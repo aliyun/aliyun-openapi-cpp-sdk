@@ -33,7 +33,7 @@ std::string DescribeZonesRequest::getAccess_key_id()const
 void DescribeZonesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeZonesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeZonesRequest::getResourceOwnerAccount()const
 void DescribeZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeZonesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeZonesRequest::getRegionId()const
 void DescribeZonesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeZonesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeZonesRequest::getOwnerAccount()const
 void DescribeZonesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeZonesRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeZonesRequest::getTags()const
 void DescribeZonesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

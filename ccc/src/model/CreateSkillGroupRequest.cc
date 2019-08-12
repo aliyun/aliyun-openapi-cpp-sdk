@@ -45,7 +45,7 @@ std::string CreateSkillGroupRequest::getInstanceId()const
 void CreateSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 bool CreateSkillGroupRequest::getAllowPrivateOutboundNumber()const
@@ -56,7 +56,7 @@ bool CreateSkillGroupRequest::getAllowPrivateOutboundNumber()const
 void CreateSkillGroupRequest::setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber)
 {
 	allowPrivateOutboundNumber_ = allowPrivateOutboundNumber;
-	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber);
+	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
 }
 
 std::vector<std::string> CreateSkillGroupRequest::getOutboundPhoneNumberId()const
@@ -79,7 +79,7 @@ std::string CreateSkillGroupRequest::getName()const
 void CreateSkillGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateSkillGroupRequest::getDescription()const
@@ -90,7 +90,7 @@ std::string CreateSkillGroupRequest::getDescription()const
 void CreateSkillGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateSkillGroupRequest::getRoutingStrategy()const
@@ -101,7 +101,7 @@ std::string CreateSkillGroupRequest::getRoutingStrategy()const
 void CreateSkillGroupRequest::setRoutingStrategy(const std::string& routingStrategy)
 {
 	routingStrategy_ = routingStrategy;
-	setCoreParameter("RoutingStrategy", routingStrategy);
+	setCoreParameter("RoutingStrategy", std::to_string(routingStrategy));
 }
 
 std::vector<std::string> CreateSkillGroupRequest::getUserId()const
@@ -124,6 +124,6 @@ std::string CreateSkillGroupRequest::getAccessKeyId()const
 void CreateSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string SearchPhotosRequest::getLibraryId()const
 void SearchPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string SearchPhotosRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string SearchPhotosRequest::getStoreName()const
 void SearchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 int SearchPhotosRequest::getPage()const
@@ -77,6 +77,6 @@ std::string SearchPhotosRequest::getKeyword()const
 void SearchPhotosRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 

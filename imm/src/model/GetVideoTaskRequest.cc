@@ -33,7 +33,7 @@ std::string GetVideoTaskRequest::getTaskType()const
 void GetVideoTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setCoreParameter("TaskType", std::to_string(taskType));
 }
 
 std::string GetVideoTaskRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetVideoTaskRequest::getRegionId()const
 void GetVideoTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetVideoTaskRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetVideoTaskRequest::getProject()const
 void GetVideoTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string GetVideoTaskRequest::getTaskId()const
@@ -66,7 +66,7 @@ std::string GetVideoTaskRequest::getTaskId()const
 void GetVideoTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string GetVideoTaskRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetVideoTaskRequest::getAccessKeyId()const
 void GetVideoTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

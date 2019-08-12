@@ -33,7 +33,7 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getSourceIp()const
 void DescribeWhiteListStrategyStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeWhiteListStrategyStatisticsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getStrategyIds()const
 void DescribeWhiteListStrategyStatisticsRequest::setStrategyIds(const std::string& strategyIds)
 {
 	strategyIds_ = strategyIds;
-	setCoreParameter("StrategyIds", strategyIds);
+	setCoreParameter("StrategyIds", std::to_string(strategyIds));
 }
 
 int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
@@ -77,6 +77,6 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getLang()const
 void DescribeWhiteListStrategyStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

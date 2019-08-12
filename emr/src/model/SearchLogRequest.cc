@@ -44,7 +44,7 @@ std::string SearchLogRequest::getLogstoreName()const
 void SearchLogRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", logstoreName);
+	setCoreParameter("LogstoreName", std::to_string(logstoreName));
 }
 
 int SearchLogRequest::getFromTimestamp()const
@@ -88,7 +88,7 @@ std::string SearchLogRequest::getClusterId()const
 void SearchLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 bool SearchLogRequest::getReverse()const
@@ -99,7 +99,7 @@ bool SearchLogRequest::getReverse()const
 void SearchLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse);
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string SearchLogRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SearchLogRequest::getAccessKeyId()const
 void SearchLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SearchLogRequest::getHostInnerIp()const
@@ -121,7 +121,7 @@ std::string SearchLogRequest::getHostInnerIp()const
 void SearchLogRequest::setHostInnerIp(const std::string& hostInnerIp)
 {
 	hostInnerIp_ = hostInnerIp;
-	setCoreParameter("HostInnerIp", hostInnerIp);
+	setCoreParameter("HostInnerIp", std::to_string(hostInnerIp));
 }
 
 std::string SearchLogRequest::getHostName()const
@@ -132,7 +132,7 @@ std::string SearchLogRequest::getHostName()const
 void SearchLogRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string SearchLogRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string SearchLogRequest::getRegionId()const
 void SearchLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int SearchLogRequest::getToTimestamp()const
@@ -165,6 +165,6 @@ std::string SearchLogRequest::getSlsQueryString()const
 void SearchLogRequest::setSlsQueryString(const std::string& slsQueryString)
 {
 	slsQueryString_ = slsQueryString;
-	setCoreParameter("SlsQueryString", slsQueryString);
+	setCoreParameter("SlsQueryString", std::to_string(slsQueryString));
 }
 

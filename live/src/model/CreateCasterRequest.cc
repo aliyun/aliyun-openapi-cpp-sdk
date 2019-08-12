@@ -33,7 +33,7 @@ std::string CreateCasterRequest::getCasterTemplate()const
 void CreateCasterRequest::setCasterTemplate(const std::string& casterTemplate)
 {
 	casterTemplate_ = casterTemplate;
-	setCoreParameter("CasterTemplate", casterTemplate);
+	setCoreParameter("CasterTemplate", std::to_string(casterTemplate));
 }
 
 std::string CreateCasterRequest::getExpireTime()const
@@ -44,7 +44,7 @@ std::string CreateCasterRequest::getExpireTime()const
 void CreateCasterRequest::setExpireTime(const std::string& expireTime)
 {
 	expireTime_ = expireTime;
-	setCoreParameter("ExpireTime", expireTime);
+	setCoreParameter("ExpireTime", std::to_string(expireTime));
 }
 
 int CreateCasterRequest::getNormType()const
@@ -66,7 +66,7 @@ std::string CreateCasterRequest::getCasterName()const
 void CreateCasterRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
+	setCoreParameter("CasterName", std::to_string(casterName));
 }
 
 std::string CreateCasterRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateCasterRequest::getClientToken()const
 void CreateCasterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateCasterRequest::getChargeType()const
@@ -88,7 +88,7 @@ std::string CreateCasterRequest::getChargeType()const
 void CreateCasterRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 long CreateCasterRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string CreateCasterRequest::getPurchaseTime()const
 void CreateCasterRequest::setPurchaseTime(const std::string& purchaseTime)
 {
 	purchaseTime_ = purchaseTime;
-	setCoreParameter("PurchaseTime", purchaseTime);
+	setCoreParameter("PurchaseTime", std::to_string(purchaseTime));
 }
 

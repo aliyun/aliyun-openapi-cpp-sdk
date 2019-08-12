@@ -33,7 +33,7 @@ std::string QueryDnsHostRequest::getInstanceId()const
 void QueryDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string QueryDnsHostRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryDnsHostRequest::getUserClientIp()const
 void QueryDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryDnsHostRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryDnsHostRequest::getLang()const
 void QueryDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -44,7 +44,7 @@ std::string QueryChangeLogListRequest::getUserClientIp()const
 void QueryChangeLogListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryChangeLogListRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string QueryChangeLogListRequest::getDomainName()const
 void QueryChangeLogListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int QueryChangeLogListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string QueryChangeLogListRequest::getLang()const
 void QueryChangeLogListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int QueryChangeLogListRequest::getPageNum()const

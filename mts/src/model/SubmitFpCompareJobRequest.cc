@@ -33,7 +33,7 @@ std::string SubmitFpCompareJobRequest::getMatchedFrameStorage()const
 void SubmitFpCompareJobRequest::setMatchedFrameStorage(const std::string& matchedFrameStorage)
 {
 	matchedFrameStorage_ = matchedFrameStorage;
-	setCoreParameter("MatchedFrameStorage", matchedFrameStorage);
+	setCoreParameter("MatchedFrameStorage", std::to_string(matchedFrameStorage));
 }
 
 std::string SubmitFpCompareJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitFpCompareJobRequest::getUserData()const
 void SubmitFpCompareJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitFpCompareJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitFpCompareJobRequest::getQueryMedia()const
 void SubmitFpCompareJobRequest::setQueryMedia(const std::string& queryMedia)
 {
 	queryMedia_ = queryMedia;
-	setCoreParameter("QueryMedia", queryMedia);
+	setCoreParameter("QueryMedia", std::to_string(queryMedia));
 }
 
 std::string SubmitFpCompareJobRequest::getFpDBId()const
@@ -77,7 +77,7 @@ std::string SubmitFpCompareJobRequest::getFpDBId()const
 void SubmitFpCompareJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
-	setCoreParameter("FpDBId", fpDBId);
+	setCoreParameter("FpDBId", std::to_string(fpDBId));
 }
 
 std::string SubmitFpCompareJobRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitFpCompareJobRequest::getResourceOwnerAccount()const
 void SubmitFpCompareJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitFpCompareJobRequest::getMasterMedia()const
@@ -99,7 +99,7 @@ std::string SubmitFpCompareJobRequest::getMasterMedia()const
 void SubmitFpCompareJobRequest::setMasterMedia(const std::string& masterMedia)
 {
 	masterMedia_ = masterMedia;
-	setCoreParameter("MasterMedia", masterMedia);
+	setCoreParameter("MasterMedia", std::to_string(masterMedia));
 }
 
 std::string SubmitFpCompareJobRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string SubmitFpCompareJobRequest::getOwnerAccount()const
 void SubmitFpCompareJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitFpCompareJobRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string SubmitFpCompareJobRequest::getAccessKeyId()const
 void SubmitFpCompareJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitFpCompareJobRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string SubmitFpCompareJobRequest::getPipelineId()const
 void SubmitFpCompareJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

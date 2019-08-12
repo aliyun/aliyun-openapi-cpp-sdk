@@ -33,7 +33,7 @@ std::string QueryServerLockRequest::getInstanceId()const
 void QueryServerLockRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string QueryServerLockRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryServerLockRequest::getUserClientIp()const
 void QueryServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryServerLockRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryServerLockRequest::getLang()const
 void QueryServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

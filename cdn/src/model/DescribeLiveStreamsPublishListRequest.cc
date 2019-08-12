@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 void DescribeLiveStreamsPublishListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsPublishListRequest::getSecurityToken()const
 void DescribeLiveStreamsPublishListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
 void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeLiveStreamsPublishListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
 void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
 void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamsPublishListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
 void DescribeLiveStreamsPublishListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 long DescribeLiveStreamsPublishListRequest::getPageNumber()const

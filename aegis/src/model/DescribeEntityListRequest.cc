@@ -33,7 +33,7 @@ std::string DescribeEntityListRequest::getOs()const
 void DescribeEntityListRequest::setOs(const std::string& os)
 {
 	os_ = os;
-	setCoreParameter("Os", os);
+	setCoreParameter("Os", std::to_string(os));
 }
 
 std::string DescribeEntityListRequest::getTagIdList()const
@@ -44,7 +44,7 @@ std::string DescribeEntityListRequest::getTagIdList()const
 void DescribeEntityListRequest::setTagIdList(const std::string& tagIdList)
 {
 	tagIdList_ = tagIdList;
-	setCoreParameter("TagIdList", tagIdList);
+	setCoreParameter("TagIdList", std::to_string(tagIdList));
 }
 
 long DescribeEntityListRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeEntityListRequest::getHealth()const
 void DescribeEntityListRequest::setHealth(const std::string& health)
 {
 	health_ = health;
-	setCoreParameter("Health", health);
+	setCoreParameter("Health", std::to_string(health));
 }
 
 int DescribeEntityListRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeEntityListRequest::getRemark()const
 void DescribeEntityListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeEntityListRequest::getTrojan()const
@@ -99,7 +99,7 @@ std::string DescribeEntityListRequest::getTrojan()const
 void DescribeEntityListRequest::setTrojan(const std::string& trojan)
 {
 	trojan_ = trojan;
-	setCoreParameter("Trojan", trojan);
+	setCoreParameter("Trojan", std::to_string(trojan));
 }
 
 std::string DescribeEntityListRequest::getSuspicious()const
@@ -110,7 +110,7 @@ std::string DescribeEntityListRequest::getSuspicious()const
 void DescribeEntityListRequest::setSuspicious(const std::string& suspicious)
 {
 	suspicious_ = suspicious;
-	setCoreParameter("Suspicious", suspicious);
+	setCoreParameter("Suspicious", std::to_string(suspicious));
 }
 
 std::string DescribeEntityListRequest::getRegionNo()const
@@ -121,7 +121,7 @@ std::string DescribeEntityListRequest::getRegionNo()const
 void DescribeEntityListRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
+	setCoreParameter("RegionNo", std::to_string(regionNo));
 }
 
 std::string DescribeEntityListRequest::getPatch()const
@@ -132,7 +132,7 @@ std::string DescribeEntityListRequest::getPatch()const
 void DescribeEntityListRequest::setPatch(const std::string& patch)
 {
 	patch_ = patch;
-	setCoreParameter("Patch", patch);
+	setCoreParameter("Patch", std::to_string(patch));
 }
 
 std::string DescribeEntityListRequest::getSourceIp()const
@@ -143,7 +143,7 @@ std::string DescribeEntityListRequest::getSourceIp()const
 void DescribeEntityListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeEntityListRequest::getPageSize()const
@@ -165,7 +165,7 @@ std::string DescribeEntityListRequest::getFrom()const
 void DescribeEntityListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeEntityListRequest::getAccount()const
@@ -176,7 +176,7 @@ std::string DescribeEntityListRequest::getAccount()const
 void DescribeEntityListRequest::setAccount(const std::string& account)
 {
 	account_ = account;
-	setCoreParameter("Account", account);
+	setCoreParameter("Account", std::to_string(account));
 }
 
 std::string DescribeEntityListRequest::getStatus()const
@@ -187,6 +187,6 @@ std::string DescribeEntityListRequest::getStatus()const
 void DescribeEntityListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

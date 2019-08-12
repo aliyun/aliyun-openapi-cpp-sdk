@@ -33,7 +33,7 @@ std::string DescribeSnapshotMonitorDataRequest::getSourceRegionId()const
 void DescribeSnapshotMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeSnapshotMonitorDataRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeSnapshotMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeSnapshotMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSnapshotMonitorDataRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeSnapshotMonitorDataRequest::getRegionId()const
 void DescribeSnapshotMonitorDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSnapshotMonitorDataRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeSnapshotMonitorDataRequest::getOwnerAccount()const
 void DescribeSnapshotMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSnapshotMonitorDataRequest::getEndTime()const
@@ -99,7 +99,7 @@ std::string DescribeSnapshotMonitorDataRequest::getEndTime()const
 void DescribeSnapshotMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSnapshotMonitorDataRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string DescribeSnapshotMonitorDataRequest::getStartTime()const
 void DescribeSnapshotMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSnapshotMonitorDataRequest::getOwnerId()const

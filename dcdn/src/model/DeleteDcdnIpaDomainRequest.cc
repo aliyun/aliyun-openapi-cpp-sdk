@@ -33,7 +33,7 @@ std::string DeleteDcdnIpaDomainRequest::getResourceGroupId()const
 void DeleteDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DeleteDcdnIpaDomainRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteDcdnIpaDomainRequest::getSecurityToken()const
 void DeleteDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteDcdnIpaDomainRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteDcdnIpaDomainRequest::getOwnerAccount()const
 void DeleteDcdnIpaDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteDcdnIpaDomainRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DeleteDcdnIpaDomainRequest::getDomainName()const
 void DeleteDcdnIpaDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteDcdnIpaDomainRequest::getOwnerId()const

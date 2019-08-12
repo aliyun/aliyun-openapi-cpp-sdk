@@ -55,7 +55,7 @@ bool DescribeEniMonitorDataRequest::getProxy_original_security_transport()const
 void DescribeEniMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeEniMonitorDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeEniMonitorDataRequest::getStartTime()const
 void DescribeEniMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeEniMonitorDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeEniMonitorDataRequest::getProxy_original_source_ip()const
 void DescribeEniMonitorDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeEniMonitorDataRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeEniMonitorDataRequest::getOwnerIdLoginEmail()const
 void DescribeEniMonitorDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeEniMonitorDataRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeEniMonitorDataRequest::getCallerType()const
 void DescribeEniMonitorDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeEniMonitorDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeEniMonitorDataRequest::getAccessKeyId()const
 void DescribeEniMonitorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeEniMonitorDataRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeEniMonitorDataRequest::getSourceRegionId()const
 void DescribeEniMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeEniMonitorDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeEniMonitorDataRequest::getSecurityToken()const
 void DescribeEniMonitorDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeEniMonitorDataRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeEniMonitorDataRequest::getRegionId()const
 void DescribeEniMonitorDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeEniMonitorDataRequest::getEnable()const
@@ -154,7 +154,7 @@ bool DescribeEniMonitorDataRequest::getEnable()const
 void DescribeEniMonitorDataRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeEniMonitorDataRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeEniMonitorDataRequest::getRequestContent()const
 void DescribeEniMonitorDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeEniMonitorDataRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeEniMonitorDataRequest::getCallerBidEmail()const
 void DescribeEniMonitorDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeEniMonitorDataRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeEniMonitorDataRequest::getCallerUidEmail()const
 void DescribeEniMonitorDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeEniMonitorDataRequest::getCallerUid()const
@@ -209,7 +209,7 @@ std::string DescribeEniMonitorDataRequest::getApp_ip()const
 void DescribeEniMonitorDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 int DescribeEniMonitorDataRequest::getPeriod()const
@@ -231,7 +231,7 @@ std::string DescribeEniMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeEniMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeEniMonitorDataRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeEniMonitorDataRequest::getOwnerAccount()const
 void DescribeEniMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeEniMonitorDataRequest::getEndTime()const
@@ -253,7 +253,7 @@ std::string DescribeEniMonitorDataRequest::getEndTime()const
 void DescribeEniMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeEniMonitorDataRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string DescribeEniMonitorDataRequest::getCallerBid()const
 void DescribeEniMonitorDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeEniMonitorDataRequest::getOwnerId()const
@@ -286,7 +286,7 @@ bool DescribeEniMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeEniMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeEniMonitorDataRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeEniMonitorDataRequest::getAk_mfa_present()const
 void DescribeEniMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeEniMonitorDataRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeEniMonitorDataRequest::getSecurity_transport()const
 void DescribeEniMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeEniMonitorDataRequest::getInstanceId()const
@@ -319,7 +319,7 @@ std::string DescribeEniMonitorDataRequest::getInstanceId()const
 void DescribeEniMonitorDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeEniMonitorDataRequest::getRequestId()const
@@ -330,7 +330,7 @@ std::string DescribeEniMonitorDataRequest::getRequestId()const
 void DescribeEniMonitorDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeEniMonitorDataRequest::getEniId()const
@@ -341,6 +341,6 @@ std::string DescribeEniMonitorDataRequest::getEniId()const
 void DescribeEniMonitorDataRequest::setEniId(const std::string& eniId)
 {
 	eniId_ = eniId;
-	setCoreParameter("EniId", eniId);
+	setCoreParameter("EniId", std::to_string(eniId));
 }
 

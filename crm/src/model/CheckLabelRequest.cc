@@ -33,7 +33,7 @@ std::string CheckLabelRequest::getLabelSeries()const
 void CheckLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", std::to_string(labelSeries));
 }
 
 std::string CheckLabelRequest::getPK()const
@@ -44,7 +44,7 @@ std::string CheckLabelRequest::getPK()const
 void CheckLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setCoreParameter("PK", std::to_string(pK));
 }
 
 std::string CheckLabelRequest::getLabelName()const
@@ -55,6 +55,6 @@ std::string CheckLabelRequest::getLabelName()const
 void CheckLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setCoreParameter("LabelName", labelName);
+	setCoreParameter("LabelName", std::to_string(labelName));
 }
 

@@ -44,7 +44,7 @@ std::string RunNoteParagraphsRequest::getRegionId()const
 void RunNoteParagraphsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RunNoteParagraphsRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string RunNoteParagraphsRequest::getNoteId()const
 void RunNoteParagraphsRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 
 std::string RunNoteParagraphsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RunNoteParagraphsRequest::getAccessKeyId()const
 void RunNoteParagraphsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

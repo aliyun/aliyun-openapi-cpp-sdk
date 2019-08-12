@@ -44,7 +44,7 @@ std::string DeleteSAGLinkLevelHaRequest::getResourceOwnerAccount()const
 void DeleteSAGLinkLevelHaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteSAGLinkLevelHaRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteSAGLinkLevelHaRequest::getRegionId()const
 void DeleteSAGLinkLevelHaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteSAGLinkLevelHaRequest::getHaType()const
@@ -66,7 +66,7 @@ std::string DeleteSAGLinkLevelHaRequest::getHaType()const
 void DeleteSAGLinkLevelHaRequest::setHaType(const std::string& haType)
 {
 	haType_ = haType;
-	setCoreParameter("HaType", haType);
+	setCoreParameter("HaType", std::to_string(haType));
 }
 
 std::string DeleteSAGLinkLevelHaRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteSAGLinkLevelHaRequest::getOwnerAccount()const
 void DeleteSAGLinkLevelHaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteSAGLinkLevelHaRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string DeleteSAGLinkLevelHaRequest::getSmartAGId()const
 void DeleteSAGLinkLevelHaRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long DeleteSAGLinkLevelHaRequest::getOwnerId()const

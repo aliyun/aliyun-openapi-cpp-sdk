@@ -55,7 +55,7 @@ std::string SingleCallByVoiceRequest::getResourceOwnerAccount()const
 void SingleCallByVoiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SingleCallByVoiceRequest::getCalledNumber()const
@@ -66,7 +66,7 @@ std::string SingleCallByVoiceRequest::getCalledNumber()const
 void SingleCallByVoiceRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", std::to_string(calledNumber));
 }
 
 std::string SingleCallByVoiceRequest::getVoiceCode()const
@@ -77,7 +77,7 @@ std::string SingleCallByVoiceRequest::getVoiceCode()const
 void SingleCallByVoiceRequest::setVoiceCode(const std::string& voiceCode)
 {
 	voiceCode_ = voiceCode;
-	setCoreParameter("VoiceCode", voiceCode);
+	setCoreParameter("VoiceCode", std::to_string(voiceCode));
 }
 
 std::string SingleCallByVoiceRequest::getCalledShowNumber()const
@@ -88,7 +88,7 @@ std::string SingleCallByVoiceRequest::getCalledShowNumber()const
 void SingleCallByVoiceRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", calledShowNumber);
+	setCoreParameter("CalledShowNumber", std::to_string(calledShowNumber));
 }
 
 int SingleCallByVoiceRequest::getPlayTimes()const
@@ -110,7 +110,7 @@ std::string SingleCallByVoiceRequest::getOutId()const
 void SingleCallByVoiceRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setCoreParameter("OutId", std::to_string(outId));
 }
 
 long SingleCallByVoiceRequest::getOwnerId()const
@@ -143,6 +143,6 @@ std::string SingleCallByVoiceRequest::getAccessKeyId()const
 void SingleCallByVoiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string PlanHostNameRequest::getRegionId()const
 void PlanHostNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<PlanHostNameRequest::HostGroup> PlanHostNameRequest::getHostGroup()const
@@ -89,7 +89,7 @@ std::string PlanHostNameRequest::getClusterId()const
 void PlanHostNameRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string PlanHostNameRequest::getAccessKeyId()const
@@ -100,6 +100,6 @@ std::string PlanHostNameRequest::getAccessKeyId()const
 void PlanHostNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

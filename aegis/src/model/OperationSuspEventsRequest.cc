@@ -33,7 +33,7 @@ std::string OperationSuspEventsRequest::getSourceIp()const
 void OperationSuspEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string OperationSuspEventsRequest::getWarnType()const
@@ -44,7 +44,7 @@ std::string OperationSuspEventsRequest::getWarnType()const
 void OperationSuspEventsRequest::setWarnType(const std::string& warnType)
 {
 	warnType_ = warnType;
-	setCoreParameter("WarnType", warnType);
+	setCoreParameter("WarnType", std::to_string(warnType));
 }
 
 std::string OperationSuspEventsRequest::getSuspiciousEventIds()const
@@ -55,7 +55,7 @@ std::string OperationSuspEventsRequest::getSuspiciousEventIds()const
 void OperationSuspEventsRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
 {
 	suspiciousEventIds_ = suspiciousEventIds;
-	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
+	setCoreParameter("SuspiciousEventIds", std::to_string(suspiciousEventIds));
 }
 
 std::string OperationSuspEventsRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string OperationSuspEventsRequest::getFrom()const
 void OperationSuspEventsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string OperationSuspEventsRequest::getSubOperation()const
@@ -77,7 +77,7 @@ std::string OperationSuspEventsRequest::getSubOperation()const
 void OperationSuspEventsRequest::setSubOperation(const std::string& subOperation)
 {
 	subOperation_ = subOperation;
-	setCoreParameter("SubOperation", subOperation);
+	setCoreParameter("SubOperation", std::to_string(subOperation));
 }
 
 std::string OperationSuspEventsRequest::getOperation()const
@@ -88,6 +88,6 @@ std::string OperationSuspEventsRequest::getOperation()const
 void OperationSuspEventsRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setCoreParameter("Operation", std::to_string(operation));
 }
 

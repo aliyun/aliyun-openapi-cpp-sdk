@@ -33,7 +33,7 @@ std::string AddACLRuleRequest::getAclId()const
 void AddACLRuleRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long AddACLRuleRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AddACLRuleRequest::getSourcePortRange()const
 void AddACLRuleRequest::setSourcePortRange(const std::string& sourcePortRange)
 {
 	sourcePortRange_ = sourcePortRange;
-	setCoreParameter("SourcePortRange", sourcePortRange);
+	setCoreParameter("SourcePortRange", std::to_string(sourcePortRange));
 }
 
 std::string AddACLRuleRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddACLRuleRequest::getResourceOwnerAccount()const
 void AddACLRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddACLRuleRequest::getIpProtocol()const
@@ -77,7 +77,7 @@ std::string AddACLRuleRequest::getIpProtocol()const
 void AddACLRuleRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", std::to_string(ipProtocol));
 }
 
 std::string AddACLRuleRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string AddACLRuleRequest::getOwnerAccount()const
 void AddACLRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddACLRuleRequest::getSourceCidr()const
@@ -99,7 +99,7 @@ std::string AddACLRuleRequest::getSourceCidr()const
 void AddACLRuleRequest::setSourceCidr(const std::string& sourceCidr)
 {
 	sourceCidr_ = sourceCidr;
-	setCoreParameter("SourceCidr", sourceCidr);
+	setCoreParameter("SourceCidr", std::to_string(sourceCidr));
 }
 
 std::string AddACLRuleRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string AddACLRuleRequest::getDescription()const
 void AddACLRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long AddACLRuleRequest::getOwnerId()const
@@ -143,7 +143,7 @@ std::string AddACLRuleRequest::getType()const
 void AddACLRuleRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string AddACLRuleRequest::getDestCidr()const
@@ -154,7 +154,7 @@ std::string AddACLRuleRequest::getDestCidr()const
 void AddACLRuleRequest::setDestCidr(const std::string& destCidr)
 {
 	destCidr_ = destCidr;
-	setCoreParameter("DestCidr", destCidr);
+	setCoreParameter("DestCidr", std::to_string(destCidr));
 }
 
 std::string AddACLRuleRequest::getDestPortRange()const
@@ -165,7 +165,7 @@ std::string AddACLRuleRequest::getDestPortRange()const
 void AddACLRuleRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
-	setCoreParameter("DestPortRange", destPortRange);
+	setCoreParameter("DestPortRange", std::to_string(destPortRange));
 }
 
 std::string AddACLRuleRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string AddACLRuleRequest::getRegionId()const
 void AddACLRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddACLRuleRequest::getDirection()const
@@ -187,7 +187,7 @@ std::string AddACLRuleRequest::getDirection()const
 void AddACLRuleRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 
 std::string AddACLRuleRequest::getPolicy()const
@@ -198,6 +198,6 @@ std::string AddACLRuleRequest::getPolicy()const
 void AddACLRuleRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", policy);
+	setCoreParameter("Policy", std::to_string(policy));
 }
 

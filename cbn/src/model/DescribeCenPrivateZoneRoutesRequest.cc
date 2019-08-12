@@ -44,7 +44,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
 void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getCenId()const
 void DescribeCenPrivateZoneRoutesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 int DescribeCenPrivateZoneRoutesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getHostRegionId()const
 void DescribeCenPrivateZoneRoutesRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setCoreParameter("HostRegionId", std::to_string(hostRegionId));
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
 void DescribeCenPrivateZoneRoutesRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setCoreParameter("AccessRegionId", std::to_string(accessRegionId));
 }
 
 int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const

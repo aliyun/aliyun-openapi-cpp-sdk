@@ -44,7 +44,7 @@ std::string FlushInstanceRequest::getInstanceId()const
 void FlushInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string FlushInstanceRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string FlushInstanceRequest::getSecurityToken()const
 void FlushInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string FlushInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string FlushInstanceRequest::getResourceOwnerAccount()const
 void FlushInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string FlushInstanceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string FlushInstanceRequest::getOwnerAccount()const
 void FlushInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long FlushInstanceRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string FlushInstanceRequest::getAccessKeyId()const
 void FlushInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

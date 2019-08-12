@@ -44,7 +44,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getLogPath()const
 void ModifyExecutionPlanClusterInfoRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setCoreParameter("LogPath", logPath);
+	setCoreParameter("LogPath", std::to_string(logPath));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getClusterName()const
@@ -55,7 +55,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getClusterName()const
 void ModifyExecutionPlanClusterInfoRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setCoreParameter("ClusterName", std::to_string(clusterName));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getConfigurations()const
@@ -66,7 +66,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getConfigurations()const
 void ModifyExecutionPlanClusterInfoRequest::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setCoreParameter("Configurations", configurations);
+	setCoreParameter("Configurations", std::to_string(configurations));
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getIoOptimized()const
@@ -77,7 +77,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getIoOptimized()const
 void ModifyExecutionPlanClusterInfoRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getSecurityGroupId()const
@@ -88,7 +88,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getSecurityGroupId()const
 void ModifyExecutionPlanClusterInfoRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getEasEnable()const
@@ -99,7 +99,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getEasEnable()const
 void ModifyExecutionPlanClusterInfoRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable);
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getCreateClusterOnDemand()const
@@ -110,7 +110,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getCreateClusterOnDemand()const
 void ModifyExecutionPlanClusterInfoRequest::setCreateClusterOnDemand(bool createClusterOnDemand)
 {
 	createClusterOnDemand_ = createClusterOnDemand;
-	setCoreParameter("CreateClusterOnDemand", createClusterOnDemand);
+	setCoreParameter("CreateClusterOnDemand", createClusterOnDemand ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getAccessKeyId()const
 void ModifyExecutionPlanClusterInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<ModifyExecutionPlanClusterInfoRequest::BootstrapAction> ModifyExecutionPlanClusterInfoRequest::getBootstrapAction()const
@@ -150,7 +150,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getRegionId()const
 void ModifyExecutionPlanClusterInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getUseLocalMetaDb()const
@@ -161,7 +161,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getUseLocalMetaDb()const
 void ModifyExecutionPlanClusterInfoRequest::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb);
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getEmrVer()const
@@ -172,7 +172,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getEmrVer()const
 void ModifyExecutionPlanClusterInfoRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setCoreParameter("EmrVer", emrVer);
+	setCoreParameter("EmrVer", std::to_string(emrVer));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getId()const
@@ -183,7 +183,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getId()const
 void ModifyExecutionPlanClusterInfoRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getIsOpenPublicIp()const
@@ -194,7 +194,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getIsOpenPublicIp()const
 void ModifyExecutionPlanClusterInfoRequest::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp);
+	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getClusterId()const
@@ -205,7 +205,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getClusterId()const
 void ModifyExecutionPlanClusterInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getInstanceGeneration()const
@@ -216,7 +216,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getInstanceGeneration()const
 void ModifyExecutionPlanClusterInfoRequest::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setCoreParameter("InstanceGeneration", instanceGeneration);
+	setCoreParameter("InstanceGeneration", std::to_string(instanceGeneration));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getClusterType()const
@@ -227,7 +227,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getClusterType()const
 void ModifyExecutionPlanClusterInfoRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", std::to_string(clusterType));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getVSwitchId()const
@@ -238,7 +238,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getVSwitchId()const
 void ModifyExecutionPlanClusterInfoRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::vector<std::string> ModifyExecutionPlanClusterInfoRequest::getOptionSoftWareList()const
@@ -261,7 +261,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getVpcId()const
 void ModifyExecutionPlanClusterInfoRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string ModifyExecutionPlanClusterInfoRequest::getNetType()const
@@ -272,7 +272,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getNetType()const
 void ModifyExecutionPlanClusterInfoRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setCoreParameter("NetType", std::to_string(netType));
 }
 
 std::vector<ModifyExecutionPlanClusterInfoRequest::EcsOrder> ModifyExecutionPlanClusterInfoRequest::getEcsOrder()const
@@ -305,7 +305,7 @@ std::string ModifyExecutionPlanClusterInfoRequest::getZoneId()const
 void ModifyExecutionPlanClusterInfoRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getHighAvailabilityEnable()const
@@ -316,7 +316,7 @@ bool ModifyExecutionPlanClusterInfoRequest::getHighAvailabilityEnable()const
 void ModifyExecutionPlanClusterInfoRequest::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable);
+	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 
 bool ModifyExecutionPlanClusterInfoRequest::getLogEnable()const
@@ -327,6 +327,6 @@ bool ModifyExecutionPlanClusterInfoRequest::getLogEnable()const
 void ModifyExecutionPlanClusterInfoRequest::setLogEnable(bool logEnable)
 {
 	logEnable_ = logEnable;
-	setCoreParameter("LogEnable", logEnable);
+	setCoreParameter("LogEnable", logEnable ? "true" : "false");
 }
 

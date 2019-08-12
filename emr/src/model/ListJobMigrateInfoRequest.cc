@@ -44,7 +44,7 @@ std::string ListJobMigrateInfoRequest::getRegionId()const
 void ListJobMigrateInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListJobMigrateInfoRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListJobMigrateInfoRequest::getUserId()const
 void ListJobMigrateInfoRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 int ListJobMigrateInfoRequest::getCurrentSize()const
@@ -88,6 +88,6 @@ std::string ListJobMigrateInfoRequest::getAccessKeyId()const
 void ListJobMigrateInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

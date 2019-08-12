@@ -33,7 +33,7 @@ std::string ListFacePhotosRequest::getCursor()const
 void ListFacePhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setCoreParameter("Cursor", std::to_string(cursor));
 }
 
 int ListFacePhotosRequest::getSize()const
@@ -55,7 +55,7 @@ std::string ListFacePhotosRequest::getLibraryId()const
 void ListFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string ListFacePhotosRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string ListFacePhotosRequest::getStoreName()const
 void ListFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long ListFacePhotosRequest::getFaceId()const
@@ -88,7 +88,7 @@ std::string ListFacePhotosRequest::getState()const
 void ListFacePhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string ListFacePhotosRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListFacePhotosRequest::getDirection()const
 void ListFacePhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 

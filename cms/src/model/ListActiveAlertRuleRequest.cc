@@ -33,7 +33,7 @@ std::string ListActiveAlertRuleRequest::getProduct()const
 void ListActiveAlertRuleRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setCoreParameter("Product", std::to_string(product));
 }
 
 std::string ListActiveAlertRuleRequest::getUserId()const
@@ -44,6 +44,6 @@ std::string ListActiveAlertRuleRequest::getUserId()const
 void ListActiveAlertRuleRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 

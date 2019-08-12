@@ -33,7 +33,7 @@ std::string GetResolveStatisticsRequest::getGranularity()const
 void GetResolveStatisticsRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setCoreParameter("Granularity", std::to_string(granularity));
 }
 
 std::string GetResolveStatisticsRequest::getProtocolName()const
@@ -44,7 +44,7 @@ std::string GetResolveStatisticsRequest::getProtocolName()const
 void GetResolveStatisticsRequest::setProtocolName(const std::string& protocolName)
 {
 	protocolName_ = protocolName;
-	setCoreParameter("ProtocolName", protocolName);
+	setCoreParameter("ProtocolName", std::to_string(protocolName));
 }
 
 std::string GetResolveStatisticsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string GetResolveStatisticsRequest::getDomainName()const
 void GetResolveStatisticsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int GetResolveStatisticsRequest::getTimeSpan()const
@@ -77,6 +77,6 @@ std::string GetResolveStatisticsRequest::getAccessKeyId()const
 void GetResolveStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

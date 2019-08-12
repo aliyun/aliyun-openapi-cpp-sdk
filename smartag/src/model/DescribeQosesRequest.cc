@@ -44,7 +44,7 @@ std::string DescribeQosesRequest::getQosName()const
 void DescribeQosesRequest::setQosName(const std::string& qosName)
 {
 	qosName_ = qosName;
-	setCoreParameter("QosName", qosName);
+	setCoreParameter("QosName", std::to_string(qosName));
 }
 
 std::string DescribeQosesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeQosesRequest::getResourceOwnerAccount()const
 void DescribeQosesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeQosesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeQosesRequest::getRegionId()const
 void DescribeQosesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeQosesRequest::getQosIds()const
@@ -77,7 +77,7 @@ std::string DescribeQosesRequest::getQosIds()const
 void DescribeQosesRequest::setQosIds(const std::string& qosIds)
 {
 	qosIds_ = qosIds;
-	setCoreParameter("QosIds", qosIds);
+	setCoreParameter("QosIds", std::to_string(qosIds));
 }
 
 std::string DescribeQosesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeQosesRequest::getOwnerAccount()const
 void DescribeQosesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeQosesRequest::getPageSize()const

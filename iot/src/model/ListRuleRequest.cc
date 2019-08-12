@@ -33,7 +33,7 @@ std::string ListRuleRequest::getSearchName()const
 void ListRuleRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setCoreParameter("SearchName", std::to_string(searchName));
 }
 
 std::string ListRuleRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string ListRuleRequest::getIotInstanceId()const
 void ListRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int ListRuleRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string ListRuleRequest::getAccessKeyId()const
 void ListRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -73,7 +73,7 @@ std::string AddHpHostRequest::getRegionId()const
 void AddHpHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddHpHostRequest::getHpBizId()const
@@ -84,7 +84,7 @@ std::string AddHpHostRequest::getHpBizId()const
 void AddHpHostRequest::setHpBizId(const std::string& hpBizId)
 {
 	hpBizId_ = hpBizId;
-	setCoreParameter("HpBizId", hpBizId);
+	setCoreParameter("HpBizId", std::to_string(hpBizId));
 }
 
 std::string AddHpHostRequest::getAccessKeyId()const
@@ -95,6 +95,6 @@ std::string AddHpHostRequest::getAccessKeyId()const
 void AddHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

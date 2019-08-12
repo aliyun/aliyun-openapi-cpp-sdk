@@ -33,7 +33,7 @@ std::string GetSearchRequest::getRegionId()const
 void GetSearchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetSearchRequest::getOrigin()const
@@ -44,7 +44,7 @@ std::string GetSearchRequest::getOrigin()const
 void GetSearchRequest::setOrigin(const std::string& origin)
 {
 	origin_ = origin;
-	setCoreParameter("Origin", origin);
+	setCoreParameter("Origin", std::to_string(origin));
 }
 
 int GetSearchRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string GetSearchRequest::getKeyword()const
 void GetSearchRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 

@@ -33,7 +33,7 @@ std::string OperateBatchDomainRequest::getUserClientIp()const
 void OperateBatchDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::vector<OperateBatchDomainRequest::DomainRecordInfo> OperateBatchDomainRequest::getDomainRecordInfo()const
@@ -69,7 +69,7 @@ std::string OperateBatchDomainRequest::getLang()const
 void OperateBatchDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string OperateBatchDomainRequest::getType()const
@@ -80,6 +80,6 @@ std::string OperateBatchDomainRequest::getType()const
 void OperateBatchDomainRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

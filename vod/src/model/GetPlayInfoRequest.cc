@@ -44,7 +44,7 @@ std::string GetPlayInfoRequest::getStreamType()const
 void GetPlayInfoRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setCoreParameter("StreamType", std::to_string(streamType));
 }
 
 std::string GetPlayInfoRequest::getFormats()const
@@ -55,7 +55,7 @@ std::string GetPlayInfoRequest::getFormats()const
 void GetPlayInfoRequest::setFormats(const std::string& formats)
 {
 	formats_ = formats;
-	setCoreParameter("Formats", formats);
+	setCoreParameter("Formats", std::to_string(formats));
 }
 
 std::string GetPlayInfoRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GetPlayInfoRequest::getResourceOwnerAccount()const
 void GetPlayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetPlayInfoRequest::getChannel()const
@@ -77,7 +77,7 @@ std::string GetPlayInfoRequest::getChannel()const
 void GetPlayInfoRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setCoreParameter("Channel", std::to_string(channel));
 }
 
 std::string GetPlayInfoRequest::getVideoId()const
@@ -88,7 +88,7 @@ std::string GetPlayInfoRequest::getVideoId()const
 void GetPlayInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 std::string GetPlayInfoRequest::getPlayerVersion()const
@@ -99,7 +99,7 @@ std::string GetPlayInfoRequest::getPlayerVersion()const
 void GetPlayInfoRequest::setPlayerVersion(const std::string& playerVersion)
 {
 	playerVersion_ = playerVersion;
-	setCoreParameter("PlayerVersion", playerVersion);
+	setCoreParameter("PlayerVersion", std::to_string(playerVersion));
 }
 
 long GetPlayInfoRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string GetPlayInfoRequest::getResultType()const
 void GetPlayInfoRequest::setResultType(const std::string& resultType)
 {
 	resultType_ = resultType;
-	setCoreParameter("ResultType", resultType);
+	setCoreParameter("ResultType", std::to_string(resultType));
 }
 
 std::string GetPlayInfoRequest::getRand()const
@@ -132,7 +132,7 @@ std::string GetPlayInfoRequest::getRand()const
 void GetPlayInfoRequest::setRand(const std::string& rand)
 {
 	rand_ = rand;
-	setCoreParameter("Rand", rand);
+	setCoreParameter("Rand", std::to_string(rand));
 }
 
 std::string GetPlayInfoRequest::getReAuthInfo()const
@@ -143,7 +143,7 @@ std::string GetPlayInfoRequest::getReAuthInfo()const
 void GetPlayInfoRequest::setReAuthInfo(const std::string& reAuthInfo)
 {
 	reAuthInfo_ = reAuthInfo;
-	setCoreParameter("ReAuthInfo", reAuthInfo);
+	setCoreParameter("ReAuthInfo", std::to_string(reAuthInfo));
 }
 
 std::string GetPlayInfoRequest::getPlayConfig()const
@@ -154,7 +154,7 @@ std::string GetPlayInfoRequest::getPlayConfig()const
 void GetPlayInfoRequest::setPlayConfig(const std::string& playConfig)
 {
 	playConfig_ = playConfig;
-	setCoreParameter("PlayConfig", playConfig);
+	setCoreParameter("PlayConfig", std::to_string(playConfig));
 }
 
 std::string GetPlayInfoRequest::getOutputType()const
@@ -165,7 +165,7 @@ std::string GetPlayInfoRequest::getOutputType()const
 void GetPlayInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setCoreParameter("OutputType", std::to_string(outputType));
 }
 
 std::string GetPlayInfoRequest::getDefinition()const
@@ -176,7 +176,7 @@ std::string GetPlayInfoRequest::getDefinition()const
 void GetPlayInfoRequest::setDefinition(const std::string& definition)
 {
 	definition_ = definition;
-	setCoreParameter("Definition", definition);
+	setCoreParameter("Definition", std::to_string(definition));
 }
 
 long GetPlayInfoRequest::getAuthTimeout()const
@@ -198,6 +198,6 @@ std::string GetPlayInfoRequest::getAuthInfo()const
 void GetPlayInfoRequest::setAuthInfo(const std::string& authInfo)
 {
 	authInfo_ = authInfo;
-	setCoreParameter("AuthInfo", authInfo);
+	setCoreParameter("AuthInfo", std::to_string(authInfo));
 }
 

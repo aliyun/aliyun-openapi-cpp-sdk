@@ -33,7 +33,7 @@ bool CreatePolicyVersionRequest::getSetAsDefault()const
 void CreatePolicyVersionRequest::setSetAsDefault(bool setAsDefault)
 {
 	setAsDefault_ = setAsDefault;
-	setCoreParameter("SetAsDefault", setAsDefault);
+	setCoreParameter("SetAsDefault", setAsDefault ? "true" : "false");
 }
 
 std::string CreatePolicyVersionRequest::getPolicyName()const
@@ -44,7 +44,7 @@ std::string CreatePolicyVersionRequest::getPolicyName()const
 void CreatePolicyVersionRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", std::to_string(policyName));
 }
 
 std::string CreatePolicyVersionRequest::getPolicyDocument()const
@@ -55,7 +55,7 @@ std::string CreatePolicyVersionRequest::getPolicyDocument()const
 void CreatePolicyVersionRequest::setPolicyDocument(const std::string& policyDocument)
 {
 	policyDocument_ = policyDocument;
-	setCoreParameter("PolicyDocument", policyDocument);
+	setCoreParameter("PolicyDocument", std::to_string(policyDocument));
 }
 
 std::string CreatePolicyVersionRequest::getRotateStrategy()const
@@ -66,6 +66,6 @@ std::string CreatePolicyVersionRequest::getRotateStrategy()const
 void CreatePolicyVersionRequest::setRotateStrategy(const std::string& rotateStrategy)
 {
 	rotateStrategy_ = rotateStrategy;
-	setCoreParameter("RotateStrategy", rotateStrategy);
+	setCoreParameter("RotateStrategy", std::to_string(rotateStrategy));
 }
 

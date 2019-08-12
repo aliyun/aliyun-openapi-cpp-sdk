@@ -33,7 +33,7 @@ std::string DescribeStratetyRequest::getSourceIp()const
 void DescribeStratetyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeStratetyRequest::getStrategyIds()const
@@ -44,7 +44,7 @@ std::string DescribeStratetyRequest::getStrategyIds()const
 void DescribeStratetyRequest::setStrategyIds(const std::string& strategyIds)
 {
 	strategyIds_ = strategyIds;
-	setCoreParameter("StrategyIds", strategyIds);
+	setCoreParameter("StrategyIds", std::to_string(strategyIds));
 }
 
 std::string DescribeStratetyRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeStratetyRequest::getLang()const
 void DescribeStratetyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -33,7 +33,7 @@ std::string OnsTopicCreateRequest::getInstanceId()const
 void OnsTopicCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int OnsTopicCreateRequest::getMessageType()const
@@ -55,7 +55,7 @@ std::string OnsTopicCreateRequest::getTopic()const
 void OnsTopicCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 std::string OnsTopicCreateRequest::getRemark()const
@@ -66,6 +66,6 @@ std::string OnsTopicCreateRequest::getRemark()const
 void OnsTopicCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 

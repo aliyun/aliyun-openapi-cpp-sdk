@@ -33,7 +33,7 @@ std::string StartRepoBuildRequest::getRepoNamespace()const
 void StartRepoBuildRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string StartRepoBuildRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string StartRepoBuildRequest::getRepoName()const
 void StartRepoBuildRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string StartRepoBuildRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string StartRepoBuildRequest::getRegionId()const
 void StartRepoBuildRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeApiDocRequest::getStageName()const
 void DescribeApiDocRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeApiDocRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeApiDocRequest::getSecurityToken()const
 void DescribeApiDocRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiDocRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeApiDocRequest::getGroupId()const
 void DescribeApiDocRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiDocRequest::getApiId()const
@@ -66,7 +66,7 @@ std::string DescribeApiDocRequest::getApiId()const
 void DescribeApiDocRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiDocRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeApiDocRequest::getAccessKeyId()const
 void DescribeApiDocRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

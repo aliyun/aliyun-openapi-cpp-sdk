@@ -44,7 +44,7 @@ std::string ModifyAccountDescriptionRequest::getAccountName()const
 void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string ModifyAccountDescriptionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyAccountDescriptionRequest::getResourceOwnerAccount()const
 void ModifyAccountDescriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyAccountDescriptionRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyAccountDescriptionRequest::getDBClusterId()const
 void ModifyAccountDescriptionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string ModifyAccountDescriptionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyAccountDescriptionRequest::getOwnerAccount()const
 void ModifyAccountDescriptionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyAccountDescriptionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifyAccountDescriptionRequest::getAccountDescription()const
 void ModifyAccountDescriptionRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	setCoreParameter("AccountDescription", std::to_string(accountDescription));
 }
 
 std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
 void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

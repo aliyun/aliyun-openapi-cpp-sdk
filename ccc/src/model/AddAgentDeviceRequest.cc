@@ -33,7 +33,7 @@ std::string AddAgentDeviceRequest::getInstanceId()const
 void AddAgentDeviceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AddAgentDeviceRequest::getClientIp()const
@@ -44,7 +44,7 @@ std::string AddAgentDeviceRequest::getClientIp()const
 void AddAgentDeviceRequest::setClientIp(const std::string& clientIp)
 {
 	clientIp_ = clientIp;
-	setCoreParameter("ClientIp", clientIp);
+	setCoreParameter("ClientIp", std::to_string(clientIp));
 }
 
 std::string AddAgentDeviceRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string AddAgentDeviceRequest::getRemark()const
 void AddAgentDeviceRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string AddAgentDeviceRequest::getClientPort()const
@@ -66,7 +66,7 @@ std::string AddAgentDeviceRequest::getClientPort()const
 void AddAgentDeviceRequest::setClientPort(const std::string& clientPort)
 {
 	clientPort_ = clientPort;
-	setCoreParameter("ClientPort", clientPort);
+	setCoreParameter("ClientPort", std::to_string(clientPort));
 }
 
 std::string AddAgentDeviceRequest::getBrowserVersion()const
@@ -77,7 +77,7 @@ std::string AddAgentDeviceRequest::getBrowserVersion()const
 void AddAgentDeviceRequest::setBrowserVersion(const std::string& browserVersion)
 {
 	browserVersion_ = browserVersion;
-	setCoreParameter("BrowserVersion", browserVersion);
+	setCoreParameter("BrowserVersion", std::to_string(browserVersion));
 }
 
 std::string AddAgentDeviceRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string AddAgentDeviceRequest::getAccessKeyId()const
 void AddAgentDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

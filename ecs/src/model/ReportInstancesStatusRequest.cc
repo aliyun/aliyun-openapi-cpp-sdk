@@ -33,7 +33,7 @@ std::string ReportInstancesStatusRequest::getReason()const
 void ReportInstancesStatusRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setCoreParameter("Reason", std::to_string(reason));
 }
 
 long ReportInstancesStatusRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ bool ReportInstancesStatusRequest::getProxy_original_security_transport()const
 void ReportInstancesStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ReportInstancesStatusRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string ReportInstancesStatusRequest::getDescription()const
 void ReportInstancesStatusRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ReportInstancesStatusRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string ReportInstancesStatusRequest::getStartTime()const
 void ReportInstancesStatusRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string ReportInstancesStatusRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string ReportInstancesStatusRequest::getProxy_original_source_ip()const
 void ReportInstancesStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ReportInstancesStatusRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string ReportInstancesStatusRequest::getOwnerIdLoginEmail()const
 void ReportInstancesStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ReportInstancesStatusRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string ReportInstancesStatusRequest::getCallerType()const
 void ReportInstancesStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ReportInstancesStatusRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string ReportInstancesStatusRequest::getAccessKeyId()const
 void ReportInstancesStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ReportInstancesStatusRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string ReportInstancesStatusRequest::getSourceRegionId()const
 void ReportInstancesStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ReportInstancesStatusRequest::getResourceGroupId()const
@@ -154,7 +154,7 @@ std::string ReportInstancesStatusRequest::getResourceGroupId()const
 void ReportInstancesStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string ReportInstancesStatusRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string ReportInstancesStatusRequest::getSecurityToken()const
 void ReportInstancesStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ReportInstancesStatusRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ReportInstancesStatusRequest::getRegionId()const
 void ReportInstancesStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool ReportInstancesStatusRequest::getEnable()const
@@ -187,7 +187,7 @@ bool ReportInstancesStatusRequest::getEnable()const
 void ReportInstancesStatusRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string ReportInstancesStatusRequest::getRequestContent()const
@@ -198,7 +198,7 @@ std::string ReportInstancesStatusRequest::getRequestContent()const
 void ReportInstancesStatusRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ReportInstancesStatusRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ std::string ReportInstancesStatusRequest::getCallerBidEmail()const
 void ReportInstancesStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getDiskId()const
@@ -232,7 +232,7 @@ std::string ReportInstancesStatusRequest::getCallerUidEmail()const
 void ReportInstancesStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ReportInstancesStatusRequest::getCallerUid()const
@@ -254,7 +254,7 @@ std::string ReportInstancesStatusRequest::getApp_ip()const
 void ReportInstancesStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ReportInstancesStatusRequest::getResourceOwnerAccount()const
@@ -265,7 +265,7 @@ std::string ReportInstancesStatusRequest::getResourceOwnerAccount()const
 void ReportInstancesStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportInstancesStatusRequest::getOwnerAccount()const
@@ -276,7 +276,7 @@ std::string ReportInstancesStatusRequest::getOwnerAccount()const
 void ReportInstancesStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReportInstancesStatusRequest::getEndTime()const
@@ -287,7 +287,7 @@ std::string ReportInstancesStatusRequest::getEndTime()const
 void ReportInstancesStatusRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ReportInstancesStatusRequest::getCallerBid()const
@@ -298,7 +298,7 @@ std::string ReportInstancesStatusRequest::getCallerBid()const
 void ReportInstancesStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ReportInstancesStatusRequest::getOwnerId()const
@@ -320,7 +320,7 @@ bool ReportInstancesStatusRequest::getProxy_trust_transport_info()const
 void ReportInstancesStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ReportInstancesStatusRequest::getAk_mfa_present()const
@@ -331,7 +331,7 @@ bool ReportInstancesStatusRequest::getAk_mfa_present()const
 void ReportInstancesStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ReportInstancesStatusRequest::getSecurity_transport()const
@@ -342,7 +342,7 @@ bool ReportInstancesStatusRequest::getSecurity_transport()const
 void ReportInstancesStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getInstanceId()const
@@ -365,7 +365,7 @@ std::string ReportInstancesStatusRequest::getRequestId()const
 void ReportInstancesStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ReportInstancesStatusRequest::getAkProxy()const
@@ -376,7 +376,7 @@ std::string ReportInstancesStatusRequest::getAkProxy()const
 void ReportInstancesStatusRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::vector<std::string> ReportInstancesStatusRequest::getDevice()const

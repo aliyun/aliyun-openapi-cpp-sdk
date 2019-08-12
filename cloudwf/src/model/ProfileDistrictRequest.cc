@@ -33,7 +33,7 @@ std::string ProfileDistrictRequest::getBeginDate()const
 void ProfileDistrictRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", std::to_string(beginDate));
 }
 
 std::string ProfileDistrictRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ProfileDistrictRequest::getEndDate()const
 void ProfileDistrictRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 int ProfileDistrictRequest::getDataType()const
@@ -77,6 +77,6 @@ std::string ProfileDistrictRequest::getAccessKeyId()const
 void ProfileDistrictRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

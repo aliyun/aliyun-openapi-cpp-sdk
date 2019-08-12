@@ -33,7 +33,7 @@ std::string CreateScenarioFromTemplateRequest::getVariables()const
 void CreateScenarioFromTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setCoreParameter("Variables", std::to_string(variables));
 }
 
 std::string CreateScenarioFromTemplateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string CreateScenarioFromTemplateRequest::getInstanceId()const
 void CreateScenarioFromTemplateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateScenarioFromTemplateRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateScenarioFromTemplateRequest::getName()const
 void CreateScenarioFromTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateScenarioFromTemplateRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateScenarioFromTemplateRequest::getDescription()const
 void CreateScenarioFromTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateScenarioFromTemplateRequest::getTemplateId()const
@@ -77,6 +77,6 @@ std::string CreateScenarioFromTemplateRequest::getTemplateId()const
 void CreateScenarioFromTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 

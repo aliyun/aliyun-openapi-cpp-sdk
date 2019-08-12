@@ -44,7 +44,7 @@ std::string CreateUserAuthRequest::getSourceIp()const
 void CreateUserAuthRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateUserAuthRequest::getAccessKey()const
@@ -55,7 +55,7 @@ std::string CreateUserAuthRequest::getAccessKey()const
 void CreateUserAuthRequest::setAccessKey(const std::string& accessKey)
 {
 	accessKey_ = accessKey;
-	setCoreParameter("AccessKey", accessKey);
+	setCoreParameter("AccessKey", std::to_string(accessKey));
 }
 
 std::string CreateUserAuthRequest::getAccessKeySecret()const
@@ -66,7 +66,7 @@ std::string CreateUserAuthRequest::getAccessKeySecret()const
 void CreateUserAuthRequest::setAccessKeySecret(const std::string& accessKeySecret)
 {
 	accessKeySecret_ = accessKeySecret;
-	setCoreParameter("AccessKeySecret", accessKeySecret);
+	setCoreParameter("AccessKeySecret", std::to_string(accessKeySecret));
 }
 
 std::string CreateUserAuthRequest::getLang()const
@@ -77,6 +77,6 @@ std::string CreateUserAuthRequest::getLang()const
 void CreateUserAuthRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

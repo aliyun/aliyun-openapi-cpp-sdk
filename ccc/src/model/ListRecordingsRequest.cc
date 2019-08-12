@@ -33,7 +33,7 @@ std::string ListRecordingsRequest::getAgentId()const
 void ListRecordingsRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 std::string ListRecordingsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListRecordingsRequest::getInstanceId()const
 void ListRecordingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListRecordingsRequest::getCriteria()const
@@ -55,7 +55,7 @@ std::string ListRecordingsRequest::getCriteria()const
 void ListRecordingsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setCoreParameter("Criteria", std::to_string(criteria));
 }
 
 std::string ListRecordingsRequest::getPhoneNumber()const
@@ -66,7 +66,7 @@ std::string ListRecordingsRequest::getPhoneNumber()const
 void ListRecordingsRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
 }
 
 int ListRecordingsRequest::getPageSize()const
@@ -121,6 +121,6 @@ std::string ListRecordingsRequest::getAccessKeyId()const
 void ListRecordingsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

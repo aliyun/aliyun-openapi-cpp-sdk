@@ -44,7 +44,7 @@ std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
 void RebalanceInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RebalanceInstancesRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string RebalanceInstancesRequest::getScalingGroupId()const
 void RebalanceInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string RebalanceInstancesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RebalanceInstancesRequest::getOwnerAccount()const
 void RebalanceInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RebalanceInstancesRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string RebalanceInstancesRequest::getAccessKeyId()const
 void RebalanceInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string SaveBatchUserAccountInfoRequest::getApp_ip()const
 void SaveBatchUserAccountInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long SaveBatchUserAccountInfoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SaveBatchUserAccountInfoRequest::getResourceId()const
 void SaveBatchUserAccountInfoRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 std::vector<std::string> SaveBatchUserAccountInfoRequest::getAliyunUserIdList()const
@@ -89,7 +89,7 @@ std::string SaveBatchUserAccountInfoRequest::getAccountType()const
 void SaveBatchUserAccountInfoRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", accountType);
+	setCoreParameter("AccountType", std::to_string(accountType));
 }
 
 bool SaveBatchUserAccountInfoRequest::getProxy_original_security_transport()const
@@ -100,7 +100,7 @@ bool SaveBatchUserAccountInfoRequest::getProxy_original_security_transport()cons
 void SaveBatchUserAccountInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string SaveBatchUserAccountInfoRequest::getCallerBid()const
@@ -111,7 +111,7 @@ std::string SaveBatchUserAccountInfoRequest::getCallerBid()const
 void SaveBatchUserAccountInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getProxy_original_source_ip()const
@@ -122,7 +122,7 @@ std::string SaveBatchUserAccountInfoRequest::getProxy_original_source_ip()const
 void SaveBatchUserAccountInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getGroupName()const
@@ -133,7 +133,7 @@ std::string SaveBatchUserAccountInfoRequest::getGroupName()const
 void SaveBatchUserAccountInfoRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getResourceType()const
@@ -144,7 +144,7 @@ std::string SaveBatchUserAccountInfoRequest::getResourceType()const
 void SaveBatchUserAccountInfoRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 bool SaveBatchUserAccountInfoRequest::getAk_mfa_present()const
@@ -155,7 +155,7 @@ bool SaveBatchUserAccountInfoRequest::getAk_mfa_present()const
 void SaveBatchUserAccountInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool SaveBatchUserAccountInfoRequest::getProxy_trust_transport_info()const
@@ -166,7 +166,7 @@ bool SaveBatchUserAccountInfoRequest::getProxy_trust_transport_info()const
 void SaveBatchUserAccountInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string SaveBatchUserAccountInfoRequest::getCallerType()const
@@ -177,7 +177,7 @@ std::string SaveBatchUserAccountInfoRequest::getCallerType()const
 void SaveBatchUserAccountInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getAccessKeyId()const
@@ -188,7 +188,7 @@ std::string SaveBatchUserAccountInfoRequest::getAccessKeyId()const
 void SaveBatchUserAccountInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getAuthType()const
@@ -199,7 +199,7 @@ std::string SaveBatchUserAccountInfoRequest::getAuthType()const
 void SaveBatchUserAccountInfoRequest::setAuthType(const std::string& authType)
 {
 	authType_ = authType;
-	setCoreParameter("AuthType", authType);
+	setCoreParameter("AuthType", std::to_string(authType));
 }
 
 bool SaveBatchUserAccountInfoRequest::getSecurity_transport()const
@@ -210,7 +210,7 @@ bool SaveBatchUserAccountInfoRequest::getSecurity_transport()const
 void SaveBatchUserAccountInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SaveBatchUserAccountInfoRequest::getAccountPassword()const
@@ -221,7 +221,7 @@ std::string SaveBatchUserAccountInfoRequest::getAccountPassword()const
 void SaveBatchUserAccountInfoRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", std::to_string(accountPassword));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getSecurityToken()const
@@ -232,7 +232,7 @@ std::string SaveBatchUserAccountInfoRequest::getSecurityToken()const
 void SaveBatchUserAccountInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getRegionId()const
@@ -243,7 +243,7 @@ std::string SaveBatchUserAccountInfoRequest::getRegionId()const
 void SaveBatchUserAccountInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SaveBatchUserAccountInfoRequest::getRequestId()const
@@ -254,7 +254,7 @@ std::string SaveBatchUserAccountInfoRequest::getRequestId()const
 void SaveBatchUserAccountInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long SaveBatchUserAccountInfoRequest::getCallerUid()const

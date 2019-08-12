@@ -33,6 +33,6 @@ std::string DescribeOssCallbackSettingRequest::getSourceIp()const
 void DescribeOssCallbackSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

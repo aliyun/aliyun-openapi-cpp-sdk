@@ -33,7 +33,7 @@ std::string DescribeEmgVulGroupRequest::getSourceIp()const
 void DescribeEmgVulGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeEmgVulGroupRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeEmgVulGroupRequest::getLang()const
 void DescribeEmgVulGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

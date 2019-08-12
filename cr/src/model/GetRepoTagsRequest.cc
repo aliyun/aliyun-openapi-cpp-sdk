@@ -33,7 +33,7 @@ std::string GetRepoTagsRequest::getRepoNamespace()const
 void GetRepoTagsRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string GetRepoTagsRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string GetRepoTagsRequest::getRepoName()const
 void GetRepoTagsRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string GetRepoTagsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetRepoTagsRequest::getRegionId()const
 void GetRepoTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int GetRepoTagsRequest::getPageSize()const

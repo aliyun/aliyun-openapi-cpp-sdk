@@ -33,6 +33,6 @@ std::string DescribeMetricRuleTargetsRequest::getRuleName()const
 void DescribeMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 

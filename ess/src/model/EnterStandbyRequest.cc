@@ -45,7 +45,7 @@ std::string EnterStandbyRequest::getResourceOwnerAccount()const
 void EnterStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EnterStandbyRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string EnterStandbyRequest::getScalingGroupId()const
 void EnterStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 long EnterStandbyRequest::getOwnerId()const
@@ -78,6 +78,6 @@ std::string EnterStandbyRequest::getAccessKeyId()const
 void EnterStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

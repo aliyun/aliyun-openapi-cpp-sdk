@@ -33,7 +33,7 @@ bool UntagResourcesRequest::getAll()const
 void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
@@ -56,7 +56,7 @@ std::string UntagResourcesRequest::getSourceIp()const
 void UntagResourcesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UntagResourcesRequest::getRegionId()const
@@ -67,7 +67,7 @@ std::string UntagResourcesRequest::getRegionId()const
 void UntagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
@@ -90,6 +90,6 @@ std::string UntagResourcesRequest::getResourceType()const
 void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

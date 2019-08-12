@@ -33,7 +33,7 @@ std::string DescribeDcdnDomainPvDataRequest::getSecurityToken()const
 void DescribeDcdnDomainPvDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDcdnDomainPvDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDcdnDomainPvDataRequest::getDomainName()const
 void DescribeDcdnDomainPvDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeDcdnDomainPvDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnDomainPvDataRequest::getEndTime()const
 void DescribeDcdnDomainPvDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDcdnDomainPvDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnDomainPvDataRequest::getStartTime()const
 void DescribeDcdnDomainPvDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeDcdnDomainPvDataRequest::getOwnerId()const

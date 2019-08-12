@@ -44,7 +44,7 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getResourceOwnerA
 void ModifyGlobalAccelerationInstanceAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyGlobalAccelerationInstanceAttributesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getRegionId()cons
 void ModifyGlobalAccelerationInstanceAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyGlobalAccelerationInstanceAttributesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getOwnerAccount()
 void ModifyGlobalAccelerationInstanceAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyGlobalAccelerationInstanceAttributesRequest::getName()const
@@ -77,7 +77,7 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getName()const
 void ModifyGlobalAccelerationInstanceAttributesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyGlobalAccelerationInstanceAttributesRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getDescription()c
 void ModifyGlobalAccelerationInstanceAttributesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long ModifyGlobalAccelerationInstanceAttributesRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyGlobalAccelerationInstanceAttributesRequest::getGlobalAccelera
 void ModifyGlobalAccelerationInstanceAttributesRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setCoreParameter("GlobalAccelerationInstanceId", std::to_string(globalAccelerationInstanceId));
 }
 

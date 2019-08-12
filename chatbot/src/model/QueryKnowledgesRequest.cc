@@ -44,7 +44,7 @@ std::string QueryKnowledgesRequest::getCoreWordName()const
 void QueryKnowledgesRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
+	setCoreParameter("CoreWordName", std::to_string(coreWordName));
 }
 
 std::string QueryKnowledgesRequest::getKnowledgeTitle()const
@@ -55,7 +55,7 @@ std::string QueryKnowledgesRequest::getKnowledgeTitle()const
 void QueryKnowledgesRequest::setKnowledgeTitle(const std::string& knowledgeTitle)
 {
 	knowledgeTitle_ = knowledgeTitle;
-	setCoreParameter("KnowledgeTitle", knowledgeTitle);
+	setCoreParameter("KnowledgeTitle", std::to_string(knowledgeTitle));
 }
 
 int QueryKnowledgesRequest::getPageNumber()const

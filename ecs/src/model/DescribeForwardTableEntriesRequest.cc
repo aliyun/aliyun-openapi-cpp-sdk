@@ -44,7 +44,7 @@ std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
 void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeForwardTableEntriesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeForwardTableEntriesRequest::getRegionId()const
 void DescribeForwardTableEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
@@ -66,7 +66,7 @@ std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
 void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& forwardEntryId)
 {
 	forwardEntryId_ = forwardEntryId;
-	setCoreParameter("ForwardEntryId", forwardEntryId);
+	setCoreParameter("ForwardEntryId", std::to_string(forwardEntryId));
 }
 
 std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
 void DescribeForwardTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
@@ -88,7 +88,7 @@ std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
 void DescribeForwardTableEntriesRequest::setForwardTableId(const std::string& forwardTableId)
 {
 	forwardTableId_ = forwardTableId;
-	setCoreParameter("ForwardTableId", forwardTableId);
+	setCoreParameter("ForwardTableId", std::to_string(forwardTableId));
 }
 
 int DescribeForwardTableEntriesRequest::getPageSize()const

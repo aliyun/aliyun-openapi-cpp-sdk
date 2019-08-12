@@ -33,7 +33,7 @@ std::string AssumeRoleRequest::getRoleArn()const
 void AssumeRoleRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setCoreParameter("RoleArn", std::to_string(roleArn));
 }
 
 std::string AssumeRoleRequest::getRoleSessionName()const
@@ -44,7 +44,7 @@ std::string AssumeRoleRequest::getRoleSessionName()const
 void AssumeRoleRequest::setRoleSessionName(const std::string& roleSessionName)
 {
 	roleSessionName_ = roleSessionName;
-	setCoreParameter("RoleSessionName", roleSessionName);
+	setCoreParameter("RoleSessionName", std::to_string(roleSessionName));
 }
 
 long AssumeRoleRequest::getDurationSeconds()const
@@ -66,6 +66,6 @@ std::string AssumeRoleRequest::getPolicy()const
 void AssumeRoleRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", policy);
+	setCoreParameter("Policy", std::to_string(policy));
 }
 

@@ -44,7 +44,7 @@ std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
 void ModifyRiskSingleResultStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
@@ -67,7 +67,7 @@ std::string ModifyRiskSingleResultStatusRequest::getLang()const
 void ModifyRiskSingleResultStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long ModifyRiskSingleResultStatusRequest::getTaskId()const
@@ -89,6 +89,6 @@ std::string ModifyRiskSingleResultStatusRequest::getStatus()const
 void ModifyRiskSingleResultStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

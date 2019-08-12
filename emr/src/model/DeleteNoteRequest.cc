@@ -44,7 +44,7 @@ std::string DeleteNoteRequest::getRegionId()const
 void DeleteNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteNoteRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteNoteRequest::getId()const
 void DeleteNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteNoteRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteNoteRequest::getAccessKeyId()const
 void DeleteNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

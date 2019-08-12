@@ -44,7 +44,7 @@ std::string DescribeACLsRequest::getResourceOwnerAccount()const
 void DescribeACLsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeACLsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeACLsRequest::getRegionId()const
 void DescribeACLsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeACLsRequest::getAclIds()const
@@ -66,7 +66,7 @@ std::string DescribeACLsRequest::getAclIds()const
 void DescribeACLsRequest::setAclIds(const std::string& aclIds)
 {
 	aclIds_ = aclIds;
-	setCoreParameter("AclIds", aclIds);
+	setCoreParameter("AclIds", std::to_string(aclIds));
 }
 
 std::string DescribeACLsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeACLsRequest::getOwnerAccount()const
 void DescribeACLsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeACLsRequest::getName()const
@@ -88,7 +88,7 @@ std::string DescribeACLsRequest::getName()const
 void DescribeACLsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeACLsRequest::getPageSize()const

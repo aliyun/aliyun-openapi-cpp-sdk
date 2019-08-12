@@ -33,7 +33,7 @@ std::string OnsConsumerAccumulateRequest::getInstanceId()const
 void OnsConsumerAccumulateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsConsumerAccumulateRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerAccumulateRequest::getGroupId()const
 void OnsConsumerAccumulateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 bool OnsConsumerAccumulateRequest::getDetail()const
@@ -55,6 +55,6 @@ bool OnsConsumerAccumulateRequest::getDetail()const
 void OnsConsumerAccumulateRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail);
+	setCoreParameter("Detail", detail ? "true" : "false");
 }
 

@@ -33,7 +33,7 @@ std::string UpdateServiceListStatusRequest::getData()const
 void UpdateServiceListStatusRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string UpdateServiceListStatusRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string UpdateServiceListStatusRequest::getRegionId()const
 void UpdateServiceListStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long UpdateServiceListStatusRequest::getCsbId()const

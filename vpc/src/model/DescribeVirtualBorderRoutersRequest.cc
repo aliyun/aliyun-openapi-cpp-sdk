@@ -61,7 +61,7 @@ std::string DescribeVirtualBorderRoutersRequest::getResourceOwnerAccount()const
 void DescribeVirtualBorderRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVirtualBorderRoutersRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeVirtualBorderRoutersRequest::getRegionId()const
 void DescribeVirtualBorderRoutersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeVirtualBorderRoutersRequest::getPageSize()const

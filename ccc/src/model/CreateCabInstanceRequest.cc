@@ -44,7 +44,7 @@ std::string CreateCabInstanceRequest::getInstanceName()const
 void CreateCabInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::string CreateCabInstanceRequest::getCallCenterInstanceId()const
@@ -55,7 +55,7 @@ std::string CreateCabInstanceRequest::getCallCenterInstanceId()const
 void CreateCabInstanceRequest::setCallCenterInstanceId(const std::string& callCenterInstanceId)
 {
 	callCenterInstanceId_ = callCenterInstanceId;
-	setCoreParameter("CallCenterInstanceId", callCenterInstanceId);
+	setCoreParameter("CallCenterInstanceId", std::to_string(callCenterInstanceId));
 }
 
 std::string CreateCabInstanceRequest::getInstanceDescription()const
@@ -66,6 +66,6 @@ std::string CreateCabInstanceRequest::getInstanceDescription()const
 void CreateCabInstanceRequest::setInstanceDescription(const std::string& instanceDescription)
 {
 	instanceDescription_ = instanceDescription;
-	setCoreParameter("InstanceDescription", instanceDescription);
+	setCoreParameter("InstanceDescription", std::to_string(instanceDescription));
 }
 

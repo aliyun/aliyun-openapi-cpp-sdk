@@ -44,7 +44,7 @@ std::string ListClusterServiceQuickLinkRequest::getRegionId()const
 void ListClusterServiceQuickLinkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListClusterServiceQuickLinkRequest::getServiceName()const
@@ -55,7 +55,7 @@ std::string ListClusterServiceQuickLinkRequest::getServiceName()const
 void ListClusterServiceQuickLinkRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string ListClusterServiceQuickLinkRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ListClusterServiceQuickLinkRequest::getClusterId()const
 void ListClusterServiceQuickLinkRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListClusterServiceQuickLinkRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListClusterServiceQuickLinkRequest::getAccessKeyId()const
 void ListClusterServiceQuickLinkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

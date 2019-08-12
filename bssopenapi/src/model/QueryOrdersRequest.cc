@@ -33,7 +33,7 @@ std::string QueryOrdersRequest::getProductCode()const
 void QueryOrdersRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string QueryOrdersRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryOrdersRequest::getSubscriptionType()const
 void QueryOrdersRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 int QueryOrdersRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryOrdersRequest::getPaymentStatus()const
 void QueryOrdersRequest::setPaymentStatus(const std::string& paymentStatus)
 {
 	paymentStatus_ = paymentStatus;
-	setCoreParameter("PaymentStatus", paymentStatus);
+	setCoreParameter("PaymentStatus", std::to_string(paymentStatus));
 }
 
 std::string QueryOrdersRequest::getCreateTimeStart()const
@@ -77,7 +77,7 @@ std::string QueryOrdersRequest::getCreateTimeStart()const
 void QueryOrdersRequest::setCreateTimeStart(const std::string& createTimeStart)
 {
 	createTimeStart_ = createTimeStart;
-	setCoreParameter("CreateTimeStart", createTimeStart);
+	setCoreParameter("CreateTimeStart", std::to_string(createTimeStart));
 }
 
 int QueryOrdersRequest::getPageNum()const
@@ -110,7 +110,7 @@ std::string QueryOrdersRequest::getCreateTimeEnd()const
 void QueryOrdersRequest::setCreateTimeEnd(const std::string& createTimeEnd)
 {
 	createTimeEnd_ = createTimeEnd;
-	setCoreParameter("CreateTimeEnd", createTimeEnd);
+	setCoreParameter("CreateTimeEnd", std::to_string(createTimeEnd));
 }
 
 std::string QueryOrdersRequest::getProductType()const
@@ -121,7 +121,7 @@ std::string QueryOrdersRequest::getProductType()const
 void QueryOrdersRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 
 std::string QueryOrdersRequest::getOrderType()const
@@ -132,6 +132,6 @@ std::string QueryOrdersRequest::getOrderType()const
 void QueryOrdersRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

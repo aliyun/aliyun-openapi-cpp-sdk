@@ -33,7 +33,7 @@ std::string ReportAnnotationJobResultRequest::getAnnotation()const
 void ReportAnnotationJobResultRequest::setAnnotation(const std::string& annotation)
 {
 	annotation_ = annotation;
-	setCoreParameter("Annotation", annotation);
+	setCoreParameter("Annotation", std::to_string(annotation));
 }
 
 std::string ReportAnnotationJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportAnnotationJobResultRequest::getJobId()const
 void ReportAnnotationJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ReportAnnotationJobResultRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ReportAnnotationJobResultRequest::getResourceOwnerAccount()const
 void ReportAnnotationJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportAnnotationJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportAnnotationJobResultRequest::getOwnerAccount()const
 void ReportAnnotationJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReportAnnotationJobResultRequest::getDetails()const
@@ -88,7 +88,7 @@ std::string ReportAnnotationJobResultRequest::getDetails()const
 void ReportAnnotationJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setCoreParameter("Details", std::to_string(details));
 }
 
 long ReportAnnotationJobResultRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ReportAnnotationJobResultRequest::getAccessKeyId()const
 void ReportAnnotationJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

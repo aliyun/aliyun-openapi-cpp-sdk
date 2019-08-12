@@ -33,7 +33,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRouteSource()const
 void CreateVpnPbrRouteEntryRequest::setRouteSource(const std::string& routeSource)
 {
 	routeSource_ = routeSource;
-	setCoreParameter("RouteSource", routeSource);
+	setCoreParameter("RouteSource", std::to_string(routeSource));
 }
 
 long CreateVpnPbrRouteEntryRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
 void CreateVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateVpnPbrRouteEntryRequest::getClientToken()const
 void CreateVpnPbrRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateVpnPbrRouteEntryRequest::getOwnerAccount()const
 void CreateVpnPbrRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int CreateVpnPbrRouteEntryRequest::getWeight()const
@@ -99,7 +99,7 @@ std::string CreateVpnPbrRouteEntryRequest::getDescription()const
 void CreateVpnPbrRouteEntryRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getVpnGatewayId()const
@@ -110,7 +110,7 @@ std::string CreateVpnPbrRouteEntryRequest::getVpnGatewayId()const
 void CreateVpnPbrRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long CreateVpnPbrRouteEntryRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRouteDest()const
 void CreateVpnPbrRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setCoreParameter("RouteDest", std::to_string(routeDest));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getNextHop()const
@@ -143,7 +143,7 @@ std::string CreateVpnPbrRouteEntryRequest::getNextHop()const
 void CreateVpnPbrRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setCoreParameter("NextHop", std::to_string(nextHop));
 }
 
 bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
@@ -154,7 +154,7 @@ bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
 void CreateVpnPbrRouteEntryRequest::setPublishVpc(bool publishVpc)
 {
 	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc);
+	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
 void CreateVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOverlayMode()const
@@ -176,6 +176,6 @@ std::string CreateVpnPbrRouteEntryRequest::getOverlayMode()const
 void CreateVpnPbrRouteEntryRequest::setOverlayMode(const std::string& overlayMode)
 {
 	overlayMode_ = overlayMode;
-	setCoreParameter("OverlayMode", overlayMode);
+	setCoreParameter("OverlayMode", std::to_string(overlayMode));
 }
 

@@ -33,7 +33,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getLocalRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setLocalRegionId(const std::string& localRegionId)
 {
 	localRegionId_ = localRegionId;
-	setCoreParameter("LocalRegionId", localRegionId);
+	setCoreParameter("LocalRegionId", std::to_string(localRegionId));
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()con
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
@@ -66,7 +66,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
 void SetCenInterRegionBandwidthLimitRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
@@ -88,7 +88,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setOppositeRegionId(const std::string& oppositeRegionId)
 {
 	oppositeRegionId_ = oppositeRegionId;
-	setCoreParameter("OppositeRegionId", oppositeRegionId);
+	setCoreParameter("OppositeRegionId", std::to_string(oppositeRegionId));
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const

@@ -33,7 +33,7 @@ std::string DescribeCasterSceneAudioRequest::getRegionId()const
 void DescribeCasterSceneAudioRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeCasterSceneAudioRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DescribeCasterSceneAudioRequest::getCasterId()const
 void DescribeCasterSceneAudioRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 std::string DescribeCasterSceneAudioRequest::getSceneId()const
@@ -55,7 +55,7 @@ std::string DescribeCasterSceneAudioRequest::getSceneId()const
 void DescribeCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setCoreParameter("SceneId", std::to_string(sceneId));
 }
 
 long DescribeCasterSceneAudioRequest::getOwnerId()const

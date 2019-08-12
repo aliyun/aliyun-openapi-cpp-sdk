@@ -55,7 +55,7 @@ std::string SetAllowIPRequest::getCallerType()const
 void SetAllowIPRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool SetAllowIPRequest::getAk_mfa_present()const
@@ -66,7 +66,7 @@ bool SetAllowIPRequest::getAk_mfa_present()const
 void SetAllowIPRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string SetAllowIPRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string SetAllowIPRequest::getAccessKeyId()const
 void SetAllowIPRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool SetAllowIPRequest::getSecurity_transport()const
@@ -88,7 +88,7 @@ bool SetAllowIPRequest::getSecurity_transport()const
 void SetAllowIPRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SetAllowIPRequest::getRegionID()const
@@ -99,7 +99,7 @@ std::string SetAllowIPRequest::getRegionID()const
 void SetAllowIPRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setCoreParameter("RegionID", std::to_string(regionID));
 }
 
 std::string SetAllowIPRequest::getRequestId()const
@@ -110,7 +110,7 @@ std::string SetAllowIPRequest::getRequestId()const
 void SetAllowIPRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long SetAllowIPRequest::getCallerUid()const
@@ -143,7 +143,7 @@ std::string SetAllowIPRequest::getNetworkType()const
 void SetAllowIPRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string SetAllowIPRequest::getAllowIP()const
@@ -154,7 +154,7 @@ std::string SetAllowIPRequest::getAllowIP()const
 void SetAllowIPRequest::setAllowIP(const std::string& allowIP)
 {
 	allowIP_ = allowIP;
-	setCoreParameter("AllowIP", allowIP);
+	setCoreParameter("AllowIP", std::to_string(allowIP));
 }
 
 bool SetAllowIPRequest::getAppend()const
@@ -165,6 +165,6 @@ bool SetAllowIPRequest::getAppend()const
 void SetAllowIPRequest::setAppend(bool append)
 {
 	append_ = append;
-	setCoreParameter("Append", append);
+	setCoreParameter("Append", append ? "true" : "false");
 }
 

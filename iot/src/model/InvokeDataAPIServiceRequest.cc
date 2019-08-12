@@ -33,7 +33,7 @@ std::string InvokeDataAPIServiceRequest::getApiSrn()const
 void InvokeDataAPIServiceRequest::setApiSrn(const std::string& apiSrn)
 {
 	apiSrn_ = apiSrn;
-	setCoreParameter("ApiSrn", apiSrn);
+	setCoreParameter("ApiSrn", std::to_string(apiSrn));
 }
 
 std::vector<InvokeDataAPIServiceRequest::Param> InvokeDataAPIServiceRequest::getParam()const
@@ -63,6 +63,6 @@ std::string InvokeDataAPIServiceRequest::getAccessKeyId()const
 void InvokeDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

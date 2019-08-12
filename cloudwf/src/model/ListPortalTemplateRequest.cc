@@ -33,7 +33,7 @@ std::string ListPortalTemplateRequest::getOrderCol()const
 void ListPortalTemplateRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 int ListPortalTemplateRequest::getLength()const
@@ -66,7 +66,7 @@ std::string ListPortalTemplateRequest::getOrderDir()const
 void ListPortalTemplateRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListPortalTemplateRequest::getSearchTempName()const
@@ -77,7 +77,7 @@ std::string ListPortalTemplateRequest::getSearchTempName()const
 void ListPortalTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setCoreParameter("SearchTempName", searchTempName);
+	setCoreParameter("SearchTempName", std::to_string(searchTempName));
 }
 
 std::string ListPortalTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListPortalTemplateRequest::getAccessKeyId()const
 void ListPortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

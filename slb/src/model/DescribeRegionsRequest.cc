@@ -33,7 +33,7 @@ std::string DescribeRegionsRequest::getAccess_key_id()const
 void DescribeRegionsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeRegionsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeRegionsRequest::getRegionId()const
 void DescribeRegionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRegionsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeRegionsRequest::getOwnerAccount()const
 void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -88,7 +88,7 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setCoreParameter("AcceptLanguage", std::to_string(acceptLanguage));
 }
 
 long DescribeRegionsRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeRegionsRequest::getTags()const
 void DescribeRegionsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

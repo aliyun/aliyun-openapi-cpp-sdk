@@ -44,7 +44,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getRegionId()const
 void DescribeClusterResourcePoolSchedulerTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getClusterId()const
 void DescribeClusterResourcePoolSchedulerTypeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getAccessKeyId()con
 void DescribeClusterResourcePoolSchedulerTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeWhiteListAssetRequest::getSourceIp()const
 void DescribeWhiteListAssetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeWhiteListAssetRequest::getLastMaxId()const
@@ -77,7 +77,7 @@ std::string DescribeWhiteListAssetRequest::getLang()const
 void DescribeWhiteListAssetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeWhiteListAssetRequest::getType()const

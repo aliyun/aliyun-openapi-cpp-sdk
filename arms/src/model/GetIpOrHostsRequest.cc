@@ -33,7 +33,7 @@ std::string GetIpOrHostsRequest::getRegionId()const
 void GetIpOrHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long GetIpOrHostsRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string GetIpOrHostsRequest::getServiceName()const
 void GetIpOrHostsRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 long GetIpOrHostsRequest::getStartTime()const

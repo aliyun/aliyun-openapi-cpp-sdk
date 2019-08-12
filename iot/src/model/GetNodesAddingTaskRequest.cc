@@ -33,7 +33,7 @@ std::string GetNodesAddingTaskRequest::getIotInstanceId()const
 void GetNodesAddingTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string GetNodesAddingTaskRequest::getTaskId()const
@@ -44,7 +44,7 @@ std::string GetNodesAddingTaskRequest::getTaskId()const
 void GetNodesAddingTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string GetNodesAddingTaskRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetNodesAddingTaskRequest::getAccessKeyId()const
 void GetNodesAddingTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

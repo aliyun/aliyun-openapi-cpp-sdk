@@ -44,7 +44,7 @@ std::string MetastoreCreateTableRequest::getFieldDelimiter()const
 void MetastoreCreateTableRequest::setFieldDelimiter(const std::string& fieldDelimiter)
 {
 	fieldDelimiter_ = fieldDelimiter;
-	setCoreParameter("FieldDelimiter", fieldDelimiter);
+	setCoreParameter("FieldDelimiter", std::to_string(fieldDelimiter));
 }
 
 std::vector<MetastoreCreateTableRequest::Column> MetastoreCreateTableRequest::getColumn()const
@@ -73,7 +73,7 @@ std::string MetastoreCreateTableRequest::getCreateWith()const
 void MetastoreCreateTableRequest::setCreateWith(const std::string& createWith)
 {
 	createWith_ = createWith;
-	setCoreParameter("CreateWith", createWith);
+	setCoreParameter("CreateWith", std::to_string(createWith));
 }
 
 std::string MetastoreCreateTableRequest::getAccessKeyId()const
@@ -84,7 +84,7 @@ std::string MetastoreCreateTableRequest::getAccessKeyId()const
 void MetastoreCreateTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<MetastoreCreateTableRequest::Partition> MetastoreCreateTableRequest::getPartition()const
@@ -113,7 +113,7 @@ std::string MetastoreCreateTableRequest::getDbName()const
 void MetastoreCreateTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreCreateTableRequest::getRegionId()const
@@ -124,7 +124,7 @@ std::string MetastoreCreateTableRequest::getRegionId()const
 void MetastoreCreateTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreCreateTableRequest::getCreateSql()const
@@ -135,7 +135,7 @@ std::string MetastoreCreateTableRequest::getCreateSql()const
 void MetastoreCreateTableRequest::setCreateSql(const std::string& createSql)
 {
 	createSql_ = createSql;
-	setCoreParameter("CreateSql", createSql);
+	setCoreParameter("CreateSql", std::to_string(createSql));
 }
 
 std::string MetastoreCreateTableRequest::getComment()const
@@ -146,7 +146,7 @@ std::string MetastoreCreateTableRequest::getComment()const
 void MetastoreCreateTableRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setCoreParameter("Comment", std::to_string(comment));
 }
 
 std::string MetastoreCreateTableRequest::getLocationUri()const
@@ -157,7 +157,7 @@ std::string MetastoreCreateTableRequest::getLocationUri()const
 void MetastoreCreateTableRequest::setLocationUri(const std::string& locationUri)
 {
 	locationUri_ = locationUri;
-	setCoreParameter("LocationUri", locationUri);
+	setCoreParameter("LocationUri", std::to_string(locationUri));
 }
 
 std::string MetastoreCreateTableRequest::getTableName()const
@@ -168,7 +168,7 @@ std::string MetastoreCreateTableRequest::getTableName()const
 void MetastoreCreateTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", tableName);
+	setCoreParameter("TableName", std::to_string(tableName));
 }
 
 std::string MetastoreCreateTableRequest::getDatabaseId()const
@@ -179,6 +179,6 @@ std::string MetastoreCreateTableRequest::getDatabaseId()const
 void MetastoreCreateTableRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setCoreParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", std::to_string(databaseId));
 }
 

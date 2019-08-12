@@ -33,7 +33,7 @@ std::string DescribeVerifySDKRequest::getSourceIp()const
 void DescribeVerifySDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeVerifySDKRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeVerifySDKRequest::getLang()const
 void DescribeVerifySDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeVerifySDKRequest::getTaskId()const
@@ -55,6 +55,6 @@ std::string DescribeVerifySDKRequest::getTaskId()const
 void DescribeVerifySDKRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

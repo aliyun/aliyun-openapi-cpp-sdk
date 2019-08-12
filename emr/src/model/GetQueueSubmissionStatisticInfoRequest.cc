@@ -33,7 +33,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getFromDatetime()const
 void GetQueueSubmissionStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", std::to_string(fromDatetime));
 }
 
 long GetQueueSubmissionStatisticInfoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getRegionId()const
 void GetQueueSubmissionStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetQueueSubmissionStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getClusterId()const
 void GetQueueSubmissionStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetQueueSubmissionStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getToDatetime()const
 void GetQueueSubmissionStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", std::to_string(toDatetime));
 }
 
 std::string GetQueueSubmissionStatisticInfoRequest::getApplicationType()const
@@ -88,7 +88,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getApplicationType()const
 void GetQueueSubmissionStatisticInfoRequest::setApplicationType(const std::string& applicationType)
 {
 	applicationType_ = applicationType;
-	setCoreParameter("ApplicationType", applicationType);
+	setCoreParameter("ApplicationType", std::to_string(applicationType));
 }
 
 std::string GetQueueSubmissionStatisticInfoRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string GetQueueSubmissionStatisticInfoRequest::getAccessKeyId()const
 void GetQueueSubmissionStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string GetQueueSubmissionStatisticInfoRequest::getFinalStatus()const
@@ -110,6 +110,6 @@ std::string GetQueueSubmissionStatisticInfoRequest::getFinalStatus()const
 void GetQueueSubmissionStatisticInfoRequest::setFinalStatus(const std::string& finalStatus)
 {
 	finalStatus_ = finalStatus;
-	setCoreParameter("FinalStatus", finalStatus);
+	setCoreParameter("FinalStatus", std::to_string(finalStatus));
 }
 

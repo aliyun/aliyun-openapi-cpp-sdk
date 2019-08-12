@@ -33,7 +33,7 @@ std::string DeleteDomainRequest::getSecurityToken()const
 void DeleteDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteDomainRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteDomainRequest::getGroupId()const
 void DeleteDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteDomainRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteDomainRequest::getDomainName()const
 void DeleteDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DeleteDomainRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteDomainRequest::getAccessKeyId()const
 void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

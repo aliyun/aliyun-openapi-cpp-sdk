@@ -44,7 +44,7 @@ std::string ListEmrAvailableConfigRequest::getRegionId()const
 void ListEmrAvailableConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListEmrAvailableConfigRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListEmrAvailableConfigRequest::getAccessKeyId()const
 void ListEmrAvailableConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

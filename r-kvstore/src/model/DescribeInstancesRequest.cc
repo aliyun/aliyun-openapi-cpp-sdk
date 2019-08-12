@@ -44,7 +44,7 @@ std::string DescribeInstancesRequest::getInstanceStatus()const
 void DescribeInstancesRequest::setInstanceStatus(const std::string& instanceStatus)
 {
 	instanceStatus_ = instanceStatus;
-	setCoreParameter("InstanceStatus", instanceStatus);
+	setCoreParameter("InstanceStatus", std::to_string(instanceStatus));
 }
 
 std::string DescribeInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeInstancesRequest::getResourceOwnerAccount()const
 void DescribeInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstancesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstancesRequest::getOwnerAccount()const
 void DescribeInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeInstancesRequest::getSearchKey()const
@@ -77,7 +77,7 @@ std::string DescribeInstancesRequest::getSearchKey()const
 void DescribeInstancesRequest::setSearchKey(const std::string& searchKey)
 {
 	searchKey_ = searchKey;
-	setCoreParameter("SearchKey", searchKey);
+	setCoreParameter("SearchKey", std::to_string(searchKey));
 }
 
 std::string DescribeInstancesRequest::getNetworkType()const
@@ -88,7 +88,7 @@ std::string DescribeInstancesRequest::getNetworkType()const
 void DescribeInstancesRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string DescribeInstancesRequest::getEngineVersion()const
@@ -99,7 +99,7 @@ std::string DescribeInstancesRequest::getEngineVersion()const
 void DescribeInstancesRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long DescribeInstancesRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeInstancesRequest::getInstanceClass()const
 void DescribeInstancesRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", instanceClass);
+	setCoreParameter("InstanceClass", std::to_string(instanceClass));
 }
 
 int DescribeInstancesRequest::getPageNumber()const
@@ -143,7 +143,7 @@ std::string DescribeInstancesRequest::getAccessKeyId()const
 void DescribeInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeInstancesRequest::getVSwitchId()const
@@ -154,7 +154,7 @@ std::string DescribeInstancesRequest::getVSwitchId()const
 void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string DescribeInstancesRequest::getExpired()const
@@ -165,7 +165,7 @@ std::string DescribeInstancesRequest::getExpired()const
 void DescribeInstancesRequest::setExpired(const std::string& expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired);
+	setCoreParameter("Expired", std::to_string(expired));
 }
 
 std::string DescribeInstancesRequest::getSecurityToken()const
@@ -176,7 +176,7 @@ std::string DescribeInstancesRequest::getSecurityToken()const
 void DescribeInstancesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeInstancesRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string DescribeInstancesRequest::getRegionId()const
 void DescribeInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeInstancesRequest::getInstanceIds()const
@@ -198,7 +198,7 @@ std::string DescribeInstancesRequest::getInstanceIds()const
 void DescribeInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string DescribeInstancesRequest::getArchitectureType()const
@@ -209,7 +209,7 @@ std::string DescribeInstancesRequest::getArchitectureType()const
 void DescribeInstancesRequest::setArchitectureType(const std::string& architectureType)
 {
 	architectureType_ = architectureType;
-	setCoreParameter("ArchitectureType", architectureType);
+	setCoreParameter("ArchitectureType", std::to_string(architectureType));
 }
 
 std::string DescribeInstancesRequest::getVpcId()const
@@ -220,7 +220,7 @@ std::string DescribeInstancesRequest::getVpcId()const
 void DescribeInstancesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -242,7 +242,7 @@ std::string DescribeInstancesRequest::getInstanceType()const
 void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::string DescribeInstancesRequest::getZoneId()const
@@ -253,7 +253,7 @@ std::string DescribeInstancesRequest::getZoneId()const
 void DescribeInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeInstancesRequest::getChargeType()const
@@ -264,7 +264,7 @@ std::string DescribeInstancesRequest::getChargeType()const
 void DescribeInstancesRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const

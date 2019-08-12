@@ -33,7 +33,7 @@ std::string ReActivateInstancesRequest::getSourceRegionId()const
 void ReActivateInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ReActivateInstancesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ReActivateInstancesRequest::getInstanceId()const
 void ReActivateInstancesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ReActivateInstancesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReActivateInstancesRequest::getResourceOwnerAccount()const
 void ReActivateInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReActivateInstancesRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ReActivateInstancesRequest::getRegionId()const
 void ReActivateInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ReActivateInstancesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ReActivateInstancesRequest::getOwnerAccount()const
 void ReActivateInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ReActivateInstancesRequest::getOwnerId()const

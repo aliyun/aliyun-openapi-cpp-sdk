@@ -44,7 +44,7 @@ std::string DeleteCommonBandwidthPackageRequest::getBandwidthPackageId()const
 void DeleteCommonBandwidthPackageRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteCommonBandwidthPackageRequest::getResourceOwnerAccount()const
 void DeleteCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
 void DeleteCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteCommonBandwidthPackageRequest::getOwnerAccount()const
 void DeleteCommonBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getForce()const
@@ -88,7 +88,7 @@ std::string DeleteCommonBandwidthPackageRequest::getForce()const
 void DeleteCommonBandwidthPackageRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", std::to_string(force));
 }
 
 long DeleteCommonBandwidthPackageRequest::getOwnerId()const

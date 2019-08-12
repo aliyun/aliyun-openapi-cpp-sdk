@@ -56,7 +56,7 @@ std::string ModifyCenRouteMapRequest::getCidrMatchMode()const
 void ModifyCenRouteMapRequest::setCidrMatchMode(const std::string& cidrMatchMode)
 {
 	cidrMatchMode_ = cidrMatchMode;
-	setCoreParameter("CidrMatchMode", cidrMatchMode);
+	setCoreParameter("CidrMatchMode", std::to_string(cidrMatchMode));
 }
 
 std::string ModifyCenRouteMapRequest::getCommunityMatchMode()const
@@ -67,7 +67,7 @@ std::string ModifyCenRouteMapRequest::getCommunityMatchMode()const
 void ModifyCenRouteMapRequest::setCommunityMatchMode(const std::string& communityMatchMode)
 {
 	communityMatchMode_ = communityMatchMode;
-	setCoreParameter("CommunityMatchMode", communityMatchMode);
+	setCoreParameter("CommunityMatchMode", std::to_string(communityMatchMode));
 }
 
 std::string ModifyCenRouteMapRequest::getCenId()const
@@ -78,7 +78,7 @@ std::string ModifyCenRouteMapRequest::getCenId()const
 void ModifyCenRouteMapRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string ModifyCenRouteMapRequest::getMapResult()const
@@ -89,7 +89,7 @@ std::string ModifyCenRouteMapRequest::getMapResult()const
 void ModifyCenRouteMapRequest::setMapResult(const std::string& mapResult)
 {
 	mapResult_ = mapResult;
-	setCoreParameter("MapResult", mapResult);
+	setCoreParameter("MapResult", std::to_string(mapResult));
 }
 
 int ModifyCenRouteMapRequest::getAsPathLength()const
@@ -111,7 +111,7 @@ std::string ModifyCenRouteMapRequest::getDescription()const
 void ModifyCenRouteMapRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 bool ModifyCenRouteMapRequest::getSourceInstanceIdsReverseMatch()const
@@ -122,7 +122,7 @@ bool ModifyCenRouteMapRequest::getSourceInstanceIdsReverseMatch()const
 void ModifyCenRouteMapRequest::setSourceInstanceIdsReverseMatch(bool sourceInstanceIdsReverseMatch)
 {
 	sourceInstanceIdsReverseMatch_ = sourceInstanceIdsReverseMatch;
-	setCoreParameter("SourceInstanceIdsReverseMatch", sourceInstanceIdsReverseMatch);
+	setCoreParameter("SourceInstanceIdsReverseMatch", sourceInstanceIdsReverseMatch ? "true" : "false");
 }
 
 int ModifyCenRouteMapRequest::getNextPriority()const
@@ -216,7 +216,7 @@ std::string ModifyCenRouteMapRequest::getResourceOwnerAccount()const
 void ModifyCenRouteMapRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyCenRouteMapRequest::getOwnerAccount()const
@@ -227,7 +227,7 @@ std::string ModifyCenRouteMapRequest::getOwnerAccount()const
 void ModifyCenRouteMapRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int ModifyCenRouteMapRequest::getPreference()const
@@ -249,7 +249,7 @@ bool ModifyCenRouteMapRequest::getDestinationInstanceIdsReverseMatch()const
 void ModifyCenRouteMapRequest::setDestinationInstanceIdsReverseMatch(bool destinationInstanceIdsReverseMatch)
 {
 	destinationInstanceIdsReverseMatch_ = destinationInstanceIdsReverseMatch;
-	setCoreParameter("DestinationInstanceIdsReverseMatch", destinationInstanceIdsReverseMatch);
+	setCoreParameter("DestinationInstanceIdsReverseMatch", destinationInstanceIdsReverseMatch ? "true" : "false");
 }
 
 std::string ModifyCenRouteMapRequest::getRouteMapId()const
@@ -260,7 +260,7 @@ std::string ModifyCenRouteMapRequest::getRouteMapId()const
 void ModifyCenRouteMapRequest::setRouteMapId(const std::string& routeMapId)
 {
 	routeMapId_ = routeMapId;
-	setCoreParameter("RouteMapId", routeMapId);
+	setCoreParameter("RouteMapId", std::to_string(routeMapId));
 }
 
 long ModifyCenRouteMapRequest::getOwnerId()const
@@ -317,7 +317,7 @@ std::string ModifyCenRouteMapRequest::getAsPathMatchMode()const
 void ModifyCenRouteMapRequest::setAsPathMatchMode(const std::string& asPathMatchMode)
 {
 	asPathMatchMode_ = asPathMatchMode;
-	setCoreParameter("AsPathMatchMode", asPathMatchMode);
+	setCoreParameter("AsPathMatchMode", std::to_string(asPathMatchMode));
 }
 
 std::vector<std::string> ModifyCenRouteMapRequest::getSourceChildInstanceTypes()const
@@ -352,7 +352,7 @@ std::string ModifyCenRouteMapRequest::getCommunityOperateMode()const
 void ModifyCenRouteMapRequest::setCommunityOperateMode(const std::string& communityOperateMode)
 {
 	communityOperateMode_ = communityOperateMode;
-	setCoreParameter("CommunityOperateMode", communityOperateMode);
+	setCoreParameter("CommunityOperateMode", std::to_string(communityOperateMode));
 }
 
 std::string ModifyCenRouteMapRequest::getCenRegionId()const
@@ -363,7 +363,7 @@ std::string ModifyCenRouteMapRequest::getCenRegionId()const
 void ModifyCenRouteMapRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", cenRegionId);
+	setCoreParameter("CenRegionId", std::to_string(cenRegionId));
 }
 
 std::vector<std::string> ModifyCenRouteMapRequest::getOperateCommunitySet()const

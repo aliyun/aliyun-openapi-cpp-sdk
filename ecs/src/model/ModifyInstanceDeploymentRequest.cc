@@ -55,7 +55,7 @@ bool ModifyInstanceDeploymentRequest::getProxy_original_security_transport()cons
 void ModifyInstanceDeploymentRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyInstanceDeploymentRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceDeploymentRequest::getProxy_original_source_ip()const
 void ModifyInstanceDeploymentRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyInstanceDeploymentRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceDeploymentRequest::getOwnerIdLoginEmail()const
 void ModifyInstanceDeploymentRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyInstanceDeploymentRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceDeploymentRequest::getCallerType()const
 void ModifyInstanceDeploymentRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ModifyInstanceDeploymentRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceDeploymentRequest::getAccessKeyId()const
 void ModifyInstanceDeploymentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceDeploymentRequest::getSourceRegionId()const
 void ModifyInstanceDeploymentRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceDeploymentRequest::getSecurityToken()const
 void ModifyInstanceDeploymentRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceDeploymentRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyInstanceDeploymentRequest::getRegionId()const
 void ModifyInstanceDeploymentRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool ModifyInstanceDeploymentRequest::getEnable()const
@@ -143,7 +143,7 @@ bool ModifyInstanceDeploymentRequest::getEnable()const
 void ModifyInstanceDeploymentRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string ModifyInstanceDeploymentRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string ModifyInstanceDeploymentRequest::getRequestContent()const
 void ModifyInstanceDeploymentRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyInstanceDeploymentRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string ModifyInstanceDeploymentRequest::getCallerBidEmail()const
 void ModifyInstanceDeploymentRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyInstanceDeploymentRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyInstanceDeploymentRequest::getCallerUidEmail()const
 void ModifyInstanceDeploymentRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ModifyInstanceDeploymentRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string ModifyInstanceDeploymentRequest::getDeploymentSetId()const
 void ModifyInstanceDeploymentRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setCoreParameter("DeploymentSetId", std::to_string(deploymentSetId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string ModifyInstanceDeploymentRequest::getApp_ip()const
 void ModifyInstanceDeploymentRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyInstanceDeploymentRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string ModifyInstanceDeploymentRequest::getResourceOwnerAccount()const
 void ModifyInstanceDeploymentRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceDeploymentRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string ModifyInstanceDeploymentRequest::getOwnerAccount()const
 void ModifyInstanceDeploymentRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyInstanceDeploymentRequest::getTenancy()const
@@ -242,7 +242,7 @@ std::string ModifyInstanceDeploymentRequest::getTenancy()const
 void ModifyInstanceDeploymentRequest::setTenancy(const std::string& tenancy)
 {
 	tenancy_ = tenancy;
-	setCoreParameter("Tenancy", tenancy);
+	setCoreParameter("Tenancy", std::to_string(tenancy));
 }
 
 std::string ModifyInstanceDeploymentRequest::getDedicatedHostId()const
@@ -253,7 +253,7 @@ std::string ModifyInstanceDeploymentRequest::getDedicatedHostId()const
 void ModifyInstanceDeploymentRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setCoreParameter("DedicatedHostId", std::to_string(dedicatedHostId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string ModifyInstanceDeploymentRequest::getCallerBid()const
 void ModifyInstanceDeploymentRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyInstanceDeploymentRequest::getOwnerId()const
@@ -286,7 +286,7 @@ bool ModifyInstanceDeploymentRequest::getProxy_trust_transport_info()const
 void ModifyInstanceDeploymentRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyInstanceDeploymentRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool ModifyInstanceDeploymentRequest::getAk_mfa_present()const
 void ModifyInstanceDeploymentRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyInstanceDeploymentRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool ModifyInstanceDeploymentRequest::getSecurity_transport()const
 void ModifyInstanceDeploymentRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyInstanceDeploymentRequest::getInstanceId()const
@@ -319,7 +319,7 @@ std::string ModifyInstanceDeploymentRequest::getInstanceId()const
 void ModifyInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getRequestId()const
@@ -330,7 +330,7 @@ std::string ModifyInstanceDeploymentRequest::getRequestId()const
 void ModifyInstanceDeploymentRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ModifyInstanceDeploymentRequest::getAkProxy()const
@@ -341,7 +341,7 @@ std::string ModifyInstanceDeploymentRequest::getAkProxy()const
 void ModifyInstanceDeploymentRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 bool ModifyInstanceDeploymentRequest::getForce()const
@@ -352,7 +352,7 @@ bool ModifyInstanceDeploymentRequest::getForce()const
 void ModifyInstanceDeploymentRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string ModifyInstanceDeploymentRequest::getAffinity()const
@@ -363,6 +363,6 @@ std::string ModifyInstanceDeploymentRequest::getAffinity()const
 void ModifyInstanceDeploymentRequest::setAffinity(const std::string& affinity)
 {
 	affinity_ = affinity;
-	setCoreParameter("Affinity", affinity);
+	setCoreParameter("Affinity", std::to_string(affinity));
 }
 

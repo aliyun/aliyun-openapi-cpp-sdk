@@ -44,7 +44,7 @@ std::string UploadMediaByURLRequest::getResourceOwnerAccount()const
 void UploadMediaByURLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UploadMediaByURLRequest::getMessageCallback()const
@@ -55,7 +55,7 @@ std::string UploadMediaByURLRequest::getMessageCallback()const
 void UploadMediaByURLRequest::setMessageCallback(const std::string& messageCallback)
 {
 	messageCallback_ = messageCallback;
-	setCoreParameter("MessageCallback", messageCallback);
+	setCoreParameter("MessageCallback", std::to_string(messageCallback));
 }
 
 long UploadMediaByURLRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string UploadMediaByURLRequest::getPriority()const
 void UploadMediaByURLRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", priority);
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string UploadMediaByURLRequest::getStorageLocation()const
@@ -88,7 +88,7 @@ std::string UploadMediaByURLRequest::getStorageLocation()const
 void UploadMediaByURLRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", storageLocation);
+	setCoreParameter("StorageLocation", std::to_string(storageLocation));
 }
 
 std::string UploadMediaByURLRequest::getUserData()const
@@ -99,7 +99,7 @@ std::string UploadMediaByURLRequest::getUserData()const
 void UploadMediaByURLRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 std::string UploadMediaByURLRequest::getTemplateGroupId()const
@@ -110,7 +110,7 @@ std::string UploadMediaByURLRequest::getTemplateGroupId()const
 void UploadMediaByURLRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", templateGroupId);
+	setCoreParameter("TemplateGroupId", std::to_string(templateGroupId));
 }
 
 std::string UploadMediaByURLRequest::getUploadMetadatas()const
@@ -121,7 +121,7 @@ std::string UploadMediaByURLRequest::getUploadMetadatas()const
 void UploadMediaByURLRequest::setUploadMetadatas(const std::string& uploadMetadatas)
 {
 	uploadMetadatas_ = uploadMetadatas;
-	setCoreParameter("UploadMetadatas", uploadMetadatas);
+	setCoreParameter("UploadMetadatas", std::to_string(uploadMetadatas));
 }
 
 std::string UploadMediaByURLRequest::getUploadURLs()const
@@ -132,7 +132,7 @@ std::string UploadMediaByURLRequest::getUploadURLs()const
 void UploadMediaByURLRequest::setUploadURLs(const std::string& uploadURLs)
 {
 	uploadURLs_ = uploadURLs;
-	setCoreParameter("UploadURLs", uploadURLs);
+	setCoreParameter("UploadURLs", std::to_string(uploadURLs));
 }
 
 std::string UploadMediaByURLRequest::getAppId()const
@@ -143,7 +143,7 @@ std::string UploadMediaByURLRequest::getAppId()const
 void UploadMediaByURLRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string UploadMediaByURLRequest::getWorkflowId()const
@@ -154,6 +154,6 @@ std::string UploadMediaByURLRequest::getWorkflowId()const
 void UploadMediaByURLRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", workflowId);
+	setCoreParameter("WorkflowId", std::to_string(workflowId));
 }
 

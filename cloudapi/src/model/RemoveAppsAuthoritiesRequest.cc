@@ -33,7 +33,7 @@ std::string RemoveAppsAuthoritiesRequest::getStageName()const
 void RemoveAppsAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string RemoveAppsAuthoritiesRequest::getAppIds()const
@@ -44,7 +44,7 @@ std::string RemoveAppsAuthoritiesRequest::getAppIds()const
 void RemoveAppsAuthoritiesRequest::setAppIds(const std::string& appIds)
 {
 	appIds_ = appIds;
-	setCoreParameter("AppIds", appIds);
+	setCoreParameter("AppIds", std::to_string(appIds));
 }
 
 std::string RemoveAppsAuthoritiesRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string RemoveAppsAuthoritiesRequest::getSecurityToken()const
 void RemoveAppsAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RemoveAppsAuthoritiesRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string RemoveAppsAuthoritiesRequest::getGroupId()const
 void RemoveAppsAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string RemoveAppsAuthoritiesRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string RemoveAppsAuthoritiesRequest::getApiId()const
 void RemoveAppsAuthoritiesRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
 void RemoveAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

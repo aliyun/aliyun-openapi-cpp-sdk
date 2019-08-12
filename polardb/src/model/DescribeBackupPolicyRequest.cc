@@ -44,7 +44,7 @@ std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 void DescribeBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBackupPolicyRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeBackupPolicyRequest::getDBClusterId()const
 void DescribeBackupPolicyRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DescribeBackupPolicyRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeBackupPolicyRequest::getOwnerAccount()const
 void DescribeBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeBackupPolicyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeBackupPolicyRequest::getAccessKeyId()const
 void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

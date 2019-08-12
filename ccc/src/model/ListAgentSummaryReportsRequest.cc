@@ -33,7 +33,7 @@ std::string ListAgentSummaryReportsRequest::getAgentIds()const
 void ListAgentSummaryReportsRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setCoreParameter("AgentIds", std::to_string(agentIds));
 }
 
 std::string ListAgentSummaryReportsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListAgentSummaryReportsRequest::getInstanceId()const
 void ListAgentSummaryReportsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
 void ListAgentSummaryReportsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 int ListAgentSummaryReportsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListAgentSummaryReportsRequest::getEndTime()const
 void ListAgentSummaryReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ListAgentSummaryReportsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string ListAgentSummaryReportsRequest::getStartTime()const
 void ListAgentSummaryReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListAgentSummaryReportsRequest::getPageNumber()const
@@ -110,6 +110,6 @@ std::string ListAgentSummaryReportsRequest::getAccessKeyId()const
 void ListAgentSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

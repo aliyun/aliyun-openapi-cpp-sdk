@@ -44,7 +44,7 @@ std::string BusinessUpdateRequest::getBusinessCity()const
 void BusinessUpdateRequest::setBusinessCity(const std::string& businessCity)
 {
 	businessCity_ = businessCity;
-	setCoreParameter("BusinessCity", businessCity);
+	setCoreParameter("BusinessCity", std::to_string(businessCity));
 }
 
 std::string BusinessUpdateRequest::getWarnEmail()const
@@ -55,7 +55,7 @@ std::string BusinessUpdateRequest::getWarnEmail()const
 void BusinessUpdateRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
-	setCoreParameter("WarnEmail", warnEmail);
+	setCoreParameter("WarnEmail", std::to_string(warnEmail));
 }
 
 std::string BusinessUpdateRequest::getBusinessAddress()const
@@ -66,7 +66,7 @@ std::string BusinessUpdateRequest::getBusinessAddress()const
 void BusinessUpdateRequest::setBusinessAddress(const std::string& businessAddress)
 {
 	businessAddress_ = businessAddress;
-	setCoreParameter("BusinessAddress", businessAddress);
+	setCoreParameter("BusinessAddress", std::to_string(businessAddress));
 }
 
 long BusinessUpdateRequest::getBid()const
@@ -88,7 +88,7 @@ std::string BusinessUpdateRequest::getBusinessManager()const
 void BusinessUpdateRequest::setBusinessManager(const std::string& businessManager)
 {
 	businessManager_ = businessManager;
-	setCoreParameter("BusinessManager", businessManager);
+	setCoreParameter("BusinessManager", std::to_string(businessManager));
 }
 
 std::string BusinessUpdateRequest::getBusinessProvince()const
@@ -99,7 +99,7 @@ std::string BusinessUpdateRequest::getBusinessProvince()const
 void BusinessUpdateRequest::setBusinessProvince(const std::string& businessProvince)
 {
 	businessProvince_ = businessProvince;
-	setCoreParameter("BusinessProvince", businessProvince);
+	setCoreParameter("BusinessProvince", std::to_string(businessProvince));
 }
 
 std::string BusinessUpdateRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string BusinessUpdateRequest::getAccessKeyId()const
 void BusinessUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

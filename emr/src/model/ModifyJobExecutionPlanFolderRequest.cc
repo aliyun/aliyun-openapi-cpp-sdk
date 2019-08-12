@@ -44,7 +44,7 @@ std::string ModifyJobExecutionPlanFolderRequest::getName()const
 void ModifyJobExecutionPlanFolderRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long ModifyJobExecutionPlanFolderRequest::getId()const
@@ -77,6 +77,6 @@ std::string ModifyJobExecutionPlanFolderRequest::getAccessKeyId()const
 void ModifyJobExecutionPlanFolderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

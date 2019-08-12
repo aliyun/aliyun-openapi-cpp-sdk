@@ -44,7 +44,7 @@ std::string DescribeSlowLogRecordsRequest::getDBName()const
 void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 int DescribeSlowLogRecordsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeSlowLogRecordsRequest::getEndTime()const
 void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
 void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeSlowLogRecordsRequest::getStartTime()const
 void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int DescribeSlowLogRecordsRequest::getPageNumber()const
@@ -110,6 +110,6 @@ std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
 void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeVerificationListRequest::getResourceOwnerAccount()const
 void DescribeVerificationListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVerificationListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeVerificationListRequest::getOwnerAccount()const
 void DescribeVerificationListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeVerificationListRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeVerificationListRequest::getEndTime()const
 void DescribeVerificationListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeVerificationListRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeVerificationListRequest::getStartTime()const
 void DescribeVerificationListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeVerificationListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeVerificationListRequest::getAccessKeyId()const
 void DescribeVerificationListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeVerificationListRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeVerificationListRequest::getSecurityToken()const
 void DescribeVerificationListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeVerificationListRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeVerificationListRequest::getRegionId()const
 void DescribeVerificationListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVerificationListRequest::getReplicaId()const
@@ -143,7 +143,7 @@ std::string DescribeVerificationListRequest::getReplicaId()const
 void DescribeVerificationListRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 int DescribeVerificationListRequest::getPageSize()const

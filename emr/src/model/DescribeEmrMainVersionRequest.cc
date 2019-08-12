@@ -44,7 +44,7 @@ std::string DescribeEmrMainVersionRequest::getRegionId()const
 void DescribeEmrMainVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeEmrMainVersionRequest::getEmrVersion()const
@@ -55,7 +55,7 @@ std::string DescribeEmrMainVersionRequest::getEmrVersion()const
 void DescribeEmrMainVersionRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", emrVersion);
+	setCoreParameter("EmrVersion", std::to_string(emrVersion));
 }
 
 std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
 void DescribeEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

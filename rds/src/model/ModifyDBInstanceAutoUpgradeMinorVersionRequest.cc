@@ -33,7 +33,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAutoUpgradeMinorV
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAutoUpgradeMinorVersion(const std::string& autoUpgradeMinorVersion)
 {
 	autoUpgradeMinorVersion_ = autoUpgradeMinorVersion;
-	setCoreParameter("AutoUpgradeMinorVersion", autoUpgradeMinorVersion);
+	setCoreParameter("AutoUpgradeMinorVersion", std::to_string(autoUpgradeMinorVersion));
 }
 
 long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getResourceOwnerAcco
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getClientToken()cons
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getDBInstanceId()con
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyDBInstanceAutoUpgradeMinorVersionRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ModifyDBInstanceAutoUpgradeMinorVersionRequest::getAccessKeyId()cons
 void ModifyDBInstanceAutoUpgradeMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

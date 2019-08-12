@@ -33,7 +33,7 @@ std::string RemoveFacePhotosRequest::getLibraryId()const
 void RemoveFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::vector<long> RemoveFacePhotosRequest::getPhotoId()const
@@ -56,7 +56,7 @@ std::string RemoveFacePhotosRequest::getStoreName()const
 void RemoveFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long RemoveFacePhotosRequest::getFaceId()const

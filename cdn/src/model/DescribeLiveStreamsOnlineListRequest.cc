@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
 void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setCoreParameter("StreamType", std::to_string(streamType));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
 void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
 void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageSize()const

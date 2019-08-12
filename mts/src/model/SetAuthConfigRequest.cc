@@ -33,7 +33,7 @@ std::string SetAuthConfigRequest::getKey1()const
 void SetAuthConfigRequest::setKey1(const std::string& key1)
 {
 	key1_ = key1;
-	setCoreParameter("Key1", key1);
+	setCoreParameter("Key1", std::to_string(key1));
 }
 
 std::string SetAuthConfigRequest::getKey2()const
@@ -44,7 +44,7 @@ std::string SetAuthConfigRequest::getKey2()const
 void SetAuthConfigRequest::setKey2(const std::string& key2)
 {
 	key2_ = key2;
-	setCoreParameter("Key2", key2);
+	setCoreParameter("Key2", std::to_string(key2));
 }
 
 std::string SetAuthConfigRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SetAuthConfigRequest::getResourceOwnerId()const
 void SetAuthConfigRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetAuthConfigRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SetAuthConfigRequest::getResourceOwnerAccount()const
 void SetAuthConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetAuthConfigRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetAuthConfigRequest::getOwnerAccount()const
 void SetAuthConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SetAuthConfigRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string SetAuthConfigRequest::getOwnerId()const
 void SetAuthConfigRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetAuthConfigRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SetAuthConfigRequest::getAccessKeyId()const
 void SetAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string GetJobsProgressRequest::getInstanceId()const
 void GetJobsProgressRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetJobsProgressRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string GetJobsProgressRequest::getSkillGroupId()const
 void GetJobsProgressRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::string GetJobsProgressRequest::getJobGroupId()const
@@ -55,6 +55,6 @@ std::string GetJobsProgressRequest::getJobGroupId()const
 void GetJobsProgressRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeLoadBalancerAttributeRequest::getAccess_key_id()const
 void DescribeLoadBalancerAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData()const
@@ -44,7 +44,7 @@ bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData()const
 void DescribeLoadBalancerAttributeRequest::setIncludeReservedData(bool includeReservedData)
 {
 	includeReservedData_ = includeReservedData;
-	setCoreParameter("IncludeReservedData", includeReservedData);
+	setCoreParameter("IncludeReservedData", includeReservedData ? "true" : "false");
 }
 
 long DescribeLoadBalancerAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeLoadBalancerAttributeRequest::getLoadBalancerId()const
 void DescribeLoadBalancerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeLoadBalancerAttributeRequest::getRegionId()const
 void DescribeLoadBalancerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeLoadBalancerAttributeRequest::getResourceOwnerAccount()const
 void DescribeLoadBalancerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeLoadBalancerAttributeRequest::getOwnerAccount()const
 void DescribeLoadBalancerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeLoadBalancerAttributeRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeLoadBalancerAttributeRequest::getTags()const
 void DescribeLoadBalancerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

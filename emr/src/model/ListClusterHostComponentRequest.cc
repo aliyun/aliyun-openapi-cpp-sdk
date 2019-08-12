@@ -44,7 +44,7 @@ std::string ListClusterHostComponentRequest::getHostName()const
 void ListClusterHostComponentRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string ListClusterHostComponentRequest::getHostInstanceId()const
@@ -55,7 +55,7 @@ std::string ListClusterHostComponentRequest::getHostInstanceId()const
 void ListClusterHostComponentRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setCoreParameter("HostInstanceId", hostInstanceId);
+	setCoreParameter("HostInstanceId", std::to_string(hostInstanceId));
 }
 
 std::string ListClusterHostComponentRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ListClusterHostComponentRequest::getRegionId()const
 void ListClusterHostComponentRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListClusterHostComponentRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string ListClusterHostComponentRequest::getComponentName()const
 void ListClusterHostComponentRequest::setComponentName(const std::string& componentName)
 {
 	componentName_ = componentName;
-	setCoreParameter("ComponentName", componentName);
+	setCoreParameter("ComponentName", std::to_string(componentName));
 }
 
 std::string ListClusterHostComponentRequest::getServiceName()const
@@ -99,7 +99,7 @@ std::string ListClusterHostComponentRequest::getServiceName()const
 void ListClusterHostComponentRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string ListClusterHostComponentRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string ListClusterHostComponentRequest::getClusterId()const
 void ListClusterHostComponentRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListClusterHostComponentRequest::getHostRole()const
@@ -121,7 +121,7 @@ std::string ListClusterHostComponentRequest::getHostRole()const
 void ListClusterHostComponentRequest::setHostRole(const std::string& hostRole)
 {
 	hostRole_ = hostRole;
-	setCoreParameter("HostRole", hostRole);
+	setCoreParameter("HostRole", std::to_string(hostRole));
 }
 
 int ListClusterHostComponentRequest::getPageNumber()const
@@ -143,7 +143,7 @@ std::string ListClusterHostComponentRequest::getAccessKeyId()const
 void ListClusterHostComponentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListClusterHostComponentRequest::getComponentStatus()const
@@ -154,6 +154,6 @@ std::string ListClusterHostComponentRequest::getComponentStatus()const
 void ListClusterHostComponentRequest::setComponentStatus(const std::string& componentStatus)
 {
 	componentStatus_ = componentStatus;
-	setCoreParameter("ComponentStatus", componentStatus);
+	setCoreParameter("ComponentStatus", std::to_string(componentStatus));
 }
 

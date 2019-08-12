@@ -33,7 +33,7 @@ std::string DescribeScreenAlarmEventListRequest::getAlarmEventName()const
 void DescribeScreenAlarmEventListRequest::setAlarmEventName(const std::string& alarmEventName)
 {
 	alarmEventName_ = alarmEventName;
-	setCoreParameter("AlarmEventName", alarmEventName);
+	setCoreParameter("AlarmEventName", std::to_string(alarmEventName));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeScreenAlarmEventListRequest::getSourceIp()const
 void DescribeScreenAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeScreenAlarmEventListRequest::getPageSize()const
 void DescribeScreenAlarmEventListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getAlarmEventType()const
@@ -66,7 +66,7 @@ std::string DescribeScreenAlarmEventListRequest::getAlarmEventType()const
 void DescribeScreenAlarmEventListRequest::setAlarmEventType(const std::string& alarmEventType)
 {
 	alarmEventType_ = alarmEventType;
-	setCoreParameter("AlarmEventType", alarmEventType);
+	setCoreParameter("AlarmEventType", std::to_string(alarmEventType));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getDealed()const
@@ -77,7 +77,7 @@ std::string DescribeScreenAlarmEventListRequest::getDealed()const
 void DescribeScreenAlarmEventListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getFrom()const
@@ -88,7 +88,7 @@ std::string DescribeScreenAlarmEventListRequest::getFrom()const
 void DescribeScreenAlarmEventListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getRemark()const
@@ -99,7 +99,7 @@ std::string DescribeScreenAlarmEventListRequest::getRemark()const
 void DescribeScreenAlarmEventListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 int DescribeScreenAlarmEventListRequest::getCurrentPage()const
@@ -121,7 +121,7 @@ std::string DescribeScreenAlarmEventListRequest::getLang()const
 void DescribeScreenAlarmEventListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeScreenAlarmEventListRequest::getLevels()const
@@ -132,6 +132,6 @@ std::string DescribeScreenAlarmEventListRequest::getLevels()const
 void DescribeScreenAlarmEventListRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
-	setCoreParameter("Levels", levels);
+	setCoreParameter("Levels", std::to_string(levels));
 }
 

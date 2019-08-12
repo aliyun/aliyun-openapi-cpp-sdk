@@ -55,7 +55,7 @@ std::string ReassignKafkaRequest::getTopicId()const
 void ReassignKafkaRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::vector<int> ReassignKafkaRequest::getBrokerId()const
@@ -78,7 +78,7 @@ std::string ReassignKafkaRequest::getRegionId()const
 void ReassignKafkaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ReassignKafkaRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string ReassignKafkaRequest::getAccessKeyId()const
 void ReassignKafkaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

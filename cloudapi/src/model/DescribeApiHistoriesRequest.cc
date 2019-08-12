@@ -33,7 +33,7 @@ std::string DescribeApiHistoriesRequest::getStageName()const
 void DescribeApiHistoriesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeApiHistoriesRequest::getApiName()const
@@ -44,7 +44,7 @@ std::string DescribeApiHistoriesRequest::getApiName()const
 void DescribeApiHistoriesRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setCoreParameter("ApiName", std::to_string(apiName));
 }
 
 std::string DescribeApiHistoriesRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeApiHistoriesRequest::getSecurityToken()const
 void DescribeApiHistoriesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiHistoriesRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeApiHistoriesRequest::getGroupId()const
 void DescribeApiHistoriesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiHistoriesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeApiHistoriesRequest::getPageSize()const
 void DescribeApiHistoriesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeApiHistoriesRequest::getApiId()const
@@ -88,7 +88,7 @@ std::string DescribeApiHistoriesRequest::getApiId()const
 void DescribeApiHistoriesRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiHistoriesRequest::getPageNumber()const
@@ -99,7 +99,7 @@ std::string DescribeApiHistoriesRequest::getPageNumber()const
 void DescribeApiHistoriesRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiHistoriesRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeApiHistoriesRequest::getAccessKeyId()const
 void DescribeApiHistoriesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

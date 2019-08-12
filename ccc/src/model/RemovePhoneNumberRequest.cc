@@ -33,7 +33,7 @@ std::string RemovePhoneNumberRequest::getInstanceId()const
 void RemovePhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RemovePhoneNumberRequest::getPhoneNumberId()const
@@ -44,7 +44,7 @@ std::string RemovePhoneNumberRequest::getPhoneNumberId()const
 void RemovePhoneNumberRequest::setPhoneNumberId(const std::string& phoneNumberId)
 {
 	phoneNumberId_ = phoneNumberId;
-	setCoreParameter("PhoneNumberId", phoneNumberId);
+	setCoreParameter("PhoneNumberId", std::to_string(phoneNumberId));
 }
 
 std::string RemovePhoneNumberRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string RemovePhoneNumberRequest::getAccessKeyId()const
 void RemovePhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

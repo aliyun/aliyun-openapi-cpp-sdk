@@ -33,7 +33,7 @@ std::string CreateRuleRequest::getSourceIp()const
 void CreateRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int CreateRuleRequest::getFeatureType()const
@@ -55,7 +55,7 @@ std::string CreateRuleRequest::getName()const
 void CreateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long CreateRuleRequest::getRiskLevelId()const
@@ -77,7 +77,7 @@ std::string CreateRuleRequest::getLang()const
 void CreateRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long CreateRuleRequest::getCustomType()const
@@ -110,6 +110,6 @@ std::string CreateRuleRequest::getContent()const
 void CreateRuleRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 

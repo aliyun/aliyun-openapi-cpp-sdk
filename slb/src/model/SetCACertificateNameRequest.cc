@@ -33,7 +33,7 @@ std::string SetCACertificateNameRequest::getAccess_key_id()const
 void SetCACertificateNameRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long SetCACertificateNameRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SetCACertificateNameRequest::getCACertificateName()const
 void SetCACertificateNameRequest::setCACertificateName(const std::string& cACertificateName)
 {
 	cACertificateName_ = cACertificateName;
-	setCoreParameter("CACertificateName", cACertificateName);
+	setCoreParameter("CACertificateName", std::to_string(cACertificateName));
 }
 
 std::string SetCACertificateNameRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SetCACertificateNameRequest::getResourceOwnerAccount()const
 void SetCACertificateNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetCACertificateNameRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SetCACertificateNameRequest::getRegionId()const
 void SetCACertificateNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetCACertificateNameRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetCACertificateNameRequest::getOwnerAccount()const
 void SetCACertificateNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetCACertificateNameRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string SetCACertificateNameRequest::getCACertificateId()const
 void SetCACertificateNameRequest::setCACertificateId(const std::string& cACertificateId)
 {
 	cACertificateId_ = cACertificateId;
-	setCoreParameter("CACertificateId", cACertificateId);
+	setCoreParameter("CACertificateId", std::to_string(cACertificateId));
 }
 

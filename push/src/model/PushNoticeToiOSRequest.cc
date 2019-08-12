@@ -33,7 +33,7 @@ std::string PushNoticeToiOSRequest::getExtParameters()const
 void PushNoticeToiOSRequest::setExtParameters(const std::string& extParameters)
 {
 	extParameters_ = extParameters;
-	setCoreParameter("ExtParameters", extParameters);
+	setCoreParameter("ExtParameters", std::to_string(extParameters));
 }
 
 std::string PushNoticeToiOSRequest::getApnsEnv()const
@@ -44,7 +44,7 @@ std::string PushNoticeToiOSRequest::getApnsEnv()const
 void PushNoticeToiOSRequest::setApnsEnv(const std::string& apnsEnv)
 {
 	apnsEnv_ = apnsEnv;
-	setCoreParameter("ApnsEnv", apnsEnv);
+	setCoreParameter("ApnsEnv", std::to_string(apnsEnv));
 }
 
 long PushNoticeToiOSRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string PushNoticeToiOSRequest::getTargetValue()const
 void PushNoticeToiOSRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setCoreParameter("TargetValue", std::to_string(targetValue));
 }
 
 std::string PushNoticeToiOSRequest::getTitle()const
@@ -77,7 +77,7 @@ std::string PushNoticeToiOSRequest::getTitle()const
 void PushNoticeToiOSRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string PushNoticeToiOSRequest::getBody()const
@@ -88,7 +88,7 @@ std::string PushNoticeToiOSRequest::getBody()const
 void PushNoticeToiOSRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", body);
+	setCoreParameter("Body", std::to_string(body));
 }
 
 std::string PushNoticeToiOSRequest::getJobKey()const
@@ -99,7 +99,7 @@ std::string PushNoticeToiOSRequest::getJobKey()const
 void PushNoticeToiOSRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", jobKey);
+	setCoreParameter("JobKey", std::to_string(jobKey));
 }
 
 std::string PushNoticeToiOSRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string PushNoticeToiOSRequest::getAccessKeyId()const
 void PushNoticeToiOSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string PushNoticeToiOSRequest::getTarget()const
@@ -121,6 +121,6 @@ std::string PushNoticeToiOSRequest::getTarget()const
 void PushNoticeToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setCoreParameter("Target", std::to_string(target));
 }
 

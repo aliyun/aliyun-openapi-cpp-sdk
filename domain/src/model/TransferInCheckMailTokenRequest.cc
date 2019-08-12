@@ -33,7 +33,7 @@ std::string TransferInCheckMailTokenRequest::getUserClientIp()const
 void TransferInCheckMailTokenRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string TransferInCheckMailTokenRequest::getLang()const
@@ -44,7 +44,7 @@ std::string TransferInCheckMailTokenRequest::getLang()const
 void TransferInCheckMailTokenRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string TransferInCheckMailTokenRequest::getToken()const
@@ -55,6 +55,6 @@ std::string TransferInCheckMailTokenRequest::getToken()const
 void TransferInCheckMailTokenRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setCoreParameter("Token", std::to_string(token));
 }
 

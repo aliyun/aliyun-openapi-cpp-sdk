@@ -33,7 +33,7 @@ std::string StopMPUTaskRequest::getApp_ip()const
 void StopMPUTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string StopMPUTaskRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string StopMPUTaskRequest::getPopProduct()const
 void StopMPUTaskRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long StopMPUTaskRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ bool StopMPUTaskRequest::getProxy_original_security_transport()const
 void StopMPUTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string StopMPUTaskRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string StopMPUTaskRequest::getCallerBid()const
 void StopMPUTaskRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long StopMPUTaskRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string StopMPUTaskRequest::getProxy_original_source_ip()const
 void StopMPUTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string StopMPUTaskRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string StopMPUTaskRequest::getVersion()const
 void StopMPUTaskRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string StopMPUTaskRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string StopMPUTaskRequest::getOwnerIdLoginEmail()const
 void StopMPUTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string StopMPUTaskRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string StopMPUTaskRequest::getCallerType()const
 void StopMPUTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool StopMPUTaskRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool StopMPUTaskRequest::getProxy_trust_transport_info()const
 void StopMPUTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool StopMPUTaskRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool StopMPUTaskRequest::getAk_mfa_present()const
 void StopMPUTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string StopMPUTaskRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string StopMPUTaskRequest::getAccessKeyId()const
 void StopMPUTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool StopMPUTaskRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool StopMPUTaskRequest::getSecurity_transport()const
 void StopMPUTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string StopMPUTaskRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string StopMPUTaskRequest::getSecurityToken()const
 void StopMPUTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string StopMPUTaskRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string StopMPUTaskRequest::getRequestId()const
 void StopMPUTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string StopMPUTaskRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string StopMPUTaskRequest::getRequestContent()const
 void StopMPUTaskRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string StopMPUTaskRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string StopMPUTaskRequest::getAppId()const
 void StopMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string StopMPUTaskRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string StopMPUTaskRequest::getCallerBidEmail()const
 void StopMPUTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string StopMPUTaskRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string StopMPUTaskRequest::getCallerUidEmail()const
 void StopMPUTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string StopMPUTaskRequest::getTaskId()const
@@ -264,7 +264,7 @@ std::string StopMPUTaskRequest::getTaskId()const
 void StopMPUTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 long StopMPUTaskRequest::getCallerUid()const

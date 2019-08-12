@@ -44,7 +44,7 @@ std::string ProduceEditingProjectVideoRequest::getMediaMetadata()const
 void ProduceEditingProjectVideoRequest::setMediaMetadata(const std::string& mediaMetadata)
 {
 	mediaMetadata_ = mediaMetadata;
-	setCoreParameter("MediaMetadata", mediaMetadata);
+	setCoreParameter("MediaMetadata", std::to_string(mediaMetadata));
 }
 
 std::string ProduceEditingProjectVideoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ProduceEditingProjectVideoRequest::getResourceOwnerAccount()const
 void ProduceEditingProjectVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ProduceEditingProjectVideoRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ProduceEditingProjectVideoRequest::getDescription()const
 void ProduceEditingProjectVideoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long ProduceEditingProjectVideoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string ProduceEditingProjectVideoRequest::getTitle()const
 void ProduceEditingProjectVideoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string ProduceEditingProjectVideoRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ProduceEditingProjectVideoRequest::getAccessKeyId()const
 void ProduceEditingProjectVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ProduceEditingProjectVideoRequest::getCoverURL()const
@@ -110,7 +110,7 @@ std::string ProduceEditingProjectVideoRequest::getCoverURL()const
 void ProduceEditingProjectVideoRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", std::to_string(coverURL));
 }
 
 std::string ProduceEditingProjectVideoRequest::getUserData()const
@@ -121,7 +121,7 @@ std::string ProduceEditingProjectVideoRequest::getUserData()const
 void ProduceEditingProjectVideoRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 std::string ProduceEditingProjectVideoRequest::getTimeline()const
@@ -132,7 +132,7 @@ std::string ProduceEditingProjectVideoRequest::getTimeline()const
 void ProduceEditingProjectVideoRequest::setTimeline(const std::string& timeline)
 {
 	timeline_ = timeline;
-	setCoreParameter("Timeline", timeline);
+	setCoreParameter("Timeline", std::to_string(timeline));
 }
 
 std::string ProduceEditingProjectVideoRequest::getProduceConfig()const
@@ -143,7 +143,7 @@ std::string ProduceEditingProjectVideoRequest::getProduceConfig()const
 void ProduceEditingProjectVideoRequest::setProduceConfig(const std::string& produceConfig)
 {
 	produceConfig_ = produceConfig;
-	setCoreParameter("ProduceConfig", produceConfig);
+	setCoreParameter("ProduceConfig", std::to_string(produceConfig));
 }
 
 std::string ProduceEditingProjectVideoRequest::getProjectId()const
@@ -154,6 +154,6 @@ std::string ProduceEditingProjectVideoRequest::getProjectId()const
 void ProduceEditingProjectVideoRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

@@ -44,7 +44,7 @@ std::string AddCommonBandwidthPackageIpRequest::getBandwidthPackageId()const
 void AddCommonBandwidthPackageIpRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddCommonBandwidthPackageIpRequest::getResourceOwnerAccount()const
 void AddCommonBandwidthPackageIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AddCommonBandwidthPackageIpRequest::getRegionId()const
 void AddCommonBandwidthPackageIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AddCommonBandwidthPackageIpRequest::getOwnerAccount()const
 void AddCommonBandwidthPackageIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getIpInstanceId()const
@@ -88,7 +88,7 @@ std::string AddCommonBandwidthPackageIpRequest::getIpInstanceId()const
 void AddCommonBandwidthPackageIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
+	setCoreParameter("IpInstanceId", std::to_string(ipInstanceId));
 }
 
 long AddCommonBandwidthPackageIpRequest::getOwnerId()const

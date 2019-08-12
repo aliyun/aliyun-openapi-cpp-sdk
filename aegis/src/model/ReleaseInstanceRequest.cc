@@ -33,7 +33,7 @@ std::string ReleaseInstanceRequest::getInstanceId()const
 void ReleaseInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 long ReleaseInstanceRequest::getOwnerId()const

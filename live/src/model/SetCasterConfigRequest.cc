@@ -33,7 +33,7 @@ std::string SetCasterConfigRequest::getSideOutputUrl()const
 void SetCasterConfigRequest::setSideOutputUrl(const std::string& sideOutputUrl)
 {
 	sideOutputUrl_ = sideOutputUrl;
-	setCoreParameter("SideOutputUrl", sideOutputUrl);
+	setCoreParameter("SideOutputUrl", std::to_string(sideOutputUrl));
 }
 
 std::string SetCasterConfigRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string SetCasterConfigRequest::getCasterId()const
 void SetCasterConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 int SetCasterConfigRequest::getChannelEnable()const
@@ -66,7 +66,7 @@ std::string SetCasterConfigRequest::getDomainName()const
 void SetCasterConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int SetCasterConfigRequest::getProgramEffect()const
@@ -88,7 +88,7 @@ std::string SetCasterConfigRequest::getProgramName()const
 void SetCasterConfigRequest::setProgramName(const std::string& programName)
 {
 	programName_ = programName;
-	setCoreParameter("ProgramName", programName);
+	setCoreParameter("ProgramName", std::to_string(programName));
 }
 
 long SetCasterConfigRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SetCasterConfigRequest::getRecordConfig()const
 void SetCasterConfigRequest::setRecordConfig(const std::string& recordConfig)
 {
 	recordConfig_ = recordConfig;
-	setCoreParameter("RecordConfig", recordConfig);
+	setCoreParameter("RecordConfig", std::to_string(recordConfig));
 }
 
 std::string SetCasterConfigRequest::getUrgentMaterialId()const
@@ -121,7 +121,7 @@ std::string SetCasterConfigRequest::getUrgentMaterialId()const
 void SetCasterConfigRequest::setUrgentMaterialId(const std::string& urgentMaterialId)
 {
 	urgentMaterialId_ = urgentMaterialId;
-	setCoreParameter("UrgentMaterialId", urgentMaterialId);
+	setCoreParameter("UrgentMaterialId", std::to_string(urgentMaterialId));
 }
 
 std::string SetCasterConfigRequest::getTranscodeConfig()const
@@ -132,7 +132,7 @@ std::string SetCasterConfigRequest::getTranscodeConfig()const
 void SetCasterConfigRequest::setTranscodeConfig(const std::string& transcodeConfig)
 {
 	transcodeConfig_ = transcodeConfig;
-	setCoreParameter("TranscodeConfig", transcodeConfig);
+	setCoreParameter("TranscodeConfig", std::to_string(transcodeConfig));
 }
 
 float SetCasterConfigRequest::getDelay()const
@@ -154,7 +154,7 @@ std::string SetCasterConfigRequest::getRegionId()const
 void SetCasterConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetCasterConfigRequest::getCasterName()const
@@ -165,7 +165,7 @@ std::string SetCasterConfigRequest::getCasterName()const
 void SetCasterConfigRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
+	setCoreParameter("CasterName", std::to_string(casterName));
 }
 
 std::string SetCasterConfigRequest::getCallbackUrl()const
@@ -176,6 +176,6 @@ std::string SetCasterConfigRequest::getCallbackUrl()const
 void SetCasterConfigRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setCoreParameter("CallbackUrl", std::to_string(callbackUrl));
 }
 

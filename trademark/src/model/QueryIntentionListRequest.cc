@@ -44,7 +44,7 @@ std::string QueryIntentionListRequest::getSortOrder()const
 void QueryIntentionListRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
+	setCoreParameter("SortOrder", std::to_string(sortOrder));
 }
 
 int QueryIntentionListRequest::getType()const
@@ -77,7 +77,7 @@ std::string QueryIntentionListRequest::getSortFiled()const
 void QueryIntentionListRequest::setSortFiled(const std::string& sortFiled)
 {
 	sortFiled_ = sortFiled;
-	setCoreParameter("SortFiled", sortFiled);
+	setCoreParameter("SortFiled", std::to_string(sortFiled));
 }
 
 int QueryIntentionListRequest::getStatus()const

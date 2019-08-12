@@ -33,7 +33,7 @@ std::string DescribeWarningMachinesRequest::getSourceIp()const
 void DescribeWarningMachinesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeWarningMachinesRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeWarningMachinesRequest::getMachineName()const
 void DescribeWarningMachinesRequest::setMachineName(const std::string& machineName)
 {
 	machineName_ = machineName;
-	setCoreParameter("MachineName", machineName);
+	setCoreParameter("MachineName", std::to_string(machineName));
 }
 
 long DescribeWarningMachinesRequest::getStrategyId()const
@@ -88,7 +88,7 @@ std::string DescribeWarningMachinesRequest::getLang()const
 void DescribeWarningMachinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeWarningMachinesRequest::getRiskId()const
@@ -110,6 +110,6 @@ std::string DescribeWarningMachinesRequest::getUuids()const
 void DescribeWarningMachinesRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

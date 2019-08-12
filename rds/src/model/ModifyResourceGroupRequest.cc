@@ -33,7 +33,7 @@ std::string ModifyResourceGroupRequest::getResourceGroupId()const
 void ModifyResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 long ModifyResourceGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyResourceGroupRequest::getResourceOwnerAccount()const
 void ModifyResourceGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyResourceGroupRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyResourceGroupRequest::getClientToken()const
 void ModifyResourceGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyResourceGroupRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyResourceGroupRequest::getOwnerAccount()const
 void ModifyResourceGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyResourceGroupRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ModifyResourceGroupRequest::getDBInstanceId()const
 void ModifyResourceGroupRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyResourceGroupRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyResourceGroupRequest::getAccessKeyId()const
 void ModifyResourceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

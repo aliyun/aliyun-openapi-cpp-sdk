@@ -33,7 +33,7 @@ std::string DeleteInstancesRequest::getSourceRegionId()const
 void DeleteInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteInstancesRequest::getResourceOwnerId()const
@@ -67,7 +67,7 @@ bool DeleteInstancesRequest::getDryRun()const
 void DeleteInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DeleteInstancesRequest::getResourceOwnerAccount()const
@@ -78,7 +78,7 @@ std::string DeleteInstancesRequest::getResourceOwnerAccount()const
 void DeleteInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteInstancesRequest::getClientToken()const
@@ -89,7 +89,7 @@ std::string DeleteInstancesRequest::getClientToken()const
 void DeleteInstancesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteInstancesRequest::getOwnerAccount()const
@@ -100,7 +100,7 @@ std::string DeleteInstancesRequest::getOwnerAccount()const
 void DeleteInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DeleteInstancesRequest::getTerminateSubscription()const
@@ -111,7 +111,7 @@ bool DeleteInstancesRequest::getTerminateSubscription()const
 void DeleteInstancesRequest::setTerminateSubscription(bool terminateSubscription)
 {
 	terminateSubscription_ = terminateSubscription;
-	setCoreParameter("TerminateSubscription", terminateSubscription);
+	setCoreParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
 }
 
 bool DeleteInstancesRequest::getForce()const
@@ -122,7 +122,7 @@ bool DeleteInstancesRequest::getForce()const
 void DeleteInstancesRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteInstancesRequest::getOwnerId()const

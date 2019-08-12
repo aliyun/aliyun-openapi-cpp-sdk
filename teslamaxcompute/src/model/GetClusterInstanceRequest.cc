@@ -33,7 +33,7 @@ std::string GetClusterInstanceRequest::getCluster()const
 void GetClusterInstanceRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setCoreParameter("Cluster", std::to_string(cluster));
 }
 
 int GetClusterInstanceRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string GetClusterInstanceRequest::getRegion()const
 void GetClusterInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string GetClusterInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetClusterInstanceRequest::getStatus()const
 void GetClusterInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

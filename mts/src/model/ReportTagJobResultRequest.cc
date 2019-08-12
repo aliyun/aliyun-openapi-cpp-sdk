@@ -33,7 +33,7 @@ std::string ReportTagJobResultRequest::getResult()const
 void ReportTagJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", result);
+	setCoreParameter("Result", std::to_string(result));
 }
 
 std::string ReportTagJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportTagJobResultRequest::getJobId()const
 void ReportTagJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ReportTagJobResultRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
 void ReportTagJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportTagJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportTagJobResultRequest::getOwnerAccount()const
 void ReportTagJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReportTagJobResultRequest::getTag()const
@@ -88,7 +88,7 @@ std::string ReportTagJobResultRequest::getTag()const
 void ReportTagJobResultRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 long ReportTagJobResultRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ReportTagJobResultRequest::getAccessKeyId()const
 void ReportTagJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

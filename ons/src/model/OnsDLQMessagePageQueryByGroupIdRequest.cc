@@ -33,7 +33,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getInstanceId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int OnsDLQMessagePageQueryByGroupIdRequest::getPageSize()const
@@ -99,6 +99,6 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getTaskId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

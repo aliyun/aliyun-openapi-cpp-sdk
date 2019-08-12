@@ -44,6 +44,6 @@ std::string GetMyGroupAlertRequest::getAlertName()const
 void GetMyGroupAlertRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	setCoreParameter("AlertName", std::to_string(alertName));
 }
 

@@ -33,7 +33,7 @@ std::string PredictiveRecordFailureRequest::getCallId()const
 void PredictiveRecordFailureRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 long PredictiveRecordFailureRequest::getActualTime()const
@@ -55,7 +55,7 @@ std::string PredictiveRecordFailureRequest::getCallingNumber()const
 void PredictiveRecordFailureRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
+	setCoreParameter("CallingNumber", std::to_string(callingNumber));
 }
 
 std::string PredictiveRecordFailureRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string PredictiveRecordFailureRequest::getInstanceId()const
 void PredictiveRecordFailureRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string PredictiveRecordFailureRequest::getDispositionCode()const
@@ -77,7 +77,7 @@ std::string PredictiveRecordFailureRequest::getDispositionCode()const
 void PredictiveRecordFailureRequest::setDispositionCode(const std::string& dispositionCode)
 {
 	dispositionCode_ = dispositionCode;
-	setCoreParameter("DispositionCode", dispositionCode);
+	setCoreParameter("DispositionCode", std::to_string(dispositionCode));
 }
 
 std::string PredictiveRecordFailureRequest::getCalledNumber()const
@@ -88,7 +88,7 @@ std::string PredictiveRecordFailureRequest::getCalledNumber()const
 void PredictiveRecordFailureRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", std::to_string(calledNumber));
 }
 
 std::string PredictiveRecordFailureRequest::getTaskId()const
@@ -99,7 +99,7 @@ std::string PredictiveRecordFailureRequest::getTaskId()const
 void PredictiveRecordFailureRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string PredictiveRecordFailureRequest::getCabInstanceId()const
@@ -110,7 +110,7 @@ std::string PredictiveRecordFailureRequest::getCabInstanceId()const
 void PredictiveRecordFailureRequest::setCabInstanceId(const std::string& cabInstanceId)
 {
 	cabInstanceId_ = cabInstanceId;
-	setCoreParameter("CabInstanceId", cabInstanceId);
+	setCoreParameter("CabInstanceId", std::to_string(cabInstanceId));
 }
 
 long PredictiveRecordFailureRequest::getCabInstanceOwnerId()const

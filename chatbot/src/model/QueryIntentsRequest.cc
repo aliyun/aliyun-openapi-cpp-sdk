@@ -33,7 +33,7 @@ std::string QueryIntentsRequest::getIntentName()const
 void QueryIntentsRequest::setIntentName(const std::string& intentName)
 {
 	intentName_ = intentName;
-	setCoreParameter("IntentName", intentName);
+	setCoreParameter("IntentName", std::to_string(intentName));
 }
 
 int QueryIntentsRequest::getPageSize()const

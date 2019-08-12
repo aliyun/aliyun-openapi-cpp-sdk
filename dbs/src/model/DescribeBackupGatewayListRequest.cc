@@ -33,7 +33,7 @@ std::string DescribeBackupGatewayListRequest::getIdentifier()const
 void DescribeBackupGatewayListRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setCoreParameter("Identifier", std::to_string(identifier));
 }
 
 std::string DescribeBackupGatewayListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeBackupGatewayListRequest::getRegionId()const
 void DescribeBackupGatewayListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBackupGatewayListRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeBackupGatewayListRequest::getClientToken()const
 void DescribeBackupGatewayListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int DescribeBackupGatewayListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeBackupGatewayListRequest::getRegion()const
 void DescribeBackupGatewayListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 int DescribeBackupGatewayListRequest::getPageNum()const
@@ -99,6 +99,6 @@ std::string DescribeBackupGatewayListRequest::getOwnerId()const
 void DescribeBackupGatewayListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

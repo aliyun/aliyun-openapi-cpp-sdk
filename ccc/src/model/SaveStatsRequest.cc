@@ -33,7 +33,7 @@ std::string SaveStatsRequest::getCallId()const
 void SaveStatsRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 std::string SaveStatsRequest::getUid()const
@@ -44,7 +44,7 @@ std::string SaveStatsRequest::getUid()const
 void SaveStatsRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setCoreParameter("Uid", std::to_string(uid));
 }
 
 long SaveStatsRequest::getRecordTime()const
@@ -66,7 +66,7 @@ std::string SaveStatsRequest::getInstanceId()const
 void SaveStatsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SaveStatsRequest::getStats()const
@@ -77,7 +77,7 @@ std::string SaveStatsRequest::getStats()const
 void SaveStatsRequest::setStats(const std::string& stats)
 {
 	stats_ = stats;
-	setCoreParameter("Stats", stats);
+	setCoreParameter("Stats", std::to_string(stats));
 }
 
 long SaveStatsRequest::getCallStartTime()const
@@ -99,7 +99,7 @@ std::string SaveStatsRequest::getTenantId()const
 void SaveStatsRequest::setTenantId(const std::string& tenantId)
 {
 	tenantId_ = tenantId;
-	setCoreParameter("TenantId", tenantId);
+	setCoreParameter("TenantId", std::to_string(tenantId));
 }
 
 std::string SaveStatsRequest::getCalleeNumber()const
@@ -110,7 +110,7 @@ std::string SaveStatsRequest::getCalleeNumber()const
 void SaveStatsRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string SaveStatsRequest::getCallerNumber()const
@@ -121,6 +121,6 @@ std::string SaveStatsRequest::getCallerNumber()const
 void SaveStatsRequest::setCallerNumber(const std::string& callerNumber)
 {
 	callerNumber_ = callerNumber;
-	setCoreParameter("CallerNumber", callerNumber);
+	setCoreParameter("CallerNumber", std::to_string(callerNumber));
 }
 

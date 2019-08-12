@@ -44,7 +44,7 @@ std::string AddNetworkOptimizationSettingRequest::getResourceOwnerAccount()const
 void AddNetworkOptimizationSettingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddNetworkOptimizationSettingRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AddNetworkOptimizationSettingRequest::getRegionId()const
 void AddNetworkOptimizationSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddNetworkOptimizationSettingRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string AddNetworkOptimizationSettingRequest::getNetworkOptId()const
 void AddNetworkOptimizationSettingRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
 }
 
 std::string AddNetworkOptimizationSettingRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AddNetworkOptimizationSettingRequest::getOwnerAccount()const
 void AddNetworkOptimizationSettingRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddNetworkOptimizationSettingRequest::getDomain()const
@@ -88,7 +88,7 @@ std::string AddNetworkOptimizationSettingRequest::getDomain()const
 void AddNetworkOptimizationSettingRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setCoreParameter("Domain", std::to_string(domain));
 }
 
 long AddNetworkOptimizationSettingRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AddNetworkOptimizationSettingRequest::getType()const
 void AddNetworkOptimizationSettingRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

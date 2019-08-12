@@ -33,7 +33,7 @@ std::string DeleteFacesRequest::getLibraryId()const
 void DeleteFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string DeleteFacesRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string DeleteFacesRequest::getStoreName()const
 void DeleteFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::vector<long> DeleteFacesRequest::getFaceId()const

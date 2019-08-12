@@ -55,7 +55,7 @@ std::string ListPageConfigTemplateRequest::getSearchTempName()const
 void ListPageConfigTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setCoreParameter("SearchTempName", searchTempName);
+	setCoreParameter("SearchTempName", std::to_string(searchTempName));
 }
 
 std::string ListPageConfigTemplateRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListPageConfigTemplateRequest::getAccessKeyId()const
 void ListPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

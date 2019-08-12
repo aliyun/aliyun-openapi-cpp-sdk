@@ -33,7 +33,7 @@ std::string DeletePhotosRequest::getLibraryId()const
 void DeletePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string DeletePhotosRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string DeletePhotosRequest::getStoreName()const
 void DeletePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::vector<long> DeletePhotosRequest::getPhotoId()const

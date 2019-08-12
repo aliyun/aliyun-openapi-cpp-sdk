@@ -33,7 +33,7 @@ std::string CreateDBClusterEndpointRequest::getAutoAddNewNodes()const
 void CreateDBClusterEndpointRequest::setAutoAddNewNodes(const std::string& autoAddNewNodes)
 {
 	autoAddNewNodes_ = autoAddNewNodes;
-	setCoreParameter("AutoAddNewNodes", autoAddNewNodes);
+	setCoreParameter("AutoAddNewNodes", std::to_string(autoAddNewNodes));
 }
 
 long CreateDBClusterEndpointRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateDBClusterEndpointRequest::getResourceOwnerAccount()const
 void CreateDBClusterEndpointRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateDBClusterEndpointRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateDBClusterEndpointRequest::getClientToken()const
 void CreateDBClusterEndpointRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateDBClusterEndpointRequest::getDBClusterId()const
@@ -77,7 +77,7 @@ std::string CreateDBClusterEndpointRequest::getDBClusterId()const
 void CreateDBClusterEndpointRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string CreateDBClusterEndpointRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateDBClusterEndpointRequest::getOwnerAccount()const
 void CreateDBClusterEndpointRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateDBClusterEndpointRequest::getEndpointConfig()const
@@ -99,7 +99,7 @@ std::string CreateDBClusterEndpointRequest::getEndpointConfig()const
 void CreateDBClusterEndpointRequest::setEndpointConfig(const std::string& endpointConfig)
 {
 	endpointConfig_ = endpointConfig;
-	setCoreParameter("EndpointConfig", endpointConfig);
+	setCoreParameter("EndpointConfig", std::to_string(endpointConfig));
 }
 
 long CreateDBClusterEndpointRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string CreateDBClusterEndpointRequest::getAccessKeyId()const
 void CreateDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDBClusterEndpointRequest::getNodes()const
@@ -132,7 +132,7 @@ std::string CreateDBClusterEndpointRequest::getNodes()const
 void CreateDBClusterEndpointRequest::setNodes(const std::string& nodes)
 {
 	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
+	setCoreParameter("Nodes", std::to_string(nodes));
 }
 
 std::string CreateDBClusterEndpointRequest::getReadWriteMode()const
@@ -143,7 +143,7 @@ std::string CreateDBClusterEndpointRequest::getReadWriteMode()const
 void CreateDBClusterEndpointRequest::setReadWriteMode(const std::string& readWriteMode)
 {
 	readWriteMode_ = readWriteMode;
-	setCoreParameter("ReadWriteMode", readWriteMode);
+	setCoreParameter("ReadWriteMode", std::to_string(readWriteMode));
 }
 
 std::string CreateDBClusterEndpointRequest::getEndpointType()const
@@ -154,6 +154,6 @@ std::string CreateDBClusterEndpointRequest::getEndpointType()const
 void CreateDBClusterEndpointRequest::setEndpointType(const std::string& endpointType)
 {
 	endpointType_ = endpointType;
-	setCoreParameter("EndpointType", endpointType);
+	setCoreParameter("EndpointType", std::to_string(endpointType));
 }
 

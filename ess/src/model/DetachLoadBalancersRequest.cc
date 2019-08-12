@@ -45,7 +45,7 @@ std::string DetachLoadBalancersRequest::getResourceOwnerAccount()const
 void DetachLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachLoadBalancersRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string DetachLoadBalancersRequest::getScalingGroupId()const
 void DetachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 bool DetachLoadBalancersRequest::getForceDetach()const
@@ -67,7 +67,7 @@ bool DetachLoadBalancersRequest::getForceDetach()const
 void DetachLoadBalancersRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach);
+	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 
 long DetachLoadBalancersRequest::getOwnerId()const
@@ -89,6 +89,6 @@ std::string DetachLoadBalancersRequest::getAccessKeyId()const
 void DetachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

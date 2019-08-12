@@ -44,7 +44,7 @@ std::string UpdateAppInfoRequest::getAppName()const
 void UpdateAppInfoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string UpdateAppInfoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateAppInfoRequest::getResourceOwnerAccount()const
 void UpdateAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateAppInfoRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string UpdateAppInfoRequest::getAppId()const
 void UpdateAppInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string UpdateAppInfoRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string UpdateAppInfoRequest::getDescription()const
 void UpdateAppInfoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long UpdateAppInfoRequest::getResourceRealOwnerId()const
@@ -110,7 +110,7 @@ std::string UpdateAppInfoRequest::getAccessKeyId()const
 void UpdateAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateAppInfoRequest::getStatus()const
@@ -121,6 +121,6 @@ std::string UpdateAppInfoRequest::getStatus()const
 void UpdateAppInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

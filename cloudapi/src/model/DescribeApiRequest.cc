@@ -33,7 +33,7 @@ std::string DescribeApiRequest::getSecurityToken()const
 void DescribeApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiRequest::getGroupId()const
 void DescribeApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiRequest::getApiId()const
@@ -55,7 +55,7 @@ std::string DescribeApiRequest::getApiId()const
 void DescribeApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeApiRequest::getAccessKeyId()const
 void DescribeApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string RestoreDBInstanceRequest::getSecurityToken()const
 void RestoreDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RestoreDBInstanceRequest::getResourceOwnerAccount()const
 void RestoreDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RestoreDBInstanceRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string RestoreDBInstanceRequest::getRegionId()const
 void RestoreDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RestoreDBInstanceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RestoreDBInstanceRequest::getOwnerAccount()const
 void RestoreDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int RestoreDBInstanceRequest::getBackupId()const
@@ -99,7 +99,7 @@ std::string RestoreDBInstanceRequest::getDBInstanceId()const
 void RestoreDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long RestoreDBInstanceRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string RestoreDBInstanceRequest::getAccessKeyId()const
 void RestoreDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

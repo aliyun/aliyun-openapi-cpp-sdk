@@ -33,7 +33,7 @@ std::string PutMetricRuleTargetsRequest::getRuleName()const
 void PutMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::string PutMetricRuleTargetsRequest::getActions()const
@@ -44,7 +44,7 @@ std::string PutMetricRuleTargetsRequest::getActions()const
 void PutMetricRuleTargetsRequest::setActions(const std::string& actions)
 {
 	actions_ = actions;
-	setCoreParameter("Actions", actions);
+	setCoreParameter("Actions", std::to_string(actions));
 }
 
 std::vector<PutMetricRuleTargetsRequest::Targets> PutMetricRuleTargetsRequest::getTargets()const

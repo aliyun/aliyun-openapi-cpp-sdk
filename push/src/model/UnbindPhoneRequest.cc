@@ -44,7 +44,7 @@ std::string UnbindPhoneRequest::getDeviceId()const
 void UnbindPhoneRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", std::to_string(deviceId));
 }
 
 std::string UnbindPhoneRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string UnbindPhoneRequest::getAccessKeyId()const
 void UnbindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

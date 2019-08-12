@@ -33,7 +33,7 @@ std::string UpdateFaceGroupRequest::getRegionId()const
 void UpdateFaceGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateFaceGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string UpdateFaceGroupRequest::getGroupId()const
 void UpdateFaceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string UpdateFaceGroupRequest::getProject()const
@@ -55,7 +55,7 @@ std::string UpdateFaceGroupRequest::getProject()const
 void UpdateFaceGroupRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string UpdateFaceGroupRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string UpdateFaceGroupRequest::getSetId()const
 void UpdateFaceGroupRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setCoreParameter("SetId", std::to_string(setId));
 }
 
 std::string UpdateFaceGroupRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string UpdateFaceGroupRequest::getGroupName()const
 void UpdateFaceGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string UpdateFaceGroupRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string UpdateFaceGroupRequest::getAccessKeyId()const
 void UpdateFaceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateFaceGroupRequest::getGroupCoverFaceId()const
@@ -99,6 +99,6 @@ std::string UpdateFaceGroupRequest::getGroupCoverFaceId()const
 void UpdateFaceGroupRequest::setGroupCoverFaceId(const std::string& groupCoverFaceId)
 {
 	groupCoverFaceId_ = groupCoverFaceId;
-	setCoreParameter("GroupCoverFaceId", groupCoverFaceId);
+	setCoreParameter("GroupCoverFaceId", std::to_string(groupCoverFaceId));
 }
 

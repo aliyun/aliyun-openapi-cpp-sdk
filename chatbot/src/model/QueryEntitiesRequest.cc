@@ -33,7 +33,7 @@ std::string QueryEntitiesRequest::getEntityName()const
 void QueryEntitiesRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setCoreParameter("EntityName", std::to_string(entityName));
 }
 
 int QueryEntitiesRequest::getPageSize()const

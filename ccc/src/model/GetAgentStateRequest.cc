@@ -33,7 +33,7 @@ std::string GetAgentStateRequest::getAgentId()const
 void GetAgentStateRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 std::string GetAgentStateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string GetAgentStateRequest::getInstanceId()const
 void GetAgentStateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetAgentStateRequest::getDn()const
@@ -55,7 +55,7 @@ std::string GetAgentStateRequest::getDn()const
 void GetAgentStateRequest::setDn(const std::string& dn)
 {
 	dn_ = dn;
-	setCoreParameter("Dn", dn);
+	setCoreParameter("Dn", std::to_string(dn));
 }
 
 std::string GetAgentStateRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetAgentStateRequest::getAccessKeyId()const
 void GetAgentStateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

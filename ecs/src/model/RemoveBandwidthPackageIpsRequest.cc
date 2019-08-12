@@ -56,7 +56,7 @@ std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const
 void RemoveBandwidthPackageIpsRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ std::string RemoveBandwidthPackageIpsRequest::getResourceOwnerAccount()const
 void RemoveBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
@@ -78,7 +78,7 @@ std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
 void RemoveBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
@@ -89,7 +89,7 @@ std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
 void RemoveBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getOwnerAccount()const
@@ -100,7 +100,7 @@ std::string RemoveBandwidthPackageIpsRequest::getOwnerAccount()const
 void RemoveBandwidthPackageIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveBandwidthPackageIpsRequest::getOwnerId()const

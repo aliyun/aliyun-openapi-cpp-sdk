@@ -66,6 +66,6 @@ std::string ListSubAccountPermissionRequest::getAccessKeyId()const
 void ListSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

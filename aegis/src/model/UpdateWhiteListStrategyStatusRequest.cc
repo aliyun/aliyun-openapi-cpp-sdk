@@ -33,7 +33,7 @@ std::string UpdateWhiteListStrategyStatusRequest::getSourceIp()const
 void UpdateWhiteListStrategyStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UpdateWhiteListStrategyStatusRequest::getStrategyIds()const
@@ -44,7 +44,7 @@ std::string UpdateWhiteListStrategyStatusRequest::getStrategyIds()const
 void UpdateWhiteListStrategyStatusRequest::setStrategyIds(const std::string& strategyIds)
 {
 	strategyIds_ = strategyIds;
-	setCoreParameter("StrategyIds", strategyIds);
+	setCoreParameter("StrategyIds", std::to_string(strategyIds));
 }
 
 std::string UpdateWhiteListStrategyStatusRequest::getLang()const
@@ -55,7 +55,7 @@ std::string UpdateWhiteListStrategyStatusRequest::getLang()const
 void UpdateWhiteListStrategyStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateWhiteListStrategyStatusRequest::getStatus()const

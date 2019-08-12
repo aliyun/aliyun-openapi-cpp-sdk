@@ -44,7 +44,7 @@ std::string DeleteStorageSetRequest::getClientToken()const
 void DeleteStorageSetRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long DeleteStorageSetRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool DeleteStorageSetRequest::getProxy_original_security_transport()const
 void DeleteStorageSetRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteStorageSetRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DeleteStorageSetRequest::getProxy_original_source_ip()const
 void DeleteStorageSetRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DeleteStorageSetRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteStorageSetRequest::getOwnerIdLoginEmail()const
 void DeleteStorageSetRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DeleteStorageSetRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteStorageSetRequest::getCallerType()const
 void DeleteStorageSetRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DeleteStorageSetRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteStorageSetRequest::getAccessKeyId()const
 void DeleteStorageSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DeleteStorageSetRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string DeleteStorageSetRequest::getResourceGroupId()const
 void DeleteStorageSetRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DeleteStorageSetRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DeleteStorageSetRequest::getSecurityToken()const
 void DeleteStorageSetRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteStorageSetRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteStorageSetRequest::getRegionId()const
 void DeleteStorageSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DeleteStorageSetRequest::getEnable()const
@@ -154,7 +154,7 @@ bool DeleteStorageSetRequest::getEnable()const
 void DeleteStorageSetRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DeleteStorageSetRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DeleteStorageSetRequest::getRequestContent()const
 void DeleteStorageSetRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DeleteStorageSetRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteStorageSetRequest::getCallerBidEmail()const
 void DeleteStorageSetRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DeleteStorageSetRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteStorageSetRequest::getCallerUidEmail()const
 void DeleteStorageSetRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DeleteStorageSetRequest::getCallerUid()const
@@ -209,7 +209,7 @@ std::string DeleteStorageSetRequest::getApp_ip()const
 void DeleteStorageSetRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DeleteStorageSetRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DeleteStorageSetRequest::getResourceOwnerAccount()const
 void DeleteStorageSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteStorageSetRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteStorageSetRequest::getOwnerAccount()const
 void DeleteStorageSetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteStorageSetRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DeleteStorageSetRequest::getCallerBid()const
 void DeleteStorageSetRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DeleteStorageSetRequest::getOwnerId()const
@@ -264,7 +264,7 @@ bool DeleteStorageSetRequest::getProxy_trust_transport_info()const
 void DeleteStorageSetRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteStorageSetRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DeleteStorageSetRequest::getAk_mfa_present()const
 void DeleteStorageSetRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteStorageSetRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DeleteStorageSetRequest::getSecurity_transport()const
 void DeleteStorageSetRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteStorageSetRequest::getStorageSetId()const
@@ -297,7 +297,7 @@ std::string DeleteStorageSetRequest::getStorageSetId()const
 void DeleteStorageSetRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
+	setCoreParameter("StorageSetId", std::to_string(storageSetId));
 }
 
 std::string DeleteStorageSetRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string DeleteStorageSetRequest::getRequestId()const
 void DeleteStorageSetRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DeleteStorageSetRequest::getAkProxy()const
@@ -319,6 +319,6 @@ std::string DeleteStorageSetRequest::getAkProxy()const
 void DeleteStorageSetRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 

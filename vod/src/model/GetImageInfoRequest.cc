@@ -44,7 +44,7 @@ std::string GetImageInfoRequest::getImageId()const
 void GetImageInfoRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string GetImageInfoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetImageInfoRequest::getResourceOwnerAccount()const
 void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetImageInfoRequest::getOutputType()const
@@ -66,7 +66,7 @@ std::string GetImageInfoRequest::getOutputType()const
 void GetImageInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setCoreParameter("OutputType", std::to_string(outputType));
 }
 
 long GetImageInfoRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string GetImageInfoRequest::getAccessKeyId()const
 void GetImageInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

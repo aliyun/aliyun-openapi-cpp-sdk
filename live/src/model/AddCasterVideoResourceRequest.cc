@@ -33,7 +33,7 @@ std::string AddCasterVideoResourceRequest::getVodUrl()const
 void AddCasterVideoResourceRequest::setVodUrl(const std::string& vodUrl)
 {
 	vodUrl_ = vodUrl;
-	setCoreParameter("VodUrl", vodUrl);
+	setCoreParameter("VodUrl", std::to_string(vodUrl));
 }
 
 std::string AddCasterVideoResourceRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string AddCasterVideoResourceRequest::getCasterId()const
 void AddCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 int AddCasterVideoResourceRequest::getEndOffset()const
@@ -77,7 +77,7 @@ std::string AddCasterVideoResourceRequest::getMaterialId()const
 void AddCasterVideoResourceRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
+	setCoreParameter("MaterialId", std::to_string(materialId));
 }
 
 int AddCasterVideoResourceRequest::getBeginOffset()const
@@ -99,7 +99,7 @@ std::string AddCasterVideoResourceRequest::getLiveStreamUrl()const
 void AddCasterVideoResourceRequest::setLiveStreamUrl(const std::string& liveStreamUrl)
 {
 	liveStreamUrl_ = liveStreamUrl;
-	setCoreParameter("LiveStreamUrl", liveStreamUrl);
+	setCoreParameter("LiveStreamUrl", std::to_string(liveStreamUrl));
 }
 
 std::string AddCasterVideoResourceRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string AddCasterVideoResourceRequest::getRegionId()const
 void AddCasterVideoResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddCasterVideoResourceRequest::getLocationId()const
@@ -121,7 +121,7 @@ std::string AddCasterVideoResourceRequest::getLocationId()const
 void AddCasterVideoResourceRequest::setLocationId(const std::string& locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", locationId);
+	setCoreParameter("LocationId", std::to_string(locationId));
 }
 
 int AddCasterVideoResourceRequest::getPtsCallbackInterval()const
@@ -143,7 +143,7 @@ std::string AddCasterVideoResourceRequest::getResourceName()const
 void AddCasterVideoResourceRequest::setResourceName(const std::string& resourceName)
 {
 	resourceName_ = resourceName;
-	setCoreParameter("ResourceName", resourceName);
+	setCoreParameter("ResourceName", std::to_string(resourceName));
 }
 
 int AddCasterVideoResourceRequest::getRepeatNum()const

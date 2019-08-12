@@ -55,7 +55,7 @@ std::string ListNavSubTreeRequest::getRegionId()const
 void ListNavSubTreeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListNavSubTreeRequest::getName()const
@@ -66,7 +66,7 @@ std::string ListNavSubTreeRequest::getName()const
 void ListNavSubTreeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ListNavSubTreeRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string ListNavSubTreeRequest::getType()const
 void ListNavSubTreeRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string ListNavSubTreeRequest::getProjectId()const
@@ -99,7 +99,7 @@ std::string ListNavSubTreeRequest::getProjectId()const
 void ListNavSubTreeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string ListNavSubTreeRequest::getParentId()const
@@ -110,7 +110,7 @@ std::string ListNavSubTreeRequest::getParentId()const
 void ListNavSubTreeRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setCoreParameter("ParentId", std::to_string(parentId));
 }
 
 int ListNavSubTreeRequest::getPageNumber()const
@@ -132,6 +132,6 @@ std::string ListNavSubTreeRequest::getAccessKeyId()const
 void ListNavSubTreeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

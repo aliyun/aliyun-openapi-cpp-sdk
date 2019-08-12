@@ -44,7 +44,7 @@ std::string ListScalingActivityRequest::getRegionId()const
 void ListScalingActivityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListScalingActivityRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string ListScalingActivityRequest::getHostGroupId()const
 void ListScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 int ListScalingActivityRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListScalingActivityRequest::getClusterId()const
 void ListScalingActivityRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListScalingActivityRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string ListScalingActivityRequest::getAccessKeyId()const
 void ListScalingActivityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

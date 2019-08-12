@@ -44,7 +44,7 @@ std::string AllocateInstancePublicConnectionRequest::getConnectionStringPrefix()
 void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string AllocateInstancePublicConnectionRequest::getInstanceId()const
 void AllocateInstancePublicConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string AllocateInstancePublicConnectionRequest::getSecurityToken()const
 void AllocateInstancePublicConnectionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()co
 void AllocateInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string AllocateInstancePublicConnectionRequest::getRegionId()const
 void AllocateInstancePublicConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getPort()const
@@ -99,7 +99,7 @@ std::string AllocateInstancePublicConnectionRequest::getPort()const
 void AllocateInstancePublicConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string AllocateInstancePublicConnectionRequest::getOwnerAccount()const
 void AllocateInstancePublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long AllocateInstancePublicConnectionRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
 void AllocateInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

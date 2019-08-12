@@ -44,7 +44,7 @@ std::string DescribeCloudConnectNetworksRequest::getResourceOwnerAccount()const
 void DescribeCloudConnectNetworksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCloudConnectNetworksRequest::getRegionId()const
 void DescribeCloudConnectNetworksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCloudConnectNetworksRequest::getOwnerAccount()const
 void DescribeCloudConnectNetworksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getName()const
@@ -77,7 +77,7 @@ std::string DescribeCloudConnectNetworksRequest::getName()const
 void DescribeCloudConnectNetworksRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeCloudConnectNetworksRequest::getCcnId()const
 void DescribeCloudConnectNetworksRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeCloudConnectNetworksRequest::getPageSize()const
 void DescribeCloudConnectNetworksRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeCloudConnectNetworksRequest::Tag> DescribeCloudConnectNetworksRequest::getTag()const
@@ -138,6 +138,6 @@ std::string DescribeCloudConnectNetworksRequest::getPageNumber()const
 void DescribeCloudConnectNetworksRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

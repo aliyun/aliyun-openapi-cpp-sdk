@@ -33,7 +33,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setCoreParameter("ContactType", std::to_string(contactType));
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 long SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getRegistrantProfileId()const
@@ -78,7 +78,7 @@ bool SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getTransfe
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited);
+	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getLang()const
@@ -89,6 +89,6 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

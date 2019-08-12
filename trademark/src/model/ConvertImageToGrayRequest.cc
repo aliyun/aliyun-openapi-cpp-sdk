@@ -33,6 +33,6 @@ std::string ConvertImageToGrayRequest::getOssKey()const
 void ConvertImageToGrayRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setCoreParameter("OssKey", std::to_string(ossKey));
 }
 

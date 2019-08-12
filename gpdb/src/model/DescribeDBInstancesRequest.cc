@@ -33,7 +33,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceIds()const
 void DescribeDBInstancesRequest::setDBInstanceIds(const std::string& dBInstanceIds)
 {
 	dBInstanceIds_ = dBInstanceIds;
-	setCoreParameter("DBInstanceIds", dBInstanceIds);
+	setCoreParameter("DBInstanceIds", std::to_string(dBInstanceIds));
 }
 
 std::string DescribeDBInstancesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstancesRequest::getRegionId()const
 void DescribeDBInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeDBInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
 void DescribeDBInstancesRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", std::to_string(dBInstanceDescription));
 }
 
 std::vector<DescribeDBInstancesRequest::Tag> DescribeDBInstancesRequest::getTag()const
@@ -105,7 +105,7 @@ std::string DescribeDBInstancesRequest::getInstanceNetworkType()const
 void DescribeDBInstancesRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", std::to_string(instanceNetworkType));
 }
 
 int DescribeDBInstancesRequest::getPageNumber()const
@@ -127,6 +127,6 @@ std::string DescribeDBInstancesRequest::getAccessKeyId()const
 void DescribeDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

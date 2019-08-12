@@ -33,7 +33,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getAlertGroup()const
 void UpdateGtmInstanceGlobalConfigRequest::setAlertGroup(const std::string& alertGroup)
 {
 	alertGroup_ = alertGroup;
-	setCoreParameter("AlertGroup", alertGroup);
+	setCoreParameter("AlertGroup", std::to_string(alertGroup));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getInstanceId()const
 void UpdateGtmInstanceGlobalConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getInstanceName()const
 void UpdateGtmInstanceGlobalConfigRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getUserDomainName()const
@@ -66,7 +66,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getUserDomainName()const
 void UpdateGtmInstanceGlobalConfigRequest::setUserDomainName(const std::string& userDomainName)
 {
 	userDomainName_ = userDomainName;
-	setCoreParameter("UserDomainName", userDomainName);
+	setCoreParameter("UserDomainName", std::to_string(userDomainName));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getCnameMode()const
@@ -77,7 +77,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getCnameMode()const
 void UpdateGtmInstanceGlobalConfigRequest::setCnameMode(const std::string& cnameMode)
 {
 	cnameMode_ = cnameMode;
-	setCoreParameter("CnameMode", cnameMode);
+	setCoreParameter("CnameMode", std::to_string(cnameMode));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getUserClientIp()const
@@ -88,7 +88,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getUserClientIp()const
 void UpdateGtmInstanceGlobalConfigRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getLbaStrategy()const
@@ -99,7 +99,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getLbaStrategy()const
 void UpdateGtmInstanceGlobalConfigRequest::setLbaStrategy(const std::string& lbaStrategy)
 {
 	lbaStrategy_ = lbaStrategy;
-	setCoreParameter("LbaStrategy", lbaStrategy);
+	setCoreParameter("LbaStrategy", std::to_string(lbaStrategy));
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getLang()const
@@ -110,7 +110,7 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getLang()const
 void UpdateGtmInstanceGlobalConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateGtmInstanceGlobalConfigRequest::getTtl()const
@@ -132,6 +132,6 @@ std::string UpdateGtmInstanceGlobalConfigRequest::getCnameCustomDomainName()cons
 void UpdateGtmInstanceGlobalConfigRequest::setCnameCustomDomainName(const std::string& cnameCustomDomainName)
 {
 	cnameCustomDomainName_ = cnameCustomDomainName;
-	setCoreParameter("CnameCustomDomainName", cnameCustomDomainName);
+	setCoreParameter("CnameCustomDomainName", std::to_string(cnameCustomDomainName));
 }
 

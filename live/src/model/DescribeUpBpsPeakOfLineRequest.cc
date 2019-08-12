@@ -33,7 +33,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getRegionId()const
 void DescribeUpBpsPeakOfLineRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getLine()const
@@ -44,7 +44,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getLine()const
 void DescribeUpBpsPeakOfLineRequest::setLine(const std::string& line)
 {
 	line_ = line;
-	setCoreParameter("Line", line);
+	setCoreParameter("Line", std::to_string(line));
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getDomainName()const
 void DescribeUpBpsPeakOfLineRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getEndTime()const
 void DescribeUpBpsPeakOfLineRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
 void DescribeUpBpsPeakOfLineRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeUpBpsPeakOfLineRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeUpBpsPeakOfLineRequest::getDomainSwitch()const
 void DescribeUpBpsPeakOfLineRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", domainSwitch);
+	setCoreParameter("DomainSwitch", std::to_string(domainSwitch));
 }
 

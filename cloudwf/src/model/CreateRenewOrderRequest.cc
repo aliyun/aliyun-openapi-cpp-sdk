@@ -56,6 +56,6 @@ std::string CreateRenewOrderRequest::getAccessKeyId()const
 void CreateRenewOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

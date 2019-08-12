@@ -33,7 +33,7 @@ std::string ModifyWebLockMachineListRequest::getSourceIp()const
 void ModifyWebLockMachineListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyWebLockMachineListRequest::getLang()const
@@ -44,7 +44,7 @@ std::string ModifyWebLockMachineListRequest::getLang()const
 void ModifyWebLockMachineListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ModifyWebLockMachineListRequest::getUuids()const
@@ -55,6 +55,6 @@ std::string ModifyWebLockMachineListRequest::getUuids()const
 void ModifyWebLockMachineListRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

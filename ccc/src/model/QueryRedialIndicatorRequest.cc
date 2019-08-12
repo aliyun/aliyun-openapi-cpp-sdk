@@ -33,7 +33,7 @@ std::string QueryRedialIndicatorRequest::getInstanceId()const
 void QueryRedialIndicatorRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string QueryRedialIndicatorRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string QueryRedialIndicatorRequest::getContactId()const
 void QueryRedialIndicatorRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setCoreParameter("ContactId", std::to_string(contactId));
 }
 
 bool QueryRedialIndicatorRequest::getMockResponse()const
@@ -55,7 +55,7 @@ bool QueryRedialIndicatorRequest::getMockResponse()const
 void QueryRedialIndicatorRequest::setMockResponse(bool mockResponse)
 {
 	mockResponse_ = mockResponse;
-	setCoreParameter("MockResponse", mockResponse);
+	setCoreParameter("MockResponse", mockResponse ? "true" : "false");
 }
 
 std::string QueryRedialIndicatorRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryRedialIndicatorRequest::getAccessKeyId()const
 void QueryRedialIndicatorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

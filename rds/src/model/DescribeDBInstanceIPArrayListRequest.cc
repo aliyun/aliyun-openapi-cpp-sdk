@@ -44,7 +44,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getWhitelistNetworkType()const
 void DescribeDBInstanceIPArrayListRequest::setWhitelistNetworkType(const std::string& whitelistNetworkType)
 {
 	whitelistNetworkType_ = whitelistNetworkType;
-	setCoreParameter("WhitelistNetworkType", whitelistNetworkType);
+	setCoreParameter("WhitelistNetworkType", std::to_string(whitelistNetworkType));
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceIPArrayListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getOwnerAccount()const
 void DescribeDBInstanceIPArrayListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
 void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeDBInstanceIPArrayListRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
 void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

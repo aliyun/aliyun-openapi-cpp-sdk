@@ -44,6 +44,6 @@ std::string CreateMyGroupAlertBatchRequest::getGroupAlertJsonArray()const
 void CreateMyGroupAlertBatchRequest::setGroupAlertJsonArray(const std::string& groupAlertJsonArray)
 {
 	groupAlertJsonArray_ = groupAlertJsonArray;
-	setCoreParameter("GroupAlertJsonArray", groupAlertJsonArray);
+	setCoreParameter("GroupAlertJsonArray", std::to_string(groupAlertJsonArray));
 }
 

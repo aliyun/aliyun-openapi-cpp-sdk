@@ -55,7 +55,7 @@ std::string ListBackupsRequest::getOrderMode()const
 void ListBackupsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setCoreParameter("OrderMode", orderMode);
+	setCoreParameter("OrderMode", std::to_string(orderMode));
 }
 
 long ListBackupsRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool ListBackupsRequest::getProxy_original_security_transport()const
 void ListBackupsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ListBackupsRequest::getBackupPlanId()const
@@ -88,7 +88,7 @@ std::string ListBackupsRequest::getBackupPlanId()const
 void ListBackupsRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string ListBackupsRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string ListBackupsRequest::getProxy_original_source_ip()const
 void ListBackupsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ListBackupsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string ListBackupsRequest::getCallerType()const
 void ListBackupsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int ListBackupsRequest::getPageNumber()const
@@ -132,7 +132,7 @@ std::string ListBackupsRequest::getAccessKeyId()const
 void ListBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListBackupsRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string ListBackupsRequest::getSecurityToken()const
 void ListBackupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ListBackupsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string ListBackupsRequest::getRegionId()const
 void ListBackupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListBackupsRequest::getLimit()const
@@ -187,7 +187,7 @@ std::string ListBackupsRequest::getServiceName()const
 void ListBackupsRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 long ListBackupsRequest::getId()const
@@ -231,7 +231,7 @@ std::string ListBackupsRequest::getOrderField()const
 void ListBackupsRequest::setOrderField(const std::string& orderField)
 {
 	orderField_ = orderField;
-	setCoreParameter("OrderField", orderField);
+	setCoreParameter("OrderField", std::to_string(orderField));
 }
 
 std::string ListBackupsRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string ListBackupsRequest::getApp_ip()const
 void ListBackupsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::vector<std::string> ListBackupsRequest::getBackupId()const
@@ -265,7 +265,7 @@ std::string ListBackupsRequest::getCallerBid()const
 void ListBackupsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string ListBackupsRequest::getClusterId()const
@@ -276,7 +276,7 @@ std::string ListBackupsRequest::getClusterId()const
 void ListBackupsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListBackupsRequest::getMetadataType()const
@@ -287,7 +287,7 @@ std::string ListBackupsRequest::getMetadataType()const
 void ListBackupsRequest::setMetadataType(const std::string& metadataType)
 {
 	metadataType_ = metadataType;
-	setCoreParameter("MetadataType", metadataType);
+	setCoreParameter("MetadataType", std::to_string(metadataType));
 }
 
 bool ListBackupsRequest::getAk_mfa_present()const
@@ -298,7 +298,7 @@ bool ListBackupsRequest::getAk_mfa_present()const
 void ListBackupsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ListBackupsRequest::getProxy_trust_transport_info()const
@@ -309,7 +309,7 @@ bool ListBackupsRequest::getProxy_trust_transport_info()const
 void ListBackupsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ListBackupsRequest::getSecurity_transport()const
@@ -320,7 +320,7 @@ bool ListBackupsRequest::getSecurity_transport()const
 void ListBackupsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ListBackupsRequest::getRequestId()const
@@ -331,7 +331,7 @@ std::string ListBackupsRequest::getRequestId()const
 void ListBackupsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ListBackupsRequest::getBizId()const
@@ -342,7 +342,7 @@ std::string ListBackupsRequest::getBizId()const
 void ListBackupsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string ListBackupsRequest::getStatus()const
@@ -353,6 +353,6 @@ std::string ListBackupsRequest::getStatus()const
 void ListBackupsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

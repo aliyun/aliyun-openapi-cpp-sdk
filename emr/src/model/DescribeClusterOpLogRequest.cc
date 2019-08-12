@@ -44,7 +44,7 @@ std::string DescribeClusterOpLogRequest::getRegionId()const
 void DescribeClusterOpLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long DescribeClusterOpLogRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeClusterOpLogRequest::getId()const
 void DescribeClusterOpLogRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 long DescribeClusterOpLogRequest::getStartTime()const
@@ -88,6 +88,6 @@ std::string DescribeClusterOpLogRequest::getAccessKeyId()const
 void DescribeClusterOpLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

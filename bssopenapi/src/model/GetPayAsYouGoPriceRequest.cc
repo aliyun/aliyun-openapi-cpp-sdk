@@ -33,7 +33,7 @@ std::string GetPayAsYouGoPriceRequest::getProductCode()const
 void GetPayAsYouGoPriceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string GetPayAsYouGoPriceRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string GetPayAsYouGoPriceRequest::getSubscriptionType()const
 void GetPayAsYouGoPriceRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 std::vector<GetPayAsYouGoPriceRequest::ModuleList> GetPayAsYouGoPriceRequest::getModuleList()const
@@ -84,7 +84,7 @@ std::string GetPayAsYouGoPriceRequest::getRegion()const
 void GetPayAsYouGoPriceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string GetPayAsYouGoPriceRequest::getProductType()const
@@ -95,6 +95,6 @@ std::string GetPayAsYouGoPriceRequest::getProductType()const
 void GetPayAsYouGoPriceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

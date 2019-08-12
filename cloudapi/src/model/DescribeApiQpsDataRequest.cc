@@ -33,7 +33,7 @@ std::string DescribeApiQpsDataRequest::getSecurityToken()const
 void DescribeApiQpsDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiQpsDataRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiQpsDataRequest::getGroupId()const
 void DescribeApiQpsDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiQpsDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeApiQpsDataRequest::getEndTime()const
 void DescribeApiQpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeApiQpsDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeApiQpsDataRequest::getStartTime()const
 void DescribeApiQpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeApiQpsDataRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string DescribeApiQpsDataRequest::getApiId()const
 void DescribeApiQpsDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiQpsDataRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeApiQpsDataRequest::getAccessKeyId()const
 void DescribeApiQpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

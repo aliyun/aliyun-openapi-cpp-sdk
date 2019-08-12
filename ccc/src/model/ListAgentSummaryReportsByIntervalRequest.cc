@@ -33,7 +33,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getAgentIds()const
 void ListAgentSummaryReportsByIntervalRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setCoreParameter("AgentIds", std::to_string(agentIds));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
 void ListAgentSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
 void ListAgentSummaryReportsByIntervalRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 int ListAgentSummaryReportsByIntervalRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getEndTime()const
 void ListAgentSummaryReportsByIntervalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
@@ -88,7 +88,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
 void ListAgentSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getStartTime()const
 void ListAgentSummaryReportsByIntervalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListAgentSummaryReportsByIntervalRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string ListAgentSummaryReportsByIntervalRequest::getAccessKeyId()const
 void ListAgentSummaryReportsByIntervalRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

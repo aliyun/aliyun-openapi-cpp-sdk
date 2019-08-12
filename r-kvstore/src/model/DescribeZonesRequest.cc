@@ -44,7 +44,7 @@ std::string DescribeZonesRequest::getSecurityToken()const
 void DescribeZonesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeZonesRequest::getResourceOwnerAccount()const
 void DescribeZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeZonesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeZonesRequest::getRegionId()const
 void DescribeZonesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeZonesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeZonesRequest::getOwnerAccount()const
 void DescribeZonesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeZonesRequest::getAcceptLanguage()const
@@ -88,7 +88,7 @@ std::string DescribeZonesRequest::getAcceptLanguage()const
 void DescribeZonesRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setCoreParameter("AcceptLanguage", std::to_string(acceptLanguage));
 }
 
 long DescribeZonesRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeZonesRequest::getAccessKeyId()const
 void DescribeZonesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyInstanceVpcAttributeRequest::getSourceRegionId()const
 void ModifyInstanceVpcAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getVSwitchId()const
@@ -44,7 +44,7 @@ std::string ModifyInstanceVpcAttributeRequest::getVSwitchId()const
 void ModifyInstanceVpcAttributeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getPrivateIpAddress()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceVpcAttributeRequest::getPrivateIpAddress()const
 void ModifyInstanceVpcAttributeRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 long ModifyInstanceVpcAttributeRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceVpcAttributeRequest::getInstanceId()const
 void ModifyInstanceVpcAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceVpcAttributeRequest::getResourceOwnerAccount()const
 void ModifyInstanceVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceVpcAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceVpcAttributeRequest::getOwnerAccount()const
 void ModifyInstanceVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceVpcAttributeRequest::getOwnerId()const

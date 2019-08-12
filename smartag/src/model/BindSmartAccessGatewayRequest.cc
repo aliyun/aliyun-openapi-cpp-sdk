@@ -55,7 +55,7 @@ std::string BindSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void BindSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string BindSmartAccessGatewayRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string BindSmartAccessGatewayRequest::getRegionId()const
 void BindSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string BindSmartAccessGatewayRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string BindSmartAccessGatewayRequest::getOwnerAccount()const
 void BindSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string BindSmartAccessGatewayRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string BindSmartAccessGatewayRequest::getCcnId()const
 void BindSmartAccessGatewayRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string BindSmartAccessGatewayRequest::getSmartAGId()const
@@ -99,7 +99,7 @@ std::string BindSmartAccessGatewayRequest::getSmartAGId()const
 void BindSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long BindSmartAccessGatewayRequest::getOwnerId()const

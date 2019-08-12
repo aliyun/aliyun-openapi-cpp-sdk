@@ -33,6 +33,6 @@ std::string DeleteLoginProfileRequest::getUserName()const
 void DeleteLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

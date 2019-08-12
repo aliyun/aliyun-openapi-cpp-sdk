@@ -33,7 +33,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getRegistrantProfileId()const
@@ -77,6 +77,6 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

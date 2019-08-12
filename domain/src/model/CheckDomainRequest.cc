@@ -33,7 +33,7 @@ std::string CheckDomainRequest::getFeeCurrency()const
 void CheckDomainRequest::setFeeCurrency(const std::string& feeCurrency)
 {
 	feeCurrency_ = feeCurrency;
-	setCoreParameter("FeeCurrency", feeCurrency);
+	setCoreParameter("FeeCurrency", std::to_string(feeCurrency));
 }
 
 int CheckDomainRequest::getFeePeriod()const
@@ -55,7 +55,7 @@ std::string CheckDomainRequest::getDomainName()const
 void CheckDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string CheckDomainRequest::getFeeCommand()const
@@ -66,7 +66,7 @@ std::string CheckDomainRequest::getFeeCommand()const
 void CheckDomainRequest::setFeeCommand(const std::string& feeCommand)
 {
 	feeCommand_ = feeCommand;
-	setCoreParameter("FeeCommand", feeCommand);
+	setCoreParameter("FeeCommand", std::to_string(feeCommand));
 }
 
 std::string CheckDomainRequest::getLang()const
@@ -77,6 +77,6 @@ std::string CheckDomainRequest::getLang()const
 void CheckDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

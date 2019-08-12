@@ -33,7 +33,7 @@ std::string ListAvailableEcsTypesRequest::getSpotStrategy()const
 void ListAvailableEcsTypesRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", std::to_string(spotStrategy));
 }
 
 std::string ListAvailableEcsTypesRequest::getZoneId()const
@@ -44,7 +44,7 @@ std::string ListAvailableEcsTypesRequest::getZoneId()const
 void ListAvailableEcsTypesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 bool ListAvailableEcsTypesRequest::getShowSoldOut()const
@@ -55,7 +55,7 @@ bool ListAvailableEcsTypesRequest::getShowSoldOut()const
 void ListAvailableEcsTypesRequest::setShowSoldOut(bool showSoldOut)
 {
 	showSoldOut_ = showSoldOut;
-	setCoreParameter("ShowSoldOut", showSoldOut);
+	setCoreParameter("ShowSoldOut", showSoldOut ? "true" : "false");
 }
 
 std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
@@ -66,7 +66,7 @@ std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const
 void ListAvailableEcsTypesRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListAvailableEcsTypesRequest::getAccessKeyId()const
 void ListAvailableEcsTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

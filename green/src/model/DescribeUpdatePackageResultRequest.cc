@@ -33,7 +33,7 @@ std::string DescribeUpdatePackageResultRequest::getSourceIp()const
 void DescribeUpdatePackageResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeUpdatePackageResultRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeUpdatePackageResultRequest::getLang()const
 void DescribeUpdatePackageResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeUpdatePackageResultRequest::getTaskId()const
@@ -55,6 +55,6 @@ std::string DescribeUpdatePackageResultRequest::getTaskId()const
 void DescribeUpdatePackageResultRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

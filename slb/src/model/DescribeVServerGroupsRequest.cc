@@ -33,7 +33,7 @@ std::string DescribeVServerGroupsRequest::getAccess_key_id()const
 void DescribeVServerGroupsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 bool DescribeVServerGroupsRequest::getIncludeRule()const
@@ -44,7 +44,7 @@ bool DescribeVServerGroupsRequest::getIncludeRule()const
 void DescribeVServerGroupsRequest::setIncludeRule(bool includeRule)
 {
 	includeRule_ = includeRule;
-	setCoreParameter("IncludeRule", includeRule);
+	setCoreParameter("IncludeRule", includeRule ? "true" : "false");
 }
 
 long DescribeVServerGroupsRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
 void DescribeVServerGroupsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
 void DescribeVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVServerGroupsRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeVServerGroupsRequest::getRegionId()const
 void DescribeVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeVServerGroupsRequest::getIncludeListener()const
@@ -99,7 +99,7 @@ bool DescribeVServerGroupsRequest::getIncludeListener()const
 void DescribeVServerGroupsRequest::setIncludeListener(bool includeListener)
 {
 	includeListener_ = includeListener;
-	setCoreParameter("IncludeListener", includeListener);
+	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
 }
 
 std::string DescribeVServerGroupsRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string DescribeVServerGroupsRequest::getOwnerAccount()const
 void DescribeVServerGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeVServerGroupsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeVServerGroupsRequest::getTags()const
 void DescribeVServerGroupsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

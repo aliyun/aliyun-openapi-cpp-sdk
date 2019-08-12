@@ -44,7 +44,7 @@ std::string ListNotaryOrdersRequest::getSortByType()const
 void ListNotaryOrdersRequest::setSortByType(const std::string& sortByType)
 {
 	sortByType_ = sortByType;
-	setCoreParameter("SortByType", sortByType);
+	setCoreParameter("SortByType", std::to_string(sortByType));
 }
 
 long ListNotaryOrdersRequest::getStartOrderDate()const
@@ -77,7 +77,7 @@ std::string ListNotaryOrdersRequest::getBizId()const
 void ListNotaryOrdersRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 int ListNotaryOrdersRequest::getNotaryType()const
@@ -110,7 +110,7 @@ std::string ListNotaryOrdersRequest::getAliyunOrderId()const
 void ListNotaryOrdersRequest::setAliyunOrderId(const std::string& aliyunOrderId)
 {
 	aliyunOrderId_ = aliyunOrderId;
-	setCoreParameter("AliyunOrderId", aliyunOrderId);
+	setCoreParameter("AliyunOrderId", std::to_string(aliyunOrderId));
 }
 
 int ListNotaryOrdersRequest::getPageNum()const

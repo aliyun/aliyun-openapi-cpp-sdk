@@ -55,7 +55,7 @@ bool DescribePlayUserTotalRequest::getProxy_original_security_transport()const
 void DescribePlayUserTotalRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribePlayUserTotalRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribePlayUserTotalRequest::getStartTime()const
 void DescribePlayUserTotalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribePlayUserTotalRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribePlayUserTotalRequest::getProxy_original_source_ip()const
 void DescribePlayUserTotalRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribePlayUserTotalRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribePlayUserTotalRequest::getOwnerIdLoginEmail()const
 void DescribePlayUserTotalRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribePlayUserTotalRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribePlayUserTotalRequest::getCallerType()const
 void DescribePlayUserTotalRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribePlayUserTotalRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribePlayUserTotalRequest::getAccessKeyId()const
 void DescribePlayUserTotalRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribePlayUserTotalRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribePlayUserTotalRequest::getSecurityToken()const
 void DescribePlayUserTotalRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribePlayUserTotalRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribePlayUserTotalRequest::getRegionId()const
 void DescribePlayUserTotalRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribePlayUserTotalRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribePlayUserTotalRequest::getRequestContent()const
 void DescribePlayUserTotalRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribePlayUserTotalRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribePlayUserTotalRequest::getCallerBidEmail()const
 void DescribePlayUserTotalRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribePlayUserTotalRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribePlayUserTotalRequest::getCallerUidEmail()const
 void DescribePlayUserTotalRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribePlayUserTotalRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string DescribePlayUserTotalRequest::getApp_ip()const
 void DescribePlayUserTotalRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribePlayUserTotalRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribePlayUserTotalRequest::getPopProduct()const
 void DescribePlayUserTotalRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribePlayUserTotalRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribePlayUserTotalRequest::getEndTime()const
 void DescribePlayUserTotalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribePlayUserTotalRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribePlayUserTotalRequest::getCallerBid()const
 void DescribePlayUserTotalRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribePlayUserTotalRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string DescribePlayUserTotalRequest::getVersion()const
 void DescribePlayUserTotalRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribePlayUserTotalRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribePlayUserTotalRequest::getProxy_trust_transport_info()const
 void DescribePlayUserTotalRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribePlayUserTotalRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribePlayUserTotalRequest::getAk_mfa_present()const
 void DescribePlayUserTotalRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribePlayUserTotalRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribePlayUserTotalRequest::getSecurity_transport()const
 void DescribePlayUserTotalRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribePlayUserTotalRequest::getVideoType()const
@@ -286,7 +286,7 @@ std::string DescribePlayUserTotalRequest::getVideoType()const
 void DescribePlayUserTotalRequest::setVideoType(const std::string& videoType)
 {
 	videoType_ = videoType;
-	setCoreParameter("VideoType", videoType);
+	setCoreParameter("VideoType", std::to_string(videoType));
 }
 
 std::string DescribePlayUserTotalRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string DescribePlayUserTotalRequest::getRequestId()const
 void DescribePlayUserTotalRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribePlayUserTotalRequest::getInterval()const
@@ -308,6 +308,6 @@ std::string DescribePlayUserTotalRequest::getInterval()const
 void DescribePlayUserTotalRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 

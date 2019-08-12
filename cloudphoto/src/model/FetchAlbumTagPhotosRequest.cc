@@ -55,7 +55,7 @@ std::string FetchAlbumTagPhotosRequest::getLibraryId()const
 void FetchAlbumTagPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long FetchAlbumTagPhotosRequest::getAlbumId()const
@@ -77,7 +77,7 @@ std::string FetchAlbumTagPhotosRequest::getStoreName()const
 void FetchAlbumTagPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 int FetchAlbumTagPhotosRequest::getPage()const

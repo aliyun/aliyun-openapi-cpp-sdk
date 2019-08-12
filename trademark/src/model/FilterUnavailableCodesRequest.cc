@@ -33,6 +33,6 @@ std::string FilterUnavailableCodesRequest::getCodes()const
 void FilterUnavailableCodesRequest::setCodes(const std::string& codes)
 {
 	codes_ = codes;
-	setCoreParameter("Codes", codes);
+	setCoreParameter("Codes", std::to_string(codes));
 }
 

@@ -44,7 +44,7 @@ std::string ModifyAlertDingDingGroupRequest::getRegionId()const
 void ModifyAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyAlertDingDingGroupRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string ModifyAlertDingDingGroupRequest::getBizId()const
 void ModifyAlertDingDingGroupRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string ModifyAlertDingDingGroupRequest::getName()const
@@ -66,7 +66,7 @@ std::string ModifyAlertDingDingGroupRequest::getName()const
 void ModifyAlertDingDingGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyAlertDingDingGroupRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string ModifyAlertDingDingGroupRequest::getDescription()const
 void ModifyAlertDingDingGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyAlertDingDingGroupRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ModifyAlertDingDingGroupRequest::getAccessKeyId()const
 void ModifyAlertDingDingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyAlertDingDingGroupRequest::getWebHookUrl()const
@@ -99,6 +99,6 @@ std::string ModifyAlertDingDingGroupRequest::getWebHookUrl()const
 void ModifyAlertDingDingGroupRequest::setWebHookUrl(const std::string& webHookUrl)
 {
 	webHookUrl_ = webHookUrl;
-	setCoreParameter("WebHookUrl", webHookUrl);
+	setCoreParameter("WebHookUrl", std::to_string(webHookUrl));
 }
 

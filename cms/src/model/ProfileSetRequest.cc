@@ -33,7 +33,7 @@ bool ProfileSetRequest::getEnableInstallAgentNewECS()const
 void ProfileSetRequest::setEnableInstallAgentNewECS(bool enableInstallAgentNewECS)
 {
 	enableInstallAgentNewECS_ = enableInstallAgentNewECS;
-	setCoreParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS);
+	setCoreParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS ? "true" : "false");
 }
 
 std::string ProfileSetRequest::getEnableActiveAlert()const
@@ -44,7 +44,7 @@ std::string ProfileSetRequest::getEnableActiveAlert()const
 void ProfileSetRequest::setEnableActiveAlert(const std::string& enableActiveAlert)
 {
 	enableActiveAlert_ = enableActiveAlert;
-	setCoreParameter("EnableActiveAlert", enableActiveAlert);
+	setCoreParameter("EnableActiveAlert", std::to_string(enableActiveAlert));
 }
 
 bool ProfileSetRequest::getAutoInstall()const
@@ -55,7 +55,7 @@ bool ProfileSetRequest::getAutoInstall()const
 void ProfileSetRequest::setAutoInstall(bool autoInstall)
 {
 	autoInstall_ = autoInstall;
-	setCoreParameter("AutoInstall", autoInstall);
+	setCoreParameter("AutoInstall", autoInstall ? "true" : "false");
 }
 
 long ProfileSetRequest::getUserId()const

@@ -33,7 +33,7 @@ std::string WriteIntentionCommunicationLogRequest::getNote()const
 void WriteIntentionCommunicationLogRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setCoreParameter("Note", std::to_string(note));
 }
 
 bool WriteIntentionCommunicationLogRequest::getReject()const
@@ -44,7 +44,7 @@ bool WriteIntentionCommunicationLogRequest::getReject()const
 void WriteIntentionCommunicationLogRequest::setReject(bool reject)
 {
 	reject_ = reject;
-	setCoreParameter("Reject", reject);
+	setCoreParameter("Reject", reject ? "true" : "false");
 }
 
 std::string WriteIntentionCommunicationLogRequest::getBizId()const
@@ -55,6 +55,6 @@ std::string WriteIntentionCommunicationLogRequest::getBizId()const
 void WriteIntentionCommunicationLogRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 

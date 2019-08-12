@@ -44,7 +44,7 @@ std::string QueryPushListRequest::getEndTime()const
 void QueryPushListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long QueryPushListRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string QueryPushListRequest::getStartTime()const
 void QueryPushListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int QueryPushListRequest::getPage()const
@@ -88,7 +88,7 @@ std::string QueryPushListRequest::getPushType()const
 void QueryPushListRequest::setPushType(const std::string& pushType)
 {
 	pushType_ = pushType;
-	setCoreParameter("PushType", pushType);
+	setCoreParameter("PushType", std::to_string(pushType));
 }
 
 std::string QueryPushListRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryPushListRequest::getAccessKeyId()const
 void QueryPushListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string ListInstalledSoftwareRequest::getClusterId()const
 void ListInstalledSoftwareRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListInstalledSoftwareRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListInstalledSoftwareRequest::getAccessKeyId()const
 void ListInstalledSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string SaveApgroupConfigRequest::getCountry()const
 void SaveApgroupConfigRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setCoreParameter("Country", std::to_string(country));
 }
 
 int SaveApgroupConfigRequest::getLogLevel()const
@@ -55,7 +55,7 @@ std::string SaveApgroupConfigRequest::getName()const
 void SaveApgroupConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int SaveApgroupConfigRequest::getEchoInt()const
@@ -88,7 +88,7 @@ std::string SaveApgroupConfigRequest::getDescription()const
 void SaveApgroupConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long SaveApgroupConfigRequest::getId()const
@@ -110,7 +110,7 @@ std::string SaveApgroupConfigRequest::getDai()const
 void SaveApgroupConfigRequest::setDai(const std::string& dai)
 {
 	dai_ = dai;
-	setCoreParameter("Dai", dai);
+	setCoreParameter("Dai", std::to_string(dai));
 }
 
 std::string SaveApgroupConfigRequest::getLogIp()const
@@ -121,7 +121,7 @@ std::string SaveApgroupConfigRequest::getLogIp()const
 void SaveApgroupConfigRequest::setLogIp(const std::string& logIp)
 {
 	logIp_ = logIp;
-	setCoreParameter("LogIp", logIp);
+	setCoreParameter("LogIp", std::to_string(logIp));
 }
 
 std::string SaveApgroupConfigRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string SaveApgroupConfigRequest::getAccessKeyId()const
 void SaveApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

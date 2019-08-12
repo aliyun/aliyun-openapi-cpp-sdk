@@ -33,7 +33,7 @@ bool DescribeRegionListRequest::getSecurity_transport()const
 void DescribeRegionListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeRegionListRequest::getRequestId()const
@@ -44,7 +44,7 @@ std::string DescribeRegionListRequest::getRequestId()const
 void DescribeRegionListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long DescribeRegionListRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ std::string DescribeRegionListRequest::getCallerType()const
 void DescribeRegionListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool DescribeRegionListRequest::getAk_mfa_present()const
@@ -88,7 +88,7 @@ bool DescribeRegionListRequest::getAk_mfa_present()const
 void DescribeRegionListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long DescribeRegionListRequest::getCallerUid()const
@@ -110,6 +110,6 @@ std::string DescribeRegionListRequest::getAccessKeyId()const
 void DescribeRegionListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

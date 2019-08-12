@@ -55,7 +55,7 @@ bool StopInvocationRequest::getProxy_original_security_transport()const
 void StopInvocationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string StopInvocationRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string StopInvocationRequest::getProxy_original_source_ip()const
 void StopInvocationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string StopInvocationRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string StopInvocationRequest::getOwnerIdLoginEmail()const
 void StopInvocationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string StopInvocationRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string StopInvocationRequest::getCallerType()const
 void StopInvocationRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string StopInvocationRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string StopInvocationRequest::getAccessKeyId()const
 void StopInvocationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string StopInvocationRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string StopInvocationRequest::getSourceRegionId()const
 void StopInvocationRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string StopInvocationRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string StopInvocationRequest::getSecurityToken()const
 void StopInvocationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string StopInvocationRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string StopInvocationRequest::getRegionId()const
 void StopInvocationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool StopInvocationRequest::getEnable()const
@@ -143,7 +143,7 @@ bool StopInvocationRequest::getEnable()const
 void StopInvocationRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string StopInvocationRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string StopInvocationRequest::getRequestContent()const
 void StopInvocationRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string StopInvocationRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string StopInvocationRequest::getCallerBidEmail()const
 void StopInvocationRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string StopInvocationRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string StopInvocationRequest::getCallerUidEmail()const
 void StopInvocationRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long StopInvocationRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string StopInvocationRequest::getInvokeId()const
 void StopInvocationRequest::setInvokeId(const std::string& invokeId)
 {
 	invokeId_ = invokeId;
-	setCoreParameter("InvokeId", invokeId);
+	setCoreParameter("InvokeId", std::to_string(invokeId));
 }
 
 std::string StopInvocationRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string StopInvocationRequest::getApp_ip()const
 void StopInvocationRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string StopInvocationRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string StopInvocationRequest::getResourceOwnerAccount()const
 void StopInvocationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string StopInvocationRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string StopInvocationRequest::getOwnerAccount()const
 void StopInvocationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string StopInvocationRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string StopInvocationRequest::getCallerBid()const
 void StopInvocationRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long StopInvocationRequest::getOwnerId()const
@@ -264,7 +264,7 @@ bool StopInvocationRequest::getProxy_trust_transport_info()const
 void StopInvocationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool StopInvocationRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool StopInvocationRequest::getAk_mfa_present()const
 void StopInvocationRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool StopInvocationRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool StopInvocationRequest::getSecurity_transport()const
 void StopInvocationRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> StopInvocationRequest::getInstanceId()const
@@ -309,7 +309,7 @@ std::string StopInvocationRequest::getRequestId()const
 void StopInvocationRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string StopInvocationRequest::getAkProxy()const
@@ -320,6 +320,6 @@ std::string StopInvocationRequest::getAkProxy()const
 void StopInvocationRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 

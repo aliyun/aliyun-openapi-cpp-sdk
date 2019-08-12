@@ -44,7 +44,7 @@ std::string MetastoreCreateKafkaTopicRequest::getRegionId()const
 void MetastoreCreateKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreCreateKafkaTopicRequest::getDataSourceId()const
@@ -55,7 +55,7 @@ std::string MetastoreCreateKafkaTopicRequest::getDataSourceId()const
 void MetastoreCreateKafkaTopicRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string MetastoreCreateKafkaTopicRequest::getTopicName()const
@@ -66,7 +66,7 @@ std::string MetastoreCreateKafkaTopicRequest::getTopicName()const
 void MetastoreCreateKafkaTopicRequest::setTopicName(const std::string& topicName)
 {
 	topicName_ = topicName;
-	setCoreParameter("TopicName", topicName);
+	setCoreParameter("TopicName", std::to_string(topicName));
 }
 
 std::vector<MetastoreCreateKafkaTopicRequest::AdvancedConfig> MetastoreCreateKafkaTopicRequest::getAdvancedConfig()const
@@ -116,6 +116,6 @@ std::string MetastoreCreateKafkaTopicRequest::getAccessKeyId()const
 void MetastoreCreateKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

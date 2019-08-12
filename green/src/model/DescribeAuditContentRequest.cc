@@ -44,7 +44,7 @@ std::string DescribeAuditContentRequest::getKeywordId()const
 void DescribeAuditContentRequest::setKeywordId(const std::string& keywordId)
 {
 	keywordId_ = keywordId;
-	setCoreParameter("KeywordId", keywordId);
+	setCoreParameter("KeywordId", std::to_string(keywordId));
 }
 
 std::string DescribeAuditContentRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string DescribeAuditContentRequest::getImageId()const
 void DescribeAuditContentRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string DescribeAuditContentRequest::getSuggestion()const
@@ -66,7 +66,7 @@ std::string DescribeAuditContentRequest::getSuggestion()const
 void DescribeAuditContentRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setCoreParameter("Suggestion", std::to_string(suggestion));
 }
 
 int DescribeAuditContentRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeAuditContentRequest::getLabel()const
 void DescribeAuditContentRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setCoreParameter("Label", std::to_string(label));
 }
 
 std::string DescribeAuditContentRequest::getStartDate()const
@@ -99,7 +99,7 @@ std::string DescribeAuditContentRequest::getStartDate()const
 void DescribeAuditContentRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 std::string DescribeAuditContentRequest::getResourceType()const
@@ -110,7 +110,7 @@ std::string DescribeAuditContentRequest::getResourceType()const
 void DescribeAuditContentRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeAuditContentRequest::getScene()const
@@ -121,7 +121,7 @@ std::string DescribeAuditContentRequest::getScene()const
 void DescribeAuditContentRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 
 std::string DescribeAuditContentRequest::getBizType()const
@@ -132,7 +132,7 @@ std::string DescribeAuditContentRequest::getBizType()const
 void DescribeAuditContentRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setCoreParameter("BizType", std::to_string(bizType));
 }
 
 std::string DescribeAuditContentRequest::getEndDate()const
@@ -143,7 +143,7 @@ std::string DescribeAuditContentRequest::getEndDate()const
 void DescribeAuditContentRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string DescribeAuditContentRequest::getSourceIp()const
@@ -154,7 +154,7 @@ std::string DescribeAuditContentRequest::getSourceIp()const
 void DescribeAuditContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAuditContentRequest::getDataId()const
@@ -165,7 +165,7 @@ std::string DescribeAuditContentRequest::getDataId()const
 void DescribeAuditContentRequest::setDataId(const std::string& dataId)
 {
 	dataId_ = dataId;
-	setCoreParameter("DataId", dataId);
+	setCoreParameter("DataId", std::to_string(dataId));
 }
 
 std::string DescribeAuditContentRequest::getLibType()const
@@ -176,7 +176,7 @@ std::string DescribeAuditContentRequest::getLibType()const
 void DescribeAuditContentRequest::setLibType(const std::string& libType)
 {
 	libType_ = libType;
-	setCoreParameter("LibType", libType);
+	setCoreParameter("LibType", std::to_string(libType));
 }
 
 std::string DescribeAuditContentRequest::getAuditResult()const
@@ -187,7 +187,7 @@ std::string DescribeAuditContentRequest::getAuditResult()const
 void DescribeAuditContentRequest::setAuditResult(const std::string& auditResult)
 {
 	auditResult_ = auditResult;
-	setCoreParameter("AuditResult", auditResult);
+	setCoreParameter("AuditResult", std::to_string(auditResult));
 }
 
 int DescribeAuditContentRequest::getPageSize()const
@@ -209,7 +209,7 @@ std::string DescribeAuditContentRequest::getLang()const
 void DescribeAuditContentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAuditContentRequest::getTaskId()const
@@ -220,6 +220,6 @@ std::string DescribeAuditContentRequest::getTaskId()const
 void DescribeAuditContentRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

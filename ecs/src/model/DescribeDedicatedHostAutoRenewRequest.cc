@@ -33,7 +33,7 @@ std::string DescribeDedicatedHostAutoRenewRequest::getSourceRegionId()const
 void DescribeDedicatedHostAutoRenewRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeDedicatedHostAutoRenewRequest::getDedicatedHostIds()const
@@ -44,7 +44,7 @@ std::string DescribeDedicatedHostAutoRenewRequest::getDedicatedHostIds()const
 void DescribeDedicatedHostAutoRenewRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
 {
 	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
+	setCoreParameter("DedicatedHostIds", std::to_string(dedicatedHostIds));
 }
 
 long DescribeDedicatedHostAutoRenewRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeDedicatedHostAutoRenewRequest::getResourceOwnerAccount()cons
 void DescribeDedicatedHostAutoRenewRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDedicatedHostAutoRenewRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeDedicatedHostAutoRenewRequest::getRegionId()const
 void DescribeDedicatedHostAutoRenewRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDedicatedHostAutoRenewRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeDedicatedHostAutoRenewRequest::getOwnerAccount()const
 void DescribeDedicatedHostAutoRenewRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDedicatedHostAutoRenewRequest::getOwnerId()const

@@ -55,7 +55,7 @@ std::string QueryTradeProduceListRequest::getPreOrderId()const
 void QueryTradeProduceListRequest::setPreOrderId(const std::string& preOrderId)
 {
 	preOrderId_ = preOrderId;
-	setCoreParameter("PreOrderId", preOrderId);
+	setCoreParameter("PreOrderId", std::to_string(preOrderId));
 }
 
 std::string QueryTradeProduceListRequest::getBizId()const
@@ -66,7 +66,7 @@ std::string QueryTradeProduceListRequest::getBizId()const
 void QueryTradeProduceListRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string QueryTradeProduceListRequest::getSortOrder()const
@@ -77,7 +77,7 @@ std::string QueryTradeProduceListRequest::getSortOrder()const
 void QueryTradeProduceListRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
+	setCoreParameter("SortOrder", std::to_string(sortOrder));
 }
 
 int QueryTradeProduceListRequest::getPageNum()const
@@ -99,7 +99,7 @@ std::string QueryTradeProduceListRequest::getSortFiled()const
 void QueryTradeProduceListRequest::setSortFiled(const std::string& sortFiled)
 {
 	sortFiled_ = sortFiled;
-	setCoreParameter("SortFiled", sortFiled);
+	setCoreParameter("SortFiled", std::to_string(sortFiled));
 }
 
 std::string QueryTradeProduceListRequest::getRegisterNumber()const
@@ -110,6 +110,6 @@ std::string QueryTradeProduceListRequest::getRegisterNumber()const
 void QueryTradeProduceListRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
+	setCoreParameter("RegisterNumber", std::to_string(registerNumber));
 }
 

@@ -33,7 +33,7 @@ bool QueryCategoriesRequest::getShowChildrens()const
 void QueryCategoriesRequest::setShowChildrens(bool showChildrens)
 {
 	showChildrens_ = showChildrens;
-	setCoreParameter("ShowChildrens", showChildrens);
+	setCoreParameter("ShowChildrens", showChildrens ? "true" : "false");
 }
 
 long QueryCategoriesRequest::getParentCategoryId()const

@@ -33,7 +33,7 @@ std::string DescribeResourceUsageRequest::getDBInstanceId()const
 void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeResourceUsageRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeResourceUsageRequest::getAccessKeyId()const
 void DescribeResourceUsageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

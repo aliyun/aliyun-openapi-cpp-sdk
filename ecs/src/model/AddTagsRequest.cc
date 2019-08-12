@@ -33,7 +33,7 @@ std::string AddTagsRequest::getSourceRegionId()const
 void AddTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long AddTagsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AddTagsRequest::getResourceId()const
 void AddTagsRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 std::string AddTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddTagsRequest::getResourceOwnerAccount()const
 void AddTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddTagsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string AddTagsRequest::getRegionId()const
 void AddTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<AddTagsRequest::Tag> AddTagsRequest::getTag()const
@@ -116,6 +116,6 @@ std::string AddTagsRequest::getResourceType()const
 void AddTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

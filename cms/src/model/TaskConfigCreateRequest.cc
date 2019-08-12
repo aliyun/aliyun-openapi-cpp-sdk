@@ -45,7 +45,7 @@ std::string TaskConfigCreateRequest::getJsonData()const
 void TaskConfigCreateRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", std::to_string(jsonData));
 }
 
 std::string TaskConfigCreateRequest::getTaskType()const
@@ -56,7 +56,7 @@ std::string TaskConfigCreateRequest::getTaskType()const
 void TaskConfigCreateRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setCoreParameter("TaskType", std::to_string(taskType));
 }
 
 std::string TaskConfigCreateRequest::getTaskScope()const
@@ -67,7 +67,7 @@ std::string TaskConfigCreateRequest::getTaskScope()const
 void TaskConfigCreateRequest::setTaskScope(const std::string& taskScope)
 {
 	taskScope_ = taskScope;
-	setCoreParameter("TaskScope", taskScope);
+	setCoreParameter("TaskScope", std::to_string(taskScope));
 }
 
 std::string TaskConfigCreateRequest::getAlertConfig()const
@@ -78,7 +78,7 @@ std::string TaskConfigCreateRequest::getAlertConfig()const
 void TaskConfigCreateRequest::setAlertConfig(const std::string& alertConfig)
 {
 	alertConfig_ = alertConfig;
-	setCoreParameter("AlertConfig", alertConfig);
+	setCoreParameter("AlertConfig", std::to_string(alertConfig));
 }
 
 long TaskConfigCreateRequest::getGroupId()const
@@ -100,7 +100,7 @@ std::string TaskConfigCreateRequest::getTaskName()const
 void TaskConfigCreateRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setCoreParameter("TaskName", std::to_string(taskName));
 }
 
 std::string TaskConfigCreateRequest::getGroupName()const
@@ -111,6 +111,6 @@ std::string TaskConfigCreateRequest::getGroupName()const
 void TaskConfigCreateRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 

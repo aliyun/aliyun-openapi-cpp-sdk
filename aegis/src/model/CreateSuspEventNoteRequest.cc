@@ -44,7 +44,7 @@ std::string CreateSuspEventNoteRequest::getNote()const
 void CreateSuspEventNoteRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setCoreParameter("Note", std::to_string(note));
 }
 
 std::string CreateSuspEventNoteRequest::getSourceIp()const
@@ -55,6 +55,6 @@ std::string CreateSuspEventNoteRequest::getSourceIp()const
 void CreateSuspEventNoteRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

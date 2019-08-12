@@ -44,7 +44,7 @@ std::string DescribeBandwidthPackagesRequest::getBandwidthPackageId()const
 void DescribeBandwidthPackagesRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string DescribeBandwidthPackagesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeBandwidthPackagesRequest::getResourceOwnerAccount()const
 void DescribeBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBandwidthPackagesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeBandwidthPackagesRequest::getRegionId()const
 void DescribeBandwidthPackagesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBandwidthPackagesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBandwidthPackagesRequest::getOwnerAccount()const
 void DescribeBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeBandwidthPackagesRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeBandwidthPackagesRequest::getNatGatewayId()const
 void DescribeBandwidthPackagesRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setCoreParameter("NatGatewayId", std::to_string(natGatewayId));
 }
 
 long DescribeBandwidthPackagesRequest::getOwnerId()const

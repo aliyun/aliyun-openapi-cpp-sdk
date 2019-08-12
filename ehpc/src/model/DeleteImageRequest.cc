@@ -33,7 +33,7 @@ std::string DeleteImageRequest::getContainerType()const
 void DeleteImageRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", containerType);
+	setCoreParameter("ContainerType", std::to_string(containerType));
 }
 
 std::string DeleteImageRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteImageRequest::getClusterId()const
 void DeleteImageRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DeleteImageRequest::getRepository()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getRepository()const
 void DeleteImageRequest::setRepository(const std::string& repository)
 {
 	repository_ = repository;
-	setCoreParameter("Repository", repository);
+	setCoreParameter("Repository", std::to_string(repository));
 }
 
 std::string DeleteImageRequest::getImageTag()const
@@ -66,7 +66,7 @@ std::string DeleteImageRequest::getImageTag()const
 void DeleteImageRequest::setImageTag(const std::string& imageTag)
 {
 	imageTag_ = imageTag;
-	setCoreParameter("ImageTag", imageTag);
+	setCoreParameter("ImageTag", std::to_string(imageTag));
 }
 
 std::string DeleteImageRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteImageRequest::getAccessKeyId()const
 void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

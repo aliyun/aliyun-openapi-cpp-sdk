@@ -33,6 +33,6 @@ std::string DescribeSuspTrendStatisticsRequest::getSourceIp()const
 void DescribeSuspTrendStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

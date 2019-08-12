@@ -33,7 +33,7 @@ std::string CreateAppRequest::getAppName()const
 void CreateAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string CreateAppRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string CreateAppRequest::getSecurityToken()const
 void CreateAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateAppRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string CreateAppRequest::getDescription()const
 void CreateAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::vector<CreateAppRequest::Tag> CreateAppRequest::getTag()const
@@ -83,6 +83,6 @@ std::string CreateAppRequest::getAccessKeyId()const
 void CreateAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

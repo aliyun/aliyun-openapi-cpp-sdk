@@ -33,7 +33,7 @@ std::string QueryMetricLastRequest::getCursor()const
 void QueryMetricLastRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setCoreParameter("Cursor", std::to_string(cursor));
 }
 
 long QueryMetricLastRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string QueryMetricLastRequest::getPeriod()const
 void QueryMetricLastRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string QueryMetricLastRequest::getLength()const
@@ -66,7 +66,7 @@ std::string QueryMetricLastRequest::getLength()const
 void QueryMetricLastRequest::setLength(const std::string& length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string QueryMetricLastRequest::getProject()const
@@ -77,7 +77,7 @@ std::string QueryMetricLastRequest::getProject()const
 void QueryMetricLastRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string QueryMetricLastRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string QueryMetricLastRequest::getEndTime()const
 void QueryMetricLastRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryMetricLastRequest::getExpress()const
@@ -99,7 +99,7 @@ std::string QueryMetricLastRequest::getExpress()const
 void QueryMetricLastRequest::setExpress(const std::string& express)
 {
 	express_ = express;
-	setCoreParameter("Express", express);
+	setCoreParameter("Express", std::to_string(express));
 }
 
 std::string QueryMetricLastRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string QueryMetricLastRequest::getStartTime()const
 void QueryMetricLastRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryMetricLastRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string QueryMetricLastRequest::getAccessKeyId()const
 void QueryMetricLastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string QueryMetricLastRequest::getMetric()const
@@ -132,7 +132,7 @@ std::string QueryMetricLastRequest::getMetric()const
 void QueryMetricLastRequest::setMetric(const std::string& metric)
 {
 	metric_ = metric;
-	setCoreParameter("Metric", metric);
+	setCoreParameter("Metric", std::to_string(metric));
 }
 
 std::string QueryMetricLastRequest::getPage()const
@@ -143,7 +143,7 @@ std::string QueryMetricLastRequest::getPage()const
 void QueryMetricLastRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string QueryMetricLastRequest::getDimensions()const
@@ -154,6 +154,6 @@ std::string QueryMetricLastRequest::getDimensions()const
 void QueryMetricLastRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", std::to_string(dimensions));
 }
 

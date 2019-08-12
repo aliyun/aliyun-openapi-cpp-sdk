@@ -44,7 +44,7 @@ std::string ConnectRouterInterfaceRequest::getResourceOwnerAccount()const
 void ConnectRouterInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ConnectRouterInterfaceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ConnectRouterInterfaceRequest::getRegionId()const
 void ConnectRouterInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long ConnectRouterInterfaceRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string ConnectRouterInterfaceRequest::getRouterInterfaceId()const
 void ConnectRouterInterfaceRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setCoreParameter("RouterInterfaceId", std::to_string(routerInterfaceId));
 }
 

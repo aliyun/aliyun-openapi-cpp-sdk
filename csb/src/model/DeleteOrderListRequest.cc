@@ -33,7 +33,7 @@ std::string DeleteOrderListRequest::getData()const
 void DeleteOrderListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string DeleteOrderListRequest::getRegionId()const
@@ -44,6 +44,6 @@ std::string DeleteOrderListRequest::getRegionId()const
 void DeleteOrderListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

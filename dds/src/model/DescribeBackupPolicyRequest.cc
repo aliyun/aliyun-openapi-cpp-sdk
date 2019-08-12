@@ -44,7 +44,7 @@ std::string DescribeBackupPolicyRequest::getSecurityToken()const
 void DescribeBackupPolicyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 void DescribeBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBackupPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeBackupPolicyRequest::getRegionId()const
 void DescribeBackupPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBackupPolicyRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBackupPolicyRequest::getOwnerAccount()const
 void DescribeBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeBackupPolicyRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeBackupPolicyRequest::getDBInstanceId()const
 void DescribeBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeBackupPolicyRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeBackupPolicyRequest::getAccessKeyId()const
 void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

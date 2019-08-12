@@ -33,7 +33,7 @@ std::string QueryPushStatByAppRequest::getGranularity()const
 void QueryPushStatByAppRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setCoreParameter("Granularity", std::to_string(granularity));
 }
 
 std::string QueryPushStatByAppRequest::getEndTime()const
@@ -44,7 +44,7 @@ std::string QueryPushStatByAppRequest::getEndTime()const
 void QueryPushStatByAppRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long QueryPushStatByAppRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string QueryPushStatByAppRequest::getStartTime()const
 void QueryPushStatByAppRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryPushStatByAppRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string QueryPushStatByAppRequest::getAccessKeyId()const
 void QueryPushStatByAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

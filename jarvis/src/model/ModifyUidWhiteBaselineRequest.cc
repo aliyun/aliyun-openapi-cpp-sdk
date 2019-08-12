@@ -44,7 +44,7 @@ std::string ModifyUidWhiteBaselineRequest::getSourceIp()const
 void ModifyUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyUidWhiteBaselineRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string ModifyUidWhiteBaselineRequest::getRemark()const
 void ModifyUidWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 int ModifyUidWhiteBaselineRequest::getId()const
@@ -77,7 +77,7 @@ std::string ModifyUidWhiteBaselineRequest::getLang()const
 void ModifyUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long ModifyUidWhiteBaselineRequest::getSrcUid()const
@@ -99,6 +99,6 @@ std::string ModifyUidWhiteBaselineRequest::getSourceCode()const
 void ModifyUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

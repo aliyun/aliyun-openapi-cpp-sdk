@@ -33,7 +33,7 @@ std::string DescribeLifecycleHooksRequest::getLifecycleHookName()const
 void DescribeLifecycleHooksRequest::setLifecycleHookName(const std::string& lifecycleHookName)
 {
 	lifecycleHookName_ = lifecycleHookName;
-	setCoreParameter("LifecycleHookName", lifecycleHookName);
+	setCoreParameter("LifecycleHookName", std::to_string(lifecycleHookName));
 }
 
 std::string DescribeLifecycleHooksRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeLifecycleHooksRequest::getResourceOwnerAccount()const
 void DescribeLifecycleHooksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeLifecycleHooksRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeLifecycleHooksRequest::getScalingGroupId()const
 void DescribeLifecycleHooksRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::vector<std::string> DescribeLifecycleHooksRequest::getLifecycleHookId()const
@@ -78,7 +78,7 @@ std::string DescribeLifecycleHooksRequest::getOwnerAccount()const
 void DescribeLifecycleHooksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeLifecycleHooksRequest::getPageSize()const
@@ -122,6 +122,6 @@ std::string DescribeLifecycleHooksRequest::getAccessKeyId()const
 void DescribeLifecycleHooksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

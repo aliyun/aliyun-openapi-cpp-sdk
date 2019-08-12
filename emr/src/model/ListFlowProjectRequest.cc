@@ -33,7 +33,7 @@ std::string ListFlowProjectRequest::getRegionId()const
 void ListFlowProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListFlowProjectRequest::getName()const
@@ -44,7 +44,7 @@ std::string ListFlowProjectRequest::getName()const
 void ListFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ListFlowProjectRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListFlowProjectRequest::getProjectId()const
 void ListFlowProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 int ListFlowProjectRequest::getPageNumber()const

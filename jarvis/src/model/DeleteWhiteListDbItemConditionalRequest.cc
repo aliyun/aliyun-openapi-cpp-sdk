@@ -33,7 +33,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSrcIP()const
 void DeleteWhiteListDbItemConditionalRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSourceIp()const
 void DeleteWhiteListDbItemConditionalRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getQueryProduct()const
@@ -55,7 +55,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getQueryProduct()const
 void DeleteWhiteListDbItemConditionalRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setCoreParameter("QueryProduct", std::to_string(queryProduct));
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getDstIP()const
@@ -66,7 +66,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getDstIP()const
 void DeleteWhiteListDbItemConditionalRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setCoreParameter("DstIP", std::to_string(dstIP));
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getLang()const
 void DeleteWhiteListDbItemConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
@@ -88,6 +88,6 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
 void DeleteWhiteListDbItemConditionalRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

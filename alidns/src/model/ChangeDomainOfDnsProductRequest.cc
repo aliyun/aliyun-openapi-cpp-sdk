@@ -33,7 +33,7 @@ std::string ChangeDomainOfDnsProductRequest::getInstanceId()const
 void ChangeDomainOfDnsProductRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ChangeDomainOfDnsProductRequest::getNewDomain()const
@@ -44,7 +44,7 @@ std::string ChangeDomainOfDnsProductRequest::getNewDomain()const
 void ChangeDomainOfDnsProductRequest::setNewDomain(const std::string& newDomain)
 {
 	newDomain_ = newDomain;
-	setCoreParameter("NewDomain", newDomain);
+	setCoreParameter("NewDomain", std::to_string(newDomain));
 }
 
 std::string ChangeDomainOfDnsProductRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string ChangeDomainOfDnsProductRequest::getUserClientIp()const
 void ChangeDomainOfDnsProductRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 bool ChangeDomainOfDnsProductRequest::getForce()const
@@ -66,7 +66,7 @@ bool ChangeDomainOfDnsProductRequest::getForce()const
 void ChangeDomainOfDnsProductRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string ChangeDomainOfDnsProductRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ChangeDomainOfDnsProductRequest::getLang()const
 void ChangeDomainOfDnsProductRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ChangeDomainOfDnsProductRequest::getAccessKeyId()const
 void ChangeDomainOfDnsProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

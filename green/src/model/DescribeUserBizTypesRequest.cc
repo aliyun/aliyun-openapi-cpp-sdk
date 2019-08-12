@@ -33,7 +33,7 @@ bool DescribeUserBizTypesRequest::getCustomized()const
 void DescribeUserBizTypesRequest::setCustomized(bool customized)
 {
 	customized_ = customized;
-	setCoreParameter("Customized", customized);
+	setCoreParameter("Customized", customized ? "true" : "false");
 }
 
 std::string DescribeUserBizTypesRequest::getSourceIp()const
@@ -44,6 +44,6 @@ std::string DescribeUserBizTypesRequest::getSourceIp()const
 void DescribeUserBizTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

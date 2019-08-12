@@ -33,7 +33,7 @@ std::string RestartDBInstanceRequest::getClientToken()const
 void RestartDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RestartDBInstanceRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string RestartDBInstanceRequest::getDBInstanceId()const
 void RestartDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string RestartDBInstanceRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string RestartDBInstanceRequest::getAccessKeyId()const
 void RestartDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

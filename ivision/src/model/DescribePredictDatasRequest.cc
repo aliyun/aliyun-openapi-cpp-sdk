@@ -44,7 +44,7 @@ std::string DescribePredictDatasRequest::getNextPageToken()const
 void DescribePredictDatasRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
 }
 
 long DescribePredictDatasRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool DescribePredictDatasRequest::getProxy_original_security_transport()const
 void DescribePredictDatasRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribePredictDatasRequest::getDataIds()const
@@ -77,7 +77,7 @@ std::string DescribePredictDatasRequest::getDataIds()const
 void DescribePredictDatasRequest::setDataIds(const std::string& dataIds)
 {
 	dataIds_ = dataIds;
-	setCoreParameter("DataIds", dataIds);
+	setCoreParameter("DataIds", std::to_string(dataIds));
 }
 
 std::string DescribePredictDatasRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribePredictDatasRequest::getProxy_original_source_ip()const
 void DescribePredictDatasRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribePredictDatasRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribePredictDatasRequest::getOwnerIdLoginEmail()const
 void DescribePredictDatasRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribePredictDatasRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribePredictDatasRequest::getCallerType()const
 void DescribePredictDatasRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribePredictDatasRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribePredictDatasRequest::getAccessKeyId()const
 void DescribePredictDatasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribePredictDatasRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribePredictDatasRequest::getSecurityToken()const
 void DescribePredictDatasRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribePredictDatasRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribePredictDatasRequest::getRegionId()const
 void DescribePredictDatasRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribePredictDatasRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribePredictDatasRequest::getRequestContent()const
 void DescribePredictDatasRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 long DescribePredictDatasRequest::getPageSize()const
@@ -176,7 +176,7 @@ std::string DescribePredictDatasRequest::getCallerBidEmail()const
 void DescribePredictDatasRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribePredictDatasRequest::getProbabilityThreshold()const
@@ -187,7 +187,7 @@ std::string DescribePredictDatasRequest::getProbabilityThreshold()const
 void DescribePredictDatasRequest::setProbabilityThreshold(const std::string& probabilityThreshold)
 {
 	probabilityThreshold_ = probabilityThreshold;
-	setCoreParameter("ProbabilityThreshold", probabilityThreshold);
+	setCoreParameter("ProbabilityThreshold", std::to_string(probabilityThreshold));
 }
 
 std::string DescribePredictDatasRequest::getOverlapThreshold()const
@@ -198,7 +198,7 @@ std::string DescribePredictDatasRequest::getOverlapThreshold()const
 void DescribePredictDatasRequest::setOverlapThreshold(const std::string& overlapThreshold)
 {
 	overlapThreshold_ = overlapThreshold;
-	setCoreParameter("OverlapThreshold", overlapThreshold);
+	setCoreParameter("OverlapThreshold", std::to_string(overlapThreshold));
 }
 
 std::string DescribePredictDatasRequest::getProjectId()const
@@ -209,7 +209,7 @@ std::string DescribePredictDatasRequest::getProjectId()const
 void DescribePredictDatasRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribePredictDatasRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribePredictDatasRequest::getCallerUidEmail()const
 void DescribePredictDatasRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribePredictDatasRequest::getCallerUid()const
@@ -242,7 +242,7 @@ std::string DescribePredictDatasRequest::getShowLog()const
 void DescribePredictDatasRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string DescribePredictDatasRequest::getApp_ip()const
@@ -253,7 +253,7 @@ std::string DescribePredictDatasRequest::getApp_ip()const
 void DescribePredictDatasRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribePredictDatasRequest::getPopProduct()const
@@ -264,7 +264,7 @@ std::string DescribePredictDatasRequest::getPopProduct()const
 void DescribePredictDatasRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribePredictDatasRequest::getModelId()const
@@ -275,7 +275,7 @@ std::string DescribePredictDatasRequest::getModelId()const
 void DescribePredictDatasRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setCoreParameter("ModelId", std::to_string(modelId));
 }
 
 std::string DescribePredictDatasRequest::getTagId()const
@@ -286,7 +286,7 @@ std::string DescribePredictDatasRequest::getTagId()const
 void DescribePredictDatasRequest::setTagId(const std::string& tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", tagId);
+	setCoreParameter("TagId", std::to_string(tagId));
 }
 
 long DescribePredictDatasRequest::getCurrentPage()const
@@ -308,7 +308,7 @@ std::string DescribePredictDatasRequest::getCallerBid()const
 void DescribePredictDatasRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribePredictDatasRequest::getOwnerId()const
@@ -330,7 +330,7 @@ std::string DescribePredictDatasRequest::getVersion()const
 void DescribePredictDatasRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribePredictDatasRequest::getProxy_trust_transport_info()const
@@ -341,7 +341,7 @@ bool DescribePredictDatasRequest::getProxy_trust_transport_info()const
 void DescribePredictDatasRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribePredictDatasRequest::getAk_mfa_present()const
@@ -352,7 +352,7 @@ bool DescribePredictDatasRequest::getAk_mfa_present()const
 void DescribePredictDatasRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribePredictDatasRequest::getSecurity_transport()const
@@ -363,7 +363,7 @@ bool DescribePredictDatasRequest::getSecurity_transport()const
 void DescribePredictDatasRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribePredictDatasRequest::getRequestId()const
@@ -374,7 +374,7 @@ std::string DescribePredictDatasRequest::getRequestId()const
 void DescribePredictDatasRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribePredictDatasRequest::getIterationId()const
@@ -385,6 +385,6 @@ std::string DescribePredictDatasRequest::getIterationId()const
 void DescribePredictDatasRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setCoreParameter("IterationId", iterationId);
+	setCoreParameter("IterationId", std::to_string(iterationId));
 }
 

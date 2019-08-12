@@ -33,7 +33,7 @@ std::string ModifyFlowProjectRequest::getRegionId()const
 void ModifyFlowProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyFlowProjectRequest::getName()const
@@ -44,7 +44,7 @@ std::string ModifyFlowProjectRequest::getName()const
 void ModifyFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyFlowProjectRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string ModifyFlowProjectRequest::getDescription()const
 void ModifyFlowProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyFlowProjectRequest::getProjectId()const
@@ -66,6 +66,6 @@ std::string ModifyFlowProjectRequest::getProjectId()const
 void ModifyFlowProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

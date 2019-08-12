@@ -44,7 +44,7 @@ std::string CloneDataSourceRequest::getRegionId()const
 void CloneDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CloneDataSourceRequest::getName()const
@@ -55,7 +55,7 @@ std::string CloneDataSourceRequest::getName()const
 void CloneDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CloneDataSourceRequest::getId()const
@@ -66,7 +66,7 @@ std::string CloneDataSourceRequest::getId()const
 void CloneDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string CloneDataSourceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CloneDataSourceRequest::getAccessKeyId()const
 void CloneDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

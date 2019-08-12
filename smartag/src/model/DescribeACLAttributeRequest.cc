@@ -33,7 +33,7 @@ std::string DescribeACLAttributeRequest::getAclId()const
 void DescribeACLAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long DescribeACLAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeACLAttributeRequest::getResourceOwnerAccount()const
 void DescribeACLAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeACLAttributeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeACLAttributeRequest::getRegionId()const
 void DescribeACLAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeACLAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeACLAttributeRequest::getOwnerAccount()const
 void DescribeACLAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeACLAttributeRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string DescribeACLAttributeRequest::getDirection()const
 void DescribeACLAttributeRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 
 std::string DescribeACLAttributeRequest::getOrder()const
@@ -132,6 +132,6 @@ std::string DescribeACLAttributeRequest::getOrder()const
 void DescribeACLAttributeRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

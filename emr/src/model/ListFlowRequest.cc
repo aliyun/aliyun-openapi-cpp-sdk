@@ -33,7 +33,7 @@ std::string ListFlowRequest::getJobId()const
 void ListFlowRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string ListFlowRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListFlowRequest::getRegionId()const
 void ListFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool ListFlowRequest::getPeriodic()const
@@ -55,7 +55,7 @@ bool ListFlowRequest::getPeriodic()const
 void ListFlowRequest::setPeriodic(bool periodic)
 {
 	periodic_ = periodic;
-	setCoreParameter("Periodic", periodic);
+	setCoreParameter("Periodic", periodic ? "true" : "false");
 }
 
 std::string ListFlowRequest::getName()const
@@ -66,7 +66,7 @@ std::string ListFlowRequest::getName()const
 void ListFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ListFlowRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string ListFlowRequest::getId()const
 void ListFlowRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ListFlowRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ListFlowRequest::getClusterId()const
 void ListFlowRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListFlowRequest::getProjectId()const
@@ -110,7 +110,7 @@ std::string ListFlowRequest::getProjectId()const
 void ListFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 int ListFlowRequest::getPageNumber()const
@@ -132,6 +132,6 @@ std::string ListFlowRequest::getStatus()const
 void ListFlowRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

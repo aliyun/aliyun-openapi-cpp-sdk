@@ -44,7 +44,7 @@ std::string RemoveCommonBandwidthPackageIpRequest::getBandwidthPackageId()const
 void RemoveCommonBandwidthPackageIpRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string RemoveCommonBandwidthPackageIpRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RemoveCommonBandwidthPackageIpRequest::getResourceOwnerAccount()cons
 void RemoveCommonBandwidthPackageIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveCommonBandwidthPackageIpRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string RemoveCommonBandwidthPackageIpRequest::getRegionId()const
 void RemoveCommonBandwidthPackageIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveCommonBandwidthPackageIpRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RemoveCommonBandwidthPackageIpRequest::getOwnerAccount()const
 void RemoveCommonBandwidthPackageIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RemoveCommonBandwidthPackageIpRequest::getIpInstanceId()const
@@ -88,7 +88,7 @@ std::string RemoveCommonBandwidthPackageIpRequest::getIpInstanceId()const
 void RemoveCommonBandwidthPackageIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
+	setCoreParameter("IpInstanceId", std::to_string(ipInstanceId));
 }
 
 long RemoveCommonBandwidthPackageIpRequest::getOwnerId()const

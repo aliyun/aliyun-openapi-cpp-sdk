@@ -44,7 +44,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction2()const
 void DescribeScheduledTasksRequest::setScheduledAction2(const std::string& scheduledAction2)
 {
 	scheduledAction2_ = scheduledAction2;
-	setCoreParameter("ScheduledAction2", scheduledAction2);
+	setCoreParameter("ScheduledAction2", std::to_string(scheduledAction2));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction1()const
@@ -55,7 +55,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction1()const
 void DescribeScheduledTasksRequest::setScheduledAction1(const std::string& scheduledAction1)
 {
 	scheduledAction1_ = scheduledAction1;
-	setCoreParameter("ScheduledAction1", scheduledAction1);
+	setCoreParameter("ScheduledAction1", std::to_string(scheduledAction1));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction6()const
@@ -66,7 +66,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction6()const
 void DescribeScheduledTasksRequest::setScheduledAction6(const std::string& scheduledAction6)
 {
 	scheduledAction6_ = scheduledAction6;
-	setCoreParameter("ScheduledAction6", scheduledAction6);
+	setCoreParameter("ScheduledAction6", std::to_string(scheduledAction6));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction5()const
@@ -77,7 +77,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction5()const
 void DescribeScheduledTasksRequest::setScheduledAction5(const std::string& scheduledAction5)
 {
 	scheduledAction5_ = scheduledAction5;
-	setCoreParameter("ScheduledAction5", scheduledAction5);
+	setCoreParameter("ScheduledAction5", std::to_string(scheduledAction5));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction4()const
@@ -88,7 +88,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction4()const
 void DescribeScheduledTasksRequest::setScheduledAction4(const std::string& scheduledAction4)
 {
 	scheduledAction4_ = scheduledAction4;
-	setCoreParameter("ScheduledAction4", scheduledAction4);
+	setCoreParameter("ScheduledAction4", std::to_string(scheduledAction4));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction3()const
@@ -99,7 +99,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction3()const
 void DescribeScheduledTasksRequest::setScheduledAction3(const std::string& scheduledAction3)
 {
 	scheduledAction3_ = scheduledAction3;
-	setCoreParameter("ScheduledAction3", scheduledAction3);
+	setCoreParameter("ScheduledAction3", std::to_string(scheduledAction3));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction9()const
@@ -110,7 +110,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction9()const
 void DescribeScheduledTasksRequest::setScheduledAction9(const std::string& scheduledAction9)
 {
 	scheduledAction9_ = scheduledAction9;
-	setCoreParameter("ScheduledAction9", scheduledAction9);
+	setCoreParameter("ScheduledAction9", std::to_string(scheduledAction9));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction8()const
@@ -121,7 +121,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction8()const
 void DescribeScheduledTasksRequest::setScheduledAction8(const std::string& scheduledAction8)
 {
 	scheduledAction8_ = scheduledAction8;
-	setCoreParameter("ScheduledAction8", scheduledAction8);
+	setCoreParameter("ScheduledAction8", std::to_string(scheduledAction8));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction7()const
@@ -132,7 +132,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction7()const
 void DescribeScheduledTasksRequest::setScheduledAction7(const std::string& scheduledAction7)
 {
 	scheduledAction7_ = scheduledAction7;
-	setCoreParameter("ScheduledAction7", scheduledAction7);
+	setCoreParameter("ScheduledAction7", std::to_string(scheduledAction7));
 }
 
 long DescribeScheduledTasksRequest::getOwnerId()const
@@ -154,7 +154,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName20()const
 void DescribeScheduledTasksRequest::setScheduledTaskName20(const std::string& scheduledTaskName20)
 {
 	scheduledTaskName20_ = scheduledTaskName20;
-	setCoreParameter("ScheduledTaskName20", scheduledTaskName20);
+	setCoreParameter("ScheduledTaskName20", std::to_string(scheduledTaskName20));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName19()const
@@ -165,7 +165,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName19()const
 void DescribeScheduledTasksRequest::setScheduledTaskName19(const std::string& scheduledTaskName19)
 {
 	scheduledTaskName19_ = scheduledTaskName19;
-	setCoreParameter("ScheduledTaskName19", scheduledTaskName19);
+	setCoreParameter("ScheduledTaskName19", std::to_string(scheduledTaskName19));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName18()const
@@ -176,7 +176,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName18()const
 void DescribeScheduledTasksRequest::setScheduledTaskName18(const std::string& scheduledTaskName18)
 {
 	scheduledTaskName18_ = scheduledTaskName18;
-	setCoreParameter("ScheduledTaskName18", scheduledTaskName18);
+	setCoreParameter("ScheduledTaskName18", std::to_string(scheduledTaskName18));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId20()const
@@ -187,7 +187,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId20()const
 void DescribeScheduledTasksRequest::setScheduledTaskId20(const std::string& scheduledTaskId20)
 {
 	scheduledTaskId20_ = scheduledTaskId20;
-	setCoreParameter("ScheduledTaskId20", scheduledTaskId20);
+	setCoreParameter("ScheduledTaskId20", std::to_string(scheduledTaskId20));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName13()const
@@ -198,7 +198,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName13()const
 void DescribeScheduledTasksRequest::setScheduledTaskName13(const std::string& scheduledTaskName13)
 {
 	scheduledTaskName13_ = scheduledTaskName13;
-	setCoreParameter("ScheduledTaskName13", scheduledTaskName13);
+	setCoreParameter("ScheduledTaskName13", std::to_string(scheduledTaskName13));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName12()const
@@ -209,7 +209,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName12()const
 void DescribeScheduledTasksRequest::setScheduledTaskName12(const std::string& scheduledTaskName12)
 {
 	scheduledTaskName12_ = scheduledTaskName12;
-	setCoreParameter("ScheduledTaskName12", scheduledTaskName12);
+	setCoreParameter("ScheduledTaskName12", std::to_string(scheduledTaskName12));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName11()const
@@ -220,7 +220,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName11()const
 void DescribeScheduledTasksRequest::setScheduledTaskName11(const std::string& scheduledTaskName11)
 {
 	scheduledTaskName11_ = scheduledTaskName11;
-	setCoreParameter("ScheduledTaskName11", scheduledTaskName11);
+	setCoreParameter("ScheduledTaskName11", std::to_string(scheduledTaskName11));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName10()const
@@ -231,7 +231,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName10()const
 void DescribeScheduledTasksRequest::setScheduledTaskName10(const std::string& scheduledTaskName10)
 {
 	scheduledTaskName10_ = scheduledTaskName10;
-	setCoreParameter("ScheduledTaskName10", scheduledTaskName10);
+	setCoreParameter("ScheduledTaskName10", std::to_string(scheduledTaskName10));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName17()const
@@ -242,7 +242,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName17()const
 void DescribeScheduledTasksRequest::setScheduledTaskName17(const std::string& scheduledTaskName17)
 {
 	scheduledTaskName17_ = scheduledTaskName17;
-	setCoreParameter("ScheduledTaskName17", scheduledTaskName17);
+	setCoreParameter("ScheduledTaskName17", std::to_string(scheduledTaskName17));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName16()const
@@ -253,7 +253,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName16()const
 void DescribeScheduledTasksRequest::setScheduledTaskName16(const std::string& scheduledTaskName16)
 {
 	scheduledTaskName16_ = scheduledTaskName16;
-	setCoreParameter("ScheduledTaskName16", scheduledTaskName16);
+	setCoreParameter("ScheduledTaskName16", std::to_string(scheduledTaskName16));
 }
 
 int DescribeScheduledTasksRequest::getPageNumber()const
@@ -275,7 +275,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName15()const
 void DescribeScheduledTasksRequest::setScheduledTaskName15(const std::string& scheduledTaskName15)
 {
 	scheduledTaskName15_ = scheduledTaskName15;
-	setCoreParameter("ScheduledTaskName15", scheduledTaskName15);
+	setCoreParameter("ScheduledTaskName15", std::to_string(scheduledTaskName15));
 }
 
 std::string DescribeScheduledTasksRequest::getAccessKeyId()const
@@ -286,7 +286,7 @@ std::string DescribeScheduledTasksRequest::getAccessKeyId()const
 void DescribeScheduledTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName14()const
@@ -297,7 +297,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName14()const
 void DescribeScheduledTasksRequest::setScheduledTaskName14(const std::string& scheduledTaskName14)
 {
 	scheduledTaskName14_ = scheduledTaskName14;
-	setCoreParameter("ScheduledTaskName14", scheduledTaskName14);
+	setCoreParameter("ScheduledTaskName14", std::to_string(scheduledTaskName14));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId2()const
@@ -308,7 +308,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId2()const
 void DescribeScheduledTasksRequest::setScheduledTaskId2(const std::string& scheduledTaskId2)
 {
 	scheduledTaskId2_ = scheduledTaskId2;
-	setCoreParameter("ScheduledTaskId2", scheduledTaskId2);
+	setCoreParameter("ScheduledTaskId2", std::to_string(scheduledTaskId2));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId1()const
@@ -319,7 +319,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId1()const
 void DescribeScheduledTasksRequest::setScheduledTaskId1(const std::string& scheduledTaskId1)
 {
 	scheduledTaskId1_ = scheduledTaskId1;
-	setCoreParameter("ScheduledTaskId1", scheduledTaskId1);
+	setCoreParameter("ScheduledTaskId1", std::to_string(scheduledTaskId1));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId4()const
@@ -330,7 +330,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId4()const
 void DescribeScheduledTasksRequest::setScheduledTaskId4(const std::string& scheduledTaskId4)
 {
 	scheduledTaskId4_ = scheduledTaskId4;
-	setCoreParameter("ScheduledTaskId4", scheduledTaskId4);
+	setCoreParameter("ScheduledTaskId4", std::to_string(scheduledTaskId4));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId18()const
@@ -341,7 +341,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId18()const
 void DescribeScheduledTasksRequest::setScheduledTaskId18(const std::string& scheduledTaskId18)
 {
 	scheduledTaskId18_ = scheduledTaskId18;
-	setCoreParameter("ScheduledTaskId18", scheduledTaskId18);
+	setCoreParameter("ScheduledTaskId18", std::to_string(scheduledTaskId18));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId3()const
@@ -352,7 +352,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId3()const
 void DescribeScheduledTasksRequest::setScheduledTaskId3(const std::string& scheduledTaskId3)
 {
 	scheduledTaskId3_ = scheduledTaskId3;
-	setCoreParameter("ScheduledTaskId3", scheduledTaskId3);
+	setCoreParameter("ScheduledTaskId3", std::to_string(scheduledTaskId3));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId19()const
@@ -363,7 +363,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId19()const
 void DescribeScheduledTasksRequest::setScheduledTaskId19(const std::string& scheduledTaskId19)
 {
 	scheduledTaskId19_ = scheduledTaskId19;
-	setCoreParameter("ScheduledTaskId19", scheduledTaskId19);
+	setCoreParameter("ScheduledTaskId19", std::to_string(scheduledTaskId19));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId6()const
@@ -374,7 +374,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId6()const
 void DescribeScheduledTasksRequest::setScheduledTaskId6(const std::string& scheduledTaskId6)
 {
 	scheduledTaskId6_ = scheduledTaskId6;
-	setCoreParameter("ScheduledTaskId6", scheduledTaskId6);
+	setCoreParameter("ScheduledTaskId6", std::to_string(scheduledTaskId6));
 }
 
 std::string DescribeScheduledTasksRequest::getRegionId()const
@@ -385,7 +385,7 @@ std::string DescribeScheduledTasksRequest::getRegionId()const
 void DescribeScheduledTasksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId5()const
@@ -396,7 +396,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId5()const
 void DescribeScheduledTasksRequest::setScheduledTaskId5(const std::string& scheduledTaskId5)
 {
 	scheduledTaskId5_ = scheduledTaskId5;
-	setCoreParameter("ScheduledTaskId5", scheduledTaskId5);
+	setCoreParameter("ScheduledTaskId5", std::to_string(scheduledTaskId5));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId8()const
@@ -407,7 +407,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId8()const
 void DescribeScheduledTasksRequest::setScheduledTaskId8(const std::string& scheduledTaskId8)
 {
 	scheduledTaskId8_ = scheduledTaskId8;
-	setCoreParameter("ScheduledTaskId8", scheduledTaskId8);
+	setCoreParameter("ScheduledTaskId8", std::to_string(scheduledTaskId8));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName9()const
@@ -418,7 +418,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName9()const
 void DescribeScheduledTasksRequest::setScheduledTaskName9(const std::string& scheduledTaskName9)
 {
 	scheduledTaskName9_ = scheduledTaskName9;
-	setCoreParameter("ScheduledTaskName9", scheduledTaskName9);
+	setCoreParameter("ScheduledTaskName9", std::to_string(scheduledTaskName9));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction20()const
@@ -429,7 +429,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction20()const
 void DescribeScheduledTasksRequest::setScheduledAction20(const std::string& scheduledAction20)
 {
 	scheduledAction20_ = scheduledAction20;
-	setCoreParameter("ScheduledAction20", scheduledAction20);
+	setCoreParameter("ScheduledAction20", std::to_string(scheduledAction20));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId7()const
@@ -440,7 +440,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId7()const
 void DescribeScheduledTasksRequest::setScheduledTaskId7(const std::string& scheduledTaskId7)
 {
 	scheduledTaskId7_ = scheduledTaskId7;
-	setCoreParameter("ScheduledTaskId7", scheduledTaskId7);
+	setCoreParameter("ScheduledTaskId7", std::to_string(scheduledTaskId7));
 }
 
 int DescribeScheduledTasksRequest::getPageSize()const
@@ -462,7 +462,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId12()const
 void DescribeScheduledTasksRequest::setScheduledTaskId12(const std::string& scheduledTaskId12)
 {
 	scheduledTaskId12_ = scheduledTaskId12;
-	setCoreParameter("ScheduledTaskId12", scheduledTaskId12);
+	setCoreParameter("ScheduledTaskId12", std::to_string(scheduledTaskId12));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName7()const
@@ -473,7 +473,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName7()const
 void DescribeScheduledTasksRequest::setScheduledTaskName7(const std::string& scheduledTaskName7)
 {
 	scheduledTaskName7_ = scheduledTaskName7;
-	setCoreParameter("ScheduledTaskName7", scheduledTaskName7);
+	setCoreParameter("ScheduledTaskName7", std::to_string(scheduledTaskName7));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId9()const
@@ -484,7 +484,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId9()const
 void DescribeScheduledTasksRequest::setScheduledTaskId9(const std::string& scheduledTaskId9)
 {
 	scheduledTaskId9_ = scheduledTaskId9;
-	setCoreParameter("ScheduledTaskId9", scheduledTaskId9);
+	setCoreParameter("ScheduledTaskId9", std::to_string(scheduledTaskId9));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId13()const
@@ -495,7 +495,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId13()const
 void DescribeScheduledTasksRequest::setScheduledTaskId13(const std::string& scheduledTaskId13)
 {
 	scheduledTaskId13_ = scheduledTaskId13;
-	setCoreParameter("ScheduledTaskId13", scheduledTaskId13);
+	setCoreParameter("ScheduledTaskId13", std::to_string(scheduledTaskId13));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName8()const
@@ -506,7 +506,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName8()const
 void DescribeScheduledTasksRequest::setScheduledTaskName8(const std::string& scheduledTaskName8)
 {
 	scheduledTaskName8_ = scheduledTaskName8;
-	setCoreParameter("ScheduledTaskName8", scheduledTaskName8);
+	setCoreParameter("ScheduledTaskName8", std::to_string(scheduledTaskName8));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId10()const
@@ -517,7 +517,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId10()const
 void DescribeScheduledTasksRequest::setScheduledTaskId10(const std::string& scheduledTaskId10)
 {
 	scheduledTaskId10_ = scheduledTaskId10;
-	setCoreParameter("ScheduledTaskId10", scheduledTaskId10);
+	setCoreParameter("ScheduledTaskId10", std::to_string(scheduledTaskId10));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName5()const
@@ -528,7 +528,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName5()const
 void DescribeScheduledTasksRequest::setScheduledTaskName5(const std::string& scheduledTaskName5)
 {
 	scheduledTaskName5_ = scheduledTaskName5;
-	setCoreParameter("ScheduledTaskName5", scheduledTaskName5);
+	setCoreParameter("ScheduledTaskName5", std::to_string(scheduledTaskName5));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId11()const
@@ -539,7 +539,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId11()const
 void DescribeScheduledTasksRequest::setScheduledTaskId11(const std::string& scheduledTaskId11)
 {
 	scheduledTaskId11_ = scheduledTaskId11;
-	setCoreParameter("ScheduledTaskId11", scheduledTaskId11);
+	setCoreParameter("ScheduledTaskId11", std::to_string(scheduledTaskId11));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName6()const
@@ -550,7 +550,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName6()const
 void DescribeScheduledTasksRequest::setScheduledTaskName6(const std::string& scheduledTaskName6)
 {
 	scheduledTaskName6_ = scheduledTaskName6;
-	setCoreParameter("ScheduledTaskName6", scheduledTaskName6);
+	setCoreParameter("ScheduledTaskName6", std::to_string(scheduledTaskName6));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId16()const
@@ -561,7 +561,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId16()const
 void DescribeScheduledTasksRequest::setScheduledTaskId16(const std::string& scheduledTaskId16)
 {
 	scheduledTaskId16_ = scheduledTaskId16;
-	setCoreParameter("ScheduledTaskId16", scheduledTaskId16);
+	setCoreParameter("ScheduledTaskId16", std::to_string(scheduledTaskId16));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName3()const
@@ -572,7 +572,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName3()const
 void DescribeScheduledTasksRequest::setScheduledTaskName3(const std::string& scheduledTaskName3)
 {
 	scheduledTaskName3_ = scheduledTaskName3;
-	setCoreParameter("ScheduledTaskName3", scheduledTaskName3);
+	setCoreParameter("ScheduledTaskName3", std::to_string(scheduledTaskName3));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId17()const
@@ -583,7 +583,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId17()const
 void DescribeScheduledTasksRequest::setScheduledTaskId17(const std::string& scheduledTaskId17)
 {
 	scheduledTaskId17_ = scheduledTaskId17;
-	setCoreParameter("ScheduledTaskId17", scheduledTaskId17);
+	setCoreParameter("ScheduledTaskId17", std::to_string(scheduledTaskId17));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName4()const
@@ -594,7 +594,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName4()const
 void DescribeScheduledTasksRequest::setScheduledTaskName4(const std::string& scheduledTaskName4)
 {
 	scheduledTaskName4_ = scheduledTaskName4;
-	setCoreParameter("ScheduledTaskName4", scheduledTaskName4);
+	setCoreParameter("ScheduledTaskName4", std::to_string(scheduledTaskName4));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId14()const
@@ -605,7 +605,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId14()const
 void DescribeScheduledTasksRequest::setScheduledTaskId14(const std::string& scheduledTaskId14)
 {
 	scheduledTaskId14_ = scheduledTaskId14;
-	setCoreParameter("ScheduledTaskId14", scheduledTaskId14);
+	setCoreParameter("ScheduledTaskId14", std::to_string(scheduledTaskId14));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName1()const
@@ -616,7 +616,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName1()const
 void DescribeScheduledTasksRequest::setScheduledTaskName1(const std::string& scheduledTaskName1)
 {
 	scheduledTaskName1_ = scheduledTaskName1;
-	setCoreParameter("ScheduledTaskName1", scheduledTaskName1);
+	setCoreParameter("ScheduledTaskName1", std::to_string(scheduledTaskName1));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskId15()const
@@ -627,7 +627,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskId15()const
 void DescribeScheduledTasksRequest::setScheduledTaskId15(const std::string& scheduledTaskId15)
 {
 	scheduledTaskId15_ = scheduledTaskId15;
-	setCoreParameter("ScheduledTaskId15", scheduledTaskId15);
+	setCoreParameter("ScheduledTaskId15", std::to_string(scheduledTaskId15));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledTaskName2()const
@@ -638,7 +638,7 @@ std::string DescribeScheduledTasksRequest::getScheduledTaskName2()const
 void DescribeScheduledTasksRequest::setScheduledTaskName2(const std::string& scheduledTaskName2)
 {
 	scheduledTaskName2_ = scheduledTaskName2;
-	setCoreParameter("ScheduledTaskName2", scheduledTaskName2);
+	setCoreParameter("ScheduledTaskName2", std::to_string(scheduledTaskName2));
 }
 
 std::string DescribeScheduledTasksRequest::getResourceOwnerAccount()const
@@ -649,7 +649,7 @@ std::string DescribeScheduledTasksRequest::getResourceOwnerAccount()const
 void DescribeScheduledTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeScheduledTasksRequest::getOwnerAccount()const
@@ -660,7 +660,7 @@ std::string DescribeScheduledTasksRequest::getOwnerAccount()const
 void DescribeScheduledTasksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction18()const
@@ -671,7 +671,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction18()const
 void DescribeScheduledTasksRequest::setScheduledAction18(const std::string& scheduledAction18)
 {
 	scheduledAction18_ = scheduledAction18;
-	setCoreParameter("ScheduledAction18", scheduledAction18);
+	setCoreParameter("ScheduledAction18", std::to_string(scheduledAction18));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction19()const
@@ -682,7 +682,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction19()const
 void DescribeScheduledTasksRequest::setScheduledAction19(const std::string& scheduledAction19)
 {
 	scheduledAction19_ = scheduledAction19;
-	setCoreParameter("ScheduledAction19", scheduledAction19);
+	setCoreParameter("ScheduledAction19", std::to_string(scheduledAction19));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction16()const
@@ -693,7 +693,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction16()const
 void DescribeScheduledTasksRequest::setScheduledAction16(const std::string& scheduledAction16)
 {
 	scheduledAction16_ = scheduledAction16;
-	setCoreParameter("ScheduledAction16", scheduledAction16);
+	setCoreParameter("ScheduledAction16", std::to_string(scheduledAction16));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction17()const
@@ -704,7 +704,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction17()const
 void DescribeScheduledTasksRequest::setScheduledAction17(const std::string& scheduledAction17)
 {
 	scheduledAction17_ = scheduledAction17;
-	setCoreParameter("ScheduledAction17", scheduledAction17);
+	setCoreParameter("ScheduledAction17", std::to_string(scheduledAction17));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction14()const
@@ -715,7 +715,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction14()const
 void DescribeScheduledTasksRequest::setScheduledAction14(const std::string& scheduledAction14)
 {
 	scheduledAction14_ = scheduledAction14;
-	setCoreParameter("ScheduledAction14", scheduledAction14);
+	setCoreParameter("ScheduledAction14", std::to_string(scheduledAction14));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction15()const
@@ -726,7 +726,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction15()const
 void DescribeScheduledTasksRequest::setScheduledAction15(const std::string& scheduledAction15)
 {
 	scheduledAction15_ = scheduledAction15;
-	setCoreParameter("ScheduledAction15", scheduledAction15);
+	setCoreParameter("ScheduledAction15", std::to_string(scheduledAction15));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction12()const
@@ -737,7 +737,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction12()const
 void DescribeScheduledTasksRequest::setScheduledAction12(const std::string& scheduledAction12)
 {
 	scheduledAction12_ = scheduledAction12;
-	setCoreParameter("ScheduledAction12", scheduledAction12);
+	setCoreParameter("ScheduledAction12", std::to_string(scheduledAction12));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction13()const
@@ -748,7 +748,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction13()const
 void DescribeScheduledTasksRequest::setScheduledAction13(const std::string& scheduledAction13)
 {
 	scheduledAction13_ = scheduledAction13;
-	setCoreParameter("ScheduledAction13", scheduledAction13);
+	setCoreParameter("ScheduledAction13", std::to_string(scheduledAction13));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction10()const
@@ -759,7 +759,7 @@ std::string DescribeScheduledTasksRequest::getScheduledAction10()const
 void DescribeScheduledTasksRequest::setScheduledAction10(const std::string& scheduledAction10)
 {
 	scheduledAction10_ = scheduledAction10;
-	setCoreParameter("ScheduledAction10", scheduledAction10);
+	setCoreParameter("ScheduledAction10", std::to_string(scheduledAction10));
 }
 
 std::string DescribeScheduledTasksRequest::getScheduledAction11()const
@@ -770,6 +770,6 @@ std::string DescribeScheduledTasksRequest::getScheduledAction11()const
 void DescribeScheduledTasksRequest::setScheduledAction11(const std::string& scheduledAction11)
 {
 	scheduledAction11_ = scheduledAction11;
-	setCoreParameter("ScheduledAction11", scheduledAction11);
+	setCoreParameter("ScheduledAction11", std::to_string(scheduledAction11));
 }
 

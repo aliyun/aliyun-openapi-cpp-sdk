@@ -33,7 +33,7 @@ std::string CancelDomainVerificationRequest::getActionType()const
 void CancelDomainVerificationRequest::setActionType(const std::string& actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", actionType);
+	setCoreParameter("ActionType", std::to_string(actionType));
 }
 
 std::string CancelDomainVerificationRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string CancelDomainVerificationRequest::getInstanceId()const
 void CancelDomainVerificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CancelDomainVerificationRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string CancelDomainVerificationRequest::getUserClientIp()const
 void CancelDomainVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string CancelDomainVerificationRequest::getLang()const
@@ -66,7 +66,7 @@ std::string CancelDomainVerificationRequest::getLang()const
 void CancelDomainVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CancelDomainVerificationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CancelDomainVerificationRequest::getAccessKeyId()const
 void CancelDomainVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

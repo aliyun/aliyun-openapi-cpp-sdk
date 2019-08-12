@@ -33,7 +33,7 @@ std::string DeleteProjectRequest::getRegionId()const
 void DeleteProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteProjectRequest::getProject()const
@@ -44,7 +44,7 @@ std::string DeleteProjectRequest::getProject()const
 void DeleteProjectRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string DeleteProjectRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteProjectRequest::getAccessKeyId()const
 void DeleteProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

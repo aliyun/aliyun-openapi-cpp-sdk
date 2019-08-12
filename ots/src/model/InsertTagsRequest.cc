@@ -33,7 +33,7 @@ std::string InsertTagsRequest::getAccess_key_id()const
 void InsertTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long InsertTagsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string InsertTagsRequest::getInstanceName()const
 void InsertTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::vector<InsertTagsRequest::TagInfo> InsertTagsRequest::getTagInfo()const

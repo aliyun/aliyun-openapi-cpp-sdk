@@ -44,7 +44,7 @@ std::string DescribeScreenCityMonitorDataRequest::getDateType()const
 void DescribeScreenCityMonitorDataRequest::setDateType(const std::string& dateType)
 {
 	dateType_ = dateType;
-	setCoreParameter("DateType", dateType);
+	setCoreParameter("DateType", std::to_string(dateType));
 }
 
 std::string DescribeScreenCityMonitorDataRequest::getSourceIp()const
@@ -55,6 +55,6 @@ std::string DescribeScreenCityMonitorDataRequest::getSourceIp()const
 void DescribeScreenCityMonitorDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

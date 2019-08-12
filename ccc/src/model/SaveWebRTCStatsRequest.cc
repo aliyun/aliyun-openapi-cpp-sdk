@@ -33,7 +33,7 @@ std::string SaveWebRTCStatsRequest::getCallId()const
 void SaveWebRTCStatsRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 std::string SaveWebRTCStatsRequest::getUid()const
@@ -44,7 +44,7 @@ std::string SaveWebRTCStatsRequest::getUid()const
 void SaveWebRTCStatsRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setCoreParameter("Uid", std::to_string(uid));
 }
 
 long SaveWebRTCStatsRequest::getRecordTime()const
@@ -66,7 +66,7 @@ std::string SaveWebRTCStatsRequest::getInstanceId()const
 void SaveWebRTCStatsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SaveWebRTCStatsRequest::getStats()const
@@ -77,7 +77,7 @@ std::string SaveWebRTCStatsRequest::getStats()const
 void SaveWebRTCStatsRequest::setStats(const std::string& stats)
 {
 	stats_ = stats;
-	setCoreParameter("Stats", stats);
+	setCoreParameter("Stats", std::to_string(stats));
 }
 
 long SaveWebRTCStatsRequest::getCallStartTime()const
@@ -99,7 +99,7 @@ std::string SaveWebRTCStatsRequest::getTenantId()const
 void SaveWebRTCStatsRequest::setTenantId(const std::string& tenantId)
 {
 	tenantId_ = tenantId;
-	setCoreParameter("TenantId", tenantId);
+	setCoreParameter("TenantId", std::to_string(tenantId));
 }
 
 std::string SaveWebRTCStatsRequest::getCalleeNumber()const
@@ -110,7 +110,7 @@ std::string SaveWebRTCStatsRequest::getCalleeNumber()const
 void SaveWebRTCStatsRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string SaveWebRTCStatsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SaveWebRTCStatsRequest::getAccessKeyId()const
 void SaveWebRTCStatsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SaveWebRTCStatsRequest::getCallerNumber()const
@@ -132,6 +132,6 @@ std::string SaveWebRTCStatsRequest::getCallerNumber()const
 void SaveWebRTCStatsRequest::setCallerNumber(const std::string& callerNumber)
 {
 	callerNumber_ = callerNumber;
-	setCoreParameter("CallerNumber", callerNumber);
+	setCoreParameter("CallerNumber", std::to_string(callerNumber));
 }
 

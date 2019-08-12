@@ -33,7 +33,7 @@ std::string CreateAccountRequest::getAccountPassword()const
 void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", std::to_string(accountPassword));
 }
 
 std::string CreateAccountRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string CreateAccountRequest::getAccountName()const
 void CreateAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string CreateAccountRequest::getDatabaseName()const
@@ -55,7 +55,7 @@ std::string CreateAccountRequest::getDatabaseName()const
 void CreateAccountRequest::setDatabaseName(const std::string& databaseName)
 {
 	databaseName_ = databaseName;
-	setCoreParameter("DatabaseName", databaseName);
+	setCoreParameter("DatabaseName", std::to_string(databaseName));
 }
 
 std::string CreateAccountRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string CreateAccountRequest::getDBInstanceId()const
 void CreateAccountRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long CreateAccountRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string CreateAccountRequest::getAccountDescription()const
 void CreateAccountRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	setCoreParameter("AccountDescription", std::to_string(accountDescription));
 }
 
 std::string CreateAccountRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateAccountRequest::getAccessKeyId()const
 void CreateAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

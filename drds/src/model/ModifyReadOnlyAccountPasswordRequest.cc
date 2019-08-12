@@ -33,7 +33,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getNewPasswd()const
 void ModifyReadOnlyAccountPasswordRequest::setNewPasswd(const std::string& newPasswd)
 {
 	newPasswd_ = newPasswd;
-	setCoreParameter("NewPasswd", newPasswd);
+	setCoreParameter("NewPasswd", std::to_string(newPasswd));
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
 void ModifyReadOnlyAccountPasswordRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
@@ -55,7 +55,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
 void ModifyReadOnlyAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
@@ -66,7 +66,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
 void ModifyReadOnlyAccountPasswordRequest::setOriginPassword(const std::string& originPassword)
 {
 	originPassword_ = originPassword;
-	setCoreParameter("OriginPassword", originPassword);
+	setCoreParameter("OriginPassword", std::to_string(originPassword));
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getDrdsInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDrdsInstanceId()const
 void ModifyReadOnlyAccountPasswordRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
 void ModifyReadOnlyAccountPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

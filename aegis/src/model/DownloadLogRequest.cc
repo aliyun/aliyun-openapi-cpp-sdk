@@ -33,7 +33,7 @@ std::string DownloadLogRequest::getSourceIp()const
 void DownloadLogRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DownloadLogRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DownloadLogRequest::getQuery()const
 void DownloadLogRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 std::string DownloadLogRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DownloadLogRequest::getEndTime()const
 void DownloadLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DownloadLogRequest::getStartTime()const
@@ -66,6 +66,6 @@ std::string DownloadLogRequest::getStartTime()const
 void DownloadLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 

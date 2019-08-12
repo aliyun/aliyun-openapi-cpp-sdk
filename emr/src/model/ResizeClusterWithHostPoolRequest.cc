@@ -44,7 +44,7 @@ std::string ResizeClusterWithHostPoolRequest::getRegionId()const
 void ResizeClusterWithHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<ResizeClusterWithHostPoolRequest::HostGroup> ResizeClusterWithHostPoolRequest::getHostGroup()const
@@ -96,7 +96,7 @@ std::string ResizeClusterWithHostPoolRequest::getClusterId()const
 void ResizeClusterWithHostPoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ResizeClusterWithHostPoolRequest::getAccessKeyId()const
@@ -107,6 +107,6 @@ std::string ResizeClusterWithHostPoolRequest::getAccessKeyId()const
 void ResizeClusterWithHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

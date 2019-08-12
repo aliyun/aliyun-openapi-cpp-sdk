@@ -44,7 +44,7 @@ bool ApplyBoardTokenRequest::getProxy_original_security_transport()const
 void ApplyBoardTokenRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ApplyBoardTokenRequest::getProxy_original_source_ip()const
@@ -55,7 +55,7 @@ std::string ApplyBoardTokenRequest::getProxy_original_source_ip()const
 void ApplyBoardTokenRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ApplyBoardTokenRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string ApplyBoardTokenRequest::getOwnerIdLoginEmail()const
 void ApplyBoardTokenRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ApplyBoardTokenRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string ApplyBoardTokenRequest::getCallerType()const
 void ApplyBoardTokenRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ApplyBoardTokenRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ApplyBoardTokenRequest::getAccessKeyId()const
 void ApplyBoardTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ApplyBoardTokenRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string ApplyBoardTokenRequest::getSecurityToken()const
 void ApplyBoardTokenRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ApplyBoardTokenRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string ApplyBoardTokenRequest::getRegionId()const
 void ApplyBoardTokenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ApplyBoardTokenRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string ApplyBoardTokenRequest::getRequestContent()const
 void ApplyBoardTokenRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ApplyBoardTokenRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string ApplyBoardTokenRequest::getCallerBidEmail()const
 void ApplyBoardTokenRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ApplyBoardTokenRequest::getBoardId()const
@@ -143,7 +143,7 @@ std::string ApplyBoardTokenRequest::getBoardId()const
 void ApplyBoardTokenRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setCoreParameter("BoardId", std::to_string(boardId));
 }
 
 std::string ApplyBoardTokenRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string ApplyBoardTokenRequest::getCallerUidEmail()const
 void ApplyBoardTokenRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ApplyBoardTokenRequest::getCallerUid()const
@@ -176,7 +176,7 @@ std::string ApplyBoardTokenRequest::getApp_ip()const
 void ApplyBoardTokenRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ApplyBoardTokenRequest::getPopProduct()const
@@ -187,7 +187,7 @@ std::string ApplyBoardTokenRequest::getPopProduct()const
 void ApplyBoardTokenRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string ApplyBoardTokenRequest::getAppUid()const
@@ -198,7 +198,7 @@ std::string ApplyBoardTokenRequest::getAppUid()const
 void ApplyBoardTokenRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setCoreParameter("AppUid", std::to_string(appUid));
 }
 
 std::string ApplyBoardTokenRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string ApplyBoardTokenRequest::getCallerBid()const
 void ApplyBoardTokenRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ApplyBoardTokenRequest::getOwnerId()const
@@ -231,7 +231,7 @@ std::string ApplyBoardTokenRequest::getVersion()const
 void ApplyBoardTokenRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool ApplyBoardTokenRequest::getProxy_trust_transport_info()const
@@ -242,7 +242,7 @@ bool ApplyBoardTokenRequest::getProxy_trust_transport_info()const
 void ApplyBoardTokenRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ApplyBoardTokenRequest::getAk_mfa_present()const
@@ -253,7 +253,7 @@ bool ApplyBoardTokenRequest::getAk_mfa_present()const
 void ApplyBoardTokenRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ApplyBoardTokenRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool ApplyBoardTokenRequest::getSecurity_transport()const
 void ApplyBoardTokenRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ApplyBoardTokenRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string ApplyBoardTokenRequest::getRequestId()const
 void ApplyBoardTokenRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ApplyBoardTokenRequest::getAppId()const
@@ -286,6 +286,6 @@ std::string ApplyBoardTokenRequest::getAppId()const
 void ApplyBoardTokenRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

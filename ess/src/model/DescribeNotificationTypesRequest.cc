@@ -33,7 +33,7 @@ std::string DescribeNotificationTypesRequest::getResourceOwnerAccount()const
 void DescribeNotificationTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long DescribeNotificationTypesRequest::getOwnerId()const
@@ -55,6 +55,6 @@ std::string DescribeNotificationTypesRequest::getAccessKeyId()const
 void DescribeNotificationTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

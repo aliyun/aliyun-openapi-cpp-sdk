@@ -44,7 +44,7 @@ std::string ModifyAuditPolicyRequest::getAuditStatus()const
 void ModifyAuditPolicyRequest::setAuditStatus(const std::string& auditStatus)
 {
 	auditStatus_ = auditStatus;
-	setCoreParameter("AuditStatus", auditStatus);
+	setCoreParameter("AuditStatus", std::to_string(auditStatus));
 }
 
 int ModifyAuditPolicyRequest::getStoragePeriod()const
@@ -66,7 +66,7 @@ std::string ModifyAuditPolicyRequest::getSecurityToken()const
 void ModifyAuditPolicyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyAuditPolicyRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyAuditPolicyRequest::getResourceOwnerAccount()const
 void ModifyAuditPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyAuditPolicyRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string ModifyAuditPolicyRequest::getRegionId()const
 void ModifyAuditPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyAuditPolicyRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyAuditPolicyRequest::getOwnerAccount()const
 void ModifyAuditPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyAuditPolicyRequest::getDBInstanceId()const
@@ -110,7 +110,7 @@ std::string ModifyAuditPolicyRequest::getDBInstanceId()const
 void ModifyAuditPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyAuditPolicyRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string ModifyAuditPolicyRequest::getAccessKeyId()const
 void ModifyAuditPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

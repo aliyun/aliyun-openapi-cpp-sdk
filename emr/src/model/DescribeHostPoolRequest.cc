@@ -44,7 +44,7 @@ std::string DescribeHostPoolRequest::getRegionId()const
 void DescribeHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeHostPoolRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string DescribeHostPoolRequest::getBizId()const
 void DescribeHostPoolRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string DescribeHostPoolRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeHostPoolRequest::getClusterId()const
 void DescribeHostPoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeHostPoolRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeHostPoolRequest::getAccessKeyId()const
 void DescribeHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

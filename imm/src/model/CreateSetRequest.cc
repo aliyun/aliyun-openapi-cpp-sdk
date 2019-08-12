@@ -33,7 +33,7 @@ std::string CreateSetRequest::getSetName()const
 void CreateSetRequest::setSetName(const std::string& setName)
 {
 	setName_ = setName;
-	setCoreParameter("SetName", setName);
+	setCoreParameter("SetName", std::to_string(setName));
 }
 
 std::string CreateSetRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateSetRequest::getRegionId()const
 void CreateSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateSetRequest::getProject()const
@@ -55,7 +55,7 @@ std::string CreateSetRequest::getProject()const
 void CreateSetRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string CreateSetRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string CreateSetRequest::getSetId()const
 void CreateSetRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setCoreParameter("SetId", std::to_string(setId));
 }
 
 std::string CreateSetRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CreateSetRequest::getAccessKeyId()const
 void CreateSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

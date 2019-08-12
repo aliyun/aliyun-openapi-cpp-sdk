@@ -44,7 +44,7 @@ std::string ListKafkaReassignTopicRequest::getRegionId()const
 void ListKafkaReassignTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListKafkaReassignTopicRequest::getReassignId()const
@@ -55,7 +55,7 @@ std::string ListKafkaReassignTopicRequest::getReassignId()const
 void ListKafkaReassignTopicRequest::setReassignId(const std::string& reassignId)
 {
 	reassignId_ = reassignId;
-	setCoreParameter("ReassignId", reassignId);
+	setCoreParameter("ReassignId", std::to_string(reassignId));
 }
 
 int ListKafkaReassignTopicRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string ListKafkaReassignTopicRequest::getAccessKeyId()const
 void ListKafkaReassignTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

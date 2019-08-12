@@ -33,7 +33,7 @@ std::string SubmitCabRecordingRequest::getInstanceId()const
 void SubmitCabRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 long SubmitCabRecordingRequest::getInstanceOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitCabRecordingRequest::getMergedRecording()const
 void SubmitCabRecordingRequest::setMergedRecording(const std::string& mergedRecording)
 {
 	mergedRecording_ = mergedRecording;
-	setCoreParameter("MergedRecording", mergedRecording);
+	setCoreParameter("MergedRecording", std::to_string(mergedRecording));
 }
 
 std::string SubmitCabRecordingRequest::getTaskId()const
@@ -66,7 +66,7 @@ std::string SubmitCabRecordingRequest::getTaskId()const
 void SubmitCabRecordingRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string SubmitCabRecordingRequest::getResourceRecording()const
@@ -77,6 +77,6 @@ std::string SubmitCabRecordingRequest::getResourceRecording()const
 void SubmitCabRecordingRequest::setResourceRecording(const std::string& resourceRecording)
 {
 	resourceRecording_ = resourceRecording;
-	setCoreParameter("ResourceRecording", resourceRecording);
+	setCoreParameter("ResourceRecording", std::to_string(resourceRecording));
 }
 

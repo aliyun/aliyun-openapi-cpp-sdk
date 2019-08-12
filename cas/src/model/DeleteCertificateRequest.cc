@@ -33,7 +33,7 @@ std::string DeleteCertificateRequest::getSourceIp()const
 void DeleteCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DeleteCertificateRequest::getCertificateId()const
@@ -55,6 +55,6 @@ std::string DeleteCertificateRequest::getLang()const
 void DeleteCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

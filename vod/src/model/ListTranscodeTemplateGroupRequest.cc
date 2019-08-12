@@ -44,7 +44,7 @@ std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ListTranscodeTemplateGroupRequest::getPageNo()const
@@ -66,7 +66,7 @@ std::string ListTranscodeTemplateGroupRequest::getAppId()const
 void ListTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 int ListTranscodeTemplateGroupRequest::getPageSize()const
@@ -99,6 +99,6 @@ std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
 void ListTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

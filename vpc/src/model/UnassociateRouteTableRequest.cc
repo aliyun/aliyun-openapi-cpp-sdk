@@ -44,7 +44,7 @@ std::string UnassociateRouteTableRequest::getClientToken()const
 void UnassociateRouteTableRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long UnassociateRouteTableRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool UnassociateRouteTableRequest::getProxy_original_security_transport()const
 void UnassociateRouteTableRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string UnassociateRouteTableRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string UnassociateRouteTableRequest::getProxy_original_source_ip()const
 void UnassociateRouteTableRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string UnassociateRouteTableRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string UnassociateRouteTableRequest::getOwnerIdLoginEmail()const
 void UnassociateRouteTableRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string UnassociateRouteTableRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string UnassociateRouteTableRequest::getCallerType()const
 void UnassociateRouteTableRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string UnassociateRouteTableRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string UnassociateRouteTableRequest::getAccessKeyId()const
 void UnassociateRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UnassociateRouteTableRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string UnassociateRouteTableRequest::getResourceGroupId()const
 void UnassociateRouteTableRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string UnassociateRouteTableRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string UnassociateRouteTableRequest::getRegionId()const
 void UnassociateRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnassociateRouteTableRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string UnassociateRouteTableRequest::getSecurityToken()const
 void UnassociateRouteTableRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 bool UnassociateRouteTableRequest::getEnable()const
@@ -154,7 +154,7 @@ bool UnassociateRouteTableRequest::getEnable()const
 void UnassociateRouteTableRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string UnassociateRouteTableRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string UnassociateRouteTableRequest::getRequestContent()const
 void UnassociateRouteTableRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string UnassociateRouteTableRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string UnassociateRouteTableRequest::getCallerBidEmail()const
 void UnassociateRouteTableRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string UnassociateRouteTableRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string UnassociateRouteTableRequest::getCallerUidEmail()const
 void UnassociateRouteTableRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string UnassociateRouteTableRequest::getRouteTableId()const
@@ -198,7 +198,7 @@ std::string UnassociateRouteTableRequest::getRouteTableId()const
 void UnassociateRouteTableRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setCoreParameter("RouteTableId", std::to_string(routeTableId));
 }
 
 long UnassociateRouteTableRequest::getCallerUid()const
@@ -220,7 +220,7 @@ std::string UnassociateRouteTableRequest::getApp_ip()const
 void UnassociateRouteTableRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string UnassociateRouteTableRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string UnassociateRouteTableRequest::getResourceOwnerAccount()const
 void UnassociateRouteTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnassociateRouteTableRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string UnassociateRouteTableRequest::getOwnerAccount()const
 void UnassociateRouteTableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnassociateRouteTableRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string UnassociateRouteTableRequest::getCallerBid()const
 void UnassociateRouteTableRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long UnassociateRouteTableRequest::getOwnerId()const
@@ -275,7 +275,7 @@ bool UnassociateRouteTableRequest::getProxy_trust_transport_info()const
 void UnassociateRouteTableRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool UnassociateRouteTableRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool UnassociateRouteTableRequest::getAk_mfa_present()const
 void UnassociateRouteTableRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string UnassociateRouteTableRequest::getVSwitchId()const
@@ -297,7 +297,7 @@ std::string UnassociateRouteTableRequest::getVSwitchId()const
 void UnassociateRouteTableRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 bool UnassociateRouteTableRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool UnassociateRouteTableRequest::getSecurity_transport()const
 void UnassociateRouteTableRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string UnassociateRouteTableRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string UnassociateRouteTableRequest::getRequestId()const
 void UnassociateRouteTableRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

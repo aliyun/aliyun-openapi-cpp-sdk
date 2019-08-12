@@ -33,7 +33,7 @@ std::string UnsubscribeBillToOSSRequest::getSubscribeType()const
 void UnsubscribeBillToOSSRequest::setSubscribeType(const std::string& subscribeType)
 {
 	subscribeType_ = subscribeType;
-	setCoreParameter("SubscribeType", subscribeType);
+	setCoreParameter("SubscribeType", std::to_string(subscribeType));
 }
 
 std::string UnsubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
@@ -44,6 +44,6 @@ std::string UnsubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
 void UnsubscribeBillToOSSRequest::setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe)
 {
 	multAccountRelSubscribe_ = multAccountRelSubscribe;
-	setCoreParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
+	setCoreParameter("MultAccountRelSubscribe", std::to_string(multAccountRelSubscribe));
 }
 

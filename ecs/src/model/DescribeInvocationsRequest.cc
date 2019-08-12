@@ -44,7 +44,7 @@ std::string DescribeInvocationsRequest::getInvokeStatus()const
 void DescribeInvocationsRequest::setInvokeStatus(const std::string& invokeStatus)
 {
 	invokeStatus_ = invokeStatus;
-	setCoreParameter("InvokeStatus", invokeStatus);
+	setCoreParameter("InvokeStatus", std::to_string(invokeStatus));
 }
 
 long DescribeInvocationsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool DescribeInvocationsRequest::getProxy_original_security_transport()const
 void DescribeInvocationsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeInvocationsRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeInvocationsRequest::getProxy_original_source_ip()const
 void DescribeInvocationsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeInvocationsRequest::getCommandId()const
@@ -88,7 +88,7 @@ std::string DescribeInvocationsRequest::getCommandId()const
 void DescribeInvocationsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setCoreParameter("CommandId", std::to_string(commandId));
 }
 
 std::string DescribeInvocationsRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeInvocationsRequest::getOwnerIdLoginEmail()const
 void DescribeInvocationsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeInvocationsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeInvocationsRequest::getCallerType()const
 void DescribeInvocationsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 long DescribeInvocationsRequest::getPageNumber()const
@@ -132,7 +132,7 @@ std::string DescribeInvocationsRequest::getAccessKeyId()const
 void DescribeInvocationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeInvocationsRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeInvocationsRequest::getSourceRegionId()const
 void DescribeInvocationsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeInvocationsRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DescribeInvocationsRequest::getSecurityToken()const
 void DescribeInvocationsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeInvocationsRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeInvocationsRequest::getRegionId()const
 void DescribeInvocationsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeInvocationsRequest::getEnable()const
@@ -176,7 +176,7 @@ bool DescribeInvocationsRequest::getEnable()const
 void DescribeInvocationsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeInvocationsRequest::getRequestContent()const
@@ -187,7 +187,7 @@ std::string DescribeInvocationsRequest::getRequestContent()const
 void DescribeInvocationsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 long DescribeInvocationsRequest::getPageSize()const
@@ -209,7 +209,7 @@ std::string DescribeInvocationsRequest::getCallerBidEmail()const
 void DescribeInvocationsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeInvocationsRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribeInvocationsRequest::getCallerUidEmail()const
 void DescribeInvocationsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeInvocationsRequest::getCallerUid()const
@@ -242,7 +242,7 @@ std::string DescribeInvocationsRequest::getInvokeId()const
 void DescribeInvocationsRequest::setInvokeId(const std::string& invokeId)
 {
 	invokeId_ = invokeId;
-	setCoreParameter("InvokeId", invokeId);
+	setCoreParameter("InvokeId", std::to_string(invokeId));
 }
 
 std::string DescribeInvocationsRequest::getApp_ip()const
@@ -253,7 +253,7 @@ std::string DescribeInvocationsRequest::getApp_ip()const
 void DescribeInvocationsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 bool DescribeInvocationsRequest::getTimed()const
@@ -264,7 +264,7 @@ bool DescribeInvocationsRequest::getTimed()const
 void DescribeInvocationsRequest::setTimed(bool timed)
 {
 	timed_ = timed;
-	setCoreParameter("Timed", timed);
+	setCoreParameter("Timed", timed ? "true" : "false");
 }
 
 std::string DescribeInvocationsRequest::getCommandName()const
@@ -275,7 +275,7 @@ std::string DescribeInvocationsRequest::getCommandName()const
 void DescribeInvocationsRequest::setCommandName(const std::string& commandName)
 {
 	commandName_ = commandName;
-	setCoreParameter("CommandName", commandName);
+	setCoreParameter("CommandName", std::to_string(commandName));
 }
 
 std::string DescribeInvocationsRequest::getResourceOwnerAccount()const
@@ -286,7 +286,7 @@ std::string DescribeInvocationsRequest::getResourceOwnerAccount()const
 void DescribeInvocationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInvocationsRequest::getOwnerAccount()const
@@ -297,7 +297,7 @@ std::string DescribeInvocationsRequest::getOwnerAccount()const
 void DescribeInvocationsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeInvocationsRequest::getCallerBid()const
@@ -308,7 +308,7 @@ std::string DescribeInvocationsRequest::getCallerBid()const
 void DescribeInvocationsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeInvocationsRequest::getOwnerId()const
@@ -330,7 +330,7 @@ bool DescribeInvocationsRequest::getProxy_trust_transport_info()const
 void DescribeInvocationsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeInvocationsRequest::getAk_mfa_present()const
@@ -341,7 +341,7 @@ bool DescribeInvocationsRequest::getAk_mfa_present()const
 void DescribeInvocationsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeInvocationsRequest::getSecurity_transport()const
@@ -352,7 +352,7 @@ bool DescribeInvocationsRequest::getSecurity_transport()const
 void DescribeInvocationsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeInvocationsRequest::getCommandType()const
@@ -363,7 +363,7 @@ std::string DescribeInvocationsRequest::getCommandType()const
 void DescribeInvocationsRequest::setCommandType(const std::string& commandType)
 {
 	commandType_ = commandType;
-	setCoreParameter("CommandType", commandType);
+	setCoreParameter("CommandType", std::to_string(commandType));
 }
 
 std::string DescribeInvocationsRequest::getInstanceId()const
@@ -374,7 +374,7 @@ std::string DescribeInvocationsRequest::getInstanceId()const
 void DescribeInvocationsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeInvocationsRequest::getRequestId()const
@@ -385,6 +385,6 @@ std::string DescribeInvocationsRequest::getRequestId()const
 void DescribeInvocationsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

@@ -33,7 +33,7 @@ std::string RealTimeRecordCommandRequest::getAppName()const
 void RealTimeRecordCommandRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string RealTimeRecordCommandRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RealTimeRecordCommandRequest::getRegionId()const
 void RealTimeRecordCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RealTimeRecordCommandRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string RealTimeRecordCommandRequest::getDomainName()const
 void RealTimeRecordCommandRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long RealTimeRecordCommandRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string RealTimeRecordCommandRequest::getCommand()const
 void RealTimeRecordCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setCoreParameter("Command", std::to_string(command));
 }
 
 std::string RealTimeRecordCommandRequest::getStreamName()const
@@ -88,6 +88,6 @@ std::string RealTimeRecordCommandRequest::getStreamName()const
 void RealTimeRecordCommandRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 

@@ -33,7 +33,7 @@ std::string QueryEmailVerificationRequest::getUserClientIp()const
 void QueryEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryEmailVerificationRequest::getLang()const
@@ -44,7 +44,7 @@ std::string QueryEmailVerificationRequest::getLang()const
 void QueryEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string QueryEmailVerificationRequest::getEmail()const
@@ -55,6 +55,6 @@ std::string QueryEmailVerificationRequest::getEmail()const
 void QueryEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 

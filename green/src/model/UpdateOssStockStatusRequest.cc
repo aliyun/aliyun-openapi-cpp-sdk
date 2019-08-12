@@ -33,7 +33,7 @@ std::string UpdateOssStockStatusRequest::getImageAutoFreeze()const
 void UpdateOssStockStatusRequest::setImageAutoFreeze(const std::string& imageAutoFreeze)
 {
 	imageAutoFreeze_ = imageAutoFreeze;
-	setCoreParameter("ImageAutoFreeze", imageAutoFreeze);
+	setCoreParameter("ImageAutoFreeze", std::to_string(imageAutoFreeze));
 }
 
 std::string UpdateOssStockStatusRequest::getResourceTypeList()const
@@ -44,7 +44,7 @@ std::string UpdateOssStockStatusRequest::getResourceTypeList()const
 void UpdateOssStockStatusRequest::setResourceTypeList(const std::string& resourceTypeList)
 {
 	resourceTypeList_ = resourceTypeList;
-	setCoreParameter("ResourceTypeList", resourceTypeList);
+	setCoreParameter("ResourceTypeList", std::to_string(resourceTypeList));
 }
 
 int UpdateOssStockStatusRequest::getVideoFrameInterval()const
@@ -77,7 +77,7 @@ std::string UpdateOssStockStatusRequest::getStartDate()const
 void UpdateOssStockStatusRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 std::string UpdateOssStockStatusRequest::getAutoFreezeType()const
@@ -88,7 +88,7 @@ std::string UpdateOssStockStatusRequest::getAutoFreezeType()const
 void UpdateOssStockStatusRequest::setAutoFreezeType(const std::string& autoFreezeType)
 {
 	autoFreezeType_ = autoFreezeType;
-	setCoreParameter("AutoFreezeType", autoFreezeType);
+	setCoreParameter("AutoFreezeType", std::to_string(autoFreezeType));
 }
 
 std::string UpdateOssStockStatusRequest::getEndDate()const
@@ -99,7 +99,7 @@ std::string UpdateOssStockStatusRequest::getEndDate()const
 void UpdateOssStockStatusRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string UpdateOssStockStatusRequest::getBucketConfigList()const
@@ -110,7 +110,7 @@ std::string UpdateOssStockStatusRequest::getBucketConfigList()const
 void UpdateOssStockStatusRequest::setBucketConfigList(const std::string& bucketConfigList)
 {
 	bucketConfigList_ = bucketConfigList;
-	setCoreParameter("BucketConfigList", bucketConfigList);
+	setCoreParameter("BucketConfigList", std::to_string(bucketConfigList));
 }
 
 std::string UpdateOssStockStatusRequest::getSourceIp()const
@@ -121,7 +121,7 @@ std::string UpdateOssStockStatusRequest::getSourceIp()const
 void UpdateOssStockStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UpdateOssStockStatusRequest::getSceneList()const
@@ -132,7 +132,7 @@ std::string UpdateOssStockStatusRequest::getSceneList()const
 void UpdateOssStockStatusRequest::setSceneList(const std::string& sceneList)
 {
 	sceneList_ = sceneList;
-	setCoreParameter("SceneList", sceneList);
+	setCoreParameter("SceneList", std::to_string(sceneList));
 }
 
 std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
@@ -143,7 +143,7 @@ std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
 void UpdateOssStockStatusRequest::setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList)
 {
 	videoAutoFreezeSceneList_ = videoAutoFreezeSceneList;
-	setCoreParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
+	setCoreParameter("VideoAutoFreezeSceneList", std::to_string(videoAutoFreezeSceneList));
 }
 
 std::string UpdateOssStockStatusRequest::getLang()const
@@ -154,7 +154,7 @@ std::string UpdateOssStockStatusRequest::getLang()const
 void UpdateOssStockStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxFrames()const
@@ -176,6 +176,6 @@ std::string UpdateOssStockStatusRequest::getOperation()const
 void UpdateOssStockStatusRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setCoreParameter("Operation", std::to_string(operation));
 }
 

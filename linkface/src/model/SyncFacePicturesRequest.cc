@@ -33,7 +33,7 @@ std::string SyncFacePicturesRequest::getIotId()const
 void SyncFacePicturesRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string SyncFacePicturesRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string SyncFacePicturesRequest::getGroupId()const
 void SyncFacePicturesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string SyncFacePicturesRequest::getDeviceName()const
@@ -55,7 +55,7 @@ std::string SyncFacePicturesRequest::getDeviceName()const
 void SyncFacePicturesRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string SyncFacePicturesRequest::getProductKey()const
@@ -66,6 +66,6 @@ std::string SyncFacePicturesRequest::getProductKey()const
 void SyncFacePicturesRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 

@@ -33,7 +33,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getProductCode()const
 void QueryMonthlyInstanceConsumptionRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string QueryMonthlyInstanceConsumptionRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getSubscriptionType()const
 void QueryMonthlyInstanceConsumptionRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 int QueryMonthlyInstanceConsumptionRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getBillingCycle()const
 void QueryMonthlyInstanceConsumptionRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", std::to_string(billingCycle));
 }
 
 long QueryMonthlyInstanceConsumptionRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string QueryMonthlyInstanceConsumptionRequest::getProductType()const
 void QueryMonthlyInstanceConsumptionRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

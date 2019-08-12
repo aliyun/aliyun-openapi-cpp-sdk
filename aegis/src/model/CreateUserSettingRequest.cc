@@ -33,7 +33,7 @@ std::string CreateUserSettingRequest::getSourceIp()const
 void CreateUserSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateUserSettingRequest::getAlertLevels()const
@@ -44,7 +44,7 @@ std::string CreateUserSettingRequest::getAlertLevels()const
 void CreateUserSettingRequest::setAlertLevels(const std::string& alertLevels)
 {
 	alertLevels_ = alertLevels;
-	setCoreParameter("AlertLevels", alertLevels);
+	setCoreParameter("AlertLevels", std::to_string(alertLevels));
 }
 
 int CreateUserSettingRequest::getInvalidWarningKeepDays()const

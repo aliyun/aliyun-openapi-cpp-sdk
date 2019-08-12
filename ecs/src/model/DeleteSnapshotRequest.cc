@@ -33,7 +33,7 @@ std::string DeleteSnapshotRequest::getSourceRegionId()const
 void DeleteSnapshotRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteSnapshotRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteSnapshotRequest::getSnapshotId()const
 void DeleteSnapshotRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
+	setCoreParameter("SnapshotId", std::to_string(snapshotId));
 }
 
 std::string DeleteSnapshotRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteSnapshotRequest::getResourceOwnerAccount()const
 void DeleteSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteSnapshotRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteSnapshotRequest::getOwnerAccount()const
 void DeleteSnapshotRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DeleteSnapshotRequest::getForce()const
@@ -88,7 +88,7 @@ bool DeleteSnapshotRequest::getForce()const
 void DeleteSnapshotRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteSnapshotRequest::getOwnerId()const

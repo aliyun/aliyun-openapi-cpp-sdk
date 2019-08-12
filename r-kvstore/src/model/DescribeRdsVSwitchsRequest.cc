@@ -44,7 +44,7 @@ std::string DescribeRdsVSwitchsRequest::getSecurityToken()const
 void DescribeRdsVSwitchsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeRdsVSwitchsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRdsVSwitchsRequest::getResourceOwnerAccount()const
 void DescribeRdsVSwitchsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRdsVSwitchsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeRdsVSwitchsRequest::getRegionId()const
 void DescribeRdsVSwitchsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeRdsVSwitchsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeRdsVSwitchsRequest::getOwnerAccount()const
 void DescribeRdsVSwitchsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeRdsVSwitchsRequest::getVpcId()const
@@ -88,7 +88,7 @@ std::string DescribeRdsVSwitchsRequest::getVpcId()const
 void DescribeRdsVSwitchsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string DescribeRdsVSwitchsRequest::getZoneId()const
@@ -99,7 +99,7 @@ std::string DescribeRdsVSwitchsRequest::getZoneId()const
 void DescribeRdsVSwitchsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 long DescribeRdsVSwitchsRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeRdsVSwitchsRequest::getAccessKeyId()const
 void DescribeRdsVSwitchsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

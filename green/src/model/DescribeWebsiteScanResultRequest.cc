@@ -44,7 +44,7 @@ std::string DescribeWebsiteScanResultRequest::getSubServiceModule()const
 void DescribeWebsiteScanResultRequest::setSubServiceModule(const std::string& subServiceModule)
 {
 	subServiceModule_ = subServiceModule;
-	setCoreParameter("SubServiceModule", subServiceModule);
+	setCoreParameter("SubServiceModule", std::to_string(subServiceModule));
 }
 
 std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
@@ -55,7 +55,7 @@ std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
 void DescribeWebsiteScanResultRequest::setSiteUrl(const std::string& siteUrl)
 {
 	siteUrl_ = siteUrl;
-	setCoreParameter("SiteUrl", siteUrl);
+	setCoreParameter("SiteUrl", std::to_string(siteUrl));
 }
 
 std::string DescribeWebsiteScanResultRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string DescribeWebsiteScanResultRequest::getSourceIp()const
 void DescribeWebsiteScanResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
@@ -77,7 +77,7 @@ std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
 void DescribeWebsiteScanResultRequest::setHandleStatus(const std::string& handleStatus)
 {
 	handleStatus_ = handleStatus;
-	setCoreParameter("HandleStatus", handleStatus);
+	setCoreParameter("HandleStatus", std::to_string(handleStatus));
 }
 
 std::string DescribeWebsiteScanResultRequest::getDomain()const
@@ -88,7 +88,7 @@ std::string DescribeWebsiteScanResultRequest::getDomain()const
 void DescribeWebsiteScanResultRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setCoreParameter("Domain", std::to_string(domain));
 }
 
 int DescribeWebsiteScanResultRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string DescribeWebsiteScanResultRequest::getLabel()const
 void DescribeWebsiteScanResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setCoreParameter("Label", std::to_string(label));
 }
 
 std::string DescribeWebsiteScanResultRequest::getLang()const
@@ -132,6 +132,6 @@ std::string DescribeWebsiteScanResultRequest::getLang()const
 void DescribeWebsiteScanResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

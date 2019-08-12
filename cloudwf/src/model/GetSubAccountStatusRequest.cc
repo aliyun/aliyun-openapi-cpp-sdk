@@ -33,6 +33,6 @@ std::string GetSubAccountStatusRequest::getAccessKeyId()const
 void GetSubAccountStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

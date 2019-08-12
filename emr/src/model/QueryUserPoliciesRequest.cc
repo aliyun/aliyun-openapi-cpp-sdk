@@ -33,7 +33,7 @@ std::string QueryUserPoliciesRequest::getApp_ip()const
 void QueryUserPoliciesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long QueryUserPoliciesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string QueryUserPoliciesRequest::getResourceId()const
 void QueryUserPoliciesRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 long QueryUserPoliciesRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool QueryUserPoliciesRequest::getProxy_original_security_transport()const
 void QueryUserPoliciesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string QueryUserPoliciesRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string QueryUserPoliciesRequest::getCallerBid()const
 void QueryUserPoliciesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string QueryUserPoliciesRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string QueryUserPoliciesRequest::getProxy_original_source_ip()const
 void QueryUserPoliciesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string QueryUserPoliciesRequest::getResourceType()const
@@ -110,7 +110,7 @@ std::string QueryUserPoliciesRequest::getResourceType()const
 void QueryUserPoliciesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 bool QueryUserPoliciesRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ bool QueryUserPoliciesRequest::getAk_mfa_present()const
 void QueryUserPoliciesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool QueryUserPoliciesRequest::getProxy_trust_transport_info()const
@@ -132,7 +132,7 @@ bool QueryUserPoliciesRequest::getProxy_trust_transport_info()const
 void QueryUserPoliciesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string QueryUserPoliciesRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string QueryUserPoliciesRequest::getCallerType()const
 void QueryUserPoliciesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string QueryUserPoliciesRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string QueryUserPoliciesRequest::getAccessKeyId()const
 void QueryUserPoliciesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool QueryUserPoliciesRequest::getSecurity_transport()const
@@ -165,7 +165,7 @@ bool QueryUserPoliciesRequest::getSecurity_transport()const
 void QueryUserPoliciesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string QueryUserPoliciesRequest::getSecurityToken()const
@@ -176,7 +176,7 @@ std::string QueryUserPoliciesRequest::getSecurityToken()const
 void QueryUserPoliciesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string QueryUserPoliciesRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string QueryUserPoliciesRequest::getRegionId()const
 void QueryUserPoliciesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string QueryUserPoliciesRequest::getRequestId()const
@@ -198,7 +198,7 @@ std::string QueryUserPoliciesRequest::getRequestId()const
 void QueryUserPoliciesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long QueryUserPoliciesRequest::getCallerUid()const

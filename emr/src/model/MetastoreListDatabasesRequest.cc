@@ -44,7 +44,7 @@ std::string MetastoreListDatabasesRequest::getDbName()const
 void MetastoreListDatabasesRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreListDatabasesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListDatabasesRequest::getRegionId()const
 void MetastoreListDatabasesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int MetastoreListDatabasesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string MetastoreListDatabasesRequest::getFuzzyDatabaseName()const
 void MetastoreListDatabasesRequest::setFuzzyDatabaseName(const std::string& fuzzyDatabaseName)
 {
 	fuzzyDatabaseName_ = fuzzyDatabaseName;
-	setCoreParameter("FuzzyDatabaseName", fuzzyDatabaseName);
+	setCoreParameter("FuzzyDatabaseName", std::to_string(fuzzyDatabaseName));
 }
 
 int MetastoreListDatabasesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string MetastoreListDatabasesRequest::getAccessKeyId()const
 void MetastoreListDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

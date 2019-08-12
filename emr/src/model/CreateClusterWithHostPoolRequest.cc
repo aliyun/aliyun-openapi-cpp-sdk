@@ -44,7 +44,7 @@ std::string CreateClusterWithHostPoolRequest::getClusterName()const
 void CreateClusterWithHostPoolRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setCoreParameter("ClusterName", std::to_string(clusterName));
 }
 
 bool CreateClusterWithHostPoolRequest::getEasEnable()const
@@ -55,7 +55,7 @@ bool CreateClusterWithHostPoolRequest::getEasEnable()const
 void CreateClusterWithHostPoolRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable);
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::vector<CreateClusterWithHostPoolRequest::HostInfo> CreateClusterWithHostPoolRequest::getHostInfo()const
@@ -88,7 +88,7 @@ std::string CreateClusterWithHostPoolRequest::getRelatedClusterId()const
 void CreateClusterWithHostPoolRequest::setRelatedClusterId(const std::string& relatedClusterId)
 {
 	relatedClusterId_ = relatedClusterId;
-	setCoreParameter("RelatedClusterId", relatedClusterId);
+	setCoreParameter("RelatedClusterId", std::to_string(relatedClusterId));
 }
 
 std::string CreateClusterWithHostPoolRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateClusterWithHostPoolRequest::getAccessKeyId()const
 void CreateClusterWithHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateClusterWithHostPoolRequest::getClusterType()const
@@ -110,7 +110,7 @@ std::string CreateClusterWithHostPoolRequest::getClusterType()const
 void CreateClusterWithHostPoolRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", std::to_string(clusterType));
 }
 
 std::string CreateClusterWithHostPoolRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string CreateClusterWithHostPoolRequest::getRegionId()const
 void CreateClusterWithHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<CreateClusterWithHostPoolRequest::HostGroup> CreateClusterWithHostPoolRequest::getHostGroup()const
@@ -150,7 +150,7 @@ std::string CreateClusterWithHostPoolRequest::getStackName()const
 void CreateClusterWithHostPoolRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setCoreParameter("StackName", std::to_string(stackName));
 }
 
 std::string CreateClusterWithHostPoolRequest::getStackVersion()const
@@ -161,7 +161,7 @@ std::string CreateClusterWithHostPoolRequest::getStackVersion()const
 void CreateClusterWithHostPoolRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", stackVersion);
+	setCoreParameter("StackVersion", std::to_string(stackVersion));
 }
 
 std::vector<CreateClusterWithHostPoolRequest::ServiceInfo> CreateClusterWithHostPoolRequest::getServiceInfo()const

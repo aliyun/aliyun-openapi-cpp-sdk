@@ -55,7 +55,7 @@ std::string GetCrowdListRequest::getGsType()const
 void GetCrowdListRequest::setGsType(const std::string& gsType)
 {
 	gsType_ = gsType;
-	setCoreParameter("GsType", gsType);
+	setCoreParameter("GsType", std::to_string(gsType));
 }
 
 std::string GetCrowdListRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string GetCrowdListRequest::getEndTime()const
 void GetCrowdListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int GetCrowdListRequest::getPage()const
@@ -88,7 +88,7 @@ std::string GetCrowdListRequest::getStartTime()const
 void GetCrowdListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int GetCrowdListRequest::getPer()const
@@ -121,6 +121,6 @@ std::string GetCrowdListRequest::getAccessKeyId()const
 void GetCrowdListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getAppName()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DeleteLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteLiveSnapshotDetectPornConfigRequest::getOwnerId()const

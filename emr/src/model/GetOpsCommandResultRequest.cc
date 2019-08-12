@@ -44,7 +44,7 @@ std::string GetOpsCommandResultRequest::getRegionId()const
 void GetOpsCommandResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long GetOpsCommandResultRequest::getEndCursor()const
@@ -77,7 +77,7 @@ std::string GetOpsCommandResultRequest::getClusterId()const
 void GetOpsCommandResultRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 long GetOpsCommandResultRequest::getTaskId()const
@@ -99,6 +99,6 @@ std::string GetOpsCommandResultRequest::getAccessKeyId()const
 void GetOpsCommandResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

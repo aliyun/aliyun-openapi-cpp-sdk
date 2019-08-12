@@ -33,7 +33,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getBidType()const
 void AddIdentityCertifiedForBidUserRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", bidType);
+	setCoreParameter("BidType", std::to_string(bidType));
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getLicenseNumber()const
@@ -44,7 +44,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getLicenseNumber()const
 void AddIdentityCertifiedForBidUserRequest::setLicenseNumber(const std::string& licenseNumber)
 {
 	licenseNumber_ = licenseNumber;
-	setCoreParameter("LicenseNumber", licenseNumber);
+	setCoreParameter("LicenseNumber", std::to_string(licenseNumber));
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getLicenseType()const
@@ -55,7 +55,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getLicenseType()const
 void AddIdentityCertifiedForBidUserRequest::setLicenseType(const std::string& licenseType)
 {
 	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", licenseType);
+	setCoreParameter("LicenseType", std::to_string(licenseType));
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getPhone()const
@@ -66,7 +66,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getPhone()const
 void AddIdentityCertifiedForBidUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setCoreParameter("Phone", std::to_string(phone));
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getName()const
 void AddIdentityCertifiedForBidUserRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getPK()const
@@ -88,7 +88,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getPK()const
 void AddIdentityCertifiedForBidUserRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setCoreParameter("PK", std::to_string(pK));
 }
 
 bool AddIdentityCertifiedForBidUserRequest::getIsEnterprise()const
@@ -99,6 +99,6 @@ bool AddIdentityCertifiedForBidUserRequest::getIsEnterprise()const
 void AddIdentityCertifiedForBidUserRequest::setIsEnterprise(bool isEnterprise)
 {
 	isEnterprise_ = isEnterprise;
-	setCoreParameter("IsEnterprise", isEnterprise);
+	setCoreParameter("IsEnterprise", isEnterprise ? "true" : "false");
 }
 

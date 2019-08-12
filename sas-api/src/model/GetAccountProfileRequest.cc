@@ -33,7 +33,7 @@ std::string GetAccountProfileRequest::getDeviceIdMd5()const
 void GetAccountProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 {
 	deviceIdMd5_ = deviceIdMd5;
-	setCoreParameter("DeviceIdMd5", deviceIdMd5);
+	setCoreParameter("DeviceIdMd5", std::to_string(deviceIdMd5));
 }
 
 int GetAccountProfileRequest::getCarrier()const
@@ -55,7 +55,7 @@ std::string GetAccountProfileRequest::getOs()const
 void GetAccountProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
-	setCoreParameter("Os", os);
+	setCoreParameter("Os", std::to_string(os));
 }
 
 std::string GetAccountProfileRequest::getPhone()const
@@ -66,7 +66,7 @@ std::string GetAccountProfileRequest::getPhone()const
 void GetAccountProfileRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setCoreParameter("Phone", std::to_string(phone));
 }
 
 std::string GetAccountProfileRequest::getRequestUrl()const
@@ -77,7 +77,7 @@ std::string GetAccountProfileRequest::getRequestUrl()const
 void GetAccountProfileRequest::setRequestUrl(const std::string& requestUrl)
 {
 	requestUrl_ = requestUrl;
-	setCoreParameter("RequestUrl", requestUrl);
+	setCoreParameter("RequestUrl", std::to_string(requestUrl));
 }
 
 std::string GetAccountProfileRequest::getIp()const
@@ -88,7 +88,7 @@ std::string GetAccountProfileRequest::getIp()const
 void GetAccountProfileRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setCoreParameter("Ip", std::to_string(ip));
 }
 
 std::string GetAccountProfileRequest::getUserAgent()const
@@ -99,7 +99,7 @@ std::string GetAccountProfileRequest::getUserAgent()const
 void GetAccountProfileRequest::setUserAgent(const std::string& userAgent)
 {
 	userAgent_ = userAgent;
-	setCoreParameter("UserAgent", userAgent);
+	setCoreParameter("UserAgent", std::to_string(userAgent));
 }
 
 int GetAccountProfileRequest::getConnectionType()const

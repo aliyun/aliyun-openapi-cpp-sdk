@@ -33,7 +33,7 @@ std::string CreateVerifySDKRequest::getSourceIp()const
 void CreateVerifySDKRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateVerifySDKRequest::getAppUrl()const
@@ -44,7 +44,7 @@ std::string CreateVerifySDKRequest::getAppUrl()const
 void CreateVerifySDKRequest::setAppUrl(const std::string& appUrl)
 {
 	appUrl_ = appUrl;
-	setCoreParameter("AppUrl", appUrl);
+	setCoreParameter("AppUrl", std::to_string(appUrl));
 }
 
 std::string CreateVerifySDKRequest::getLang()const
@@ -55,7 +55,7 @@ std::string CreateVerifySDKRequest::getLang()const
 void CreateVerifySDKRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateVerifySDKRequest::getPlatform()const
@@ -66,6 +66,6 @@ std::string CreateVerifySDKRequest::getPlatform()const
 void CreateVerifySDKRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setCoreParameter("Platform", std::to_string(platform));
 }
 

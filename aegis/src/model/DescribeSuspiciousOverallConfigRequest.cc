@@ -33,7 +33,7 @@ std::string DescribeSuspiciousOverallConfigRequest::getSourceIp()const
 void DescribeSuspiciousOverallConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeSuspiciousOverallConfigRequest::getType()const
@@ -44,6 +44,6 @@ std::string DescribeSuspiciousOverallConfigRequest::getType()const
 void DescribeSuspiciousOverallConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

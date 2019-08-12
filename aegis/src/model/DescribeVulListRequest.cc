@@ -33,7 +33,7 @@ std::string DescribeVulListRequest::getStatusList()const
 void DescribeVulListRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
+	setCoreParameter("StatusList", std::to_string(statusList));
 }
 
 std::string DescribeVulListRequest::getLevel()const
@@ -44,7 +44,7 @@ std::string DescribeVulListRequest::getLevel()const
 void DescribeVulListRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setCoreParameter("Level", std::to_string(level));
 }
 
 std::string DescribeVulListRequest::getResource()const
@@ -55,7 +55,7 @@ std::string DescribeVulListRequest::getResource()const
 void DescribeVulListRequest::setResource(const std::string& resource)
 {
 	resource_ = resource;
-	setCoreParameter("Resource", resource);
+	setCoreParameter("Resource", std::to_string(resource));
 }
 
 std::string DescribeVulListRequest::getCveId()const
@@ -66,7 +66,7 @@ std::string DescribeVulListRequest::getCveId()const
 void DescribeVulListRequest::setCveId(const std::string& cveId)
 {
 	cveId_ = cveId;
-	setCoreParameter("CveId", cveId);
+	setCoreParameter("CveId", std::to_string(cveId));
 }
 
 std::string DescribeVulListRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string DescribeVulListRequest::getGroupId()const
 void DescribeVulListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeVulListRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeVulListRequest::getRemark()const
 void DescribeVulListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeVulListRequest::getDealed()const
@@ -99,7 +99,7 @@ std::string DescribeVulListRequest::getDealed()const
 void DescribeVulListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 int DescribeVulListRequest::getCurrentPage()const
@@ -121,7 +121,7 @@ std::string DescribeVulListRequest::getType()const
 void DescribeVulListRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 long DescribeVulListRequest::getCreateTsStart()const
@@ -143,7 +143,7 @@ std::string DescribeVulListRequest::getBatchName()const
 void DescribeVulListRequest::setBatchName(const std::string& batchName)
 {
 	batchName_ = batchName;
-	setCoreParameter("BatchName", batchName);
+	setCoreParameter("BatchName", std::to_string(batchName));
 }
 
 std::string DescribeVulListRequest::getAliasName()const
@@ -154,7 +154,7 @@ std::string DescribeVulListRequest::getAliasName()const
 void DescribeVulListRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setCoreParameter("AliasName", std::to_string(aliasName));
 }
 
 std::string DescribeVulListRequest::getSourceIp()const
@@ -165,7 +165,7 @@ std::string DescribeVulListRequest::getSourceIp()const
 void DescribeVulListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeVulListRequest::getName()const
@@ -176,7 +176,7 @@ std::string DescribeVulListRequest::getName()const
 void DescribeVulListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeVulListRequest::getPageSize()const
@@ -198,7 +198,7 @@ std::string DescribeVulListRequest::getIds()const
 void DescribeVulListRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string DescribeVulListRequest::getLang()const
@@ -209,7 +209,7 @@ std::string DescribeVulListRequest::getLang()const
 void DescribeVulListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeVulListRequest::getCreateTsEnd()const
@@ -231,7 +231,7 @@ std::string DescribeVulListRequest::getNecessity()const
 void DescribeVulListRequest::setNecessity(const std::string& necessity)
 {
 	necessity_ = necessity;
-	setCoreParameter("Necessity", necessity);
+	setCoreParameter("Necessity", std::to_string(necessity));
 }
 
 std::string DescribeVulListRequest::getUuids()const
@@ -242,6 +242,6 @@ std::string DescribeVulListRequest::getUuids()const
 void DescribeVulListRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

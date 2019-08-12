@@ -44,7 +44,7 @@ std::string ModifyBandwidthPackageSpecRequest::getBandwidthPackageId()const
 void ModifyBandwidthPackageSpecRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string ModifyBandwidthPackageSpecRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyBandwidthPackageSpecRequest::getResourceOwnerAccount()const
 void ModifyBandwidthPackageSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyBandwidthPackageSpecRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyBandwidthPackageSpecRequest::getRegionId()const
 void ModifyBandwidthPackageSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyBandwidthPackageSpecRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string ModifyBandwidthPackageSpecRequest::getBandwidth()const
 void ModifyBandwidthPackageSpecRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyBandwidthPackageSpecRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyBandwidthPackageSpecRequest::getOwnerAccount()const
 void ModifyBandwidthPackageSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyBandwidthPackageSpecRequest::getOwnerId()const

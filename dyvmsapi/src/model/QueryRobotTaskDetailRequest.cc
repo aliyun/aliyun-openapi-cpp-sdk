@@ -44,7 +44,7 @@ std::string QueryRobotTaskDetailRequest::getResourceOwnerAccount()const
 void QueryRobotTaskDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long QueryRobotTaskDetailRequest::getId()const
@@ -77,6 +77,6 @@ std::string QueryRobotTaskDetailRequest::getAccessKeyId()const
 void QueryRobotTaskDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

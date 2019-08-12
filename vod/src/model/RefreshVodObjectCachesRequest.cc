@@ -33,7 +33,7 @@ std::string RefreshVodObjectCachesRequest::getSecurityToken()const
 void RefreshVodObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RefreshVodObjectCachesRequest::getObjectPath()const
@@ -44,7 +44,7 @@ std::string RefreshVodObjectCachesRequest::getObjectPath()const
 void RefreshVodObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", std::to_string(objectPath));
 }
 
 long RefreshVodObjectCachesRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string RefreshVodObjectCachesRequest::getObjectType()const
 void RefreshVodObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", std::to_string(objectType));
 }
 

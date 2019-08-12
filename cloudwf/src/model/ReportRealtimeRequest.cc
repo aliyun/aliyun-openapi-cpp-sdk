@@ -33,7 +33,7 @@ std::string ReportRealtimeRequest::getAccessKeyId()const
 void ReportRealtimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ReportRealtimeRequest::getAgsid()const

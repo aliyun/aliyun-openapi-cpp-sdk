@@ -33,7 +33,7 @@ std::string DescribeSignaturesRequest::getSecurityToken()const
 void DescribeSignaturesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeSignaturesRequest::getSignatureName()const
@@ -44,7 +44,7 @@ std::string DescribeSignaturesRequest::getSignatureName()const
 void DescribeSignaturesRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", signatureName);
+	setCoreParameter("SignatureName", std::to_string(signatureName));
 }
 
 int DescribeSignaturesRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeSignaturesRequest::getSignatureId()const
 void DescribeSignaturesRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setCoreParameter("SignatureId", std::to_string(signatureId));
 }
 
 int DescribeSignaturesRequest::getPageNumber()const
@@ -88,6 +88,6 @@ std::string DescribeSignaturesRequest::getAccessKeyId()const
 void DescribeSignaturesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

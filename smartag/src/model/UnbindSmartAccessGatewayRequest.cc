@@ -55,7 +55,7 @@ std::string UnbindSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void UnbindSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string UnbindSmartAccessGatewayRequest::getRegionId()const
 void UnbindSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string UnbindSmartAccessGatewayRequest::getOwnerAccount()const
 void UnbindSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string UnbindSmartAccessGatewayRequest::getCcnId()const
 void UnbindSmartAccessGatewayRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getSmartAGId()const
@@ -99,7 +99,7 @@ std::string UnbindSmartAccessGatewayRequest::getSmartAGId()const
 void UnbindSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long UnbindSmartAccessGatewayRequest::getOwnerId()const

@@ -44,7 +44,7 @@ std::string MetastoreRetryTaskRequest::getRegionId()const
 void MetastoreRetryTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreRetryTaskRequest::getTaskId()const
@@ -55,7 +55,7 @@ std::string MetastoreRetryTaskRequest::getTaskId()const
 void MetastoreRetryTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string MetastoreRetryTaskRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MetastoreRetryTaskRequest::getAccessKeyId()const
 void MetastoreRetryTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

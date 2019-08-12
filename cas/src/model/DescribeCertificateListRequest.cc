@@ -33,7 +33,7 @@ std::string DescribeCertificateListRequest::getResourceGroupId()const
 void DescribeCertificateListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeCertificateListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCertificateListRequest::getSourceIp()const
 void DescribeCertificateListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeCertificateListRequest::getSortType()const
@@ -55,7 +55,7 @@ std::string DescribeCertificateListRequest::getSortType()const
 void DescribeCertificateListRequest::setSortType(const std::string& sortType)
 {
 	sortType_ = sortType;
-	setCoreParameter("SortType", sortType);
+	setCoreParameter("SortType", std::to_string(sortType));
 }
 
 std::string DescribeCertificateListRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeCertificateListRequest::getRegionId()const
 void DescribeCertificateListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeCertificateListRequest::getShowSize()const
@@ -88,7 +88,7 @@ std::string DescribeCertificateListRequest::getSortColumn()const
 void DescribeCertificateListRequest::setSortColumn(const std::string& sortColumn)
 {
 	sortColumn_ = sortColumn;
-	setCoreParameter("SortColumn", sortColumn);
+	setCoreParameter("SortColumn", std::to_string(sortColumn));
 }
 
 int DescribeCertificateListRequest::getCurrentPage()const
@@ -127,7 +127,7 @@ std::string DescribeCertificateListRequest::getLang()const
 void DescribeCertificateListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeCertificateListRequest::getKeyword()const
@@ -138,7 +138,7 @@ std::string DescribeCertificateListRequest::getKeyword()const
 void DescribeCertificateListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 std::string DescribeCertificateListRequest::getStatus()const
@@ -149,6 +149,6 @@ std::string DescribeCertificateListRequest::getStatus()const
 void DescribeCertificateListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

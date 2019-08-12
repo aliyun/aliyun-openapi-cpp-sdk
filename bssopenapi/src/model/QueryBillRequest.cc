@@ -33,7 +33,7 @@ std::string QueryBillRequest::getProductCode()const
 void QueryBillRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 bool QueryBillRequest::getIsHideZeroCharge()const
@@ -44,7 +44,7 @@ bool QueryBillRequest::getIsHideZeroCharge()const
 void QueryBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setCoreParameter("IsHideZeroCharge", isHideZeroCharge);
+	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
 }
 
 bool QueryBillRequest::getIsDisplayLocalCurrency()const
@@ -55,7 +55,7 @@ bool QueryBillRequest::getIsDisplayLocalCurrency()const
 void QueryBillRequest::setIsDisplayLocalCurrency(bool isDisplayLocalCurrency)
 {
 	isDisplayLocalCurrency_ = isDisplayLocalCurrency;
-	setCoreParameter("IsDisplayLocalCurrency", isDisplayLocalCurrency);
+	setCoreParameter("IsDisplayLocalCurrency", isDisplayLocalCurrency ? "true" : "false");
 }
 
 std::string QueryBillRequest::getSubscriptionType()const
@@ -66,7 +66,7 @@ std::string QueryBillRequest::getSubscriptionType()const
 void QueryBillRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 int QueryBillRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string QueryBillRequest::getBillingCycle()const
 void QueryBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", std::to_string(billingCycle));
 }
 
 std::string QueryBillRequest::getType()const
@@ -99,7 +99,7 @@ std::string QueryBillRequest::getType()const
 void QueryBillRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 long QueryBillRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string QueryBillRequest::getProductType()const
 void QueryBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

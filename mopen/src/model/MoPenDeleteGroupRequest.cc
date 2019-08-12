@@ -33,6 +33,6 @@ std::string MoPenDeleteGroupRequest::getGroupId()const
 void MoPenDeleteGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

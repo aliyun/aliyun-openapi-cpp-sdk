@@ -44,7 +44,7 @@ std::string CategoryTreeRequest::getResourceOwnerAccount()const
 void CategoryTreeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CategoryTreeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CategoryTreeRequest::getOwnerAccount()const
 void CategoryTreeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CategoryTreeRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string CategoryTreeRequest::getAccessKeyId()const
 void CategoryTreeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

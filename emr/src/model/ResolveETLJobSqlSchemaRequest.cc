@@ -33,7 +33,7 @@ std::string ResolveETLJobSqlSchemaRequest::getStageName()const
 void ResolveETLJobSqlSchemaRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 long ResolveETLJobSqlSchemaRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ResolveETLJobSqlSchemaRequest::getRegionId()const
 void ResolveETLJobSqlSchemaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string ResolveETLJobSqlSchemaRequest::getEtlJobId()const
 void ResolveETLJobSqlSchemaRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", std::to_string(etlJobId));
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string ResolveETLJobSqlSchemaRequest::getDataSourceId()const
 void ResolveETLJobSqlSchemaRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ResolveETLJobSqlSchemaRequest::getAccessKeyId()const
 void ResolveETLJobSqlSchemaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getSql()const
@@ -99,6 +99,6 @@ std::string ResolveETLJobSqlSchemaRequest::getSql()const
 void ResolveETLJobSqlSchemaRequest::setSql(const std::string& sql)
 {
 	sql_ = sql;
-	setCoreParameter("Sql", sql);
+	setCoreParameter("Sql", std::to_string(sql));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeRouteServicesInCenRequest::getResourceOwnerAccount()const
 void DescribeRouteServicesInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRouteServicesInCenRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeRouteServicesInCenRequest::getCenId()const
 void DescribeRouteServicesInCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
 void DescribeRouteServicesInCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeRouteServicesInCenRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeRouteServicesInCenRequest::getHost()const
 void DescribeRouteServicesInCenRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", host);
+	setCoreParameter("Host", std::to_string(host));
 }
 
 std::string DescribeRouteServicesInCenRequest::getHostRegionId()const
@@ -99,7 +99,7 @@ std::string DescribeRouteServicesInCenRequest::getHostRegionId()const
 void DescribeRouteServicesInCenRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setCoreParameter("HostRegionId", std::to_string(hostRegionId));
 }
 
 std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
 void DescribeRouteServicesInCenRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setCoreParameter("AccessRegionId", std::to_string(accessRegionId));
 }
 
 long DescribeRouteServicesInCenRequest::getOwnerId()const

@@ -66,7 +66,7 @@ std::string ListEmailVerificationRequest::getUserClientIp()const
 void ListEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string ListEmailVerificationRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ListEmailVerificationRequest::getLang()const
 void ListEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int ListEmailVerificationRequest::getPageNum()const
@@ -99,7 +99,7 @@ std::string ListEmailVerificationRequest::getEmail()const
 void ListEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 
 int ListEmailVerificationRequest::getVerificationStatus()const

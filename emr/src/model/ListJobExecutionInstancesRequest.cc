@@ -44,7 +44,7 @@ std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
 void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
 {
 	executionPlanInstanceId_ = executionPlanInstanceId;
-	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+	setCoreParameter("ExecutionPlanInstanceId", std::to_string(executionPlanInstanceId));
 }
 
 std::string ListJobExecutionInstancesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListJobExecutionInstancesRequest::getRegionId()const
 void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListJobExecutionInstancesRequest::getPageSize()const
@@ -77,7 +77,7 @@ bool ListJobExecutionInstancesRequest::getIsDesc()const
 void ListJobExecutionInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc);
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListJobExecutionInstancesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
 void ListJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

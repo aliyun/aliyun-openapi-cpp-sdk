@@ -33,7 +33,7 @@ bool CancelPredictiveJobsRequest::getAll()const
 void CancelPredictiveJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> CancelPredictiveJobsRequest::getJobId()const
@@ -56,7 +56,7 @@ std::string CancelPredictiveJobsRequest::getInstanceId()const
 void CancelPredictiveJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CancelPredictiveJobsRequest::getJobGroupId()const
@@ -67,6 +67,6 @@ std::string CancelPredictiveJobsRequest::getJobGroupId()const
 void CancelPredictiveJobsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 

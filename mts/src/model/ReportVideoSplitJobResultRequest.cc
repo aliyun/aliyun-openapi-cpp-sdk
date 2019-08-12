@@ -33,7 +33,7 @@ std::string ReportVideoSplitJobResultRequest::getResult()const
 void ReportVideoSplitJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", result);
+	setCoreParameter("Result", std::to_string(result));
 }
 
 std::string ReportVideoSplitJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportVideoSplitJobResultRequest::getJobId()const
 void ReportVideoSplitJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ReportVideoSplitJobResultRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ReportVideoSplitJobResultRequest::getResourceOwnerAccount()const
 void ReportVideoSplitJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportVideoSplitJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportVideoSplitJobResultRequest::getOwnerAccount()const
 void ReportVideoSplitJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReportVideoSplitJobResultRequest::getDetails()const
@@ -88,7 +88,7 @@ std::string ReportVideoSplitJobResultRequest::getDetails()const
 void ReportVideoSplitJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setCoreParameter("Details", std::to_string(details));
 }
 
 long ReportVideoSplitJobResultRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ReportVideoSplitJobResultRequest::getAccessKeyId()const
 void ReportVideoSplitJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

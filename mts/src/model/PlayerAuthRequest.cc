@@ -33,7 +33,7 @@ std::string PlayerAuthRequest::getResourceOwnerId()const
 void PlayerAuthRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PlayerAuthRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string PlayerAuthRequest::getResourceOwnerAccount()const
 void PlayerAuthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string PlayerAuthRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string PlayerAuthRequest::getOwnerAccount()const
 void PlayerAuthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string PlayerAuthRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string PlayerAuthRequest::getOwnerId()const
 void PlayerAuthRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PlayerAuthRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string PlayerAuthRequest::getAccessKeyId()const
 void PlayerAuthRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string SetL2OssKeyConfigRequest::getSecurityToken()const
 void SetL2OssKeyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetL2OssKeyConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetL2OssKeyConfigRequest::getDomainName()const
 void SetL2OssKeyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetL2OssKeyConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string SetL2OssKeyConfigRequest::getPrivateOssAuth()const
 void SetL2OssKeyConfigRequest::setPrivateOssAuth(const std::string& privateOssAuth)
 {
 	privateOssAuth_ = privateOssAuth;
-	setCoreParameter("PrivateOssAuth", privateOssAuth);
+	setCoreParameter("PrivateOssAuth", std::to_string(privateOssAuth));
 }
 

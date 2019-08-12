@@ -33,7 +33,7 @@ std::string DescribeNsasSuspEventTypeRequest::getSourceIp()const
 void DescribeNsasSuspEventTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeNsasSuspEventTypeRequest::getName()const
@@ -44,7 +44,7 @@ std::string DescribeNsasSuspEventTypeRequest::getName()const
 void DescribeNsasSuspEventTypeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string DescribeNsasSuspEventTypeRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string DescribeNsasSuspEventTypeRequest::getRemark()const
 void DescribeNsasSuspEventTypeRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeNsasSuspEventTypeRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string DescribeNsasSuspEventTypeRequest::getFrom()const
 void DescribeNsasSuspEventTypeRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeNsasSuspEventTypeRequest::getLang()const
@@ -77,6 +77,6 @@ std::string DescribeNsasSuspEventTypeRequest::getLang()const
 void DescribeNsasSuspEventTypeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

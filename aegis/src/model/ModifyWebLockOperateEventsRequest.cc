@@ -33,7 +33,7 @@ std::string ModifyWebLockOperateEventsRequest::getSourceIp()const
 void ModifyWebLockOperateEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyWebLockOperateEventsRequest::getOperation()const
@@ -44,7 +44,7 @@ std::string ModifyWebLockOperateEventsRequest::getOperation()const
 void ModifyWebLockOperateEventsRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setCoreParameter("Operation", std::to_string(operation));
 }
 
 std::string ModifyWebLockOperateEventsRequest::getEventIds()const
@@ -55,6 +55,6 @@ std::string ModifyWebLockOperateEventsRequest::getEventIds()const
 void ModifyWebLockOperateEventsRequest::setEventIds(const std::string& eventIds)
 {
 	eventIds_ = eventIds;
-	setCoreParameter("EventIds", eventIds);
+	setCoreParameter("EventIds", std::to_string(eventIds));
 }
 

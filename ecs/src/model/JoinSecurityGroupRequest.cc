@@ -33,7 +33,7 @@ std::string JoinSecurityGroupRequest::getSourceRegionId()const
 void JoinSecurityGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long JoinSecurityGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string JoinSecurityGroupRequest::getInstanceId()const
 void JoinSecurityGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string JoinSecurityGroupRequest::getResourceOwnerAccount()const
 void JoinSecurityGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string JoinSecurityGroupRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string JoinSecurityGroupRequest::getOwnerAccount()const
 void JoinSecurityGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string JoinSecurityGroupRequest::getSecurityGroupId()const
@@ -88,7 +88,7 @@ std::string JoinSecurityGroupRequest::getSecurityGroupId()const
 void JoinSecurityGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 long JoinSecurityGroupRequest::getOwnerId()const

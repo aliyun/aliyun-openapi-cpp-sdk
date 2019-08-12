@@ -33,7 +33,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getSourceRegionId()con
 void ModifyDedicatedHostAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
@@ -55,7 +55,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getDedicatedHostIds()c
 void ModifyDedicatedHostAutoRenewAttributeRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
 {
 	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
+	setCoreParameter("DedicatedHostIds", std::to_string(dedicatedHostIds));
 }
 
 long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
 }
 
 bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
@@ -88,7 +88,7 @@ bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccoun
 void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRegionId()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerAccount()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRenewalStatus()const
@@ -132,7 +132,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRenewalStatus()cons
 void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", renewalStatus);
+	setCoreParameter("RenewalStatus", std::to_string(renewalStatus));
 }
 
 long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const

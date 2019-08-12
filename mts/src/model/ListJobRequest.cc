@@ -44,7 +44,7 @@ std::string ListJobRequest::getResourceOwnerAccount()const
 void ListJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ListJobRequest::getNextPageToken()const
@@ -55,7 +55,7 @@ std::string ListJobRequest::getNextPageToken()const
 void ListJobRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
 }
 
 std::string ListJobRequest::getStartOfJobCreatedTimeRange()const
@@ -66,7 +66,7 @@ std::string ListJobRequest::getStartOfJobCreatedTimeRange()const
 void ListJobRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
-	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+	setCoreParameter("StartOfJobCreatedTimeRange", std::to_string(startOfJobCreatedTimeRange));
 }
 
 std::string ListJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ListJobRequest::getOwnerAccount()const
 void ListJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ListJobRequest::getMaximumPageSize()const
@@ -99,7 +99,7 @@ std::string ListJobRequest::getState()const
 void ListJobRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 long ListJobRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ListJobRequest::getAccessKeyId()const
 void ListJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListJobRequest::getEndOfJobCreatedTimeRange()const
@@ -132,7 +132,7 @@ std::string ListJobRequest::getEndOfJobCreatedTimeRange()const
 void ListJobRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
 {
 	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+	setCoreParameter("EndOfJobCreatedTimeRange", std::to_string(endOfJobCreatedTimeRange));
 }
 
 std::string ListJobRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string ListJobRequest::getPipelineId()const
 void ListJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

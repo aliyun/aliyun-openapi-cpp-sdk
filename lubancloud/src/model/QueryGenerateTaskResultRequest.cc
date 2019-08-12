@@ -33,7 +33,7 @@ bool QueryGenerateTaskResultRequest::getSecurity_transport()const
 void QueryGenerateTaskResultRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string QueryGenerateTaskResultRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string QueryGenerateTaskResultRequest::getApp_ip()const
 void QueryGenerateTaskResultRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string QueryGenerateTaskResultRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string QueryGenerateTaskResultRequest::getRegionId()const
 void QueryGenerateTaskResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string QueryGenerateTaskResultRequest::getRequestId()const
@@ -66,7 +66,7 @@ std::string QueryGenerateTaskResultRequest::getRequestId()const
 void QueryGenerateTaskResultRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long QueryGenerateTaskResultRequest::getCallerParentId()const
@@ -88,7 +88,7 @@ std::string QueryGenerateTaskResultRequest::getCallerType()const
 void QueryGenerateTaskResultRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool QueryGenerateTaskResultRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool QueryGenerateTaskResultRequest::getAk_mfa_present()const
 void QueryGenerateTaskResultRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long QueryGenerateTaskResultRequest::getCallerUid()const

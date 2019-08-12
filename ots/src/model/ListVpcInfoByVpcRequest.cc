@@ -33,7 +33,7 @@ std::string ListVpcInfoByVpcRequest::getAccess_key_id()const
 void ListVpcInfoByVpcRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long ListVpcInfoByVpcRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ListVpcInfoByVpcRequest::getVpcId()const
 void ListVpcInfoByVpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 long ListVpcInfoByVpcRequest::getPageSize()const

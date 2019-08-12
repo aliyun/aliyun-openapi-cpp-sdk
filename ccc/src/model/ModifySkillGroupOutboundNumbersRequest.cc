@@ -33,7 +33,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getInstanceId()const
 void ModifySkillGroupOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhoneNumberId()const
@@ -56,7 +56,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
 void ModifySkillGroupOutboundNumbersRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
@@ -78,6 +78,6 @@ std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
 void ModifySkillGroupOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

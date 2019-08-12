@@ -44,7 +44,7 @@ std::string KickOutClientsRequest::getResourceOwnerAccount()const
 void KickOutClientsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string KickOutClientsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string KickOutClientsRequest::getRegionId()const
 void KickOutClientsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string KickOutClientsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string KickOutClientsRequest::getOwnerAccount()const
 void KickOutClientsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string KickOutClientsRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string KickOutClientsRequest::getSmartAGId()const
 void KickOutClientsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long KickOutClientsRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string KickOutClientsRequest::getUsername()const
 void KickOutClientsRequest::setUsername(const std::string& username)
 {
 	username_ = username;
-	setCoreParameter("Username", username);
+	setCoreParameter("Username", std::to_string(username));
 }
 

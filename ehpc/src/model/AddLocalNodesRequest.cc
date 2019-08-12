@@ -33,7 +33,7 @@ std::string AddLocalNodesRequest::getNodes()const
 void AddLocalNodesRequest::setNodes(const std::string& nodes)
 {
 	nodes_ = nodes;
-	setCoreParameter("Nodes", nodes);
+	setCoreParameter("Nodes", std::to_string(nodes));
 }
 
 std::string AddLocalNodesRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string AddLocalNodesRequest::getClusterId()const
 void AddLocalNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string AddLocalNodesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string AddLocalNodesRequest::getAccessKeyId()const
 void AddLocalNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

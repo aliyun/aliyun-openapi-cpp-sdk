@@ -33,7 +33,7 @@ std::string AddAlbumPhotosRequest::getLibraryId()const
 void AddAlbumPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long AddAlbumPhotosRequest::getAlbumId()const
@@ -67,6 +67,6 @@ std::string AddAlbumPhotosRequest::getStoreName()const
 void AddAlbumPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

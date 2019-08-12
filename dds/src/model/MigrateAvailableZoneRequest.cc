@@ -33,7 +33,7 @@ std::string MigrateAvailableZoneRequest::getVswitch()const
 void MigrateAvailableZoneRequest::setVswitch(const std::string& vswitch)
 {
 	vswitch_ = vswitch;
-	setCoreParameter("Vswitch", vswitch);
+	setCoreParameter("Vswitch", std::to_string(vswitch));
 }
 
 long MigrateAvailableZoneRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string MigrateAvailableZoneRequest::getResourceOwnerAccount()const
 void MigrateAvailableZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string MigrateAvailableZoneRequest::getEffectiveTime()const
@@ -66,7 +66,7 @@ std::string MigrateAvailableZoneRequest::getEffectiveTime()const
 void MigrateAvailableZoneRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setCoreParameter("EffectiveTime", std::to_string(effectiveTime));
 }
 
 std::string MigrateAvailableZoneRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string MigrateAvailableZoneRequest::getOwnerAccount()const
 void MigrateAvailableZoneRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string MigrateAvailableZoneRequest::getZoneId()const
@@ -88,7 +88,7 @@ std::string MigrateAvailableZoneRequest::getZoneId()const
 void MigrateAvailableZoneRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string MigrateAvailableZoneRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string MigrateAvailableZoneRequest::getDBInstanceId()const
 void MigrateAvailableZoneRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long MigrateAvailableZoneRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string MigrateAvailableZoneRequest::getAccessKeyId()const
 void MigrateAvailableZoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

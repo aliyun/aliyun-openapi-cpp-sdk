@@ -44,7 +44,7 @@ std::string DescribeImageFromLibRequest::getEndDate()const
 void DescribeImageFromLibRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string DescribeImageFromLibRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeImageFromLibRequest::getSourceIp()const
 void DescribeImageFromLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeImageFromLibRequest::getImageLibId()const
@@ -110,6 +110,6 @@ std::string DescribeImageFromLibRequest::getStartDate()const
 void DescribeImageFromLibRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 

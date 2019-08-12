@@ -44,7 +44,7 @@ std::string ListClusterTemplatesRequest::getRegionId()const
 void ListClusterTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListClusterTemplatesRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string ListClusterTemplatesRequest::getBizId()const
 void ListClusterTemplatesRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 int ListClusterTemplatesRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string ListClusterTemplatesRequest::getAccessKeyId()const
 void ListClusterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

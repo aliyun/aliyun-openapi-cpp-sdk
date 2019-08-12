@@ -33,7 +33,7 @@ std::string OnsMessageTraceRequest::getInstanceId()const
 void OnsMessageTraceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsMessageTraceRequest::getTopic()const
@@ -44,7 +44,7 @@ std::string OnsMessageTraceRequest::getTopic()const
 void OnsMessageTraceRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 std::string OnsMessageTraceRequest::getMsgId()const
@@ -55,6 +55,6 @@ std::string OnsMessageTraceRequest::getMsgId()const
 void OnsMessageTraceRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setCoreParameter("MsgId", std::to_string(msgId));
 }
 

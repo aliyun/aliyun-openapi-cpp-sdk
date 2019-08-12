@@ -33,7 +33,7 @@ std::string CreateBgpGroupRequest::getAuthKey()const
 void CreateBgpGroupRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setCoreParameter("AuthKey", authKey);
+	setCoreParameter("AuthKey", std::to_string(authKey));
 }
 
 long CreateBgpGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateBgpGroupRequest::getResourceOwnerAccount()const
 void CreateBgpGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateBgpGroupRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateBgpGroupRequest::getClientToken()const
 void CreateBgpGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateBgpGroupRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateBgpGroupRequest::getOwnerAccount()const
 void CreateBgpGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateBgpGroupRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateBgpGroupRequest::getDescription()const
 void CreateBgpGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateBgpGroupRequest::getOwnerId()const
@@ -121,7 +121,7 @@ bool CreateBgpGroupRequest::getIsFakeAsn()const
 void CreateBgpGroupRequest::setIsFakeAsn(bool isFakeAsn)
 {
 	isFakeAsn_ = isFakeAsn;
-	setCoreParameter("IsFakeAsn", isFakeAsn);
+	setCoreParameter("IsFakeAsn", isFakeAsn ? "true" : "false");
 }
 
 std::string CreateBgpGroupRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateBgpGroupRequest::getRegionId()const
 void CreateBgpGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateBgpGroupRequest::getRouterId()const
@@ -143,7 +143,7 @@ std::string CreateBgpGroupRequest::getRouterId()const
 void CreateBgpGroupRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setCoreParameter("RouterId", std::to_string(routerId));
 }
 
 std::string CreateBgpGroupRequest::getName()const
@@ -154,6 +154,6 @@ std::string CreateBgpGroupRequest::getName()const
 void CreateBgpGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

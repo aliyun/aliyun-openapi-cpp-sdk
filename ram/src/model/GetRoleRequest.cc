@@ -33,6 +33,6 @@ std::string GetRoleRequest::getRoleName()const
 void GetRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setCoreParameter("RoleName", std::to_string(roleName));
 }
 

@@ -33,6 +33,6 @@ std::string GetAliyunPkByAliyunIdRequest::getAliyunId()const
 void GetAliyunPkByAliyunIdRequest::setAliyunId(const std::string& aliyunId)
 {
 	aliyunId_ = aliyunId;
-	setCoreParameter("AliyunId", aliyunId);
+	setCoreParameter("AliyunId", std::to_string(aliyunId));
 }
 

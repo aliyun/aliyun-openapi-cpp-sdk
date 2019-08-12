@@ -45,7 +45,7 @@ std::string ExitStandbyRequest::getResourceOwnerAccount()const
 void ExitStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ExitStandbyRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string ExitStandbyRequest::getScalingGroupId()const
 void ExitStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 long ExitStandbyRequest::getOwnerId()const
@@ -78,6 +78,6 @@ std::string ExitStandbyRequest::getAccessKeyId()const
 void ExitStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

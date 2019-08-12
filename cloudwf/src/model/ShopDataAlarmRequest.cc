@@ -33,7 +33,7 @@ std::string ShopDataAlarmRequest::getWarnPhone()const
 void ShopDataAlarmRequest::setWarnPhone(const std::string& warnPhone)
 {
 	warnPhone_ = warnPhone;
-	setCoreParameter("WarnPhone", warnPhone);
+	setCoreParameter("WarnPhone", std::to_string(warnPhone));
 }
 
 int ShopDataAlarmRequest::getWarn()const
@@ -66,7 +66,7 @@ std::string ShopDataAlarmRequest::getWarnEmail()const
 void ShopDataAlarmRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
-	setCoreParameter("WarnEmail", warnEmail);
+	setCoreParameter("WarnEmail", std::to_string(warnEmail));
 }
 
 std::string ShopDataAlarmRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string ShopDataAlarmRequest::getAccessKeyId()const
 void ShopDataAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ShopDataAlarmRequest::getSid()const

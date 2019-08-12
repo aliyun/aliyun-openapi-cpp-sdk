@@ -33,7 +33,7 @@ std::string DescribeOrderListRequest::getSourceIp()const
 void DescribeOrderListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeOrderListRequest::getShowSize()const
@@ -94,7 +94,7 @@ std::string DescribeOrderListRequest::getKeyword()const
 void DescribeOrderListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 std::string DescribeOrderListRequest::getLang()const
@@ -105,7 +105,7 @@ std::string DescribeOrderListRequest::getLang()const
 void DescribeOrderListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeOrderListRequest::getStatus()const
@@ -116,6 +116,6 @@ std::string DescribeOrderListRequest::getStatus()const
 void DescribeOrderListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

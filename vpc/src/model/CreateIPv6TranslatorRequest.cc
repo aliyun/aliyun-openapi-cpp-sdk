@@ -44,7 +44,7 @@ bool CreateIPv6TranslatorRequest::getAutoPay()const
 void CreateIPv6TranslatorRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateIPv6TranslatorRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateIPv6TranslatorRequest::getResourceOwnerAccount()const
 void CreateIPv6TranslatorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateIPv6TranslatorRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateIPv6TranslatorRequest::getClientToken()const
 void CreateIPv6TranslatorRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int CreateIPv6TranslatorRequest::getBandwidth()const
@@ -88,7 +88,7 @@ std::string CreateIPv6TranslatorRequest::getOwnerAccount()const
 void CreateIPv6TranslatorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateIPv6TranslatorRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string CreateIPv6TranslatorRequest::getSpec()const
 void CreateIPv6TranslatorRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setCoreParameter("Spec", std::to_string(spec));
 }
 
 int CreateIPv6TranslatorRequest::getDuration()const
@@ -132,7 +132,7 @@ std::string CreateIPv6TranslatorRequest::getRegionId()const
 void CreateIPv6TranslatorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateIPv6TranslatorRequest::getName()const
@@ -143,7 +143,7 @@ std::string CreateIPv6TranslatorRequest::getName()const
 void CreateIPv6TranslatorRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateIPv6TranslatorRequest::getPayType()const
@@ -154,7 +154,7 @@ std::string CreateIPv6TranslatorRequest::getPayType()const
 void CreateIPv6TranslatorRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string CreateIPv6TranslatorRequest::getPricingCycle()const
@@ -165,6 +165,6 @@ std::string CreateIPv6TranslatorRequest::getPricingCycle()const
 void CreateIPv6TranslatorRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

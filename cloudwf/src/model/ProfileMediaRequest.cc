@@ -33,7 +33,7 @@ std::string ProfileMediaRequest::getBeginDate()const
 void ProfileMediaRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", std::to_string(beginDate));
 }
 
 std::string ProfileMediaRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ProfileMediaRequest::getEndDate()const
 void ProfileMediaRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 int ProfileMediaRequest::getDataType()const
@@ -77,6 +77,6 @@ std::string ProfileMediaRequest::getAccessKeyId()const
 void ProfileMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

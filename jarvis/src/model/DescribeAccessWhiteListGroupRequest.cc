@@ -33,7 +33,7 @@ std::string DescribeAccessWhiteListGroupRequest::getSrcIP()const
 void DescribeAccessWhiteListGroupRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string DescribeAccessWhiteListGroupRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeAccessWhiteListGroupRequest::getSourceIp()const
 void DescribeAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeAccessWhiteListGroupRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeAccessWhiteListGroupRequest::getQueryProduct()const
 void DescribeAccessWhiteListGroupRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setCoreParameter("QueryProduct", std::to_string(queryProduct));
 }
 
 int DescribeAccessWhiteListGroupRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ std::string DescribeAccessWhiteListGroupRequest::getDstIP()const
 void DescribeAccessWhiteListGroupRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setCoreParameter("DstIP", std::to_string(dstIP));
 }
 
 std::string DescribeAccessWhiteListGroupRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeAccessWhiteListGroupRequest::getLang()const
 void DescribeAccessWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAccessWhiteListGroupRequest::getStatus()const
@@ -121,7 +121,7 @@ std::string DescribeAccessWhiteListGroupRequest::getStatus()const
 void DescribeAccessWhiteListGroupRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 
 std::string DescribeAccessWhiteListGroupRequest::getSourceCode()const
@@ -132,6 +132,6 @@ std::string DescribeAccessWhiteListGroupRequest::getSourceCode()const
 void DescribeAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

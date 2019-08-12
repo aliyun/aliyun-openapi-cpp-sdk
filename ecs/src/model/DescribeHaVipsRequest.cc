@@ -61,7 +61,7 @@ std::string DescribeHaVipsRequest::getResourceOwnerAccount()const
 void DescribeHaVipsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeHaVipsRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeHaVipsRequest::getRegionId()const
 void DescribeHaVipsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeHaVipsRequest::getOwnerAccount()const
@@ -83,7 +83,7 @@ std::string DescribeHaVipsRequest::getOwnerAccount()const
 void DescribeHaVipsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeHaVipsRequest::getPageSize()const

@@ -33,7 +33,7 @@ std::string DescribeUidWhiteListGroupRequest::getSourceIp()const
 void DescribeUidWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeUidWhiteListGroupRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeUidWhiteListGroupRequest::getDstIP()const
 void DescribeUidWhiteListGroupRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setCoreParameter("DstIP", std::to_string(dstIP));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeUidWhiteListGroupRequest::getLang()const
 void DescribeUidWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getSrcUid()const
@@ -99,7 +99,7 @@ std::string DescribeUidWhiteListGroupRequest::getSrcUid()const
 void DescribeUidWhiteListGroupRequest::setSrcUid(const std::string& srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getStatus()const
@@ -110,7 +110,7 @@ std::string DescribeUidWhiteListGroupRequest::getStatus()const
 void DescribeUidWhiteListGroupRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getSourceCode()const
@@ -121,6 +121,6 @@ std::string DescribeUidWhiteListGroupRequest::getSourceCode()const
 void DescribeUidWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

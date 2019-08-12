@@ -33,7 +33,7 @@ std::string DescribeClustersRequest::getSourceRegionId()const
 void DescribeClustersRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeClustersRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeClustersRequest::getResourceOwnerAccount()const
 void DescribeClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeClustersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeClustersRequest::getRegionId()const
 void DescribeClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeClustersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeClustersRequest::getOwnerAccount()const
 void DescribeClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeClustersRequest::getOwnerId()const

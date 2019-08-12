@@ -44,6 +44,6 @@ std::string PutGroupDynamicRuleRequest::getGroupRuleArrayJson()const
 void PutGroupDynamicRuleRequest::setGroupRuleArrayJson(const std::string& groupRuleArrayJson)
 {
 	groupRuleArrayJson_ = groupRuleArrayJson;
-	setCoreParameter("GroupRuleArrayJson", groupRuleArrayJson);
+	setCoreParameter("GroupRuleArrayJson", std::to_string(groupRuleArrayJson));
 }
 

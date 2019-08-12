@@ -55,7 +55,7 @@ std::string ModifyRiskCheckStatusRequest::getSourceIp()const
 void ModifyRiskCheckStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyRiskCheckStatusRequest::getLang()const
@@ -66,7 +66,7 @@ std::string ModifyRiskCheckStatusRequest::getLang()const
 void ModifyRiskCheckStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long ModifyRiskCheckStatusRequest::getTaskId()const
@@ -88,6 +88,6 @@ std::string ModifyRiskCheckStatusRequest::getStatus()const
 void ModifyRiskCheckStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

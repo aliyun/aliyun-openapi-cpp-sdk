@@ -33,7 +33,7 @@ std::string AddLabelRequest::getLabelSeries()const
 void AddLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", std::to_string(labelSeries));
 }
 
 std::string AddLabelRequest::getOrganization()const
@@ -44,7 +44,7 @@ std::string AddLabelRequest::getOrganization()const
 void AddLabelRequest::setOrganization(const std::string& organization)
 {
 	organization_ = organization;
-	setCoreParameter("Organization", organization);
+	setCoreParameter("Organization", std::to_string(organization));
 }
 
 std::string AddLabelRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string AddLabelRequest::getEndTime()const
 void AddLabelRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string AddLabelRequest::getPK()const
@@ -66,7 +66,7 @@ std::string AddLabelRequest::getPK()const
 void AddLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setCoreParameter("PK", std::to_string(pK));
 }
 
 std::string AddLabelRequest::getLabelName()const
@@ -77,7 +77,7 @@ std::string AddLabelRequest::getLabelName()const
 void AddLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setCoreParameter("LabelName", labelName);
+	setCoreParameter("LabelName", std::to_string(labelName));
 }
 
 std::string AddLabelRequest::getUserName()const
@@ -88,6 +88,6 @@ std::string AddLabelRequest::getUserName()const
 void AddLabelRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

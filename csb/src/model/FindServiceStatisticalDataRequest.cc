@@ -44,7 +44,7 @@ std::string FindServiceStatisticalDataRequest::getRegionId()const
 void FindServiceStatisticalDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long FindServiceStatisticalDataRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string FindServiceStatisticalDataRequest::getServiceName()const
 void FindServiceStatisticalDataRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 long FindServiceStatisticalDataRequest::getStartTime()const

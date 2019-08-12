@@ -44,7 +44,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getCircuitCode()const
 void ModifyVirtualBorderRouterAttributeRequest::setCircuitCode(const std::string& circuitCode)
 {
 	circuitCode_ = circuitCode;
-	setCoreParameter("CircuitCode", circuitCode);
+	setCoreParameter("CircuitCode", std::to_string(circuitCode));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getAssociatedPhysicalConnections()const
@@ -55,7 +55,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getAssociatedPhysicalConn
 void ModifyVirtualBorderRouterAttributeRequest::setAssociatedPhysicalConnections(const std::string& associatedPhysicalConnections)
 {
 	associatedPhysicalConnections_ = associatedPhysicalConnections;
-	setCoreParameter("AssociatedPhysicalConnections", associatedPhysicalConnections);
+	setCoreParameter("AssociatedPhysicalConnections", std::to_string(associatedPhysicalConnections));
 }
 
 int ModifyVirtualBorderRouterAttributeRequest::getVlanId()const
@@ -77,7 +77,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerAccount()
 void ModifyVirtualBorderRouterAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getClientToken()const
 void ModifyVirtualBorderRouterAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getOwnerAccount()const
 void ModifyVirtualBorderRouterAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getDescription()const
 void ModifyVirtualBorderRouterAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getVbrId()const
@@ -121,7 +121,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getVbrId()const
 void ModifyVirtualBorderRouterAttributeRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", std::to_string(vbrId));
 }
 
 long ModifyVirtualBorderRouterAttributeRequest::getOwnerId()const
@@ -154,7 +154,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getPeerGatewayIp()const
 void ModifyVirtualBorderRouterAttributeRequest::setPeerGatewayIp(const std::string& peerGatewayIp)
 {
 	peerGatewayIp_ = peerGatewayIp;
-	setCoreParameter("PeerGatewayIp", peerGatewayIp);
+	setCoreParameter("PeerGatewayIp", std::to_string(peerGatewayIp));
 }
 
 long ModifyVirtualBorderRouterAttributeRequest::getDetectMultiplier()const
@@ -176,7 +176,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getPeeringSubnetMask()con
 void ModifyVirtualBorderRouterAttributeRequest::setPeeringSubnetMask(const std::string& peeringSubnetMask)
 {
 	peeringSubnetMask_ = peeringSubnetMask;
-	setCoreParameter("PeeringSubnetMask", peeringSubnetMask);
+	setCoreParameter("PeeringSubnetMask", std::to_string(peeringSubnetMask));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getRegionId()const
 void ModifyVirtualBorderRouterAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getName()const
@@ -198,7 +198,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getName()const
 void ModifyVirtualBorderRouterAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getLocalGatewayIp()const
@@ -209,7 +209,7 @@ std::string ModifyVirtualBorderRouterAttributeRequest::getLocalGatewayIp()const
 void ModifyVirtualBorderRouterAttributeRequest::setLocalGatewayIp(const std::string& localGatewayIp)
 {
 	localGatewayIp_ = localGatewayIp;
-	setCoreParameter("LocalGatewayIp", localGatewayIp);
+	setCoreParameter("LocalGatewayIp", std::to_string(localGatewayIp));
 }
 
 long ModifyVirtualBorderRouterAttributeRequest::getMinTxInterval()const

@@ -44,7 +44,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceNetworkTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getOwnerAccount()const
 void ModifyDBInstanceNetworkTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyDBInstanceNetworkTypeRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
 void ModifyDBInstanceNetworkTypeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
@@ -99,7 +99,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
 void ModifyDBInstanceNetworkTypeRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getRetainClassic()const
@@ -110,7 +110,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getRetainClassic()const
 void ModifyDBInstanceNetworkTypeRequest::setRetainClassic(const std::string& retainClassic)
 {
 	retainClassic_ = retainClassic;
-	setCoreParameter("RetainClassic", retainClassic);
+	setCoreParameter("RetainClassic", std::to_string(retainClassic));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays()const
@@ -121,7 +121,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays()const
 void ModifyDBInstanceNetworkTypeRequest::setClassicExpiredDays(const std::string& classicExpiredDays)
 {
 	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", classicExpiredDays);
+	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
@@ -132,7 +132,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
 void ModifyDBInstanceNetworkTypeRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setCoreParameter("VPCId", std::to_string(vPCId));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getReadWriteSplittingPrivateIpAddress()const
@@ -154,7 +154,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getReadWriteSplittingPrivateIpAd
 void ModifyDBInstanceNetworkTypeRequest::setReadWriteSplittingPrivateIpAddress(const std::string& readWriteSplittingPrivateIpAddress)
 {
 	readWriteSplittingPrivateIpAddress_ = readWriteSplittingPrivateIpAddress;
-	setCoreParameter("ReadWriteSplittingPrivateIpAddress", readWriteSplittingPrivateIpAddress);
+	setCoreParameter("ReadWriteSplittingPrivateIpAddress", std::to_string(readWriteSplittingPrivateIpAddress));
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
@@ -165,7 +165,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
 void ModifyDBInstanceNetworkTypeRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", std::to_string(instanceNetworkType));
 }
 
 int ModifyDBInstanceNetworkTypeRequest::getReadWriteSplittingClassicExpiredDays()const

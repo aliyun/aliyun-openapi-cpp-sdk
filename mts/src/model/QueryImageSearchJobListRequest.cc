@@ -44,7 +44,7 @@ std::string QueryImageSearchJobListRequest::getResourceOwnerAccount()const
 void QueryImageSearchJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryImageSearchJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryImageSearchJobListRequest::getJobIds()const
 void QueryImageSearchJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryImageSearchJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryImageSearchJobListRequest::getOwnerAccount()const
 void QueryImageSearchJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryImageSearchJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryImageSearchJobListRequest::getAccessKeyId()const
 void QueryImageSearchJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

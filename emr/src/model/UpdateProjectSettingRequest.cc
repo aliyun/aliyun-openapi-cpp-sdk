@@ -44,7 +44,7 @@ std::string UpdateProjectSettingRequest::getRegionId()const
 void UpdateProjectSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateProjectSettingRequest::getDefaultOssPath()const
@@ -55,7 +55,7 @@ std::string UpdateProjectSettingRequest::getDefaultOssPath()const
 void UpdateProjectSettingRequest::setDefaultOssPath(const std::string& defaultOssPath)
 {
 	defaultOssPath_ = defaultOssPath;
-	setCoreParameter("DefaultOssPath", defaultOssPath);
+	setCoreParameter("DefaultOssPath", std::to_string(defaultOssPath));
 }
 
 std::string UpdateProjectSettingRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string UpdateProjectSettingRequest::getProjectId()const
 void UpdateProjectSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string UpdateProjectSettingRequest::getOssConfig()const
@@ -77,7 +77,7 @@ std::string UpdateProjectSettingRequest::getOssConfig()const
 void UpdateProjectSettingRequest::setOssConfig(const std::string& ossConfig)
 {
 	ossConfig_ = ossConfig;
-	setCoreParameter("OssConfig", ossConfig);
+	setCoreParameter("OssConfig", std::to_string(ossConfig));
 }
 
 std::string UpdateProjectSettingRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UpdateProjectSettingRequest::getAccessKeyId()const
 void UpdateProjectSettingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

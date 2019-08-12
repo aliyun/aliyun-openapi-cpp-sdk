@@ -33,7 +33,7 @@ std::string DeleteDBInstanceRequest::getClientToken()const
 void DeleteDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteDBInstanceRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string DeleteDBInstanceRequest::getDBInstanceId()const
 void DeleteDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DeleteDBInstanceRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DeleteDBInstanceRequest::getAccessKeyId()const
 void DeleteDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -61,7 +61,7 @@ std::string DescribeAccessPointsRequest::getHostOperator()const
 void DescribeAccessPointsRequest::setHostOperator(const std::string& hostOperator)
 {
 	hostOperator_ = hostOperator;
-	setCoreParameter("HostOperator", hostOperator);
+	setCoreParameter("HostOperator", std::to_string(hostOperator));
 }
 
 std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
@@ -72,7 +72,7 @@ std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
 void DescribeAccessPointsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAccessPointsRequest::getRegionId()const
@@ -83,7 +83,7 @@ std::string DescribeAccessPointsRequest::getRegionId()const
 void DescribeAccessPointsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeAccessPointsRequest::getName()const
@@ -94,7 +94,7 @@ std::string DescribeAccessPointsRequest::getName()const
 void DescribeAccessPointsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeAccessPointsRequest::getPageSize()const
@@ -127,7 +127,7 @@ std::string DescribeAccessPointsRequest::getType()const
 void DescribeAccessPointsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int DescribeAccessPointsRequest::getPageNumber()const

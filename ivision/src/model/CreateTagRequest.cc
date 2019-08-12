@@ -55,7 +55,7 @@ bool CreateTagRequest::getProxy_original_security_transport()const
 void CreateTagRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateTagRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateTagRequest::getDescription()const
 void CreateTagRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateTagRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string CreateTagRequest::getProxy_original_source_ip()const
 void CreateTagRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string CreateTagRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string CreateTagRequest::getOwnerIdLoginEmail()const
 void CreateTagRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateTagRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string CreateTagRequest::getCallerType()const
 void CreateTagRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateTagRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateTagRequest::getAccessKeyId()const
 void CreateTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateTagRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string CreateTagRequest::getSecurityToken()const
 void CreateTagRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateTagRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateTagRequest::getRegionId()const
 void CreateTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateTagRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string CreateTagRequest::getRequestContent()const
 void CreateTagRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string CreateTagRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string CreateTagRequest::getCallerBidEmail()const
 void CreateTagRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateTagRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string CreateTagRequest::getProjectId()const
 void CreateTagRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string CreateTagRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string CreateTagRequest::getCallerUidEmail()const
 void CreateTagRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateTagRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string CreateTagRequest::getShowLog()const
 void CreateTagRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string CreateTagRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string CreateTagRequest::getApp_ip()const
 void CreateTagRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateTagRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string CreateTagRequest::getPopProduct()const
 void CreateTagRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string CreateTagRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string CreateTagRequest::getCallerBid()const
 void CreateTagRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateTagRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string CreateTagRequest::getVersion()const
 void CreateTagRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool CreateTagRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool CreateTagRequest::getProxy_trust_transport_info()const
 void CreateTagRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateTagRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool CreateTagRequest::getAk_mfa_present()const
 void CreateTagRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateTagRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool CreateTagRequest::getSecurity_transport()const
 void CreateTagRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateTagRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string CreateTagRequest::getRequestId()const
 void CreateTagRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateTagRequest::getName()const
@@ -308,6 +308,6 @@ std::string CreateTagRequest::getName()const
 void CreateTagRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

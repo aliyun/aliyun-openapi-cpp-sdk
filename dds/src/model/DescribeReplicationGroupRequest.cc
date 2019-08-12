@@ -33,7 +33,7 @@ std::string DescribeReplicationGroupRequest::getDestinationInstanceIds()const
 void DescribeReplicationGroupRequest::setDestinationInstanceIds(const std::string& destinationInstanceIds)
 {
 	destinationInstanceIds_ = destinationInstanceIds;
-	setCoreParameter("DestinationInstanceIds", destinationInstanceIds);
+	setCoreParameter("DestinationInstanceIds", std::to_string(destinationInstanceIds));
 }
 
 long DescribeReplicationGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeReplicationGroupRequest::getSecurityToken()const
 void DescribeReplicationGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeReplicationGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeReplicationGroupRequest::getResourceOwnerAccount()const
 void DescribeReplicationGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeReplicationGroupRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeReplicationGroupRequest::getRegionId()const
 void DescribeReplicationGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeReplicationGroupRequest::getReplicationGroupId()const
@@ -88,7 +88,7 @@ std::string DescribeReplicationGroupRequest::getReplicationGroupId()const
 void DescribeReplicationGroupRequest::setReplicationGroupId(const std::string& replicationGroupId)
 {
 	replicationGroupId_ = replicationGroupId;
-	setCoreParameter("ReplicationGroupId", replicationGroupId);
+	setCoreParameter("ReplicationGroupId", std::to_string(replicationGroupId));
 }
 
 std::string DescribeReplicationGroupRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeReplicationGroupRequest::getOwnerAccount()const
 void DescribeReplicationGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeReplicationGroupRequest::getSourceInstanceId()const
@@ -110,7 +110,7 @@ std::string DescribeReplicationGroupRequest::getSourceInstanceId()const
 void DescribeReplicationGroupRequest::setSourceInstanceId(const std::string& sourceInstanceId)
 {
 	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", sourceInstanceId);
+	setCoreParameter("SourceInstanceId", std::to_string(sourceInstanceId));
 }
 
 long DescribeReplicationGroupRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeReplicationGroupRequest::getAccessKeyId()const
 void DescribeReplicationGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string RetryExecutionPlanRequest::getRegionId()const
 void RetryExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RetryExecutionPlanRequest::getExecutionPlanWorkNodeIds()const
@@ -55,7 +55,7 @@ std::string RetryExecutionPlanRequest::getExecutionPlanWorkNodeIds()const
 void RetryExecutionPlanRequest::setExecutionPlanWorkNodeIds(const std::string& executionPlanWorkNodeIds)
 {
 	executionPlanWorkNodeIds_ = executionPlanWorkNodeIds;
-	setCoreParameter("ExecutionPlanWorkNodeIds", executionPlanWorkNodeIds);
+	setCoreParameter("ExecutionPlanWorkNodeIds", std::to_string(executionPlanWorkNodeIds));
 }
 
 std::string RetryExecutionPlanRequest::getId()const
@@ -66,7 +66,7 @@ std::string RetryExecutionPlanRequest::getId()const
 void RetryExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string RetryExecutionPlanRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string RetryExecutionPlanRequest::getAccessKeyId()const
 void RetryExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

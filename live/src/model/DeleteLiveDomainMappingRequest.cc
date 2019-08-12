@@ -33,7 +33,7 @@ std::string DeleteLiveDomainMappingRequest::getPullDomain()const
 void DeleteLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
 {
 	pullDomain_ = pullDomain;
-	setCoreParameter("PullDomain", pullDomain);
+	setCoreParameter("PullDomain", std::to_string(pullDomain));
 }
 
 std::string DeleteLiveDomainMappingRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLiveDomainMappingRequest::getSecurityToken()const
 void DeleteLiveDomainMappingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLiveDomainMappingRequest::getPushDomain()const
@@ -55,7 +55,7 @@ std::string DeleteLiveDomainMappingRequest::getPushDomain()const
 void DeleteLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain)
 {
 	pushDomain_ = pushDomain;
-	setCoreParameter("PushDomain", pushDomain);
+	setCoreParameter("PushDomain", std::to_string(pushDomain));
 }
 
 long DeleteLiveDomainMappingRequest::getOwnerId()const

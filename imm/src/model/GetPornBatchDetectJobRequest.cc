@@ -33,7 +33,7 @@ std::string GetPornBatchDetectJobRequest::getJobId()const
 void GetPornBatchDetectJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string GetPornBatchDetectJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetPornBatchDetectJobRequest::getRegionId()const
 void GetPornBatchDetectJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetPornBatchDetectJobRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetPornBatchDetectJobRequest::getProject()const
 void GetPornBatchDetectJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string GetPornBatchDetectJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetPornBatchDetectJobRequest::getAccessKeyId()const
 void GetPornBatchDetectJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

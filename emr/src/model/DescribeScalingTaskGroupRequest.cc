@@ -44,7 +44,7 @@ std::string DescribeScalingTaskGroupRequest::getRegionId()const
 void DescribeScalingTaskGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeScalingTaskGroupRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeScalingTaskGroupRequest::getHostGroupId()const
 void DescribeScalingTaskGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 std::string DescribeScalingTaskGroupRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeScalingTaskGroupRequest::getClusterId()const
 void DescribeScalingTaskGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeScalingTaskGroupRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeScalingTaskGroupRequest::getAccessKeyId()const
 void DescribeScalingTaskGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

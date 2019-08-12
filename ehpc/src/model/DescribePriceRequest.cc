@@ -33,7 +33,7 @@ std::string DescribePriceRequest::getPriceUnit()const
 void DescribePriceRequest::setPriceUnit(const std::string& priceUnit)
 {
 	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", priceUnit);
+	setCoreParameter("PriceUnit", std::to_string(priceUnit));
 }
 
 std::vector<DescribePriceRequest::Commodities> DescribePriceRequest::getCommodities()const
@@ -66,7 +66,7 @@ std::string DescribePriceRequest::getChargeType()const
 void DescribePriceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 std::string DescribePriceRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribePriceRequest::getAccessKeyId()const
 void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribePriceRequest::getOrderType()const
@@ -88,6 +88,6 @@ std::string DescribePriceRequest::getOrderType()const
 void DescribePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

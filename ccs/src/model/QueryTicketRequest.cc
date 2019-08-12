@@ -33,7 +33,7 @@ std::string QueryTicketRequest::getStage()const
 void QueryTicketRequest::setStage(const std::string& stage)
 {
 	stage_ = stage;
-	setCoreParameter("Stage", stage);
+	setCoreParameter("Stage", std::to_string(stage));
 }
 
 int QueryTicketRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryTicketRequest::getCreatorId()const
 void QueryTicketRequest::setCreatorId(const std::string& creatorId)
 {
 	creatorId_ = creatorId;
-	setCoreParameter("CreatorId", creatorId);
+	setCoreParameter("CreatorId", std::to_string(creatorId));
 }
 
 std::string QueryTicketRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string QueryTicketRequest::getEndTime()const
 void QueryTicketRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryTicketRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryTicketRequest::getStartTime()const
 void QueryTicketRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int QueryTicketRequest::getPageNum()const
@@ -99,7 +99,7 @@ std::string QueryTicketRequest::getType()const
 void QueryTicketRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string QueryTicketRequest::getCcsInstanceId()const
@@ -110,6 +110,6 @@ std::string QueryTicketRequest::getCcsInstanceId()const
 void QueryTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setCoreParameter("CcsInstanceId", std::to_string(ccsInstanceId));
 }
 

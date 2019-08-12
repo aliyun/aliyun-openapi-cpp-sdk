@@ -45,7 +45,7 @@ std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
 void SetInstancesProtectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetInstancesProtectionRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string SetInstancesProtectionRequest::getScalingGroupId()const
 void SetInstancesProtectionRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 long SetInstancesProtectionRequest::getOwnerId()const
@@ -78,7 +78,7 @@ std::string SetInstancesProtectionRequest::getAccessKeyId()const
 void SetInstancesProtectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
@@ -89,6 +89,6 @@ bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
 void SetInstancesProtectionRequest::setProtectedFromScaleIn(bool protectedFromScaleIn)
 {
 	protectedFromScaleIn_ = protectedFromScaleIn;
-	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn);
+	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn ? "true" : "false");
 }
 

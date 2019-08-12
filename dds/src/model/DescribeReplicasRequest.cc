@@ -44,7 +44,7 @@ std::string DescribeReplicasRequest::getSecurityToken()const
 void DescribeReplicasRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeReplicasRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeReplicasRequest::getResourceOwnerAccount()const
 void DescribeReplicasRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeReplicasRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeReplicasRequest::getRegionId()const
 void DescribeReplicasRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeReplicasRequest::getAttachDbInstanceData()const
@@ -77,7 +77,7 @@ bool DescribeReplicasRequest::getAttachDbInstanceData()const
 void DescribeReplicasRequest::setAttachDbInstanceData(bool attachDbInstanceData)
 {
 	attachDbInstanceData_ = attachDbInstanceData;
-	setCoreParameter("AttachDbInstanceData", attachDbInstanceData);
+	setCoreParameter("AttachDbInstanceData", attachDbInstanceData ? "true" : "false");
 }
 
 std::string DescribeReplicasRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeReplicasRequest::getOwnerAccount()const
 void DescribeReplicasRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeReplicasRequest::getReplicaId()const
@@ -99,7 +99,7 @@ std::string DescribeReplicasRequest::getReplicaId()const
 void DescribeReplicasRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 int DescribeReplicasRequest::getPageSize()const
@@ -143,6 +143,6 @@ std::string DescribeReplicasRequest::getAccessKeyId()const
 void DescribeReplicasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

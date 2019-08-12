@@ -44,7 +44,7 @@ std::string DescribeDBClusterMigrationRequest::getSecurityToken()const
 void DescribeDBClusterMigrationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDBClusterMigrationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBClusterMigrationRequest::getResourceOwnerAccount()const
 void DescribeDBClusterMigrationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBClusterMigrationRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeDBClusterMigrationRequest::getRegionId()const
 void DescribeDBClusterMigrationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDBClusterMigrationRequest::getDBClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeDBClusterMigrationRequest::getDBClusterId()const
 void DescribeDBClusterMigrationRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DescribeDBClusterMigrationRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeDBClusterMigrationRequest::getOwnerAccount()const
 void DescribeDBClusterMigrationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDBClusterMigrationRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeDBClusterMigrationRequest::getAccessKeyId()const
 void DescribeDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

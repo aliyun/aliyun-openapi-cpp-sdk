@@ -55,7 +55,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getResourceOwnerAccount()con
 void ModifyInstanceCrossBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getCrossBackupType()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getCrossBackupType()const
 void ModifyInstanceCrossBackupPolicyRequest::setCrossBackupType(const std::string& crossBackupType)
 {
 	crossBackupType_ = crossBackupType;
-	setCoreParameter("CrossBackupType", crossBackupType);
+	setCoreParameter("CrossBackupType", std::to_string(crossBackupType));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getLogBackupEnabled()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getLogBackupEnabled()const
 void ModifyInstanceCrossBackupPolicyRequest::setLogBackupEnabled(const std::string& logBackupEnabled)
 {
 	logBackupEnabled_ = logBackupEnabled;
-	setCoreParameter("LogBackupEnabled", logBackupEnabled);
+	setCoreParameter("LogBackupEnabled", std::to_string(logBackupEnabled));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getBackupEnabled()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getBackupEnabled()const
 void ModifyInstanceCrossBackupPolicyRequest::setBackupEnabled(const std::string& backupEnabled)
 {
 	backupEnabled_ = backupEnabled;
-	setCoreParameter("BackupEnabled", backupEnabled);
+	setCoreParameter("BackupEnabled", std::to_string(backupEnabled));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getRelService()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getRelService()const
 void ModifyInstanceCrossBackupPolicyRequest::setRelService(const std::string& relService)
 {
 	relService_ = relService;
-	setCoreParameter("RelService", relService);
+	setCoreParameter("RelService", std::to_string(relService));
 }
 
 long ModifyInstanceCrossBackupPolicyRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getCrossBackupRegion()const
 void ModifyInstanceCrossBackupPolicyRequest::setCrossBackupRegion(const std::string& crossBackupRegion)
 {
 	crossBackupRegion_ = crossBackupRegion;
-	setCoreParameter("CrossBackupRegion", crossBackupRegion);
+	setCoreParameter("CrossBackupRegion", std::to_string(crossBackupRegion));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getStorageType()const
@@ -132,7 +132,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getStorageType()const
 void ModifyInstanceCrossBackupPolicyRequest::setStorageType(const std::string& storageType)
 {
 	storageType_ = storageType;
-	setCoreParameter("StorageType", storageType);
+	setCoreParameter("StorageType", std::to_string(storageType));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getAccessKeyId()const
 void ModifyInstanceCrossBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getEndpoint()const
@@ -154,7 +154,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getEndpoint()const
 void ModifyInstanceCrossBackupPolicyRequest::setEndpoint(const std::string& endpoint)
 {
 	endpoint_ = endpoint;
-	setCoreParameter("Endpoint", endpoint);
+	setCoreParameter("Endpoint", std::to_string(endpoint));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getRegionId()const
 void ModifyInstanceCrossBackupPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getStorageOwner()const
@@ -176,7 +176,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getStorageOwner()const
 void ModifyInstanceCrossBackupPolicyRequest::setStorageOwner(const std::string& storageOwner)
 {
 	storageOwner_ = storageOwner;
-	setCoreParameter("StorageOwner", storageOwner);
+	setCoreParameter("StorageOwner", std::to_string(storageOwner));
 }
 
 std::string ModifyInstanceCrossBackupPolicyRequest::getDBInstanceId()const
@@ -187,7 +187,7 @@ std::string ModifyInstanceCrossBackupPolicyRequest::getDBInstanceId()const
 void ModifyInstanceCrossBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 int ModifyInstanceCrossBackupPolicyRequest::getRetention()const

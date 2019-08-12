@@ -44,7 +44,7 @@ std::string ModifyJobExecutionPlanParamRequest::getParamName()const
 void ModifyJobExecutionPlanParamRequest::setParamName(const std::string& paramName)
 {
 	paramName_ = paramName;
-	setCoreParameter("ParamName", paramName);
+	setCoreParameter("ParamName", std::to_string(paramName));
 }
 
 std::string ModifyJobExecutionPlanParamRequest::getParamValue()const
@@ -55,7 +55,7 @@ std::string ModifyJobExecutionPlanParamRequest::getParamValue()const
 void ModifyJobExecutionPlanParamRequest::setParamValue(const std::string& paramValue)
 {
 	paramValue_ = paramValue;
-	setCoreParameter("ParamValue", paramValue);
+	setCoreParameter("ParamValue", std::to_string(paramValue));
 }
 
 long ModifyJobExecutionPlanParamRequest::getId()const
@@ -77,6 +77,6 @@ std::string ModifyJobExecutionPlanParamRequest::getAccessKeyId()const
 void ModifyJobExecutionPlanParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

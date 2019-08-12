@@ -33,7 +33,7 @@ std::string SaveUserAccountInfoRequest::getApp_ip()const
 void SaveUserAccountInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long SaveUserAccountInfoRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SaveUserAccountInfoRequest::getAccountType()const
 void SaveUserAccountInfoRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", accountType);
+	setCoreParameter("AccountType", std::to_string(accountType));
 }
 
 bool SaveUserAccountInfoRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool SaveUserAccountInfoRequest::getProxy_original_security_transport()const
 void SaveUserAccountInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string SaveUserAccountInfoRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string SaveUserAccountInfoRequest::getCallerBid()const
 void SaveUserAccountInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string SaveUserAccountInfoRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string SaveUserAccountInfoRequest::getProxy_original_source_ip()const
 void SaveUserAccountInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string SaveUserAccountInfoRequest::getGroupName()const
@@ -110,7 +110,7 @@ std::string SaveUserAccountInfoRequest::getGroupName()const
 void SaveUserAccountInfoRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 bool SaveUserAccountInfoRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ bool SaveUserAccountInfoRequest::getAk_mfa_present()const
 void SaveUserAccountInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool SaveUserAccountInfoRequest::getProxy_trust_transport_info()const
@@ -132,7 +132,7 @@ bool SaveUserAccountInfoRequest::getProxy_trust_transport_info()const
 void SaveUserAccountInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string SaveUserAccountInfoRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string SaveUserAccountInfoRequest::getCallerType()const
 void SaveUserAccountInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string SaveUserAccountInfoRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string SaveUserAccountInfoRequest::getAccessKeyId()const
 void SaveUserAccountInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SaveUserAccountInfoRequest::getAuthType()const
@@ -165,7 +165,7 @@ std::string SaveUserAccountInfoRequest::getAuthType()const
 void SaveUserAccountInfoRequest::setAuthType(const std::string& authType)
 {
 	authType_ = authType;
-	setCoreParameter("AuthType", authType);
+	setCoreParameter("AuthType", std::to_string(authType));
 }
 
 bool SaveUserAccountInfoRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool SaveUserAccountInfoRequest::getSecurity_transport()const
 void SaveUserAccountInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SaveUserAccountInfoRequest::getAccountPassword()const
@@ -187,7 +187,7 @@ std::string SaveUserAccountInfoRequest::getAccountPassword()const
 void SaveUserAccountInfoRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", std::to_string(accountPassword));
 }
 
 std::string SaveUserAccountInfoRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string SaveUserAccountInfoRequest::getSecurityToken()const
 void SaveUserAccountInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SaveUserAccountInfoRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string SaveUserAccountInfoRequest::getRegionId()const
 void SaveUserAccountInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SaveUserAccountInfoRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string SaveUserAccountInfoRequest::getRequestId()const
 void SaveUserAccountInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long SaveUserAccountInfoRequest::getCallerUid()const
@@ -242,6 +242,6 @@ std::string SaveUserAccountInfoRequest::getAliyunUserId()const
 void SaveUserAccountInfoRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", aliyunUserId);
+	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
 }
 

@@ -33,7 +33,7 @@ std::string QueryHotlineRecordRequest::getAgentId()const
 void QueryHotlineRecordRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 long QueryHotlineRecordRequest::getMaxTalkDuration()const
@@ -55,7 +55,7 @@ std::string QueryHotlineRecordRequest::getGroupId()const
 void QueryHotlineRecordRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string QueryHotlineRecordRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string QueryHotlineRecordRequest::getEndTime()const
 void QueryHotlineRecordRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryHotlineRecordRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryHotlineRecordRequest::getStartTime()const
 void QueryHotlineRecordRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int QueryHotlineRecordRequest::getPageNum()const
@@ -99,7 +99,7 @@ std::string QueryHotlineRecordRequest::getSatisfaction()const
 void QueryHotlineRecordRequest::setSatisfaction(const std::string& satisfaction)
 {
 	satisfaction_ = satisfaction;
-	setCoreParameter("Satisfaction", satisfaction);
+	setCoreParameter("Satisfaction", std::to_string(satisfaction));
 }
 
 long QueryHotlineRecordRequest::getMinTalkDuratoin()const
@@ -121,7 +121,7 @@ std::string QueryHotlineRecordRequest::getCategoryIds()const
 void QueryHotlineRecordRequest::setCategoryIds(const std::string& categoryIds)
 {
 	categoryIds_ = categoryIds;
-	setCoreParameter("CategoryIds", categoryIds);
+	setCoreParameter("CategoryIds", std::to_string(categoryIds));
 }
 
 std::string QueryHotlineRecordRequest::getVisitorProvince()const
@@ -132,7 +132,7 @@ std::string QueryHotlineRecordRequest::getVisitorProvince()const
 void QueryHotlineRecordRequest::setVisitorProvince(const std::string& visitorProvince)
 {
 	visitorProvince_ = visitorProvince;
-	setCoreParameter("VisitorProvince", visitorProvince);
+	setCoreParameter("VisitorProvince", std::to_string(visitorProvince));
 }
 
 int QueryHotlineRecordRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string QueryHotlineRecordRequest::getCallType()const
 void QueryHotlineRecordRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setCoreParameter("CallType", callType);
+	setCoreParameter("CallType", std::to_string(callType));
 }
 
 std::string QueryHotlineRecordRequest::getCcsInstanceId()const
@@ -165,7 +165,7 @@ std::string QueryHotlineRecordRequest::getCcsInstanceId()const
 void QueryHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setCoreParameter("CcsInstanceId", std::to_string(ccsInstanceId));
 }
 
 std::string QueryHotlineRecordRequest::getVisitorPhone()const
@@ -176,7 +176,7 @@ std::string QueryHotlineRecordRequest::getVisitorPhone()const
 void QueryHotlineRecordRequest::setVisitorPhone(const std::string& visitorPhone)
 {
 	visitorPhone_ = visitorPhone;
-	setCoreParameter("VisitorPhone", visitorPhone);
+	setCoreParameter("VisitorPhone", std::to_string(visitorPhone));
 }
 
 std::string QueryHotlineRecordRequest::getVisitorId()const
@@ -187,7 +187,7 @@ std::string QueryHotlineRecordRequest::getVisitorId()const
 void QueryHotlineRecordRequest::setVisitorId(const std::string& visitorId)
 {
 	visitorId_ = visitorId;
-	setCoreParameter("VisitorId", visitorId);
+	setCoreParameter("VisitorId", std::to_string(visitorId));
 }
 
 std::string QueryHotlineRecordRequest::getStatus()const
@@ -198,6 +198,6 @@ std::string QueryHotlineRecordRequest::getStatus()const
 void QueryHotlineRecordRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

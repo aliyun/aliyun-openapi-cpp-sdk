@@ -33,7 +33,7 @@ std::string DescribeAssetListRequest::getSourceIp()const
 void DescribeAssetListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeAssetListRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeAssetListRequest::getFrom()const
 void DescribeAssetListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 int DescribeAssetListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ std::string DescribeAssetListRequest::getLang()const
 void DescribeAssetListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAssetListRequest::getFilterConditions()const
@@ -88,6 +88,6 @@ std::string DescribeAssetListRequest::getFilterConditions()const
 void DescribeAssetListRequest::setFilterConditions(const std::string& filterConditions)
 {
 	filterConditions_ = filterConditions;
-	setCoreParameter("FilterConditions", filterConditions);
+	setCoreParameter("FilterConditions", std::to_string(filterConditions));
 }
 

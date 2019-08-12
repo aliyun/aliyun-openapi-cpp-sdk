@@ -33,7 +33,7 @@ std::string GetQuotaInstanceRequest::getCluster()const
 void GetQuotaInstanceRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setCoreParameter("Cluster", std::to_string(cluster));
 }
 
 int GetQuotaInstanceRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string GetQuotaInstanceRequest::getQuotaId()const
 void GetQuotaInstanceRequest::setQuotaId(const std::string& quotaId)
 {
 	quotaId_ = quotaId;
-	setCoreParameter("QuotaId", quotaId);
+	setCoreParameter("QuotaId", std::to_string(quotaId));
 }
 
 int GetQuotaInstanceRequest::getPageNum()const
@@ -77,7 +77,7 @@ std::string GetQuotaInstanceRequest::getRegion()const
 void GetQuotaInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string GetQuotaInstanceRequest::getQuotaName()const
@@ -88,7 +88,7 @@ std::string GetQuotaInstanceRequest::getQuotaName()const
 void GetQuotaInstanceRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", quotaName);
+	setCoreParameter("QuotaName", std::to_string(quotaName));
 }
 
 std::string GetQuotaInstanceRequest::getStatus()const
@@ -99,6 +99,6 @@ std::string GetQuotaInstanceRequest::getStatus()const
 void GetQuotaInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

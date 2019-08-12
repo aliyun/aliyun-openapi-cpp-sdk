@@ -44,7 +44,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getResourceOwnerAccount()co
 void ModifyDBInstanceConnectionStringRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getOwnerAccount()const
 void ModifyDBInstanceConnectionStringRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getNewConnectionString()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getNewConnectionString()con
 void ModifyDBInstanceConnectionStringRequest::setNewConnectionString(const std::string& newConnectionString)
 {
 	newConnectionString_ = newConnectionString;
-	setCoreParameter("NewConnectionString", newConnectionString);
+	setCoreParameter("NewConnectionString", std::to_string(newConnectionString));
 }
 
 long ModifyDBInstanceConnectionStringRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getIPType()const
 void ModifyDBInstanceConnectionStringRequest::setIPType(const std::string& iPType)
 {
 	iPType_ = iPType;
-	setCoreParameter("IPType", iPType);
+	setCoreParameter("IPType", std::to_string(iPType));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString()const
@@ -99,7 +99,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString(
 void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setCoreParameter("CurrentConnectionString", currentConnectionString);
+	setCoreParameter("CurrentConnectionString", std::to_string(currentConnectionString));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
 void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getSecurityToken()const
 void ModifyDBInstanceConnectionStringRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getRegionId()const
 void ModifyDBInstanceConnectionStringRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getPort()const
@@ -143,7 +143,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getPort()const
 void ModifyDBInstanceConnectionStringRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
@@ -154,6 +154,6 @@ std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
 void ModifyDBInstanceConnectionStringRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 

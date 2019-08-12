@@ -33,7 +33,7 @@ std::string ModifyUserPasswordsRequest::getClusterId()const
 void ModifyUserPasswordsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<ModifyUserPasswordsRequest::User> ModifyUserPasswordsRequest::getUser()const
@@ -61,6 +61,6 @@ std::string ModifyUserPasswordsRequest::getAccessKeyId()const
 void ModifyUserPasswordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

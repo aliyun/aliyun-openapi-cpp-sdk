@@ -44,7 +44,7 @@ std::string DescribeJobRequest::getRegionId()const
 void DescribeJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeJobRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeJobRequest::getId()const
 void DescribeJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeJobRequest::getAccessKeyId()const
 void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

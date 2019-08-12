@@ -55,7 +55,7 @@ std::string UpdateKafkaReassignParamRequest::getRegionId()const
 void UpdateKafkaReassignParamRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateKafkaReassignParamRequest::getReassignId()const
@@ -66,7 +66,7 @@ std::string UpdateKafkaReassignParamRequest::getReassignId()const
 void UpdateKafkaReassignParamRequest::setReassignId(const std::string& reassignId)
 {
 	reassignId_ = reassignId;
-	setCoreParameter("ReassignId", reassignId);
+	setCoreParameter("ReassignId", std::to_string(reassignId));
 }
 
 std::string UpdateKafkaReassignParamRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string UpdateKafkaReassignParamRequest::getAccessKeyId()const
 void UpdateKafkaReassignParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

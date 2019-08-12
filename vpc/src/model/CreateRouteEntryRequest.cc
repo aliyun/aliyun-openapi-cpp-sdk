@@ -44,7 +44,7 @@ std::string CreateRouteEntryRequest::getRouteEntryName()const
 void CreateRouteEntryRequest::setRouteEntryName(const std::string& routeEntryName)
 {
 	routeEntryName_ = routeEntryName;
-	setCoreParameter("RouteEntryName", routeEntryName);
+	setCoreParameter("RouteEntryName", std::to_string(routeEntryName));
 }
 
 std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateRouteEntryRequest::getResourceOwnerAccount()const
 void CreateRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateRouteEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateRouteEntryRequest::getClientToken()const
 void CreateRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
@@ -77,7 +77,7 @@ std::string CreateRouteEntryRequest::getDestinationCidrBlock()const
 void CreateRouteEntryRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setCoreParameter("DestinationCidrBlock", std::to_string(destinationCidrBlock));
 }
 
 std::string CreateRouteEntryRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateRouteEntryRequest::getOwnerAccount()const
 void CreateRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateRouteEntryRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string CreateRouteEntryRequest::getPrivateIpAddress()const
 void CreateRouteEntryRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 std::string CreateRouteEntryRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string CreateRouteEntryRequest::getRegionId()const
 void CreateRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateRouteEntryRequest::getNextHopId()const
@@ -132,7 +132,7 @@ std::string CreateRouteEntryRequest::getNextHopId()const
 void CreateRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 {
 	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
+	setCoreParameter("NextHopId", std::to_string(nextHopId));
 }
 
 std::string CreateRouteEntryRequest::getNextHopType()const
@@ -143,7 +143,7 @@ std::string CreateRouteEntryRequest::getNextHopType()const
 void CreateRouteEntryRequest::setNextHopType(const std::string& nextHopType)
 {
 	nextHopType_ = nextHopType;
-	setCoreParameter("NextHopType", nextHopType);
+	setCoreParameter("NextHopType", std::to_string(nextHopType));
 }
 
 std::vector<CreateRouteEntryRequest::NextHopList> CreateRouteEntryRequest::getNextHopList()const
@@ -172,6 +172,6 @@ std::string CreateRouteEntryRequest::getRouteTableId()const
 void CreateRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setCoreParameter("RouteTableId", std::to_string(routeTableId));
 }
 

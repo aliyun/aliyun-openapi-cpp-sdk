@@ -33,7 +33,7 @@ std::string DescribeTopRiskyAssetsRequest::getSourceIp()const
 void DescribeTopRiskyAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeTopRiskyAssetsRequest::getPageSize()const
@@ -55,6 +55,6 @@ std::string DescribeTopRiskyAssetsRequest::getFrom()const
 void DescribeTopRiskyAssetsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 

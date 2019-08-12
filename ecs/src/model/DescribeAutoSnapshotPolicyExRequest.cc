@@ -33,7 +33,7 @@ std::string DescribeAutoSnapshotPolicyExRequest::getSourceRegionId()const
 void DescribeAutoSnapshotPolicyExRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeAutoSnapshotPolicyExRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
 void DescribeAutoSnapshotPolicyExRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAutoSnapshotPolicyExRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeAutoSnapshotPolicyExRequest::getRegionId()const
 void DescribeAutoSnapshotPolicyExRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId()const
@@ -77,7 +77,7 @@ std::string DescribeAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId()const
 void DescribeAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
 {
 	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
-	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
+	setCoreParameter("AutoSnapshotPolicyId", std::to_string(autoSnapshotPolicyId));
 }
 
 std::string DescribeAutoSnapshotPolicyExRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeAutoSnapshotPolicyExRequest::getOwnerAccount()const
 void DescribeAutoSnapshotPolicyExRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeAutoSnapshotPolicyExRequest::getPageSize()const

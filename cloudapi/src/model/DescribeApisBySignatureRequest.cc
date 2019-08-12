@@ -33,7 +33,7 @@ std::string DescribeApisBySignatureRequest::getSecurityToken()const
 void DescribeApisBySignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeApisBySignatureRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeApisBySignatureRequest::getSignatureId()const
 void DescribeApisBySignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setCoreParameter("SignatureId", std::to_string(signatureId));
 }
 
 int DescribeApisBySignatureRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string DescribeApisBySignatureRequest::getAccessKeyId()const
 void DescribeApisBySignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string CheckTransferInFeasibilityRequest::getTransferAuthorizationCode()con
 void CheckTransferInFeasibilityRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
 {
 	transferAuthorizationCode_ = transferAuthorizationCode;
-	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
+	setCoreParameter("TransferAuthorizationCode", std::to_string(transferAuthorizationCode));
 }
 
 std::string CheckTransferInFeasibilityRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CheckTransferInFeasibilityRequest::getUserClientIp()const
 void CheckTransferInFeasibilityRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string CheckTransferInFeasibilityRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string CheckTransferInFeasibilityRequest::getDomainName()const
 void CheckTransferInFeasibilityRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string CheckTransferInFeasibilityRequest::getLang()const
@@ -66,6 +66,6 @@ std::string CheckTransferInFeasibilityRequest::getLang()const
 void CheckTransferInFeasibilityRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

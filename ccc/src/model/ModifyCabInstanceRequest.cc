@@ -44,7 +44,7 @@ std::string ModifyCabInstanceRequest::getInstanceId()const
 void ModifyCabInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyCabInstanceRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string ModifyCabInstanceRequest::getInstanceName()const
 void ModifyCabInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::string ModifyCabInstanceRequest::getCallCenterInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyCabInstanceRequest::getCallCenterInstanceId()const
 void ModifyCabInstanceRequest::setCallCenterInstanceId(const std::string& callCenterInstanceId)
 {
 	callCenterInstanceId_ = callCenterInstanceId;
-	setCoreParameter("CallCenterInstanceId", callCenterInstanceId);
+	setCoreParameter("CallCenterInstanceId", std::to_string(callCenterInstanceId));
 }
 
 std::string ModifyCabInstanceRequest::getInstanceDescription()const
@@ -77,6 +77,6 @@ std::string ModifyCabInstanceRequest::getInstanceDescription()const
 void ModifyCabInstanceRequest::setInstanceDescription(const std::string& instanceDescription)
 {
 	instanceDescription_ = instanceDescription;
-	setCoreParameter("InstanceDescription", instanceDescription);
+	setCoreParameter("InstanceDescription", std::to_string(instanceDescription));
 }
 

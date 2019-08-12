@@ -33,7 +33,7 @@ std::string SetQueueRequest::getQueueName()const
 void SetQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setCoreParameter("QueueName", std::to_string(queueName));
 }
 
 std::vector<SetQueueRequest::Node> SetQueueRequest::getNode()const
@@ -60,7 +60,7 @@ std::string SetQueueRequest::getClusterId()const
 void SetQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string SetQueueRequest::getAccessKeyId()const
@@ -71,6 +71,6 @@ std::string SetQueueRequest::getAccessKeyId()const
 void SetQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

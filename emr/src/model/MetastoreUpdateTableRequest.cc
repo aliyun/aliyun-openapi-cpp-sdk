@@ -44,7 +44,7 @@ std::string MetastoreUpdateTableRequest::getRegionId()const
 void MetastoreUpdateTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<MetastoreUpdateTableRequest::AddColumn> MetastoreUpdateTableRequest::getAddColumn()const
@@ -103,7 +103,7 @@ std::string MetastoreUpdateTableRequest::getTableId()const
 void MetastoreUpdateTableRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setCoreParameter("TableId", std::to_string(tableId));
 }
 
 std::vector<std::string> MetastoreUpdateTableRequest::getDeletePartitionName()const
@@ -126,6 +126,6 @@ std::string MetastoreUpdateTableRequest::getAccessKeyId()const
 void MetastoreUpdateTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

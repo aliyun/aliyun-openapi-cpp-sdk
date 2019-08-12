@@ -33,7 +33,7 @@ std::string QueryEvaluateListRequest::getEndSearchTime()const
 void QueryEvaluateListRequest::setEndSearchTime(const std::string& endSearchTime)
 {
 	endSearchTime_ = endSearchTime;
-	setCoreParameter("EndSearchTime", endSearchTime);
+	setCoreParameter("EndSearchTime", std::to_string(endSearchTime));
 }
 
 std::string QueryEvaluateListRequest::getOutBizId()const
@@ -44,7 +44,7 @@ std::string QueryEvaluateListRequest::getOutBizId()const
 void QueryEvaluateListRequest::setOutBizId(const std::string& outBizId)
 {
 	outBizId_ = outBizId;
-	setCoreParameter("OutBizId", outBizId);
+	setCoreParameter("OutBizId", std::to_string(outBizId));
 }
 
 int QueryEvaluateListRequest::getSortType()const
@@ -111,7 +111,7 @@ std::string QueryEvaluateListRequest::getStartSearchTime()const
 void QueryEvaluateListRequest::setStartSearchTime(const std::string& startSearchTime)
 {
 	startSearchTime_ = startSearchTime;
-	setCoreParameter("StartSearchTime", startSearchTime);
+	setCoreParameter("StartSearchTime", std::to_string(startSearchTime));
 }
 
 std::string QueryEvaluateListRequest::getEndBizTime()const
@@ -122,7 +122,7 @@ std::string QueryEvaluateListRequest::getEndBizTime()const
 void QueryEvaluateListRequest::setEndBizTime(const std::string& endBizTime)
 {
 	endBizTime_ = endBizTime;
-	setCoreParameter("EndBizTime", endBizTime);
+	setCoreParameter("EndBizTime", std::to_string(endBizTime));
 }
 
 int QueryEvaluateListRequest::getPageSize()const
@@ -155,7 +155,7 @@ std::string QueryEvaluateListRequest::getBillCycle()const
 void QueryEvaluateListRequest::setBillCycle(const std::string& billCycle)
 {
 	billCycle_ = billCycle;
-	setCoreParameter("BillCycle", billCycle);
+	setCoreParameter("BillCycle", std::to_string(billCycle));
 }
 
 long QueryEvaluateListRequest::getStartAmount()const
@@ -177,6 +177,6 @@ std::string QueryEvaluateListRequest::getStartBizTime()const
 void QueryEvaluateListRequest::setStartBizTime(const std::string& startBizTime)
 {
 	startBizTime_ = startBizTime;
-	setCoreParameter("StartBizTime", startBizTime);
+	setCoreParameter("StartBizTime", std::to_string(startBizTime));
 }
 

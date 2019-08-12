@@ -33,7 +33,7 @@ std::string CreateContactFlowRequest::getCanvas()const
 void CreateContactFlowRequest::setCanvas(const std::string& canvas)
 {
 	canvas_ = canvas;
-	setCoreParameter("Canvas", canvas);
+	setCoreParameter("Canvas", std::to_string(canvas));
 }
 
 std::string CreateContactFlowRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string CreateContactFlowRequest::getInstanceId()const
 void CreateContactFlowRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateContactFlowRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateContactFlowRequest::getName()const
 void CreateContactFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateContactFlowRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateContactFlowRequest::getDescription()const
 void CreateContactFlowRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateContactFlowRequest::getType()const
@@ -77,7 +77,7 @@ std::string CreateContactFlowRequest::getType()const
 void CreateContactFlowRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateContactFlowRequest::getContent()const
@@ -88,7 +88,7 @@ std::string CreateContactFlowRequest::getContent()const
 void CreateContactFlowRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 
 std::string CreateContactFlowRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateContactFlowRequest::getAccessKeyId()const
 void CreateContactFlowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

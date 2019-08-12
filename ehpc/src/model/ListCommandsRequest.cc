@@ -44,7 +44,7 @@ std::string ListCommandsRequest::getClusterId()const
 void ListCommandsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListCommandsRequest::getCommandId()const
@@ -55,7 +55,7 @@ std::string ListCommandsRequest::getCommandId()const
 void ListCommandsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setCoreParameter("CommandId", std::to_string(commandId));
 }
 
 int ListCommandsRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string ListCommandsRequest::getAccessKeyId()const
 void ListCommandsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

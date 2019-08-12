@@ -33,7 +33,7 @@ std::string UpdateProjectRequest::getRegionId()const
 void UpdateProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateProjectRequest::getNewServiceRole()const
@@ -44,7 +44,7 @@ std::string UpdateProjectRequest::getNewServiceRole()const
 void UpdateProjectRequest::setNewServiceRole(const std::string& newServiceRole)
 {
 	newServiceRole_ = newServiceRole;
-	setCoreParameter("NewServiceRole", newServiceRole);
+	setCoreParameter("NewServiceRole", std::to_string(newServiceRole));
 }
 
 std::string UpdateProjectRequest::getProject()const
@@ -55,7 +55,7 @@ std::string UpdateProjectRequest::getProject()const
 void UpdateProjectRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string UpdateProjectRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string UpdateProjectRequest::getAccessKeyId()const
 void UpdateProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int UpdateProjectRequest::getNewCU()const

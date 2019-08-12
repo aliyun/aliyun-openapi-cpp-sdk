@@ -33,7 +33,7 @@ std::string ListJobGroupsRequest::getInstanceId()const
 void ListJobGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int ListJobGroupsRequest::getPageSize()const

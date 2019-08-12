@@ -33,7 +33,7 @@ std::string DescribeETLJobStageOutputSchemaRequest::getStageName()const
 void DescribeETLJobStageOutputSchemaRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 long DescribeETLJobStageOutputSchemaRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeETLJobStageOutputSchemaRequest::getRegionId()const
 void DescribeETLJobStageOutputSchemaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeETLJobStageOutputSchemaRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string DescribeETLJobStageOutputSchemaRequest::getEtlJobId()const
 void DescribeETLJobStageOutputSchemaRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", std::to_string(etlJobId));
 }
 
 std::string DescribeETLJobStageOutputSchemaRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeETLJobStageOutputSchemaRequest::getAccessKeyId()const
 void DescribeETLJobStageOutputSchemaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

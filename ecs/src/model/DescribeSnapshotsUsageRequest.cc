@@ -55,7 +55,7 @@ bool DescribeSnapshotsUsageRequest::getProxy_original_security_transport()const
 void DescribeSnapshotsUsageRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeSnapshotsUsageRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeSnapshotsUsageRequest::getProxy_original_source_ip()const
 void DescribeSnapshotsUsageRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeSnapshotsUsageRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeSnapshotsUsageRequest::getOwnerIdLoginEmail()const
 void DescribeSnapshotsUsageRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeSnapshotsUsageRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeSnapshotsUsageRequest::getCallerType()const
 void DescribeSnapshotsUsageRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeSnapshotsUsageRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeSnapshotsUsageRequest::getAccessKeyId()const
 void DescribeSnapshotsUsageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeSnapshotsUsageRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeSnapshotsUsageRequest::getSourceRegionId()const
 void DescribeSnapshotsUsageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeSnapshotsUsageRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeSnapshotsUsageRequest::getSecurityToken()const
 void DescribeSnapshotsUsageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeSnapshotsUsageRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeSnapshotsUsageRequest::getRegionId()const
 void DescribeSnapshotsUsageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeSnapshotsUsageRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeSnapshotsUsageRequest::getEnable()const
 void DescribeSnapshotsUsageRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeSnapshotsUsageRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeSnapshotsUsageRequest::getRequestContent()const
 void DescribeSnapshotsUsageRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeSnapshotsUsageRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeSnapshotsUsageRequest::getCallerBidEmail()const
 void DescribeSnapshotsUsageRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeSnapshotsUsageRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeSnapshotsUsageRequest::getCallerUidEmail()const
 void DescribeSnapshotsUsageRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeSnapshotsUsageRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string DescribeSnapshotsUsageRequest::getApp_ip()const
 void DescribeSnapshotsUsageRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string DescribeSnapshotsUsageRequest::getResourceOwnerAccount()const
 void DescribeSnapshotsUsageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSnapshotsUsageRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeSnapshotsUsageRequest::getOwnerAccount()const
 void DescribeSnapshotsUsageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSnapshotsUsageRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeSnapshotsUsageRequest::getCallerBid()const
 void DescribeSnapshotsUsageRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeSnapshotsUsageRequest::getOwnerId()const
@@ -253,7 +253,7 @@ bool DescribeSnapshotsUsageRequest::getProxy_trust_transport_info()const
 void DescribeSnapshotsUsageRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeSnapshotsUsageRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeSnapshotsUsageRequest::getAk_mfa_present()const
 void DescribeSnapshotsUsageRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeSnapshotsUsageRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeSnapshotsUsageRequest::getSecurity_transport()const
 void DescribeSnapshotsUsageRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeSnapshotsUsageRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string DescribeSnapshotsUsageRequest::getRequestId()const
 void DescribeSnapshotsUsageRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeSnapshotsUsageRequest::getAkProxy()const
@@ -297,6 +297,6 @@ std::string DescribeSnapshotsUsageRequest::getAkProxy()const
 void DescribeSnapshotsUsageRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 

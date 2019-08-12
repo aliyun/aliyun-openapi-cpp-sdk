@@ -56,7 +56,7 @@ std::string ListClustersRequest::getRegionId()const
 void ListClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListClustersRequest::getPageSize()const
@@ -90,7 +90,7 @@ bool ListClustersRequest::getIsDesc()const
 void ListClustersRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc);
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 std::string ListClustersRequest::getCreateType()const
@@ -101,7 +101,7 @@ std::string ListClustersRequest::getCreateType()const
 void ListClustersRequest::setCreateType(const std::string& createType)
 {
 	createType_ = createType;
-	setCoreParameter("CreateType", createType);
+	setCoreParameter("CreateType", std::to_string(createType));
 }
 
 std::string ListClustersRequest::getDepositType()const
@@ -112,7 +112,7 @@ std::string ListClustersRequest::getDepositType()const
 void ListClustersRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
+	setCoreParameter("DepositType", std::to_string(depositType));
 }
 
 bool ListClustersRequest::getDefaultStatus()const
@@ -123,7 +123,7 @@ bool ListClustersRequest::getDefaultStatus()const
 void ListClustersRequest::setDefaultStatus(bool defaultStatus)
 {
 	defaultStatus_ = defaultStatus;
-	setCoreParameter("DefaultStatus", defaultStatus);
+	setCoreParameter("DefaultStatus", defaultStatus ? "true" : "false");
 }
 
 int ListClustersRequest::getPageNumber()const
@@ -145,7 +145,7 @@ std::string ListClustersRequest::getAccessKeyId()const
 void ListClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListClustersRequest::getMachineType()const
@@ -156,6 +156,6 @@ std::string ListClustersRequest::getMachineType()const
 void ListClustersRequest::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
-	setCoreParameter("MachineType", machineType);
+	setCoreParameter("MachineType", std::to_string(machineType));
 }
 

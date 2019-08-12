@@ -33,7 +33,7 @@ std::string UpdateIntentRequest::getIntentDefinition()const
 void UpdateIntentRequest::setIntentDefinition(const std::string& intentDefinition)
 {
 	intentDefinition_ = intentDefinition;
-	setCoreParameter("IntentDefinition", intentDefinition);
+	setCoreParameter("IntentDefinition", std::to_string(intentDefinition));
 }
 
 long UpdateIntentRequest::getIntentId()const

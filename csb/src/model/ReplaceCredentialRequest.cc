@@ -33,7 +33,7 @@ std::string ReplaceCredentialRequest::getRegionId()const
 void ReplaceCredentialRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long ReplaceCredentialRequest::getCredentialId()const

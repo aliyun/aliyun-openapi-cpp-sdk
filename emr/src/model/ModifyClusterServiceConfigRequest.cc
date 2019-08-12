@@ -33,7 +33,7 @@ bool ModifyClusterServiceConfigRequest::getRefreshHostConfig()const
 void ModifyClusterServiceConfigRequest::setRefreshHostConfig(bool refreshHostConfig)
 {
 	refreshHostConfig_ = refreshHostConfig;
-	setCoreParameter("RefreshHostConfig", refreshHostConfig);
+	setCoreParameter("RefreshHostConfig", refreshHostConfig ? "true" : "false");
 }
 
 long ModifyClusterServiceConfigRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyClusterServiceConfigRequest::getConfigType()const
 void ModifyClusterServiceConfigRequest::setConfigType(const std::string& configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", configType);
+	setCoreParameter("ConfigType", std::to_string(configType));
 }
 
 std::string ModifyClusterServiceConfigRequest::getHostInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyClusterServiceConfigRequest::getHostInstanceId()const
 void ModifyClusterServiceConfigRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setCoreParameter("HostInstanceId", hostInstanceId);
+	setCoreParameter("HostInstanceId", std::to_string(hostInstanceId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string ModifyClusterServiceConfigRequest::getGroupId()const
 void ModifyClusterServiceConfigRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string ModifyClusterServiceConfigRequest::getClusterId()const
 void ModifyClusterServiceConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyClusterServiceConfigRequest::getAccessKeyId()const
 void ModifyClusterServiceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getCustomConfigParams()const
@@ -110,7 +110,7 @@ std::string ModifyClusterServiceConfigRequest::getCustomConfigParams()const
 void ModifyClusterServiceConfigRequest::setCustomConfigParams(const std::string& customConfigParams)
 {
 	customConfigParams_ = customConfigParams;
-	setCoreParameter("CustomConfigParams", customConfigParams);
+	setCoreParameter("CustomConfigParams", std::to_string(customConfigParams));
 }
 
 std::string ModifyClusterServiceConfigRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyClusterServiceConfigRequest::getRegionId()const
 void ModifyClusterServiceConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getServiceName()const
@@ -132,7 +132,7 @@ std::string ModifyClusterServiceConfigRequest::getServiceName()const
 void ModifyClusterServiceConfigRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string ModifyClusterServiceConfigRequest::getComment()const
@@ -143,7 +143,7 @@ std::string ModifyClusterServiceConfigRequest::getComment()const
 void ModifyClusterServiceConfigRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setCoreParameter("Comment", std::to_string(comment));
 }
 
 std::vector<std::string> ModifyClusterServiceConfigRequest::getGatewayClusterIdList()const
@@ -166,6 +166,6 @@ std::string ModifyClusterServiceConfigRequest::getConfigParams()const
 void ModifyClusterServiceConfigRequest::setConfigParams(const std::string& configParams)
 {
 	configParams_ = configParams;
-	setCoreParameter("ConfigParams", configParams);
+	setCoreParameter("ConfigParams", std::to_string(configParams));
 }
 

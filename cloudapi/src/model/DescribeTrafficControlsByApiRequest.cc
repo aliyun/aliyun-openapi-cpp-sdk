@@ -33,7 +33,7 @@ std::string DescribeTrafficControlsByApiRequest::getStageName()const
 void DescribeTrafficControlsByApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeTrafficControlsByApiRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeTrafficControlsByApiRequest::getSecurityToken()const
 void DescribeTrafficControlsByApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeTrafficControlsByApiRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeTrafficControlsByApiRequest::getGroupId()const
 void DescribeTrafficControlsByApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeTrafficControlsByApiRequest::getApiId()const
@@ -66,7 +66,7 @@ std::string DescribeTrafficControlsByApiRequest::getApiId()const
 void DescribeTrafficControlsByApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeTrafficControlsByApiRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeTrafficControlsByApiRequest::getAccessKeyId()const
 void DescribeTrafficControlsByApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

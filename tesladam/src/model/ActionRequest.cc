@@ -44,6 +44,6 @@ std::string ActionRequest::getStepCode()const
 void ActionRequest::setStepCode(const std::string& stepCode)
 {
 	stepCode_ = stepCode;
-	setCoreParameter("StepCode", stepCode);
+	setCoreParameter("StepCode", std::to_string(stepCode));
 }
 

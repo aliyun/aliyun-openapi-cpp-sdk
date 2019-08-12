@@ -33,7 +33,7 @@ std::string DescribeRiskWhiteListRequest::getRiskName()const
 void DescribeRiskWhiteListRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
+	setCoreParameter("RiskName", std::to_string(riskName));
 }
 
 std::string DescribeRiskWhiteListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRiskWhiteListRequest::getSourceIp()const
 void DescribeRiskWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeRiskWhiteListRequest::getPageSize()const

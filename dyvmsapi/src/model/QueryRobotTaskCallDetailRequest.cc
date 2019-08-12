@@ -55,7 +55,7 @@ std::string QueryRobotTaskCallDetailRequest::getResourceOwnerAccount()const
 void QueryRobotTaskCallDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryRobotTaskCallDetailRequest::getCallee()const
@@ -66,7 +66,7 @@ std::string QueryRobotTaskCallDetailRequest::getCallee()const
 void QueryRobotTaskCallDetailRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", callee);
+	setCoreParameter("Callee", std::to_string(callee));
 }
 
 long QueryRobotTaskCallDetailRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const
 void QueryRobotTaskCallDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

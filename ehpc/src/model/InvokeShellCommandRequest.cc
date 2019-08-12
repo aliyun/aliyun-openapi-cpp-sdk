@@ -49,7 +49,7 @@ std::string InvokeShellCommandRequest::getWorkingDir()const
 void InvokeShellCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", workingDir);
+	setCoreParameter("WorkingDir", std::to_string(workingDir));
 }
 
 std::string InvokeShellCommandRequest::getClusterId()const
@@ -60,7 +60,7 @@ std::string InvokeShellCommandRequest::getClusterId()const
 void InvokeShellCommandRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string InvokeShellCommandRequest::getCommand()const
@@ -71,7 +71,7 @@ std::string InvokeShellCommandRequest::getCommand()const
 void InvokeShellCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setCoreParameter("Command", std::to_string(command));
 }
 
 int InvokeShellCommandRequest::getTimeout()const
@@ -93,6 +93,6 @@ std::string InvokeShellCommandRequest::getAccessKeyId()const
 void InvokeShellCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

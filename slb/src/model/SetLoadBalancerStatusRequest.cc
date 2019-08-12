@@ -33,7 +33,7 @@ std::string SetLoadBalancerStatusRequest::getAccess_key_id()const
 void SetLoadBalancerStatusRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long SetLoadBalancerStatusRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
 void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string SetLoadBalancerStatusRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string SetLoadBalancerStatusRequest::getRegionId()const
 void SetLoadBalancerStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount()const
 void SetLoadBalancerStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetLoadBalancerStatusRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetLoadBalancerStatusRequest::getOwnerAccount()const
 void SetLoadBalancerStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetLoadBalancerStatusRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SetLoadBalancerStatusRequest::getLoadBalancerStatus()const
 void SetLoadBalancerStatusRequest::setLoadBalancerStatus(const std::string& loadBalancerStatus)
 {
 	loadBalancerStatus_ = loadBalancerStatus;
-	setCoreParameter("LoadBalancerStatus", loadBalancerStatus);
+	setCoreParameter("LoadBalancerStatus", std::to_string(loadBalancerStatus));
 }
 
 std::string SetLoadBalancerStatusRequest::getTags()const
@@ -121,6 +121,6 @@ std::string SetLoadBalancerStatusRequest::getTags()const
 void SetLoadBalancerStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

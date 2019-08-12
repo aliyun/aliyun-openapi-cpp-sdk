@@ -44,7 +44,7 @@ std::string DeleteParagraphRequest::getRegionId()const
 void DeleteParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string DeleteParagraphRequest::getNoteId()const
 void DeleteParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 
 std::string DeleteParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string DeleteParagraphRequest::getId()const
 void DeleteParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteParagraphRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteParagraphRequest::getAccessKeyId()const
 void DeleteParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

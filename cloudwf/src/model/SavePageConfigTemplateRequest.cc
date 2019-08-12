@@ -44,7 +44,7 @@ std::string SavePageConfigTemplateRequest::getTempDesc()const
 void SavePageConfigTemplateRequest::setTempDesc(const std::string& tempDesc)
 {
 	tempDesc_ = tempDesc;
-	setCoreParameter("TempDesc", tempDesc);
+	setCoreParameter("TempDesc", std::to_string(tempDesc));
 }
 
 std::string SavePageConfigTemplateRequest::getTempName()const
@@ -55,7 +55,7 @@ std::string SavePageConfigTemplateRequest::getTempName()const
 void SavePageConfigTemplateRequest::setTempName(const std::string& tempName)
 {
 	tempName_ = tempName;
-	setCoreParameter("TempName", tempName);
+	setCoreParameter("TempName", std::to_string(tempName));
 }
 
 long SavePageConfigTemplateRequest::getId()const
@@ -77,7 +77,7 @@ std::string SavePageConfigTemplateRequest::getTempPermission()const
 void SavePageConfigTemplateRequest::setTempPermission(const std::string& tempPermission)
 {
 	tempPermission_ = tempPermission;
-	setCoreParameter("TempPermission", tempPermission);
+	setCoreParameter("TempPermission", std::to_string(tempPermission));
 }
 
 std::string SavePageConfigTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SavePageConfigTemplateRequest::getAccessKeyId()const
 void SavePageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

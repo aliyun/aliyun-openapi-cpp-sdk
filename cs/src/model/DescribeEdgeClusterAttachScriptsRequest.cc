@@ -33,7 +33,7 @@ std::string DescribeEdgeClusterAttachScriptsRequest::getClusterId()const
 void DescribeEdgeClusterAttachScriptsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeEdgeClusterAttachScriptsRequest::getNamePrefix()const
@@ -44,6 +44,6 @@ std::string DescribeEdgeClusterAttachScriptsRequest::getNamePrefix()const
 void DescribeEdgeClusterAttachScriptsRequest::setNamePrefix(const std::string& namePrefix)
 {
 	namePrefix_ = namePrefix;
-	setCoreParameter("NamePrefix", namePrefix);
+	setCoreParameter("NamePrefix", std::to_string(namePrefix));
 }
 

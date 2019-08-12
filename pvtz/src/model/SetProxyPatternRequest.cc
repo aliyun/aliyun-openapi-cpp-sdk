@@ -33,7 +33,7 @@ std::string SetProxyPatternRequest::getProxyPattern()const
 void SetProxyPatternRequest::setProxyPattern(const std::string& proxyPattern)
 {
 	proxyPattern_ = proxyPattern;
-	setCoreParameter("ProxyPattern", proxyPattern);
+	setCoreParameter("ProxyPattern", std::to_string(proxyPattern));
 }
 
 std::string SetProxyPatternRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SetProxyPatternRequest::getUserClientIp()const
 void SetProxyPatternRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SetProxyPatternRequest::getZoneId()const
@@ -55,7 +55,7 @@ std::string SetProxyPatternRequest::getZoneId()const
 void SetProxyPatternRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string SetProxyPatternRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SetProxyPatternRequest::getLang()const
 void SetProxyPatternRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

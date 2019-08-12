@@ -55,7 +55,7 @@ std::string GetAnalyzePlaceDataRequest::getEndDate()const
 void GetAnalyzePlaceDataRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 long GetAnalyzePlaceDataRequest::getLocationId()const
@@ -77,7 +77,7 @@ std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
 void GetAnalyzePlaceDataRequest::setParentLocationIds(const std::string& parentLocationIds)
 {
 	parentLocationIds_ = parentLocationIds;
-	setCoreParameter("ParentLocationIds", parentLocationIds);
+	setCoreParameter("ParentLocationIds", std::to_string(parentLocationIds));
 }
 
 std::string GetAnalyzePlaceDataRequest::getStartDate()const
@@ -88,7 +88,7 @@ std::string GetAnalyzePlaceDataRequest::getStartDate()const
 void GetAnalyzePlaceDataRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 long GetAnalyzePlaceDataRequest::getStartUVCount()const

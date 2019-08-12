@@ -44,7 +44,7 @@ std::string ReleaseInstancePublicConnectionRequest::getInstanceId()const
 void ReleaseInstancePublicConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ReleaseInstancePublicConnectionRequest::getSecurityToken()const
 void ReleaseInstancePublicConnectionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReleaseInstancePublicConnectionRequest::getResourceOwnerAccount()con
 void ReleaseInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ReleaseInstancePublicConnectionRequest::getRegionId()const
 void ReleaseInstancePublicConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ReleaseInstancePublicConnectionRequest::getOwnerAccount()const
 void ReleaseInstancePublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ReleaseInstancePublicConnectionRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setCoreParameter("CurrentConnectionString", currentConnectionString);
+	setCoreParameter("CurrentConnectionString", std::to_string(currentConnectionString));
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

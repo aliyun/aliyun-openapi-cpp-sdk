@@ -33,7 +33,7 @@ std::string DescribeLatestActionsRequest::getSourceIp()const
 void DescribeLatestActionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeLatestActionsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeLatestActionsRequest::getFrom()const
 void DescribeLatestActionsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 int DescribeLatestActionsRequest::getCurrentPage()const
@@ -77,6 +77,6 @@ std::string DescribeLatestActionsRequest::getSecureToken()const
 void DescribeLatestActionsRequest::setSecureToken(const std::string& secureToken)
 {
 	secureToken_ = secureToken;
-	setCoreParameter("SecureToken", secureToken);
+	setCoreParameter("SecureToken", std::to_string(secureToken));
 }
 

@@ -33,7 +33,7 @@ std::string EnableThingRequest::getIotId()const
 void EnableThingRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string EnableThingRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string EnableThingRequest::getIotInstanceId()const
 void EnableThingRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string EnableThingRequest::getDeviceName()const
@@ -55,7 +55,7 @@ std::string EnableThingRequest::getDeviceName()const
 void EnableThingRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string EnableThingRequest::getProductKey()const
@@ -66,7 +66,7 @@ std::string EnableThingRequest::getProductKey()const
 void EnableThingRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string EnableThingRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string EnableThingRequest::getAccessKeyId()const
 void EnableThingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

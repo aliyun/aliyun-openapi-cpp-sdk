@@ -33,7 +33,7 @@ std::string AuthenticateSigRequest::getSig()const
 void AuthenticateSigRequest::setSig(const std::string& sig)
 {
 	sig_ = sig;
-	setCoreParameter("Sig", sig);
+	setCoreParameter("Sig", std::to_string(sig));
 }
 
 std::string AuthenticateSigRequest::getRemoteIp()const
@@ -44,7 +44,7 @@ std::string AuthenticateSigRequest::getRemoteIp()const
 void AuthenticateSigRequest::setRemoteIp(const std::string& remoteIp)
 {
 	remoteIp_ = remoteIp;
-	setCoreParameter("RemoteIp", remoteIp);
+	setCoreParameter("RemoteIp", std::to_string(remoteIp));
 }
 
 std::string AuthenticateSigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string AuthenticateSigRequest::getSourceIp()const
 void AuthenticateSigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string AuthenticateSigRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string AuthenticateSigRequest::getAppKey()const
 void AuthenticateSigRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string AuthenticateSigRequest::getSessionId()const
@@ -77,7 +77,7 @@ std::string AuthenticateSigRequest::getSessionId()const
 void AuthenticateSigRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setCoreParameter("SessionId", std::to_string(sessionId));
 }
 
 std::string AuthenticateSigRequest::getToken()const
@@ -88,7 +88,7 @@ std::string AuthenticateSigRequest::getToken()const
 void AuthenticateSigRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setCoreParameter("Token", std::to_string(token));
 }
 
 std::string AuthenticateSigRequest::getScene()const
@@ -99,6 +99,6 @@ std::string AuthenticateSigRequest::getScene()const
 void AuthenticateSigRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 

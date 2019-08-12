@@ -33,7 +33,7 @@ std::string DetachKeyPairRequest::getSourceRegionId()const
 void DetachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DetachKeyPairRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DetachKeyPairRequest::getResourceOwnerAccount()const
 void DetachKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachKeyPairRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DetachKeyPairRequest::getRegionId()const
 void DetachKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DetachKeyPairRequest::getInstanceIds()const
@@ -77,7 +77,7 @@ std::string DetachKeyPairRequest::getInstanceIds()const
 void DetachKeyPairRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string DetachKeyPairRequest::getKeyPairName()const
@@ -88,7 +88,7 @@ std::string DetachKeyPairRequest::getKeyPairName()const
 void DetachKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 long DetachKeyPairRequest::getOwnerId()const

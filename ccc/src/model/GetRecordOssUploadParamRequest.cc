@@ -33,7 +33,7 @@ std::string GetRecordOssUploadParamRequest::getInstanceId()const
 void GetRecordOssUploadParamRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetRecordOssUploadParamRequest::getFileName()const
@@ -44,7 +44,7 @@ std::string GetRecordOssUploadParamRequest::getFileName()const
 void GetRecordOssUploadParamRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 
 std::string GetRecordOssUploadParamRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetRecordOssUploadParamRequest::getAccessKeyId()const
 void GetRecordOssUploadParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

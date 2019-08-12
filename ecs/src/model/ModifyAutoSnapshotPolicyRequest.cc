@@ -33,7 +33,7 @@ bool ModifyAutoSnapshotPolicyRequest::getDataDiskPolicyEnabled()const
 void ModifyAutoSnapshotPolicyRequest::setDataDiskPolicyEnabled(bool dataDiskPolicyEnabled)
 {
 	dataDiskPolicyEnabled_ = dataDiskPolicyEnabled;
-	setCoreParameter("DataDiskPolicyEnabled", dataDiskPolicyEnabled);
+	setCoreParameter("DataDiskPolicyEnabled", dataDiskPolicyEnabled ? "true" : "false");
 }
 
 long ModifyAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ModifyAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void ModifyAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 bool ModifyAutoSnapshotPolicyRequest::getSystemDiskPolicyRetentionLastWeek()const
@@ -77,7 +77,7 @@ bool ModifyAutoSnapshotPolicyRequest::getSystemDiskPolicyRetentionLastWeek()cons
 void ModifyAutoSnapshotPolicyRequest::setSystemDiskPolicyRetentionLastWeek(bool systemDiskPolicyRetentionLastWeek)
 {
 	systemDiskPolicyRetentionLastWeek_ = systemDiskPolicyRetentionLastWeek;
-	setCoreParameter("SystemDiskPolicyRetentionLastWeek", systemDiskPolicyRetentionLastWeek);
+	setCoreParameter("SystemDiskPolicyRetentionLastWeek", systemDiskPolicyRetentionLastWeek ? "true" : "false");
 }
 
 std::string ModifyAutoSnapshotPolicyRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyAutoSnapshotPolicyRequest::getOwnerAccount()const
 void ModifyAutoSnapshotPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int ModifyAutoSnapshotPolicyRequest::getSystemDiskPolicyTimePeriod()const
@@ -121,7 +121,7 @@ bool ModifyAutoSnapshotPolicyRequest::getDataDiskPolicyRetentionLastWeek()const
 void ModifyAutoSnapshotPolicyRequest::setDataDiskPolicyRetentionLastWeek(bool dataDiskPolicyRetentionLastWeek)
 {
 	dataDiskPolicyRetentionLastWeek_ = dataDiskPolicyRetentionLastWeek;
-	setCoreParameter("DataDiskPolicyRetentionLastWeek", dataDiskPolicyRetentionLastWeek);
+	setCoreParameter("DataDiskPolicyRetentionLastWeek", dataDiskPolicyRetentionLastWeek ? "true" : "false");
 }
 
 int ModifyAutoSnapshotPolicyRequest::getSystemDiskPolicyRetentionDays()const
@@ -154,6 +154,6 @@ bool ModifyAutoSnapshotPolicyRequest::getSystemDiskPolicyEnabled()const
 void ModifyAutoSnapshotPolicyRequest::setSystemDiskPolicyEnabled(bool systemDiskPolicyEnabled)
 {
 	systemDiskPolicyEnabled_ = systemDiskPolicyEnabled;
-	setCoreParameter("SystemDiskPolicyEnabled", systemDiskPolicyEnabled);
+	setCoreParameter("SystemDiskPolicyEnabled", systemDiskPolicyEnabled ? "true" : "false");
 }
 

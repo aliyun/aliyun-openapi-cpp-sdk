@@ -56,7 +56,7 @@ std::string MigrateClusterHostGroupHostRequest::getRegionId()const
 void MigrateClusterHostGroupHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MigrateClusterHostGroupHostRequest::getHostGroupId()const
@@ -67,7 +67,7 @@ std::string MigrateClusterHostGroupHostRequest::getHostGroupId()const
 void MigrateClusterHostGroupHostRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 std::string MigrateClusterHostGroupHostRequest::getClusterId()const
@@ -78,7 +78,7 @@ std::string MigrateClusterHostGroupHostRequest::getClusterId()const
 void MigrateClusterHostGroupHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string MigrateClusterHostGroupHostRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string MigrateClusterHostGroupHostRequest::getAccessKeyId()const
 void MigrateClusterHostGroupHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

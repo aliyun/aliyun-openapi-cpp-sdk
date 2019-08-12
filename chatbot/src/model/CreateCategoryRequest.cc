@@ -44,6 +44,6 @@ std::string CreateCategoryRequest::getName()const
 void CreateCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

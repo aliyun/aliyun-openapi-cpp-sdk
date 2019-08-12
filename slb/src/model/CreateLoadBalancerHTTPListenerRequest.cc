@@ -33,7 +33,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getAccess_key_id()const
 void CreateLoadBalancerHTTPListenerRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long CreateLoadBalancerHTTPListenerRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getListenerForward()const
 void CreateLoadBalancerHTTPListenerRequest::setListenerForward(const std::string& listenerForward)
 {
 	listenerForward_ = listenerForward;
-	setCoreParameter("ListenerForward", listenerForward);
+	setCoreParameter("ListenerForward", std::to_string(listenerForward));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor()const
@@ -77,7 +77,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor()const
 void CreateLoadBalancerHTTPListenerRequest::setXForwardedFor(const std::string& xForwardedFor)
 {
 	xForwardedFor_ = xForwardedFor;
-	setCoreParameter("XForwardedFor", xForwardedFor);
+	setCoreParameter("XForwardedFor", std::to_string(xForwardedFor));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckURI()const
@@ -88,7 +88,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckURI()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheckURI(const std::string& healthCheckURI)
 {
 	healthCheckURI_ = healthCheckURI;
-	setCoreParameter("HealthCheckURI", healthCheckURI);
+	setCoreParameter("HealthCheckURI", std::to_string(healthCheckURI));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getDescription()const
 void CreateLoadBalancerHTTPListenerRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getUnhealthyThreshold()const
@@ -132,7 +132,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getAclStatus()const
 void CreateLoadBalancerHTTPListenerRequest::setAclStatus(const std::string& aclStatus)
 {
 	aclStatus_ = aclStatus;
-	setCoreParameter("AclStatus", aclStatus);
+	setCoreParameter("AclStatus", std::to_string(aclStatus));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getScheduler()const
@@ -143,7 +143,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getScheduler()const
 void CreateLoadBalancerHTTPListenerRequest::setScheduler(const std::string& scheduler)
 {
 	scheduler_ = scheduler;
-	setCoreParameter("Scheduler", scheduler);
+	setCoreParameter("Scheduler", std::to_string(scheduler));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getAclType()const
@@ -154,7 +154,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getAclType()const
 void CreateLoadBalancerHTTPListenerRequest::setAclType(const std::string& aclType)
 {
 	aclType_ = aclType;
-	setCoreParameter("AclType", aclType);
+	setCoreParameter("AclType", std::to_string(aclType));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheck()const
@@ -165,7 +165,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheck()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheck(const std::string& healthCheck)
 {
 	healthCheck_ = healthCheck;
-	setCoreParameter("HealthCheck", healthCheck);
+	setCoreParameter("HealthCheck", std::to_string(healthCheck));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getForwardPort()const
@@ -198,7 +198,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getRegionId()const
 void CreateLoadBalancerHTTPListenerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getCookieTimeout()const
@@ -220,7 +220,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getStickySessionType()const
 void CreateLoadBalancerHTTPListenerRequest::setStickySessionType(const std::string& stickySessionType)
 {
 	stickySessionType_ = stickySessionType;
-	setCoreParameter("StickySessionType", stickySessionType);
+	setCoreParameter("StickySessionType", std::to_string(stickySessionType));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getVpcIds()const
@@ -231,7 +231,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getVpcIds()const
 void CreateLoadBalancerHTTPListenerRequest::setVpcIds(const std::string& vpcIds)
 {
 	vpcIds_ = vpcIds;
-	setCoreParameter("VpcIds", vpcIds);
+	setCoreParameter("VpcIds", std::to_string(vpcIds));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getVServerGroupId()const
@@ -242,7 +242,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getVServerGroupId()const
 void CreateLoadBalancerHTTPListenerRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setCoreParameter("VServerGroupId", std::to_string(vServerGroupId));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getAclId()const
@@ -253,7 +253,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getAclId()const
 void CreateLoadBalancerHTTPListenerRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getListenerPort()const
@@ -275,7 +275,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getCookie()const
 void CreateLoadBalancerHTTPListenerRequest::setCookie(const std::string& cookie)
 {
 	cookie_ = cookie;
-	setCoreParameter("Cookie", cookie);
+	setCoreParameter("Cookie", std::to_string(cookie));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckType()const
@@ -286,7 +286,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckType()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheckType(const std::string& healthCheckType)
 {
 	healthCheckType_ = healthCheckType;
-	setCoreParameter("HealthCheckType", healthCheckType);
+	setCoreParameter("HealthCheckType", std::to_string(healthCheckType));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getResourceOwnerAccount()const
@@ -297,7 +297,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getResourceOwnerAccount()cons
 void CreateLoadBalancerHTTPListenerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getBandwidth()const
@@ -319,7 +319,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getStickySession()const
 void CreateLoadBalancerHTTPListenerRequest::setStickySession(const std::string& stickySession)
 {
 	stickySession_ = stickySession;
-	setCoreParameter("StickySession", stickySession);
+	setCoreParameter("StickySession", std::to_string(stickySession));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckMethod()const
@@ -330,7 +330,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckMethod()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheckMethod(const std::string& healthCheckMethod)
 {
 	healthCheckMethod_ = healthCheckMethod;
-	setCoreParameter("HealthCheckMethod", healthCheckMethod);
+	setCoreParameter("HealthCheckMethod", std::to_string(healthCheckMethod));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckDomain()const
@@ -341,7 +341,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckDomain()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheckDomain(const std::string& healthCheckDomain)
 {
 	healthCheckDomain_ = healthCheckDomain;
-	setCoreParameter("HealthCheckDomain", healthCheckDomain);
+	setCoreParameter("HealthCheckDomain", std::to_string(healthCheckDomain));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getRequestTimeout()const
@@ -363,7 +363,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getOwnerAccount()const
 void CreateLoadBalancerHTTPListenerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getGzip()const
@@ -374,7 +374,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getGzip()const
 void CreateLoadBalancerHTTPListenerRequest::setGzip(const std::string& gzip)
 {
 	gzip_ = gzip;
-	setCoreParameter("Gzip", gzip);
+	setCoreParameter("Gzip", std::to_string(gzip));
 }
 
 long CreateLoadBalancerHTTPListenerRequest::getOwnerId()const
@@ -396,7 +396,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getTags()const
 void CreateLoadBalancerHTTPListenerRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getIdleTimeout()const
@@ -418,7 +418,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getLoadBalancerId()const
 void CreateLoadBalancerHTTPListenerRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor_SLBIP()const
@@ -429,7 +429,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor_SLBIP()const
 void CreateLoadBalancerHTTPListenerRequest::setXForwardedFor_SLBIP(const std::string& xForwardedFor_SLBIP)
 {
 	xForwardedFor_SLBIP_ = xForwardedFor_SLBIP;
-	setCoreParameter("XForwardedFor_SLBIP", xForwardedFor_SLBIP);
+	setCoreParameter("XForwardedFor_SLBIP", std::to_string(xForwardedFor_SLBIP));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getBackendServerPort()const
@@ -462,7 +462,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor_proto()const
 void CreateLoadBalancerHTTPListenerRequest::setXForwardedFor_proto(const std::string& xForwardedFor_proto)
 {
 	xForwardedFor_proto_ = xForwardedFor_proto;
-	setCoreParameter("XForwardedFor_proto", xForwardedFor_proto);
+	setCoreParameter("XForwardedFor_proto", std::to_string(xForwardedFor_proto));
 }
 
 std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor_SLBID()const
@@ -473,7 +473,7 @@ std::string CreateLoadBalancerHTTPListenerRequest::getXForwardedFor_SLBID()const
 void CreateLoadBalancerHTTPListenerRequest::setXForwardedFor_SLBID(const std::string& xForwardedFor_SLBID)
 {
 	xForwardedFor_SLBID_ = xForwardedFor_SLBID;
-	setCoreParameter("XForwardedFor_SLBID", xForwardedFor_SLBID);
+	setCoreParameter("XForwardedFor_SLBID", std::to_string(xForwardedFor_SLBID));
 }
 
 int CreateLoadBalancerHTTPListenerRequest::getHealthCheckConnectPort()const
@@ -495,6 +495,6 @@ std::string CreateLoadBalancerHTTPListenerRequest::getHealthCheckHttpCode()const
 void CreateLoadBalancerHTTPListenerRequest::setHealthCheckHttpCode(const std::string& healthCheckHttpCode)
 {
 	healthCheckHttpCode_ = healthCheckHttpCode;
-	setCoreParameter("HealthCheckHttpCode", healthCheckHttpCode);
+	setCoreParameter("HealthCheckHttpCode", std::to_string(healthCheckHttpCode));
 }
 

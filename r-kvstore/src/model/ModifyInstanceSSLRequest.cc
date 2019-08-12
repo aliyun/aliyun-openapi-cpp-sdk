@@ -44,7 +44,7 @@ std::string ModifyInstanceSSLRequest::getInstanceId()const
 void ModifyInstanceSSLRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceSSLRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceSSLRequest::getSecurityToken()const
 void ModifyInstanceSSLRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceSSLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceSSLRequest::getResourceOwnerAccount()const
 void ModifyInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceSSLRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceSSLRequest::getRegionId()const
 void ModifyInstanceSSLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceSSLRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceSSLRequest::getOwnerAccount()const
 void ModifyInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceSSLRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceSSLRequest::getAccessKeyId()const
 void ModifyInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyInstanceSSLRequest::getSSLEnabled()const
@@ -121,6 +121,6 @@ std::string ModifyInstanceSSLRequest::getSSLEnabled()const
 void ModifyInstanceSSLRequest::setSSLEnabled(const std::string& sSLEnabled)
 {
 	sSLEnabled_ = sSLEnabled;
-	setCoreParameter("SSLEnabled", sSLEnabled);
+	setCoreParameter("SSLEnabled", std::to_string(sSLEnabled));
 }
 

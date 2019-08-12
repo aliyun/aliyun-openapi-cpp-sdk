@@ -33,7 +33,7 @@ std::string DeleteImageRequest::getSourceRegionId()const
 void DeleteImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteImageRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getImageId()const
 void DeleteImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string DeleteImageRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteImageRequest::getResourceOwnerAccount()const
 void DeleteImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteImageRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteImageRequest::getRegionId()const
 void DeleteImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteImageRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteImageRequest::getOwnerAccount()const
 void DeleteImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DeleteImageRequest::getForce()const
@@ -99,7 +99,7 @@ bool DeleteImageRequest::getForce()const
 void DeleteImageRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteImageRequest::getOwnerId()const

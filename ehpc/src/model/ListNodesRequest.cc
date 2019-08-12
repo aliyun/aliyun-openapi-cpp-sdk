@@ -33,7 +33,7 @@ std::string ListNodesRequest::getHostName()const
 void ListNodesRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string ListNodesRequest::getRole()const
@@ -44,7 +44,7 @@ std::string ListNodesRequest::getRole()const
 void ListNodesRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 int ListNodesRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListNodesRequest::getClusterId()const
 void ListNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListNodesRequest::getPageNumber()const
@@ -88,6 +88,6 @@ std::string ListNodesRequest::getAccessKeyId()const
 void ListNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

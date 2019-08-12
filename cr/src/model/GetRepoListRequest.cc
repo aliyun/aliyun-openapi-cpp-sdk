@@ -33,7 +33,7 @@ std::string GetRepoListRequest::getRegionId()const
 void GetRepoListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int GetRepoListRequest::getPageSize()const
@@ -66,6 +66,6 @@ std::string GetRepoListRequest::getStatus()const
 void GetRepoListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

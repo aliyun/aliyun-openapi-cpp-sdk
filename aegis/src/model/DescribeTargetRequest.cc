@@ -33,7 +33,7 @@ std::string DescribeTargetRequest::getSourceIp()const
 void DescribeTargetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeTargetRequest::getType()const
@@ -44,7 +44,7 @@ std::string DescribeTargetRequest::getType()const
 void DescribeTargetRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeTargetRequest::getConfig()const
@@ -55,6 +55,6 @@ std::string DescribeTargetRequest::getConfig()const
 void DescribeTargetRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setCoreParameter("Config", std::to_string(config));
 }
 

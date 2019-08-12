@@ -33,7 +33,7 @@ std::string QuerySuperDeviceGroupRequest::getIotInstanceId()const
 void QuerySuperDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string QuerySuperDeviceGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string QuerySuperDeviceGroupRequest::getGroupId()const
 void QuerySuperDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string QuerySuperDeviceGroupRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string QuerySuperDeviceGroupRequest::getAccessKeyId()const
 void QuerySuperDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

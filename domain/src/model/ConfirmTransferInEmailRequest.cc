@@ -33,7 +33,7 @@ std::string ConfirmTransferInEmailRequest::getUserClientIp()const
 void ConfirmTransferInEmailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::vector<std::string> ConfirmTransferInEmailRequest::getDomainName()const
@@ -56,7 +56,7 @@ std::string ConfirmTransferInEmailRequest::getLang()const
 void ConfirmTransferInEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ConfirmTransferInEmailRequest::getEmail()const
@@ -67,6 +67,6 @@ std::string ConfirmTransferInEmailRequest::getEmail()const
 void ConfirmTransferInEmailRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 

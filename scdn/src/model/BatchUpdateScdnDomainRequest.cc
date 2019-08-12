@@ -33,7 +33,7 @@ std::string BatchUpdateScdnDomainRequest::getTopLevelDomain()const
 void BatchUpdateScdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
 }
 
 std::string BatchUpdateScdnDomainRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string BatchUpdateScdnDomainRequest::getResourceGroupId()const
 void BatchUpdateScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string BatchUpdateScdnDomainRequest::getSources()const
@@ -55,7 +55,7 @@ std::string BatchUpdateScdnDomainRequest::getSources()const
 void BatchUpdateScdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setCoreParameter("Sources", std::to_string(sources));
 }
 
 std::string BatchUpdateScdnDomainRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string BatchUpdateScdnDomainRequest::getSecurityToken()const
 void BatchUpdateScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string BatchUpdateScdnDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string BatchUpdateScdnDomainRequest::getDomainName()const
 void BatchUpdateScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long BatchUpdateScdnDomainRequest::getOwnerId()const

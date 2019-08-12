@@ -33,7 +33,7 @@ std::string DescribeVulExportInfoRequest::getSourceIp()const
 void DescribeVulExportInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeVulExportInfoRequest::getExportId()const

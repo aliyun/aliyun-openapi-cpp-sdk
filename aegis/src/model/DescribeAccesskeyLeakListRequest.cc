@@ -33,7 +33,7 @@ std::string DescribeAccesskeyLeakListRequest::getSourceIp()const
 void DescribeAccesskeyLeakListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAccesskeyLeakListRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeAccesskeyLeakListRequest::getQuery()const
 void DescribeAccesskeyLeakListRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 int DescribeAccesskeyLeakListRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string DescribeAccesskeyLeakListRequest::getStatus()const
 void DescribeAccesskeyLeakListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

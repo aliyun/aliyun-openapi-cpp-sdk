@@ -44,7 +44,7 @@ std::string QueryTransferInListRequest::getUserClientIp()const
 void QueryTransferInListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 long QueryTransferInListRequest::getSubmissionEndDate()const
@@ -66,7 +66,7 @@ std::string QueryTransferInListRequest::getDomainName()const
 void QueryTransferInListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
@@ -77,7 +77,7 @@ std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
 void QueryTransferInListRequest::setSimpleTransferInStatus(const std::string& simpleTransferInStatus)
 {
 	simpleTransferInStatus_ = simpleTransferInStatus;
-	setCoreParameter("SimpleTransferInStatus", simpleTransferInStatus);
+	setCoreParameter("SimpleTransferInStatus", std::to_string(simpleTransferInStatus));
 }
 
 int QueryTransferInListRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string QueryTransferInListRequest::getLang()const
 void QueryTransferInListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int QueryTransferInListRequest::getPageNum()const

@@ -33,7 +33,7 @@ std::string ModifyVulLevelRequest::getConcernLevel()const
 void ModifyVulLevelRequest::setConcernLevel(const std::string& concernLevel)
 {
 	concernLevel_ = concernLevel;
-	setCoreParameter("ConcernLevel", concernLevel);
+	setCoreParameter("ConcernLevel", std::to_string(concernLevel));
 }
 
 std::string ModifyVulLevelRequest::getSourceIp()const
@@ -44,6 +44,6 @@ std::string ModifyVulLevelRequest::getSourceIp()const
 void ModifyVulLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

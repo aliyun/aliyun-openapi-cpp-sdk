@@ -44,7 +44,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getInstanceId()const
 void DescribeMonthlyServiceStatusDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getMonth()const
@@ -55,7 +55,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getMonth()const
 void DescribeMonthlyServiceStatusDetailRequest::setMonth(const std::string& month)
 {
 	month_ = month;
-	setCoreParameter("Month", month);
+	setCoreParameter("Month", std::to_string(month));
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getSecurityToken()const
 void DescribeMonthlyServiceStatusDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getResourceOwnerAccount()
 void DescribeMonthlyServiceStatusDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getRegionId()const
 void DescribeMonthlyServiceStatusDetailRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeMonthlyServiceStatusDetailRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getOwnerAccount()const
 void DescribeMonthlyServiceStatusDetailRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeMonthlyServiceStatusDetailRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeMonthlyServiceStatusDetailRequest::getAccessKeyId()const
 void DescribeMonthlyServiceStatusDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

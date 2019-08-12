@@ -44,7 +44,7 @@ std::string CreateVSwitchRequest::getResourceOwnerAccount()const
 void CreateVSwitchRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateVSwitchRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateVSwitchRequest::getRegionId()const
 void CreateVSwitchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateVSwitchRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateVSwitchRequest::getClientToken()const
 void CreateVSwitchRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateVSwitchRequest::getVpcId()const
@@ -77,7 +77,7 @@ std::string CreateVSwitchRequest::getVpcId()const
 void CreateVSwitchRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateVSwitchRequest::getVSwitchName()const
@@ -88,7 +88,7 @@ std::string CreateVSwitchRequest::getVSwitchName()const
 void CreateVSwitchRequest::setVSwitchName(const std::string& vSwitchName)
 {
 	vSwitchName_ = vSwitchName;
-	setCoreParameter("VSwitchName", vSwitchName);
+	setCoreParameter("VSwitchName", std::to_string(vSwitchName));
 }
 
 std::string CreateVSwitchRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateVSwitchRequest::getOwnerAccount()const
 void CreateVSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateVSwitchRequest::getCidrBlock()const
@@ -110,7 +110,7 @@ std::string CreateVSwitchRequest::getCidrBlock()const
 void CreateVSwitchRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
 }
 
 std::string CreateVSwitchRequest::getZoneId()const
@@ -121,7 +121,7 @@ std::string CreateVSwitchRequest::getZoneId()const
 void CreateVSwitchRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CreateVSwitchRequest::getDescription()const
@@ -132,7 +132,7 @@ std::string CreateVSwitchRequest::getDescription()const
 void CreateVSwitchRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateVSwitchRequest::getOwnerId()const

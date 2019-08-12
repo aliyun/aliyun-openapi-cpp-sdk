@@ -55,7 +55,7 @@ bool DescribeUserBusinessBehaviorRequest::getProxy_original_security_transport()
 void DescribeUserBusinessBehaviorRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeUserBusinessBehaviorRequest::getProxy_original_source_ip()co
 void DescribeUserBusinessBehaviorRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeUserBusinessBehaviorRequest::getOwnerIdLoginEmail()const
 void DescribeUserBusinessBehaviorRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeUserBusinessBehaviorRequest::getCallerType()const
 void DescribeUserBusinessBehaviorRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeUserBusinessBehaviorRequest::getAccessKeyId()const
 void DescribeUserBusinessBehaviorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeUserBusinessBehaviorRequest::getSourceRegionId()const
 void DescribeUserBusinessBehaviorRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeUserBusinessBehaviorRequest::getSecurityToken()const
 void DescribeUserBusinessBehaviorRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeUserBusinessBehaviorRequest::getRegionId()const
 void DescribeUserBusinessBehaviorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeUserBusinessBehaviorRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeUserBusinessBehaviorRequest::getEnable()const
 void DescribeUserBusinessBehaviorRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeUserBusinessBehaviorRequest::getRequestContent()const
 void DescribeUserBusinessBehaviorRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeUserBusinessBehaviorRequest::getCallerBidEmail()const
 void DescribeUserBusinessBehaviorRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeUserBusinessBehaviorRequest::getCallerUidEmail()const
 void DescribeUserBusinessBehaviorRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeUserBusinessBehaviorRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string DescribeUserBusinessBehaviorRequest::getApp_ip()const
 void DescribeUserBusinessBehaviorRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string DescribeUserBusinessBehaviorRequest::getResourceOwnerAccount()const
 void DescribeUserBusinessBehaviorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeUserBusinessBehaviorRequest::getOwnerAccount()const
 void DescribeUserBusinessBehaviorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeUserBusinessBehaviorRequest::getCallerBid()const
 void DescribeUserBusinessBehaviorRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeUserBusinessBehaviorRequest::getOwnerId()const
@@ -253,7 +253,7 @@ bool DescribeUserBusinessBehaviorRequest::getProxy_trust_transport_info()const
 void DescribeUserBusinessBehaviorRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeUserBusinessBehaviorRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeUserBusinessBehaviorRequest::getAk_mfa_present()const
 void DescribeUserBusinessBehaviorRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeUserBusinessBehaviorRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeUserBusinessBehaviorRequest::getSecurity_transport()const
 void DescribeUserBusinessBehaviorRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string DescribeUserBusinessBehaviorRequest::getRequestId()const
 void DescribeUserBusinessBehaviorRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getAkProxy()const
@@ -297,7 +297,7 @@ std::string DescribeUserBusinessBehaviorRequest::getAkProxy()const
 void DescribeUserBusinessBehaviorRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string DescribeUserBusinessBehaviorRequest::getStatusKey()const
@@ -308,6 +308,6 @@ std::string DescribeUserBusinessBehaviorRequest::getStatusKey()const
 void DescribeUserBusinessBehaviorRequest::setStatusKey(const std::string& statusKey)
 {
 	statusKey_ = statusKey;
-	setCoreParameter("StatusKey", statusKey);
+	setCoreParameter("StatusKey", std::to_string(statusKey));
 }
 

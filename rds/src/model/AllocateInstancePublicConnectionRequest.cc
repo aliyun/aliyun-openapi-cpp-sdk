@@ -44,7 +44,7 @@ std::string AllocateInstancePublicConnectionRequest::getConnectionStringPrefix()
 void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()co
 void AllocateInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getPort()const
@@ -66,7 +66,7 @@ std::string AllocateInstancePublicConnectionRequest::getPort()const
 void AllocateInstancePublicConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AllocateInstancePublicConnectionRequest::getOwnerAccount()const
 void AllocateInstancePublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string AllocateInstancePublicConnectionRequest::getDBInstanceId()const
 void AllocateInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long AllocateInstancePublicConnectionRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
 void AllocateInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

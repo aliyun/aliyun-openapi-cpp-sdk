@@ -44,7 +44,7 @@ std::string CreateTempDBInstanceRequest::getRestoreTime()const
 void CreateTempDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", std::to_string(restoreTime));
 }
 
 std::string CreateTempDBInstanceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateTempDBInstanceRequest::getResourceOwnerAccount()const
 void CreateTempDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int CreateTempDBInstanceRequest::getBackupId()const
@@ -77,7 +77,7 @@ std::string CreateTempDBInstanceRequest::getOwnerAccount()const
 void CreateTempDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateTempDBInstanceRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string CreateTempDBInstanceRequest::getDBInstanceId()const
 void CreateTempDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long CreateTempDBInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string CreateTempDBInstanceRequest::getAccessKeyId()const
 void CreateTempDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

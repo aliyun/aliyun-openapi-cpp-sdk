@@ -44,7 +44,7 @@ std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
 void QueryVideoSplitJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryVideoSplitJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryVideoSplitJobListRequest::getJobIds()const
 void QueryVideoSplitJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
 void QueryVideoSplitJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryVideoSplitJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
 void QueryVideoSplitJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

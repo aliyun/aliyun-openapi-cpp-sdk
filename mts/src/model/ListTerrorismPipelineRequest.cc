@@ -44,7 +44,7 @@ std::string ListTerrorismPipelineRequest::getResourceOwnerAccount()const
 void ListTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ListTerrorismPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ListTerrorismPipelineRequest::getOwnerAccount()const
 void ListTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ListTerrorismPipelineRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListTerrorismPipelineRequest::getState()const
 void ListTerrorismPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 long ListTerrorismPipelineRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ListTerrorismPipelineRequest::getAccessKeyId()const
 void ListTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

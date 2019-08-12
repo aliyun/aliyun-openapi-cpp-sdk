@@ -33,7 +33,7 @@ std::string ListJobsRequest::getOwner()const
 void ListJobsRequest::setOwner(const std::string& owner)
 {
 	owner_ = owner;
-	setCoreParameter("Owner", owner);
+	setCoreParameter("Owner", std::to_string(owner));
 }
 
 int ListJobsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string ListJobsRequest::getClusterId()const
 void ListJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListJobsRequest::getState()const
@@ -66,7 +66,7 @@ std::string ListJobsRequest::getState()const
 void ListJobsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string ListJobsRequest::getRerunable()const
@@ -77,7 +77,7 @@ std::string ListJobsRequest::getRerunable()const
 void ListJobsRequest::setRerunable(const std::string& rerunable)
 {
 	rerunable_ = rerunable;
-	setCoreParameter("Rerunable", rerunable);
+	setCoreParameter("Rerunable", std::to_string(rerunable));
 }
 
 int ListJobsRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string ListJobsRequest::getAccessKeyId()const
 void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

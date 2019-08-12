@@ -44,7 +44,7 @@ std::string ListUsersRequest::getRegionId()const
 void ListUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListUsersRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ListUsersRequest::getClusterId()const
 void ListUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListUsersRequest::getType()const
@@ -66,7 +66,7 @@ std::string ListUsersRequest::getType()const
 void ListUsersRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string ListUsersRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListUsersRequest::getAccessKeyId()const
 void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

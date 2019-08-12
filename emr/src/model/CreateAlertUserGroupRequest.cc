@@ -33,7 +33,7 @@ std::string CreateAlertUserGroupRequest::getUserList()const
 void CreateAlertUserGroupRequest::setUserList(const std::string& userList)
 {
 	userList_ = userList;
-	setCoreParameter("UserList", userList);
+	setCoreParameter("UserList", std::to_string(userList));
 }
 
 long CreateAlertUserGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateAlertUserGroupRequest::getRegionId()const
 void CreateAlertUserGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateAlertUserGroupRequest::getName()const
@@ -66,7 +66,7 @@ std::string CreateAlertUserGroupRequest::getName()const
 void CreateAlertUserGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateAlertUserGroupRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateAlertUserGroupRequest::getDescription()const
 void CreateAlertUserGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateAlertUserGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CreateAlertUserGroupRequest::getAccessKeyId()const
 void CreateAlertUserGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

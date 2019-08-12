@@ -33,7 +33,7 @@ std::string ModifyDeploymentSetAttributeRequest::getSourceRegionId()const
 void ModifyDeploymentSetAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetId()const
@@ -44,7 +44,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetId()const
 void ModifyDeploymentSetAttributeRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setCoreParameter("DeploymentSetId", std::to_string(deploymentSetId));
 }
 
 long ModifyDeploymentSetAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ModifyDeploymentSetAttributeRequest::getResourceOwnerAccount()const
 void ModifyDeploymentSetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyDeploymentSetAttributeRequest::getRegionId()const
 void ModifyDeploymentSetAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyDeploymentSetAttributeRequest::getOwnerAccount()const
 void ModifyDeploymentSetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDescription()const
 void ModifyDeploymentSetAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetName()const
@@ -110,7 +110,7 @@ std::string ModifyDeploymentSetAttributeRequest::getDeploymentSetName()const
 void ModifyDeploymentSetAttributeRequest::setDeploymentSetName(const std::string& deploymentSetName)
 {
 	deploymentSetName_ = deploymentSetName;
-	setCoreParameter("DeploymentSetName", deploymentSetName);
+	setCoreParameter("DeploymentSetName", std::to_string(deploymentSetName));
 }
 
 long ModifyDeploymentSetAttributeRequest::getOwnerId()const

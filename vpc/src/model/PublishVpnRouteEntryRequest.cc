@@ -44,7 +44,7 @@ bool PublishVpnRouteEntryRequest::getPublishVpc()const
 void PublishVpnRouteEntryRequest::setPublishVpc(bool publishVpc)
 {
 	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc);
+	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
 }
 
 std::string PublishVpnRouteEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string PublishVpnRouteEntryRequest::getResourceOwnerAccount()const
 void PublishVpnRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string PublishVpnRouteEntryRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string PublishVpnRouteEntryRequest::getRegionId()const
 void PublishVpnRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string PublishVpnRouteEntryRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string PublishVpnRouteEntryRequest::getClientToken()const
 void PublishVpnRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string PublishVpnRouteEntryRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string PublishVpnRouteEntryRequest::getOwnerAccount()const
 void PublishVpnRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string PublishVpnRouteEntryRequest::getVpnGatewayId()const
@@ -99,7 +99,7 @@ std::string PublishVpnRouteEntryRequest::getVpnGatewayId()const
 void PublishVpnRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long PublishVpnRouteEntryRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string PublishVpnRouteEntryRequest::getRouteDest()const
 void PublishVpnRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setCoreParameter("RouteDest", std::to_string(routeDest));
 }
 
 std::string PublishVpnRouteEntryRequest::getNextHop()const
@@ -132,7 +132,7 @@ std::string PublishVpnRouteEntryRequest::getNextHop()const
 void PublishVpnRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setCoreParameter("NextHop", std::to_string(nextHop));
 }
 
 std::string PublishVpnRouteEntryRequest::getRouteType()const
@@ -143,6 +143,6 @@ std::string PublishVpnRouteEntryRequest::getRouteType()const
 void PublishVpnRouteEntryRequest::setRouteType(const std::string& routeType)
 {
 	routeType_ = routeType;
-	setCoreParameter("RouteType", routeType);
+	setCoreParameter("RouteType", std::to_string(routeType));
 }
 

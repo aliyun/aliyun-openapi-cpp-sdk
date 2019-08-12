@@ -33,7 +33,7 @@ std::string GetFaceSearchGroupRequest::getRegionId()const
 void GetFaceSearchGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetFaceSearchGroupRequest::getProject()const
@@ -44,7 +44,7 @@ std::string GetFaceSearchGroupRequest::getProject()const
 void GetFaceSearchGroupRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string GetFaceSearchGroupRequest::getGroupName()const
@@ -55,7 +55,7 @@ std::string GetFaceSearchGroupRequest::getGroupName()const
 void GetFaceSearchGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string GetFaceSearchGroupRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetFaceSearchGroupRequest::getAccessKeyId()const
 void GetFaceSearchGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

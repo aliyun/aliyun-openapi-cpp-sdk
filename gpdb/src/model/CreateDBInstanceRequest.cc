@@ -33,7 +33,7 @@ std::string CreateDBInstanceRequest::getDBInstanceGroupCount()const
 void CreateDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
 {
 	dBInstanceGroupCount_ = dBInstanceGroupCount;
-	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+	setCoreParameter("DBInstanceGroupCount", std::to_string(dBInstanceGroupCount));
 }
 
 std::string CreateDBInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ std::string CreateDBInstanceRequest::getPeriod()const
 void CreateDBInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateDBInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateDBInstanceRequest::getClientToken()const
 void CreateDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateDBInstanceRequest::getEngineVersion()const
@@ -66,7 +66,7 @@ std::string CreateDBInstanceRequest::getEngineVersion()const
 void CreateDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long CreateDBInstanceRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string CreateDBInstanceRequest::getUsedTime()const
 void CreateDBInstanceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string CreateDBInstanceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateDBInstanceRequest::getAccessKeyId()const
 void CreateDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDBInstanceRequest::getDBInstanceClass()const
@@ -110,7 +110,7 @@ std::string CreateDBInstanceRequest::getDBInstanceClass()const
 void CreateDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
 }
 
 std::string CreateDBInstanceRequest::getSecurityIPList()const
@@ -121,7 +121,7 @@ std::string CreateDBInstanceRequest::getSecurityIPList()const
 void CreateDBInstanceRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", securityIPList);
+	setCoreParameter("SecurityIPList", std::to_string(securityIPList));
 }
 
 std::string CreateDBInstanceRequest::getVSwitchId()const
@@ -132,7 +132,7 @@ std::string CreateDBInstanceRequest::getVSwitchId()const
 void CreateDBInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string CreateDBInstanceRequest::getPrivateIpAddress()const
@@ -143,7 +143,7 @@ std::string CreateDBInstanceRequest::getPrivateIpAddress()const
 void CreateDBInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 std::string CreateDBInstanceRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string CreateDBInstanceRequest::getRegionId()const
 void CreateDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateDBInstanceRequest::getEngine()const
@@ -165,7 +165,7 @@ std::string CreateDBInstanceRequest::getEngine()const
 void CreateDBInstanceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string CreateDBInstanceRequest::getVPCId()const
@@ -176,7 +176,7 @@ std::string CreateDBInstanceRequest::getVPCId()const
 void CreateDBInstanceRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setCoreParameter("VPCId", std::to_string(vPCId));
 }
 
 std::string CreateDBInstanceRequest::getZoneId()const
@@ -187,7 +187,7 @@ std::string CreateDBInstanceRequest::getZoneId()const
 void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CreateDBInstanceRequest::getDBInstanceDescription()const
@@ -198,7 +198,7 @@ std::string CreateDBInstanceRequest::getDBInstanceDescription()const
 void CreateDBInstanceRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", std::to_string(dBInstanceDescription));
 }
 
 std::string CreateDBInstanceRequest::getPayType()const
@@ -209,7 +209,7 @@ std::string CreateDBInstanceRequest::getPayType()const
 void CreateDBInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string CreateDBInstanceRequest::getInstanceNetworkType()const
@@ -220,6 +220,6 @@ std::string CreateDBInstanceRequest::getInstanceNetworkType()const
 void CreateDBInstanceRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", std::to_string(instanceNetworkType));
 }
 

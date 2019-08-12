@@ -44,7 +44,7 @@ std::string DescribeErrorLogsRequest::getResourceOwnerAccount()const
 void DescribeErrorLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeErrorLogsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeErrorLogsRequest::getOwnerAccount()const
 void DescribeErrorLogsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeErrorLogsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeErrorLogsRequest::getEndTime()const
 void DescribeErrorLogsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeErrorLogsRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeErrorLogsRequest::getDBInstanceId()const
 void DescribeErrorLogsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeErrorLogsRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeErrorLogsRequest::getStartTime()const
 void DescribeErrorLogsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeErrorLogsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeErrorLogsRequest::getAccessKeyId()const
 void DescribeErrorLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

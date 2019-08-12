@@ -33,7 +33,7 @@ std::string DescribeShardDbConnectionInfoRequest::getDbName()const
 void DescribeShardDbConnectionInfoRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeShardDbConnectionInfoRequest::getDrdsInstanceId()const
 void DescribeShardDbConnectionInfoRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getSubDbName()const
@@ -55,7 +55,7 @@ std::string DescribeShardDbConnectionInfoRequest::getSubDbName()const
 void DescribeShardDbConnectionInfoRequest::setSubDbName(const std::string& subDbName)
 {
 	subDbName_ = subDbName;
-	setCoreParameter("SubDbName", subDbName);
+	setCoreParameter("SubDbName", std::to_string(subDbName));
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeShardDbConnectionInfoRequest::getAccessKeyId()const
 void DescribeShardDbConnectionInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

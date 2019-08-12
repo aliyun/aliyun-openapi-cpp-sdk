@@ -55,7 +55,7 @@ std::string CreateResourceQueueRequest::getRegionId()const
 void CreateResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateResourceQueueRequest::getName()const
@@ -66,7 +66,7 @@ std::string CreateResourceQueueRequest::getName()const
 void CreateResourceQueueRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateResourceQueueRequest::getQualifiedName()const
@@ -77,7 +77,7 @@ std::string CreateResourceQueueRequest::getQualifiedName()const
 void CreateResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
 {
 	qualifiedName_ = qualifiedName;
-	setCoreParameter("QualifiedName", qualifiedName);
+	setCoreParameter("QualifiedName", std::to_string(qualifiedName));
 }
 
 long CreateResourceQueueRequest::getResourcePoolId()const
@@ -99,7 +99,7 @@ std::string CreateResourceQueueRequest::getClusterId()const
 void CreateResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 bool CreateResourceQueueRequest::getLeaf()const
@@ -110,7 +110,7 @@ bool CreateResourceQueueRequest::getLeaf()const
 void CreateResourceQueueRequest::setLeaf(bool leaf)
 {
 	leaf_ = leaf;
-	setCoreParameter("Leaf", leaf);
+	setCoreParameter("Leaf", leaf ? "true" : "false");
 }
 
 std::vector<CreateResourceQueueRequest::Config> CreateResourceQueueRequest::getConfig()const
@@ -140,6 +140,6 @@ std::string CreateResourceQueueRequest::getAccessKeyId()const
 void CreateResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

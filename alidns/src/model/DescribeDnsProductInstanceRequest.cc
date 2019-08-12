@@ -33,7 +33,7 @@ std::string DescribeDnsProductInstanceRequest::getInstanceId()const
 void DescribeDnsProductInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeDnsProductInstanceRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeDnsProductInstanceRequest::getUserClientIp()const
 void DescribeDnsProductInstanceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeDnsProductInstanceRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeDnsProductInstanceRequest::getLang()const
 void DescribeDnsProductInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeDnsProductInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDnsProductInstanceRequest::getAccessKeyId()const
 void DescribeDnsProductInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

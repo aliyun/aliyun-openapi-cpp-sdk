@@ -33,7 +33,7 @@ std::string DescribeDomainConfigsRequest::getSecurityToken()const
 void DescribeDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDomainConfigsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDomainConfigsRequest::getDomainName()const
 void DescribeDomainConfigsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeDomainConfigsRequest::getConfigList()const
@@ -55,7 +55,7 @@ std::string DescribeDomainConfigsRequest::getConfigList()const
 void DescribeDomainConfigsRequest::setConfigList(const std::string& configList)
 {
 	configList_ = configList;
-	setCoreParameter("ConfigList", configList);
+	setCoreParameter("ConfigList", std::to_string(configList));
 }
 
 long DescribeDomainConfigsRequest::getOwnerId()const

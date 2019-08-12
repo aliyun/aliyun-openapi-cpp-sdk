@@ -33,7 +33,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getOppositeRouterId()const
 void ModifyRouterInterfaceAttributeRequest::setOppositeRouterId(const std::string& oppositeRouterId)
 {
 	oppositeRouterId_ = oppositeRouterId;
-	setCoreParameter("OppositeRouterId", oppositeRouterId);
+	setCoreParameter("OppositeRouterId", std::to_string(oppositeRouterId));
 }
 
 long ModifyRouterInterfaceAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getResourceOwnerAccount()cons
 void ModifyRouterInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getDescription()const
 void ModifyRouterInterfaceAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckTargetIp()const
@@ -77,7 +77,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckTargetIp()const
 void ModifyRouterInterfaceAttributeRequest::setHealthCheckTargetIp(const std::string& healthCheckTargetIp)
 {
 	healthCheckTargetIp_ = healthCheckTargetIp;
-	setCoreParameter("HealthCheckTargetIp", healthCheckTargetIp);
+	setCoreParameter("HealthCheckTargetIp", std::to_string(healthCheckTargetIp));
 }
 
 long ModifyRouterInterfaceAttributeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getRouterInterfaceId()const
 void ModifyRouterInterfaceAttributeRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setCoreParameter("RouterInterfaceId", std::to_string(routerInterfaceId));
 }
 
 long ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getRegionId()const
 void ModifyRouterInterfaceAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckSourceIp()const
@@ -132,7 +132,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getHealthCheckSourceIp()const
 void ModifyRouterInterfaceAttributeRequest::setHealthCheckSourceIp(const std::string& healthCheckSourceIp)
 {
 	healthCheckSourceIp_ = healthCheckSourceIp;
-	setCoreParameter("HealthCheckSourceIp", healthCheckSourceIp);
+	setCoreParameter("HealthCheckSourceIp", std::to_string(healthCheckSourceIp));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getName()const
@@ -143,7 +143,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getName()const
 void ModifyRouterInterfaceAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getOppositeRouterType()const
@@ -154,7 +154,7 @@ std::string ModifyRouterInterfaceAttributeRequest::getOppositeRouterType()const
 void ModifyRouterInterfaceAttributeRequest::setOppositeRouterType(const std::string& oppositeRouterType)
 {
 	oppositeRouterType_ = oppositeRouterType;
-	setCoreParameter("OppositeRouterType", oppositeRouterType);
+	setCoreParameter("OppositeRouterType", std::to_string(oppositeRouterType));
 }
 
 std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
@@ -165,6 +165,6 @@ std::string ModifyRouterInterfaceAttributeRequest::getOppositeInterfaceId()const
 void ModifyRouterInterfaceAttributeRequest::setOppositeInterfaceId(const std::string& oppositeInterfaceId)
 {
 	oppositeInterfaceId_ = oppositeInterfaceId;
-	setCoreParameter("OppositeInterfaceId", oppositeInterfaceId);
+	setCoreParameter("OppositeInterfaceId", std::to_string(oppositeInterfaceId));
 }
 

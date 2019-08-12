@@ -44,7 +44,7 @@ std::string StartKafkaPreferredReplicaElectionRequest::getTopicId()const
 void StartKafkaPreferredReplicaElectionRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::string StartKafkaPreferredReplicaElectionRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string StartKafkaPreferredReplicaElectionRequest::getRegionId()const
 void StartKafkaPreferredReplicaElectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StartKafkaPreferredReplicaElectionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string StartKafkaPreferredReplicaElectionRequest::getAccessKeyId()const
 void StartKafkaPreferredReplicaElectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

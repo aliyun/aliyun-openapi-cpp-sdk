@@ -33,7 +33,7 @@ std::string SetCcConfigRequest::getAllowIps()const
 void SetCcConfigRequest::setAllowIps(const std::string& allowIps)
 {
 	allowIps_ = allowIps;
-	setCoreParameter("AllowIps", allowIps);
+	setCoreParameter("AllowIps", std::to_string(allowIps));
 }
 
 std::string SetCcConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetCcConfigRequest::getSecurityToken()const
 void SetCcConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetCcConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetCcConfigRequest::getDomainName()const
 void SetCcConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetCcConfigRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string SetCcConfigRequest::getBlockIps()const
 void SetCcConfigRequest::setBlockIps(const std::string& blockIps)
 {
 	blockIps_ = blockIps;
-	setCoreParameter("BlockIps", blockIps);
+	setCoreParameter("BlockIps", std::to_string(blockIps));
 }
 

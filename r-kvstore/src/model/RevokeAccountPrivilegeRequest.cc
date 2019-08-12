@@ -44,7 +44,7 @@ std::string RevokeAccountPrivilegeRequest::getInstanceId()const
 void RevokeAccountPrivilegeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RevokeAccountPrivilegeRequest::getAccountName()const
@@ -55,7 +55,7 @@ std::string RevokeAccountPrivilegeRequest::getAccountName()const
 void RevokeAccountPrivilegeRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string RevokeAccountPrivilegeRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string RevokeAccountPrivilegeRequest::getSecurityToken()const
 void RevokeAccountPrivilegeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RevokeAccountPrivilegeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RevokeAccountPrivilegeRequest::getResourceOwnerAccount()const
 void RevokeAccountPrivilegeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RevokeAccountPrivilegeRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string RevokeAccountPrivilegeRequest::getRegionId()const
 void RevokeAccountPrivilegeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RevokeAccountPrivilegeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string RevokeAccountPrivilegeRequest::getOwnerAccount()const
 void RevokeAccountPrivilegeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RevokeAccountPrivilegeRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string RevokeAccountPrivilegeRequest::getAccessKeyId()const
 void RevokeAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

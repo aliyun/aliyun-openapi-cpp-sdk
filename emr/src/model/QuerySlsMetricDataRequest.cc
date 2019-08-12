@@ -55,7 +55,7 @@ std::string QuerySlsMetricDataRequest::getRegionId()const
 void QuerySlsMetricDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string QuerySlsMetricDataRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string QuerySlsMetricDataRequest::getClusterId()const
 void QuerySlsMetricDataRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 long QuerySlsMetricDataRequest::getStartTimeStamp()const
@@ -88,7 +88,7 @@ std::string QuerySlsMetricDataRequest::getMetricName()const
 void QuerySlsMetricDataRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string QuerySlsMetricDataRequest::getHostRole()const
@@ -99,7 +99,7 @@ std::string QuerySlsMetricDataRequest::getHostRole()const
 void QuerySlsMetricDataRequest::setHostRole(const std::string& hostRole)
 {
 	hostRole_ = hostRole;
-	setCoreParameter("HostRole", hostRole);
+	setCoreParameter("HostRole", std::to_string(hostRole));
 }
 
 std::string QuerySlsMetricDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string QuerySlsMetricDataRequest::getAccessKeyId()const
 void QuerySlsMetricDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long QuerySlsMetricDataRequest::getEndTimeStamp()const

@@ -33,7 +33,7 @@ std::string DescribeVodRefreshTasksRequest::getObjectPath()const
 void DescribeVodRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", std::to_string(objectPath));
 }
 
 std::string DescribeVodRefreshTasksRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeVodRefreshTasksRequest::getDomainName()const
 void DescribeVodRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeVodRefreshTasksRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeVodRefreshTasksRequest::getEndTime()const
 void DescribeVodRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeVodRefreshTasksRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeVodRefreshTasksRequest::getStartTime()const
 void DescribeVodRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeVodRefreshTasksRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeVodRefreshTasksRequest::getResourceGroupId()const
 void DescribeVodRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeVodRefreshTasksRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeVodRefreshTasksRequest::getSecurityToken()const
 void DescribeVodRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeVodRefreshTasksRequest::getPageSize()const
@@ -132,7 +132,7 @@ std::string DescribeVodRefreshTasksRequest::getObjectType()const
 void DescribeVodRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", std::to_string(objectType));
 }
 
 std::string DescribeVodRefreshTasksRequest::getTaskId()const
@@ -143,7 +143,7 @@ std::string DescribeVodRefreshTasksRequest::getTaskId()const
 void DescribeVodRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string DescribeVodRefreshTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeVodRefreshTasksRequest::getStatus()const
 void DescribeVodRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

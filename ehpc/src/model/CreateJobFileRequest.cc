@@ -33,7 +33,7 @@ std::string CreateJobFileRequest::getTargetFile()const
 void CreateJobFileRequest::setTargetFile(const std::string& targetFile)
 {
 	targetFile_ = targetFile;
-	setCoreParameter("TargetFile", targetFile);
+	setCoreParameter("TargetFile", std::to_string(targetFile));
 }
 
 std::string CreateJobFileRequest::getRunasUserPassword()const
@@ -44,7 +44,7 @@ std::string CreateJobFileRequest::getRunasUserPassword()const
 void CreateJobFileRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setCoreParameter("RunasUserPassword", runasUserPassword);
+	setCoreParameter("RunasUserPassword", std::to_string(runasUserPassword));
 }
 
 std::string CreateJobFileRequest::getRunasUser()const
@@ -55,7 +55,7 @@ std::string CreateJobFileRequest::getRunasUser()const
 void CreateJobFileRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", std::to_string(runasUser));
 }
 
 std::string CreateJobFileRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateJobFileRequest::getClusterId()const
 void CreateJobFileRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateJobFileRequest::getContent()const
@@ -77,7 +77,7 @@ std::string CreateJobFileRequest::getContent()const
 void CreateJobFileRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 
 std::string CreateJobFileRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CreateJobFileRequest::getAccessKeyId()const
 void CreateJobFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

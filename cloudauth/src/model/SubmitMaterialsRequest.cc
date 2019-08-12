@@ -44,7 +44,7 @@ std::string SubmitMaterialsRequest::getSourceIp()const
 void SubmitMaterialsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::vector<SubmitMaterialsRequest::Material> SubmitMaterialsRequest::getMaterial()const
@@ -72,6 +72,6 @@ std::string SubmitMaterialsRequest::getVerifyToken()const
 void SubmitMaterialsRequest::setVerifyToken(const std::string& verifyToken)
 {
 	verifyToken_ = verifyToken;
-	setCoreParameter("VerifyToken", verifyToken);
+	setCoreParameter("VerifyToken", std::to_string(verifyToken));
 }
 

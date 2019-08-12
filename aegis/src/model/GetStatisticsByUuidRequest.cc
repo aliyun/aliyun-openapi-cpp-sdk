@@ -33,6 +33,6 @@ std::string GetStatisticsByUuidRequest::getUuid()const
 void GetStatisticsByUuidRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 

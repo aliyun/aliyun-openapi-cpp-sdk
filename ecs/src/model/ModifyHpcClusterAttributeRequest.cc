@@ -44,7 +44,7 @@ std::string ModifyHpcClusterAttributeRequest::getHpcClusterId()const
 void ModifyHpcClusterAttributeRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setCoreParameter("HpcClusterId", std::to_string(hpcClusterId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string ModifyHpcClusterAttributeRequest::getClientToken()const
 void ModifyHpcClusterAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long ModifyHpcClusterAttributeRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool ModifyHpcClusterAttributeRequest::getProxy_original_security_transport()con
 void ModifyHpcClusterAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyHpcClusterAttributeRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyHpcClusterAttributeRequest::getDescription()const
 void ModifyHpcClusterAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string ModifyHpcClusterAttributeRequest::getProxy_original_source_ip()const
 void ModifyHpcClusterAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string ModifyHpcClusterAttributeRequest::getOwnerIdLoginEmail()const
 void ModifyHpcClusterAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string ModifyHpcClusterAttributeRequest::getCallerType()const
 void ModifyHpcClusterAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string ModifyHpcClusterAttributeRequest::getAccessKeyId()const
 void ModifyHpcClusterAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyHpcClusterAttributeRequest::getSourceRegionId()const
 void ModifyHpcClusterAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string ModifyHpcClusterAttributeRequest::getRegionId()const
 void ModifyHpcClusterAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string ModifyHpcClusterAttributeRequest::getSecurityToken()const
 void ModifyHpcClusterAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 bool ModifyHpcClusterAttributeRequest::getEnable()const
@@ -176,7 +176,7 @@ bool ModifyHpcClusterAttributeRequest::getEnable()const
 void ModifyHpcClusterAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string ModifyHpcClusterAttributeRequest::getRequestContent()const
@@ -187,7 +187,7 @@ std::string ModifyHpcClusterAttributeRequest::getRequestContent()const
 void ModifyHpcClusterAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getCallerBidEmail()const
@@ -198,7 +198,7 @@ std::string ModifyHpcClusterAttributeRequest::getCallerBidEmail()const
 void ModifyHpcClusterAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getCallerUidEmail()const
@@ -209,7 +209,7 @@ std::string ModifyHpcClusterAttributeRequest::getCallerUidEmail()const
 void ModifyHpcClusterAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ModifyHpcClusterAttributeRequest::getCallerUid()const
@@ -231,7 +231,7 @@ std::string ModifyHpcClusterAttributeRequest::getApp_ip()const
 void ModifyHpcClusterAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getResourceOwnerAccount()const
@@ -242,7 +242,7 @@ std::string ModifyHpcClusterAttributeRequest::getResourceOwnerAccount()const
 void ModifyHpcClusterAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getOwnerAccount()const
@@ -253,7 +253,7 @@ std::string ModifyHpcClusterAttributeRequest::getOwnerAccount()const
 void ModifyHpcClusterAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string ModifyHpcClusterAttributeRequest::getCallerBid()const
 void ModifyHpcClusterAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyHpcClusterAttributeRequest::getOwnerId()const
@@ -286,7 +286,7 @@ bool ModifyHpcClusterAttributeRequest::getProxy_trust_transport_info()const
 void ModifyHpcClusterAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyHpcClusterAttributeRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool ModifyHpcClusterAttributeRequest::getAk_mfa_present()const
 void ModifyHpcClusterAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyHpcClusterAttributeRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool ModifyHpcClusterAttributeRequest::getSecurity_transport()const
 void ModifyHpcClusterAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyHpcClusterAttributeRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string ModifyHpcClusterAttributeRequest::getRequestId()const
 void ModifyHpcClusterAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getAkProxy()const
@@ -330,7 +330,7 @@ std::string ModifyHpcClusterAttributeRequest::getAkProxy()const
 void ModifyHpcClusterAttributeRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string ModifyHpcClusterAttributeRequest::getName()const
@@ -341,6 +341,6 @@ std::string ModifyHpcClusterAttributeRequest::getName()const
 void ModifyHpcClusterAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

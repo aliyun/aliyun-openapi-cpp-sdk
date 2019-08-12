@@ -33,7 +33,7 @@ std::string GetDownloadUrlRequest::getLibraryId()const
 void GetDownloadUrlRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long GetDownloadUrlRequest::getPhotoId()const
@@ -55,6 +55,6 @@ std::string GetDownloadUrlRequest::getStoreName()const
 void GetDownloadUrlRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

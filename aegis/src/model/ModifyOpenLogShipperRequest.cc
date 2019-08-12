@@ -33,7 +33,7 @@ std::string ModifyOpenLogShipperRequest::getSourceIp()const
 void ModifyOpenLogShipperRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyOpenLogShipperRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string ModifyOpenLogShipperRequest::getFrom()const
 void ModifyOpenLogShipperRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string ModifyOpenLogShipperRequest::getLang()const
@@ -55,6 +55,6 @@ std::string ModifyOpenLogShipperRequest::getLang()const
 void ModifyOpenLogShipperRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

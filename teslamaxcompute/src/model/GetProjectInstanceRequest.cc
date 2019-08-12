@@ -44,7 +44,7 @@ std::string GetProjectInstanceRequest::getProject()const
 void GetProjectInstanceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 int GetProjectInstanceRequest::getPageNum()const
@@ -66,7 +66,7 @@ std::string GetProjectInstanceRequest::getRegion()const
 void GetProjectInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string GetProjectInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetProjectInstanceRequest::getStatus()const
 void GetProjectInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

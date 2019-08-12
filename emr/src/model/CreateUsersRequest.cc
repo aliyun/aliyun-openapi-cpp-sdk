@@ -44,7 +44,7 @@ std::string CreateUsersRequest::getRegionId()const
 void CreateUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateUsersRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string CreateUsersRequest::getClusterId()const
 void CreateUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<CreateUsersRequest::UserInfo> CreateUsersRequest::getUserInfo()const
@@ -84,6 +84,6 @@ std::string CreateUsersRequest::getAccessKeyId()const
 void CreateUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string QueryFpCompareJobListRequest::getResourceOwnerAccount()const
 void QueryFpCompareJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryFpCompareJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryFpCompareJobListRequest::getJobIds()const
 void QueryFpCompareJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryFpCompareJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryFpCompareJobListRequest::getOwnerAccount()const
 void QueryFpCompareJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryFpCompareJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryFpCompareJobListRequest::getAccessKeyId()const
 void QueryFpCompareJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

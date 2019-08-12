@@ -33,7 +33,7 @@ std::string GetRepoAuthorizationListRequest::getRepoNamespace()const
 void GetRepoAuthorizationListRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string GetRepoAuthorizationListRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string GetRepoAuthorizationListRequest::getRepoName()const
 void GetRepoAuthorizationListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string GetRepoAuthorizationListRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetRepoAuthorizationListRequest::getRegionId()const
 void GetRepoAuthorizationListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetRepoAuthorizationListRequest::getAuthorize()const
@@ -66,6 +66,6 @@ std::string GetRepoAuthorizationListRequest::getAuthorize()const
 void GetRepoAuthorizationListRequest::setAuthorize(const std::string& authorize)
 {
 	authorize_ = authorize;
-	setCoreParameter("Authorize", authorize);
+	setCoreParameter("Authorize", std::to_string(authorize));
 }
 

@@ -33,7 +33,7 @@ std::string StartLoadBalancerListenerRequest::getAccess_key_id()const
 void StartLoadBalancerListenerRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long StartLoadBalancerListenerRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string StartLoadBalancerListenerRequest::getLoadBalancerId()const
 void StartLoadBalancerListenerRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string StartLoadBalancerListenerRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string StartLoadBalancerListenerRequest::getRegionId()const
 void StartLoadBalancerListenerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StartLoadBalancerListenerRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string StartLoadBalancerListenerRequest::getResourceOwnerAccount()const
 void StartLoadBalancerListenerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string StartLoadBalancerListenerRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string StartLoadBalancerListenerRequest::getOwnerAccount()const
 void StartLoadBalancerListenerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long StartLoadBalancerListenerRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string StartLoadBalancerListenerRequest::getListenerProtocol()const
 void StartLoadBalancerListenerRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
 }
 
 std::string StartLoadBalancerListenerRequest::getTags()const
@@ -132,6 +132,6 @@ std::string StartLoadBalancerListenerRequest::getTags()const
 void StartLoadBalancerListenerRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

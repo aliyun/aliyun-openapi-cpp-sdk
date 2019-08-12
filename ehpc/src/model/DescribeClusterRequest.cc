@@ -33,7 +33,7 @@ std::string DescribeClusterRequest::getClusterId()const
 void DescribeClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeClusterRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeClusterRequest::getAccessKeyId()const
 void DescribeClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string RerunJobsRequest::getJobs()const
 void RerunJobsRequest::setJobs(const std::string& jobs)
 {
 	jobs_ = jobs;
-	setCoreParameter("Jobs", jobs);
+	setCoreParameter("Jobs", std::to_string(jobs));
 }
 
 std::string RerunJobsRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string RerunJobsRequest::getClusterId()const
 void RerunJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string RerunJobsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string RerunJobsRequest::getAccessKeyId()const
 void RerunJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

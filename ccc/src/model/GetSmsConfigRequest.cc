@@ -33,7 +33,7 @@ std::string GetSmsConfigRequest::getInstanceId()const
 void GetSmsConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<int> GetSmsConfigRequest::getScenario()const
@@ -56,6 +56,6 @@ std::string GetSmsConfigRequest::getAccessKeyId()const
 void GetSmsConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

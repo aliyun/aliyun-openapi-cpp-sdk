@@ -44,7 +44,7 @@ std::string CreateClusterWithTemplateRequest::getUniqueTag()const
 void CreateClusterWithTemplateRequest::setUniqueTag(const std::string& uniqueTag)
 {
 	uniqueTag_ = uniqueTag;
-	setCoreParameter("UniqueTag", uniqueTag);
+	setCoreParameter("UniqueTag", std::to_string(uniqueTag));
 }
 
 std::string CreateClusterWithTemplateRequest::getClusterName()const
@@ -55,7 +55,7 @@ std::string CreateClusterWithTemplateRequest::getClusterName()const
 void CreateClusterWithTemplateRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setCoreParameter("ClusterName", std::to_string(clusterName));
 }
 
 std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
@@ -66,7 +66,7 @@ std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
 void CreateClusterWithTemplateRequest::setTemplateBizId(const std::string& templateBizId)
 {
 	templateBizId_ = templateBizId;
-	setCoreParameter("TemplateBizId", templateBizId);
+	setCoreParameter("TemplateBizId", std::to_string(templateBizId));
 }
 
 std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
 void CreateClusterWithTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

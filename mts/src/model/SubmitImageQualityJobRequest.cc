@@ -33,7 +33,7 @@ std::string SubmitImageQualityJobRequest::getInput()const
 void SubmitImageQualityJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitImageQualityJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitImageQualityJobRequest::getUserData()const
 void SubmitImageQualityJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitImageQualityJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitImageQualityJobRequest::getResourceOwnerAccount()const
 void SubmitImageQualityJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitImageQualityJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitImageQualityJobRequest::getOwnerAccount()const
 void SubmitImageQualityJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitImageQualityJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string SubmitImageQualityJobRequest::getAccessKeyId()const
 void SubmitImageQualityJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitImageQualityJobRequest::getPipelineId()const
@@ -110,6 +110,6 @@ std::string SubmitImageQualityJobRequest::getPipelineId()const
 void SubmitImageQualityJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

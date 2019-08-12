@@ -44,7 +44,7 @@ std::string DescribeSmartAccessGatewaysRequest::getSerialNumber()const
 void DescribeSmartAccessGatewaysRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setCoreParameter("SerialNumber", std::to_string(serialNumber));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSmartAccessGatewaysRequest::getResourceOwnerAccount()const
 void DescribeSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getAclIds()const
@@ -66,7 +66,7 @@ std::string DescribeSmartAccessGatewaysRequest::getAclIds()const
 void DescribeSmartAccessGatewaysRequest::setAclIds(const std::string& aclIds)
 {
 	aclIds_ = aclIds;
-	setCoreParameter("AclIds", aclIds);
+	setCoreParameter("AclIds", std::to_string(aclIds));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSmartAccessGatewaysRequest::getOwnerAccount()const
 void DescribeSmartAccessGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getAssociatedCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeSmartAccessGatewaysRequest::getAssociatedCcnId()const
 void DescribeSmartAccessGatewaysRequest::setAssociatedCcnId(const std::string& associatedCcnId)
 {
 	associatedCcnId_ = associatedCcnId;
-	setCoreParameter("AssociatedCcnId", associatedCcnId);
+	setCoreParameter("AssociatedCcnId", std::to_string(associatedCcnId));
 }
 
 long DescribeSmartAccessGatewaysRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeSmartAccessGatewaysRequest::getUnboundAclIds()const
 void DescribeSmartAccessGatewaysRequest::setUnboundAclIds(const std::string& unboundAclIds)
 {
 	unboundAclIds_ = unboundAclIds;
-	setCoreParameter("UnboundAclIds", unboundAclIds);
+	setCoreParameter("UnboundAclIds", std::to_string(unboundAclIds));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string DescribeSmartAccessGatewaysRequest::getPageNumber()const
 void DescribeSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeSmartAccessGatewaysRequest::getRegionId()const
 void DescribeSmartAccessGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getName()const
@@ -143,7 +143,7 @@ std::string DescribeSmartAccessGatewaysRequest::getName()const
 void DescribeSmartAccessGatewaysRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeSmartAccessGatewaysRequest::getPageSize()const
 void DescribeSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getSmartAGId()const
@@ -165,7 +165,7 @@ std::string DescribeSmartAccessGatewaysRequest::getSmartAGId()const
 void DescribeSmartAccessGatewaysRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getInstanceType()const
@@ -176,7 +176,7 @@ std::string DescribeSmartAccessGatewaysRequest::getInstanceType()const
 void DescribeSmartAccessGatewaysRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::string DescribeSmartAccessGatewaysRequest::getStatus()const
@@ -187,6 +187,6 @@ std::string DescribeSmartAccessGatewaysRequest::getStatus()const
 void DescribeSmartAccessGatewaysRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

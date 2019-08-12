@@ -33,7 +33,7 @@ std::string CreatCustomOcrTemplateRequest::getImgUrl()const
 void CreatCustomOcrTemplateRequest::setImgUrl(const std::string& imgUrl)
 {
 	imgUrl_ = imgUrl;
-	setCoreParameter("ImgUrl", imgUrl);
+	setCoreParameter("ImgUrl", std::to_string(imgUrl));
 }
 
 std::string CreatCustomOcrTemplateRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreatCustomOcrTemplateRequest::getSourceIp()const
 void CreatCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreatCustomOcrTemplateRequest::getReferArea()const
@@ -55,7 +55,7 @@ std::string CreatCustomOcrTemplateRequest::getReferArea()const
 void CreatCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
-	setCoreParameter("ReferArea", referArea);
+	setCoreParameter("ReferArea", std::to_string(referArea));
 }
 
 std::string CreatCustomOcrTemplateRequest::getRecognizeArea()const
@@ -66,7 +66,7 @@ std::string CreatCustomOcrTemplateRequest::getRecognizeArea()const
 void CreatCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
 {
 	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", recognizeArea);
+	setCoreParameter("RecognizeArea", std::to_string(recognizeArea));
 }
 
 std::string CreatCustomOcrTemplateRequest::getName()const
@@ -77,6 +77,6 @@ std::string CreatCustomOcrTemplateRequest::getName()const
 void CreatCustomOcrTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

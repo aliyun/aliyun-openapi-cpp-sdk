@@ -44,7 +44,7 @@ std::string ListOpsOperationTaskRequest::getRegionId()const
 void ListOpsOperationTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long ListOpsOperationTaskRequest::getOperationId()const
@@ -77,6 +77,6 @@ std::string ListOpsOperationTaskRequest::getAccessKeyId()const
 void ListOpsOperationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

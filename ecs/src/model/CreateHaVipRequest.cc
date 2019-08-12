@@ -33,7 +33,7 @@ std::string CreateHaVipRequest::getVSwitchId()const
 void CreateHaVipRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string CreateHaVipRequest::getIpAddress()const
@@ -44,7 +44,7 @@ std::string CreateHaVipRequest::getIpAddress()const
 void CreateHaVipRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setCoreParameter("IpAddress", std::to_string(ipAddress));
 }
 
 long CreateHaVipRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string CreateHaVipRequest::getResourceOwnerAccount()const
 void CreateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateHaVipRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateHaVipRequest::getClientToken()const
 void CreateHaVipRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateHaVipRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string CreateHaVipRequest::getRegionId()const
 void CreateHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateHaVipRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateHaVipRequest::getOwnerAccount()const
 void CreateHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateHaVipRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string CreateHaVipRequest::getDescription()const
 void CreateHaVipRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateHaVipRequest::getOwnerId()const

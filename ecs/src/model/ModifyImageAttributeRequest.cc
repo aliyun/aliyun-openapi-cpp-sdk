@@ -33,7 +33,7 @@ std::string ModifyImageAttributeRequest::getSourceRegionId()const
 void ModifyImageAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ModifyImageAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyImageAttributeRequest::getImageId()const
 void ModifyImageAttributeRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string ModifyImageAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyImageAttributeRequest::getResourceOwnerAccount()const
 void ModifyImageAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyImageAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyImageAttributeRequest::getRegionId()const
 void ModifyImageAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyImageAttributeRequest::getImageName()const
@@ -88,7 +88,7 @@ std::string ModifyImageAttributeRequest::getImageName()const
 void ModifyImageAttributeRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", imageName);
+	setCoreParameter("ImageName", std::to_string(imageName));
 }
 
 std::string ModifyImageAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyImageAttributeRequest::getOwnerAccount()const
 void ModifyImageAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyImageAttributeRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string ModifyImageAttributeRequest::getDescription()const
 void ModifyImageAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long ModifyImageAttributeRequest::getOwnerId()const

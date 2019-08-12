@@ -33,7 +33,7 @@ std::string SetGWSInstanceUserRequest::getInstanceId()const
 void SetGWSInstanceUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SetGWSInstanceUserRequest::getUserUid()const
@@ -44,7 +44,7 @@ std::string SetGWSInstanceUserRequest::getUserUid()const
 void SetGWSInstanceUserRequest::setUserUid(const std::string& userUid)
 {
 	userUid_ = userUid;
-	setCoreParameter("UserUid", userUid);
+	setCoreParameter("UserUid", std::to_string(userUid));
 }
 
 std::string SetGWSInstanceUserRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string SetGWSInstanceUserRequest::getAccessKeyId()const
 void SetGWSInstanceUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetGWSInstanceUserRequest::getUserName()const
@@ -66,6 +66,6 @@ std::string SetGWSInstanceUserRequest::getUserName()const
 void SetGWSInstanceUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

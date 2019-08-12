@@ -33,7 +33,7 @@ std::string RenewBackupPlanRequest::getPeriod()const
 void RenewBackupPlanRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string RenewBackupPlanRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RenewBackupPlanRequest::getRegionId()const
 void RenewBackupPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RenewBackupPlanRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string RenewBackupPlanRequest::getClientToken()const
 void RenewBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RenewBackupPlanRequest::getBackupPlanId()const
@@ -66,7 +66,7 @@ std::string RenewBackupPlanRequest::getBackupPlanId()const
 void RenewBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string RenewBackupPlanRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string RenewBackupPlanRequest::getOwnerId()const
 void RenewBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int RenewBackupPlanRequest::getUsedTime()const

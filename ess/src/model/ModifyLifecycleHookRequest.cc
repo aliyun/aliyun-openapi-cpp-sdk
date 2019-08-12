@@ -33,7 +33,7 @@ std::string ModifyLifecycleHookRequest::getDefaultResult()const
 void ModifyLifecycleHookRequest::setDefaultResult(const std::string& defaultResult)
 {
 	defaultResult_ = defaultResult;
-	setCoreParameter("DefaultResult", defaultResult);
+	setCoreParameter("DefaultResult", std::to_string(defaultResult));
 }
 
 std::string ModifyLifecycleHookRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyLifecycleHookRequest::getResourceOwnerAccount()const
 void ModifyLifecycleHookRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ModifyLifecycleHookRequest::getHeartbeatTimeout()const
@@ -66,7 +66,7 @@ std::string ModifyLifecycleHookRequest::getLifecycleHookId()const
 void ModifyLifecycleHookRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setCoreParameter("LifecycleHookId", lifecycleHookId);
+	setCoreParameter("LifecycleHookId", std::to_string(lifecycleHookId));
 }
 
 std::string ModifyLifecycleHookRequest::getScalingGroupId()const
@@ -77,7 +77,7 @@ std::string ModifyLifecycleHookRequest::getScalingGroupId()const
 void ModifyLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string ModifyLifecycleHookRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyLifecycleHookRequest::getOwnerAccount()const
 void ModifyLifecycleHookRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyLifecycleHookRequest::getNotificationMetadata()const
@@ -99,7 +99,7 @@ std::string ModifyLifecycleHookRequest::getNotificationMetadata()const
 void ModifyLifecycleHookRequest::setNotificationMetadata(const std::string& notificationMetadata)
 {
 	notificationMetadata_ = notificationMetadata;
-	setCoreParameter("NotificationMetadata", notificationMetadata);
+	setCoreParameter("NotificationMetadata", std::to_string(notificationMetadata));
 }
 
 long ModifyLifecycleHookRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyLifecycleHookRequest::getLifecycleTransition()const
 void ModifyLifecycleHookRequest::setLifecycleTransition(const std::string& lifecycleTransition)
 {
 	lifecycleTransition_ = lifecycleTransition;
-	setCoreParameter("LifecycleTransition", lifecycleTransition);
+	setCoreParameter("LifecycleTransition", std::to_string(lifecycleTransition));
 }
 
 std::string ModifyLifecycleHookRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string ModifyLifecycleHookRequest::getAccessKeyId()const
 void ModifyLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyLifecycleHookRequest::getLifecycleHookName()const
@@ -143,7 +143,7 @@ std::string ModifyLifecycleHookRequest::getLifecycleHookName()const
 void ModifyLifecycleHookRequest::setLifecycleHookName(const std::string& lifecycleHookName)
 {
 	lifecycleHookName_ = lifecycleHookName;
-	setCoreParameter("LifecycleHookName", lifecycleHookName);
+	setCoreParameter("LifecycleHookName", std::to_string(lifecycleHookName));
 }
 
 std::string ModifyLifecycleHookRequest::getNotificationArn()const
@@ -154,6 +154,6 @@ std::string ModifyLifecycleHookRequest::getNotificationArn()const
 void ModifyLifecycleHookRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
+	setCoreParameter("NotificationArn", std::to_string(notificationArn));
 }
 

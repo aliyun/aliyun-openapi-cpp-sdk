@@ -33,7 +33,7 @@ std::string GetInstanceSummaryReportRequest::getInstanceId()const
 void GetInstanceSummaryReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int GetInstanceSummaryReportRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string GetInstanceSummaryReportRequest::getEndTime()const
 void GetInstanceSummaryReportRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetInstanceSummaryReportRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string GetInstanceSummaryReportRequest::getStartTime()const
 void GetInstanceSummaryReportRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int GetInstanceSummaryReportRequest::getPageNumber()const
@@ -88,6 +88,6 @@ std::string GetInstanceSummaryReportRequest::getAccessKeyId()const
 void GetInstanceSummaryReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

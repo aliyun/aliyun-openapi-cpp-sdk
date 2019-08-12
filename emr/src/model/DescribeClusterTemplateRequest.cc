@@ -44,7 +44,7 @@ std::string DescribeClusterTemplateRequest::getBizId()const
 void DescribeClusterTemplateRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string DescribeClusterTemplateRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeClusterTemplateRequest::getAccessKeyId()const
 void DescribeClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

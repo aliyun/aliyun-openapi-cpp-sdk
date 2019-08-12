@@ -33,7 +33,7 @@ std::string UpdateEntityRequest::getRegex()const
 void UpdateEntityRequest::setRegex(const std::string& regex)
 {
 	regex_ = regex;
-	setCoreParameter("Regex", regex);
+	setCoreParameter("Regex", std::to_string(regex));
 }
 
 std::string UpdateEntityRequest::getEntityType()const
@@ -44,7 +44,7 @@ std::string UpdateEntityRequest::getEntityType()const
 void UpdateEntityRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", entityType);
+	setCoreParameter("EntityType", std::to_string(entityType));
 }
 
 std::string UpdateEntityRequest::getMembers()const
@@ -55,7 +55,7 @@ std::string UpdateEntityRequest::getMembers()const
 void UpdateEntityRequest::setMembers(const std::string& members)
 {
 	members_ = members;
-	setCoreParameter("Members", members);
+	setCoreParameter("Members", std::to_string(members));
 }
 
 std::string UpdateEntityRequest::getEntityName()const
@@ -66,7 +66,7 @@ std::string UpdateEntityRequest::getEntityName()const
 void UpdateEntityRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setCoreParameter("EntityName", std::to_string(entityName));
 }
 
 long UpdateEntityRequest::getEntityId()const

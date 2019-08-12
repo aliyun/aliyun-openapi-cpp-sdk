@@ -44,7 +44,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointOracleSID()const
 void CreateRestoreTaskRequest::setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID)
 {
 	destinationEndpointOracleSID_ = destinationEndpointOracleSID;
-	setCoreParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID);
+	setCoreParameter("DestinationEndpointOracleSID", std::to_string(destinationEndpointOracleSID));
 }
 
 long CreateRestoreTaskRequest::getRestoreTime()const
@@ -66,7 +66,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointInstanceType()const
 void CreateRestoreTaskRequest::setDestinationEndpointInstanceType(const std::string& destinationEndpointInstanceType)
 {
 	destinationEndpointInstanceType_ = destinationEndpointInstanceType;
-	setCoreParameter("DestinationEndpointInstanceType", destinationEndpointInstanceType);
+	setCoreParameter("DestinationEndpointInstanceType", std::to_string(destinationEndpointInstanceType));
 }
 
 std::string CreateRestoreTaskRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateRestoreTaskRequest::getClientToken()const
 void CreateRestoreTaskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointInstanceID()const
@@ -88,7 +88,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointInstanceID()const
 void CreateRestoreTaskRequest::setDestinationEndpointInstanceID(const std::string& destinationEndpointInstanceID)
 {
 	destinationEndpointInstanceID_ = destinationEndpointInstanceID;
-	setCoreParameter("DestinationEndpointInstanceID", destinationEndpointInstanceID);
+	setCoreParameter("DestinationEndpointInstanceID", std::to_string(destinationEndpointInstanceID));
 }
 
 int CreateRestoreTaskRequest::getDestinationEndpointPort()const
@@ -110,7 +110,7 @@ std::string CreateRestoreTaskRequest::getBackupPlanId()const
 void CreateRestoreTaskRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string CreateRestoreTaskRequest::getBackupSetId()const
@@ -121,7 +121,7 @@ std::string CreateRestoreTaskRequest::getBackupSetId()const
 void CreateRestoreTaskRequest::setBackupSetId(const std::string& backupSetId)
 {
 	backupSetId_ = backupSetId;
-	setCoreParameter("BackupSetId", backupSetId);
+	setCoreParameter("BackupSetId", std::to_string(backupSetId));
 }
 
 std::string CreateRestoreTaskRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string CreateRestoreTaskRequest::getOwnerId()const
 void CreateRestoreTaskRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointRegion()const
@@ -143,7 +143,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointRegion()const
 void CreateRestoreTaskRequest::setDestinationEndpointRegion(const std::string& destinationEndpointRegion)
 {
 	destinationEndpointRegion_ = destinationEndpointRegion;
-	setCoreParameter("DestinationEndpointRegion", destinationEndpointRegion);
+	setCoreParameter("DestinationEndpointRegion", std::to_string(destinationEndpointRegion));
 }
 
 std::string CreateRestoreTaskRequest::getRestoreDir()const
@@ -154,7 +154,7 @@ std::string CreateRestoreTaskRequest::getRestoreDir()const
 void CreateRestoreTaskRequest::setRestoreDir(const std::string& restoreDir)
 {
 	restoreDir_ = restoreDir;
-	setCoreParameter("RestoreDir", restoreDir);
+	setCoreParameter("RestoreDir", std::to_string(restoreDir));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointIP()const
@@ -165,7 +165,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointIP()const
 void CreateRestoreTaskRequest::setDestinationEndpointIP(const std::string& destinationEndpointIP)
 {
 	destinationEndpointIP_ = destinationEndpointIP;
-	setCoreParameter("DestinationEndpointIP", destinationEndpointIP);
+	setCoreParameter("DestinationEndpointIP", std::to_string(destinationEndpointIP));
 }
 
 std::string CreateRestoreTaskRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string CreateRestoreTaskRequest::getRegionId()const
 void CreateRestoreTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointDatabaseName()const
@@ -187,7 +187,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointDatabaseName()const
 void CreateRestoreTaskRequest::setDestinationEndpointDatabaseName(const std::string& destinationEndpointDatabaseName)
 {
 	destinationEndpointDatabaseName_ = destinationEndpointDatabaseName;
-	setCoreParameter("DestinationEndpointDatabaseName", destinationEndpointDatabaseName);
+	setCoreParameter("DestinationEndpointDatabaseName", std::to_string(destinationEndpointDatabaseName));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointUserName()const
@@ -198,7 +198,7 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointUserName()const
 void CreateRestoreTaskRequest::setDestinationEndpointUserName(const std::string& destinationEndpointUserName)
 {
 	destinationEndpointUserName_ = destinationEndpointUserName;
-	setCoreParameter("DestinationEndpointUserName", destinationEndpointUserName);
+	setCoreParameter("DestinationEndpointUserName", std::to_string(destinationEndpointUserName));
 }
 
 std::string CreateRestoreTaskRequest::getRestoreObjects()const
@@ -209,7 +209,7 @@ std::string CreateRestoreTaskRequest::getRestoreObjects()const
 void CreateRestoreTaskRequest::setRestoreObjects(const std::string& restoreObjects)
 {
 	restoreObjects_ = restoreObjects;
-	setCoreParameter("RestoreObjects", restoreObjects);
+	setCoreParameter("RestoreObjects", std::to_string(restoreObjects));
 }
 
 std::string CreateRestoreTaskRequest::getRestoreTaskName()const
@@ -220,7 +220,7 @@ std::string CreateRestoreTaskRequest::getRestoreTaskName()const
 void CreateRestoreTaskRequest::setRestoreTaskName(const std::string& restoreTaskName)
 {
 	restoreTaskName_ = restoreTaskName;
-	setCoreParameter("RestoreTaskName", restoreTaskName);
+	setCoreParameter("RestoreTaskName", std::to_string(restoreTaskName));
 }
 
 std::string CreateRestoreTaskRequest::getDuplicateConflict()const
@@ -231,7 +231,7 @@ std::string CreateRestoreTaskRequest::getDuplicateConflict()const
 void CreateRestoreTaskRequest::setDuplicateConflict(const std::string& duplicateConflict)
 {
 	duplicateConflict_ = duplicateConflict;
-	setCoreParameter("DuplicateConflict", duplicateConflict);
+	setCoreParameter("DuplicateConflict", std::to_string(duplicateConflict));
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointPassword()const
@@ -242,6 +242,6 @@ std::string CreateRestoreTaskRequest::getDestinationEndpointPassword()const
 void CreateRestoreTaskRequest::setDestinationEndpointPassword(const std::string& destinationEndpointPassword)
 {
 	destinationEndpointPassword_ = destinationEndpointPassword;
-	setCoreParameter("DestinationEndpointPassword", destinationEndpointPassword);
+	setCoreParameter("DestinationEndpointPassword", std::to_string(destinationEndpointPassword));
 }
 

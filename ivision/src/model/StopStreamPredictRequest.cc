@@ -55,7 +55,7 @@ bool StopStreamPredictRequest::getProxy_original_security_transport()const
 void StopStreamPredictRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string StopStreamPredictRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string StopStreamPredictRequest::getProxy_original_source_ip()const
 void StopStreamPredictRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string StopStreamPredictRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string StopStreamPredictRequest::getOwnerIdLoginEmail()const
 void StopStreamPredictRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string StopStreamPredictRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string StopStreamPredictRequest::getCallerType()const
 void StopStreamPredictRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string StopStreamPredictRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string StopStreamPredictRequest::getAccessKeyId()const
 void StopStreamPredictRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string StopStreamPredictRequest::getPredictId()const
@@ -110,7 +110,7 @@ std::string StopStreamPredictRequest::getPredictId()const
 void StopStreamPredictRequest::setPredictId(const std::string& predictId)
 {
 	predictId_ = predictId;
-	setCoreParameter("PredictId", predictId);
+	setCoreParameter("PredictId", std::to_string(predictId));
 }
 
 std::string StopStreamPredictRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string StopStreamPredictRequest::getSecurityToken()const
 void StopStreamPredictRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string StopStreamPredictRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string StopStreamPredictRequest::getRegionId()const
 void StopStreamPredictRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StopStreamPredictRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string StopStreamPredictRequest::getRequestContent()const
 void StopStreamPredictRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string StopStreamPredictRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string StopStreamPredictRequest::getCallerBidEmail()const
 void StopStreamPredictRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string StopStreamPredictRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string StopStreamPredictRequest::getCallerUidEmail()const
 void StopStreamPredictRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long StopStreamPredictRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string StopStreamPredictRequest::getShowLog()const
 void StopStreamPredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string StopStreamPredictRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string StopStreamPredictRequest::getApp_ip()const
 void StopStreamPredictRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string StopStreamPredictRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string StopStreamPredictRequest::getPopProduct()const
 void StopStreamPredictRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string StopStreamPredictRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string StopStreamPredictRequest::getCallerBid()const
 void StopStreamPredictRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long StopStreamPredictRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string StopStreamPredictRequest::getVersion()const
 void StopStreamPredictRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool StopStreamPredictRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool StopStreamPredictRequest::getProxy_trust_transport_info()const
 void StopStreamPredictRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool StopStreamPredictRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool StopStreamPredictRequest::getAk_mfa_present()const
 void StopStreamPredictRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool StopStreamPredictRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool StopStreamPredictRequest::getSecurity_transport()const
 void StopStreamPredictRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string StopStreamPredictRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string StopStreamPredictRequest::getRequestId()const
 void StopStreamPredictRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

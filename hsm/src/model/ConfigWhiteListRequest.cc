@@ -44,7 +44,7 @@ std::string ConfigWhiteListRequest::getInstanceId()const
 void ConfigWhiteListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ConfigWhiteListRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string ConfigWhiteListRequest::getSourceIp()const
 void ConfigWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ConfigWhiteListRequest::getWhiteList()const
@@ -66,6 +66,6 @@ std::string ConfigWhiteListRequest::getWhiteList()const
 void ConfigWhiteListRequest::setWhiteList(const std::string& whiteList)
 {
 	whiteList_ = whiteList;
-	setCoreParameter("WhiteList", whiteList);
+	setCoreParameter("WhiteList", std::to_string(whiteList));
 }
 

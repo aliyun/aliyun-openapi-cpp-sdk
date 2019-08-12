@@ -33,7 +33,7 @@ bool GetAllowIPRequest::getSecurity_transport()const
 void GetAllowIPRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string GetAllowIPRequest::getRegionID()const
@@ -44,7 +44,7 @@ std::string GetAllowIPRequest::getRegionID()const
 void GetAllowIPRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setCoreParameter("RegionID", std::to_string(regionID));
 }
 
 std::string GetAllowIPRequest::getRequestId()const
@@ -55,7 +55,7 @@ std::string GetAllowIPRequest::getRequestId()const
 void GetAllowIPRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long GetAllowIPRequest::getCallerParentId()const
@@ -88,7 +88,7 @@ std::string GetAllowIPRequest::getCallerType()const
 void GetAllowIPRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool GetAllowIPRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool GetAllowIPRequest::getAk_mfa_present()const
 void GetAllowIPRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long GetAllowIPRequest::getCallerUid()const
@@ -121,7 +121,7 @@ std::string GetAllowIPRequest::getAccessKeyId()const
 void GetAllowIPRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long GetAllowIPRequest::getUserID()const
@@ -143,6 +143,6 @@ std::string GetAllowIPRequest::getNetworkType()const
 void GetAllowIPRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyUserRequest::getPrivateOutboundNumberId()const
 void ModifyUserRequest::setPrivateOutboundNumberId(const std::string& privateOutboundNumberId)
 {
 	privateOutboundNumberId_ = privateOutboundNumberId;
-	setCoreParameter("PrivateOutboundNumberId", privateOutboundNumberId);
+	setCoreParameter("PrivateOutboundNumberId", std::to_string(privateOutboundNumberId));
 }
 
 std::vector<int> ModifyUserRequest::getSkillLevel()const
@@ -56,7 +56,7 @@ std::string ModifyUserRequest::getInstanceId()const
 void ModifyUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyUserRequest::getPhone()const
@@ -67,7 +67,7 @@ std::string ModifyUserRequest::getPhone()const
 void ModifyUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setCoreParameter("Phone", std::to_string(phone));
 }
 
 std::vector<std::string> ModifyUserRequest::getRoleId()const
@@ -90,7 +90,7 @@ std::string ModifyUserRequest::getDisplayName()const
 void ModifyUserRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setCoreParameter("DisplayName", std::to_string(displayName));
 }
 
 std::vector<std::string> ModifyUserRequest::getSkillGroupId()const
@@ -113,7 +113,7 @@ std::string ModifyUserRequest::getUserId()const
 void ModifyUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ModifyUserRequest::getEmail()const
@@ -124,7 +124,7 @@ std::string ModifyUserRequest::getEmail()const
 void ModifyUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 
 std::string ModifyUserRequest::getAccessKeyId()const
@@ -135,6 +135,6 @@ std::string ModifyUserRequest::getAccessKeyId()const
 void ModifyUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

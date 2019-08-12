@@ -44,7 +44,7 @@ std::string ListUsersRequest::getClusterId()const
 void ListUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListUsersRequest::getPageNumber()const
@@ -66,6 +66,6 @@ std::string ListUsersRequest::getAccessKeyId()const
 void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

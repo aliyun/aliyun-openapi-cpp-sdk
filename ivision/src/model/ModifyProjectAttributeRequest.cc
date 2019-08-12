@@ -55,7 +55,7 @@ bool ModifyProjectAttributeRequest::getProxy_original_security_transport()const
 void ModifyProjectAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyProjectAttributeRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyProjectAttributeRequest::getDescription()const
 void ModifyProjectAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyProjectAttributeRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string ModifyProjectAttributeRequest::getProxy_original_source_ip()const
 void ModifyProjectAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyProjectAttributeRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string ModifyProjectAttributeRequest::getOwnerIdLoginEmail()const
 void ModifyProjectAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyProjectAttributeRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string ModifyProjectAttributeRequest::getCallerType()const
 void ModifyProjectAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ModifyProjectAttributeRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ModifyProjectAttributeRequest::getAccessKeyId()const
 void ModifyProjectAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyProjectAttributeRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyProjectAttributeRequest::getSecurityToken()const
 void ModifyProjectAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyProjectAttributeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyProjectAttributeRequest::getRegionId()const
 void ModifyProjectAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyProjectAttributeRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string ModifyProjectAttributeRequest::getRequestContent()const
 void ModifyProjectAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyProjectAttributeRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string ModifyProjectAttributeRequest::getCallerBidEmail()const
 void ModifyProjectAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyProjectAttributeRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string ModifyProjectAttributeRequest::getProjectId()const
 void ModifyProjectAttributeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string ModifyProjectAttributeRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyProjectAttributeRequest::getCallerUidEmail()const
 void ModifyProjectAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ModifyProjectAttributeRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string ModifyProjectAttributeRequest::getShowLog()const
 void ModifyProjectAttributeRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string ModifyProjectAttributeRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string ModifyProjectAttributeRequest::getApp_ip()const
 void ModifyProjectAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyProjectAttributeRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string ModifyProjectAttributeRequest::getPopProduct()const
 void ModifyProjectAttributeRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string ModifyProjectAttributeRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string ModifyProjectAttributeRequest::getCallerBid()const
 void ModifyProjectAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyProjectAttributeRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string ModifyProjectAttributeRequest::getVersion()const
 void ModifyProjectAttributeRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool ModifyProjectAttributeRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ModifyProjectAttributeRequest::getProxy_trust_transport_info()const
 void ModifyProjectAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyProjectAttributeRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ModifyProjectAttributeRequest::getAk_mfa_present()const
 void ModifyProjectAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyProjectAttributeRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ModifyProjectAttributeRequest::getSecurity_transport()const
 void ModifyProjectAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyProjectAttributeRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string ModifyProjectAttributeRequest::getRequestId()const
 void ModifyProjectAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ModifyProjectAttributeRequest::getName()const
@@ -308,6 +308,6 @@ std::string ModifyProjectAttributeRequest::getName()const
 void ModifyProjectAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

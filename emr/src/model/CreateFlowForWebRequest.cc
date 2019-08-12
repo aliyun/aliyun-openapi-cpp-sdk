@@ -33,7 +33,7 @@ std::string CreateFlowForWebRequest::getCronExpr()const
 void CreateFlowForWebRequest::setCronExpr(const std::string& cronExpr)
 {
 	cronExpr_ = cronExpr;
-	setCoreParameter("CronExpr", cronExpr);
+	setCoreParameter("CronExpr", std::to_string(cronExpr));
 }
 
 std::string CreateFlowForWebRequest::getParentFlowList()const
@@ -44,7 +44,7 @@ std::string CreateFlowForWebRequest::getParentFlowList()const
 void CreateFlowForWebRequest::setParentFlowList(const std::string& parentFlowList)
 {
 	parentFlowList_ = parentFlowList;
-	setCoreParameter("ParentFlowList", parentFlowList);
+	setCoreParameter("ParentFlowList", std::to_string(parentFlowList));
 }
 
 std::string CreateFlowForWebRequest::getAlertDingDingGroupBizId()const
@@ -55,7 +55,7 @@ std::string CreateFlowForWebRequest::getAlertDingDingGroupBizId()const
 void CreateFlowForWebRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
 {
 	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
-	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+	setCoreParameter("AlertDingDingGroupBizId", std::to_string(alertDingDingGroupBizId));
 }
 
 long CreateFlowForWebRequest::getStartSchedule()const
@@ -77,7 +77,7 @@ std::string CreateFlowForWebRequest::getDescription()const
 void CreateFlowForWebRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateFlowForWebRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string CreateFlowForWebRequest::getClusterId()const
 void CreateFlowForWebRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateFlowForWebRequest::getAlertUserGroupBizId()const
@@ -99,7 +99,7 @@ std::string CreateFlowForWebRequest::getAlertUserGroupBizId()const
 void CreateFlowForWebRequest::setAlertUserGroupBizId(const std::string& alertUserGroupBizId)
 {
 	alertUserGroupBizId_ = alertUserGroupBizId;
-	setCoreParameter("AlertUserGroupBizId", alertUserGroupBizId);
+	setCoreParameter("AlertUserGroupBizId", std::to_string(alertUserGroupBizId));
 }
 
 std::string CreateFlowForWebRequest::getGraph()const
@@ -110,7 +110,7 @@ std::string CreateFlowForWebRequest::getGraph()const
 void CreateFlowForWebRequest::setGraph(const std::string& graph)
 {
 	graph_ = graph;
-	setCoreParameter("Graph", graph);
+	setCoreParameter("Graph", std::to_string(graph));
 }
 
 std::string CreateFlowForWebRequest::getHostName()const
@@ -121,7 +121,7 @@ std::string CreateFlowForWebRequest::getHostName()const
 void CreateFlowForWebRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string CreateFlowForWebRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateFlowForWebRequest::getRegionId()const
 void CreateFlowForWebRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool CreateFlowForWebRequest::getCreateCluster()const
@@ -143,7 +143,7 @@ bool CreateFlowForWebRequest::getCreateCluster()const
 void CreateFlowForWebRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
-	setCoreParameter("CreateCluster", createCluster);
+	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
 }
 
 std::string CreateFlowForWebRequest::getName()const
@@ -154,7 +154,7 @@ std::string CreateFlowForWebRequest::getName()const
 void CreateFlowForWebRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long CreateFlowForWebRequest::getEndSchedule()const
@@ -176,7 +176,7 @@ std::string CreateFlowForWebRequest::getAlertConf()const
 void CreateFlowForWebRequest::setAlertConf(const std::string& alertConf)
 {
 	alertConf_ = alertConf;
-	setCoreParameter("AlertConf", alertConf);
+	setCoreParameter("AlertConf", std::to_string(alertConf));
 }
 
 std::string CreateFlowForWebRequest::getProjectId()const
@@ -187,7 +187,7 @@ std::string CreateFlowForWebRequest::getProjectId()const
 void CreateFlowForWebRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string CreateFlowForWebRequest::getParentCategory()const
@@ -198,6 +198,6 @@ std::string CreateFlowForWebRequest::getParentCategory()const
 void CreateFlowForWebRequest::setParentCategory(const std::string& parentCategory)
 {
 	parentCategory_ = parentCategory;
-	setCoreParameter("ParentCategory", parentCategory);
+	setCoreParameter("ParentCategory", std::to_string(parentCategory));
 }
 

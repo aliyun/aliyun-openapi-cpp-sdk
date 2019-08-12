@@ -33,7 +33,7 @@ std::string CreateCustomerGatewayRequest::getIpAddress()const
 void CreateCustomerGatewayRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setCoreParameter("IpAddress", std::to_string(ipAddress));
 }
 
 long CreateCustomerGatewayRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateCustomerGatewayRequest::getResourceOwnerAccount()const
 void CreateCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateCustomerGatewayRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateCustomerGatewayRequest::getRegionId()const
 void CreateCustomerGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateCustomerGatewayRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateCustomerGatewayRequest::getClientToken()const
 void CreateCustomerGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateCustomerGatewayRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateCustomerGatewayRequest::getOwnerAccount()const
 void CreateCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateCustomerGatewayRequest::getName()const
@@ -99,7 +99,7 @@ std::string CreateCustomerGatewayRequest::getName()const
 void CreateCustomerGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateCustomerGatewayRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string CreateCustomerGatewayRequest::getDescription()const
 void CreateCustomerGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateCustomerGatewayRequest::getOwnerId()const

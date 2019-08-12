@@ -44,7 +44,7 @@ std::string CreateBackupRequest::getInstanceId()const
 void CreateBackupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateBackupRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string CreateBackupRequest::getSecurityToken()const
 void CreateBackupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateBackupRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateBackupRequest::getResourceOwnerAccount()const
 void CreateBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateBackupRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateBackupRequest::getRegionId()const
 void CreateBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateBackupRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateBackupRequest::getOwnerAccount()const
 void CreateBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateBackupRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string CreateBackupRequest::getAccessKeyId()const
 void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

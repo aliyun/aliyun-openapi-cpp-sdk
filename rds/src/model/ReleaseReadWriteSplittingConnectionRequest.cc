@@ -44,7 +44,7 @@ std::string ReleaseReadWriteSplittingConnectionRequest::getResourceOwnerAccount(
 void ReleaseReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReleaseReadWriteSplittingConnectionRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReleaseReadWriteSplittingConnectionRequest::getOwnerAccount()const
 void ReleaseReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ReleaseReadWriteSplittingConnectionRequest::getDBInstanceId()const
 void ReleaseReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ReleaseReadWriteSplittingConnectionRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string ReleaseReadWriteSplittingConnectionRequest::getAccessKeyId()const
 void ReleaseReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

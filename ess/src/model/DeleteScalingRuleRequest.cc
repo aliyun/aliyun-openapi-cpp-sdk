@@ -33,7 +33,7 @@ std::string DeleteScalingRuleRequest::getResourceOwnerAccount()const
 void DeleteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteScalingRuleRequest::getOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteScalingRuleRequest::getOwnerAccount()const
 void DeleteScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteScalingRuleRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string DeleteScalingRuleRequest::getScalingRuleId()const
 void DeleteScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setCoreParameter("ScalingRuleId", std::to_string(scalingRuleId));
 }
 
 std::string DeleteScalingRuleRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteScalingRuleRequest::getAccessKeyId()const
 void DeleteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

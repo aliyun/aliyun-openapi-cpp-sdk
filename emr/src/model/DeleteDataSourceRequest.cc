@@ -44,7 +44,7 @@ std::string DeleteDataSourceRequest::getRegionId()const
 void DeleteDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteDataSourceRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteDataSourceRequest::getId()const
 void DeleteDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteDataSourceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteDataSourceRequest::getAccessKeyId()const
 void DeleteDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

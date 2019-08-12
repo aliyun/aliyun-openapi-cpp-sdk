@@ -33,7 +33,7 @@ bool ListMyGroupInstancesRequest::getTotal()const
 void ListMyGroupInstancesRequest::setTotal(bool total)
 {
 	total_ = total;
-	setCoreParameter("Total", total);
+	setCoreParameter("Total", total ? "true" : "false");
 }
 
 std::string ListMyGroupInstancesRequest::getInstanceIds()const
@@ -44,7 +44,7 @@ std::string ListMyGroupInstancesRequest::getInstanceIds()const
 void ListMyGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 long ListMyGroupInstancesRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string ListMyGroupInstancesRequest::getCategory()const
 void ListMyGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string ListMyGroupInstancesRequest::getKeyword()const
@@ -88,7 +88,7 @@ std::string ListMyGroupInstancesRequest::getKeyword()const
 void ListMyGroupInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 int ListMyGroupInstancesRequest::getPageNumber()const

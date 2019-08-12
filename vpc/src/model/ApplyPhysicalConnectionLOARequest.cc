@@ -44,7 +44,7 @@ std::string ApplyPhysicalConnectionLOARequest::getPeerLocation()const
 void ApplyPhysicalConnectionLOARequest::setPeerLocation(const std::string& peerLocation)
 {
 	peerLocation_ = peerLocation;
-	setCoreParameter("PeerLocation", peerLocation);
+	setCoreParameter("PeerLocation", std::to_string(peerLocation));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string ApplyPhysicalConnectionLOARequest::getClientToken()const
 void ApplyPhysicalConnectionLOARequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ApplyPhysicalConnectionLOARequest::getResourceOwnerAccount()const
 void ApplyPhysicalConnectionLOARequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ApplyPhysicalConnectionLOARequest::getBandwidth()const
@@ -88,7 +88,7 @@ std::string ApplyPhysicalConnectionLOARequest::getLineType()const
 void ApplyPhysicalConnectionLOARequest::setLineType(const std::string& lineType)
 {
 	lineType_ = lineType;
-	setCoreParameter("LineType", lineType);
+	setCoreParameter("LineType", std::to_string(lineType));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ApplyPhysicalConnectionLOARequest::getOwnerAccount()const
 void ApplyPhysicalConnectionLOARequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getConstructionTime()const
@@ -110,7 +110,7 @@ std::string ApplyPhysicalConnectionLOARequest::getConstructionTime()const
 void ApplyPhysicalConnectionLOARequest::setConstructionTime(const std::string& constructionTime)
 {
 	constructionTime_ = constructionTime;
-	setCoreParameter("ConstructionTime", constructionTime);
+	setCoreParameter("ConstructionTime", std::to_string(constructionTime));
 }
 
 long ApplyPhysicalConnectionLOARequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string ApplyPhysicalConnectionLOARequest::getInstanceId()const
 void ApplyPhysicalConnectionLOARequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ApplyPhysicalConnectionLOARequest::getRegionId()const
 void ApplyPhysicalConnectionLOARequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getCompanyName()const
@@ -154,7 +154,7 @@ std::string ApplyPhysicalConnectionLOARequest::getCompanyName()const
 void ApplyPhysicalConnectionLOARequest::setCompanyName(const std::string& companyName)
 {
 	companyName_ = companyName;
-	setCoreParameter("CompanyName", companyName);
+	setCoreParameter("CompanyName", std::to_string(companyName));
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getSi()const
@@ -165,7 +165,7 @@ std::string ApplyPhysicalConnectionLOARequest::getSi()const
 void ApplyPhysicalConnectionLOARequest::setSi(const std::string& si)
 {
 	si_ = si;
-	setCoreParameter("Si", si);
+	setCoreParameter("Si", std::to_string(si));
 }
 
 std::vector<ApplyPhysicalConnectionLOARequest::PMInfo> ApplyPhysicalConnectionLOARequest::getPMInfo()const

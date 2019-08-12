@@ -33,7 +33,7 @@ std::string CreateOrUpdateDingTalkRequest::getRuleActionName()const
 void CreateOrUpdateDingTalkRequest::setRuleActionName(const std::string& ruleActionName)
 {
 	ruleActionName_ = ruleActionName;
-	setCoreParameter("RuleActionName", ruleActionName);
+	setCoreParameter("RuleActionName", std::to_string(ruleActionName));
 }
 
 std::string CreateOrUpdateDingTalkRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateOrUpdateDingTalkRequest::getSourceIp()const
 void CreateOrUpdateDingTalkRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateOrUpdateDingTalkRequest::getSendUrl()const
@@ -55,7 +55,7 @@ std::string CreateOrUpdateDingTalkRequest::getSendUrl()const
 void CreateOrUpdateDingTalkRequest::setSendUrl(const std::string& sendUrl)
 {
 	sendUrl_ = sendUrl;
-	setCoreParameter("SendUrl", sendUrl);
+	setCoreParameter("SendUrl", std::to_string(sendUrl));
 }
 
 long CreateOrUpdateDingTalkRequest::getId()const

@@ -33,7 +33,7 @@ std::string ModifyBackupPolicyRequest::getPreferredBackupTime()const
 void ModifyBackupPolicyRequest::setPreferredBackupTime(const std::string& preferredBackupTime)
 {
 	preferredBackupTime_ = preferredBackupTime;
-	setCoreParameter("PreferredBackupTime", preferredBackupTime);
+	setCoreParameter("PreferredBackupTime", std::to_string(preferredBackupTime));
 }
 
 std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
@@ -44,7 +44,7 @@ std::string ModifyBackupPolicyRequest::getPreferredBackupPeriod()const
 void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string& preferredBackupPeriod)
 {
 	preferredBackupPeriod_ = preferredBackupPeriod;
-	setCoreParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	setCoreParameter("PreferredBackupPeriod", std::to_string(preferredBackupPeriod));
 }
 
 long ModifyBackupPolicyRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ModifyBackupPolicyRequest::getSecurityToken()const
 void ModifyBackupPolicyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const
 void ModifyBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyBackupPolicyRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string ModifyBackupPolicyRequest::getRegionId()const
 void ModifyBackupPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyBackupPolicyRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyBackupPolicyRequest::getOwnerAccount()const
 void ModifyBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyBackupPolicyRequest::getDBInstanceId()const
@@ -110,7 +110,7 @@ std::string ModifyBackupPolicyRequest::getDBInstanceId()const
 void ModifyBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyBackupPolicyRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string ModifyBackupPolicyRequest::getAccessKeyId()const
 void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string DeleteAttachedMediaRequest::getResourceOwnerAccount()const
 void DeleteAttachedMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteAttachedMediaRequest::getMediaIds()const
@@ -55,7 +55,7 @@ std::string DeleteAttachedMediaRequest::getMediaIds()const
 void DeleteAttachedMediaRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setCoreParameter("MediaIds", std::to_string(mediaIds));
 }
 
 long DeleteAttachedMediaRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string DeleteAttachedMediaRequest::getAccessKeyId()const
 void DeleteAttachedMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

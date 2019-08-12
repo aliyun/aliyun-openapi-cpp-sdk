@@ -33,7 +33,7 @@ std::string ResetDiskRequest::getSourceRegionId()const
 void ResetDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ResetDiskRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ResetDiskRequest::getSnapshotId()const
 void ResetDiskRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
+	setCoreParameter("SnapshotId", std::to_string(snapshotId));
 }
 
 std::string ResetDiskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ResetDiskRequest::getResourceOwnerAccount()const
 void ResetDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ResetDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ResetDiskRequest::getOwnerAccount()const
 void ResetDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ResetDiskRequest::getDiskId()const
@@ -88,7 +88,7 @@ std::string ResetDiskRequest::getDiskId()const
 void ResetDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 long ResetDiskRequest::getOwnerId()const

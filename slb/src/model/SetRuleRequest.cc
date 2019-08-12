@@ -33,7 +33,7 @@ std::string SetRuleRequest::getAccess_key_id()const
 void SetRuleRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long SetRuleRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SetRuleRequest::getHealthCheckURI()const
 void SetRuleRequest::setHealthCheckURI(const std::string& healthCheckURI)
 {
 	healthCheckURI_ = healthCheckURI;
-	setCoreParameter("HealthCheckURI", healthCheckURI);
+	setCoreParameter("HealthCheckURI", std::to_string(healthCheckURI));
 }
 
 std::string SetRuleRequest::getRuleName()const
@@ -77,7 +77,7 @@ std::string SetRuleRequest::getRuleName()const
 void SetRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 int SetRuleRequest::getUnhealthyThreshold()const
@@ -110,7 +110,7 @@ std::string SetRuleRequest::getScheduler()const
 void SetRuleRequest::setScheduler(const std::string& scheduler)
 {
 	scheduler_ = scheduler;
-	setCoreParameter("Scheduler", scheduler);
+	setCoreParameter("Scheduler", std::to_string(scheduler));
 }
 
 std::string SetRuleRequest::getHealthCheck()const
@@ -121,7 +121,7 @@ std::string SetRuleRequest::getHealthCheck()const
 void SetRuleRequest::setHealthCheck(const std::string& healthCheck)
 {
 	healthCheck_ = healthCheck;
-	setCoreParameter("HealthCheck", healthCheck);
+	setCoreParameter("HealthCheck", std::to_string(healthCheck));
 }
 
 std::string SetRuleRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string SetRuleRequest::getRegionId()const
 void SetRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetRuleRequest::getListenerSync()const
@@ -143,7 +143,7 @@ std::string SetRuleRequest::getListenerSync()const
 void SetRuleRequest::setListenerSync(const std::string& listenerSync)
 {
 	listenerSync_ = listenerSync;
-	setCoreParameter("ListenerSync", listenerSync);
+	setCoreParameter("ListenerSync", std::to_string(listenerSync));
 }
 
 int SetRuleRequest::getCookieTimeout()const
@@ -165,7 +165,7 @@ std::string SetRuleRequest::getStickySessionType()const
 void SetRuleRequest::setStickySessionType(const std::string& stickySessionType)
 {
 	stickySessionType_ = stickySessionType;
-	setCoreParameter("StickySessionType", stickySessionType);
+	setCoreParameter("StickySessionType", std::to_string(stickySessionType));
 }
 
 std::string SetRuleRequest::getVServerGroupId()const
@@ -176,7 +176,7 @@ std::string SetRuleRequest::getVServerGroupId()const
 void SetRuleRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setCoreParameter("VServerGroupId", std::to_string(vServerGroupId));
 }
 
 std::string SetRuleRequest::getCookie()const
@@ -187,7 +187,7 @@ std::string SetRuleRequest::getCookie()const
 void SetRuleRequest::setCookie(const std::string& cookie)
 {
 	cookie_ = cookie;
-	setCoreParameter("Cookie", cookie);
+	setCoreParameter("Cookie", std::to_string(cookie));
 }
 
 std::string SetRuleRequest::getResourceOwnerAccount()const
@@ -198,7 +198,7 @@ std::string SetRuleRequest::getResourceOwnerAccount()const
 void SetRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetRuleRequest::getStickySession()const
@@ -209,7 +209,7 @@ std::string SetRuleRequest::getStickySession()const
 void SetRuleRequest::setStickySession(const std::string& stickySession)
 {
 	stickySession_ = stickySession;
-	setCoreParameter("StickySession", stickySession);
+	setCoreParameter("StickySession", std::to_string(stickySession));
 }
 
 std::string SetRuleRequest::getHealthCheckDomain()const
@@ -220,7 +220,7 @@ std::string SetRuleRequest::getHealthCheckDomain()const
 void SetRuleRequest::setHealthCheckDomain(const std::string& healthCheckDomain)
 {
 	healthCheckDomain_ = healthCheckDomain;
-	setCoreParameter("HealthCheckDomain", healthCheckDomain);
+	setCoreParameter("HealthCheckDomain", std::to_string(healthCheckDomain));
 }
 
 std::string SetRuleRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string SetRuleRequest::getOwnerAccount()const
 void SetRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetRuleRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string SetRuleRequest::getTags()const
 void SetRuleRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 int SetRuleRequest::getHealthCheckInterval()const
@@ -275,7 +275,7 @@ std::string SetRuleRequest::getRuleId()const
 void SetRuleRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 
 int SetRuleRequest::getHealthCheckConnectPort()const
@@ -297,6 +297,6 @@ std::string SetRuleRequest::getHealthCheckHttpCode()const
 void SetRuleRequest::setHealthCheckHttpCode(const std::string& healthCheckHttpCode)
 {
 	healthCheckHttpCode_ = healthCheckHttpCode;
-	setCoreParameter("HealthCheckHttpCode", healthCheckHttpCode);
+	setCoreParameter("HealthCheckHttpCode", std::to_string(healthCheckHttpCode));
 }
 

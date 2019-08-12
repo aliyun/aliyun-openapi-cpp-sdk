@@ -44,7 +44,7 @@ std::string CreateHpcClusterRequest::getClientToken()const
 void CreateHpcClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long CreateHpcClusterRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool CreateHpcClusterRequest::getProxy_original_security_transport()const
 void CreateHpcClusterRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateHpcClusterRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateHpcClusterRequest::getDescription()const
 void CreateHpcClusterRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateHpcClusterRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string CreateHpcClusterRequest::getProxy_original_source_ip()const
 void CreateHpcClusterRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string CreateHpcClusterRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string CreateHpcClusterRequest::getOwnerIdLoginEmail()const
 void CreateHpcClusterRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateHpcClusterRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string CreateHpcClusterRequest::getCallerType()const
 void CreateHpcClusterRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateHpcClusterRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateHpcClusterRequest::getAccessKeyId()const
 void CreateHpcClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateHpcClusterRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ std::string CreateHpcClusterRequest::getSourceRegionId()const
 void CreateHpcClusterRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string CreateHpcClusterRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateHpcClusterRequest::getRegionId()const
 void CreateHpcClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateHpcClusterRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string CreateHpcClusterRequest::getSecurityToken()const
 void CreateHpcClusterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 bool CreateHpcClusterRequest::getEnable()const
@@ -165,7 +165,7 @@ bool CreateHpcClusterRequest::getEnable()const
 void CreateHpcClusterRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateHpcClusterRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string CreateHpcClusterRequest::getRequestContent()const
 void CreateHpcClusterRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string CreateHpcClusterRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string CreateHpcClusterRequest::getCallerBidEmail()const
 void CreateHpcClusterRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateHpcClusterRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string CreateHpcClusterRequest::getCallerUidEmail()const
 void CreateHpcClusterRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateHpcClusterRequest::getCallerUid()const
@@ -220,7 +220,7 @@ std::string CreateHpcClusterRequest::getApp_ip()const
 void CreateHpcClusterRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateHpcClusterRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string CreateHpcClusterRequest::getResourceOwnerAccount()const
 void CreateHpcClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateHpcClusterRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string CreateHpcClusterRequest::getOwnerAccount()const
 void CreateHpcClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateHpcClusterRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string CreateHpcClusterRequest::getCallerBid()const
 void CreateHpcClusterRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateHpcClusterRequest::getOwnerId()const
@@ -275,7 +275,7 @@ bool CreateHpcClusterRequest::getProxy_trust_transport_info()const
 void CreateHpcClusterRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateHpcClusterRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool CreateHpcClusterRequest::getAk_mfa_present()const
 void CreateHpcClusterRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateHpcClusterRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool CreateHpcClusterRequest::getSecurity_transport()const
 void CreateHpcClusterRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateHpcClusterRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string CreateHpcClusterRequest::getRequestId()const
 void CreateHpcClusterRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateHpcClusterRequest::getAkProxy()const
@@ -319,7 +319,7 @@ std::string CreateHpcClusterRequest::getAkProxy()const
 void CreateHpcClusterRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string CreateHpcClusterRequest::getName()const
@@ -330,6 +330,6 @@ std::string CreateHpcClusterRequest::getName()const
 void CreateHpcClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

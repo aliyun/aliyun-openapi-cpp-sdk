@@ -44,7 +44,7 @@ std::string StopRobotTaskRequest::getResourceOwnerAccount()const
 void StopRobotTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long StopRobotTaskRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string StopRobotTaskRequest::getAccessKeyId()const
 void StopRobotTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

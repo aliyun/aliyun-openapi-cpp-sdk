@@ -33,6 +33,6 @@ std::string ListPoliciesForUserRequest::getUserName()const
 void ListPoliciesForUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

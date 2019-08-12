@@ -44,7 +44,7 @@ std::string DescribeWebsiteInstanceRequest::getInstanceId()const
 void DescribeWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeWebsiteInstanceRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeWebsiteInstanceRequest::getSourceIp()const
 void DescribeWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeWebsiteInstanceRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string DescribeWebsiteInstanceRequest::getLang()const
 void DescribeWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

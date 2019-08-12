@@ -33,7 +33,7 @@ std::string CreateSignaturePeopleCertificateRequest::getPeopleName()const
 void CreateSignaturePeopleCertificateRequest::setPeopleName(const std::string& peopleName)
 {
 	peopleName_ = peopleName;
-	setCoreParameter("PeopleName", peopleName);
+	setCoreParameter("PeopleName", std::to_string(peopleName));
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
 void CreateSignaturePeopleCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getMobile()const
@@ -55,7 +55,7 @@ std::string CreateSignaturePeopleCertificateRequest::getMobile()const
 void CreateSignaturePeopleCertificateRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setCoreParameter("Mobile", std::to_string(mobile));
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
@@ -66,7 +66,7 @@ std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
 void CreateSignaturePeopleCertificateRequest::setIdentityNumber(const std::string& identityNumber)
 {
 	identityNumber_ = identityNumber;
-	setCoreParameter("IdentityNumber", identityNumber);
+	setCoreParameter("IdentityNumber", std::to_string(identityNumber));
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getLang()const
@@ -77,7 +77,7 @@ std::string CreateSignaturePeopleCertificateRequest::getLang()const
 void CreateSignaturePeopleCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getEmail()const
@@ -88,6 +88,6 @@ std::string CreateSignaturePeopleCertificateRequest::getEmail()const
 void CreateSignaturePeopleCertificateRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 

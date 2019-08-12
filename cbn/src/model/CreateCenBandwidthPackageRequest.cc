@@ -33,7 +33,7 @@ std::string CreateCenBandwidthPackageRequest::getGeographicRegionBId()const
 void CreateCenBandwidthPackageRequest::setGeographicRegionBId(const std::string& geographicRegionBId)
 {
 	geographicRegionBId_ = geographicRegionBId;
-	setCoreParameter("GeographicRegionBId", geographicRegionBId);
+	setCoreParameter("GeographicRegionBId", std::to_string(geographicRegionBId));
 }
 
 long CreateCenBandwidthPackageRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string CreateCenBandwidthPackageRequest::getGeographicRegionAId()const
 void CreateCenBandwidthPackageRequest::setGeographicRegionAId(const std::string& geographicRegionAId)
 {
 	geographicRegionAId_ = geographicRegionAId;
-	setCoreParameter("GeographicRegionAId", geographicRegionAId);
+	setCoreParameter("GeographicRegionAId", std::to_string(geographicRegionAId));
 }
 
 bool CreateCenBandwidthPackageRequest::getAutoPay()const
@@ -77,7 +77,7 @@ bool CreateCenBandwidthPackageRequest::getAutoPay()const
 void CreateCenBandwidthPackageRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateCenBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateCenBandwidthPackageRequest::getResourceOwnerAccount()const
 void CreateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateCenBandwidthPackageRequest::getClientToken()const
@@ -99,7 +99,7 @@ std::string CreateCenBandwidthPackageRequest::getClientToken()const
 void CreateCenBandwidthPackageRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int CreateCenBandwidthPackageRequest::getBandwidth()const
@@ -121,7 +121,7 @@ std::string CreateCenBandwidthPackageRequest::getOwnerAccount()const
 void CreateCenBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateCenBandwidthPackageRequest::getDescription()const
@@ -132,7 +132,7 @@ std::string CreateCenBandwidthPackageRequest::getDescription()const
 void CreateCenBandwidthPackageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateCenBandwidthPackageRequest::getOwnerId()const
@@ -154,7 +154,7 @@ std::string CreateCenBandwidthPackageRequest::getBandwidthPackageChargeType()con
 void CreateCenBandwidthPackageRequest::setBandwidthPackageChargeType(const std::string& bandwidthPackageChargeType)
 {
 	bandwidthPackageChargeType_ = bandwidthPackageChargeType;
-	setCoreParameter("BandwidthPackageChargeType", bandwidthPackageChargeType);
+	setCoreParameter("BandwidthPackageChargeType", std::to_string(bandwidthPackageChargeType));
 }
 
 std::string CreateCenBandwidthPackageRequest::getName()const
@@ -165,7 +165,7 @@ std::string CreateCenBandwidthPackageRequest::getName()const
 void CreateCenBandwidthPackageRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateCenBandwidthPackageRequest::getPricingCycle()const
@@ -176,6 +176,6 @@ std::string CreateCenBandwidthPackageRequest::getPricingCycle()const
 void CreateCenBandwidthPackageRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

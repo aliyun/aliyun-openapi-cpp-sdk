@@ -33,7 +33,7 @@ std::string SubmitFlowRequest::getRegionId()const
 void SubmitFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SubmitFlowRequest::getConf()const
@@ -44,7 +44,7 @@ std::string SubmitFlowRequest::getConf()const
 void SubmitFlowRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setCoreParameter("Conf", std::to_string(conf));
 }
 
 std::string SubmitFlowRequest::getProjectId()const
@@ -55,7 +55,7 @@ std::string SubmitFlowRequest::getProjectId()const
 void SubmitFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string SubmitFlowRequest::getFlowId()const
@@ -66,6 +66,6 @@ std::string SubmitFlowRequest::getFlowId()const
 void SubmitFlowRequest::setFlowId(const std::string& flowId)
 {
 	flowId_ = flowId;
-	setCoreParameter("FlowId", flowId);
+	setCoreParameter("FlowId", std::to_string(flowId));
 }
 

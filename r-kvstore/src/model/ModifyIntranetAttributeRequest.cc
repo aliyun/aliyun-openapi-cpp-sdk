@@ -44,7 +44,7 @@ std::string ModifyIntranetAttributeRequest::getInstanceId()const
 void ModifyIntranetAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyIntranetAttributeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyIntranetAttributeRequest::getSecurityToken()const
 void ModifyIntranetAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyIntranetAttributeRequest::getResourceOwnerAccount()const
 void ModifyIntranetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyIntranetAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyIntranetAttributeRequest::getRegionId()const
 void ModifyIntranetAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyIntranetAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyIntranetAttributeRequest::getOwnerAccount()const
 void ModifyIntranetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyIntranetAttributeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyIntranetAttributeRequest::getAccessKeyId()const
 void ModifyIntranetAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

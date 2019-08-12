@@ -57,7 +57,7 @@ std::string QueryAppDeviceListRequest::getIotInstanceId()const
 void QueryAppDeviceListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryAppDeviceListRequest::getPageSize()const
@@ -90,7 +90,7 @@ std::string QueryAppDeviceListRequest::getAppKey()const
 void QueryAppDeviceListRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const

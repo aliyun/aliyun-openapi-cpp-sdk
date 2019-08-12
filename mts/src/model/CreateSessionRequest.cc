@@ -33,7 +33,7 @@ std::string CreateSessionRequest::getResourceOwnerId()const
 void CreateSessionRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateSessionRequest::getSessionTime()const
@@ -55,7 +55,7 @@ std::string CreateSessionRequest::getResourceOwnerAccount()const
 void CreateSessionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateSessionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateSessionRequest::getOwnerAccount()const
 void CreateSessionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateSessionRequest::getEndUserId()const
@@ -77,7 +77,7 @@ std::string CreateSessionRequest::getEndUserId()const
 void CreateSessionRequest::setEndUserId(const std::string& endUserId)
 {
 	endUserId_ = endUserId;
-	setCoreParameter("EndUserId", endUserId);
+	setCoreParameter("EndUserId", std::to_string(endUserId));
 }
 
 std::string CreateSessionRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string CreateSessionRequest::getOwnerId()const
 void CreateSessionRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSessionRequest::getMediaId()const
@@ -99,7 +99,7 @@ std::string CreateSessionRequest::getMediaId()const
 void CreateSessionRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", std::to_string(mediaId));
 }
 
 std::string CreateSessionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateSessionRequest::getAccessKeyId()const
 void CreateSessionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

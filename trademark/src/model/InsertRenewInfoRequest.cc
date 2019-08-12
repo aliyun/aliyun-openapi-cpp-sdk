@@ -33,7 +33,7 @@ std::string InsertRenewInfoRequest::getEngName()const
 void InsertRenewInfoRequest::setEngName(const std::string& engName)
 {
 	engName_ = engName;
-	setCoreParameter("EngName", engName);
+	setCoreParameter("EngName", std::to_string(engName));
 }
 
 std::string InsertRenewInfoRequest::getAddress()const
@@ -44,7 +44,7 @@ std::string InsertRenewInfoRequest::getAddress()const
 void InsertRenewInfoRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setCoreParameter("Address", std::to_string(address));
 }
 
 long InsertRenewInfoRequest::getRegisterTime()const
@@ -66,7 +66,7 @@ std::string InsertRenewInfoRequest::getEngAddress()const
 void InsertRenewInfoRequest::setEngAddress(const std::string& engAddress)
 {
 	engAddress_ = engAddress;
-	setCoreParameter("EngAddress", engAddress);
+	setCoreParameter("EngAddress", std::to_string(engAddress));
 }
 
 std::string InsertRenewInfoRequest::getName()const
@@ -77,6 +77,6 @@ std::string InsertRenewInfoRequest::getName()const
 void InsertRenewInfoRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 

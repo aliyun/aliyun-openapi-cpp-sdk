@@ -33,7 +33,7 @@ std::string ListUmengPagePermission4RootRequest::getOrderCol()const
 void ListUmengPagePermission4RootRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 int ListUmengPagePermission4RootRequest::getLength()const
@@ -55,7 +55,7 @@ std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
 void ListUmengPagePermission4RootRequest::setSearchEmail(const std::string& searchEmail)
 {
 	searchEmail_ = searchEmail;
-	setCoreParameter("SearchEmail", searchEmail);
+	setCoreParameter("SearchEmail", std::to_string(searchEmail));
 }
 
 int ListUmengPagePermission4RootRequest::getPageIndex()const
@@ -77,7 +77,7 @@ std::string ListUmengPagePermission4RootRequest::getOrderDir()const
 void ListUmengPagePermission4RootRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListUmengPagePermission4RootRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListUmengPagePermission4RootRequest::getAccessKeyId()const
 void ListUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

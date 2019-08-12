@@ -44,7 +44,7 @@ std::string DescribeDBClustersRequest::getDBClusterDescription()const
 void DescribeDBClustersRequest::setDBClusterDescription(const std::string& dBClusterDescription)
 {
 	dBClusterDescription_ = dBClusterDescription;
-	setCoreParameter("DBClusterDescription", dBClusterDescription);
+	setCoreParameter("DBClusterDescription", std::to_string(dBClusterDescription));
 }
 
 std::string DescribeDBClustersRequest::getDBClusterStatus()const
@@ -55,7 +55,7 @@ std::string DescribeDBClustersRequest::getDBClusterStatus()const
 void DescribeDBClustersRequest::setDBClusterStatus(const std::string& dBClusterStatus)
 {
 	dBClusterStatus_ = dBClusterStatus;
-	setCoreParameter("DBClusterStatus", dBClusterStatus);
+	setCoreParameter("DBClusterStatus", std::to_string(dBClusterStatus));
 }
 
 std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
 void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBClustersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDBClustersRequest::getOwnerAccount()const
 void DescribeDBClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDBClustersRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeDBClustersRequest::getAccessKeyId()const
 void DescribeDBClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDBClustersRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDBClustersRequest::getRegionId()const
 void DescribeDBClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDBClustersRequest::getDBType()const
@@ -132,7 +132,7 @@ std::string DescribeDBClustersRequest::getDBType()const
 void DescribeDBClustersRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
-	setCoreParameter("DBType", dBType);
+	setCoreParameter("DBType", std::to_string(dBType));
 }
 
 int DescribeDBClustersRequest::getPageSize()const
@@ -171,6 +171,6 @@ std::string DescribeDBClustersRequest::getDBClusterIds()const
 void DescribeDBClustersRequest::setDBClusterIds(const std::string& dBClusterIds)
 {
 	dBClusterIds_ = dBClusterIds;
-	setCoreParameter("DBClusterIds", dBClusterIds);
+	setCoreParameter("DBClusterIds", std::to_string(dBClusterIds));
 }
 

@@ -33,7 +33,7 @@ std::string QueryDeviceByTagsRequest::getIotInstanceId()const
 void QueryDeviceByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryDeviceByTagsRequest::getPageSize()const
@@ -83,6 +83,6 @@ std::string QueryDeviceByTagsRequest::getAccessKeyId()const
 void QueryDeviceByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

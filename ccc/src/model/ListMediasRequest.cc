@@ -33,7 +33,7 @@ std::string ListMediasRequest::getInstanceId()const
 void ListMediasRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int ListMediasRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string ListMediasRequest::getNamePrefix()const
 void ListMediasRequest::setNamePrefix(const std::string& namePrefix)
 {
 	namePrefix_ = namePrefix;
-	setCoreParameter("NamePrefix", namePrefix);
+	setCoreParameter("NamePrefix", std::to_string(namePrefix));
 }
 
 int ListMediasRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string ListMediasRequest::getAccessKeyId()const
 void ListMediasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

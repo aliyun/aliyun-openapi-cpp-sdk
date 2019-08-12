@@ -33,7 +33,7 @@ std::string PickLocalNumberRequest::getInstanceId()const
 void PickLocalNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> PickLocalNumberRequest::getCandidateNumber()const
@@ -56,7 +56,7 @@ std::string PickLocalNumberRequest::getCalleeNumber()const
 void PickLocalNumberRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string PickLocalNumberRequest::getAccessKeyId()const
@@ -67,6 +67,6 @@ std::string PickLocalNumberRequest::getAccessKeyId()const
 void PickLocalNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

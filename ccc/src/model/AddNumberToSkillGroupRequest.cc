@@ -33,7 +33,7 @@ std::string AddNumberToSkillGroupRequest::getNumber()const
 void AddNumberToSkillGroupRequest::setNumber(const std::string& number)
 {
 	number_ = number;
-	setCoreParameter("Number", number);
+	setCoreParameter("Number", std::to_string(number));
 }
 
 std::string AddNumberToSkillGroupRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string AddNumberToSkillGroupRequest::getInstanceId()const
 void AddNumberToSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AddNumberToSkillGroupRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string AddNumberToSkillGroupRequest::getSkillGroupId()const
 void AddNumberToSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::string AddNumberToSkillGroupRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string AddNumberToSkillGroupRequest::getAccessKeyId()const
 void AddNumberToSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

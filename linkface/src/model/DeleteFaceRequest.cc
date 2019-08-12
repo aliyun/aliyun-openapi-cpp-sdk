@@ -33,7 +33,7 @@ std::string DeleteFaceRequest::getGroupId()const
 void DeleteFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteFaceRequest::getUserId()const
@@ -44,6 +44,6 @@ std::string DeleteFaceRequest::getUserId()const
 void DeleteFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 

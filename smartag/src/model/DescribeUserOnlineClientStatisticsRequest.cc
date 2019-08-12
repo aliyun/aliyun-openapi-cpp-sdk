@@ -44,7 +44,7 @@ std::string DescribeUserOnlineClientStatisticsRequest::getResourceOwnerAccount()
 void DescribeUserOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeUserOnlineClientStatisticsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeUserOnlineClientStatisticsRequest::getRegionId()const
 void DescribeUserOnlineClientStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeUserOnlineClientStatisticsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeUserOnlineClientStatisticsRequest::getOwnerAccount()const
 void DescribeUserOnlineClientStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeUserOnlineClientStatisticsRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DescribeUserOnlineClientStatisticsRequest::getSmartAGId()const
 void DescribeUserOnlineClientStatisticsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 std::vector<std::string> DescribeUserOnlineClientStatisticsRequest::getUserNames()const

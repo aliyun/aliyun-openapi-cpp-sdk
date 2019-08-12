@@ -33,7 +33,7 @@ std::string DeleteCasterLayoutRequest::getRegionId()const
 void DeleteCasterLayoutRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteCasterLayoutRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DeleteCasterLayoutRequest::getCasterId()const
 void DeleteCasterLayoutRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long DeleteCasterLayoutRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DeleteCasterLayoutRequest::getLayoutId()const
 void DeleteCasterLayoutRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setCoreParameter("LayoutId", std::to_string(layoutId));
 }
 

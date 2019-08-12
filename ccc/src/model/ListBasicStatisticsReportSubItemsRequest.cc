@@ -33,7 +33,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getInstanceId()const
 void ListBasicStatisticsReportSubItemsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
@@ -44,7 +44,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
 void ListBasicStatisticsReportSubItemsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
 void ListBasicStatisticsReportSubItemsRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const

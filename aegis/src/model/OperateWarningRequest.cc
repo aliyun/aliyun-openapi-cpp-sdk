@@ -33,7 +33,7 @@ std::string OperateWarningRequest::getReason()const
 void OperateWarningRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setCoreParameter("Reason", std::to_string(reason));
 }
 
 std::string OperateWarningRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string OperateWarningRequest::getSourceIp()const
 void OperateWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string OperateWarningRequest::getOperateType()const
@@ -55,7 +55,7 @@ std::string OperateWarningRequest::getOperateType()const
 void OperateWarningRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setCoreParameter("OperateType", std::to_string(operateType));
 }
 
 std::string OperateWarningRequest::getRiskWarningIds()const
@@ -66,6 +66,6 @@ std::string OperateWarningRequest::getRiskWarningIds()const
 void OperateWarningRequest::setRiskWarningIds(const std::string& riskWarningIds)
 {
 	riskWarningIds_ = riskWarningIds;
-	setCoreParameter("RiskWarningIds", riskWarningIds);
+	setCoreParameter("RiskWarningIds", std::to_string(riskWarningIds));
 }
 

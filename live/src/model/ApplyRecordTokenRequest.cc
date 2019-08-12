@@ -33,7 +33,7 @@ std::string ApplyRecordTokenRequest::getApp_ip()const
 void ApplyRecordTokenRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ApplyRecordTokenRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string ApplyRecordTokenRequest::getPopProduct()const
 void ApplyRecordTokenRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long ApplyRecordTokenRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool ApplyRecordTokenRequest::getProxy_original_security_transport()const
 void ApplyRecordTokenRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ApplyRecordTokenRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string ApplyRecordTokenRequest::getCallerBid()const
 void ApplyRecordTokenRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ApplyRecordTokenRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ApplyRecordTokenRequest::getProxy_original_source_ip()const
 void ApplyRecordTokenRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ApplyRecordTokenRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string ApplyRecordTokenRequest::getVersion()const
 void ApplyRecordTokenRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string ApplyRecordTokenRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string ApplyRecordTokenRequest::getOwnerIdLoginEmail()const
 void ApplyRecordTokenRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ApplyRecordTokenRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string ApplyRecordTokenRequest::getCallerType()const
 void ApplyRecordTokenRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool ApplyRecordTokenRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool ApplyRecordTokenRequest::getProxy_trust_transport_info()const
 void ApplyRecordTokenRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ApplyRecordTokenRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool ApplyRecordTokenRequest::getAk_mfa_present()const
 void ApplyRecordTokenRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string ApplyRecordTokenRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string ApplyRecordTokenRequest::getAccessKeyId()const
 void ApplyRecordTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool ApplyRecordTokenRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool ApplyRecordTokenRequest::getSecurity_transport()const
 void ApplyRecordTokenRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ApplyRecordTokenRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string ApplyRecordTokenRequest::getSecurityToken()const
 void ApplyRecordTokenRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ApplyRecordTokenRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string ApplyRecordTokenRequest::getRegionId()const
 void ApplyRecordTokenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ApplyRecordTokenRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string ApplyRecordTokenRequest::getRequestId()const
 void ApplyRecordTokenRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ApplyRecordTokenRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string ApplyRecordTokenRequest::getRequestContent()const
 void ApplyRecordTokenRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ApplyRecordTokenRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string ApplyRecordTokenRequest::getAppId()const
 void ApplyRecordTokenRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string ApplyRecordTokenRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string ApplyRecordTokenRequest::getCallerBidEmail()const
 void ApplyRecordTokenRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ApplyRecordTokenRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string ApplyRecordTokenRequest::getCallerUidEmail()const
 void ApplyRecordTokenRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ApplyRecordTokenRequest::getCallerUid()const

@@ -44,7 +44,7 @@ std::string CreateScalingTaskGroupRequest::getDataDiskCategory()const
 void CreateScalingTaskGroupRequest::setDataDiskCategory(const std::string& dataDiskCategory)
 {
 	dataDiskCategory_ = dataDiskCategory;
-	setCoreParameter("DataDiskCategory", dataDiskCategory);
+	setCoreParameter("DataDiskCategory", std::to_string(dataDiskCategory));
 }
 
 std::string CreateScalingTaskGroupRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string CreateScalingTaskGroupRequest::getClusterId()const
 void CreateScalingTaskGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int CreateScalingTaskGroupRequest::getMinSize()const
@@ -77,7 +77,7 @@ std::string CreateScalingTaskGroupRequest::getAccessKeyId()const
 void CreateScalingTaskGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateScalingTaskGroupRequest::getSpotStrategy()const
@@ -88,7 +88,7 @@ std::string CreateScalingTaskGroupRequest::getSpotStrategy()const
 void CreateScalingTaskGroupRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", std::to_string(spotStrategy));
 }
 
 int CreateScalingTaskGroupRequest::getDataDiskSize()const
@@ -127,7 +127,7 @@ std::string CreateScalingTaskGroupRequest::getRegionId()const
 void CreateScalingTaskGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<CreateScalingTaskGroupRequest::ScalingRule> CreateScalingTaskGroupRequest::getScalingRule()const
@@ -165,7 +165,7 @@ std::string CreateScalingTaskGroupRequest::getActiveRuleCategory()const
 void CreateScalingTaskGroupRequest::setActiveRuleCategory(const std::string& activeRuleCategory)
 {
 	activeRuleCategory_ = activeRuleCategory;
-	setCoreParameter("ActiveRuleCategory", activeRuleCategory);
+	setCoreParameter("ActiveRuleCategory", std::to_string(activeRuleCategory));
 }
 
 int CreateScalingTaskGroupRequest::getMaxSize()const
@@ -209,7 +209,7 @@ std::string CreateScalingTaskGroupRequest::getPayType()const
 void CreateScalingTaskGroupRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::vector<std::string> CreateScalingTaskGroupRequest::getInstanceTypeList()const

@@ -44,7 +44,7 @@ std::string DescribeNetworkOptimizationSettingsRequest::getResourceOwnerAccount(
 void DescribeNetworkOptimizationSettingsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeNetworkOptimizationSettingsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeNetworkOptimizationSettingsRequest::getRegionId()const
 void DescribeNetworkOptimizationSettingsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeNetworkOptimizationSettingsRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string DescribeNetworkOptimizationSettingsRequest::getNetworkOptId()const
 void DescribeNetworkOptimizationSettingsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
 }
 
 std::string DescribeNetworkOptimizationSettingsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeNetworkOptimizationSettingsRequest::getOwnerAccount()const
 void DescribeNetworkOptimizationSettingsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeNetworkOptimizationSettingsRequest::getPageSize()const

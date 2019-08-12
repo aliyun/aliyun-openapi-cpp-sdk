@@ -33,7 +33,7 @@ std::string CreateOrderAuditRequest::getSourceIp()const
 void CreateOrderAuditRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long CreateOrderAuditRequest::getOrderId()const
@@ -55,7 +55,7 @@ std::string CreateOrderAuditRequest::getLang()const
 void CreateOrderAuditRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateOrderAuditRequest::getType()const
@@ -66,6 +66,6 @@ std::string CreateOrderAuditRequest::getType()const
 void CreateOrderAuditRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

@@ -33,7 +33,7 @@ std::string ListClusterServiceCustomActionSupportConfigRequest::getServiceCustom
 void ListClusterServiceCustomActionSupportConfigRequest::setServiceCustomActionName(const std::string& serviceCustomActionName)
 {
 	serviceCustomActionName_ = serviceCustomActionName;
-	setCoreParameter("ServiceCustomActionName", serviceCustomActionName);
+	setCoreParameter("ServiceCustomActionName", std::to_string(serviceCustomActionName));
 }
 
 long ListClusterServiceCustomActionSupportConfigRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ListClusterServiceCustomActionSupportConfigRequest::getRegionId()con
 void ListClusterServiceCustomActionSupportConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListClusterServiceCustomActionSupportConfigRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string ListClusterServiceCustomActionSupportConfigRequest::getServiceName()
 void ListClusterServiceCustomActionSupportConfigRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string ListClusterServiceCustomActionSupportConfigRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListClusterServiceCustomActionSupportConfigRequest::getClusterId()co
 void ListClusterServiceCustomActionSupportConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListClusterServiceCustomActionSupportConfigRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListClusterServiceCustomActionSupportConfigRequest::getAccessKeyId()
 void ListClusterServiceCustomActionSupportConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

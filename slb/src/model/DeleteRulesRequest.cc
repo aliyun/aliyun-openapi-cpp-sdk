@@ -33,7 +33,7 @@ std::string DeleteRulesRequest::getAccess_key_id()const
 void DeleteRulesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DeleteRulesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteRulesRequest::getRuleIds()const
 void DeleteRulesRequest::setRuleIds(const std::string& ruleIds)
 {
 	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", ruleIds);
+	setCoreParameter("RuleIds", std::to_string(ruleIds));
 }
 
 std::string DeleteRulesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteRulesRequest::getResourceOwnerAccount()const
 void DeleteRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteRulesRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteRulesRequest::getRegionId()const
 void DeleteRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteRulesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteRulesRequest::getOwnerAccount()const
 void DeleteRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteRulesRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DeleteRulesRequest::getTags()const
 void DeleteRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

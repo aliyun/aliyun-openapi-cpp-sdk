@@ -55,7 +55,7 @@ bool CreateSmartAccessGatewaySoftwareRequest::getAutoPay()const
 void CreateSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()co
 void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
 void CreateSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
 void CreateSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
@@ -110,7 +110,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getChargeType()const
 void CreateSmartAccessGatewaySoftwareRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const

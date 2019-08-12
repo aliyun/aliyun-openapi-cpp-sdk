@@ -33,7 +33,7 @@ std::string DescribeCheckWarningsRequest::getSourceIp()const
 void DescribeCheckWarningsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeCheckWarningsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeCheckWarningsRequest::getLang()const
 void DescribeCheckWarningsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeCheckWarningsRequest::getRiskId()const
@@ -88,6 +88,6 @@ std::string DescribeCheckWarningsRequest::getUuid()const
 void DescribeCheckWarningsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 

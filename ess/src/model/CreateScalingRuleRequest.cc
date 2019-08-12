@@ -33,7 +33,7 @@ std::string CreateScalingRuleRequest::getResourceOwnerAccount()const
 void CreateScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int CreateScalingRuleRequest::getAdjustmentValue()const
@@ -73,7 +73,7 @@ std::string CreateScalingRuleRequest::getScalingGroupId()const
 void CreateScalingRuleRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 int CreateScalingRuleRequest::getEstimatedInstanceWarmup()const
@@ -95,7 +95,7 @@ std::string CreateScalingRuleRequest::getOwnerAccount()const
 void CreateScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int CreateScalingRuleRequest::getPredictiveTaskBufferTime()const
@@ -117,7 +117,7 @@ std::string CreateScalingRuleRequest::getAdjustmentType()const
 void CreateScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
 {
 	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", adjustmentType);
+	setCoreParameter("AdjustmentType", std::to_string(adjustmentType));
 }
 
 bool CreateScalingRuleRequest::getDisableScaleIn()const
@@ -128,7 +128,7 @@ bool CreateScalingRuleRequest::getDisableScaleIn()const
 void CreateScalingRuleRequest::setDisableScaleIn(bool disableScaleIn)
 {
 	disableScaleIn_ = disableScaleIn;
-	setCoreParameter("DisableScaleIn", disableScaleIn);
+	setCoreParameter("DisableScaleIn", disableScaleIn ? "true" : "false");
 }
 
 long CreateScalingRuleRequest::getOwnerId()const
@@ -161,7 +161,7 @@ std::string CreateScalingRuleRequest::getAccessKeyId()const
 void CreateScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int CreateScalingRuleRequest::getPredictiveValueBuffer()const
@@ -183,7 +183,7 @@ std::string CreateScalingRuleRequest::getScalingRuleName()const
 void CreateScalingRuleRequest::setScalingRuleName(const std::string& scalingRuleName)
 {
 	scalingRuleName_ = scalingRuleName;
-	setCoreParameter("ScalingRuleName", scalingRuleName);
+	setCoreParameter("ScalingRuleName", std::to_string(scalingRuleName));
 }
 
 int CreateScalingRuleRequest::getCooldown()const
@@ -216,7 +216,7 @@ std::string CreateScalingRuleRequest::getPredictiveValueBehavior()const
 void CreateScalingRuleRequest::setPredictiveValueBehavior(const std::string& predictiveValueBehavior)
 {
 	predictiveValueBehavior_ = predictiveValueBehavior;
-	setCoreParameter("PredictiveValueBehavior", predictiveValueBehavior);
+	setCoreParameter("PredictiveValueBehavior", std::to_string(predictiveValueBehavior));
 }
 
 float CreateScalingRuleRequest::getTargetValue()const
@@ -238,7 +238,7 @@ std::string CreateScalingRuleRequest::getScalingRuleType()const
 void CreateScalingRuleRequest::setScalingRuleType(const std::string& scalingRuleType)
 {
 	scalingRuleType_ = scalingRuleType;
-	setCoreParameter("ScalingRuleType", scalingRuleType);
+	setCoreParameter("ScalingRuleType", std::to_string(scalingRuleType));
 }
 
 std::string CreateScalingRuleRequest::getMetricName()const
@@ -249,7 +249,7 @@ std::string CreateScalingRuleRequest::getMetricName()const
 void CreateScalingRuleRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string CreateScalingRuleRequest::getPredictiveScalingMode()const
@@ -260,6 +260,6 @@ std::string CreateScalingRuleRequest::getPredictiveScalingMode()const
 void CreateScalingRuleRequest::setPredictiveScalingMode(const std::string& predictiveScalingMode)
 {
 	predictiveScalingMode_ = predictiveScalingMode;
-	setCoreParameter("PredictiveScalingMode", predictiveScalingMode);
+	setCoreParameter("PredictiveScalingMode", std::to_string(predictiveScalingMode));
 }
 

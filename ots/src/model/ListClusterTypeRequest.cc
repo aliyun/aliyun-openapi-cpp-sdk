@@ -33,7 +33,7 @@ std::string ListClusterTypeRequest::getAccess_key_id()const
 void ListClusterTypeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long ListClusterTypeRequest::getResourceOwnerId()const

@@ -44,7 +44,7 @@ std::string GetAttachedMediaInfoRequest::getResourceOwnerAccount()const
 void GetAttachedMediaInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetAttachedMediaInfoRequest::getOutputType()const
@@ -55,7 +55,7 @@ std::string GetAttachedMediaInfoRequest::getOutputType()const
 void GetAttachedMediaInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setCoreParameter("OutputType", std::to_string(outputType));
 }
 
 std::string GetAttachedMediaInfoRequest::getMediaIds()const
@@ -66,7 +66,7 @@ std::string GetAttachedMediaInfoRequest::getMediaIds()const
 void GetAttachedMediaInfoRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setCoreParameter("MediaIds", std::to_string(mediaIds));
 }
 
 long GetAttachedMediaInfoRequest::getResourceRealOwnerId()const
@@ -110,6 +110,6 @@ std::string GetAttachedMediaInfoRequest::getAccessKeyId()const
 void GetAttachedMediaInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

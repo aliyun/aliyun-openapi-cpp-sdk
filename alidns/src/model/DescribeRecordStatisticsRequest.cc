@@ -33,7 +33,7 @@ std::string DescribeRecordStatisticsRequest::getRr()const
 void DescribeRecordStatisticsRequest::setRr(const std::string& rr)
 {
 	rr_ = rr;
-	setCoreParameter("Rr", rr);
+	setCoreParameter("Rr", std::to_string(rr));
 }
 
 std::string DescribeRecordStatisticsRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string DescribeRecordStatisticsRequest::getEndDate()const
 void DescribeRecordStatisticsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string DescribeRecordStatisticsRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string DescribeRecordStatisticsRequest::getUserClientIp()const
 void DescribeRecordStatisticsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeRecordStatisticsRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DescribeRecordStatisticsRequest::getDomainName()const
 void DescribeRecordStatisticsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeRecordStatisticsRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeRecordStatisticsRequest::getLang()const
 void DescribeRecordStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeRecordStatisticsRequest::getStartDate()const
@@ -88,6 +88,6 @@ std::string DescribeRecordStatisticsRequest::getStartDate()const
 void DescribeRecordStatisticsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 

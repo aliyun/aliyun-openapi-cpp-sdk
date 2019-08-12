@@ -33,7 +33,7 @@ std::string DescribeImageSharePermissionRequest::getSourceRegionId()const
 void DescribeImageSharePermissionRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeImageSharePermissionRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeImageSharePermissionRequest::getImageId()const
 void DescribeImageSharePermissionRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string DescribeImageSharePermissionRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeImageSharePermissionRequest::getResourceOwnerAccount()const
 void DescribeImageSharePermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeImageSharePermissionRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeImageSharePermissionRequest::getRegionId()const
 void DescribeImageSharePermissionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeImageSharePermissionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeImageSharePermissionRequest::getOwnerAccount()const
 void DescribeImageSharePermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeImageSharePermissionRequest::getPageSize()const

@@ -44,7 +44,7 @@ std::string DisableScalingGroupRequest::getResourceOwnerAccount()const
 void DisableScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DisableScalingGroupRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string DisableScalingGroupRequest::getScalingGroupId()const
 void DisableScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string DisableScalingGroupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DisableScalingGroupRequest::getOwnerAccount()const
 void DisableScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DisableScalingGroupRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DisableScalingGroupRequest::getAccessKeyId()const
 void DisableScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

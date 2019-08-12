@@ -33,7 +33,7 @@ std::string DescribeDataTotalCountRequest::getProductCode()const
 void DescribeDataTotalCountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 long DescribeDataTotalCountRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeDataTotalCountRequest::getSourceIp()const
 void DescribeDataTotalCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDataTotalCountRequest::getFeatureType()const
@@ -88,6 +88,6 @@ std::string DescribeDataTotalCountRequest::getLang()const
 void DescribeDataTotalCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

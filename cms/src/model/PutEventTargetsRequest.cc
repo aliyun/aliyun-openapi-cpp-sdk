@@ -108,7 +108,7 @@ std::string PutEventTargetsRequest::getRuleName()const
 void PutEventTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::vector<PutEventTargetsRequest::MnsParameters> PutEventTargetsRequest::getMnsParameters()const

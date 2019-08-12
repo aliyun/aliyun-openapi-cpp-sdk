@@ -44,7 +44,7 @@ std::string ListNotesRequest::getRegionId()const
 void ListNotesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListNotesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListNotesRequest::getAccessKeyId()const
 void ListNotesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

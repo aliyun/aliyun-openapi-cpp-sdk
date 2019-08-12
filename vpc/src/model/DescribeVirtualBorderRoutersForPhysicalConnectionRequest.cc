@@ -61,7 +61,7 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourc
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionI
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -83,7 +83,7 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPhysica
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
 }
 
 int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageSize()const

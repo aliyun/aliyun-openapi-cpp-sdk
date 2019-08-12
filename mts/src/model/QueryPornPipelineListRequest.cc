@@ -44,7 +44,7 @@ std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
 void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryPornPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryPornPipelineListRequest::getPipelineIds()const
 void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setCoreParameter("PipelineIds", std::to_string(pipelineIds));
 }
 
 std::string QueryPornPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryPornPipelineListRequest::getOwnerAccount()const
 void QueryPornPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryPornPipelineListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryPornPipelineListRequest::getAccessKeyId()const
 void QueryPornPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

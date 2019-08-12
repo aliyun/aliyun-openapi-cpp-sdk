@@ -44,7 +44,7 @@ std::string CreateAccountRequest::getResourceOwnerAccount()const
 void CreateAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateAccountRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateAccountRequest::getOwnerAccount()const
 void CreateAccountRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateAccountRequest::getAccountType()const
@@ -66,7 +66,7 @@ std::string CreateAccountRequest::getAccountType()const
 void CreateAccountRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", accountType);
+	setCoreParameter("AccountType", std::to_string(accountType));
 }
 
 long CreateAccountRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string CreateAccountRequest::getAccountDescription()const
 void CreateAccountRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	setCoreParameter("AccountDescription", std::to_string(accountDescription));
 }
 
 std::string CreateAccountRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateAccountRequest::getAccessKeyId()const
 void CreateAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateAccountRequest::getAccountPrivilege()const
@@ -110,7 +110,7 @@ std::string CreateAccountRequest::getAccountPrivilege()const
 void CreateAccountRequest::setAccountPrivilege(const std::string& accountPrivilege)
 {
 	accountPrivilege_ = accountPrivilege;
-	setCoreParameter("AccountPrivilege", accountPrivilege);
+	setCoreParameter("AccountPrivilege", std::to_string(accountPrivilege));
 }
 
 std::string CreateAccountRequest::getAccountPassword()const
@@ -121,7 +121,7 @@ std::string CreateAccountRequest::getAccountPassword()const
 void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", std::to_string(accountPassword));
 }
 
 std::string CreateAccountRequest::getInstanceId()const
@@ -132,7 +132,7 @@ std::string CreateAccountRequest::getInstanceId()const
 void CreateAccountRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateAccountRequest::getAccountName()const
@@ -143,7 +143,7 @@ std::string CreateAccountRequest::getAccountName()const
 void CreateAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string CreateAccountRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string CreateAccountRequest::getSecurityToken()const
 void CreateAccountRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateAccountRequest::getRegionId()const
@@ -165,6 +165,6 @@ std::string CreateAccountRequest::getRegionId()const
 void CreateAccountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

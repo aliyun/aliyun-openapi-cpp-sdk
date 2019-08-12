@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
 void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setCoreParameter("StreamType", std::to_string(streamType));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getEndTime()const
 void DescribeLiveStreamsOnlineListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getOrderBy()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getOrderBy()const
 void DescribeLiveStreamsOnlineListRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStartTime()const
 void DescribeLiveStreamsOnlineListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
 void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getRegionId()const
 void DescribeLiveStreamsOnlineListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageSize()const
@@ -143,7 +143,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamName()const
 void DescribeLiveStreamsOnlineListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getQueryType()const
@@ -154,6 +154,6 @@ std::string DescribeLiveStreamsOnlineListRequest::getQueryType()const
 void DescribeLiveStreamsOnlineListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 

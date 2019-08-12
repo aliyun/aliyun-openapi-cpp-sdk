@@ -33,7 +33,7 @@ std::string DescribeBizTypeSettingRequest::getSourceIp()const
 void DescribeBizTypeSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeBizTypeSettingRequest::getBizTypeName()const
@@ -44,7 +44,7 @@ std::string DescribeBizTypeSettingRequest::getBizTypeName()const
 void DescribeBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", bizTypeName);
+	setCoreParameter("BizTypeName", std::to_string(bizTypeName));
 }
 
 std::string DescribeBizTypeSettingRequest::getResourceType()const
@@ -55,6 +55,6 @@ std::string DescribeBizTypeSettingRequest::getResourceType()const
 void DescribeBizTypeSettingRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

@@ -33,7 +33,7 @@ std::string CreateDataLimitRequest::getPassword()const
 void CreateDataLimitRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 std::string CreateDataLimitRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateDataLimitRequest::getSourceIp()const
 void CreateDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateDataLimitRequest::getConnector()const
@@ -55,7 +55,7 @@ std::string CreateDataLimitRequest::getConnector()const
 void CreateDataLimitRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", connector);
+	setCoreParameter("Connector", std::to_string(connector));
 }
 
 std::string CreateDataLimitRequest::getDataLimitList()const
@@ -66,7 +66,7 @@ std::string CreateDataLimitRequest::getDataLimitList()const
 void CreateDataLimitRequest::setDataLimitList(const std::string& dataLimitList)
 {
 	dataLimitList_ = dataLimitList;
-	setCoreParameter("DataLimitList", dataLimitList);
+	setCoreParameter("DataLimitList", std::to_string(dataLimitList));
 }
 
 std::string CreateDataLimitRequest::getLang()const
@@ -77,7 +77,7 @@ std::string CreateDataLimitRequest::getLang()const
 void CreateDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int CreateDataLimitRequest::getResourceType()const
@@ -99,7 +99,7 @@ std::string CreateDataLimitRequest::getServiceRegionId()const
 void CreateDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", serviceRegionId);
+	setCoreParameter("ServiceRegionId", std::to_string(serviceRegionId));
 }
 
 std::string CreateDataLimitRequest::getParentId()const
@@ -110,7 +110,7 @@ std::string CreateDataLimitRequest::getParentId()const
 void CreateDataLimitRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setCoreParameter("ParentId", std::to_string(parentId));
 }
 
 std::string CreateDataLimitRequest::getUserName()const
@@ -121,6 +121,6 @@ std::string CreateDataLimitRequest::getUserName()const
 void CreateDataLimitRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

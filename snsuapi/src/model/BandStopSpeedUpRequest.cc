@@ -33,7 +33,7 @@ std::string BandStopSpeedUpRequest::getIpAddress()const
 void BandStopSpeedUpRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setCoreParameter("IpAddress", std::to_string(ipAddress));
 }
 
 long BandStopSpeedUpRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string BandStopSpeedUpRequest::getResourceOwnerAccount()const
 void BandStopSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int BandStopSpeedUpRequest::getPort()const
@@ -99,7 +99,7 @@ std::string BandStopSpeedUpRequest::getAccessKeyId()const
 void BandStopSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string BandStopSpeedUpRequest::getDirection()const
@@ -110,6 +110,6 @@ std::string BandStopSpeedUpRequest::getDirection()const
 void BandStopSpeedUpRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeWarningRequest::getTypeNames()const
 void DescribeWarningRequest::setTypeNames(const std::string& typeNames)
 {
 	typeNames_ = typeNames;
-	setCoreParameter("TypeNames", typeNames);
+	setCoreParameter("TypeNames", std::to_string(typeNames));
 }
 
 std::string DescribeWarningRequest::getRiskName()const
@@ -44,7 +44,7 @@ std::string DescribeWarningRequest::getRiskName()const
 void DescribeWarningRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
+	setCoreParameter("RiskName", std::to_string(riskName));
 }
 
 std::string DescribeWarningRequest::getStatusList()const
@@ -55,7 +55,7 @@ std::string DescribeWarningRequest::getStatusList()const
 void DescribeWarningRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
+	setCoreParameter("StatusList", std::to_string(statusList));
 }
 
 std::string DescribeWarningRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string DescribeWarningRequest::getSourceIp()const
 void DescribeWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWarningRequest::getRiskLevels()const
@@ -77,7 +77,7 @@ std::string DescribeWarningRequest::getRiskLevels()const
 void DescribeWarningRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", riskLevels);
+	setCoreParameter("RiskLevels", std::to_string(riskLevels));
 }
 
 int DescribeWarningRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string DescribeWarningRequest::getDealed()const
 void DescribeWarningRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 std::string DescribeWarningRequest::getSubTypeNames()const
@@ -132,7 +132,7 @@ std::string DescribeWarningRequest::getSubTypeNames()const
 void DescribeWarningRequest::setSubTypeNames(const std::string& subTypeNames)
 {
 	subTypeNames_ = subTypeNames;
-	setCoreParameter("SubTypeNames", subTypeNames);
+	setCoreParameter("SubTypeNames", std::to_string(subTypeNames));
 }
 
 std::string DescribeWarningRequest::getUuids()const
@@ -143,6 +143,6 @@ std::string DescribeWarningRequest::getUuids()const
 void DescribeWarningRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

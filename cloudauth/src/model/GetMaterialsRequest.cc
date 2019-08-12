@@ -44,7 +44,7 @@ std::string GetMaterialsRequest::getBiz()const
 void GetMaterialsRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", biz);
+	setCoreParameter("Biz", std::to_string(biz));
 }
 
 std::string GetMaterialsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string GetMaterialsRequest::getSourceIp()const
 void GetMaterialsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string GetMaterialsRequest::getTicketId()const
@@ -66,6 +66,6 @@ std::string GetMaterialsRequest::getTicketId()const
 void GetMaterialsRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setCoreParameter("TicketId", ticketId);
+	setCoreParameter("TicketId", std::to_string(ticketId));
 }
 

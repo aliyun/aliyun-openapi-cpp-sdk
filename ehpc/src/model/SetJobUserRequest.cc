@@ -33,7 +33,7 @@ std::string SetJobUserRequest::getRunasUserPassword()const
 void SetJobUserRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setCoreParameter("RunasUserPassword", runasUserPassword);
+	setCoreParameter("RunasUserPassword", std::to_string(runasUserPassword));
 }
 
 std::string SetJobUserRequest::getRunasUser()const
@@ -44,7 +44,7 @@ std::string SetJobUserRequest::getRunasUser()const
 void SetJobUserRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", std::to_string(runasUser));
 }
 
 std::string SetJobUserRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string SetJobUserRequest::getClusterId()const
 void SetJobUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string SetJobUserRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SetJobUserRequest::getAccessKeyId()const
 void SetJobUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

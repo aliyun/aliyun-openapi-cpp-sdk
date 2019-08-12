@@ -33,7 +33,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getUserClientIp()cons
 void SaveSingleTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getDomainName()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getLang()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveSingleTaskForUpdateProhibitionLockRequest::getStatus()const
@@ -66,6 +66,6 @@ bool SaveSingleTaskForUpdateProhibitionLockRequest::getStatus()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

@@ -45,7 +45,7 @@ std::string SendCommandByMacRequest::getCommand()const
 void SendCommandByMacRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setCoreParameter("Command", std::to_string(command));
 }
 
 std::string SendCommandByMacRequest::getAccessKeyId()const
@@ -56,6 +56,6 @@ std::string SendCommandByMacRequest::getAccessKeyId()const
 void SendCommandByMacRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

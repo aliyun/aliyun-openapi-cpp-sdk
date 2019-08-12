@@ -44,7 +44,7 @@ std::string DeleteRouteServiceInCenRequest::getResourceOwnerAccount()const
 void DeleteRouteServiceInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteRouteServiceInCenRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DeleteRouteServiceInCenRequest::getCenId()const
 void DeleteRouteServiceInCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DeleteRouteServiceInCenRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteRouteServiceInCenRequest::getOwnerAccount()const
 void DeleteRouteServiceInCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteRouteServiceInCenRequest::getHost()const
@@ -77,7 +77,7 @@ std::string DeleteRouteServiceInCenRequest::getHost()const
 void DeleteRouteServiceInCenRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", host);
+	setCoreParameter("Host", std::to_string(host));
 }
 
 std::string DeleteRouteServiceInCenRequest::getHostRegionId()const
@@ -88,7 +88,7 @@ std::string DeleteRouteServiceInCenRequest::getHostRegionId()const
 void DeleteRouteServiceInCenRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setCoreParameter("HostRegionId", std::to_string(hostRegionId));
 }
 
 std::string DeleteRouteServiceInCenRequest::getAccessRegionId()const
@@ -99,7 +99,7 @@ std::string DeleteRouteServiceInCenRequest::getAccessRegionId()const
 void DeleteRouteServiceInCenRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setCoreParameter("AccessRegionId", std::to_string(accessRegionId));
 }
 
 long DeleteRouteServiceInCenRequest::getOwnerId()const

@@ -66,7 +66,7 @@ std::string ModifyUserStatisticsRequest::getRegionId()const
 void ModifyUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ModifyUserStatisticsRequest::getJobNum()const
@@ -110,7 +110,7 @@ std::string ModifyUserStatisticsRequest::getUserId()const
 void ModifyUserStatisticsRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ModifyUserStatisticsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyUserStatisticsRequest::getAccessKeyId()const
 void ModifyUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int ModifyUserStatisticsRequest::getInteractionJobNum()const

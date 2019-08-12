@@ -33,7 +33,7 @@ std::string SubmitVideoSummaryJobRequest::getInput()const
 void SubmitVideoSummaryJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitVideoSummaryJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitVideoSummaryJobRequest::getUserData()const
 void SubmitVideoSummaryJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitVideoSummaryJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitVideoSummaryJobRequest::getResourceOwnerAccount()const
 void SubmitVideoSummaryJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitVideoSummaryJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitVideoSummaryJobRequest::getOwnerAccount()const
 void SubmitVideoSummaryJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitVideoSummaryJobRequest::getVideoSummaryConfig()const
@@ -88,7 +88,7 @@ std::string SubmitVideoSummaryJobRequest::getVideoSummaryConfig()const
 void SubmitVideoSummaryJobRequest::setVideoSummaryConfig(const std::string& videoSummaryConfig)
 {
 	videoSummaryConfig_ = videoSummaryConfig;
-	setCoreParameter("VideoSummaryConfig", videoSummaryConfig);
+	setCoreParameter("VideoSummaryConfig", std::to_string(videoSummaryConfig));
 }
 
 long SubmitVideoSummaryJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitVideoSummaryJobRequest::getAccessKeyId()const
 void SubmitVideoSummaryJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitVideoSummaryJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitVideoSummaryJobRequest::getPipelineId()const
 void SubmitVideoSummaryJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

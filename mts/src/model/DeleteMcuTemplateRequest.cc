@@ -44,7 +44,7 @@ std::string DeleteMcuTemplateRequest::getResourceOwnerAccount()const
 void DeleteMcuTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteMcuTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMcuTemplateRequest::getOwnerAccount()const
 void DeleteMcuTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteMcuTemplateRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DeleteMcuTemplateRequest::getTemplateId()const
 void DeleteMcuTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string DeleteMcuTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteMcuTemplateRequest::getAccessKeyId()const
 void DeleteMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

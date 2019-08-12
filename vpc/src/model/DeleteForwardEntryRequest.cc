@@ -44,7 +44,7 @@ std::string DeleteForwardEntryRequest::getResourceOwnerAccount()const
 void DeleteForwardEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteForwardEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteForwardEntryRequest::getRegionId()const
 void DeleteForwardEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteForwardEntryRequest::getForwardEntryId()const
@@ -66,7 +66,7 @@ std::string DeleteForwardEntryRequest::getForwardEntryId()const
 void DeleteForwardEntryRequest::setForwardEntryId(const std::string& forwardEntryId)
 {
 	forwardEntryId_ = forwardEntryId;
-	setCoreParameter("ForwardEntryId", forwardEntryId);
+	setCoreParameter("ForwardEntryId", std::to_string(forwardEntryId));
 }
 
 std::string DeleteForwardEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteForwardEntryRequest::getOwnerAccount()const
 void DeleteForwardEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteForwardEntryRequest::getForwardTableId()const
@@ -88,7 +88,7 @@ std::string DeleteForwardEntryRequest::getForwardTableId()const
 void DeleteForwardEntryRequest::setForwardTableId(const std::string& forwardTableId)
 {
 	forwardTableId_ = forwardTableId;
-	setCoreParameter("ForwardTableId", forwardTableId);
+	setCoreParameter("ForwardTableId", std::to_string(forwardTableId));
 }
 
 long DeleteForwardEntryRequest::getOwnerId()const

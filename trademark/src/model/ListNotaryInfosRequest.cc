@@ -33,7 +33,7 @@ std::string ListNotaryInfosRequest::getBizOrderNo()const
 void ListNotaryInfosRequest::setBizOrderNo(const std::string& bizOrderNo)
 {
 	bizOrderNo_ = bizOrderNo;
-	setCoreParameter("BizOrderNo", bizOrderNo);
+	setCoreParameter("BizOrderNo", std::to_string(bizOrderNo));
 }
 
 int ListNotaryInfosRequest::getNotaryType()const
@@ -77,6 +77,6 @@ std::string ListNotaryInfosRequest::getToken()const
 void ListNotaryInfosRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setCoreParameter("Token", std::to_string(token));
 }
 

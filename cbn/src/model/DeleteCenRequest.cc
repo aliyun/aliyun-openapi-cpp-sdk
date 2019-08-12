@@ -44,7 +44,7 @@ std::string DeleteCenRequest::getResourceOwnerAccount()const
 void DeleteCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteCenRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DeleteCenRequest::getCenId()const
 void DeleteCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DeleteCenRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteCenRequest::getOwnerAccount()const
 void DeleteCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteCenRequest::getOwnerId()const

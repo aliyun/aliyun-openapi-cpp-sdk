@@ -33,7 +33,7 @@ std::string GetTaskStatusRequest::getApp_ip()const
 void GetTaskStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string GetTaskStatusRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string GetTaskStatusRequest::getPopProduct()const
 void GetTaskStatusRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long GetTaskStatusRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool GetTaskStatusRequest::getProxy_original_security_transport()const
 void GetTaskStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string GetTaskStatusRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string GetTaskStatusRequest::getCallerBid()const
 void GetTaskStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long GetTaskStatusRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string GetTaskStatusRequest::getProxy_original_source_ip()const
 void GetTaskStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string GetTaskStatusRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string GetTaskStatusRequest::getVersion()const
 void GetTaskStatusRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string GetTaskStatusRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string GetTaskStatusRequest::getOwnerIdLoginEmail()const
 void GetTaskStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string GetTaskStatusRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string GetTaskStatusRequest::getCallerType()const
 void GetTaskStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool GetTaskStatusRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool GetTaskStatusRequest::getProxy_trust_transport_info()const
 void GetTaskStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool GetTaskStatusRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool GetTaskStatusRequest::getAk_mfa_present()const
 void GetTaskStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string GetTaskStatusRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string GetTaskStatusRequest::getAccessKeyId()const
 void GetTaskStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool GetTaskStatusRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool GetTaskStatusRequest::getSecurity_transport()const
 void GetTaskStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string GetTaskStatusRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string GetTaskStatusRequest::getSecurityToken()const
 void GetTaskStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string GetTaskStatusRequest::getRequestId()const
@@ -198,7 +198,7 @@ std::string GetTaskStatusRequest::getRequestId()const
 void GetTaskStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string GetTaskStatusRequest::getRequestContent()const
@@ -209,7 +209,7 @@ std::string GetTaskStatusRequest::getRequestContent()const
 void GetTaskStatusRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string GetTaskStatusRequest::getAppId()const
@@ -220,7 +220,7 @@ std::string GetTaskStatusRequest::getAppId()const
 void GetTaskStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string GetTaskStatusRequest::getCallerBidEmail()const
@@ -231,7 +231,7 @@ std::string GetTaskStatusRequest::getCallerBidEmail()const
 void GetTaskStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string GetTaskStatusRequest::getCallerUidEmail()const
@@ -242,7 +242,7 @@ std::string GetTaskStatusRequest::getCallerUidEmail()const
 void GetTaskStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string GetTaskStatusRequest::getChannelId()const
@@ -253,7 +253,7 @@ std::string GetTaskStatusRequest::getChannelId()const
 void GetTaskStatusRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", std::to_string(channelId));
 }
 
 long GetTaskStatusRequest::getTaskId()const

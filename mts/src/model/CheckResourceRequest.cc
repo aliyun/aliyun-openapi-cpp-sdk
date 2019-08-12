@@ -33,7 +33,7 @@ std::string CheckResourceRequest::getCountry()const
 void CheckResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setCoreParameter("Country", std::to_string(country));
 }
 
 long CheckResourceRequest::getHid()const
@@ -66,7 +66,7 @@ std::string CheckResourceRequest::getInvoker()const
 void CheckResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setCoreParameter("Invoker", invoker);
+	setCoreParameter("Invoker", std::to_string(invoker));
 }
 
 std::string CheckResourceRequest::getMessage()const
@@ -77,7 +77,7 @@ std::string CheckResourceRequest::getMessage()const
 void CheckResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", message);
+	setCoreParameter("Message", std::to_string(message));
 }
 
 std::string CheckResourceRequest::getUrl()const
@@ -88,7 +88,7 @@ std::string CheckResourceRequest::getUrl()const
 void CheckResourceRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setCoreParameter("Url", std::to_string(url));
 }
 
 bool CheckResourceRequest::getSuccess()const
@@ -99,7 +99,7 @@ bool CheckResourceRequest::getSuccess()const
 void CheckResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success);
+	setCoreParameter("Success", success ? "true" : "false");
 }
 
 bool CheckResourceRequest::getInterrupt()const
@@ -110,7 +110,7 @@ bool CheckResourceRequest::getInterrupt()const
 void CheckResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt);
+	setCoreParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string CheckResourceRequest::getGmtWakeup()const
@@ -121,7 +121,7 @@ std::string CheckResourceRequest::getGmtWakeup()const
 void CheckResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setCoreParameter("GmtWakeup", gmtWakeup);
+	setCoreParameter("GmtWakeup", std::to_string(gmtWakeup));
 }
 
 std::string CheckResourceRequest::getPk()const
@@ -132,7 +132,7 @@ std::string CheckResourceRequest::getPk()const
 void CheckResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setCoreParameter("Pk", pk);
+	setCoreParameter("Pk", std::to_string(pk));
 }
 
 std::string CheckResourceRequest::getBid()const
@@ -143,7 +143,7 @@ std::string CheckResourceRequest::getBid()const
 void CheckResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", bid);
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 std::string CheckResourceRequest::getPrompt()const
@@ -154,7 +154,7 @@ std::string CheckResourceRequest::getPrompt()const
 void CheckResourceRequest::setPrompt(const std::string& prompt)
 {
 	prompt_ = prompt;
-	setCoreParameter("Prompt", prompt);
+	setCoreParameter("Prompt", std::to_string(prompt));
 }
 
 std::string CheckResourceRequest::getTaskExtraData()const
@@ -165,7 +165,7 @@ std::string CheckResourceRequest::getTaskExtraData()const
 void CheckResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setCoreParameter("TaskExtraData", taskExtraData);
+	setCoreParameter("TaskExtraData", std::to_string(taskExtraData));
 }
 
 std::string CheckResourceRequest::getTaskIdentifier()const
@@ -176,6 +176,6 @@ std::string CheckResourceRequest::getTaskIdentifier()const
 void CheckResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setCoreParameter("TaskIdentifier", taskIdentifier);
+	setCoreParameter("TaskIdentifier", std::to_string(taskIdentifier));
 }
 

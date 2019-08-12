@@ -33,7 +33,7 @@ std::string UpdateCategoryRequest::getName()const
 void UpdateCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long UpdateCategoryRequest::getCategoryId()const

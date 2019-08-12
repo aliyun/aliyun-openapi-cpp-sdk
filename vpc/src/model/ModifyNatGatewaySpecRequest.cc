@@ -44,7 +44,7 @@ bool ModifyNatGatewaySpecRequest::getAutoPay()const
 void ModifyNatGatewaySpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
 void ModifyNatGatewaySpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyNatGatewaySpecRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyNatGatewaySpecRequest::getRegionId()const
 void ModifyNatGatewaySpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyNatGatewaySpecRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifyNatGatewaySpecRequest::getClientToken()const
 void ModifyNatGatewaySpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
 void ModifyNatGatewaySpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
@@ -99,7 +99,7 @@ std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
 void ModifyNatGatewaySpecRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setCoreParameter("NatGatewayId", std::to_string(natGatewayId));
 }
 
 long ModifyNatGatewaySpecRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string ModifyNatGatewaySpecRequest::getSpec()const
 void ModifyNatGatewaySpecRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setCoreParameter("Spec", std::to_string(spec));
 }
 

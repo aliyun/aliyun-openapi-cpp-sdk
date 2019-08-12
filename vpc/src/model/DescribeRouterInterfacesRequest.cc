@@ -61,7 +61,7 @@ std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
 void DescribeRouterInterfacesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRouterInterfacesRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeRouterInterfacesRequest::getRegionId()const
 void DescribeRouterInterfacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeRouterInterfacesRequest::getPageSize()const
@@ -105,7 +105,7 @@ bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
 void DescribeRouterInterfacesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData);
+	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
 }
 
 int DescribeRouterInterfacesRequest::getPageNumber()const

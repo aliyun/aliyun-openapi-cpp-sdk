@@ -44,7 +44,7 @@ std::string DeleteVirtualBorderRouterRequest::getRegionId()const
 void DeleteVirtualBorderRouterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteVirtualBorderRouterRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteVirtualBorderRouterRequest::getResourceOwnerAccount()const
 void DeleteVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteVirtualBorderRouterRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteVirtualBorderRouterRequest::getClientToken()const
 void DeleteVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteVirtualBorderRouterRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteVirtualBorderRouterRequest::getOwnerAccount()const
 void DeleteVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteVirtualBorderRouterRequest::getUserCidr()const
@@ -88,7 +88,7 @@ std::string DeleteVirtualBorderRouterRequest::getUserCidr()const
 void DeleteVirtualBorderRouterRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 std::string DeleteVirtualBorderRouterRequest::getVbrId()const
@@ -99,7 +99,7 @@ std::string DeleteVirtualBorderRouterRequest::getVbrId()const
 void DeleteVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", std::to_string(vbrId));
 }
 
 long DeleteVirtualBorderRouterRequest::getOwnerId()const

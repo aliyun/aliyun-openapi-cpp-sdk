@@ -33,7 +33,7 @@ std::string CreateScalingRuleRequest::getLaunchTime()const
 void CreateScalingRuleRequest::setLaunchTime(const std::string& launchTime)
 {
 	launchTime_ = launchTime;
-	setCoreParameter("LaunchTime", launchTime);
+	setCoreParameter("LaunchTime", std::to_string(launchTime));
 }
 
 long CreateScalingRuleRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateScalingRuleRequest::getRuleCategory()const
 void CreateScalingRuleRequest::setRuleCategory(const std::string& ruleCategory)
 {
 	ruleCategory_ = ruleCategory;
-	setCoreParameter("RuleCategory", ruleCategory);
+	setCoreParameter("RuleCategory", std::to_string(ruleCategory));
 }
 
 int CreateScalingRuleRequest::getAdjustmentValue()const
@@ -77,7 +77,7 @@ std::string CreateScalingRuleRequest::getAdjustmentType()const
 void CreateScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
 {
 	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", adjustmentType);
+	setCoreParameter("AdjustmentType", std::to_string(adjustmentType));
 }
 
 std::string CreateScalingRuleRequest::getRuleName()const
@@ -88,7 +88,7 @@ std::string CreateScalingRuleRequest::getRuleName()const
 void CreateScalingRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::string CreateScalingRuleRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string CreateScalingRuleRequest::getClusterId()const
 void CreateScalingRuleRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int CreateScalingRuleRequest::getLaunchExpirationTime()const
@@ -121,7 +121,7 @@ std::string CreateScalingRuleRequest::getRecurrenceValue()const
 void CreateScalingRuleRequest::setRecurrenceValue(const std::string& recurrenceValue)
 {
 	recurrenceValue_ = recurrenceValue;
-	setCoreParameter("RecurrenceValue", recurrenceValue);
+	setCoreParameter("RecurrenceValue", std::to_string(recurrenceValue));
 }
 
 std::string CreateScalingRuleRequest::getRecurrenceEndTime()const
@@ -132,7 +132,7 @@ std::string CreateScalingRuleRequest::getRecurrenceEndTime()const
 void CreateScalingRuleRequest::setRecurrenceEndTime(const std::string& recurrenceEndTime)
 {
 	recurrenceEndTime_ = recurrenceEndTime;
-	setCoreParameter("RecurrenceEndTime", recurrenceEndTime);
+	setCoreParameter("RecurrenceEndTime", std::to_string(recurrenceEndTime));
 }
 
 std::vector<CreateScalingRuleRequest::CloudWatchTrigger> CreateScalingRuleRequest::getCloudWatchTrigger()const
@@ -164,7 +164,7 @@ std::string CreateScalingRuleRequest::getAccessKeyId()const
 void CreateScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateScalingRuleRequest::getRegionId()const
@@ -175,7 +175,7 @@ std::string CreateScalingRuleRequest::getRegionId()const
 void CreateScalingRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateScalingRuleRequest::getHostGroupId()const
@@ -186,7 +186,7 @@ std::string CreateScalingRuleRequest::getHostGroupId()const
 void CreateScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 std::vector<CreateScalingRuleRequest::SchedulerTrigger> CreateScalingRuleRequest::getSchedulerTrigger()const
@@ -228,6 +228,6 @@ std::string CreateScalingRuleRequest::getRecurrenceType()const
 void CreateScalingRuleRequest::setRecurrenceType(const std::string& recurrenceType)
 {
 	recurrenceType_ = recurrenceType;
-	setCoreParameter("RecurrenceType", recurrenceType);
+	setCoreParameter("RecurrenceType", std::to_string(recurrenceType));
 }
 

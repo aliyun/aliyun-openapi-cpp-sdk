@@ -44,7 +44,7 @@ std::string ListAlertUserGroupRequest::getFromApp()const
 void ListAlertUserGroupRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
+	setCoreParameter("FromApp", std::to_string(fromApp));
 }
 
 std::string ListAlertUserGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListAlertUserGroupRequest::getRegionId()const
 void ListAlertUserGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListAlertUserGroupRequest::getIds()const
@@ -66,7 +66,7 @@ std::string ListAlertUserGroupRequest::getIds()const
 void ListAlertUserGroupRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string ListAlertUserGroupRequest::getUserId()const
@@ -77,7 +77,7 @@ std::string ListAlertUserGroupRequest::getUserId()const
 void ListAlertUserGroupRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ListAlertUserGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListAlertUserGroupRequest::getAccessKeyId()const
 void ListAlertUserGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

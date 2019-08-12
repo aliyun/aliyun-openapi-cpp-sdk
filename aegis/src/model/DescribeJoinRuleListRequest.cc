@@ -33,7 +33,7 @@ std::string DescribeJoinRuleListRequest::getWarnLevel()const
 void DescribeJoinRuleListRequest::setWarnLevel(const std::string& warnLevel)
 {
 	warnLevel_ = warnLevel;
-	setCoreParameter("WarnLevel", warnLevel);
+	setCoreParameter("WarnLevel", std::to_string(warnLevel));
 }
 
 std::string DescribeJoinRuleListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeJoinRuleListRequest::getSourceIp()const
 void DescribeJoinRuleListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeJoinRuleListRequest::getPageSize()const

@@ -33,7 +33,7 @@ std::string OnsMessageSendRequest::getInstanceId()const
 void OnsMessageSendRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsMessageSendRequest::getTopic()const
@@ -44,7 +44,7 @@ std::string OnsMessageSendRequest::getTopic()const
 void OnsMessageSendRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 std::string OnsMessageSendRequest::getTag()const
@@ -55,7 +55,7 @@ std::string OnsMessageSendRequest::getTag()const
 void OnsMessageSendRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 std::string OnsMessageSendRequest::getMessage()const
@@ -66,7 +66,7 @@ std::string OnsMessageSendRequest::getMessage()const
 void OnsMessageSendRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", message);
+	setCoreParameter("Message", std::to_string(message));
 }
 
 std::string OnsMessageSendRequest::getKey()const
@@ -77,6 +77,6 @@ std::string OnsMessageSendRequest::getKey()const
 void OnsMessageSendRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

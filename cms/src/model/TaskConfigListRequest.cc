@@ -55,7 +55,7 @@ std::string TaskConfigListRequest::getTaskName()const
 void TaskConfigListRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setCoreParameter("TaskName", std::to_string(taskName));
 }
 
 long TaskConfigListRequest::getId()const

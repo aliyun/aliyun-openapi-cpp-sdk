@@ -44,7 +44,7 @@ std::string ModifyNatGatewayAttributeRequest::getResourceOwnerAccount()const
 void ModifyNatGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyNatGatewayAttributeRequest::getRegionId()const
 void ModifyNatGatewayAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyNatGatewayAttributeRequest::getOwnerAccount()const
 void ModifyNatGatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getName()const
@@ -77,7 +77,7 @@ std::string ModifyNatGatewayAttributeRequest::getName()const
 void ModifyNatGatewayAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyNatGatewayAttributeRequest::getDescription()const
 void ModifyNatGatewayAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getNatGatewayId()const
@@ -99,7 +99,7 @@ std::string ModifyNatGatewayAttributeRequest::getNatGatewayId()const
 void ModifyNatGatewayAttributeRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setCoreParameter("NatGatewayId", std::to_string(natGatewayId));
 }
 
 long ModifyNatGatewayAttributeRequest::getOwnerId()const

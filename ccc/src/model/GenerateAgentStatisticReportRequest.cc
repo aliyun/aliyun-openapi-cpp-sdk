@@ -33,7 +33,7 @@ std::string GenerateAgentStatisticReportRequest::getAgentId()const
 void GenerateAgentStatisticReportRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 std::string GenerateAgentStatisticReportRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string GenerateAgentStatisticReportRequest::getInstanceId()const
 void GenerateAgentStatisticReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GenerateAgentStatisticReportRequest::getEndDate()const
@@ -55,7 +55,7 @@ std::string GenerateAgentStatisticReportRequest::getEndDate()const
 void GenerateAgentStatisticReportRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 int GenerateAgentStatisticReportRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string GenerateAgentStatisticReportRequest::getStartDate()const
 void GenerateAgentStatisticReportRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 int GenerateAgentStatisticReportRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string GenerateAgentStatisticReportRequest::getAccessKeyId()const
 void GenerateAgentStatisticReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

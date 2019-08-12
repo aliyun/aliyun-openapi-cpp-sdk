@@ -33,7 +33,7 @@ std::string DescribeDeploymentProductRequest::getSourceIp()const
 void DescribeDeploymentProductRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeDeploymentProductRequest::getCertificateId()const
@@ -55,6 +55,6 @@ std::string DescribeDeploymentProductRequest::getLang()const
 void DescribeDeploymentProductRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

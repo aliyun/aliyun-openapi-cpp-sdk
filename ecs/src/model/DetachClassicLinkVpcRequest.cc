@@ -33,7 +33,7 @@ std::string DetachClassicLinkVpcRequest::getSourceRegionId()const
 void DetachClassicLinkVpcRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DetachClassicLinkVpcRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DetachClassicLinkVpcRequest::getInstanceId()const
 void DetachClassicLinkVpcRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DetachClassicLinkVpcRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DetachClassicLinkVpcRequest::getResourceOwnerAccount()const
 void DetachClassicLinkVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachClassicLinkVpcRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DetachClassicLinkVpcRequest::getRegionId()const
 void DetachClassicLinkVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DetachClassicLinkVpcRequest::getVpcId()const
@@ -88,7 +88,7 @@ std::string DetachClassicLinkVpcRequest::getVpcId()const
 void DetachClassicLinkVpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 long DetachClassicLinkVpcRequest::getOwnerId()const

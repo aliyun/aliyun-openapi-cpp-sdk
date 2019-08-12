@@ -44,7 +44,7 @@ std::string DescribeTagsRequest::getResourceOwnerAccount()const
 void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeTagsRequest::getRegionId()const
 void DescribeTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeTagsRequest::getNextToken()const
@@ -66,7 +66,7 @@ std::string DescribeTagsRequest::getNextToken()const
 void DescribeTagsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setCoreParameter("NextToken", std::to_string(nextToken));
 }
 
 std::string DescribeTagsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeTagsRequest::getOwnerAccount()const
 void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeTagsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeTagsRequest::getResourceType()const
 void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeTagsRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeTagsRequest::getAccessKeyId()const
 void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

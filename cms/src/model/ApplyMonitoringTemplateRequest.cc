@@ -44,7 +44,7 @@ std::string ApplyMonitoringTemplateRequest::getApplyMode()const
 void ApplyMonitoringTemplateRequest::setApplyMode(const std::string& applyMode)
 {
 	applyMode_ = applyMode;
-	setCoreParameter("ApplyMode", applyMode);
+	setCoreParameter("ApplyMode", std::to_string(applyMode));
 }
 
 std::string ApplyMonitoringTemplateRequest::getWebhook()const
@@ -55,7 +55,7 @@ std::string ApplyMonitoringTemplateRequest::getWebhook()const
 void ApplyMonitoringTemplateRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", webhook);
+	setCoreParameter("Webhook", std::to_string(webhook));
 }
 
 std::string ApplyMonitoringTemplateRequest::getTemplateIds()const
@@ -66,7 +66,7 @@ std::string ApplyMonitoringTemplateRequest::getTemplateIds()const
 void ApplyMonitoringTemplateRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setCoreParameter("TemplateIds", std::to_string(templateIds));
 }
 
 long ApplyMonitoringTemplateRequest::getEnableEndTime()const

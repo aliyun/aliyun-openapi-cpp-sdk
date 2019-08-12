@@ -44,7 +44,7 @@ std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
 void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateVideoInfoRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string UpdateVideoInfoRequest::getDescription()const
 void UpdateVideoInfoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string UpdateVideoInfoRequest::getVideoId()const
@@ -66,7 +66,7 @@ std::string UpdateVideoInfoRequest::getVideoId()const
 void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 long UpdateVideoInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string UpdateVideoInfoRequest::getTitle()const
 void UpdateVideoInfoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string UpdateVideoInfoRequest::getTags()const
@@ -99,7 +99,7 @@ std::string UpdateVideoInfoRequest::getTags()const
 void UpdateVideoInfoRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 std::string UpdateVideoInfoRequest::getCoverURL()const
@@ -110,7 +110,7 @@ std::string UpdateVideoInfoRequest::getCoverURL()const
 void UpdateVideoInfoRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", std::to_string(coverURL));
 }
 
 std::string UpdateVideoInfoRequest::getDownloadSwitch()const
@@ -121,7 +121,7 @@ std::string UpdateVideoInfoRequest::getDownloadSwitch()const
 void UpdateVideoInfoRequest::setDownloadSwitch(const std::string& downloadSwitch)
 {
 	downloadSwitch_ = downloadSwitch;
-	setCoreParameter("DownloadSwitch", downloadSwitch);
+	setCoreParameter("DownloadSwitch", std::to_string(downloadSwitch));
 }
 
 long UpdateVideoInfoRequest::getCateId()const
@@ -143,7 +143,7 @@ std::string UpdateVideoInfoRequest::getCustomMediaInfo()const
 void UpdateVideoInfoRequest::setCustomMediaInfo(const std::string& customMediaInfo)
 {
 	customMediaInfo_ = customMediaInfo;
-	setCoreParameter("CustomMediaInfo", customMediaInfo);
+	setCoreParameter("CustomMediaInfo", std::to_string(customMediaInfo));
 }
 
 std::string UpdateVideoInfoRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string UpdateVideoInfoRequest::getStatus()const
 void UpdateVideoInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

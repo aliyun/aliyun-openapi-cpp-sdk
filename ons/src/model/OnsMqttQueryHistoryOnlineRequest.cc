@@ -33,7 +33,7 @@ std::string OnsMqttQueryHistoryOnlineRequest::getInstanceId()const
 void OnsMqttQueryHistoryOnlineRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsMqttQueryHistoryOnlineRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsMqttQueryHistoryOnlineRequest::getGroupId()const
 void OnsMqttQueryHistoryOnlineRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getEndTime()const

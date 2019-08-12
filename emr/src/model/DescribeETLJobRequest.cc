@@ -44,7 +44,7 @@ std::string DescribeETLJobRequest::getRegionId()const
 void DescribeETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeETLJobRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeETLJobRequest::getId()const
 void DescribeETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeETLJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeETLJobRequest::getAccessKeyId()const
 void DescribeETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

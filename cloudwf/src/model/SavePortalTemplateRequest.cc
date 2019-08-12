@@ -33,7 +33,7 @@ std::string SavePortalTemplateRequest::getTextContent()const
 void SavePortalTemplateRequest::setTextContent(const std::string& textContent)
 {
 	textContent_ = textContent;
-	setCoreParameter("TextContent", textContent);
+	setCoreParameter("TextContent", std::to_string(textContent));
 }
 
 std::string SavePortalTemplateRequest::getTempName()const
@@ -44,7 +44,7 @@ std::string SavePortalTemplateRequest::getTempName()const
 void SavePortalTemplateRequest::setTempName(const std::string& tempName)
 {
 	tempName_ = tempName;
-	setCoreParameter("TempName", tempName);
+	setCoreParameter("TempName", std::to_string(tempName));
 }
 
 std::string SavePortalTemplateRequest::getTextAlign()const
@@ -55,7 +55,7 @@ std::string SavePortalTemplateRequest::getTextAlign()const
 void SavePortalTemplateRequest::setTextAlign(const std::string& textAlign)
 {
 	textAlign_ = textAlign;
-	setCoreParameter("TextAlign", textAlign);
+	setCoreParameter("TextAlign", std::to_string(textAlign));
 }
 
 std::string SavePortalTemplateRequest::getTextColor()const
@@ -66,7 +66,7 @@ std::string SavePortalTemplateRequest::getTextColor()const
 void SavePortalTemplateRequest::setTextColor(const std::string& textColor)
 {
 	textColor_ = textColor;
-	setCoreParameter("TextColor", textColor);
+	setCoreParameter("TextColor", std::to_string(textColor));
 }
 
 long SavePortalTemplateRequest::getId()const
@@ -99,6 +99,6 @@ std::string SavePortalTemplateRequest::getAccessKeyId()const
 void SavePortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

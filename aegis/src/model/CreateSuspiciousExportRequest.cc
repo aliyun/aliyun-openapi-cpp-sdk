@@ -33,7 +33,7 @@ std::string CreateSuspiciousExportRequest::getStatusList()const
 void CreateSuspiciousExportRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
+	setCoreParameter("StatusList", std::to_string(statusList));
 }
 
 std::string CreateSuspiciousExportRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateSuspiciousExportRequest::getSourceIp()const
 void CreateSuspiciousExportRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateSuspiciousExportRequest::getEventNameRemark()const
@@ -55,7 +55,7 @@ std::string CreateSuspiciousExportRequest::getEventNameRemark()const
 void CreateSuspiciousExportRequest::setEventNameRemark(const std::string& eventNameRemark)
 {
 	eventNameRemark_ = eventNameRemark;
-	setCoreParameter("EventNameRemark", eventNameRemark);
+	setCoreParameter("EventNameRemark", std::to_string(eventNameRemark));
 }
 
 std::string CreateSuspiciousExportRequest::getLevel()const
@@ -66,7 +66,7 @@ std::string CreateSuspiciousExportRequest::getLevel()const
 void CreateSuspiciousExportRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setCoreParameter("Level", std::to_string(level));
 }
 
 std::string CreateSuspiciousExportRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string CreateSuspiciousExportRequest::getGroupId()const
 void CreateSuspiciousExportRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string CreateSuspiciousExportRequest::getDealed()const
@@ -88,7 +88,7 @@ std::string CreateSuspiciousExportRequest::getDealed()const
 void CreateSuspiciousExportRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 std::string CreateSuspiciousExportRequest::getEventType()const
@@ -99,7 +99,7 @@ std::string CreateSuspiciousExportRequest::getEventType()const
 void CreateSuspiciousExportRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 std::string CreateSuspiciousExportRequest::getRemark()const
@@ -110,7 +110,7 @@ std::string CreateSuspiciousExportRequest::getRemark()const
 void CreateSuspiciousExportRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string CreateSuspiciousExportRequest::getTag()const
@@ -121,6 +121,6 @@ std::string CreateSuspiciousExportRequest::getTag()const
 void CreateSuspiciousExportRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 

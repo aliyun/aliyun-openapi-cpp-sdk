@@ -44,7 +44,7 @@ std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
 void SubmitPreprocessJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitPreprocessJobsRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string SubmitPreprocessJobsRequest::getVideoId()const
 void SubmitPreprocessJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 long SubmitPreprocessJobsRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string SubmitPreprocessJobsRequest::getPreprocessType()const
 void SubmitPreprocessJobsRequest::setPreprocessType(const std::string& preprocessType)
 {
 	preprocessType_ = preprocessType;
-	setCoreParameter("PreprocessType", preprocessType);
+	setCoreParameter("PreprocessType", std::to_string(preprocessType));
 }
 
 std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
 void SubmitPreprocessJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

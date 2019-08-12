@@ -33,6 +33,6 @@ std::string ScaleClusterRequest::getClusterId()const
 void ScaleClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 

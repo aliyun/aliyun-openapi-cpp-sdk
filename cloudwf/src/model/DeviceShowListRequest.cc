@@ -33,7 +33,7 @@ std::string DeviceShowListRequest::getDirc()const
 void DeviceShowListRequest::setDirc(const std::string& dirc)
 {
 	dirc_ = dirc;
-	setCoreParameter("Dirc", dirc);
+	setCoreParameter("Dirc", std::to_string(dirc));
 }
 
 int DeviceShowListRequest::getPage()const
@@ -77,7 +77,7 @@ std::string DeviceShowListRequest::getAccessKeyId()const
 void DeviceShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long DeviceShowListRequest::getSid()const

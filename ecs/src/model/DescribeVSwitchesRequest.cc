@@ -33,7 +33,7 @@ std::string DescribeVSwitchesRequest::getVSwitchId()const
 void DescribeVSwitchesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 long DescribeVSwitchesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeVSwitchesRequest::getResourceOwnerAccount()const
 void DescribeVSwitchesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVSwitchesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVSwitchesRequest::getRegionId()const
 void DescribeVSwitchesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVSwitchesRequest::getVpcId()const
@@ -77,7 +77,7 @@ std::string DescribeVSwitchesRequest::getVpcId()const
 void DescribeVSwitchesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string DescribeVSwitchesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVSwitchesRequest::getOwnerAccount()const
 void DescribeVSwitchesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeVSwitchesRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeVSwitchesRequest::getZoneId()const
 void DescribeVSwitchesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 bool DescribeVSwitchesRequest::getIsDefault()const
@@ -121,7 +121,7 @@ bool DescribeVSwitchesRequest::getIsDefault()const
 void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault);
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeVSwitchesRequest::getOwnerId()const

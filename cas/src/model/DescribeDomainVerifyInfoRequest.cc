@@ -33,7 +33,7 @@ std::string DescribeDomainVerifyInfoRequest::getSourceIp()const
 void DescribeDomainVerifyInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeDomainVerifyInfoRequest::getOrderId()const
@@ -55,6 +55,6 @@ std::string DescribeDomainVerifyInfoRequest::getLang()const
 void DescribeDomainVerifyInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

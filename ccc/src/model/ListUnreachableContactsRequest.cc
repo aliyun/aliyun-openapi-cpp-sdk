@@ -33,7 +33,7 @@ std::string ListUnreachableContactsRequest::getInstanceId()const
 void ListUnreachableContactsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListUnreachableContactsRequest::getJobGroupId()const
@@ -44,7 +44,7 @@ std::string ListUnreachableContactsRequest::getJobGroupId()const
 void ListUnreachableContactsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 
 int ListUnreachableContactsRequest::getPageSize()const

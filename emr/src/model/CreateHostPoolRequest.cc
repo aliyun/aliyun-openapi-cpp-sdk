@@ -44,7 +44,7 @@ std::string CreateHostPoolRequest::getRegionId()const
 void CreateHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateHostPoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateHostPoolRequest::getName()const
 void CreateHostPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateHostPoolRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateHostPoolRequest::getDescription()const
 void CreateHostPoolRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::vector<CreateHostPoolRequest::KubeClusterInfo> CreateHostPoolRequest::getKubeClusterInfo()const
@@ -96,7 +96,7 @@ std::string CreateHostPoolRequest::getType()const
 void CreateHostPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateHostPoolRequest::getAccessKeyId()const
@@ -107,6 +107,6 @@ std::string CreateHostPoolRequest::getAccessKeyId()const
 void CreateHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

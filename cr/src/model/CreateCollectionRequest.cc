@@ -33,6 +33,6 @@ std::string CreateCollectionRequest::getRegionId()const
 void CreateCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

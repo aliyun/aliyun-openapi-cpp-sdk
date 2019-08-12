@@ -44,7 +44,7 @@ std::string UpdateMediaCategoryRequest::getResourceOwnerAccount()const
 void UpdateMediaCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long UpdateMediaCategoryRequest::getCateId()const
@@ -66,7 +66,7 @@ std::string UpdateMediaCategoryRequest::getOwnerAccount()const
 void UpdateMediaCategoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long UpdateMediaCategoryRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string UpdateMediaCategoryRequest::getMediaId()const
 void UpdateMediaCategoryRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", std::to_string(mediaId));
 }
 
 std::string UpdateMediaCategoryRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateMediaCategoryRequest::getAccessKeyId()const
 void UpdateMediaCategoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

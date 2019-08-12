@@ -33,7 +33,7 @@ std::string ApgroupBatchAddApRequest::getApAssetIds()const
 void ApgroupBatchAddApRequest::setApAssetIds(const std::string& apAssetIds)
 {
 	apAssetIds_ = apAssetIds;
-	setCoreParameter("ApAssetIds", apAssetIds);
+	setCoreParameter("ApAssetIds", std::to_string(apAssetIds));
 }
 
 long ApgroupBatchAddApRequest::getApgroupId()const
@@ -55,6 +55,6 @@ std::string ApgroupBatchAddApRequest::getAccessKeyId()const
 void ApgroupBatchAddApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

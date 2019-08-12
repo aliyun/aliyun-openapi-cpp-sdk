@@ -33,7 +33,7 @@ std::string ModifyBackupStrategyRequest::getBackupPeriod()const
 void ModifyBackupStrategyRequest::setBackupPeriod(const std::string& backupPeriod)
 {
 	backupPeriod_ = backupPeriod;
-	setCoreParameter("BackupPeriod", backupPeriod);
+	setCoreParameter("BackupPeriod", std::to_string(backupPeriod));
 }
 
 std::string ModifyBackupStrategyRequest::getBackupStartTime()const
@@ -44,7 +44,7 @@ std::string ModifyBackupStrategyRequest::getBackupStartTime()const
 void ModifyBackupStrategyRequest::setBackupStartTime(const std::string& backupStartTime)
 {
 	backupStartTime_ = backupStartTime;
-	setCoreParameter("BackupStartTime", backupStartTime);
+	setCoreParameter("BackupStartTime", std::to_string(backupStartTime));
 }
 
 std::string ModifyBackupStrategyRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyBackupStrategyRequest::getRegionId()const
 void ModifyBackupStrategyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyBackupStrategyRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyBackupStrategyRequest::getClientToken()const
 void ModifyBackupStrategyRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyBackupStrategyRequest::getBackupPlanId()const
@@ -77,7 +77,7 @@ std::string ModifyBackupStrategyRequest::getBackupPlanId()const
 void ModifyBackupStrategyRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string ModifyBackupStrategyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string ModifyBackupStrategyRequest::getOwnerId()const
 void ModifyBackupStrategyRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

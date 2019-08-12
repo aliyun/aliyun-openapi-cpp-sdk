@@ -33,7 +33,7 @@ std::string GetLicenseRequest::getResourceOwnerId()const
 void GetLicenseRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetLicenseRequest::getData()const
@@ -44,7 +44,7 @@ std::string GetLicenseRequest::getData()const
 void GetLicenseRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string GetLicenseRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetLicenseRequest::getResourceOwnerAccount()const
 void GetLicenseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetLicenseRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GetLicenseRequest::getOwnerAccount()const
 void GetLicenseRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string GetLicenseRequest::getHeader()const
@@ -77,7 +77,7 @@ std::string GetLicenseRequest::getHeader()const
 void GetLicenseRequest::setHeader(const std::string& header)
 {
 	header_ = header;
-	setCoreParameter("Header", header);
+	setCoreParameter("Header", std::to_string(header));
 }
 
 std::string GetLicenseRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string GetLicenseRequest::getOwnerId()const
 void GetLicenseRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetLicenseRequest::getMediaId()const
@@ -99,7 +99,7 @@ std::string GetLicenseRequest::getMediaId()const
 void GetLicenseRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", std::to_string(mediaId));
 }
 
 std::string GetLicenseRequest::getType()const
@@ -110,7 +110,7 @@ std::string GetLicenseRequest::getType()const
 void GetLicenseRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string GetLicenseRequest::getLicenseUrl()const
@@ -121,7 +121,7 @@ std::string GetLicenseRequest::getLicenseUrl()const
 void GetLicenseRequest::setLicenseUrl(const std::string& licenseUrl)
 {
 	licenseUrl_ = licenseUrl;
-	setCoreParameter("LicenseUrl", licenseUrl);
+	setCoreParameter("LicenseUrl", std::to_string(licenseUrl));
 }
 
 std::string GetLicenseRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string GetLicenseRequest::getAccessKeyId()const
 void GetLicenseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

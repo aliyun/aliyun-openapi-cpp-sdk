@@ -44,7 +44,7 @@ std::string StopParagraphRequest::getRegionId()const
 void StopParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StopParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string StopParagraphRequest::getNoteId()const
 void StopParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 
 std::string StopParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string StopParagraphRequest::getId()const
 void StopParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string StopParagraphRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string StopParagraphRequest::getAccessKeyId()const
 void StopParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

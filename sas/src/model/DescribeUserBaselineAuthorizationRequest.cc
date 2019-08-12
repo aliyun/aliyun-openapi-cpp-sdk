@@ -44,7 +44,7 @@ std::string DescribeUserBaselineAuthorizationRequest::getSourceIp()const
 void DescribeUserBaselineAuthorizationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeUserBaselineAuthorizationRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeUserBaselineAuthorizationRequest::getLang()const
 void DescribeUserBaselineAuthorizationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

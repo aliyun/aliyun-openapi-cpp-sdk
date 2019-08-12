@@ -33,7 +33,7 @@ std::string DescribeBackupPlanListRequest::getRegionId()const
 void DescribeBackupPlanListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBackupPlanListRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DescribeBackupPlanListRequest::getClientToken()const
 void DescribeBackupPlanListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int DescribeBackupPlanListRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeBackupPlanListRequest::getBackupPlanId()const
 void DescribeBackupPlanListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string DescribeBackupPlanListRequest::getRegion()const
@@ -77,7 +77,7 @@ std::string DescribeBackupPlanListRequest::getRegion()const
 void DescribeBackupPlanListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 int DescribeBackupPlanListRequest::getPageNum()const
@@ -99,6 +99,6 @@ std::string DescribeBackupPlanListRequest::getOwnerId()const
 void DescribeBackupPlanListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

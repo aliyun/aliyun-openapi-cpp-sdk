@@ -33,7 +33,7 @@ std::string CreateImageLibRequest::getSourceIp()const
 void CreateImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 bool CreateImageLibRequest::getEnable()const
@@ -44,7 +44,7 @@ bool CreateImageLibRequest::getEnable()const
 void CreateImageLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateImageLibRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateImageLibRequest::getName()const
 void CreateImageLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateImageLibRequest::getBizTypes()const
@@ -66,7 +66,7 @@ std::string CreateImageLibRequest::getBizTypes()const
 void CreateImageLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", bizTypes);
+	setCoreParameter("BizTypes", std::to_string(bizTypes));
 }
 
 std::string CreateImageLibRequest::getServiceModule()const
@@ -77,7 +77,7 @@ std::string CreateImageLibRequest::getServiceModule()const
 void CreateImageLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setCoreParameter("ServiceModule", std::to_string(serviceModule));
 }
 
 std::string CreateImageLibRequest::getCategory()const
@@ -88,7 +88,7 @@ std::string CreateImageLibRequest::getCategory()const
 void CreateImageLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string CreateImageLibRequest::getScene()const
@@ -99,6 +99,6 @@ std::string CreateImageLibRequest::getScene()const
 void CreateImageLibRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeVulStatisticsRequest::getEndModifyTimePatch()const
 void DescribeVulStatisticsRequest::setEndModifyTimePatch(const std::string& endModifyTimePatch)
 {
 	endModifyTimePatch_ = endModifyTimePatch;
-	setCoreParameter("EndModifyTimePatch", endModifyTimePatch);
+	setCoreParameter("EndModifyTimePatch", std::to_string(endModifyTimePatch));
 }
 
 std::string DescribeVulStatisticsRequest::getRemarkPatch()const
@@ -44,7 +44,7 @@ std::string DescribeVulStatisticsRequest::getRemarkPatch()const
 void DescribeVulStatisticsRequest::setRemarkPatch(const std::string& remarkPatch)
 {
 	remarkPatch_ = remarkPatch;
-	setCoreParameter("RemarkPatch", remarkPatch);
+	setCoreParameter("RemarkPatch", std::to_string(remarkPatch));
 }
 
 std::string DescribeVulStatisticsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeVulStatisticsRequest::getSourceIp()const
 void DescribeVulStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeVulStatisticsRequest::getEndFindTimePatch()const
@@ -66,7 +66,7 @@ std::string DescribeVulStatisticsRequest::getEndFindTimePatch()const
 void DescribeVulStatisticsRequest::setEndFindTimePatch(const std::string& endFindTimePatch)
 {
 	endFindTimePatch_ = endFindTimePatch;
-	setCoreParameter("EndFindTimePatch", endFindTimePatch);
+	setCoreParameter("EndFindTimePatch", std::to_string(endFindTimePatch));
 }
 
 std::string DescribeVulStatisticsRequest::getStartModifyTimePatch()const
@@ -77,7 +77,7 @@ std::string DescribeVulStatisticsRequest::getStartModifyTimePatch()const
 void DescribeVulStatisticsRequest::setStartModifyTimePatch(const std::string& startModifyTimePatch)
 {
 	startModifyTimePatch_ = startModifyTimePatch;
-	setCoreParameter("StartModifyTimePatch", startModifyTimePatch);
+	setCoreParameter("StartModifyTimePatch", std::to_string(startModifyTimePatch));
 }
 
 std::string DescribeVulStatisticsRequest::getStartFindTimePatch()const
@@ -88,7 +88,7 @@ std::string DescribeVulStatisticsRequest::getStartFindTimePatch()const
 void DescribeVulStatisticsRequest::setStartFindTimePatch(const std::string& startFindTimePatch)
 {
 	startFindTimePatch_ = startFindTimePatch;
-	setCoreParameter("StartFindTimePatch", startFindTimePatch);
+	setCoreParameter("StartFindTimePatch", std::to_string(startFindTimePatch));
 }
 
 std::string DescribeVulStatisticsRequest::getFrom()const
@@ -99,7 +99,7 @@ std::string DescribeVulStatisticsRequest::getFrom()const
 void DescribeVulStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeVulStatisticsRequest::getDistribution()const
@@ -110,7 +110,7 @@ std::string DescribeVulStatisticsRequest::getDistribution()const
 void DescribeVulStatisticsRequest::setDistribution(const std::string& distribution)
 {
 	distribution_ = distribution;
-	setCoreParameter("Distribution", distribution);
+	setCoreParameter("Distribution", std::to_string(distribution));
 }
 
 std::string DescribeVulStatisticsRequest::getUuid()const
@@ -121,6 +121,6 @@ std::string DescribeVulStatisticsRequest::getUuid()const
 void DescribeVulStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 

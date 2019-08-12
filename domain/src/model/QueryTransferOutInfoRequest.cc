@@ -33,7 +33,7 @@ std::string QueryTransferOutInfoRequest::getDomainName()const
 void QueryTransferOutInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string QueryTransferOutInfoRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryTransferOutInfoRequest::getUserClientIp()const
 void QueryTransferOutInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryTransferOutInfoRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryTransferOutInfoRequest::getLang()const
 void QueryTransferOutInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -44,7 +44,7 @@ std::string RenewWebSiteInstanceRequest::getInstanceId()const
 void RenewWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RenewWebSiteInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string RenewWebSiteInstanceRequest::getClientToken()const
 void RenewWebSiteInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int RenewWebSiteInstanceRequest::getOrderNum()const
@@ -77,7 +77,7 @@ std::string RenewWebSiteInstanceRequest::getCommodityCode()const
 void RenewWebSiteInstanceRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setCoreParameter("CommodityCode", std::to_string(commodityCode));
 }
 
 long RenewWebSiteInstanceRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string RenewWebSiteInstanceRequest::getPricingCycle()const
 void RenewWebSiteInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 
 std::string RenewWebSiteInstanceRequest::getOrderType()const
@@ -110,6 +110,6 @@ std::string RenewWebSiteInstanceRequest::getOrderType()const
 void RenewWebSiteInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

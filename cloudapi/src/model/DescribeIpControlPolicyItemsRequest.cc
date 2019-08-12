@@ -33,7 +33,7 @@ std::string DescribeIpControlPolicyItemsRequest::getIpControlId()const
 void DescribeIpControlPolicyItemsRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setCoreParameter("IpControlId", std::to_string(ipControlId));
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
@@ -44,7 +44,7 @@ std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
 void DescribeIpControlPolicyItemsRequest::setPolicyItemId(const std::string& policyItemId)
 {
 	policyItemId_ = policyItemId;
-	setCoreParameter("PolicyItemId", policyItemId);
+	setCoreParameter("PolicyItemId", std::to_string(policyItemId));
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
 void DescribeIpControlPolicyItemsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeIpControlPolicyItemsRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
 void DescribeIpControlPolicyItemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

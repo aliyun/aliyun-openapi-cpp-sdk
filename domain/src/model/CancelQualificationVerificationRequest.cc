@@ -33,7 +33,7 @@ std::string CancelQualificationVerificationRequest::getInstanceId()const
 void CancelQualificationVerificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CancelQualificationVerificationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CancelQualificationVerificationRequest::getUserClientIp()const
 void CancelQualificationVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string CancelQualificationVerificationRequest::getLang()const
@@ -55,7 +55,7 @@ std::string CancelQualificationVerificationRequest::getLang()const
 void CancelQualificationVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CancelQualificationVerificationRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string CancelQualificationVerificationRequest::getAccessKeyId()const
 void CancelQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CancelQualificationVerificationRequest::getQualificationType()const
@@ -77,6 +77,6 @@ std::string CancelQualificationVerificationRequest::getQualificationType()const
 void CancelQualificationVerificationRequest::setQualificationType(const std::string& qualificationType)
 {
 	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
+	setCoreParameter("QualificationType", std::to_string(qualificationType));
 }
 

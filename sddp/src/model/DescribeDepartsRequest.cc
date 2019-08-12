@@ -33,7 +33,7 @@ std::string DescribeDepartsRequest::getSourceIp()const
 void DescribeDepartsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDepartsRequest::getFeatureType()const
@@ -88,7 +88,7 @@ std::string DescribeDepartsRequest::getLang()const
 void DescribeDepartsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeDepartsRequest::getKey()const
@@ -99,6 +99,6 @@ std::string DescribeDepartsRequest::getKey()const
 void DescribeDepartsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

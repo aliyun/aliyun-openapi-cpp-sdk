@@ -55,7 +55,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getKey()const
@@ -66,7 +66,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getKey()const
 void DescribeDrdsInstanceMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const

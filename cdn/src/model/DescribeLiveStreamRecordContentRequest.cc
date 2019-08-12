@@ -33,7 +33,7 @@ std::string DescribeLiveStreamRecordContentRequest::getAppName()const
 void DescribeLiveStreamRecordContentRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
 void DescribeLiveStreamRecordContentRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
 void DescribeLiveStreamRecordContentRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
 void DescribeLiveStreamRecordContentRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamRecordContentRequest::getStartTime()const
 void DescribeLiveStreamRecordContentRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamRecordContentRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeLiveStreamRecordContentRequest::getStreamName()const
 void DescribeLiveStreamRecordContentRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 

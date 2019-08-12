@@ -44,7 +44,7 @@ std::string MetastoreDropTableRequest::getDbName()const
 void MetastoreDropTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreDropTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDropTableRequest::getRegionId()const
 void MetastoreDropTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreDropTableRequest::getTableId()const
@@ -66,7 +66,7 @@ std::string MetastoreDropTableRequest::getTableId()const
 void MetastoreDropTableRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setCoreParameter("TableId", std::to_string(tableId));
 }
 
 std::string MetastoreDropTableRequest::getTableName()const
@@ -77,7 +77,7 @@ std::string MetastoreDropTableRequest::getTableName()const
 void MetastoreDropTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", tableName);
+	setCoreParameter("TableName", std::to_string(tableName));
 }
 
 std::string MetastoreDropTableRequest::getDatabaseId()const
@@ -88,7 +88,7 @@ std::string MetastoreDropTableRequest::getDatabaseId()const
 void MetastoreDropTableRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setCoreParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", std::to_string(databaseId));
 }
 
 std::string MetastoreDropTableRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string MetastoreDropTableRequest::getAccessKeyId()const
 void MetastoreDropTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

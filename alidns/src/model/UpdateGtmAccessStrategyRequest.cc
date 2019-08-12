@@ -33,7 +33,7 @@ std::string UpdateGtmAccessStrategyRequest::getStrategyName()const
 void UpdateGtmAccessStrategyRequest::setStrategyName(const std::string& strategyName)
 {
 	strategyName_ = strategyName;
-	setCoreParameter("StrategyName", strategyName);
+	setCoreParameter("StrategyName", std::to_string(strategyName));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getDefaultAddrPoolId()const
@@ -44,7 +44,7 @@ std::string UpdateGtmAccessStrategyRequest::getDefaultAddrPoolId()const
 void UpdateGtmAccessStrategyRequest::setDefaultAddrPoolId(const std::string& defaultAddrPoolId)
 {
 	defaultAddrPoolId_ = defaultAddrPoolId;
-	setCoreParameter("DefaultAddrPoolId", defaultAddrPoolId);
+	setCoreParameter("DefaultAddrPoolId", std::to_string(defaultAddrPoolId));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getAccessLines()const
@@ -55,7 +55,7 @@ std::string UpdateGtmAccessStrategyRequest::getAccessLines()const
 void UpdateGtmAccessStrategyRequest::setAccessLines(const std::string& accessLines)
 {
 	accessLines_ = accessLines;
-	setCoreParameter("AccessLines", accessLines);
+	setCoreParameter("AccessLines", std::to_string(accessLines));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getFailoverAddrPoolId()const
@@ -66,7 +66,7 @@ std::string UpdateGtmAccessStrategyRequest::getFailoverAddrPoolId()const
 void UpdateGtmAccessStrategyRequest::setFailoverAddrPoolId(const std::string& failoverAddrPoolId)
 {
 	failoverAddrPoolId_ = failoverAddrPoolId;
-	setCoreParameter("FailoverAddrPoolId", failoverAddrPoolId);
+	setCoreParameter("FailoverAddrPoolId", std::to_string(failoverAddrPoolId));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getUserClientIp()const
@@ -77,7 +77,7 @@ std::string UpdateGtmAccessStrategyRequest::getUserClientIp()const
 void UpdateGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getStrategyId()const
@@ -88,7 +88,7 @@ std::string UpdateGtmAccessStrategyRequest::getStrategyId()const
 void UpdateGtmAccessStrategyRequest::setStrategyId(const std::string& strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string UpdateGtmAccessStrategyRequest::getLang()const
@@ -99,6 +99,6 @@ std::string UpdateGtmAccessStrategyRequest::getLang()const
 void UpdateGtmAccessStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

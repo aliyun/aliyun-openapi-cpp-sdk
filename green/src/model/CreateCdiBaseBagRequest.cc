@@ -44,7 +44,7 @@ std::string CreateCdiBaseBagRequest::getClientToken()const
 void CreateCdiBaseBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateCdiBaseBagRequest::getCommodityCode()const
@@ -55,7 +55,7 @@ std::string CreateCdiBaseBagRequest::getCommodityCode()const
 void CreateCdiBaseBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setCoreParameter("CommodityCode", std::to_string(commodityCode));
 }
 
 long CreateCdiBaseBagRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string CreateCdiBaseBagRequest::getOrderType()const
 void CreateCdiBaseBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

@@ -55,7 +55,7 @@ std::string QueryTaskInfoHistoryRequest::getTaskNoCursor()const
 void QueryTaskInfoHistoryRequest::setTaskNoCursor(const std::string& taskNoCursor)
 {
 	taskNoCursor_ = taskNoCursor;
-	setCoreParameter("TaskNoCursor", taskNoCursor);
+	setCoreParameter("TaskNoCursor", std::to_string(taskNoCursor));
 }
 
 std::string QueryTaskInfoHistoryRequest::getUserClientIp()const
@@ -66,7 +66,7 @@ std::string QueryTaskInfoHistoryRequest::getUserClientIp()const
 void QueryTaskInfoHistoryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int QueryTaskInfoHistoryRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string QueryTaskInfoHistoryRequest::getLang()const
 void QueryTaskInfoHistoryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long QueryTaskInfoHistoryRequest::getCreateTimeCursor()const

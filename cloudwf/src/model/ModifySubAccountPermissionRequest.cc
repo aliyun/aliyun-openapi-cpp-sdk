@@ -57,7 +57,7 @@ std::string ModifySubAccountPermissionRequest::getPagePermission()const
 void ModifySubAccountPermissionRequest::setPagePermission(const std::string& pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setCoreParameter("PagePermission", pagePermission);
+	setCoreParameter("PagePermission", std::to_string(pagePermission));
 }
 
 long ModifySubAccountPermissionRequest::getId()const
@@ -79,7 +79,7 @@ std::string ModifySubAccountPermissionRequest::getAccessKeyId()const
 void ModifySubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<long> ModifySubAccountPermissionRequest::getBusinessIds()const

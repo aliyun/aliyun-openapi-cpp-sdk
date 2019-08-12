@@ -33,7 +33,7 @@ std::string PlanComponentTopoRequest::getClusterType()const
 void PlanComponentTopoRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", std::to_string(clusterType));
 }
 
 long PlanComponentTopoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string PlanComponentTopoRequest::getRegionId()const
 void PlanComponentTopoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<PlanComponentTopoRequest::HostGroup> PlanComponentTopoRequest::getHostGroup()const
@@ -101,7 +101,7 @@ std::string PlanComponentTopoRequest::getStackName()const
 void PlanComponentTopoRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setCoreParameter("StackName", std::to_string(stackName));
 }
 
 std::string PlanComponentTopoRequest::getClusterId()const
@@ -112,7 +112,7 @@ std::string PlanComponentTopoRequest::getClusterId()const
 void PlanComponentTopoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string PlanComponentTopoRequest::getStackVersion()const
@@ -123,7 +123,7 @@ std::string PlanComponentTopoRequest::getStackVersion()const
 void PlanComponentTopoRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", stackVersion);
+	setCoreParameter("StackVersion", std::to_string(stackVersion));
 }
 
 std::vector<PlanComponentTopoRequest::ServiceInfo> PlanComponentTopoRequest::getServiceInfo()const
@@ -152,6 +152,6 @@ std::string PlanComponentTopoRequest::getAccessKeyId()const
 void PlanComponentTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

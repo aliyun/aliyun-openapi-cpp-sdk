@@ -55,7 +55,7 @@ bool RenewMultiInstanceRequest::getAutoPay()const
 void RenewMultiInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string RenewMultiInstanceRequest::getFromApp()const
@@ -66,7 +66,7 @@ std::string RenewMultiInstanceRequest::getFromApp()const
 void RenewMultiInstanceRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
+	setCoreParameter("FromApp", std::to_string(fromApp));
 }
 
 std::string RenewMultiInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RenewMultiInstanceRequest::getResourceOwnerAccount()const
 void RenewMultiInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RenewMultiInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RenewMultiInstanceRequest::getOwnerAccount()const
 void RenewMultiInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RenewMultiInstanceRequest::getCouponNo()const
@@ -99,7 +99,7 @@ std::string RenewMultiInstanceRequest::getCouponNo()const
 void RenewMultiInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 long RenewMultiInstanceRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string RenewMultiInstanceRequest::getAccessKeyId()const
 void RenewMultiInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string RenewMultiInstanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string RenewMultiInstanceRequest::getSecurityToken()const
 void RenewMultiInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RenewMultiInstanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string RenewMultiInstanceRequest::getRegionId()const
 void RenewMultiInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RenewMultiInstanceRequest::getInstanceIds()const
@@ -154,7 +154,7 @@ std::string RenewMultiInstanceRequest::getInstanceIds()const
 void RenewMultiInstanceRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string RenewMultiInstanceRequest::getBusinessInfo()const
@@ -165,6 +165,6 @@ std::string RenewMultiInstanceRequest::getBusinessInfo()const
 void RenewMultiInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
 }
 

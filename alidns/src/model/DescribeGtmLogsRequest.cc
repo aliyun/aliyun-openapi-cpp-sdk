@@ -33,7 +33,7 @@ std::string DescribeGtmLogsRequest::getInstanceId()const
 void DescribeGtmLogsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeGtmLogsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeGtmLogsRequest::getUserClientIp()const
 void DescribeGtmLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int DescribeGtmLogsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeGtmLogsRequest::getLang()const
 void DescribeGtmLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeGtmLogsRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string DescribeGtmLogsRequest::getKeyword()const
 void DescribeGtmLogsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 long DescribeGtmLogsRequest::getStartTimestamp()const

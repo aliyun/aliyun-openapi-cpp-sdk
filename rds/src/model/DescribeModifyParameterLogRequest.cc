@@ -44,7 +44,7 @@ std::string DescribeModifyParameterLogRequest::getResourceOwnerAccount()const
 void DescribeModifyParameterLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeModifyParameterLogRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeModifyParameterLogRequest::getOwnerAccount()const
 void DescribeModifyParameterLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeModifyParameterLogRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeModifyParameterLogRequest::getEndTime()const
 void DescribeModifyParameterLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeModifyParameterLogRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeModifyParameterLogRequest::getDBInstanceId()const
 void DescribeModifyParameterLogRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeModifyParameterLogRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeModifyParameterLogRequest::getStartTime()const
 void DescribeModifyParameterLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeModifyParameterLogRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeModifyParameterLogRequest::getAccessKeyId()const
 void DescribeModifyParameterLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

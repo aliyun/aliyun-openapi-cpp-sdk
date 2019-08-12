@@ -33,7 +33,7 @@ std::string CancelOrderRequest::getOrderId()const
 void CancelOrderRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 long CancelOrderRequest::getOwnerId()const

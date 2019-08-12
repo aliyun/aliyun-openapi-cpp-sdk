@@ -33,7 +33,7 @@ std::string ListOutboundPhoneNumberOfUserRequest::getInstanceId()const
 void ListOutboundPhoneNumberOfUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListOutboundPhoneNumberOfUserRequest::getUserId()const
@@ -44,7 +44,7 @@ std::string ListOutboundPhoneNumberOfUserRequest::getUserId()const
 void ListOutboundPhoneNumberOfUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ListOutboundPhoneNumberOfUserRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListOutboundPhoneNumberOfUserRequest::getAccessKeyId()const
 void ListOutboundPhoneNumberOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

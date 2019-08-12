@@ -33,7 +33,7 @@ std::string DetachInstanceRamRoleRequest::getSourceRegionId()const
 void DetachInstanceRamRoleRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DetachInstanceRamRoleRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DetachInstanceRamRoleRequest::getResourceOwnerAccount()const
 void DetachInstanceRamRoleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachInstanceRamRoleRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DetachInstanceRamRoleRequest::getRegionId()const
 void DetachInstanceRamRoleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DetachInstanceRamRoleRequest::getInstanceIds()const
@@ -77,7 +77,7 @@ std::string DetachInstanceRamRoleRequest::getInstanceIds()const
 void DetachInstanceRamRoleRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string DetachInstanceRamRoleRequest::getRamRoleName()const
@@ -88,7 +88,7 @@ std::string DetachInstanceRamRoleRequest::getRamRoleName()const
 void DetachInstanceRamRoleRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setCoreParameter("RamRoleName", std::to_string(ramRoleName));
 }
 
 long DetachInstanceRamRoleRequest::getOwnerId()const

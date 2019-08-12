@@ -44,7 +44,7 @@ std::string ModifyDBDescriptionRequest::getDBName()const
 void ModifyDBDescriptionRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string ModifyDBDescriptionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBDescriptionRequest::getResourceOwnerAccount()const
 void ModifyDBDescriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBDescriptionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyDBDescriptionRequest::getOwnerAccount()const
 void ModifyDBDescriptionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBDescriptionRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBDescriptionRequest::getDBInstanceId()const
 void ModifyDBDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string ModifyDBDescriptionRequest::getDBDescription()const
@@ -88,7 +88,7 @@ std::string ModifyDBDescriptionRequest::getDBDescription()const
 void ModifyDBDescriptionRequest::setDBDescription(const std::string& dBDescription)
 {
 	dBDescription_ = dBDescription;
-	setCoreParameter("DBDescription", dBDescription);
+	setCoreParameter("DBDescription", std::to_string(dBDescription));
 }
 
 long ModifyDBDescriptionRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyDBDescriptionRequest::getAccessKeyId()const
 void ModifyDBDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

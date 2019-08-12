@@ -44,7 +44,7 @@ std::string GetTranscodeTaskRequest::getResourceOwnerAccount()const
 void GetTranscodeTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetTranscodeTaskRequest::getTranscodeTaskId()const
@@ -55,7 +55,7 @@ std::string GetTranscodeTaskRequest::getTranscodeTaskId()const
 void GetTranscodeTaskRequest::setTranscodeTaskId(const std::string& transcodeTaskId)
 {
 	transcodeTaskId_ = transcodeTaskId;
-	setCoreParameter("TranscodeTaskId", transcodeTaskId);
+	setCoreParameter("TranscodeTaskId", std::to_string(transcodeTaskId));
 }
 
 long GetTranscodeTaskRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string GetTranscodeTaskRequest::getAccessKeyId()const
 void GetTranscodeTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

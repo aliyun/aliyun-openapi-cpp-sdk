@@ -44,7 +44,7 @@ std::string QueryAuthenticationRequest::getIotId()const
 void QueryAuthenticationRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 int QueryAuthenticationRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string QueryAuthenticationRequest::getDeviceName()const
 void QueryAuthenticationRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string QueryAuthenticationRequest::getProductKey()const
@@ -88,6 +88,6 @@ std::string QueryAuthenticationRequest::getProductKey()const
 void QueryAuthenticationRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 

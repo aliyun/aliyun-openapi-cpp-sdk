@@ -44,7 +44,7 @@ std::string UserDataUpdateRequest::getUploadFile()const
 void UserDataUpdateRequest::setUploadFile(const std::string& uploadFile)
 {
 	uploadFile_ = uploadFile;
-	setCoreParameter("UploadFile", uploadFile);
+	setCoreParameter("UploadFile", std::to_string(uploadFile));
 }
 
 std::string UserDataUpdateRequest::getName()const
@@ -55,7 +55,7 @@ std::string UserDataUpdateRequest::getName()const
 void UserDataUpdateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long UserDataUpdateRequest::getBid()const
@@ -77,7 +77,7 @@ std::string UserDataUpdateRequest::getType()const
 void UserDataUpdateRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string UserDataUpdateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UserDataUpdateRequest::getAccessKeyId()const
 void UserDataUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

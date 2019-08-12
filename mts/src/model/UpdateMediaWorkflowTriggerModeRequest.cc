@@ -44,7 +44,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()cons
 void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
 void UpdateMediaWorkflowTriggerModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
@@ -66,7 +66,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
 void UpdateMediaWorkflowTriggerModeRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setCoreParameter("MediaWorkflowId", std::to_string(mediaWorkflowId));
 }
 
 long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
 void UpdateMediaWorkflowTriggerModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
@@ -99,6 +99,6 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
 void UpdateMediaWorkflowTriggerModeRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
-	setCoreParameter("TriggerMode", triggerMode);
+	setCoreParameter("TriggerMode", std::to_string(triggerMode));
 }
 

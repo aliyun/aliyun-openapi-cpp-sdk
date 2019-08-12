@@ -44,7 +44,7 @@ std::string DescribeInstancesRequest::getInstanceId()const
 void DescribeInstancesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeInstancesRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeInstancesRequest::getSourceIp()const
 void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeInstancesRequest::getPageSize()const

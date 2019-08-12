@@ -33,7 +33,7 @@ std::string DescribeRecordLogsRequest::getEndDate()const
 void DescribeRecordLogsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string DescribeRecordLogsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeRecordLogsRequest::getUserClientIp()const
 void DescribeRecordLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeRecordLogsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeRecordLogsRequest::getDomainName()const
 void DescribeRecordLogsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeRecordLogsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeRecordLogsRequest::getLang()const
 void DescribeRecordLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeRecordLogsRequest::getKeyWord()const
@@ -88,7 +88,7 @@ std::string DescribeRecordLogsRequest::getKeyWord()const
 void DescribeRecordLogsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", std::to_string(keyWord));
 }
 
 std::string DescribeRecordLogsRequest::getStartDate()const
@@ -99,7 +99,7 @@ std::string DescribeRecordLogsRequest::getStartDate()const
 void DescribeRecordLogsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 long DescribeRecordLogsRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string DescribeRecordLogsRequest::getAccessKeyId()const
 void DescribeRecordLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

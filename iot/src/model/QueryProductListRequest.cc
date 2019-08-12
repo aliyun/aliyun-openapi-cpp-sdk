@@ -33,7 +33,7 @@ std::string QueryProductListRequest::getIotInstanceId()const
 void QueryProductListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryProductListRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryProductListRequest::getAliyunCommodityCode()const
 void QueryProductListRequest::setAliyunCommodityCode(const std::string& aliyunCommodityCode)
 {
 	aliyunCommodityCode_ = aliyunCommodityCode;
-	setCoreParameter("AliyunCommodityCode", aliyunCommodityCode);
+	setCoreParameter("AliyunCommodityCode", std::to_string(aliyunCommodityCode));
 }
 
 std::string QueryProductListRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string QueryProductListRequest::getAccessKeyId()const
 void QueryProductListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

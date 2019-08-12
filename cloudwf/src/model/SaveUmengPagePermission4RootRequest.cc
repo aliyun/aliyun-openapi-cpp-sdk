@@ -33,7 +33,7 @@ std::string SaveUmengPagePermission4RootRequest::getGsPermission()const
 void SaveUmengPagePermission4RootRequest::setGsPermission(const std::string& gsPermission)
 {
 	gsPermission_ = gsPermission;
-	setCoreParameter("GsPermission", gsPermission);
+	setCoreParameter("GsPermission", std::to_string(gsPermission));
 }
 
 long SaveUmengPagePermission4RootRequest::getAliyunPk()const
@@ -88,6 +88,6 @@ std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const
 void SaveUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

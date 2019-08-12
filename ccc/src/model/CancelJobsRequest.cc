@@ -33,7 +33,7 @@ bool CancelJobsRequest::getAll()const
 void CancelJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> CancelJobsRequest::getJobId()const
@@ -56,7 +56,7 @@ std::string CancelJobsRequest::getInstanceId()const
 void CancelJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> CancelJobsRequest::getJobReferenceId()const
@@ -79,7 +79,7 @@ std::string CancelJobsRequest::getGroupId()const
 void CancelJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string CancelJobsRequest::getScenarioId()const
@@ -90,6 +90,6 @@ std::string CancelJobsRequest::getScenarioId()const
 void CancelJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 

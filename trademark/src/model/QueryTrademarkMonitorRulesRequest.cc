@@ -55,7 +55,7 @@ std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
 void QueryTrademarkMonitorRulesRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::string QueryTrademarkMonitorRulesRequest::getId()const
@@ -66,7 +66,7 @@ std::string QueryTrademarkMonitorRulesRequest::getId()const
 void QueryTrademarkMonitorRulesRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageNum()const

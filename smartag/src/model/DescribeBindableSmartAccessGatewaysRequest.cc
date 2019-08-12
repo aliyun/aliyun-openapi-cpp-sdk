@@ -44,7 +44,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount(
 void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getRegionId()const
 void DescribeBindableSmartAccessGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
@@ -66,7 +66,7 @@ bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
 void DescribeBindableSmartAccessGatewaysRequest::setCrossAccount(bool crossAccount)
 {
 	crossAccount_ = crossAccount;
-	setCoreParameter("CrossAccount", crossAccount);
+	setCoreParameter("CrossAccount", crossAccount ? "true" : "false");
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
 void DescribeBindableSmartAccessGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
 void DescribeBindableSmartAccessGatewaysRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
 void DescribeBindableSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeBindableSmartAccessGatewaysRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const
 void DescribeBindableSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

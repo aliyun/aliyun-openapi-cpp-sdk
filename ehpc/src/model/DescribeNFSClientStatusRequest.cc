@@ -33,7 +33,7 @@ std::string DescribeNFSClientStatusRequest::getInstanceId()const
 void DescribeNFSClientStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeNFSClientStatusRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeNFSClientStatusRequest::getAccessKeyId()const
 void DescribeNFSClientStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

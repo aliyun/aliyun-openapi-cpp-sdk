@@ -33,7 +33,7 @@ std::string AllowPushStreamRequest::getApp_ip()const
 void AllowPushStreamRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string AllowPushStreamRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string AllowPushStreamRequest::getPopProduct()const
 void AllowPushStreamRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long AllowPushStreamRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool AllowPushStreamRequest::getProxy_original_security_transport()const
 void AllowPushStreamRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string AllowPushStreamRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string AllowPushStreamRequest::getCallerBid()const
 void AllowPushStreamRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long AllowPushStreamRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string AllowPushStreamRequest::getProxy_original_source_ip()const
 void AllowPushStreamRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string AllowPushStreamRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string AllowPushStreamRequest::getVersion()const
 void AllowPushStreamRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string AllowPushStreamRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string AllowPushStreamRequest::getOwnerIdLoginEmail()const
 void AllowPushStreamRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string AllowPushStreamRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string AllowPushStreamRequest::getCallerType()const
 void AllowPushStreamRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool AllowPushStreamRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool AllowPushStreamRequest::getProxy_trust_transport_info()const
 void AllowPushStreamRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool AllowPushStreamRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool AllowPushStreamRequest::getAk_mfa_present()const
 void AllowPushStreamRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string AllowPushStreamRequest::getRoomId()const
@@ -165,7 +165,7 @@ std::string AllowPushStreamRequest::getRoomId()const
 void AllowPushStreamRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setCoreParameter("RoomId", std::to_string(roomId));
 }
 
 std::string AllowPushStreamRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string AllowPushStreamRequest::getAccessKeyId()const
 void AllowPushStreamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool AllowPushStreamRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool AllowPushStreamRequest::getSecurity_transport()const
 void AllowPushStreamRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string AllowPushStreamRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string AllowPushStreamRequest::getSecurityToken()const
 void AllowPushStreamRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AllowPushStreamRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string AllowPushStreamRequest::getRegionId()const
 void AllowPushStreamRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AllowPushStreamRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string AllowPushStreamRequest::getRequestId()const
 void AllowPushStreamRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string AllowPushStreamRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string AllowPushStreamRequest::getRequestContent()const
 void AllowPushStreamRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string AllowPushStreamRequest::getAppId()const
@@ -242,7 +242,7 @@ std::string AllowPushStreamRequest::getAppId()const
 void AllowPushStreamRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string AllowPushStreamRequest::getCallerBidEmail()const
@@ -253,7 +253,7 @@ std::string AllowPushStreamRequest::getCallerBidEmail()const
 void AllowPushStreamRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string AllowPushStreamRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string AllowPushStreamRequest::getCallerUidEmail()const
 void AllowPushStreamRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long AllowPushStreamRequest::getCallerUid()const

@@ -33,6 +33,6 @@ std::string CreateNamespaceRequest::getRegionId()const
 void CreateNamespaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

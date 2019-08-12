@@ -33,7 +33,7 @@ std::string ModifyApiRequest::getWebSocketApiType()const
 void ModifyApiRequest::setWebSocketApiType(const std::string& webSocketApiType)
 {
 	webSocketApiType_ = webSocketApiType;
-	setCoreParameter("WebSocketApiType", webSocketApiType);
+	setCoreParameter("WebSocketApiType", std::to_string(webSocketApiType));
 }
 
 std::string ModifyApiRequest::getErrorCodeSamples()const
@@ -44,7 +44,7 @@ std::string ModifyApiRequest::getErrorCodeSamples()const
 void ModifyApiRequest::setErrorCodeSamples(const std::string& errorCodeSamples)
 {
 	errorCodeSamples_ = errorCodeSamples;
-	setCoreParameter("ErrorCodeSamples", errorCodeSamples);
+	setCoreParameter("ErrorCodeSamples", std::to_string(errorCodeSamples));
 }
 
 std::string ModifyApiRequest::getAppCodeAuthType()const
@@ -55,7 +55,7 @@ std::string ModifyApiRequest::getAppCodeAuthType()const
 void ModifyApiRequest::setAppCodeAuthType(const std::string& appCodeAuthType)
 {
 	appCodeAuthType_ = appCodeAuthType;
-	setCoreParameter("AppCodeAuthType", appCodeAuthType);
+	setCoreParameter("AppCodeAuthType", std::to_string(appCodeAuthType));
 }
 
 std::string ModifyApiRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyApiRequest::getDescription()const
 void ModifyApiRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 bool ModifyApiRequest::getDisableInternet()const
@@ -77,7 +77,7 @@ bool ModifyApiRequest::getDisableInternet()const
 void ModifyApiRequest::setDisableInternet(bool disableInternet)
 {
 	disableInternet_ = disableInternet;
-	setCoreParameter("DisableInternet", disableInternet);
+	setCoreParameter("DisableInternet", disableInternet ? "true" : "false");
 }
 
 std::string ModifyApiRequest::getConstantParameters()const
@@ -88,7 +88,7 @@ std::string ModifyApiRequest::getConstantParameters()const
 void ModifyApiRequest::setConstantParameters(const std::string& constantParameters)
 {
 	constantParameters_ = constantParameters;
-	setCoreParameter("ConstantParameters", constantParameters);
+	setCoreParameter("ConstantParameters", std::to_string(constantParameters));
 }
 
 std::string ModifyApiRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyApiRequest::getAccessKeyId()const
 void ModifyApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyApiRequest::getAuthType()const
@@ -110,7 +110,7 @@ std::string ModifyApiRequest::getAuthType()const
 void ModifyApiRequest::setAuthType(const std::string& authType)
 {
 	authType_ = authType;
-	setCoreParameter("AuthType", authType);
+	setCoreParameter("AuthType", std::to_string(authType));
 }
 
 std::string ModifyApiRequest::getAllowSignatureMethod()const
@@ -121,7 +121,7 @@ std::string ModifyApiRequest::getAllowSignatureMethod()const
 void ModifyApiRequest::setAllowSignatureMethod(const std::string& allowSignatureMethod)
 {
 	allowSignatureMethod_ = allowSignatureMethod;
-	setCoreParameter("AllowSignatureMethod", allowSignatureMethod);
+	setCoreParameter("AllowSignatureMethod", std::to_string(allowSignatureMethod));
 }
 
 std::string ModifyApiRequest::getServiceParameters()const
@@ -132,7 +132,7 @@ std::string ModifyApiRequest::getServiceParameters()const
 void ModifyApiRequest::setServiceParameters(const std::string& serviceParameters)
 {
 	serviceParameters_ = serviceParameters;
-	setCoreParameter("ServiceParameters", serviceParameters);
+	setCoreParameter("ServiceParameters", std::to_string(serviceParameters));
 }
 
 std::string ModifyApiRequest::getFailResultSample()const
@@ -143,7 +143,7 @@ std::string ModifyApiRequest::getFailResultSample()const
 void ModifyApiRequest::setFailResultSample(const std::string& failResultSample)
 {
 	failResultSample_ = failResultSample;
-	setCoreParameter("FailResultSample", failResultSample);
+	setCoreParameter("FailResultSample", std::to_string(failResultSample));
 }
 
 std::string ModifyApiRequest::getSystemParameters()const
@@ -154,7 +154,7 @@ std::string ModifyApiRequest::getSystemParameters()const
 void ModifyApiRequest::setSystemParameters(const std::string& systemParameters)
 {
 	systemParameters_ = systemParameters;
-	setCoreParameter("SystemParameters", systemParameters);
+	setCoreParameter("SystemParameters", std::to_string(systemParameters));
 }
 
 std::string ModifyApiRequest::getServiceParametersMap()const
@@ -165,7 +165,7 @@ std::string ModifyApiRequest::getServiceParametersMap()const
 void ModifyApiRequest::setServiceParametersMap(const std::string& serviceParametersMap)
 {
 	serviceParametersMap_ = serviceParametersMap;
-	setCoreParameter("ServiceParametersMap", serviceParametersMap);
+	setCoreParameter("ServiceParametersMap", std::to_string(serviceParametersMap));
 }
 
 std::string ModifyApiRequest::getSecurityToken()const
@@ -176,7 +176,7 @@ std::string ModifyApiRequest::getSecurityToken()const
 void ModifyApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyApiRequest::getOpenIdConnectConfig()const
@@ -187,7 +187,7 @@ std::string ModifyApiRequest::getOpenIdConnectConfig()const
 void ModifyApiRequest::setOpenIdConnectConfig(const std::string& openIdConnectConfig)
 {
 	openIdConnectConfig_ = openIdConnectConfig;
-	setCoreParameter("OpenIdConnectConfig", openIdConnectConfig);
+	setCoreParameter("OpenIdConnectConfig", std::to_string(openIdConnectConfig));
 }
 
 std::string ModifyApiRequest::getRequestParameters()const
@@ -198,7 +198,7 @@ std::string ModifyApiRequest::getRequestParameters()const
 void ModifyApiRequest::setRequestParameters(const std::string& requestParameters)
 {
 	requestParameters_ = requestParameters;
-	setCoreParameter("RequestParameters", requestParameters);
+	setCoreParameter("RequestParameters", std::to_string(requestParameters));
 }
 
 std::string ModifyApiRequest::getResultDescriptions()const
@@ -209,7 +209,7 @@ std::string ModifyApiRequest::getResultDescriptions()const
 void ModifyApiRequest::setResultDescriptions(const std::string& resultDescriptions)
 {
 	resultDescriptions_ = resultDescriptions;
-	setCoreParameter("ResultDescriptions", resultDescriptions);
+	setCoreParameter("ResultDescriptions", std::to_string(resultDescriptions));
 }
 
 std::string ModifyApiRequest::getVisibility()const
@@ -220,7 +220,7 @@ std::string ModifyApiRequest::getVisibility()const
 void ModifyApiRequest::setVisibility(const std::string& visibility)
 {
 	visibility_ = visibility;
-	setCoreParameter("Visibility", visibility);
+	setCoreParameter("Visibility", std::to_string(visibility));
 }
 
 std::string ModifyApiRequest::getGroupId()const
@@ -231,7 +231,7 @@ std::string ModifyApiRequest::getGroupId()const
 void ModifyApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ModifyApiRequest::getServiceConfig()const
@@ -242,7 +242,7 @@ std::string ModifyApiRequest::getServiceConfig()const
 void ModifyApiRequest::setServiceConfig(const std::string& serviceConfig)
 {
 	serviceConfig_ = serviceConfig;
-	setCoreParameter("ServiceConfig", serviceConfig);
+	setCoreParameter("ServiceConfig", std::to_string(serviceConfig));
 }
 
 std::string ModifyApiRequest::getResultType()const
@@ -253,7 +253,7 @@ std::string ModifyApiRequest::getResultType()const
 void ModifyApiRequest::setResultType(const std::string& resultType)
 {
 	resultType_ = resultType;
-	setCoreParameter("ResultType", resultType);
+	setCoreParameter("ResultType", std::to_string(resultType));
 }
 
 std::string ModifyApiRequest::getApiName()const
@@ -264,7 +264,7 @@ std::string ModifyApiRequest::getApiName()const
 void ModifyApiRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setCoreParameter("ApiName", std::to_string(apiName));
 }
 
 std::string ModifyApiRequest::getResultSample()const
@@ -275,7 +275,7 @@ std::string ModifyApiRequest::getResultSample()const
 void ModifyApiRequest::setResultSample(const std::string& resultSample)
 {
 	resultSample_ = resultSample;
-	setCoreParameter("ResultSample", resultSample);
+	setCoreParameter("ResultSample", std::to_string(resultSample));
 }
 
 bool ModifyApiRequest::getForceNonceCheck()const
@@ -286,7 +286,7 @@ bool ModifyApiRequest::getForceNonceCheck()const
 void ModifyApiRequest::setForceNonceCheck(bool forceNonceCheck)
 {
 	forceNonceCheck_ = forceNonceCheck;
-	setCoreParameter("ForceNonceCheck", forceNonceCheck);
+	setCoreParameter("ForceNonceCheck", forceNonceCheck ? "true" : "false");
 }
 
 std::string ModifyApiRequest::getRequestConfig()const
@@ -297,7 +297,7 @@ std::string ModifyApiRequest::getRequestConfig()const
 void ModifyApiRequest::setRequestConfig(const std::string& requestConfig)
 {
 	requestConfig_ = requestConfig;
-	setCoreParameter("RequestConfig", requestConfig);
+	setCoreParameter("RequestConfig", std::to_string(requestConfig));
 }
 
 std::string ModifyApiRequest::getResultBodyModel()const
@@ -308,7 +308,7 @@ std::string ModifyApiRequest::getResultBodyModel()const
 void ModifyApiRequest::setResultBodyModel(const std::string& resultBodyModel)
 {
 	resultBodyModel_ = resultBodyModel;
-	setCoreParameter("ResultBodyModel", resultBodyModel);
+	setCoreParameter("ResultBodyModel", std::to_string(resultBodyModel));
 }
 
 std::string ModifyApiRequest::getApiId()const
@@ -319,6 +319,6 @@ std::string ModifyApiRequest::getApiId()const
 void ModifyApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 

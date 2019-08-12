@@ -33,7 +33,7 @@ std::string DescribeLimitationRequest::getResourceOwnerAccount()const
 void DescribeLimitationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long DescribeLimitationRequest::getOwnerId()const
@@ -55,6 +55,6 @@ std::string DescribeLimitationRequest::getAccessKeyId()const
 void DescribeLimitationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string ARMSQueryDataSetRequest::getDateStr()const
 void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
+	setCoreParameter("DateStr", std::to_string(dateStr));
 }
 
 long ARMSQueryDataSetRequest::getMinTime()const
@@ -55,7 +55,7 @@ bool ARMSQueryDataSetRequest::getReduceTail()const
 void ARMSQueryDataSetRequest::setReduceTail(bool reduceTail)
 {
 	reduceTail_ = reduceTail;
-	setCoreParameter("ReduceTail", reduceTail);
+	setCoreParameter("ReduceTail", reduceTail ? "true" : "false");
 }
 
 long ARMSQueryDataSetRequest::getMaxTime()const
@@ -77,7 +77,7 @@ std::string ARMSQueryDataSetRequest::getAccessKeyId()const
 void ARMSQueryDataSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<ARMSQueryDataSetRequest::OptionalDims> ARMSQueryDataSetRequest::getOptionalDims()const
@@ -129,7 +129,7 @@ bool ARMSQueryDataSetRequest::getIsDrillDown()const
 void ARMSQueryDataSetRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setCoreParameter("IsDrillDown", isDrillDown);
+	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 bool ARMSQueryDataSetRequest::getHungryMode()const
@@ -140,7 +140,7 @@ bool ARMSQueryDataSetRequest::getHungryMode()const
 void ARMSQueryDataSetRequest::setHungryMode(bool hungryMode)
 {
 	hungryMode_ = hungryMode;
-	setCoreParameter("HungryMode", hungryMode);
+	setCoreParameter("HungryMode", hungryMode ? "true" : "false");
 }
 
 std::string ARMSQueryDataSetRequest::getSecurityToken()const
@@ -151,7 +151,7 @@ std::string ARMSQueryDataSetRequest::getSecurityToken()const
 void ARMSQueryDataSetRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ARMSQueryDataSetRequest::getRegionId()const
@@ -162,7 +162,7 @@ std::string ARMSQueryDataSetRequest::getRegionId()const
 void ARMSQueryDataSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ARMSQueryDataSetRequest::getOrderByKey()const
@@ -173,7 +173,7 @@ std::string ARMSQueryDataSetRequest::getOrderByKey()const
 void ARMSQueryDataSetRequest::setOrderByKey(const std::string& orderByKey)
 {
 	orderByKey_ = orderByKey;
-	setCoreParameter("OrderByKey", orderByKey);
+	setCoreParameter("OrderByKey", std::to_string(orderByKey));
 }
 
 int ARMSQueryDataSetRequest::getLimit()const

@@ -33,7 +33,7 @@ bool CreateDrdsInstanceRequest::getIsAutoRenew()const
 void CreateDrdsInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setCoreParameter("IsAutoRenew", isAutoRenew);
+	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
 }
 
 int CreateDrdsInstanceRequest::getQuantity()const
@@ -55,7 +55,7 @@ std::string CreateDrdsInstanceRequest::getClientToken()const
 void CreateDrdsInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateDrdsInstanceRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateDrdsInstanceRequest::getDescription()const
 void CreateDrdsInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateDrdsInstanceRequest::getSpecification()const
@@ -77,7 +77,7 @@ std::string CreateDrdsInstanceRequest::getSpecification()const
 void CreateDrdsInstanceRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", specification);
+	setCoreParameter("Specification", std::to_string(specification));
 }
 
 std::string CreateDrdsInstanceRequest::getType()const
@@ -88,7 +88,7 @@ std::string CreateDrdsInstanceRequest::getType()const
 void CreateDrdsInstanceRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateDrdsInstanceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateDrdsInstanceRequest::getAccessKeyId()const
 void CreateDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDrdsInstanceRequest::getVswitchId()const
@@ -110,7 +110,7 @@ std::string CreateDrdsInstanceRequest::getVswitchId()const
 void CreateDrdsInstanceRequest::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
+	setCoreParameter("VswitchId", std::to_string(vswitchId));
 }
 
 int CreateDrdsInstanceRequest::getDuration()const
@@ -132,7 +132,7 @@ bool CreateDrdsInstanceRequest::getIsHa()const
 void CreateDrdsInstanceRequest::setIsHa(bool isHa)
 {
 	isHa_ = isHa;
-	setCoreParameter("IsHa", isHa);
+	setCoreParameter("IsHa", isHa ? "true" : "false");
 }
 
 std::string CreateDrdsInstanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateDrdsInstanceRequest::getRegionId()const
 void CreateDrdsInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateDrdsInstanceRequest::getInstanceSeries()const
@@ -154,7 +154,7 @@ std::string CreateDrdsInstanceRequest::getInstanceSeries()const
 void CreateDrdsInstanceRequest::setInstanceSeries(const std::string& instanceSeries)
 {
 	instanceSeries_ = instanceSeries;
-	setCoreParameter("InstanceSeries", instanceSeries);
+	setCoreParameter("InstanceSeries", std::to_string(instanceSeries));
 }
 
 std::string CreateDrdsInstanceRequest::getVpcId()const
@@ -165,7 +165,7 @@ std::string CreateDrdsInstanceRequest::getVpcId()const
 void CreateDrdsInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateDrdsInstanceRequest::getZoneId()const
@@ -176,7 +176,7 @@ std::string CreateDrdsInstanceRequest::getZoneId()const
 void CreateDrdsInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CreateDrdsInstanceRequest::getPayType()const
@@ -187,7 +187,7 @@ std::string CreateDrdsInstanceRequest::getPayType()const
 void CreateDrdsInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string CreateDrdsInstanceRequest::getPricingCycle()const
@@ -198,6 +198,6 @@ std::string CreateDrdsInstanceRequest::getPricingCycle()const
 void CreateDrdsInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

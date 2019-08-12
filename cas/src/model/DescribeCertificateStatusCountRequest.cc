@@ -33,7 +33,7 @@ std::string DescribeCertificateStatusCountRequest::getResourceGroupId()const
 void DescribeCertificateStatusCountRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeCertificateStatusCountRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCertificateStatusCountRequest::getSourceIp()const
 void DescribeCertificateStatusCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeCertificateStatusCountRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCertificateStatusCountRequest::getRegionId()const
 void DescribeCertificateStatusCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<DescribeCertificateStatusCountRequest::Tag> DescribeCertificateStatusCountRequest::getTag()const
@@ -83,6 +83,6 @@ std::string DescribeCertificateStatusCountRequest::getLang()const
 void DescribeCertificateStatusCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

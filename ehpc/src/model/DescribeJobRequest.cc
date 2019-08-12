@@ -33,7 +33,7 @@ std::string DescribeJobRequest::getJobId()const
 void DescribeJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string DescribeJobRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DescribeJobRequest::getClusterId()const
 void DescribeJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeJobRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeJobRequest::getAccessKeyId()const
 void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

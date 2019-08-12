@@ -33,7 +33,7 @@ std::string DescribeLiveUserDomainsRequest::getSecurityToken()const
 void DescribeLiveUserDomainsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeLiveUserDomainsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeLiveUserDomainsRequest::getDomainName()const
 void DescribeLiveUserDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeLiveUserDomainsRequest::getRegionName()const
@@ -66,7 +66,7 @@ std::string DescribeLiveUserDomainsRequest::getRegionName()const
 void DescribeLiveUserDomainsRequest::setRegionName(const std::string& regionName)
 {
 	regionName_ = regionName;
-	setCoreParameter("RegionName", regionName);
+	setCoreParameter("RegionName", std::to_string(regionName));
 }
 
 long DescribeLiveUserDomainsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeLiveUserDomainsRequest::getDomainStatus()const
 void DescribeLiveUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", domainStatus);
+	setCoreParameter("DomainStatus", std::to_string(domainStatus));
 }
 
 std::string DescribeLiveUserDomainsRequest::getLiveDomainType()const
@@ -110,7 +110,7 @@ std::string DescribeLiveUserDomainsRequest::getLiveDomainType()const
 void DescribeLiveUserDomainsRequest::setLiveDomainType(const std::string& liveDomainType)
 {
 	liveDomainType_ = liveDomainType;
-	setCoreParameter("LiveDomainType", liveDomainType);
+	setCoreParameter("LiveDomainType", std::to_string(liveDomainType));
 }
 
 std::string DescribeLiveUserDomainsRequest::getDomainSearchType()const
@@ -121,6 +121,6 @@ std::string DescribeLiveUserDomainsRequest::getDomainSearchType()const
 void DescribeLiveUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
 {
 	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", domainSearchType);
+	setCoreParameter("DomainSearchType", std::to_string(domainSearchType));
 }
 

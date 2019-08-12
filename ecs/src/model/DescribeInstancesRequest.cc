@@ -33,7 +33,7 @@ std::string DescribeInstancesRequest::getInnerIpAddresses()const
 void DescribeInstancesRequest::setInnerIpAddresses(const std::string& innerIpAddresses)
 {
 	innerIpAddresses_ = innerIpAddresses;
-	setCoreParameter("InnerIpAddresses", innerIpAddresses);
+	setCoreParameter("InnerIpAddresses", std::to_string(innerIpAddresses));
 }
 
 long DescribeInstancesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeInstancesRequest::getImageId()const
 void DescribeInstancesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string DescribeInstancesRequest::getPrivateIpAddresses()const
@@ -66,7 +66,7 @@ std::string DescribeInstancesRequest::getPrivateIpAddresses()const
 void DescribeInstancesRequest::setPrivateIpAddresses(const std::string& privateIpAddresses)
 {
 	privateIpAddresses_ = privateIpAddresses;
-	setCoreParameter("PrivateIpAddresses", privateIpAddresses);
+	setCoreParameter("PrivateIpAddresses", std::to_string(privateIpAddresses));
 }
 
 std::string DescribeInstancesRequest::getHpcClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeInstancesRequest::getHpcClusterId()const
 void DescribeInstancesRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setCoreParameter("HpcClusterId", std::to_string(hpcClusterId));
 }
 
 std::string DescribeInstancesRequest::getFilter2Value()const
@@ -88,7 +88,7 @@ std::string DescribeInstancesRequest::getFilter2Value()const
 void DescribeInstancesRequest::setFilter2Value(const std::string& filter2Value)
 {
 	filter2Value_ = filter2Value;
-	setCoreParameter("Filter2Value", filter2Value);
+	setCoreParameter("Filter2Value", std::to_string(filter2Value));
 }
 
 std::string DescribeInstancesRequest::getFilter4Value()const
@@ -99,7 +99,7 @@ std::string DescribeInstancesRequest::getFilter4Value()const
 void DescribeInstancesRequest::setFilter4Value(const std::string& filter4Value)
 {
 	filter4Value_ = filter4Value;
-	setCoreParameter("Filter4Value", filter4Value);
+	setCoreParameter("Filter4Value", std::to_string(filter4Value));
 }
 
 bool DescribeInstancesRequest::getIoOptimized()const
@@ -110,7 +110,7 @@ bool DescribeInstancesRequest::getIoOptimized()const
 void DescribeInstancesRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getSecurityGroupId()const
@@ -121,7 +121,7 @@ std::string DescribeInstancesRequest::getSecurityGroupId()const
 void DescribeInstancesRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 std::string DescribeInstancesRequest::getKeyPairName()const
@@ -132,7 +132,7 @@ std::string DescribeInstancesRequest::getKeyPairName()const
 void DescribeInstancesRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 std::string DescribeInstancesRequest::getFilter4Key()const
@@ -143,7 +143,7 @@ std::string DescribeInstancesRequest::getFilter4Key()const
 void DescribeInstancesRequest::setFilter4Key(const std::string& filter4Key)
 {
 	filter4Key_ = filter4Key;
-	setCoreParameter("Filter4Key", filter4Key);
+	setCoreParameter("Filter4Key", std::to_string(filter4Key));
 }
 
 int DescribeInstancesRequest::getPageNumber()const
@@ -165,7 +165,7 @@ std::string DescribeInstancesRequest::getSourceRegionId()const
 void DescribeInstancesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeInstancesRequest::getResourceGroupId()const
@@ -176,7 +176,7 @@ std::string DescribeInstancesRequest::getResourceGroupId()const
 void DescribeInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeInstancesRequest::getLockReason()const
@@ -187,7 +187,7 @@ std::string DescribeInstancesRequest::getLockReason()const
 void DescribeInstancesRequest::setLockReason(const std::string& lockReason)
 {
 	lockReason_ = lockReason;
-	setCoreParameter("LockReason", lockReason);
+	setCoreParameter("LockReason", std::to_string(lockReason));
 }
 
 std::string DescribeInstancesRequest::getFilter1Key()const
@@ -198,7 +198,7 @@ std::string DescribeInstancesRequest::getFilter1Key()const
 void DescribeInstancesRequest::setFilter1Key(const std::string& filter1Key)
 {
 	filter1Key_ = filter1Key;
-	setCoreParameter("Filter1Key", filter1Key);
+	setCoreParameter("Filter1Key", std::to_string(filter1Key));
 }
 
 std::string DescribeInstancesRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string DescribeInstancesRequest::getRegionId()const
 void DescribeInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeInstancesRequest::getRdmaIpAddresses()const
@@ -220,7 +220,7 @@ std::string DescribeInstancesRequest::getRdmaIpAddresses()const
 void DescribeInstancesRequest::setRdmaIpAddresses(const std::string& rdmaIpAddresses)
 {
 	rdmaIpAddresses_ = rdmaIpAddresses;
-	setCoreParameter("RdmaIpAddresses", rdmaIpAddresses);
+	setCoreParameter("RdmaIpAddresses", std::to_string(rdmaIpAddresses));
 }
 
 bool DescribeInstancesRequest::getDeviceAvailable()const
@@ -231,7 +231,7 @@ bool DescribeInstancesRequest::getDeviceAvailable()const
 void DescribeInstancesRequest::setDeviceAvailable(bool deviceAvailable)
 {
 	deviceAvailable_ = deviceAvailable;
-	setCoreParameter("DeviceAvailable", deviceAvailable);
+	setCoreParameter("DeviceAvailable", deviceAvailable ? "true" : "false");
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -253,7 +253,7 @@ std::string DescribeInstancesRequest::getPublicIpAddresses()const
 void DescribeInstancesRequest::setPublicIpAddresses(const std::string& publicIpAddresses)
 {
 	publicIpAddresses_ = publicIpAddresses;
-	setCoreParameter("PublicIpAddresses", publicIpAddresses);
+	setCoreParameter("PublicIpAddresses", std::to_string(publicIpAddresses));
 }
 
 std::string DescribeInstancesRequest::getInstanceType()const
@@ -264,7 +264,7 @@ std::string DescribeInstancesRequest::getInstanceType()const
 void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
@@ -292,7 +292,7 @@ std::string DescribeInstancesRequest::getInstanceChargeType()const
 void DescribeInstancesRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string DescribeInstancesRequest::getFilter3Value()const
@@ -303,7 +303,7 @@ std::string DescribeInstancesRequest::getFilter3Value()const
 void DescribeInstancesRequest::setFilter3Value(const std::string& filter3Value)
 {
 	filter3Value_ = filter3Value;
-	setCoreParameter("Filter3Value", filter3Value);
+	setCoreParameter("Filter3Value", std::to_string(filter3Value));
 }
 
 bool DescribeInstancesRequest::getDryRun()const
@@ -314,7 +314,7 @@ bool DescribeInstancesRequest::getDryRun()const
 void DescribeInstancesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getResourceOwnerAccount()const
@@ -325,7 +325,7 @@ std::string DescribeInstancesRequest::getResourceOwnerAccount()const
 void DescribeInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstancesRequest::getOwnerAccount()const
@@ -336,7 +336,7 @@ std::string DescribeInstancesRequest::getOwnerAccount()const
 void DescribeInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeInstancesRequest::getInstanceTypeFamily()const
@@ -347,7 +347,7 @@ std::string DescribeInstancesRequest::getInstanceTypeFamily()const
 void DescribeInstancesRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setCoreParameter("InstanceTypeFamily", std::to_string(instanceTypeFamily));
 }
 
 std::string DescribeInstancesRequest::getFilter1Value()const
@@ -358,7 +358,7 @@ std::string DescribeInstancesRequest::getFilter1Value()const
 void DescribeInstancesRequest::setFilter1Value(const std::string& filter1Value)
 {
 	filter1Value_ = filter1Value;
-	setCoreParameter("Filter1Value", filter1Value);
+	setCoreParameter("Filter1Value", std::to_string(filter1Value));
 }
 
 bool DescribeInstancesRequest::getNeedSaleCycle()const
@@ -369,7 +369,7 @@ bool DescribeInstancesRequest::getNeedSaleCycle()const
 void DescribeInstancesRequest::setNeedSaleCycle(bool needSaleCycle)
 {
 	needSaleCycle_ = needSaleCycle;
-	setCoreParameter("NeedSaleCycle", needSaleCycle);
+	setCoreParameter("NeedSaleCycle", needSaleCycle ? "true" : "false");
 }
 
 std::string DescribeInstancesRequest::getFilter2Key()const
@@ -380,7 +380,7 @@ std::string DescribeInstancesRequest::getFilter2Key()const
 void DescribeInstancesRequest::setFilter2Key(const std::string& filter2Key)
 {
 	filter2Key_ = filter2Key;
-	setCoreParameter("Filter2Key", filter2Key);
+	setCoreParameter("Filter2Key", std::to_string(filter2Key));
 }
 
 long DescribeInstancesRequest::getOwnerId()const
@@ -402,7 +402,7 @@ std::string DescribeInstancesRequest::getVSwitchId()const
 void DescribeInstancesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string DescribeInstancesRequest::getEipAddresses()const
@@ -413,7 +413,7 @@ std::string DescribeInstancesRequest::getEipAddresses()const
 void DescribeInstancesRequest::setEipAddresses(const std::string& eipAddresses)
 {
 	eipAddresses_ = eipAddresses;
-	setCoreParameter("EipAddresses", eipAddresses);
+	setCoreParameter("EipAddresses", std::to_string(eipAddresses));
 }
 
 std::string DescribeInstancesRequest::getInstanceName()const
@@ -424,7 +424,7 @@ std::string DescribeInstancesRequest::getInstanceName()const
 void DescribeInstancesRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::string DescribeInstancesRequest::getInstanceIds()const
@@ -435,7 +435,7 @@ std::string DescribeInstancesRequest::getInstanceIds()const
 void DescribeInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string DescribeInstancesRequest::getInternetChargeType()const
@@ -446,7 +446,7 @@ std::string DescribeInstancesRequest::getInternetChargeType()const
 void DescribeInstancesRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setCoreParameter("InternetChargeType", std::to_string(internetChargeType));
 }
 
 std::string DescribeInstancesRequest::getVpcId()const
@@ -457,7 +457,7 @@ std::string DescribeInstancesRequest::getVpcId()const
 void DescribeInstancesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string DescribeInstancesRequest::getZoneId()const
@@ -468,7 +468,7 @@ std::string DescribeInstancesRequest::getZoneId()const
 void DescribeInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeInstancesRequest::getFilter3Key()const
@@ -479,7 +479,7 @@ std::string DescribeInstancesRequest::getFilter3Key()const
 void DescribeInstancesRequest::setFilter3Key(const std::string& filter3Key)
 {
 	filter3Key_ = filter3Key;
-	setCoreParameter("Filter3Key", filter3Key);
+	setCoreParameter("Filter3Key", std::to_string(filter3Key));
 }
 
 std::string DescribeInstancesRequest::getInstanceNetworkType()const
@@ -490,7 +490,7 @@ std::string DescribeInstancesRequest::getInstanceNetworkType()const
 void DescribeInstancesRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setCoreParameter("InstanceNetworkType", std::to_string(instanceNetworkType));
 }
 
 std::string DescribeInstancesRequest::getStatus()const
@@ -501,6 +501,6 @@ std::string DescribeInstancesRequest::getStatus()const
 void DescribeInstancesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

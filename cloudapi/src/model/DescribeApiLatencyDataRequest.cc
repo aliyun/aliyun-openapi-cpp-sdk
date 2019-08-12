@@ -33,7 +33,7 @@ std::string DescribeApiLatencyDataRequest::getSecurityToken()const
 void DescribeApiLatencyDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiLatencyDataRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiLatencyDataRequest::getGroupId()const
 void DescribeApiLatencyDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiLatencyDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeApiLatencyDataRequest::getEndTime()const
 void DescribeApiLatencyDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeApiLatencyDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeApiLatencyDataRequest::getStartTime()const
 void DescribeApiLatencyDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeApiLatencyDataRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string DescribeApiLatencyDataRequest::getApiId()const
 void DescribeApiLatencyDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
 void DescribeApiLatencyDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

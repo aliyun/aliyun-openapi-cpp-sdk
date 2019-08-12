@@ -33,7 +33,7 @@ std::string DescribeGtmMonitorConfigRequest::getUserClientIp()const
 void DescribeGtmMonitorConfigRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeGtmMonitorConfigRequest::getMonitorConfigId()const
@@ -44,7 +44,7 @@ std::string DescribeGtmMonitorConfigRequest::getMonitorConfigId()const
 void DescribeGtmMonitorConfigRequest::setMonitorConfigId(const std::string& monitorConfigId)
 {
 	monitorConfigId_ = monitorConfigId;
-	setCoreParameter("MonitorConfigId", monitorConfigId);
+	setCoreParameter("MonitorConfigId", std::to_string(monitorConfigId));
 }
 
 std::string DescribeGtmMonitorConfigRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeGtmMonitorConfigRequest::getLang()const
 void DescribeGtmMonitorConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

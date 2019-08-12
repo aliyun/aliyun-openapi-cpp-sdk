@@ -44,7 +44,7 @@ std::string ListJobExecutionPlanParamsRequest::getRelateId()const
 void ListJobExecutionPlanParamsRequest::setRelateId(const std::string& relateId)
 {
 	relateId_ = relateId;
-	setCoreParameter("RelateId", relateId);
+	setCoreParameter("RelateId", std::to_string(relateId));
 }
 
 std::string ListJobExecutionPlanParamsRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string ListJobExecutionPlanParamsRequest::getAccessKeyId()const
 void ListJobExecutionPlanParamsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListJobExecutionPlanParamsRequest::getParamBizType()const
@@ -66,6 +66,6 @@ std::string ListJobExecutionPlanParamsRequest::getParamBizType()const
 void ListJobExecutionPlanParamsRequest::setParamBizType(const std::string& paramBizType)
 {
 	paramBizType_ = paramBizType;
-	setCoreParameter("ParamBizType", paramBizType);
+	setCoreParameter("ParamBizType", std::to_string(paramBizType));
 }
 

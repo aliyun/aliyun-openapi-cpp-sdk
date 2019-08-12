@@ -33,7 +33,7 @@ std::string ListJobStatusRequest::getContactName()const
 void ListJobStatusRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setCoreParameter("ContactName", std::to_string(contactName));
 }
 
 std::string ListJobStatusRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListJobStatusRequest::getInstanceId()const
 void ListJobStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListJobStatusRequest::getTimeAlignment()const
@@ -55,7 +55,7 @@ std::string ListJobStatusRequest::getTimeAlignment()const
 void ListJobStatusRequest::setTimeAlignment(const std::string& timeAlignment)
 {
 	timeAlignment_ = timeAlignment;
-	setCoreParameter("TimeAlignment", timeAlignment);
+	setCoreParameter("TimeAlignment", std::to_string(timeAlignment));
 }
 
 std::string ListJobStatusRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string ListJobStatusRequest::getGroupId()const
 void ListJobStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ListJobStatusRequest::getPhoneNumber()const
@@ -77,7 +77,7 @@ std::string ListJobStatusRequest::getPhoneNumber()const
 void ListJobStatusRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
 }
 
 int ListJobStatusRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string ListJobStatusRequest::getScenarioId()const
 void ListJobStatusRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 
 int ListJobStatusRequest::getPageNumber()const

@@ -55,7 +55,7 @@ bool DescribeDemandsRequest::getProxy_original_security_transport()const
 void DescribeDemandsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDemandsRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDemandsRequest::getProxy_original_source_ip()const
 void DescribeDemandsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeDemandsRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDemandsRequest::getOwnerIdLoginEmail()const
 void DescribeDemandsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeDemandsRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDemandsRequest::getCallerType()const
 void DescribeDemandsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int DescribeDemandsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ std::string DescribeDemandsRequest::getAccessKeyId()const
 void DescribeDemandsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDemandsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeDemandsRequest::getSecurityToken()const
 void DescribeDemandsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDemandsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeDemandsRequest::getRegionId()const
 void DescribeDemandsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeDemandsRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeDemandsRequest::getEnable()const
 void DescribeDemandsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeDemandsRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeDemandsRequest::getRequestContent()const
 void DescribeDemandsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeDemandsRequest::getPageSize()const
@@ -176,7 +176,7 @@ std::string DescribeDemandsRequest::getCallerBidEmail()const
 void DescribeDemandsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeDemandsRequest::getInstanceType()const
@@ -187,7 +187,7 @@ std::string DescribeDemandsRequest::getInstanceType()const
 void DescribeDemandsRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::vector<DescribeDemandsRequest::Tag> DescribeDemandsRequest::getTag()const
@@ -215,7 +215,7 @@ std::string DescribeDemandsRequest::getInstanceChargeType()const
 void DescribeDemandsRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string DescribeDemandsRequest::getCallerUidEmail()const
@@ -226,7 +226,7 @@ std::string DescribeDemandsRequest::getCallerUidEmail()const
 void DescribeDemandsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeDemandsRequest::getCallerUid()const
@@ -248,7 +248,7 @@ std::string DescribeDemandsRequest::getApp_ip()const
 void DescribeDemandsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 bool DescribeDemandsRequest::getDryRun()const
@@ -259,7 +259,7 @@ bool DescribeDemandsRequest::getDryRun()const
 void DescribeDemandsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeDemandsRequest::getResourceOwnerAccount()const
@@ -270,7 +270,7 @@ std::string DescribeDemandsRequest::getResourceOwnerAccount()const
 void DescribeDemandsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDemandsRequest::getOwnerAccount()const
@@ -281,7 +281,7 @@ std::string DescribeDemandsRequest::getOwnerAccount()const
 void DescribeDemandsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDemandsRequest::getInstanceTypeFamily()const
@@ -292,7 +292,7 @@ std::string DescribeDemandsRequest::getInstanceTypeFamily()const
 void DescribeDemandsRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setCoreParameter("InstanceTypeFamily", std::to_string(instanceTypeFamily));
 }
 
 std::string DescribeDemandsRequest::getCallerBid()const
@@ -303,7 +303,7 @@ std::string DescribeDemandsRequest::getCallerBid()const
 void DescribeDemandsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeDemandsRequest::getOwnerId()const
@@ -337,7 +337,7 @@ bool DescribeDemandsRequest::getProxy_trust_transport_info()const
 void DescribeDemandsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDemandsRequest::getAk_mfa_present()const
@@ -348,7 +348,7 @@ bool DescribeDemandsRequest::getAk_mfa_present()const
 void DescribeDemandsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDemandsRequest::getSecurity_transport()const
@@ -359,7 +359,7 @@ bool DescribeDemandsRequest::getSecurity_transport()const
 void DescribeDemandsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDemandsRequest::getRequestId()const
@@ -370,7 +370,7 @@ std::string DescribeDemandsRequest::getRequestId()const
 void DescribeDemandsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeDemandsRequest::getAkProxy()const
@@ -381,7 +381,7 @@ std::string DescribeDemandsRequest::getAkProxy()const
 void DescribeDemandsRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string DescribeDemandsRequest::getZoneId()const
@@ -392,6 +392,6 @@ std::string DescribeDemandsRequest::getZoneId()const
 void DescribeDemandsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 

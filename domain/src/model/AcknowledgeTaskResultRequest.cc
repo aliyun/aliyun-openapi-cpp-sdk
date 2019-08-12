@@ -45,7 +45,7 @@ std::string AcknowledgeTaskResultRequest::getUserClientIp()const
 void AcknowledgeTaskResultRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string AcknowledgeTaskResultRequest::getLang()const
@@ -56,6 +56,6 @@ std::string AcknowledgeTaskResultRequest::getLang()const
 void AcknowledgeTaskResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

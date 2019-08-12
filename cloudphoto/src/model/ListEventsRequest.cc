@@ -33,7 +33,7 @@ std::string ListEventsRequest::getCursor()const
 void ListEventsRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setCoreParameter("Cursor", std::to_string(cursor));
 }
 
 int ListEventsRequest::getSize()const
@@ -55,7 +55,7 @@ std::string ListEventsRequest::getStoreName()const
 void ListEventsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string ListEventsRequest::getState()const
@@ -66,7 +66,7 @@ std::string ListEventsRequest::getState()const
 void ListEventsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string ListEventsRequest::getDirection()const
@@ -77,6 +77,6 @@ std::string ListEventsRequest::getDirection()const
 void ListEventsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 

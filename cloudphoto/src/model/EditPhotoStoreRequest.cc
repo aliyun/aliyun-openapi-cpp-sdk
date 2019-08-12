@@ -33,7 +33,7 @@ std::string EditPhotoStoreRequest::getAutoCleanEnabled()const
 void EditPhotoStoreRequest::setAutoCleanEnabled(const std::string& autoCleanEnabled)
 {
 	autoCleanEnabled_ = autoCleanEnabled;
-	setCoreParameter("AutoCleanEnabled", autoCleanEnabled);
+	setCoreParameter("AutoCleanEnabled", std::to_string(autoCleanEnabled));
 }
 
 long EditPhotoStoreRequest::getDefaultTrashQuota()const
@@ -55,7 +55,7 @@ std::string EditPhotoStoreRequest::getStoreName()const
 void EditPhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string EditPhotoStoreRequest::getRemark()const
@@ -66,7 +66,7 @@ std::string EditPhotoStoreRequest::getRemark()const
 void EditPhotoStoreRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 long EditPhotoStoreRequest::getDefaultQuota()const

@@ -45,7 +45,7 @@ std::string ToggleFeaturesRequest::getStoreName()const
 void ToggleFeaturesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::vector<std::string> ToggleFeaturesRequest::getEnabledFeatures()const

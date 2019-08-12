@@ -61,7 +61,7 @@ std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
@@ -72,7 +72,7 @@ std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeCenBandwidthPackagesRequest::getPageSize()const
@@ -116,6 +116,6 @@ bool DescribeCenBandwidthPackagesRequest::getIsOrKey()const
 void DescribeCenBandwidthPackagesRequest::setIsOrKey(bool isOrKey)
 {
 	isOrKey_ = isOrKey;
-	setCoreParameter("IsOrKey", isOrKey);
+	setCoreParameter("IsOrKey", isOrKey ? "true" : "false");
 }
 

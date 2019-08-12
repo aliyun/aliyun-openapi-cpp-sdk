@@ -56,7 +56,7 @@ std::string StartBaselineSecurityCheckRequest::getSourceIp()const
 void StartBaselineSecurityCheckRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
@@ -79,7 +79,7 @@ std::string StartBaselineSecurityCheckRequest::getLang()const
 void StartBaselineSecurityCheckRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string StartBaselineSecurityCheckRequest::getType()const
@@ -90,6 +90,6 @@ std::string StartBaselineSecurityCheckRequest::getType()const
 void StartBaselineSecurityCheckRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

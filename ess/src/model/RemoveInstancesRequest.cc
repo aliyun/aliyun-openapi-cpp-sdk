@@ -56,7 +56,7 @@ std::string RemoveInstancesRequest::getRemovePolicy()const
 void RemoveInstancesRequest::setRemovePolicy(const std::string& removePolicy)
 {
 	removePolicy_ = removePolicy;
-	setCoreParameter("RemovePolicy", removePolicy);
+	setCoreParameter("RemovePolicy", std::to_string(removePolicy));
 }
 
 std::string RemoveInstancesRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ std::string RemoveInstancesRequest::getResourceOwnerAccount()const
 void RemoveInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveInstancesRequest::getScalingGroupId()const
@@ -78,7 +78,7 @@ std::string RemoveInstancesRequest::getScalingGroupId()const
 void RemoveInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string RemoveInstancesRequest::getOwnerAccount()const
@@ -89,7 +89,7 @@ std::string RemoveInstancesRequest::getOwnerAccount()const
 void RemoveInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveInstancesRequest::getOwnerId()const
@@ -111,6 +111,6 @@ std::string RemoveInstancesRequest::getAccessKeyId()const
 void RemoveInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

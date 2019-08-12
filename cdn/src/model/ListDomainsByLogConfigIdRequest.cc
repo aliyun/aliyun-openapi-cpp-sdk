@@ -33,7 +33,7 @@ std::string ListDomainsByLogConfigIdRequest::getApp_ip()const
 void ListDomainsByLogConfigIdRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string ListDomainsByLogConfigIdRequest::getPopProduct()const
 void ListDomainsByLogConfigIdRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getProduct()const
@@ -55,7 +55,7 @@ std::string ListDomainsByLogConfigIdRequest::getProduct()const
 void ListDomainsByLogConfigIdRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setCoreParameter("Product", std::to_string(product));
 }
 
 long ListDomainsByLogConfigIdRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool ListDomainsByLogConfigIdRequest::getProxy_original_security_transport()cons
 void ListDomainsByLogConfigIdRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ListDomainsByLogConfigIdRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string ListDomainsByLogConfigIdRequest::getCallerBid()const
 void ListDomainsByLogConfigIdRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ListDomainsByLogConfigIdRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ListDomainsByLogConfigIdRequest::getProxy_original_source_ip()const
 void ListDomainsByLogConfigIdRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string ListDomainsByLogConfigIdRequest::getVersion()const
 void ListDomainsByLogConfigIdRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string ListDomainsByLogConfigIdRequest::getOwnerIdLoginEmail()const
 void ListDomainsByLogConfigIdRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string ListDomainsByLogConfigIdRequest::getCallerType()const
 void ListDomainsByLogConfigIdRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool ListDomainsByLogConfigIdRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool ListDomainsByLogConfigIdRequest::getProxy_trust_transport_info()const
 void ListDomainsByLogConfigIdRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ListDomainsByLogConfigIdRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool ListDomainsByLogConfigIdRequest::getAk_mfa_present()const
 void ListDomainsByLogConfigIdRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string ListDomainsByLogConfigIdRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string ListDomainsByLogConfigIdRequest::getAccessKeyId()const
 void ListDomainsByLogConfigIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool ListDomainsByLogConfigIdRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool ListDomainsByLogConfigIdRequest::getSecurity_transport()const
 void ListDomainsByLogConfigIdRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ListDomainsByLogConfigIdRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string ListDomainsByLogConfigIdRequest::getSecurityToken()const
 void ListDomainsByLogConfigIdRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string ListDomainsByLogConfigIdRequest::getRequestId()const
 void ListDomainsByLogConfigIdRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string ListDomainsByLogConfigIdRequest::getRequestContent()const
 void ListDomainsByLogConfigIdRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getConfigId()const
@@ -231,7 +231,7 @@ std::string ListDomainsByLogConfigIdRequest::getConfigId()const
 void ListDomainsByLogConfigIdRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string ListDomainsByLogConfigIdRequest::getCallerBidEmail()const
 void ListDomainsByLogConfigIdRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ListDomainsByLogConfigIdRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string ListDomainsByLogConfigIdRequest::getCallerUidEmail()const
 void ListDomainsByLogConfigIdRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ListDomainsByLogConfigIdRequest::getCallerUid()const

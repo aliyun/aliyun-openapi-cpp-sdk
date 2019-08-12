@@ -44,7 +44,7 @@ std::string DescribeSQLReportsRequest::getResourceOwnerAccount()const
 void DescribeSQLReportsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSQLReportsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSQLReportsRequest::getOwnerAccount()const
 void DescribeSQLReportsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeSQLReportsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeSQLReportsRequest::getEndTime()const
 void DescribeSQLReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSQLReportsRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeSQLReportsRequest::getDBInstanceId()const
 void DescribeSQLReportsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeSQLReportsRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeSQLReportsRequest::getStartTime()const
 void DescribeSQLReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSQLReportsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeSQLReportsRequest::getAccessKeyId()const
 void DescribeSQLReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

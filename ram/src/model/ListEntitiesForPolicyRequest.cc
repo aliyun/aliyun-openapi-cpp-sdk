@@ -33,7 +33,7 @@ std::string ListEntitiesForPolicyRequest::getPolicyType()const
 void ListEntitiesForPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string ListEntitiesForPolicyRequest::getPolicyName()const
@@ -44,6 +44,6 @@ std::string ListEntitiesForPolicyRequest::getPolicyName()const
 void ListEntitiesForPolicyRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", std::to_string(policyName));
 }
 

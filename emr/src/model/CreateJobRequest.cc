@@ -33,7 +33,7 @@ std::string CreateJobRequest::getRunParameter()const
 void CreateJobRequest::setRunParameter(const std::string& runParameter)
 {
 	runParameter_ = runParameter;
-	setCoreParameter("RunParameter", runParameter);
+	setCoreParameter("RunParameter", std::to_string(runParameter));
 }
 
 int CreateJobRequest::getRetryInterval()const
@@ -66,7 +66,7 @@ std::string CreateJobRequest::getRegionId()const
 void CreateJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateJobRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreateJobRequest::getName()const
 void CreateJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateJobRequest::getType()const
@@ -88,7 +88,7 @@ std::string CreateJobRequest::getType()const
 void CreateJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int CreateJobRequest::getMaxRetry()const
@@ -110,7 +110,7 @@ std::string CreateJobRequest::getAccessKeyId()const
 void CreateJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateJobRequest::getFailAct()const
@@ -121,6 +121,6 @@ std::string CreateJobRequest::getFailAct()const
 void CreateJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setCoreParameter("FailAct", std::to_string(failAct));
 }
 

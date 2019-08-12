@@ -33,7 +33,7 @@ std::string DescribePurchasedApisRequest::getStageName()const
 void DescribePurchasedApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribePurchasedApisRequest::getApiName()const
@@ -44,7 +44,7 @@ std::string DescribePurchasedApisRequest::getApiName()const
 void DescribePurchasedApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setCoreParameter("ApiName", std::to_string(apiName));
 }
 
 std::string DescribePurchasedApisRequest::getVisibility()const
@@ -55,7 +55,7 @@ std::string DescribePurchasedApisRequest::getVisibility()const
 void DescribePurchasedApisRequest::setVisibility(const std::string& visibility)
 {
 	visibility_ = visibility;
-	setCoreParameter("Visibility", visibility);
+	setCoreParameter("Visibility", std::to_string(visibility));
 }
 
 std::string DescribePurchasedApisRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string DescribePurchasedApisRequest::getSecurityToken()const
 void DescribePurchasedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribePurchasedApisRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string DescribePurchasedApisRequest::getGroupId()const
 void DescribePurchasedApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribePurchasedApisRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribePurchasedApisRequest::getApiId()const
 void DescribePurchasedApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 int DescribePurchasedApisRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string DescribePurchasedApisRequest::getAccessKeyId()const
 void DescribePurchasedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

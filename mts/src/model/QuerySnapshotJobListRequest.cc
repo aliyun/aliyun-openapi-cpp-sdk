@@ -44,7 +44,7 @@ std::string QuerySnapshotJobListRequest::getResourceOwnerAccount()const
 void QuerySnapshotJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QuerySnapshotJobListRequest::getNextPageToken()const
@@ -55,7 +55,7 @@ std::string QuerySnapshotJobListRequest::getNextPageToken()const
 void QuerySnapshotJobListRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
 }
 
 std::string QuerySnapshotJobListRequest::getSnapshotJobIds()const
@@ -66,7 +66,7 @@ std::string QuerySnapshotJobListRequest::getSnapshotJobIds()const
 void QuerySnapshotJobListRequest::setSnapshotJobIds(const std::string& snapshotJobIds)
 {
 	snapshotJobIds_ = snapshotJobIds;
-	setCoreParameter("SnapshotJobIds", snapshotJobIds);
+	setCoreParameter("SnapshotJobIds", std::to_string(snapshotJobIds));
 }
 
 std::string QuerySnapshotJobListRequest::getStartOfJobCreatedTimeRange()const
@@ -77,7 +77,7 @@ std::string QuerySnapshotJobListRequest::getStartOfJobCreatedTimeRange()const
 void QuerySnapshotJobListRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
-	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+	setCoreParameter("StartOfJobCreatedTimeRange", std::to_string(startOfJobCreatedTimeRange));
 }
 
 std::string QuerySnapshotJobListRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string QuerySnapshotJobListRequest::getOwnerAccount()const
 void QuerySnapshotJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QuerySnapshotJobListRequest::getMaximumPageSize()const
@@ -121,7 +121,7 @@ std::string QuerySnapshotJobListRequest::getAccessKeyId()const
 void QuerySnapshotJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string QuerySnapshotJobListRequest::getPipelineId()const
@@ -132,7 +132,7 @@ std::string QuerySnapshotJobListRequest::getPipelineId()const
 void QuerySnapshotJobListRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 
 std::string QuerySnapshotJobListRequest::getState()const
@@ -143,7 +143,7 @@ std::string QuerySnapshotJobListRequest::getState()const
 void QuerySnapshotJobListRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string QuerySnapshotJobListRequest::getEndOfJobCreatedTimeRange()const
@@ -154,6 +154,6 @@ std::string QuerySnapshotJobListRequest::getEndOfJobCreatedTimeRange()const
 void QuerySnapshotJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
 {
 	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+	setCoreParameter("EndOfJobCreatedTimeRange", std::to_string(endOfJobCreatedTimeRange));
 }
 

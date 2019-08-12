@@ -33,7 +33,7 @@ std::string ModifyACLRequest::getAclId()const
 void ModifyACLRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long ModifyACLRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyACLRequest::getResourceOwnerAccount()const
 void ModifyACLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyACLRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyACLRequest::getRegionId()const
 void ModifyACLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyACLRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyACLRequest::getOwnerAccount()const
 void ModifyACLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyACLRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyACLRequest::getName()const
 void ModifyACLRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long ModifyACLRequest::getOwnerId()const

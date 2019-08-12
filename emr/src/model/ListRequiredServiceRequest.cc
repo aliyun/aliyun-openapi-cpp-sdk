@@ -44,7 +44,7 @@ std::string ListRequiredServiceRequest::getRegionId()const
 void ListRequiredServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListRequiredServiceRequest::getEmrVersion()const
@@ -55,7 +55,7 @@ std::string ListRequiredServiceRequest::getEmrVersion()const
 void ListRequiredServiceRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", emrVersion);
+	setCoreParameter("EmrVersion", std::to_string(emrVersion));
 }
 
 std::string ListRequiredServiceRequest::getServiceNameList()const
@@ -66,7 +66,7 @@ std::string ListRequiredServiceRequest::getServiceNameList()const
 void ListRequiredServiceRequest::setServiceNameList(const std::string& serviceNameList)
 {
 	serviceNameList_ = serviceNameList;
-	setCoreParameter("ServiceNameList", serviceNameList);
+	setCoreParameter("ServiceNameList", std::to_string(serviceNameList));
 }
 
 std::string ListRequiredServiceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListRequiredServiceRequest::getAccessKeyId()const
 void ListRequiredServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

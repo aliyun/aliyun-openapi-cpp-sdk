@@ -33,7 +33,7 @@ std::string QueryDeviceFileListRequest::getIotId()const
 void QueryDeviceFileListRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string QueryDeviceFileListRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string QueryDeviceFileListRequest::getIotInstanceId()const
 void QueryDeviceFileListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryDeviceFileListRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryDeviceFileListRequest::getDeviceName()const
 void QueryDeviceFileListRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 int QueryDeviceFileListRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string QueryDeviceFileListRequest::getProductKey()const
 void QueryDeviceFileListRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string QueryDeviceFileListRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryDeviceFileListRequest::getAccessKeyId()const
 void QueryDeviceFileListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

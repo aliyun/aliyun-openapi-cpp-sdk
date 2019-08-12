@@ -33,7 +33,7 @@ std::string SubmitAnnotationJobRequest::getInput()const
 void SubmitAnnotationJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitAnnotationJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitAnnotationJobRequest::getUserData()const
 void SubmitAnnotationJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitAnnotationJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitAnnotationJobRequest::getResourceOwnerAccount()const
 void SubmitAnnotationJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitAnnotationJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitAnnotationJobRequest::getOwnerAccount()const
 void SubmitAnnotationJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitAnnotationJobRequest::getAnnotationConfig()const
@@ -88,7 +88,7 @@ std::string SubmitAnnotationJobRequest::getAnnotationConfig()const
 void SubmitAnnotationJobRequest::setAnnotationConfig(const std::string& annotationConfig)
 {
 	annotationConfig_ = annotationConfig;
-	setCoreParameter("AnnotationConfig", annotationConfig);
+	setCoreParameter("AnnotationConfig", std::to_string(annotationConfig));
 }
 
 long SubmitAnnotationJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitAnnotationJobRequest::getAccessKeyId()const
 void SubmitAnnotationJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitAnnotationJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitAnnotationJobRequest::getPipelineId()const
 void SubmitAnnotationJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

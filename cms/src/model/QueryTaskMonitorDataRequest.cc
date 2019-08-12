@@ -33,7 +33,7 @@ std::string QueryTaskMonitorDataRequest::getCursor()const
 void QueryTaskMonitorDataRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setCoreParameter("Cursor", std::to_string(cursor));
 }
 
 std::string QueryTaskMonitorDataRequest::getPeriod()const
@@ -44,7 +44,7 @@ std::string QueryTaskMonitorDataRequest::getPeriod()const
 void QueryTaskMonitorDataRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 int QueryTaskMonitorDataRequest::getLength()const
@@ -66,7 +66,7 @@ std::string QueryTaskMonitorDataRequest::getEndTime()const
 void QueryTaskMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryTaskMonitorDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryTaskMonitorDataRequest::getStartTime()const
 void QueryTaskMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryTaskMonitorDataRequest::getType()const
@@ -88,7 +88,7 @@ std::string QueryTaskMonitorDataRequest::getType()const
 void QueryTaskMonitorDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string QueryTaskMonitorDataRequest::getMetricName()const
@@ -99,7 +99,7 @@ std::string QueryTaskMonitorDataRequest::getMetricName()const
 void QueryTaskMonitorDataRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string QueryTaskMonitorDataRequest::getTaskId()const
@@ -110,6 +110,6 @@ std::string QueryTaskMonitorDataRequest::getTaskId()const
 void QueryTaskMonitorDataRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

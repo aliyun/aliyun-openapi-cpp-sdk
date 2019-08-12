@@ -44,7 +44,7 @@ std::string CheckCreateDdrDBInstanceRequest::getRestoreTime()const
 void CheckCreateDdrDBInstanceRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", std::to_string(restoreTime));
 }
 
 int CheckCreateDdrDBInstanceRequest::getDBInstanceStorage()const
@@ -66,7 +66,7 @@ std::string CheckCreateDdrDBInstanceRequest::getSourceDBInstanceName()const
 void CheckCreateDdrDBInstanceRequest::setSourceDBInstanceName(const std::string& sourceDBInstanceName)
 {
 	sourceDBInstanceName_ = sourceDBInstanceName;
-	setCoreParameter("SourceDBInstanceName", sourceDBInstanceName);
+	setCoreParameter("SourceDBInstanceName", std::to_string(sourceDBInstanceName));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getBakSetName()const
@@ -77,7 +77,7 @@ std::string CheckCreateDdrDBInstanceRequest::getBakSetName()const
 void CheckCreateDdrDBInstanceRequest::setBakSetName(const std::string& bakSetName)
 {
 	bakSetName_ = bakSetName;
-	setCoreParameter("BakSetName", bakSetName);
+	setCoreParameter("BakSetName", std::to_string(bakSetName));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CheckCreateDdrDBInstanceRequest::getResourceOwnerAccount()const
 void CheckCreateDdrDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getHostType()const
@@ -99,7 +99,7 @@ std::string CheckCreateDdrDBInstanceRequest::getHostType()const
 void CheckCreateDdrDBInstanceRequest::setHostType(const std::string& hostType)
 {
 	hostType_ = hostType;
-	setCoreParameter("HostType", hostType);
+	setCoreParameter("HostType", std::to_string(hostType));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getBackupSetId()const
@@ -110,7 +110,7 @@ std::string CheckCreateDdrDBInstanceRequest::getBackupSetId()const
 void CheckCreateDdrDBInstanceRequest::setBackupSetId(const std::string& backupSetId)
 {
 	backupSetId_ = backupSetId;
-	setCoreParameter("BackupSetId", backupSetId);
+	setCoreParameter("BackupSetId", std::to_string(backupSetId));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getEngineVersion()const
@@ -121,7 +121,7 @@ std::string CheckCreateDdrDBInstanceRequest::getEngineVersion()const
 void CheckCreateDdrDBInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long CheckCreateDdrDBInstanceRequest::getOwnerId()const
@@ -143,7 +143,7 @@ std::string CheckCreateDdrDBInstanceRequest::getUserBakSetURL()const
 void CheckCreateDdrDBInstanceRequest::setUserBakSetURL(const std::string& userBakSetURL)
 {
 	userBakSetURL_ = userBakSetURL;
-	setCoreParameter("UserBakSetURL", userBakSetURL);
+	setCoreParameter("UserBakSetURL", std::to_string(userBakSetURL));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CheckCreateDdrDBInstanceRequest::getAccessKeyId()const
 void CheckCreateDdrDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getDBInstanceClass()const
@@ -165,7 +165,7 @@ std::string CheckCreateDdrDBInstanceRequest::getDBInstanceClass()const
 void CheckCreateDdrDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getRestoreType()const
@@ -176,7 +176,7 @@ std::string CheckCreateDdrDBInstanceRequest::getRestoreType()const
 void CheckCreateDdrDBInstanceRequest::setRestoreType(const std::string& restoreType)
 {
 	restoreType_ = restoreType;
-	setCoreParameter("RestoreType", restoreType);
+	setCoreParameter("RestoreType", std::to_string(restoreType));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string CheckCreateDdrDBInstanceRequest::getRegionId()const
 void CheckCreateDdrDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getEngine()const
@@ -198,7 +198,7 @@ std::string CheckCreateDdrDBInstanceRequest::getEngine()const
 void CheckCreateDdrDBInstanceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getSourceRegion()const
@@ -209,7 +209,7 @@ std::string CheckCreateDdrDBInstanceRequest::getSourceRegion()const
 void CheckCreateDdrDBInstanceRequest::setSourceRegion(const std::string& sourceRegion)
 {
 	sourceRegion_ = sourceRegion;
-	setCoreParameter("SourceRegion", sourceRegion);
+	setCoreParameter("SourceRegion", std::to_string(sourceRegion));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getBackupSetRegion()const
@@ -220,7 +220,7 @@ std::string CheckCreateDdrDBInstanceRequest::getBackupSetRegion()const
 void CheckCreateDdrDBInstanceRequest::setBackupSetRegion(const std::string& backupSetRegion)
 {
 	backupSetRegion_ = backupSetRegion;
-	setCoreParameter("BackupSetRegion", backupSetRegion);
+	setCoreParameter("BackupSetRegion", std::to_string(backupSetRegion));
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getBackupSetType()const
@@ -231,6 +231,6 @@ std::string CheckCreateDdrDBInstanceRequest::getBackupSetType()const
 void CheckCreateDdrDBInstanceRequest::setBackupSetType(const std::string& backupSetType)
 {
 	backupSetType_ = backupSetType;
-	setCoreParameter("BackupSetType", backupSetType);
+	setCoreParameter("BackupSetType", std::to_string(backupSetType));
 }
 

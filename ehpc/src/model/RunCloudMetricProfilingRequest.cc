@@ -44,7 +44,7 @@ std::string RunCloudMetricProfilingRequest::getHostName()const
 void RunCloudMetricProfilingRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string RunCloudMetricProfilingRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RunCloudMetricProfilingRequest::getRegionId()const
 void RunCloudMetricProfilingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int RunCloudMetricProfilingRequest::getProcessId()const
@@ -88,7 +88,7 @@ std::string RunCloudMetricProfilingRequest::getClusterId()const
 void RunCloudMetricProfilingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string RunCloudMetricProfilingRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string RunCloudMetricProfilingRequest::getAccessKeyId()const
 void RunCloudMetricProfilingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

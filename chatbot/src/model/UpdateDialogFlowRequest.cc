@@ -33,7 +33,7 @@ std::string UpdateDialogFlowRequest::getModuleDefinition()const
 void UpdateDialogFlowRequest::setModuleDefinition(const std::string& moduleDefinition)
 {
 	moduleDefinition_ = moduleDefinition;
-	setCoreParameter("ModuleDefinition", moduleDefinition);
+	setCoreParameter("ModuleDefinition", std::to_string(moduleDefinition));
 }
 
 long UpdateDialogFlowRequest::getDialogId()const

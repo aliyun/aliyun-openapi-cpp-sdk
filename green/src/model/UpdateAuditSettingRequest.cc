@@ -33,7 +33,7 @@ std::string UpdateAuditSettingRequest::getSourceIp()const
 void UpdateAuditSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UpdateAuditSettingRequest::getSeed()const
@@ -44,7 +44,7 @@ std::string UpdateAuditSettingRequest::getSeed()const
 void UpdateAuditSettingRequest::setSeed(const std::string& seed)
 {
 	seed_ = seed;
-	setCoreParameter("Seed", seed);
+	setCoreParameter("Seed", std::to_string(seed));
 }
 
 std::string UpdateAuditSettingRequest::getAuditRange()const
@@ -55,7 +55,7 @@ std::string UpdateAuditSettingRequest::getAuditRange()const
 void UpdateAuditSettingRequest::setAuditRange(const std::string& auditRange)
 {
 	auditRange_ = auditRange;
-	setCoreParameter("AuditRange", auditRange);
+	setCoreParameter("AuditRange", std::to_string(auditRange));
 }
 
 std::string UpdateAuditSettingRequest::getCallback()const
@@ -66,6 +66,6 @@ std::string UpdateAuditSettingRequest::getCallback()const
 void UpdateAuditSettingRequest::setCallback(const std::string& callback)
 {
 	callback_ = callback;
-	setCoreParameter("Callback", callback);
+	setCoreParameter("Callback", std::to_string(callback));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyEventTypeStatusRequest::getSubTypeIds()const
 void ModifyEventTypeStatusRequest::setSubTypeIds(const std::string& subTypeIds)
 {
 	subTypeIds_ = subTypeIds;
-	setCoreParameter("SubTypeIds", subTypeIds);
+	setCoreParameter("SubTypeIds", std::to_string(subTypeIds));
 }
 
 std::string ModifyEventTypeStatusRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyEventTypeStatusRequest::getSourceIp()const
 void ModifyEventTypeStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyEventTypeStatusRequest::getLang()const
@@ -55,6 +55,6 @@ std::string ModifyEventTypeStatusRequest::getLang()const
 void ModifyEventTypeStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -33,7 +33,7 @@ std::string GetPhotosByMd5sRequest::getLibraryId()const
 void GetPhotosByMd5sRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string GetPhotosByMd5sRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string GetPhotosByMd5sRequest::getStoreName()const
 void GetPhotosByMd5sRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string GetPhotosByMd5sRequest::getState()const
@@ -55,7 +55,7 @@ std::string GetPhotosByMd5sRequest::getState()const
 void GetPhotosByMd5sRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::vector<std::string> GetPhotosByMd5sRequest::getMd5()const

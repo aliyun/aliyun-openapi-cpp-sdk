@@ -33,7 +33,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getAccess_key_id()const
 void ModifyLoadBalancerPayTypeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long ModifyLoadBalancerPayTypeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ bool ModifyLoadBalancerPayTypeRequest::getAutoPay()const
 void ModifyLoadBalancerPayTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getResourceOwnerAccount()const
 void ModifyLoadBalancerPayTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getOwnerAccount()const
 void ModifyLoadBalancerPayTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyLoadBalancerPayTypeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getTags()const
 void ModifyLoadBalancerPayTypeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 int ModifyLoadBalancerPayTypeRequest::getDuration()const
@@ -121,7 +121,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getLoadBalancerId()const
 void ModifyLoadBalancerPayTypeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getRegionId()const
 void ModifyLoadBalancerPayTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getPayType()const
@@ -143,7 +143,7 @@ std::string ModifyLoadBalancerPayTypeRequest::getPayType()const
 void ModifyLoadBalancerPayTypeRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getPricingCycle()const
@@ -154,6 +154,6 @@ std::string ModifyLoadBalancerPayTypeRequest::getPricingCycle()const
 void ModifyLoadBalancerPayTypeRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

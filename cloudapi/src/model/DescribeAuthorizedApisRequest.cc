@@ -33,7 +33,7 @@ std::string DescribeAuthorizedApisRequest::getSecurityToken()const
 void DescribeAuthorizedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeAuthorizedApisRequest::getAppId()const
@@ -77,6 +77,6 @@ std::string DescribeAuthorizedApisRequest::getAccessKeyId()const
 void DescribeAuthorizedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

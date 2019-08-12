@@ -44,7 +44,7 @@ std::string ModifySnatEntryRequest::getResourceOwnerAccount()const
 void ModifySnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySnatEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifySnatEntryRequest::getRegionId()const
 void ModifySnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifySnatEntryRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySnatEntryRequest::getOwnerAccount()const
 void ModifySnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySnatEntryRequest::getSnatEntryName()const
@@ -77,7 +77,7 @@ std::string ModifySnatEntryRequest::getSnatEntryName()const
 void ModifySnatEntryRequest::setSnatEntryName(const std::string& snatEntryName)
 {
 	snatEntryName_ = snatEntryName;
-	setCoreParameter("SnatEntryName", snatEntryName);
+	setCoreParameter("SnatEntryName", std::to_string(snatEntryName));
 }
 
 std::string ModifySnatEntryRequest::getSnatTableId()const
@@ -88,7 +88,7 @@ std::string ModifySnatEntryRequest::getSnatTableId()const
 void ModifySnatEntryRequest::setSnatTableId(const std::string& snatTableId)
 {
 	snatTableId_ = snatTableId;
-	setCoreParameter("SnatTableId", snatTableId);
+	setCoreParameter("SnatTableId", std::to_string(snatTableId));
 }
 
 std::string ModifySnatEntryRequest::getSnatEntryId()const
@@ -99,7 +99,7 @@ std::string ModifySnatEntryRequest::getSnatEntryId()const
 void ModifySnatEntryRequest::setSnatEntryId(const std::string& snatEntryId)
 {
 	snatEntryId_ = snatEntryId;
-	setCoreParameter("SnatEntryId", snatEntryId);
+	setCoreParameter("SnatEntryId", std::to_string(snatEntryId));
 }
 
 long ModifySnatEntryRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string ModifySnatEntryRequest::getSnatIp()const
 void ModifySnatEntryRequest::setSnatIp(const std::string& snatIp)
 {
 	snatIp_ = snatIp;
-	setCoreParameter("SnatIp", snatIp);
+	setCoreParameter("SnatIp", std::to_string(snatIp));
 }
 

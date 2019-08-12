@@ -44,7 +44,7 @@ std::string GetJobMigrateResultRequest::getRegionId()const
 void GetJobMigrateResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetJobMigrateResultRequest::getId()const
@@ -55,7 +55,7 @@ std::string GetJobMigrateResultRequest::getId()const
 void GetJobMigrateResultRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetJobMigrateResultRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetJobMigrateResultRequest::getAccessKeyId()const
 void GetJobMigrateResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

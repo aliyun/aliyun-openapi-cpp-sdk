@@ -33,7 +33,7 @@ std::string CreateIntentRequest::getIntentDefinition()const
 void CreateIntentRequest::setIntentDefinition(const std::string& intentDefinition)
 {
 	intentDefinition_ = intentDefinition;
-	setCoreParameter("IntentDefinition", intentDefinition);
+	setCoreParameter("IntentDefinition", std::to_string(intentDefinition));
 }
 
 long CreateIntentRequest::getDialogId()const

@@ -44,7 +44,7 @@ std::string KillExecutionJobInstanceRequest::getRegionId()const
 void KillExecutionJobInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string KillExecutionJobInstanceRequest::getJobInstanceId()const
@@ -55,7 +55,7 @@ std::string KillExecutionJobInstanceRequest::getJobInstanceId()const
 void KillExecutionJobInstanceRequest::setJobInstanceId(const std::string& jobInstanceId)
 {
 	jobInstanceId_ = jobInstanceId;
-	setCoreParameter("JobInstanceId", jobInstanceId);
+	setCoreParameter("JobInstanceId", std::to_string(jobInstanceId));
 }
 
 std::string KillExecutionJobInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string KillExecutionJobInstanceRequest::getAccessKeyId()const
 void KillExecutionJobInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

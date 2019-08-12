@@ -33,7 +33,7 @@ std::string RemoveBackendServersRequest::getAccess_key_id()const
 void RemoveBackendServersRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long RemoveBackendServersRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string RemoveBackendServersRequest::getLoadBalancerId()const
 void RemoveBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string RemoveBackendServersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string RemoveBackendServersRequest::getRegionId()const
 void RemoveBackendServersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveBackendServersRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RemoveBackendServersRequest::getResourceOwnerAccount()const
 void RemoveBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveBackendServersRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveBackendServersRequest::getOwnerAccount()const
 void RemoveBackendServersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveBackendServersRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string RemoveBackendServersRequest::getBackendServers()const
 void RemoveBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
 	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
+	setCoreParameter("BackendServers", std::to_string(backendServers));
 }
 
 std::string RemoveBackendServersRequest::getTags()const
@@ -121,6 +121,6 @@ std::string RemoveBackendServersRequest::getTags()const
 void RemoveBackendServersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

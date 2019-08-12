@@ -44,7 +44,7 @@ std::string ModifySecurityCheckScheduleConfigRequest::getSourceIp()const
 void ModifySecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
@@ -55,7 +55,7 @@ std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
 void ModifySecurityCheckScheduleConfigRequest::setDaysOfWeek(const std::string& daysOfWeek)
 {
 	daysOfWeek_ = daysOfWeek;
-	setCoreParameter("DaysOfWeek", daysOfWeek);
+	setCoreParameter("DaysOfWeek", std::to_string(daysOfWeek));
 }
 
 int ModifySecurityCheckScheduleConfigRequest::getEndTime()const
@@ -88,6 +88,6 @@ std::string ModifySecurityCheckScheduleConfigRequest::getLang()const
 void ModifySecurityCheckScheduleConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

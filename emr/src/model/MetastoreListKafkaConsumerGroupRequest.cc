@@ -44,7 +44,7 @@ std::string MetastoreListKafkaConsumerGroupRequest::getTopicId()const
 void MetastoreListKafkaConsumerGroupRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListKafkaConsumerGroupRequest::getRegionId()const
 void MetastoreListKafkaConsumerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int MetastoreListKafkaConsumerGroupRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string MetastoreListKafkaConsumerGroupRequest::getAccessKeyId()const
 void MetastoreListKafkaConsumerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

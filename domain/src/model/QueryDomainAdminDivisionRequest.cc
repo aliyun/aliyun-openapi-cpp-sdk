@@ -33,7 +33,7 @@ std::string QueryDomainAdminDivisionRequest::getUserClientIp()const
 void QueryDomainAdminDivisionRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryDomainAdminDivisionRequest::getLang()const
@@ -44,6 +44,6 @@ std::string QueryDomainAdminDivisionRequest::getLang()const
 void QueryDomainAdminDivisionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

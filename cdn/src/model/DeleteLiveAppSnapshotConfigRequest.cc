@@ -33,7 +33,7 @@ std::string DeleteLiveAppSnapshotConfigRequest::getAppName()const
 void DeleteLiveAppSnapshotConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DeleteLiveAppSnapshotConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLiveAppSnapshotConfigRequest::getSecurityToken()const
 void DeleteLiveAppSnapshotConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLiveAppSnapshotConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLiveAppSnapshotConfigRequest::getDomainName()const
 void DeleteLiveAppSnapshotConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteLiveAppSnapshotConfigRequest::getOwnerId()const

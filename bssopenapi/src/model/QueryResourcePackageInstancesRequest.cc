@@ -33,7 +33,7 @@ std::string QueryResourcePackageInstancesRequest::getExpiryTimeEnd()const
 void QueryResourcePackageInstancesRequest::setExpiryTimeEnd(const std::string& expiryTimeEnd)
 {
 	expiryTimeEnd_ = expiryTimeEnd;
-	setCoreParameter("ExpiryTimeEnd", expiryTimeEnd);
+	setCoreParameter("ExpiryTimeEnd", std::to_string(expiryTimeEnd));
 }
 
 std::string QueryResourcePackageInstancesRequest::getProductCode()const
@@ -44,7 +44,7 @@ std::string QueryResourcePackageInstancesRequest::getProductCode()const
 void QueryResourcePackageInstancesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 int QueryResourcePackageInstancesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string QueryResourcePackageInstancesRequest::getExpiryTimeStart()const
 void QueryResourcePackageInstancesRequest::setExpiryTimeStart(const std::string& expiryTimeStart)
 {
 	expiryTimeStart_ = expiryTimeStart;
-	setCoreParameter("ExpiryTimeStart", expiryTimeStart);
+	setCoreParameter("ExpiryTimeStart", std::to_string(expiryTimeStart));
 }
 
 int QueryResourcePackageInstancesRequest::getPageNum()const

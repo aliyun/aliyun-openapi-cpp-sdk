@@ -33,7 +33,7 @@ bool DeleteUnionCasServiceRequest::getLeafOnly()const
 void DeleteUnionCasServiceRequest::setLeafOnly(bool leafOnly)
 {
 	leafOnly_ = leafOnly;
-	setCoreParameter("LeafOnly", leafOnly);
+	setCoreParameter("LeafOnly", leafOnly ? "true" : "false");
 }
 
 std::string DeleteUnionCasServiceRequest::getCasCsbName()const
@@ -44,7 +44,7 @@ std::string DeleteUnionCasServiceRequest::getCasCsbName()const
 void DeleteUnionCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 {
 	casCsbName_ = casCsbName;
-	setCoreParameter("CasCsbName", casCsbName);
+	setCoreParameter("CasCsbName", std::to_string(casCsbName));
 }
 
 std::string DeleteUnionCasServiceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteUnionCasServiceRequest::getRegionId()const
 void DeleteUnionCasServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteUnionCasServiceRequest::getSrcUserId()const
@@ -66,7 +66,7 @@ std::string DeleteUnionCasServiceRequest::getSrcUserId()const
 void DeleteUnionCasServiceRequest::setSrcUserId(const std::string& srcUserId)
 {
 	srcUserId_ = srcUserId;
-	setCoreParameter("SrcUserId", srcUserId);
+	setCoreParameter("SrcUserId", std::to_string(srcUserId));
 }
 
 std::string DeleteUnionCasServiceRequest::getCasServiceId()const
@@ -77,6 +77,6 @@ std::string DeleteUnionCasServiceRequest::getCasServiceId()const
 void DeleteUnionCasServiceRequest::setCasServiceId(const std::string& casServiceId)
 {
 	casServiceId_ = casServiceId;
-	setCoreParameter("CasServiceId", casServiceId);
+	setCoreParameter("CasServiceId", std::to_string(casServiceId));
 }
 

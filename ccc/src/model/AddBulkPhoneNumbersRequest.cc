@@ -33,7 +33,7 @@ std::string AddBulkPhoneNumbersRequest::getContactFlowId()const
 void AddBulkPhoneNumbersRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", contactFlowId);
+	setCoreParameter("ContactFlowId", std::to_string(contactFlowId));
 }
 
 std::string AddBulkPhoneNumbersRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string AddBulkPhoneNumbersRequest::getInstanceId()const
 void AddBulkPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AddBulkPhoneNumbersRequest::getUsage()const
@@ -55,7 +55,7 @@ std::string AddBulkPhoneNumbersRequest::getUsage()const
 void AddBulkPhoneNumbersRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", usage);
+	setCoreParameter("Usage", std::to_string(usage));
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
@@ -90,6 +90,6 @@ std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
 void AddBulkPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

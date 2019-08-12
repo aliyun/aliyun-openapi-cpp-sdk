@@ -44,7 +44,7 @@ std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
 void DescribeClusterServiceConfigTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
@@ -55,7 +55,7 @@ std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
 void DescribeClusterServiceConfigTagRequest::setConfigTag(const std::string& configTag)
 {
 	configTag_ = configTag;
-	setCoreParameter("ConfigTag", configTag);
+	setCoreParameter("ConfigTag", std::to_string(configTag));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
 void DescribeClusterServiceConfigTagRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
 void DescribeClusterServiceConfigTagRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
 void DescribeClusterServiceConfigTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

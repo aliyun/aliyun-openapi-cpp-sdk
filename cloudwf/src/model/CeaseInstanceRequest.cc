@@ -33,7 +33,7 @@ std::string CeaseInstanceRequest::getTraceId()const
 void CeaseInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setCoreParameter("TraceId", std::to_string(traceId));
 }
 
 std::string CeaseInstanceRequest::getSpMsg()const
@@ -44,7 +44,7 @@ std::string CeaseInstanceRequest::getSpMsg()const
 void CeaseInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setCoreParameter("SpMsg", spMsg);
+	setCoreParameter("SpMsg", std::to_string(spMsg));
 }
 
 std::string CeaseInstanceRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CeaseInstanceRequest::getAccessKeyId()const
 void CeaseInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

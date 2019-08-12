@@ -33,7 +33,7 @@ std::string DeleteWatermarkRequest::getWatermarkId()const
 void DeleteWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
+	setCoreParameter("WatermarkId", std::to_string(watermarkId));
 }
 
 long DeleteWatermarkRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
 void DeleteWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long DeleteWatermarkRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string DeleteWatermarkRequest::getAccessKeyId()const
 void DeleteWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

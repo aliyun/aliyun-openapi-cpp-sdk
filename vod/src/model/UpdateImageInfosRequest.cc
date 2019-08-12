@@ -44,7 +44,7 @@ std::string UpdateImageInfosRequest::getUpdateContent()const
 void UpdateImageInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
-	setCoreParameter("UpdateContent", updateContent);
+	setCoreParameter("UpdateContent", std::to_string(updateContent));
 }
 
 std::string UpdateImageInfosRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateImageInfosRequest::getResourceOwnerAccount()const
 void UpdateImageInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long UpdateImageInfosRequest::getResourceRealOwnerId()const
@@ -88,6 +88,6 @@ std::string UpdateImageInfosRequest::getAccessKeyId()const
 void UpdateImageInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

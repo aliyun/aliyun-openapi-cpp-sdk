@@ -33,7 +33,7 @@ bool QueryEndPointListRequest::getSecurity_transport()const
 void QueryEndPointListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string QueryEndPointListRequest::getRegionID()const
@@ -44,7 +44,7 @@ std::string QueryEndPointListRequest::getRegionID()const
 void QueryEndPointListRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setCoreParameter("RegionID", std::to_string(regionID));
 }
 
 std::string QueryEndPointListRequest::getRequestId()const
@@ -55,7 +55,7 @@ std::string QueryEndPointListRequest::getRequestId()const
 void QueryEndPointListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long QueryEndPointListRequest::getCallerParentId()const
@@ -88,7 +88,7 @@ std::string QueryEndPointListRequest::getCallerType()const
 void QueryEndPointListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool QueryEndPointListRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool QueryEndPointListRequest::getAk_mfa_present()const
 void QueryEndPointListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long QueryEndPointListRequest::getCallerUid()const
@@ -121,7 +121,7 @@ std::string QueryEndPointListRequest::getAccessKeyId()const
 void QueryEndPointListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long QueryEndPointListRequest::getUserID()const

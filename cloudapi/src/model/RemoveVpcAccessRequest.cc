@@ -33,7 +33,7 @@ std::string RemoveVpcAccessRequest::getInstanceId()const
 void RemoveVpcAccessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RemoveVpcAccessRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string RemoveVpcAccessRequest::getSecurityToken()const
 void RemoveVpcAccessRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int RemoveVpcAccessRequest::getPort()const
@@ -66,7 +66,7 @@ std::string RemoveVpcAccessRequest::getVpcId()const
 void RemoveVpcAccessRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string RemoveVpcAccessRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string RemoveVpcAccessRequest::getAccessKeyId()const
 void RemoveVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string QueryTradeIntentionUserListRequest::getBizId()const
 void QueryTradeIntentionUserListRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 long QueryTradeIntentionUserListRequest::getEnd()const

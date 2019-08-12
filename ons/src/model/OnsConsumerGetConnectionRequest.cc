@@ -33,7 +33,7 @@ std::string OnsConsumerGetConnectionRequest::getInstanceId()const
 void OnsConsumerGetConnectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsConsumerGetConnectionRequest::getGroupId()const
@@ -44,6 +44,6 @@ std::string OnsConsumerGetConnectionRequest::getGroupId()const
 void OnsConsumerGetConnectionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

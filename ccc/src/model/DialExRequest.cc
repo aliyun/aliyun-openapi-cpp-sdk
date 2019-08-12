@@ -33,7 +33,7 @@ std::string DialExRequest::getRoutPoint()const
 void DialExRequest::setRoutPoint(const std::string& routPoint)
 {
 	routPoint_ = routPoint;
-	setCoreParameter("RoutPoint", routPoint);
+	setCoreParameter("RoutPoint", std::to_string(routPoint));
 }
 
 std::string DialExRequest::getCaller()const
@@ -44,7 +44,7 @@ std::string DialExRequest::getCaller()const
 void DialExRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", caller);
+	setCoreParameter("Caller", std::to_string(caller));
 }
 
 std::string DialExRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DialExRequest::getInstanceId()const
 void DialExRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DialExRequest::getProvider()const
@@ -66,7 +66,7 @@ std::string DialExRequest::getProvider()const
 void DialExRequest::setProvider(const std::string& provider)
 {
 	provider_ = provider;
-	setCoreParameter("Provider", provider);
+	setCoreParameter("Provider", std::to_string(provider));
 }
 
 std::string DialExRequest::getCallee()const
@@ -77,7 +77,7 @@ std::string DialExRequest::getCallee()const
 void DialExRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", callee);
+	setCoreParameter("Callee", std::to_string(callee));
 }
 
 int DialExRequest::getAnswerMode()const
@@ -99,6 +99,6 @@ std::string DialExRequest::getAccessKeyId()const
 void DialExRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

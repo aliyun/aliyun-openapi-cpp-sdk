@@ -33,7 +33,7 @@ std::string DeleteLiveDetectNotifyConfigRequest::getSecurityToken()const
 void DeleteLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLiveDetectNotifyConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DeleteLiveDetectNotifyConfigRequest::getDomainName()const
 void DeleteLiveDetectNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteLiveDetectNotifyConfigRequest::getOwnerId()const

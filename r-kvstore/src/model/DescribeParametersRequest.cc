@@ -44,7 +44,7 @@ std::string DescribeParametersRequest::getSecurityToken()const
 void DescribeParametersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeParametersRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeParametersRequest::getResourceOwnerAccount()const
 void DescribeParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeParametersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeParametersRequest::getRegionId()const
 void DescribeParametersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeParametersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeParametersRequest::getOwnerAccount()const
 void DescribeParametersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeParametersRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeParametersRequest::getDBInstanceId()const
 void DescribeParametersRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeParametersRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeParametersRequest::getNodeId()const
 void DescribeParametersRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 
 std::string DescribeParametersRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeParametersRequest::getAccessKeyId()const
 void DescribeParametersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

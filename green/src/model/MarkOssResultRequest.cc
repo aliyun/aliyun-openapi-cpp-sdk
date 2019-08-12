@@ -33,7 +33,7 @@ std::string MarkOssResultRequest::getSourceIp()const
 void MarkOssResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string MarkOssResultRequest::getIds()const
@@ -44,7 +44,7 @@ std::string MarkOssResultRequest::getIds()const
 void MarkOssResultRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string MarkOssResultRequest::getLang()const
@@ -55,7 +55,7 @@ std::string MarkOssResultRequest::getLang()const
 void MarkOssResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool MarkOssResultRequest::getStock()const
@@ -66,7 +66,7 @@ bool MarkOssResultRequest::getStock()const
 void MarkOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock);
+	setCoreParameter("Stock", stock ? "true" : "false");
 }
 
 std::string MarkOssResultRequest::getOperation()const
@@ -77,7 +77,7 @@ std::string MarkOssResultRequest::getOperation()const
 void MarkOssResultRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setCoreParameter("Operation", std::to_string(operation));
 }
 
 std::string MarkOssResultRequest::getResourceType()const
@@ -88,7 +88,7 @@ std::string MarkOssResultRequest::getResourceType()const
 void MarkOssResultRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string MarkOssResultRequest::getScene()const
@@ -99,6 +99,6 @@ std::string MarkOssResultRequest::getScene()const
 void MarkOssResultRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 

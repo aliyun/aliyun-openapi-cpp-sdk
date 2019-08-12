@@ -44,7 +44,7 @@ std::string DeleteDBEndpointAddressRequest::getResourceOwnerAccount()const
 void DeleteDBEndpointAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteDBEndpointAddressRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DeleteDBEndpointAddressRequest::getDBClusterId()const
 void DeleteDBEndpointAddressRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DeleteDBEndpointAddressRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteDBEndpointAddressRequest::getOwnerAccount()const
 void DeleteDBEndpointAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteDBEndpointAddressRequest::getNetType()const
@@ -77,7 +77,7 @@ std::string DeleteDBEndpointAddressRequest::getNetType()const
 void DeleteDBEndpointAddressRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setCoreParameter("NetType", std::to_string(netType));
 }
 
 std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
@@ -88,7 +88,7 @@ std::string DeleteDBEndpointAddressRequest::getDBEndpointId()const
 void DeleteDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
 {
 	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", dBEndpointId);
+	setCoreParameter("DBEndpointId", std::to_string(dBEndpointId));
 }
 
 long DeleteDBEndpointAddressRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DeleteDBEndpointAddressRequest::getAccessKeyId()const
 void DeleteDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

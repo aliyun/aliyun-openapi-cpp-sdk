@@ -33,7 +33,7 @@ std::string CreateOfficeConversionTaskRequest::getSrcType()const
 void CreateOfficeConversionTaskRequest::setSrcType(const std::string& srcType)
 {
 	srcType_ = srcType;
-	setCoreParameter("SrcType", srcType);
+	setCoreParameter("SrcType", std::to_string(srcType));
 }
 
 std::string CreateOfficeConversionTaskRequest::getProject()const
@@ -44,7 +44,7 @@ std::string CreateOfficeConversionTaskRequest::getProject()const
 void CreateOfficeConversionTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string CreateOfficeConversionTaskRequest::getIdempotentToken()const
@@ -55,7 +55,7 @@ std::string CreateOfficeConversionTaskRequest::getIdempotentToken()const
 void CreateOfficeConversionTaskRequest::setIdempotentToken(const std::string& idempotentToken)
 {
 	idempotentToken_ = idempotentToken;
-	setCoreParameter("IdempotentToken", idempotentToken);
+	setCoreParameter("IdempotentToken", std::to_string(idempotentToken));
 }
 
 bool CreateOfficeConversionTaskRequest::getPdfVector()const
@@ -66,7 +66,7 @@ bool CreateOfficeConversionTaskRequest::getPdfVector()const
 void CreateOfficeConversionTaskRequest::setPdfVector(bool pdfVector)
 {
 	pdfVector_ = pdfVector;
-	setCoreParameter("PdfVector", pdfVector);
+	setCoreParameter("PdfVector", pdfVector ? "true" : "false");
 }
 
 std::string CreateOfficeConversionTaskRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string CreateOfficeConversionTaskRequest::getAccessKeyId()const
 void CreateOfficeConversionTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateOfficeConversionTaskRequest::getPassword()const
@@ -88,7 +88,7 @@ std::string CreateOfficeConversionTaskRequest::getPassword()const
 void CreateOfficeConversionTaskRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 long CreateOfficeConversionTaskRequest::getStartPage()const
@@ -110,7 +110,7 @@ std::string CreateOfficeConversionTaskRequest::getRegionId()const
 void CreateOfficeConversionTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateOfficeConversionTaskRequest::getNotifyEndpoint()const
@@ -121,7 +121,7 @@ std::string CreateOfficeConversionTaskRequest::getNotifyEndpoint()const
 void CreateOfficeConversionTaskRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setCoreParameter("NotifyEndpoint", std::to_string(notifyEndpoint));
 }
 
 bool CreateOfficeConversionTaskRequest::getFitToPagesWide()const
@@ -132,7 +132,7 @@ bool CreateOfficeConversionTaskRequest::getFitToPagesWide()const
 void CreateOfficeConversionTaskRequest::setFitToPagesWide(bool fitToPagesWide)
 {
 	fitToPagesWide_ = fitToPagesWide;
-	setCoreParameter("FitToPagesWide", fitToPagesWide);
+	setCoreParameter("FitToPagesWide", fitToPagesWide ? "true" : "false");
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtFilePrefix()const
@@ -143,7 +143,7 @@ std::string CreateOfficeConversionTaskRequest::getTgtFilePrefix()const
 void CreateOfficeConversionTaskRequest::setTgtFilePrefix(const std::string& tgtFilePrefix)
 {
 	tgtFilePrefix_ = tgtFilePrefix;
-	setCoreParameter("TgtFilePrefix", tgtFilePrefix);
+	setCoreParameter("TgtFilePrefix", std::to_string(tgtFilePrefix));
 }
 
 std::string CreateOfficeConversionTaskRequest::getNotifyTopicName()const
@@ -154,7 +154,7 @@ std::string CreateOfficeConversionTaskRequest::getNotifyTopicName()const
 void CreateOfficeConversionTaskRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setCoreParameter("NotifyTopicName", std::to_string(notifyTopicName));
 }
 
 std::string CreateOfficeConversionTaskRequest::getModelId()const
@@ -165,7 +165,7 @@ std::string CreateOfficeConversionTaskRequest::getModelId()const
 void CreateOfficeConversionTaskRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setCoreParameter("ModelId", std::to_string(modelId));
 }
 
 int CreateOfficeConversionTaskRequest::getDisplayDpi()const
@@ -220,7 +220,7 @@ std::string CreateOfficeConversionTaskRequest::getTgtFileSuffix()const
 void CreateOfficeConversionTaskRequest::setTgtFileSuffix(const std::string& tgtFileSuffix)
 {
 	tgtFileSuffix_ = tgtFileSuffix;
-	setCoreParameter("TgtFileSuffix", tgtFileSuffix);
+	setCoreParameter("TgtFileSuffix", std::to_string(tgtFileSuffix));
 }
 
 bool CreateOfficeConversionTaskRequest::getSheetOnePage()const
@@ -231,7 +231,7 @@ bool CreateOfficeConversionTaskRequest::getSheetOnePage()const
 void CreateOfficeConversionTaskRequest::setSheetOnePage(bool sheetOnePage)
 {
 	sheetOnePage_ = sheetOnePage;
-	setCoreParameter("SheetOnePage", sheetOnePage);
+	setCoreParameter("SheetOnePage", sheetOnePage ? "true" : "false");
 }
 
 long CreateOfficeConversionTaskRequest::getMaxSheetCol()const
@@ -253,7 +253,7 @@ std::string CreateOfficeConversionTaskRequest::getTgtType()const
 void CreateOfficeConversionTaskRequest::setTgtType(const std::string& tgtType)
 {
 	tgtType_ = tgtType;
-	setCoreParameter("TgtType", tgtType);
+	setCoreParameter("TgtType", std::to_string(tgtType));
 }
 
 bool CreateOfficeConversionTaskRequest::getHidecomments()const
@@ -264,7 +264,7 @@ bool CreateOfficeConversionTaskRequest::getHidecomments()const
 void CreateOfficeConversionTaskRequest::setHidecomments(bool hidecomments)
 {
 	hidecomments_ = hidecomments;
-	setCoreParameter("Hidecomments", hidecomments);
+	setCoreParameter("Hidecomments", hidecomments ? "true" : "false");
 }
 
 bool CreateOfficeConversionTaskRequest::getFitToPagesTall()const
@@ -275,7 +275,7 @@ bool CreateOfficeConversionTaskRequest::getFitToPagesTall()const
 void CreateOfficeConversionTaskRequest::setFitToPagesTall(bool fitToPagesTall)
 {
 	fitToPagesTall_ = fitToPagesTall;
-	setCoreParameter("FitToPagesTall", fitToPagesTall);
+	setCoreParameter("FitToPagesTall", fitToPagesTall ? "true" : "false");
 }
 
 std::string CreateOfficeConversionTaskRequest::getSrcUri()const
@@ -286,7 +286,7 @@ std::string CreateOfficeConversionTaskRequest::getSrcUri()const
 void CreateOfficeConversionTaskRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", std::to_string(srcUri));
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtFilePages()const
@@ -297,7 +297,7 @@ std::string CreateOfficeConversionTaskRequest::getTgtFilePages()const
 void CreateOfficeConversionTaskRequest::setTgtFilePages(const std::string& tgtFilePages)
 {
 	tgtFilePages_ = tgtFilePages;
-	setCoreParameter("TgtFilePages", tgtFilePages);
+	setCoreParameter("TgtFilePages", std::to_string(tgtFilePages));
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtUri()const
@@ -308,6 +308,6 @@ std::string CreateOfficeConversionTaskRequest::getTgtUri()const
 void CreateOfficeConversionTaskRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setCoreParameter("TgtUri", tgtUri);
+	setCoreParameter("TgtUri", std::to_string(tgtUri));
 }
 

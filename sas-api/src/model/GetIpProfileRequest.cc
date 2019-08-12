@@ -33,7 +33,7 @@ std::string GetIpProfileRequest::getDeviceIdMd5()const
 void GetIpProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 {
 	deviceIdMd5_ = deviceIdMd5;
-	setCoreParameter("DeviceIdMd5", deviceIdMd5);
+	setCoreParameter("DeviceIdMd5", std::to_string(deviceIdMd5));
 }
 
 int GetIpProfileRequest::getCarrier()const
@@ -55,7 +55,7 @@ std::string GetIpProfileRequest::getOs()const
 void GetIpProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
-	setCoreParameter("Os", os);
+	setCoreParameter("Os", std::to_string(os));
 }
 
 std::string GetIpProfileRequest::getRequestUrl()const
@@ -66,7 +66,7 @@ std::string GetIpProfileRequest::getRequestUrl()const
 void GetIpProfileRequest::setRequestUrl(const std::string& requestUrl)
 {
 	requestUrl_ = requestUrl;
-	setCoreParameter("RequestUrl", requestUrl);
+	setCoreParameter("RequestUrl", std::to_string(requestUrl));
 }
 
 std::string GetIpProfileRequest::getIp()const
@@ -77,7 +77,7 @@ std::string GetIpProfileRequest::getIp()const
 void GetIpProfileRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setCoreParameter("Ip", std::to_string(ip));
 }
 
 std::string GetIpProfileRequest::getUserAgent()const
@@ -88,7 +88,7 @@ std::string GetIpProfileRequest::getUserAgent()const
 void GetIpProfileRequest::setUserAgent(const std::string& userAgent)
 {
 	userAgent_ = userAgent;
-	setCoreParameter("UserAgent", userAgent);
+	setCoreParameter("UserAgent", std::to_string(userAgent));
 }
 
 int GetIpProfileRequest::getConnectionType()const

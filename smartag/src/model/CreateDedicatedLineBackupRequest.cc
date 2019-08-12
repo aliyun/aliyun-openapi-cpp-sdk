@@ -44,7 +44,7 @@ std::string CreateDedicatedLineBackupRequest::getResourceOwnerAccount()const
 void CreateDedicatedLineBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateDedicatedLineBackupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateDedicatedLineBackupRequest::getRegionId()const
 void CreateDedicatedLineBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateDedicatedLineBackupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateDedicatedLineBackupRequest::getOwnerAccount()const
 void CreateDedicatedLineBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateDedicatedLineBackupRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string CreateDedicatedLineBackupRequest::getSmartAGId()const
 void CreateDedicatedLineBackupRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long CreateDedicatedLineBackupRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string CreateDedicatedLineBackupRequest::getVbrId()const
 void CreateDedicatedLineBackupRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", std::to_string(vbrId));
 }
 
 std::string CreateDedicatedLineBackupRequest::getVbrRegionId()const
@@ -110,6 +110,6 @@ std::string CreateDedicatedLineBackupRequest::getVbrRegionId()const
 void CreateDedicatedLineBackupRequest::setVbrRegionId(const std::string& vbrRegionId)
 {
 	vbrRegionId_ = vbrRegionId;
-	setCoreParameter("VbrRegionId", vbrRegionId);
+	setCoreParameter("VbrRegionId", std::to_string(vbrRegionId));
 }
 

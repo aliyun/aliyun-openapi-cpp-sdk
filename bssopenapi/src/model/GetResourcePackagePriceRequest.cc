@@ -44,7 +44,7 @@ std::string GetResourcePackagePriceRequest::getProductCode()const
 void GetResourcePackagePriceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string GetResourcePackagePriceRequest::getSpecification()const
@@ -55,7 +55,7 @@ std::string GetResourcePackagePriceRequest::getSpecification()const
 void GetResourcePackagePriceRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", specification);
+	setCoreParameter("Specification", std::to_string(specification));
 }
 
 long GetResourcePackagePriceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string GetResourcePackagePriceRequest::getPackageType()const
 void GetResourcePackagePriceRequest::setPackageType(const std::string& packageType)
 {
 	packageType_ = packageType;
-	setCoreParameter("PackageType", packageType);
+	setCoreParameter("PackageType", std::to_string(packageType));
 }
 
 std::string GetResourcePackagePriceRequest::getEffectiveDate()const
@@ -88,7 +88,7 @@ std::string GetResourcePackagePriceRequest::getEffectiveDate()const
 void GetResourcePackagePriceRequest::setEffectiveDate(const std::string& effectiveDate)
 {
 	effectiveDate_ = effectiveDate;
-	setCoreParameter("EffectiveDate", effectiveDate);
+	setCoreParameter("EffectiveDate", std::to_string(effectiveDate));
 }
 
 std::string GetResourcePackagePriceRequest::getPricingCycle()const
@@ -99,6 +99,6 @@ std::string GetResourcePackagePriceRequest::getPricingCycle()const
 void GetResourcePackagePriceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

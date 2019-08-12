@@ -44,7 +44,7 @@ std::string ListResourcePoolForAdminRequest::getRegionId()const
 void ListResourcePoolForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListResourcePoolForAdminRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListResourcePoolForAdminRequest::getClusterId()const
 void ListResourcePoolForAdminRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListResourcePoolForAdminRequest::getUserId()const
@@ -77,7 +77,7 @@ std::string ListResourcePoolForAdminRequest::getUserId()const
 void ListResourcePoolForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 int ListResourcePoolForAdminRequest::getPageNumber()const
@@ -99,7 +99,7 @@ std::string ListResourcePoolForAdminRequest::getAccessKeyId()const
 void ListResourcePoolForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListResourcePoolForAdminRequest::getPoolType()const
@@ -110,6 +110,6 @@ std::string ListResourcePoolForAdminRequest::getPoolType()const
 void ListResourcePoolForAdminRequest::setPoolType(const std::string& poolType)
 {
 	poolType_ = poolType;
-	setCoreParameter("PoolType", poolType);
+	setCoreParameter("PoolType", std::to_string(poolType));
 }
 

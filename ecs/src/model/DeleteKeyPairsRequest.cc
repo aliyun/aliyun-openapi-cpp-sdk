@@ -33,7 +33,7 @@ std::string DeleteKeyPairsRequest::getSourceRegionId()const
 void DeleteKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteKeyPairsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteKeyPairsRequest::getResourceOwnerAccount()const
 void DeleteKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteKeyPairsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteKeyPairsRequest::getRegionId()const
 void DeleteKeyPairsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteKeyPairsRequest::getKeyPairNames()const
@@ -77,7 +77,7 @@ std::string DeleteKeyPairsRequest::getKeyPairNames()const
 void DeleteKeyPairsRequest::setKeyPairNames(const std::string& keyPairNames)
 {
 	keyPairNames_ = keyPairNames;
-	setCoreParameter("KeyPairNames", keyPairNames);
+	setCoreParameter("KeyPairNames", std::to_string(keyPairNames));
 }
 
 long DeleteKeyPairsRequest::getOwnerId()const

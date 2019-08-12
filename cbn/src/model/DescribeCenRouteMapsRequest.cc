@@ -44,7 +44,7 @@ std::string DescribeCenRouteMapsRequest::getResourceOwnerAccount()const
 void DescribeCenRouteMapsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenRouteMapsRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenRouteMapsRequest::getCenId()const
 void DescribeCenRouteMapsRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DescribeCenRouteMapsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenRouteMapsRequest::getOwnerAccount()const
 void DescribeCenRouteMapsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeCenRouteMapsRequest::getCenRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeCenRouteMapsRequest::getCenRegionId()const
 void DescribeCenRouteMapsRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", cenRegionId);
+	setCoreParameter("CenRegionId", std::to_string(cenRegionId));
 }
 
 int DescribeCenRouteMapsRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeCenRouteMapsRequest::getRouteMapId()const
 void DescribeCenRouteMapsRequest::setRouteMapId(const std::string& routeMapId)
 {
 	routeMapId_ = routeMapId;
-	setCoreParameter("RouteMapId", routeMapId);
+	setCoreParameter("RouteMapId", std::to_string(routeMapId));
 }
 
 long DescribeCenRouteMapsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeCenRouteMapsRequest::getTransmitDirection()const
 void DescribeCenRouteMapsRequest::setTransmitDirection(const std::string& transmitDirection)
 {
 	transmitDirection_ = transmitDirection;
-	setCoreParameter("TransmitDirection", transmitDirection);
+	setCoreParameter("TransmitDirection", std::to_string(transmitDirection));
 }
 

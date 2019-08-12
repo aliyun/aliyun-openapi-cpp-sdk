@@ -44,7 +44,7 @@ std::string DescribeUserStatisticsRequest::getRegionId()const
 void DescribeUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeUserStatisticsRequest::getUserId()const
@@ -55,7 +55,7 @@ std::string DescribeUserStatisticsRequest::getUserId()const
 void DescribeUserStatisticsRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string DescribeUserStatisticsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeUserStatisticsRequest::getAccessKeyId()const
 void DescribeUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

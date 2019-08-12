@@ -44,7 +44,7 @@ std::string DescribePackagesRequest::getSourceIp()const
 void DescribePackagesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribePackagesRequest::getProductId()const
@@ -77,7 +77,7 @@ std::string DescribePackagesRequest::getName()const
 void DescribePackagesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribePackagesRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribePackagesRequest::getQueryName()const
 void DescribePackagesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setCoreParameter("QueryName", std::to_string(queryName));
 }
 
 long DescribePackagesRequest::getRiskLevelId()const
@@ -132,7 +132,7 @@ std::string DescribePackagesRequest::getLang()const
 void DescribePackagesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribePackagesRequest::getRuleId()const

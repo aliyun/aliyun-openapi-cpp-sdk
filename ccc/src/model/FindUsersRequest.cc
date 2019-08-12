@@ -33,7 +33,7 @@ std::string FindUsersRequest::getInstanceId()const
 void FindUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string FindUsersRequest::getCriteria()const
@@ -44,7 +44,7 @@ std::string FindUsersRequest::getCriteria()const
 void FindUsersRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setCoreParameter("Criteria", std::to_string(criteria));
 }
 
 int FindUsersRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string FindUsersRequest::getAccessKeyId()const
 void FindUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

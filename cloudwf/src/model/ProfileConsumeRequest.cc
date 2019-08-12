@@ -33,7 +33,7 @@ std::string ProfileConsumeRequest::getBeginDate()const
 void ProfileConsumeRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", std::to_string(beginDate));
 }
 
 std::string ProfileConsumeRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ProfileConsumeRequest::getEndDate()const
 void ProfileConsumeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 int ProfileConsumeRequest::getDataType()const
@@ -77,6 +77,6 @@ std::string ProfileConsumeRequest::getAccessKeyId()const
 void ProfileConsumeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

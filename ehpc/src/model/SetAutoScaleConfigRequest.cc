@@ -55,7 +55,7 @@ std::string SetAutoScaleConfigRequest::getClusterId()const
 void SetAutoScaleConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 bool SetAutoScaleConfigRequest::getEnableAutoGrow()const
@@ -66,7 +66,7 @@ bool SetAutoScaleConfigRequest::getEnableAutoGrow()const
 void SetAutoScaleConfigRequest::setEnableAutoGrow(bool enableAutoGrow)
 {
 	enableAutoGrow_ = enableAutoGrow;
-	setCoreParameter("EnableAutoGrow", enableAutoGrow);
+	setCoreParameter("EnableAutoGrow", enableAutoGrow ? "true" : "false");
 }
 
 float SetAutoScaleConfigRequest::getSpotPriceLimit()const
@@ -88,7 +88,7 @@ bool SetAutoScaleConfigRequest::getEnableAutoShrink()const
 void SetAutoScaleConfigRequest::setEnableAutoShrink(bool enableAutoShrink)
 {
 	enableAutoShrink_ = enableAutoShrink;
-	setCoreParameter("EnableAutoShrink", enableAutoShrink);
+	setCoreParameter("EnableAutoShrink", enableAutoShrink ? "true" : "false");
 }
 
 std::string SetAutoScaleConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SetAutoScaleConfigRequest::getAccessKeyId()const
 void SetAutoScaleConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetAutoScaleConfigRequest::getSpotStrategy()const
@@ -110,7 +110,7 @@ std::string SetAutoScaleConfigRequest::getSpotStrategy()const
 void SetAutoScaleConfigRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", std::to_string(spotStrategy));
 }
 
 int SetAutoScaleConfigRequest::getMaxNodesInCluster()const
@@ -132,7 +132,7 @@ std::string SetAutoScaleConfigRequest::getExcludeNodes()const
 void SetAutoScaleConfigRequest::setExcludeNodes(const std::string& excludeNodes)
 {
 	excludeNodes_ = excludeNodes;
-	setCoreParameter("ExcludeNodes", excludeNodes);
+	setCoreParameter("ExcludeNodes", std::to_string(excludeNodes));
 }
 
 int SetAutoScaleConfigRequest::getShrinkIntervalInMinutes()const

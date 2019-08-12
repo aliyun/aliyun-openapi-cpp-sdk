@@ -33,7 +33,7 @@ std::string CreatePredictiveJobsRequest::getInstanceId()const
 void CreatePredictiveJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreatePredictiveJobsRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string CreatePredictiveJobsRequest::getSkillGroupId()const
 void CreatePredictiveJobsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::string CreatePredictiveJobsRequest::getStrategyJson()const
@@ -55,7 +55,7 @@ std::string CreatePredictiveJobsRequest::getStrategyJson()const
 void CreatePredictiveJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setCoreParameter("StrategyJson", std::to_string(strategyJson));
 }
 
 std::vector<std::string> CreatePredictiveJobsRequest::getJobsJson()const

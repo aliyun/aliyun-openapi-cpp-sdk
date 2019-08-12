@@ -33,7 +33,7 @@ std::string DescribeVulMachineListRequest::getSourceIp()const
 void DescribeVulMachineListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeVulMachineListRequest::getEndTs()const
@@ -55,7 +55,7 @@ std::string DescribeVulMachineListRequest::getFrom()const
 void DescribeVulMachineListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 long DescribeVulMachineListRequest::getStartTs()const
@@ -77,7 +77,7 @@ std::string DescribeVulMachineListRequest::getIncludeApp()const
 void DescribeVulMachineListRequest::setIncludeApp(const std::string& includeApp)
 {
 	includeApp_ = includeApp;
-	setCoreParameter("IncludeApp", includeApp);
+	setCoreParameter("IncludeApp", std::to_string(includeApp));
 }
 
 std::string DescribeVulMachineListRequest::getUuids()const
@@ -88,6 +88,6 @@ std::string DescribeVulMachineListRequest::getUuids()const
 void DescribeVulMachineListRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

@@ -33,7 +33,7 @@ bool DeleteNodesRequest::getReleaseInstance()const
 void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setCoreParameter("ReleaseInstance", releaseInstance);
+	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
 }
 
 std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance()const
@@ -60,7 +60,7 @@ std::string DeleteNodesRequest::getClusterId()const
 void DeleteNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DeleteNodesRequest::getAccessKeyId()const
@@ -71,6 +71,6 @@ std::string DeleteNodesRequest::getAccessKeyId()const
 void DeleteNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

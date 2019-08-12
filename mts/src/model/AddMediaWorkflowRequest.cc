@@ -44,7 +44,7 @@ std::string AddMediaWorkflowRequest::getResourceOwnerAccount()const
 void AddMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddMediaWorkflowRequest::getTopology()const
@@ -55,7 +55,7 @@ std::string AddMediaWorkflowRequest::getTopology()const
 void AddMediaWorkflowRequest::setTopology(const std::string& topology)
 {
 	topology_ = topology;
-	setCoreParameter("Topology", topology);
+	setCoreParameter("Topology", std::to_string(topology));
 }
 
 std::string AddMediaWorkflowRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddMediaWorkflowRequest::getOwnerAccount()const
 void AddMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddMediaWorkflowRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddMediaWorkflowRequest::getName()const
 void AddMediaWorkflowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long AddMediaWorkflowRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string AddMediaWorkflowRequest::getAccessKeyId()const
 void AddMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AddMediaWorkflowRequest::getTriggerMode()const
@@ -110,6 +110,6 @@ std::string AddMediaWorkflowRequest::getTriggerMode()const
 void AddMediaWorkflowRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
-	setCoreParameter("TriggerMode", triggerMode);
+	setCoreParameter("TriggerMode", std::to_string(triggerMode));
 }
 

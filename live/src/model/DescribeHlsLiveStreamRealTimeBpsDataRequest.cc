@@ -33,7 +33,7 @@ std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getRegionId()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getDomainName()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getTime()const
@@ -55,7 +55,7 @@ std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getTime()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setCoreParameter("Time", std::to_string(time));
 }
 
 long DescribeHlsLiveStreamRealTimeBpsDataRequest::getOwnerId()const

@@ -44,7 +44,7 @@ std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
 void DescribeAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAutoRenewAttributeRequest::getRegionId()const
 void DescribeAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
 void DescribeAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeAutoRenewAttributeRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeAutoRenewAttributeRequest::getAccessKeyId()const
 void DescribeAutoRenewAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getDBClusterIds()const
@@ -121,6 +121,6 @@ std::string DescribeAutoRenewAttributeRequest::getDBClusterIds()const
 void DescribeAutoRenewAttributeRequest::setDBClusterIds(const std::string& dBClusterIds)
 {
 	dBClusterIds_ = dBClusterIds;
-	setCoreParameter("DBClusterIds", dBClusterIds);
+	setCoreParameter("DBClusterIds", std::to_string(dBClusterIds));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getStart()const
@@ -110,7 +110,7 @@ bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse);
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getNodeInstanceId()const
@@ -121,7 +121,7 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getNodeInstanceId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setCoreParameter("NodeInstanceId", std::to_string(nodeInstanceId));
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getProjectId()const
@@ -132,6 +132,6 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getProjectId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

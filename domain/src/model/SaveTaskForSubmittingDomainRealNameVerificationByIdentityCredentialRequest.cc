@@ -33,7 +33,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredentialType(const std::string& identityCredentialType)
 {
 	identityCredentialType_ = identityCredentialType;
-	setCoreParameter("IdentityCredentialType", identityCredentialType);
+	setCoreParameter("IdentityCredentialType", std::to_string(identityCredentialType));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getIdentityCredential()const
@@ -55,7 +55,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredential(const std::string& identityCredential)
 {
 	identityCredential_ = identityCredential;
-	setCoreParameter("IdentityCredential", identityCredential);
+	setCoreParameter("IdentityCredential", std::to_string(identityCredential));
 }
 
 std::vector<std::string> SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getDomainName()const
@@ -78,7 +78,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getIdentityCredentialNo()const
@@ -89,6 +89,6 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
 {
 	identityCredentialNo_ = identityCredentialNo;
-	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
+	setCoreParameter("IdentityCredentialNo", std::to_string(identityCredentialNo));
 }
 

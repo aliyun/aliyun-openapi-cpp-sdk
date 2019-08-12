@@ -55,7 +55,7 @@ std::string CreateQosCarRequest::getResourceOwnerAccount()const
 void CreateQosCarRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int CreateQosCarRequest::getMinBandwidthAbs()const
@@ -88,7 +88,7 @@ std::string CreateQosCarRequest::getOwnerAccount()const
 void CreateQosCarRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateQosCarRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateQosCarRequest::getDescription()const
 void CreateQosCarRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateQosCarRequest::getOwnerId()const
@@ -143,7 +143,7 @@ std::string CreateQosCarRequest::getLimitType()const
 void CreateQosCarRequest::setLimitType(const std::string& limitType)
 {
 	limitType_ = limitType;
-	setCoreParameter("LimitType", limitType);
+	setCoreParameter("LimitType", std::to_string(limitType));
 }
 
 std::string CreateQosCarRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string CreateQosCarRequest::getRegionId()const
 void CreateQosCarRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateQosCarRequest::getPercentSourceType()const
@@ -165,7 +165,7 @@ std::string CreateQosCarRequest::getPercentSourceType()const
 void CreateQosCarRequest::setPercentSourceType(const std::string& percentSourceType)
 {
 	percentSourceType_ = percentSourceType;
-	setCoreParameter("PercentSourceType", percentSourceType);
+	setCoreParameter("PercentSourceType", std::to_string(percentSourceType));
 }
 
 std::string CreateQosCarRequest::getQosId()const
@@ -176,6 +176,6 @@ std::string CreateQosCarRequest::getQosId()const
 void CreateQosCarRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setCoreParameter("QosId", std::to_string(qosId));
 }
 

@@ -66,7 +66,7 @@ std::string DetectFaceAttributesRequest::getSourceIp()const
 void DetectFaceAttributesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DetectFaceAttributesRequest::getRetAttributes()const
@@ -77,7 +77,7 @@ std::string DetectFaceAttributesRequest::getRetAttributes()const
 void DetectFaceAttributesRequest::setRetAttributes(const std::string& retAttributes)
 {
 	retAttributes_ = retAttributes;
-	setCoreParameter("RetAttributes", retAttributes);
+	setCoreParameter("RetAttributes", std::to_string(retAttributes));
 }
 
 std::string DetectFaceAttributesRequest::getMaterialValue()const
@@ -88,7 +88,7 @@ std::string DetectFaceAttributesRequest::getMaterialValue()const
 void DetectFaceAttributesRequest::setMaterialValue(const std::string& materialValue)
 {
 	materialValue_ = materialValue;
-	setCoreParameter("MaterialValue", materialValue);
+	setCoreParameter("MaterialValue", std::to_string(materialValue));
 }
 
 bool DetectFaceAttributesRequest::getDontSaveDB()const
@@ -99,7 +99,7 @@ bool DetectFaceAttributesRequest::getDontSaveDB()const
 void DetectFaceAttributesRequest::setDontSaveDB(bool dontSaveDB)
 {
 	dontSaveDB_ = dontSaveDB;
-	setCoreParameter("DontSaveDB", dontSaveDB);
+	setCoreParameter("DontSaveDB", dontSaveDB ? "true" : "false");
 }
 
 std::string DetectFaceAttributesRequest::getClientTag()const
@@ -110,6 +110,6 @@ std::string DetectFaceAttributesRequest::getClientTag()const
 void DetectFaceAttributesRequest::setClientTag(const std::string& clientTag)
 {
 	clientTag_ = clientTag;
-	setCoreParameter("ClientTag", clientTag);
+	setCoreParameter("ClientTag", std::to_string(clientTag));
 }
 

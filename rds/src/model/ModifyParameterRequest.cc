@@ -44,7 +44,7 @@ std::string ModifyParameterRequest::getParameterGroupId()const
 void ModifyParameterRequest::setParameterGroupId(const std::string& parameterGroupId)
 {
 	parameterGroupId_ = parameterGroupId;
-	setCoreParameter("ParameterGroupId", parameterGroupId);
+	setCoreParameter("ParameterGroupId", std::to_string(parameterGroupId));
 }
 
 std::string ModifyParameterRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyParameterRequest::getResourceOwnerAccount()const
 void ModifyParameterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyParameterRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyParameterRequest::getClientToken()const
 void ModifyParameterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyParameterRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyParameterRequest::getOwnerAccount()const
 void ModifyParameterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyParameterRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ModifyParameterRequest::getDBInstanceId()const
 void ModifyParameterRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 bool ModifyParameterRequest::getForcerestart()const
@@ -99,7 +99,7 @@ bool ModifyParameterRequest::getForcerestart()const
 void ModifyParameterRequest::setForcerestart(bool forcerestart)
 {
 	forcerestart_ = forcerestart;
-	setCoreParameter("Forcerestart", forcerestart);
+	setCoreParameter("Forcerestart", forcerestart ? "true" : "false");
 }
 
 long ModifyParameterRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyParameterRequest::getParameters()const
 void ModifyParameterRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
-	setCoreParameter("Parameters", parameters);
+	setCoreParameter("Parameters", std::to_string(parameters));
 }
 
 std::string ModifyParameterRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyParameterRequest::getAccessKeyId()const
 void ModifyParameterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

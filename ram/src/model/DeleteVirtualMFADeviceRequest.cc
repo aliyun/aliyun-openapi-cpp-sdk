@@ -33,6 +33,6 @@ std::string DeleteVirtualMFADeviceRequest::getSerialNumber()const
 void DeleteVirtualMFADeviceRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setCoreParameter("SerialNumber", std::to_string(serialNumber));
 }
 

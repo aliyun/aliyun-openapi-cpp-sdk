@@ -44,7 +44,7 @@ bool ListKafkaTopicStatisticsRequest::getActiveOnly()const
 void ListKafkaTopicStatisticsRequest::setActiveOnly(bool activeOnly)
 {
 	activeOnly_ = activeOnly;
-	setCoreParameter("ActiveOnly", activeOnly);
+	setCoreParameter("ActiveOnly", activeOnly ? "true" : "false");
 }
 
 std::string ListKafkaTopicStatisticsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListKafkaTopicStatisticsRequest::getRegionId()const
 void ListKafkaTopicStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListKafkaTopicStatisticsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListKafkaTopicStatisticsRequest::getDataSourceId()const
 void ListKafkaTopicStatisticsRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string ListKafkaTopicStatisticsRequest::getTopicName()const
@@ -88,7 +88,7 @@ std::string ListKafkaTopicStatisticsRequest::getTopicName()const
 void ListKafkaTopicStatisticsRequest::setTopicName(const std::string& topicName)
 {
 	topicName_ = topicName;
-	setCoreParameter("TopicName", topicName);
+	setCoreParameter("TopicName", std::to_string(topicName));
 }
 
 std::string ListKafkaTopicStatisticsRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ListKafkaTopicStatisticsRequest::getClusterId()const
 void ListKafkaTopicStatisticsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListKafkaTopicStatisticsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string ListKafkaTopicStatisticsRequest::getFuzzyTopicName()const
 void ListKafkaTopicStatisticsRequest::setFuzzyTopicName(const std::string& fuzzyTopicName)
 {
 	fuzzyTopicName_ = fuzzyTopicName;
-	setCoreParameter("FuzzyTopicName", fuzzyTopicName);
+	setCoreParameter("FuzzyTopicName", std::to_string(fuzzyTopicName));
 }
 
 std::string ListKafkaTopicStatisticsRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListKafkaTopicStatisticsRequest::getAccessKeyId()const
 void ListKafkaTopicStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

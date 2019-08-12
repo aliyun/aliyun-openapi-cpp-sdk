@@ -33,7 +33,7 @@ std::string ListPrivilegesOfUserRequest::getInstanceId()const
 void ListPrivilegesOfUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListPrivilegesOfUserRequest::getUserId()const
@@ -44,7 +44,7 @@ std::string ListPrivilegesOfUserRequest::getUserId()const
 void ListPrivilegesOfUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ListPrivilegesOfUserRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListPrivilegesOfUserRequest::getAccessKeyId()const
 void ListPrivilegesOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

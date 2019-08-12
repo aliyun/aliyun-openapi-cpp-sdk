@@ -33,7 +33,7 @@ std::string DescribeLiveDomainMappingRequest::getRegionId()const
 void DescribeLiveDomainMappingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeLiveDomainMappingRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainMappingRequest::getDomainName()const
 void DescribeLiveDomainMappingRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeLiveDomainMappingRequest::getOwnerId()const

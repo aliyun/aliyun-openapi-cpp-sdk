@@ -33,7 +33,7 @@ bool UntagResourcesRequest::getAll()const
 void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 long UntagResourcesRequest::getResourceOwnerId()const
@@ -67,7 +67,7 @@ std::string UntagResourcesRequest::getResourceOwnerAccount()const
 void UntagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UntagResourcesRequest::getRegionId()const
@@ -78,7 +78,7 @@ std::string UntagResourcesRequest::getRegionId()const
 void UntagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UntagResourcesRequest::getOwnerAccount()const
@@ -89,7 +89,7 @@ std::string UntagResourcesRequest::getOwnerAccount()const
 void UntagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long UntagResourcesRequest::getOwnerId()const
@@ -123,7 +123,7 @@ std::string UntagResourcesRequest::getResourceType()const
 void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string UntagResourcesRequest::getAccessKeyId()const
@@ -134,6 +134,6 @@ std::string UntagResourcesRequest::getAccessKeyId()const
 void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

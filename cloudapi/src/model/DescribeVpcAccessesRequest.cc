@@ -33,7 +33,7 @@ std::string DescribeVpcAccessesRequest::getSecurityToken()const
 void DescribeVpcAccessesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeVpcAccessesRequest::getPageSize()const
@@ -66,6 +66,6 @@ std::string DescribeVpcAccessesRequest::getAccessKeyId()const
 void DescribeVpcAccessesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string AssociateEipAddressRequest::getInstanceId()const
 void AssociateEipAddressRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AssociateEipAddressRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AssociateEipAddressRequest::getResourceOwnerAccount()const
 void AssociateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AssociateEipAddressRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AssociateEipAddressRequest::getRegionId()const
 void AssociateEipAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AssociateEipAddressRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AssociateEipAddressRequest::getOwnerAccount()const
 void AssociateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AssociateEipAddressRequest::getInstanceType()const
@@ -88,7 +88,7 @@ std::string AssociateEipAddressRequest::getInstanceType()const
 void AssociateEipAddressRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::string AssociateEipAddressRequest::getAllocationId()const
@@ -99,7 +99,7 @@ std::string AssociateEipAddressRequest::getAllocationId()const
 void AssociateEipAddressRequest::setAllocationId(const std::string& allocationId)
 {
 	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	setCoreParameter("AllocationId", std::to_string(allocationId));
 }
 
 long AssociateEipAddressRequest::getOwnerId()const

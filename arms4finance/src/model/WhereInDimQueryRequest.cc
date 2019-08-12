@@ -33,7 +33,7 @@ std::string WhereInDimQueryRequest::getWhereInKey()const
 void WhereInDimQueryRequest::setWhereInKey(const std::string& whereInKey)
 {
 	whereInKey_ = whereInKey;
-	setCoreParameter("WhereInKey", whereInKey);
+	setCoreParameter("WhereInKey", std::to_string(whereInKey));
 }
 
 std::vector<std::string> WhereInDimQueryRequest::getMeasures()const
@@ -67,7 +67,7 @@ std::string WhereInDimQueryRequest::getDateStr()const
 void WhereInDimQueryRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
+	setCoreParameter("DateStr", std::to_string(dateStr));
 }
 
 bool WhereInDimQueryRequest::getIsDrillDown()const
@@ -78,7 +78,7 @@ bool WhereInDimQueryRequest::getIsDrillDown()const
 void WhereInDimQueryRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setCoreParameter("IsDrillDown", isDrillDown);
+	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 long WhereInDimQueryRequest::getMinTime()const

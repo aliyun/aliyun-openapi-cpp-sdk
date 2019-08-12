@@ -44,7 +44,7 @@ bool DescribeBoardEventsRequest::getProxy_original_security_transport()const
 void DescribeBoardEventsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeBoardEventsRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeBoardEventsRequest::getStartTime()const
 void DescribeBoardEventsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeBoardEventsRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeBoardEventsRequest::getProxy_original_source_ip()const
 void DescribeBoardEventsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeBoardEventsRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeBoardEventsRequest::getOwnerIdLoginEmail()const
 void DescribeBoardEventsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeBoardEventsRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeBoardEventsRequest::getCallerType()const
 void DescribeBoardEventsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeBoardEventsRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeBoardEventsRequest::getAccessKeyId()const
 void DescribeBoardEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeBoardEventsRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeBoardEventsRequest::getSecurityToken()const
 void DescribeBoardEventsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeBoardEventsRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeBoardEventsRequest::getRegionId()const
 void DescribeBoardEventsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBoardEventsRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribeBoardEventsRequest::getRequestContent()const
 void DescribeBoardEventsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeBoardEventsRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeBoardEventsRequest::getCallerBidEmail()const
 void DescribeBoardEventsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeBoardEventsRequest::getBoardId()const
@@ -154,7 +154,7 @@ std::string DescribeBoardEventsRequest::getBoardId()const
 void DescribeBoardEventsRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setCoreParameter("BoardId", std::to_string(boardId));
 }
 
 std::string DescribeBoardEventsRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeBoardEventsRequest::getCallerUidEmail()const
 void DescribeBoardEventsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeBoardEventsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string DescribeBoardEventsRequest::getApp_ip()const
 void DescribeBoardEventsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeBoardEventsRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeBoardEventsRequest::getPopProduct()const
 void DescribeBoardEventsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeBoardEventsRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeBoardEventsRequest::getEndTime()const
 void DescribeBoardEventsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeBoardEventsRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeBoardEventsRequest::getCallerBid()const
 void DescribeBoardEventsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeBoardEventsRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string DescribeBoardEventsRequest::getVersion()const
 void DescribeBoardEventsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeBoardEventsRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeBoardEventsRequest::getProxy_trust_transport_info()const
 void DescribeBoardEventsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeBoardEventsRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeBoardEventsRequest::getAk_mfa_present()const
 void DescribeBoardEventsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeBoardEventsRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeBoardEventsRequest::getSecurity_transport()const
 void DescribeBoardEventsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeBoardEventsRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string DescribeBoardEventsRequest::getRequestId()const
 void DescribeBoardEventsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeBoardEventsRequest::getAppId()const
@@ -297,6 +297,6 @@ std::string DescribeBoardEventsRequest::getAppId()const
 void DescribeBoardEventsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

@@ -33,7 +33,7 @@ std::string QueryInstanceGaapCostRequest::getProductCode()const
 void QueryInstanceGaapCostRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string QueryInstanceGaapCostRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryInstanceGaapCostRequest::getSubscriptionType()const
 void QueryInstanceGaapCostRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 int QueryInstanceGaapCostRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryInstanceGaapCostRequest::getBillingCycle()const
 void QueryInstanceGaapCostRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", std::to_string(billingCycle));
 }
 
 int QueryInstanceGaapCostRequest::getPageNum()const
@@ -88,6 +88,6 @@ std::string QueryInstanceGaapCostRequest::getProductType()const
 void QueryInstanceGaapCostRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

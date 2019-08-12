@@ -55,7 +55,7 @@ bool CreateProductRequest::getId2()const
 void CreateProductRequest::setId2(bool id2)
 {
 	id2_ = id2;
-	setCoreParameter("Id2", id2);
+	setCoreParameter("Id2", id2 ? "true" : "false");
 }
 
 std::string CreateProductRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ std::string CreateProductRequest::getIotInstanceId()const
 void CreateProductRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string CreateProductRequest::getNetType()const
@@ -77,7 +77,7 @@ std::string CreateProductRequest::getNetType()const
 void CreateProductRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setCoreParameter("NetType", std::to_string(netType));
 }
 
 std::string CreateProductRequest::getProductName()const
@@ -88,7 +88,7 @@ std::string CreateProductRequest::getProductName()const
 void CreateProductRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", productName);
+	setCoreParameter("ProductName", std::to_string(productName));
 }
 
 std::string CreateProductRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateProductRequest::getDescription()const
 void CreateProductRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateProductRequest::getProtocolType()const
@@ -110,7 +110,7 @@ std::string CreateProductRequest::getProtocolType()const
 void CreateProductRequest::setProtocolType(const std::string& protocolType)
 {
 	protocolType_ = protocolType;
-	setCoreParameter("ProtocolType", protocolType);
+	setCoreParameter("ProtocolType", std::to_string(protocolType));
 }
 
 std::string CreateProductRequest::getAliyunCommodityCode()const
@@ -121,7 +121,7 @@ std::string CreateProductRequest::getAliyunCommodityCode()const
 void CreateProductRequest::setAliyunCommodityCode(const std::string& aliyunCommodityCode)
 {
 	aliyunCommodityCode_ = aliyunCommodityCode;
-	setCoreParameter("AliyunCommodityCode", aliyunCommodityCode);
+	setCoreParameter("AliyunCommodityCode", std::to_string(aliyunCommodityCode));
 }
 
 std::string CreateProductRequest::getJoinPermissionId()const
@@ -132,7 +132,7 @@ std::string CreateProductRequest::getJoinPermissionId()const
 void CreateProductRequest::setJoinPermissionId(const std::string& joinPermissionId)
 {
 	joinPermissionId_ = joinPermissionId;
-	setCoreParameter("JoinPermissionId", joinPermissionId);
+	setCoreParameter("JoinPermissionId", std::to_string(joinPermissionId));
 }
 
 long CreateProductRequest::getCategoryId()const
@@ -154,6 +154,6 @@ std::string CreateProductRequest::getAccessKeyId()const
 void CreateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

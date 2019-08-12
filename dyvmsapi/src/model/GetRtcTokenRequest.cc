@@ -44,7 +44,7 @@ std::string GetRtcTokenRequest::getResourceOwnerAccount()const
 void GetRtcTokenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long GetRtcTokenRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string GetRtcTokenRequest::getUserId()const
 void GetRtcTokenRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string GetRtcTokenRequest::getDeviceId()const
@@ -77,7 +77,7 @@ std::string GetRtcTokenRequest::getDeviceId()const
 void GetRtcTokenRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", std::to_string(deviceId));
 }
 
 bool GetRtcTokenRequest::getIsCustomAccount()const
@@ -88,7 +88,7 @@ bool GetRtcTokenRequest::getIsCustomAccount()const
 void GetRtcTokenRequest::setIsCustomAccount(bool isCustomAccount)
 {
 	isCustomAccount_ = isCustomAccount;
-	setCoreParameter("IsCustomAccount", isCustomAccount);
+	setCoreParameter("IsCustomAccount", isCustomAccount ? "true" : "false");
 }
 
 std::string GetRtcTokenRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetRtcTokenRequest::getAccessKeyId()const
 void GetRtcTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

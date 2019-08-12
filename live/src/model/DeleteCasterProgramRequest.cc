@@ -33,7 +33,7 @@ std::string DeleteCasterProgramRequest::getCasterId()const
 void DeleteCasterProgramRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long DeleteCasterProgramRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsControlHistoryRequest::getAppName()const
 void DescribeLiveStreamsControlHistoryRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamsControlHistoryRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsControlHistoryRequest::getSecurityToken()const
 void DescribeLiveStreamsControlHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamsControlHistoryRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsControlHistoryRequest::getDomainName()const
 void DescribeLiveStreamsControlHistoryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeLiveStreamsControlHistoryRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsControlHistoryRequest::getEndTime()const
 void DescribeLiveStreamsControlHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamsControlHistoryRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsControlHistoryRequest::getStartTime()const
 void DescribeLiveStreamsControlHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamsControlHistoryRequest::getOwnerId()const

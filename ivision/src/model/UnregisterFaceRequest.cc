@@ -55,7 +55,7 @@ bool UnregisterFaceRequest::getProxy_original_security_transport()const
 void UnregisterFaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string UnregisterFaceRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string UnregisterFaceRequest::getProxy_original_source_ip()const
 void UnregisterFaceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string UnregisterFaceRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UnregisterFaceRequest::getOwnerIdLoginEmail()const
 void UnregisterFaceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string UnregisterFaceRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UnregisterFaceRequest::getCallerType()const
 void UnregisterFaceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string UnregisterFaceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UnregisterFaceRequest::getAccessKeyId()const
 void UnregisterFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UnregisterFaceRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string UnregisterFaceRequest::getSecurityToken()const
 void UnregisterFaceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string UnregisterFaceRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string UnregisterFaceRequest::getRegionId()const
 void UnregisterFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnregisterFaceRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string UnregisterFaceRequest::getRequestContent()const
 void UnregisterFaceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string UnregisterFaceRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string UnregisterFaceRequest::getCallerBidEmail()const
 void UnregisterFaceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string UnregisterFaceRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string UnregisterFaceRequest::getCallerUidEmail()const
 void UnregisterFaceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long UnregisterFaceRequest::getCallerUid()const
@@ -176,7 +176,7 @@ std::string UnregisterFaceRequest::getShowLog()const
 void UnregisterFaceRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string UnregisterFaceRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string UnregisterFaceRequest::getApp_ip()const
 void UnregisterFaceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string UnregisterFaceRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string UnregisterFaceRequest::getPopProduct()const
 void UnregisterFaceRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string UnregisterFaceRequest::getGroupId()const
@@ -209,7 +209,7 @@ std::string UnregisterFaceRequest::getGroupId()const
 void UnregisterFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string UnregisterFaceRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string UnregisterFaceRequest::getCallerBid()const
 void UnregisterFaceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long UnregisterFaceRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string UnregisterFaceRequest::getVersion()const
 void UnregisterFaceRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool UnregisterFaceRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool UnregisterFaceRequest::getProxy_trust_transport_info()const
 void UnregisterFaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool UnregisterFaceRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool UnregisterFaceRequest::getAk_mfa_present()const
 void UnregisterFaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool UnregisterFaceRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool UnregisterFaceRequest::getSecurity_transport()const
 void UnregisterFaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string UnregisterFaceRequest::getFaceToken()const
@@ -286,7 +286,7 @@ std::string UnregisterFaceRequest::getFaceToken()const
 void UnregisterFaceRequest::setFaceToken(const std::string& faceToken)
 {
 	faceToken_ = faceToken;
-	setCoreParameter("FaceToken", faceToken);
+	setCoreParameter("FaceToken", std::to_string(faceToken));
 }
 
 std::string UnregisterFaceRequest::getServiceCode()const
@@ -297,7 +297,7 @@ std::string UnregisterFaceRequest::getServiceCode()const
 void UnregisterFaceRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", std::to_string(serviceCode));
 }
 
 std::string UnregisterFaceRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string UnregisterFaceRequest::getRequestId()const
 void UnregisterFaceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

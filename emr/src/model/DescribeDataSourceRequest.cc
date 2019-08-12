@@ -44,7 +44,7 @@ std::string DescribeDataSourceRequest::getRegionId()const
 void DescribeDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDataSourceRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeDataSourceRequest::getId()const
 void DescribeDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeDataSourceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDataSourceRequest::getAccessKeyId()const
 void DescribeDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getSourceIp()const
 void DescribeScreenAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getData()const
@@ -44,7 +44,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getData()const
 void DescribeScreenAttackAnalysisDataRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getBase64()const
@@ -55,7 +55,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getBase64()const
 void DescribeScreenAttackAnalysisDataRequest::setBase64(const std::string& base64)
 {
 	base64_ = base64;
-	setCoreParameter("Base64", base64);
+	setCoreParameter("Base64", std::to_string(base64));
 }
 
 int DescribeScreenAttackAnalysisDataRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getLang()const
 void DescribeScreenAttackAnalysisDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getType()const
@@ -121,6 +121,6 @@ std::string DescribeScreenAttackAnalysisDataRequest::getType()const
 void DescribeScreenAttackAnalysisDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

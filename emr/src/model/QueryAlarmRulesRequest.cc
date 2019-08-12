@@ -44,7 +44,7 @@ std::string QueryAlarmRulesRequest::getRegionId()const
 void QueryAlarmRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string QueryAlarmRulesRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string QueryAlarmRulesRequest::getClusterId()const
 void QueryAlarmRulesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string QueryAlarmRulesRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryAlarmRulesRequest::getAccessKeyId()const
 void QueryAlarmRulesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

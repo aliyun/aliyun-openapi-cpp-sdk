@@ -33,7 +33,7 @@ std::string SetIpAllowListConfigRequest::getAllowIps()const
 void SetIpAllowListConfigRequest::setAllowIps(const std::string& allowIps)
 {
 	allowIps_ = allowIps;
-	setCoreParameter("AllowIps", allowIps);
+	setCoreParameter("AllowIps", std::to_string(allowIps));
 }
 
 std::string SetIpAllowListConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetIpAllowListConfigRequest::getSecurityToken()const
 void SetIpAllowListConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetIpAllowListConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetIpAllowListConfigRequest::getDomainName()const
 void SetIpAllowListConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetIpAllowListConfigRequest::getOwnerId()const

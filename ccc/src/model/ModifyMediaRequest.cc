@@ -33,7 +33,7 @@ std::string ModifyMediaRequest::getInstanceId()const
 void ModifyMediaRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyMediaRequest::getFileName()const
@@ -44,7 +44,7 @@ std::string ModifyMediaRequest::getFileName()const
 void ModifyMediaRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 
 std::string ModifyMediaRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyMediaRequest::getName()const
 void ModifyMediaRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyMediaRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyMediaRequest::getDescription()const
 void ModifyMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyMediaRequest::getOssFilePath()const
@@ -77,7 +77,7 @@ std::string ModifyMediaRequest::getOssFilePath()const
 void ModifyMediaRequest::setOssFilePath(const std::string& ossFilePath)
 {
 	ossFilePath_ = ossFilePath;
-	setCoreParameter("OssFilePath", ossFilePath);
+	setCoreParameter("OssFilePath", std::to_string(ossFilePath));
 }
 
 std::string ModifyMediaRequest::getUploadResult()const
@@ -88,7 +88,7 @@ std::string ModifyMediaRequest::getUploadResult()const
 void ModifyMediaRequest::setUploadResult(const std::string& uploadResult)
 {
 	uploadResult_ = uploadResult;
-	setCoreParameter("UploadResult", uploadResult);
+	setCoreParameter("UploadResult", std::to_string(uploadResult));
 }
 
 std::string ModifyMediaRequest::getType()const
@@ -99,7 +99,7 @@ std::string ModifyMediaRequest::getType()const
 void ModifyMediaRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string ModifyMediaRequest::getContent()const
@@ -110,7 +110,7 @@ std::string ModifyMediaRequest::getContent()const
 void ModifyMediaRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 
 std::string ModifyMediaRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyMediaRequest::getAccessKeyId()const
 void ModifyMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyMediaRequest::getOssFileName()const
@@ -132,6 +132,6 @@ std::string ModifyMediaRequest::getOssFileName()const
 void ModifyMediaRequest::setOssFileName(const std::string& ossFileName)
 {
 	ossFileName_ = ossFileName;
-	setCoreParameter("OssFileName", ossFileName);
+	setCoreParameter("OssFileName", std::to_string(ossFileName));
 }
 

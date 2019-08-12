@@ -44,7 +44,7 @@ std::string DescribeCharacterSetNameRequest::getResourceOwnerAccount()const
 void DescribeCharacterSetNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCharacterSetNameRequest::getEngine()const
@@ -55,7 +55,7 @@ std::string DescribeCharacterSetNameRequest::getEngine()const
 void DescribeCharacterSetNameRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string DescribeCharacterSetNameRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeCharacterSetNameRequest::getRegionId()const
 void DescribeCharacterSetNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeCharacterSetNameRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeCharacterSetNameRequest::getOwnerAccount()const
 void DescribeCharacterSetNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeCharacterSetNameRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeCharacterSetNameRequest::getAccessKeyId()const
 void DescribeCharacterSetNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

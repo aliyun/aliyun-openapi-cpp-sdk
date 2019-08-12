@@ -33,7 +33,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDbName()const
 void DescribeDrdsInstanceDbMonitorRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 long DescribeDrdsInstanceDbMonitorRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceDbMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
@@ -77,7 +77,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
 void DescribeDrdsInstanceDbMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceDbMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

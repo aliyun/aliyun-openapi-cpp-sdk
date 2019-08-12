@@ -33,7 +33,7 @@ std::string ResendEmailVerificationRequest::getUserClientIp()const
 void ResendEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string ResendEmailVerificationRequest::getLang()const
@@ -44,7 +44,7 @@ std::string ResendEmailVerificationRequest::getLang()const
 void ResendEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ResendEmailVerificationRequest::getEmail()const
@@ -55,6 +55,6 @@ std::string ResendEmailVerificationRequest::getEmail()const
 void ResendEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 

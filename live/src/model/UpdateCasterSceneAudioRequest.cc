@@ -51,7 +51,7 @@ std::string UpdateCasterSceneAudioRequest::getRegionId()const
 void UpdateCasterSceneAudioRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateCasterSceneAudioRequest::getCasterId()const
@@ -62,7 +62,7 @@ std::string UpdateCasterSceneAudioRequest::getCasterId()const
 void UpdateCasterSceneAudioRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 std::string UpdateCasterSceneAudioRequest::getSceneId()const
@@ -73,7 +73,7 @@ std::string UpdateCasterSceneAudioRequest::getSceneId()const
 void UpdateCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setCoreParameter("SceneId", std::to_string(sceneId));
 }
 
 std::vector<std::string> UpdateCasterSceneAudioRequest::getMixList()const

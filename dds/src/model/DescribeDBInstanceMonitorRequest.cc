@@ -44,7 +44,7 @@ std::string DescribeDBInstanceMonitorRequest::getSecurityToken()const
 void DescribeDBInstanceMonitorRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDBInstanceMonitorRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceMonitorRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBInstanceMonitorRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceMonitorRequest::getRegionId()const
 void DescribeDBInstanceMonitorRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDBInstanceMonitorRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstanceMonitorRequest::getOwnerAccount()const
 void DescribeDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDBInstanceMonitorRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeDBInstanceMonitorRequest::getDBInstanceId()const
 void DescribeDBInstanceMonitorRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeDBInstanceMonitorRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeDBInstanceMonitorRequest::getAccessKeyId()const
 void DescribeDBInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

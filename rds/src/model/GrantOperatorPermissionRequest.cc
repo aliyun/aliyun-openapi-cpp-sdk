@@ -33,7 +33,7 @@ std::string GrantOperatorPermissionRequest::getPrivileges()const
 void GrantOperatorPermissionRequest::setPrivileges(const std::string& privileges)
 {
 	privileges_ = privileges;
-	setCoreParameter("Privileges", privileges);
+	setCoreParameter("Privileges", std::to_string(privileges));
 }
 
 long GrantOperatorPermissionRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string GrantOperatorPermissionRequest::getResourceOwnerAccount()const
 void GrantOperatorPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GrantOperatorPermissionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GrantOperatorPermissionRequest::getOwnerAccount()const
 void GrantOperatorPermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string GrantOperatorPermissionRequest::getExpiredTime()const
@@ -77,7 +77,7 @@ std::string GrantOperatorPermissionRequest::getExpiredTime()const
 void GrantOperatorPermissionRequest::setExpiredTime(const std::string& expiredTime)
 {
 	expiredTime_ = expiredTime;
-	setCoreParameter("ExpiredTime", expiredTime);
+	setCoreParameter("ExpiredTime", std::to_string(expiredTime));
 }
 
 std::string GrantOperatorPermissionRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string GrantOperatorPermissionRequest::getDBInstanceId()const
 void GrantOperatorPermissionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long GrantOperatorPermissionRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string GrantOperatorPermissionRequest::getAccessKeyId()const
 void GrantOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

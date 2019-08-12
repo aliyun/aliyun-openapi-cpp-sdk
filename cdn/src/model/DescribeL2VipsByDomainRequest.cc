@@ -33,7 +33,7 @@ std::string DescribeL2VipsByDomainRequest::getSecurityToken()const
 void DescribeL2VipsByDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeL2VipsByDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeL2VipsByDomainRequest::getDomainName()const
 void DescribeL2VipsByDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeL2VipsByDomainRequest::getOwnerId()const

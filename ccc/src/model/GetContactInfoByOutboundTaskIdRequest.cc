@@ -33,7 +33,7 @@ std::string GetContactInfoByOutboundTaskIdRequest::getInstanceId()const
 void GetContactInfoByOutboundTaskIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetContactInfoByOutboundTaskIdRequest::getOutboundTaskId()const
@@ -44,7 +44,7 @@ std::string GetContactInfoByOutboundTaskIdRequest::getOutboundTaskId()const
 void GetContactInfoByOutboundTaskIdRequest::setOutboundTaskId(const std::string& outboundTaskId)
 {
 	outboundTaskId_ = outboundTaskId;
-	setCoreParameter("OutboundTaskId", outboundTaskId);
+	setCoreParameter("OutboundTaskId", std::to_string(outboundTaskId));
 }
 
 std::string GetContactInfoByOutboundTaskIdRequest::getSkillGroupId()const
@@ -55,6 +55,6 @@ std::string GetContactInfoByOutboundTaskIdRequest::getSkillGroupId()const
 void GetContactInfoByOutboundTaskIdRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 

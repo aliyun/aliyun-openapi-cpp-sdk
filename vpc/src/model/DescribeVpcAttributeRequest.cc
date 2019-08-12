@@ -44,7 +44,7 @@ bool DescribeVpcAttributeRequest::getDryRun()const
 void DescribeVpcAttributeRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVpcAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeVpcAttributeRequest::getResourceOwnerAccount()const
 void DescribeVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpcAttributeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpcAttributeRequest::getRegionId()const
 void DescribeVpcAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpcAttributeRequest::getVpcId()const
@@ -77,7 +77,7 @@ std::string DescribeVpcAttributeRequest::getVpcId()const
 void DescribeVpcAttributeRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string DescribeVpcAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVpcAttributeRequest::getOwnerAccount()const
 void DescribeVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DescribeVpcAttributeRequest::getIsDefault()const
@@ -99,7 +99,7 @@ bool DescribeVpcAttributeRequest::getIsDefault()const
 void DescribeVpcAttributeRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault);
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeVpcAttributeRequest::getOwnerId()const

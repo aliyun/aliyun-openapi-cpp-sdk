@@ -33,7 +33,7 @@ std::string RemoveTagsRequest::getAccess_key_id()const
 void RemoveTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long RemoveTagsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string RemoveTagsRequest::getLoadBalancerId()const
 void RemoveTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string RemoveTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RemoveTagsRequest::getResourceOwnerAccount()const
 void RemoveTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveTagsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RemoveTagsRequest::getRegionId()const
 void RemoveTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveTagsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveTagsRequest::getOwnerAccount()const
 void RemoveTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveTagsRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string RemoveTagsRequest::getTags()const
 void RemoveTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

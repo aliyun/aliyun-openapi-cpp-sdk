@@ -33,7 +33,7 @@ std::string RemoveBackupRuleRequest::getApp_ip()const
 void RemoveBackupRuleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long RemoveBackupRuleRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ bool RemoveBackupRuleRequest::getProxy_original_security_transport()const
 void RemoveBackupRuleRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string RemoveBackupRuleRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string RemoveBackupRuleRequest::getCallerBid()const
 void RemoveBackupRuleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string RemoveBackupRuleRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string RemoveBackupRuleRequest::getProxy_original_source_ip()const
 void RemoveBackupRuleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 bool RemoveBackupRuleRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool RemoveBackupRuleRequest::getAk_mfa_present()const
 void RemoveBackupRuleRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool RemoveBackupRuleRequest::getProxy_trust_transport_info()const
@@ -110,7 +110,7 @@ bool RemoveBackupRuleRequest::getProxy_trust_transport_info()const
 void RemoveBackupRuleRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string RemoveBackupRuleRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string RemoveBackupRuleRequest::getCallerType()const
 void RemoveBackupRuleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string RemoveBackupRuleRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string RemoveBackupRuleRequest::getAccessKeyId()const
 void RemoveBackupRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool RemoveBackupRuleRequest::getSecurity_transport()const
@@ -143,7 +143,7 @@ bool RemoveBackupRuleRequest::getSecurity_transport()const
 void RemoveBackupRuleRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string RemoveBackupRuleRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string RemoveBackupRuleRequest::getSecurityToken()const
 void RemoveBackupRuleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RemoveBackupRuleRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string RemoveBackupRuleRequest::getRegionId()const
 void RemoveBackupRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveBackupRuleRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string RemoveBackupRuleRequest::getRequestId()const
 void RemoveBackupRuleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long RemoveBackupRuleRequest::getCallerUid()const
@@ -198,6 +198,6 @@ std::string RemoveBackupRuleRequest::getBackupRuleId()const
 void RemoveBackupRuleRequest::setBackupRuleId(const std::string& backupRuleId)
 {
 	backupRuleId_ = backupRuleId;
-	setCoreParameter("BackupRuleId", backupRuleId);
+	setCoreParameter("BackupRuleId", std::to_string(backupRuleId));
 }
 

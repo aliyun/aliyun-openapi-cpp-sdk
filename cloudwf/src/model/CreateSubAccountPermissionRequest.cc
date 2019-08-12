@@ -68,7 +68,7 @@ std::string CreateSubAccountPermissionRequest::getPagePermission()const
 void CreateSubAccountPermissionRequest::setPagePermission(const std::string& pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setCoreParameter("PagePermission", pagePermission);
+	setCoreParameter("PagePermission", std::to_string(pagePermission));
 }
 
 std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string CreateSubAccountPermissionRequest::getAccessKeyId()const
 void CreateSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int CreateSubAccountPermissionRequest::getPermissionType()const

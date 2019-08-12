@@ -33,7 +33,7 @@ std::string VerifyPhoneRequest::getVerifyCode()const
 void VerifyPhoneRequest::setVerifyCode(const std::string& verifyCode)
 {
 	verifyCode_ = verifyCode;
-	setCoreParameter("VerifyCode", verifyCode);
+	setCoreParameter("VerifyCode", std::to_string(verifyCode));
 }
 
 std::string VerifyPhoneRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string VerifyPhoneRequest::getSourceIp()const
 void VerifyPhoneRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string VerifyPhoneRequest::getPhone()const
@@ -55,7 +55,7 @@ std::string VerifyPhoneRequest::getPhone()const
 void VerifyPhoneRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setCoreParameter("Phone", std::to_string(phone));
 }
 
 std::string VerifyPhoneRequest::getLang()const
@@ -66,6 +66,6 @@ std::string VerifyPhoneRequest::getLang()const
 void VerifyPhoneRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

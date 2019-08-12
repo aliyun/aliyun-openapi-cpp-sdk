@@ -33,7 +33,7 @@ std::string DescribePhoneInfoRequest::getSourceIp()const
 void DescribePhoneInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribePhoneInfoRequest::getPhoneNum()const
@@ -44,7 +44,7 @@ std::string DescribePhoneInfoRequest::getPhoneNum()const
 void DescribePhoneInfoRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", phoneNum);
+	setCoreParameter("PhoneNum", std::to_string(phoneNum));
 }
 
 std::string DescribePhoneInfoRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribePhoneInfoRequest::getLang()const
 void DescribePhoneInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribePhoneInfoRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DescribePhoneInfoRequest::getSourceCode()const
 void DescribePhoneInfoRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

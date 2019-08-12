@@ -33,7 +33,7 @@ std::string DescribeAnalysisHistogramsRequest::getSourceIp()const
 void DescribeAnalysisHistogramsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAnalysisHistogramsRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeAnalysisHistogramsRequest::getQuery()const
 void DescribeAnalysisHistogramsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 int DescribeAnalysisHistogramsRequest::getFrom()const

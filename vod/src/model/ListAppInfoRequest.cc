@@ -44,7 +44,7 @@ std::string ListAppInfoRequest::getResourceOwnerAccount()const
 void ListAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ListAppInfoRequest::getPageNo()const
@@ -99,7 +99,7 @@ std::string ListAppInfoRequest::getAccessKeyId()const
 void ListAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListAppInfoRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string ListAppInfoRequest::getStatus()const
 void ListAppInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

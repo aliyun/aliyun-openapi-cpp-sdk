@@ -33,7 +33,7 @@ std::string GetCollectionRequest::getRegionId()const
 void GetCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int GetCollectionRequest::getPageSize()const

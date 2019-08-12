@@ -33,7 +33,7 @@ std::string SubmitBeautifyJobsRequest::getBeautifyConfig()const
 void SubmitBeautifyJobsRequest::setBeautifyConfig(const std::string& beautifyConfig)
 {
 	beautifyConfig_ = beautifyConfig;
-	setCoreParameter("BeautifyConfig", beautifyConfig);
+	setCoreParameter("BeautifyConfig", std::to_string(beautifyConfig));
 }
 
 std::string SubmitBeautifyJobsRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitBeautifyJobsRequest::getUserData()const
 void SubmitBeautifyJobsRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 bool SubmitBeautifyJobsRequest::getAsync()const
@@ -55,7 +55,7 @@ bool SubmitBeautifyJobsRequest::getAsync()const
 void SubmitBeautifyJobsRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async);
+	setCoreParameter("Async", async ? "true" : "false");
 }
 
 long SubmitBeautifyJobsRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ std::string SubmitBeautifyJobsRequest::getResourceOwnerAccount()const
 void SubmitBeautifyJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitBeautifyJobsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitBeautifyJobsRequest::getOwnerAccount()const
 void SubmitBeautifyJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitBeautifyJobsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitBeautifyJobsRequest::getAccessKeyId()const
 void SubmitBeautifyJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitBeautifyJobsRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitBeautifyJobsRequest::getPipelineId()const
 void SubmitBeautifyJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

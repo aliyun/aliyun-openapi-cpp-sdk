@@ -44,6 +44,6 @@ std::string OemFlowrateMonitorRequest::getAccessKeyId()const
 void OemFlowrateMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

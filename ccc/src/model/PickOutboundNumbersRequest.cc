@@ -33,7 +33,7 @@ std::string PickOutboundNumbersRequest::getInstanceId()const
 void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int PickOutboundNumbersRequest::getCount()const
@@ -67,7 +67,7 @@ std::string PickOutboundNumbersRequest::getCalleeNumber()const
 void PickOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string PickOutboundNumbersRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string PickOutboundNumbersRequest::getAccessKeyId()const
 void PickOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string ListPredictiveJobGroupsRequest::getInstanceId()const
 void ListPredictiveJobGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListPredictiveJobGroupsRequest::getCriteria()const
@@ -44,7 +44,7 @@ std::string ListPredictiveJobGroupsRequest::getCriteria()const
 void ListPredictiveJobGroupsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setCoreParameter("Criteria", std::to_string(criteria));
 }
 
 std::string ListPredictiveJobGroupsRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListPredictiveJobGroupsRequest::getSkillGroupId()const
 void ListPredictiveJobGroupsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::string ListPredictiveJobGroupsRequest::getName()const
@@ -66,7 +66,7 @@ std::string ListPredictiveJobGroupsRequest::getName()const
 void ListPredictiveJobGroupsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ListPredictiveJobGroupsRequest::getPageSize()const

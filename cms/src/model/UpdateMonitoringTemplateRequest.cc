@@ -33,7 +33,7 @@ std::string UpdateMonitoringTemplateRequest::getEventRuleTemplatesJson()const
 void UpdateMonitoringTemplateRequest::setEventRuleTemplatesJson(const std::string& eventRuleTemplatesJson)
 {
 	eventRuleTemplatesJson_ = eventRuleTemplatesJson;
-	setCoreParameter("EventRuleTemplatesJson", eventRuleTemplatesJson);
+	setCoreParameter("EventRuleTemplatesJson", std::to_string(eventRuleTemplatesJson));
 }
 
 std::string UpdateMonitoringTemplateRequest::getName()const
@@ -44,7 +44,7 @@ std::string UpdateMonitoringTemplateRequest::getName()const
 void UpdateMonitoringTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long UpdateMonitoringTemplateRequest::getRestVersion()const
@@ -66,7 +66,7 @@ std::string UpdateMonitoringTemplateRequest::getDescription()const
 void UpdateMonitoringTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long UpdateMonitoringTemplateRequest::getId()const
@@ -88,6 +88,6 @@ std::string UpdateMonitoringTemplateRequest::getAlertTemplatesJson()const
 void UpdateMonitoringTemplateRequest::setAlertTemplatesJson(const std::string& alertTemplatesJson)
 {
 	alertTemplatesJson_ = alertTemplatesJson;
-	setCoreParameter("AlertTemplatesJson", alertTemplatesJson);
+	setCoreParameter("AlertTemplatesJson", std::to_string(alertTemplatesJson));
 }
 

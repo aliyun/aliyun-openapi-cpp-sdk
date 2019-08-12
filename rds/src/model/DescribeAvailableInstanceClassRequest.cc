@@ -44,7 +44,7 @@ std::string DescribeAvailableInstanceClassRequest::getResourceOwnerAccount()cons
 void DescribeAvailableInstanceClassRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableInstanceClassRequest::getOwnerAccount()const
 void DescribeAvailableInstanceClassRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getEngineVersion()const
@@ -66,7 +66,7 @@ std::string DescribeAvailableInstanceClassRequest::getEngineVersion()const
 void DescribeAvailableInstanceClassRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long DescribeAvailableInstanceClassRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string DescribeAvailableInstanceClassRequest::getAccessKeyId()const
 void DescribeAvailableInstanceClassRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string DescribeAvailableInstanceClassRequest::getRegionId()const
 void DescribeAvailableInstanceClassRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getEngine()const
@@ -110,7 +110,7 @@ std::string DescribeAvailableInstanceClassRequest::getEngine()const
 void DescribeAvailableInstanceClassRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getZoneId()const
@@ -121,7 +121,7 @@ std::string DescribeAvailableInstanceClassRequest::getZoneId()const
 void DescribeAvailableInstanceClassRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getDBInstanceId()const
@@ -132,7 +132,7 @@ std::string DescribeAvailableInstanceClassRequest::getDBInstanceId()const
 void DescribeAvailableInstanceClassRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getInstanceChargeType()const
@@ -143,7 +143,7 @@ std::string DescribeAvailableInstanceClassRequest::getInstanceChargeType()const
 void DescribeAvailableInstanceClassRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string DescribeAvailableInstanceClassRequest::getOrderType()const
@@ -154,6 +154,6 @@ std::string DescribeAvailableInstanceClassRequest::getOrderType()const
 void DescribeAvailableInstanceClassRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

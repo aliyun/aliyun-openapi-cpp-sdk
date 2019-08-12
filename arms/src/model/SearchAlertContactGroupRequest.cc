@@ -33,6 +33,6 @@ std::string SearchAlertContactGroupRequest::getContactGroupName()const
 void SearchAlertContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setCoreParameter("ContactGroupName", std::to_string(contactGroupName));
 }
 

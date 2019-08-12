@@ -55,7 +55,7 @@ bool DeleteTrainDatasRequest::getProxy_original_security_transport()const
 void DeleteTrainDatasRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteTrainDatasRequest::getDataIds()const
@@ -66,7 +66,7 @@ std::string DeleteTrainDatasRequest::getDataIds()const
 void DeleteTrainDatasRequest::setDataIds(const std::string& dataIds)
 {
 	dataIds_ = dataIds;
-	setCoreParameter("DataIds", dataIds);
+	setCoreParameter("DataIds", std::to_string(dataIds));
 }
 
 std::string DeleteTrainDatasRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DeleteTrainDatasRequest::getProxy_original_source_ip()const
 void DeleteTrainDatasRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DeleteTrainDatasRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteTrainDatasRequest::getOwnerIdLoginEmail()const
 void DeleteTrainDatasRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DeleteTrainDatasRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteTrainDatasRequest::getCallerType()const
 void DeleteTrainDatasRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DeleteTrainDatasRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteTrainDatasRequest::getAccessKeyId()const
 void DeleteTrainDatasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DeleteTrainDatasRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DeleteTrainDatasRequest::getSecurityToken()const
 void DeleteTrainDatasRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteTrainDatasRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DeleteTrainDatasRequest::getRegionId()const
 void DeleteTrainDatasRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteTrainDatasRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DeleteTrainDatasRequest::getRequestContent()const
 void DeleteTrainDatasRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DeleteTrainDatasRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DeleteTrainDatasRequest::getCallerBidEmail()const
 void DeleteTrainDatasRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DeleteTrainDatasRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string DeleteTrainDatasRequest::getProjectId()const
 void DeleteTrainDatasRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DeleteTrainDatasRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteTrainDatasRequest::getCallerUidEmail()const
 void DeleteTrainDatasRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DeleteTrainDatasRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string DeleteTrainDatasRequest::getShowLog()const
 void DeleteTrainDatasRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string DeleteTrainDatasRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteTrainDatasRequest::getApp_ip()const
 void DeleteTrainDatasRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DeleteTrainDatasRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DeleteTrainDatasRequest::getPopProduct()const
 void DeleteTrainDatasRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DeleteTrainDatasRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DeleteTrainDatasRequest::getCallerBid()const
 void DeleteTrainDatasRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DeleteTrainDatasRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string DeleteTrainDatasRequest::getVersion()const
 void DeleteTrainDatasRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DeleteTrainDatasRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool DeleteTrainDatasRequest::getProxy_trust_transport_info()const
 void DeleteTrainDatasRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DeleteTrainDatasRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DeleteTrainDatasRequest::getAk_mfa_present()const
 void DeleteTrainDatasRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteTrainDatasRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DeleteTrainDatasRequest::getSecurity_transport()const
 void DeleteTrainDatasRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteTrainDatasRequest::getRequestId()const
@@ -297,6 +297,6 @@ std::string DeleteTrainDatasRequest::getRequestId()const
 void DeleteTrainDatasRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

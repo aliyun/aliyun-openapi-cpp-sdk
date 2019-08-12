@@ -33,7 +33,7 @@ std::string CreateOrUpdateJoinRuleRequest::getWarnLevel()const
 void CreateOrUpdateJoinRuleRequest::setWarnLevel(const std::string& warnLevel)
 {
 	warnLevel_ = warnLevel;
-	setCoreParameter("WarnLevel", warnLevel);
+	setCoreParameter("WarnLevel", std::to_string(warnLevel));
 }
 
 long CreateOrUpdateJoinRuleRequest::getDataSourceId2()const
@@ -77,7 +77,7 @@ std::string CreateOrUpdateJoinRuleRequest::getDescription()const
 void CreateOrUpdateJoinRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getRuleName()const
@@ -88,7 +88,7 @@ std::string CreateOrUpdateJoinRuleRequest::getRuleName()const
 void CreateOrUpdateJoinRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getExpression2()const
@@ -99,7 +99,7 @@ std::string CreateOrUpdateJoinRuleRequest::getExpression2()const
 void CreateOrUpdateJoinRuleRequest::setExpression2(const std::string& expression2)
 {
 	expression2_ = expression2;
-	setCoreParameter("Expression2", expression2);
+	setCoreParameter("Expression2", std::to_string(expression2));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getExpression1()const
@@ -110,7 +110,7 @@ std::string CreateOrUpdateJoinRuleRequest::getExpression1()const
 void CreateOrUpdateJoinRuleRequest::setExpression1(const std::string& expression1)
 {
 	expression1_ = expression1;
-	setCoreParameter("Expression1", expression1);
+	setCoreParameter("Expression1", std::to_string(expression1));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getSourceIp()const
@@ -121,7 +121,7 @@ std::string CreateOrUpdateJoinRuleRequest::getSourceIp()const
 void CreateOrUpdateJoinRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getStatisticsRules()const
@@ -132,7 +132,7 @@ std::string CreateOrUpdateJoinRuleRequest::getStatisticsRules()const
 void CreateOrUpdateJoinRuleRequest::setStatisticsRules(const std::string& statisticsRules)
 {
 	statisticsRules_ = statisticsRules;
-	setCoreParameter("StatisticsRules", statisticsRules);
+	setCoreParameter("StatisticsRules", std::to_string(statisticsRules));
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getJoinRelation()const
@@ -143,7 +143,7 @@ std::string CreateOrUpdateJoinRuleRequest::getJoinRelation()const
 void CreateOrUpdateJoinRuleRequest::setJoinRelation(const std::string& joinRelation)
 {
 	joinRelation_ = joinRelation;
-	setCoreParameter("JoinRelation", joinRelation);
+	setCoreParameter("JoinRelation", std::to_string(joinRelation));
 }
 
 long CreateOrUpdateJoinRuleRequest::getRuleId()const
@@ -165,6 +165,6 @@ std::string CreateOrUpdateJoinRuleRequest::getActions()const
 void CreateOrUpdateJoinRuleRequest::setActions(const std::string& actions)
 {
 	actions_ = actions;
-	setCoreParameter("Actions", actions);
+	setCoreParameter("Actions", std::to_string(actions));
 }
 

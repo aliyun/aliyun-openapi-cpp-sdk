@@ -44,7 +44,7 @@ std::string ListClusterOperationHostTaskRequest::getRegionId()const
 void ListClusterOperationHostTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListClusterOperationHostTaskRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListClusterOperationHostTaskRequest::getOperationId()const
 void ListClusterOperationHostTaskRequest::setOperationId(const std::string& operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", operationId);
+	setCoreParameter("OperationId", std::to_string(operationId));
 }
 
 std::string ListClusterOperationHostTaskRequest::getHostId()const
@@ -77,7 +77,7 @@ std::string ListClusterOperationHostTaskRequest::getHostId()const
 void ListClusterOperationHostTaskRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setCoreParameter("HostId", std::to_string(hostId));
 }
 
 std::string ListClusterOperationHostTaskRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string ListClusterOperationHostTaskRequest::getClusterId()const
 void ListClusterOperationHostTaskRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListClusterOperationHostTaskRequest::getPageNumber()const
@@ -110,7 +110,7 @@ std::string ListClusterOperationHostTaskRequest::getAccessKeyId()const
 void ListClusterOperationHostTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListClusterOperationHostTaskRequest::getStatus()const
@@ -121,6 +121,6 @@ std::string ListClusterOperationHostTaskRequest::getStatus()const
 void ListClusterOperationHostTaskRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

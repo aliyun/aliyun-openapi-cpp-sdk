@@ -33,7 +33,7 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getAclId()const
 void ModifyIPv6TranslatorAclListEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long ModifyIPv6TranslatorAclListEntryRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getResourceOwnerAccount()co
 void ModifyIPv6TranslatorAclListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyIPv6TranslatorAclListEntryRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getRegionId()const
 void ModifyIPv6TranslatorAclListEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
 void ModifyIPv6TranslatorAclListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyIPv6TranslatorAclListEntryRequest::getAclEntryComment()const
@@ -88,7 +88,7 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getAclEntryComment()const
 void ModifyIPv6TranslatorAclListEntryRequest::setAclEntryComment(const std::string& aclEntryComment)
 {
 	aclEntryComment_ = aclEntryComment;
-	setCoreParameter("AclEntryComment", aclEntryComment);
+	setCoreParameter("AclEntryComment", std::to_string(aclEntryComment));
 }
 
 long ModifyIPv6TranslatorAclListEntryRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyIPv6TranslatorAclListEntryRequest::getAclEntryId()const
 void ModifyIPv6TranslatorAclListEntryRequest::setAclEntryId(const std::string& aclEntryId)
 {
 	aclEntryId_ = aclEntryId;
-	setCoreParameter("AclEntryId", aclEntryId);
+	setCoreParameter("AclEntryId", std::to_string(aclEntryId));
 }
 

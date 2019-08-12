@@ -33,7 +33,7 @@ std::string AttachPolicyToUserRequest::getPolicyType()const
 void AttachPolicyToUserRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string AttachPolicyToUserRequest::getPolicyName()const
@@ -44,7 +44,7 @@ std::string AttachPolicyToUserRequest::getPolicyName()const
 void AttachPolicyToUserRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", std::to_string(policyName));
 }
 
 std::string AttachPolicyToUserRequest::getUserName()const
@@ -55,6 +55,6 @@ std::string AttachPolicyToUserRequest::getUserName()const
 void AttachPolicyToUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

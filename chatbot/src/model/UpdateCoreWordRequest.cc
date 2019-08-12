@@ -33,7 +33,7 @@ std::string UpdateCoreWordRequest::getCoreWordName()const
 void UpdateCoreWordRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
+	setCoreParameter("CoreWordName", std::to_string(coreWordName));
 }
 
 std::string UpdateCoreWordRequest::getCoreWordCode()const
@@ -44,6 +44,6 @@ std::string UpdateCoreWordRequest::getCoreWordCode()const
 void UpdateCoreWordRequest::setCoreWordCode(const std::string& coreWordCode)
 {
 	coreWordCode_ = coreWordCode;
-	setCoreParameter("CoreWordCode", coreWordCode);
+	setCoreParameter("CoreWordCode", std::to_string(coreWordCode));
 }
 

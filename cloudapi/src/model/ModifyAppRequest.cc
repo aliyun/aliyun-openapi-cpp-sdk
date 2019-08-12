@@ -33,7 +33,7 @@ std::string ModifyAppRequest::getAppName()const
 void ModifyAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string ModifyAppRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyAppRequest::getSecurityToken()const
 void ModifyAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long ModifyAppRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string ModifyAppRequest::getDescription()const
 void ModifyAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::vector<ModifyAppRequest::Tag> ModifyAppRequest::getTag()const
@@ -94,6 +94,6 @@ std::string ModifyAppRequest::getAccessKeyId()const
 void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

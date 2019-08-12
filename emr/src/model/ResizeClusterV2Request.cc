@@ -33,7 +33,7 @@ std::string ResizeClusterV2Request::getVswitchId()const
 void ResizeClusterV2Request::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
+	setCoreParameter("VswitchId", std::to_string(vswitchId));
 }
 
 bool ResizeClusterV2Request::getIsOpenPublicIp()const
@@ -44,7 +44,7 @@ bool ResizeClusterV2Request::getIsOpenPublicIp()const
 void ResizeClusterV2Request::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp);
+	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 bool ResizeClusterV2Request::getAutoPayOrder()const
@@ -55,7 +55,7 @@ bool ResizeClusterV2Request::getAutoPayOrder()const
 void ResizeClusterV2Request::setAutoPayOrder(bool autoPayOrder)
 {
 	autoPayOrder_ = autoPayOrder;
-	setCoreParameter("AutoPayOrder", autoPayOrder);
+	setCoreParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
 }
 
 std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::getHostComponentInfo()const
@@ -84,7 +84,7 @@ std::string ResizeClusterV2Request::getRegionId()const
 void ResizeClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<ResizeClusterV2Request::HostGroup> ResizeClusterV2Request::getHostGroup()const
@@ -129,7 +129,7 @@ std::string ResizeClusterV2Request::getClusterId()const
 void ResizeClusterV2Request::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ResizeClusterV2Request::getAccessKeyId()const
@@ -140,6 +140,6 @@ std::string ResizeClusterV2Request::getAccessKeyId()const
 void ResizeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

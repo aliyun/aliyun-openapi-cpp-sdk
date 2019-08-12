@@ -44,7 +44,7 @@ std::string DescribeInstanceCrossBackupPolicyRequest::getResourceOwnerAccount()c
 void DescribeInstanceCrossBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstanceCrossBackupPolicyRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceCrossBackupPolicyRequest::getRegionId()const
 void DescribeInstanceCrossBackupPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeInstanceCrossBackupPolicyRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceCrossBackupPolicyRequest::getDBInstanceId()const
 void DescribeInstanceCrossBackupPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeInstanceCrossBackupPolicyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeInstanceCrossBackupPolicyRequest::getAccessKeyId()const
 void DescribeInstanceCrossBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

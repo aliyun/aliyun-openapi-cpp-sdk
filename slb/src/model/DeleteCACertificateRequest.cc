@@ -33,7 +33,7 @@ std::string DeleteCACertificateRequest::getAccess_key_id()const
 void DeleteCACertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DeleteCACertificateRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteCACertificateRequest::getResourceOwnerAccount()const
 void DeleteCACertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteCACertificateRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteCACertificateRequest::getRegionId()const
 void DeleteCACertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteCACertificateRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteCACertificateRequest::getOwnerAccount()const
 void DeleteCACertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteCACertificateRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DeleteCACertificateRequest::getCACertificateId()const
 void DeleteCACertificateRequest::setCACertificateId(const std::string& cACertificateId)
 {
 	cACertificateId_ = cACertificateId;
-	setCoreParameter("CACertificateId", cACertificateId);
+	setCoreParameter("CACertificateId", std::to_string(cACertificateId));
 }
 

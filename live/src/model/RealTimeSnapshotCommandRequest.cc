@@ -44,7 +44,7 @@ std::string RealTimeSnapshotCommandRequest::getAppName()const
 void RealTimeSnapshotCommandRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string RealTimeSnapshotCommandRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RealTimeSnapshotCommandRequest::getRegionId()const
 void RealTimeSnapshotCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RealTimeSnapshotCommandRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string RealTimeSnapshotCommandRequest::getDomainName()const
 void RealTimeSnapshotCommandRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int RealTimeSnapshotCommandRequest::getInterval()const
@@ -99,7 +99,7 @@ std::string RealTimeSnapshotCommandRequest::getCommand()const
 void RealTimeSnapshotCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setCoreParameter("Command", std::to_string(command));
 }
 
 std::string RealTimeSnapshotCommandRequest::getStreamName()const
@@ -110,6 +110,6 @@ std::string RealTimeSnapshotCommandRequest::getStreamName()const
 void RealTimeSnapshotCommandRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 

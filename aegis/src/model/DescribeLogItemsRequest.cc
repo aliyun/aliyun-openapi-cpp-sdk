@@ -66,7 +66,7 @@ std::string DescribeLogItemsRequest::getQuery()const
 void DescribeLogItemsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 std::string DescribeLogItemsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeLogItemsRequest::getEndTime()const
 void DescribeLogItemsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLogItemsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeLogItemsRequest::getCurrentPage()const
 void DescribeLogItemsRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeLogItemsRequest::getNetworkOffset()const
@@ -110,7 +110,7 @@ std::string DescribeLogItemsRequest::getStartTime()const
 void DescribeLogItemsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int DescribeLogItemsRequest::getAccountSnapshotOffset()const
@@ -143,7 +143,7 @@ std::string DescribeLogItemsRequest::getSourceIp()const
 void DescribeLogItemsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeLogItemsRequest::getCrackOffset()const
@@ -165,6 +165,6 @@ std::string DescribeLogItemsRequest::getPageSize()const
 void DescribeLogItemsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

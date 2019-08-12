@@ -44,7 +44,7 @@ std::string DeleteAccountRequest::getAccountName()const
 void DeleteAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string DeleteAccountRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteAccountRequest::getResourceOwnerAccount()const
 void DeleteAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteAccountRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string DeleteAccountRequest::getDBClusterId()const
 void DeleteAccountRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DeleteAccountRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteAccountRequest::getOwnerAccount()const
 void DeleteAccountRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteAccountRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DeleteAccountRequest::getAccessKeyId()const
 void DeleteAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

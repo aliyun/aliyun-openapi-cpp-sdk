@@ -33,7 +33,7 @@ std::string DescribeLiveCertificateDetailRequest::getSecurityToken()const
 void DescribeLiveCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveCertificateDetailRequest::getCertName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveCertificateDetailRequest::getCertName()const
 void DescribeLiveCertificateDetailRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setCoreParameter("CertName", std::to_string(certName));
 }
 
 long DescribeLiveCertificateDetailRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string GetJobListRequest::getInstanceId()const
 void GetJobListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetJobListRequest::getJobGroupId()const
@@ -44,7 +44,7 @@ std::string GetJobListRequest::getJobGroupId()const
 void GetJobListRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 
 int GetJobListRequest::getPageSize()const
@@ -88,6 +88,6 @@ bool GetJobListRequest::getQueryAll()const
 void GetJobListRequest::setQueryAll(bool queryAll)
 {
 	queryAll_ = queryAll;
-	setCoreParameter("QueryAll", queryAll);
+	setCoreParameter("QueryAll", queryAll ? "true" : "false");
 }
 

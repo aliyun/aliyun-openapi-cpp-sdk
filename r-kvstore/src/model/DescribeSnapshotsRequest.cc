@@ -44,7 +44,7 @@ std::string DescribeSnapshotsRequest::getInstanceId()const
 void DescribeSnapshotsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSnapshotsRequest::getResourceOwnerAccount()const
 void DescribeSnapshotsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSnapshotsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeSnapshotsRequest::getRegionId()const
 void DescribeSnapshotsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSnapshotsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSnapshotsRequest::getOwnerAccount()const
 void DescribeSnapshotsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSnapshotsRequest::getSnapshotIds()const
@@ -88,7 +88,7 @@ std::string DescribeSnapshotsRequest::getSnapshotIds()const
 void DescribeSnapshotsRequest::setSnapshotIds(const std::string& snapshotIds)
 {
 	snapshotIds_ = snapshotIds;
-	setCoreParameter("SnapshotIds", snapshotIds);
+	setCoreParameter("SnapshotIds", std::to_string(snapshotIds));
 }
 
 std::string DescribeSnapshotsRequest::getEndTime()const
@@ -99,7 +99,7 @@ std::string DescribeSnapshotsRequest::getEndTime()const
 void DescribeSnapshotsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSnapshotsRequest::getBeginTime()const
@@ -110,7 +110,7 @@ std::string DescribeSnapshotsRequest::getBeginTime()const
 void DescribeSnapshotsRequest::setBeginTime(const std::string& beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", beginTime);
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 long DescribeSnapshotsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeSnapshotsRequest::getAccessKeyId()const
 void DescribeSnapshotsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

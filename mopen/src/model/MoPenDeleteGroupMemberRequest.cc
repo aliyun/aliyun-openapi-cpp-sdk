@@ -44,6 +44,6 @@ std::string MoPenDeleteGroupMemberRequest::getDeviceName()const
 void MoPenDeleteGroupMemberRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 

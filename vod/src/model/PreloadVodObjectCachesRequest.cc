@@ -33,7 +33,7 @@ std::string PreloadVodObjectCachesRequest::getSecurityToken()const
 void PreloadVodObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string PreloadVodObjectCachesRequest::getObjectPath()const
@@ -44,7 +44,7 @@ std::string PreloadVodObjectCachesRequest::getObjectPath()const
 void PreloadVodObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", std::to_string(objectPath));
 }
 
 long PreloadVodObjectCachesRequest::getOwnerId()const

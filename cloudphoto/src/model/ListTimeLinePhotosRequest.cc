@@ -44,7 +44,7 @@ std::string ListTimeLinePhotosRequest::getLibraryId()const
 void ListTimeLinePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long ListTimeLinePhotosRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string ListTimeLinePhotosRequest::getStoreName()const
 void ListTimeLinePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 int ListTimeLinePhotosRequest::getPage()const
@@ -99,7 +99,7 @@ std::string ListTimeLinePhotosRequest::getFilterBy()const
 void ListTimeLinePhotosRequest::setFilterBy(const std::string& filterBy)
 {
 	filterBy_ = filterBy;
-	setCoreParameter("FilterBy", filterBy);
+	setCoreParameter("FilterBy", std::to_string(filterBy));
 }
 
 std::string ListTimeLinePhotosRequest::getDirection()const
@@ -110,7 +110,7 @@ std::string ListTimeLinePhotosRequest::getDirection()const
 void ListTimeLinePhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setCoreParameter("Direction", std::to_string(direction));
 }
 
 std::string ListTimeLinePhotosRequest::getOrder()const
@@ -121,6 +121,6 @@ std::string ListTimeLinePhotosRequest::getOrder()const
 void ListTimeLinePhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

@@ -33,7 +33,7 @@ std::string CreateGWSClusterRequest::getClusterType()const
 void CreateGWSClusterRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", std::to_string(clusterType));
 }
 
 std::string CreateGWSClusterRequest::getVpcId()const
@@ -44,7 +44,7 @@ std::string CreateGWSClusterRequest::getVpcId()const
 void CreateGWSClusterRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateGWSClusterRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateGWSClusterRequest::getName()const
 void CreateGWSClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateGWSClusterRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string CreateGWSClusterRequest::getAccessKeyId()const
 void CreateGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

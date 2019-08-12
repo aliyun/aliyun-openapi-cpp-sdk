@@ -33,7 +33,7 @@ std::string FindApprovalOrderListRequest::getProjectName()const
 void FindApprovalOrderListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", std::to_string(projectName));
 }
 
 std::string FindApprovalOrderListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string FindApprovalOrderListRequest::getRegionId()const
 void FindApprovalOrderListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long FindApprovalOrderListRequest::getCsbId()const
@@ -66,7 +66,7 @@ std::string FindApprovalOrderListRequest::getAlias()const
 void FindApprovalOrderListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setCoreParameter("Alias", std::to_string(alias));
 }
 
 std::string FindApprovalOrderListRequest::getServiceName()const
@@ -77,7 +77,7 @@ std::string FindApprovalOrderListRequest::getServiceName()const
 void FindApprovalOrderListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 long FindApprovalOrderListRequest::getServiceId()const
@@ -110,6 +110,6 @@ bool FindApprovalOrderListRequest::getOnlyPending()const
 void FindApprovalOrderListRequest::setOnlyPending(bool onlyPending)
 {
 	onlyPending_ = onlyPending;
-	setCoreParameter("OnlyPending", onlyPending);
+	setCoreParameter("OnlyPending", onlyPending ? "true" : "false");
 }
 

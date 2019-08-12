@@ -44,7 +44,7 @@ std::string DescribeFlowLogsRequest::getResourceOwnerAccount()const
 void DescribeFlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeFlowLogsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeFlowLogsRequest::getOwnerAccount()const
 void DescribeFlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeFlowLogsRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string DescribeFlowLogsRequest::getDescription()const
 void DescribeFlowLogsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long DescribeFlowLogsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeFlowLogsRequest::getRegionId()const
 void DescribeFlowLogsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeFlowLogsRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string DescribeFlowLogsRequest::getOutputType()const
 void DescribeFlowLogsRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setCoreParameter("OutputType", std::to_string(outputType));
 }
 
 std::string DescribeFlowLogsRequest::getFlowLogId()const
@@ -132,7 +132,7 @@ std::string DescribeFlowLogsRequest::getFlowLogId()const
 void DescribeFlowLogsRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setCoreParameter("FlowLogId", std::to_string(flowLogId));
 }
 
 std::string DescribeFlowLogsRequest::getFlowLogName()const
@@ -143,7 +143,7 @@ std::string DescribeFlowLogsRequest::getFlowLogName()const
 void DescribeFlowLogsRequest::setFlowLogName(const std::string& flowLogName)
 {
 	flowLogName_ = flowLogName;
-	setCoreParameter("FlowLogName", flowLogName);
+	setCoreParameter("FlowLogName", std::to_string(flowLogName));
 }
 
 std::string DescribeFlowLogsRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeFlowLogsRequest::getStatus()const
 void DescribeFlowLogsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

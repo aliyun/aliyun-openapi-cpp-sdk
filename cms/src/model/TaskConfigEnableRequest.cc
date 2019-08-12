@@ -45,6 +45,6 @@ bool TaskConfigEnableRequest::getEnabled()const
 void TaskConfigEnableRequest::setEnabled(bool enabled)
 {
 	enabled_ = enabled;
-	setCoreParameter("Enabled", enabled);
+	setCoreParameter("Enabled", enabled ? "true" : "false");
 }
 

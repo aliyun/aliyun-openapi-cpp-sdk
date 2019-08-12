@@ -44,7 +44,7 @@ bool FetchLibrariesRequest::getNeedQuota()const
 void FetchLibrariesRequest::setNeedQuota(bool needQuota)
 {
 	needQuota_ = needQuota;
-	setCoreParameter("NeedQuota", needQuota);
+	setCoreParameter("NeedQuota", needQuota ? "true" : "false");
 }
 
 std::string FetchLibrariesRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string FetchLibrariesRequest::getStoreName()const
 void FetchLibrariesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 int FetchLibrariesRequest::getPage()const

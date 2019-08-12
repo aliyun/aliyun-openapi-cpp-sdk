@@ -55,7 +55,7 @@ std::string DescribeActiveOperationTaskTypeRequest::getSecurityToken()const
 void DescribeActiveOperationTaskTypeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeActiveOperationTaskTypeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeActiveOperationTaskTypeRequest::getResourceOwnerAccount()con
 void DescribeActiveOperationTaskTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeActiveOperationTaskTypeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeActiveOperationTaskTypeRequest::getRegionId()const
 void DescribeActiveOperationTaskTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeActiveOperationTaskTypeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeActiveOperationTaskTypeRequest::getOwnerAccount()const
 void DescribeActiveOperationTaskTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeActiveOperationTaskTypeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeActiveOperationTaskTypeRequest::getAccessKeyId()const
 void DescribeActiveOperationTaskTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

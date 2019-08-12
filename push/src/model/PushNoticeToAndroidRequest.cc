@@ -33,7 +33,7 @@ std::string PushNoticeToAndroidRequest::getExtParameters()const
 void PushNoticeToAndroidRequest::setExtParameters(const std::string& extParameters)
 {
 	extParameters_ = extParameters;
-	setCoreParameter("ExtParameters", extParameters);
+	setCoreParameter("ExtParameters", std::to_string(extParameters));
 }
 
 long PushNoticeToAndroidRequest::getAppKey()const
@@ -55,7 +55,7 @@ std::string PushNoticeToAndroidRequest::getTargetValue()const
 void PushNoticeToAndroidRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setCoreParameter("TargetValue", std::to_string(targetValue));
 }
 
 std::string PushNoticeToAndroidRequest::getTitle()const
@@ -66,7 +66,7 @@ std::string PushNoticeToAndroidRequest::getTitle()const
 void PushNoticeToAndroidRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string PushNoticeToAndroidRequest::getBody()const
@@ -77,7 +77,7 @@ std::string PushNoticeToAndroidRequest::getBody()const
 void PushNoticeToAndroidRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", body);
+	setCoreParameter("Body", std::to_string(body));
 }
 
 std::string PushNoticeToAndroidRequest::getJobKey()const
@@ -88,7 +88,7 @@ std::string PushNoticeToAndroidRequest::getJobKey()const
 void PushNoticeToAndroidRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", jobKey);
+	setCoreParameter("JobKey", std::to_string(jobKey));
 }
 
 std::string PushNoticeToAndroidRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string PushNoticeToAndroidRequest::getAccessKeyId()const
 void PushNoticeToAndroidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string PushNoticeToAndroidRequest::getTarget()const
@@ -110,6 +110,6 @@ std::string PushNoticeToAndroidRequest::getTarget()const
 void PushNoticeToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setCoreParameter("Target", std::to_string(target));
 }
 

@@ -33,7 +33,7 @@ std::string QueryTradeMarkApplicationsRequest::getTmName()const
 void QueryTradeMarkApplicationsRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setCoreParameter("TmName", std::to_string(tmName));
 }
 
 std::string QueryTradeMarkApplicationsRequest::getMaterialName()const
@@ -44,7 +44,7 @@ std::string QueryTradeMarkApplicationsRequest::getMaterialName()const
 void QueryTradeMarkApplicationsRequest::setMaterialName(const std::string& materialName)
 {
 	materialName_ = materialName;
-	setCoreParameter("MaterialName", materialName);
+	setCoreParameter("MaterialName", std::to_string(materialName));
 }
 
 int QueryTradeMarkApplicationsRequest::getHidden()const
@@ -66,7 +66,7 @@ std::string QueryTradeMarkApplicationsRequest::getOrderId()const
 void QueryTradeMarkApplicationsRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string QueryTradeMarkApplicationsRequest::getTmNumber()const
@@ -77,7 +77,7 @@ std::string QueryTradeMarkApplicationsRequest::getTmNumber()const
 void QueryTradeMarkApplicationsRequest::setTmNumber(const std::string& tmNumber)
 {
 	tmNumber_ = tmNumber;
-	setCoreParameter("TmNumber", tmNumber);
+	setCoreParameter("TmNumber", std::to_string(tmNumber));
 }
 
 std::string QueryTradeMarkApplicationsRequest::getIntentionBizId()const
@@ -88,7 +88,7 @@ std::string QueryTradeMarkApplicationsRequest::getIntentionBizId()const
 void QueryTradeMarkApplicationsRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", intentionBizId);
+	setCoreParameter("IntentionBizId", std::to_string(intentionBizId));
 }
 
 int QueryTradeMarkApplicationsRequest::getPageNum()const
@@ -110,7 +110,7 @@ std::string QueryTradeMarkApplicationsRequest::getType()const
 void QueryTradeMarkApplicationsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int QueryTradeMarkApplicationsRequest::getSupplementStatus()const
@@ -143,7 +143,7 @@ std::string QueryTradeMarkApplicationsRequest::getBizId()const
 void QueryTradeMarkApplicationsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 
 std::string QueryTradeMarkApplicationsRequest::getSortOrder()const
@@ -154,7 +154,7 @@ std::string QueryTradeMarkApplicationsRequest::getSortOrder()const
 void QueryTradeMarkApplicationsRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
+	setCoreParameter("SortOrder", std::to_string(sortOrder));
 }
 
 int QueryTradeMarkApplicationsRequest::getStatus()const

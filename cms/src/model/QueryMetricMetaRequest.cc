@@ -33,7 +33,7 @@ std::string QueryMetricMetaRequest::getMetric()const
 void QueryMetricMetaRequest::setMetric(const std::string& metric)
 {
 	metric_ = metric;
-	setCoreParameter("Metric", metric);
+	setCoreParameter("Metric", std::to_string(metric));
 }
 
 int QueryMetricMetaRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryMetricMetaRequest::getProject()const
 void QueryMetricMetaRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 int QueryMetricMetaRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string QueryMetricMetaRequest::getLabels()const
 void QueryMetricMetaRequest::setLabels(const std::string& labels)
 {
 	labels_ = labels;
-	setCoreParameter("Labels", labels);
+	setCoreParameter("Labels", std::to_string(labels));
 }
 

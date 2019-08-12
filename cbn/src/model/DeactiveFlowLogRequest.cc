@@ -44,7 +44,7 @@ std::string DeactiveFlowLogRequest::getResourceOwnerAccount()const
 void DeactiveFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeactiveFlowLogRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DeactiveFlowLogRequest::getClientToken()const
 void DeactiveFlowLogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeactiveFlowLogRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeactiveFlowLogRequest::getRegionId()const
 void DeactiveFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeactiveFlowLogRequest::getCenId()const
@@ -77,7 +77,7 @@ std::string DeactiveFlowLogRequest::getCenId()const
 void DeactiveFlowLogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DeactiveFlowLogRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeactiveFlowLogRequest::getOwnerAccount()const
 void DeactiveFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeactiveFlowLogRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DeactiveFlowLogRequest::getFlowLogId()const
 void DeactiveFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setCoreParameter("FlowLogId", std::to_string(flowLogId));
 }
 

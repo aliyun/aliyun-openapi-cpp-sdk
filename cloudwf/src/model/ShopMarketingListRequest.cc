@@ -33,7 +33,7 @@ std::string ShopMarketingListRequest::getName()const
 void ShopMarketingListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ShopMarketingListRequest::getPage()const
@@ -66,7 +66,7 @@ std::string ShopMarketingListRequest::getAccessKeyId()const
 void ShopMarketingListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ShopMarketingListRequest::getSid()const

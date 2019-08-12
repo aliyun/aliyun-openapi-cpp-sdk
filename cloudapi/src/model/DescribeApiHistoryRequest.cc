@@ -33,7 +33,7 @@ std::string DescribeApiHistoryRequest::getStageName()const
 void DescribeApiHistoryRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeApiHistoryRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeApiHistoryRequest::getSecurityToken()const
 void DescribeApiHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiHistoryRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeApiHistoryRequest::getGroupId()const
 void DescribeApiHistoryRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeApiHistoryRequest::getApiId()const
@@ -66,7 +66,7 @@ std::string DescribeApiHistoryRequest::getApiId()const
 void DescribeApiHistoryRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string DescribeApiHistoryRequest::getHistoryVersion()const
@@ -77,7 +77,7 @@ std::string DescribeApiHistoryRequest::getHistoryVersion()const
 void DescribeApiHistoryRequest::setHistoryVersion(const std::string& historyVersion)
 {
 	historyVersion_ = historyVersion;
-	setCoreParameter("HistoryVersion", historyVersion);
+	setCoreParameter("HistoryVersion", std::to_string(historyVersion));
 }
 
 std::string DescribeApiHistoryRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeApiHistoryRequest::getAccessKeyId()const
 void DescribeApiHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ bool ListAlarmRequest::getIsEnable()const
 void ListAlarmRequest::setIsEnable(bool isEnable)
 {
 	isEnable_ = isEnable;
-	setCoreParameter("IsEnable", isEnable);
+	setCoreParameter("IsEnable", isEnable ? "true" : "false");
 }
 
 std::string ListAlarmRequest::getName()const
@@ -44,7 +44,7 @@ std::string ListAlarmRequest::getName()const
 void ListAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ListAlarmRequest::get_Namespace()const
@@ -55,7 +55,7 @@ std::string ListAlarmRequest::get_Namespace()const
 void ListAlarmRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", std::to_string(_namespace));
 }
 
 int ListAlarmRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListAlarmRequest::getId()const
 void ListAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ListAlarmRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListAlarmRequest::getState()const
 void ListAlarmRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string ListAlarmRequest::getDimension()const
@@ -99,7 +99,7 @@ std::string ListAlarmRequest::getDimension()const
 void ListAlarmRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setCoreParameter("Dimension", dimension);
+	setCoreParameter("Dimension", std::to_string(dimension));
 }
 
 int ListAlarmRequest::getPageNumber()const

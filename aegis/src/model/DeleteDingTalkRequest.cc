@@ -33,7 +33,7 @@ std::string DeleteDingTalkRequest::getSourceIp()const
 void DeleteDingTalkRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteDingTalkRequest::getIds()const
@@ -44,6 +44,6 @@ std::string DeleteDingTalkRequest::getIds()const
 void DeleteDingTalkRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 

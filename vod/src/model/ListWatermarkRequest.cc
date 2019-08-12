@@ -44,7 +44,7 @@ std::string ListWatermarkRequest::getResourceOwnerAccount()const
 void ListWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ListWatermarkRequest::getPageNo()const
@@ -66,7 +66,7 @@ std::string ListWatermarkRequest::getAppId()const
 void ListWatermarkRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 int ListWatermarkRequest::getPageSize()const
@@ -99,6 +99,6 @@ std::string ListWatermarkRequest::getAccessKeyId()const
 void ListWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

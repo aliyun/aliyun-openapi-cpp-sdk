@@ -44,7 +44,7 @@ std::string DeletePhysicalConnectionRequest::getRegionId()const
 void DeletePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeletePhysicalConnectionRequest::getResourceOwnerAccount()const
 void DeletePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeletePhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeletePhysicalConnectionRequest::getClientToken()const
 void DeletePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string DeletePhysicalConnectionRequest::getPhysicalConnectionId()const
 void DeletePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
 }
 
 std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeletePhysicalConnectionRequest::getOwnerAccount()const
 void DeletePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeletePhysicalConnectionRequest::getUserCidr()const
@@ -99,7 +99,7 @@ std::string DeletePhysicalConnectionRequest::getUserCidr()const
 void DeletePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 long DeletePhysicalConnectionRequest::getOwnerId()const

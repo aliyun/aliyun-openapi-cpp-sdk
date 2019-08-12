@@ -33,7 +33,7 @@ std::string UpdateWhiteListProcessStatusRequest::getProcessIds()const
 void UpdateWhiteListProcessStatusRequest::setProcessIds(const std::string& processIds)
 {
 	processIds_ = processIds;
-	setCoreParameter("ProcessIds", processIds);
+	setCoreParameter("ProcessIds", std::to_string(processIds));
 }
 
 std::string UpdateWhiteListProcessStatusRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string UpdateWhiteListProcessStatusRequest::getSourceIp()const
 void UpdateWhiteListProcessStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long UpdateWhiteListProcessStatusRequest::getStrategyId()const
@@ -66,7 +66,7 @@ std::string UpdateWhiteListProcessStatusRequest::getLang()const
 void UpdateWhiteListProcessStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateWhiteListProcessStatusRequest::getStatus()const

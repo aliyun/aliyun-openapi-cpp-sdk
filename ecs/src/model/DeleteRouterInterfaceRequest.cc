@@ -44,7 +44,7 @@ std::string DeleteRouterInterfaceRequest::getRegionId()const
 void DeleteRouterInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteRouterInterfaceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteRouterInterfaceRequest::getResourceOwnerAccount()const
 void DeleteRouterInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteRouterInterfaceRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteRouterInterfaceRequest::getClientToken()const
 void DeleteRouterInterfaceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteRouterInterfaceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteRouterInterfaceRequest::getOwnerAccount()const
 void DeleteRouterInterfaceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteRouterInterfaceRequest::getUserCidr()const
@@ -88,7 +88,7 @@ std::string DeleteRouterInterfaceRequest::getUserCidr()const
 void DeleteRouterInterfaceRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 std::string DeleteRouterInterfaceRequest::getRouterInterfaceId()const
@@ -99,7 +99,7 @@ std::string DeleteRouterInterfaceRequest::getRouterInterfaceId()const
 void DeleteRouterInterfaceRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setCoreParameter("RouterInterfaceId", std::to_string(routerInterfaceId));
 }
 
 long DeleteRouterInterfaceRequest::getOwnerId()const

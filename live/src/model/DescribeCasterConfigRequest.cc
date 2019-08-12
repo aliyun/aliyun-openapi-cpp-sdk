@@ -33,7 +33,7 @@ std::string DescribeCasterConfigRequest::getRegionId()const
 void DescribeCasterConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeCasterConfigRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DescribeCasterConfigRequest::getCasterId()const
 void DescribeCasterConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long DescribeCasterConfigRequest::getOwnerId()const

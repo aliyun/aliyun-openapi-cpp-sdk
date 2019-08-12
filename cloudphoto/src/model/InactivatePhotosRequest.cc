@@ -33,7 +33,7 @@ std::string InactivatePhotosRequest::getLibraryId()const
 void InactivatePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::vector<long> InactivatePhotosRequest::getPhotoId()const
@@ -56,7 +56,7 @@ std::string InactivatePhotosRequest::getStoreName()const
 void InactivatePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long InactivatePhotosRequest::getInactiveTime()const

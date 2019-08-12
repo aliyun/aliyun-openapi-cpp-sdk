@@ -44,7 +44,7 @@ bool DescribeBoardsRequest::getProxy_original_security_transport()const
 void DescribeBoardsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeBoardsRequest::getProxy_original_source_ip()const
@@ -55,7 +55,7 @@ std::string DescribeBoardsRequest::getProxy_original_source_ip()const
 void DescribeBoardsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 int DescribeBoardsRequest::getPageNum()const
@@ -77,7 +77,7 @@ std::string DescribeBoardsRequest::getOwnerIdLoginEmail()const
 void DescribeBoardsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeBoardsRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeBoardsRequest::getCallerType()const
 void DescribeBoardsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeBoardsRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeBoardsRequest::getAccessKeyId()const
 void DescribeBoardsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeBoardsRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeBoardsRequest::getSecurityToken()const
 void DescribeBoardsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeBoardsRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeBoardsRequest::getRegionId()const
 void DescribeBoardsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBoardsRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribeBoardsRequest::getRequestContent()const
 void DescribeBoardsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeBoardsRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeBoardsRequest::getCallerBidEmail()const
 void DescribeBoardsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeBoardsRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeBoardsRequest::getCallerUidEmail()const
 void DescribeBoardsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeBoardsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string DescribeBoardsRequest::getApp_ip()const
 void DescribeBoardsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeBoardsRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeBoardsRequest::getPopProduct()const
 void DescribeBoardsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeBoardsRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string DescribeBoardsRequest::getCallerBid()const
 void DescribeBoardsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeBoardsRequest::getOwnerId()const
@@ -231,7 +231,7 @@ std::string DescribeBoardsRequest::getVersion()const
 void DescribeBoardsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeBoardsRequest::getProxy_trust_transport_info()const
@@ -242,7 +242,7 @@ bool DescribeBoardsRequest::getProxy_trust_transport_info()const
 void DescribeBoardsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeBoardsRequest::getAk_mfa_present()const
@@ -253,7 +253,7 @@ bool DescribeBoardsRequest::getAk_mfa_present()const
 void DescribeBoardsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeBoardsRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool DescribeBoardsRequest::getSecurity_transport()const
 void DescribeBoardsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeBoardsRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string DescribeBoardsRequest::getRequestId()const
 void DescribeBoardsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeBoardsRequest::getAppId()const
@@ -286,6 +286,6 @@ std::string DescribeBoardsRequest::getAppId()const
 void DescribeBoardsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

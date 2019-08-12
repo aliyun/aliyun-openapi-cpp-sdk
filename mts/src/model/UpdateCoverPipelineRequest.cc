@@ -44,7 +44,7 @@ std::string UpdateCoverPipelineRequest::getRole()const
 void UpdateCoverPipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::string UpdateCoverPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateCoverPipelineRequest::getResourceOwnerAccount()const
 void UpdateCoverPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateCoverPipelineRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateCoverPipelineRequest::getOwnerAccount()const
 void UpdateCoverPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UpdateCoverPipelineRequest::getName()const
@@ -77,7 +77,7 @@ std::string UpdateCoverPipelineRequest::getName()const
 void UpdateCoverPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateCoverPipelineRequest::getState()const
@@ -88,7 +88,7 @@ std::string UpdateCoverPipelineRequest::getState()const
 void UpdateCoverPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string UpdateCoverPipelineRequest::getNotifyConfig()const
@@ -99,7 +99,7 @@ std::string UpdateCoverPipelineRequest::getNotifyConfig()const
 void UpdateCoverPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", std::to_string(notifyConfig));
 }
 
 long UpdateCoverPipelineRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string UpdateCoverPipelineRequest::getAccessKeyId()const
 void UpdateCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateCoverPipelineRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string UpdateCoverPipelineRequest::getPipelineId()const
 void UpdateCoverPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

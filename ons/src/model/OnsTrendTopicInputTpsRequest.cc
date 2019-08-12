@@ -44,7 +44,7 @@ std::string OnsTrendTopicInputTpsRequest::getInstanceId()const
 void OnsTrendTopicInputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsTrendTopicInputTpsRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsTrendTopicInputTpsRequest::getTopic()const
 void OnsTrendTopicInputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 long OnsTrendTopicInputTpsRequest::getEndTime()const

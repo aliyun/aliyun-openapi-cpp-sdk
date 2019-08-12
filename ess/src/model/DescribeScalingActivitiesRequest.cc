@@ -33,7 +33,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId9()const
 void DescribeScalingActivitiesRequest::setScalingActivityId9(const std::string& scalingActivityId9)
 {
 	scalingActivityId9_ = scalingActivityId9;
-	setCoreParameter("ScalingActivityId9", scalingActivityId9);
+	setCoreParameter("ScalingActivityId9", std::to_string(scalingActivityId9));
 }
 
 long DescribeScalingActivitiesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId5()const
 void DescribeScalingActivitiesRequest::setScalingActivityId5(const std::string& scalingActivityId5)
 {
 	scalingActivityId5_ = scalingActivityId5;
-	setCoreParameter("ScalingActivityId5", scalingActivityId5);
+	setCoreParameter("ScalingActivityId5", std::to_string(scalingActivityId5));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId6()const
@@ -66,7 +66,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId6()const
 void DescribeScalingActivitiesRequest::setScalingActivityId6(const std::string& scalingActivityId6)
 {
 	scalingActivityId6_ = scalingActivityId6;
-	setCoreParameter("ScalingActivityId6", scalingActivityId6);
+	setCoreParameter("ScalingActivityId6", std::to_string(scalingActivityId6));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingGroupId()const
@@ -77,7 +77,7 @@ std::string DescribeScalingActivitiesRequest::getScalingGroupId()const
 void DescribeScalingActivitiesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId7()const
@@ -88,7 +88,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId7()const
 void DescribeScalingActivitiesRequest::setScalingActivityId7(const std::string& scalingActivityId7)
 {
 	scalingActivityId7_ = scalingActivityId7;
-	setCoreParameter("ScalingActivityId7", scalingActivityId7);
+	setCoreParameter("ScalingActivityId7", std::to_string(scalingActivityId7));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId8()const
@@ -99,7 +99,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId8()const
 void DescribeScalingActivitiesRequest::setScalingActivityId8(const std::string& scalingActivityId8)
 {
 	scalingActivityId8_ = scalingActivityId8;
-	setCoreParameter("ScalingActivityId8", scalingActivityId8);
+	setCoreParameter("ScalingActivityId8", std::to_string(scalingActivityId8));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId1()const
@@ -110,7 +110,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId1()const
 void DescribeScalingActivitiesRequest::setScalingActivityId1(const std::string& scalingActivityId1)
 {
 	scalingActivityId1_ = scalingActivityId1;
-	setCoreParameter("ScalingActivityId1", scalingActivityId1);
+	setCoreParameter("ScalingActivityId1", std::to_string(scalingActivityId1));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId2()const
@@ -121,7 +121,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId2()const
 void DescribeScalingActivitiesRequest::setScalingActivityId2(const std::string& scalingActivityId2)
 {
 	scalingActivityId2_ = scalingActivityId2;
-	setCoreParameter("ScalingActivityId2", scalingActivityId2);
+	setCoreParameter("ScalingActivityId2", std::to_string(scalingActivityId2));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId3()const
@@ -132,7 +132,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId3()const
 void DescribeScalingActivitiesRequest::setScalingActivityId3(const std::string& scalingActivityId3)
 {
 	scalingActivityId3_ = scalingActivityId3;
-	setCoreParameter("ScalingActivityId3", scalingActivityId3);
+	setCoreParameter("ScalingActivityId3", std::to_string(scalingActivityId3));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId4()const
@@ -143,7 +143,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId4()const
 void DescribeScalingActivitiesRequest::setScalingActivityId4(const std::string& scalingActivityId4)
 {
 	scalingActivityId4_ = scalingActivityId4;
-	setCoreParameter("ScalingActivityId4", scalingActivityId4);
+	setCoreParameter("ScalingActivityId4", std::to_string(scalingActivityId4));
 }
 
 int DescribeScalingActivitiesRequest::getPageNumber()const
@@ -165,7 +165,7 @@ std::string DescribeScalingActivitiesRequest::getAccessKeyId()const
 void DescribeScalingActivitiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeScalingActivitiesRequest::getStatusCode()const
@@ -176,7 +176,7 @@ std::string DescribeScalingActivitiesRequest::getStatusCode()const
 void DescribeScalingActivitiesRequest::setStatusCode(const std::string& statusCode)
 {
 	statusCode_ = statusCode;
-	setCoreParameter("StatusCode", statusCode);
+	setCoreParameter("StatusCode", std::to_string(statusCode));
 }
 
 std::string DescribeScalingActivitiesRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string DescribeScalingActivitiesRequest::getRegionId()const
 void DescribeScalingActivitiesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeScalingActivitiesRequest::getPageSize()const
@@ -209,7 +209,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId11()const
 void DescribeScalingActivitiesRequest::setScalingActivityId11(const std::string& scalingActivityId11)
 {
 	scalingActivityId11_ = scalingActivityId11;
-	setCoreParameter("ScalingActivityId11", scalingActivityId11);
+	setCoreParameter("ScalingActivityId11", std::to_string(scalingActivityId11));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId10()const
@@ -220,7 +220,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId10()const
 void DescribeScalingActivitiesRequest::setScalingActivityId10(const std::string& scalingActivityId10)
 {
 	scalingActivityId10_ = scalingActivityId10;
-	setCoreParameter("ScalingActivityId10", scalingActivityId10);
+	setCoreParameter("ScalingActivityId10", std::to_string(scalingActivityId10));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId13()const
@@ -231,7 +231,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId13()const
 void DescribeScalingActivitiesRequest::setScalingActivityId13(const std::string& scalingActivityId13)
 {
 	scalingActivityId13_ = scalingActivityId13;
-	setCoreParameter("ScalingActivityId13", scalingActivityId13);
+	setCoreParameter("ScalingActivityId13", std::to_string(scalingActivityId13));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId12()const
@@ -242,7 +242,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId12()const
 void DescribeScalingActivitiesRequest::setScalingActivityId12(const std::string& scalingActivityId12)
 {
 	scalingActivityId12_ = scalingActivityId12;
-	setCoreParameter("ScalingActivityId12", scalingActivityId12);
+	setCoreParameter("ScalingActivityId12", std::to_string(scalingActivityId12));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId15()const
@@ -253,7 +253,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId15()const
 void DescribeScalingActivitiesRequest::setScalingActivityId15(const std::string& scalingActivityId15)
 {
 	scalingActivityId15_ = scalingActivityId15;
-	setCoreParameter("ScalingActivityId15", scalingActivityId15);
+	setCoreParameter("ScalingActivityId15", std::to_string(scalingActivityId15));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId14()const
@@ -264,7 +264,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId14()const
 void DescribeScalingActivitiesRequest::setScalingActivityId14(const std::string& scalingActivityId14)
 {
 	scalingActivityId14_ = scalingActivityId14;
-	setCoreParameter("ScalingActivityId14", scalingActivityId14);
+	setCoreParameter("ScalingActivityId14", std::to_string(scalingActivityId14));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId17()const
@@ -275,7 +275,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId17()const
 void DescribeScalingActivitiesRequest::setScalingActivityId17(const std::string& scalingActivityId17)
 {
 	scalingActivityId17_ = scalingActivityId17;
-	setCoreParameter("ScalingActivityId17", scalingActivityId17);
+	setCoreParameter("ScalingActivityId17", std::to_string(scalingActivityId17));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId16()const
@@ -286,7 +286,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId16()const
 void DescribeScalingActivitiesRequest::setScalingActivityId16(const std::string& scalingActivityId16)
 {
 	scalingActivityId16_ = scalingActivityId16;
-	setCoreParameter("ScalingActivityId16", scalingActivityId16);
+	setCoreParameter("ScalingActivityId16", std::to_string(scalingActivityId16));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId19()const
@@ -297,7 +297,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId19()const
 void DescribeScalingActivitiesRequest::setScalingActivityId19(const std::string& scalingActivityId19)
 {
 	scalingActivityId19_ = scalingActivityId19;
-	setCoreParameter("ScalingActivityId19", scalingActivityId19);
+	setCoreParameter("ScalingActivityId19", std::to_string(scalingActivityId19));
 }
 
 std::string DescribeScalingActivitiesRequest::getResourceOwnerAccount()const
@@ -308,7 +308,7 @@ std::string DescribeScalingActivitiesRequest::getResourceOwnerAccount()const
 void DescribeScalingActivitiesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeScalingActivitiesRequest::getScalingActivityId18()const
@@ -319,7 +319,7 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId18()const
 void DescribeScalingActivitiesRequest::setScalingActivityId18(const std::string& scalingActivityId18)
 {
 	scalingActivityId18_ = scalingActivityId18;
-	setCoreParameter("ScalingActivityId18", scalingActivityId18);
+	setCoreParameter("ScalingActivityId18", std::to_string(scalingActivityId18));
 }
 
 std::string DescribeScalingActivitiesRequest::getOwnerAccount()const
@@ -330,7 +330,7 @@ std::string DescribeScalingActivitiesRequest::getOwnerAccount()const
 void DescribeScalingActivitiesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeScalingActivitiesRequest::getOwnerId()const
@@ -352,6 +352,6 @@ std::string DescribeScalingActivitiesRequest::getScalingActivityId20()const
 void DescribeScalingActivitiesRequest::setScalingActivityId20(const std::string& scalingActivityId20)
 {
 	scalingActivityId20_ = scalingActivityId20;
-	setCoreParameter("ScalingActivityId20", scalingActivityId20);
+	setCoreParameter("ScalingActivityId20", std::to_string(scalingActivityId20));
 }
 

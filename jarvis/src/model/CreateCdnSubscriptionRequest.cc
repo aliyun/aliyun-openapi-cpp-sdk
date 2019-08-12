@@ -44,7 +44,7 @@ std::string CreateCdnSubscriptionRequest::getSourceIp()const
 void CreateCdnSubscriptionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateCdnSubscriptionRequest::getLang()const
@@ -55,7 +55,7 @@ std::string CreateCdnSubscriptionRequest::getLang()const
 void CreateCdnSubscriptionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateCdnSubscriptionRequest::getCdnUidList()const
@@ -66,7 +66,7 @@ std::string CreateCdnSubscriptionRequest::getCdnUidList()const
 void CreateCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
-	setCoreParameter("CdnUidList", cdnUidList);
+	setCoreParameter("CdnUidList", std::to_string(cdnUidList));
 }
 
 std::string CreateCdnSubscriptionRequest::getSourceCode()const
@@ -77,6 +77,6 @@ std::string CreateCdnSubscriptionRequest::getSourceCode()const
 void CreateCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

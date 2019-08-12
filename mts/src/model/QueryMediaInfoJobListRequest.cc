@@ -44,7 +44,7 @@ std::string QueryMediaInfoJobListRequest::getMediaInfoJobIds()const
 void QueryMediaInfoJobListRequest::setMediaInfoJobIds(const std::string& mediaInfoJobIds)
 {
 	mediaInfoJobIds_ = mediaInfoJobIds;
-	setCoreParameter("MediaInfoJobIds", mediaInfoJobIds);
+	setCoreParameter("MediaInfoJobIds", std::to_string(mediaInfoJobIds));
 }
 
 std::string QueryMediaInfoJobListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryMediaInfoJobListRequest::getResourceOwnerAccount()const
 void QueryMediaInfoJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryMediaInfoJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryMediaInfoJobListRequest::getOwnerAccount()const
 void QueryMediaInfoJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryMediaInfoJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryMediaInfoJobListRequest::getAccessKeyId()const
 void QueryMediaInfoJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

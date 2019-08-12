@@ -33,7 +33,7 @@ std::string ImportKeyPairRequest::getSourceRegionId()const
 void ImportKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ImportKeyPairRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ImportKeyPairRequest::getResourceOwnerAccount()const
 void ImportKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ImportKeyPairRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ImportKeyPairRequest::getRegionId()const
 void ImportKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ImportKeyPairRequest::getPublicKeyBody()const
@@ -77,7 +77,7 @@ std::string ImportKeyPairRequest::getPublicKeyBody()const
 void ImportKeyPairRequest::setPublicKeyBody(const std::string& publicKeyBody)
 {
 	publicKeyBody_ = publicKeyBody;
-	setCoreParameter("PublicKeyBody", publicKeyBody);
+	setCoreParameter("PublicKeyBody", std::to_string(publicKeyBody));
 }
 
 std::string ImportKeyPairRequest::getKeyPairName()const
@@ -88,7 +88,7 @@ std::string ImportKeyPairRequest::getKeyPairName()const
 void ImportKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 long ImportKeyPairRequest::getOwnerId()const

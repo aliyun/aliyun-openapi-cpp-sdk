@@ -33,7 +33,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getSourceIp()const
 void DescribeWhiteListEffectiveAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getRemark()const
 void DescribeWhiteListEffectiveAssetsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 long DescribeWhiteListEffectiveAssetsRequest::getStrategyId()const
@@ -88,7 +88,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getLang()const
 void DescribeWhiteListEffectiveAssetsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getNeedStatistics()const

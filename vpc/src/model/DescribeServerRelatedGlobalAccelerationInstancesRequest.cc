@@ -44,7 +44,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerTy
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerType(const std::string& serverType)
 {
 	serverType_ = serverType;
-	setCoreParameter("ServerType", serverType);
+	setCoreParameter("ServerType", std::to_string(serverType));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResource
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAcc
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setCoreParameter("ServerId", serverId);
+	setCoreParameter("ServerId", std::to_string(serverId));
 }
 

@@ -33,7 +33,7 @@ std::string AddCasterEpisodeRequest::getResourceId()const
 void AddCasterEpisodeRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 std::vector<std::string> AddCasterEpisodeRequest::getComponentId()const
@@ -56,7 +56,7 @@ std::string AddCasterEpisodeRequest::getSwitchType()const
 void AddCasterEpisodeRequest::setSwitchType(const std::string& switchType)
 {
 	switchType_ = switchType;
-	setCoreParameter("SwitchType", switchType);
+	setCoreParameter("SwitchType", std::to_string(switchType));
 }
 
 std::string AddCasterEpisodeRequest::getCasterId()const
@@ -67,7 +67,7 @@ std::string AddCasterEpisodeRequest::getCasterId()const
 void AddCasterEpisodeRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 std::string AddCasterEpisodeRequest::getEpisodeType()const
@@ -78,7 +78,7 @@ std::string AddCasterEpisodeRequest::getEpisodeType()const
 void AddCasterEpisodeRequest::setEpisodeType(const std::string& episodeType)
 {
 	episodeType_ = episodeType;
-	setCoreParameter("EpisodeType", episodeType);
+	setCoreParameter("EpisodeType", std::to_string(episodeType));
 }
 
 std::string AddCasterEpisodeRequest::getEpisodeName()const
@@ -89,7 +89,7 @@ std::string AddCasterEpisodeRequest::getEpisodeName()const
 void AddCasterEpisodeRequest::setEpisodeName(const std::string& episodeName)
 {
 	episodeName_ = episodeName;
-	setCoreParameter("EpisodeName", episodeName);
+	setCoreParameter("EpisodeName", std::to_string(episodeName));
 }
 
 std::string AddCasterEpisodeRequest::getEndTime()const
@@ -100,7 +100,7 @@ std::string AddCasterEpisodeRequest::getEndTime()const
 void AddCasterEpisodeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string AddCasterEpisodeRequest::getStartTime()const
@@ -111,7 +111,7 @@ std::string AddCasterEpisodeRequest::getStartTime()const
 void AddCasterEpisodeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long AddCasterEpisodeRequest::getOwnerId()const

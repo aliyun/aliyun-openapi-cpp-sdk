@@ -44,7 +44,7 @@ std::string DeleteNavNodeRequest::getRegionId()const
 void DeleteNavNodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteNavNodeRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteNavNodeRequest::getId()const
 void DeleteNavNodeRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteNavNodeRequest::getProjectId()const
@@ -66,7 +66,7 @@ std::string DeleteNavNodeRequest::getProjectId()const
 void DeleteNavNodeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DeleteNavNodeRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteNavNodeRequest::getAccessKeyId()const
 void DeleteNavNodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

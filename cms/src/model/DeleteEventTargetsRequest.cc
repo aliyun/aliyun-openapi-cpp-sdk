@@ -45,6 +45,6 @@ std::string DeleteEventTargetsRequest::getRuleName()const
 void DeleteEventTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 

@@ -44,7 +44,7 @@ std::string CreateDatabaseRequest::getDBName()const
 void CreateDatabaseRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string CreateDatabaseRequest::getAccountName()const
@@ -55,7 +55,7 @@ std::string CreateDatabaseRequest::getAccountName()const
 void CreateDatabaseRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string CreateDatabaseRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateDatabaseRequest::getResourceOwnerAccount()const
 void CreateDatabaseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateDatabaseRequest::getDBClusterId()const
@@ -77,7 +77,7 @@ std::string CreateDatabaseRequest::getDBClusterId()const
 void CreateDatabaseRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string CreateDatabaseRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateDatabaseRequest::getOwnerAccount()const
 void CreateDatabaseRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateDatabaseRequest::getDBDescription()const
@@ -99,7 +99,7 @@ std::string CreateDatabaseRequest::getDBDescription()const
 void CreateDatabaseRequest::setDBDescription(const std::string& dBDescription)
 {
 	dBDescription_ = dBDescription;
-	setCoreParameter("DBDescription", dBDescription);
+	setCoreParameter("DBDescription", std::to_string(dBDescription));
 }
 
 long CreateDatabaseRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string CreateDatabaseRequest::getCharacterSetName()const
 void CreateDatabaseRequest::setCharacterSetName(const std::string& characterSetName)
 {
 	characterSetName_ = characterSetName;
-	setCoreParameter("CharacterSetName", characterSetName);
+	setCoreParameter("CharacterSetName", std::to_string(characterSetName));
 }
 
 std::string CreateDatabaseRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string CreateDatabaseRequest::getAccessKeyId()const
 void CreateDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDatabaseRequest::getAccountPrivilege()const
@@ -143,6 +143,6 @@ std::string CreateDatabaseRequest::getAccountPrivilege()const
 void CreateDatabaseRequest::setAccountPrivilege(const std::string& accountPrivilege)
 {
 	accountPrivilege_ = accountPrivilege;
-	setCoreParameter("AccountPrivilege", accountPrivilege);
+	setCoreParameter("AccountPrivilege", std::to_string(accountPrivilege));
 }
 

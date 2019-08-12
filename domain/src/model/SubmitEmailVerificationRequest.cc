@@ -33,7 +33,7 @@ bool SubmitEmailVerificationRequest::getSendIfExist()const
 void SubmitEmailVerificationRequest::setSendIfExist(bool sendIfExist)
 {
 	sendIfExist_ = sendIfExist;
-	setCoreParameter("SendIfExist", sendIfExist);
+	setCoreParameter("SendIfExist", sendIfExist ? "true" : "false");
 }
 
 std::string SubmitEmailVerificationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SubmitEmailVerificationRequest::getUserClientIp()const
 void SubmitEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SubmitEmailVerificationRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SubmitEmailVerificationRequest::getLang()const
 void SubmitEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string SubmitEmailVerificationRequest::getEmail()const
@@ -66,6 +66,6 @@ std::string SubmitEmailVerificationRequest::getEmail()const
 void SubmitEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 

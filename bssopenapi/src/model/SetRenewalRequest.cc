@@ -33,7 +33,7 @@ std::string SetRenewalRequest::getProductCode()const
 void SetRenewalRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string SetRenewalRequest::getInstanceIDs()const
@@ -44,7 +44,7 @@ std::string SetRenewalRequest::getInstanceIDs()const
 void SetRenewalRequest::setInstanceIDs(const std::string& instanceIDs)
 {
 	instanceIDs_ = instanceIDs;
-	setCoreParameter("InstanceIDs", instanceIDs);
+	setCoreParameter("InstanceIDs", std::to_string(instanceIDs));
 }
 
 std::string SetRenewalRequest::getSubscriptionType()const
@@ -55,7 +55,7 @@ std::string SetRenewalRequest::getSubscriptionType()const
 void SetRenewalRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 std::string SetRenewalRequest::getRenewalStatus()const
@@ -66,7 +66,7 @@ std::string SetRenewalRequest::getRenewalStatus()const
 void SetRenewalRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", renewalStatus);
+	setCoreParameter("RenewalStatus", std::to_string(renewalStatus));
 }
 
 std::string SetRenewalRequest::getRenewalPeriodUnit()const
@@ -77,7 +77,7 @@ std::string SetRenewalRequest::getRenewalPeriodUnit()const
 void SetRenewalRequest::setRenewalPeriodUnit(const std::string& renewalPeriodUnit)
 {
 	renewalPeriodUnit_ = renewalPeriodUnit;
-	setCoreParameter("RenewalPeriodUnit", renewalPeriodUnit);
+	setCoreParameter("RenewalPeriodUnit", std::to_string(renewalPeriodUnit));
 }
 
 int SetRenewalRequest::getRenewalPeriod()const
@@ -110,6 +110,6 @@ std::string SetRenewalRequest::getProductType()const
 void SetRenewalRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

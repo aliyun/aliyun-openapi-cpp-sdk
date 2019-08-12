@@ -33,7 +33,7 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getInstanceId()const
 void SaveTaskForSubmittingDomainDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SaveTaskForSubmittingDomainDeleteRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getUserClientIp()const
 void SaveTaskForSubmittingDomainDeleteRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveTaskForSubmittingDomainDeleteRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getLang()const
 void SaveTaskForSubmittingDomainDeleteRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -33,7 +33,7 @@ std::string RefreshScdnObjectCachesRequest::getSecurityToken()const
 void RefreshScdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RefreshScdnObjectCachesRequest::getObjectPath()const
@@ -44,7 +44,7 @@ std::string RefreshScdnObjectCachesRequest::getObjectPath()const
 void RefreshScdnObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", std::to_string(objectPath));
 }
 
 long RefreshScdnObjectCachesRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string RefreshScdnObjectCachesRequest::getObjectType()const
 void RefreshScdnObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", std::to_string(objectType));
 }
 

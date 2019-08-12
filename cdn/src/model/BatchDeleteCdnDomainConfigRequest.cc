@@ -33,7 +33,7 @@ std::string BatchDeleteCdnDomainConfigRequest::getFunctionNames()const
 void BatchDeleteCdnDomainConfigRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setCoreParameter("FunctionNames", functionNames);
+	setCoreParameter("FunctionNames", std::to_string(functionNames));
 }
 
 std::string BatchDeleteCdnDomainConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string BatchDeleteCdnDomainConfigRequest::getSecurityToken()const
 void BatchDeleteCdnDomainConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string BatchDeleteCdnDomainConfigRequest::getDomainNames()const
@@ -55,7 +55,7 @@ std::string BatchDeleteCdnDomainConfigRequest::getDomainNames()const
 void BatchDeleteCdnDomainConfigRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setCoreParameter("DomainNames", std::to_string(domainNames));
 }
 
 std::string BatchDeleteCdnDomainConfigRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string BatchDeleteCdnDomainConfigRequest::getOwnerAccount()const
 void BatchDeleteCdnDomainConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long BatchDeleteCdnDomainConfigRequest::getOwnerId()const

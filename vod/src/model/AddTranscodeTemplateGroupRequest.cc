@@ -33,7 +33,7 @@ std::string AddTranscodeTemplateGroupRequest::getTranscodeTemplateList()const
 void AddTranscodeTemplateGroupRequest::setTranscodeTemplateList(const std::string& transcodeTemplateList)
 {
 	transcodeTemplateList_ = transcodeTemplateList;
-	setCoreParameter("TranscodeTemplateList", transcodeTemplateList);
+	setCoreParameter("TranscodeTemplateList", std::to_string(transcodeTemplateList));
 }
 
 long AddTranscodeTemplateGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AddTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void AddTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddTranscodeTemplateGroupRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string AddTranscodeTemplateGroupRequest::getAppId()const
 void AddTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string AddTranscodeTemplateGroupRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddTranscodeTemplateGroupRequest::getName()const
 void AddTranscodeTemplateGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long AddTranscodeTemplateGroupRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string AddTranscodeTemplateGroupRequest::getAccessKeyId()const
 void AddTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AddTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -110,6 +110,6 @@ std::string AddTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
 void AddTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+	setCoreParameter("TranscodeTemplateGroupId", std::to_string(transcodeTemplateGroupId));
 }
 

@@ -45,7 +45,7 @@ std::string TagResourcesRequest::getSourceIp()const
 void TagResourcesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string TagResourcesRequest::getRegionId()const
@@ -56,7 +56,7 @@ std::string TagResourcesRequest::getRegionId()const
 void TagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string TagResourcesRequest::getScope()const
@@ -67,7 +67,7 @@ std::string TagResourcesRequest::getScope()const
 void TagResourcesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setCoreParameter("Scope", std::to_string(scope));
 }
 
 std::string TagResourcesRequest::getTagOwnerUid()const
@@ -78,7 +78,7 @@ std::string TagResourcesRequest::getTagOwnerUid()const
 void TagResourcesRequest::setTagOwnerUid(const std::string& tagOwnerUid)
 {
 	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", tagOwnerUid);
+	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
 }
 
 std::string TagResourcesRequest::getTagOwnerBid()const
@@ -89,7 +89,7 @@ std::string TagResourcesRequest::getTagOwnerBid()const
 void TagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
 {
 	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", tagOwnerBid);
+	setCoreParameter("TagOwnerBid", std::to_string(tagOwnerBid));
 }
 
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
@@ -117,6 +117,6 @@ std::string TagResourcesRequest::getResourceType()const
 void TagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

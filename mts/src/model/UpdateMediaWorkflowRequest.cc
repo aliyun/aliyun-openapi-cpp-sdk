@@ -44,7 +44,7 @@ std::string UpdateMediaWorkflowRequest::getResourceOwnerAccount()const
 void UpdateMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateMediaWorkflowRequest::getTopology()const
@@ -55,7 +55,7 @@ std::string UpdateMediaWorkflowRequest::getTopology()const
 void UpdateMediaWorkflowRequest::setTopology(const std::string& topology)
 {
 	topology_ = topology;
-	setCoreParameter("Topology", topology);
+	setCoreParameter("Topology", std::to_string(topology));
 }
 
 std::string UpdateMediaWorkflowRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateMediaWorkflowRequest::getOwnerAccount()const
 void UpdateMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UpdateMediaWorkflowRequest::getMediaWorkflowId()const
@@ -77,7 +77,7 @@ std::string UpdateMediaWorkflowRequest::getMediaWorkflowId()const
 void UpdateMediaWorkflowRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setCoreParameter("MediaWorkflowId", std::to_string(mediaWorkflowId));
 }
 
 long UpdateMediaWorkflowRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string UpdateMediaWorkflowRequest::getAccessKeyId()const
 void UpdateMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

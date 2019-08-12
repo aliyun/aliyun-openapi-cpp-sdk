@@ -33,7 +33,7 @@ std::string ListApStaStatusRequest::getOrderCol()const
 void ListApStaStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListApStaStatusRequest::getSearchProtocal()const
@@ -44,7 +44,7 @@ std::string ListApStaStatusRequest::getSearchProtocal()const
 void ListApStaStatusRequest::setSearchProtocal(const std::string& searchProtocal)
 {
 	searchProtocal_ = searchProtocal;
-	setCoreParameter("SearchProtocal", searchProtocal);
+	setCoreParameter("SearchProtocal", std::to_string(searchProtocal));
 }
 
 std::string ListApStaStatusRequest::getSearchSsid()const
@@ -55,7 +55,7 @@ std::string ListApStaStatusRequest::getSearchSsid()const
 void ListApStaStatusRequest::setSearchSsid(const std::string& searchSsid)
 {
 	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
+	setCoreParameter("SearchSsid", std::to_string(searchSsid));
 }
 
 std::string ListApStaStatusRequest::getSearchIp()const
@@ -66,7 +66,7 @@ std::string ListApStaStatusRequest::getSearchIp()const
 void ListApStaStatusRequest::setSearchIp(const std::string& searchIp)
 {
 	searchIp_ = searchIp;
-	setCoreParameter("SearchIp", searchIp);
+	setCoreParameter("SearchIp", std::to_string(searchIp));
 }
 
 int ListApStaStatusRequest::getLength()const
@@ -88,7 +88,7 @@ std::string ListApStaStatusRequest::getSearchUsername()const
 void ListApStaStatusRequest::setSearchUsername(const std::string& searchUsername)
 {
 	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
+	setCoreParameter("SearchUsername", std::to_string(searchUsername));
 }
 
 std::string ListApStaStatusRequest::getSearchMac()const
@@ -99,7 +99,7 @@ std::string ListApStaStatusRequest::getSearchMac()const
 void ListApStaStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", std::to_string(searchMac));
 }
 
 int ListApStaStatusRequest::getPageIndex()const
@@ -132,7 +132,7 @@ std::string ListApStaStatusRequest::getOrderDir()const
 void ListApStaStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListApStaStatusRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string ListApStaStatusRequest::getAccessKeyId()const
 void ListApStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

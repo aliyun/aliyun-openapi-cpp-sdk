@@ -44,7 +44,7 @@ std::string CreateInstanceRequest::getHpcClusterId()const
 void CreateInstanceRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setCoreParameter("HpcClusterId", std::to_string(hpcClusterId));
 }
 
 std::string CreateInstanceRequest::getSecurityEnhancementStrategy()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getSecurityEnhancementStrategy()const
 void CreateInstanceRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
 {
 	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+	setCoreParameter("SecurityEnhancementStrategy", std::to_string(securityEnhancementStrategy));
 }
 
 std::string CreateInstanceRequest::getKeyPairName()const
@@ -66,7 +66,7 @@ std::string CreateInstanceRequest::getKeyPairName()const
 void CreateInstanceRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 float CreateInstanceRequest::getSpotPriceLimit()const
@@ -88,7 +88,7 @@ std::string CreateInstanceRequest::getSourceRegionId()const
 void CreateInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 bool CreateInstanceRequest::getDeletionProtection()const
@@ -99,7 +99,7 @@ bool CreateInstanceRequest::getDeletionProtection()const
 void CreateInstanceRequest::setDeletionProtection(bool deletionProtection)
 {
 	deletionProtection_ = deletionProtection;
-	setCoreParameter("DeletionProtection", deletionProtection);
+	setCoreParameter("DeletionProtection", deletionProtection ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getResourceGroupId()const
@@ -110,7 +110,7 @@ std::string CreateInstanceRequest::getResourceGroupId()const
 void CreateInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string CreateInstanceRequest::getHostName()const
@@ -121,7 +121,7 @@ std::string CreateInstanceRequest::getHostName()const
 void CreateInstanceRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string CreateInstanceRequest::getPassword()const
@@ -132,7 +132,7 @@ std::string CreateInstanceRequest::getPassword()const
 void CreateInstanceRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 int CreateInstanceRequest::getStorageSetPartitionNumber()const
@@ -182,7 +182,7 @@ std::string CreateInstanceRequest::getNodeControllerId()const
 void CreateInstanceRequest::setNodeControllerId(const std::string& nodeControllerId)
 {
 	nodeControllerId_ = nodeControllerId;
-	setCoreParameter("NodeControllerId", nodeControllerId);
+	setCoreParameter("NodeControllerId", std::to_string(nodeControllerId));
 }
 
 int CreateInstanceRequest::getPeriod()const
@@ -204,7 +204,7 @@ bool CreateInstanceRequest::getDryRun()const
 void CreateInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -226,7 +226,7 @@ std::string CreateInstanceRequest::getCapacityReservationPreference()const
 void CreateInstanceRequest::setCapacityReservationPreference(const std::string& capacityReservationPreference)
 {
 	capacityReservationPreference_ = capacityReservationPreference;
-	setCoreParameter("CapacityReservationPreference", capacityReservationPreference);
+	setCoreParameter("CapacityReservationPreference", std::to_string(capacityReservationPreference));
 }
 
 std::string CreateInstanceRequest::getVSwitchId()const
@@ -237,7 +237,7 @@ std::string CreateInstanceRequest::getVSwitchId()const
 void CreateInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string CreateInstanceRequest::getPrivateIpAddress()const
@@ -248,7 +248,7 @@ std::string CreateInstanceRequest::getPrivateIpAddress()const
 void CreateInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 std::string CreateInstanceRequest::getSpotStrategy()const
@@ -259,7 +259,7 @@ std::string CreateInstanceRequest::getSpotStrategy()const
 void CreateInstanceRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", std::to_string(spotStrategy));
 }
 
 std::string CreateInstanceRequest::getPeriodUnit()const
@@ -270,7 +270,7 @@ std::string CreateInstanceRequest::getPeriodUnit()const
 void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
 }
 
 std::string CreateInstanceRequest::getInstanceName()const
@@ -281,7 +281,7 @@ std::string CreateInstanceRequest::getInstanceName()const
 void CreateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 bool CreateInstanceRequest::getAutoRenew()const
@@ -292,7 +292,7 @@ bool CreateInstanceRequest::getAutoRenew()const
 void CreateInstanceRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getInternetChargeType()const
@@ -303,7 +303,7 @@ std::string CreateInstanceRequest::getInternetChargeType()const
 void CreateInstanceRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setCoreParameter("InternetChargeType", std::to_string(internetChargeType));
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -314,7 +314,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 int CreateInstanceRequest::getInternetMaxBandwidthIn()const
@@ -336,7 +336,7 @@ bool CreateInstanceRequest::getUseAdditionalService()const
 void CreateInstanceRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setCoreParameter("UseAdditionalService", useAdditionalService);
+	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getAffinity()const
@@ -347,7 +347,7 @@ std::string CreateInstanceRequest::getAffinity()const
 void CreateInstanceRequest::setAffinity(const std::string& affinity)
 {
 	affinity_ = affinity;
-	setCoreParameter("Affinity", affinity);
+	setCoreParameter("Affinity", std::to_string(affinity));
 }
 
 std::string CreateInstanceRequest::getImageId()const
@@ -358,7 +358,7 @@ std::string CreateInstanceRequest::getImageId()const
 void CreateInstanceRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -369,7 +369,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateInstanceRequest::getVlanId()const
@@ -380,7 +380,7 @@ std::string CreateInstanceRequest::getVlanId()const
 void CreateInstanceRequest::setVlanId(const std::string& vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", vlanId);
+	setCoreParameter("VlanId", std::to_string(vlanId));
 }
 
 std::string CreateInstanceRequest::getSpotInterruptionBehavior()const
@@ -391,7 +391,7 @@ std::string CreateInstanceRequest::getSpotInterruptionBehavior()const
 void CreateInstanceRequest::setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior)
 {
 	spotInterruptionBehavior_ = spotInterruptionBehavior;
-	setCoreParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
+	setCoreParameter("SpotInterruptionBehavior", std::to_string(spotInterruptionBehavior));
 }
 
 std::string CreateInstanceRequest::getIoOptimized()const
@@ -402,7 +402,7 @@ std::string CreateInstanceRequest::getIoOptimized()const
 void CreateInstanceRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setCoreParameter("IoOptimized", std::to_string(ioOptimized));
 }
 
 std::string CreateInstanceRequest::getSecurityGroupId()const
@@ -413,7 +413,7 @@ std::string CreateInstanceRequest::getSecurityGroupId()const
 void CreateInstanceRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 int CreateInstanceRequest::getInternetMaxBandwidthOut()const
@@ -435,7 +435,7 @@ std::string CreateInstanceRequest::getDescription()const
 void CreateInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateInstanceRequest::getSystemDiskCategory()const
@@ -446,7 +446,7 @@ std::string CreateInstanceRequest::getSystemDiskCategory()const
 void CreateInstanceRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setCoreParameter("SystemDiskCategory", std::to_string(systemDiskCategory));
 }
 
 std::string CreateInstanceRequest::getCapacityReservationId()const
@@ -457,7 +457,7 @@ std::string CreateInstanceRequest::getCapacityReservationId()const
 void CreateInstanceRequest::setCapacityReservationId(const std::string& capacityReservationId)
 {
 	capacityReservationId_ = capacityReservationId;
-	setCoreParameter("CapacityReservationId", capacityReservationId);
+	setCoreParameter("CapacityReservationId", std::to_string(capacityReservationId));
 }
 
 std::string CreateInstanceRequest::getSystemDiskPerformanceLevel()const
@@ -468,7 +468,7 @@ std::string CreateInstanceRequest::getSystemDiskPerformanceLevel()const
 void CreateInstanceRequest::setSystemDiskPerformanceLevel(const std::string& systemDiskPerformanceLevel)
 {
 	systemDiskPerformanceLevel_ = systemDiskPerformanceLevel;
-	setCoreParameter("SystemDiskPerformanceLevel", systemDiskPerformanceLevel);
+	setCoreParameter("SystemDiskPerformanceLevel", std::to_string(systemDiskPerformanceLevel));
 }
 
 std::string CreateInstanceRequest::getUserData()const
@@ -479,7 +479,7 @@ std::string CreateInstanceRequest::getUserData()const
 void CreateInstanceRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 bool CreateInstanceRequest::getPasswordInherit()const
@@ -490,7 +490,7 @@ bool CreateInstanceRequest::getPasswordInherit()const
 void CreateInstanceRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit);
+	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getRegionId()const
@@ -501,7 +501,7 @@ std::string CreateInstanceRequest::getRegionId()const
 void CreateInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateInstanceRequest::getInstanceType()const
@@ -512,7 +512,7 @@ std::string CreateInstanceRequest::getInstanceType()const
 void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::vector<CreateInstanceRequest::Arn> CreateInstanceRequest::getArn()const
@@ -541,7 +541,7 @@ std::string CreateInstanceRequest::getInstanceChargeType()const
 void CreateInstanceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string CreateInstanceRequest::getDeploymentSetId()const
@@ -552,7 +552,7 @@ std::string CreateInstanceRequest::getDeploymentSetId()const
 void CreateInstanceRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setCoreParameter("DeploymentSetId", std::to_string(deploymentSetId));
 }
 
 std::string CreateInstanceRequest::getInnerIpAddress()const
@@ -563,7 +563,7 @@ std::string CreateInstanceRequest::getInnerIpAddress()const
 void CreateInstanceRequest::setInnerIpAddress(const std::string& innerIpAddress)
 {
 	innerIpAddress_ = innerIpAddress;
-	setCoreParameter("InnerIpAddress", innerIpAddress);
+	setCoreParameter("InnerIpAddress", std::to_string(innerIpAddress));
 }
 
 std::string CreateInstanceRequest::getResourceOwnerAccount()const
@@ -574,7 +574,7 @@ std::string CreateInstanceRequest::getResourceOwnerAccount()const
 void CreateInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateInstanceRequest::getOwnerAccount()const
@@ -585,7 +585,7 @@ std::string CreateInstanceRequest::getOwnerAccount()const
 void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateInstanceRequest::getTenancy()const
@@ -596,7 +596,7 @@ std::string CreateInstanceRequest::getTenancy()const
 void CreateInstanceRequest::setTenancy(const std::string& tenancy)
 {
 	tenancy_ = tenancy;
-	setCoreParameter("Tenancy", tenancy);
+	setCoreParameter("Tenancy", std::to_string(tenancy));
 }
 
 std::string CreateInstanceRequest::getSystemDiskDiskName()const
@@ -607,7 +607,7 @@ std::string CreateInstanceRequest::getSystemDiskDiskName()const
 void CreateInstanceRequest::setSystemDiskDiskName(const std::string& systemDiskDiskName)
 {
 	systemDiskDiskName_ = systemDiskDiskName;
-	setCoreParameter("SystemDiskDiskName", systemDiskDiskName);
+	setCoreParameter("SystemDiskDiskName", std::to_string(systemDiskDiskName));
 }
 
 std::string CreateInstanceRequest::getRamRoleName()const
@@ -618,7 +618,7 @@ std::string CreateInstanceRequest::getRamRoleName()const
 void CreateInstanceRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setCoreParameter("RamRoleName", std::to_string(ramRoleName));
 }
 
 std::string CreateInstanceRequest::getDedicatedHostId()const
@@ -629,7 +629,7 @@ std::string CreateInstanceRequest::getDedicatedHostId()const
 void CreateInstanceRequest::setDedicatedHostId(const std::string& dedicatedHostId)
 {
 	dedicatedHostId_ = dedicatedHostId;
-	setCoreParameter("DedicatedHostId", dedicatedHostId);
+	setCoreParameter("DedicatedHostId", std::to_string(dedicatedHostId));
 }
 
 std::string CreateInstanceRequest::getClusterId()const
@@ -640,7 +640,7 @@ std::string CreateInstanceRequest::getClusterId()const
 void CreateInstanceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateInstanceRequest::getCreditSpecification()const
@@ -651,7 +651,7 @@ std::string CreateInstanceRequest::getCreditSpecification()const
 void CreateInstanceRequest::setCreditSpecification(const std::string& creditSpecification)
 {
 	creditSpecification_ = creditSpecification;
-	setCoreParameter("CreditSpecification", creditSpecification);
+	setCoreParameter("CreditSpecification", std::to_string(creditSpecification));
 }
 
 std::vector<CreateInstanceRequest::DataDisk> CreateInstanceRequest::getDataDisk()const
@@ -687,7 +687,7 @@ std::string CreateInstanceRequest::getStorageSetId()const
 void CreateInstanceRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", storageSetId);
+	setCoreParameter("StorageSetId", std::to_string(storageSetId));
 }
 
 int CreateInstanceRequest::getSystemDiskSize()const
@@ -709,6 +709,6 @@ std::string CreateInstanceRequest::getSystemDiskDescription()const
 void CreateInstanceRequest::setSystemDiskDescription(const std::string& systemDiskDescription)
 {
 	systemDiskDescription_ = systemDiskDescription;
-	setCoreParameter("SystemDiskDescription", systemDiskDescription);
+	setCoreParameter("SystemDiskDescription", std::to_string(systemDiskDescription));
 }
 

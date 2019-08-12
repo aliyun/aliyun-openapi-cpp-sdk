@@ -33,7 +33,7 @@ std::string WriteCommunicationLogRequest::getNote()const
 void WriteCommunicationLogRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setCoreParameter("Note", std::to_string(note));
 }
 
 std::string WriteCommunicationLogRequest::getTargetId()const
@@ -44,7 +44,7 @@ std::string WriteCommunicationLogRequest::getTargetId()const
 void WriteCommunicationLogRequest::setTargetId(const std::string& targetId)
 {
 	targetId_ = targetId;
-	setCoreParameter("TargetId", targetId);
+	setCoreParameter("TargetId", std::to_string(targetId));
 }
 
 std::string WriteCommunicationLogRequest::getBizId()const
@@ -55,6 +55,6 @@ std::string WriteCommunicationLogRequest::getBizId()const
 void WriteCommunicationLogRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 

@@ -44,7 +44,7 @@ std::string SmartCallRequest::getVoiceCodeParam()const
 void SmartCallRequest::setVoiceCodeParam(const std::string& voiceCodeParam)
 {
 	voiceCodeParam_ = voiceCodeParam;
-	setCoreParameter("VoiceCodeParam", voiceCodeParam);
+	setCoreParameter("VoiceCodeParam", std::to_string(voiceCodeParam));
 }
 
 bool SmartCallRequest::getEarlyMediaAsr()const
@@ -55,7 +55,7 @@ bool SmartCallRequest::getEarlyMediaAsr()const
 void SmartCallRequest::setEarlyMediaAsr(bool earlyMediaAsr)
 {
 	earlyMediaAsr_ = earlyMediaAsr;
-	setCoreParameter("EarlyMediaAsr", earlyMediaAsr);
+	setCoreParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
 }
 
 int SmartCallRequest::getSpeed()const
@@ -77,7 +77,7 @@ std::string SmartCallRequest::getAccessKeyId()const
 void SmartCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SmartCallRequest::getAsrBaseId()const
@@ -88,7 +88,7 @@ std::string SmartCallRequest::getAsrBaseId()const
 void SmartCallRequest::setAsrBaseId(const std::string& asrBaseId)
 {
 	asrBaseId_ = asrBaseId;
-	setCoreParameter("AsrBaseId", asrBaseId);
+	setCoreParameter("AsrBaseId", std::to_string(asrBaseId));
 }
 
 int SmartCallRequest::getSessionTimeout()const
@@ -110,7 +110,7 @@ std::string SmartCallRequest::getDynamicId()const
 void SmartCallRequest::setDynamicId(const std::string& dynamicId)
 {
 	dynamicId_ = dynamicId;
-	setCoreParameter("DynamicId", dynamicId);
+	setCoreParameter("DynamicId", std::to_string(dynamicId));
 }
 
 std::string SmartCallRequest::getCalledNumber()const
@@ -121,7 +121,7 @@ std::string SmartCallRequest::getCalledNumber()const
 void SmartCallRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", std::to_string(calledNumber));
 }
 
 int SmartCallRequest::getTtsSpeed()const
@@ -143,7 +143,7 @@ std::string SmartCallRequest::getVoiceCode()const
 void SmartCallRequest::setVoiceCode(const std::string& voiceCode)
 {
 	voiceCode_ = voiceCode;
-	setCoreParameter("VoiceCode", voiceCode);
+	setCoreParameter("VoiceCode", std::to_string(voiceCode));
 }
 
 std::string SmartCallRequest::getCalledShowNumber()const
@@ -154,7 +154,7 @@ std::string SmartCallRequest::getCalledShowNumber()const
 void SmartCallRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", calledShowNumber);
+	setCoreParameter("CalledShowNumber", std::to_string(calledShowNumber));
 }
 
 int SmartCallRequest::getActionCodeTimeBreak()const
@@ -176,7 +176,7 @@ bool SmartCallRequest::getTtsConf()const
 void SmartCallRequest::setTtsConf(bool ttsConf)
 {
 	ttsConf_ = ttsConf;
-	setCoreParameter("TtsConf", ttsConf);
+	setCoreParameter("TtsConf", ttsConf ? "true" : "false");
 }
 
 bool SmartCallRequest::getActionCodeBreak()const
@@ -187,7 +187,7 @@ bool SmartCallRequest::getActionCodeBreak()const
 void SmartCallRequest::setActionCodeBreak(bool actionCodeBreak)
 {
 	actionCodeBreak_ = actionCodeBreak;
-	setCoreParameter("ActionCodeBreak", actionCodeBreak);
+	setCoreParameter("ActionCodeBreak", actionCodeBreak ? "true" : "false");
 }
 
 std::string SmartCallRequest::getResourceOwnerAccount()const
@@ -198,7 +198,7 @@ std::string SmartCallRequest::getResourceOwnerAccount()const
 void SmartCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 bool SmartCallRequest::getRecordFlag()const
@@ -209,7 +209,7 @@ bool SmartCallRequest::getRecordFlag()const
 void SmartCallRequest::setRecordFlag(bool recordFlag)
 {
 	recordFlag_ = recordFlag;
-	setCoreParameter("RecordFlag", recordFlag);
+	setCoreParameter("RecordFlag", recordFlag ? "true" : "false");
 }
 
 long SmartCallRequest::getOwnerId()const
@@ -264,7 +264,7 @@ std::string SmartCallRequest::getOutId()const
 void SmartCallRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setCoreParameter("OutId", std::to_string(outId));
 }
 
 std::string SmartCallRequest::getAsrModelId()const
@@ -275,7 +275,7 @@ std::string SmartCallRequest::getAsrModelId()const
 void SmartCallRequest::setAsrModelId(const std::string& asrModelId)
 {
 	asrModelId_ = asrModelId;
-	setCoreParameter("AsrModelId", asrModelId);
+	setCoreParameter("AsrModelId", std::to_string(asrModelId));
 }
 
 int SmartCallRequest::getPauseTime()const
@@ -297,6 +297,6 @@ std::string SmartCallRequest::getTtsStyle()const
 void SmartCallRequest::setTtsStyle(const std::string& ttsStyle)
 {
 	ttsStyle_ = ttsStyle;
-	setCoreParameter("TtsStyle", ttsStyle);
+	setCoreParameter("TtsStyle", std::to_string(ttsStyle));
 }
 

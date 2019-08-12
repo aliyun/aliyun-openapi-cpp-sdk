@@ -33,7 +33,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getChannel()const
 void QueryTradeMarkApplicationsByIntentionRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setCoreParameter("Channel", std::to_string(channel));
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()con
 void QueryTradeMarkApplicationsByIntentionRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", intentionBizId);
+	setCoreParameter("IntentionBizId", std::to_string(intentionBizId));
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const

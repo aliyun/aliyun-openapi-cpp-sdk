@@ -33,7 +33,7 @@ std::string ListTagKeysRequest::getSourceIp()const
 void ListTagKeysRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ListTagKeysRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListTagKeysRequest::getRegionId()const
 void ListTagKeysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListTagKeysRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string ListTagKeysRequest::getResourceType()const
 void ListTagKeysRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

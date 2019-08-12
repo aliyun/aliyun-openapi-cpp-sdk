@@ -33,7 +33,7 @@ std::string OnsMessageGetByMsgIdRequest::getInstanceId()const
 void OnsMessageGetByMsgIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsMessageGetByMsgIdRequest::getMsgId()const
@@ -44,7 +44,7 @@ std::string OnsMessageGetByMsgIdRequest::getMsgId()const
 void OnsMessageGetByMsgIdRequest::setMsgId(const std::string& msgId)
 {
 	msgId_ = msgId;
-	setCoreParameter("MsgId", msgId);
+	setCoreParameter("MsgId", std::to_string(msgId));
 }
 
 std::string OnsMessageGetByMsgIdRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsMessageGetByMsgIdRequest::getTopic()const
 void OnsMessageGetByMsgIdRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 

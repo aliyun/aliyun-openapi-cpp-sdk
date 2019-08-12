@@ -33,7 +33,7 @@ std::string ModifyStrategyRequest::getRiskSubTypeName()const
 void ModifyStrategyRequest::setRiskSubTypeName(const std::string& riskSubTypeName)
 {
 	riskSubTypeName_ = riskSubTypeName;
-	setCoreParameter("RiskSubTypeName", riskSubTypeName);
+	setCoreParameter("RiskSubTypeName", std::to_string(riskSubTypeName));
 }
 
 std::string ModifyStrategyRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyStrategyRequest::getSourceIp()const
 void ModifyStrategyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyStrategyRequest::getCycleStartTime()const
@@ -55,7 +55,7 @@ std::string ModifyStrategyRequest::getCycleStartTime()const
 void ModifyStrategyRequest::setCycleStartTime(const std::string& cycleStartTime)
 {
 	cycleStartTime_ = cycleStartTime;
-	setCoreParameter("CycleStartTime", cycleStartTime);
+	setCoreParameter("CycleStartTime", std::to_string(cycleStartTime));
 }
 
 std::string ModifyStrategyRequest::getName()const
@@ -66,7 +66,7 @@ std::string ModifyStrategyRequest::getName()const
 void ModifyStrategyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyStrategyRequest::getCycleDays()const
@@ -77,7 +77,7 @@ std::string ModifyStrategyRequest::getCycleDays()const
 void ModifyStrategyRequest::setCycleDays(const std::string& cycleDays)
 {
 	cycleDays_ = cycleDays;
-	setCoreParameter("CycleDays", cycleDays);
+	setCoreParameter("CycleDays", std::to_string(cycleDays));
 }
 
 std::string ModifyStrategyRequest::getId()const
@@ -88,6 +88,6 @@ std::string ModifyStrategyRequest::getId()const
 void ModifyStrategyRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

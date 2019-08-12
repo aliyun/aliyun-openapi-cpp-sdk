@@ -44,7 +44,7 @@ bool QueryMediaListByURLRequest::getIncludeSummaryList()const
 void QueryMediaListByURLRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setCoreParameter("IncludeSummaryList", includeSummaryList);
+	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
 void QueryMediaListByURLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
@@ -66,7 +66,7 @@ bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
 void QueryMediaListByURLRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setCoreParameter("IncludeSnapshotList", includeSnapshotList);
+	setCoreParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getFileURLs()const
@@ -77,7 +77,7 @@ std::string QueryMediaListByURLRequest::getFileURLs()const
 void QueryMediaListByURLRequest::setFileURLs(const std::string& fileURLs)
 {
 	fileURLs_ = fileURLs;
-	setCoreParameter("FileURLs", fileURLs);
+	setCoreParameter("FileURLs", std::to_string(fileURLs));
 }
 
 std::string QueryMediaListByURLRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string QueryMediaListByURLRequest::getOwnerAccount()const
 void QueryMediaListByURLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryMediaListByURLRequest::getOwnerId()const
@@ -110,7 +110,7 @@ bool QueryMediaListByURLRequest::getIncludePlayList()const
 void QueryMediaListByURLRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList);
+	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string QueryMediaListByURLRequest::getAccessKeyId()const
 void QueryMediaListByURLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
@@ -132,6 +132,6 @@ bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
 void QueryMediaListByURLRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setCoreParameter("IncludeMediaInfo", includeMediaInfo);
+	setCoreParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
 }
 

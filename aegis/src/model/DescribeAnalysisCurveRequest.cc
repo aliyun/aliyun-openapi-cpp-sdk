@@ -33,7 +33,7 @@ std::string DescribeAnalysisCurveRequest::getSourceIp()const
 void DescribeAnalysisCurveRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeAnalysisCurveRequest::getStartTimeStamp()const

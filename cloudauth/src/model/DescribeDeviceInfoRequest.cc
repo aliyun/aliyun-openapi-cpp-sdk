@@ -33,7 +33,7 @@ std::string DescribeDeviceInfoRequest::getBizType()const
 void DescribeDeviceInfoRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setCoreParameter("BizType", std::to_string(bizType));
 }
 
 std::string DescribeDeviceInfoRequest::getUserDeviceId()const
@@ -44,7 +44,7 @@ std::string DescribeDeviceInfoRequest::getUserDeviceId()const
 void DescribeDeviceInfoRequest::setUserDeviceId(const std::string& userDeviceId)
 {
 	userDeviceId_ = userDeviceId;
-	setCoreParameter("UserDeviceId", userDeviceId);
+	setCoreParameter("UserDeviceId", std::to_string(userDeviceId));
 }
 
 int DescribeDeviceInfoRequest::getTotalCount()const
@@ -66,7 +66,7 @@ std::string DescribeDeviceInfoRequest::getSourceIp()const
 void DescribeDeviceInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDeviceInfoRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeDeviceInfoRequest::getLang()const
 void DescribeDeviceInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeDeviceInfoRequest::getExpiredEndDay()const
@@ -110,7 +110,7 @@ std::string DescribeDeviceInfoRequest::getExpiredEndDay()const
 void DescribeDeviceInfoRequest::setExpiredEndDay(const std::string& expiredEndDay)
 {
 	expiredEndDay_ = expiredEndDay;
-	setCoreParameter("ExpiredEndDay", expiredEndDay);
+	setCoreParameter("ExpiredEndDay", std::to_string(expiredEndDay));
 }
 
 std::string DescribeDeviceInfoRequest::getDeviceId()const
@@ -121,7 +121,7 @@ std::string DescribeDeviceInfoRequest::getDeviceId()const
 void DescribeDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", std::to_string(deviceId));
 }
 
 std::string DescribeDeviceInfoRequest::getExpiredStartDay()const
@@ -132,6 +132,6 @@ std::string DescribeDeviceInfoRequest::getExpiredStartDay()const
 void DescribeDeviceInfoRequest::setExpiredStartDay(const std::string& expiredStartDay)
 {
 	expiredStartDay_ = expiredStartDay;
-	setCoreParameter("ExpiredStartDay", expiredStartDay);
+	setCoreParameter("ExpiredStartDay", std::to_string(expiredStartDay));
 }
 

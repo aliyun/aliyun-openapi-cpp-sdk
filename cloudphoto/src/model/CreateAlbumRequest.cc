@@ -33,7 +33,7 @@ std::string CreateAlbumRequest::getAlbumName()const
 void CreateAlbumRequest::setAlbumName(const std::string& albumName)
 {
 	albumName_ = albumName;
-	setCoreParameter("AlbumName", albumName);
+	setCoreParameter("AlbumName", std::to_string(albumName));
 }
 
 std::string CreateAlbumRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string CreateAlbumRequest::getLibraryId()const
 void CreateAlbumRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string CreateAlbumRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string CreateAlbumRequest::getStoreName()const
 void CreateAlbumRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string CreateAlbumRequest::getRemark()const
@@ -66,6 +66,6 @@ std::string CreateAlbumRequest::getRemark()const
 void CreateAlbumRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 

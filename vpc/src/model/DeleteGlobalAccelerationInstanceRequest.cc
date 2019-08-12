@@ -44,7 +44,7 @@ std::string DeleteGlobalAccelerationInstanceRequest::getResourceOwnerAccount()co
 void DeleteGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteGlobalAccelerationInstanceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteGlobalAccelerationInstanceRequest::getRegionId()const
 void DeleteGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteGlobalAccelerationInstanceRequest::getOwnerAccount()const
 void DeleteGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteGlobalAccelerationInstanceRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DeleteGlobalAccelerationInstanceRequest::getGlobalAccelerationInstan
 void DeleteGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setCoreParameter("GlobalAccelerationInstanceId", std::to_string(globalAccelerationInstanceId));
 }
 

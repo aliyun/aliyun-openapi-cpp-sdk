@@ -33,7 +33,7 @@ bool PickGlobalOutboundNumbersRequest::getIsVirtual()const
 void PickGlobalOutboundNumbersRequest::setIsVirtual(bool isVirtual)
 {
 	isVirtual_ = isVirtual;
-	setCoreParameter("IsVirtual", isVirtual);
+	setCoreParameter("IsVirtual", isVirtual ? "true" : "false");
 }
 
 std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
 void PickGlobalOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> PickGlobalOutboundNumbersRequest::getSkillGroupId()const
@@ -78,7 +78,7 @@ std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const
 void PickGlobalOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
 void PickGlobalOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

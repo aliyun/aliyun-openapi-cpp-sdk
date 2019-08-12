@@ -33,7 +33,7 @@ std::string CreateUserRequest::getApp_ip()const
 void CreateUserRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long CreateUserRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ bool CreateUserRequest::getProxy_original_security_transport()const
 void CreateUserRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateUserRequest::getUserType()const
@@ -77,7 +77,7 @@ std::string CreateUserRequest::getUserType()const
 void CreateUserRequest::setUserType(const std::string& userType)
 {
 	userType_ = userType;
-	setCoreParameter("UserType", userType);
+	setCoreParameter("UserType", std::to_string(userType));
 }
 
 std::string CreateUserRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateUserRequest::getDescription()const
 void CreateUserRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateUserRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string CreateUserRequest::getCallerBid()const
 void CreateUserRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string CreateUserRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string CreateUserRequest::getProxy_original_source_ip()const
 void CreateUserRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 bool CreateUserRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ bool CreateUserRequest::getAk_mfa_present()const
 void CreateUserRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateUserRequest::getProxy_trust_transport_info()const
@@ -132,7 +132,7 @@ bool CreateUserRequest::getProxy_trust_transport_info()const
 void CreateUserRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string CreateUserRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string CreateUserRequest::getCallerType()const
 void CreateUserRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateUserRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CreateUserRequest::getAccessKeyId()const
 void CreateUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<CreateUserRequest::UserAccountParamList> CreateUserRequest::getUserAccountParamList()const
@@ -183,7 +183,7 @@ bool CreateUserRequest::getSecurity_transport()const
 void CreateUserRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<long> CreateUserRequest::getGroupIdList()const
@@ -206,7 +206,7 @@ std::string CreateUserRequest::getSecurityToken()const
 void CreateUserRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateUserRequest::getRegionId()const
@@ -217,7 +217,7 @@ std::string CreateUserRequest::getRegionId()const
 void CreateUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateUserRequest::getRequestId()const
@@ -228,7 +228,7 @@ std::string CreateUserRequest::getRequestId()const
 void CreateUserRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::vector<long> CreateUserRequest::getRoleIdList()const
@@ -262,7 +262,7 @@ std::string CreateUserRequest::getAliyunUserId()const
 void CreateUserRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", aliyunUserId);
+	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
 }
 
 std::string CreateUserRequest::getUserName()const
@@ -273,7 +273,7 @@ std::string CreateUserRequest::getUserName()const
 void CreateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 
 std::string CreateUserRequest::getStatus()const
@@ -284,6 +284,6 @@ std::string CreateUserRequest::getStatus()const
 void CreateUserRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

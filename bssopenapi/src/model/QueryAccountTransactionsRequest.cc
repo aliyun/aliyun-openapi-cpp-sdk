@@ -33,7 +33,7 @@ std::string QueryAccountTransactionsRequest::getRecordID()const
 void QueryAccountTransactionsRequest::setRecordID(const std::string& recordID)
 {
 	recordID_ = recordID;
-	setCoreParameter("RecordID", recordID);
+	setCoreParameter("RecordID", std::to_string(recordID));
 }
 
 int QueryAccountTransactionsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryAccountTransactionsRequest::getTransactionChannelSN()const
 void QueryAccountTransactionsRequest::setTransactionChannelSN(const std::string& transactionChannelSN)
 {
 	transactionChannelSN_ = transactionChannelSN;
-	setCoreParameter("TransactionChannelSN", transactionChannelSN);
+	setCoreParameter("TransactionChannelSN", std::to_string(transactionChannelSN));
 }
 
 std::string QueryAccountTransactionsRequest::getCreateTimeStart()const
@@ -66,7 +66,7 @@ std::string QueryAccountTransactionsRequest::getCreateTimeStart()const
 void QueryAccountTransactionsRequest::setCreateTimeStart(const std::string& createTimeStart)
 {
 	createTimeStart_ = createTimeStart;
-	setCoreParameter("CreateTimeStart", createTimeStart);
+	setCoreParameter("CreateTimeStart", std::to_string(createTimeStart));
 }
 
 std::string QueryAccountTransactionsRequest::getTransactionNumber()const
@@ -77,7 +77,7 @@ std::string QueryAccountTransactionsRequest::getTransactionNumber()const
 void QueryAccountTransactionsRequest::setTransactionNumber(const std::string& transactionNumber)
 {
 	transactionNumber_ = transactionNumber;
-	setCoreParameter("TransactionNumber", transactionNumber);
+	setCoreParameter("TransactionNumber", std::to_string(transactionNumber));
 }
 
 int QueryAccountTransactionsRequest::getPageNum()const
@@ -99,6 +99,6 @@ std::string QueryAccountTransactionsRequest::getCreateTimeEnd()const
 void QueryAccountTransactionsRequest::setCreateTimeEnd(const std::string& createTimeEnd)
 {
 	createTimeEnd_ = createTimeEnd;
-	setCoreParameter("CreateTimeEnd", createTimeEnd);
+	setCoreParameter("CreateTimeEnd", std::to_string(createTimeEnd));
 }
 

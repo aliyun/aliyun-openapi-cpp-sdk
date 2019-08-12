@@ -33,7 +33,7 @@ std::string DescribePunishListRequest::getSrcIP()const
 void DescribePunishListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string DescribePunishListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribePunishListRequest::getSourceIp()const
 void DescribePunishListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribePunishListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribePunishListRequest::getPunishStatus()const
 void DescribePunishListRequest::setPunishStatus(const std::string& punishStatus)
 {
 	punishStatus_ = punishStatus;
-	setCoreParameter("PunishStatus", punishStatus);
+	setCoreParameter("PunishStatus", std::to_string(punishStatus));
 }
 
 std::string DescribePunishListRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribePunishListRequest::getLang()const
 void DescribePunishListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribePunishListRequest::getSrcUid()const
@@ -110,6 +110,6 @@ std::string DescribePunishListRequest::getSourceCode()const
 void DescribePunishListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

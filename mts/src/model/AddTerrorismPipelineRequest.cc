@@ -44,7 +44,7 @@ std::string AddTerrorismPipelineRequest::getResourceOwnerAccount()const
 void AddTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddTerrorismPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddTerrorismPipelineRequest::getOwnerAccount()const
 void AddTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddTerrorismPipelineRequest::getName()const
@@ -66,7 +66,7 @@ std::string AddTerrorismPipelineRequest::getName()const
 void AddTerrorismPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string AddTerrorismPipelineRequest::getNotifyConfig()const
@@ -77,7 +77,7 @@ std::string AddTerrorismPipelineRequest::getNotifyConfig()const
 void AddTerrorismPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", std::to_string(notifyConfig));
 }
 
 long AddTerrorismPipelineRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AddTerrorismPipelineRequest::getAccessKeyId()const
 void AddTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

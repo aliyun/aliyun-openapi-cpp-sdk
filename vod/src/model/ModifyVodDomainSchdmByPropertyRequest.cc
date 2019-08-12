@@ -55,7 +55,7 @@ bool ModifyVodDomainSchdmByPropertyRequest::getProxy_original_security_transport
 void ModifyVodDomainSchdmByPropertyRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getProxy_original_source_ip()
 void ModifyVodDomainSchdmByPropertyRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
 void ModifyVodDomainSchdmByPropertyRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getCallerType()const
 void ModifyVodDomainSchdmByPropertyRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getAccessKeyId()const
 void ModifyVodDomainSchdmByPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getSecurityToken()const
 void ModifyVodDomainSchdmByPropertyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getRegionId()const
 void ModifyVodDomainSchdmByPropertyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getRequestContent()const
 void ModifyVodDomainSchdmByPropertyRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getProperty()const
@@ -143,7 +143,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getProperty()const
 void ModifyVodDomainSchdmByPropertyRequest::setProperty(const std::string& property)
 {
 	property_ = property;
-	setCoreParameter("Property", property);
+	setCoreParameter("Property", std::to_string(property));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getCallerBidEmail()const
 void ModifyVodDomainSchdmByPropertyRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getCallerUidEmail()const
 void ModifyVodDomainSchdmByPropertyRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ModifyVodDomainSchdmByPropertyRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getApp_ip()const
 void ModifyVodDomainSchdmByPropertyRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getPopProduct()const
 void ModifyVodDomainSchdmByPropertyRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getDomainName()const
@@ -209,7 +209,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getDomainName()const
 void ModifyVodDomainSchdmByPropertyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getCallerBid()const
 void ModifyVodDomainSchdmByPropertyRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyVodDomainSchdmByPropertyRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getVersion()const
 void ModifyVodDomainSchdmByPropertyRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool ModifyVodDomainSchdmByPropertyRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool ModifyVodDomainSchdmByPropertyRequest::getProxy_trust_transport_info()const
 void ModifyVodDomainSchdmByPropertyRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyVodDomainSchdmByPropertyRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool ModifyVodDomainSchdmByPropertyRequest::getAk_mfa_present()const
 void ModifyVodDomainSchdmByPropertyRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyVodDomainSchdmByPropertyRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool ModifyVodDomainSchdmByPropertyRequest::getSecurity_transport()const
 void ModifyVodDomainSchdmByPropertyRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getServiceCode()const
@@ -286,7 +286,7 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getServiceCode()const
 void ModifyVodDomainSchdmByPropertyRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", std::to_string(serviceCode));
 }
 
 std::string ModifyVodDomainSchdmByPropertyRequest::getRequestId()const
@@ -297,6 +297,6 @@ std::string ModifyVodDomainSchdmByPropertyRequest::getRequestId()const
 void ModifyVodDomainSchdmByPropertyRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 

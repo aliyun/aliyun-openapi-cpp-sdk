@@ -33,7 +33,7 @@ std::string CreateFlowJobRequest::getRunConf()const
 void CreateFlowJobRequest::setRunConf(const std::string& runConf)
 {
 	runConf_ = runConf;
-	setCoreParameter("RunConf", runConf);
+	setCoreParameter("RunConf", std::to_string(runConf));
 }
 
 std::string CreateFlowJobRequest::getEnvConf()const
@@ -44,7 +44,7 @@ std::string CreateFlowJobRequest::getEnvConf()const
 void CreateFlowJobRequest::setEnvConf(const std::string& envConf)
 {
 	envConf_ = envConf;
-	setCoreParameter("EnvConf", envConf);
+	setCoreParameter("EnvConf", std::to_string(envConf));
 }
 
 std::string CreateFlowJobRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string CreateFlowJobRequest::getDescription()const
 void CreateFlowJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateFlowJobRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateFlowJobRequest::getClusterId()const
 void CreateFlowJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateFlowJobRequest::getType()const
@@ -77,7 +77,7 @@ std::string CreateFlowJobRequest::getType()const
 void CreateFlowJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateFlowJobRequest::getParams()const
@@ -88,7 +88,7 @@ std::string CreateFlowJobRequest::getParams()const
 void CreateFlowJobRequest::setParams(const std::string& params)
 {
 	params_ = params;
-	setCoreParameter("Params", params);
+	setCoreParameter("Params", std::to_string(params));
 }
 
 std::string CreateFlowJobRequest::getParamConf()const
@@ -99,7 +99,7 @@ std::string CreateFlowJobRequest::getParamConf()const
 void CreateFlowJobRequest::setParamConf(const std::string& paramConf)
 {
 	paramConf_ = paramConf;
-	setCoreParameter("ParamConf", paramConf);
+	setCoreParameter("ParamConf", std::to_string(paramConf));
 }
 
 std::vector<CreateFlowJobRequest::ResourceList> CreateFlowJobRequest::getResourceList()const
@@ -127,7 +127,7 @@ std::string CreateFlowJobRequest::getFailAct()const
 void CreateFlowJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setCoreParameter("FailAct", std::to_string(failAct));
 }
 
 std::string CreateFlowJobRequest::getMode()const
@@ -138,7 +138,7 @@ std::string CreateFlowJobRequest::getMode()const
 void CreateFlowJobRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode);
+	setCoreParameter("Mode", std::to_string(mode));
 }
 
 long CreateFlowJobRequest::getRetryInterval()const
@@ -160,7 +160,7 @@ std::string CreateFlowJobRequest::getMonitorConf()const
 void CreateFlowJobRequest::setMonitorConf(const std::string& monitorConf)
 {
 	monitorConf_ = monitorConf;
-	setCoreParameter("MonitorConf", monitorConf);
+	setCoreParameter("MonitorConf", std::to_string(monitorConf));
 }
 
 std::string CreateFlowJobRequest::getRegionId()const
@@ -171,7 +171,7 @@ std::string CreateFlowJobRequest::getRegionId()const
 void CreateFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateFlowJobRequest::getName()const
@@ -182,7 +182,7 @@ std::string CreateFlowJobRequest::getName()const
 void CreateFlowJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int CreateFlowJobRequest::getMaxRetry()const
@@ -204,7 +204,7 @@ bool CreateFlowJobRequest::getAdhoc()const
 void CreateFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc);
+	setCoreParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string CreateFlowJobRequest::getAlertConf()const
@@ -215,7 +215,7 @@ std::string CreateFlowJobRequest::getAlertConf()const
 void CreateFlowJobRequest::setAlertConf(const std::string& alertConf)
 {
 	alertConf_ = alertConf;
-	setCoreParameter("AlertConf", alertConf);
+	setCoreParameter("AlertConf", std::to_string(alertConf));
 }
 
 std::string CreateFlowJobRequest::getProjectId()const
@@ -226,7 +226,7 @@ std::string CreateFlowJobRequest::getProjectId()const
 void CreateFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string CreateFlowJobRequest::getParentCategory()const
@@ -237,6 +237,6 @@ std::string CreateFlowJobRequest::getParentCategory()const
 void CreateFlowJobRequest::setParentCategory(const std::string& parentCategory)
 {
 	parentCategory_ = parentCategory;
-	setCoreParameter("ParentCategory", parentCategory);
+	setCoreParameter("ParentCategory", std::to_string(parentCategory));
 }
 

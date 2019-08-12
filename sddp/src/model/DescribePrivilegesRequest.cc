@@ -55,7 +55,7 @@ std::string DescribePrivilegesRequest::getDataTypeIds()const
 void DescribePrivilegesRequest::setDataTypeIds(const std::string& dataTypeIds)
 {
 	dataTypeIds_ = dataTypeIds;
-	setCoreParameter("DataTypeIds", dataTypeIds);
+	setCoreParameter("DataTypeIds", std::to_string(dataTypeIds));
 }
 
 std::string DescribePrivilegesRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string DescribePrivilegesRequest::getSourceIp()const
 void DescribePrivilegesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribePrivilegesRequest::getFeatureType()const
@@ -110,7 +110,7 @@ std::string DescribePrivilegesRequest::getLang()const
 void DescribePrivilegesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribePrivilegesRequest::getKey()const
@@ -121,6 +121,6 @@ std::string DescribePrivilegesRequest::getKey()const
 void DescribePrivilegesRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

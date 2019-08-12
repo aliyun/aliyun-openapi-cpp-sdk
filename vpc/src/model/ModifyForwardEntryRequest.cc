@@ -44,7 +44,7 @@ std::string ModifyForwardEntryRequest::getResourceOwnerAccount()const
 void ModifyForwardEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyForwardEntryRequest::getIpProtocol()const
@@ -55,7 +55,7 @@ std::string ModifyForwardEntryRequest::getIpProtocol()const
 void ModifyForwardEntryRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", std::to_string(ipProtocol));
 }
 
 std::string ModifyForwardEntryRequest::getForwardEntryName()const
@@ -66,7 +66,7 @@ std::string ModifyForwardEntryRequest::getForwardEntryName()const
 void ModifyForwardEntryRequest::setForwardEntryName(const std::string& forwardEntryName)
 {
 	forwardEntryName_ = forwardEntryName;
-	setCoreParameter("ForwardEntryName", forwardEntryName);
+	setCoreParameter("ForwardEntryName", std::to_string(forwardEntryName));
 }
 
 std::string ModifyForwardEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyForwardEntryRequest::getOwnerAccount()const
 void ModifyForwardEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyForwardEntryRequest::getForwardTableId()const
@@ -88,7 +88,7 @@ std::string ModifyForwardEntryRequest::getForwardTableId()const
 void ModifyForwardEntryRequest::setForwardTableId(const std::string& forwardTableId)
 {
 	forwardTableId_ = forwardTableId;
-	setCoreParameter("ForwardTableId", forwardTableId);
+	setCoreParameter("ForwardTableId", std::to_string(forwardTableId));
 }
 
 long ModifyForwardEntryRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ModifyForwardEntryRequest::getInternalIp()const
 void ModifyForwardEntryRequest::setInternalIp(const std::string& internalIp)
 {
 	internalIp_ = internalIp;
-	setCoreParameter("InternalIp", internalIp);
+	setCoreParameter("InternalIp", std::to_string(internalIp));
 }
 
 std::string ModifyForwardEntryRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyForwardEntryRequest::getRegionId()const
 void ModifyForwardEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyForwardEntryRequest::getForwardEntryId()const
@@ -132,7 +132,7 @@ std::string ModifyForwardEntryRequest::getForwardEntryId()const
 void ModifyForwardEntryRequest::setForwardEntryId(const std::string& forwardEntryId)
 {
 	forwardEntryId_ = forwardEntryId;
-	setCoreParameter("ForwardEntryId", forwardEntryId);
+	setCoreParameter("ForwardEntryId", std::to_string(forwardEntryId));
 }
 
 std::string ModifyForwardEntryRequest::getInternalPort()const
@@ -143,7 +143,7 @@ std::string ModifyForwardEntryRequest::getInternalPort()const
 void ModifyForwardEntryRequest::setInternalPort(const std::string& internalPort)
 {
 	internalPort_ = internalPort;
-	setCoreParameter("InternalPort", internalPort);
+	setCoreParameter("InternalPort", std::to_string(internalPort));
 }
 
 std::string ModifyForwardEntryRequest::getExternalIp()const
@@ -154,7 +154,7 @@ std::string ModifyForwardEntryRequest::getExternalIp()const
 void ModifyForwardEntryRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", externalIp);
+	setCoreParameter("ExternalIp", std::to_string(externalIp));
 }
 
 std::string ModifyForwardEntryRequest::getExternalPort()const
@@ -165,6 +165,6 @@ std::string ModifyForwardEntryRequest::getExternalPort()const
 void ModifyForwardEntryRequest::setExternalPort(const std::string& externalPort)
 {
 	externalPort_ = externalPort;
-	setCoreParameter("ExternalPort", externalPort);
+	setCoreParameter("ExternalPort", std::to_string(externalPort));
 }
 

@@ -44,7 +44,7 @@ std::string UpdateDataSourceRequest::getRegionId()const
 void UpdateDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateDataSourceRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateDataSourceRequest::getName()const
 void UpdateDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateDataSourceRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string UpdateDataSourceRequest::getDescription()const
 void UpdateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string UpdateDataSourceRequest::getConf()const
@@ -77,7 +77,7 @@ std::string UpdateDataSourceRequest::getConf()const
 void UpdateDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setCoreParameter("Conf", std::to_string(conf));
 }
 
 std::string UpdateDataSourceRequest::getId()const
@@ -88,7 +88,7 @@ std::string UpdateDataSourceRequest::getId()const
 void UpdateDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateDataSourceRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateDataSourceRequest::getAccessKeyId()const
 void UpdateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ListDataSourceRequest::getCreateFrom()const
 void ListDataSourceRequest::setCreateFrom(const std::string& createFrom)
 {
 	createFrom_ = createFrom;
-	setCoreParameter("CreateFrom", createFrom);
+	setCoreParameter("CreateFrom", std::to_string(createFrom));
 }
 
 std::string ListDataSourceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListDataSourceRequest::getRegionId()const
 void ListDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListDataSourceRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListDataSourceRequest::getName()const
 void ListDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ListDataSourceRequest::getSourceType()const
@@ -88,7 +88,7 @@ std::string ListDataSourceRequest::getSourceType()const
 void ListDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setCoreParameter("SourceType", std::to_string(sourceType));
 }
 
 std::string ListDataSourceRequest::getId()const
@@ -99,7 +99,7 @@ std::string ListDataSourceRequest::getId()const
 void ListDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ListDataSourceRequest::getProjectId()const
@@ -110,7 +110,7 @@ std::string ListDataSourceRequest::getProjectId()const
 void ListDataSourceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 int ListDataSourceRequest::getPageNumber()const
@@ -132,6 +132,6 @@ std::string ListDataSourceRequest::getAccessKeyId()const
 void ListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ListUserStatisticsRequest::getRegionId()const
 void ListUserStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListUserStatisticsRequest::getOrderMode()const
@@ -55,7 +55,7 @@ std::string ListUserStatisticsRequest::getOrderMode()const
 void ListUserStatisticsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setCoreParameter("OrderMode", orderMode);
+	setCoreParameter("OrderMode", std::to_string(orderMode));
 }
 
 int ListUserStatisticsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListUserStatisticsRequest::getOrderFieldName()const
 void ListUserStatisticsRequest::setOrderFieldName(const std::string& orderFieldName)
 {
 	orderFieldName_ = orderFieldName;
-	setCoreParameter("OrderFieldName", orderFieldName);
+	setCoreParameter("OrderFieldName", std::to_string(orderFieldName));
 }
 
 int ListUserStatisticsRequest::getCurrentSize()const
@@ -99,6 +99,6 @@ std::string ListUserStatisticsRequest::getAccessKeyId()const
 void ListUserStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

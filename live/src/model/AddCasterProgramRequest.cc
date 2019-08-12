@@ -33,7 +33,7 @@ std::string AddCasterProgramRequest::getCasterId()const
 void AddCasterProgramRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 std::vector<AddCasterProgramRequest::Episode> AddCasterProgramRequest::getEpisode()const

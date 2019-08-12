@@ -44,7 +44,7 @@ std::string ListKafkaBrokerRequest::getRegionId()const
 void ListKafkaBrokerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListKafkaBrokerRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListKafkaBrokerRequest::getClusterId()const
 void ListKafkaBrokerRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListKafkaBrokerRequest::getPageNumber()const
@@ -88,6 +88,6 @@ std::string ListKafkaBrokerRequest::getAccessKeyId()const
 void ListKafkaBrokerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

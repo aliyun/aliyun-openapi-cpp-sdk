@@ -33,7 +33,7 @@ std::string TransferInRefetchWhoisEmailRequest::getDomainName()const
 void TransferInRefetchWhoisEmailRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string TransferInRefetchWhoisEmailRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string TransferInRefetchWhoisEmailRequest::getUserClientIp()const
 void TransferInRefetchWhoisEmailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string TransferInRefetchWhoisEmailRequest::getLang()const
@@ -55,6 +55,6 @@ std::string TransferInRefetchWhoisEmailRequest::getLang()const
 void TransferInRefetchWhoisEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

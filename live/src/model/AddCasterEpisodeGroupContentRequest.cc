@@ -33,7 +33,7 @@ std::string AddCasterEpisodeGroupContentRequest::getClientToken()const
 void AddCasterEpisodeGroupContentRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long AddCasterEpisodeGroupContentRequest::getOwnerId()const
@@ -55,6 +55,6 @@ std::string AddCasterEpisodeGroupContentRequest::getContent()const
 void AddCasterEpisodeGroupContentRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 

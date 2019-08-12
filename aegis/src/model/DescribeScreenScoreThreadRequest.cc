@@ -33,7 +33,7 @@ std::string DescribeScreenScoreThreadRequest::getSourceIp()const
 void DescribeScreenScoreThreadRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeScreenScoreThreadRequest::getEndTime()const

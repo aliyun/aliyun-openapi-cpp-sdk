@@ -44,7 +44,7 @@ std::string ModifyCommonBandwidthPackageSpecRequest::getBandwidthPackageId()cons
 void ModifyCommonBandwidthPackageSpecRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string ModifyCommonBandwidthPackageSpecRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyCommonBandwidthPackageSpecRequest::getResourceOwnerAccount()co
 void ModifyCommonBandwidthPackageSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyCommonBandwidthPackageSpecRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyCommonBandwidthPackageSpecRequest::getRegionId()const
 void ModifyCommonBandwidthPackageSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyCommonBandwidthPackageSpecRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string ModifyCommonBandwidthPackageSpecRequest::getBandwidth()const
 void ModifyCommonBandwidthPackageSpecRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyCommonBandwidthPackageSpecRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyCommonBandwidthPackageSpecRequest::getOwnerAccount()const
 void ModifyCommonBandwidthPackageSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyCommonBandwidthPackageSpecRequest::getOwnerId()const

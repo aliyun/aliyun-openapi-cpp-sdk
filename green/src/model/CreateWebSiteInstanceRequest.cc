@@ -44,7 +44,7 @@ std::string CreateWebSiteInstanceRequest::getClientToken()const
 void CreateWebSiteInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int CreateWebSiteInstanceRequest::getOrderNum()const
@@ -77,7 +77,7 @@ std::string CreateWebSiteInstanceRequest::getPricingCycle()const
 void CreateWebSiteInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 
 std::string CreateWebSiteInstanceRequest::getOrderType()const
@@ -88,6 +88,6 @@ std::string CreateWebSiteInstanceRequest::getOrderType()const
 void CreateWebSiteInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

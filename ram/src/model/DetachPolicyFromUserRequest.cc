@@ -33,7 +33,7 @@ std::string DetachPolicyFromUserRequest::getPolicyType()const
 void DetachPolicyFromUserRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string DetachPolicyFromUserRequest::getPolicyName()const
@@ -44,7 +44,7 @@ std::string DetachPolicyFromUserRequest::getPolicyName()const
 void DetachPolicyFromUserRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", std::to_string(policyName));
 }
 
 std::string DetachPolicyFromUserRequest::getUserName()const
@@ -55,6 +55,6 @@ std::string DetachPolicyFromUserRequest::getUserName()const
 void DetachPolicyFromUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

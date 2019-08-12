@@ -44,7 +44,7 @@ bool CreateNatGatewayRequest::getAutoPay()const
 void CreateNatGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
 void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateNatGatewayRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateNatGatewayRequest::getClientToken()const
 void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateNatGatewayRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateNatGatewayRequest::getOwnerAccount()const
 void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateNatGatewayRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateNatGatewayRequest::getDescription()const
 void CreateNatGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateNatGatewayRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string CreateNatGatewayRequest::getSpec()const
 void CreateNatGatewayRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setCoreParameter("Spec", std::to_string(spec));
 }
 
 std::string CreateNatGatewayRequest::getDuration()const
@@ -121,7 +121,7 @@ std::string CreateNatGatewayRequest::getDuration()const
 void CreateNatGatewayRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateNatGatewayRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateNatGatewayRequest::getRegionId()const
 void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateNatGatewayRequest::getVpcId()const
@@ -143,7 +143,7 @@ std::string CreateNatGatewayRequest::getVpcId()const
 void CreateNatGatewayRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateNatGatewayRequest::getName()const
@@ -154,7 +154,7 @@ std::string CreateNatGatewayRequest::getName()const
 void CreateNatGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
@@ -185,7 +185,7 @@ std::string CreateNatGatewayRequest::getInstanceChargeType()const
 void CreateNatGatewayRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string CreateNatGatewayRequest::getPricingCycle()const
@@ -196,6 +196,6 @@ std::string CreateNatGatewayRequest::getPricingCycle()const
 void CreateNatGatewayRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeTasksRequest::getResourceOwnerAccount()const
 void DescribeTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeTasksRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeTasksRequest::getOwnerAccount()const
 void DescribeTasksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeTasksRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeTasksRequest::getEndTime()const
 void DescribeTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeTasksRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeTasksRequest::getStartTime()const
 void DescribeTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeTasksRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeTasksRequest::getAccessKeyId()const
 void DescribeTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int DescribeTasksRequest::getPageSize()const
@@ -132,7 +132,7 @@ std::string DescribeTasksRequest::getDBInstanceId()const
 void DescribeTasksRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeTasksRequest::getTaskAction()const
@@ -143,7 +143,7 @@ std::string DescribeTasksRequest::getTaskAction()const
 void DescribeTasksRequest::setTaskAction(const std::string& taskAction)
 {
 	taskAction_ = taskAction;
-	setCoreParameter("TaskAction", taskAction);
+	setCoreParameter("TaskAction", std::to_string(taskAction));
 }
 
 std::string DescribeTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeTasksRequest::getStatus()const
 void DescribeTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

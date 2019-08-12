@@ -44,7 +44,7 @@ std::string MetastoreDescribeKafkaTopicRequest::getTopicId()const
 void MetastoreDescribeKafkaTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::string MetastoreDescribeKafkaTopicRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDescribeKafkaTopicRequest::getRegionId()const
 void MetastoreDescribeKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreDescribeKafkaTopicRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MetastoreDescribeKafkaTopicRequest::getAccessKeyId()const
 void MetastoreDescribeKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

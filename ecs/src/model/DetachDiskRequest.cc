@@ -33,7 +33,7 @@ std::string DetachDiskRequest::getSourceRegionId()const
 void DetachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DetachDiskRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DetachDiskRequest::getInstanceId()const
 void DetachDiskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DetachDiskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DetachDiskRequest::getResourceOwnerAccount()const
 void DetachDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DetachDiskRequest::getOwnerAccount()const
 void DetachDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DetachDiskRequest::getDiskId()const
@@ -88,7 +88,7 @@ std::string DetachDiskRequest::getDiskId()const
 void DetachDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 long DetachDiskRequest::getOwnerId()const

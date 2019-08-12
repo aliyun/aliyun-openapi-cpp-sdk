@@ -55,7 +55,7 @@ bool DescribeRtcChannelUserListRequest::getProxy_original_security_transport()co
 void DescribeRtcChannelUserListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeRtcChannelUserListRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeRtcChannelUserListRequest::getProxy_original_source_ip()cons
 void DescribeRtcChannelUserListRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeRtcChannelUserListRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeRtcChannelUserListRequest::getOwnerIdLoginEmail()const
 void DescribeRtcChannelUserListRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeRtcChannelUserListRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeRtcChannelUserListRequest::getCallerType()const
 void DescribeRtcChannelUserListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeRtcChannelUserListRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeRtcChannelUserListRequest::getAccessKeyId()const
 void DescribeRtcChannelUserListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeRtcChannelUserListRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeRtcChannelUserListRequest::getSecurityToken()const
 void DescribeRtcChannelUserListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeRtcChannelUserListRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeRtcChannelUserListRequest::getRequestContent()const
 void DescribeRtcChannelUserListRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 long DescribeRtcChannelUserListRequest::getPageSize()const
@@ -143,7 +143,7 @@ std::string DescribeRtcChannelUserListRequest::getCallerBidEmail()const
 void DescribeRtcChannelUserListRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeRtcChannelUserListRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeRtcChannelUserListRequest::getCallerUidEmail()const
 void DescribeRtcChannelUserListRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeRtcChannelUserListRequest::getCallerUid()const
@@ -176,7 +176,7 @@ std::string DescribeRtcChannelUserListRequest::getApp_ip()const
 void DescribeRtcChannelUserListRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeRtcChannelUserListRequest::getPopProduct()const
@@ -187,7 +187,7 @@ std::string DescribeRtcChannelUserListRequest::getPopProduct()const
 void DescribeRtcChannelUserListRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeRtcChannelUserListRequest::getCallerBid()const
@@ -198,7 +198,7 @@ std::string DescribeRtcChannelUserListRequest::getCallerBid()const
 void DescribeRtcChannelUserListRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeRtcChannelUserListRequest::getOwnerId()const
@@ -220,7 +220,7 @@ std::string DescribeRtcChannelUserListRequest::getVersion()const
 void DescribeRtcChannelUserListRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeRtcChannelUserListRequest::getProxy_trust_transport_info()const
@@ -231,7 +231,7 @@ bool DescribeRtcChannelUserListRequest::getProxy_trust_transport_info()const
 void DescribeRtcChannelUserListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeRtcChannelUserListRequest::getAk_mfa_present()const
@@ -242,7 +242,7 @@ bool DescribeRtcChannelUserListRequest::getAk_mfa_present()const
 void DescribeRtcChannelUserListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeRtcChannelUserListRequest::getSecurity_transport()const
@@ -253,7 +253,7 @@ bool DescribeRtcChannelUserListRequest::getSecurity_transport()const
 void DescribeRtcChannelUserListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeRtcChannelUserListRequest::getServiceCode()const
@@ -264,7 +264,7 @@ std::string DescribeRtcChannelUserListRequest::getServiceCode()const
 void DescribeRtcChannelUserListRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", std::to_string(serviceCode));
 }
 
 std::string DescribeRtcChannelUserListRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string DescribeRtcChannelUserListRequest::getRequestId()const
 void DescribeRtcChannelUserListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long DescribeRtcChannelUserListRequest::getPageNo()const
@@ -297,7 +297,7 @@ std::string DescribeRtcChannelUserListRequest::getAppId()const
 void DescribeRtcChannelUserListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string DescribeRtcChannelUserListRequest::getChannelId()const
@@ -308,7 +308,7 @@ std::string DescribeRtcChannelUserListRequest::getChannelId()const
 void DescribeRtcChannelUserListRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", std::to_string(channelId));
 }
 
 std::string DescribeRtcChannelUserListRequest::getTimePoint()const
@@ -319,6 +319,6 @@ std::string DescribeRtcChannelUserListRequest::getTimePoint()const
 void DescribeRtcChannelUserListRequest::setTimePoint(const std::string& timePoint)
 {
 	timePoint_ = timePoint;
-	setCoreParameter("TimePoint", timePoint);
+	setCoreParameter("TimePoint", std::to_string(timePoint));
 }
 

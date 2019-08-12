@@ -33,7 +33,7 @@ std::string DeleteDiskRequest::getSourceRegionId()const
 void DeleteDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteDiskRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteDiskRequest::getResourceOwnerAccount()const
 void DeleteDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteDiskRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteDiskRequest::getOwnerAccount()const
 void DeleteDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteDiskRequest::getDiskId()const
@@ -77,7 +77,7 @@ std::string DeleteDiskRequest::getDiskId()const
 void DeleteDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 long DeleteDiskRequest::getOwnerId()const

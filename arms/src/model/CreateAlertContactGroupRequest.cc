@@ -33,7 +33,7 @@ std::string CreateAlertContactGroupRequest::getContactGroupName()const
 void CreateAlertContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setCoreParameter("ContactGroupName", std::to_string(contactGroupName));
 }
 
 std::string CreateAlertContactGroupRequest::getContactIds()const
@@ -44,6 +44,6 @@ std::string CreateAlertContactGroupRequest::getContactIds()const
 void CreateAlertContactGroupRequest::setContactIds(const std::string& contactIds)
 {
 	contactIds_ = contactIds;
-	setCoreParameter("ContactIds", contactIds);
+	setCoreParameter("ContactIds", std::to_string(contactIds));
 }
 

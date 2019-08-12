@@ -44,7 +44,7 @@ std::string DescribeBackupsRequest::getResourceOwnerAccount()const
 void DescribeBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBackupsRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeBackupsRequest::getDBClusterId()const
 void DescribeBackupsRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DescribeBackupsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeBackupsRequest::getOwnerAccount()const
 void DescribeBackupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeBackupsRequest::getBackupId()const
@@ -77,7 +77,7 @@ std::string DescribeBackupsRequest::getBackupId()const
 void DescribeBackupsRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setCoreParameter("BackupId", std::to_string(backupId));
 }
 
 std::string DescribeBackupsRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string DescribeBackupsRequest::getEndTime()const
 void DescribeBackupsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeBackupsRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeBackupsRequest::getStartTime()const
 void DescribeBackupsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeBackupsRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string DescribeBackupsRequest::getAccessKeyId()const
 void DescribeBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeBackupsRequest::getBackupStatus()const
@@ -143,7 +143,7 @@ std::string DescribeBackupsRequest::getBackupStatus()const
 void DescribeBackupsRequest::setBackupStatus(const std::string& backupStatus)
 {
 	backupStatus_ = backupStatus;
-	setCoreParameter("BackupStatus", backupStatus);
+	setCoreParameter("BackupStatus", std::to_string(backupStatus));
 }
 
 int DescribeBackupsRequest::getPageSize()const
@@ -165,6 +165,6 @@ std::string DescribeBackupsRequest::getBackupMode()const
 void DescribeBackupsRequest::setBackupMode(const std::string& backupMode)
 {
 	backupMode_ = backupMode;
-	setCoreParameter("BackupMode", backupMode);
+	setCoreParameter("BackupMode", std::to_string(backupMode));
 }
 

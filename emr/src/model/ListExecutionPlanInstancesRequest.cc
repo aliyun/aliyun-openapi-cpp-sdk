@@ -33,7 +33,7 @@ bool ListExecutionPlanInstancesRequest::getOnlyLastInstance()const
 void ListExecutionPlanInstancesRequest::setOnlyLastInstance(bool onlyLastInstance)
 {
 	onlyLastInstance_ = onlyLastInstance;
-	setCoreParameter("OnlyLastInstance", onlyLastInstance);
+	setCoreParameter("OnlyLastInstance", onlyLastInstance ? "true" : "false");
 }
 
 long ListExecutionPlanInstancesRequest::getResourceOwnerId()const
@@ -79,7 +79,7 @@ std::string ListExecutionPlanInstancesRequest::getRegionId()const
 void ListExecutionPlanInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListExecutionPlanInstancesRequest::getPageSize()const
@@ -101,7 +101,7 @@ bool ListExecutionPlanInstancesRequest::getIsDesc()const
 void ListExecutionPlanInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc);
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListExecutionPlanInstancesRequest::getPageNumber()const
@@ -123,6 +123,6 @@ std::string ListExecutionPlanInstancesRequest::getAccessKeyId()const
 void ListExecutionPlanInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

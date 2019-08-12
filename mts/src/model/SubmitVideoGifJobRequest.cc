@@ -33,7 +33,7 @@ std::string SubmitVideoGifJobRequest::getInput()const
 void SubmitVideoGifJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitVideoGifJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitVideoGifJobRequest::getUserData()const
 void SubmitVideoGifJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitVideoGifJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitVideoGifJobRequest::getResourceOwnerAccount()const
 void SubmitVideoGifJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitVideoGifJobRequest::getVideoGifConfig()const
@@ -77,7 +77,7 @@ std::string SubmitVideoGifJobRequest::getVideoGifConfig()const
 void SubmitVideoGifJobRequest::setVideoGifConfig(const std::string& videoGifConfig)
 {
 	videoGifConfig_ = videoGifConfig;
-	setCoreParameter("VideoGifConfig", videoGifConfig);
+	setCoreParameter("VideoGifConfig", std::to_string(videoGifConfig));
 }
 
 std::string SubmitVideoGifJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitVideoGifJobRequest::getOwnerAccount()const
 void SubmitVideoGifJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitVideoGifJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitVideoGifJobRequest::getAccessKeyId()const
 void SubmitVideoGifJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitVideoGifJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitVideoGifJobRequest::getPipelineId()const
 void SubmitVideoGifJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

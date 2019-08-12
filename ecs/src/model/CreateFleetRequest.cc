@@ -44,7 +44,7 @@ std::string CreateFleetRequest::getFleetType()const
 void CreateFleetRequest::setFleetType(const std::string& fleetType)
 {
 	fleetType_ = fleetType;
-	setCoreParameter("FleetType", fleetType);
+	setCoreParameter("FleetType", std::to_string(fleetType));
 }
 
 long CreateFleetRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool CreateFleetRequest::getProxy_original_security_transport()const
 void CreateFleetRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateFleetRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateFleetRequest::getDescription()const
 void CreateFleetRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateFleetRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string CreateFleetRequest::getProxy_original_source_ip()const
 void CreateFleetRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 bool CreateFleetRequest::getTerminateInstancesWithExpiration()const
@@ -99,7 +99,7 @@ bool CreateFleetRequest::getTerminateInstancesWithExpiration()const
 void CreateFleetRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration);
+	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
 }
 
 std::string CreateFleetRequest::getOnDemandTargetCapacity()const
@@ -110,7 +110,7 @@ std::string CreateFleetRequest::getOnDemandTargetCapacity()const
 void CreateFleetRequest::setOnDemandTargetCapacity(const std::string& onDemandTargetCapacity)
 {
 	onDemandTargetCapacity_ = onDemandTargetCapacity;
-	setCoreParameter("OnDemandTargetCapacity", onDemandTargetCapacity);
+	setCoreParameter("OnDemandTargetCapacity", std::to_string(onDemandTargetCapacity));
 }
 
 std::string CreateFleetRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string CreateFleetRequest::getOwnerIdLoginEmail()const
 void CreateFleetRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateFleetRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string CreateFleetRequest::getCallerType()const
 void CreateFleetRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateFleetRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string CreateFleetRequest::getAccessKeyId()const
 void CreateFleetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateFleetRequest::getFleetName()const
@@ -154,7 +154,7 @@ std::string CreateFleetRequest::getFleetName()const
 void CreateFleetRequest::setFleetName(const std::string& fleetName)
 {
 	fleetName_ = fleetName;
-	setCoreParameter("FleetName", fleetName);
+	setCoreParameter("FleetName", std::to_string(fleetName));
 }
 
 std::string CreateFleetRequest::getSpotAllocationStrategy()const
@@ -165,7 +165,7 @@ std::string CreateFleetRequest::getSpotAllocationStrategy()const
 void CreateFleetRequest::setSpotAllocationStrategy(const std::string& spotAllocationStrategy)
 {
 	spotAllocationStrategy_ = spotAllocationStrategy;
-	setCoreParameter("SpotAllocationStrategy", spotAllocationStrategy);
+	setCoreParameter("SpotAllocationStrategy", std::to_string(spotAllocationStrategy));
 }
 
 std::string CreateFleetRequest::getSecurityToken()const
@@ -176,7 +176,7 @@ std::string CreateFleetRequest::getSecurityToken()const
 void CreateFleetRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateFleetRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string CreateFleetRequest::getRegionId()const
 void CreateFleetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool CreateFleetRequest::getEnable()const
@@ -198,7 +198,7 @@ bool CreateFleetRequest::getEnable()const
 void CreateFleetRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateFleetRequest::getRequestContent()const
@@ -209,7 +209,7 @@ std::string CreateFleetRequest::getRequestContent()const
 void CreateFleetRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 bool CreateFleetRequest::getTerminateInstances()const
@@ -220,7 +220,7 @@ bool CreateFleetRequest::getTerminateInstances()const
 void CreateFleetRequest::setTerminateInstances(bool terminateInstances)
 {
 	terminateInstances_ = terminateInstances;
-	setCoreParameter("TerminateInstances", terminateInstances);
+	setCoreParameter("TerminateInstances", terminateInstances ? "true" : "false");
 }
 
 std::string CreateFleetRequest::getCallerBidEmail()const
@@ -231,7 +231,7 @@ std::string CreateFleetRequest::getCallerBidEmail()const
 void CreateFleetRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateFleetRequest::getDefaultTargetCapacityType()const
@@ -242,7 +242,7 @@ std::string CreateFleetRequest::getDefaultTargetCapacityType()const
 void CreateFleetRequest::setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType)
 {
 	defaultTargetCapacityType_ = defaultTargetCapacityType;
-	setCoreParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+	setCoreParameter("DefaultTargetCapacityType", std::to_string(defaultTargetCapacityType));
 }
 
 std::string CreateFleetRequest::getExcessCapacityTerminationPolicy()const
@@ -253,7 +253,7 @@ std::string CreateFleetRequest::getExcessCapacityTerminationPolicy()const
 void CreateFleetRequest::setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy)
 {
 	excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
-	setCoreParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
+	setCoreParameter("ExcessCapacityTerminationPolicy", std::to_string(excessCapacityTerminationPolicy));
 }
 
 std::vector<CreateFleetRequest::LaunchTemplateConfig> CreateFleetRequest::getLaunchTemplateConfig()const
@@ -284,7 +284,7 @@ std::string CreateFleetRequest::getValidUntil()const
 void CreateFleetRequest::setValidUntil(const std::string& validUntil)
 {
 	validUntil_ = validUntil;
-	setCoreParameter("ValidUntil", validUntil);
+	setCoreParameter("ValidUntil", std::to_string(validUntil));
 }
 
 std::string CreateFleetRequest::getCallerUidEmail()const
@@ -295,7 +295,7 @@ std::string CreateFleetRequest::getCallerUidEmail()const
 void CreateFleetRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateFleetRequest::getCallerUid()const
@@ -317,7 +317,7 @@ std::string CreateFleetRequest::getFillGapWithOnDemand()const
 void CreateFleetRequest::setFillGapWithOnDemand(const std::string& fillGapWithOnDemand)
 {
 	fillGapWithOnDemand_ = fillGapWithOnDemand;
-	setCoreParameter("FillGapWithOnDemand", fillGapWithOnDemand);
+	setCoreParameter("FillGapWithOnDemand", std::to_string(fillGapWithOnDemand));
 }
 
 std::string CreateFleetRequest::getApp_ip()const
@@ -328,7 +328,7 @@ std::string CreateFleetRequest::getApp_ip()const
 void CreateFleetRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateFleetRequest::getSpotInstanceInterruptionBehavior()const
@@ -339,7 +339,7 @@ std::string CreateFleetRequest::getSpotInstanceInterruptionBehavior()const
 void CreateFleetRequest::setSpotInstanceInterruptionBehavior(const std::string& spotInstanceInterruptionBehavior)
 {
 	spotInstanceInterruptionBehavior_ = spotInstanceInterruptionBehavior;
-	setCoreParameter("SpotInstanceInterruptionBehavior", spotInstanceInterruptionBehavior);
+	setCoreParameter("SpotInstanceInterruptionBehavior", std::to_string(spotInstanceInterruptionBehavior));
 }
 
 std::string CreateFleetRequest::getLaunchTemplateId()const
@@ -350,7 +350,7 @@ std::string CreateFleetRequest::getLaunchTemplateId()const
 void CreateFleetRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", std::to_string(launchTemplateId));
 }
 
 std::string CreateFleetRequest::getResourceOwnerAccount()const
@@ -361,7 +361,7 @@ std::string CreateFleetRequest::getResourceOwnerAccount()const
 void CreateFleetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateFleetRequest::getOwnerAccount()const
@@ -372,7 +372,7 @@ std::string CreateFleetRequest::getOwnerAccount()const
 void CreateFleetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int CreateFleetRequest::getSpotInstancePoolsToUseCount()const
@@ -394,7 +394,7 @@ std::string CreateFleetRequest::getCallerBid()const
 void CreateFleetRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateFleetRequest::getOwnerId()const
@@ -416,7 +416,7 @@ std::string CreateFleetRequest::getLaunchTemplateVersion()const
 void CreateFleetRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setCoreParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
 bool CreateFleetRequest::getProxy_trust_transport_info()const
@@ -427,7 +427,7 @@ bool CreateFleetRequest::getProxy_trust_transport_info()const
 void CreateFleetRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateFleetRequest::getAk_mfa_present()const
@@ -438,7 +438,7 @@ bool CreateFleetRequest::getAk_mfa_present()const
 void CreateFleetRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateFleetRequest::getSecurity_transport()const
@@ -449,7 +449,7 @@ bool CreateFleetRequest::getSecurity_transport()const
 void CreateFleetRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateFleetRequest::getRequestId()const
@@ -460,7 +460,7 @@ std::string CreateFleetRequest::getRequestId()const
 void CreateFleetRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateFleetRequest::getAkProxy()const
@@ -471,7 +471,7 @@ std::string CreateFleetRequest::getAkProxy()const
 void CreateFleetRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string CreateFleetRequest::getTotalTargetCapacity()const
@@ -482,7 +482,7 @@ std::string CreateFleetRequest::getTotalTargetCapacity()const
 void CreateFleetRequest::setTotalTargetCapacity(const std::string& totalTargetCapacity)
 {
 	totalTargetCapacity_ = totalTargetCapacity;
-	setCoreParameter("TotalTargetCapacity", totalTargetCapacity);
+	setCoreParameter("TotalTargetCapacity", std::to_string(totalTargetCapacity));
 }
 
 std::string CreateFleetRequest::getOnDemandAllocationStrategy()const
@@ -493,7 +493,7 @@ std::string CreateFleetRequest::getOnDemandAllocationStrategy()const
 void CreateFleetRequest::setOnDemandAllocationStrategy(const std::string& onDemandAllocationStrategy)
 {
 	onDemandAllocationStrategy_ = onDemandAllocationStrategy;
-	setCoreParameter("OnDemandAllocationStrategy", onDemandAllocationStrategy);
+	setCoreParameter("OnDemandAllocationStrategy", std::to_string(onDemandAllocationStrategy));
 }
 
 std::string CreateFleetRequest::getSpotTargetCapacity()const
@@ -504,7 +504,7 @@ std::string CreateFleetRequest::getSpotTargetCapacity()const
 void CreateFleetRequest::setSpotTargetCapacity(const std::string& spotTargetCapacity)
 {
 	spotTargetCapacity_ = spotTargetCapacity;
-	setCoreParameter("SpotTargetCapacity", spotTargetCapacity);
+	setCoreParameter("SpotTargetCapacity", std::to_string(spotTargetCapacity));
 }
 
 std::string CreateFleetRequest::getValidFrom()const
@@ -515,7 +515,7 @@ std::string CreateFleetRequest::getValidFrom()const
 void CreateFleetRequest::setValidFrom(const std::string& validFrom)
 {
 	validFrom_ = validFrom;
-	setCoreParameter("ValidFrom", validFrom);
+	setCoreParameter("ValidFrom", std::to_string(validFrom));
 }
 
 float CreateFleetRequest::getMaxSpotPrice()const

@@ -33,7 +33,7 @@ std::string DescribeVulRelatedProcessRequest::getSourceIp()const
 void DescribeVulRelatedProcessRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeVulRelatedProcessRequest::getId()const
@@ -55,6 +55,6 @@ std::string DescribeVulRelatedProcessRequest::getPpid()const
 void DescribeVulRelatedProcessRequest::setPpid(const std::string& ppid)
 {
 	ppid_ = ppid;
-	setCoreParameter("Ppid", ppid);
+	setCoreParameter("Ppid", std::to_string(ppid));
 }
 

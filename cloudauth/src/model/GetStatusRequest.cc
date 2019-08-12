@@ -44,7 +44,7 @@ std::string GetStatusRequest::getBiz()const
 void GetStatusRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", biz);
+	setCoreParameter("Biz", std::to_string(biz));
 }
 
 std::string GetStatusRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string GetStatusRequest::getSourceIp()const
 void GetStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string GetStatusRequest::getTicketId()const
@@ -66,6 +66,6 @@ std::string GetStatusRequest::getTicketId()const
 void GetStatusRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setCoreParameter("TicketId", ticketId);
+	setCoreParameter("TicketId", std::to_string(ticketId));
 }
 

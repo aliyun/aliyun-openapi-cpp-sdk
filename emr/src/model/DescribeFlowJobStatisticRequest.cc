@@ -33,7 +33,7 @@ std::string DescribeFlowJobStatisticRequest::getFromApp()const
 void DescribeFlowJobStatisticRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", fromApp);
+	setCoreParameter("FromApp", std::to_string(fromApp));
 }
 
 std::string DescribeFlowJobStatisticRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeFlowJobStatisticRequest::getRegionId()const
 void DescribeFlowJobStatisticRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeFlowJobStatisticRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string DescribeFlowJobStatisticRequest::getProjectId()const
 void DescribeFlowJobStatisticRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

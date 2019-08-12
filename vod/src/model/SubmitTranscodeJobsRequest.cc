@@ -33,7 +33,7 @@ std::string SubmitTranscodeJobsRequest::getUserData()const
 void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitTranscodeJobsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
 void SubmitTranscodeJobsRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", templateGroupId);
+	setCoreParameter("TemplateGroupId", std::to_string(templateGroupId));
 }
 
 std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
 void SubmitTranscodeJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitTranscodeJobsRequest::getVideoId()const
@@ -77,7 +77,7 @@ std::string SubmitTranscodeJobsRequest::getVideoId()const
 void SubmitTranscodeJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 std::string SubmitTranscodeJobsRequest::getOverrideParams()const
@@ -88,7 +88,7 @@ std::string SubmitTranscodeJobsRequest::getOverrideParams()const
 void SubmitTranscodeJobsRequest::setOverrideParams(const std::string& overrideParams)
 {
 	overrideParams_ = overrideParams;
-	setCoreParameter("OverrideParams", overrideParams);
+	setCoreParameter("OverrideParams", std::to_string(overrideParams));
 }
 
 long SubmitTranscodeJobsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitTranscodeJobsRequest::getPriority()const
 void SubmitTranscodeJobsRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", priority);
+	setCoreParameter("Priority", std::to_string(priority));
 }
 
 std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
@@ -121,7 +121,7 @@ std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
 void SubmitTranscodeJobsRequest::setEncryptConfig(const std::string& encryptConfig)
 {
 	encryptConfig_ = encryptConfig;
-	setCoreParameter("EncryptConfig", encryptConfig);
+	setCoreParameter("EncryptConfig", std::to_string(encryptConfig));
 }
 
 std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
 void SubmitTranscodeJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitTranscodeJobsRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string SubmitTranscodeJobsRequest::getPipelineId()const
 void SubmitTranscodeJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

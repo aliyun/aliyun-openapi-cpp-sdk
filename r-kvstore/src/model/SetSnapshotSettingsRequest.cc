@@ -55,7 +55,7 @@ std::string SetSnapshotSettingsRequest::getResourceOwnerAccount()const
 void SetSnapshotSettingsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetSnapshotSettingsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SetSnapshotSettingsRequest::getOwnerAccount()const
 void SetSnapshotSettingsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int SetSnapshotSettingsRequest::getDayList()const
@@ -99,7 +99,7 @@ std::string SetSnapshotSettingsRequest::getAccessKeyId()const
 void SetSnapshotSettingsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetSnapshotSettingsRequest::getInstanceId()const
@@ -110,7 +110,7 @@ std::string SetSnapshotSettingsRequest::getInstanceId()const
 void SetSnapshotSettingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int SetSnapshotSettingsRequest::getRetentionDay()const
@@ -132,7 +132,7 @@ std::string SetSnapshotSettingsRequest::getRegionId()const
 void SetSnapshotSettingsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int SetSnapshotSettingsRequest::getMaxManualSnapshots()const

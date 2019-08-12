@@ -33,7 +33,7 @@ std::string DescribeSpecialEcsRequest::getTargetIp()const
 void DescribeSpecialEcsRequest::setTargetIp(const std::string& targetIp)
 {
 	targetIp_ = targetIp;
-	setCoreParameter("TargetIp", targetIp);
+	setCoreParameter("TargetIp", std::to_string(targetIp));
 }
 
 std::string DescribeSpecialEcsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeSpecialEcsRequest::getSourceIp()const
 void DescribeSpecialEcsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeSpecialEcsRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeSpecialEcsRequest::getLang()const
 void DescribeSpecialEcsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeSpecialEcsRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DescribeSpecialEcsRequest::getSourceCode()const
 void DescribeSpecialEcsRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

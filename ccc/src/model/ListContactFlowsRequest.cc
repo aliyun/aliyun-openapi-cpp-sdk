@@ -33,7 +33,7 @@ std::string ListContactFlowsRequest::getInstanceId()const
 void ListContactFlowsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListContactFlowsRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListContactFlowsRequest::getAccessKeyId()const
 void ListContactFlowsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

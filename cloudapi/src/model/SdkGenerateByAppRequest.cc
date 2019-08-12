@@ -33,7 +33,7 @@ std::string SdkGenerateByAppRequest::getSecurityToken()const
 void SdkGenerateByAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long SdkGenerateByAppRequest::getAppId()const
@@ -55,7 +55,7 @@ std::string SdkGenerateByAppRequest::getLanguage()const
 void SdkGenerateByAppRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setCoreParameter("Language", std::to_string(language));
 }
 
 std::string SdkGenerateByAppRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SdkGenerateByAppRequest::getAccessKeyId()const
 void SdkGenerateByAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

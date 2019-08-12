@@ -33,7 +33,7 @@ std::string ListCallEventDetailByContactIdRequest::getInstanceId()const
 void ListCallEventDetailByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListCallEventDetailByContactIdRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string ListCallEventDetailByContactIdRequest::getContactId()const
 void ListCallEventDetailByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setCoreParameter("ContactId", std::to_string(contactId));
 }
 
 std::string ListCallEventDetailByContactIdRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListCallEventDetailByContactIdRequest::getAccessKeyId()const
 void ListCallEventDetailByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string GetPrivateAccessUrlsRequest::getLibraryId()const
 void GetPrivateAccessUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::vector<long> GetPrivateAccessUrlsRequest::getPhotoId()const
@@ -56,7 +56,7 @@ std::string GetPrivateAccessUrlsRequest::getStoreName()const
 void GetPrivateAccessUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string GetPrivateAccessUrlsRequest::getZoomType()const
@@ -67,6 +67,6 @@ std::string GetPrivateAccessUrlsRequest::getZoomType()const
 void GetPrivateAccessUrlsRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", zoomType);
+	setCoreParameter("ZoomType", std::to_string(zoomType));
 }
 

@@ -44,7 +44,7 @@ std::string DeleteBgpNetworkRequest::getResourceOwnerAccount()const
 void DeleteBgpNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteBgpNetworkRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteBgpNetworkRequest::getRegionId()const
 void DeleteBgpNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteBgpNetworkRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteBgpNetworkRequest::getClientToken()const
 void DeleteBgpNetworkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteBgpNetworkRequest::getRouterId()const
@@ -77,7 +77,7 @@ std::string DeleteBgpNetworkRequest::getRouterId()const
 void DeleteBgpNetworkRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setCoreParameter("RouterId", std::to_string(routerId));
 }
 
 std::string DeleteBgpNetworkRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteBgpNetworkRequest::getOwnerAccount()const
 void DeleteBgpNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteBgpNetworkRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DeleteBgpNetworkRequest::getDstCidrBlock()const
 void DeleteBgpNetworkRequest::setDstCidrBlock(const std::string& dstCidrBlock)
 {
 	dstCidrBlock_ = dstCidrBlock;
-	setCoreParameter("DstCidrBlock", dstCidrBlock);
+	setCoreParameter("DstCidrBlock", std::to_string(dstCidrBlock));
 }
 

@@ -33,6 +33,6 @@ std::string UpdateKnowledgeRequest::getKnowledge()const
 void UpdateKnowledgeRequest::setKnowledge(const std::string& knowledge)
 {
 	knowledge_ = knowledge;
-	setCoreParameter("Knowledge", knowledge);
+	setCoreParameter("Knowledge", std::to_string(knowledge));
 }
 

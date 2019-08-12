@@ -33,7 +33,7 @@ std::string EnableBillGenerationRequest::getProductCode()const
 void EnableBillGenerationRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 long EnableBillGenerationRequest::getOwnerId()const

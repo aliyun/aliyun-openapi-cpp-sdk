@@ -33,7 +33,7 @@ std::string SaveBatchTaskForDomainNameProxyServiceRequest::getUserClientIp()cons
 void SaveBatchTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::vector<std::string> SaveBatchTaskForDomainNameProxyServiceRequest::getDomainName()const
@@ -56,7 +56,7 @@ std::string SaveBatchTaskForDomainNameProxyServiceRequest::getLang()const
 void SaveBatchTaskForDomainNameProxyServiceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForDomainNameProxyServiceRequest::getStatus()const
@@ -67,6 +67,6 @@ bool SaveBatchTaskForDomainNameProxyServiceRequest::getStatus()const
 void SaveBatchTaskForDomainNameProxyServiceRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

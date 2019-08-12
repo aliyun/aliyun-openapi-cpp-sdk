@@ -44,7 +44,7 @@ std::string ReplaceSystemDiskRequest::getImageId()const
 void ReplaceSystemDiskRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string ReplaceSystemDiskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReplaceSystemDiskRequest::getResourceOwnerAccount()const
 void ReplaceSystemDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReplaceSystemDiskRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ReplaceSystemDiskRequest::getClientToken()const
 void ReplaceSystemDiskRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ReplaceSystemDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReplaceSystemDiskRequest::getOwnerAccount()const
 void ReplaceSystemDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReplaceSystemDiskRequest::getSecurityEnhancementStrategy()const
@@ -88,7 +88,7 @@ std::string ReplaceSystemDiskRequest::getSecurityEnhancementStrategy()const
 void ReplaceSystemDiskRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
 {
 	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+	setCoreParameter("SecurityEnhancementStrategy", std::to_string(securityEnhancementStrategy));
 }
 
 std::string ReplaceSystemDiskRequest::getKeyPairName()const
@@ -99,7 +99,7 @@ std::string ReplaceSystemDiskRequest::getKeyPairName()const
 void ReplaceSystemDiskRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 long ReplaceSystemDiskRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ReplaceSystemDiskRequest::getPlatform()const
 void ReplaceSystemDiskRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setCoreParameter("Platform", std::to_string(platform));
 }
 
 std::string ReplaceSystemDiskRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ std::string ReplaceSystemDiskRequest::getSourceRegionId()const
 void ReplaceSystemDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ReplaceSystemDiskRequest::getPassword()const
@@ -143,7 +143,7 @@ std::string ReplaceSystemDiskRequest::getPassword()const
 void ReplaceSystemDiskRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 std::string ReplaceSystemDiskRequest::getInstanceId()const
@@ -154,7 +154,7 @@ std::string ReplaceSystemDiskRequest::getInstanceId()const
 void ReplaceSystemDiskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 bool ReplaceSystemDiskRequest::getPasswordInherit()const
@@ -165,7 +165,7 @@ bool ReplaceSystemDiskRequest::getPasswordInherit()const
 void ReplaceSystemDiskRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit);
+	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 int ReplaceSystemDiskRequest::getSystemDiskSize()const
@@ -187,7 +187,7 @@ std::string ReplaceSystemDiskRequest::getDiskId()const
 void ReplaceSystemDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 bool ReplaceSystemDiskRequest::getUseAdditionalService()const
@@ -198,7 +198,7 @@ bool ReplaceSystemDiskRequest::getUseAdditionalService()const
 void ReplaceSystemDiskRequest::setUseAdditionalService(bool useAdditionalService)
 {
 	useAdditionalService_ = useAdditionalService;
-	setCoreParameter("UseAdditionalService", useAdditionalService);
+	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
 }
 
 std::string ReplaceSystemDiskRequest::getArchitecture()const
@@ -209,6 +209,6 @@ std::string ReplaceSystemDiskRequest::getArchitecture()const
 void ReplaceSystemDiskRequest::setArchitecture(const std::string& architecture)
 {
 	architecture_ = architecture;
-	setCoreParameter("Architecture", architecture);
+	setCoreParameter("Architecture", std::to_string(architecture));
 }
 

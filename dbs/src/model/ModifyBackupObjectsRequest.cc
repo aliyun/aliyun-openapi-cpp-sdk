@@ -33,7 +33,7 @@ std::string ModifyBackupObjectsRequest::getRegionId()const
 void ModifyBackupObjectsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyBackupObjectsRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string ModifyBackupObjectsRequest::getClientToken()const
 void ModifyBackupObjectsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyBackupObjectsRequest::getBackupPlanId()const
@@ -55,7 +55,7 @@ std::string ModifyBackupObjectsRequest::getBackupPlanId()const
 void ModifyBackupObjectsRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string ModifyBackupObjectsRequest::getBackupObjects()const
@@ -66,7 +66,7 @@ std::string ModifyBackupObjectsRequest::getBackupObjects()const
 void ModifyBackupObjectsRequest::setBackupObjects(const std::string& backupObjects)
 {
 	backupObjects_ = backupObjects;
-	setCoreParameter("BackupObjects", backupObjects);
+	setCoreParameter("BackupObjects", std::to_string(backupObjects));
 }
 
 std::string ModifyBackupObjectsRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string ModifyBackupObjectsRequest::getOwnerId()const
 void ModifyBackupObjectsRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

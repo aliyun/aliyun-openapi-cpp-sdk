@@ -33,7 +33,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getSourceRegionId()const
 void ModifyInstanceAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 int ModifyInstanceAutoRenewAttributeRequest::getDuration()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getPeriodUnit()const
 void ModifyInstanceAutoRenewAttributeRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getInstanceId()const
 void ModifyInstanceAutoRenewAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 bool ModifyInstanceAutoRenewAttributeRequest::getAutoRenew()const
@@ -88,7 +88,7 @@ bool ModifyInstanceAutoRenewAttributeRequest::getAutoRenew()const
 void ModifyInstanceAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getResourceOwnerAccount()co
 void ModifyInstanceAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getRegionId()const
 void ModifyInstanceAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getOwnerAccount()const
 void ModifyInstanceAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyInstanceAutoRenewAttributeRequest::getRenewalStatus()const
@@ -132,7 +132,7 @@ std::string ModifyInstanceAutoRenewAttributeRequest::getRenewalStatus()const
 void ModifyInstanceAutoRenewAttributeRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", renewalStatus);
+	setCoreParameter("RenewalStatus", std::to_string(renewalStatus));
 }
 
 long ModifyInstanceAutoRenewAttributeRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string DeleteAccessControlListRequest::getAccess_key_id()const
 void DeleteAccessControlListRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 std::string DeleteAccessControlListRequest::getAclId()const
@@ -44,7 +44,7 @@ std::string DeleteAccessControlListRequest::getAclId()const
 void DeleteAccessControlListRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long DeleteAccessControlListRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DeleteAccessControlListRequest::getResourceOwnerAccount()const
 void DeleteAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteAccessControlListRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteAccessControlListRequest::getRegionId()const
 void DeleteAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteAccessControlListRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteAccessControlListRequest::getOwnerAccount()const
 void DeleteAccessControlListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteAccessControlListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DeleteAccessControlListRequest::getAccessKeyId()const
 void DeleteAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DeleteAccessControlListRequest::getTags()const
@@ -121,6 +121,6 @@ std::string DeleteAccessControlListRequest::getTags()const
 void DeleteAccessControlListRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

@@ -44,7 +44,7 @@ std::string ListPushRecordsRequest::getEndTime()const
 void ListPushRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long ListPushRecordsRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string ListPushRecordsRequest::getStartTime()const
 void ListPushRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListPushRecordsRequest::getPage()const
@@ -88,7 +88,7 @@ std::string ListPushRecordsRequest::getPushType()const
 void ListPushRecordsRequest::setPushType(const std::string& pushType)
 {
 	pushType_ = pushType;
-	setCoreParameter("PushType", pushType);
+	setCoreParameter("PushType", std::to_string(pushType));
 }
 
 std::string ListPushRecordsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListPushRecordsRequest::getAccessKeyId()const
 void ListPushRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -66,7 +66,7 @@ std::string DescribeActionDataRequest::getStoreId()const
 void DescribeActionDataRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 
 int DescribeActionDataRequest::getPageLimit()const

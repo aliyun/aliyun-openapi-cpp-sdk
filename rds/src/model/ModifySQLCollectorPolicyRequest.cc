@@ -55,7 +55,7 @@ std::string ModifySQLCollectorPolicyRequest::getResourceOwnerAccount()const
 void ModifySQLCollectorPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySQLCollectorPolicyRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifySQLCollectorPolicyRequest::getClientToken()const
 void ModifySQLCollectorPolicyRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifySQLCollectorPolicyRequest::getSQLCollectorStatus()const
@@ -77,7 +77,7 @@ std::string ModifySQLCollectorPolicyRequest::getSQLCollectorStatus()const
 void ModifySQLCollectorPolicyRequest::setSQLCollectorStatus(const std::string& sQLCollectorStatus)
 {
 	sQLCollectorStatus_ = sQLCollectorStatus;
-	setCoreParameter("SQLCollectorStatus", sQLCollectorStatus);
+	setCoreParameter("SQLCollectorStatus", std::to_string(sQLCollectorStatus));
 }
 
 std::string ModifySQLCollectorPolicyRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifySQLCollectorPolicyRequest::getOwnerAccount()const
 void ModifySQLCollectorPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySQLCollectorPolicyRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string ModifySQLCollectorPolicyRequest::getDBInstanceId()const
 void ModifySQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifySQLCollectorPolicyRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string ModifySQLCollectorPolicyRequest::getAccessKeyId()const
 void ModifySQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

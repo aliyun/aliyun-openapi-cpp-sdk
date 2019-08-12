@@ -45,7 +45,7 @@ std::string PickOutboundNumbersByTagsRequest::getInstanceId()const
 void PickOutboundNumbersByTagsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> PickOutboundNumbersByTagsRequest::getServiceTag()const
@@ -91,7 +91,7 @@ std::string PickOutboundNumbersByTagsRequest::getCalleeNumber()const
 void PickOutboundNumbersByTagsRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
 }
 
 std::string PickOutboundNumbersByTagsRequest::getAccessKeyId()const
@@ -102,6 +102,6 @@ std::string PickOutboundNumbersByTagsRequest::getAccessKeyId()const
 void PickOutboundNumbersByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

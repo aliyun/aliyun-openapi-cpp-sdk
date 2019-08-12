@@ -67,7 +67,7 @@ bool DescribeInstancesFullStatusRequest::getProxy_original_security_transport()c
 void DescribeInstancesFullStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeInstancesFullStatusRequest::getProxy_original_source_ip()const
@@ -78,7 +78,7 @@ std::string DescribeInstancesFullStatusRequest::getProxy_original_source_ip()con
 void DescribeInstancesFullStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeInstancesFullStatusRequest::getOwnerIdLoginEmail()const
@@ -89,7 +89,7 @@ std::string DescribeInstancesFullStatusRequest::getOwnerIdLoginEmail()const
 void DescribeInstancesFullStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeInstancesFullStatusRequest::getCallerType()const
@@ -100,7 +100,7 @@ std::string DescribeInstancesFullStatusRequest::getCallerType()const
 void DescribeInstancesFullStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int DescribeInstancesFullStatusRequest::getPageNumber()const
@@ -122,7 +122,7 @@ std::string DescribeInstancesFullStatusRequest::getAccessKeyId()const
 void DescribeInstancesFullStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeInstancesFullStatusRequest::getSourceRegionId()const
@@ -133,7 +133,7 @@ std::string DescribeInstancesFullStatusRequest::getSourceRegionId()const
 void DescribeInstancesFullStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeInstancesFullStatusRequest::getSecurityToken()const
@@ -144,7 +144,7 @@ std::string DescribeInstancesFullStatusRequest::getSecurityToken()const
 void DescribeInstancesFullStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeInstancesFullStatusRequest::getRegionId()const
@@ -155,7 +155,7 @@ std::string DescribeInstancesFullStatusRequest::getRegionId()const
 void DescribeInstancesFullStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeInstancesFullStatusRequest::getEnable()const
@@ -166,7 +166,7 @@ bool DescribeInstancesFullStatusRequest::getEnable()const
 void DescribeInstancesFullStatusRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeInstancesFullStatusRequest::getRequestContent()const
@@ -177,7 +177,7 @@ std::string DescribeInstancesFullStatusRequest::getRequestContent()const
 void DescribeInstancesFullStatusRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeInstancesFullStatusRequest::getPageSize()const
@@ -199,7 +199,7 @@ std::string DescribeInstancesFullStatusRequest::getCallerBidEmail()const
 void DescribeInstancesFullStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeInstancesFullStatusRequest::getCallerUidEmail()const
@@ -210,7 +210,7 @@ std::string DescribeInstancesFullStatusRequest::getCallerUidEmail()const
 void DescribeInstancesFullStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventPublishTimeEnd()const
@@ -221,7 +221,7 @@ std::string DescribeInstancesFullStatusRequest::getEventPublishTimeEnd()const
 void DescribeInstancesFullStatusRequest::setEventPublishTimeEnd(const std::string& eventPublishTimeEnd)
 {
 	eventPublishTimeEnd_ = eventPublishTimeEnd;
-	setCoreParameter("EventPublishTimeEnd", eventPublishTimeEnd);
+	setCoreParameter("EventPublishTimeEnd", std::to_string(eventPublishTimeEnd));
 }
 
 long DescribeInstancesFullStatusRequest::getCallerUid()const
@@ -243,7 +243,7 @@ std::string DescribeInstancesFullStatusRequest::getApp_ip()const
 void DescribeInstancesFullStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceEventType()const
@@ -266,7 +266,7 @@ std::string DescribeInstancesFullStatusRequest::getResourceOwnerAccount()const
 void DescribeInstancesFullStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstancesFullStatusRequest::getOwnerAccount()const
@@ -277,7 +277,7 @@ std::string DescribeInstancesFullStatusRequest::getOwnerAccount()const
 void DescribeInstancesFullStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeInstancesFullStatusRequest::getNotBeforeStart()const
@@ -288,7 +288,7 @@ std::string DescribeInstancesFullStatusRequest::getNotBeforeStart()const
 void DescribeInstancesFullStatusRequest::setNotBeforeStart(const std::string& notBeforeStart)
 {
 	notBeforeStart_ = notBeforeStart;
-	setCoreParameter("NotBeforeStart", notBeforeStart);
+	setCoreParameter("NotBeforeStart", std::to_string(notBeforeStart));
 }
 
 std::string DescribeInstancesFullStatusRequest::getCallerBid()const
@@ -299,7 +299,7 @@ std::string DescribeInstancesFullStatusRequest::getCallerBid()const
 void DescribeInstancesFullStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeInstancesFullStatusRequest::getOwnerId()const
@@ -321,7 +321,7 @@ bool DescribeInstancesFullStatusRequest::getProxy_trust_transport_info()const
 void DescribeInstancesFullStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeInstancesFullStatusRequest::getAk_mfa_present()const
@@ -332,7 +332,7 @@ bool DescribeInstancesFullStatusRequest::getAk_mfa_present()const
 void DescribeInstancesFullStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeInstancesFullStatusRequest::getSecurity_transport()const
@@ -343,7 +343,7 @@ bool DescribeInstancesFullStatusRequest::getSecurity_transport()const
 void DescribeInstancesFullStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventPublishTimeStart()const
@@ -354,7 +354,7 @@ std::string DescribeInstancesFullStatusRequest::getEventPublishTimeStart()const
 void DescribeInstancesFullStatusRequest::setEventPublishTimeStart(const std::string& eventPublishTimeStart)
 {
 	eventPublishTimeStart_ = eventPublishTimeStart;
-	setCoreParameter("EventPublishTimeStart", eventPublishTimeStart);
+	setCoreParameter("EventPublishTimeStart", std::to_string(eventPublishTimeStart));
 }
 
 std::vector<std::string> DescribeInstancesFullStatusRequest::getInstanceId()const
@@ -377,7 +377,7 @@ std::string DescribeInstancesFullStatusRequest::getNotBeforeEnd()const
 void DescribeInstancesFullStatusRequest::setNotBeforeEnd(const std::string& notBeforeEnd)
 {
 	notBeforeEnd_ = notBeforeEnd;
-	setCoreParameter("NotBeforeEnd", notBeforeEnd);
+	setCoreParameter("NotBeforeEnd", std::to_string(notBeforeEnd));
 }
 
 std::string DescribeInstancesFullStatusRequest::getRequestId()const
@@ -388,7 +388,7 @@ std::string DescribeInstancesFullStatusRequest::getRequestId()const
 void DescribeInstancesFullStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeInstancesFullStatusRequest::getAkProxy()const
@@ -399,7 +399,7 @@ std::string DescribeInstancesFullStatusRequest::getAkProxy()const
 void DescribeInstancesFullStatusRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string DescribeInstancesFullStatusRequest::getHealthStatus()const
@@ -410,7 +410,7 @@ std::string DescribeInstancesFullStatusRequest::getHealthStatus()const
 void DescribeInstancesFullStatusRequest::setHealthStatus(const std::string& healthStatus)
 {
 	healthStatus_ = healthStatus;
-	setCoreParameter("HealthStatus", healthStatus);
+	setCoreParameter("HealthStatus", std::to_string(healthStatus));
 }
 
 std::string DescribeInstancesFullStatusRequest::getEventType()const
@@ -421,7 +421,7 @@ std::string DescribeInstancesFullStatusRequest::getEventType()const
 void DescribeInstancesFullStatusRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 std::string DescribeInstancesFullStatusRequest::getStatus()const
@@ -432,6 +432,6 @@ std::string DescribeInstancesFullStatusRequest::getStatus()const
 void DescribeInstancesFullStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

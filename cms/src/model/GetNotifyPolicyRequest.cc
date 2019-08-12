@@ -33,7 +33,7 @@ std::string GetNotifyPolicyRequest::getPolicyType()const
 void GetNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string GetNotifyPolicyRequest::getAlertName()const
@@ -44,7 +44,7 @@ std::string GetNotifyPolicyRequest::getAlertName()const
 void GetNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	setCoreParameter("AlertName", std::to_string(alertName));
 }
 
 std::string GetNotifyPolicyRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string GetNotifyPolicyRequest::getGroupId()const
 void GetNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string GetNotifyPolicyRequest::getId()const
@@ -66,7 +66,7 @@ std::string GetNotifyPolicyRequest::getId()const
 void GetNotifyPolicyRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetNotifyPolicyRequest::getDimensions()const
@@ -77,7 +77,7 @@ std::string GetNotifyPolicyRequest::getDimensions()const
 void GetNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", std::to_string(dimensions));
 }
 
 std::string GetNotifyPolicyRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetNotifyPolicyRequest::getAccessKeyId()const
 void GetNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

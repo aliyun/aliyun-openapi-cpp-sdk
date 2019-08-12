@@ -33,7 +33,7 @@ std::string GetServicesRequest::getRegionId()const
 void GetServicesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetServicesRequest::getAppType()const
@@ -44,6 +44,6 @@ std::string GetServicesRequest::getAppType()const
 void GetServicesRequest::setAppType(const std::string& appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", appType);
+	setCoreParameter("AppType", std::to_string(appType));
 }
 

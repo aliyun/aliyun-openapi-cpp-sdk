@@ -44,7 +44,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getDbName()const
 void SyncDataSourceSchemaDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getRegionId()const
 void SyncDataSourceSchemaDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getEtlJobId()const
 void SyncDataSourceSchemaDatabaseRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", std::to_string(etlJobId));
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string SyncDataSourceSchemaDatabaseRequest::getDataSourceId()const
 void SyncDataSourceSchemaDatabaseRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string SyncDataSourceSchemaDatabaseRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SyncDataSourceSchemaDatabaseRequest::getAccessKeyId()const
 void SyncDataSourceSchemaDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

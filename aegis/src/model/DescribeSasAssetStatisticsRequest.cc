@@ -33,7 +33,7 @@ std::string DescribeSasAssetStatisticsRequest::getSourceIp()const
 void DescribeSasAssetStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeSasAssetStatisticsRequest::getStatisticsColumn()const
@@ -44,7 +44,7 @@ std::string DescribeSasAssetStatisticsRequest::getStatisticsColumn()const
 void DescribeSasAssetStatisticsRequest::setStatisticsColumn(const std::string& statisticsColumn)
 {
 	statisticsColumn_ = statisticsColumn;
-	setCoreParameter("StatisticsColumn", statisticsColumn);
+	setCoreParameter("StatisticsColumn", std::to_string(statisticsColumn));
 }
 
 int DescribeSasAssetStatisticsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeSasAssetStatisticsRequest::getFrom()const
 void DescribeSasAssetStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 int DescribeSasAssetStatisticsRequest::getCurrentPage()const
@@ -88,6 +88,6 @@ std::string DescribeSasAssetStatisticsRequest::getUuids()const
 void DescribeSasAssetStatisticsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

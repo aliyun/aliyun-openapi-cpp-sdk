@@ -33,7 +33,7 @@ std::string DescribeAuthAccountsRequest::getSourceIp()const
 void DescribeAuthAccountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeAuthAccountsRequest::getFeatureType()const
@@ -77,6 +77,6 @@ std::string DescribeAuthAccountsRequest::getLang()const
 void DescribeAuthAccountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -44,7 +44,7 @@ std::string QueryDeviceServiceDataRequest::getIdentifier()const
 void QueryDeviceServiceDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setCoreParameter("Identifier", std::to_string(identifier));
 }
 
 std::string QueryDeviceServiceDataRequest::getIotId()const
@@ -55,7 +55,7 @@ std::string QueryDeviceServiceDataRequest::getIotId()const
 void QueryDeviceServiceDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
 void QueryDeviceServiceDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryDeviceServiceDataRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string QueryDeviceServiceDataRequest::getDeviceName()const
 void QueryDeviceServiceDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 long QueryDeviceServiceDataRequest::getStartTime()const
@@ -121,7 +121,7 @@ std::string QueryDeviceServiceDataRequest::getProductKey()const
 void QueryDeviceServiceDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
 void QueryDeviceServiceDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string RevokeInstanceFromCbnRequest::getResourceOwnerAccount()const
 void RevokeInstanceFromCbnRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RevokeInstanceFromCbnRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RevokeInstanceFromCbnRequest::getRegionId()const
 void RevokeInstanceFromCbnRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RevokeInstanceFromCbnRequest::getCenInstanceId()const
@@ -66,7 +66,7 @@ std::string RevokeInstanceFromCbnRequest::getCenInstanceId()const
 void RevokeInstanceFromCbnRequest::setCenInstanceId(const std::string& cenInstanceId)
 {
 	cenInstanceId_ = cenInstanceId;
-	setCoreParameter("CenInstanceId", cenInstanceId);
+	setCoreParameter("CenInstanceId", std::to_string(cenInstanceId));
 }
 
 std::string RevokeInstanceFromCbnRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RevokeInstanceFromCbnRequest::getOwnerAccount()const
 void RevokeInstanceFromCbnRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RevokeInstanceFromCbnRequest::getCcnInstanceId()const
@@ -88,7 +88,7 @@ std::string RevokeInstanceFromCbnRequest::getCcnInstanceId()const
 void RevokeInstanceFromCbnRequest::setCcnInstanceId(const std::string& ccnInstanceId)
 {
 	ccnInstanceId_ = ccnInstanceId;
-	setCoreParameter("CcnInstanceId", ccnInstanceId);
+	setCoreParameter("CcnInstanceId", std::to_string(ccnInstanceId));
 }
 
 long RevokeInstanceFromCbnRequest::getOwnerId()const

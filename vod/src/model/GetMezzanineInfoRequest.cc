@@ -44,7 +44,7 @@ std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
 void GetMezzanineInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetMezzanineInfoRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string GetMezzanineInfoRequest::getVideoId()const
 void GetMezzanineInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 bool GetMezzanineInfoRequest::getPreviewSegment()const
@@ -66,7 +66,7 @@ bool GetMezzanineInfoRequest::getPreviewSegment()const
 void GetMezzanineInfoRequest::setPreviewSegment(bool previewSegment)
 {
 	previewSegment_ = previewSegment;
-	setCoreParameter("PreviewSegment", previewSegment);
+	setCoreParameter("PreviewSegment", previewSegment ? "true" : "false");
 }
 
 std::string GetMezzanineInfoRequest::getOutputType()const
@@ -77,7 +77,7 @@ std::string GetMezzanineInfoRequest::getOutputType()const
 void GetMezzanineInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setCoreParameter("OutputType", std::to_string(outputType));
 }
 
 std::string GetMezzanineInfoRequest::getAdditionType()const
@@ -88,7 +88,7 @@ std::string GetMezzanineInfoRequest::getAdditionType()const
 void GetMezzanineInfoRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
-	setCoreParameter("AdditionType", additionType);
+	setCoreParameter("AdditionType", std::to_string(additionType));
 }
 
 long GetMezzanineInfoRequest::getOwnerId()const

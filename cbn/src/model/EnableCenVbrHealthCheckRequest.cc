@@ -44,7 +44,7 @@ std::string EnableCenVbrHealthCheckRequest::getResourceOwnerAccount()const
 void EnableCenVbrHealthCheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EnableCenVbrHealthCheckRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string EnableCenVbrHealthCheckRequest::getCenId()const
 void EnableCenVbrHealthCheckRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string EnableCenVbrHealthCheckRequest::getHealthCheckSourceIp()const
@@ -66,7 +66,7 @@ std::string EnableCenVbrHealthCheckRequest::getHealthCheckSourceIp()const
 void EnableCenVbrHealthCheckRequest::setHealthCheckSourceIp(const std::string& healthCheckSourceIp)
 {
 	healthCheckSourceIp_ = healthCheckSourceIp;
-	setCoreParameter("HealthCheckSourceIp", healthCheckSourceIp);
+	setCoreParameter("HealthCheckSourceIp", std::to_string(healthCheckSourceIp));
 }
 
 long EnableCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
@@ -88,7 +88,7 @@ std::string EnableCenVbrHealthCheckRequest::getOwnerAccount()const
 void EnableCenVbrHealthCheckRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string EnableCenVbrHealthCheckRequest::getVbrInstanceId()const
@@ -99,7 +99,7 @@ std::string EnableCenVbrHealthCheckRequest::getVbrInstanceId()const
 void EnableCenVbrHealthCheckRequest::setVbrInstanceId(const std::string& vbrInstanceId)
 {
 	vbrInstanceId_ = vbrInstanceId;
-	setCoreParameter("VbrInstanceId", vbrInstanceId);
+	setCoreParameter("VbrInstanceId", std::to_string(vbrInstanceId));
 }
 
 std::string EnableCenVbrHealthCheckRequest::getHealthCheckTargetIp()const
@@ -110,7 +110,7 @@ std::string EnableCenVbrHealthCheckRequest::getHealthCheckTargetIp()const
 void EnableCenVbrHealthCheckRequest::setHealthCheckTargetIp(const std::string& healthCheckTargetIp)
 {
 	healthCheckTargetIp_ = healthCheckTargetIp;
-	setCoreParameter("HealthCheckTargetIp", healthCheckTargetIp);
+	setCoreParameter("HealthCheckTargetIp", std::to_string(healthCheckTargetIp));
 }
 
 long EnableCenVbrHealthCheckRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string EnableCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
 void EnableCenVbrHealthCheckRequest::setVbrInstanceRegionId(const std::string& vbrInstanceRegionId)
 {
 	vbrInstanceRegionId_ = vbrInstanceRegionId;
-	setCoreParameter("VbrInstanceRegionId", vbrInstanceRegionId);
+	setCoreParameter("VbrInstanceRegionId", std::to_string(vbrInstanceRegionId));
 }
 

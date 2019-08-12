@@ -33,7 +33,7 @@ bool QueryProductListRequest::getQueryTotalCount()const
 void QueryProductListRequest::setQueryTotalCount(bool queryTotalCount)
 {
 	queryTotalCount_ = queryTotalCount;
-	setCoreParameter("QueryTotalCount", queryTotalCount);
+	setCoreParameter("QueryTotalCount", queryTotalCount ? "true" : "false");
 }
 
 int QueryProductListRequest::getPageSize()const

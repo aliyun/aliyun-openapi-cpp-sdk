@@ -55,7 +55,7 @@ bool DescribeDiskMonitorDataRequest::getProxy_original_security_transport()const
 void DescribeDiskMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDiskMonitorDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDiskMonitorDataRequest::getStartTime()const
 void DescribeDiskMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDiskMonitorDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeDiskMonitorDataRequest::getProxy_original_source_ip()const
 void DescribeDiskMonitorDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeDiskMonitorDataRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeDiskMonitorDataRequest::getOwnerIdLoginEmail()const
 void DescribeDiskMonitorDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeDiskMonitorDataRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeDiskMonitorDataRequest::getCallerType()const
 void DescribeDiskMonitorDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeDiskMonitorDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeDiskMonitorDataRequest::getAccessKeyId()const
 void DescribeDiskMonitorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDiskMonitorDataRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDiskMonitorDataRequest::getSourceRegionId()const
 void DescribeDiskMonitorDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeDiskMonitorDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDiskMonitorDataRequest::getSecurityToken()const
 void DescribeDiskMonitorDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 bool DescribeDiskMonitorDataRequest::getEnable()const
@@ -143,7 +143,7 @@ bool DescribeDiskMonitorDataRequest::getEnable()const
 void DescribeDiskMonitorDataRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeDiskMonitorDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeDiskMonitorDataRequest::getRequestContent()const
 void DescribeDiskMonitorDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeDiskMonitorDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDiskMonitorDataRequest::getCallerBidEmail()const
 void DescribeDiskMonitorDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeDiskMonitorDataRequest::getDiskId()const
@@ -176,7 +176,7 @@ std::string DescribeDiskMonitorDataRequest::getDiskId()const
 void DescribeDiskMonitorDataRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 std::string DescribeDiskMonitorDataRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeDiskMonitorDataRequest::getCallerUidEmail()const
 void DescribeDiskMonitorDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeDiskMonitorDataRequest::getCallerUid()const
@@ -209,7 +209,7 @@ std::string DescribeDiskMonitorDataRequest::getApp_ip()const
 void DescribeDiskMonitorDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 int DescribeDiskMonitorDataRequest::getPeriod()const
@@ -231,7 +231,7 @@ std::string DescribeDiskMonitorDataRequest::getResourceOwnerAccount()const
 void DescribeDiskMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDiskMonitorDataRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeDiskMonitorDataRequest::getOwnerAccount()const
 void DescribeDiskMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDiskMonitorDataRequest::getEndTime()const
@@ -253,7 +253,7 @@ std::string DescribeDiskMonitorDataRequest::getEndTime()const
 void DescribeDiskMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDiskMonitorDataRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string DescribeDiskMonitorDataRequest::getCallerBid()const
 void DescribeDiskMonitorDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeDiskMonitorDataRequest::getOwnerId()const
@@ -286,7 +286,7 @@ bool DescribeDiskMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeDiskMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDiskMonitorDataRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeDiskMonitorDataRequest::getAk_mfa_present()const
 void DescribeDiskMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDiskMonitorDataRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeDiskMonitorDataRequest::getSecurity_transport()const
 void DescribeDiskMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDiskMonitorDataRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string DescribeDiskMonitorDataRequest::getRequestId()const
 void DescribeDiskMonitorDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeDiskMonitorDataRequest::getAkProxy()const
@@ -330,6 +330,6 @@ std::string DescribeDiskMonitorDataRequest::getAkProxy()const
 void DescribeDiskMonitorDataRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 

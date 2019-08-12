@@ -33,7 +33,7 @@ std::string ReportCoverJobResultRequest::getResult()const
 void ReportCoverJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", result);
+	setCoreParameter("Result", std::to_string(result));
 }
 
 std::string ReportCoverJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportCoverJobResultRequest::getJobId()const
 void ReportCoverJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ReportCoverJobResultRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string ReportCoverJobResultRequest::getResourceOwnerAccount()const
 void ReportCoverJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportCoverJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportCoverJobResultRequest::getOwnerAccount()const
 void ReportCoverJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ReportCoverJobResultRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ReportCoverJobResultRequest::getAccessKeyId()const
 void ReportCoverJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

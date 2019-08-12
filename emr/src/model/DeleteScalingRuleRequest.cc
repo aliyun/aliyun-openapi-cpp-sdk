@@ -44,7 +44,7 @@ std::string DeleteScalingRuleRequest::getRegionId()const
 void DeleteScalingRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteScalingRuleRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string DeleteScalingRuleRequest::getHostGroupId()const
 void DeleteScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 std::string DeleteScalingRuleRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DeleteScalingRuleRequest::getClusterId()const
 void DeleteScalingRuleRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DeleteScalingRuleRequest::getScalingRuleId()const
@@ -77,7 +77,7 @@ std::string DeleteScalingRuleRequest::getScalingRuleId()const
 void DeleteScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setCoreParameter("ScalingRuleId", std::to_string(scalingRuleId));
 }
 
 std::string DeleteScalingRuleRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteScalingRuleRequest::getAccessKeyId()const
 void DeleteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

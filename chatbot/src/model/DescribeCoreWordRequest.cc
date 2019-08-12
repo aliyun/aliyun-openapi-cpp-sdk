@@ -33,6 +33,6 @@ std::string DescribeCoreWordRequest::getCoreWordName()const
 void DescribeCoreWordRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
+	setCoreParameter("CoreWordName", std::to_string(coreWordName));
 }
 

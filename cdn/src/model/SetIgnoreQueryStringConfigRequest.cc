@@ -33,7 +33,7 @@ std::string SetIgnoreQueryStringConfigRequest::getKeepOssArgs()const
 void SetIgnoreQueryStringConfigRequest::setKeepOssArgs(const std::string& keepOssArgs)
 {
 	keepOssArgs_ = keepOssArgs;
-	setCoreParameter("KeepOssArgs", keepOssArgs);
+	setCoreParameter("KeepOssArgs", std::to_string(keepOssArgs));
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
@@ -44,7 +44,7 @@ std::string SetIgnoreQueryStringConfigRequest::getHashKeyArgs()const
 void SetIgnoreQueryStringConfigRequest::setHashKeyArgs(const std::string& hashKeyArgs)
 {
 	hashKeyArgs_ = hashKeyArgs;
-	setCoreParameter("HashKeyArgs", hashKeyArgs);
+	setCoreParameter("HashKeyArgs", std::to_string(hashKeyArgs));
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetIgnoreQueryStringConfigRequest::getSecurityToken()const
 void SetIgnoreQueryStringConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getEnable()const
@@ -66,7 +66,7 @@ std::string SetIgnoreQueryStringConfigRequest::getEnable()const
 void SetIgnoreQueryStringConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", std::to_string(enable));
 }
 
 std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetIgnoreQueryStringConfigRequest::getDomainName()const
 void SetIgnoreQueryStringConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetIgnoreQueryStringConfigRequest::getOwnerId()const

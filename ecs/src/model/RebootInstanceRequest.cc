@@ -33,7 +33,7 @@ std::string RebootInstanceRequest::getSourceRegionId()const
 void RebootInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long RebootInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string RebootInstanceRequest::getInstanceId()const
 void RebootInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 bool RebootInstanceRequest::getDryRun()const
@@ -66,7 +66,7 @@ bool RebootInstanceRequest::getDryRun()const
 void RebootInstanceRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string RebootInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RebootInstanceRequest::getResourceOwnerAccount()const
 void RebootInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RebootInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RebootInstanceRequest::getOwnerAccount()const
 void RebootInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RebootInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ bool RebootInstanceRequest::getForceStop()const
 void RebootInstanceRequest::setForceStop(bool forceStop)
 {
 	forceStop_ = forceStop;
-	setCoreParameter("ForceStop", forceStop);
+	setCoreParameter("ForceStop", forceStop ? "true" : "false");
 }
 

@@ -33,7 +33,7 @@ std::string UpgradeDBInstanceRequest::getDBInstanceGroupCount()const
 void UpgradeDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
 {
 	dBInstanceGroupCount_ = dBInstanceGroupCount;
-	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+	setCoreParameter("DBInstanceGroupCount", std::to_string(dBInstanceGroupCount));
 }
 
 std::string UpgradeDBInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string UpgradeDBInstanceRequest::getRegionId()const
 void UpgradeDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceId()const
@@ -55,7 +55,7 @@ std::string UpgradeDBInstanceRequest::getDBInstanceId()const
 void UpgradeDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long UpgradeDBInstanceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string UpgradeDBInstanceRequest::getPayType()const
 void UpgradeDBInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string UpgradeDBInstanceRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string UpgradeDBInstanceRequest::getAccessKeyId()const
 void UpgradeDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceClass()const
@@ -99,6 +99,6 @@ std::string UpgradeDBInstanceRequest::getDBInstanceClass()const
 void UpgradeDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
 }
 

@@ -44,7 +44,7 @@ std::string ListAliasesByKeyIdRequest::getKeyId()const
 void ListAliasesByKeyIdRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setCoreParameter("KeyId", std::to_string(keyId));
 }
 
 int ListAliasesByKeyIdRequest::getPageNumber()const

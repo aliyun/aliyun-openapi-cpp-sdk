@@ -33,7 +33,7 @@ std::string DownloadCabRecordingRequest::getInstanceId()const
 void DownloadCabRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DownloadCabRecordingRequest::getTaskId()const
@@ -44,6 +44,6 @@ std::string DownloadCabRecordingRequest::getTaskId()const
 void DownloadCabRecordingRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

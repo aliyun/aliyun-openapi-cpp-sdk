@@ -33,7 +33,7 @@ std::string MarkAuditContentRequest::getAuditIllegalReasons()const
 void MarkAuditContentRequest::setAuditIllegalReasons(const std::string& auditIllegalReasons)
 {
 	auditIllegalReasons_ = auditIllegalReasons;
-	setCoreParameter("AuditIllegalReasons", auditIllegalReasons);
+	setCoreParameter("AuditIllegalReasons", std::to_string(auditIllegalReasons));
 }
 
 std::string MarkAuditContentRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string MarkAuditContentRequest::getSourceIp()const
 void MarkAuditContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string MarkAuditContentRequest::getAuditResult()const
@@ -55,7 +55,7 @@ std::string MarkAuditContentRequest::getAuditResult()const
 void MarkAuditContentRequest::setAuditResult(const std::string& auditResult)
 {
 	auditResult_ = auditResult;
-	setCoreParameter("AuditResult", auditResult);
+	setCoreParameter("AuditResult", std::to_string(auditResult));
 }
 
 std::string MarkAuditContentRequest::getIds()const
@@ -66,6 +66,6 @@ std::string MarkAuditContentRequest::getIds()const
 void MarkAuditContentRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 

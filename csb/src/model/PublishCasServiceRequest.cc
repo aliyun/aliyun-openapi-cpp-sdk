@@ -33,7 +33,7 @@ std::string PublishCasServiceRequest::getCasCsbName()const
 void PublishCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 {
 	casCsbName_ = casCsbName;
-	setCoreParameter("CasCsbName", casCsbName);
+	setCoreParameter("CasCsbName", std::to_string(casCsbName));
 }
 
 std::string PublishCasServiceRequest::getData()const
@@ -44,7 +44,7 @@ std::string PublishCasServiceRequest::getData()const
 void PublishCasServiceRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string PublishCasServiceRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string PublishCasServiceRequest::getRegionId()const
 void PublishCasServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

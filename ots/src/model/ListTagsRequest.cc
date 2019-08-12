@@ -33,7 +33,7 @@ std::string ListTagsRequest::getAccess_key_id()const
 void ListTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long ListTagsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ListTagsRequest::getInstanceName()const
 void ListTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 long ListTagsRequest::getPageSize()const

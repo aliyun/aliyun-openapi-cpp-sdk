@@ -33,7 +33,7 @@ std::string ListNodesNoPagingRequest::getHostName()const
 void ListNodesNoPagingRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string ListNodesNoPagingRequest::getRole()const
@@ -44,7 +44,7 @@ std::string ListNodesNoPagingRequest::getRole()const
 void ListNodesNoPagingRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::string ListNodesNoPagingRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ListNodesNoPagingRequest::getClusterId()const
 void ListNodesNoPagingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 bool ListNodesNoPagingRequest::getOnlyDetached()const
@@ -66,7 +66,7 @@ bool ListNodesNoPagingRequest::getOnlyDetached()const
 void ListNodesNoPagingRequest::setOnlyDetached(bool onlyDetached)
 {
 	onlyDetached_ = onlyDetached;
-	setCoreParameter("OnlyDetached", onlyDetached);
+	setCoreParameter("OnlyDetached", onlyDetached ? "true" : "false");
 }
 
 std::string ListNodesNoPagingRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListNodesNoPagingRequest::getAccessKeyId()const
 void ListNodesNoPagingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ModifyScalingRuleRequest::getResourceOwnerAccount()const
 void ModifyScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ModifyScalingRuleRequest::getAdjustmentValue()const
@@ -95,7 +95,7 @@ std::string ModifyScalingRuleRequest::getOwnerAccount()const
 void ModifyScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int ModifyScalingRuleRequest::getPredictiveTaskBufferTime()const
@@ -117,7 +117,7 @@ std::string ModifyScalingRuleRequest::getAdjustmentType()const
 void ModifyScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
 {
 	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", adjustmentType);
+	setCoreParameter("AdjustmentType", std::to_string(adjustmentType));
 }
 
 bool ModifyScalingRuleRequest::getDisableScaleIn()const
@@ -128,7 +128,7 @@ bool ModifyScalingRuleRequest::getDisableScaleIn()const
 void ModifyScalingRuleRequest::setDisableScaleIn(bool disableScaleIn)
 {
 	disableScaleIn_ = disableScaleIn;
-	setCoreParameter("DisableScaleIn", disableScaleIn);
+	setCoreParameter("DisableScaleIn", disableScaleIn ? "true" : "false");
 }
 
 long ModifyScalingRuleRequest::getOwnerId()const
@@ -150,7 +150,7 @@ std::string ModifyScalingRuleRequest::getScalingRuleId()const
 void ModifyScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setCoreParameter("ScalingRuleId", std::to_string(scalingRuleId));
 }
 
 int ModifyScalingRuleRequest::getInitialMaxSize()const
@@ -172,7 +172,7 @@ std::string ModifyScalingRuleRequest::getAccessKeyId()const
 void ModifyScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int ModifyScalingRuleRequest::getPredictiveValueBuffer()const
@@ -194,7 +194,7 @@ std::string ModifyScalingRuleRequest::getScalingRuleName()const
 void ModifyScalingRuleRequest::setScalingRuleName(const std::string& scalingRuleName)
 {
 	scalingRuleName_ = scalingRuleName;
-	setCoreParameter("ScalingRuleName", scalingRuleName);
+	setCoreParameter("ScalingRuleName", std::to_string(scalingRuleName));
 }
 
 int ModifyScalingRuleRequest::getCooldown()const
@@ -227,7 +227,7 @@ std::string ModifyScalingRuleRequest::getPredictiveValueBehavior()const
 void ModifyScalingRuleRequest::setPredictiveValueBehavior(const std::string& predictiveValueBehavior)
 {
 	predictiveValueBehavior_ = predictiveValueBehavior;
-	setCoreParameter("PredictiveValueBehavior", predictiveValueBehavior);
+	setCoreParameter("PredictiveValueBehavior", std::to_string(predictiveValueBehavior));
 }
 
 float ModifyScalingRuleRequest::getTargetValue()const
@@ -249,7 +249,7 @@ std::string ModifyScalingRuleRequest::getMetricName()const
 void ModifyScalingRuleRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string ModifyScalingRuleRequest::getPredictiveScalingMode()const
@@ -260,6 +260,6 @@ std::string ModifyScalingRuleRequest::getPredictiveScalingMode()const
 void ModifyScalingRuleRequest::setPredictiveScalingMode(const std::string& predictiveScalingMode)
 {
 	predictiveScalingMode_ = predictiveScalingMode;
-	setCoreParameter("PredictiveScalingMode", predictiveScalingMode);
+	setCoreParameter("PredictiveScalingMode", std::to_string(predictiveScalingMode));
 }
 

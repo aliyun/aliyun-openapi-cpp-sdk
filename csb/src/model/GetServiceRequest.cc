@@ -33,7 +33,7 @@ std::string GetServiceRequest::getRegionId()const
 void GetServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long GetServiceRequest::getCsbId()const

@@ -33,7 +33,7 @@ std::string KillFlowJobRequest::getRegionId()const
 void KillFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string KillFlowJobRequest::getJobInstanceId()const
@@ -44,7 +44,7 @@ std::string KillFlowJobRequest::getJobInstanceId()const
 void KillFlowJobRequest::setJobInstanceId(const std::string& jobInstanceId)
 {
 	jobInstanceId_ = jobInstanceId;
-	setCoreParameter("JobInstanceId", jobInstanceId);
+	setCoreParameter("JobInstanceId", std::to_string(jobInstanceId));
 }
 
 std::string KillFlowJobRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string KillFlowJobRequest::getProjectId()const
 void KillFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

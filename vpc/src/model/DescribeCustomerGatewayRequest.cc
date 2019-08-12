@@ -44,7 +44,7 @@ std::string DescribeCustomerGatewayRequest::getResourceOwnerAccount()const
 void DescribeCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCustomerGatewayRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCustomerGatewayRequest::getRegionId()const
 void DescribeCustomerGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeCustomerGatewayRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCustomerGatewayRequest::getOwnerAccount()const
 void DescribeCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeCustomerGatewayRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeCustomerGatewayRequest::getCustomerGatewayId()const
 void DescribeCustomerGatewayRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setCoreParameter("CustomerGatewayId", std::to_string(customerGatewayId));
 }
 

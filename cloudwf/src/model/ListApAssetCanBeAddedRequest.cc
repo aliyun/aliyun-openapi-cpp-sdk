@@ -33,7 +33,7 @@ std::string ListApAssetCanBeAddedRequest::getSearchName()const
 void ListApAssetCanBeAddedRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setCoreParameter("SearchName", std::to_string(searchName));
 }
 
 long ListApAssetCanBeAddedRequest::getApgroupId()const
@@ -77,7 +77,7 @@ std::string ListApAssetCanBeAddedRequest::getSearchMac()const
 void ListApAssetCanBeAddedRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", std::to_string(searchMac));
 }
 
 std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
 void ListApAssetCanBeAddedRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListApAssetCanBeAddedRequest::getSearchModel()const
@@ -99,6 +99,6 @@ std::string ListApAssetCanBeAddedRequest::getSearchModel()const
 void ListApAssetCanBeAddedRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setCoreParameter("SearchModel", searchModel);
+	setCoreParameter("SearchModel", std::to_string(searchModel));
 }
 

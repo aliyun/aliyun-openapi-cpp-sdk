@@ -44,7 +44,7 @@ std::string DescribeNetworkOptimizationsRequest::getResourceOwnerAccount()const
 void DescribeNetworkOptimizationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeNetworkOptimizationsRequest::getRegionId()const
 void DescribeNetworkOptimizationsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string DescribeNetworkOptimizationsRequest::getNetworkOptId()const
 void DescribeNetworkOptimizationsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeNetworkOptimizationsRequest::getOwnerAccount()const
 void DescribeNetworkOptimizationsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeNetworkOptimizationsRequest::getCcnId()const
 void DescribeNetworkOptimizationsRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getName()const
@@ -99,7 +99,7 @@ std::string DescribeNetworkOptimizationsRequest::getName()const
 void DescribeNetworkOptimizationsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeNetworkOptimizationsRequest::getPageSize()const

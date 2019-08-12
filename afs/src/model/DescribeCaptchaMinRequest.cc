@@ -33,7 +33,7 @@ std::string DescribeCaptchaMinRequest::getSourceIp()const
 void DescribeCaptchaMinRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeCaptchaMinRequest::getConfigName()const
@@ -44,7 +44,7 @@ std::string DescribeCaptchaMinRequest::getConfigName()const
 void DescribeCaptchaMinRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setCoreParameter("ConfigName", std::to_string(configName));
 }
 
 std::string DescribeCaptchaMinRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string DescribeCaptchaMinRequest::getRefExtId()const
 void DescribeCaptchaMinRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setCoreParameter("RefExtId", std::to_string(refExtId));
 }
 
 std::string DescribeCaptchaMinRequest::getTime()const
@@ -66,7 +66,7 @@ std::string DescribeCaptchaMinRequest::getTime()const
 void DescribeCaptchaMinRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setCoreParameter("Time", std::to_string(time));
 }
 
 std::string DescribeCaptchaMinRequest::getType()const
@@ -77,6 +77,6 @@ std::string DescribeCaptchaMinRequest::getType()const
 void DescribeCaptchaMinRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

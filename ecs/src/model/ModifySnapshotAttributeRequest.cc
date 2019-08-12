@@ -33,7 +33,7 @@ std::string ModifySnapshotAttributeRequest::getSourceRegionId()const
 void ModifySnapshotAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ModifySnapshotAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifySnapshotAttributeRequest::getSnapshotId()const
 void ModifySnapshotAttributeRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", snapshotId);
+	setCoreParameter("SnapshotId", std::to_string(snapshotId));
 }
 
 std::string ModifySnapshotAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySnapshotAttributeRequest::getResourceOwnerAccount()const
 void ModifySnapshotAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySnapshotAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifySnapshotAttributeRequest::getOwnerAccount()const
 void ModifySnapshotAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySnapshotAttributeRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifySnapshotAttributeRequest::getDescription()const
 void ModifySnapshotAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifySnapshotAttributeRequest::getSnapshotName()const
@@ -99,7 +99,7 @@ std::string ModifySnapshotAttributeRequest::getSnapshotName()const
 void ModifySnapshotAttributeRequest::setSnapshotName(const std::string& snapshotName)
 {
 	snapshotName_ = snapshotName;
-	setCoreParameter("SnapshotName", snapshotName);
+	setCoreParameter("SnapshotName", std::to_string(snapshotName));
 }
 
 long ModifySnapshotAttributeRequest::getOwnerId()const

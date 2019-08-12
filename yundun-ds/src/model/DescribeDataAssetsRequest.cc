@@ -44,7 +44,7 @@ std::string DescribeDataAssetsRequest::getSourceIp()const
 void DescribeDataAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDataAssetsRequest::getFeatureType()const
@@ -66,7 +66,7 @@ std::string DescribeDataAssetsRequest::getRiskLevels()const
 void DescribeDataAssetsRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", riskLevels);
+	setCoreParameter("RiskLevels", std::to_string(riskLevels));
 }
 
 std::string DescribeDataAssetsRequest::getName()const
@@ -77,7 +77,7 @@ std::string DescribeDataAssetsRequest::getName()const
 void DescribeDataAssetsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeDataAssetsRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeDataAssetsRequest::getLang()const
 void DescribeDataAssetsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeDataAssetsRequest::getRuleId()const

@@ -33,7 +33,7 @@ std::string DeleteRuleRequest::getIotInstanceId()const
 void DeleteRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 long DeleteRuleRequest::getRuleId()const
@@ -55,6 +55,6 @@ std::string DeleteRuleRequest::getAccessKeyId()const
 void DeleteRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

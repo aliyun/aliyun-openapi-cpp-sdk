@@ -33,7 +33,7 @@ std::string SetBackendServersRequest::getAccess_key_id()const
 void SetBackendServersRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long SetBackendServersRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SetBackendServersRequest::getLoadBalancerId()const
 void SetBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string SetBackendServersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string SetBackendServersRequest::getRegionId()const
 void SetBackendServersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetBackendServersRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetBackendServersRequest::getResourceOwnerAccount()const
 void SetBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetBackendServersRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetBackendServersRequest::getOwnerAccount()const
 void SetBackendServersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetBackendServersRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SetBackendServersRequest::getBackendServers()const
 void SetBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
 	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
+	setCoreParameter("BackendServers", std::to_string(backendServers));
 }
 
 std::string SetBackendServersRequest::getTags()const
@@ -121,6 +121,6 @@ std::string SetBackendServersRequest::getTags()const
 void SetBackendServersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

@@ -33,7 +33,7 @@ std::string SetReqHeaderConfigRequest::getSecurityToken()const
 void SetReqHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long SetReqHeaderConfigRequest::getConfigId()const
@@ -55,7 +55,7 @@ std::string SetReqHeaderConfigRequest::getDomainName()const
 void SetReqHeaderConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetReqHeaderConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string SetReqHeaderConfigRequest::getValue()const
 void SetReqHeaderConfigRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setCoreParameter("Value", std::to_string(value));
 }
 
 std::string SetReqHeaderConfigRequest::getKey()const
@@ -88,6 +88,6 @@ std::string SetReqHeaderConfigRequest::getKey()const
 void SetReqHeaderConfigRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

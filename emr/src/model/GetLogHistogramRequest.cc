@@ -44,7 +44,7 @@ std::string GetLogHistogramRequest::getHostInnerIp()const
 void GetLogHistogramRequest::setHostInnerIp(const std::string& hostInnerIp)
 {
 	hostInnerIp_ = hostInnerIp;
-	setCoreParameter("HostInnerIp", hostInnerIp);
+	setCoreParameter("HostInnerIp", std::to_string(hostInnerIp));
 }
 
 std::string GetLogHistogramRequest::getHostName()const
@@ -55,7 +55,7 @@ std::string GetLogHistogramRequest::getHostName()const
 void GetLogHistogramRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string GetLogHistogramRequest::getLogstoreName()const
@@ -66,7 +66,7 @@ std::string GetLogHistogramRequest::getLogstoreName()const
 void GetLogHistogramRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", logstoreName);
+	setCoreParameter("LogstoreName", std::to_string(logstoreName));
 }
 
 int GetLogHistogramRequest::getFromTimestamp()const
@@ -88,7 +88,7 @@ std::string GetLogHistogramRequest::getRegionId()const
 void GetLogHistogramRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int GetLogHistogramRequest::getToTimestamp()const
@@ -110,7 +110,7 @@ std::string GetLogHistogramRequest::getSlsQueryString()const
 void GetLogHistogramRequest::setSlsQueryString(const std::string& slsQueryString)
 {
 	slsQueryString_ = slsQueryString;
-	setCoreParameter("SlsQueryString", slsQueryString);
+	setCoreParameter("SlsQueryString", std::to_string(slsQueryString));
 }
 
 std::string GetLogHistogramRequest::getClusterId()const
@@ -121,7 +121,7 @@ std::string GetLogHistogramRequest::getClusterId()const
 void GetLogHistogramRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetLogHistogramRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string GetLogHistogramRequest::getAccessKeyId()const
 void GetLogHistogramRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

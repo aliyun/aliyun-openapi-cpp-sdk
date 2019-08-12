@@ -33,7 +33,7 @@ std::string DescribeVulNumStatisticsRequest::getSourceIp()const
 void DescribeVulNumStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeVulNumStatisticsRequest::getEndTs()const
@@ -55,7 +55,7 @@ std::string DescribeVulNumStatisticsRequest::getFrom()const
 void DescribeVulNumStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 long DescribeVulNumStatisticsRequest::getStartTs()const
@@ -88,7 +88,7 @@ std::string DescribeVulNumStatisticsRequest::getIncludeApp()const
 void DescribeVulNumStatisticsRequest::setIncludeApp(const std::string& includeApp)
 {
 	includeApp_ = includeApp;
-	setCoreParameter("IncludeApp", includeApp);
+	setCoreParameter("IncludeApp", std::to_string(includeApp));
 }
 
 long DescribeVulNumStatisticsRequest::getCreateTsStart()const
@@ -110,6 +110,6 @@ std::string DescribeVulNumStatisticsRequest::getUuids()const
 void DescribeVulNumStatisticsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

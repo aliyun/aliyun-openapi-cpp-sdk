@@ -44,7 +44,7 @@ std::string SingleCallByTtsRequest::getResourceOwnerAccount()const
 void SingleCallByTtsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SingleCallByTtsRequest::getTtsCode()const
@@ -55,7 +55,7 @@ std::string SingleCallByTtsRequest::getTtsCode()const
 void SingleCallByTtsRequest::setTtsCode(const std::string& ttsCode)
 {
 	ttsCode_ = ttsCode;
-	setCoreParameter("TtsCode", ttsCode);
+	setCoreParameter("TtsCode", std::to_string(ttsCode));
 }
 
 int SingleCallByTtsRequest::getPlayTimes()const
@@ -77,7 +77,7 @@ std::string SingleCallByTtsRequest::getTtsParam()const
 void SingleCallByTtsRequest::setTtsParam(const std::string& ttsParam)
 {
 	ttsParam_ = ttsParam;
-	setCoreParameter("TtsParam", ttsParam);
+	setCoreParameter("TtsParam", std::to_string(ttsParam));
 }
 
 long SingleCallByTtsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SingleCallByTtsRequest::getAccessKeyId()const
 void SingleCallByTtsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int SingleCallByTtsRequest::getVolume()const
@@ -132,7 +132,7 @@ std::string SingleCallByTtsRequest::getCalledNumber()const
 void SingleCallByTtsRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", std::to_string(calledNumber));
 }
 
 std::string SingleCallByTtsRequest::getCalledShowNumber()const
@@ -143,7 +143,7 @@ std::string SingleCallByTtsRequest::getCalledShowNumber()const
 void SingleCallByTtsRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", calledShowNumber);
+	setCoreParameter("CalledShowNumber", std::to_string(calledShowNumber));
 }
 
 std::string SingleCallByTtsRequest::getOutId()const
@@ -154,6 +154,6 @@ std::string SingleCallByTtsRequest::getOutId()const
 void SingleCallByTtsRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setCoreParameter("OutId", std::to_string(outId));
 }
 

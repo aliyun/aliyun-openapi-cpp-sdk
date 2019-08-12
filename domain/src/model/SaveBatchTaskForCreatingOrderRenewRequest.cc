@@ -33,7 +33,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setCoreParameter("PromotionNo", std::to_string(promotionNo));
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRenewRequest::OrderRenewParam> SaveBatchTaskForCreatingOrderRenewRequest::getOrderRenewParam()const
@@ -73,7 +73,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
@@ -84,7 +84,7 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon);
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
@@ -95,7 +95,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
@@ -106,6 +106,6 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion);
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

@@ -33,7 +33,7 @@ std::string SubmitTagJobRequest::getInput()const
 void SubmitTagJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitTagJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitTagJobRequest::getUserData()const
 void SubmitTagJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitTagJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitTagJobRequest::getResourceOwnerAccount()const
 void SubmitTagJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitTagJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitTagJobRequest::getOwnerAccount()const
 void SubmitTagJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitTagJobRequest::getTagConfig()const
@@ -88,7 +88,7 @@ std::string SubmitTagJobRequest::getTagConfig()const
 void SubmitTagJobRequest::setTagConfig(const std::string& tagConfig)
 {
 	tagConfig_ = tagConfig;
-	setCoreParameter("TagConfig", tagConfig);
+	setCoreParameter("TagConfig", std::to_string(tagConfig));
 }
 
 long SubmitTagJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitTagJobRequest::getAccessKeyId()const
 void SubmitTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitTagJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitTagJobRequest::getPipelineId()const
 void SubmitTagJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

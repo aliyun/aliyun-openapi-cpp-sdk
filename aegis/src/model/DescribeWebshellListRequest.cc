@@ -33,7 +33,7 @@ std::string DescribeWebshellListRequest::getSourceIp()const
 void DescribeWebshellListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWebshellListRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeWebshellListRequest::getGroupId()const
 void DescribeWebshellListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeWebshellListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeWebshellListRequest::getDealed()const
 void DescribeWebshellListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 std::string DescribeWebshellListRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeWebshellListRequest::getRemark()const
 void DescribeWebshellListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeWebshellListRequest::getTag()const
@@ -99,7 +99,7 @@ std::string DescribeWebshellListRequest::getTag()const
 void DescribeWebshellListRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 int DescribeWebshellListRequest::getStatus()const

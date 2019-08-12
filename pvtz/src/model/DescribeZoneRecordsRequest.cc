@@ -44,7 +44,7 @@ std::string DescribeZoneRecordsRequest::getUserClientIp()const
 void DescribeZoneRecordsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeZoneRecordsRequest::getZoneId()const
@@ -55,7 +55,7 @@ std::string DescribeZoneRecordsRequest::getZoneId()const
 void DescribeZoneRecordsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeZoneRecordsRequest::getSearchMode()const
@@ -66,7 +66,7 @@ std::string DescribeZoneRecordsRequest::getSearchMode()const
 void DescribeZoneRecordsRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
+	setCoreParameter("SearchMode", std::to_string(searchMode));
 }
 
 std::string DescribeZoneRecordsRequest::getTag()const
@@ -77,7 +77,7 @@ std::string DescribeZoneRecordsRequest::getTag()const
 void DescribeZoneRecordsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 std::string DescribeZoneRecordsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeZoneRecordsRequest::getLang()const
 void DescribeZoneRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeZoneRecordsRequest::getKeyword()const
@@ -99,7 +99,7 @@ std::string DescribeZoneRecordsRequest::getKeyword()const
 void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 int DescribeZoneRecordsRequest::getPageNumber()const

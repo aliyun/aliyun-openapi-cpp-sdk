@@ -33,7 +33,7 @@ std::string GetJobRequest::getJobId()const
 void GetJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string GetJobRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string GetJobRequest::getInstanceId()const
 void GetJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 

@@ -33,7 +33,7 @@ std::string InsertTradeIntentionUserRequest::getMobile()const
 void InsertTradeIntentionUserRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setCoreParameter("Mobile", std::to_string(mobile));
 }
 
 std::string InsertTradeIntentionUserRequest::getDescription()const
@@ -44,7 +44,7 @@ std::string InsertTradeIntentionUserRequest::getDescription()const
 void InsertTradeIntentionUserRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string InsertTradeIntentionUserRequest::getPartnerCode()const
@@ -55,7 +55,7 @@ std::string InsertTradeIntentionUserRequest::getPartnerCode()const
 void InsertTradeIntentionUserRequest::setPartnerCode(const std::string& partnerCode)
 {
 	partnerCode_ = partnerCode;
-	setCoreParameter("PartnerCode", partnerCode);
+	setCoreParameter("PartnerCode", std::to_string(partnerCode));
 }
 
 std::string InsertTradeIntentionUserRequest::getClassification()const
@@ -66,7 +66,7 @@ std::string InsertTradeIntentionUserRequest::getClassification()const
 void InsertTradeIntentionUserRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setCoreParameter("Classification", std::to_string(classification));
 }
 
 int InsertTradeIntentionUserRequest::getType()const
@@ -88,7 +88,7 @@ std::string InsertTradeIntentionUserRequest::getRegisterNumber()const
 void InsertTradeIntentionUserRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
+	setCoreParameter("RegisterNumber", std::to_string(registerNumber));
 }
 
 std::string InsertTradeIntentionUserRequest::getVcode()const
@@ -99,7 +99,7 @@ std::string InsertTradeIntentionUserRequest::getVcode()const
 void InsertTradeIntentionUserRequest::setVcode(const std::string& vcode)
 {
 	vcode_ = vcode;
-	setCoreParameter("Vcode", vcode);
+	setCoreParameter("Vcode", std::to_string(vcode));
 }
 
 std::string InsertTradeIntentionUserRequest::getUserName()const
@@ -110,6 +110,6 @@ std::string InsertTradeIntentionUserRequest::getUserName()const
 void InsertTradeIntentionUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

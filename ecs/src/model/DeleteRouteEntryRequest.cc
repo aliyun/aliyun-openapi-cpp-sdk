@@ -44,7 +44,7 @@ std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
 void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteRouteEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteRouteEntryRequest::getRegionId()const
 void DeleteRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
@@ -66,7 +66,7 @@ std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
 void DeleteRouteEntryRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setCoreParameter("DestinationCidrBlock", std::to_string(destinationCidrBlock));
 }
 
 std::string DeleteRouteEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteRouteEntryRequest::getOwnerAccount()const
 void DeleteRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteRouteEntryRequest::getNextHopId()const
@@ -88,7 +88,7 @@ std::string DeleteRouteEntryRequest::getNextHopId()const
 void DeleteRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 {
 	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
+	setCoreParameter("NextHopId", std::to_string(nextHopId));
 }
 
 long DeleteRouteEntryRequest::getOwnerId()const
@@ -127,6 +127,6 @@ std::string DeleteRouteEntryRequest::getRouteTableId()const
 void DeleteRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setCoreParameter("RouteTableId", std::to_string(routeTableId));
 }
 

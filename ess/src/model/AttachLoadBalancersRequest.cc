@@ -45,7 +45,7 @@ std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
 void AttachLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AttachLoadBalancersRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string AttachLoadBalancersRequest::getScalingGroupId()const
 void AttachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 bool AttachLoadBalancersRequest::getForceAttach()const
@@ -67,7 +67,7 @@ bool AttachLoadBalancersRequest::getForceAttach()const
 void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach);
+	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 long AttachLoadBalancersRequest::getOwnerId()const
@@ -89,6 +89,6 @@ std::string AttachLoadBalancersRequest::getAccessKeyId()const
 void AttachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

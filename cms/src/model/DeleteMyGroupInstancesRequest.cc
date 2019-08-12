@@ -33,7 +33,7 @@ std::string DeleteMyGroupInstancesRequest::getInstanceIds()const
 void DeleteMyGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setCoreParameter("InstanceIds", std::to_string(instanceIds));
 }
 
 std::string DeleteMyGroupInstancesRequest::getInstanceIdList()const
@@ -44,7 +44,7 @@ std::string DeleteMyGroupInstancesRequest::getInstanceIdList()const
 void DeleteMyGroupInstancesRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	setCoreParameter("InstanceIdList", std::to_string(instanceIdList));
 }
 
 long DeleteMyGroupInstancesRequest::getGroupId()const
@@ -66,6 +66,6 @@ std::string DeleteMyGroupInstancesRequest::getCategory()const
 void DeleteMyGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 

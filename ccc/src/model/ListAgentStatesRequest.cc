@@ -33,7 +33,7 @@ std::string ListAgentStatesRequest::getAgentIds()const
 void ListAgentStatesRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setCoreParameter("AgentIds", std::to_string(agentIds));
 }
 
 std::string ListAgentStatesRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListAgentStatesRequest::getInstanceId()const
 void ListAgentStatesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListAgentStatesRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListAgentStatesRequest::getSkillGroupId()const
 void ListAgentStatesRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 int ListAgentStatesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string ListAgentStatesRequest::getState()const
 void ListAgentStatesRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 int ListAgentStatesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string ListAgentStatesRequest::getAccessKeyId()const
 void ListAgentStatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

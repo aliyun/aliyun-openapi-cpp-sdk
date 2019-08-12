@@ -44,7 +44,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
 void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getCenId()const
 void UnroutePrivateZoneInCenToVpcRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
 void UnroutePrivateZoneInCenToVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
@@ -77,7 +77,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
 void UnroutePrivateZoneInCenToVpcRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setCoreParameter("AccessRegionId", std::to_string(accessRegionId));
 }
 
 long UnroutePrivateZoneInCenToVpcRequest::getOwnerId()const

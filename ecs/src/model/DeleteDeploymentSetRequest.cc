@@ -33,7 +33,7 @@ std::string DeleteDeploymentSetRequest::getSourceRegionId()const
 void DeleteDeploymentSetRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DeleteDeploymentSetRequest::getDeploymentSetId()const
@@ -44,7 +44,7 @@ std::string DeleteDeploymentSetRequest::getDeploymentSetId()const
 void DeleteDeploymentSetRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setCoreParameter("DeploymentSetId", std::to_string(deploymentSetId));
 }
 
 long DeleteDeploymentSetRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DeleteDeploymentSetRequest::getResourceOwnerAccount()const
 void DeleteDeploymentSetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteDeploymentSetRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteDeploymentSetRequest::getRegionId()const
 void DeleteDeploymentSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteDeploymentSetRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteDeploymentSetRequest::getOwnerAccount()const
 void DeleteDeploymentSetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteDeploymentSetRequest::getOwnerId()const

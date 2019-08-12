@@ -33,7 +33,7 @@ std::string DescribeOSSDownloadInfoRequest::getSourceIp()const
 void DescribeOSSDownloadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeOSSDownloadInfoRequest::getOssKey()const
@@ -44,7 +44,7 @@ std::string DescribeOSSDownloadInfoRequest::getOssKey()const
 void DescribeOSSDownloadInfoRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setCoreParameter("OssKey", std::to_string(ossKey));
 }
 
 std::string DescribeOSSDownloadInfoRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeOSSDownloadInfoRequest::getLang()const
 void DescribeOSSDownloadInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

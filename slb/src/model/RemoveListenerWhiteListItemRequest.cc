@@ -33,7 +33,7 @@ std::string RemoveListenerWhiteListItemRequest::getAccess_key_id()const
 void RemoveListenerWhiteListItemRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long RemoveListenerWhiteListItemRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string RemoveListenerWhiteListItemRequest::getLoadBalancerId()const
 void RemoveListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string RemoveListenerWhiteListItemRequest::getSourceItems()const
@@ -77,7 +77,7 @@ std::string RemoveListenerWhiteListItemRequest::getSourceItems()const
 void RemoveListenerWhiteListItemRequest::setSourceItems(const std::string& sourceItems)
 {
 	sourceItems_ = sourceItems;
-	setCoreParameter("SourceItems", sourceItems);
+	setCoreParameter("SourceItems", std::to_string(sourceItems));
 }
 
 std::string RemoveListenerWhiteListItemRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string RemoveListenerWhiteListItemRequest::getRegionId()const
 void RemoveListenerWhiteListItemRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveListenerWhiteListItemRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ std::string RemoveListenerWhiteListItemRequest::getResourceOwnerAccount()const
 void RemoveListenerWhiteListItemRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveListenerWhiteListItemRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string RemoveListenerWhiteListItemRequest::getOwnerAccount()const
 void RemoveListenerWhiteListItemRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveListenerWhiteListItemRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string RemoveListenerWhiteListItemRequest::getListenerProtocol()const
 void RemoveListenerWhiteListItemRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
 }
 
 std::string RemoveListenerWhiteListItemRequest::getTags()const
@@ -143,6 +143,6 @@ std::string RemoveListenerWhiteListItemRequest::getTags()const
 void RemoveListenerWhiteListItemRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

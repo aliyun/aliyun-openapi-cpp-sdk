@@ -44,7 +44,7 @@ std::string DescribeVpnConnectionRequest::getResourceOwnerAccount()const
 void DescribeVpnConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpnConnectionRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnConnectionRequest::getRegionId()const
 void DescribeVpnConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpnConnectionRequest::getVpnConnectionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpnConnectionRequest::getVpnConnectionId()const
 void DescribeVpnConnectionRequest::setVpnConnectionId(const std::string& vpnConnectionId)
 {
 	vpnConnectionId_ = vpnConnectionId;
-	setCoreParameter("VpnConnectionId", vpnConnectionId);
+	setCoreParameter("VpnConnectionId", std::to_string(vpnConnectionId));
 }
 
 std::string DescribeVpnConnectionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpnConnectionRequest::getOwnerAccount()const
 void DescribeVpnConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeVpnConnectionRequest::getOwnerId()const

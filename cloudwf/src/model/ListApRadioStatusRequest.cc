@@ -44,7 +44,7 @@ std::string ListApRadioStatusRequest::getOrderCol()const
 void ListApRadioStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListApRadioStatusRequest::getSearchName()const
@@ -55,7 +55,7 @@ std::string ListApRadioStatusRequest::getSearchName()const
 void ListApRadioStatusRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setCoreParameter("SearchName", std::to_string(searchName));
 }
 
 int ListApRadioStatusRequest::getSearchChannelEquals()const
@@ -88,7 +88,7 @@ std::string ListApRadioStatusRequest::getSearchMac()const
 void ListApRadioStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", std::to_string(searchMac));
 }
 
 std::string ListApRadioStatusRequest::getSearchApgroupName()const
@@ -99,7 +99,7 @@ std::string ListApRadioStatusRequest::getSearchApgroupName()const
 void ListApRadioStatusRequest::setSearchApgroupName(const std::string& searchApgroupName)
 {
 	searchApgroupName_ = searchApgroupName;
-	setCoreParameter("SearchApgroupName", searchApgroupName);
+	setCoreParameter("SearchApgroupName", std::to_string(searchApgroupName));
 }
 
 int ListApRadioStatusRequest::getPageIndex()const
@@ -121,7 +121,7 @@ std::string ListApRadioStatusRequest::getOrderDir()const
 void ListApRadioStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 int ListApRadioStatusRequest::getSearchApStatus()const
@@ -143,6 +143,6 @@ std::string ListApRadioStatusRequest::getAccessKeyId()const
 void ListApRadioStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

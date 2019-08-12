@@ -33,7 +33,7 @@ std::string LaunchShortMessageAppraiseRequest::getAcid()const
 void LaunchShortMessageAppraiseRequest::setAcid(const std::string& acid)
 {
 	acid_ = acid;
-	setCoreParameter("Acid", acid);
+	setCoreParameter("Acid", std::to_string(acid));
 }
 
 std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
 void LaunchShortMessageAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int LaunchShortMessageAppraiseRequest::getContactType()const
@@ -66,7 +66,7 @@ std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const
 void LaunchShortMessageAppraiseRequest::setPhoneNumbers(const std::string& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	setCoreParameter("PhoneNumbers", phoneNumbers);
+	setCoreParameter("PhoneNumbers", std::to_string(phoneNumbers));
 }
 
 std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
@@ -77,7 +77,7 @@ std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
 void LaunchShortMessageAppraiseRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
 void LaunchShortMessageAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

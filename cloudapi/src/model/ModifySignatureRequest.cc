@@ -33,7 +33,7 @@ std::string ModifySignatureRequest::getSecurityToken()const
 void ModifySignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifySignatureRequest::getSignatureName()const
@@ -44,7 +44,7 @@ std::string ModifySignatureRequest::getSignatureName()const
 void ModifySignatureRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", signatureName);
+	setCoreParameter("SignatureName", std::to_string(signatureName));
 }
 
 std::string ModifySignatureRequest::getSignatureKey()const
@@ -55,7 +55,7 @@ std::string ModifySignatureRequest::getSignatureKey()const
 void ModifySignatureRequest::setSignatureKey(const std::string& signatureKey)
 {
 	signatureKey_ = signatureKey;
-	setCoreParameter("SignatureKey", signatureKey);
+	setCoreParameter("SignatureKey", std::to_string(signatureKey));
 }
 
 std::string ModifySignatureRequest::getSignatureId()const
@@ -66,7 +66,7 @@ std::string ModifySignatureRequest::getSignatureId()const
 void ModifySignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setCoreParameter("SignatureId", std::to_string(signatureId));
 }
 
 std::string ModifySignatureRequest::getSignatureSecret()const
@@ -77,7 +77,7 @@ std::string ModifySignatureRequest::getSignatureSecret()const
 void ModifySignatureRequest::setSignatureSecret(const std::string& signatureSecret)
 {
 	signatureSecret_ = signatureSecret;
-	setCoreParameter("SignatureSecret", signatureSecret);
+	setCoreParameter("SignatureSecret", std::to_string(signatureSecret));
 }
 
 std::string ModifySignatureRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifySignatureRequest::getAccessKeyId()const
 void ModifySignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeScdnDomainTopReferVisitRequest::getSecurityToken()const
 void DescribeScdnDomainTopReferVisitRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeScdnDomainTopReferVisitRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeScdnDomainTopReferVisitRequest::getDomainName()const
 void DescribeScdnDomainTopReferVisitRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeScdnDomainTopReferVisitRequest::getSortBy()const
@@ -55,7 +55,7 @@ std::string DescribeScdnDomainTopReferVisitRequest::getSortBy()const
 void DescribeScdnDomainTopReferVisitRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", std::to_string(sortBy));
 }
 
 std::string DescribeScdnDomainTopReferVisitRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeScdnDomainTopReferVisitRequest::getStartTime()const
 void DescribeScdnDomainTopReferVisitRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeScdnDomainTopReferVisitRequest::getOwnerId()const

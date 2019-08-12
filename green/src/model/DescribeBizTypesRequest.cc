@@ -33,7 +33,7 @@ std::string DescribeBizTypesRequest::getSourceIp()const
 void DescribeBizTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 bool DescribeBizTypesRequest::getImportFlag()const
@@ -44,6 +44,6 @@ bool DescribeBizTypesRequest::getImportFlag()const
 void DescribeBizTypesRequest::setImportFlag(bool importFlag)
 {
 	importFlag_ = importFlag;
-	setCoreParameter("ImportFlag", importFlag);
+	setCoreParameter("ImportFlag", importFlag ? "true" : "false");
 }
 

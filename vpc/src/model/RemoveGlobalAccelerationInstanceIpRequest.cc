@@ -44,7 +44,7 @@ std::string RemoveGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()
 void RemoveGlobalAccelerationInstanceIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveGlobalAccelerationInstanceIpRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RemoveGlobalAccelerationInstanceIpRequest::getRegionId()const
 void RemoveGlobalAccelerationInstanceIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RemoveGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
 void RemoveGlobalAccelerationInstanceIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RemoveGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
@@ -77,7 +77,7 @@ std::string RemoveGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
 void RemoveGlobalAccelerationInstanceIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
+	setCoreParameter("IpInstanceId", std::to_string(ipInstanceId));
 }
 
 long RemoveGlobalAccelerationInstanceIpRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string RemoveGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInst
 void RemoveGlobalAccelerationInstanceIpRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setCoreParameter("GlobalAccelerationInstanceId", std::to_string(globalAccelerationInstanceId));
 }
 

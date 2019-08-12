@@ -33,7 +33,7 @@ std::string DescribeAnalysisLogsRequest::getSourceIp()const
 void DescribeAnalysisLogsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAnalysisLogsRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeAnalysisLogsRequest::getQuery()const
 void DescribeAnalysisLogsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 int DescribeAnalysisLogsRequest::getPageSize()const
@@ -99,6 +99,6 @@ bool DescribeAnalysisLogsRequest::getReverse()const
 void DescribeAnalysisLogsRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse);
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 

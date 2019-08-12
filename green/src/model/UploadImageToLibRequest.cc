@@ -33,7 +33,7 @@ std::string UploadImageToLibRequest::getImages()const
 void UploadImageToLibRequest::setImages(const std::string& images)
 {
 	images_ = images;
-	setCoreParameter("Images", images);
+	setCoreParameter("Images", std::to_string(images));
 }
 
 std::string UploadImageToLibRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string UploadImageToLibRequest::getSourceIp()const
 void UploadImageToLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int UploadImageToLibRequest::getImageLibId()const

@@ -33,7 +33,7 @@ std::string DescribeWebsiteVerifyInfoRequest::getInstanceId()const
 void DescribeWebsiteVerifyInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeWebsiteVerifyInfoRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeWebsiteVerifyInfoRequest::getSourceIp()const
 void DescribeWebsiteVerifyInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWebsiteVerifyInfoRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeWebsiteVerifyInfoRequest::getLang()const
 void DescribeWebsiteVerifyInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

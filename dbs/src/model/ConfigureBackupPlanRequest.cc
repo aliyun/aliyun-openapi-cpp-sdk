@@ -33,7 +33,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointRegion()const
 void ConfigureBackupPlanRequest::setSourceEndpointRegion(const std::string& sourceEndpointRegion)
 {
 	sourceEndpointRegion_ = sourceEndpointRegion;
-	setCoreParameter("SourceEndpointRegion", sourceEndpointRegion);
+	setCoreParameter("SourceEndpointRegion", std::to_string(sourceEndpointRegion));
 }
 
 int ConfigureBackupPlanRequest::getDuplicationArchivePeriod()const
@@ -66,7 +66,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceID()const
 void ConfigureBackupPlanRequest::setSourceEndpointInstanceID(const std::string& sourceEndpointInstanceID)
 {
 	sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-	setCoreParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
+	setCoreParameter("SourceEndpointInstanceID", std::to_string(sourceEndpointInstanceID));
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointUserName()const
@@ -77,7 +77,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointUserName()const
 void ConfigureBackupPlanRequest::setSourceEndpointUserName(const std::string& sourceEndpointUserName)
 {
 	sourceEndpointUserName_ = sourceEndpointUserName;
-	setCoreParameter("SourceEndpointUserName", sourceEndpointUserName);
+	setCoreParameter("SourceEndpointUserName", std::to_string(sourceEndpointUserName));
 }
 
 std::string ConfigureBackupPlanRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string ConfigureBackupPlanRequest::getClientToken()const
 void ConfigureBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointPassword()const
@@ -99,7 +99,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointPassword()const
 void ConfigureBackupPlanRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
 {
 	sourceEndpointPassword_ = sourceEndpointPassword;
-	setCoreParameter("SourceEndpointPassword", sourceEndpointPassword);
+	setCoreParameter("SourceEndpointPassword", std::to_string(sourceEndpointPassword));
 }
 
 std::string ConfigureBackupPlanRequest::getBackupPlanId()const
@@ -110,7 +110,7 @@ std::string ConfigureBackupPlanRequest::getBackupPlanId()const
 void ConfigureBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string ConfigureBackupPlanRequest::getBackupObjects()const
@@ -121,7 +121,7 @@ std::string ConfigureBackupPlanRequest::getBackupObjects()const
 void ConfigureBackupPlanRequest::setBackupObjects(const std::string& backupObjects)
 {
 	backupObjects_ = backupObjects;
-	setCoreParameter("BackupObjects", backupObjects);
+	setCoreParameter("BackupObjects", std::to_string(backupObjects));
 }
 
 std::string ConfigureBackupPlanRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string ConfigureBackupPlanRequest::getOwnerId()const
 void ConfigureBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ConfigureBackupPlanRequest::getSourceEndpointPort()const
@@ -154,7 +154,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointDatabaseName()const
 void ConfigureBackupPlanRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
 {
 	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setCoreParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+	setCoreParameter("SourceEndpointDatabaseName", std::to_string(sourceEndpointDatabaseName));
 }
 
 int ConfigureBackupPlanRequest::getBackupRetentionPeriod()const
@@ -187,7 +187,7 @@ std::string ConfigureBackupPlanRequest::getBackupPeriod()const
 void ConfigureBackupPlanRequest::setBackupPeriod(const std::string& backupPeriod)
 {
 	backupPeriod_ = backupPeriod;
-	setCoreParameter("BackupPeriod", backupPeriod);
+	setCoreParameter("BackupPeriod", std::to_string(backupPeriod));
 }
 
 std::string ConfigureBackupPlanRequest::getBackupStartTime()const
@@ -198,7 +198,7 @@ std::string ConfigureBackupPlanRequest::getBackupStartTime()const
 void ConfigureBackupPlanRequest::setBackupStartTime(const std::string& backupStartTime)
 {
 	backupStartTime_ = backupStartTime;
-	setCoreParameter("BackupStartTime", backupStartTime);
+	setCoreParameter("BackupStartTime", std::to_string(backupStartTime));
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceType()const
@@ -209,7 +209,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceType()const
 void ConfigureBackupPlanRequest::setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType)
 {
 	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-	setCoreParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
+	setCoreParameter("SourceEndpointInstanceType", std::to_string(sourceEndpointInstanceType));
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointIP()const
@@ -220,7 +220,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointIP()const
 void ConfigureBackupPlanRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
 {
 	sourceEndpointIP_ = sourceEndpointIP;
-	setCoreParameter("SourceEndpointIP", sourceEndpointIP);
+	setCoreParameter("SourceEndpointIP", std::to_string(sourceEndpointIP));
 }
 
 std::string ConfigureBackupPlanRequest::getBackupPlanName()const
@@ -231,7 +231,7 @@ std::string ConfigureBackupPlanRequest::getBackupPlanName()const
 void ConfigureBackupPlanRequest::setBackupPlanName(const std::string& backupPlanName)
 {
 	backupPlanName_ = backupPlanName;
-	setCoreParameter("BackupPlanName", backupPlanName);
+	setCoreParameter("BackupPlanName", std::to_string(backupPlanName));
 }
 
 std::string ConfigureBackupPlanRequest::getRegionId()const
@@ -242,7 +242,7 @@ std::string ConfigureBackupPlanRequest::getRegionId()const
 void ConfigureBackupPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointOracleSID()const
@@ -253,7 +253,7 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointOracleSID()const
 void ConfigureBackupPlanRequest::setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID)
 {
 	sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-	setCoreParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
+	setCoreParameter("SourceEndpointOracleSID", std::to_string(sourceEndpointOracleSID));
 }
 
 std::string ConfigureBackupPlanRequest::getOSSBucketName()const
@@ -264,7 +264,7 @@ std::string ConfigureBackupPlanRequest::getOSSBucketName()const
 void ConfigureBackupPlanRequest::setOSSBucketName(const std::string& oSSBucketName)
 {
 	oSSBucketName_ = oSSBucketName;
-	setCoreParameter("OSSBucketName", oSSBucketName);
+	setCoreParameter("OSSBucketName", std::to_string(oSSBucketName));
 }
 
 bool ConfigureBackupPlanRequest::getEnableBackupLog()const
@@ -275,6 +275,6 @@ bool ConfigureBackupPlanRequest::getEnableBackupLog()const
 void ConfigureBackupPlanRequest::setEnableBackupLog(bool enableBackupLog)
 {
 	enableBackupLog_ = enableBackupLog;
-	setCoreParameter("EnableBackupLog", enableBackupLog);
+	setCoreParameter("EnableBackupLog", enableBackupLog ? "true" : "false");
 }
 

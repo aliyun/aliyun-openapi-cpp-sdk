@@ -33,7 +33,7 @@ bool QueryDomainRealNameVerificationInfoRequest::getFetchImage()const
 void QueryDomainRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 {
 	fetchImage_ = fetchImage;
-	setCoreParameter("FetchImage", fetchImage);
+	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
 void QueryDomainRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string QueryDomainRealNameVerificationInfoRequest::getDomainName()const
 void QueryDomainRealNameVerificationInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getLang()const
@@ -66,6 +66,6 @@ std::string QueryDomainRealNameVerificationInfoRequest::getLang()const
 void QueryDomainRealNameVerificationInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

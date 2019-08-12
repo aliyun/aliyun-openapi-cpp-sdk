@@ -33,7 +33,7 @@ std::string GenerateUploadFilePolicyRequest::getFileType()const
 void GenerateUploadFilePolicyRequest::setFileType(const std::string& fileType)
 {
 	fileType_ = fileType;
-	setCoreParameter("FileType", fileType);
+	setCoreParameter("FileType", std::to_string(fileType));
 }
 
 std::string GenerateUploadFilePolicyRequest::getBizId()const
@@ -44,6 +44,6 @@ std::string GenerateUploadFilePolicyRequest::getBizId()const
 void GenerateUploadFilePolicyRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setCoreParameter("BizId", std::to_string(bizId));
 }
 

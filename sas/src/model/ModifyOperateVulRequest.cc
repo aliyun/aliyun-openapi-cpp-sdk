@@ -33,7 +33,7 @@ std::string ModifyOperateVulRequest::getReason()const
 void ModifyOperateVulRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setCoreParameter("Reason", std::to_string(reason));
 }
 
 std::string ModifyOperateVulRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyOperateVulRequest::getSourceIp()const
 void ModifyOperateVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyOperateVulRequest::getOperateType()const
@@ -55,7 +55,7 @@ std::string ModifyOperateVulRequest::getOperateType()const
 void ModifyOperateVulRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setCoreParameter("OperateType", std::to_string(operateType));
 }
 
 std::string ModifyOperateVulRequest::getType()const
@@ -66,7 +66,7 @@ std::string ModifyOperateVulRequest::getType()const
 void ModifyOperateVulRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string ModifyOperateVulRequest::getInfo()const
@@ -77,6 +77,6 @@ std::string ModifyOperateVulRequest::getInfo()const
 void ModifyOperateVulRequest::setInfo(const std::string& info)
 {
 	info_ = info;
-	setCoreParameter("Info", info);
+	setCoreParameter("Info", std::to_string(info));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeAccountDetailRequest::getSourceIp()const
 void DescribeAccountDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAccountDetailRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAccountDetailRequest::getLang()const
 void DescribeAccountDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeAccountDetailRequest::getUserId()const

@@ -44,7 +44,7 @@ std::string DescribeSQLLogReportsRequest::getResourceOwnerAccount()const
 void DescribeSQLLogReportsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSQLLogReportsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSQLLogReportsRequest::getOwnerAccount()const
 void DescribeSQLLogReportsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeSQLLogReportsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeSQLLogReportsRequest::getEndTime()const
 void DescribeSQLLogReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSQLLogReportsRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeSQLLogReportsRequest::getDBInstanceId()const
 void DescribeSQLLogReportsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeSQLLogReportsRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeSQLLogReportsRequest::getStartTime()const
 void DescribeSQLLogReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSQLLogReportsRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeSQLLogReportsRequest::getAccessKeyId()const
 void DescribeSQLLogReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

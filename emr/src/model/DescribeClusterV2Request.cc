@@ -44,7 +44,7 @@ std::string DescribeClusterV2Request::getRegionId()const
 void DescribeClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeClusterV2Request::getId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterV2Request::getId()const
 void DescribeClusterV2Request::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeClusterV2Request::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeClusterV2Request::getAccessKeyId()const
 void DescribeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

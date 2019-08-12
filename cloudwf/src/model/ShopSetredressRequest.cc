@@ -33,7 +33,7 @@ std::string ShopSetredressRequest::getWorkday()const
 void ShopSetredressRequest::setWorkday(const std::string& workday)
 {
 	workday_ = workday;
-	setCoreParameter("Workday", workday);
+	setCoreParameter("Workday", std::to_string(workday));
 }
 
 int ShopSetredressRequest::getFilterclose()const
@@ -66,7 +66,7 @@ std::string ShopSetredressRequest::getHoliday()const
 void ShopSetredressRequest::setHoliday(const std::string& holiday)
 {
 	holiday_ = holiday;
-	setCoreParameter("Holiday", holiday);
+	setCoreParameter("Holiday", std::to_string(holiday));
 }
 
 std::string ShopSetredressRequest::getHnum()const
@@ -77,7 +77,7 @@ std::string ShopSetredressRequest::getHnum()const
 void ShopSetredressRequest::setHnum(const std::string& hnum)
 {
 	hnum_ = hnum;
-	setCoreParameter("Hnum", hnum);
+	setCoreParameter("Hnum", std::to_string(hnum));
 }
 
 std::string ShopSetredressRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ShopSetredressRequest::getAccessKeyId()const
 void ShopSetredressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ShopSetredressRequest::getSid()const
@@ -132,7 +132,7 @@ std::string ShopSetredressRequest::getWnum()const
 void ShopSetredressRequest::setWnum(const std::string& wnum)
 {
 	wnum_ = wnum;
-	setCoreParameter("Wnum", wnum);
+	setCoreParameter("Wnum", std::to_string(wnum));
 }
 
 int ShopSetredressRequest::getState()const

@@ -33,7 +33,7 @@ std::string SaveBatchTaskForTransferProhibitionLockRequest::getUserClientIp()con
 void SaveBatchTaskForTransferProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::vector<std::string> SaveBatchTaskForTransferProhibitionLockRequest::getDomainName()const
@@ -56,7 +56,7 @@ std::string SaveBatchTaskForTransferProhibitionLockRequest::getLang()const
 void SaveBatchTaskForTransferProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForTransferProhibitionLockRequest::getStatus()const
@@ -67,6 +67,6 @@ bool SaveBatchTaskForTransferProhibitionLockRequest::getStatus()const
 void SaveBatchTaskForTransferProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", status ? "true" : "false");
 }
 

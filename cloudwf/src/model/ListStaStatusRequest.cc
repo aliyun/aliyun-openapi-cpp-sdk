@@ -33,7 +33,7 @@ std::string ListStaStatusRequest::getOrderCol()const
 void ListStaStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListStaStatusRequest::getSearchGroupName()const
@@ -44,7 +44,7 @@ std::string ListStaStatusRequest::getSearchGroupName()const
 void ListStaStatusRequest::setSearchGroupName(const std::string& searchGroupName)
 {
 	searchGroupName_ = searchGroupName;
-	setCoreParameter("SearchGroupName", searchGroupName);
+	setCoreParameter("SearchGroupName", std::to_string(searchGroupName));
 }
 
 int ListStaStatusRequest::getSearchStatus()const
@@ -77,7 +77,7 @@ std::string ListStaStatusRequest::getSearchUsername()const
 void ListStaStatusRequest::setSearchUsername(const std::string& searchUsername)
 {
 	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
+	setCoreParameter("SearchUsername", std::to_string(searchUsername));
 }
 
 std::string ListStaStatusRequest::getOrderDir()const
@@ -88,7 +88,7 @@ std::string ListStaStatusRequest::getOrderDir()const
 void ListStaStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListStaStatusRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListStaStatusRequest::getAccessKeyId()const
 void ListStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListStaStatusRequest::getSearchProtocal()const
@@ -110,7 +110,7 @@ std::string ListStaStatusRequest::getSearchProtocal()const
 void ListStaStatusRequest::setSearchProtocal(const std::string& searchProtocal)
 {
 	searchProtocal_ = searchProtocal;
-	setCoreParameter("SearchProtocal", searchProtocal);
+	setCoreParameter("SearchProtocal", std::to_string(searchProtocal));
 }
 
 std::string ListStaStatusRequest::getSearchSsid()const
@@ -121,7 +121,7 @@ std::string ListStaStatusRequest::getSearchSsid()const
 void ListStaStatusRequest::setSearchSsid(const std::string& searchSsid)
 {
 	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
+	setCoreParameter("SearchSsid", std::to_string(searchSsid));
 }
 
 std::string ListStaStatusRequest::getSearchApName()const
@@ -132,7 +132,7 @@ std::string ListStaStatusRequest::getSearchApName()const
 void ListStaStatusRequest::setSearchApName(const std::string& searchApName)
 {
 	searchApName_ = searchApName;
-	setCoreParameter("SearchApName", searchApName);
+	setCoreParameter("SearchApName", std::to_string(searchApName));
 }
 
 std::string ListStaStatusRequest::getSearchIp()const
@@ -143,7 +143,7 @@ std::string ListStaStatusRequest::getSearchIp()const
 void ListStaStatusRequest::setSearchIp(const std::string& searchIp)
 {
 	searchIp_ = searchIp;
-	setCoreParameter("SearchIp", searchIp);
+	setCoreParameter("SearchIp", std::to_string(searchIp));
 }
 
 int ListStaStatusRequest::getPageIndex()const
@@ -165,7 +165,7 @@ std::string ListStaStatusRequest::getSearchMac()const
 void ListStaStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", std::to_string(searchMac));
 }
 
 std::string ListStaStatusRequest::getSearchDescription()const
@@ -176,6 +176,6 @@ std::string ListStaStatusRequest::getSearchDescription()const
 void ListStaStatusRequest::setSearchDescription(const std::string& searchDescription)
 {
 	searchDescription_ = searchDescription;
-	setCoreParameter("SearchDescription", searchDescription);
+	setCoreParameter("SearchDescription", std::to_string(searchDescription));
 }
 

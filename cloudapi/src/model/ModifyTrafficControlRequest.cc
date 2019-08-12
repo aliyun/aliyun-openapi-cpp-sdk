@@ -33,7 +33,7 @@ std::string ModifyTrafficControlRequest::getTrafficControlId()const
 void ModifyTrafficControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
 }
 
 int ModifyTrafficControlRequest::getApiDefault()const
@@ -55,7 +55,7 @@ std::string ModifyTrafficControlRequest::getSecurityToken()const
 void ModifyTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyTrafficControlRequest::getTrafficControlName()const
@@ -66,7 +66,7 @@ std::string ModifyTrafficControlRequest::getTrafficControlName()const
 void ModifyTrafficControlRequest::setTrafficControlName(const std::string& trafficControlName)
 {
 	trafficControlName_ = trafficControlName;
-	setCoreParameter("TrafficControlName", trafficControlName);
+	setCoreParameter("TrafficControlName", std::to_string(trafficControlName));
 }
 
 std::string ModifyTrafficControlRequest::getTrafficControlUnit()const
@@ -77,7 +77,7 @@ std::string ModifyTrafficControlRequest::getTrafficControlUnit()const
 void ModifyTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
 {
 	trafficControlUnit_ = trafficControlUnit;
-	setCoreParameter("TrafficControlUnit", trafficControlUnit);
+	setCoreParameter("TrafficControlUnit", std::to_string(trafficControlUnit));
 }
 
 std::string ModifyTrafficControlRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyTrafficControlRequest::getDescription()const
 void ModifyTrafficControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 int ModifyTrafficControlRequest::getUserDefault()const
@@ -121,6 +121,6 @@ std::string ModifyTrafficControlRequest::getAccessKeyId()const
 void ModifyTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

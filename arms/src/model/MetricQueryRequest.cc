@@ -44,7 +44,7 @@ std::string MetricQueryRequest::getOrderBy()const
 void MetricQueryRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 std::vector<MetricQueryRequest::Filters> MetricQueryRequest::getFilters()const
@@ -83,7 +83,7 @@ std::string MetricQueryRequest::getAccessKeyId()const
 void MetricQueryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int MetricQueryRequest::getIintervalInSec()const
@@ -117,7 +117,7 @@ std::string MetricQueryRequest::getMetric()const
 void MetricQueryRequest::setMetric(const std::string& metric)
 {
 	metric_ = metric;
-	setCoreParameter("Metric", metric);
+	setCoreParameter("Metric", std::to_string(metric));
 }
 
 std::string MetricQueryRequest::getSecurityToken()const
@@ -128,7 +128,7 @@ std::string MetricQueryRequest::getSecurityToken()const
 void MetricQueryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string MetricQueryRequest::getRegionId()const
@@ -139,7 +139,7 @@ std::string MetricQueryRequest::getRegionId()const
 void MetricQueryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetricQueryRequest::getCustomFilters()const
@@ -150,7 +150,7 @@ std::string MetricQueryRequest::getCustomFilters()const
 void MetricQueryRequest::setCustomFilters(const std::string& customFilters)
 {
 	customFilters_ = customFilters;
-	setCoreParameter("CustomFilters", customFilters);
+	setCoreParameter("CustomFilters", std::to_string(customFilters));
 }
 
 int MetricQueryRequest::getLimit()const
@@ -172,7 +172,7 @@ std::string MetricQueryRequest::getWhere()const
 void MetricQueryRequest::setWhere(const std::string& where)
 {
 	where_ = where;
-	setCoreParameter("Where", where);
+	setCoreParameter("Where", std::to_string(where));
 }
 
 std::vector<std::string> MetricQueryRequest::getDimensions()const
@@ -195,6 +195,6 @@ std::string MetricQueryRequest::getOrder()const
 void MetricQueryRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

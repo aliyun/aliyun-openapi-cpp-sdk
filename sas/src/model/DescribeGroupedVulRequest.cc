@@ -33,7 +33,7 @@ std::string DescribeGroupedVulRequest::getAliasName()const
 void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setCoreParameter("AliasName", std::to_string(aliasName));
 }
 
 std::string DescribeGroupedVulRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeGroupedVulRequest::getSourceIp()const
 void DescribeGroupedVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeGroupedVulRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeGroupedVulRequest::getDealed()const
 void DescribeGroupedVulRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 int DescribeGroupedVulRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeGroupedVulRequest::getLang()const
 void DescribeGroupedVulRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeGroupedVulRequest::getType()const
@@ -99,7 +99,7 @@ std::string DescribeGroupedVulRequest::getType()const
 void DescribeGroupedVulRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const
@@ -110,7 +110,7 @@ std::string DescribeGroupedVulRequest::getNecessity()const
 void DescribeGroupedVulRequest::setNecessity(const std::string& necessity)
 {
 	necessity_ = necessity;
-	setCoreParameter("Necessity", necessity);
+	setCoreParameter("Necessity", std::to_string(necessity));
 }
 
 std::string DescribeGroupedVulRequest::getUuids()const
@@ -121,6 +121,6 @@ std::string DescribeGroupedVulRequest::getUuids()const
 void DescribeGroupedVulRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

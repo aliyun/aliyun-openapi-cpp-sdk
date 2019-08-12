@@ -33,6 +33,6 @@ std::string ListAuditSecurityIpRequest::getSecurityGroupName()const
 void ListAuditSecurityIpRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setCoreParameter("SecurityGroupName", std::to_string(securityGroupName));
 }
 

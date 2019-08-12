@@ -44,7 +44,7 @@ std::string CheckResourceRequest::getResourceOwnerAccount()const
 void CheckResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CheckResourceRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CheckResourceRequest::getOwnerAccount()const
 void CheckResourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CheckResourceRequest::getSpecifyCount()const
@@ -66,7 +66,7 @@ std::string CheckResourceRequest::getSpecifyCount()const
 void CheckResourceRequest::setSpecifyCount(const std::string& specifyCount)
 {
 	specifyCount_ = specifyCount;
-	setCoreParameter("SpecifyCount", specifyCount);
+	setCoreParameter("SpecifyCount", std::to_string(specifyCount));
 }
 
 std::string CheckResourceRequest::getEngineVersion()const
@@ -77,7 +77,7 @@ std::string CheckResourceRequest::getEngineVersion()const
 void CheckResourceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long CheckResourceRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string CheckResourceRequest::getAccessKeyId()const
 void CheckResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CheckResourceRequest::getDBInstanceClass()const
@@ -110,7 +110,7 @@ std::string CheckResourceRequest::getDBInstanceClass()const
 void CheckResourceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
 }
 
 std::string CheckResourceRequest::getEngine()const
@@ -121,7 +121,7 @@ std::string CheckResourceRequest::getEngine()const
 void CheckResourceRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string CheckResourceRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CheckResourceRequest::getRegionId()const
 void CheckResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CheckResourceRequest::getZoneId()const
@@ -143,7 +143,7 @@ std::string CheckResourceRequest::getZoneId()const
 void CheckResourceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CheckResourceRequest::getDBInstanceUseType()const
@@ -154,7 +154,7 @@ std::string CheckResourceRequest::getDBInstanceUseType()const
 void CheckResourceRequest::setDBInstanceUseType(const std::string& dBInstanceUseType)
 {
 	dBInstanceUseType_ = dBInstanceUseType;
-	setCoreParameter("DBInstanceUseType", dBInstanceUseType);
+	setCoreParameter("DBInstanceUseType", std::to_string(dBInstanceUseType));
 }
 
 std::string CheckResourceRequest::getDBInstanceId()const
@@ -165,6 +165,6 @@ std::string CheckResourceRequest::getDBInstanceId()const
 void CheckResourceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 

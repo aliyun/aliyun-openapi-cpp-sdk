@@ -33,7 +33,7 @@ std::string RenewCredentialsRequest::getRegionId()const
 void RenewCredentialsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long RenewCredentialsRequest::getCredentialId()const

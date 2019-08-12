@@ -33,7 +33,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getAccess_key_id()con
 void DescribeListenerAccessControlAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeListenerAccessControlAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()co
 void DescribeListenerAccessControlAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getRegionId()const
 void DescribeListenerAccessControlAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getResourceOwnerAccou
 void DescribeListenerAccessControlAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getOwnerAccount()cons
 void DescribeListenerAccessControlAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeListenerAccessControlAttributeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getListenerProtocol()
 void DescribeListenerAccessControlAttributeRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getTags()const
@@ -132,6 +132,6 @@ std::string DescribeListenerAccessControlAttributeRequest::getTags()const
 void DescribeListenerAccessControlAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

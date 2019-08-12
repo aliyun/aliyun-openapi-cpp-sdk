@@ -44,7 +44,7 @@ std::string GetAnalyzeCommodityDataRequest::getEndDate()const
 void GetAnalyzeCommodityDataRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 long GetAnalyzeCommodityDataRequest::getEndUserCount()const
@@ -110,7 +110,7 @@ std::string GetAnalyzeCommodityDataRequest::getStartDate()const
 void GetAnalyzeCommodityDataRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 long GetAnalyzeCommodityDataRequest::getStayPeriod()const

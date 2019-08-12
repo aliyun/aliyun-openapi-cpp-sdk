@@ -44,7 +44,7 @@ std::string ModifySecurityIpsRequest::getModifyMode()const
 void ModifySecurityIpsRequest::setModifyMode(const std::string& modifyMode)
 {
 	modifyMode_ = modifyMode;
-	setCoreParameter("ModifyMode", modifyMode);
+	setCoreParameter("ModifyMode", std::to_string(modifyMode));
 }
 
 std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
 void ModifySecurityIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySecurityIpsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySecurityIpsRequest::getOwnerAccount()const
 void ModifySecurityIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIps()const
@@ -77,7 +77,7 @@ std::string ModifySecurityIpsRequest::getSecurityIps()const
 void ModifySecurityIpsRequest::setSecurityIps(const std::string& securityIps)
 {
 	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
+	setCoreParameter("SecurityIps", std::to_string(securityIps));
 }
 
 long ModifySecurityIpsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifySecurityIpsRequest::getAccessKeyId()const
 void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIpGroupName()const
@@ -110,7 +110,7 @@ std::string ModifySecurityIpsRequest::getSecurityIpGroupName()const
 void ModifySecurityIpsRequest::setSecurityIpGroupName(const std::string& securityIpGroupName)
 {
 	securityIpGroupName_ = securityIpGroupName;
-	setCoreParameter("SecurityIpGroupName", securityIpGroupName);
+	setCoreParameter("SecurityIpGroupName", std::to_string(securityIpGroupName));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifySecurityIpsRequest::getSecurityToken()const
 void ModifySecurityIpsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifySecurityIpsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifySecurityIpsRequest::getRegionId()const
 void ModifySecurityIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceId()const
 void ModifySecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIpGroupAttribute()const
@@ -154,6 +154,6 @@ std::string ModifySecurityIpsRequest::getSecurityIpGroupAttribute()const
 void ModifySecurityIpsRequest::setSecurityIpGroupAttribute(const std::string& securityIpGroupAttribute)
 {
 	securityIpGroupAttribute_ = securityIpGroupAttribute;
-	setCoreParameter("SecurityIpGroupAttribute", securityIpGroupAttribute);
+	setCoreParameter("SecurityIpGroupAttribute", std::to_string(securityIpGroupAttribute));
 }
 

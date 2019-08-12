@@ -44,7 +44,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
 void ModifyInstanceSpecPreCheckRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getSecurityToken()const
 void ModifyInstanceSpecPreCheckRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getResourceOwnerAccount()const
 void ModifyInstanceSpecPreCheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getRegionId()const
 void ModifyInstanceSpecPreCheckRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getOwnerAccount()const
 void ModifyInstanceSpecPreCheckRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceSpecPreCheckRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getTargetInstanceClass()const
 void ModifyInstanceSpecPreCheckRequest::setTargetInstanceClass(const std::string& targetInstanceClass)
 {
 	targetInstanceClass_ = targetInstanceClass;
-	setCoreParameter("TargetInstanceClass", targetInstanceClass);
+	setCoreParameter("TargetInstanceClass", std::to_string(targetInstanceClass));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
 void ModifyInstanceSpecPreCheckRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

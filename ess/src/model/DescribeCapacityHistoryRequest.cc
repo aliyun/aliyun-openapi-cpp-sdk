@@ -33,7 +33,7 @@ std::string DescribeCapacityHistoryRequest::getResourceOwnerAccount()const
 void DescribeCapacityHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCapacityHistoryRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeCapacityHistoryRequest::getScalingGroupId()const
 void DescribeCapacityHistoryRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 int DescribeCapacityHistoryRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeCapacityHistoryRequest::getEndTime()const
 void DescribeCapacityHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeCapacityHistoryRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeCapacityHistoryRequest::getStartTime()const
 void DescribeCapacityHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeCapacityHistoryRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeCapacityHistoryRequest::getAccessKeyId()const
 void DescribeCapacityHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

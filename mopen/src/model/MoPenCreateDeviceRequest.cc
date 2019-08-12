@@ -33,7 +33,7 @@ std::string MoPenCreateDeviceRequest::getDeviceName()const
 void MoPenCreateDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 int MoPenCreateDeviceRequest::getDeviceType()const

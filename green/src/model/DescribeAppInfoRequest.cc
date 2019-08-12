@@ -44,7 +44,7 @@ std::string DescribeAppInfoRequest::getSourceIp()const
 void DescribeAppInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeAppInfoRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeAppInfoRequest::getLang()const
 void DescribeAppInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAppInfoRequest::getPlatform()const
@@ -88,6 +88,6 @@ std::string DescribeAppInfoRequest::getPlatform()const
 void DescribeAppInfoRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setCoreParameter("Platform", std::to_string(platform));
 }
 

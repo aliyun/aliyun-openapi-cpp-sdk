@@ -33,7 +33,7 @@ std::string SaveGroupApRadioConfigRequest::getJsonData()const
 void SaveGroupApRadioConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", std::to_string(jsonData));
 }
 
 std::string SaveGroupApRadioConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string SaveGroupApRadioConfigRequest::getAccessKeyId()const
 void SaveGroupApRadioConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

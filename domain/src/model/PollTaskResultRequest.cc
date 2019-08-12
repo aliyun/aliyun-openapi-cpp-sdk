@@ -33,7 +33,7 @@ std::string PollTaskResultRequest::getInstanceId()const
 void PollTaskResultRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string PollTaskResultRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string PollTaskResultRequest::getUserClientIp()const
 void PollTaskResultRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string PollTaskResultRequest::getTaskNo()const
@@ -55,7 +55,7 @@ std::string PollTaskResultRequest::getTaskNo()const
 void PollTaskResultRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", taskNo);
+	setCoreParameter("TaskNo", std::to_string(taskNo));
 }
 
 std::string PollTaskResultRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string PollTaskResultRequest::getDomainName()const
 void PollTaskResultRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int PollTaskResultRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string PollTaskResultRequest::getLang()const
 void PollTaskResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int PollTaskResultRequest::getPageNum()const

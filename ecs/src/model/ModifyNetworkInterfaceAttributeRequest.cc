@@ -67,7 +67,7 @@ bool ModifyNetworkInterfaceAttributeRequest::getProxy_original_security_transpor
 void ModifyNetworkInterfaceAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getDescription()const
@@ -78,7 +78,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getDescription()const
 void ModifyNetworkInterfaceAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getProxy_original_source_ip()const
@@ -89,7 +89,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getProxy_original_source_ip(
 void ModifyNetworkInterfaceAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getOwnerIdLoginEmail()const
@@ -100,7 +100,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getOwnerIdLoginEmail()const
 void ModifyNetworkInterfaceAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getCallerType()const
@@ -111,7 +111,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getCallerType()const
 void ModifyNetworkInterfaceAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getAccessKeyId()const
@@ -122,7 +122,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getAccessKeyId()const
 void ModifyNetworkInterfaceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getSourceRegionId()const
@@ -133,7 +133,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getSourceRegionId()const
 void ModifyNetworkInterfaceAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getSecurityToken()const
@@ -144,7 +144,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getSecurityToken()const
 void ModifyNetworkInterfaceAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getRegionId()const
@@ -155,7 +155,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getRegionId()const
 void ModifyNetworkInterfaceAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool ModifyNetworkInterfaceAttributeRequest::getEnable()const
@@ -166,7 +166,7 @@ bool ModifyNetworkInterfaceAttributeRequest::getEnable()const
 void ModifyNetworkInterfaceAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getRequestContent()const
@@ -177,7 +177,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getRequestContent()const
 void ModifyNetworkInterfaceAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getCallerBidEmail()const
@@ -188,7 +188,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getCallerBidEmail()const
 void ModifyNetworkInterfaceAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getCallerUidEmail()const
@@ -199,7 +199,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getCallerUidEmail()const
 void ModifyNetworkInterfaceAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceName()const
@@ -210,7 +210,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceName()con
 void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceName(const std::string& networkInterfaceName)
 {
 	networkInterfaceName_ = networkInterfaceName;
-	setCoreParameter("NetworkInterfaceName", networkInterfaceName);
+	setCoreParameter("NetworkInterfaceName", std::to_string(networkInterfaceName));
 }
 
 long ModifyNetworkInterfaceAttributeRequest::getCallerUid()const
@@ -232,7 +232,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getApp_ip()const
 void ModifyNetworkInterfaceAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getResourceOwnerAccount()const
@@ -243,7 +243,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getResourceOwnerAccount()con
 void ModifyNetworkInterfaceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getOwnerAccount()const
@@ -254,7 +254,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getOwnerAccount()const
 void ModifyNetworkInterfaceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getCallerBid()const
@@ -265,7 +265,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getCallerBid()const
 void ModifyNetworkInterfaceAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyNetworkInterfaceAttributeRequest::getOwnerId()const
@@ -287,7 +287,7 @@ bool ModifyNetworkInterfaceAttributeRequest::getProxy_trust_transport_info()cons
 void ModifyNetworkInterfaceAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyNetworkInterfaceAttributeRequest::getAk_mfa_present()const
@@ -298,7 +298,7 @@ bool ModifyNetworkInterfaceAttributeRequest::getAk_mfa_present()const
 void ModifyNetworkInterfaceAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ModifyNetworkInterfaceAttributeRequest::getSecurity_transport()const
@@ -309,7 +309,7 @@ bool ModifyNetworkInterfaceAttributeRequest::getSecurity_transport()const
 void ModifyNetworkInterfaceAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getRequestId()const
@@ -320,7 +320,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getRequestId()const
 void ModifyNetworkInterfaceAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getAkProxy()const
@@ -331,7 +331,7 @@ std::string ModifyNetworkInterfaceAttributeRequest::getAkProxy()const
 void ModifyNetworkInterfaceAttributeRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId()const
@@ -342,6 +342,6 @@ std::string ModifyNetworkInterfaceAttributeRequest::getNetworkInterfaceId()const
 void ModifyNetworkInterfaceAttributeRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
+	setCoreParameter("NetworkInterfaceId", std::to_string(networkInterfaceId));
 }
 

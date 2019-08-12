@@ -33,7 +33,7 @@ std::string ListExecutionPlansRequest::getJobId()const
 void ListExecutionPlansRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ListExecutionPlansRequest::getResourceOwnerId()const
@@ -67,7 +67,7 @@ std::string ListExecutionPlansRequest::getRegionId()const
 void ListExecutionPlansRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListExecutionPlansRequest::getPageSize()const
@@ -89,7 +89,7 @@ std::string ListExecutionPlansRequest::getQueryString()const
 void ListExecutionPlansRequest::setQueryString(const std::string& queryString)
 {
 	queryString_ = queryString;
-	setCoreParameter("QueryString", queryString);
+	setCoreParameter("QueryString", std::to_string(queryString));
 }
 
 std::string ListExecutionPlansRequest::getClusterId()const
@@ -100,7 +100,7 @@ std::string ListExecutionPlansRequest::getClusterId()const
 void ListExecutionPlansRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 bool ListExecutionPlansRequest::getIsDesc()const
@@ -111,7 +111,7 @@ bool ListExecutionPlansRequest::getIsDesc()const
 void ListExecutionPlansRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc);
+	setCoreParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 std::string ListExecutionPlansRequest::getStrategy()const
@@ -122,7 +122,7 @@ std::string ListExecutionPlansRequest::getStrategy()const
 void ListExecutionPlansRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", strategy);
+	setCoreParameter("Strategy", std::to_string(strategy));
 }
 
 int ListExecutionPlansRequest::getPageNumber()const
@@ -144,7 +144,7 @@ std::string ListExecutionPlansRequest::getQueryType()const
 void ListExecutionPlansRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 
 std::string ListExecutionPlansRequest::getAccessKeyId()const
@@ -155,6 +155,6 @@ std::string ListExecutionPlansRequest::getAccessKeyId()const
 void ListExecutionPlansRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

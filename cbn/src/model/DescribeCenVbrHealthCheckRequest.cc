@@ -44,7 +44,7 @@ std::string DescribeCenVbrHealthCheckRequest::getResourceOwnerAccount()const
 void DescribeCenVbrHealthCheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenVbrHealthCheckRequest::getCenId()const
 void DescribeCenVbrHealthCheckRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 long DescribeCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
@@ -77,7 +77,7 @@ std::string DescribeCenVbrHealthCheckRequest::getOwnerAccount()const
 void DescribeCenVbrHealthCheckRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceId(const std::string& vbrInstanceId)
 {
 	vbrInstanceId_ = vbrInstanceId;
-	setCoreParameter("VbrInstanceId", vbrInstanceId);
+	setCoreParameter("VbrInstanceId", std::to_string(vbrInstanceId));
 }
 
 int DescribeCenVbrHealthCheckRequest::getPageSize()const
@@ -121,7 +121,7 @@ std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceRegionId(const std::string& vbrInstanceRegionId)
 {
 	vbrInstanceRegionId_ = vbrInstanceRegionId;
-	setCoreParameter("VbrInstanceRegionId", vbrInstanceRegionId);
+	setCoreParameter("VbrInstanceRegionId", std::to_string(vbrInstanceRegionId));
 }
 
 int DescribeCenVbrHealthCheckRequest::getPageNumber()const

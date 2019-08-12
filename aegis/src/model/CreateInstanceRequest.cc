@@ -44,7 +44,7 @@ bool CreateInstanceRequest::getIsAutoRenew()const
 void CreateInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setCoreParameter("IsAutoRenew", isAutoRenew);
+	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int CreateInstanceRequest::getVmNumber()const
@@ -99,7 +99,7 @@ std::string CreateInstanceRequest::getPricingCycle()const
 void CreateInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 
 int CreateInstanceRequest::getAutoRenewDuration()const

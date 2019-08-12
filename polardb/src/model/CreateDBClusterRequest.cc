@@ -44,7 +44,7 @@ std::string CreateDBClusterRequest::getDBClusterDescription()const
 void CreateDBClusterRequest::setDBClusterDescription(const std::string& dBClusterDescription)
 {
 	dBClusterDescription_ = dBClusterDescription;
-	setCoreParameter("DBClusterDescription", dBClusterDescription);
+	setCoreParameter("DBClusterDescription", std::to_string(dBClusterDescription));
 }
 
 std::string CreateDBClusterRequest::getPeriod()const
@@ -55,7 +55,7 @@ std::string CreateDBClusterRequest::getPeriod()const
 void CreateDBClusterRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateDBClusterRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateDBClusterRequest::getResourceOwnerAccount()const
 void CreateDBClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateDBClusterRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateDBClusterRequest::getClientToken()const
 void CreateDBClusterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateDBClusterRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateDBClusterRequest::getOwnerAccount()const
 void CreateDBClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateDBClusterRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string CreateDBClusterRequest::getUsedTime()const
 void CreateDBClusterRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", usedTime);
+	setCoreParameter("UsedTime", std::to_string(usedTime));
 }
 
 std::string CreateDBClusterRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateDBClusterRequest::getAccessKeyId()const
 void CreateDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDBClusterRequest::getClusterNetworkType()const
@@ -132,7 +132,7 @@ std::string CreateDBClusterRequest::getClusterNetworkType()const
 void CreateDBClusterRequest::setClusterNetworkType(const std::string& clusterNetworkType)
 {
 	clusterNetworkType_ = clusterNetworkType;
-	setCoreParameter("ClusterNetworkType", clusterNetworkType);
+	setCoreParameter("ClusterNetworkType", std::to_string(clusterNetworkType));
 }
 
 std::string CreateDBClusterRequest::getVSwitchId()const
@@ -143,7 +143,7 @@ std::string CreateDBClusterRequest::getVSwitchId()const
 void CreateDBClusterRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string CreateDBClusterRequest::getDBNodeClass()const
@@ -154,7 +154,7 @@ std::string CreateDBClusterRequest::getDBNodeClass()const
 void CreateDBClusterRequest::setDBNodeClass(const std::string& dBNodeClass)
 {
 	dBNodeClass_ = dBNodeClass;
-	setCoreParameter("DBNodeClass", dBNodeClass);
+	setCoreParameter("DBNodeClass", std::to_string(dBNodeClass));
 }
 
 bool CreateDBClusterRequest::getAutoRenew()const
@@ -165,7 +165,7 @@ bool CreateDBClusterRequest::getAutoRenew()const
 void CreateDBClusterRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string CreateDBClusterRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string CreateDBClusterRequest::getRegionId()const
 void CreateDBClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateDBClusterRequest::getEngine()const
@@ -187,7 +187,7 @@ std::string CreateDBClusterRequest::getEngine()const
 void CreateDBClusterRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string CreateDBClusterRequest::getVPCId()const
@@ -198,7 +198,7 @@ std::string CreateDBClusterRequest::getVPCId()const
 void CreateDBClusterRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setCoreParameter("VPCId", std::to_string(vPCId));
 }
 
 std::string CreateDBClusterRequest::getDBType()const
@@ -209,7 +209,7 @@ std::string CreateDBClusterRequest::getDBType()const
 void CreateDBClusterRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
-	setCoreParameter("DBType", dBType);
+	setCoreParameter("DBType", std::to_string(dBType));
 }
 
 std::string CreateDBClusterRequest::getZoneId()const
@@ -220,7 +220,7 @@ std::string CreateDBClusterRequest::getZoneId()const
 void CreateDBClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CreateDBClusterRequest::getDBVersion()const
@@ -231,7 +231,7 @@ std::string CreateDBClusterRequest::getDBVersion()const
 void CreateDBClusterRequest::setDBVersion(const std::string& dBVersion)
 {
 	dBVersion_ = dBVersion;
-	setCoreParameter("DBVersion", dBVersion);
+	setCoreParameter("DBVersion", std::to_string(dBVersion));
 }
 
 std::string CreateDBClusterRequest::getCreationOption()const
@@ -242,7 +242,7 @@ std::string CreateDBClusterRequest::getCreationOption()const
 void CreateDBClusterRequest::setCreationOption(const std::string& creationOption)
 {
 	creationOption_ = creationOption;
-	setCoreParameter("CreationOption", creationOption);
+	setCoreParameter("CreationOption", std::to_string(creationOption));
 }
 
 std::string CreateDBClusterRequest::getSourceResourceId()const
@@ -253,7 +253,7 @@ std::string CreateDBClusterRequest::getSourceResourceId()const
 void CreateDBClusterRequest::setSourceResourceId(const std::string& sourceResourceId)
 {
 	sourceResourceId_ = sourceResourceId;
-	setCoreParameter("SourceResourceId", sourceResourceId);
+	setCoreParameter("SourceResourceId", std::to_string(sourceResourceId));
 }
 
 std::string CreateDBClusterRequest::getCloneDataPoint()const
@@ -264,7 +264,7 @@ std::string CreateDBClusterRequest::getCloneDataPoint()const
 void CreateDBClusterRequest::setCloneDataPoint(const std::string& cloneDataPoint)
 {
 	cloneDataPoint_ = cloneDataPoint;
-	setCoreParameter("CloneDataPoint", cloneDataPoint);
+	setCoreParameter("CloneDataPoint", std::to_string(cloneDataPoint));
 }
 
 std::string CreateDBClusterRequest::getPayType()const
@@ -275,6 +275,6 @@ std::string CreateDBClusterRequest::getPayType()const
 void CreateDBClusterRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 

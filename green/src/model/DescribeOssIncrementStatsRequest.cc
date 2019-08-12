@@ -33,7 +33,7 @@ std::string DescribeOssIncrementStatsRequest::getEndDate()const
 void DescribeOssIncrementStatsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string DescribeOssIncrementStatsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeOssIncrementStatsRequest::getSourceIp()const
 void DescribeOssIncrementStatsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeOssIncrementStatsRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeOssIncrementStatsRequest::getLang()const
 void DescribeOssIncrementStatsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeOssIncrementStatsRequest::getStartDate()const
@@ -66,7 +66,7 @@ std::string DescribeOssIncrementStatsRequest::getStartDate()const
 void DescribeOssIncrementStatsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 std::string DescribeOssIncrementStatsRequest::getResourceType()const
@@ -77,7 +77,7 @@ std::string DescribeOssIncrementStatsRequest::getResourceType()const
 void DescribeOssIncrementStatsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeOssIncrementStatsRequest::getScene()const
@@ -88,6 +88,6 @@ std::string DescribeOssIncrementStatsRequest::getScene()const
 void DescribeOssIncrementStatsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 

@@ -33,7 +33,7 @@ std::string DownloadAllTypeRecordingRequest::getInstanceId()const
 void DownloadAllTypeRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DownloadAllTypeRecordingRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string DownloadAllTypeRecordingRequest::getContactId()const
 void DownloadAllTypeRecordingRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setCoreParameter("ContactId", std::to_string(contactId));
 }
 
 std::string DownloadAllTypeRecordingRequest::getChannel()const
@@ -55,7 +55,7 @@ std::string DownloadAllTypeRecordingRequest::getChannel()const
 void DownloadAllTypeRecordingRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setCoreParameter("Channel", std::to_string(channel));
 }
 
 std::string DownloadAllTypeRecordingRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DownloadAllTypeRecordingRequest::getAccessKeyId()const
 void DownloadAllTypeRecordingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

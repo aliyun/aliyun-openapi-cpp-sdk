@@ -33,7 +33,7 @@ std::string FindOrderableListRequest::getProjectName()const
 void FindOrderableListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", std::to_string(projectName));
 }
 
 long FindOrderableListRequest::getCsbId()const
@@ -55,7 +55,7 @@ std::string FindOrderableListRequest::getRegionId()const
 void FindOrderableListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string FindOrderableListRequest::getAlias()const
@@ -66,7 +66,7 @@ std::string FindOrderableListRequest::getAlias()const
 void FindOrderableListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setCoreParameter("Alias", std::to_string(alias));
 }
 
 std::string FindOrderableListRequest::getServiceName()const
@@ -77,7 +77,7 @@ std::string FindOrderableListRequest::getServiceName()const
 void FindOrderableListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 int FindOrderableListRequest::getPageNum()const

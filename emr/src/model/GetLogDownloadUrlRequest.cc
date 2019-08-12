@@ -44,7 +44,7 @@ std::string GetLogDownloadUrlRequest::getHostName()const
 void GetLogDownloadUrlRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string GetLogDownloadUrlRequest::getLogstoreName()const
@@ -55,7 +55,7 @@ std::string GetLogDownloadUrlRequest::getLogstoreName()const
 void GetLogDownloadUrlRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", logstoreName);
+	setCoreParameter("LogstoreName", std::to_string(logstoreName));
 }
 
 std::string GetLogDownloadUrlRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string GetLogDownloadUrlRequest::getRegionId()const
 void GetLogDownloadUrlRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetLogDownloadUrlRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string GetLogDownloadUrlRequest::getClusterId()const
 void GetLogDownloadUrlRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetLogDownloadUrlRequest::getLogFileName()const
@@ -88,7 +88,7 @@ std::string GetLogDownloadUrlRequest::getLogFileName()const
 void GetLogDownloadUrlRequest::setLogFileName(const std::string& logFileName)
 {
 	logFileName_ = logFileName;
-	setCoreParameter("LogFileName", logFileName);
+	setCoreParameter("LogFileName", std::to_string(logFileName));
 }
 
 std::string GetLogDownloadUrlRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetLogDownloadUrlRequest::getAccessKeyId()const
 void GetLogDownloadUrlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

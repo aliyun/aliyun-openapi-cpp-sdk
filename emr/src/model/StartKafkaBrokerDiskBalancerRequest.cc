@@ -66,7 +66,7 @@ std::string StartKafkaBrokerDiskBalancerRequest::getRegionId()const
 void StartKafkaBrokerDiskBalancerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StartKafkaBrokerDiskBalancerRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string StartKafkaBrokerDiskBalancerRequest::getClusterId()const
 void StartKafkaBrokerDiskBalancerRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string StartKafkaBrokerDiskBalancerRequest::getBalanceThreshold()const
@@ -88,7 +88,7 @@ std::string StartKafkaBrokerDiskBalancerRequest::getBalanceThreshold()const
 void StartKafkaBrokerDiskBalancerRequest::setBalanceThreshold(const std::string& balanceThreshold)
 {
 	balanceThreshold_ = balanceThreshold;
-	setCoreParameter("BalanceThreshold", balanceThreshold);
+	setCoreParameter("BalanceThreshold", std::to_string(balanceThreshold));
 }
 
 std::string StartKafkaBrokerDiskBalancerRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string StartKafkaBrokerDiskBalancerRequest::getAccessKeyId()const
 void StartKafkaBrokerDiskBalancerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

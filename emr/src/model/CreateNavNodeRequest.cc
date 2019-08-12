@@ -44,7 +44,7 @@ std::string CreateNavNodeRequest::getRegionId()const
 void CreateNavNodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateNavNodeRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateNavNodeRequest::getName()const
 void CreateNavNodeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateNavNodeRequest::getType()const
@@ -66,7 +66,7 @@ std::string CreateNavNodeRequest::getType()const
 void CreateNavNodeRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateNavNodeRequest::getProjectId()const
@@ -77,7 +77,7 @@ std::string CreateNavNodeRequest::getProjectId()const
 void CreateNavNodeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string CreateNavNodeRequest::getCategoryType()const
@@ -88,7 +88,7 @@ std::string CreateNavNodeRequest::getCategoryType()const
 void CreateNavNodeRequest::setCategoryType(const std::string& categoryType)
 {
 	categoryType_ = categoryType;
-	setCoreParameter("CategoryType", categoryType);
+	setCoreParameter("CategoryType", std::to_string(categoryType));
 }
 
 std::string CreateNavNodeRequest::getObjectId()const
@@ -99,7 +99,7 @@ std::string CreateNavNodeRequest::getObjectId()const
 void CreateNavNodeRequest::setObjectId(const std::string& objectId)
 {
 	objectId_ = objectId;
-	setCoreParameter("ObjectId", objectId);
+	setCoreParameter("ObjectId", std::to_string(objectId));
 }
 
 std::string CreateNavNodeRequest::getParentId()const
@@ -110,7 +110,7 @@ std::string CreateNavNodeRequest::getParentId()const
 void CreateNavNodeRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setCoreParameter("ParentId", std::to_string(parentId));
 }
 
 std::string CreateNavNodeRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string CreateNavNodeRequest::getAccessKeyId()const
 void CreateNavNodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

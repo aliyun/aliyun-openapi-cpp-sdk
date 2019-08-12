@@ -33,7 +33,7 @@ std::string DescribeAppAttributesRequest::getAppName()const
 void DescribeAppAttributesRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeAppAttributesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeAppAttributesRequest::getSecurityToken()const
 void DescribeAppAttributesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeAppAttributesRequest::getAppId()const
@@ -94,7 +94,7 @@ bool DescribeAppAttributesRequest::getEnableTagAuth()const
 void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth)
 {
 	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth);
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
 }
 
 int DescribeAppAttributesRequest::getPageNumber()const
@@ -116,6 +116,6 @@ std::string DescribeAppAttributesRequest::getAccessKeyId()const
 void DescribeAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

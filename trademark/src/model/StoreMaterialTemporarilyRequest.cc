@@ -33,7 +33,7 @@ std::string StoreMaterialTemporarilyRequest::getContactEmail()const
 void StoreMaterialTemporarilyRequest::setContactEmail(const std::string& contactEmail)
 {
 	contactEmail_ = contactEmail;
-	setCoreParameter("ContactEmail", contactEmail);
+	setCoreParameter("ContactEmail", std::to_string(contactEmail));
 }
 
 std::string StoreMaterialTemporarilyRequest::getContactAddress()const
@@ -44,7 +44,7 @@ std::string StoreMaterialTemporarilyRequest::getContactAddress()const
 void StoreMaterialTemporarilyRequest::setContactAddress(const std::string& contactAddress)
 {
 	contactAddress_ = contactAddress;
-	setCoreParameter("ContactAddress", contactAddress);
+	setCoreParameter("ContactAddress", std::to_string(contactAddress));
 }
 
 std::string StoreMaterialTemporarilyRequest::getEAddress()const
@@ -55,7 +55,7 @@ std::string StoreMaterialTemporarilyRequest::getEAddress()const
 void StoreMaterialTemporarilyRequest::setEAddress(const std::string& eAddress)
 {
 	eAddress_ = eAddress;
-	setCoreParameter("EAddress", eAddress);
+	setCoreParameter("EAddress", std::to_string(eAddress));
 }
 
 std::string StoreMaterialTemporarilyRequest::getCountry()const
@@ -66,7 +66,7 @@ std::string StoreMaterialTemporarilyRequest::getCountry()const
 void StoreMaterialTemporarilyRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setCoreParameter("Country", std::to_string(country));
 }
 
 std::string StoreMaterialTemporarilyRequest::getLegalNoticeOssKey()const
@@ -77,7 +77,7 @@ std::string StoreMaterialTemporarilyRequest::getLegalNoticeOssKey()const
 void StoreMaterialTemporarilyRequest::setLegalNoticeOssKey(const std::string& legalNoticeOssKey)
 {
 	legalNoticeOssKey_ = legalNoticeOssKey;
-	setCoreParameter("LegalNoticeOssKey", legalNoticeOssKey);
+	setCoreParameter("LegalNoticeOssKey", std::to_string(legalNoticeOssKey));
 }
 
 std::string StoreMaterialTemporarilyRequest::getAddress()const
@@ -88,7 +88,7 @@ std::string StoreMaterialTemporarilyRequest::getAddress()const
 void StoreMaterialTemporarilyRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setCoreParameter("Address", std::to_string(address));
 }
 
 std::string StoreMaterialTemporarilyRequest::getTown()const
@@ -99,7 +99,7 @@ std::string StoreMaterialTemporarilyRequest::getTown()const
 void StoreMaterialTemporarilyRequest::setTown(const std::string& town)
 {
 	town_ = town;
-	setCoreParameter("Town", town);
+	setCoreParameter("Town", std::to_string(town));
 }
 
 std::string StoreMaterialTemporarilyRequest::getContactNumber()const
@@ -110,7 +110,7 @@ std::string StoreMaterialTemporarilyRequest::getContactNumber()const
 void StoreMaterialTemporarilyRequest::setContactNumber(const std::string& contactNumber)
 {
 	contactNumber_ = contactNumber;
-	setCoreParameter("ContactNumber", contactNumber);
+	setCoreParameter("ContactNumber", std::to_string(contactNumber));
 }
 
 std::string StoreMaterialTemporarilyRequest::getCity()const
@@ -121,7 +121,7 @@ std::string StoreMaterialTemporarilyRequest::getCity()const
 void StoreMaterialTemporarilyRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setCoreParameter("City", std::to_string(city));
 }
 
 std::string StoreMaterialTemporarilyRequest::getIdCardOssKey()const
@@ -132,7 +132,7 @@ std::string StoreMaterialTemporarilyRequest::getIdCardOssKey()const
 void StoreMaterialTemporarilyRequest::setIdCardOssKey(const std::string& idCardOssKey)
 {
 	idCardOssKey_ = idCardOssKey;
-	setCoreParameter("IdCardOssKey", idCardOssKey);
+	setCoreParameter("IdCardOssKey", std::to_string(idCardOssKey));
 }
 
 std::string StoreMaterialTemporarilyRequest::getType()const
@@ -143,7 +143,7 @@ std::string StoreMaterialTemporarilyRequest::getType()const
 void StoreMaterialTemporarilyRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string StoreMaterialTemporarilyRequest::getContactName()const
@@ -154,7 +154,7 @@ std::string StoreMaterialTemporarilyRequest::getContactName()const
 void StoreMaterialTemporarilyRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setCoreParameter("ContactName", std::to_string(contactName));
 }
 
 std::string StoreMaterialTemporarilyRequest::getPassportOssKey()const
@@ -165,7 +165,7 @@ std::string StoreMaterialTemporarilyRequest::getPassportOssKey()const
 void StoreMaterialTemporarilyRequest::setPassportOssKey(const std::string& passportOssKey)
 {
 	passportOssKey_ = passportOssKey;
-	setCoreParameter("PassportOssKey", passportOssKey);
+	setCoreParameter("PassportOssKey", std::to_string(passportOssKey));
 }
 
 std::string StoreMaterialTemporarilyRequest::getContactZipcode()const
@@ -176,7 +176,7 @@ std::string StoreMaterialTemporarilyRequest::getContactZipcode()const
 void StoreMaterialTemporarilyRequest::setContactZipcode(const std::string& contactZipcode)
 {
 	contactZipcode_ = contactZipcode;
-	setCoreParameter("ContactZipcode", contactZipcode);
+	setCoreParameter("ContactZipcode", std::to_string(contactZipcode));
 }
 
 std::string StoreMaterialTemporarilyRequest::getEName()const
@@ -187,7 +187,7 @@ std::string StoreMaterialTemporarilyRequest::getEName()const
 void StoreMaterialTemporarilyRequest::setEName(const std::string& eName)
 {
 	eName_ = eName;
-	setCoreParameter("EName", eName);
+	setCoreParameter("EName", std::to_string(eName));
 }
 
 std::string StoreMaterialTemporarilyRequest::getProvince()const
@@ -198,7 +198,7 @@ std::string StoreMaterialTemporarilyRequest::getProvince()const
 void StoreMaterialTemporarilyRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", province);
+	setCoreParameter("Province", std::to_string(province));
 }
 
 std::string StoreMaterialTemporarilyRequest::getBusinessLicenceOssKey()const
@@ -209,7 +209,7 @@ std::string StoreMaterialTemporarilyRequest::getBusinessLicenceOssKey()const
 void StoreMaterialTemporarilyRequest::setBusinessLicenceOssKey(const std::string& businessLicenceOssKey)
 {
 	businessLicenceOssKey_ = businessLicenceOssKey;
-	setCoreParameter("BusinessLicenceOssKey", businessLicenceOssKey);
+	setCoreParameter("BusinessLicenceOssKey", std::to_string(businessLicenceOssKey));
 }
 
 std::string StoreMaterialTemporarilyRequest::getName()const
@@ -220,7 +220,7 @@ std::string StoreMaterialTemporarilyRequest::getName()const
 void StoreMaterialTemporarilyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string StoreMaterialTemporarilyRequest::getCardNumber()const
@@ -231,7 +231,7 @@ std::string StoreMaterialTemporarilyRequest::getCardNumber()const
 void StoreMaterialTemporarilyRequest::setCardNumber(const std::string& cardNumber)
 {
 	cardNumber_ = cardNumber;
-	setCoreParameter("CardNumber", cardNumber);
+	setCoreParameter("CardNumber", std::to_string(cardNumber));
 }
 
 std::string StoreMaterialTemporarilyRequest::getRegion()const
@@ -242,7 +242,7 @@ std::string StoreMaterialTemporarilyRequest::getRegion()const
 void StoreMaterialTemporarilyRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string StoreMaterialTemporarilyRequest::getLoaOssKey()const
@@ -253,6 +253,6 @@ std::string StoreMaterialTemporarilyRequest::getLoaOssKey()const
 void StoreMaterialTemporarilyRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
+	setCoreParameter("LoaOssKey", std::to_string(loaOssKey));
 }
 

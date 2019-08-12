@@ -33,7 +33,7 @@ std::string GetServiceExtensionsRequest::getServiceType()const
 void GetServiceExtensionsRequest::setServiceType(const std::string& serviceType)
 {
 	serviceType_ = serviceType;
-	setCoreParameter("ServiceType", serviceType);
+	setCoreParameter("ServiceType", std::to_string(serviceType));
 }
 
 std::string GetServiceExtensionsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string GetServiceExtensionsRequest::getInstanceId()const
 void GetServiceExtensionsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetServiceExtensionsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetServiceExtensionsRequest::getAccessKeyId()const
 void GetServiceExtensionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

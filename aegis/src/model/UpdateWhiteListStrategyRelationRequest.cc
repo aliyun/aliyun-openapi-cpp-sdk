@@ -33,7 +33,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getSourceIp()const
 void UpdateWhiteListStrategyRelationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int UpdateWhiteListStrategyRelationRequest::getProcessMethod()const
@@ -66,7 +66,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getLang()const
 void UpdateWhiteListStrategyRelationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateWhiteListStrategyRelationRequest::getType()const
@@ -88,7 +88,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getUuid()const
 void UpdateWhiteListStrategyRelationRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 
 int UpdateWhiteListStrategyRelationRequest::getStatus()const

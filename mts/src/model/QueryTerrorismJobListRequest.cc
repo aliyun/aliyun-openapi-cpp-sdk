@@ -44,7 +44,7 @@ std::string QueryTerrorismJobListRequest::getResourceOwnerAccount()const
 void QueryTerrorismJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryTerrorismJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryTerrorismJobListRequest::getJobIds()const
 void QueryTerrorismJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryTerrorismJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryTerrorismJobListRequest::getOwnerAccount()const
 void QueryTerrorismJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryTerrorismJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryTerrorismJobListRequest::getAccessKeyId()const
 void QueryTerrorismJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeReplicaPerformanceRequest::getDestinationDBInstanceId()const
 void DescribeReplicaPerformanceRequest::setDestinationDBInstanceId(const std::string& destinationDBInstanceId)
 {
 	destinationDBInstanceId_ = destinationDBInstanceId;
-	setCoreParameter("DestinationDBInstanceId", destinationDBInstanceId);
+	setCoreParameter("DestinationDBInstanceId", std::to_string(destinationDBInstanceId));
 }
 
 std::string DescribeReplicaPerformanceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeReplicaPerformanceRequest::getResourceOwnerAccount()const
 void DescribeReplicaPerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeReplicaPerformanceRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeReplicaPerformanceRequest::getOwnerAccount()const
 void DescribeReplicaPerformanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeReplicaPerformanceRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeReplicaPerformanceRequest::getEndTime()const
 void DescribeReplicaPerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeReplicaPerformanceRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeReplicaPerformanceRequest::getStartTime()const
 void DescribeReplicaPerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeReplicaPerformanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeReplicaPerformanceRequest::getAccessKeyId()const
 void DescribeReplicaPerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeReplicaPerformanceRequest::getSourceDBInstanceId()const
@@ -121,7 +121,7 @@ std::string DescribeReplicaPerformanceRequest::getSourceDBInstanceId()const
 void DescribeReplicaPerformanceRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
 {
 	sourceDBInstanceId_ = sourceDBInstanceId;
-	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
+	setCoreParameter("SourceDBInstanceId", std::to_string(sourceDBInstanceId));
 }
 
 std::string DescribeReplicaPerformanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeReplicaPerformanceRequest::getSecurityToken()const
 void DescribeReplicaPerformanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeReplicaPerformanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeReplicaPerformanceRequest::getRegionId()const
 void DescribeReplicaPerformanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeReplicaPerformanceRequest::getReplicaId()const
@@ -154,7 +154,7 @@ std::string DescribeReplicaPerformanceRequest::getReplicaId()const
 void DescribeReplicaPerformanceRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 std::string DescribeReplicaPerformanceRequest::getKey()const
@@ -165,6 +165,6 @@ std::string DescribeReplicaPerformanceRequest::getKey()const
 void DescribeReplicaPerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

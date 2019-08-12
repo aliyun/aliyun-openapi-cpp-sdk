@@ -33,7 +33,7 @@ std::string CreateTagJobRequest::getNotifyTopicName()const
 void CreateTagJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", notifyTopicName);
+	setCoreParameter("NotifyTopicName", std::to_string(notifyTopicName));
 }
 
 std::string CreateTagJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateTagJobRequest::getRegionId()const
 void CreateTagJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateTagJobRequest::getNotifyEndpoint()const
@@ -55,7 +55,7 @@ std::string CreateTagJobRequest::getNotifyEndpoint()const
 void CreateTagJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", notifyEndpoint);
+	setCoreParameter("NotifyEndpoint", std::to_string(notifyEndpoint));
 }
 
 std::string CreateTagJobRequest::getProject()const
@@ -66,7 +66,7 @@ std::string CreateTagJobRequest::getProject()const
 void CreateTagJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string CreateTagJobRequest::getExternalID()const
@@ -77,7 +77,7 @@ std::string CreateTagJobRequest::getExternalID()const
 void CreateTagJobRequest::setExternalID(const std::string& externalID)
 {
 	externalID_ = externalID;
-	setCoreParameter("ExternalID", externalID);
+	setCoreParameter("ExternalID", std::to_string(externalID));
 }
 
 std::string CreateTagJobRequest::getSrcUri()const
@@ -88,7 +88,7 @@ std::string CreateTagJobRequest::getSrcUri()const
 void CreateTagJobRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", std::to_string(srcUri));
 }
 
 std::string CreateTagJobRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateTagJobRequest::getAccessKeyId()const
 void CreateTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

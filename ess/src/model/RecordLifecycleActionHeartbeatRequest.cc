@@ -33,7 +33,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleActionToken()cons
 void RecordLifecycleActionHeartbeatRequest::setLifecycleActionToken(const std::string& lifecycleActionToken)
 {
 	lifecycleActionToken_ = lifecycleActionToken;
-	setCoreParameter("LifecycleActionToken", lifecycleActionToken);
+	setCoreParameter("LifecycleActionToken", std::to_string(lifecycleActionToken));
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()cons
 void RecordLifecycleActionHeartbeatRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
@@ -66,7 +66,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
 void RecordLifecycleActionHeartbeatRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setCoreParameter("LifecycleHookId", lifecycleHookId);
+	setCoreParameter("LifecycleHookId", std::to_string(lifecycleHookId));
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const
 void RecordLifecycleActionHeartbeatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

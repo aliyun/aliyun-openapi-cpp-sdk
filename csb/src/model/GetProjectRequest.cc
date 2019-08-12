@@ -33,7 +33,7 @@ std::string GetProjectRequest::getProjectName()const
 void GetProjectRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", std::to_string(projectName));
 }
 
 std::string GetProjectRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetProjectRequest::getRegionId()const
 void GetProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long GetProjectRequest::getCsbId()const

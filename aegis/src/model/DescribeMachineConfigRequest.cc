@@ -44,7 +44,7 @@ std::string DescribeMachineConfigRequest::getTypes()const
 void DescribeMachineConfigRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", types);
+	setCoreParameter("Types", std::to_string(types));
 }
 
 std::string DescribeMachineConfigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeMachineConfigRequest::getSourceIp()const
 void DescribeMachineConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeMachineConfigRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeMachineConfigRequest::getType()const
 void DescribeMachineConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeMachineConfigRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeMachineConfigRequest::getLang()const
 void DescribeMachineConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeMachineConfigRequest::getConfig()const
@@ -110,7 +110,7 @@ std::string DescribeMachineConfigRequest::getConfig()const
 void DescribeMachineConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setCoreParameter("Config", std::to_string(config));
 }
 
 std::string DescribeMachineConfigRequest::getTarget()const
@@ -121,6 +121,6 @@ std::string DescribeMachineConfigRequest::getTarget()const
 void DescribeMachineConfigRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setCoreParameter("Target", std::to_string(target));
 }
 

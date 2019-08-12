@@ -33,7 +33,7 @@ std::string MoveFacePhotosRequest::getLibraryId()const
 void MoveFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long MoveFacePhotosRequest::getTargetFaceId()const
@@ -67,7 +67,7 @@ std::string MoveFacePhotosRequest::getStoreName()const
 void MoveFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long MoveFacePhotosRequest::getSourceFaceId()const

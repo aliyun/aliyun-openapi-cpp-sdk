@@ -33,7 +33,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getAclId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerAccount()co
 void RemoveIPv6TranslatorAclListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getClientToken()const
 void RemoveIPv6TranslatorAclListEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getRegionId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
 void RemoveIPv6TranslatorAclListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RemoveIPv6TranslatorAclListEntryRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getAclEntryId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setAclEntryId(const std::string& aclEntryId)
 {
 	aclEntryId_ = aclEntryId;
-	setCoreParameter("AclEntryId", aclEntryId);
+	setCoreParameter("AclEntryId", std::to_string(aclEntryId));
 }
 

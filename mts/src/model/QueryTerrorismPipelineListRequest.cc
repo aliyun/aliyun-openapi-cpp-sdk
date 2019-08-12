@@ -44,7 +44,7 @@ std::string QueryTerrorismPipelineListRequest::getResourceOwnerAccount()const
 void QueryTerrorismPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryTerrorismPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryTerrorismPipelineListRequest::getPipelineIds()const
 void QueryTerrorismPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setCoreParameter("PipelineIds", std::to_string(pipelineIds));
 }
 
 std::string QueryTerrorismPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryTerrorismPipelineListRequest::getOwnerAccount()const
 void QueryTerrorismPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryTerrorismPipelineListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryTerrorismPipelineListRequest::getAccessKeyId()const
 void QueryTerrorismPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ImportDataForSQLServerRequest::getFileName()const
 void ImportDataForSQLServerRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 
 std::string ImportDataForSQLServerRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ImportDataForSQLServerRequest::getResourceOwnerAccount()const
 void ImportDataForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ImportDataForSQLServerRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ImportDataForSQLServerRequest::getOwnerAccount()const
 void ImportDataForSQLServerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ImportDataForSQLServerRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string ImportDataForSQLServerRequest::getDBInstanceId()const
 void ImportDataForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ImportDataForSQLServerRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ImportDataForSQLServerRequest::getAccessKeyId()const
 void ImportDataForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

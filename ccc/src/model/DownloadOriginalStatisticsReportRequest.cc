@@ -33,7 +33,7 @@ std::string DownloadOriginalStatisticsReportRequest::getInstanceId()const
 void DownloadOriginalStatisticsReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DownloadOriginalStatisticsReportRequest::getJobGroupId()const
@@ -44,6 +44,6 @@ std::string DownloadOriginalStatisticsReportRequest::getJobGroupId()const
 void DownloadOriginalStatisticsReportRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
 }
 

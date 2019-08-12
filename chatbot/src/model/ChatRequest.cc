@@ -33,7 +33,7 @@ std::string ChatRequest::getKnowledgeId()const
 void ChatRequest::setKnowledgeId(const std::string& knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", knowledgeId);
+	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
 }
 
 std::string ChatRequest::getSenderId()const
@@ -44,7 +44,7 @@ std::string ChatRequest::getSenderId()const
 void ChatRequest::setSenderId(const std::string& senderId)
 {
 	senderId_ = senderId;
-	setCoreParameter("SenderId", senderId);
+	setCoreParameter("SenderId", std::to_string(senderId));
 }
 
 std::string ChatRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string ChatRequest::getInstanceId()const
 void ChatRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ChatRequest::getSenderNick()const
@@ -66,7 +66,7 @@ std::string ChatRequest::getSenderNick()const
 void ChatRequest::setSenderNick(const std::string& senderNick)
 {
 	senderNick_ = senderNick;
-	setCoreParameter("SenderNick", senderNick);
+	setCoreParameter("SenderNick", std::to_string(senderNick));
 }
 
 std::vector<std::string> ChatRequest::getPerspective()const
@@ -89,7 +89,7 @@ bool ChatRequest::getRecommend()const
 void ChatRequest::setRecommend(bool recommend)
 {
 	recommend_ = recommend;
-	setCoreParameter("Recommend", recommend);
+	setCoreParameter("Recommend", recommend ? "true" : "false");
 }
 
 std::string ChatRequest::getSessionId()const
@@ -100,7 +100,7 @@ std::string ChatRequest::getSessionId()const
 void ChatRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setCoreParameter("SessionId", std::to_string(sessionId));
 }
 
 std::string ChatRequest::getTag()const
@@ -111,7 +111,7 @@ std::string ChatRequest::getTag()const
 void ChatRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 std::string ChatRequest::getUtterance()const
@@ -122,7 +122,7 @@ std::string ChatRequest::getUtterance()const
 void ChatRequest::setUtterance(const std::string& utterance)
 {
 	utterance_ = utterance;
-	setCoreParameter("Utterance", utterance);
+	setCoreParameter("Utterance", std::to_string(utterance));
 }
 
 std::string ChatRequest::getAccessKeyId()const
@@ -133,6 +133,6 @@ std::string ChatRequest::getAccessKeyId()const
 void ChatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string GetCategoriesRequest::getResourceOwnerId()const
 void GetCategoriesRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetCategoriesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetCategoriesRequest::getResourceOwnerAccount()const
 void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long GetCategoriesRequest::getCateId()const
@@ -88,7 +88,7 @@ std::string GetCategoriesRequest::getSortBy()const
 void GetCategoriesRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", std::to_string(sortBy));
 }
 
 std::string GetCategoriesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string GetCategoriesRequest::getOwnerId()const
 void GetCategoriesRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetCategoriesRequest::getType()const
@@ -110,6 +110,6 @@ std::string GetCategoriesRequest::getType()const
 void GetCategoriesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

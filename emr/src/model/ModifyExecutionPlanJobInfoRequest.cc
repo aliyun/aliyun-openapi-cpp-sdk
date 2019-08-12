@@ -44,7 +44,7 @@ std::string ModifyExecutionPlanJobInfoRequest::getRegionId()const
 void ModifyExecutionPlanJobInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyExecutionPlanJobInfoRequest::getId()const
@@ -55,7 +55,7 @@ std::string ModifyExecutionPlanJobInfoRequest::getId()const
 void ModifyExecutionPlanJobInfoRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::vector<std::string> ModifyExecutionPlanJobInfoRequest::getJobIdList()const
@@ -78,6 +78,6 @@ std::string ModifyExecutionPlanJobInfoRequest::getAccessKeyId()const
 void ModifyExecutionPlanJobInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

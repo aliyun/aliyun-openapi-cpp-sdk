@@ -33,7 +33,7 @@ std::string CreateConsoleAccessWhiteListRequest::getNote()const
 void CreateConsoleAccessWhiteListRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setCoreParameter("Note", std::to_string(note));
 }
 
 long CreateConsoleAccessWhiteListRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateConsoleAccessWhiteListRequest::getSrcIP()const
 void CreateConsoleAccessWhiteListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string CreateConsoleAccessWhiteListRequest::getSourceIp()const
 void CreateConsoleAccessWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int CreateConsoleAccessWhiteListRequest::getDstPort()const
@@ -88,7 +88,7 @@ std::string CreateConsoleAccessWhiteListRequest::getInstanceIdList()const
 void CreateConsoleAccessWhiteListRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	setCoreParameter("InstanceIdList", std::to_string(instanceIdList));
 }
 
 int CreateConsoleAccessWhiteListRequest::getLiveTime()const
@@ -110,7 +110,7 @@ std::string CreateConsoleAccessWhiteListRequest::getProductName()const
 void CreateConsoleAccessWhiteListRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", productName);
+	setCoreParameter("ProductName", std::to_string(productName));
 }
 
 int CreateConsoleAccessWhiteListRequest::getWhiteListType()const
@@ -132,7 +132,7 @@ std::string CreateConsoleAccessWhiteListRequest::getInstanceInfoList()const
 void CreateConsoleAccessWhiteListRequest::setInstanceInfoList(const std::string& instanceInfoList)
 {
 	instanceInfoList_ = instanceInfoList;
-	setCoreParameter("InstanceInfoList", instanceInfoList);
+	setCoreParameter("InstanceInfoList", std::to_string(instanceInfoList));
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getLang()const
@@ -143,7 +143,7 @@ std::string CreateConsoleAccessWhiteListRequest::getLang()const
 void CreateConsoleAccessWhiteListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getSourceCode()const
@@ -154,6 +154,6 @@ std::string CreateConsoleAccessWhiteListRequest::getSourceCode()const
 void CreateConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

@@ -33,6 +33,6 @@ std::string QueryCustomEventDetailRequest::getQueryJson()const
 void QueryCustomEventDetailRequest::setQueryJson(const std::string& queryJson)
 {
 	queryJson_ = queryJson;
-	setCoreParameter("QueryJson", queryJson);
+	setCoreParameter("QueryJson", std::to_string(queryJson));
 }
 

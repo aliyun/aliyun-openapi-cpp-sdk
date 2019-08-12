@@ -33,7 +33,7 @@ std::string StopCasterRequest::getCasterId()const
 void StopCasterRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long StopCasterRequest::getOwnerId()const

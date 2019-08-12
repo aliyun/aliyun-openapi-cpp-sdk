@@ -33,7 +33,7 @@ std::string MergeFacesRequest::getLibraryId()const
 void MergeFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long MergeFacesRequest::getTargetFaceId()const
@@ -55,7 +55,7 @@ std::string MergeFacesRequest::getStoreName()const
 void MergeFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::vector<long> MergeFacesRequest::getFaceId()const

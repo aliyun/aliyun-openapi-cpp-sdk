@@ -33,7 +33,7 @@ std::string DescribeAvailableResourceRequest::getAccess_key_id()const
 void DescribeAvailableResourceRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeAvailableResourceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
 void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAvailableResourceRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeAvailableResourceRequest::getRegionId()const
 void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeAvailableResourceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeAvailableResourceRequest::getOwnerAccount()const
 void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeAvailableResourceRequest::getAddressType()const
@@ -88,7 +88,7 @@ std::string DescribeAvailableResourceRequest::getAddressType()const
 void DescribeAvailableResourceRequest::setAddressType(const std::string& addressType)
 {
 	addressType_ = addressType;
-	setCoreParameter("AddressType", addressType);
+	setCoreParameter("AddressType", std::to_string(addressType));
 }
 
 long DescribeAvailableResourceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeAvailableResourceRequest::getAddressIPVersion()const
 void DescribeAvailableResourceRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
 	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", addressIPVersion);
+	setCoreParameter("AddressIPVersion", std::to_string(addressIPVersion));
 }
 

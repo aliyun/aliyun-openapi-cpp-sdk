@@ -44,7 +44,7 @@ std::string ModifyReplicaRelationRequest::getSecurityToken()const
 void ModifyReplicaRelationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyReplicaRelationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyReplicaRelationRequest::getResourceOwnerAccount()const
 void ModifyReplicaRelationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyReplicaRelationRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyReplicaRelationRequest::getRegionId()const
 void ModifyReplicaRelationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyReplicaRelationRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyReplicaRelationRequest::getOwnerAccount()const
 void ModifyReplicaRelationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyReplicaRelationRequest::getReplicaId()const
@@ -88,7 +88,7 @@ std::string ModifyReplicaRelationRequest::getReplicaId()const
 void ModifyReplicaRelationRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 long ModifyReplicaRelationRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyReplicaRelationRequest::getAccessKeyId()const
 void ModifyReplicaRelationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

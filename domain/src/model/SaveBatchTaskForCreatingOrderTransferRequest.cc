@@ -33,7 +33,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setCoreParameter("PromotionNo", std::to_string(promotionNo));
 }
 
 std::vector<SaveBatchTaskForCreatingOrderTransferRequest::OrderTransferParam> SaveBatchTaskForCreatingOrderTransferRequest::getOrderTransferParam()const
@@ -63,7 +63,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getCouponNo()const
@@ -74,7 +74,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 bool SaveBatchTaskForCreatingOrderTransferRequest::getUseCoupon()const
@@ -85,7 +85,7 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon);
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const
@@ -96,7 +96,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForCreatingOrderTransferRequest::getUsePromotion()const
@@ -107,6 +107,6 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion);
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

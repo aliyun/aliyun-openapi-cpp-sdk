@@ -33,7 +33,7 @@ std::string DescribeBatchResultDetailRequest::getBatchType()const
 void DescribeBatchResultDetailRequest::setBatchType(const std::string& batchType)
 {
 	batchType_ = batchType;
-	setCoreParameter("BatchType", batchType);
+	setCoreParameter("BatchType", std::to_string(batchType));
 }
 
 std::string DescribeBatchResultDetailRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeBatchResultDetailRequest::getUserClientIp()const
 void DescribeBatchResultDetailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int DescribeBatchResultDetailRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeBatchResultDetailRequest::getLang()const
 void DescribeBatchResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeBatchResultDetailRequest::getPageNumber()const

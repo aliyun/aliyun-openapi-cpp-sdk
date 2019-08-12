@@ -33,7 +33,7 @@ std::string DescribeResetRecordListRequest::getSrcIP()const
 void DescribeResetRecordListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string DescribeResetRecordListRequest::getPeriod()const
@@ -44,7 +44,7 @@ std::string DescribeResetRecordListRequest::getPeriod()const
 void DescribeResetRecordListRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string DescribeResetRecordListRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeResetRecordListRequest::getSourceIp()const
 void DescribeResetRecordListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeResetRecordListRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeResetRecordListRequest::getDstIP()const
 void DescribeResetRecordListRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setCoreParameter("DstIP", std::to_string(dstIP));
 }
 
 std::string DescribeResetRecordListRequest::getRegion()const
@@ -99,7 +99,7 @@ std::string DescribeResetRecordListRequest::getRegion()const
 void DescribeResetRecordListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string DescribeResetRecordListRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeResetRecordListRequest::getLang()const
 void DescribeResetRecordListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeResetRecordListRequest::getSourceCode()const
@@ -121,6 +121,6 @@ std::string DescribeResetRecordListRequest::getSourceCode()const
 void DescribeResetRecordListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeStrategyExecDetailRequest::getSourceIp()const
 void DescribeStrategyExecDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeStrategyExecDetailRequest::getStrategyId()const

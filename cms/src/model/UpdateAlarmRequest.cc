@@ -44,7 +44,7 @@ std::string UpdateAlarmRequest::getWebhook()const
 void UpdateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", webhook);
+	setCoreParameter("Webhook", std::to_string(webhook));
 }
 
 bool UpdateAlarmRequest::getDryRun()const
@@ -55,7 +55,7 @@ bool UpdateAlarmRequest::getDryRun()const
 void UpdateAlarmRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string UpdateAlarmRequest::getContactGroups()const
@@ -66,7 +66,7 @@ std::string UpdateAlarmRequest::getContactGroups()const
 void UpdateAlarmRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", contactGroups);
+	setCoreParameter("ContactGroups", std::to_string(contactGroups));
 }
 
 int UpdateAlarmRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string UpdateAlarmRequest::getThreshold()const
 void UpdateAlarmRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", threshold);
+	setCoreParameter("Threshold", std::to_string(threshold));
 }
 
 int UpdateAlarmRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string UpdateAlarmRequest::getName()const
 void UpdateAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int UpdateAlarmRequest::getEvaluationCount()const
@@ -143,7 +143,7 @@ std::string UpdateAlarmRequest::getId()const
 void UpdateAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 int UpdateAlarmRequest::getNotifyType()const
@@ -165,7 +165,7 @@ std::string UpdateAlarmRequest::getComparisonOperator()const
 void UpdateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
 {
 	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", comparisonOperator);
+	setCoreParameter("ComparisonOperator", std::to_string(comparisonOperator));
 }
 
 std::string UpdateAlarmRequest::getStatistics()const
@@ -176,6 +176,6 @@ std::string UpdateAlarmRequest::getStatistics()const
 void UpdateAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", statistics);
+	setCoreParameter("Statistics", std::to_string(statistics));
 }
 

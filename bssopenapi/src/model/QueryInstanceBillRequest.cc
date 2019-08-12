@@ -33,7 +33,7 @@ bool QueryInstanceBillRequest::getIsBillingItem()const
 void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
 {
 	isBillingItem_ = isBillingItem;
-	setCoreParameter("IsBillingItem", isBillingItem);
+	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
 }
 
 std::string QueryInstanceBillRequest::getProductCode()const
@@ -44,7 +44,7 @@ std::string QueryInstanceBillRequest::getProductCode()const
 void QueryInstanceBillRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 bool QueryInstanceBillRequest::getIsHideZeroCharge()const
@@ -55,7 +55,7 @@ bool QueryInstanceBillRequest::getIsHideZeroCharge()const
 void QueryInstanceBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setCoreParameter("IsHideZeroCharge", isHideZeroCharge);
+	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
 }
 
 std::string QueryInstanceBillRequest::getSubscriptionType()const
@@ -66,7 +66,7 @@ std::string QueryInstanceBillRequest::getSubscriptionType()const
 void QueryInstanceBillRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 int QueryInstanceBillRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string QueryInstanceBillRequest::getBillingCycle()const
 void QueryInstanceBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setCoreParameter("BillingCycle", std::to_string(billingCycle));
 }
 
 long QueryInstanceBillRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string QueryInstanceBillRequest::getProductType()const
 void QueryInstanceBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyDBClusterMaintainTimeRequest::getMaintainTime()const
 void ModifyDBClusterMaintainTimeRequest::setMaintainTime(const std::string& maintainTime)
 {
 	maintainTime_ = maintainTime;
-	setCoreParameter("MaintainTime", maintainTime);
+	setCoreParameter("MaintainTime", std::to_string(maintainTime));
 }
 
 long ModifyDBClusterMaintainTimeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyDBClusterMaintainTimeRequest::getResourceOwnerAccount()const
 void ModifyDBClusterMaintainTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBClusterMaintainTimeRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyDBClusterMaintainTimeRequest::getDBClusterId()const
 void ModifyDBClusterMaintainTimeRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string ModifyDBClusterMaintainTimeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBClusterMaintainTimeRequest::getOwnerAccount()const
 void ModifyDBClusterMaintainTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyDBClusterMaintainTimeRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ModifyDBClusterMaintainTimeRequest::getAccessKeyId()const
 void ModifyDBClusterMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

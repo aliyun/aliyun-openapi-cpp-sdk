@@ -33,7 +33,7 @@ std::string DeleteKeywordLibRequest::getSourceIp()const
 void DeleteKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DeleteKeywordLibRequest::getId()const
@@ -55,6 +55,6 @@ std::string DeleteKeywordLibRequest::getLang()const
 void DeleteKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

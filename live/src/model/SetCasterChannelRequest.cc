@@ -33,7 +33,7 @@ std::string SetCasterChannelRequest::getResourceId()const
 void SetCasterChannelRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 int SetCasterChannelRequest::getPlayStatus()const
@@ -55,7 +55,7 @@ std::string SetCasterChannelRequest::getRegionId()const
 void SetCasterChannelRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetCasterChannelRequest::getCasterId()const
@@ -66,7 +66,7 @@ std::string SetCasterChannelRequest::getCasterId()const
 void SetCasterChannelRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long SetCasterChannelRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string SetCasterChannelRequest::getChannelId()const
 void SetCasterChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", std::to_string(channelId));
 }
 

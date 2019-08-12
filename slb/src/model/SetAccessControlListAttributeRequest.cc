@@ -33,7 +33,7 @@ std::string SetAccessControlListAttributeRequest::getAccess_key_id()const
 void SetAccessControlListAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 std::string SetAccessControlListAttributeRequest::getAclId()const
@@ -44,7 +44,7 @@ std::string SetAccessControlListAttributeRequest::getAclId()const
 void SetAccessControlListAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setCoreParameter("AclId", std::to_string(aclId));
 }
 
 long SetAccessControlListAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SetAccessControlListAttributeRequest::getAclName()const
 void SetAccessControlListAttributeRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setCoreParameter("AclName", aclName);
+	setCoreParameter("AclName", std::to_string(aclName));
 }
 
 std::string SetAccessControlListAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SetAccessControlListAttributeRequest::getResourceOwnerAccount()const
 void SetAccessControlListAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetAccessControlListAttributeRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string SetAccessControlListAttributeRequest::getRegionId()const
 void SetAccessControlListAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetAccessControlListAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string SetAccessControlListAttributeRequest::getOwnerAccount()const
 void SetAccessControlListAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetAccessControlListAttributeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string SetAccessControlListAttributeRequest::getAccessKeyId()const
 void SetAccessControlListAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetAccessControlListAttributeRequest::getTags()const
@@ -132,6 +132,6 @@ std::string SetAccessControlListAttributeRequest::getTags()const
 void SetAccessControlListAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

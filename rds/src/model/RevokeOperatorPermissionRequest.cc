@@ -44,7 +44,7 @@ std::string RevokeOperatorPermissionRequest::getResourceOwnerAccount()const
 void RevokeOperatorPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RevokeOperatorPermissionRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RevokeOperatorPermissionRequest::getOwnerAccount()const
 void RevokeOperatorPermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RevokeOperatorPermissionRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string RevokeOperatorPermissionRequest::getDBInstanceId()const
 void RevokeOperatorPermissionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long RevokeOperatorPermissionRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string RevokeOperatorPermissionRequest::getAccessKeyId()const
 void RevokeOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

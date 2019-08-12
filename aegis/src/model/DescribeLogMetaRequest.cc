@@ -33,7 +33,7 @@ std::string DescribeLogMetaRequest::getSourceIp()const
 void DescribeLogMetaRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeLogMetaRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string DescribeLogMetaRequest::getFrom()const
 void DescribeLogMetaRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeLogMetaRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeLogMetaRequest::getLang()const
 void DescribeLogMetaRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

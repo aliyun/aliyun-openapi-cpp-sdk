@@ -45,7 +45,7 @@ std::string UnTagResourcesRequest::getRegionId()const
 void UnTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<std::string> UnTagResourcesRequest::getTagKey()const
@@ -68,6 +68,6 @@ std::string UnTagResourcesRequest::getResourceType()const
 void UnTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 

@@ -44,7 +44,7 @@ std::string OperateExistsNodeClusterRequest::getLogPath()const
 void OperateExistsNodeClusterRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setCoreParameter("LogPath", logPath);
+	setCoreParameter("LogPath", std::to_string(logPath));
 }
 
 std::vector<std::string> OperateExistsNodeClusterRequest::getMasterInstanceIdList()const
@@ -67,7 +67,7 @@ bool OperateExistsNodeClusterRequest::getIoOptimized()const
 void OperateExistsNodeClusterRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string OperateExistsNodeClusterRequest::getSecurityGroupId()const
@@ -78,7 +78,7 @@ std::string OperateExistsNodeClusterRequest::getSecurityGroupId()const
 void OperateExistsNodeClusterRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 bool OperateExistsNodeClusterRequest::getEasEnable()const
@@ -89,7 +89,7 @@ bool OperateExistsNodeClusterRequest::getEasEnable()const
 void OperateExistsNodeClusterRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable);
+	setCoreParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 bool OperateExistsNodeClusterRequest::getIsResize()const
@@ -100,7 +100,7 @@ bool OperateExistsNodeClusterRequest::getIsResize()const
 void OperateExistsNodeClusterRequest::setIsResize(bool isResize)
 {
 	isResize_ = isResize;
-	setCoreParameter("IsResize", isResize);
+	setCoreParameter("IsResize", isResize ? "true" : "false");
 }
 
 std::string OperateExistsNodeClusterRequest::getDepositType()const
@@ -111,7 +111,7 @@ std::string OperateExistsNodeClusterRequest::getDepositType()const
 void OperateExistsNodeClusterRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
+	setCoreParameter("DepositType", std::to_string(depositType));
 }
 
 std::string OperateExistsNodeClusterRequest::getAccessKeyId()const
@@ -122,7 +122,7 @@ std::string OperateExistsNodeClusterRequest::getAccessKeyId()const
 void OperateExistsNodeClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string OperateExistsNodeClusterRequest::getMachineType()const
@@ -133,7 +133,7 @@ std::string OperateExistsNodeClusterRequest::getMachineType()const
 void OperateExistsNodeClusterRequest::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
-	setCoreParameter("MachineType", machineType);
+	setCoreParameter("MachineType", std::to_string(machineType));
 }
 
 std::string OperateExistsNodeClusterRequest::getRegionId()const
@@ -144,7 +144,7 @@ std::string OperateExistsNodeClusterRequest::getRegionId()const
 void OperateExistsNodeClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool OperateExistsNodeClusterRequest::getUseLocalMetaDb()const
@@ -155,7 +155,7 @@ bool OperateExistsNodeClusterRequest::getUseLocalMetaDb()const
 void OperateExistsNodeClusterRequest::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb);
+	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string OperateExistsNodeClusterRequest::getEmrVer()const
@@ -166,7 +166,7 @@ std::string OperateExistsNodeClusterRequest::getEmrVer()const
 void OperateExistsNodeClusterRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setCoreParameter("EmrVer", emrVer);
+	setCoreParameter("EmrVer", std::to_string(emrVer));
 }
 
 int OperateExistsNodeClusterRequest::getPeriod()const
@@ -188,7 +188,7 @@ std::string OperateExistsNodeClusterRequest::getClusterId()const
 void OperateExistsNodeClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string OperateExistsNodeClusterRequest::getVSwitchId()const
@@ -199,7 +199,7 @@ std::string OperateExistsNodeClusterRequest::getVSwitchId()const
 void OperateExistsNodeClusterRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string OperateExistsNodeClusterRequest::getClusterType()const
@@ -210,7 +210,7 @@ std::string OperateExistsNodeClusterRequest::getClusterType()const
 void OperateExistsNodeClusterRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", std::to_string(clusterType));
 }
 
 std::vector<std::string> OperateExistsNodeClusterRequest::getOptionSoftWareList()const
@@ -245,7 +245,7 @@ std::string OperateExistsNodeClusterRequest::getVpcId()const
 void OperateExistsNodeClusterRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string OperateExistsNodeClusterRequest::getNetType()const
@@ -256,7 +256,7 @@ std::string OperateExistsNodeClusterRequest::getNetType()const
 void OperateExistsNodeClusterRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setCoreParameter("NetType", std::to_string(netType));
 }
 
 std::string OperateExistsNodeClusterRequest::getName()const
@@ -267,7 +267,7 @@ std::string OperateExistsNodeClusterRequest::getName()const
 void OperateExistsNodeClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string OperateExistsNodeClusterRequest::getZoneId()const
@@ -278,7 +278,7 @@ std::string OperateExistsNodeClusterRequest::getZoneId()const
 void OperateExistsNodeClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string OperateExistsNodeClusterRequest::getChargeType()const
@@ -289,7 +289,7 @@ std::string OperateExistsNodeClusterRequest::getChargeType()const
 void OperateExistsNodeClusterRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 std::string OperateExistsNodeClusterRequest::getOperateType()const
@@ -300,7 +300,7 @@ std::string OperateExistsNodeClusterRequest::getOperateType()const
 void OperateExistsNodeClusterRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setCoreParameter("OperateType", std::to_string(operateType));
 }
 
 bool OperateExistsNodeClusterRequest::getHighAvailabilityEnable()const
@@ -311,6 +311,6 @@ bool OperateExistsNodeClusterRequest::getHighAvailabilityEnable()const
 void OperateExistsNodeClusterRequest::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable);
+	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 

@@ -33,7 +33,7 @@ std::string SaveRegistrantProfileRequest::getCountry()const
 void SaveRegistrantProfileRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setCoreParameter("Country", std::to_string(country));
 }
 
 std::string SaveRegistrantProfileRequest::getAddress()const
@@ -44,7 +44,7 @@ std::string SaveRegistrantProfileRequest::getAddress()const
 void SaveRegistrantProfileRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setCoreParameter("Address", std::to_string(address));
 }
 
 std::string SaveRegistrantProfileRequest::getTelArea()const
@@ -55,7 +55,7 @@ std::string SaveRegistrantProfileRequest::getTelArea()const
 void SaveRegistrantProfileRequest::setTelArea(const std::string& telArea)
 {
 	telArea_ = telArea;
-	setCoreParameter("TelArea", telArea);
+	setCoreParameter("TelArea", std::to_string(telArea));
 }
 
 std::string SaveRegistrantProfileRequest::getCity()const
@@ -66,7 +66,7 @@ std::string SaveRegistrantProfileRequest::getCity()const
 void SaveRegistrantProfileRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setCoreParameter("City", std::to_string(city));
 }
 
 long SaveRegistrantProfileRequest::getRegistrantProfileId()const
@@ -88,7 +88,7 @@ std::string SaveRegistrantProfileRequest::getZhAddress()const
 void SaveRegistrantProfileRequest::setZhAddress(const std::string& zhAddress)
 {
 	zhAddress_ = zhAddress;
-	setCoreParameter("ZhAddress", zhAddress);
+	setCoreParameter("ZhAddress", std::to_string(zhAddress));
 }
 
 std::string SaveRegistrantProfileRequest::getRegistrantType()const
@@ -99,7 +99,7 @@ std::string SaveRegistrantProfileRequest::getRegistrantType()const
 void SaveRegistrantProfileRequest::setRegistrantType(const std::string& registrantType)
 {
 	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", registrantType);
+	setCoreParameter("RegistrantType", std::to_string(registrantType));
 }
 
 std::string SaveRegistrantProfileRequest::getRegistrantProfileType()const
@@ -110,7 +110,7 @@ std::string SaveRegistrantProfileRequest::getRegistrantProfileType()const
 void SaveRegistrantProfileRequest::setRegistrantProfileType(const std::string& registrantProfileType)
 {
 	registrantProfileType_ = registrantProfileType;
-	setCoreParameter("RegistrantProfileType", registrantProfileType);
+	setCoreParameter("RegistrantProfileType", std::to_string(registrantProfileType));
 }
 
 std::string SaveRegistrantProfileRequest::getTelephone()const
@@ -121,7 +121,7 @@ std::string SaveRegistrantProfileRequest::getTelephone()const
 void SaveRegistrantProfileRequest::setTelephone(const std::string& telephone)
 {
 	telephone_ = telephone;
-	setCoreParameter("Telephone", telephone);
+	setCoreParameter("Telephone", std::to_string(telephone));
 }
 
 bool SaveRegistrantProfileRequest::getDefaultRegistrantProfile()const
@@ -132,7 +132,7 @@ bool SaveRegistrantProfileRequest::getDefaultRegistrantProfile()const
 void SaveRegistrantProfileRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
 {
 	defaultRegistrantProfile_ = defaultRegistrantProfile;
-	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile);
+	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
 }
 
 std::string SaveRegistrantProfileRequest::getZhCity()const
@@ -143,7 +143,7 @@ std::string SaveRegistrantProfileRequest::getZhCity()const
 void SaveRegistrantProfileRequest::setZhCity(const std::string& zhCity)
 {
 	zhCity_ = zhCity;
-	setCoreParameter("ZhCity", zhCity);
+	setCoreParameter("ZhCity", std::to_string(zhCity));
 }
 
 std::string SaveRegistrantProfileRequest::getZhProvince()const
@@ -154,7 +154,7 @@ std::string SaveRegistrantProfileRequest::getZhProvince()const
 void SaveRegistrantProfileRequest::setZhProvince(const std::string& zhProvince)
 {
 	zhProvince_ = zhProvince;
-	setCoreParameter("ZhProvince", zhProvince);
+	setCoreParameter("ZhProvince", std::to_string(zhProvince));
 }
 
 std::string SaveRegistrantProfileRequest::getRegistrantOrganization()const
@@ -165,7 +165,7 @@ std::string SaveRegistrantProfileRequest::getRegistrantOrganization()const
 void SaveRegistrantProfileRequest::setRegistrantOrganization(const std::string& registrantOrganization)
 {
 	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", registrantOrganization);
+	setCoreParameter("RegistrantOrganization", std::to_string(registrantOrganization));
 }
 
 std::string SaveRegistrantProfileRequest::getTelExt()const
@@ -176,7 +176,7 @@ std::string SaveRegistrantProfileRequest::getTelExt()const
 void SaveRegistrantProfileRequest::setTelExt(const std::string& telExt)
 {
 	telExt_ = telExt;
-	setCoreParameter("TelExt", telExt);
+	setCoreParameter("TelExt", std::to_string(telExt));
 }
 
 std::string SaveRegistrantProfileRequest::getProvince()const
@@ -187,7 +187,7 @@ std::string SaveRegistrantProfileRequest::getProvince()const
 void SaveRegistrantProfileRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", province);
+	setCoreParameter("Province", std::to_string(province));
 }
 
 std::string SaveRegistrantProfileRequest::getZhRegistrantName()const
@@ -198,7 +198,7 @@ std::string SaveRegistrantProfileRequest::getZhRegistrantName()const
 void SaveRegistrantProfileRequest::setZhRegistrantName(const std::string& zhRegistrantName)
 {
 	zhRegistrantName_ = zhRegistrantName;
-	setCoreParameter("ZhRegistrantName", zhRegistrantName);
+	setCoreParameter("ZhRegistrantName", std::to_string(zhRegistrantName));
 }
 
 std::string SaveRegistrantProfileRequest::getPostalCode()const
@@ -209,7 +209,7 @@ std::string SaveRegistrantProfileRequest::getPostalCode()const
 void SaveRegistrantProfileRequest::setPostalCode(const std::string& postalCode)
 {
 	postalCode_ = postalCode;
-	setCoreParameter("PostalCode", postalCode);
+	setCoreParameter("PostalCode", std::to_string(postalCode));
 }
 
 std::string SaveRegistrantProfileRequest::getUserClientIp()const
@@ -220,7 +220,7 @@ std::string SaveRegistrantProfileRequest::getUserClientIp()const
 void SaveRegistrantProfileRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveRegistrantProfileRequest::getLang()const
@@ -231,7 +231,7 @@ std::string SaveRegistrantProfileRequest::getLang()const
 void SaveRegistrantProfileRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string SaveRegistrantProfileRequest::getEmail()const
@@ -242,7 +242,7 @@ std::string SaveRegistrantProfileRequest::getEmail()const
 void SaveRegistrantProfileRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setCoreParameter("Email", std::to_string(email));
 }
 
 std::string SaveRegistrantProfileRequest::getRegistrantName()const
@@ -253,7 +253,7 @@ std::string SaveRegistrantProfileRequest::getRegistrantName()const
 void SaveRegistrantProfileRequest::setRegistrantName(const std::string& registrantName)
 {
 	registrantName_ = registrantName;
-	setCoreParameter("RegistrantName", registrantName);
+	setCoreParameter("RegistrantName", std::to_string(registrantName));
 }
 
 std::string SaveRegistrantProfileRequest::getZhRegistrantOrganization()const
@@ -264,6 +264,6 @@ std::string SaveRegistrantProfileRequest::getZhRegistrantOrganization()const
 void SaveRegistrantProfileRequest::setZhRegistrantOrganization(const std::string& zhRegistrantOrganization)
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
-	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+	setCoreParameter("ZhRegistrantOrganization", std::to_string(zhRegistrantOrganization));
 }
 

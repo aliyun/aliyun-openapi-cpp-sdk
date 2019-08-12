@@ -55,7 +55,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getResourceOwnerAccount()co
 void DescribeNewProjectEipMonitorDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getRegionId()const
 void DescribeNewProjectEipMonitorDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getOwnerAccount()const
 void DescribeNewProjectEipMonitorDataRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getEndTime()const
 void DescribeNewProjectEipMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getAllocationId()const
@@ -99,7 +99,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getAllocationId()const
 void DescribeNewProjectEipMonitorDataRequest::setAllocationId(const std::string& allocationId)
 {
 	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	setCoreParameter("AllocationId", std::to_string(allocationId));
 }
 
 std::string DescribeNewProjectEipMonitorDataRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string DescribeNewProjectEipMonitorDataRequest::getStartTime()const
 void DescribeNewProjectEipMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeNewProjectEipMonitorDataRequest::getOwnerId()const

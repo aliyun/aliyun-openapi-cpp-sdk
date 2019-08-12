@@ -44,7 +44,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId10()const
 void DescribeScalingGroupsRequest::setScalingGroupId10(const std::string& scalingGroupId10)
 {
 	scalingGroupId10_ = scalingGroupId10;
-	setCoreParameter("ScalingGroupId10", scalingGroupId10);
+	setCoreParameter("ScalingGroupId10", std::to_string(scalingGroupId10));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId12()const
@@ -55,7 +55,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId12()const
 void DescribeScalingGroupsRequest::setScalingGroupId12(const std::string& scalingGroupId12)
 {
 	scalingGroupId12_ = scalingGroupId12;
-	setCoreParameter("ScalingGroupId12", scalingGroupId12);
+	setCoreParameter("ScalingGroupId12", std::to_string(scalingGroupId12));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId13()const
@@ -66,7 +66,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId13()const
 void DescribeScalingGroupsRequest::setScalingGroupId13(const std::string& scalingGroupId13)
 {
 	scalingGroupId13_ = scalingGroupId13;
-	setCoreParameter("ScalingGroupId13", scalingGroupId13);
+	setCoreParameter("ScalingGroupId13", std::to_string(scalingGroupId13));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId14()const
@@ -77,7 +77,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId14()const
 void DescribeScalingGroupsRequest::setScalingGroupId14(const std::string& scalingGroupId14)
 {
 	scalingGroupId14_ = scalingGroupId14;
-	setCoreParameter("ScalingGroupId14", scalingGroupId14);
+	setCoreParameter("ScalingGroupId14", std::to_string(scalingGroupId14));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId15()const
@@ -88,7 +88,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId15()const
 void DescribeScalingGroupsRequest::setScalingGroupId15(const std::string& scalingGroupId15)
 {
 	scalingGroupId15_ = scalingGroupId15;
-	setCoreParameter("ScalingGroupId15", scalingGroupId15);
+	setCoreParameter("ScalingGroupId15", std::to_string(scalingGroupId15));
 }
 
 long DescribeScalingGroupsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeScalingGroupsRequest::getAccessKeyId()const
 void DescribeScalingGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeScalingGroupsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeScalingGroupsRequest::getRegionId()const
 void DescribeScalingGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeScalingGroupsRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName20()const
 void DescribeScalingGroupsRequest::setScalingGroupName20(const std::string& scalingGroupName20)
 {
 	scalingGroupName20_ = scalingGroupName20;
-	setCoreParameter("ScalingGroupName20", scalingGroupName20);
+	setCoreParameter("ScalingGroupName20", std::to_string(scalingGroupName20));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName19()const
@@ -165,7 +165,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName19()const
 void DescribeScalingGroupsRequest::setScalingGroupName19(const std::string& scalingGroupName19)
 {
 	scalingGroupName19_ = scalingGroupName19;
-	setCoreParameter("ScalingGroupName19", scalingGroupName19);
+	setCoreParameter("ScalingGroupName19", std::to_string(scalingGroupName19));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId20()const
@@ -176,7 +176,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId20()const
 void DescribeScalingGroupsRequest::setScalingGroupId20(const std::string& scalingGroupId20)
 {
 	scalingGroupId20_ = scalingGroupId20;
-	setCoreParameter("ScalingGroupId20", scalingGroupId20);
+	setCoreParameter("ScalingGroupId20", std::to_string(scalingGroupId20));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName18()const
@@ -187,7 +187,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName18()const
 void DescribeScalingGroupsRequest::setScalingGroupName18(const std::string& scalingGroupName18)
 {
 	scalingGroupName18_ = scalingGroupName18;
-	setCoreParameter("ScalingGroupName18", scalingGroupName18);
+	setCoreParameter("ScalingGroupName18", std::to_string(scalingGroupName18));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName17()const
@@ -198,7 +198,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName17()const
 void DescribeScalingGroupsRequest::setScalingGroupName17(const std::string& scalingGroupName17)
 {
 	scalingGroupName17_ = scalingGroupName17;
-	setCoreParameter("ScalingGroupName17", scalingGroupName17);
+	setCoreParameter("ScalingGroupName17", std::to_string(scalingGroupName17));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName16()const
@@ -209,7 +209,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName16()const
 void DescribeScalingGroupsRequest::setScalingGroupName16(const std::string& scalingGroupName16)
 {
 	scalingGroupName16_ = scalingGroupName16;
-	setCoreParameter("ScalingGroupName16", scalingGroupName16);
+	setCoreParameter("ScalingGroupName16", std::to_string(scalingGroupName16));
 }
 
 std::string DescribeScalingGroupsRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeScalingGroupsRequest::getResourceOwnerAccount()const
 void DescribeScalingGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName()const
@@ -231,7 +231,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName()const
 void DescribeScalingGroupsRequest::setScalingGroupName(const std::string& scalingGroupName)
 {
 	scalingGroupName_ = scalingGroupName;
-	setCoreParameter("ScalingGroupName", scalingGroupName);
+	setCoreParameter("ScalingGroupName", std::to_string(scalingGroupName));
 }
 
 std::string DescribeScalingGroupsRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeScalingGroupsRequest::getOwnerAccount()const
 void DescribeScalingGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName1()const
@@ -253,7 +253,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName1()const
 void DescribeScalingGroupsRequest::setScalingGroupName1(const std::string& scalingGroupName1)
 {
 	scalingGroupName1_ = scalingGroupName1;
-	setCoreParameter("ScalingGroupName1", scalingGroupName1);
+	setCoreParameter("ScalingGroupName1", std::to_string(scalingGroupName1));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName2()const
@@ -264,7 +264,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName2()const
 void DescribeScalingGroupsRequest::setScalingGroupName2(const std::string& scalingGroupName2)
 {
 	scalingGroupName2_ = scalingGroupName2;
-	setCoreParameter("ScalingGroupName2", scalingGroupName2);
+	setCoreParameter("ScalingGroupName2", std::to_string(scalingGroupName2));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId2()const
@@ -275,7 +275,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId2()const
 void DescribeScalingGroupsRequest::setScalingGroupId2(const std::string& scalingGroupId2)
 {
 	scalingGroupId2_ = scalingGroupId2;
-	setCoreParameter("ScalingGroupId2", scalingGroupId2);
+	setCoreParameter("ScalingGroupId2", std::to_string(scalingGroupId2));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId1()const
@@ -286,7 +286,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId1()const
 void DescribeScalingGroupsRequest::setScalingGroupId1(const std::string& scalingGroupId1)
 {
 	scalingGroupId1_ = scalingGroupId1;
-	setCoreParameter("ScalingGroupId1", scalingGroupId1);
+	setCoreParameter("ScalingGroupId1", std::to_string(scalingGroupId1));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId6()const
@@ -297,7 +297,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId6()const
 void DescribeScalingGroupsRequest::setScalingGroupId6(const std::string& scalingGroupId6)
 {
 	scalingGroupId6_ = scalingGroupId6;
-	setCoreParameter("ScalingGroupId6", scalingGroupId6);
+	setCoreParameter("ScalingGroupId6", std::to_string(scalingGroupId6));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId16()const
@@ -308,7 +308,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId16()const
 void DescribeScalingGroupsRequest::setScalingGroupId16(const std::string& scalingGroupId16)
 {
 	scalingGroupId16_ = scalingGroupId16;
-	setCoreParameter("ScalingGroupId16", scalingGroupId16);
+	setCoreParameter("ScalingGroupId16", std::to_string(scalingGroupId16));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName7()const
@@ -319,7 +319,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName7()const
 void DescribeScalingGroupsRequest::setScalingGroupName7(const std::string& scalingGroupName7)
 {
 	scalingGroupName7_ = scalingGroupName7;
-	setCoreParameter("ScalingGroupName7", scalingGroupName7);
+	setCoreParameter("ScalingGroupName7", std::to_string(scalingGroupName7));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName11()const
@@ -330,7 +330,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName11()const
 void DescribeScalingGroupsRequest::setScalingGroupName11(const std::string& scalingGroupName11)
 {
 	scalingGroupName11_ = scalingGroupName11;
-	setCoreParameter("ScalingGroupName11", scalingGroupName11);
+	setCoreParameter("ScalingGroupName11", std::to_string(scalingGroupName11));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId5()const
@@ -341,7 +341,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId5()const
 void DescribeScalingGroupsRequest::setScalingGroupId5(const std::string& scalingGroupId5)
 {
 	scalingGroupId5_ = scalingGroupId5;
-	setCoreParameter("ScalingGroupId5", scalingGroupId5);
+	setCoreParameter("ScalingGroupId5", std::to_string(scalingGroupId5));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId17()const
@@ -352,7 +352,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId17()const
 void DescribeScalingGroupsRequest::setScalingGroupId17(const std::string& scalingGroupId17)
 {
 	scalingGroupId17_ = scalingGroupId17;
-	setCoreParameter("ScalingGroupId17", scalingGroupId17);
+	setCoreParameter("ScalingGroupId17", std::to_string(scalingGroupId17));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName8()const
@@ -363,7 +363,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName8()const
 void DescribeScalingGroupsRequest::setScalingGroupName8(const std::string& scalingGroupName8)
 {
 	scalingGroupName8_ = scalingGroupName8;
-	setCoreParameter("ScalingGroupName8", scalingGroupName8);
+	setCoreParameter("ScalingGroupName8", std::to_string(scalingGroupName8));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName10()const
@@ -374,7 +374,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName10()const
 void DescribeScalingGroupsRequest::setScalingGroupName10(const std::string& scalingGroupName10)
 {
 	scalingGroupName10_ = scalingGroupName10;
-	setCoreParameter("ScalingGroupName10", scalingGroupName10);
+	setCoreParameter("ScalingGroupName10", std::to_string(scalingGroupName10));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId4()const
@@ -385,7 +385,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId4()const
 void DescribeScalingGroupsRequest::setScalingGroupId4(const std::string& scalingGroupId4)
 {
 	scalingGroupId4_ = scalingGroupId4;
-	setCoreParameter("ScalingGroupId4", scalingGroupId4);
+	setCoreParameter("ScalingGroupId4", std::to_string(scalingGroupId4));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId18()const
@@ -396,7 +396,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId18()const
 void DescribeScalingGroupsRequest::setScalingGroupId18(const std::string& scalingGroupId18)
 {
 	scalingGroupId18_ = scalingGroupId18;
-	setCoreParameter("ScalingGroupId18", scalingGroupId18);
+	setCoreParameter("ScalingGroupId18", std::to_string(scalingGroupId18));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName9()const
@@ -407,7 +407,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName9()const
 void DescribeScalingGroupsRequest::setScalingGroupName9(const std::string& scalingGroupName9)
 {
 	scalingGroupName9_ = scalingGroupName9;
-	setCoreParameter("ScalingGroupName9", scalingGroupName9);
+	setCoreParameter("ScalingGroupName9", std::to_string(scalingGroupName9));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId3()const
@@ -418,7 +418,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId3()const
 void DescribeScalingGroupsRequest::setScalingGroupId3(const std::string& scalingGroupId3)
 {
 	scalingGroupId3_ = scalingGroupId3;
-	setCoreParameter("ScalingGroupId3", scalingGroupId3);
+	setCoreParameter("ScalingGroupId3", std::to_string(scalingGroupId3));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId19()const
@@ -429,7 +429,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId19()const
 void DescribeScalingGroupsRequest::setScalingGroupId19(const std::string& scalingGroupId19)
 {
 	scalingGroupId19_ = scalingGroupId19;
-	setCoreParameter("ScalingGroupId19", scalingGroupId19);
+	setCoreParameter("ScalingGroupId19", std::to_string(scalingGroupId19));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName3()const
@@ -440,7 +440,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName3()const
 void DescribeScalingGroupsRequest::setScalingGroupName3(const std::string& scalingGroupName3)
 {
 	scalingGroupName3_ = scalingGroupName3;
-	setCoreParameter("ScalingGroupName3", scalingGroupName3);
+	setCoreParameter("ScalingGroupName3", std::to_string(scalingGroupName3));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName15()const
@@ -451,7 +451,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName15()const
 void DescribeScalingGroupsRequest::setScalingGroupName15(const std::string& scalingGroupName15)
 {
 	scalingGroupName15_ = scalingGroupName15;
-	setCoreParameter("ScalingGroupName15", scalingGroupName15);
+	setCoreParameter("ScalingGroupName15", std::to_string(scalingGroupName15));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId9()const
@@ -462,7 +462,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId9()const
 void DescribeScalingGroupsRequest::setScalingGroupId9(const std::string& scalingGroupId9)
 {
 	scalingGroupId9_ = scalingGroupId9;
-	setCoreParameter("ScalingGroupId9", scalingGroupId9);
+	setCoreParameter("ScalingGroupId9", std::to_string(scalingGroupId9));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName4()const
@@ -473,7 +473,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName4()const
 void DescribeScalingGroupsRequest::setScalingGroupName4(const std::string& scalingGroupName4)
 {
 	scalingGroupName4_ = scalingGroupName4;
-	setCoreParameter("ScalingGroupName4", scalingGroupName4);
+	setCoreParameter("ScalingGroupName4", std::to_string(scalingGroupName4));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName14()const
@@ -484,7 +484,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName14()const
 void DescribeScalingGroupsRequest::setScalingGroupName14(const std::string& scalingGroupName14)
 {
 	scalingGroupName14_ = scalingGroupName14;
-	setCoreParameter("ScalingGroupName14", scalingGroupName14);
+	setCoreParameter("ScalingGroupName14", std::to_string(scalingGroupName14));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId8()const
@@ -495,7 +495,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId8()const
 void DescribeScalingGroupsRequest::setScalingGroupId8(const std::string& scalingGroupId8)
 {
 	scalingGroupId8_ = scalingGroupId8;
-	setCoreParameter("ScalingGroupId8", scalingGroupId8);
+	setCoreParameter("ScalingGroupId8", std::to_string(scalingGroupId8));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName5()const
@@ -506,7 +506,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName5()const
 void DescribeScalingGroupsRequest::setScalingGroupName5(const std::string& scalingGroupName5)
 {
 	scalingGroupName5_ = scalingGroupName5;
-	setCoreParameter("ScalingGroupName5", scalingGroupName5);
+	setCoreParameter("ScalingGroupName5", std::to_string(scalingGroupName5));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName13()const
@@ -517,7 +517,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName13()const
 void DescribeScalingGroupsRequest::setScalingGroupName13(const std::string& scalingGroupName13)
 {
 	scalingGroupName13_ = scalingGroupName13;
-	setCoreParameter("ScalingGroupName13", scalingGroupName13);
+	setCoreParameter("ScalingGroupName13", std::to_string(scalingGroupName13));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupId7()const
@@ -528,7 +528,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupId7()const
 void DescribeScalingGroupsRequest::setScalingGroupId7(const std::string& scalingGroupId7)
 {
 	scalingGroupId7_ = scalingGroupId7;
-	setCoreParameter("ScalingGroupId7", scalingGroupId7);
+	setCoreParameter("ScalingGroupId7", std::to_string(scalingGroupId7));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName6()const
@@ -539,7 +539,7 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName6()const
 void DescribeScalingGroupsRequest::setScalingGroupName6(const std::string& scalingGroupName6)
 {
 	scalingGroupName6_ = scalingGroupName6;
-	setCoreParameter("ScalingGroupName6", scalingGroupName6);
+	setCoreParameter("ScalingGroupName6", std::to_string(scalingGroupName6));
 }
 
 std::string DescribeScalingGroupsRequest::getScalingGroupName12()const
@@ -550,6 +550,6 @@ std::string DescribeScalingGroupsRequest::getScalingGroupName12()const
 void DescribeScalingGroupsRequest::setScalingGroupName12(const std::string& scalingGroupName12)
 {
 	scalingGroupName12_ = scalingGroupName12;
-	setCoreParameter("ScalingGroupName12", scalingGroupName12);
+	setCoreParameter("ScalingGroupName12", std::to_string(scalingGroupName12));
 }
 

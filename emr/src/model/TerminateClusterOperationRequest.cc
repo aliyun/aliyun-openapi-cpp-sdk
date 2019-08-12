@@ -44,7 +44,7 @@ std::string TerminateClusterOperationRequest::getRegionId()const
 void TerminateClusterOperationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string TerminateClusterOperationRequest::getOperationId()const
@@ -55,7 +55,7 @@ std::string TerminateClusterOperationRequest::getOperationId()const
 void TerminateClusterOperationRequest::setOperationId(const std::string& operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", operationId);
+	setCoreParameter("OperationId", std::to_string(operationId));
 }
 
 std::string TerminateClusterOperationRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string TerminateClusterOperationRequest::getClusterId()const
 void TerminateClusterOperationRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string TerminateClusterOperationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string TerminateClusterOperationRequest::getAccessKeyId()const
 void TerminateClusterOperationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

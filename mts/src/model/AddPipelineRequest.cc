@@ -44,7 +44,7 @@ std::string AddPipelineRequest::getRole()const
 void AddPipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::string AddPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddPipelineRequest::getResourceOwnerAccount()const
 void AddPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddPipelineRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddPipelineRequest::getOwnerAccount()const
 void AddPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddPipelineRequest::getName()const
@@ -77,7 +77,7 @@ std::string AddPipelineRequest::getName()const
 void AddPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string AddPipelineRequest::getNotifyConfig()const
@@ -88,7 +88,7 @@ std::string AddPipelineRequest::getNotifyConfig()const
 void AddPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", std::to_string(notifyConfig));
 }
 
 long AddPipelineRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string AddPipelineRequest::getSpeed()const
 void AddPipelineRequest::setSpeed(const std::string& speed)
 {
 	speed_ = speed;
-	setCoreParameter("Speed", speed);
+	setCoreParameter("Speed", std::to_string(speed));
 }
 
 std::string AddPipelineRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string AddPipelineRequest::getAccessKeyId()const
 void AddPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

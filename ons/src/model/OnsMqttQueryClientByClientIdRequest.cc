@@ -33,7 +33,7 @@ std::string OnsMqttQueryClientByClientIdRequest::getClientId()const
 void OnsMqttQueryClientByClientIdRequest::setClientId(const std::string& clientId)
 {
 	clientId_ = clientId;
-	setCoreParameter("ClientId", clientId);
+	setCoreParameter("ClientId", std::to_string(clientId));
 }
 
 std::string OnsMqttQueryClientByClientIdRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string OnsMqttQueryClientByClientIdRequest::getInstanceId()const
 void OnsMqttQueryClientByClientIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 

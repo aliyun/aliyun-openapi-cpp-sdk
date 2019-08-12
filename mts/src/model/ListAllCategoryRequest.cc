@@ -44,7 +44,7 @@ std::string ListAllCategoryRequest::getResourceOwnerAccount()const
 void ListAllCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ListAllCategoryRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ListAllCategoryRequest::getOwnerAccount()const
 void ListAllCategoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ListAllCategoryRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string ListAllCategoryRequest::getAccessKeyId()const
 void ListAllCategoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

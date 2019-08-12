@@ -45,7 +45,7 @@ std::string ModifySkillGroupOfUserRequest::getInstanceId()const
 void ModifySkillGroupOfUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> ModifySkillGroupOfUserRequest::getRoleId()const
@@ -80,7 +80,7 @@ std::string ModifySkillGroupOfUserRequest::getUserId()const
 void ModifySkillGroupOfUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
@@ -91,6 +91,6 @@ std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
 void ModifySkillGroupOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

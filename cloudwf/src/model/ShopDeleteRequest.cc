@@ -33,7 +33,7 @@ std::string ShopDeleteRequest::getAccessKeyId()const
 void ShopDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ShopDeleteRequest::getSid()const

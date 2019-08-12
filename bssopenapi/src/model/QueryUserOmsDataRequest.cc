@@ -33,7 +33,7 @@ std::string QueryUserOmsDataRequest::getDataType()const
 void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
+	setCoreParameter("DataType", std::to_string(dataType));
 }
 
 std::string QueryUserOmsDataRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string QueryUserOmsDataRequest::getMarker()const
 void QueryUserOmsDataRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setCoreParameter("Marker", std::to_string(marker));
 }
 
 int QueryUserOmsDataRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string QueryUserOmsDataRequest::getEndTime()const
 void QueryUserOmsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryUserOmsDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryUserOmsDataRequest::getStartTime()const
 void QueryUserOmsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long QueryUserOmsDataRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string QueryUserOmsDataRequest::getTable()const
 void QueryUserOmsDataRequest::setTable(const std::string& table)
 {
 	table_ = table;
-	setCoreParameter("Table", table);
+	setCoreParameter("Table", std::to_string(table));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeCheckWarningSummaryRequest::getRiskName()const
 void DescribeCheckWarningSummaryRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
+	setCoreParameter("RiskName", std::to_string(riskName));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
 void DescribeCheckWarningSummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeCheckWarningSummaryRequest::getRiskStatus()const
@@ -99,7 +99,7 @@ std::string DescribeCheckWarningSummaryRequest::getLang()const
 void DescribeCheckWarningSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getTypeName()const
@@ -110,7 +110,7 @@ std::string DescribeCheckWarningSummaryRequest::getTypeName()const
 void DescribeCheckWarningSummaryRequest::setTypeName(const std::string& typeName)
 {
 	typeName_ = typeName;
-	setCoreParameter("TypeName", typeName);
+	setCoreParameter("TypeName", std::to_string(typeName));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getStatus()const
@@ -121,7 +121,7 @@ std::string DescribeCheckWarningSummaryRequest::getStatus()const
 void DescribeCheckWarningSummaryRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getUuids()const
@@ -132,6 +132,6 @@ std::string DescribeCheckWarningSummaryRequest::getUuids()const
 void DescribeCheckWarningSummaryRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

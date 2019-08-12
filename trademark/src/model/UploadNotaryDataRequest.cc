@@ -33,7 +33,7 @@ std::string UploadNotaryDataRequest::getUploadContext()const
 void UploadNotaryDataRequest::setUploadContext(const std::string& uploadContext)
 {
 	uploadContext_ = uploadContext;
-	setCoreParameter("UploadContext", uploadContext);
+	setCoreParameter("UploadContext", std::to_string(uploadContext));
 }
 
 std::string UploadNotaryDataRequest::getBizOrderNo()const
@@ -44,7 +44,7 @@ std::string UploadNotaryDataRequest::getBizOrderNo()const
 void UploadNotaryDataRequest::setBizOrderNo(const std::string& bizOrderNo)
 {
 	bizOrderNo_ = bizOrderNo;
-	setCoreParameter("BizOrderNo", bizOrderNo);
+	setCoreParameter("BizOrderNo", std::to_string(bizOrderNo));
 }
 
 int UploadNotaryDataRequest::getNotaryType()const

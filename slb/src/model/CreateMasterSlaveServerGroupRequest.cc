@@ -33,7 +33,7 @@ std::string CreateMasterSlaveServerGroupRequest::getAccess_key_id()const
 void CreateMasterSlaveServerGroupRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long CreateMasterSlaveServerGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveBackendServers()c
 void CreateMasterSlaveServerGroupRequest::setMasterSlaveBackendServers(const std::string& masterSlaveBackendServers)
 {
 	masterSlaveBackendServers_ = masterSlaveBackendServers;
-	setCoreParameter("MasterSlaveBackendServers", masterSlaveBackendServers);
+	setCoreParameter("MasterSlaveBackendServers", std::to_string(masterSlaveBackendServers));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string CreateMasterSlaveServerGroupRequest::getLoadBalancerId()const
 void CreateMasterSlaveServerGroupRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateMasterSlaveServerGroupRequest::getResourceOwnerAccount()const
 void CreateMasterSlaveServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string CreateMasterSlaveServerGroupRequest::getRegionId()const
 void CreateMasterSlaveServerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateMasterSlaveServerGroupRequest::getOwnerAccount()const
 void CreateMasterSlaveServerGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveServerGroupName()const
@@ -110,7 +110,7 @@ std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveServerGroupName()
 void CreateMasterSlaveServerGroupRequest::setMasterSlaveServerGroupName(const std::string& masterSlaveServerGroupName)
 {
 	masterSlaveServerGroupName_ = masterSlaveServerGroupName;
-	setCoreParameter("MasterSlaveServerGroupName", masterSlaveServerGroupName);
+	setCoreParameter("MasterSlaveServerGroupName", std::to_string(masterSlaveServerGroupName));
 }
 
 long CreateMasterSlaveServerGroupRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string CreateMasterSlaveServerGroupRequest::getTags()const
 void CreateMasterSlaveServerGroupRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

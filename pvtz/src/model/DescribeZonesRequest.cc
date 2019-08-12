@@ -33,7 +33,7 @@ std::string DescribeZonesRequest::getQueryVpcId()const
 void DescribeZonesRequest::setQueryVpcId(const std::string& queryVpcId)
 {
 	queryVpcId_ = queryVpcId;
-	setCoreParameter("QueryVpcId", queryVpcId);
+	setCoreParameter("QueryVpcId", std::to_string(queryVpcId));
 }
 
 std::string DescribeZonesRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeZonesRequest::getResourceGroupId()const
 void DescribeZonesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 int DescribeZonesRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeZonesRequest::getUserClientIp()const
 void DescribeZonesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeZonesRequest::getSearchMode()const
@@ -77,7 +77,7 @@ std::string DescribeZonesRequest::getSearchMode()const
 void DescribeZonesRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
+	setCoreParameter("SearchMode", std::to_string(searchMode));
 }
 
 std::string DescribeZonesRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeZonesRequest::getLang()const
 void DescribeZonesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeZonesRequest::getKeyword()const
@@ -99,7 +99,7 @@ std::string DescribeZonesRequest::getKeyword()const
 void DescribeZonesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 int DescribeZonesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string DescribeZonesRequest::getQueryRegionId()const
 void DescribeZonesRequest::setQueryRegionId(const std::string& queryRegionId)
 {
 	queryRegionId_ = queryRegionId;
-	setCoreParameter("QueryRegionId", queryRegionId);
+	setCoreParameter("QueryRegionId", std::to_string(queryRegionId));
 }
 

@@ -55,7 +55,7 @@ std::string GetAuditHistoryRequest::getVideoId()const
 void GetAuditHistoryRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 std::string GetAuditHistoryRequest::getSortBy()const
@@ -66,6 +66,6 @@ std::string GetAuditHistoryRequest::getSortBy()const
 void GetAuditHistoryRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", std::to_string(sortBy));
 }
 

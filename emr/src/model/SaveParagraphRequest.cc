@@ -44,7 +44,7 @@ std::string SaveParagraphRequest::getRegionId()const
 void SaveParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SaveParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string SaveParagraphRequest::getNoteId()const
 void SaveParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 
 std::string SaveParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string SaveParagraphRequest::getId()const
 void SaveParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SaveParagraphRequest::getText()const
@@ -77,7 +77,7 @@ std::string SaveParagraphRequest::getText()const
 void SaveParagraphRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setCoreParameter("Text", std::to_string(text));
 }
 
 std::string SaveParagraphRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SaveParagraphRequest::getAccessKeyId()const
 void SaveParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

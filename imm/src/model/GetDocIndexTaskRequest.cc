@@ -33,7 +33,7 @@ std::string GetDocIndexTaskRequest::getRegionId()const
 void GetDocIndexTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetDocIndexTaskRequest::getProject()const
@@ -44,7 +44,7 @@ std::string GetDocIndexTaskRequest::getProject()const
 void GetDocIndexTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string GetDocIndexTaskRequest::getTaskId()const
@@ -55,7 +55,7 @@ std::string GetDocIndexTaskRequest::getTaskId()const
 void GetDocIndexTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string GetDocIndexTaskRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetDocIndexTaskRequest::getAccessKeyId()const
 void GetDocIndexTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

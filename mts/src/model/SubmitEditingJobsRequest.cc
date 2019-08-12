@@ -33,7 +33,7 @@ std::string SubmitEditingJobsRequest::getOutputBucket()const
 void SubmitEditingJobsRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", outputBucket);
+	setCoreParameter("OutputBucket", std::to_string(outputBucket));
 }
 
 long SubmitEditingJobsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
 void SubmitEditingJobsRequest::setEditingJobOutputs(const std::string& editingJobOutputs)
 {
 	editingJobOutputs_ = editingJobOutputs;
-	setCoreParameter("EditingJobOutputs", editingJobOutputs);
+	setCoreParameter("EditingJobOutputs", std::to_string(editingJobOutputs));
 }
 
 std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
 void SubmitEditingJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitEditingJobsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitEditingJobsRequest::getOwnerAccount()const
 void SubmitEditingJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitEditingJobsRequest::getOutputLocation()const
@@ -88,7 +88,7 @@ std::string SubmitEditingJobsRequest::getOutputLocation()const
 void SubmitEditingJobsRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", outputLocation);
+	setCoreParameter("OutputLocation", std::to_string(outputLocation));
 }
 
 long SubmitEditingJobsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitEditingJobsRequest::getEditingInputs()const
 void SubmitEditingJobsRequest::setEditingInputs(const std::string& editingInputs)
 {
 	editingInputs_ = editingInputs;
-	setCoreParameter("EditingInputs", editingInputs);
+	setCoreParameter("EditingInputs", std::to_string(editingInputs));
 }
 
 std::string SubmitEditingJobsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SubmitEditingJobsRequest::getAccessKeyId()const
 void SubmitEditingJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitEditingJobsRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string SubmitEditingJobsRequest::getPipelineId()const
 void SubmitEditingJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

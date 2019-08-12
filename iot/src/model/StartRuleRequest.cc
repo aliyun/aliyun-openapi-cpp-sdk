@@ -33,7 +33,7 @@ std::string StartRuleRequest::getIotInstanceId()const
 void StartRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 long StartRuleRequest::getRuleId()const
@@ -55,6 +55,6 @@ std::string StartRuleRequest::getAccessKeyId()const
 void StartRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

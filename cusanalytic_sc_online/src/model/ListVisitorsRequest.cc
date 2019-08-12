@@ -33,7 +33,7 @@ std::string ListVisitorsRequest::getPkId()const
 void ListVisitorsRequest::setPkId(const std::string& pkId)
 {
 	pkId_ = pkId;
-	setCoreParameter("PkId", pkId);
+	setCoreParameter("PkId", std::to_string(pkId));
 }
 
 std::string ListVisitorsRequest::getGender()const
@@ -44,7 +44,7 @@ std::string ListVisitorsRequest::getGender()const
 void ListVisitorsRequest::setGender(const std::string& gender)
 {
 	gender_ = gender;
-	setCoreParameter("Gender", gender);
+	setCoreParameter("Gender", std::to_string(gender));
 }
 
 long ListVisitorsRequest::getUkId()const
@@ -77,7 +77,7 @@ std::string ListVisitorsRequest::getLocationIds()const
 void ListVisitorsRequest::setLocationIds(const std::string& locationIds)
 {
 	locationIds_ = locationIds;
-	setCoreParameter("LocationIds", locationIds);
+	setCoreParameter("LocationIds", std::to_string(locationIds));
 }
 
 std::string ListVisitorsRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string ListVisitorsRequest::getEndTime()const
 void ListVisitorsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long ListVisitorsRequest::getEnterCount()const
@@ -121,7 +121,7 @@ std::string ListVisitorsRequest::getStartTime()const
 void ListVisitorsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListVisitorsRequest::getAgeStart()const
@@ -154,6 +154,6 @@ std::string ListVisitorsRequest::getStoreIds()const
 void ListVisitorsRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setCoreParameter("StoreIds", std::to_string(storeIds));
 }
 

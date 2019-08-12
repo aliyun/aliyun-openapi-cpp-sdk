@@ -44,7 +44,7 @@ std::string CreateCacheAnalysisTaskRequest::getInstanceId()const
 void CreateCacheAnalysisTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string CreateCacheAnalysisTaskRequest::getSecurityToken()const
 void CreateCacheAnalysisTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateCacheAnalysisTaskRequest::getResourceOwnerAccount()const
 void CreateCacheAnalysisTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateCacheAnalysisTaskRequest::getRegionId()const
 void CreateCacheAnalysisTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateCacheAnalysisTaskRequest::getOwnerAccount()const
 void CreateCacheAnalysisTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateCacheAnalysisTaskRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string CreateCacheAnalysisTaskRequest::getAccessKeyId()const
 void CreateCacheAnalysisTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

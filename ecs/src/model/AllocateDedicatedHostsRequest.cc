@@ -44,7 +44,7 @@ std::string AllocateDedicatedHostsRequest::getClientToken()const
 void AllocateDedicatedHostsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 long AllocateDedicatedHostsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool AllocateDedicatedHostsRequest::getProxy_original_security_transport()const
 void AllocateDedicatedHostsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string AllocateDedicatedHostsRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string AllocateDedicatedHostsRequest::getDescription()const
 void AllocateDedicatedHostsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string AllocateDedicatedHostsRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string AllocateDedicatedHostsRequest::getProxy_original_source_ip()const
 void AllocateDedicatedHostsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string AllocateDedicatedHostsRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string AllocateDedicatedHostsRequest::getOwnerIdLoginEmail()const
 void AllocateDedicatedHostsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string AllocateDedicatedHostsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string AllocateDedicatedHostsRequest::getCallerType()const
 void AllocateDedicatedHostsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string AllocateDedicatedHostsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string AllocateDedicatedHostsRequest::getAccessKeyId()const
 void AllocateDedicatedHostsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AllocateDedicatedHostsRequest::getSourceRegionId()const
@@ -132,7 +132,7 @@ std::string AllocateDedicatedHostsRequest::getSourceRegionId()const
 void AllocateDedicatedHostsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string AllocateDedicatedHostsRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string AllocateDedicatedHostsRequest::getResourceGroupId()const
 void AllocateDedicatedHostsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string AllocateDedicatedHostsRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string AllocateDedicatedHostsRequest::getSecurityToken()const
 void AllocateDedicatedHostsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AllocateDedicatedHostsRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string AllocateDedicatedHostsRequest::getRegionId()const
 void AllocateDedicatedHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool AllocateDedicatedHostsRequest::getEnable()const
@@ -176,7 +176,7 @@ bool AllocateDedicatedHostsRequest::getEnable()const
 void AllocateDedicatedHostsRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string AllocateDedicatedHostsRequest::getRequestContent()const
@@ -187,7 +187,7 @@ std::string AllocateDedicatedHostsRequest::getRequestContent()const
 void AllocateDedicatedHostsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string AllocateDedicatedHostsRequest::getActionOnMaintenance()const
@@ -198,7 +198,7 @@ std::string AllocateDedicatedHostsRequest::getActionOnMaintenance()const
 void AllocateDedicatedHostsRequest::setActionOnMaintenance(const std::string& actionOnMaintenance)
 {
 	actionOnMaintenance_ = actionOnMaintenance;
-	setCoreParameter("ActionOnMaintenance", actionOnMaintenance);
+	setCoreParameter("ActionOnMaintenance", std::to_string(actionOnMaintenance));
 }
 
 std::string AllocateDedicatedHostsRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ std::string AllocateDedicatedHostsRequest::getCallerBidEmail()const
 void AllocateDedicatedHostsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::vector<AllocateDedicatedHostsRequest::Tag> AllocateDedicatedHostsRequest::getTag()const
@@ -237,7 +237,7 @@ std::string AllocateDedicatedHostsRequest::getDedicatedHostType()const
 void AllocateDedicatedHostsRequest::setDedicatedHostType(const std::string& dedicatedHostType)
 {
 	dedicatedHostType_ = dedicatedHostType;
-	setCoreParameter("DedicatedHostType", dedicatedHostType);
+	setCoreParameter("DedicatedHostType", std::to_string(dedicatedHostType));
 }
 
 std::string AllocateDedicatedHostsRequest::getCallerUidEmail()const
@@ -248,7 +248,7 @@ std::string AllocateDedicatedHostsRequest::getCallerUidEmail()const
 void AllocateDedicatedHostsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long AllocateDedicatedHostsRequest::getCallerUid()const
@@ -270,7 +270,7 @@ std::string AllocateDedicatedHostsRequest::getApp_ip()const
 void AllocateDedicatedHostsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 int AllocateDedicatedHostsRequest::getAutoRenewPeriod()const
@@ -314,7 +314,7 @@ std::string AllocateDedicatedHostsRequest::getDedicatedHostName()const
 void AllocateDedicatedHostsRequest::setDedicatedHostName(const std::string& dedicatedHostName)
 {
 	dedicatedHostName_ = dedicatedHostName;
-	setCoreParameter("DedicatedHostName", dedicatedHostName);
+	setCoreParameter("DedicatedHostName", std::to_string(dedicatedHostName));
 }
 
 std::string AllocateDedicatedHostsRequest::getResourceOwnerAccount()const
@@ -325,7 +325,7 @@ std::string AllocateDedicatedHostsRequest::getResourceOwnerAccount()const
 void AllocateDedicatedHostsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateDedicatedHostsRequest::getOwnerAccount()const
@@ -336,7 +336,7 @@ std::string AllocateDedicatedHostsRequest::getOwnerAccount()const
 void AllocateDedicatedHostsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AllocateDedicatedHostsRequest::getAutoReleaseTime()const
@@ -347,7 +347,7 @@ std::string AllocateDedicatedHostsRequest::getAutoReleaseTime()const
 void AllocateDedicatedHostsRequest::setAutoReleaseTime(const std::string& autoReleaseTime)
 {
 	autoReleaseTime_ = autoReleaseTime;
-	setCoreParameter("AutoReleaseTime", autoReleaseTime);
+	setCoreParameter("AutoReleaseTime", std::to_string(autoReleaseTime));
 }
 
 std::string AllocateDedicatedHostsRequest::getCallerBid()const
@@ -358,7 +358,7 @@ std::string AllocateDedicatedHostsRequest::getCallerBid()const
 void AllocateDedicatedHostsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long AllocateDedicatedHostsRequest::getOwnerId()const
@@ -380,7 +380,7 @@ bool AllocateDedicatedHostsRequest::getProxy_trust_transport_info()const
 void AllocateDedicatedHostsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool AllocateDedicatedHostsRequest::getAk_mfa_present()const
@@ -391,7 +391,7 @@ bool AllocateDedicatedHostsRequest::getAk_mfa_present()const
 void AllocateDedicatedHostsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool AllocateDedicatedHostsRequest::getSecurity_transport()const
@@ -402,7 +402,7 @@ bool AllocateDedicatedHostsRequest::getSecurity_transport()const
 void AllocateDedicatedHostsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string AllocateDedicatedHostsRequest::getPeriodUnit()const
@@ -413,7 +413,7 @@ std::string AllocateDedicatedHostsRequest::getPeriodUnit()const
 void AllocateDedicatedHostsRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
 }
 
 bool AllocateDedicatedHostsRequest::getAutoRenew()const
@@ -424,7 +424,7 @@ bool AllocateDedicatedHostsRequest::getAutoRenew()const
 void AllocateDedicatedHostsRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::string AllocateDedicatedHostsRequest::getRequestId()const
@@ -435,7 +435,7 @@ std::string AllocateDedicatedHostsRequest::getRequestId()const
 void AllocateDedicatedHostsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string AllocateDedicatedHostsRequest::getAkProxy()const
@@ -446,7 +446,7 @@ std::string AllocateDedicatedHostsRequest::getAkProxy()const
 void AllocateDedicatedHostsRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 int AllocateDedicatedHostsRequest::getNetworkAttributesSlbUdpTimeout()const
@@ -468,7 +468,7 @@ std::string AllocateDedicatedHostsRequest::getZoneId()const
 void AllocateDedicatedHostsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string AllocateDedicatedHostsRequest::getAutoPlacement()const
@@ -479,7 +479,7 @@ std::string AllocateDedicatedHostsRequest::getAutoPlacement()const
 void AllocateDedicatedHostsRequest::setAutoPlacement(const std::string& autoPlacement)
 {
 	autoPlacement_ = autoPlacement;
-	setCoreParameter("AutoPlacement", autoPlacement);
+	setCoreParameter("AutoPlacement", std::to_string(autoPlacement));
 }
 
 std::string AllocateDedicatedHostsRequest::getChargeType()const
@@ -490,7 +490,7 @@ std::string AllocateDedicatedHostsRequest::getChargeType()const
 void AllocateDedicatedHostsRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 
 int AllocateDedicatedHostsRequest::getNetworkAttributesUdpTimeout()const

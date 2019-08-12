@@ -55,7 +55,7 @@ std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupType()co
 void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupType(const std::string& autoProvisioningGroupType)
 {
 	autoProvisioningGroupType_ = autoProvisioningGroupType;
-	setCoreParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+	setCoreParameter("AutoProvisioningGroupType", std::to_string(autoProvisioningGroupType));
 }
 
 bool CreateAutoProvisioningGroupRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool CreateAutoProvisioningGroupRequest::getProxy_original_security_transport()c
 void CreateAutoProvisioningGroupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateAutoProvisioningGroupRequest::getDescription()const
 void CreateAutoProvisioningGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string CreateAutoProvisioningGroupRequest::getProxy_original_source_ip()con
 void CreateAutoProvisioningGroupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()const
@@ -99,7 +99,7 @@ bool CreateAutoProvisioningGroupRequest::getTerminateInstancesWithExpiration()co
 void CreateAutoProvisioningGroupRequest::setTerminateInstancesWithExpiration(bool terminateInstancesWithExpiration)
 {
 	terminateInstancesWithExpiration_ = terminateInstancesWithExpiration;
-	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration);
+	setCoreParameter("TerminateInstancesWithExpiration", terminateInstancesWithExpiration ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string CreateAutoProvisioningGroupRequest::getOwnerIdLoginEmail()const
 void CreateAutoProvisioningGroupRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string CreateAutoProvisioningGroupRequest::getCallerType()const
 void CreateAutoProvisioningGroupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string CreateAutoProvisioningGroupRequest::getAccessKeyId()const
 void CreateAutoProvisioningGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string CreateAutoProvisioningGroupRequest::getResourceGroupId()const
 void CreateAutoProvisioningGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy()const
@@ -154,7 +154,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotAllocationStrategy()const
 void CreateAutoProvisioningGroupRequest::setSpotAllocationStrategy(const std::string& spotAllocationStrategy)
 {
 	spotAllocationStrategy_ = spotAllocationStrategy;
-	setCoreParameter("SpotAllocationStrategy", spotAllocationStrategy);
+	setCoreParameter("SpotAllocationStrategy", std::to_string(spotAllocationStrategy));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string CreateAutoProvisioningGroupRequest::getSecurityToken()const
 void CreateAutoProvisioningGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string CreateAutoProvisioningGroupRequest::getRegionId()const
 void CreateAutoProvisioningGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool CreateAutoProvisioningGroupRequest::getEnable()const
@@ -187,7 +187,7 @@ bool CreateAutoProvisioningGroupRequest::getEnable()const
 void CreateAutoProvisioningGroupRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getRequestContent()const
@@ -198,7 +198,7 @@ std::string CreateAutoProvisioningGroupRequest::getRequestContent()const
 void CreateAutoProvisioningGroupRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 bool CreateAutoProvisioningGroupRequest::getTerminateInstances()const
@@ -209,7 +209,7 @@ bool CreateAutoProvisioningGroupRequest::getTerminateInstances()const
 void CreateAutoProvisioningGroupRequest::setTerminateInstances(bool terminateInstances)
 {
 	terminateInstances_ = terminateInstances;
-	setCoreParameter("TerminateInstances", terminateInstances);
+	setCoreParameter("TerminateInstances", terminateInstances ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getCallerBidEmail()const
@@ -220,7 +220,7 @@ std::string CreateAutoProvisioningGroupRequest::getCallerBidEmail()const
 void CreateAutoProvisioningGroupRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy()const
@@ -231,7 +231,7 @@ std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy(
 void CreateAutoProvisioningGroupRequest::setPayAsYouGoAllocationStrategy(const std::string& payAsYouGoAllocationStrategy)
 {
 	payAsYouGoAllocationStrategy_ = payAsYouGoAllocationStrategy;
-	setCoreParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
+	setCoreParameter("PayAsYouGoAllocationStrategy", std::to_string(payAsYouGoAllocationStrategy));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType()const
@@ -242,7 +242,7 @@ std::string CreateAutoProvisioningGroupRequest::getDefaultTargetCapacityType()co
 void CreateAutoProvisioningGroupRequest::setDefaultTargetCapacityType(const std::string& defaultTargetCapacityType)
 {
 	defaultTargetCapacityType_ = defaultTargetCapacityType;
-	setCoreParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+	setCoreParameter("DefaultTargetCapacityType", std::to_string(defaultTargetCapacityType));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPolicy()const
@@ -253,7 +253,7 @@ std::string CreateAutoProvisioningGroupRequest::getExcessCapacityTerminationPoli
 void CreateAutoProvisioningGroupRequest::setExcessCapacityTerminationPolicy(const std::string& excessCapacityTerminationPolicy)
 {
 	excessCapacityTerminationPolicy_ = excessCapacityTerminationPolicy;
-	setCoreParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
+	setCoreParameter("ExcessCapacityTerminationPolicy", std::to_string(excessCapacityTerminationPolicy));
 }
 
 std::vector<CreateAutoProvisioningGroupRequest::LaunchTemplateConfig> CreateAutoProvisioningGroupRequest::getLaunchTemplateConfig()const
@@ -284,7 +284,7 @@ std::string CreateAutoProvisioningGroupRequest::getValidUntil()const
 void CreateAutoProvisioningGroupRequest::setValidUntil(const std::string& validUntil)
 {
 	validUntil_ = validUntil;
-	setCoreParameter("ValidUntil", validUntil);
+	setCoreParameter("ValidUntil", std::to_string(validUntil));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getCallerUidEmail()const
@@ -295,7 +295,7 @@ std::string CreateAutoProvisioningGroupRequest::getCallerUidEmail()const
 void CreateAutoProvisioningGroupRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateAutoProvisioningGroupRequest::getCallerUid()const
@@ -317,7 +317,7 @@ std::string CreateAutoProvisioningGroupRequest::getApp_ip()const
 void CreateAutoProvisioningGroupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehavior()const
@@ -328,7 +328,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotInstanceInterruptionBehav
 void CreateAutoProvisioningGroupRequest::setSpotInstanceInterruptionBehavior(const std::string& spotInstanceInterruptionBehavior)
 {
 	spotInstanceInterruptionBehavior_ = spotInstanceInterruptionBehavior;
-	setCoreParameter("SpotInstanceInterruptionBehavior", spotInstanceInterruptionBehavior);
+	setCoreParameter("SpotInstanceInterruptionBehavior", std::to_string(spotInstanceInterruptionBehavior));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId()const
@@ -339,7 +339,7 @@ std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateId()const
 void CreateAutoProvisioningGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", std::to_string(launchTemplateId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const
@@ -350,7 +350,7 @@ std::string CreateAutoProvisioningGroupRequest::getResourceOwnerAccount()const
 void CreateAutoProvisioningGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getOwnerAccount()const
@@ -361,7 +361,7 @@ std::string CreateAutoProvisioningGroupRequest::getOwnerAccount()const
 void CreateAutoProvisioningGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int CreateAutoProvisioningGroupRequest::getSpotInstancePoolsToUseCount()const
@@ -383,7 +383,7 @@ std::string CreateAutoProvisioningGroupRequest::getCallerBid()const
 void CreateAutoProvisioningGroupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateAutoProvisioningGroupRequest::getOwnerId()const
@@ -405,7 +405,7 @@ std::string CreateAutoProvisioningGroupRequest::getLaunchTemplateVersion()const
 void CreateAutoProvisioningGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setCoreParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
 bool CreateAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
@@ -416,7 +416,7 @@ bool CreateAutoProvisioningGroupRequest::getProxy_trust_transport_info()const
 void CreateAutoProvisioningGroupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateAutoProvisioningGroupRequest::getAk_mfa_present()const
@@ -427,7 +427,7 @@ bool CreateAutoProvisioningGroupRequest::getAk_mfa_present()const
 void CreateAutoProvisioningGroupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateAutoProvisioningGroupRequest::getSecurity_transport()const
@@ -438,7 +438,7 @@ bool CreateAutoProvisioningGroupRequest::getSecurity_transport()const
 void CreateAutoProvisioningGroupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()const
@@ -449,7 +449,7 @@ std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoTargetCapacity()con
 void CreateAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::string& payAsYouGoTargetCapacity)
 {
 	payAsYouGoTargetCapacity_ = payAsYouGoTargetCapacity;
-	setCoreParameter("PayAsYouGoTargetCapacity", payAsYouGoTargetCapacity);
+	setCoreParameter("PayAsYouGoTargetCapacity", std::to_string(payAsYouGoTargetCapacity));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getRequestId()const
@@ -460,7 +460,7 @@ std::string CreateAutoProvisioningGroupRequest::getRequestId()const
 void CreateAutoProvisioningGroupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getAkProxy()const
@@ -471,7 +471,7 @@ std::string CreateAutoProvisioningGroupRequest::getAkProxy()const
 void CreateAutoProvisioningGroupRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity()const
@@ -482,7 +482,7 @@ std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity()const
 void CreateAutoProvisioningGroupRequest::setTotalTargetCapacity(const std::string& totalTargetCapacity)
 {
 	totalTargetCapacity_ = totalTargetCapacity;
-	setCoreParameter("TotalTargetCapacity", totalTargetCapacity);
+	setCoreParameter("TotalTargetCapacity", std::to_string(totalTargetCapacity));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity()const
@@ -493,7 +493,7 @@ std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity()const
 void CreateAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string& spotTargetCapacity)
 {
 	spotTargetCapacity_ = spotTargetCapacity;
-	setCoreParameter("SpotTargetCapacity", spotTargetCapacity);
+	setCoreParameter("SpotTargetCapacity", std::to_string(spotTargetCapacity));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getValidFrom()const
@@ -504,7 +504,7 @@ std::string CreateAutoProvisioningGroupRequest::getValidFrom()const
 void CreateAutoProvisioningGroupRequest::setValidFrom(const std::string& validFrom)
 {
 	validFrom_ = validFrom;
-	setCoreParameter("ValidFrom", validFrom);
+	setCoreParameter("ValidFrom", std::to_string(validFrom));
 }
 
 std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName()const
@@ -515,7 +515,7 @@ std::string CreateAutoProvisioningGroupRequest::getAutoProvisioningGroupName()co
 void CreateAutoProvisioningGroupRequest::setAutoProvisioningGroupName(const std::string& autoProvisioningGroupName)
 {
 	autoProvisioningGroupName_ = autoProvisioningGroupName;
-	setCoreParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+	setCoreParameter("AutoProvisioningGroupName", std::to_string(autoProvisioningGroupName));
 }
 
 float CreateAutoProvisioningGroupRequest::getMaxSpotPrice()const

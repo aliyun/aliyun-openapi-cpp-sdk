@@ -33,7 +33,7 @@ std::string DeleteUserResourceRoleRequest::getApp_ip()const
 void DeleteUserResourceRoleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long DeleteUserResourceRoleRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteUserResourceRoleRequest::getResourceId()const
 void DeleteUserResourceRoleRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 long DeleteUserResourceRoleRequest::getCallerParentId()const
@@ -88,7 +88,7 @@ bool DeleteUserResourceRoleRequest::getProxy_original_security_transport()const
 void DeleteUserResourceRoleRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DeleteUserResourceRoleRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string DeleteUserResourceRoleRequest::getCallerBid()const
 void DeleteUserResourceRoleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string DeleteUserResourceRoleRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string DeleteUserResourceRoleRequest::getProxy_original_source_ip()const
 void DeleteUserResourceRoleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DeleteUserResourceRoleRequest::getResourceType()const
@@ -121,7 +121,7 @@ std::string DeleteUserResourceRoleRequest::getResourceType()const
 void DeleteUserResourceRoleRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 bool DeleteUserResourceRoleRequest::getAk_mfa_present()const
@@ -132,7 +132,7 @@ bool DeleteUserResourceRoleRequest::getAk_mfa_present()const
 void DeleteUserResourceRoleRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DeleteUserResourceRoleRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool DeleteUserResourceRoleRequest::getProxy_trust_transport_info()const
 void DeleteUserResourceRoleRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string DeleteUserResourceRoleRequest::getCallerType()const
@@ -154,7 +154,7 @@ std::string DeleteUserResourceRoleRequest::getCallerType()const
 void DeleteUserResourceRoleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DeleteUserResourceRoleRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string DeleteUserResourceRoleRequest::getAccessKeyId()const
 void DeleteUserResourceRoleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool DeleteUserResourceRoleRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool DeleteUserResourceRoleRequest::getSecurity_transport()const
 void DeleteUserResourceRoleRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DeleteUserResourceRoleRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string DeleteUserResourceRoleRequest::getSecurityToken()const
 void DeleteUserResourceRoleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteUserResourceRoleRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string DeleteUserResourceRoleRequest::getRegionId()const
 void DeleteUserResourceRoleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteUserResourceRoleRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DeleteUserResourceRoleRequest::getRequestId()const
 void DeleteUserResourceRoleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long DeleteUserResourceRoleRequest::getCallerUid()const
@@ -231,6 +231,6 @@ std::string DeleteUserResourceRoleRequest::getAliyunUserId()const
 void DeleteUserResourceRoleRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", aliyunUserId);
+	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
 }
 

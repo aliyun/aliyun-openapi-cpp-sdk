@@ -33,7 +33,7 @@ std::string SaveProbeDataSubscriberRequest::getApiUrl()const
 void SaveProbeDataSubscriberRequest::setApiUrl(const std::string& apiUrl)
 {
 	apiUrl_ = apiUrl;
-	setCoreParameter("ApiUrl", apiUrl);
+	setCoreParameter("ApiUrl", std::to_string(apiUrl));
 }
 
 std::string SaveProbeDataSubscriberRequest::getParamGenScript()const
@@ -44,7 +44,7 @@ std::string SaveProbeDataSubscriberRequest::getParamGenScript()const
 void SaveProbeDataSubscriberRequest::setParamGenScript(const std::string& paramGenScript)
 {
 	paramGenScript_ = paramGenScript;
-	setCoreParameter("ParamGenScript", paramGenScript);
+	setCoreParameter("ParamGenScript", std::to_string(paramGenScript));
 }
 
 std::string SaveProbeDataSubscriberRequest::getName()const
@@ -55,7 +55,7 @@ std::string SaveProbeDataSubscriberRequest::getName()const
 void SaveProbeDataSubscriberRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string SaveProbeDataSubscriberRequest::getHttpMethod()const
@@ -66,7 +66,7 @@ std::string SaveProbeDataSubscriberRequest::getHttpMethod()const
 void SaveProbeDataSubscriberRequest::setHttpMethod(const std::string& httpMethod)
 {
 	httpMethod_ = httpMethod;
-	setCoreParameter("HttpMethod", httpMethod);
+	setCoreParameter("HttpMethod", std::to_string(httpMethod));
 }
 
 std::string SaveProbeDataSubscriberRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string SaveProbeDataSubscriberRequest::getDescription()const
 void SaveProbeDataSubscriberRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long SaveProbeDataSubscriberRequest::getId()const
@@ -110,7 +110,7 @@ std::string SaveProbeDataSubscriberRequest::getAccessKeyId()const
 void SaveProbeDataSubscriberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<long> SaveProbeDataSubscriberRequest::getResourceIds()const

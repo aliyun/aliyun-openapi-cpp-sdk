@@ -33,7 +33,7 @@ std::string CombineLoaRequest::getTrademarkName()const
 void CombineLoaRequest::setTrademarkName(const std::string& trademarkName)
 {
 	trademarkName_ = trademarkName;
-	setCoreParameter("TrademarkName", trademarkName);
+	setCoreParameter("TrademarkName", std::to_string(trademarkName));
 }
 
 std::string CombineLoaRequest::getMaterialName()const
@@ -44,7 +44,7 @@ std::string CombineLoaRequest::getMaterialName()const
 void CombineLoaRequest::setMaterialName(const std::string& materialName)
 {
 	materialName_ = materialName;
-	setCoreParameter("MaterialName", materialName);
+	setCoreParameter("MaterialName", std::to_string(materialName));
 }
 
 std::string CombineLoaRequest::getAddress()const
@@ -55,7 +55,7 @@ std::string CombineLoaRequest::getAddress()const
 void CombineLoaRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setCoreParameter("Address", std::to_string(address));
 }
 
 std::string CombineLoaRequest::getNationality()const
@@ -66,7 +66,7 @@ std::string CombineLoaRequest::getNationality()const
 void CombineLoaRequest::setNationality(const std::string& nationality)
 {
 	nationality_ = nationality;
-	setCoreParameter("Nationality", nationality);
+	setCoreParameter("Nationality", std::to_string(nationality));
 }
 
 std::string CombineLoaRequest::getTmProduceType()const
@@ -77,7 +77,7 @@ std::string CombineLoaRequest::getTmProduceType()const
 void CombineLoaRequest::setTmProduceType(const std::string& tmProduceType)
 {
 	tmProduceType_ = tmProduceType;
-	setCoreParameter("TmProduceType", tmProduceType);
+	setCoreParameter("TmProduceType", std::to_string(tmProduceType));
 }
 
 std::string CombineLoaRequest::getMaterialId()const
@@ -88,6 +88,6 @@ std::string CombineLoaRequest::getMaterialId()const
 void CombineLoaRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
+	setCoreParameter("MaterialId", std::to_string(materialId));
 }
 

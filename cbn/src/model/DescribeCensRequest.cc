@@ -61,7 +61,7 @@ std::string DescribeCensRequest::getResourceOwnerAccount()const
 void DescribeCensRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCensRequest::getOwnerAccount()const
@@ -72,7 +72,7 @@ std::string DescribeCensRequest::getOwnerAccount()const
 void DescribeCensRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeCensRequest::getPageSize()const

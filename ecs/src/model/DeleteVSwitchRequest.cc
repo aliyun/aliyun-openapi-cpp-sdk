@@ -33,7 +33,7 @@ std::string DeleteVSwitchRequest::getVSwitchId()const
 void DeleteVSwitchRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 long DeleteVSwitchRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteVSwitchRequest::getResourceOwnerAccount()const
 void DeleteVSwitchRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteVSwitchRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteVSwitchRequest::getRegionId()const
 void DeleteVSwitchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteVSwitchRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteVSwitchRequest::getOwnerAccount()const
 void DeleteVSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteVSwitchRequest::getOwnerId()const

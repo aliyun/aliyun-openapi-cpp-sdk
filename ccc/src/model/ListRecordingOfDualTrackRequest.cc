@@ -33,7 +33,7 @@ std::string ListRecordingOfDualTrackRequest::getCallingNumber()const
 void ListRecordingOfDualTrackRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
+	setCoreParameter("CallingNumber", std::to_string(callingNumber));
 }
 
 std::string ListRecordingOfDualTrackRequest::getAgentId()const
@@ -44,7 +44,7 @@ std::string ListRecordingOfDualTrackRequest::getAgentId()const
 void ListRecordingOfDualTrackRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 std::string ListRecordingOfDualTrackRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string ListRecordingOfDualTrackRequest::getInstanceId()const
 void ListRecordingOfDualTrackRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
@@ -66,7 +66,7 @@ std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
 void ListRecordingOfDualTrackRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setCoreParameter("CalledNumber", std::to_string(calledNumber));
 }
 
 int ListRecordingOfDualTrackRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string ListRecordingOfDualTrackRequest::getConnectId()const
 void ListRecordingOfDualTrackRequest::setConnectId(const std::string& connectId)
 {
 	connectId_ = connectId;
-	setCoreParameter("ConnectId", connectId);
+	setCoreParameter("ConnectId", std::to_string(connectId));
 }
 
 int ListRecordingOfDualTrackRequest::getPageNumber()const
@@ -132,6 +132,6 @@ std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const
 void ListRecordingOfDualTrackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeBgpGroupsRequest::getResourceOwnerAccount()const
 void DescribeBgpGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBgpGroupsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeBgpGroupsRequest::getRegionId()const
 void DescribeBgpGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBgpGroupsRequest::getRouterId()const
@@ -66,7 +66,7 @@ std::string DescribeBgpGroupsRequest::getRouterId()const
 void DescribeBgpGroupsRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setCoreParameter("RouterId", std::to_string(routerId));
 }
 
 std::string DescribeBgpGroupsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBgpGroupsRequest::getOwnerAccount()const
 void DescribeBgpGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeBgpGroupsRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeBgpGroupsRequest::getBgpGroupId()const
 void DescribeBgpGroupsRequest::setBgpGroupId(const std::string& bgpGroupId)
 {
 	bgpGroupId_ = bgpGroupId;
-	setCoreParameter("BgpGroupId", bgpGroupId);
+	setCoreParameter("BgpGroupId", std::to_string(bgpGroupId));
 }
 
 bool DescribeBgpGroupsRequest::getIsDefault()const
@@ -110,7 +110,7 @@ bool DescribeBgpGroupsRequest::getIsDefault()const
 void DescribeBgpGroupsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault);
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 long DescribeBgpGroupsRequest::getOwnerId()const

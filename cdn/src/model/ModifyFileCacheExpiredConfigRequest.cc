@@ -33,7 +33,7 @@ std::string ModifyFileCacheExpiredConfigRequest::getSecurityToken()const
 void ModifyFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyFileCacheExpiredConfigRequest::getConfigID()const
@@ -44,7 +44,7 @@ std::string ModifyFileCacheExpiredConfigRequest::getConfigID()const
 void ModifyFileCacheExpiredConfigRequest::setConfigID(const std::string& configID)
 {
 	configID_ = configID;
-	setCoreParameter("ConfigID", configID);
+	setCoreParameter("ConfigID", std::to_string(configID));
 }
 
 std::string ModifyFileCacheExpiredConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ModifyFileCacheExpiredConfigRequest::getDomainName()const
 void ModifyFileCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string ModifyFileCacheExpiredConfigRequest::getWeight()const
@@ -66,7 +66,7 @@ std::string ModifyFileCacheExpiredConfigRequest::getWeight()const
 void ModifyFileCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setCoreParameter("Weight", std::to_string(weight));
 }
 
 std::string ModifyFileCacheExpiredConfigRequest::getCacheContent()const
@@ -77,7 +77,7 @@ std::string ModifyFileCacheExpiredConfigRequest::getCacheContent()const
 void ModifyFileCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", cacheContent);
+	setCoreParameter("CacheContent", std::to_string(cacheContent));
 }
 
 long ModifyFileCacheExpiredConfigRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ModifyFileCacheExpiredConfigRequest::getTTL()const
 void ModifyFileCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", tTL);
+	setCoreParameter("TTL", std::to_string(tTL));
 }
 

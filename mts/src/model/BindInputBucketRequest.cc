@@ -33,7 +33,7 @@ std::string BindInputBucketRequest::getBucket()const
 void BindInputBucketRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setCoreParameter("Bucket", std::to_string(bucket));
 }
 
 long BindInputBucketRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string BindInputBucketRequest::getResourceOwnerAccount()const
 void BindInputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string BindInputBucketRequest::getRoleArn()const
@@ -66,7 +66,7 @@ std::string BindInputBucketRequest::getRoleArn()const
 void BindInputBucketRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setCoreParameter("RoleArn", std::to_string(roleArn));
 }
 
 std::string BindInputBucketRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string BindInputBucketRequest::getOwnerAccount()const
 void BindInputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long BindInputBucketRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string BindInputBucketRequest::getAccessKeyId()const
 void BindInputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

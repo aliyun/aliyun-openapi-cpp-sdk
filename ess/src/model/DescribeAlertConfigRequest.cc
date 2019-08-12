@@ -33,7 +33,7 @@ std::string DescribeAlertConfigRequest::getResourceOwnerAccount()const
 void DescribeAlertConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAlertConfigRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeAlertConfigRequest::getScalingGroupId()const
 void DescribeAlertConfigRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 long DescribeAlertConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DescribeAlertConfigRequest::getAccessKeyId()const
 void DescribeAlertConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

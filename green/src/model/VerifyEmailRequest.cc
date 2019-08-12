@@ -33,7 +33,7 @@ std::string VerifyEmailRequest::getVerifyCode()const
 void VerifyEmailRequest::setVerifyCode(const std::string& verifyCode)
 {
 	verifyCode_ = verifyCode;
-	setCoreParameter("VerifyCode", verifyCode);
+	setCoreParameter("VerifyCode", std::to_string(verifyCode));
 }
 
 std::string VerifyEmailRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string VerifyEmailRequest::getSourceIp()const
 void VerifyEmailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string VerifyEmailRequest::getLang()const
@@ -55,6 +55,6 @@ std::string VerifyEmailRequest::getLang()const
 void VerifyEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

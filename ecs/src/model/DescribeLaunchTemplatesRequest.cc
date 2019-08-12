@@ -67,7 +67,7 @@ bool DescribeLaunchTemplatesRequest::getProxy_original_security_transport()const
 void DescribeLaunchTemplatesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeLaunchTemplatesRequest::getProxy_original_source_ip()const
@@ -78,7 +78,7 @@ std::string DescribeLaunchTemplatesRequest::getProxy_original_source_ip()const
 void DescribeLaunchTemplatesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeLaunchTemplatesRequest::getOwnerIdLoginEmail()const
@@ -89,7 +89,7 @@ std::string DescribeLaunchTemplatesRequest::getOwnerIdLoginEmail()const
 void DescribeLaunchTemplatesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeLaunchTemplatesRequest::getCallerType()const
@@ -100,7 +100,7 @@ std::string DescribeLaunchTemplatesRequest::getCallerType()const
 void DescribeLaunchTemplatesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int DescribeLaunchTemplatesRequest::getPageNumber()const
@@ -122,7 +122,7 @@ std::string DescribeLaunchTemplatesRequest::getAccessKeyId()const
 void DescribeLaunchTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeLaunchTemplatesRequest::getSourceRegionId()const
@@ -133,7 +133,7 @@ std::string DescribeLaunchTemplatesRequest::getSourceRegionId()const
 void DescribeLaunchTemplatesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeLaunchTemplatesRequest::getSecurityToken()const
@@ -144,7 +144,7 @@ std::string DescribeLaunchTemplatesRequest::getSecurityToken()const
 void DescribeLaunchTemplatesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLaunchTemplatesRequest::getRegionId()const
@@ -155,7 +155,7 @@ std::string DescribeLaunchTemplatesRequest::getRegionId()const
 void DescribeLaunchTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeLaunchTemplatesRequest::getEnable()const
@@ -166,7 +166,7 @@ bool DescribeLaunchTemplatesRequest::getEnable()const
 void DescribeLaunchTemplatesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeLaunchTemplatesRequest::getRequestContent()const
@@ -177,7 +177,7 @@ std::string DescribeLaunchTemplatesRequest::getRequestContent()const
 void DescribeLaunchTemplatesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeLaunchTemplatesRequest::getPageSize()const
@@ -199,7 +199,7 @@ std::string DescribeLaunchTemplatesRequest::getCallerBidEmail()const
 void DescribeLaunchTemplatesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::vector<DescribeLaunchTemplatesRequest::TemplateTag> DescribeLaunchTemplatesRequest::getTemplateTag()const
@@ -227,7 +227,7 @@ std::string DescribeLaunchTemplatesRequest::getCallerUidEmail()const
 void DescribeLaunchTemplatesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeLaunchTemplatesRequest::getCallerUid()const
@@ -249,7 +249,7 @@ std::string DescribeLaunchTemplatesRequest::getApp_ip()const
 void DescribeLaunchTemplatesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::vector<std::string> DescribeLaunchTemplatesRequest::getLaunchTemplateId()const
@@ -272,7 +272,7 @@ std::string DescribeLaunchTemplatesRequest::getResourceOwnerAccount()const
 void DescribeLaunchTemplatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeLaunchTemplatesRequest::getOwnerAccount()const
@@ -283,7 +283,7 @@ std::string DescribeLaunchTemplatesRequest::getOwnerAccount()const
 void DescribeLaunchTemplatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeLaunchTemplatesRequest::getTemplateResourceGroupId()const
@@ -294,7 +294,7 @@ std::string DescribeLaunchTemplatesRequest::getTemplateResourceGroupId()const
 void DescribeLaunchTemplatesRequest::setTemplateResourceGroupId(const std::string& templateResourceGroupId)
 {
 	templateResourceGroupId_ = templateResourceGroupId;
-	setCoreParameter("TemplateResourceGroupId", templateResourceGroupId);
+	setCoreParameter("TemplateResourceGroupId", std::to_string(templateResourceGroupId));
 }
 
 std::string DescribeLaunchTemplatesRequest::getCallerBid()const
@@ -305,7 +305,7 @@ std::string DescribeLaunchTemplatesRequest::getCallerBid()const
 void DescribeLaunchTemplatesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeLaunchTemplatesRequest::getOwnerId()const
@@ -327,7 +327,7 @@ bool DescribeLaunchTemplatesRequest::getProxy_trust_transport_info()const
 void DescribeLaunchTemplatesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeLaunchTemplatesRequest::getAk_mfa_present()const
@@ -338,7 +338,7 @@ bool DescribeLaunchTemplatesRequest::getAk_mfa_present()const
 void DescribeLaunchTemplatesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeLaunchTemplatesRequest::getSecurity_transport()const
@@ -349,7 +349,7 @@ bool DescribeLaunchTemplatesRequest::getSecurity_transport()const
 void DescribeLaunchTemplatesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeLaunchTemplatesRequest::getRequestId()const
@@ -360,7 +360,7 @@ std::string DescribeLaunchTemplatesRequest::getRequestId()const
 void DescribeLaunchTemplatesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeLaunchTemplatesRequest::getAkProxy()const
@@ -371,6 +371,6 @@ std::string DescribeLaunchTemplatesRequest::getAkProxy()const
 void DescribeLaunchTemplatesRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 

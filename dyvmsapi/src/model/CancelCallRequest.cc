@@ -33,7 +33,7 @@ std::string CancelCallRequest::getCallId()const
 void CancelCallRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 long CancelCallRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CancelCallRequest::getResourceOwnerAccount()const
 void CancelCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long CancelCallRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string CancelCallRequest::getAccessKeyId()const
 void CancelCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

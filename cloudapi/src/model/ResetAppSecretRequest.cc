@@ -33,7 +33,7 @@ std::string ResetAppSecretRequest::getSecurityToken()const
 void ResetAppSecretRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ResetAppSecretRequest::getAppKey()const
@@ -44,7 +44,7 @@ std::string ResetAppSecretRequest::getAppKey()const
 void ResetAppSecretRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string ResetAppSecretRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ResetAppSecretRequest::getAccessKeyId()const
 void ResetAppSecretRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

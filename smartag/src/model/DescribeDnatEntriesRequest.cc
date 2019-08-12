@@ -44,7 +44,7 @@ std::string DescribeDnatEntriesRequest::getResourceOwnerAccount()const
 void DescribeDnatEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDnatEntriesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeDnatEntriesRequest::getRegionId()const
 void DescribeDnatEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDnatEntriesRequest::getSagId()const
@@ -66,7 +66,7 @@ std::string DescribeDnatEntriesRequest::getSagId()const
 void DescribeDnatEntriesRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	setCoreParameter("SagId", std::to_string(sagId));
 }
 
 std::string DescribeDnatEntriesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDnatEntriesRequest::getOwnerAccount()const
 void DescribeDnatEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeDnatEntriesRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeDnatEntriesRequest::getType()const
 void DescribeDnatEntriesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int DescribeDnatEntriesRequest::getPageNumber()const

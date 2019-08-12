@@ -44,7 +44,7 @@ std::string GetAITemplateRequest::getResourceOwnerAccount()const
 void GetAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long GetAITemplateRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string GetAITemplateRequest::getTemplateId()const
 void GetAITemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 

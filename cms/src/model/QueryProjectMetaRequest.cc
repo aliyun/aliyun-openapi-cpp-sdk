@@ -55,6 +55,6 @@ std::string QueryProjectMetaRequest::getLabels()const
 void QueryProjectMetaRequest::setLabels(const std::string& labels)
 {
 	labels_ = labels;
-	setCoreParameter("Labels", labels);
+	setCoreParameter("Labels", std::to_string(labels));
 }
 

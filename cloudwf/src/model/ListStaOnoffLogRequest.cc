@@ -33,7 +33,7 @@ std::string ListStaOnoffLogRequest::getOrderCol()const
 void ListStaOnoffLogRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListStaOnoffLogRequest::getSearchSsid()const
@@ -44,7 +44,7 @@ std::string ListStaOnoffLogRequest::getSearchSsid()const
 void ListStaOnoffLogRequest::setSearchSsid(const std::string& searchSsid)
 {
 	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
+	setCoreParameter("SearchSsid", std::to_string(searchSsid));
 }
 
 std::string ListStaOnoffLogRequest::getSearchApName()const
@@ -55,7 +55,7 @@ std::string ListStaOnoffLogRequest::getSearchApName()const
 void ListStaOnoffLogRequest::setSearchApName(const std::string& searchApName)
 {
 	searchApName_ = searchApName;
-	setCoreParameter("SearchApName", searchApName);
+	setCoreParameter("SearchApName", std::to_string(searchApName));
 }
 
 int ListStaOnoffLogRequest::getLength()const
@@ -77,7 +77,7 @@ std::string ListStaOnoffLogRequest::getSearchUsername()const
 void ListStaOnoffLogRequest::setSearchUsername(const std::string& searchUsername)
 {
 	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
+	setCoreParameter("SearchUsername", std::to_string(searchUsername));
 }
 
 int ListStaOnoffLogRequest::getPageIndex()const
@@ -110,7 +110,7 @@ std::string ListStaOnoffLogRequest::getOrderDir()const
 void ListStaOnoffLogRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListStaOnoffLogRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ListStaOnoffLogRequest::getAccessKeyId()const
 void ListStaOnoffLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

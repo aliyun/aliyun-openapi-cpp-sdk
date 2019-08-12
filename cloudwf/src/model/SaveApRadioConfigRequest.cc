@@ -33,7 +33,7 @@ std::string SaveApRadioConfigRequest::getRequireMode()const
 void SaveApRadioConfigRequest::setRequireMode(const std::string& requireMode)
 {
 	requireMode_ = requireMode;
-	setCoreParameter("RequireMode", requireMode);
+	setCoreParameter("RequireMode", std::to_string(requireMode));
 }
 
 std::string SaveApRadioConfigRequest::getHtmode()const
@@ -44,7 +44,7 @@ std::string SaveApRadioConfigRequest::getHtmode()const
 void SaveApRadioConfigRequest::setHtmode(const std::string& htmode)
 {
 	htmode_ = htmode;
-	setCoreParameter("Htmode", htmode);
+	setCoreParameter("Htmode", std::to_string(htmode));
 }
 
 int SaveApRadioConfigRequest::getFrag()const
@@ -121,7 +121,7 @@ std::string SaveApRadioConfigRequest::getHwmode()const
 void SaveApRadioConfigRequest::setHwmode(const std::string& hwmode)
 {
 	hwmode_ = hwmode;
-	setCoreParameter("Hwmode", hwmode);
+	setCoreParameter("Hwmode", std::to_string(hwmode));
 }
 
 int SaveApRadioConfigRequest::getUapsd()const
@@ -154,7 +154,7 @@ std::string SaveApRadioConfigRequest::getMac()const
 void SaveApRadioConfigRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setCoreParameter("Mac", std::to_string(mac));
 }
 
 std::string SaveApRadioConfigRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string SaveApRadioConfigRequest::getAccessKeyId()const
 void SaveApRadioConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int SaveApRadioConfigRequest::getRts()const

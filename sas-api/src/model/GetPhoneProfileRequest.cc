@@ -33,7 +33,7 @@ std::string GetPhoneProfileRequest::getPhone()const
 void GetPhoneProfileRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setCoreParameter("Phone", std::to_string(phone));
 }
 
 int GetPhoneProfileRequest::getSensType()const
@@ -55,7 +55,7 @@ std::string GetPhoneProfileRequest::getDataVersion()const
 void GetPhoneProfileRequest::setDataVersion(const std::string& dataVersion)
 {
 	dataVersion_ = dataVersion;
-	setCoreParameter("DataVersion", dataVersion);
+	setCoreParameter("DataVersion", std::to_string(dataVersion));
 }
 
 int GetPhoneProfileRequest::getBusinessType()const

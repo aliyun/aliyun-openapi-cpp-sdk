@@ -33,7 +33,7 @@ bool RegistFaceRequest::getChooseBiggestFace()const
 void RegistFaceRequest::setChooseBiggestFace(bool chooseBiggestFace)
 {
 	chooseBiggestFace_ = chooseBiggestFace;
-	setCoreParameter("ChooseBiggestFace", chooseBiggestFace);
+	setCoreParameter("ChooseBiggestFace", chooseBiggestFace ? "true" : "false");
 }
 
 std::string RegistFaceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RegistFaceRequest::getRegionId()const
 void RegistFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool RegistFaceRequest::getIsQualityLimit()const
@@ -55,7 +55,7 @@ bool RegistFaceRequest::getIsQualityLimit()const
 void RegistFaceRequest::setIsQualityLimit(bool isQualityLimit)
 {
 	isQualityLimit_ = isQualityLimit;
-	setCoreParameter("IsQualityLimit", isQualityLimit);
+	setCoreParameter("IsQualityLimit", isQualityLimit ? "true" : "false");
 }
 
 std::string RegistFaceRequest::getProject()const
@@ -66,7 +66,7 @@ std::string RegistFaceRequest::getProject()const
 void RegistFaceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string RegistFaceRequest::getSrcUri()const
@@ -77,7 +77,7 @@ std::string RegistFaceRequest::getSrcUri()const
 void RegistFaceRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", srcUri);
+	setCoreParameter("SrcUri", std::to_string(srcUri));
 }
 
 std::string RegistFaceRequest::getRegisterCheckLevel()const
@@ -88,7 +88,7 @@ std::string RegistFaceRequest::getRegisterCheckLevel()const
 void RegistFaceRequest::setRegisterCheckLevel(const std::string& registerCheckLevel)
 {
 	registerCheckLevel_ = registerCheckLevel;
-	setCoreParameter("RegisterCheckLevel", registerCheckLevel);
+	setCoreParameter("RegisterCheckLevel", std::to_string(registerCheckLevel));
 }
 
 std::string RegistFaceRequest::getGroupName()const
@@ -99,7 +99,7 @@ std::string RegistFaceRequest::getGroupName()const
 void RegistFaceRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string RegistFaceRequest::getUser()const
@@ -110,7 +110,7 @@ std::string RegistFaceRequest::getUser()const
 void RegistFaceRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setCoreParameter("User", std::to_string(user));
 }
 
 std::string RegistFaceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RegistFaceRequest::getAccessKeyId()const
 void RegistFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

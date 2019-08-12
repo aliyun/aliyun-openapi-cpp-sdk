@@ -44,6 +44,6 @@ std::string DeleteCasterEpisodeGroupRequest::getProgramId()const
 void DeleteCasterEpisodeGroupRequest::setProgramId(const std::string& programId)
 {
 	programId_ = programId;
-	setCoreParameter("ProgramId", programId);
+	setCoreParameter("ProgramId", std::to_string(programId));
 }
 

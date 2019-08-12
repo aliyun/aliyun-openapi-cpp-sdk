@@ -55,7 +55,7 @@ std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const
 void DescribeSlowLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSlowLogRecordsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSlowLogRecordsRequest::getOwnerAccount()const
 void DescribeSlowLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSlowLogRecordsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeSlowLogRecordsRequest::getEndTime()const
 void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSlowLogRecordsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeSlowLogRecordsRequest::getStartTime()const
 void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSlowLogRecordsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
 void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getSlowLogRecordType()const
@@ -132,7 +132,7 @@ std::string DescribeSlowLogRecordsRequest::getSlowLogRecordType()const
 void DescribeSlowLogRecordsRequest::setSlowLogRecordType(const std::string& slowLogRecordType)
 {
 	slowLogRecordType_ = slowLogRecordType;
-	setCoreParameter("SlowLogRecordType", slowLogRecordType);
+	setCoreParameter("SlowLogRecordType", std::to_string(slowLogRecordType));
 }
 
 std::string DescribeSlowLogRecordsRequest::getInstanceId()const
@@ -143,7 +143,7 @@ std::string DescribeSlowLogRecordsRequest::getInstanceId()const
 void DescribeSlowLogRecordsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBName()const
@@ -154,7 +154,7 @@ std::string DescribeSlowLogRecordsRequest::getDBName()const
 void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string DescribeSlowLogRecordsRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string DescribeSlowLogRecordsRequest::getSecurityToken()const
 void DescribeSlowLogRecordsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeSlowLogRecordsRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string DescribeSlowLogRecordsRequest::getRegionId()const
 void DescribeSlowLogRecordsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeSlowLogRecordsRequest::getPageSize()const
@@ -198,6 +198,6 @@ std::string DescribeSlowLogRecordsRequest::getNodeId()const
 void DescribeSlowLogRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 

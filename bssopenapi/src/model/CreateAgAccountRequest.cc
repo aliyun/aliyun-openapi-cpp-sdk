@@ -33,7 +33,7 @@ std::string CreateAgAccountRequest::getFirstName()const
 void CreateAgAccountRequest::setFirstName(const std::string& firstName)
 {
 	firstName_ = firstName;
-	setCoreParameter("FirstName", firstName);
+	setCoreParameter("FirstName", std::to_string(firstName));
 }
 
 std::string CreateAgAccountRequest::getLoginEmail()const
@@ -44,7 +44,7 @@ std::string CreateAgAccountRequest::getLoginEmail()const
 void CreateAgAccountRequest::setLoginEmail(const std::string& loginEmail)
 {
 	loginEmail_ = loginEmail;
-	setCoreParameter("LoginEmail", loginEmail);
+	setCoreParameter("LoginEmail", std::to_string(loginEmail));
 }
 
 std::string CreateAgAccountRequest::getProvinceName()const
@@ -55,7 +55,7 @@ std::string CreateAgAccountRequest::getProvinceName()const
 void CreateAgAccountRequest::setProvinceName(const std::string& provinceName)
 {
 	provinceName_ = provinceName;
-	setCoreParameter("ProvinceName", provinceName);
+	setCoreParameter("ProvinceName", std::to_string(provinceName));
 }
 
 std::string CreateAgAccountRequest::getCityName()const
@@ -66,7 +66,7 @@ std::string CreateAgAccountRequest::getCityName()const
 void CreateAgAccountRequest::setCityName(const std::string& cityName)
 {
 	cityName_ = cityName;
-	setCoreParameter("CityName", cityName);
+	setCoreParameter("CityName", std::to_string(cityName));
 }
 
 std::string CreateAgAccountRequest::getAccountAttr()const
@@ -77,7 +77,7 @@ std::string CreateAgAccountRequest::getAccountAttr()const
 void CreateAgAccountRequest::setAccountAttr(const std::string& accountAttr)
 {
 	accountAttr_ = accountAttr;
-	setCoreParameter("AccountAttr", accountAttr);
+	setCoreParameter("AccountAttr", std::to_string(accountAttr));
 }
 
 std::string CreateAgAccountRequest::getPostcode()const
@@ -88,7 +88,7 @@ std::string CreateAgAccountRequest::getPostcode()const
 void CreateAgAccountRequest::setPostcode(const std::string& postcode)
 {
 	postcode_ = postcode;
-	setCoreParameter("Postcode", postcode);
+	setCoreParameter("Postcode", std::to_string(postcode));
 }
 
 std::string CreateAgAccountRequest::getEnterpriseName()const
@@ -99,7 +99,7 @@ std::string CreateAgAccountRequest::getEnterpriseName()const
 void CreateAgAccountRequest::setEnterpriseName(const std::string& enterpriseName)
 {
 	enterpriseName_ = enterpriseName;
-	setCoreParameter("EnterpriseName", enterpriseName);
+	setCoreParameter("EnterpriseName", std::to_string(enterpriseName));
 }
 
 std::string CreateAgAccountRequest::getNationCode()const
@@ -110,7 +110,7 @@ std::string CreateAgAccountRequest::getNationCode()const
 void CreateAgAccountRequest::setNationCode(const std::string& nationCode)
 {
 	nationCode_ = nationCode;
-	setCoreParameter("NationCode", nationCode);
+	setCoreParameter("NationCode", std::to_string(nationCode));
 }
 
 std::string CreateAgAccountRequest::getLastName()const
@@ -121,6 +121,6 @@ std::string CreateAgAccountRequest::getLastName()const
 void CreateAgAccountRequest::setLastName(const std::string& lastName)
 {
 	lastName_ = lastName;
-	setCoreParameter("LastName", lastName);
+	setCoreParameter("LastName", std::to_string(lastName));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeLiveSnapshotConfigRequest::getAppName()const
 void DescribeLiveSnapshotConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveSnapshotConfigRequest::getSecurityToken()const
 void DescribeLiveSnapshotConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveSnapshotConfigRequest::getDomainName()const
 void DescribeLiveSnapshotConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveSnapshotConfigRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeLiveSnapshotConfigRequest::getStreamName()const
 void DescribeLiveSnapshotConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveSnapshotConfigRequest::getOrder()const
@@ -110,6 +110,6 @@ std::string DescribeLiveSnapshotConfigRequest::getOrder()const
 void DescribeLiveSnapshotConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyAppRequest::getApp_ip()const
 void ModifyAppRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string ModifyAppRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string ModifyAppRequest::getPopProduct()const
 void ModifyAppRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long ModifyAppRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool ModifyAppRequest::getProxy_original_security_transport()const
 void ModifyAppRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ModifyAppRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string ModifyAppRequest::getCallerBid()const
 void ModifyAppRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long ModifyAppRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifyAppRequest::getProxy_original_source_ip()const
 void ModifyAppRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ModifyAppRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string ModifyAppRequest::getVersion()const
 void ModifyAppRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string ModifyAppRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string ModifyAppRequest::getOwnerIdLoginEmail()const
 void ModifyAppRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string ModifyAppRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string ModifyAppRequest::getCallerType()const
 void ModifyAppRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool ModifyAppRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool ModifyAppRequest::getProxy_trust_transport_info()const
 void ModifyAppRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool ModifyAppRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool ModifyAppRequest::getAk_mfa_present()const
 void ModifyAppRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string ModifyAppRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string ModifyAppRequest::getAccessKeyId()const
 void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool ModifyAppRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool ModifyAppRequest::getSecurity_transport()const
 void ModifyAppRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ModifyAppRequest::getAppName()const
@@ -187,7 +187,7 @@ std::string ModifyAppRequest::getAppName()const
 void ModifyAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string ModifyAppRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string ModifyAppRequest::getSecurityToken()const
 void ModifyAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyAppRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string ModifyAppRequest::getRequestId()const
 void ModifyAppRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string ModifyAppRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string ModifyAppRequest::getRequestContent()const
 void ModifyAppRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string ModifyAppRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string ModifyAppRequest::getAppId()const
 void ModifyAppRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string ModifyAppRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string ModifyAppRequest::getCallerBidEmail()const
 void ModifyAppRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string ModifyAppRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string ModifyAppRequest::getCallerUidEmail()const
 void ModifyAppRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long ModifyAppRequest::getCallerUid()const

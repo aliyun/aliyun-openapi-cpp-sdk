@@ -44,7 +44,7 @@ std::string QueryFpImportResultRequest::getResourceOwnerAccount()const
 void QueryFpImportResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryFpImportResultRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryFpImportResultRequest::getOwnerAccount()const
 void QueryFpImportResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryFpImportResultRequest::getPageSize()const
@@ -121,6 +121,6 @@ std::string QueryFpImportResultRequest::getAccessKeyId()const
 void QueryFpImportResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

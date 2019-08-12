@@ -44,7 +44,7 @@ std::string ApplyInvoiceRequest::getApplyUserNick()const
 void ApplyInvoiceRequest::setApplyUserNick(const std::string& applyUserNick)
 {
 	applyUserNick_ = applyUserNick;
-	setCoreParameter("ApplyUserNick", applyUserNick);
+	setCoreParameter("ApplyUserNick", std::to_string(applyUserNick));
 }
 
 bool ApplyInvoiceRequest::getInvoiceByAmount()const
@@ -55,7 +55,7 @@ bool ApplyInvoiceRequest::getInvoiceByAmount()const
 void ApplyInvoiceRequest::setInvoiceByAmount(bool invoiceByAmount)
 {
 	invoiceByAmount_ = invoiceByAmount;
-	setCoreParameter("InvoiceByAmount", invoiceByAmount);
+	setCoreParameter("InvoiceByAmount", invoiceByAmount ? "true" : "false");
 }
 
 long ApplyInvoiceRequest::getCustomerId()const

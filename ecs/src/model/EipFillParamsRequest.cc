@@ -44,7 +44,7 @@ std::string EipFillParamsRequest::getData()const
 void EipFillParamsRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string EipFillParamsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EipFillParamsRequest::getResourceOwnerAccount()const
 void EipFillParamsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EipFillParamsRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string EipFillParamsRequest::getClientToken()const
 void EipFillParamsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string EipFillParamsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string EipFillParamsRequest::getOwnerAccount()const
 void EipFillParamsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string EipFillParamsRequest::getUserCidr()const
@@ -88,7 +88,7 @@ std::string EipFillParamsRequest::getUserCidr()const
 void EipFillParamsRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 long EipFillParamsRequest::getOwnerId()const

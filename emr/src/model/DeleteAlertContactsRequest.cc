@@ -44,7 +44,7 @@ std::string DeleteAlertContactsRequest::getRegionId()const
 void DeleteAlertContactsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteAlertContactsRequest::getIds()const
@@ -55,7 +55,7 @@ std::string DeleteAlertContactsRequest::getIds()const
 void DeleteAlertContactsRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string DeleteAlertContactsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteAlertContactsRequest::getAccessKeyId()const
 void DeleteAlertContactsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

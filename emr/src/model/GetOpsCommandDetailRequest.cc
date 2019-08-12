@@ -44,7 +44,7 @@ std::string GetOpsCommandDetailRequest::getRegionId()const
 void GetOpsCommandDetailRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetOpsCommandDetailRequest::getOpsCommandName()const
@@ -55,7 +55,7 @@ std::string GetOpsCommandDetailRequest::getOpsCommandName()const
 void GetOpsCommandDetailRequest::setOpsCommandName(const std::string& opsCommandName)
 {
 	opsCommandName_ = opsCommandName;
-	setCoreParameter("OpsCommandName", opsCommandName);
+	setCoreParameter("OpsCommandName", std::to_string(opsCommandName));
 }
 
 std::string GetOpsCommandDetailRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetOpsCommandDetailRequest::getAccessKeyId()const
 void GetOpsCommandDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

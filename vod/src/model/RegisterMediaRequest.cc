@@ -33,7 +33,7 @@ std::string RegisterMediaRequest::getUserData()const
 void RegisterMediaRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long RegisterMediaRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string RegisterMediaRequest::getTemplateGroupId()const
 void RegisterMediaRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", templateGroupId);
+	setCoreParameter("TemplateGroupId", std::to_string(templateGroupId));
 }
 
 std::string RegisterMediaRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RegisterMediaRequest::getResourceOwnerAccount()const
 void RegisterMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long RegisterMediaRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string RegisterMediaRequest::getRegisterMetadatas()const
 void RegisterMediaRequest::setRegisterMetadatas(const std::string& registerMetadatas)
 {
 	registerMetadatas_ = registerMetadatas;
-	setCoreParameter("RegisterMetadatas", registerMetadatas);
+	setCoreParameter("RegisterMetadatas", std::to_string(registerMetadatas));
 }
 
 std::string RegisterMediaRequest::getWorkflowId()const
@@ -99,7 +99,7 @@ std::string RegisterMediaRequest::getWorkflowId()const
 void RegisterMediaRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", workflowId);
+	setCoreParameter("WorkflowId", std::to_string(workflowId));
 }
 
 std::string RegisterMediaRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string RegisterMediaRequest::getAccessKeyId()const
 void RegisterMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

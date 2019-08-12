@@ -44,7 +44,7 @@ std::string ListExecutePlanMigrateInfoRequest::getRegionId()const
 void ListExecutePlanMigrateInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListExecutePlanMigrateInfoRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListExecutePlanMigrateInfoRequest::getUserId()const
 void ListExecutePlanMigrateInfoRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 int ListExecutePlanMigrateInfoRequest::getCurrentSize()const
@@ -88,6 +88,6 @@ std::string ListExecutePlanMigrateInfoRequest::getAccessKeyId()const
 void ListExecutePlanMigrateInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

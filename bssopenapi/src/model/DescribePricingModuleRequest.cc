@@ -33,7 +33,7 @@ std::string DescribePricingModuleRequest::getProductCode()const
 void DescribePricingModuleRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string DescribePricingModuleRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string DescribePricingModuleRequest::getSubscriptionType()const
 void DescribePricingModuleRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
 }
 
 long DescribePricingModuleRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DescribePricingModuleRequest::getProductType()const
 void DescribePricingModuleRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setCoreParameter("ProductType", std::to_string(productType));
 }
 

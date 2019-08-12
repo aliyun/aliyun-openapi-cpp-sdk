@@ -33,7 +33,7 @@ std::string DescribePerDateDataRequest::getSourceIp()const
 void DescribePerDateDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribePerDateDataRequest::getApiType()const

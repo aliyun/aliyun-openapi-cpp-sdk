@@ -44,7 +44,7 @@ std::string CreateNoteRequest::getRegionId()const
 void CreateNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateNoteRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateNoteRequest::getName()const
 void CreateNoteRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateNoteRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateNoteRequest::getClusterId()const
 void CreateNoteRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateNoteRequest::getType()const
@@ -77,7 +77,7 @@ std::string CreateNoteRequest::getType()const
 void CreateNoteRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateNoteRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CreateNoteRequest::getAccessKeyId()const
 void CreateNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

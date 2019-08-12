@@ -33,7 +33,7 @@ std::string CreateFaultRequest::getSpeakerList()const
 void CreateFaultRequest::setSpeakerList(const std::string& speakerList)
 {
 	speakerList_ = speakerList;
-	setCoreParameter("SpeakerList", speakerList);
+	setCoreParameter("SpeakerList", std::to_string(speakerList));
 }
 
 long CreateFaultRequest::getAgentId()const
@@ -55,7 +55,7 @@ std::string CreateFaultRequest::getAgentOssFileName()const
 void CreateFaultRequest::setAgentOssFileName(const std::string& agentOssFileName)
 {
 	agentOssFileName_ = agentOssFileName;
-	setCoreParameter("AgentOssFileName", agentOssFileName);
+	setCoreParameter("AgentOssFileName", std::to_string(agentOssFileName));
 }
 
 std::string CreateFaultRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateFaultRequest::getDescription()const
 void CreateFaultRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateFaultRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string CreateFaultRequest::getOperatingSystemVersion()const
 void CreateFaultRequest::setOperatingSystemVersion(const std::string& operatingSystemVersion)
 {
 	operatingSystemVersion_ = operatingSystemVersion;
-	setCoreParameter("OperatingSystemVersion", operatingSystemVersion);
+	setCoreParameter("OperatingSystemVersion", std::to_string(operatingSystemVersion));
 }
 
 long CreateFaultRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string CreateFaultRequest::getMicrophoneList()const
 void CreateFaultRequest::setMicrophoneList(const std::string& microphoneList)
 {
 	microphoneList_ = microphoneList;
-	setCoreParameter("MicrophoneList", microphoneList);
+	setCoreParameter("MicrophoneList", std::to_string(microphoneList));
 }
 
 std::string CreateFaultRequest::getSpeakerEquipment()const
@@ -121,7 +121,7 @@ std::string CreateFaultRequest::getSpeakerEquipment()const
 void CreateFaultRequest::setSpeakerEquipment(const std::string& speakerEquipment)
 {
 	speakerEquipment_ = speakerEquipment;
-	setCoreParameter("SpeakerEquipment", speakerEquipment);
+	setCoreParameter("SpeakerEquipment", std::to_string(speakerEquipment));
 }
 
 std::string CreateFaultRequest::getServicePort()const
@@ -132,7 +132,7 @@ std::string CreateFaultRequest::getServicePort()const
 void CreateFaultRequest::setServicePort(const std::string& servicePort)
 {
 	servicePort_ = servicePort;
-	setCoreParameter("ServicePort", servicePort);
+	setCoreParameter("ServicePort", std::to_string(servicePort));
 }
 
 std::string CreateFaultRequest::getClientPort()const
@@ -143,7 +143,7 @@ std::string CreateFaultRequest::getClientPort()const
 void CreateFaultRequest::setClientPort(const std::string& clientPort)
 {
 	clientPort_ = clientPort;
-	setCoreParameter("ClientPort", clientPort);
+	setCoreParameter("ClientPort", std::to_string(clientPort));
 }
 
 std::string CreateFaultRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CreateFaultRequest::getAccessKeyId()const
 void CreateFaultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateFaultRequest::getServiceIp()const
@@ -165,7 +165,7 @@ std::string CreateFaultRequest::getServiceIp()const
 void CreateFaultRequest::setServiceIp(const std::string& serviceIp)
 {
 	serviceIp_ = serviceIp;
-	setCoreParameter("ServiceIp", serviceIp);
+	setCoreParameter("ServiceIp", std::to_string(serviceIp));
 }
 
 std::string CreateFaultRequest::getInstanceId()const
@@ -176,7 +176,7 @@ std::string CreateFaultRequest::getInstanceId()const
 void CreateFaultRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateFaultRequest::getCustomFilePath()const
@@ -187,7 +187,7 @@ std::string CreateFaultRequest::getCustomFilePath()const
 void CreateFaultRequest::setCustomFilePath(const std::string& customFilePath)
 {
 	customFilePath_ = customFilePath;
-	setCoreParameter("CustomFilePath", customFilePath);
+	setCoreParameter("CustomFilePath", std::to_string(customFilePath));
 }
 
 std::string CreateFaultRequest::getClientIp()const
@@ -198,7 +198,7 @@ std::string CreateFaultRequest::getClientIp()const
 void CreateFaultRequest::setClientIp(const std::string& clientIp)
 {
 	clientIp_ = clientIp;
-	setCoreParameter("ClientIp", clientIp);
+	setCoreParameter("ClientIp", std::to_string(clientIp));
 }
 
 std::string CreateFaultRequest::getAgentFilePath()const
@@ -209,7 +209,7 @@ std::string CreateFaultRequest::getAgentFilePath()const
 void CreateFaultRequest::setAgentFilePath(const std::string& agentFilePath)
 {
 	agentFilePath_ = agentFilePath;
-	setCoreParameter("AgentFilePath", agentFilePath);
+	setCoreParameter("AgentFilePath", std::to_string(agentFilePath));
 }
 
 std::string CreateFaultRequest::getConnectId()const
@@ -220,7 +220,7 @@ std::string CreateFaultRequest::getConnectId()const
 void CreateFaultRequest::setConnectId(const std::string& connectId)
 {
 	connectId_ = connectId;
-	setCoreParameter("ConnectId", connectId);
+	setCoreParameter("ConnectId", std::to_string(connectId));
 }
 
 std::string CreateFaultRequest::getCustomOssFileName()const
@@ -231,7 +231,7 @@ std::string CreateFaultRequest::getCustomOssFileName()const
 void CreateFaultRequest::setCustomOssFileName(const std::string& customOssFileName)
 {
 	customOssFileName_ = customOssFileName;
-	setCoreParameter("CustomOssFileName", customOssFileName);
+	setCoreParameter("CustomOssFileName", std::to_string(customOssFileName));
 }
 
 std::string CreateFaultRequest::getMicrophoneEquipment()const
@@ -242,7 +242,7 @@ std::string CreateFaultRequest::getMicrophoneEquipment()const
 void CreateFaultRequest::setMicrophoneEquipment(const std::string& microphoneEquipment)
 {
 	microphoneEquipment_ = microphoneEquipment;
-	setCoreParameter("MicrophoneEquipment", microphoneEquipment);
+	setCoreParameter("MicrophoneEquipment", std::to_string(microphoneEquipment));
 }
 
 std::string CreateFaultRequest::getBrowserVersion()const
@@ -253,6 +253,6 @@ std::string CreateFaultRequest::getBrowserVersion()const
 void CreateFaultRequest::setBrowserVersion(const std::string& browserVersion)
 {
 	browserVersion_ = browserVersion;
-	setCoreParameter("BrowserVersion", browserVersion);
+	setCoreParameter("BrowserVersion", std::to_string(browserVersion));
 }
 

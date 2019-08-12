@@ -44,7 +44,7 @@ std::string DescribeScalingActivityRequest::getRegionId()const
 void DescribeScalingActivityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeScalingActivityRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeScalingActivityRequest::getHostGroupId()const
 void DescribeScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
 }
 
 std::string DescribeScalingActivityRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeScalingActivityRequest::getClusterId()const
 void DescribeScalingActivityRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeScalingActivityRequest::getScalingActivityId()const
@@ -77,7 +77,7 @@ std::string DescribeScalingActivityRequest::getScalingActivityId()const
 void DescribeScalingActivityRequest::setScalingActivityId(const std::string& scalingActivityId)
 {
 	scalingActivityId_ = scalingActivityId;
-	setCoreParameter("ScalingActivityId", scalingActivityId);
+	setCoreParameter("ScalingActivityId", std::to_string(scalingActivityId));
 }
 
 std::string DescribeScalingActivityRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeScalingActivityRequest::getAccessKeyId()const
 void DescribeScalingActivityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

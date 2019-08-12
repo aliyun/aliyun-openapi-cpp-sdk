@@ -33,7 +33,7 @@ std::string DescribeAccountsRequest::getProductCode()const
 void DescribeAccountsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string DescribeAccountsRequest::getLoginName()const
@@ -44,7 +44,7 @@ std::string DescribeAccountsRequest::getLoginName()const
 void DescribeAccountsRequest::setLoginName(const std::string& loginName)
 {
 	loginName_ = loginName;
-	setCoreParameter("LoginName", loginName);
+	setCoreParameter("LoginName", std::to_string(loginName));
 }
 
 int DescribeAccountsRequest::getFeatureType()const
@@ -66,7 +66,7 @@ std::string DescribeAccountsRequest::getColumnId()const
 void DescribeAccountsRequest::setColumnId(const std::string& columnId)
 {
 	columnId_ = columnId;
-	setCoreParameter("ColumnId", columnId);
+	setCoreParameter("ColumnId", std::to_string(columnId));
 }
 
 std::string DescribeAccountsRequest::getPackageId()const
@@ -77,7 +77,7 @@ std::string DescribeAccountsRequest::getPackageId()const
 void DescribeAccountsRequest::setPackageId(const std::string& packageId)
 {
 	packageId_ = packageId;
-	setCoreParameter("PackageId", packageId);
+	setCoreParameter("PackageId", std::to_string(packageId));
 }
 
 int DescribeAccountsRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ std::string DescribeAccountsRequest::getInstanceId()const
 void DescribeAccountsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeAccountsRequest::getSourceIp()const
@@ -110,7 +110,7 @@ std::string DescribeAccountsRequest::getSourceIp()const
 void DescribeAccountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeAccountsRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeAccountsRequest::getTableId()const
 void DescribeAccountsRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setCoreParameter("TableId", std::to_string(tableId));
 }
 
 std::string DescribeAccountsRequest::getLang()const
@@ -165,7 +165,7 @@ std::string DescribeAccountsRequest::getLang()const
 void DescribeAccountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAccountsRequest::getKey()const
@@ -176,7 +176,7 @@ std::string DescribeAccountsRequest::getKey()const
 void DescribeAccountsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 
 int DescribeAccountsRequest::getQueryType()const

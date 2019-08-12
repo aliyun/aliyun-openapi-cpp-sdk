@@ -33,7 +33,7 @@ std::string MarkWebsiteScanResultRequest::getSourceIp()const
 void MarkWebsiteScanResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string MarkWebsiteScanResultRequest::getIds()const
@@ -44,7 +44,7 @@ std::string MarkWebsiteScanResultRequest::getIds()const
 void MarkWebsiteScanResultRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string MarkWebsiteScanResultRequest::getLang()const
@@ -55,6 +55,6 @@ std::string MarkWebsiteScanResultRequest::getLang()const
 void MarkWebsiteScanResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

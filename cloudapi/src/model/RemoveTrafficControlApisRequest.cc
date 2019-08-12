@@ -33,7 +33,7 @@ std::string RemoveTrafficControlApisRequest::getTrafficControlId()const
 void RemoveTrafficControlApisRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
 }
 
 std::string RemoveTrafficControlApisRequest::getStageName()const
@@ -44,7 +44,7 @@ std::string RemoveTrafficControlApisRequest::getStageName()const
 void RemoveTrafficControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string RemoveTrafficControlApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string RemoveTrafficControlApisRequest::getSecurityToken()const
 void RemoveTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RemoveTrafficControlApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string RemoveTrafficControlApisRequest::getGroupId()const
 void RemoveTrafficControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string RemoveTrafficControlApisRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string RemoveTrafficControlApisRequest::getAccessKeyId()const
 void RemoveTrafficControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string RemoveTrafficControlApisRequest::getApiIds()const
@@ -88,6 +88,6 @@ std::string RemoveTrafficControlApisRequest::getApiIds()const
 void RemoveTrafficControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setCoreParameter("ApiIds", std::to_string(apiIds));
 }
 

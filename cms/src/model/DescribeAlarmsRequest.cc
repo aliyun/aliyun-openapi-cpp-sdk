@@ -33,7 +33,7 @@ bool DescribeAlarmsRequest::getEnableState()const
 void DescribeAlarmsRequest::setEnableState(bool enableState)
 {
 	enableState_ = enableState;
-	setCoreParameter("EnableState", enableState);
+	setCoreParameter("EnableState", enableState ? "true" : "false");
 }
 
 std::string DescribeAlarmsRequest::getNames()const
@@ -44,7 +44,7 @@ std::string DescribeAlarmsRequest::getNames()const
 void DescribeAlarmsRequest::setNames(const std::string& names)
 {
 	names_ = names;
-	setCoreParameter("Names", names);
+	setCoreParameter("Names", std::to_string(names));
 }
 
 std::string DescribeAlarmsRequest::getDisplayName()const
@@ -55,7 +55,7 @@ std::string DescribeAlarmsRequest::getDisplayName()const
 void DescribeAlarmsRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setCoreParameter("DisplayName", std::to_string(displayName));
 }
 
 std::string DescribeAlarmsRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeAlarmsRequest::getGroupId()const
 void DescribeAlarmsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeAlarmsRequest::get_Namespace()const
@@ -77,7 +77,7 @@ std::string DescribeAlarmsRequest::get_Namespace()const
 void DescribeAlarmsRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", std::to_string(_namespace));
 }
 
 std::string DescribeAlarmsRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeAlarmsRequest::getPageSize()const
 void DescribeAlarmsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAlarmsRequest::getAlertState()const
@@ -99,7 +99,7 @@ std::string DescribeAlarmsRequest::getAlertState()const
 void DescribeAlarmsRequest::setAlertState(const std::string& alertState)
 {
 	alertState_ = alertState;
-	setCoreParameter("AlertState", alertState);
+	setCoreParameter("AlertState", std::to_string(alertState));
 }
 
 std::string DescribeAlarmsRequest::getNameKeyword()const
@@ -110,7 +110,7 @@ std::string DescribeAlarmsRequest::getNameKeyword()const
 void DescribeAlarmsRequest::setNameKeyword(const std::string& nameKeyword)
 {
 	nameKeyword_ = nameKeyword;
-	setCoreParameter("NameKeyword", nameKeyword);
+	setCoreParameter("NameKeyword", std::to_string(nameKeyword));
 }
 
 std::string DescribeAlarmsRequest::getGroupBy()const
@@ -121,7 +121,7 @@ std::string DescribeAlarmsRequest::getGroupBy()const
 void DescribeAlarmsRequest::setGroupBy(const std::string& groupBy)
 {
 	groupBy_ = groupBy;
-	setCoreParameter("GroupBy", groupBy);
+	setCoreParameter("GroupBy", std::to_string(groupBy));
 }
 
 std::string DescribeAlarmsRequest::getPage()const
@@ -132,7 +132,7 @@ std::string DescribeAlarmsRequest::getPage()const
 void DescribeAlarmsRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string DescribeAlarmsRequest::getMetricName()const
@@ -143,6 +143,6 @@ std::string DescribeAlarmsRequest::getMetricName()const
 void DescribeAlarmsRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 

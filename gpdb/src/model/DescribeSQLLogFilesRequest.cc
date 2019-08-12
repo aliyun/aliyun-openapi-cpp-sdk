@@ -33,7 +33,7 @@ std::string DescribeSQLLogFilesRequest::getFileName()const
 void DescribeSQLLogFilesRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 
 int DescribeSQLLogFilesRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeSQLLogFilesRequest::getDBInstanceId()const
 void DescribeSQLLogFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 int DescribeSQLLogFilesRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
 void DescribeSQLLogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string AddBandwidthPackageIpsRequest::getBandwidthPackageId()const
 void AddBandwidthPackageIpsRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string AddBandwidthPackageIpsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddBandwidthPackageIpsRequest::getResourceOwnerAccount()const
 void AddBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddBandwidthPackageIpsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AddBandwidthPackageIpsRequest::getRegionId()const
 void AddBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddBandwidthPackageIpsRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string AddBandwidthPackageIpsRequest::getClientToken()const
 void AddBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string AddBandwidthPackageIpsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string AddBandwidthPackageIpsRequest::getOwnerAccount()const
 void AddBandwidthPackageIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long AddBandwidthPackageIpsRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AddBandwidthPackageIpsRequest::getIpCount()const
 void AddBandwidthPackageIpsRequest::setIpCount(const std::string& ipCount)
 {
 	ipCount_ = ipCount;
-	setCoreParameter("IpCount", ipCount);
+	setCoreParameter("IpCount", std::to_string(ipCount));
 }
 

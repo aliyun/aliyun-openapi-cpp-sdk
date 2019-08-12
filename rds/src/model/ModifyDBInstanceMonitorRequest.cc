@@ -44,7 +44,7 @@ std::string ModifyDBInstanceMonitorRequest::getPeriod()const
 void ModifyDBInstanceMonitorRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceMonitorRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceMonitorRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceMonitorRequest::getClientToken()const
 void ModifyDBInstanceMonitorRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceMonitorRequest::getOwnerAccount()const
 void ModifyDBInstanceMonitorRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBInstanceMonitorRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceMonitorRequest::getDBInstanceId()const
 void ModifyDBInstanceMonitorRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyDBInstanceMonitorRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const
 void ModifyDBInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

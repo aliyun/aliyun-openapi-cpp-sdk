@@ -44,7 +44,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageI
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAcco
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getBandwidth()const
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()con
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getEipId()const
@@ -99,7 +99,7 @@ std::string ModifyCommonBandwidthPackageIpBandwidthRequest::getEipId()const
 void ModifyCommonBandwidthPackageIpBandwidthRequest::setEipId(const std::string& eipId)
 {
 	eipId_ = eipId;
-	setCoreParameter("EipId", eipId);
+	setCoreParameter("EipId", std::to_string(eipId));
 }
 
 long ModifyCommonBandwidthPackageIpBandwidthRequest::getOwnerId()const

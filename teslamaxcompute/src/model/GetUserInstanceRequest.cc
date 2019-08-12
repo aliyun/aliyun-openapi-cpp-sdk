@@ -55,7 +55,7 @@ std::string GetUserInstanceRequest::getRegion()const
 void GetUserInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string GetUserInstanceRequest::getUser()const
@@ -66,7 +66,7 @@ std::string GetUserInstanceRequest::getUser()const
 void GetUserInstanceRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setCoreParameter("User", std::to_string(user));
 }
 
 std::string GetUserInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetUserInstanceRequest::getStatus()const
 void GetUserInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

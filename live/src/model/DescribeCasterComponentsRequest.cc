@@ -33,7 +33,7 @@ std::string DescribeCasterComponentsRequest::getComponentId()const
 void DescribeCasterComponentsRequest::setComponentId(const std::string& componentId)
 {
 	componentId_ = componentId;
-	setCoreParameter("ComponentId", componentId);
+	setCoreParameter("ComponentId", std::to_string(componentId));
 }
 
 std::string DescribeCasterComponentsRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DescribeCasterComponentsRequest::getCasterId()const
 void DescribeCasterComponentsRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long DescribeCasterComponentsRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getAppName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
@@ -99,6 +99,6 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

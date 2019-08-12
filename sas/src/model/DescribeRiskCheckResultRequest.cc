@@ -44,7 +44,7 @@ std::string DescribeRiskCheckResultRequest::getSourceIp()const
 void DescribeRiskCheckResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeRiskCheckResultRequest::getGroupId()const
@@ -78,7 +78,7 @@ std::string DescribeRiskCheckResultRequest::getName()const
 void DescribeRiskCheckResultRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeRiskCheckResultRequest::getPageSize()const
@@ -111,7 +111,7 @@ std::string DescribeRiskCheckResultRequest::getLang()const
 void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeRiskCheckResultRequest::getRiskLevel()const
@@ -122,7 +122,7 @@ std::string DescribeRiskCheckResultRequest::getRiskLevel()const
 void DescribeRiskCheckResultRequest::setRiskLevel(const std::string& riskLevel)
 {
 	riskLevel_ = riskLevel;
-	setCoreParameter("RiskLevel", riskLevel);
+	setCoreParameter("RiskLevel", std::to_string(riskLevel));
 }
 
 std::string DescribeRiskCheckResultRequest::getStatus()const
@@ -133,6 +133,6 @@ std::string DescribeRiskCheckResultRequest::getStatus()const
 void DescribeRiskCheckResultRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

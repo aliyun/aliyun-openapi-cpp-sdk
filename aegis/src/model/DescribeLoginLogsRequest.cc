@@ -33,7 +33,7 @@ std::string DescribeLoginLogsRequest::getTypes()const
 void DescribeLoginLogsRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", types);
+	setCoreParameter("Types", std::to_string(types));
 }
 
 std::string DescribeLoginLogsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeLoginLogsRequest::getSourceIp()const
 void DescribeLoginLogsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeLoginLogsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeLoginLogsRequest::getStatuses()const
 void DescribeLoginLogsRequest::setStatuses(const std::string& statuses)
 {
 	statuses_ = statuses;
-	setCoreParameter("Statuses", statuses);
+	setCoreParameter("Statuses", std::to_string(statuses));
 }
 
 int DescribeLoginLogsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeLoginLogsRequest::getRemark()const
 void DescribeLoginLogsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeLoginLogsRequest::getTag()const
@@ -99,6 +99,6 @@ std::string DescribeLoginLogsRequest::getTag()const
 void DescribeLoginLogsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 

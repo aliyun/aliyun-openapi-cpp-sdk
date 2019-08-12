@@ -33,7 +33,7 @@ bool ResumeJobsRequest::getAll()const
 void ResumeJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> ResumeJobsRequest::getJobId()const
@@ -56,7 +56,7 @@ std::string ResumeJobsRequest::getInstanceId()const
 void ResumeJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> ResumeJobsRequest::getJobReferenceId()const
@@ -79,7 +79,7 @@ std::string ResumeJobsRequest::getGroupId()const
 void ResumeJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ResumeJobsRequest::getScenarioId()const
@@ -90,6 +90,6 @@ std::string ResumeJobsRequest::getScenarioId()const
 void ResumeJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 

@@ -33,7 +33,7 @@ std::string CreatePhotoStoreRequest::getBucketName()const
 void CreatePhotoStoreRequest::setBucketName(const std::string& bucketName)
 {
 	bucketName_ = bucketName;
-	setCoreParameter("BucketName", bucketName);
+	setCoreParameter("BucketName", std::to_string(bucketName));
 }
 
 std::string CreatePhotoStoreRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string CreatePhotoStoreRequest::getStoreName()const
 void CreatePhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string CreatePhotoStoreRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string CreatePhotoStoreRequest::getRemark()const
 void CreatePhotoStoreRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 long CreatePhotoStoreRequest::getDefaultQuota()const

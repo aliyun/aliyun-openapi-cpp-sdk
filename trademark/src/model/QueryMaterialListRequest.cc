@@ -33,7 +33,7 @@ std::string QueryMaterialListRequest::getName()const
 void QueryMaterialListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int QueryMaterialListRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryMaterialListRequest::getCardNumber()const
 void QueryMaterialListRequest::setCardNumber(const std::string& cardNumber)
 {
 	cardNumber_ = cardNumber;
-	setCoreParameter("CardNumber", cardNumber);
+	setCoreParameter("CardNumber", std::to_string(cardNumber));
 }
 
 int QueryMaterialListRequest::getType()const

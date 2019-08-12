@@ -33,7 +33,7 @@ std::string SetIpControlApisRequest::getStageName()const
 void SetIpControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string SetIpControlApisRequest::getIpControlId()const
@@ -44,7 +44,7 @@ std::string SetIpControlApisRequest::getIpControlId()const
 void SetIpControlApisRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setCoreParameter("IpControlId", std::to_string(ipControlId));
 }
 
 std::string SetIpControlApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetIpControlApisRequest::getSecurityToken()const
 void SetIpControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetIpControlApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string SetIpControlApisRequest::getGroupId()const
 void SetIpControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string SetIpControlApisRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string SetIpControlApisRequest::getAccessKeyId()const
 void SetIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetIpControlApisRequest::getApiIds()const
@@ -88,6 +88,6 @@ std::string SetIpControlApisRequest::getApiIds()const
 void SetIpControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setCoreParameter("ApiIds", std::to_string(apiIds));
 }
 

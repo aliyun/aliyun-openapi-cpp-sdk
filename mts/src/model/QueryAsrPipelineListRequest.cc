@@ -44,7 +44,7 @@ std::string QueryAsrPipelineListRequest::getResourceOwnerAccount()const
 void QueryAsrPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryAsrPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryAsrPipelineListRequest::getPipelineIds()const
 void QueryAsrPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setCoreParameter("PipelineIds", std::to_string(pipelineIds));
 }
 
 std::string QueryAsrPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryAsrPipelineListRequest::getOwnerAccount()const
 void QueryAsrPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryAsrPipelineListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryAsrPipelineListRequest::getAccessKeyId()const
 void QueryAsrPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

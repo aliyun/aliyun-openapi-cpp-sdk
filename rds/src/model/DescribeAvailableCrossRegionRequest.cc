@@ -44,7 +44,7 @@ std::string DescribeAvailableCrossRegionRequest::getResourceOwnerAccount()const
 void DescribeAvailableCrossRegionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAvailableCrossRegionRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableCrossRegionRequest::getRegionId()const
 void DescribeAvailableCrossRegionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long DescribeAvailableCrossRegionRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string DescribeAvailableCrossRegionRequest::getAccessKeyId()const
 void DescribeAvailableCrossRegionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

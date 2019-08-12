@@ -44,7 +44,7 @@ std::string DeleteBgpPeerRequest::getResourceOwnerAccount()const
 void DeleteBgpPeerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteBgpPeerRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteBgpPeerRequest::getRegionId()const
 void DeleteBgpPeerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteBgpPeerRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteBgpPeerRequest::getClientToken()const
 void DeleteBgpPeerRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteBgpPeerRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteBgpPeerRequest::getOwnerAccount()const
 void DeleteBgpPeerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteBgpPeerRequest::getBgpPeerId()const
@@ -88,7 +88,7 @@ std::string DeleteBgpPeerRequest::getBgpPeerId()const
 void DeleteBgpPeerRequest::setBgpPeerId(const std::string& bgpPeerId)
 {
 	bgpPeerId_ = bgpPeerId;
-	setCoreParameter("BgpPeerId", bgpPeerId);
+	setCoreParameter("BgpPeerId", std::to_string(bgpPeerId));
 }
 
 long DeleteBgpPeerRequest::getOwnerId()const

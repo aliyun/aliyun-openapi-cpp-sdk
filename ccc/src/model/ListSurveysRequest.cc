@@ -33,7 +33,7 @@ std::string ListSurveysRequest::getInstanceId()const
 void ListSurveysRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListSurveysRequest::getScenarioId()const
@@ -44,6 +44,6 @@ std::string ListSurveysRequest::getScenarioId()const
 void ListSurveysRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 

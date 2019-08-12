@@ -44,7 +44,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getRegionId()const
 void ModifyExecutionPlanBasicInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getName()const
 void ModifyExecutionPlanBasicInfoRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getId()const
@@ -66,7 +66,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getId()const
 void ModifyExecutionPlanBasicInfoRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ModifyExecutionPlanBasicInfoRequest::getClusterId()const
 void ModifyExecutionPlanBasicInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyExecutionPlanBasicInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyExecutionPlanBasicInfoRequest::getAccessKeyId()const
 void ModifyExecutionPlanBasicInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

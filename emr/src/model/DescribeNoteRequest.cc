@@ -44,7 +44,7 @@ std::string DescribeNoteRequest::getRegionId()const
 void DescribeNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeNoteRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeNoteRequest::getId()const
 void DescribeNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeNoteRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeNoteRequest::getAccessKeyId()const
 void DescribeNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

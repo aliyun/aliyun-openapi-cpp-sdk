@@ -33,7 +33,7 @@ std::string GetPredictiveJobRequest::getJobId()const
 void GetPredictiveJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string GetPredictiveJobRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string GetPredictiveJobRequest::getInstanceId()const
 void GetPredictiveJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 

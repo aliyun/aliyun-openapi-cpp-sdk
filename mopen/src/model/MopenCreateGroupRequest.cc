@@ -33,6 +33,6 @@ std::string MopenCreateGroupRequest::getCreator()const
 void MopenCreateGroupRequest::setCreator(const std::string& creator)
 {
 	creator_ = creator;
-	setCoreParameter("Creator", creator);
+	setCoreParameter("Creator", std::to_string(creator));
 }
 

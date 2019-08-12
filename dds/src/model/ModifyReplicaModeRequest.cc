@@ -33,7 +33,7 @@ std::string ModifyReplicaModeRequest::getDomainMode()const
 void ModifyReplicaModeRequest::setDomainMode(const std::string& domainMode)
 {
 	domainMode_ = domainMode;
-	setCoreParameter("DomainMode", domainMode);
+	setCoreParameter("DomainMode", std::to_string(domainMode));
 }
 
 long ModifyReplicaModeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyReplicaModeRequest::getPrimaryInstanceId()const
 void ModifyReplicaModeRequest::setPrimaryInstanceId(const std::string& primaryInstanceId)
 {
 	primaryInstanceId_ = primaryInstanceId;
-	setCoreParameter("PrimaryInstanceId", primaryInstanceId);
+	setCoreParameter("PrimaryInstanceId", std::to_string(primaryInstanceId));
 }
 
 std::string ModifyReplicaModeRequest::getReplicaMode()const
@@ -66,7 +66,7 @@ std::string ModifyReplicaModeRequest::getReplicaMode()const
 void ModifyReplicaModeRequest::setReplicaMode(const std::string& replicaMode)
 {
 	replicaMode_ = replicaMode;
-	setCoreParameter("ReplicaMode", replicaMode);
+	setCoreParameter("ReplicaMode", std::to_string(replicaMode));
 }
 
 std::string ModifyReplicaModeRequest::getSecurityToken()const
@@ -77,7 +77,7 @@ std::string ModifyReplicaModeRequest::getSecurityToken()const
 void ModifyReplicaModeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyReplicaModeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyReplicaModeRequest::getResourceOwnerAccount()const
 void ModifyReplicaModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyReplicaModeRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string ModifyReplicaModeRequest::getRegionId()const
 void ModifyReplicaModeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyReplicaModeRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string ModifyReplicaModeRequest::getOwnerAccount()const
 void ModifyReplicaModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyReplicaModeRequest::getReplicaId()const
@@ -121,7 +121,7 @@ std::string ModifyReplicaModeRequest::getReplicaId()const
 void ModifyReplicaModeRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 long ModifyReplicaModeRequest::getOwnerId()const
@@ -143,6 +143,6 @@ std::string ModifyReplicaModeRequest::getAccessKeyId()const
 void ModifyReplicaModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

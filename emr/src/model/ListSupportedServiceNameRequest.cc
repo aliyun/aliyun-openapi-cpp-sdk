@@ -44,7 +44,7 @@ std::string ListSupportedServiceNameRequest::getRegionId()const
 void ListSupportedServiceNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListSupportedServiceNameRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListSupportedServiceNameRequest::getAccessKeyId()const
 void ListSupportedServiceNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

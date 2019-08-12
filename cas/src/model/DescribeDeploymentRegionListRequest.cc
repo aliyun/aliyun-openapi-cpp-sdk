@@ -33,7 +33,7 @@ std::string DescribeDeploymentRegionListRequest::getSourceIp()const
 void DescribeDeploymentRegionListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeDeploymentRegionListRequest::getCertificateId()const
@@ -55,7 +55,7 @@ std::string DescribeDeploymentRegionListRequest::getCloudProduct()const
 void DescribeDeploymentRegionListRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setCoreParameter("CloudProduct", std::to_string(cloudProduct));
 }
 
 std::string DescribeDeploymentRegionListRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeDeploymentRegionListRequest::getLang()const
 void DescribeDeploymentRegionListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDeployedApisRequest::getStageName()const
 void DescribeDeployedApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeDeployedApisRequest::getApiName()const
@@ -44,7 +44,7 @@ std::string DescribeDeployedApisRequest::getApiName()const
 void DescribeDeployedApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setCoreParameter("ApiName", std::to_string(apiName));
 }
 
 std::string DescribeDeployedApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeDeployedApisRequest::getSecurityToken()const
 void DescribeDeployedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDeployedApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeDeployedApisRequest::getGroupId()const
 void DescribeDeployedApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeDeployedApisRequest::getPageSize()const
@@ -105,7 +105,7 @@ bool DescribeDeployedApisRequest::getEnableTagAuth()const
 void DescribeDeployedApisRequest::setEnableTagAuth(bool enableTagAuth)
 {
 	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth);
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
 }
 
 std::string DescribeDeployedApisRequest::getApiId()const
@@ -116,7 +116,7 @@ std::string DescribeDeployedApisRequest::getApiId()const
 void DescribeDeployedApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 int DescribeDeployedApisRequest::getPageNumber()const
@@ -138,6 +138,6 @@ std::string DescribeDeployedApisRequest::getAccessKeyId()const
 void DescribeDeployedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

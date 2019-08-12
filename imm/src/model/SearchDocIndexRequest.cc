@@ -44,7 +44,7 @@ std::string SearchDocIndexRequest::getCustomKey1()const
 void SearchDocIndexRequest::setCustomKey1(const std::string& customKey1)
 {
 	customKey1_ = customKey1;
-	setCoreParameter("CustomKey1", customKey1);
+	setCoreParameter("CustomKey1", std::to_string(customKey1));
 }
 
 std::string SearchDocIndexRequest::getSet()const
@@ -55,7 +55,7 @@ std::string SearchDocIndexRequest::getSet()const
 void SearchDocIndexRequest::setSet(const std::string& set)
 {
 	set_ = set;
-	setCoreParameter("Set", set);
+	setCoreParameter("Set", std::to_string(set));
 }
 
 int SearchDocIndexRequest::getSizeLimitEnd()const
@@ -77,7 +77,7 @@ std::string SearchDocIndexRequest::getCustomKey5()const
 void SearchDocIndexRequest::setCustomKey5(const std::string& customKey5)
 {
 	customKey5_ = customKey5;
-	setCoreParameter("CustomKey5", customKey5);
+	setCoreParameter("CustomKey5", std::to_string(customKey5));
 }
 
 int SearchDocIndexRequest::getOffset()const
@@ -99,7 +99,7 @@ std::string SearchDocIndexRequest::getCustomKey4()const
 void SearchDocIndexRequest::setCustomKey4(const std::string& customKey4)
 {
 	customKey4_ = customKey4;
-	setCoreParameter("CustomKey4", customKey4);
+	setCoreParameter("CustomKey4", std::to_string(customKey4));
 }
 
 std::string SearchDocIndexRequest::getCustomKey3()const
@@ -110,7 +110,7 @@ std::string SearchDocIndexRequest::getCustomKey3()const
 void SearchDocIndexRequest::setCustomKey3(const std::string& customKey3)
 {
 	customKey3_ = customKey3;
-	setCoreParameter("CustomKey3", customKey3);
+	setCoreParameter("CustomKey3", std::to_string(customKey3));
 }
 
 std::string SearchDocIndexRequest::getCustomKey2()const
@@ -121,7 +121,7 @@ std::string SearchDocIndexRequest::getCustomKey2()const
 void SearchDocIndexRequest::setCustomKey2(const std::string& customKey2)
 {
 	customKey2_ = customKey2;
-	setCoreParameter("CustomKey2", customKey2);
+	setCoreParameter("CustomKey2", std::to_string(customKey2));
 }
 
 std::string SearchDocIndexRequest::getProject()const
@@ -132,7 +132,7 @@ std::string SearchDocIndexRequest::getProject()const
 void SearchDocIndexRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 int SearchDocIndexRequest::getModifiedTimeStart()const
@@ -165,7 +165,7 @@ std::string SearchDocIndexRequest::getCustomKey6()const
 void SearchDocIndexRequest::setCustomKey6(const std::string& customKey6)
 {
 	customKey6_ = customKey6;
-	setCoreParameter("CustomKey6", customKey6);
+	setCoreParameter("CustomKey6", std::to_string(customKey6));
 }
 
 std::string SearchDocIndexRequest::getContent()const
@@ -176,7 +176,7 @@ std::string SearchDocIndexRequest::getContent()const
 void SearchDocIndexRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 
 int SearchDocIndexRequest::getPageNumLimitEnd()const
@@ -198,7 +198,7 @@ std::string SearchDocIndexRequest::getAccessKeyId()const
 void SearchDocIndexRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SearchDocIndexRequest::getContentType()const
@@ -209,7 +209,7 @@ std::string SearchDocIndexRequest::getContentType()const
 void SearchDocIndexRequest::setContentType(const std::string& contentType)
 {
 	contentType_ = contentType;
-	setCoreParameter("ContentType", contentType);
+	setCoreParameter("ContentType", std::to_string(contentType));
 }
 
 int SearchDocIndexRequest::getSizeLimitStart()const
@@ -231,7 +231,7 @@ std::string SearchDocIndexRequest::getRegionId()const
 void SearchDocIndexRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SearchDocIndexRequest::getName()const
@@ -242,7 +242,7 @@ std::string SearchDocIndexRequest::getName()const
 void SearchDocIndexRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int SearchDocIndexRequest::getLimit()const

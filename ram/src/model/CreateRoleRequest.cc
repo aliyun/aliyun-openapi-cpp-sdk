@@ -33,7 +33,7 @@ std::string CreateRoleRequest::getRoleName()const
 void CreateRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setCoreParameter("RoleName", std::to_string(roleName));
 }
 
 std::string CreateRoleRequest::getDescription()const
@@ -44,7 +44,7 @@ std::string CreateRoleRequest::getDescription()const
 void CreateRoleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateRoleRequest::getAssumeRolePolicyDocument()const
@@ -55,6 +55,6 @@ std::string CreateRoleRequest::getAssumeRolePolicyDocument()const
 void CreateRoleRequest::setAssumeRolePolicyDocument(const std::string& assumeRolePolicyDocument)
 {
 	assumeRolePolicyDocument_ = assumeRolePolicyDocument;
-	setCoreParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+	setCoreParameter("AssumeRolePolicyDocument", std::to_string(assumeRolePolicyDocument));
 }
 

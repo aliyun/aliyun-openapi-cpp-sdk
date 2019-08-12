@@ -44,7 +44,7 @@ std::string ListFlowNodeSqlResultRequest::getRegionId()const
 void ListFlowNodeSqlResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListFlowNodeSqlResultRequest::getLength()const
@@ -77,7 +77,7 @@ std::string ListFlowNodeSqlResultRequest::getNodeInstanceId()const
 void ListFlowNodeSqlResultRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setCoreParameter("NodeInstanceId", std::to_string(nodeInstanceId));
 }
 
 std::string ListFlowNodeSqlResultRequest::getProjectId()const
@@ -88,6 +88,6 @@ std::string ListFlowNodeSqlResultRequest::getProjectId()const
 void ListFlowNodeSqlResultRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeHistogramRequest::getSourceIp()const
 void DescribeHistogramRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeHistogramRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeHistogramRequest::getQuery()const
 void DescribeHistogramRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setCoreParameter("Query", std::to_string(query));
 }
 
 std::string DescribeHistogramRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeHistogramRequest::getEndTime()const
 void DescribeHistogramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeHistogramRequest::getStartTime()const
@@ -66,6 +66,6 @@ std::string DescribeHistogramRequest::getStartTime()const
 void DescribeHistogramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 

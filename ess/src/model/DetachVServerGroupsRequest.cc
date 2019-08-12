@@ -33,7 +33,7 @@ std::string DetachVServerGroupsRequest::getResourceOwnerAccount()const
 void DetachVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachVServerGroupsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetachVServerGroupsRequest::getRegionId()const
 void DetachVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DetachVServerGroupsRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string DetachVServerGroupsRequest::getScalingGroupId()const
 void DetachVServerGroupsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 bool DetachVServerGroupsRequest::getForceDetach()const
@@ -66,7 +66,7 @@ bool DetachVServerGroupsRequest::getForceDetach()const
 void DetachVServerGroupsRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach);
+	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 
 long DetachVServerGroupsRequest::getOwnerId()const
@@ -105,6 +105,6 @@ std::string DetachVServerGroupsRequest::getAccessKeyId()const
 void DetachVServerGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

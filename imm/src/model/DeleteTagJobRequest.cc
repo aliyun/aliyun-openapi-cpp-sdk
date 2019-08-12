@@ -33,7 +33,7 @@ std::string DeleteTagJobRequest::getJobId()const
 void DeleteTagJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string DeleteTagJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteTagJobRequest::getRegionId()const
 void DeleteTagJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteTagJobRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteTagJobRequest::getProject()const
 void DeleteTagJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string DeleteTagJobRequest::getClearIndexData()const
@@ -66,7 +66,7 @@ std::string DeleteTagJobRequest::getClearIndexData()const
 void DeleteTagJobRequest::setClearIndexData(const std::string& clearIndexData)
 {
 	clearIndexData_ = clearIndexData;
-	setCoreParameter("ClearIndexData", clearIndexData);
+	setCoreParameter("ClearIndexData", std::to_string(clearIndexData));
 }
 
 std::string DeleteTagJobRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteTagJobRequest::getAccessKeyId()const
 void DeleteTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

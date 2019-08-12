@@ -33,7 +33,7 @@ std::string UpdateGtmMonitorRequest::getMonitorExtendInfo()const
 void UpdateGtmMonitorRequest::setMonitorExtendInfo(const std::string& monitorExtendInfo)
 {
 	monitorExtendInfo_ = monitorExtendInfo;
-	setCoreParameter("MonitorExtendInfo", monitorExtendInfo);
+	setCoreParameter("MonitorExtendInfo", std::to_string(monitorExtendInfo));
 }
 
 std::string UpdateGtmMonitorRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateGtmMonitorRequest::getUserClientIp()const
 void UpdateGtmMonitorRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string UpdateGtmMonitorRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateGtmMonitorRequest::getName()const
 void UpdateGtmMonitorRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateGtmMonitorRequest::getMonitorConfigId()const
@@ -66,7 +66,7 @@ std::string UpdateGtmMonitorRequest::getMonitorConfigId()const
 void UpdateGtmMonitorRequest::setMonitorConfigId(const std::string& monitorConfigId)
 {
 	monitorConfigId_ = monitorConfigId;
-	setCoreParameter("MonitorConfigId", monitorConfigId);
+	setCoreParameter("MonitorConfigId", std::to_string(monitorConfigId));
 }
 
 int UpdateGtmMonitorRequest::getEvaluationCount()const
@@ -88,7 +88,7 @@ std::string UpdateGtmMonitorRequest::getProtocolType()const
 void UpdateGtmMonitorRequest::setProtocolType(const std::string& protocolType)
 {
 	protocolType_ = protocolType;
-	setCoreParameter("ProtocolType", protocolType);
+	setCoreParameter("ProtocolType", std::to_string(protocolType));
 }
 
 int UpdateGtmMonitorRequest::getInterval()const
@@ -110,7 +110,7 @@ std::string UpdateGtmMonitorRequest::getLang()const
 void UpdateGtmMonitorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateGtmMonitorRequest::getTimeout()const

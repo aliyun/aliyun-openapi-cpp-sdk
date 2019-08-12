@@ -33,7 +33,7 @@ std::string SetResellerUserAlarmThresholdRequest::getAlarmType()const
 void SetResellerUserAlarmThresholdRequest::setAlarmType(const std::string& alarmType)
 {
 	alarmType_ = alarmType;
-	setCoreParameter("AlarmType", alarmType);
+	setCoreParameter("AlarmType", std::to_string(alarmType));
 }
 
 std::string SetResellerUserAlarmThresholdRequest::getAlarmThresholds()const
@@ -44,7 +44,7 @@ std::string SetResellerUserAlarmThresholdRequest::getAlarmThresholds()const
 void SetResellerUserAlarmThresholdRequest::setAlarmThresholds(const std::string& alarmThresholds)
 {
 	alarmThresholds_ = alarmThresholds;
-	setCoreParameter("AlarmThresholds", alarmThresholds);
+	setCoreParameter("AlarmThresholds", std::to_string(alarmThresholds));
 }
 
 long SetResellerUserAlarmThresholdRequest::getOwnerId()const

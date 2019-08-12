@@ -33,7 +33,7 @@ std::string ListAccountConfigRequest::getOrderCol()const
 void ListAccountConfigRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 int ListAccountConfigRequest::getLength()const
@@ -55,7 +55,7 @@ std::string ListAccountConfigRequest::getSearchEmail()const
 void ListAccountConfigRequest::setSearchEmail(const std::string& searchEmail)
 {
 	searchEmail_ = searchEmail;
-	setCoreParameter("SearchEmail", searchEmail);
+	setCoreParameter("SearchEmail", std::to_string(searchEmail));
 }
 
 int ListAccountConfigRequest::getPageIndex()const
@@ -77,7 +77,7 @@ std::string ListAccountConfigRequest::getOrderDir()const
 void ListAccountConfigRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListAccountConfigRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListAccountConfigRequest::getAccessKeyId()const
 void ListAccountConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

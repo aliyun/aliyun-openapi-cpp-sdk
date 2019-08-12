@@ -44,7 +44,7 @@ std::string DisassociateQosRequest::getResourceOwnerAccount()const
 void DisassociateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DisassociateQosRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DisassociateQosRequest::getRegionId()const
 void DisassociateQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DisassociateQosRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DisassociateQosRequest::getOwnerAccount()const
 void DisassociateQosRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DisassociateQosRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DisassociateQosRequest::getSmartAGId()const
 void DisassociateQosRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long DisassociateQosRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DisassociateQosRequest::getQosId()const
 void DisassociateQosRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setCoreParameter("QosId", std::to_string(qosId));
 }
 

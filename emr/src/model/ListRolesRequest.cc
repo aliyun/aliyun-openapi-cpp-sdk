@@ -33,7 +33,7 @@ std::string ListRolesRequest::getApp_ip()const
 void ListRolesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long ListRolesRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ bool ListRolesRequest::getProxy_original_security_transport()const
 void ListRolesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string ListRolesRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string ListRolesRequest::getCallerBid()const
 void ListRolesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string ListRolesRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string ListRolesRequest::getProxy_original_source_ip()const
 void ListRolesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string ListRolesRequest::getResourceType()const
@@ -99,7 +99,7 @@ std::string ListRolesRequest::getResourceType()const
 void ListRolesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 bool ListRolesRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ bool ListRolesRequest::getAk_mfa_present()const
 void ListRolesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool ListRolesRequest::getProxy_trust_transport_info()const
@@ -121,7 +121,7 @@ bool ListRolesRequest::getProxy_trust_transport_info()const
 void ListRolesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string ListRolesRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string ListRolesRequest::getCallerType()const
 void ListRolesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string ListRolesRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string ListRolesRequest::getAccessKeyId()const
 void ListRolesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool ListRolesRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ bool ListRolesRequest::getSecurity_transport()const
 void ListRolesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string ListRolesRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string ListRolesRequest::getSecurityToken()const
 void ListRolesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ListRolesRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ListRolesRequest::getRegionId()const
 void ListRolesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListRolesRequest::getRequestId()const
@@ -187,7 +187,7 @@ std::string ListRolesRequest::getRequestId()const
 void ListRolesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long ListRolesRequest::getCallerUid()const

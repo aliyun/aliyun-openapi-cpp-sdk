@@ -33,7 +33,7 @@ std::string SaveTaskRequest::getBizType()const
 void SaveTaskRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setCoreParameter("BizType", std::to_string(bizType));
 }
 
 std::string SaveTaskRequest::getRequest()const
@@ -44,6 +44,6 @@ std::string SaveTaskRequest::getRequest()const
 void SaveTaskRequest::setRequest(const std::string& request)
 {
 	request_ = request;
-	setCoreParameter("Request", request);
+	setCoreParameter("Request", std::to_string(request));
 }
 

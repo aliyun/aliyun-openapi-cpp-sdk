@@ -33,7 +33,7 @@ std::string ModifyRefreshProcessInfoRequest::getSourceIp()const
 void ModifyRefreshProcessInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyRefreshProcessInfoRequest::getUuid()const
@@ -44,6 +44,6 @@ std::string ModifyRefreshProcessInfoRequest::getUuid()const
 void ModifyRefreshProcessInfoRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 

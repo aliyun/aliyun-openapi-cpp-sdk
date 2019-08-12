@@ -33,7 +33,7 @@ std::string DeleteImageFromLibRequest::getSourceIp()const
 void DeleteImageFromLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteImageFromLibRequest::getIds()const
@@ -44,6 +44,6 @@ std::string DeleteImageFromLibRequest::getIds()const
 void DeleteImageFromLibRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 

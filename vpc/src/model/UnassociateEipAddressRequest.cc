@@ -33,7 +33,7 @@ std::string UnassociateEipAddressRequest::getPrivateIpAddress()const
 void UnassociateEipAddressRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
 }
 
 long UnassociateEipAddressRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string UnassociateEipAddressRequest::getInstanceId()const
 void UnassociateEipAddressRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UnassociateEipAddressRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnassociateEipAddressRequest::getResourceOwnerAccount()const
 void UnassociateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnassociateEipAddressRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string UnassociateEipAddressRequest::getRegionId()const
 void UnassociateEipAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnassociateEipAddressRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string UnassociateEipAddressRequest::getOwnerAccount()const
 void UnassociateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnassociateEipAddressRequest::getInstanceType()const
@@ -99,7 +99,7 @@ std::string UnassociateEipAddressRequest::getInstanceType()const
 void UnassociateEipAddressRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 bool UnassociateEipAddressRequest::getForce()const
@@ -110,7 +110,7 @@ bool UnassociateEipAddressRequest::getForce()const
 void UnassociateEipAddressRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string UnassociateEipAddressRequest::getAllocationId()const
@@ -121,7 +121,7 @@ std::string UnassociateEipAddressRequest::getAllocationId()const
 void UnassociateEipAddressRequest::setAllocationId(const std::string& allocationId)
 {
 	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	setCoreParameter("AllocationId", std::to_string(allocationId));
 }
 
 long UnassociateEipAddressRequest::getOwnerId()const

@@ -33,6 +33,6 @@ std::string DeleteAliasRequest::getAliasName()const
 void DeleteAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setCoreParameter("AliasName", std::to_string(aliasName));
 }
 

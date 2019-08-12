@@ -44,7 +44,7 @@ std::string SubmitAIMediaAuditJobRequest::getResourceOwnerAccount()const
 void SubmitAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitAIMediaAuditJobRequest::getOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitAIMediaAuditJobRequest::getOwnerId()const
 void SubmitAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAIMediaAuditJobRequest::getMediaId()const
@@ -66,7 +66,7 @@ std::string SubmitAIMediaAuditJobRequest::getMediaId()const
 void SubmitAIMediaAuditJobRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", std::to_string(mediaId));
 }
 
 std::string SubmitAIMediaAuditJobRequest::getTemplateId()const
@@ -77,7 +77,7 @@ std::string SubmitAIMediaAuditJobRequest::getTemplateId()const
 void SubmitAIMediaAuditJobRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
 void SubmitAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

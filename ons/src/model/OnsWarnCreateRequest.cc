@@ -33,7 +33,7 @@ std::string OnsWarnCreateRequest::getInstanceId()const
 void OnsWarnCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsWarnCreateRequest::getBlockTime()const
@@ -44,7 +44,7 @@ std::string OnsWarnCreateRequest::getBlockTime()const
 void OnsWarnCreateRequest::setBlockTime(const std::string& blockTime)
 {
 	blockTime_ = blockTime;
-	setCoreParameter("BlockTime", blockTime);
+	setCoreParameter("BlockTime", std::to_string(blockTime));
 }
 
 std::string OnsWarnCreateRequest::getLevel()const
@@ -55,7 +55,7 @@ std::string OnsWarnCreateRequest::getLevel()const
 void OnsWarnCreateRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setCoreParameter("Level", std::to_string(level));
 }
 
 std::string OnsWarnCreateRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string OnsWarnCreateRequest::getGroupId()const
 void OnsWarnCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string OnsWarnCreateRequest::getDelayTime()const
@@ -77,7 +77,7 @@ std::string OnsWarnCreateRequest::getDelayTime()const
 void OnsWarnCreateRequest::setDelayTime(const std::string& delayTime)
 {
 	delayTime_ = delayTime;
-	setCoreParameter("DelayTime", delayTime);
+	setCoreParameter("DelayTime", std::to_string(delayTime));
 }
 
 std::string OnsWarnCreateRequest::getTopic()const
@@ -88,7 +88,7 @@ std::string OnsWarnCreateRequest::getTopic()const
 void OnsWarnCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 std::string OnsWarnCreateRequest::getThreshold()const
@@ -99,7 +99,7 @@ std::string OnsWarnCreateRequest::getThreshold()const
 void OnsWarnCreateRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", threshold);
+	setCoreParameter("Threshold", std::to_string(threshold));
 }
 
 std::string OnsWarnCreateRequest::getAlertTime()const
@@ -110,7 +110,7 @@ std::string OnsWarnCreateRequest::getAlertTime()const
 void OnsWarnCreateRequest::setAlertTime(const std::string& alertTime)
 {
 	alertTime_ = alertTime;
-	setCoreParameter("AlertTime", alertTime);
+	setCoreParameter("AlertTime", std::to_string(alertTime));
 }
 
 std::string OnsWarnCreateRequest::getContacts()const
@@ -121,6 +121,6 @@ std::string OnsWarnCreateRequest::getContacts()const
 void OnsWarnCreateRequest::setContacts(const std::string& contacts)
 {
 	contacts_ = contacts;
-	setCoreParameter("Contacts", contacts);
+	setCoreParameter("Contacts", std::to_string(contacts));
 }
 

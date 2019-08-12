@@ -44,7 +44,7 @@ std::string DisassociateFlowLogRequest::getResourceOwnerAccount()const
 void DisassociateFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DisassociateFlowLogRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DisassociateFlowLogRequest::getRegionId()const
 void DisassociateFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DisassociateFlowLogRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DisassociateFlowLogRequest::getOwnerAccount()const
 void DisassociateFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DisassociateFlowLogRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DisassociateFlowLogRequest::getSmartAGId()const
 void DisassociateFlowLogRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long DisassociateFlowLogRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DisassociateFlowLogRequest::getFlowLogId()const
 void DisassociateFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setCoreParameter("FlowLogId", std::to_string(flowLogId));
 }
 

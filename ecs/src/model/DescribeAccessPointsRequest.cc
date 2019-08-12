@@ -61,7 +61,7 @@ std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
 void DescribeAccessPointsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAccessPointsRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeAccessPointsRequest::getRegionId()const
 void DescribeAccessPointsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeAccessPointsRequest::getPageSize()const
@@ -105,7 +105,7 @@ std::string DescribeAccessPointsRequest::getType()const
 void DescribeAccessPointsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int DescribeAccessPointsRequest::getPageNumber()const

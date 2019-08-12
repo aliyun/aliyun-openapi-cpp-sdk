@@ -55,7 +55,7 @@ std::string QueryTaskListRequest::getUserClientIp()const
 void QueryTaskListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int QueryTaskListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string QueryTaskListRequest::getLang()const
 void QueryTaskListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int QueryTaskListRequest::getPageNum()const

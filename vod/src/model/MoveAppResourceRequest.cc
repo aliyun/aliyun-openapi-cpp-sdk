@@ -33,7 +33,7 @@ std::string MoveAppResourceRequest::getTargetAppId()const
 void MoveAppResourceRequest::setTargetAppId(const std::string& targetAppId)
 {
 	targetAppId_ = targetAppId;
-	setCoreParameter("TargetAppId", targetAppId);
+	setCoreParameter("TargetAppId", std::to_string(targetAppId));
 }
 
 long MoveAppResourceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string MoveAppResourceRequest::getResourceOwnerAccount()const
 void MoveAppResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long MoveAppResourceRequest::getResourceRealOwnerId()const
@@ -88,7 +88,7 @@ std::string MoveAppResourceRequest::getResourceType()const
 void MoveAppResourceRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string MoveAppResourceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string MoveAppResourceRequest::getAccessKeyId()const
 void MoveAppResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string MoveAppResourceRequest::getResourceIds()const
@@ -110,6 +110,6 @@ std::string MoveAppResourceRequest::getResourceIds()const
 void MoveAppResourceRequest::setResourceIds(const std::string& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	setCoreParameter("ResourceIds", resourceIds);
+	setCoreParameter("ResourceIds", std::to_string(resourceIds));
 }
 

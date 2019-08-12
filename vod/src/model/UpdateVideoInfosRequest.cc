@@ -44,7 +44,7 @@ std::string UpdateVideoInfosRequest::getUpdateContent()const
 void UpdateVideoInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
-	setCoreParameter("UpdateContent", updateContent);
+	setCoreParameter("UpdateContent", std::to_string(updateContent));
 }
 
 std::string UpdateVideoInfosRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateVideoInfosRequest::getResourceOwnerAccount()const
 void UpdateVideoInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long UpdateVideoInfosRequest::getOwnerId()const

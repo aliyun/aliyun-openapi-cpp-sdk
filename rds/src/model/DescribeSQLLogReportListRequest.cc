@@ -44,7 +44,7 @@ std::string DescribeSQLLogReportListRequest::getResourceOwnerAccount()const
 void DescribeSQLLogReportListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSQLLogReportListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSQLLogReportListRequest::getOwnerAccount()const
 void DescribeSQLLogReportListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeSQLLogReportListRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeSQLLogReportListRequest::getEndTime()const
 void DescribeSQLLogReportListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSQLLogReportListRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeSQLLogReportListRequest::getDBInstanceId()const
 void DescribeSQLLogReportListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeSQLLogReportListRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeSQLLogReportListRequest::getStartTime()const
 void DescribeSQLLogReportListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSQLLogReportListRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeSQLLogReportListRequest::getAccessKeyId()const
 void DescribeSQLLogReportListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

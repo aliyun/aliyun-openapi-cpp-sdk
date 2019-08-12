@@ -74,7 +74,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setCoreParameter("PromotionNo", std::to_string(promotionNo));
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
@@ -85,7 +85,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getCouponNo()const
@@ -96,7 +96,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 bool SaveBatchTaskForCreatingOrderActivateRequest::getUseCoupon()const
@@ -107,7 +107,7 @@ bool SaveBatchTaskForCreatingOrderActivateRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon);
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getLang()const
@@ -118,7 +118,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getLang()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForCreatingOrderActivateRequest::getUsePromotion()const
@@ -129,6 +129,6 @@ bool SaveBatchTaskForCreatingOrderActivateRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion);
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

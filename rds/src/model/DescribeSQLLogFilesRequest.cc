@@ -44,7 +44,7 @@ std::string DescribeSQLLogFilesRequest::getFileName()const
 void DescribeSQLLogFilesRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 
 std::string DescribeSQLLogFilesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSQLLogFilesRequest::getResourceOwnerAccount()const
 void DescribeSQLLogFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSQLLogFilesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSQLLogFilesRequest::getOwnerAccount()const
 void DescribeSQLLogFilesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeSQLLogFilesRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeSQLLogFilesRequest::getDBInstanceId()const
 void DescribeSQLLogFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeSQLLogFilesRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
 void DescribeSQLLogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string CreateUploadImageRequest::getImageType()const
 void CreateUploadImageRequest::setImageType(const std::string& imageType)
 {
 	imageType_ = imageType;
-	setCoreParameter("ImageType", imageType);
+	setCoreParameter("ImageType", std::to_string(imageType));
 }
 
 std::string CreateUploadImageRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateUploadImageRequest::getResourceOwnerAccount()const
 void CreateUploadImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateUploadImageRequest::getImageExt()const
@@ -66,7 +66,7 @@ std::string CreateUploadImageRequest::getImageExt()const
 void CreateUploadImageRequest::setImageExt(const std::string& imageExt)
 {
 	imageExt_ = imageExt;
-	setCoreParameter("ImageExt", imageExt);
+	setCoreParameter("ImageExt", std::to_string(imageExt));
 }
 
 std::string CreateUploadImageRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateUploadImageRequest::getDescription()const
 void CreateUploadImageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateUploadImageRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string CreateUploadImageRequest::getTitle()const
 void CreateUploadImageRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string CreateUploadImageRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateUploadImageRequest::getAccessKeyId()const
 void CreateUploadImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateUploadImageRequest::getTags()const
@@ -121,7 +121,7 @@ std::string CreateUploadImageRequest::getTags()const
 void CreateUploadImageRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 std::string CreateUploadImageRequest::getStorageLocation()const
@@ -132,7 +132,7 @@ std::string CreateUploadImageRequest::getStorageLocation()const
 void CreateUploadImageRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", storageLocation);
+	setCoreParameter("StorageLocation", std::to_string(storageLocation));
 }
 
 std::string CreateUploadImageRequest::getUserData()const
@@ -143,7 +143,7 @@ std::string CreateUploadImageRequest::getUserData()const
 void CreateUploadImageRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 std::string CreateUploadImageRequest::getOriginalFileName()const
@@ -154,7 +154,7 @@ std::string CreateUploadImageRequest::getOriginalFileName()const
 void CreateUploadImageRequest::setOriginalFileName(const std::string& originalFileName)
 {
 	originalFileName_ = originalFileName;
-	setCoreParameter("OriginalFileName", originalFileName);
+	setCoreParameter("OriginalFileName", std::to_string(originalFileName));
 }
 
 long CreateUploadImageRequest::getCateId()const
@@ -176,6 +176,6 @@ std::string CreateUploadImageRequest::getAppId()const
 void CreateUploadImageRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

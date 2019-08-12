@@ -33,7 +33,7 @@ std::string TagResourceRequest::getKeyId()const
 void TagResourceRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setCoreParameter("KeyId", std::to_string(keyId));
 }
 
 std::string TagResourceRequest::getTags()const
@@ -44,6 +44,6 @@ std::string TagResourceRequest::getTags()const
 void TagResourceRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

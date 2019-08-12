@@ -33,7 +33,7 @@ std::string DetachCenChildInstanceRequest::getChildInstanceId()const
 void DetachCenChildInstanceRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setCoreParameter("ChildInstanceId", std::to_string(childInstanceId));
 }
 
 long DetachCenChildInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DetachCenChildInstanceRequest::getResourceOwnerAccount()const
 void DetachCenChildInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DetachCenChildInstanceRequest::getCenId()const
@@ -66,7 +66,7 @@ std::string DetachCenChildInstanceRequest::getCenId()const
 void DetachCenChildInstanceRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DetachCenChildInstanceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DetachCenChildInstanceRequest::getOwnerAccount()const
 void DetachCenChildInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DetachCenChildInstanceRequest::getCenOwnerId()const
@@ -110,7 +110,7 @@ std::string DetachCenChildInstanceRequest::getChildInstanceType()const
 void DetachCenChildInstanceRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setCoreParameter("ChildInstanceType", std::to_string(childInstanceType));
 }
 
 long DetachCenChildInstanceRequest::getChildInstanceOwnerId()const
@@ -132,6 +132,6 @@ std::string DetachCenChildInstanceRequest::getChildInstanceRegionId()const
 void DetachCenChildInstanceRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setCoreParameter("ChildInstanceRegionId", std::to_string(childInstanceRegionId));
 }
 

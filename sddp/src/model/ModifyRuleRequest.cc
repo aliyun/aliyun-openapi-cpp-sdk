@@ -33,7 +33,7 @@ std::string ModifyRuleRequest::getSourceIp()const
 void ModifyRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int ModifyRuleRequest::getFeatureType()const
@@ -55,7 +55,7 @@ std::string ModifyRuleRequest::getName()const
 void ModifyRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long ModifyRuleRequest::getId()const
@@ -88,7 +88,7 @@ std::string ModifyRuleRequest::getLang()const
 void ModifyRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int ModifyRuleRequest::getCustomType()const
@@ -121,6 +121,6 @@ std::string ModifyRuleRequest::getContent()const
 void ModifyRuleRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setCoreParameter("Content", std::to_string(content));
 }
 

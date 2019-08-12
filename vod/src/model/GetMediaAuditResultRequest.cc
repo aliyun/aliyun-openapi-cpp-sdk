@@ -44,7 +44,7 @@ std::string GetMediaAuditResultRequest::getResourceOwnerAccount()const
 void GetMediaAuditResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long GetMediaAuditResultRequest::getResourceRealOwnerId()const
@@ -66,7 +66,7 @@ std::string GetMediaAuditResultRequest::getOwnerId()const
 void GetMediaAuditResultRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetMediaAuditResultRequest::getMediaId()const
@@ -77,7 +77,7 @@ std::string GetMediaAuditResultRequest::getMediaId()const
 void GetMediaAuditResultRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", std::to_string(mediaId));
 }
 
 std::string GetMediaAuditResultRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetMediaAuditResultRequest::getAccessKeyId()const
 void GetMediaAuditResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

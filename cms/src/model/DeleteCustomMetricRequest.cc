@@ -33,7 +33,7 @@ std::string DeleteCustomMetricRequest::getGroupId()const
 void DeleteCustomMetricRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteCustomMetricRequest::getMetricName()const
@@ -44,7 +44,7 @@ std::string DeleteCustomMetricRequest::getMetricName()const
 void DeleteCustomMetricRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string DeleteCustomMetricRequest::getUUID()const
@@ -55,7 +55,7 @@ std::string DeleteCustomMetricRequest::getUUID()const
 void DeleteCustomMetricRequest::setUUID(const std::string& uUID)
 {
 	uUID_ = uUID;
-	setCoreParameter("UUID", uUID);
+	setCoreParameter("UUID", std::to_string(uUID));
 }
 
 std::string DeleteCustomMetricRequest::getMd5()const
@@ -66,6 +66,6 @@ std::string DeleteCustomMetricRequest::getMd5()const
 void DeleteCustomMetricRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setCoreParameter("Md5", std::to_string(md5));
 }
 

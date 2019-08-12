@@ -33,6 +33,6 @@ std::string DescribeLocationsRequest::getStoreId()const
 void DescribeLocationsRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 

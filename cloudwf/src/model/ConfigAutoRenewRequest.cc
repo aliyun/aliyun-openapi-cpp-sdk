@@ -55,7 +55,7 @@ bool ConfigAutoRenewRequest::getAutoRenew()const
 void ConfigAutoRenewRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew);
+	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::vector<std::string> ConfigAutoRenewRequest::getApList()const
@@ -78,6 +78,6 @@ std::string ConfigAutoRenewRequest::getAccessKeyId()const
 void ConfigAutoRenewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

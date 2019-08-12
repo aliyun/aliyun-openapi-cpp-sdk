@@ -33,7 +33,7 @@ std::string DescribeLiveStreamCountRequest::getRegionId()const
 void DescribeLiveStreamCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeLiveStreamCountRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamCountRequest::getDomainName()const
 void DescribeLiveStreamCountRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeLiveStreamCountRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string SwitchApiRequest::getStageName()const
 void SwitchApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string SwitchApiRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SwitchApiRequest::getSecurityToken()const
 void SwitchApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SwitchApiRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string SwitchApiRequest::getGroupId()const
 void SwitchApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string SwitchApiRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string SwitchApiRequest::getDescription()const
 void SwitchApiRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string SwitchApiRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string SwitchApiRequest::getApiId()const
 void SwitchApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 std::string SwitchApiRequest::getHistoryVersion()const
@@ -88,7 +88,7 @@ std::string SwitchApiRequest::getHistoryVersion()const
 void SwitchApiRequest::setHistoryVersion(const std::string& historyVersion)
 {
 	historyVersion_ = historyVersion;
-	setCoreParameter("HistoryVersion", historyVersion);
+	setCoreParameter("HistoryVersion", std::to_string(historyVersion));
 }
 
 std::string SwitchApiRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SwitchApiRequest::getAccessKeyId()const
 void SwitchApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

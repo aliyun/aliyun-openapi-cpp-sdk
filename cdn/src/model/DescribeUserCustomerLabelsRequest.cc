@@ -44,7 +44,7 @@ std::string DescribeUserCustomerLabelsRequest::getSecurityToken()const
 void DescribeUserCustomerLabelsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeUserCustomerLabelsRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DescribeUserCustomerLabelsRequest::getAccessKeyId()const
 void DescribeUserCustomerLabelsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

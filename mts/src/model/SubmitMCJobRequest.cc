@@ -33,7 +33,7 @@ std::string SubmitMCJobRequest::getUserData()const
 void SubmitMCJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitMCJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitMCJobRequest::getImages()const
 void SubmitMCJobRequest::setImages(const std::string& images)
 {
 	images_ = images;
-	setCoreParameter("Images", images);
+	setCoreParameter("Images", std::to_string(images));
 }
 
 std::string SubmitMCJobRequest::getTexts()const
@@ -66,7 +66,7 @@ std::string SubmitMCJobRequest::getTexts()const
 void SubmitMCJobRequest::setTexts(const std::string& texts)
 {
 	texts_ = texts;
-	setCoreParameter("Texts", texts);
+	setCoreParameter("Texts", std::to_string(texts));
 }
 
 std::string SubmitMCJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitMCJobRequest::getResourceOwnerAccount()const
 void SubmitMCJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitMCJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitMCJobRequest::getOwnerAccount()const
 void SubmitMCJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitMCJobRequest::getVideo()const
@@ -99,7 +99,7 @@ std::string SubmitMCJobRequest::getVideo()const
 void SubmitMCJobRequest::setVideo(const std::string& video)
 {
 	video_ = video;
-	setCoreParameter("Video", video);
+	setCoreParameter("Video", std::to_string(video));
 }
 
 long SubmitMCJobRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string SubmitMCJobRequest::getCensorConfig()const
 void SubmitMCJobRequest::setCensorConfig(const std::string& censorConfig)
 {
 	censorConfig_ = censorConfig;
-	setCoreParameter("CensorConfig", censorConfig);
+	setCoreParameter("CensorConfig", std::to_string(censorConfig));
 }
 
 std::string SubmitMCJobRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string SubmitMCJobRequest::getAccessKeyId()const
 void SubmitMCJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitMCJobRequest::getPipelineId()const
@@ -143,6 +143,6 @@ std::string SubmitMCJobRequest::getPipelineId()const
 void SubmitMCJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

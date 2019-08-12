@@ -33,7 +33,7 @@ std::string DescribeDataCountsRequest::getSourceIp()const
 void DescribeDataCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDataCountsRequest::getFeatureType()const
@@ -55,6 +55,6 @@ std::string DescribeDataCountsRequest::getLang()const
 void DescribeDataCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

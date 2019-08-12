@@ -33,7 +33,7 @@ std::string GetImageLayerRequest::getRepoNamespace()const
 void GetImageLayerRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string GetImageLayerRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string GetImageLayerRequest::getRepoName()const
 void GetImageLayerRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string GetImageLayerRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetImageLayerRequest::getRegionId()const
 void GetImageLayerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetImageLayerRequest::getTag()const
@@ -66,6 +66,6 @@ std::string GetImageLayerRequest::getTag()const
 void GetImageLayerRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 

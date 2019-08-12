@@ -44,7 +44,7 @@ std::string QueryDeviceEventDataRequest::getIdentifier()const
 void QueryDeviceEventDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setCoreParameter("Identifier", std::to_string(identifier));
 }
 
 std::string QueryDeviceEventDataRequest::getIotId()const
@@ -55,7 +55,7 @@ std::string QueryDeviceEventDataRequest::getIotId()const
 void QueryDeviceEventDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string QueryDeviceEventDataRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ std::string QueryDeviceEventDataRequest::getIotInstanceId()const
 void QueryDeviceEventDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int QueryDeviceEventDataRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string QueryDeviceEventDataRequest::getEventType()const
 void QueryDeviceEventDataRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 std::string QueryDeviceEventDataRequest::getDeviceName()const
@@ -110,7 +110,7 @@ std::string QueryDeviceEventDataRequest::getDeviceName()const
 void QueryDeviceEventDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 long QueryDeviceEventDataRequest::getStartTime()const
@@ -132,7 +132,7 @@ std::string QueryDeviceEventDataRequest::getProductKey()const
 void QueryDeviceEventDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string QueryDeviceEventDataRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string QueryDeviceEventDataRequest::getAccessKeyId()const
 void QueryDeviceEventDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

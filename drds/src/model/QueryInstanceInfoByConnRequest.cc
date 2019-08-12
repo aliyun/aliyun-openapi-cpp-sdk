@@ -44,7 +44,7 @@ std::string QueryInstanceInfoByConnRequest::getHost()const
 void QueryInstanceInfoByConnRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", host);
+	setCoreParameter("Host", std::to_string(host));
 }
 
 std::string QueryInstanceInfoByConnRequest::getUserName()const
@@ -55,7 +55,7 @@ std::string QueryInstanceInfoByConnRequest::getUserName()const
 void QueryInstanceInfoByConnRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 
 std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
 void QueryInstanceInfoByConnRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

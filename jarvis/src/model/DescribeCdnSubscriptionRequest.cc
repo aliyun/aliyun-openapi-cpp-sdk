@@ -33,7 +33,7 @@ std::string DescribeCdnSubscriptionRequest::getSourceIp()const
 void DescribeCdnSubscriptionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeCdnSubscriptionRequest::getSubscriptionState()const
@@ -77,7 +77,7 @@ std::string DescribeCdnSubscriptionRequest::getLang()const
 void DescribeCdnSubscriptionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeCdnSubscriptionRequest::getVendorName()const
@@ -88,7 +88,7 @@ std::string DescribeCdnSubscriptionRequest::getVendorName()const
 void DescribeCdnSubscriptionRequest::setVendorName(const std::string& vendorName)
 {
 	vendorName_ = vendorName;
-	setCoreParameter("VendorName", vendorName);
+	setCoreParameter("VendorName", std::to_string(vendorName));
 }
 
 std::string DescribeCdnSubscriptionRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string DescribeCdnSubscriptionRequest::getSourceCode()const
 void DescribeCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

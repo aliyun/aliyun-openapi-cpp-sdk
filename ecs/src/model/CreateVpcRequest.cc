@@ -33,7 +33,7 @@ std::string CreateVpcRequest::getVpcName()const
 void CreateVpcRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setCoreParameter("VpcName", vpcName);
+	setCoreParameter("VpcName", std::to_string(vpcName));
 }
 
 long CreateVpcRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateVpcRequest::getResourceOwnerAccount()const
 void CreateVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateVpcRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateVpcRequest::getRegionId()const
 void CreateVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateVpcRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateVpcRequest::getClientToken()const
 void CreateVpcRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateVpcRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateVpcRequest::getOwnerAccount()const
 void CreateVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateVpcRequest::getCidrBlock()const
@@ -99,7 +99,7 @@ std::string CreateVpcRequest::getCidrBlock()const
 void CreateVpcRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
 }
 
 std::string CreateVpcRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string CreateVpcRequest::getDescription()const
 void CreateVpcRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateVpcRequest::getUserCidr()const
@@ -121,7 +121,7 @@ std::string CreateVpcRequest::getUserCidr()const
 void CreateVpcRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 long CreateVpcRequest::getOwnerId()const

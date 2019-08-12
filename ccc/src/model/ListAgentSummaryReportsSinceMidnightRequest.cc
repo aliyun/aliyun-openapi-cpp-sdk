@@ -33,7 +33,7 @@ std::string ListAgentSummaryReportsSinceMidnightRequest::getAgentIds()const
 void ListAgentSummaryReportsSinceMidnightRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setCoreParameter("AgentIds", std::to_string(agentIds));
 }
 
 std::string ListAgentSummaryReportsSinceMidnightRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListAgentSummaryReportsSinceMidnightRequest::getInstanceId()const
 void ListAgentSummaryReportsSinceMidnightRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListAgentSummaryReportsSinceMidnightRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListAgentSummaryReportsSinceMidnightRequest::getSkillGroupId()const
 void ListAgentSummaryReportsSinceMidnightRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 int ListAgentSummaryReportsSinceMidnightRequest::getPageSize()const
@@ -88,6 +88,6 @@ std::string ListAgentSummaryReportsSinceMidnightRequest::getAccessKeyId()const
 void ListAgentSummaryReportsSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

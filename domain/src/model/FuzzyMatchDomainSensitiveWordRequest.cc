@@ -33,7 +33,7 @@ std::string FuzzyMatchDomainSensitiveWordRequest::getUserClientIp()const
 void FuzzyMatchDomainSensitiveWordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string FuzzyMatchDomainSensitiveWordRequest::getKeyword()const
@@ -44,7 +44,7 @@ std::string FuzzyMatchDomainSensitiveWordRequest::getKeyword()const
 void FuzzyMatchDomainSensitiveWordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 std::string FuzzyMatchDomainSensitiveWordRequest::getLang()const
@@ -55,6 +55,6 @@ std::string FuzzyMatchDomainSensitiveWordRequest::getLang()const
 void FuzzyMatchDomainSensitiveWordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

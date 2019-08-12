@@ -33,7 +33,7 @@ std::string DescribeRulesRequest::getSourceIp()const
 void DescribeRulesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeRulesRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeRulesRequest::getName()const
 void DescribeRulesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeRulesRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeRulesRequest::getLang()const
 void DescribeRulesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeRulesRequest::getCustomType()const

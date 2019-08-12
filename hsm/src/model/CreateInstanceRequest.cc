@@ -44,7 +44,7 @@ std::string CreateInstanceRequest::getPeriodUnit()const
 void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
 }
 
 std::string CreateInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getResourceOwnerId()const
 void CreateInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateInstanceRequest::getQuantity()const
@@ -77,7 +77,7 @@ std::string CreateInstanceRequest::getHsmDeviceType()const
 void CreateInstanceRequest::setHsmDeviceType(const std::string& hsmDeviceType)
 {
 	hsmDeviceType_ = hsmDeviceType;
-	setCoreParameter("HsmDeviceType", hsmDeviceType);
+	setCoreParameter("HsmDeviceType", std::to_string(hsmDeviceType));
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -99,7 +99,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string CreateInstanceRequest::getHsmOem()const
@@ -110,6 +110,6 @@ std::string CreateInstanceRequest::getHsmOem()const
 void CreateInstanceRequest::setHsmOem(const std::string& hsmOem)
 {
 	hsmOem_ = hsmOem;
-	setCoreParameter("HsmOem", hsmOem);
+	setCoreParameter("HsmOem", std::to_string(hsmOem));
 }
 

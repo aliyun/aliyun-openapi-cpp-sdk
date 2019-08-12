@@ -33,7 +33,7 @@ std::string ModifyAssetGroupRequest::getSourceIp()const
 void ModifyAssetGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long ModifyAssetGroupRequest::getGroupId()const
@@ -55,6 +55,6 @@ std::string ModifyAssetGroupRequest::getUuids()const
 void ModifyAssetGroupRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

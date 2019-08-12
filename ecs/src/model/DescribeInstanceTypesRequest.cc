@@ -33,7 +33,7 @@ std::string DescribeInstanceTypesRequest::getSourceRegionId()const
 void DescribeInstanceTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeInstanceTypesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceTypesRequest::getResourceOwnerAccount()const
 void DescribeInstanceTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstanceTypesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceTypesRequest::getOwnerAccount()const
 void DescribeInstanceTypesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeInstanceTypesRequest::getInstanceTypeFamily()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceTypesRequest::getInstanceTypeFamily()const
 void DescribeInstanceTypesRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setCoreParameter("InstanceTypeFamily", std::to_string(instanceTypeFamily));
 }
 
 long DescribeInstanceTypesRequest::getOwnerId()const

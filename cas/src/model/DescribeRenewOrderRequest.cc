@@ -33,7 +33,7 @@ std::string DescribeRenewOrderRequest::getSourceIp()const
 void DescribeRenewOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeRenewOrderRequest::getOrderId()const

@@ -33,7 +33,7 @@ std::string GetInstanceSummaryReportSinceMidnightRequest::getInstanceId()const
 void GetInstanceSummaryReportSinceMidnightRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int GetInstanceSummaryReportSinceMidnightRequest::getPageSize()const
@@ -66,6 +66,6 @@ std::string GetInstanceSummaryReportSinceMidnightRequest::getAccessKeyId()const
 void GetInstanceSummaryReportSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string AddDomainRecordRequest::getRR()const
 void AddDomainRecordRequest::setRR(const std::string& rR)
 {
 	rR_ = rR;
-	setCoreParameter("RR", rR);
+	setCoreParameter("RR", std::to_string(rR));
 }
 
 std::string AddDomainRecordRequest::getLine()const
@@ -44,7 +44,7 @@ std::string AddDomainRecordRequest::getLine()const
 void AddDomainRecordRequest::setLine(const std::string& line)
 {
 	line_ = line;
-	setCoreParameter("Line", line);
+	setCoreParameter("Line", std::to_string(line));
 }
 
 std::string AddDomainRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string AddDomainRecordRequest::getUserClientIp()const
 void AddDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string AddDomainRecordRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string AddDomainRecordRequest::getDomainName()const
 void AddDomainRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string AddDomainRecordRequest::getLang()const
@@ -77,7 +77,7 @@ std::string AddDomainRecordRequest::getLang()const
 void AddDomainRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string AddDomainRecordRequest::getType()const
@@ -88,7 +88,7 @@ std::string AddDomainRecordRequest::getType()const
 void AddDomainRecordRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 long AddDomainRecordRequest::getPriority()const
@@ -110,7 +110,7 @@ std::string AddDomainRecordRequest::getValue()const
 void AddDomainRecordRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", value);
+	setCoreParameter("Value", std::to_string(value));
 }
 
 long AddDomainRecordRequest::getTTL()const
@@ -132,6 +132,6 @@ std::string AddDomainRecordRequest::getAccessKeyId()const
 void AddDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

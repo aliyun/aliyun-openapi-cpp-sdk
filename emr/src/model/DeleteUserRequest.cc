@@ -44,7 +44,7 @@ std::string DeleteUserRequest::getRegionId()const
 void DeleteUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteUserRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string DeleteUserRequest::getClusterId()const
 void DeleteUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DeleteUserRequest::getType()const
@@ -66,7 +66,7 @@ std::string DeleteUserRequest::getType()const
 void DeleteUserRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DeleteUserRequest::getUserId()const
@@ -77,7 +77,7 @@ std::string DeleteUserRequest::getUserId()const
 void DeleteUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string DeleteUserRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteUserRequest::getAccessKeyId()const
 void DeleteUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getResourceOwnerAccount()const
 void ModifyMySQLDBInstanceDelayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getSqlDelay()const
@@ -55,7 +55,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getSqlDelay()const
 void ModifyMySQLDBInstanceDelayRequest::setSqlDelay(const std::string& sqlDelay)
 {
 	sqlDelay_ = sqlDelay;
-	setCoreParameter("SqlDelay", sqlDelay);
+	setCoreParameter("SqlDelay", std::to_string(sqlDelay));
 }
 
 std::string ModifyMySQLDBInstanceDelayRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyMySQLDBInstanceDelayRequest::getDBInstanceId()const
 void ModifyMySQLDBInstanceDelayRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyMySQLDBInstanceDelayRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string ModifyMySQLDBInstanceDelayRequest::getAccessKeyId()const
 void ModifyMySQLDBInstanceDelayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

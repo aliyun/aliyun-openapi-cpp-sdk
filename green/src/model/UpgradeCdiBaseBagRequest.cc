@@ -33,7 +33,7 @@ std::string UpgradeCdiBaseBagRequest::getInstanceId()const
 void UpgradeCdiBaseBagRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UpgradeCdiBaseBagRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string UpgradeCdiBaseBagRequest::getClientToken()const
 void UpgradeCdiBaseBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string UpgradeCdiBaseBagRequest::getCommodityCode()const
@@ -55,7 +55,7 @@ std::string UpgradeCdiBaseBagRequest::getCommodityCode()const
 void UpgradeCdiBaseBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setCoreParameter("CommodityCode", std::to_string(commodityCode));
 }
 
 long UpgradeCdiBaseBagRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string UpgradeCdiBaseBagRequest::getOrderType()const
 void UpgradeCdiBaseBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

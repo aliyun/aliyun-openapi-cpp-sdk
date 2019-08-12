@@ -33,7 +33,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getFunctionNames()const
 void BatchDeleteLiveDomainConfigsRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setCoreParameter("FunctionNames", functionNames);
+	setCoreParameter("FunctionNames", std::to_string(functionNames));
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
 void BatchDeleteLiveDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
@@ -55,7 +55,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
 void BatchDeleteLiveDomainConfigsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setCoreParameter("DomainNames", std::to_string(domainNames));
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
 void BatchDeleteLiveDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long BatchDeleteLiveDomainConfigsRequest::getOwnerId()const

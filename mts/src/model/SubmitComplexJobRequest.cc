@@ -44,7 +44,7 @@ std::string SubmitComplexJobRequest::getTranscodeOutput()const
 void SubmitComplexJobRequest::setTranscodeOutput(const std::string& transcodeOutput)
 {
 	transcodeOutput_ = transcodeOutput;
-	setCoreParameter("TranscodeOutput", transcodeOutput);
+	setCoreParameter("TranscodeOutput", std::to_string(transcodeOutput));
 }
 
 std::string SubmitComplexJobRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SubmitComplexJobRequest::getResourceOwnerAccount()const
 void SubmitComplexJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitComplexJobRequest::getInputs()const
@@ -66,7 +66,7 @@ std::string SubmitComplexJobRequest::getInputs()const
 void SubmitComplexJobRequest::setInputs(const std::string& inputs)
 {
 	inputs_ = inputs;
-	setCoreParameter("Inputs", inputs);
+	setCoreParameter("Inputs", std::to_string(inputs));
 }
 
 std::string SubmitComplexJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitComplexJobRequest::getOwnerAccount()const
 void SubmitComplexJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SubmitComplexJobRequest::getOutputLocation()const
@@ -88,7 +88,7 @@ std::string SubmitComplexJobRequest::getOutputLocation()const
 void SubmitComplexJobRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", outputLocation);
+	setCoreParameter("OutputLocation", std::to_string(outputLocation));
 }
 
 long SubmitComplexJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitComplexJobRequest::getAccessKeyId()const
 void SubmitComplexJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitComplexJobRequest::getPipelineId()const
@@ -121,7 +121,7 @@ std::string SubmitComplexJobRequest::getPipelineId()const
 void SubmitComplexJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 
 std::string SubmitComplexJobRequest::getOutputBucket()const
@@ -132,7 +132,7 @@ std::string SubmitComplexJobRequest::getOutputBucket()const
 void SubmitComplexJobRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", outputBucket);
+	setCoreParameter("OutputBucket", std::to_string(outputBucket));
 }
 
 std::string SubmitComplexJobRequest::getUserData()const
@@ -143,7 +143,7 @@ std::string SubmitComplexJobRequest::getUserData()const
 void SubmitComplexJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 std::string SubmitComplexJobRequest::getComplexConfigs()const
@@ -154,6 +154,6 @@ std::string SubmitComplexJobRequest::getComplexConfigs()const
 void SubmitComplexJobRequest::setComplexConfigs(const std::string& complexConfigs)
 {
 	complexConfigs_ = complexConfigs;
-	setCoreParameter("ComplexConfigs", complexConfigs);
+	setCoreParameter("ComplexConfigs", std::to_string(complexConfigs));
 }
 

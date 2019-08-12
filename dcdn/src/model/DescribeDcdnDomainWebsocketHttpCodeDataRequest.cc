@@ -44,7 +44,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_original_security_
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getLocationNameEn()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getLocationNameEn()c
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getStartTime()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getIspNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getIspNameEn()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_original_so
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getOwnerIdLoginEmail
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerType()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAccessKeyId()cons
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurityToken()co
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getRequestContent()c
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerBidEmail()c
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerUidEmail()c
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getApp_ip()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getPopProduct()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getDomainName()const
@@ -209,7 +209,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getDomainName()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getEndTime()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerBid()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeDcdnDomainWebsocketHttpCodeDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getVersion()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_trust_transport_in
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAk_mfa_present()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurity_transport()cons
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getRequestId()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getInterval()const
@@ -308,7 +308,7 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getInterval()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getFields()const
@@ -319,6 +319,6 @@ std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getFields()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", fields);
+	setCoreParameter("Fields", std::to_string(fields));
 }
 

@@ -33,7 +33,7 @@ std::string PutMetricAlarmRequest::getPeriod()const
 void PutMetricAlarmRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string PutMetricAlarmRequest::getWebhook()const
@@ -44,7 +44,7 @@ std::string PutMetricAlarmRequest::getWebhook()const
 void PutMetricAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", webhook);
+	setCoreParameter("Webhook", std::to_string(webhook));
 }
 
 std::string PutMetricAlarmRequest::getContactGroups()const
@@ -55,7 +55,7 @@ std::string PutMetricAlarmRequest::getContactGroups()const
 void PutMetricAlarmRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", contactGroups);
+	setCoreParameter("ContactGroups", std::to_string(contactGroups));
 }
 
 int PutMetricAlarmRequest::getLevel()const
@@ -77,7 +77,7 @@ std::string PutMetricAlarmRequest::getSubject()const
 void PutMetricAlarmRequest::setSubject(const std::string& subject)
 {
 	subject_ = subject;
-	setCoreParameter("Subject", subject);
+	setCoreParameter("Subject", std::to_string(subject));
 }
 
 std::string PutMetricAlarmRequest::getAlertName()const
@@ -88,7 +88,7 @@ std::string PutMetricAlarmRequest::getAlertName()const
 void PutMetricAlarmRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	setCoreParameter("AlertName", std::to_string(alertName));
 }
 
 std::string PutMetricAlarmRequest::getGroupId()const
@@ -99,7 +99,7 @@ std::string PutMetricAlarmRequest::getGroupId()const
 void PutMetricAlarmRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string PutMetricAlarmRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string PutMetricAlarmRequest::getDescription()const
 void PutMetricAlarmRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string PutMetricAlarmRequest::getResources()const
@@ -121,7 +121,7 @@ std::string PutMetricAlarmRequest::getResources()const
 void PutMetricAlarmRequest::setResources(const std::string& resources)
 {
 	resources_ = resources;
-	setCoreParameter("Resources", resources);
+	setCoreParameter("Resources", std::to_string(resources));
 }
 
 std::string PutMetricAlarmRequest::getThreshold()const
@@ -132,7 +132,7 @@ std::string PutMetricAlarmRequest::getThreshold()const
 void PutMetricAlarmRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", threshold);
+	setCoreParameter("Threshold", std::to_string(threshold));
 }
 
 std::string PutMetricAlarmRequest::getEffectiveInterval()const
@@ -143,7 +143,7 @@ std::string PutMetricAlarmRequest::getEffectiveInterval()const
 void PutMetricAlarmRequest::setEffectiveInterval(const std::string& effectiveInterval)
 {
 	effectiveInterval_ = effectiveInterval;
-	setCoreParameter("EffectiveInterval", effectiveInterval);
+	setCoreParameter("EffectiveInterval", std::to_string(effectiveInterval));
 }
 
 std::string PutMetricAlarmRequest::getGroupName()const
@@ -154,7 +154,7 @@ std::string PutMetricAlarmRequest::getGroupName()const
 void PutMetricAlarmRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string PutMetricAlarmRequest::getFilter()const
@@ -165,7 +165,7 @@ std::string PutMetricAlarmRequest::getFilter()const
 void PutMetricAlarmRequest::setFilter(const std::string& filter)
 {
 	filter_ = filter;
-	setCoreParameter("Filter", filter);
+	setCoreParameter("Filter", std::to_string(filter));
 }
 
 std::string PutMetricAlarmRequest::getNoEffectiveInterval()const
@@ -176,7 +176,7 @@ std::string PutMetricAlarmRequest::getNoEffectiveInterval()const
 void PutMetricAlarmRequest::setNoEffectiveInterval(const std::string& noEffectiveInterval)
 {
 	noEffectiveInterval_ = noEffectiveInterval;
-	setCoreParameter("NoEffectiveInterval", noEffectiveInterval);
+	setCoreParameter("NoEffectiveInterval", std::to_string(noEffectiveInterval));
 }
 
 std::string PutMetricAlarmRequest::getDisplayName()const
@@ -187,7 +187,7 @@ std::string PutMetricAlarmRequest::getDisplayName()const
 void PutMetricAlarmRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setCoreParameter("DisplayName", std::to_string(displayName));
 }
 
 std::string PutMetricAlarmRequest::get_Namespace()const
@@ -198,7 +198,7 @@ std::string PutMetricAlarmRequest::get_Namespace()const
 void PutMetricAlarmRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", std::to_string(_namespace));
 }
 
 int PutMetricAlarmRequest::getEvaluationCount()const
@@ -231,7 +231,7 @@ std::string PutMetricAlarmRequest::getInterval()const
 void PutMetricAlarmRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string PutMetricAlarmRequest::getMetricName()const
@@ -242,7 +242,7 @@ std::string PutMetricAlarmRequest::getMetricName()const
 void PutMetricAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string PutMetricAlarmRequest::getDeepDive()const
@@ -253,7 +253,7 @@ std::string PutMetricAlarmRequest::getDeepDive()const
 void PutMetricAlarmRequest::setDeepDive(const std::string& deepDive)
 {
 	deepDive_ = deepDive;
-	setCoreParameter("DeepDive", deepDive);
+	setCoreParameter("DeepDive", std::to_string(deepDive));
 }
 
 std::string PutMetricAlarmRequest::getComparisonOperator()const
@@ -264,7 +264,7 @@ std::string PutMetricAlarmRequest::getComparisonOperator()const
 void PutMetricAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
 {
 	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", comparisonOperator);
+	setCoreParameter("ComparisonOperator", std::to_string(comparisonOperator));
 }
 
 std::string PutMetricAlarmRequest::getDimensions()const
@@ -275,7 +275,7 @@ std::string PutMetricAlarmRequest::getDimensions()const
 void PutMetricAlarmRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", std::to_string(dimensions));
 }
 
 std::string PutMetricAlarmRequest::getStatistics()const
@@ -286,6 +286,6 @@ std::string PutMetricAlarmRequest::getStatistics()const
 void PutMetricAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", statistics);
+	setCoreParameter("Statistics", std::to_string(statistics));
 }
 

@@ -33,7 +33,7 @@ std::string QueryGroupUsersRequest::getGroupId()const
 void QueryGroupUsersRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int QueryGroupUsersRequest::getPageSize()const

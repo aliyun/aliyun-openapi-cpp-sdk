@@ -33,7 +33,7 @@ std::string DescribeBatchResultCountRequest::getBatchType()const
 void DescribeBatchResultCountRequest::setBatchType(const std::string& batchType)
 {
 	batchType_ = batchType;
-	setCoreParameter("BatchType", batchType);
+	setCoreParameter("BatchType", std::to_string(batchType));
 }
 
 std::string DescribeBatchResultCountRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeBatchResultCountRequest::getUserClientIp()const
 void DescribeBatchResultCountRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeBatchResultCountRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeBatchResultCountRequest::getLang()const
 void DescribeBatchResultCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeBatchResultCountRequest::getTaskId()const

@@ -44,7 +44,7 @@ std::string DescribeDBInstancesRequest::getEngineVersion()const
 void DescribeDBInstancesRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 std::string DescribeDBInstancesRequest::getNetworkType()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancesRequest::getNetworkType()const
 void DescribeDBInstancesRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 int DescribeDBInstancesRequest::getPageNumber()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstancesRequest::getReplicationFactor()const
 void DescribeDBInstancesRequest::setReplicationFactor(const std::string& replicationFactor)
 {
 	replicationFactor_ = replicationFactor;
-	setCoreParameter("ReplicationFactor", replicationFactor);
+	setCoreParameter("ReplicationFactor", std::to_string(replicationFactor));
 }
 
 std::string DescribeDBInstancesRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeDBInstancesRequest::getAccessKeyId()const
 void DescribeDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDBInstancesRequest::getExpired()const
@@ -99,7 +99,7 @@ std::string DescribeDBInstancesRequest::getExpired()const
 void DescribeDBInstancesRequest::setExpired(const std::string& expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired);
+	setCoreParameter("Expired", std::to_string(expired));
 }
 
 std::string DescribeDBInstancesRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDBInstancesRequest::getSecurityToken()const
 void DescribeDBInstancesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDBInstancesRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDBInstancesRequest::getRegionId()const
 void DescribeDBInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDBInstancesRequest::getEngine()const
@@ -132,7 +132,7 @@ std::string DescribeDBInstancesRequest::getEngine()const
 void DescribeDBInstancesRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 int DescribeDBInstancesRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceId()const
 void DescribeDBInstancesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
@@ -165,7 +165,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
 void DescribeDBInstancesRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", std::to_string(dBInstanceDescription));
 }
 
 std::string DescribeDBInstancesRequest::getDBInstanceStatus()const
@@ -176,7 +176,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceStatus()const
 void DescribeDBInstancesRequest::setDBInstanceStatus(const std::string& dBInstanceStatus)
 {
 	dBInstanceStatus_ = dBInstanceStatus;
-	setCoreParameter("DBInstanceStatus", dBInstanceStatus);
+	setCoreParameter("DBInstanceStatus", std::to_string(dBInstanceStatus));
 }
 
 std::vector<DescribeDBInstancesRequest::Tag> DescribeDBInstancesRequest::getTag()const
@@ -204,7 +204,7 @@ std::string DescribeDBInstancesRequest::getExpireTime()const
 void DescribeDBInstancesRequest::setExpireTime(const std::string& expireTime)
 {
 	expireTime_ = expireTime;
-	setCoreParameter("ExpireTime", expireTime);
+	setCoreParameter("ExpireTime", std::to_string(expireTime));
 }
 
 std::string DescribeDBInstancesRequest::getResourceOwnerAccount()const
@@ -215,7 +215,7 @@ std::string DescribeDBInstancesRequest::getResourceOwnerAccount()const
 void DescribeDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBInstancesRequest::getOwnerAccount()const
@@ -226,7 +226,7 @@ std::string DescribeDBInstancesRequest::getOwnerAccount()const
 void DescribeDBInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDBInstancesRequest::getOwnerId()const
@@ -248,7 +248,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceType()const
 void DescribeDBInstancesRequest::setDBInstanceType(const std::string& dBInstanceType)
 {
 	dBInstanceType_ = dBInstanceType;
-	setCoreParameter("DBInstanceType", dBInstanceType);
+	setCoreParameter("DBInstanceType", std::to_string(dBInstanceType));
 }
 
 std::string DescribeDBInstancesRequest::getDBInstanceClass()const
@@ -259,7 +259,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceClass()const
 void DescribeDBInstancesRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
 }
 
 std::string DescribeDBInstancesRequest::getVSwitchId()const
@@ -270,7 +270,7 @@ std::string DescribeDBInstancesRequest::getVSwitchId()const
 void DescribeDBInstancesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string DescribeDBInstancesRequest::getVpcId()const
@@ -281,7 +281,7 @@ std::string DescribeDBInstancesRequest::getVpcId()const
 void DescribeDBInstancesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string DescribeDBInstancesRequest::getZoneId()const
@@ -292,7 +292,7 @@ std::string DescribeDBInstancesRequest::getZoneId()const
 void DescribeDBInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeDBInstancesRequest::getChargeType()const
@@ -303,6 +303,6 @@ std::string DescribeDBInstancesRequest::getChargeType()const
 void DescribeDBInstancesRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setCoreParameter("ChargeType", std::to_string(chargeType));
 }
 

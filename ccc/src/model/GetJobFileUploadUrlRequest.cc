@@ -33,7 +33,7 @@ std::string GetJobFileUploadUrlRequest::getInstanceId()const
 void GetJobFileUploadUrlRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetJobFileUploadUrlRequest::getFileName()const
@@ -44,6 +44,6 @@ std::string GetJobFileUploadUrlRequest::getFileName()const
 void GetJobFileUploadUrlRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setCoreParameter("FileName", std::to_string(fileName));
 }
 

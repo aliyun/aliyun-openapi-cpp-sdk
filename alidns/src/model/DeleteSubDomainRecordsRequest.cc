@@ -33,7 +33,7 @@ std::string DeleteSubDomainRecordsRequest::getRR()const
 void DeleteSubDomainRecordsRequest::setRR(const std::string& rR)
 {
 	rR_ = rR;
-	setCoreParameter("RR", rR);
+	setCoreParameter("RR", std::to_string(rR));
 }
 
 std::string DeleteSubDomainRecordsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DeleteSubDomainRecordsRequest::getUserClientIp()const
 void DeleteSubDomainRecordsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DeleteSubDomainRecordsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteSubDomainRecordsRequest::getDomainName()const
 void DeleteSubDomainRecordsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DeleteSubDomainRecordsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DeleteSubDomainRecordsRequest::getLang()const
 void DeleteSubDomainRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DeleteSubDomainRecordsRequest::getType()const
@@ -77,7 +77,7 @@ std::string DeleteSubDomainRecordsRequest::getType()const
 void DeleteSubDomainRecordsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DeleteSubDomainRecordsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteSubDomainRecordsRequest::getAccessKeyId()const
 void DeleteSubDomainRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

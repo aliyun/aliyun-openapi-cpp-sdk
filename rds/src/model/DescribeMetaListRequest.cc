@@ -44,7 +44,7 @@ std::string DescribeMetaListRequest::getRestoreTime()const
 void DescribeMetaListRequest::setRestoreTime(const std::string& restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", restoreTime);
+	setCoreParameter("RestoreTime", std::to_string(restoreTime));
 }
 
 std::string DescribeMetaListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeMetaListRequest::getResourceOwnerAccount()const
 void DescribeMetaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeMetaListRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DescribeMetaListRequest::getClientToken()const
 void DescribeMetaListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DescribeMetaListRequest::getPattern()const
@@ -77,7 +77,7 @@ std::string DescribeMetaListRequest::getPattern()const
 void DescribeMetaListRequest::setPattern(const std::string& pattern)
 {
 	pattern_ = pattern;
-	setCoreParameter("Pattern", pattern);
+	setCoreParameter("Pattern", std::to_string(pattern));
 }
 
 std::string DescribeMetaListRequest::getBackupSetID()const
@@ -88,7 +88,7 @@ std::string DescribeMetaListRequest::getBackupSetID()const
 void DescribeMetaListRequest::setBackupSetID(const std::string& backupSetID)
 {
 	backupSetID_ = backupSetID;
-	setCoreParameter("BackupSetID", backupSetID);
+	setCoreParameter("BackupSetID", std::to_string(backupSetID));
 }
 
 long DescribeMetaListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeMetaListRequest::getAccessKeyId()const
 void DescribeMetaListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeMetaListRequest::getGetDbName()const
@@ -121,7 +121,7 @@ std::string DescribeMetaListRequest::getGetDbName()const
 void DescribeMetaListRequest::setGetDbName(const std::string& getDbName)
 {
 	getDbName_ = getDbName;
-	setCoreParameter("GetDbName", getDbName);
+	setCoreParameter("GetDbName", std::to_string(getDbName));
 }
 
 std::string DescribeMetaListRequest::getRestoreType()const
@@ -132,7 +132,7 @@ std::string DescribeMetaListRequest::getRestoreType()const
 void DescribeMetaListRequest::setRestoreType(const std::string& restoreType)
 {
 	restoreType_ = restoreType;
-	setCoreParameter("RestoreType", restoreType);
+	setCoreParameter("RestoreType", std::to_string(restoreType));
 }
 
 std::string DescribeMetaListRequest::getPageSize()const
@@ -143,7 +143,7 @@ std::string DescribeMetaListRequest::getPageSize()const
 void DescribeMetaListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMetaListRequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ std::string DescribeMetaListRequest::getDBInstanceId()const
 void DescribeMetaListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeMetaListRequest::getPageIndex()const
@@ -165,6 +165,6 @@ std::string DescribeMetaListRequest::getPageIndex()const
 void DescribeMetaListRequest::setPageIndex(const std::string& pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -44,7 +44,7 @@ std::string DeleteDedicatedLineBackupRequest::getResourceOwnerAccount()const
 void DeleteDedicatedLineBackupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteDedicatedLineBackupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteDedicatedLineBackupRequest::getRegionId()const
 void DeleteDedicatedLineBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteDedicatedLineBackupRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteDedicatedLineBackupRequest::getOwnerAccount()const
 void DeleteDedicatedLineBackupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteDedicatedLineBackupRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DeleteDedicatedLineBackupRequest::getSmartAGId()const
 void DeleteDedicatedLineBackupRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long DeleteDedicatedLineBackupRequest::getOwnerId()const

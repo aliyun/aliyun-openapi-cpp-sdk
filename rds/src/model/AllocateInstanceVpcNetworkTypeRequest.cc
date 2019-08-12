@@ -33,7 +33,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getTargetVpcId()const
 void AllocateInstanceVpcNetworkTypeRequest::setTargetVpcId(const std::string& targetVpcId)
 {
 	targetVpcId_ = targetVpcId;
-	setCoreParameter("TargetVpcId", targetVpcId);
+	setCoreParameter("TargetVpcId", std::to_string(targetVpcId));
 }
 
 long AllocateInstanceVpcNetworkTypeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getTargetZoneId()const
 void AllocateInstanceVpcNetworkTypeRequest::setTargetZoneId(const std::string& targetZoneId)
 {
 	targetZoneId_ = targetZoneId;
-	setCoreParameter("TargetZoneId", targetZoneId);
+	setCoreParameter("TargetZoneId", std::to_string(targetZoneId));
 }
 
 std::string AllocateInstanceVpcNetworkTypeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getResourceOwnerAccount()cons
 void AllocateInstanceVpcNetworkTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateInstanceVpcNetworkTypeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getOwnerAccount()const
 void AllocateInstanceVpcNetworkTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AllocateInstanceVpcNetworkTypeRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getDBInstanceId()const
 void AllocateInstanceVpcNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string AllocateInstanceVpcNetworkTypeRequest::getTargetRegionId()const
@@ -99,7 +99,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getTargetRegionId()const
 void AllocateInstanceVpcNetworkTypeRequest::setTargetRegionId(const std::string& targetRegionId)
 {
 	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", targetRegionId);
+	setCoreParameter("TargetRegionId", std::to_string(targetRegionId));
 }
 
 std::string AllocateInstanceVpcNetworkTypeRequest::getTargetVSwitchId()const
@@ -110,7 +110,7 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getTargetVSwitchId()const
 void AllocateInstanceVpcNetworkTypeRequest::setTargetVSwitchId(const std::string& targetVSwitchId)
 {
 	targetVSwitchId_ = targetVSwitchId;
-	setCoreParameter("TargetVSwitchId", targetVSwitchId);
+	setCoreParameter("TargetVSwitchId", std::to_string(targetVSwitchId));
 }
 
 long AllocateInstanceVpcNetworkTypeRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string AllocateInstanceVpcNetworkTypeRequest::getAccessKeyId()const
 void AllocateInstanceVpcNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

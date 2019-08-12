@@ -33,7 +33,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getAppName()const
 void DeleteLivePullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
 void DeleteLivePullStreamInfoConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
 void DeleteLivePullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteLivePullStreamInfoConfigRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
 void DeleteLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getResourceOwnerAccount()c
 void DescribeCrossRegionLogBackupFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getRegionId()const
 void DescribeCrossRegionLogBackupFilesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeCrossRegionLogBackupFilesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getEndTime()const
 void DescribeCrossRegionLogBackupFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getDBInstanceId()const
 void DescribeCrossRegionLogBackupFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getStartTime()const
 void DescribeCrossRegionLogBackupFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeCrossRegionLogBackupFilesRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getCrossBackupRegion()cons
 void DescribeCrossRegionLogBackupFilesRequest::setCrossBackupRegion(const std::string& crossBackupRegion)
 {
 	crossBackupRegion_ = crossBackupRegion;
-	setCoreParameter("CrossBackupRegion", crossBackupRegion);
+	setCoreParameter("CrossBackupRegion", std::to_string(crossBackupRegion));
 }
 
 int DescribeCrossRegionLogBackupFilesRequest::getPageNumber()const
@@ -143,6 +143,6 @@ std::string DescribeCrossRegionLogBackupFilesRequest::getAccessKeyId()const
 void DescribeCrossRegionLogBackupFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string RemoveClusterHostsRequest::getRegionId()const
 void RemoveClusterHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RemoveClusterHostsRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string RemoveClusterHostsRequest::getClusterId()const
 void RemoveClusterHostsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<std::string> RemoveClusterHostsRequest::getHostIdList()const
@@ -78,6 +78,6 @@ std::string RemoveClusterHostsRequest::getAccessKeyId()const
 void RemoveClusterHostsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

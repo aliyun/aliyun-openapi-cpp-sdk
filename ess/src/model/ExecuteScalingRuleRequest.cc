@@ -44,7 +44,7 @@ std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
 void ExecuteScalingRuleRequest::setScalingRuleAri(const std::string& scalingRuleAri)
 {
 	scalingRuleAri_ = scalingRuleAri;
-	setCoreParameter("ScalingRuleAri", scalingRuleAri);
+	setCoreParameter("ScalingRuleAri", std::to_string(scalingRuleAri));
 }
 
 std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
 void ExecuteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ExecuteScalingRuleRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ExecuteScalingRuleRequest::getClientToken()const
 void ExecuteScalingRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 float ExecuteScalingRuleRequest::getBreachThreshold()const
@@ -88,7 +88,7 @@ std::string ExecuteScalingRuleRequest::getOwnerAccount()const
 void ExecuteScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ExecuteScalingRuleRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string ExecuteScalingRuleRequest::getAccessKeyId()const
 void ExecuteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

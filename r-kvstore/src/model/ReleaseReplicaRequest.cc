@@ -44,7 +44,7 @@ std::string ReleaseReplicaRequest::getSecurityToken()const
 void ReleaseReplicaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
 void ReleaseReplicaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReleaseReplicaRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ReleaseReplicaRequest::getRegionId()const
 void ReleaseReplicaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ReleaseReplicaRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReleaseReplicaRequest::getOwnerAccount()const
 void ReleaseReplicaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReleaseReplicaRequest::getReplicaId()const
@@ -88,7 +88,7 @@ std::string ReleaseReplicaRequest::getReplicaId()const
 void ReleaseReplicaRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 long ReleaseReplicaRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ReleaseReplicaRequest::getAccessKeyId()const
 void ReleaseReplicaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

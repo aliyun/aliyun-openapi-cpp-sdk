@@ -33,7 +33,7 @@ std::string DeleteUsersRequest::getClusterId()const
 void DeleteUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<DeleteUsersRequest::User> DeleteUsersRequest::getUser()const
@@ -60,6 +60,6 @@ std::string DeleteUsersRequest::getAccessKeyId()const
 void DeleteUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

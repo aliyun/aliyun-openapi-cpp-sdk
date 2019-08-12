@@ -33,7 +33,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getAppName()const
 void DescribeLiveStreamRecordIndexFilesRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getSecurityToken()const
 void DescribeLiveStreamRecordIndexFilesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getDomainName()const
 void DescribeLiveStreamRecordIndexFilesRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveStreamRecordIndexFilesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getEndTime()const
 void DescribeLiveStreamRecordIndexFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getStartTime()const
 void DescribeLiveStreamRecordIndexFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamRecordIndexFilesRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getStreamName()const
 void DescribeLiveStreamRecordIndexFilesRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getOrder()const
@@ -132,6 +132,6 @@ std::string DescribeLiveStreamRecordIndexFilesRequest::getOrder()const
 void DescribeLiveStreamRecordIndexFilesRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

@@ -44,7 +44,7 @@ std::string EnablePhysicalConnectionRequest::getRegionId()const
 void EnablePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string EnablePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EnablePhysicalConnectionRequest::getResourceOwnerAccount()const
 void EnablePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EnablePhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string EnablePhysicalConnectionRequest::getClientToken()const
 void EnablePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string EnablePhysicalConnectionRequest::getPhysicalConnectionId()const
 void EnablePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
 }
 
 std::string EnablePhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string EnablePhysicalConnectionRequest::getOwnerAccount()const
 void EnablePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string EnablePhysicalConnectionRequest::getUserCidr()const
@@ -99,7 +99,7 @@ std::string EnablePhysicalConnectionRequest::getUserCidr()const
 void EnablePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 long EnablePhysicalConnectionRequest::getOwnerId()const

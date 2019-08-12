@@ -44,7 +44,7 @@ std::string GetURLUploadInfosRequest::getResourceOwnerAccount()const
 void GetURLUploadInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetURLUploadInfosRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string GetURLUploadInfosRequest::getJobIds()const
 void GetURLUploadInfosRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string GetURLUploadInfosRequest::getUploadURLs()const
@@ -66,7 +66,7 @@ std::string GetURLUploadInfosRequest::getUploadURLs()const
 void GetURLUploadInfosRequest::setUploadURLs(const std::string& uploadURLs)
 {
 	uploadURLs_ = uploadURLs;
-	setCoreParameter("UploadURLs", uploadURLs);
+	setCoreParameter("UploadURLs", std::to_string(uploadURLs));
 }
 
 long GetURLUploadInfosRequest::getOwnerId()const

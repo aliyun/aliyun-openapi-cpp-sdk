@@ -33,7 +33,7 @@ std::string CreateNamespaceAuthorizationRequest::getRegionId()const
 void CreateNamespaceAuthorizationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateNamespaceAuthorizationRequest::get_Namespace()const
@@ -44,6 +44,6 @@ std::string CreateNamespaceAuthorizationRequest::get_Namespace()const
 void CreateNamespaceAuthorizationRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setCoreParameter("_Namespace", std::to_string(_namespace));
 }
 

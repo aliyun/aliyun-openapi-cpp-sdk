@@ -44,7 +44,7 @@ std::string ProfileTagRequest::getBeginDate()const
 void ProfileTagRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", std::to_string(beginDate));
 }
 
 std::string ProfileTagRequest::getEndDate()const
@@ -55,7 +55,7 @@ std::string ProfileTagRequest::getEndDate()const
 void ProfileTagRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 int ProfileTagRequest::getAppType()const
@@ -77,7 +77,7 @@ std::string ProfileTagRequest::getTag()const
 void ProfileTagRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 std::string ProfileTagRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ProfileTagRequest::getAccessKeyId()const
 void ProfileTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ProfileTagRequest::getAgsid()const

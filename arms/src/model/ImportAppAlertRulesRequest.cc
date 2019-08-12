@@ -33,7 +33,7 @@ bool ImportAppAlertRulesRequest::getIsAutoStart()const
 void ImportAppAlertRulesRequest::setIsAutoStart(bool isAutoStart)
 {
 	isAutoStart_ = isAutoStart;
-	setCoreParameter("IsAutoStart", isAutoStart);
+	setCoreParameter("IsAutoStart", isAutoStart ? "true" : "false");
 }
 
 std::string ImportAppAlertRulesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ImportAppAlertRulesRequest::getRegionId()const
 void ImportAppAlertRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ImportAppAlertRulesRequest::getContactGroupIds()const
@@ -55,7 +55,7 @@ std::string ImportAppAlertRulesRequest::getContactGroupIds()const
 void ImportAppAlertRulesRequest::setContactGroupIds(const std::string& contactGroupIds)
 {
 	contactGroupIds_ = contactGroupIds;
-	setCoreParameter("ContactGroupIds", contactGroupIds);
+	setCoreParameter("ContactGroupIds", std::to_string(contactGroupIds));
 }
 
 std::string ImportAppAlertRulesRequest::getPids()const
@@ -66,7 +66,7 @@ std::string ImportAppAlertRulesRequest::getPids()const
 void ImportAppAlertRulesRequest::setPids(const std::string& pids)
 {
 	pids_ = pids;
-	setCoreParameter("Pids", pids);
+	setCoreParameter("Pids", std::to_string(pids));
 }
 
 std::string ImportAppAlertRulesRequest::getTemplateAlertId()const
@@ -77,6 +77,6 @@ std::string ImportAppAlertRulesRequest::getTemplateAlertId()const
 void ImportAppAlertRulesRequest::setTemplateAlertId(const std::string& templateAlertId)
 {
 	templateAlertId_ = templateAlertId;
-	setCoreParameter("TemplateAlertId", templateAlertId);
+	setCoreParameter("TemplateAlertId", std::to_string(templateAlertId));
 }
 

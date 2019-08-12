@@ -33,7 +33,7 @@ std::string AttachDiskRequest::getSourceRegionId()const
 void AttachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long AttachDiskRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AttachDiskRequest::getInstanceId()const
 void AttachDiskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AttachDiskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AttachDiskRequest::getResourceOwnerAccount()const
 void AttachDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AttachDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AttachDiskRequest::getOwnerAccount()const
 void AttachDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AttachDiskRequest::getDiskId()const
@@ -88,7 +88,7 @@ std::string AttachDiskRequest::getDiskId()const
 void AttachDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
+	setCoreParameter("DiskId", std::to_string(diskId));
 }
 
 long AttachDiskRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string AttachDiskRequest::getDevice()const
 void AttachDiskRequest::setDevice(const std::string& device)
 {
 	device_ = device;
-	setCoreParameter("Device", device);
+	setCoreParameter("Device", std::to_string(device));
 }
 
 bool AttachDiskRequest::getDeleteWithInstance()const
@@ -121,6 +121,6 @@ bool AttachDiskRequest::getDeleteWithInstance()const
 void AttachDiskRequest::setDeleteWithInstance(bool deleteWithInstance)
 {
 	deleteWithInstance_ = deleteWithInstance;
-	setCoreParameter("DeleteWithInstance", deleteWithInstance);
+	setCoreParameter("DeleteWithInstance", deleteWithInstance ? "true" : "false");
 }
 

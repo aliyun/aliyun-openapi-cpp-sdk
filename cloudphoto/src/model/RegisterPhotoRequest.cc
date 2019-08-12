@@ -33,7 +33,7 @@ std::string RegisterPhotoRequest::getLibraryId()const
 void RegisterPhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 float RegisterPhotoRequest::getLatitude()const
@@ -55,7 +55,7 @@ std::string RegisterPhotoRequest::getPhotoTitle()const
 void RegisterPhotoRequest::setPhotoTitle(const std::string& photoTitle)
 {
 	photoTitle_ = photoTitle;
-	setCoreParameter("PhotoTitle", photoTitle);
+	setCoreParameter("PhotoTitle", std::to_string(photoTitle));
 }
 
 std::string RegisterPhotoRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string RegisterPhotoRequest::getStoreName()const
 void RegisterPhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string RegisterPhotoRequest::getIsVideo()const
@@ -77,7 +77,7 @@ std::string RegisterPhotoRequest::getIsVideo()const
 void RegisterPhotoRequest::setIsVideo(const std::string& isVideo)
 {
 	isVideo_ = isVideo;
-	setCoreParameter("IsVideo", isVideo);
+	setCoreParameter("IsVideo", std::to_string(isVideo));
 }
 
 std::string RegisterPhotoRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string RegisterPhotoRequest::getRemark()const
 void RegisterPhotoRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 long RegisterPhotoRequest::getSize()const
@@ -132,7 +132,7 @@ std::string RegisterPhotoRequest::getLocation()const
 void RegisterPhotoRequest::setLocation(const std::string& location)
 {
 	location_ = location;
-	setCoreParameter("Location", location);
+	setCoreParameter("Location", std::to_string(location));
 }
 
 float RegisterPhotoRequest::getLongitude()const
@@ -165,6 +165,6 @@ std::string RegisterPhotoRequest::getMd5()const
 void RegisterPhotoRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setCoreParameter("Md5", std::to_string(md5));
 }
 

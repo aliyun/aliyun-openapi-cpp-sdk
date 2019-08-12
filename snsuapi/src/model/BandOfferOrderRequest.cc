@@ -44,7 +44,7 @@ std::string BandOfferOrderRequest::getResourceOwnerAccount()const
 void BandOfferOrderRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string BandOfferOrderRequest::getBandId()const
@@ -55,7 +55,7 @@ std::string BandOfferOrderRequest::getBandId()const
 void BandOfferOrderRequest::setBandId(const std::string& bandId)
 {
 	bandId_ = bandId;
-	setCoreParameter("BandId", bandId);
+	setCoreParameter("BandId", std::to_string(bandId));
 }
 
 std::string BandOfferOrderRequest::getOfferId()const
@@ -66,7 +66,7 @@ std::string BandOfferOrderRequest::getOfferId()const
 void BandOfferOrderRequest::setOfferId(const std::string& offerId)
 {
 	offerId_ = offerId;
-	setCoreParameter("OfferId", offerId);
+	setCoreParameter("OfferId", std::to_string(offerId));
 }
 
 long BandOfferOrderRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string BandOfferOrderRequest::getAccessKeyId()const
 void BandOfferOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,6 +44,6 @@ std::string DelPortalTempRequest::getAccessKeyId()const
 void DelPortalTempRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

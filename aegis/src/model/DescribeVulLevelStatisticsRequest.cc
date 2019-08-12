@@ -33,7 +33,7 @@ std::string DescribeVulLevelStatisticsRequest::getSourceIp()const
 void DescribeVulLevelStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeVulLevelStatisticsRequest::getEndTs()const
@@ -55,7 +55,7 @@ std::string DescribeVulLevelStatisticsRequest::getFrom()const
 void DescribeVulLevelStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 long DescribeVulLevelStatisticsRequest::getStartTs()const
@@ -77,7 +77,7 @@ std::string DescribeVulLevelStatisticsRequest::getIncludeApp()const
 void DescribeVulLevelStatisticsRequest::setIncludeApp(const std::string& includeApp)
 {
 	includeApp_ = includeApp;
-	setCoreParameter("IncludeApp", includeApp);
+	setCoreParameter("IncludeApp", std::to_string(includeApp));
 }
 
 std::string DescribeVulLevelStatisticsRequest::getUuids()const
@@ -88,6 +88,6 @@ std::string DescribeVulLevelStatisticsRequest::getUuids()const
 void DescribeVulLevelStatisticsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

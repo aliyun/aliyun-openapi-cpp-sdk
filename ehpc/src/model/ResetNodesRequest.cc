@@ -49,7 +49,7 @@ std::string ResetNodesRequest::getClusterId()const
 void ResetNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ResetNodesRequest::getAccessKeyId()const
@@ -60,6 +60,6 @@ std::string ResetNodesRequest::getAccessKeyId()const
 void ResetNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

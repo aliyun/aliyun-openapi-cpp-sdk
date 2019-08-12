@@ -44,7 +44,7 @@ std::string ListJobInstanceWorkersRequest::getRegionId()const
 void ListJobInstanceWorkersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListJobInstanceWorkersRequest::getJobInstanceId()const
@@ -55,7 +55,7 @@ std::string ListJobInstanceWorkersRequest::getJobInstanceId()const
 void ListJobInstanceWorkersRequest::setJobInstanceId(const std::string& jobInstanceId)
 {
 	jobInstanceId_ = jobInstanceId;
-	setCoreParameter("JobInstanceId", jobInstanceId);
+	setCoreParameter("JobInstanceId", std::to_string(jobInstanceId));
 }
 
 std::string ListJobInstanceWorkersRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListJobInstanceWorkersRequest::getAccessKeyId()const
 void ListJobInstanceWorkersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

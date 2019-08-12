@@ -33,7 +33,7 @@ std::string ModifyMachineConfigRequest::getSourceIp()const
 void ModifyMachineConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyMachineConfigRequest::getType()const
@@ -44,7 +44,7 @@ std::string ModifyMachineConfigRequest::getType()const
 void ModifyMachineConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string ModifyMachineConfigRequest::getTarget()const
@@ -55,6 +55,6 @@ std::string ModifyMachineConfigRequest::getTarget()const
 void ModifyMachineConfigRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setCoreParameter("Target", std::to_string(target));
 }
 

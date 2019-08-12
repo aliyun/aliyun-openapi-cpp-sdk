@@ -33,7 +33,7 @@ std::string SaveSuspEventUserSettingRequest::getSourceIp()const
 void SaveSuspEventUserSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string SaveSuspEventUserSettingRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string SaveSuspEventUserSettingRequest::getFrom()const
 void SaveSuspEventUserSettingRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string SaveSuspEventUserSettingRequest::getLevelsOn()const
@@ -55,6 +55,6 @@ std::string SaveSuspEventUserSettingRequest::getLevelsOn()const
 void SaveSuspEventUserSettingRequest::setLevelsOn(const std::string& levelsOn)
 {
 	levelsOn_ = levelsOn;
-	setCoreParameter("LevelsOn", levelsOn);
+	setCoreParameter("LevelsOn", std::to_string(levelsOn));
 }
 

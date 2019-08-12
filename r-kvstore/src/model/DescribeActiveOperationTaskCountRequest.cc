@@ -44,7 +44,7 @@ std::string DescribeActiveOperationTaskCountRequest::getSecurityToken()const
 void DescribeActiveOperationTaskCountRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeActiveOperationTaskCountRequest::getResourceOwnerAccount()co
 void DescribeActiveOperationTaskCountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeActiveOperationTaskCountRequest::getRegionId()const
 void DescribeActiveOperationTaskCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeActiveOperationTaskCountRequest::getOwnerAccount()const
 void DescribeActiveOperationTaskCountRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeActiveOperationTaskCountRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeActiveOperationTaskCountRequest::getAccessKeyId()const
 void DescribeActiveOperationTaskCountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

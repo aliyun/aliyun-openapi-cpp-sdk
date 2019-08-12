@@ -33,7 +33,7 @@ std::string SetForceRedirectConfigRequest::getSecurityToken()const
 void SetForceRedirectConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetForceRedirectConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetForceRedirectConfigRequest::getDomainName()const
 void SetForceRedirectConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SetForceRedirectConfigRequest::getRedirectType()const
@@ -55,7 +55,7 @@ std::string SetForceRedirectConfigRequest::getRedirectType()const
 void SetForceRedirectConfigRequest::setRedirectType(const std::string& redirectType)
 {
 	redirectType_ = redirectType;
-	setCoreParameter("RedirectType", redirectType);
+	setCoreParameter("RedirectType", std::to_string(redirectType));
 }
 
 long SetForceRedirectConfigRequest::getOwnerId()const

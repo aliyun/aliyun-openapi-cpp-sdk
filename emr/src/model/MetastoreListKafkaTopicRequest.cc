@@ -44,7 +44,7 @@ bool MetastoreListKafkaTopicRequest::getActiveOnly()const
 void MetastoreListKafkaTopicRequest::setActiveOnly(bool activeOnly)
 {
 	activeOnly_ = activeOnly;
-	setCoreParameter("ActiveOnly", activeOnly);
+	setCoreParameter("ActiveOnly", activeOnly ? "true" : "false");
 }
 
 std::string MetastoreListKafkaTopicRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListKafkaTopicRequest::getRegionId()const
 void MetastoreListKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int MetastoreListKafkaTopicRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string MetastoreListKafkaTopicRequest::getDataSourceId()const
 void MetastoreListKafkaTopicRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string MetastoreListKafkaTopicRequest::getTopicName()const
@@ -88,7 +88,7 @@ std::string MetastoreListKafkaTopicRequest::getTopicName()const
 void MetastoreListKafkaTopicRequest::setTopicName(const std::string& topicName)
 {
 	topicName_ = topicName;
-	setCoreParameter("TopicName", topicName);
+	setCoreParameter("TopicName", std::to_string(topicName));
 }
 
 std::string MetastoreListKafkaTopicRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string MetastoreListKafkaTopicRequest::getClusterId()const
 void MetastoreListKafkaTopicRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int MetastoreListKafkaTopicRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string MetastoreListKafkaTopicRequest::getAccessKeyId()const
 void MetastoreListKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

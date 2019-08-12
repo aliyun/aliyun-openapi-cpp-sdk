@@ -33,7 +33,7 @@ std::string ModifyJobRequest::getRunParameter()const
 void ModifyJobRequest::setRunParameter(const std::string& runParameter)
 {
 	runParameter_ = runParameter;
-	setCoreParameter("RunParameter", runParameter);
+	setCoreParameter("RunParameter", std::to_string(runParameter));
 }
 
 int ModifyJobRequest::getRetryInterval()const
@@ -66,7 +66,7 @@ std::string ModifyJobRequest::getRegionId()const
 void ModifyJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyJobRequest::getName()const
@@ -77,7 +77,7 @@ std::string ModifyJobRequest::getName()const
 void ModifyJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyJobRequest::getId()const
@@ -88,7 +88,7 @@ std::string ModifyJobRequest::getId()const
 void ModifyJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyJobRequest::getType()const
@@ -99,7 +99,7 @@ std::string ModifyJobRequest::getType()const
 void ModifyJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 int ModifyJobRequest::getMaxRetry()const
@@ -121,7 +121,7 @@ std::string ModifyJobRequest::getAccessKeyId()const
 void ModifyJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyJobRequest::getFailAct()const
@@ -132,6 +132,6 @@ std::string ModifyJobRequest::getFailAct()const
 void ModifyJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setCoreParameter("FailAct", std::to_string(failAct));
 }
 

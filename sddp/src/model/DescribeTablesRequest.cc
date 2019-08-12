@@ -33,7 +33,7 @@ std::string DescribeTablesRequest::getProductCode()const
 void DescribeTablesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 long DescribeTablesRequest::getProductId()const
@@ -88,7 +88,7 @@ std::string DescribeTablesRequest::getQueryName()const
 void DescribeTablesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setCoreParameter("QueryName", std::to_string(queryName));
 }
 
 long DescribeTablesRequest::getRiskLevelId()const
@@ -121,7 +121,7 @@ std::string DescribeTablesRequest::getSourceIp()const
 void DescribeTablesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeTablesRequest::getName()const
@@ -132,7 +132,7 @@ std::string DescribeTablesRequest::getName()const
 void DescribeTablesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeTablesRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string DescribeTablesRequest::getLang()const
 void DescribeTablesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeTablesRequest::getRuleId()const

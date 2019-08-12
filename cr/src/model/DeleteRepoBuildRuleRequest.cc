@@ -33,7 +33,7 @@ std::string DeleteRepoBuildRuleRequest::getRepoNamespace()const
 void DeleteRepoBuildRuleRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string DeleteRepoBuildRuleRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string DeleteRepoBuildRuleRequest::getRepoName()const
 void DeleteRepoBuildRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string DeleteRepoBuildRuleRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteRepoBuildRuleRequest::getRegionId()const
 void DeleteRepoBuildRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long DeleteRepoBuildRuleRequest::getBuildRuleId()const

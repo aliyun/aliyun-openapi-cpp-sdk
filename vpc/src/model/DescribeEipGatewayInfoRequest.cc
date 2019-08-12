@@ -33,7 +33,7 @@ std::string DescribeEipGatewayInfoRequest::getApp_ip()const
 void DescribeEipGatewayInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long DescribeEipGatewayInfoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long DescribeEipGatewayInfoRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ std::string DescribeEipGatewayInfoRequest::getOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DescribeEipGatewayInfoRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool DescribeEipGatewayInfoRequest::getProxy_original_security_transport()const
 void DescribeEipGatewayInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerBid()const
 void DescribeEipGatewayInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeEipGatewayInfoRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeEipGatewayInfoRequest::getProxy_original_source_ip()const
 void DescribeEipGatewayInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeEipGatewayInfoRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string DescribeEipGatewayInfoRequest::getOwnerIdLoginEmail()const
 void DescribeEipGatewayInfoRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerType()const
 void DescribeEipGatewayInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool DescribeEipGatewayInfoRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool DescribeEipGatewayInfoRequest::getProxy_trust_transport_info()const
 void DescribeEipGatewayInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeEipGatewayInfoRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool DescribeEipGatewayInfoRequest::getAk_mfa_present()const
 void DescribeEipGatewayInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeEipGatewayInfoRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string DescribeEipGatewayInfoRequest::getAccessKeyId()const
 void DescribeEipGatewayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool DescribeEipGatewayInfoRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool DescribeEipGatewayInfoRequest::getSecurity_transport()const
 void DescribeEipGatewayInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeEipGatewayInfoRequest::getInstanceId()const
@@ -198,7 +198,7 @@ std::string DescribeEipGatewayInfoRequest::getInstanceId()const
 void DescribeEipGatewayInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string DescribeEipGatewayInfoRequest::getRegionId()const
 void DescribeEipGatewayInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getSecurityToken()const
@@ -220,7 +220,7 @@ std::string DescribeEipGatewayInfoRequest::getSecurityToken()const
 void DescribeEipGatewayInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeEipGatewayInfoRequest::getRequestId()const
@@ -231,7 +231,7 @@ std::string DescribeEipGatewayInfoRequest::getRequestId()const
 void DescribeEipGatewayInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 bool DescribeEipGatewayInfoRequest::getEnable()const
@@ -242,7 +242,7 @@ bool DescribeEipGatewayInfoRequest::getEnable()const
 void DescribeEipGatewayInfoRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeEipGatewayInfoRequest::getRequestContent()const
@@ -253,7 +253,7 @@ std::string DescribeEipGatewayInfoRequest::getRequestContent()const
 void DescribeEipGatewayInfoRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerBidEmail()const
@@ -264,7 +264,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerBidEmail()const
 void DescribeEipGatewayInfoRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerUidEmail()const
@@ -275,7 +275,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerUidEmail()const
 void DescribeEipGatewayInfoRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeEipGatewayInfoRequest::getCallerUid()const

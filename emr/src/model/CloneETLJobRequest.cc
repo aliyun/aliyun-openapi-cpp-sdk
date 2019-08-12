@@ -44,7 +44,7 @@ std::string CloneETLJobRequest::getRegionId()const
 void CloneETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CloneETLJobRequest::getName()const
@@ -55,7 +55,7 @@ std::string CloneETLJobRequest::getName()const
 void CloneETLJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CloneETLJobRequest::getId()const
@@ -66,7 +66,7 @@ std::string CloneETLJobRequest::getId()const
 void CloneETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string CloneETLJobRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CloneETLJobRequest::getAccessKeyId()const
 void CloneETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

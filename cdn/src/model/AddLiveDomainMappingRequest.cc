@@ -33,7 +33,7 @@ std::string AddLiveDomainMappingRequest::getPullDomain()const
 void AddLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
 {
 	pullDomain_ = pullDomain;
-	setCoreParameter("PullDomain", pullDomain);
+	setCoreParameter("PullDomain", std::to_string(pullDomain));
 }
 
 std::string AddLiveDomainMappingRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AddLiveDomainMappingRequest::getSecurityToken()const
 void AddLiveDomainMappingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AddLiveDomainMappingRequest::getPushDomain()const
@@ -55,7 +55,7 @@ std::string AddLiveDomainMappingRequest::getPushDomain()const
 void AddLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain)
 {
 	pushDomain_ = pushDomain;
-	setCoreParameter("PushDomain", pushDomain);
+	setCoreParameter("PushDomain", std::to_string(pushDomain));
 }
 
 long AddLiveDomainMappingRequest::getOwnerId()const

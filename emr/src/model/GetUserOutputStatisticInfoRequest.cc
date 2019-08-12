@@ -33,7 +33,7 @@ std::string GetUserOutputStatisticInfoRequest::getFromDatetime()const
 void GetUserOutputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", std::to_string(fromDatetime));
 }
 
 long GetUserOutputStatisticInfoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string GetUserOutputStatisticInfoRequest::getRegionId()const
 void GetUserOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetUserOutputStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetUserOutputStatisticInfoRequest::getClusterId()const
 void GetUserOutputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetUserOutputStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetUserOutputStatisticInfoRequest::getToDatetime()const
 void GetUserOutputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", std::to_string(toDatetime));
 }
 
 std::string GetUserOutputStatisticInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetUserOutputStatisticInfoRequest::getAccessKeyId()const
 void GetUserOutputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

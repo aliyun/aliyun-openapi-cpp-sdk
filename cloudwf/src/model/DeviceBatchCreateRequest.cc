@@ -33,7 +33,7 @@ std::string DeviceBatchCreateRequest::getSn()const
 void DeviceBatchCreateRequest::setSn(const std::string& sn)
 {
 	sn_ = sn;
-	setCoreParameter("Sn", sn);
+	setCoreParameter("Sn", std::to_string(sn));
 }
 
 int DeviceBatchCreateRequest::getDeviceType()const
@@ -55,6 +55,6 @@ std::string DeviceBatchCreateRequest::getAccessKeyId()const
 void DeviceBatchCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

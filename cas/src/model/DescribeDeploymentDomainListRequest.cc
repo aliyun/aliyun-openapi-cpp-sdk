@@ -33,7 +33,7 @@ std::string DescribeDeploymentDomainListRequest::getSourceIp()const
 void DescribeDeploymentDomainListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeDeploymentDomainListRequest::getCertificateId()const
@@ -55,7 +55,7 @@ std::string DescribeDeploymentDomainListRequest::getCloudProduct()const
 void DescribeDeploymentDomainListRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setCoreParameter("CloudProduct", std::to_string(cloudProduct));
 }
 
 std::string DescribeDeploymentDomainListRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeDeploymentDomainListRequest::getLang()const
 void DescribeDeploymentDomainListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

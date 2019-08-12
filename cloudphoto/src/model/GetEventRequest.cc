@@ -44,7 +44,7 @@ std::string GetEventRequest::getLibraryId()const
 void GetEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string GetEventRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string GetEventRequest::getStoreName()const
 void GetEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

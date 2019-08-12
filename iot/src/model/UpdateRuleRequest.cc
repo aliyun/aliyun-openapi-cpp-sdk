@@ -33,7 +33,7 @@ std::string UpdateRuleRequest::getSelect()const
 void UpdateRuleRequest::setSelect(const std::string& select)
 {
 	select_ = select;
-	setCoreParameter("Select", select);
+	setCoreParameter("Select", std::to_string(select));
 }
 
 std::string UpdateRuleRequest::getRuleDesc()const
@@ -44,7 +44,7 @@ std::string UpdateRuleRequest::getRuleDesc()const
 void UpdateRuleRequest::setRuleDesc(const std::string& ruleDesc)
 {
 	ruleDesc_ = ruleDesc;
-	setCoreParameter("RuleDesc", ruleDesc);
+	setCoreParameter("RuleDesc", std::to_string(ruleDesc));
 }
 
 std::string UpdateRuleRequest::getIotInstanceId()const
@@ -55,7 +55,7 @@ std::string UpdateRuleRequest::getIotInstanceId()const
 void UpdateRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string UpdateRuleRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateRuleRequest::getName()const
 void UpdateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateRuleRequest::getWhere()const
@@ -77,7 +77,7 @@ std::string UpdateRuleRequest::getWhere()const
 void UpdateRuleRequest::setWhere(const std::string& where)
 {
 	where_ = where;
-	setCoreParameter("Where", where);
+	setCoreParameter("Where", std::to_string(where));
 }
 
 long UpdateRuleRequest::getRuleId()const
@@ -99,7 +99,7 @@ std::string UpdateRuleRequest::getProductKey()const
 void UpdateRuleRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 int UpdateRuleRequest::getTopicType()const
@@ -121,7 +121,7 @@ std::string UpdateRuleRequest::getAccessKeyId()const
 void UpdateRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateRuleRequest::getShortTopic()const
@@ -132,6 +132,6 @@ std::string UpdateRuleRequest::getShortTopic()const
 void UpdateRuleRequest::setShortTopic(const std::string& shortTopic)
 {
 	shortTopic_ = shortTopic;
-	setCoreParameter("ShortTopic", shortTopic);
+	setCoreParameter("ShortTopic", std::to_string(shortTopic));
 }
 

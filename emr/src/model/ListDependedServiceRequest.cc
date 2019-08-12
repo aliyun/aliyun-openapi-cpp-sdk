@@ -44,7 +44,7 @@ std::string ListDependedServiceRequest::getRegionId()const
 void ListDependedServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListDependedServiceRequest::getServiceName()const
@@ -55,7 +55,7 @@ std::string ListDependedServiceRequest::getServiceName()const
 void ListDependedServiceRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 std::string ListDependedServiceRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ListDependedServiceRequest::getClusterId()const
 void ListDependedServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListDependedServiceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListDependedServiceRequest::getAccessKeyId()const
 void ListDependedServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

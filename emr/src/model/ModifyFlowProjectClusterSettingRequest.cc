@@ -57,7 +57,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getRegionId()const
 void ModifyFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getHostList()const
@@ -80,7 +80,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getClusterId()const
 void ModifyFlowProjectClusterSettingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getDefaultQueue()const
@@ -91,7 +91,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getDefaultQueue()const
 void ModifyFlowProjectClusterSettingRequest::setDefaultQueue(const std::string& defaultQueue)
 {
 	defaultQueue_ = defaultQueue;
-	setCoreParameter("DefaultQueue", defaultQueue);
+	setCoreParameter("DefaultQueue", std::to_string(defaultQueue));
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getProjectId()const
@@ -102,7 +102,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getProjectId()const
 void ModifyFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getDefaultUser()const
@@ -113,6 +113,6 @@ std::string ModifyFlowProjectClusterSettingRequest::getDefaultUser()const
 void ModifyFlowProjectClusterSettingRequest::setDefaultUser(const std::string& defaultUser)
 {
 	defaultUser_ = defaultUser;
-	setCoreParameter("DefaultUser", defaultUser);
+	setCoreParameter("DefaultUser", std::to_string(defaultUser));
 }
 

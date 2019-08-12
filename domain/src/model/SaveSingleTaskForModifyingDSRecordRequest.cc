@@ -44,7 +44,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForModifyingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getDigestType()const
@@ -77,7 +77,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDigest()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", digest);
+	setCoreParameter("Digest", std::to_string(digest));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
@@ -88,7 +88,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
 void SaveSingleTaskForModifyingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getAlgorithm()const

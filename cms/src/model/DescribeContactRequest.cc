@@ -33,6 +33,6 @@ std::string DescribeContactRequest::getContactName()const
 void DescribeContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setCoreParameter("ContactName", std::to_string(contactName));
 }
 

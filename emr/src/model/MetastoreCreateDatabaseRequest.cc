@@ -33,7 +33,7 @@ std::string MetastoreCreateDatabaseRequest::getDbSource()const
 void MetastoreCreateDatabaseRequest::setDbSource(const std::string& dbSource)
 {
 	dbSource_ = dbSource;
-	setCoreParameter("DbSource", dbSource);
+	setCoreParameter("DbSource", std::to_string(dbSource));
 }
 
 long MetastoreCreateDatabaseRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string MetastoreCreateDatabaseRequest::getDbName()const
 void MetastoreCreateDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreCreateDatabaseRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string MetastoreCreateDatabaseRequest::getRegionId()const
 void MetastoreCreateDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreCreateDatabaseRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string MetastoreCreateDatabaseRequest::getDataSourceId()const
 void MetastoreCreateDatabaseRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string MetastoreCreateDatabaseRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string MetastoreCreateDatabaseRequest::getDescription()const
 void MetastoreCreateDatabaseRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string MetastoreCreateDatabaseRequest::getComment()const
@@ -99,7 +99,7 @@ std::string MetastoreCreateDatabaseRequest::getComment()const
 void MetastoreCreateDatabaseRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setCoreParameter("Comment", std::to_string(comment));
 }
 
 std::string MetastoreCreateDatabaseRequest::getLocationUri()const
@@ -110,7 +110,7 @@ std::string MetastoreCreateDatabaseRequest::getLocationUri()const
 void MetastoreCreateDatabaseRequest::setLocationUri(const std::string& locationUri)
 {
 	locationUri_ = locationUri;
-	setCoreParameter("LocationUri", locationUri);
+	setCoreParameter("LocationUri", std::to_string(locationUri));
 }
 
 std::string MetastoreCreateDatabaseRequest::getClusterBizId()const
@@ -121,7 +121,7 @@ std::string MetastoreCreateDatabaseRequest::getClusterBizId()const
 void MetastoreCreateDatabaseRequest::setClusterBizId(const std::string& clusterBizId)
 {
 	clusterBizId_ = clusterBizId;
-	setCoreParameter("ClusterBizId", clusterBizId);
+	setCoreParameter("ClusterBizId", std::to_string(clusterBizId));
 }
 
 std::string MetastoreCreateDatabaseRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string MetastoreCreateDatabaseRequest::getAccessKeyId()const
 void MetastoreCreateDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string UpgradeInstanceRequest::getInstanceId()const
 void UpgradeInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UpgradeInstanceRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string UpgradeInstanceRequest::getClientToken()const
 void UpgradeInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int UpgradeInstanceRequest::getVmNumber()const

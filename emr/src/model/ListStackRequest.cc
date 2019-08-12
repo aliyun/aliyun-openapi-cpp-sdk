@@ -44,7 +44,7 @@ std::string ListStackRequest::getRegionId()const
 void ListStackRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListStackRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListStackRequest::getStackName()const
 void ListStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setCoreParameter("StackName", std::to_string(stackName));
 }
 
 std::string ListStackRequest::getStackVersion()const
@@ -77,7 +77,7 @@ std::string ListStackRequest::getStackVersion()const
 void ListStackRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", stackVersion);
+	setCoreParameter("StackVersion", std::to_string(stackVersion));
 }
 
 int ListStackRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string ListStackRequest::getAccessKeyId()const
 void ListStackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

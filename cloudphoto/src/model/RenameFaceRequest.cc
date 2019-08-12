@@ -33,7 +33,7 @@ std::string RenameFaceRequest::getLibraryId()const
 void RenameFaceRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string RenameFaceRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string RenameFaceRequest::getStoreName()const
 void RenameFaceRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long RenameFaceRequest::getFaceId()const
@@ -66,6 +66,6 @@ std::string RenameFaceRequest::getFaceName()const
 void RenameFaceRequest::setFaceName(const std::string& faceName)
 {
 	faceName_ = faceName;
-	setCoreParameter("FaceName", faceName);
+	setCoreParameter("FaceName", std::to_string(faceName));
 }
 

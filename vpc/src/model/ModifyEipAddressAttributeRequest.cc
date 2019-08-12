@@ -44,7 +44,7 @@ std::string ModifyEipAddressAttributeRequest::getResourceOwnerAccount()const
 void ModifyEipAddressAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyEipAddressAttributeRequest::getBandwidth()const
@@ -55,7 +55,7 @@ std::string ModifyEipAddressAttributeRequest::getBandwidth()const
 void ModifyEipAddressAttributeRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyEipAddressAttributeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyEipAddressAttributeRequest::getRegionId()const
 void ModifyEipAddressAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyEipAddressAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyEipAddressAttributeRequest::getOwnerAccount()const
 void ModifyEipAddressAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyEipAddressAttributeRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyEipAddressAttributeRequest::getName()const
 void ModifyEipAddressAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyEipAddressAttributeRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string ModifyEipAddressAttributeRequest::getDescription()const
 void ModifyEipAddressAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string ModifyEipAddressAttributeRequest::getAllocationId()const
@@ -110,7 +110,7 @@ std::string ModifyEipAddressAttributeRequest::getAllocationId()const
 void ModifyEipAddressAttributeRequest::setAllocationId(const std::string& allocationId)
 {
 	allocationId_ = allocationId;
-	setCoreParameter("AllocationId", allocationId);
+	setCoreParameter("AllocationId", std::to_string(allocationId));
 }
 
 long ModifyEipAddressAttributeRequest::getOwnerId()const

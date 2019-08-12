@@ -44,7 +44,7 @@ std::string ModifySagRemoteAccessRequest::getSerialNumber()const
 void ModifySagRemoteAccessRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setCoreParameter("SerialNumber", std::to_string(serialNumber));
 }
 
 std::string ModifySagRemoteAccessRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifySagRemoteAccessRequest::getResourceOwnerAccount()const
 void ModifySagRemoteAccessRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySagRemoteAccessRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySagRemoteAccessRequest::getOwnerAccount()const
 void ModifySagRemoteAccessRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySagRemoteAccessRequest::getRemoteAccessIp()const
@@ -77,7 +77,7 @@ std::string ModifySagRemoteAccessRequest::getRemoteAccessIp()const
 void ModifySagRemoteAccessRequest::setRemoteAccessIp(const std::string& remoteAccessIp)
 {
 	remoteAccessIp_ = remoteAccessIp;
-	setCoreParameter("RemoteAccessIp", remoteAccessIp);
+	setCoreParameter("RemoteAccessIp", std::to_string(remoteAccessIp));
 }
 
 std::string ModifySagRemoteAccessRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string ModifySagRemoteAccessRequest::getSmartAGId()const
 void ModifySagRemoteAccessRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long ModifySagRemoteAccessRequest::getOwnerId()const

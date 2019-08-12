@@ -33,7 +33,7 @@ std::string DeleteNotifyPolicyRequest::getPolicyType()const
 void DeleteNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string DeleteNotifyPolicyRequest::getAlertName()const
@@ -44,7 +44,7 @@ std::string DeleteNotifyPolicyRequest::getAlertName()const
 void DeleteNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	setCoreParameter("AlertName", std::to_string(alertName));
 }
 
 std::string DeleteNotifyPolicyRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DeleteNotifyPolicyRequest::getGroupId()const
 void DeleteNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteNotifyPolicyRequest::getId()const
@@ -66,7 +66,7 @@ std::string DeleteNotifyPolicyRequest::getId()const
 void DeleteNotifyPolicyRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteNotifyPolicyRequest::getDimensions()const
@@ -77,7 +77,7 @@ std::string DeleteNotifyPolicyRequest::getDimensions()const
 void DeleteNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", std::to_string(dimensions));
 }
 
 std::string DeleteNotifyPolicyRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteNotifyPolicyRequest::getAccessKeyId()const
 void DeleteNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

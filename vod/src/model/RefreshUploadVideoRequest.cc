@@ -44,7 +44,7 @@ std::string RefreshUploadVideoRequest::getResourceOwnerAccount()const
 void RefreshUploadVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RefreshUploadVideoRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string RefreshUploadVideoRequest::getVideoId()const
 void RefreshUploadVideoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 long RefreshUploadVideoRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string DescribeWebshellRequest::getSourceIp()const
 void DescribeWebshellRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeWebshellRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeWebshellRequest::getRemark()const
 void DescribeWebshellRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeWebshellRequest::getDealed()const
@@ -66,7 +66,7 @@ std::string DescribeWebshellRequest::getDealed()const
 void DescribeWebshellRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 int DescribeWebshellRequest::getTag()const

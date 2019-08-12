@@ -33,7 +33,7 @@ std::string SubmitFacerecogJobRequest::getInput()const
 void SubmitFacerecogJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitFacerecogJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitFacerecogJobRequest::getUserData()const
 void SubmitFacerecogJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitFacerecogJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitFacerecogJobRequest::getResourceOwnerAccount()const
 void SubmitFacerecogJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitFacerecogJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitFacerecogJobRequest::getOwnerAccount()const
 void SubmitFacerecogJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitFacerecogJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string SubmitFacerecogJobRequest::getFacerecogConfig()const
 void SubmitFacerecogJobRequest::setFacerecogConfig(const std::string& facerecogConfig)
 {
 	facerecogConfig_ = facerecogConfig;
-	setCoreParameter("FacerecogConfig", facerecogConfig);
+	setCoreParameter("FacerecogConfig", std::to_string(facerecogConfig));
 }
 
 std::string SubmitFacerecogJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitFacerecogJobRequest::getAccessKeyId()const
 void SubmitFacerecogJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitFacerecogJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitFacerecogJobRequest::getPipelineId()const
 void SubmitFacerecogJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

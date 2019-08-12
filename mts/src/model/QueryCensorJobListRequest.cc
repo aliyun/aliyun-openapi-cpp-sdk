@@ -44,7 +44,7 @@ std::string QueryCensorJobListRequest::getResourceOwnerAccount()const
 void QueryCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryCensorJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryCensorJobListRequest::getJobIds()const
 void QueryCensorJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryCensorJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryCensorJobListRequest::getOwnerAccount()const
 void QueryCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryCensorJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryCensorJobListRequest::getAccessKeyId()const
 void QueryCensorJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

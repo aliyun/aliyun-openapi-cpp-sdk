@@ -44,7 +44,7 @@ std::string ImportDatabaseBetweenInstancesRequest::getSourceDBInstanceId()const
 void ImportDatabaseBetweenInstancesRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
 {
 	sourceDBInstanceId_ = sourceDBInstanceId;
-	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
+	setCoreParameter("SourceDBInstanceId", std::to_string(sourceDBInstanceId));
 }
 
 std::string ImportDatabaseBetweenInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ImportDatabaseBetweenInstancesRequest::getResourceOwnerAccount()cons
 void ImportDatabaseBetweenInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ImportDatabaseBetweenInstancesRequest::getDBInfo()const
@@ -66,7 +66,7 @@ std::string ImportDatabaseBetweenInstancesRequest::getDBInfo()const
 void ImportDatabaseBetweenInstancesRequest::setDBInfo(const std::string& dBInfo)
 {
 	dBInfo_ = dBInfo;
-	setCoreParameter("DBInfo", dBInfo);
+	setCoreParameter("DBInfo", std::to_string(dBInfo));
 }
 
 std::string ImportDatabaseBetweenInstancesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ImportDatabaseBetweenInstancesRequest::getOwnerAccount()const
 void ImportDatabaseBetweenInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ImportDatabaseBetweenInstancesRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ImportDatabaseBetweenInstancesRequest::getDBInstanceId()const
 void ImportDatabaseBetweenInstancesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ImportDatabaseBetweenInstancesRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ImportDatabaseBetweenInstancesRequest::getAccessKeyId()const
 void ImportDatabaseBetweenInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

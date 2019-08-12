@@ -44,7 +44,7 @@ std::string QueryTrademarkMonitorResultsRequest::getTmName()const
 void QueryTrademarkMonitorResultsRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setCoreParameter("TmName", std::to_string(tmName));
 }
 
 std::string QueryTrademarkMonitorResultsRequest::getApplyYear()const
@@ -55,7 +55,7 @@ std::string QueryTrademarkMonitorResultsRequest::getApplyYear()const
 void QueryTrademarkMonitorResultsRequest::setApplyYear(const std::string& applyYear)
 {
 	applyYear_ = applyYear;
-	setCoreParameter("ApplyYear", applyYear);
+	setCoreParameter("ApplyYear", std::to_string(applyYear));
 }
 
 int QueryTrademarkMonitorResultsRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string QueryTrademarkMonitorResultsRequest::getClassification()const
 void QueryTrademarkMonitorResultsRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setCoreParameter("Classification", std::to_string(classification));
 }
 
 int QueryTrademarkMonitorResultsRequest::getPageNum()const
@@ -121,6 +121,6 @@ std::string QueryTrademarkMonitorResultsRequest::getRegistrationNumber()const
 void QueryTrademarkMonitorResultsRequest::setRegistrationNumber(const std::string& registrationNumber)
 {
 	registrationNumber_ = registrationNumber;
-	setCoreParameter("RegistrationNumber", registrationNumber);
+	setCoreParameter("RegistrationNumber", std::to_string(registrationNumber));
 }
 

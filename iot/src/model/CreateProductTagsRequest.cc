@@ -50,7 +50,7 @@ std::string CreateProductTagsRequest::getIotInstanceId()const
 void CreateProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string CreateProductTagsRequest::getProductKey()const
@@ -61,7 +61,7 @@ std::string CreateProductTagsRequest::getProductKey()const
 void CreateProductTagsRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string CreateProductTagsRequest::getAccessKeyId()const
@@ -72,6 +72,6 @@ std::string CreateProductTagsRequest::getAccessKeyId()const
 void CreateProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeWebLockEventsRequest::getStatusList()const
 void DescribeWebLockEventsRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", statusList);
+	setCoreParameter("StatusList", std::to_string(statusList));
 }
 
 std::string DescribeWebLockEventsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeWebLockEventsRequest::getSourceIp()const
 void DescribeWebLockEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWebLockEventsRequest::getLevel()const
@@ -55,7 +55,7 @@ std::string DescribeWebLockEventsRequest::getLevel()const
 void DescribeWebLockEventsRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setCoreParameter("Level", std::to_string(level));
 }
 
 std::string DescribeWebLockEventsRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeWebLockEventsRequest::getGroupId()const
 void DescribeWebLockEventsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeWebLockEventsRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeWebLockEventsRequest::getRemark()const
 void DescribeWebLockEventsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string DescribeWebLockEventsRequest::getDealed()const
@@ -99,7 +99,7 @@ std::string DescribeWebLockEventsRequest::getDealed()const
 void DescribeWebLockEventsRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setCoreParameter("Dealed", std::to_string(dealed));
 }
 
 int DescribeWebLockEventsRequest::getCurrentPage()const
@@ -121,7 +121,7 @@ std::string DescribeWebLockEventsRequest::getTag()const
 void DescribeWebLockEventsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 
 std::string DescribeWebLockEventsRequest::getLang()const
@@ -132,7 +132,7 @@ std::string DescribeWebLockEventsRequest::getLang()const
 void DescribeWebLockEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeWebLockEventsRequest::getEventName()const
@@ -143,6 +143,6 @@ std::string DescribeWebLockEventsRequest::getEventName()const
 void DescribeWebLockEventsRequest::setEventName(const std::string& eventName)
 {
 	eventName_ = eventName;
-	setCoreParameter("EventName", eventName);
+	setCoreParameter("EventName", std::to_string(eventName));
 }
 

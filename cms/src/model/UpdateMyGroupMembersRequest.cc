@@ -33,7 +33,7 @@ std::string UpdateMyGroupMembersRequest::getReaders()const
 void UpdateMyGroupMembersRequest::setReaders(const std::string& readers)
 {
 	readers_ = readers;
-	setCoreParameter("Readers", readers);
+	setCoreParameter("Readers", std::to_string(readers));
 }
 
 long UpdateMyGroupMembersRequest::getGroupId()const
@@ -55,6 +55,6 @@ std::string UpdateMyGroupMembersRequest::getMasters()const
 void UpdateMyGroupMembersRequest::setMasters(const std::string& masters)
 {
 	masters_ = masters;
-	setCoreParameter("Masters", masters);
+	setCoreParameter("Masters", std::to_string(masters));
 }
 

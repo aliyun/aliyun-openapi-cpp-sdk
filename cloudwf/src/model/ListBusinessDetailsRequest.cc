@@ -33,7 +33,7 @@ std::string ListBusinessDetailsRequest::getOrderCol()const
 void ListBusinessDetailsRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListBusinessDetailsRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListBusinessDetailsRequest::getSearchName()const
 void ListBusinessDetailsRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setCoreParameter("SearchName", std::to_string(searchName));
 }
 
 int ListBusinessDetailsRequest::getLength()const
@@ -77,7 +77,7 @@ std::string ListBusinessDetailsRequest::getOrderDir()const
 void ListBusinessDetailsRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListBusinessDetailsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListBusinessDetailsRequest::getAccessKeyId()const
 void ListBusinessDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

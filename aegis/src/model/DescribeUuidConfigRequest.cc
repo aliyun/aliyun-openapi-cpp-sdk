@@ -33,7 +33,7 @@ std::string DescribeUuidConfigRequest::getSourceIp()const
 void DescribeUuidConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeUuidConfigRequest::getUuid()const
@@ -44,6 +44,6 @@ std::string DescribeUuidConfigRequest::getUuid()const
 void DescribeUuidConfigRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 

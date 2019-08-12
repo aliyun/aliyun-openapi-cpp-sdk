@@ -33,7 +33,7 @@ std::string GetVisualServiceStatusRequest::getClusterId()const
 void GetVisualServiceStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetVisualServiceStatusRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetVisualServiceStatusRequest::getAccessKeyId()const
 void GetVisualServiceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

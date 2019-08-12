@@ -33,7 +33,7 @@ std::string SubmitGenerateTaskRequest::getApp_ip()const
 void SubmitGenerateTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 int SubmitGenerateTaskRequest::getImageCount()const
@@ -66,7 +66,7 @@ std::string SubmitGenerateTaskRequest::getActionPoint()const
 void SubmitGenerateTaskRequest::setActionPoint(const std::string& actionPoint)
 {
 	actionPoint_ = actionPoint;
-	setCoreParameter("ActionPoint", actionPoint);
+	setCoreParameter("ActionPoint", std::to_string(actionPoint));
 }
 
 std::string SubmitGenerateTaskRequest::getLogoImagePath()const
@@ -77,7 +77,7 @@ std::string SubmitGenerateTaskRequest::getLogoImagePath()const
 void SubmitGenerateTaskRequest::setLogoImagePath(const std::string& logoImagePath)
 {
 	logoImagePath_ = logoImagePath;
-	setCoreParameter("LogoImagePath", logoImagePath);
+	setCoreParameter("LogoImagePath", std::to_string(logoImagePath));
 }
 
 int SubmitGenerateTaskRequest::getType()const
@@ -99,7 +99,7 @@ std::string SubmitGenerateTaskRequest::getCallerType()const
 void SubmitGenerateTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool SubmitGenerateTaskRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ bool SubmitGenerateTaskRequest::getAk_mfa_present()const
 void SubmitGenerateTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool SubmitGenerateTaskRequest::getSecurity_transport()const
@@ -121,7 +121,7 @@ bool SubmitGenerateTaskRequest::getSecurity_transport()const
 void SubmitGenerateTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> SubmitGenerateTaskRequest::getMajorImagePath()const
@@ -144,7 +144,7 @@ std::string SubmitGenerateTaskRequest::getRegionId()const
 void SubmitGenerateTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SubmitGenerateTaskRequest::getRequestId()const
@@ -155,7 +155,7 @@ std::string SubmitGenerateTaskRequest::getRequestId()const
 void SubmitGenerateTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 int SubmitGenerateTaskRequest::getWidth()const

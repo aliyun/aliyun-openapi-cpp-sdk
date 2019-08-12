@@ -33,7 +33,7 @@ std::string DescribeInstanceStatusRequest::getSourceRegionId()const
 void DescribeInstanceStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeInstanceStatusRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceStatusRequest::getResourceOwnerAccount()const
 void DescribeInstanceStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstanceStatusRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceStatusRequest::getRegionId()const
 void DescribeInstanceStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeInstanceStatusRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceStatusRequest::getOwnerAccount()const
 void DescribeInstanceStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeInstanceStatusRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeInstanceStatusRequest::getZoneId()const
 void DescribeInstanceStatusRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeInstanceStatusRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string DescribeInstanceStatusRequest::getClusterId()const
 void DescribeInstanceStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 long DescribeInstanceStatusRequest::getOwnerId()const

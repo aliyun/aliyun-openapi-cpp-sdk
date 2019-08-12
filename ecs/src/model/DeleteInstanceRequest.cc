@@ -33,7 +33,7 @@ std::string DeleteInstanceRequest::getSourceRegionId()const
 void DeleteInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DeleteInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteInstanceRequest::getInstanceId()const
 void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DeleteInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteInstanceRequest::getResourceOwnerAccount()const
 void DeleteInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteInstanceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteInstanceRequest::getOwnerAccount()const
 void DeleteInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 bool DeleteInstanceRequest::getTerminateSubscription()const
@@ -88,7 +88,7 @@ bool DeleteInstanceRequest::getTerminateSubscription()const
 void DeleteInstanceRequest::setTerminateSubscription(bool terminateSubscription)
 {
 	terminateSubscription_ = terminateSubscription;
-	setCoreParameter("TerminateSubscription", terminateSubscription);
+	setCoreParameter("TerminateSubscription", terminateSubscription ? "true" : "false");
 }
 
 bool DeleteInstanceRequest::getForce()const
@@ -99,7 +99,7 @@ bool DeleteInstanceRequest::getForce()const
 void DeleteInstanceRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteInstanceRequest::getOwnerId()const

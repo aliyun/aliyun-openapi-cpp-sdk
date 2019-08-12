@@ -44,7 +44,7 @@ std::string ListHostPoolRequest::getRegionId()const
 void ListHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListHostPoolRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string ListHostPoolRequest::getAccessKeyId()const
 void ListHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

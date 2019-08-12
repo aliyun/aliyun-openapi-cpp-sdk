@@ -33,7 +33,7 @@ std::string DescribeLiveRecordConfigRequest::getAppName()const
 void DescribeLiveRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveRecordConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveRecordConfigRequest::getSecurityToken()const
 void DescribeLiveRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveRecordConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveRecordConfigRequest::getDomainName()const
 void DescribeLiveRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveRecordConfigRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeLiveRecordConfigRequest::getStreamName()const
 void DescribeLiveRecordConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveRecordConfigRequest::getOrder()const
@@ -110,6 +110,6 @@ std::string DescribeLiveRecordConfigRequest::getOrder()const
 void DescribeLiveRecordConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

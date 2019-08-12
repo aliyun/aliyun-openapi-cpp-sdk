@@ -33,7 +33,7 @@ std::string DescribeCdnVendorRequest::getSourceIp()const
 void DescribeCdnVendorRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeCdnVendorRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeCdnVendorRequest::getLang()const
 void DescribeCdnVendorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeCdnVendorRequest::getSourceCode()const
@@ -77,6 +77,6 @@ std::string DescribeCdnVendorRequest::getSourceCode()const
 void DescribeCdnVendorRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

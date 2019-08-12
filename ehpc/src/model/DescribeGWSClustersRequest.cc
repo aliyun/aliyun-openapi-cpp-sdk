@@ -44,7 +44,7 @@ std::string DescribeGWSClustersRequest::getClusterId()const
 void DescribeGWSClustersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int DescribeGWSClustersRequest::getPageNumber()const
@@ -66,6 +66,6 @@ std::string DescribeGWSClustersRequest::getAccessKeyId()const
 void DescribeGWSClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

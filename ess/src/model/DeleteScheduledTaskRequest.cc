@@ -33,7 +33,7 @@ std::string DeleteScheduledTaskRequest::getResourceOwnerAccount()const
 void DeleteScheduledTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteScheduledTaskRequest::getOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteScheduledTaskRequest::getOwnerAccount()const
 void DeleteScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteScheduledTaskRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string DeleteScheduledTaskRequest::getScheduledTaskId()const
 void DeleteScheduledTaskRequest::setScheduledTaskId(const std::string& scheduledTaskId)
 {
 	scheduledTaskId_ = scheduledTaskId;
-	setCoreParameter("ScheduledTaskId", scheduledTaskId);
+	setCoreParameter("ScheduledTaskId", std::to_string(scheduledTaskId));
 }
 
 std::string DeleteScheduledTaskRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteScheduledTaskRequest::getAccessKeyId()const
 void DeleteScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

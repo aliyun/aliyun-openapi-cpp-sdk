@@ -33,7 +33,7 @@ bool SubmitCutoutTaskRequest::getSecurity_transport()const
 void SubmitCutoutTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SubmitCutoutTaskRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string SubmitCutoutTaskRequest::getApp_ip()const
 void SubmitCutoutTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string SubmitCutoutTaskRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SubmitCutoutTaskRequest::getRegionId()const
 void SubmitCutoutTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long SubmitCutoutTaskRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ std::string SubmitCutoutTaskRequest::getRequestId()const
 void SubmitCutoutTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string SubmitCutoutTaskRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string SubmitCutoutTaskRequest::getCallerType()const
 void SubmitCutoutTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool SubmitCutoutTaskRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool SubmitCutoutTaskRequest::getAk_mfa_present()const
 void SubmitCutoutTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long SubmitCutoutTaskRequest::getCallerUid()const

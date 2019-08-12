@@ -45,7 +45,7 @@ std::string AssignJobsRequest::getInstanceId()const
 void AssignJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string AssignJobsRequest::getGroupId()const
@@ -56,7 +56,7 @@ std::string AssignJobsRequest::getGroupId()const
 void AssignJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string AssignJobsRequest::getStrategyJson()const
@@ -67,7 +67,7 @@ std::string AssignJobsRequest::getStrategyJson()const
 void AssignJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setCoreParameter("StrategyJson", std::to_string(strategyJson));
 }
 
 std::string AssignJobsRequest::getScenarioId()const
@@ -78,7 +78,7 @@ std::string AssignJobsRequest::getScenarioId()const
 void AssignJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 
 std::vector<std::string> AssignJobsRequest::getJobsJson()const

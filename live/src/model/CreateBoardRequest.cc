@@ -33,7 +33,7 @@ std::string CreateBoardRequest::getApp_ip()const
 void CreateBoardRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateBoardRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string CreateBoardRequest::getPopProduct()const
 void CreateBoardRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 long CreateBoardRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool CreateBoardRequest::getProxy_original_security_transport()const
 void CreateBoardRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateBoardRequest::getAppUid()const
@@ -77,7 +77,7 @@ std::string CreateBoardRequest::getAppUid()const
 void CreateBoardRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setCoreParameter("AppUid", std::to_string(appUid));
 }
 
 std::string CreateBoardRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string CreateBoardRequest::getCallerBid()const
 void CreateBoardRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateBoardRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string CreateBoardRequest::getProxy_original_source_ip()const
 void CreateBoardRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string CreateBoardRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string CreateBoardRequest::getVersion()const
 void CreateBoardRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 std::string CreateBoardRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string CreateBoardRequest::getOwnerIdLoginEmail()const
 void CreateBoardRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateBoardRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string CreateBoardRequest::getCallerType()const
 void CreateBoardRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool CreateBoardRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool CreateBoardRequest::getProxy_trust_transport_info()const
 void CreateBoardRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateBoardRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool CreateBoardRequest::getAk_mfa_present()const
 void CreateBoardRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string CreateBoardRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string CreateBoardRequest::getAccessKeyId()const
 void CreateBoardRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool CreateBoardRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool CreateBoardRequest::getSecurity_transport()const
 void CreateBoardRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateBoardRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string CreateBoardRequest::getSecurityToken()const
 void CreateBoardRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateBoardRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string CreateBoardRequest::getRegionId()const
 void CreateBoardRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateBoardRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string CreateBoardRequest::getRequestId()const
 void CreateBoardRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateBoardRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string CreateBoardRequest::getRequestContent()const
 void CreateBoardRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string CreateBoardRequest::getAppId()const
@@ -242,7 +242,7 @@ std::string CreateBoardRequest::getAppId()const
 void CreateBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string CreateBoardRequest::getCallerBidEmail()const
@@ -253,7 +253,7 @@ std::string CreateBoardRequest::getCallerBidEmail()const
 void CreateBoardRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateBoardRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string CreateBoardRequest::getCallerUidEmail()const
 void CreateBoardRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateBoardRequest::getCallerUid()const

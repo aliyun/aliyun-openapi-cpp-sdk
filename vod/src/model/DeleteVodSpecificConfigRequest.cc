@@ -33,7 +33,7 @@ std::string DeleteVodSpecificConfigRequest::getSecurityToken()const
 void DeleteVodSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteVodSpecificConfigRequest::getConfigId()const
@@ -44,7 +44,7 @@ std::string DeleteVodSpecificConfigRequest::getConfigId()const
 void DeleteVodSpecificConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setCoreParameter("ConfigId", std::to_string(configId));
 }
 
 std::string DeleteVodSpecificConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteVodSpecificConfigRequest::getDomainName()const
 void DeleteVodSpecificConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteVodSpecificConfigRequest::getOwnerId()const

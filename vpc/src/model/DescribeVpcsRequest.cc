@@ -44,7 +44,7 @@ bool DescribeVpcsRequest::getDryRun()const
 void DescribeVpcsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeVpcsRequest::getResourceOwnerAccount()const
 void DescribeVpcsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpcsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeVpcsRequest::getOwnerAccount()const
 void DescribeVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeVpcsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeVpcsRequest::getVpcName()const
 void DescribeVpcsRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setCoreParameter("VpcName", vpcName);
+	setCoreParameter("VpcName", std::to_string(vpcName));
 }
 
 std::string DescribeVpcsRequest::getResourceGroupId()const
@@ -110,7 +110,7 @@ std::string DescribeVpcsRequest::getResourceGroupId()const
 void DescribeVpcsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeVpcsRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeVpcsRequest::getRegionId()const
 void DescribeVpcsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpcsRequest::getVpcId()const
@@ -132,7 +132,7 @@ std::string DescribeVpcsRequest::getVpcId()const
 void DescribeVpcsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 int DescribeVpcsRequest::getPageSize()const
@@ -171,6 +171,6 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault);
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 

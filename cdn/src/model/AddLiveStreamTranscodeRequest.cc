@@ -33,7 +33,7 @@ std::string AddLiveStreamTranscodeRequest::get_Template()const
 void AddLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", _template);
+	setCoreParameter("_Template", std::to_string(_template));
 }
 
 std::string AddLiveStreamTranscodeRequest::getApp()const
@@ -44,7 +44,7 @@ std::string AddLiveStreamTranscodeRequest::getApp()const
 void AddLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", app);
+	setCoreParameter("App", std::to_string(app));
 }
 
 std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
 void AddLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AddLiveStreamTranscodeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddLiveStreamTranscodeRequest::getOwnerAccount()const
 void AddLiveStreamTranscodeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddLiveStreamTranscodeRequest::getDomain()const
@@ -77,7 +77,7 @@ std::string AddLiveStreamTranscodeRequest::getDomain()const
 void AddLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setCoreParameter("Domain", std::to_string(domain));
 }
 
 std::string AddLiveStreamTranscodeRequest::getRecord()const
@@ -88,7 +88,7 @@ std::string AddLiveStreamTranscodeRequest::getRecord()const
 void AddLiveStreamTranscodeRequest::setRecord(const std::string& record)
 {
 	record_ = record;
-	setCoreParameter("Record", record);
+	setCoreParameter("Record", std::to_string(record));
 }
 
 long AddLiveStreamTranscodeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AddLiveStreamTranscodeRequest::getSnapshot()const
 void AddLiveStreamTranscodeRequest::setSnapshot(const std::string& snapshot)
 {
 	snapshot_ = snapshot;
-	setCoreParameter("Snapshot", snapshot);
+	setCoreParameter("Snapshot", std::to_string(snapshot));
 }
 

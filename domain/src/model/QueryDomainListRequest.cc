@@ -44,7 +44,7 @@ std::string QueryDomainListRequest::getProductDomainType()const
 void QueryDomainListRequest::setProductDomainType(const std::string& productDomainType)
 {
 	productDomainType_ = productDomainType;
-	setCoreParameter("ProductDomainType", productDomainType);
+	setCoreParameter("ProductDomainType", std::to_string(productDomainType));
 }
 
 std::string QueryDomainListRequest::getOrderKeyType()const
@@ -55,7 +55,7 @@ std::string QueryDomainListRequest::getOrderKeyType()const
 void QueryDomainListRequest::setOrderKeyType(const std::string& orderKeyType)
 {
 	orderKeyType_ = orderKeyType;
-	setCoreParameter("OrderKeyType", orderKeyType);
+	setCoreParameter("OrderKeyType", std::to_string(orderKeyType));
 }
 
 std::string QueryDomainListRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string QueryDomainListRequest::getDomainName()const
 void QueryDomainListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long QueryDomainListRequest::getStartExpirationDate()const
@@ -99,7 +99,7 @@ std::string QueryDomainListRequest::getOrderByType()const
 void QueryDomainListRequest::setOrderByType(const std::string& orderByType)
 {
 	orderByType_ = orderByType;
-	setCoreParameter("OrderByType", orderByType);
+	setCoreParameter("OrderByType", std::to_string(orderByType));
 }
 
 std::string QueryDomainListRequest::getDomainGroupId()const
@@ -110,7 +110,7 @@ std::string QueryDomainListRequest::getDomainGroupId()const
 void QueryDomainListRequest::setDomainGroupId(const std::string& domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", domainGroupId);
+	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 
 long QueryDomainListRequest::getEndRegistrationDate()const
@@ -132,7 +132,7 @@ std::string QueryDomainListRequest::getUserClientIp()const
 void QueryDomainListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 int QueryDomainListRequest::getPageSize()const
@@ -154,7 +154,7 @@ std::string QueryDomainListRequest::getLang()const
 void QueryDomainListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string QueryDomainListRequest::getQueryType()const
@@ -165,7 +165,7 @@ std::string QueryDomainListRequest::getQueryType()const
 void QueryDomainListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 
 long QueryDomainListRequest::getStartRegistrationDate()const

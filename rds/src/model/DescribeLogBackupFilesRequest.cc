@@ -44,7 +44,7 @@ std::string DescribeLogBackupFilesRequest::getResourceOwnerAccount()const
 void DescribeLogBackupFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeLogBackupFilesRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeLogBackupFilesRequest::getOwnerAccount()const
 void DescribeLogBackupFilesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeLogBackupFilesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeLogBackupFilesRequest::getEndTime()const
 void DescribeLogBackupFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLogBackupFilesRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeLogBackupFilesRequest::getDBInstanceId()const
 void DescribeLogBackupFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeLogBackupFilesRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeLogBackupFilesRequest::getStartTime()const
 void DescribeLogBackupFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLogBackupFilesRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeLogBackupFilesRequest::getAccessKeyId()const
 void DescribeLogBackupFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

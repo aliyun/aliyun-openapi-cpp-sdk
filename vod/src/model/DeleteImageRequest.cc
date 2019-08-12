@@ -44,7 +44,7 @@ std::string DeleteImageRequest::getImageType()const
 void DeleteImageRequest::setImageType(const std::string& imageType)
 {
 	imageType_ = imageType;
-	setCoreParameter("ImageType", imageType);
+	setCoreParameter("ImageType", std::to_string(imageType));
 }
 
 std::string DeleteImageRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getResourceOwnerAccount()const
 void DeleteImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteImageRequest::getImageURLs()const
@@ -66,7 +66,7 @@ std::string DeleteImageRequest::getImageURLs()const
 void DeleteImageRequest::setImageURLs(const std::string& imageURLs)
 {
 	imageURLs_ = imageURLs;
-	setCoreParameter("ImageURLs", imageURLs);
+	setCoreParameter("ImageURLs", std::to_string(imageURLs));
 }
 
 std::string DeleteImageRequest::getVideoId()const
@@ -77,7 +77,7 @@ std::string DeleteImageRequest::getVideoId()const
 void DeleteImageRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 long DeleteImageRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DeleteImageRequest::getDeleteImageType()const
 void DeleteImageRequest::setDeleteImageType(const std::string& deleteImageType)
 {
 	deleteImageType_ = deleteImageType;
-	setCoreParameter("DeleteImageType", deleteImageType);
+	setCoreParameter("DeleteImageType", std::to_string(deleteImageType));
 }
 
 std::string DeleteImageRequest::getImageIds()const
@@ -110,7 +110,7 @@ std::string DeleteImageRequest::getImageIds()const
 void DeleteImageRequest::setImageIds(const std::string& imageIds)
 {
 	imageIds_ = imageIds;
-	setCoreParameter("ImageIds", imageIds);
+	setCoreParameter("ImageIds", std::to_string(imageIds));
 }
 
 std::string DeleteImageRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DeleteImageRequest::getAccessKeyId()const
 void DeleteImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

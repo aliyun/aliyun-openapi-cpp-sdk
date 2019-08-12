@@ -44,7 +44,7 @@ std::string DescribeParameterModificationHistoryRequest::getSecurityToken()const
 void DescribeParameterModificationHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeParameterModificationHistoryRequest::getResourceOwnerAccount
 void DescribeParameterModificationHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeParameterModificationHistoryRequest::getRegionId()const
 void DescribeParameterModificationHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeParameterModificationHistoryRequest::getOwnerAccount()const
 void DescribeParameterModificationHistoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string DescribeParameterModificationHistoryRequest::getEndTime()const
 void DescribeParameterModificationHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeParameterModificationHistoryRequest::getDBInstanceId()const
 void DescribeParameterModificationHistoryRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getStartTime()const
@@ -110,7 +110,7 @@ std::string DescribeParameterModificationHistoryRequest::getStartTime()const
 void DescribeParameterModificationHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeParameterModificationHistoryRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string DescribeParameterModificationHistoryRequest::getNodeId()const
 void DescribeParameterModificationHistoryRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 
 std::string DescribeParameterModificationHistoryRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string DescribeParameterModificationHistoryRequest::getAccessKeyId()const
 void DescribeParameterModificationHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

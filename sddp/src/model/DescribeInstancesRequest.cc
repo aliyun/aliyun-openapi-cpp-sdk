@@ -33,7 +33,7 @@ std::string DescribeInstancesRequest::getProductCode()const
 void DescribeInstancesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string DescribeInstancesRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeInstancesRequest::getSourceIp()const
 void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeInstancesRequest::getProductId()const
@@ -77,7 +77,7 @@ std::string DescribeInstancesRequest::getName()const
 void DescribeInstancesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeInstancesRequest::getQueryName()const
 void DescribeInstancesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setCoreParameter("QueryName", std::to_string(queryName));
 }
 
 long DescribeInstancesRequest::getRiskLevelId()const
@@ -132,7 +132,7 @@ std::string DescribeInstancesRequest::getLang()const
 void DescribeInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeInstancesRequest::getRuleId()const

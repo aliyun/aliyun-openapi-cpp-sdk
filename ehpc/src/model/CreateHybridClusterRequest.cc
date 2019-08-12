@@ -33,7 +33,7 @@ std::string CreateHybridClusterRequest::getEhpcVersion()const
 void CreateHybridClusterRequest::setEhpcVersion(const std::string& ehpcVersion)
 {
 	ehpcVersion_ = ehpcVersion;
-	setCoreParameter("EhpcVersion", ehpcVersion);
+	setCoreParameter("EhpcVersion", std::to_string(ehpcVersion));
 }
 
 std::string CreateHybridClusterRequest::getSecurityGroupId()const
@@ -44,7 +44,7 @@ std::string CreateHybridClusterRequest::getSecurityGroupId()const
 void CreateHybridClusterRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 std::string CreateHybridClusterRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string CreateHybridClusterRequest::getDescription()const
 void CreateHybridClusterRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateHybridClusterRequest::getKeyPairName()const
@@ -66,7 +66,7 @@ std::string CreateHybridClusterRequest::getKeyPairName()const
 void CreateHybridClusterRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 std::string CreateHybridClusterRequest::getSecurityGroupName()const
@@ -77,7 +77,7 @@ std::string CreateHybridClusterRequest::getSecurityGroupName()const
 void CreateHybridClusterRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setCoreParameter("SecurityGroupName", std::to_string(securityGroupName));
 }
 
 std::string CreateHybridClusterRequest::getEcsOrderComputeInstanceType()const
@@ -88,7 +88,7 @@ std::string CreateHybridClusterRequest::getEcsOrderComputeInstanceType()const
 void CreateHybridClusterRequest::setEcsOrderComputeInstanceType(const std::string& ecsOrderComputeInstanceType)
 {
 	ecsOrderComputeInstanceType_ = ecsOrderComputeInstanceType;
-	setCoreParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
+	setCoreParameter("EcsOrderComputeInstanceType", std::to_string(ecsOrderComputeInstanceType));
 }
 
 std::string CreateHybridClusterRequest::getOnPremiseVolumeRemotePath()const
@@ -99,7 +99,7 @@ std::string CreateHybridClusterRequest::getOnPremiseVolumeRemotePath()const
 void CreateHybridClusterRequest::setOnPremiseVolumeRemotePath(const std::string& onPremiseVolumeRemotePath)
 {
 	onPremiseVolumeRemotePath_ = onPremiseVolumeRemotePath;
-	setCoreParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
+	setCoreParameter("OnPremiseVolumeRemotePath", std::to_string(onPremiseVolumeRemotePath));
 }
 
 std::string CreateHybridClusterRequest::getJobQueue()const
@@ -110,7 +110,7 @@ std::string CreateHybridClusterRequest::getJobQueue()const
 void CreateHybridClusterRequest::setJobQueue(const std::string& jobQueue)
 {
 	jobQueue_ = jobQueue;
-	setCoreParameter("JobQueue", jobQueue);
+	setCoreParameter("JobQueue", std::to_string(jobQueue));
 }
 
 std::string CreateHybridClusterRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateHybridClusterRequest::getAccessKeyId()const
 void CreateHybridClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateHybridClusterRequest::getVolumeType()const
@@ -132,7 +132,7 @@ std::string CreateHybridClusterRequest::getVolumeType()const
 void CreateHybridClusterRequest::setVolumeType(const std::string& volumeType)
 {
 	volumeType_ = volumeType;
-	setCoreParameter("VolumeType", volumeType);
+	setCoreParameter("VolumeType", std::to_string(volumeType));
 }
 
 std::string CreateHybridClusterRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string CreateHybridClusterRequest::getResourceGroupId()const
 void CreateHybridClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string CreateHybridClusterRequest::getPassword()const
@@ -154,7 +154,7 @@ std::string CreateHybridClusterRequest::getPassword()const
 void CreateHybridClusterRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 std::string CreateHybridClusterRequest::getOnPremiseVolumeMountPoint()const
@@ -165,7 +165,7 @@ std::string CreateHybridClusterRequest::getOnPremiseVolumeMountPoint()const
 void CreateHybridClusterRequest::setOnPremiseVolumeMountPoint(const std::string& onPremiseVolumeMountPoint)
 {
 	onPremiseVolumeMountPoint_ = onPremiseVolumeMountPoint;
-	setCoreParameter("OnPremiseVolumeMountPoint", onPremiseVolumeMountPoint);
+	setCoreParameter("OnPremiseVolumeMountPoint", std::to_string(onPremiseVolumeMountPoint));
 }
 
 std::string CreateHybridClusterRequest::getOnPremiseVolumeProtocol()const
@@ -176,7 +176,7 @@ std::string CreateHybridClusterRequest::getOnPremiseVolumeProtocol()const
 void CreateHybridClusterRequest::setOnPremiseVolumeProtocol(const std::string& onPremiseVolumeProtocol)
 {
 	onPremiseVolumeProtocol_ = onPremiseVolumeProtocol;
-	setCoreParameter("OnPremiseVolumeProtocol", onPremiseVolumeProtocol);
+	setCoreParameter("OnPremiseVolumeProtocol", std::to_string(onPremiseVolumeProtocol));
 }
 
 std::string CreateHybridClusterRequest::getVolumeProtocol()const
@@ -187,7 +187,7 @@ std::string CreateHybridClusterRequest::getVolumeProtocol()const
 void CreateHybridClusterRequest::setVolumeProtocol(const std::string& volumeProtocol)
 {
 	volumeProtocol_ = volumeProtocol;
-	setCoreParameter("VolumeProtocol", volumeProtocol);
+	setCoreParameter("VolumeProtocol", std::to_string(volumeProtocol));
 }
 
 std::string CreateHybridClusterRequest::getOnPremiseVolumeLocalPath()const
@@ -198,7 +198,7 @@ std::string CreateHybridClusterRequest::getOnPremiseVolumeLocalPath()const
 void CreateHybridClusterRequest::setOnPremiseVolumeLocalPath(const std::string& onPremiseVolumeLocalPath)
 {
 	onPremiseVolumeLocalPath_ = onPremiseVolumeLocalPath;
-	setCoreParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
+	setCoreParameter("OnPremiseVolumeLocalPath", std::to_string(onPremiseVolumeLocalPath));
 }
 
 std::string CreateHybridClusterRequest::getClientVersion()const
@@ -209,7 +209,7 @@ std::string CreateHybridClusterRequest::getClientVersion()const
 void CreateHybridClusterRequest::setClientVersion(const std::string& clientVersion)
 {
 	clientVersion_ = clientVersion;
-	setCoreParameter("ClientVersion", clientVersion);
+	setCoreParameter("ClientVersion", std::to_string(clientVersion));
 }
 
 std::string CreateHybridClusterRequest::getOsTag()const
@@ -220,7 +220,7 @@ std::string CreateHybridClusterRequest::getOsTag()const
 void CreateHybridClusterRequest::setOsTag(const std::string& osTag)
 {
 	osTag_ = osTag;
-	setCoreParameter("OsTag", osTag);
+	setCoreParameter("OsTag", std::to_string(osTag));
 }
 
 std::string CreateHybridClusterRequest::getRemoteDirectory()const
@@ -231,7 +231,7 @@ std::string CreateHybridClusterRequest::getRemoteDirectory()const
 void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
 {
 	remoteDirectory_ = remoteDirectory;
-	setCoreParameter("RemoteDirectory", remoteDirectory);
+	setCoreParameter("RemoteDirectory", std::to_string(remoteDirectory));
 }
 
 std::vector<CreateHybridClusterRequest::PostInstallScript> CreateHybridClusterRequest::getPostInstallScript()const
@@ -259,7 +259,7 @@ std::string CreateHybridClusterRequest::getVSwitchId()const
 void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::vector<CreateHybridClusterRequest::Nodes> CreateHybridClusterRequest::getNodes()const
@@ -306,7 +306,7 @@ std::string CreateHybridClusterRequest::getDomain()const
 void CreateHybridClusterRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setCoreParameter("Domain", std::to_string(domain));
 }
 
 std::string CreateHybridClusterRequest::getVpcId()const
@@ -317,7 +317,7 @@ std::string CreateHybridClusterRequest::getVpcId()const
 void CreateHybridClusterRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateHybridClusterRequest::getName()const
@@ -328,7 +328,7 @@ std::string CreateHybridClusterRequest::getName()const
 void CreateHybridClusterRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateHybridClusterRequest::getVolumeId()const
@@ -339,7 +339,7 @@ std::string CreateHybridClusterRequest::getVolumeId()const
 void CreateHybridClusterRequest::setVolumeId(const std::string& volumeId)
 {
 	volumeId_ = volumeId;
-	setCoreParameter("VolumeId", volumeId);
+	setCoreParameter("VolumeId", std::to_string(volumeId));
 }
 
 std::string CreateHybridClusterRequest::getVolumeMountpoint()const
@@ -350,7 +350,7 @@ std::string CreateHybridClusterRequest::getVolumeMountpoint()const
 void CreateHybridClusterRequest::setVolumeMountpoint(const std::string& volumeMountpoint)
 {
 	volumeMountpoint_ = volumeMountpoint;
-	setCoreParameter("VolumeMountpoint", volumeMountpoint);
+	setCoreParameter("VolumeMountpoint", std::to_string(volumeMountpoint));
 }
 
 std::string CreateHybridClusterRequest::getZoneId()const
@@ -361,7 +361,7 @@ std::string CreateHybridClusterRequest::getZoneId()const
 void CreateHybridClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 bool CreateHybridClusterRequest::getSchedulerPreInstall()const
@@ -372,7 +372,7 @@ bool CreateHybridClusterRequest::getSchedulerPreInstall()const
 void CreateHybridClusterRequest::setSchedulerPreInstall(bool schedulerPreInstall)
 {
 	schedulerPreInstall_ = schedulerPreInstall;
-	setCoreParameter("SchedulerPreInstall", schedulerPreInstall);
+	setCoreParameter("SchedulerPreInstall", schedulerPreInstall ? "true" : "false");
 }
 
 std::string CreateHybridClusterRequest::getLocation()const
@@ -383,6 +383,6 @@ std::string CreateHybridClusterRequest::getLocation()const
 void CreateHybridClusterRequest::setLocation(const std::string& location)
 {
 	location_ = location;
-	setCoreParameter("Location", location);
+	setCoreParameter("Location", std::to_string(location));
 }
 

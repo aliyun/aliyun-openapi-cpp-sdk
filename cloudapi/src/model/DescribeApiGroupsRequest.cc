@@ -33,7 +33,7 @@ std::string DescribeApiGroupsRequest::getSecurityToken()const
 void DescribeApiGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeApiGroupsRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiGroupsRequest::getGroupId()const
 void DescribeApiGroupsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeApiGroupsRequest::getPageSize()const
@@ -83,7 +83,7 @@ bool DescribeApiGroupsRequest::getEnableTagAuth()const
 void DescribeApiGroupsRequest::setEnableTagAuth(bool enableTagAuth)
 {
 	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth);
+	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
 }
 
 std::string DescribeApiGroupsRequest::getGroupName()const
@@ -94,7 +94,7 @@ std::string DescribeApiGroupsRequest::getGroupName()const
 void DescribeApiGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 int DescribeApiGroupsRequest::getPageNumber()const
@@ -116,6 +116,6 @@ std::string DescribeApiGroupsRequest::getAccessKeyId()const
 void DescribeApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

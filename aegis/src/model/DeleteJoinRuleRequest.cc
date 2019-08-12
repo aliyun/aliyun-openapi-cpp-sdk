@@ -33,7 +33,7 @@ std::string DeleteJoinRuleRequest::getSourceIp()const
 void DeleteJoinRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteJoinRuleRequest::getIds()const
@@ -44,6 +44,6 @@ std::string DeleteJoinRuleRequest::getIds()const
 void DeleteJoinRuleRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 

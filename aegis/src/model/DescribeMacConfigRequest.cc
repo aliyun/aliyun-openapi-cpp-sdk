@@ -44,7 +44,7 @@ std::string DescribeMacConfigRequest::getTypes()const
 void DescribeMacConfigRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", types);
+	setCoreParameter("Types", std::to_string(types));
 }
 
 std::string DescribeMacConfigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeMacConfigRequest::getSourceIp()const
 void DescribeMacConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeMacConfigRequest::getExtern()const
@@ -66,7 +66,7 @@ std::string DescribeMacConfigRequest::getExtern()const
 void DescribeMacConfigRequest::setExtern(const std::string& extern)
 {
 	extern_ = extern;
-	setCoreParameter("Extern", extern);
+	setCoreParameter("Extern", std::to_string(extern));
 }
 
 std::string DescribeMacConfigRequest::getType()const
@@ -77,7 +77,7 @@ std::string DescribeMacConfigRequest::getType()const
 void DescribeMacConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeMacConfigRequest::getConfig()const
@@ -88,7 +88,7 @@ std::string DescribeMacConfigRequest::getConfig()const
 void DescribeMacConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setCoreParameter("Config", std::to_string(config));
 }
 
 std::string DescribeMacConfigRequest::getTarget()const
@@ -99,6 +99,6 @@ std::string DescribeMacConfigRequest::getTarget()const
 void DescribeMacConfigRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setCoreParameter("Target", std::to_string(target));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeQuaraFileRequest::getSourceIp()const
 void DescribeQuaraFileRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeQuaraFileRequest::getPageSize()const

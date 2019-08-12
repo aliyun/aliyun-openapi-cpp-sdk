@@ -33,7 +33,7 @@ std::string DescribeKeyPairsRequest::getSourceRegionId()const
 void DescribeKeyPairsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeKeyPairsRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeKeyPairsRequest::getResourceGroupId()const
 void DescribeKeyPairsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 long DescribeKeyPairsRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeKeyPairsRequest::getResourceOwnerAccount()const
 void DescribeKeyPairsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeKeyPairsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeKeyPairsRequest::getRegionId()const
 void DescribeKeyPairsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeKeyPairsRequest::getKeyPairFingerPrint()const
@@ -88,7 +88,7 @@ std::string DescribeKeyPairsRequest::getKeyPairFingerPrint()const
 void DescribeKeyPairsRequest::setKeyPairFingerPrint(const std::string& keyPairFingerPrint)
 {
 	keyPairFingerPrint_ = keyPairFingerPrint;
-	setCoreParameter("KeyPairFingerPrint", keyPairFingerPrint);
+	setCoreParameter("KeyPairFingerPrint", std::to_string(keyPairFingerPrint));
 }
 
 int DescribeKeyPairsRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeKeyPairsRequest::getKeyPairName()const
 void DescribeKeyPairsRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 std::vector<DescribeKeyPairsRequest::Tag> DescribeKeyPairsRequest::getTag()const

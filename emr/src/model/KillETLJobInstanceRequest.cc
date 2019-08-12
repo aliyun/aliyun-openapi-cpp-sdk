@@ -44,7 +44,7 @@ std::string KillETLJobInstanceRequest::getInstanceId()const
 void KillETLJobInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string KillETLJobInstanceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string KillETLJobInstanceRequest::getRegionId()const
 void KillETLJobInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string KillETLJobInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string KillETLJobInstanceRequest::getAccessKeyId()const
 void KillETLJobInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

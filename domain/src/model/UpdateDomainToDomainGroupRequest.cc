@@ -44,7 +44,7 @@ std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
 void UpdateDomainToDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
@@ -55,7 +55,7 @@ std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
 void UpdateDomainToDomainGroupRequest::setFileToUpload(const std::string& fileToUpload)
 {
 	fileToUpload_ = fileToUpload;
-	setCoreParameter("FileToUpload", fileToUpload);
+	setCoreParameter("FileToUpload", std::to_string(fileToUpload));
 }
 
 std::vector<std::string> UpdateDomainToDomainGroupRequest::getDomainName()const
@@ -78,7 +78,7 @@ bool UpdateDomainToDomainGroupRequest::getReplace()const
 void UpdateDomainToDomainGroupRequest::setReplace(bool replace)
 {
 	replace_ = replace;
-	setCoreParameter("Replace", replace);
+	setCoreParameter("Replace", replace ? "true" : "false");
 }
 
 std::string UpdateDomainToDomainGroupRequest::getLang()const
@@ -89,7 +89,7 @@ std::string UpdateDomainToDomainGroupRequest::getLang()const
 void UpdateDomainToDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long UpdateDomainToDomainGroupRequest::getDomainGroupId()const

@@ -44,7 +44,7 @@ std::string DeleteAlertUserGroupsRequest::getRegionId()const
 void DeleteAlertUserGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteAlertUserGroupsRequest::getIds()const
@@ -55,7 +55,7 @@ std::string DeleteAlertUserGroupsRequest::getIds()const
 void DeleteAlertUserGroupsRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setCoreParameter("Ids", std::to_string(ids));
 }
 
 std::string DeleteAlertUserGroupsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteAlertUserGroupsRequest::getAccessKeyId()const
 void DeleteAlertUserGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

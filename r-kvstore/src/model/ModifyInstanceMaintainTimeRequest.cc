@@ -44,7 +44,7 @@ std::string ModifyInstanceMaintainTimeRequest::getInstanceId()const
 void ModifyInstanceMaintainTimeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceMaintainTimeRequest::getSecurityToken()const
 void ModifyInstanceMaintainTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceMaintainTimeRequest::getResourceOwnerAccount()const
 void ModifyInstanceMaintainTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceMaintainTimeRequest::getRegionId()const
 void ModifyInstanceMaintainTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getMaintainStartTime()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceMaintainTimeRequest::getMaintainStartTime()const
 void ModifyInstanceMaintainTimeRequest::setMaintainStartTime(const std::string& maintainStartTime)
 {
 	maintainStartTime_ = maintainStartTime;
-	setCoreParameter("MaintainStartTime", maintainStartTime);
+	setCoreParameter("MaintainStartTime", std::to_string(maintainStartTime));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceMaintainTimeRequest::getOwnerAccount()const
 void ModifyInstanceMaintainTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceMaintainTimeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceMaintainTimeRequest::getMaintainEndTime()const
 void ModifyInstanceMaintainTimeRequest::setMaintainEndTime(const std::string& maintainEndTime)
 {
 	maintainEndTime_ = maintainEndTime;
-	setCoreParameter("MaintainEndTime", maintainEndTime);
+	setCoreParameter("MaintainEndTime", std::to_string(maintainEndTime));
 }
 
 std::string ModifyInstanceMaintainTimeRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyInstanceMaintainTimeRequest::getAccessKeyId()const
 void ModifyInstanceMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

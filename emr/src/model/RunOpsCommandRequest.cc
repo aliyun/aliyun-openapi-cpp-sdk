@@ -44,7 +44,7 @@ std::string RunOpsCommandRequest::getRegionId()const
 void RunOpsCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RunOpsCommandRequest::getOpsCommandName()const
@@ -55,7 +55,7 @@ std::string RunOpsCommandRequest::getOpsCommandName()const
 void RunOpsCommandRequest::setOpsCommandName(const std::string& opsCommandName)
 {
 	opsCommandName_ = opsCommandName;
-	setCoreParameter("OpsCommandName", opsCommandName);
+	setCoreParameter("OpsCommandName", std::to_string(opsCommandName));
 }
 
 std::string RunOpsCommandRequest::getComment()const
@@ -66,7 +66,7 @@ std::string RunOpsCommandRequest::getComment()const
 void RunOpsCommandRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setCoreParameter("Comment", std::to_string(comment));
 }
 
 std::string RunOpsCommandRequest::getCustomParams()const
@@ -77,7 +77,7 @@ std::string RunOpsCommandRequest::getCustomParams()const
 void RunOpsCommandRequest::setCustomParams(const std::string& customParams)
 {
 	customParams_ = customParams;
-	setCoreParameter("CustomParams", customParams);
+	setCoreParameter("CustomParams", std::to_string(customParams));
 }
 
 std::string RunOpsCommandRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string RunOpsCommandRequest::getClusterId()const
 void RunOpsCommandRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<std::string> RunOpsCommandRequest::getHostIdList()const
@@ -111,7 +111,7 @@ std::string RunOpsCommandRequest::getDimension()const
 void RunOpsCommandRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setCoreParameter("Dimension", dimension);
+	setCoreParameter("Dimension", std::to_string(dimension));
 }
 
 std::string RunOpsCommandRequest::getAccessKeyId()const
@@ -122,6 +122,6 @@ std::string RunOpsCommandRequest::getAccessKeyId()const
 void RunOpsCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

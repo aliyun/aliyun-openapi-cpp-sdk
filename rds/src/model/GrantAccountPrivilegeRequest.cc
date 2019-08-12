@@ -44,7 +44,7 @@ std::string GrantAccountPrivilegeRequest::getAccountName()const
 void GrantAccountPrivilegeRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string GrantAccountPrivilegeRequest::getDBName()const
@@ -55,7 +55,7 @@ std::string GrantAccountPrivilegeRequest::getDBName()const
 void GrantAccountPrivilegeRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string GrantAccountPrivilegeRequest::getResourceOwnerAccount()const
 void GrantAccountPrivilegeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GrantAccountPrivilegeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string GrantAccountPrivilegeRequest::getOwnerAccount()const
 void GrantAccountPrivilegeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string GrantAccountPrivilegeRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string GrantAccountPrivilegeRequest::getDBInstanceId()const
 void GrantAccountPrivilegeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long GrantAccountPrivilegeRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string GrantAccountPrivilegeRequest::getAccessKeyId()const
 void GrantAccountPrivilegeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
@@ -121,6 +121,6 @@ std::string GrantAccountPrivilegeRequest::getAccountPrivilege()const
 void GrantAccountPrivilegeRequest::setAccountPrivilege(const std::string& accountPrivilege)
 {
 	accountPrivilege_ = accountPrivilege;
-	setCoreParameter("AccountPrivilege", accountPrivilege);
+	setCoreParameter("AccountPrivilege", std::to_string(accountPrivilege));
 }
 

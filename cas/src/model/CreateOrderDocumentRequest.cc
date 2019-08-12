@@ -33,7 +33,7 @@ std::string CreateOrderDocumentRequest::getOssKey()const
 void CreateOrderDocumentRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setCoreParameter("OssKey", std::to_string(ossKey));
 }
 
 std::string CreateOrderDocumentRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateOrderDocumentRequest::getSourceIp()const
 void CreateOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long CreateOrderDocumentRequest::getOrderId()const
@@ -77,7 +77,7 @@ std::string CreateOrderDocumentRequest::getLang()const
 void CreateOrderDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string CreateOrderDocumentRequest::getExtName()const
@@ -88,6 +88,6 @@ std::string CreateOrderDocumentRequest::getExtName()const
 void CreateOrderDocumentRequest::setExtName(const std::string& extName)
 {
 	extName_ = extName;
-	setCoreParameter("ExtName", extName);
+	setCoreParameter("ExtName", std::to_string(extName));
 }
 

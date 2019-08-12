@@ -44,7 +44,7 @@ std::string UpdateNavNodeRequest::getRegionId()const
 void UpdateNavNodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateNavNodeRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateNavNodeRequest::getName()const
 void UpdateNavNodeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateNavNodeRequest::getId()const
@@ -66,7 +66,7 @@ std::string UpdateNavNodeRequest::getId()const
 void UpdateNavNodeRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateNavNodeRequest::getProjectId()const
@@ -77,7 +77,7 @@ std::string UpdateNavNodeRequest::getProjectId()const
 void UpdateNavNodeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string UpdateNavNodeRequest::getParentId()const
@@ -88,7 +88,7 @@ std::string UpdateNavNodeRequest::getParentId()const
 void UpdateNavNodeRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setCoreParameter("ParentId", std::to_string(parentId));
 }
 
 std::string UpdateNavNodeRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateNavNodeRequest::getAccessKeyId()const
 void UpdateNavNodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,6 +44,6 @@ std::string ShopActionReturningRequest::getAccessKeyId()const
 void ShopActionReturningRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

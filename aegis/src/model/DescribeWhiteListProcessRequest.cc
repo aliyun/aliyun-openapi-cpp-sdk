@@ -33,7 +33,7 @@ std::string DescribeWhiteListProcessRequest::getSourceIp()const
 void DescribeWhiteListProcessRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeWhiteListProcessRequest::getProcessName()const
@@ -44,7 +44,7 @@ std::string DescribeWhiteListProcessRequest::getProcessName()const
 void DescribeWhiteListProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
+	setCoreParameter("ProcessName", std::to_string(processName));
 }
 
 int DescribeWhiteListProcessRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeWhiteListProcessRequest::getLang()const
 void DescribeWhiteListProcessRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeWhiteListProcessRequest::getDesc()const

@@ -33,7 +33,7 @@ std::string ListUsersRequest::getInstanceId()const
 void ListUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int ListUsersRequest::getPageSize()const
@@ -66,6 +66,6 @@ std::string ListUsersRequest::getAccessKeyId()const
 void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

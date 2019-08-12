@@ -44,7 +44,7 @@ std::string DescribeCollationTimeZonesRequest::getResourceOwnerAccount()const
 void DescribeCollationTimeZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long DescribeCollationTimeZonesRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string DescribeCollationTimeZonesRequest::getAccessKeyId()const
 void DescribeCollationTimeZonesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

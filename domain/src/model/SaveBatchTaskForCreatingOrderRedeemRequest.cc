@@ -33,7 +33,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setCoreParameter("PromotionNo", std::to_string(promotionNo));
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRedeemRequest::OrderRedeemParam> SaveBatchTaskForCreatingOrderRedeemRequest::getOrderRedeemParam()const
@@ -61,7 +61,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
@@ -72,7 +72,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
@@ -83,7 +83,7 @@ bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon);
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const
@@ -94,7 +94,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUsePromotion()const
@@ -105,6 +105,6 @@ bool SaveBatchTaskForCreatingOrderRedeemRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion);
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

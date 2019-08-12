@@ -55,7 +55,7 @@ std::string ExportOssResultRequest::getSuggestion()const
 void ExportOssResultRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setCoreParameter("Suggestion", std::to_string(suggestion));
 }
 
 int ExportOssResultRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string ExportOssResultRequest::getStartDate()const
 void ExportOssResultRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 std::string ExportOssResultRequest::getResourceType()const
@@ -99,7 +99,7 @@ std::string ExportOssResultRequest::getResourceType()const
 void ExportOssResultRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ExportOssResultRequest::getScene()const
@@ -110,7 +110,7 @@ std::string ExportOssResultRequest::getScene()const
 void ExportOssResultRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setCoreParameter("Scene", std::to_string(scene));
 }
 
 std::string ExportOssResultRequest::getBucket()const
@@ -121,7 +121,7 @@ std::string ExportOssResultRequest::getBucket()const
 void ExportOssResultRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setCoreParameter("Bucket", std::to_string(bucket));
 }
 
 std::string ExportOssResultRequest::getEndDate()const
@@ -132,7 +132,7 @@ std::string ExportOssResultRequest::getEndDate()const
 void ExportOssResultRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string ExportOssResultRequest::getSourceIp()const
@@ -143,7 +143,7 @@ std::string ExportOssResultRequest::getSourceIp()const
 void ExportOssResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int ExportOssResultRequest::getPageSize()const
@@ -165,7 +165,7 @@ std::string ExportOssResultRequest::getLang()const
 void ExportOssResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 bool ExportOssResultRequest::getStock()const
@@ -176,6 +176,6 @@ bool ExportOssResultRequest::getStock()const
 void ExportOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock);
+	setCoreParameter("Stock", stock ? "true" : "false");
 }
 

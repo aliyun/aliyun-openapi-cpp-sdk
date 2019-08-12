@@ -33,7 +33,7 @@ std::string QueryDialogsRequest::getInstanceId()const
 void QueryDialogsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int QueryDialogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string QueryDialogsRequest::getDialogName()const
 void QueryDialogsRequest::setDialogName(const std::string& dialogName)
 {
 	dialogName_ = dialogName;
-	setCoreParameter("DialogName", dialogName);
+	setCoreParameter("DialogName", std::to_string(dialogName));
 }
 
 int QueryDialogsRequest::getPageNumber()const

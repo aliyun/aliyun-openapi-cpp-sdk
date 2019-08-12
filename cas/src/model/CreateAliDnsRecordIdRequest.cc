@@ -33,7 +33,7 @@ std::string CreateAliDnsRecordIdRequest::getRecordId()const
 void CreateAliDnsRecordIdRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setCoreParameter("RecordId", std::to_string(recordId));
 }
 
 std::string CreateAliDnsRecordIdRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateAliDnsRecordIdRequest::getSourceIp()const
 void CreateAliDnsRecordIdRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long CreateAliDnsRecordIdRequest::getOrderId()const
@@ -66,6 +66,6 @@ std::string CreateAliDnsRecordIdRequest::getLang()const
 void CreateAliDnsRecordIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

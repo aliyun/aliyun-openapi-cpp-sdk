@@ -55,7 +55,7 @@ std::string ListCpfsFileSystemsRequest::getAccessKeyId()const
 void ListCpfsFileSystemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListCpfsFileSystemsRequest::getFileSystemId()const
@@ -66,6 +66,6 @@ std::string ListCpfsFileSystemsRequest::getFileSystemId()const
 void ListCpfsFileSystemsRequest::setFileSystemId(const std::string& fileSystemId)
 {
 	fileSystemId_ = fileSystemId;
-	setCoreParameter("FileSystemId", fileSystemId);
+	setCoreParameter("FileSystemId", std::to_string(fileSystemId));
 }
 

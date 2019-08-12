@@ -33,7 +33,7 @@ std::string DescribeDcdnRefreshTasksRequest::getObjectPath()const
 void DescribeDcdnRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setCoreParameter("ObjectPath", std::to_string(objectPath));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDcdnRefreshTasksRequest::getDomainName()const
 void DescribeDcdnRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnRefreshTasksRequest::getEndTime()const
 void DescribeDcdnRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnRefreshTasksRequest::getStartTime()const
 void DescribeDcdnRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeDcdnRefreshTasksRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnRefreshTasksRequest::getResourceGroupId()const
 void DescribeDcdnRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnRefreshTasksRequest::getSecurityToken()const
 void DescribeDcdnRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribeDcdnRefreshTasksRequest::getPageSize()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnRefreshTasksRequest::getObjectType()const
 void DescribeDcdnRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setCoreParameter("ObjectType", std::to_string(objectType));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getTaskId()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnRefreshTasksRequest::getTaskId()const
 void DescribeDcdnRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeDcdnRefreshTasksRequest::getStatus()const
 void DescribeDcdnRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

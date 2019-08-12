@@ -33,7 +33,7 @@ std::string IndexImageRequest::getRemarksB()const
 void IndexImageRequest::setRemarksB(const std::string& remarksB)
 {
 	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", remarksB);
+	setCoreParameter("RemarksB", std::to_string(remarksB));
 }
 
 std::string IndexImageRequest::getProject()const
@@ -44,7 +44,7 @@ std::string IndexImageRequest::getProject()const
 void IndexImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string IndexImageRequest::getRemarksA()const
@@ -55,7 +55,7 @@ std::string IndexImageRequest::getRemarksA()const
 void IndexImageRequest::setRemarksA(const std::string& remarksA)
 {
 	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", remarksA);
+	setCoreParameter("RemarksA", std::to_string(remarksA));
 }
 
 std::string IndexImageRequest::getExternalId()const
@@ -66,7 +66,7 @@ std::string IndexImageRequest::getExternalId()const
 void IndexImageRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setCoreParameter("ExternalId", externalId);
+	setCoreParameter("ExternalId", std::to_string(externalId));
 }
 
 std::string IndexImageRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string IndexImageRequest::getAccessKeyId()const
 void IndexImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string IndexImageRequest::getImageUri()const
@@ -88,7 +88,7 @@ std::string IndexImageRequest::getImageUri()const
 void IndexImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", imageUri);
+	setCoreParameter("ImageUri", std::to_string(imageUri));
 }
 
 std::string IndexImageRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string IndexImageRequest::getRegionId()const
 void IndexImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string IndexImageRequest::getSourceUri()const
@@ -110,7 +110,7 @@ std::string IndexImageRequest::getSourceUri()const
 void IndexImageRequest::setSourceUri(const std::string& sourceUri)
 {
 	sourceUri_ = sourceUri;
-	setCoreParameter("SourceUri", sourceUri);
+	setCoreParameter("SourceUri", std::to_string(sourceUri));
 }
 
 std::string IndexImageRequest::getSourcePosition()const
@@ -121,7 +121,7 @@ std::string IndexImageRequest::getSourcePosition()const
 void IndexImageRequest::setSourcePosition(const std::string& sourcePosition)
 {
 	sourcePosition_ = sourcePosition;
-	setCoreParameter("SourcePosition", sourcePosition);
+	setCoreParameter("SourcePosition", std::to_string(sourcePosition));
 }
 
 std::string IndexImageRequest::getRemarksD()const
@@ -132,7 +132,7 @@ std::string IndexImageRequest::getRemarksD()const
 void IndexImageRequest::setRemarksD(const std::string& remarksD)
 {
 	remarksD_ = remarksD;
-	setCoreParameter("RemarksD", remarksD);
+	setCoreParameter("RemarksD", std::to_string(remarksD));
 }
 
 std::string IndexImageRequest::getRemarksC()const
@@ -143,7 +143,7 @@ std::string IndexImageRequest::getRemarksC()const
 void IndexImageRequest::setRemarksC(const std::string& remarksC)
 {
 	remarksC_ = remarksC;
-	setCoreParameter("RemarksC", remarksC);
+	setCoreParameter("RemarksC", std::to_string(remarksC));
 }
 
 std::string IndexImageRequest::getSetId()const
@@ -154,7 +154,7 @@ std::string IndexImageRequest::getSetId()const
 void IndexImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setCoreParameter("SetId", std::to_string(setId));
 }
 
 std::string IndexImageRequest::getSourceType()const
@@ -165,7 +165,7 @@ std::string IndexImageRequest::getSourceType()const
 void IndexImageRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setCoreParameter("SourceType", std::to_string(sourceType));
 }
 
 std::string IndexImageRequest::getRealUid()const
@@ -176,6 +176,6 @@ std::string IndexImageRequest::getRealUid()const
 void IndexImageRequest::setRealUid(const std::string& realUid)
 {
 	realUid_ = realUid;
-	setCoreParameter("RealUid", realUid);
+	setCoreParameter("RealUid", std::to_string(realUid));
 }
 

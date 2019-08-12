@@ -33,7 +33,7 @@ std::string SetIpBlackListConfigRequest::getSecurityToken()const
 void SetIpBlackListConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetIpBlackListConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetIpBlackListConfigRequest::getDomainName()const
 void SetIpBlackListConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetIpBlackListConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ std::string SetIpBlackListConfigRequest::getBlockIps()const
 void SetIpBlackListConfigRequest::setBlockIps(const std::string& blockIps)
 {
 	blockIps_ = blockIps;
-	setCoreParameter("BlockIps", blockIps);
+	setCoreParameter("BlockIps", std::to_string(blockIps));
 }
 

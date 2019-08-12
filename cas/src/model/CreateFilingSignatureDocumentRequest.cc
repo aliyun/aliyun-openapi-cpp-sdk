@@ -33,7 +33,7 @@ std::string CreateFilingSignatureDocumentRequest::getSourceIp()const
 void CreateFilingSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateFilingSignatureDocumentRequest::getDocId()const
@@ -44,7 +44,7 @@ std::string CreateFilingSignatureDocumentRequest::getDocId()const
 void CreateFilingSignatureDocumentRequest::setDocId(const std::string& docId)
 {
 	docId_ = docId;
-	setCoreParameter("DocId", docId);
+	setCoreParameter("DocId", std::to_string(docId));
 }
 
 std::string CreateFilingSignatureDocumentRequest::getLang()const
@@ -55,6 +55,6 @@ std::string CreateFilingSignatureDocumentRequest::getLang()const
 void CreateFilingSignatureDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

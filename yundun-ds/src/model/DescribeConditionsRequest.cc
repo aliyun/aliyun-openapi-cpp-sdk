@@ -33,7 +33,7 @@ std::string DescribeConditionsRequest::getProductCode()const
 void DescribeConditionsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string DescribeConditionsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeConditionsRequest::getSourceIp()const
 void DescribeConditionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeConditionsRequest::getFeatureType()const
@@ -77,7 +77,7 @@ std::string DescribeConditionsRequest::getLang()const
 void DescribeConditionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeConditionsRequest::getQueryType()const

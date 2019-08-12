@@ -33,7 +33,7 @@ std::string ModifyInstanceVncPasswdRequest::getSourceRegionId()const
 void ModifyInstanceVncPasswdRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long ModifyInstanceVncPasswdRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceVncPasswdRequest::getInstanceId()const
 void ModifyInstanceVncPasswdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceVncPasswdRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceVncPasswdRequest::getResourceOwnerAccount()const
 void ModifyInstanceVncPasswdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceVncPasswdRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceVncPasswdRequest::getRegionId()const
 void ModifyInstanceVncPasswdRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceVncPasswdRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceVncPasswdRequest::getOwnerAccount()const
 void ModifyInstanceVncPasswdRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceVncPasswdRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyInstanceVncPasswdRequest::getVncPassword()const
 void ModifyInstanceVncPasswdRequest::setVncPassword(const std::string& vncPassword)
 {
 	vncPassword_ = vncPassword;
-	setCoreParameter("VncPassword", vncPassword);
+	setCoreParameter("VncPassword", std::to_string(vncPassword));
 }
 

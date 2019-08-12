@@ -44,7 +44,7 @@ std::string DescribeDatabasesRequest::getDBName()const
 void DescribeDatabasesRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDatabasesRequest::getResourceOwnerAccount()const
 void DescribeDatabasesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDatabasesRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeDatabasesRequest::getDBClusterId()const
 void DescribeDatabasesRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DescribeDatabasesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDatabasesRequest::getOwnerAccount()const
 void DescribeDatabasesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDatabasesRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeDatabasesRequest::getAccessKeyId()const
 void DescribeDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

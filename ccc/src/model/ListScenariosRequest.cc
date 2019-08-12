@@ -33,6 +33,6 @@ std::string ListScenariosRequest::getInstanceId()const
 void ListScenariosRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeVRoutersRequest::getVRouterId()const
 void DescribeVRoutersRequest::setVRouterId(const std::string& vRouterId)
 {
 	vRouterId_ = vRouterId;
-	setCoreParameter("VRouterId", vRouterId);
+	setCoreParameter("VRouterId", std::to_string(vRouterId));
 }
 
 std::string DescribeVRoutersRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeVRoutersRequest::getResourceOwnerAccount()const
 void DescribeVRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVRoutersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVRoutersRequest::getRegionId()const
 void DescribeVRoutersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVRoutersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVRoutersRequest::getOwnerAccount()const
 void DescribeVRoutersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeVRoutersRequest::getPageSize()const

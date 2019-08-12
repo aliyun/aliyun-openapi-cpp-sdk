@@ -44,7 +44,7 @@ std::string ListClusterInstalledServiceRequest::getRegionId()const
 void ListClusterInstalledServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListClusterInstalledServiceRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string ListClusterInstalledServiceRequest::getClusterId()const
 void ListClusterInstalledServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListClusterInstalledServiceRequest::getPageNumber()const
@@ -88,6 +88,6 @@ std::string ListClusterInstalledServiceRequest::getAccessKeyId()const
 void ListClusterInstalledServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

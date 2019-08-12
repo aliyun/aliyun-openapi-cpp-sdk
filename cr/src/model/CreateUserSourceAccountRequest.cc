@@ -33,6 +33,6 @@ std::string CreateUserSourceAccountRequest::getRegionId()const
 void CreateUserSourceAccountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 

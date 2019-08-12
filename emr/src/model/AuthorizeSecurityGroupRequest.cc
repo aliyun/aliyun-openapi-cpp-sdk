@@ -33,7 +33,7 @@ std::string AuthorizeSecurityGroupRequest::getBizType()const
 void AuthorizeSecurityGroupRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setCoreParameter("BizType", std::to_string(bizType));
 }
 
 long AuthorizeSecurityGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AuthorizeSecurityGroupRequest::getBizContent()const
 void AuthorizeSecurityGroupRequest::setBizContent(const std::string& bizContent)
 {
 	bizContent_ = bizContent;
-	setCoreParameter("BizContent", bizContent);
+	setCoreParameter("BizContent", std::to_string(bizContent));
 }
 
 std::string AuthorizeSecurityGroupRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AuthorizeSecurityGroupRequest::getRegionId()const
 void AuthorizeSecurityGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AuthorizeSecurityGroupRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string AuthorizeSecurityGroupRequest::getClusterId()const
 void AuthorizeSecurityGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string AuthorizeSecurityGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string AuthorizeSecurityGroupRequest::getAccessKeyId()const
 void AuthorizeSecurityGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

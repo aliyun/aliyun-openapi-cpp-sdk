@@ -33,7 +33,7 @@ std::string UpdateProjectListStatusRequest::getData()const
 void UpdateProjectListStatusRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string UpdateProjectListStatusRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string UpdateProjectListStatusRequest::getRegionId()const
 void UpdateProjectListStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long UpdateProjectListStatusRequest::getCsbId()const

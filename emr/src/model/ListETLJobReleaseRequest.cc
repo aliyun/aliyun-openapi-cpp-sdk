@@ -44,7 +44,7 @@ std::string ListETLJobReleaseRequest::getRegionId()const
 void ListETLJobReleaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListETLJobReleaseRequest::getEtlJobId()const
@@ -55,7 +55,7 @@ std::string ListETLJobReleaseRequest::getEtlJobId()const
 void ListETLJobReleaseRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", etlJobId);
+	setCoreParameter("EtlJobId", std::to_string(etlJobId));
 }
 
 std::string ListETLJobReleaseRequest::getReleaseId()const
@@ -66,7 +66,7 @@ std::string ListETLJobReleaseRequest::getReleaseId()const
 void ListETLJobReleaseRequest::setReleaseId(const std::string& releaseId)
 {
 	releaseId_ = releaseId;
-	setCoreParameter("ReleaseId", releaseId);
+	setCoreParameter("ReleaseId", std::to_string(releaseId));
 }
 
 int ListETLJobReleaseRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string ListETLJobReleaseRequest::getAccessKeyId()const
 void ListETLJobReleaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListETLJobReleaseRequest::getStatus()const
@@ -121,6 +121,6 @@ std::string ListETLJobReleaseRequest::getStatus()const
 void ListETLJobReleaseRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

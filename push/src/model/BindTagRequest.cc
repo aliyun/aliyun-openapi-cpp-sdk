@@ -33,7 +33,7 @@ std::string BindTagRequest::getTagName()const
 void BindTagRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", tagName);
+	setCoreParameter("TagName", std::to_string(tagName));
 }
 
 std::string BindTagRequest::getClientKey()const
@@ -44,7 +44,7 @@ std::string BindTagRequest::getClientKey()const
 void BindTagRequest::setClientKey(const std::string& clientKey)
 {
 	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", clientKey);
+	setCoreParameter("ClientKey", std::to_string(clientKey));
 }
 
 long BindTagRequest::getAppKey()const
@@ -66,7 +66,7 @@ std::string BindTagRequest::getKeyType()const
 void BindTagRequest::setKeyType(const std::string& keyType)
 {
 	keyType_ = keyType;
-	setCoreParameter("KeyType", keyType);
+	setCoreParameter("KeyType", std::to_string(keyType));
 }
 
 std::string BindTagRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string BindTagRequest::getAccessKeyId()const
 void BindTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

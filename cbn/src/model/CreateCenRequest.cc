@@ -33,7 +33,7 @@ std::string CreateCenRequest::getProtectionLevel()const
 void CreateCenRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", protectionLevel);
+	setCoreParameter("ProtectionLevel", std::to_string(protectionLevel));
 }
 
 long CreateCenRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateCenRequest::getResourceOwnerAccount()const
 void CreateCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateCenRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateCenRequest::getClientToken()const
 void CreateCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CreateCenRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateCenRequest::getOwnerAccount()const
 void CreateCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateCenRequest::getName()const
@@ -88,7 +88,7 @@ std::string CreateCenRequest::getName()const
 void CreateCenRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateCenRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateCenRequest::getDescription()const
 void CreateCenRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long CreateCenRequest::getOwnerId()const

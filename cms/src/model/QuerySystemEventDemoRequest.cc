@@ -33,7 +33,7 @@ std::string QuerySystemEventDemoRequest::getProduct()const
 void QuerySystemEventDemoRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setCoreParameter("Product", std::to_string(product));
 }
 
 std::string QuerySystemEventDemoRequest::getEventName()const
@@ -44,6 +44,6 @@ std::string QuerySystemEventDemoRequest::getEventName()const
 void QuerySystemEventDemoRequest::setEventName(const std::string& eventName)
 {
 	eventName_ = eventName;
-	setCoreParameter("EventName", eventName);
+	setCoreParameter("EventName", std::to_string(eventName));
 }
 

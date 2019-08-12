@@ -33,7 +33,7 @@ std::string ListCallDetailRecordsRequest::getContactType()const
 void ListCallDetailRecordsRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setCoreParameter("ContactType", std::to_string(contactType));
 }
 
 std::string ListCallDetailRecordsRequest::getContactId()const
@@ -44,7 +44,7 @@ std::string ListCallDetailRecordsRequest::getContactId()const
 void ListCallDetailRecordsRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setCoreParameter("ContactId", std::to_string(contactId));
 }
 
 std::string ListCallDetailRecordsRequest::getCriteria()const
@@ -55,7 +55,7 @@ std::string ListCallDetailRecordsRequest::getCriteria()const
 void ListCallDetailRecordsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setCoreParameter("Criteria", std::to_string(criteria));
 }
 
 std::string ListCallDetailRecordsRequest::getPhoneNumber()const
@@ -66,7 +66,7 @@ std::string ListCallDetailRecordsRequest::getPhoneNumber()const
 void ListCallDetailRecordsRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
 }
 
 std::string ListCallDetailRecordsRequest::getOrderBy()const
@@ -77,7 +77,7 @@ std::string ListCallDetailRecordsRequest::getOrderBy()const
 void ListCallDetailRecordsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 long ListCallDetailRecordsRequest::getStartTime()const
@@ -121,7 +121,7 @@ std::string ListCallDetailRecordsRequest::getAccessKeyId()const
 void ListCallDetailRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListCallDetailRecordsRequest::getInstanceId()const
@@ -132,7 +132,7 @@ std::string ListCallDetailRecordsRequest::getInstanceId()const
 void ListCallDetailRecordsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListCallDetailRecordsRequest::getContactDisposition()const
@@ -143,7 +143,7 @@ std::string ListCallDetailRecordsRequest::getContactDisposition()const
 void ListCallDetailRecordsRequest::setContactDisposition(const std::string& contactDisposition)
 {
 	contactDisposition_ = contactDisposition;
-	setCoreParameter("ContactDisposition", contactDisposition);
+	setCoreParameter("ContactDisposition", std::to_string(contactDisposition));
 }
 
 int ListCallDetailRecordsRequest::getPageSize()const
@@ -165,6 +165,6 @@ bool ListCallDetailRecordsRequest::getWithRecording()const
 void ListCallDetailRecordsRequest::setWithRecording(bool withRecording)
 {
 	withRecording_ = withRecording;
-	setCoreParameter("WithRecording", withRecording);
+	setCoreParameter("WithRecording", withRecording ? "true" : "false");
 }
 

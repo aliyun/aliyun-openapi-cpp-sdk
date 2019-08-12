@@ -44,7 +44,7 @@ std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
 void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
 void OnsTrendGroupOutputTpsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsTrendGroupOutputTpsRequest::getTopic()const
 void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 
 long OnsTrendGroupOutputTpsRequest::getEndTime()const

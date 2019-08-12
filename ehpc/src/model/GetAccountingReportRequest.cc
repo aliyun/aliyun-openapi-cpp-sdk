@@ -33,7 +33,7 @@ std::string GetAccountingReportRequest::getReportType()const
 void GetAccountingReportRequest::setReportType(const std::string& reportType)
 {
 	reportType_ = reportType;
-	setCoreParameter("ReportType", reportType);
+	setCoreParameter("ReportType", std::to_string(reportType));
 }
 
 int GetAccountingReportRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string GetAccountingReportRequest::getClusterId()const
 void GetAccountingReportRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int GetAccountingReportRequest::getStartTime()const
@@ -77,6 +77,6 @@ std::string GetAccountingReportRequest::getAccessKeyId()const
 void GetAccountingReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

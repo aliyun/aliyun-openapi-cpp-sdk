@@ -44,7 +44,7 @@ std::string ModifyAgentDeviceRequest::getInstanceId()const
 void ModifyAgentDeviceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int ModifyAgentDeviceRequest::getIsLogin()const
@@ -66,6 +66,6 @@ std::string ModifyAgentDeviceRequest::getAccessKeyId()const
 void ModifyAgentDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

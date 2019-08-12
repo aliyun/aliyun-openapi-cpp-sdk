@@ -33,7 +33,7 @@ std::string CreateScreenSettingRequest::getScreenDataMap()const
 void CreateScreenSettingRequest::setScreenDataMap(const std::string& screenDataMap)
 {
 	screenDataMap_ = screenDataMap;
-	setCoreParameter("ScreenDataMap", screenDataMap);
+	setCoreParameter("ScreenDataMap", std::to_string(screenDataMap));
 }
 
 int CreateScreenSettingRequest::getScreenDefault()const
@@ -55,7 +55,7 @@ bool CreateScreenSettingRequest::getLogoPower()const
 void CreateScreenSettingRequest::setLogoPower(bool logoPower)
 {
 	logoPower_ = logoPower;
-	setCoreParameter("LogoPower", logoPower);
+	setCoreParameter("LogoPower", logoPower ? "true" : "false");
 }
 
 std::string CreateScreenSettingRequest::getMonitorUrl()const
@@ -66,7 +66,7 @@ std::string CreateScreenSettingRequest::getMonitorUrl()const
 void CreateScreenSettingRequest::setMonitorUrl(const std::string& monitorUrl)
 {
 	monitorUrl_ = monitorUrl;
-	setCoreParameter("MonitorUrl", monitorUrl);
+	setCoreParameter("MonitorUrl", std::to_string(monitorUrl));
 }
 
 std::string CreateScreenSettingRequest::getSourceIp()const
@@ -77,7 +77,7 @@ std::string CreateScreenSettingRequest::getSourceIp()const
 void CreateScreenSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int CreateScreenSettingRequest::getId()const
@@ -99,7 +99,7 @@ std::string CreateScreenSettingRequest::getTitle()const
 void CreateScreenSettingRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 
 std::string CreateScreenSettingRequest::getLogoUrl()const
@@ -110,6 +110,6 @@ std::string CreateScreenSettingRequest::getLogoUrl()const
 void CreateScreenSettingRequest::setLogoUrl(const std::string& logoUrl)
 {
 	logoUrl_ = logoUrl;
-	setCoreParameter("LogoUrl", logoUrl);
+	setCoreParameter("LogoUrl", std::to_string(logoUrl));
 }
 

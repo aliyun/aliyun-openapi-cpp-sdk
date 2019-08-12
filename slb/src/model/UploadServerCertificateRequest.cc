@@ -33,7 +33,7 @@ std::string UploadServerCertificateRequest::getAccess_key_id()const
 void UploadServerCertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long UploadServerCertificateRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string UploadServerCertificateRequest::getServerCertificate()const
 void UploadServerCertificateRequest::setServerCertificate(const std::string& serverCertificate)
 {
 	serverCertificate_ = serverCertificate;
-	setCoreParameter("ServerCertificate", serverCertificate);
+	setCoreParameter("ServerCertificate", std::to_string(serverCertificate));
 }
 
 std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
 void UploadServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UploadServerCertificateRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string UploadServerCertificateRequest::getOwnerAccount()const
 void UploadServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UploadServerCertificateRequest::getAliCloudCertificateName()const
@@ -88,7 +88,7 @@ std::string UploadServerCertificateRequest::getAliCloudCertificateName()const
 void UploadServerCertificateRequest::setAliCloudCertificateName(const std::string& aliCloudCertificateName)
 {
 	aliCloudCertificateName_ = aliCloudCertificateName;
-	setCoreParameter("AliCloudCertificateName", aliCloudCertificateName);
+	setCoreParameter("AliCloudCertificateName", std::to_string(aliCloudCertificateName));
 }
 
 std::string UploadServerCertificateRequest::getAliCloudCertificateId()const
@@ -99,7 +99,7 @@ std::string UploadServerCertificateRequest::getAliCloudCertificateId()const
 void UploadServerCertificateRequest::setAliCloudCertificateId(const std::string& aliCloudCertificateId)
 {
 	aliCloudCertificateId_ = aliCloudCertificateId;
-	setCoreParameter("AliCloudCertificateId", aliCloudCertificateId);
+	setCoreParameter("AliCloudCertificateId", std::to_string(aliCloudCertificateId));
 }
 
 long UploadServerCertificateRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string UploadServerCertificateRequest::getTags()const
 void UploadServerCertificateRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 std::string UploadServerCertificateRequest::getPrivateKey()const
@@ -132,7 +132,7 @@ std::string UploadServerCertificateRequest::getPrivateKey()const
 void UploadServerCertificateRequest::setPrivateKey(const std::string& privateKey)
 {
 	privateKey_ = privateKey;
-	setCoreParameter("PrivateKey", privateKey);
+	setCoreParameter("PrivateKey", std::to_string(privateKey));
 }
 
 std::string UploadServerCertificateRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string UploadServerCertificateRequest::getResourceGroupId()const
 void UploadServerCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string UploadServerCertificateRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string UploadServerCertificateRequest::getRegionId()const
 void UploadServerCertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UploadServerCertificateRequest::getServerCertificateName()const
@@ -165,6 +165,6 @@ std::string UploadServerCertificateRequest::getServerCertificateName()const
 void UploadServerCertificateRequest::setServerCertificateName(const std::string& serverCertificateName)
 {
 	serverCertificateName_ = serverCertificateName;
-	setCoreParameter("ServerCertificateName", serverCertificateName);
+	setCoreParameter("ServerCertificateName", std::to_string(serverCertificateName));
 }
 

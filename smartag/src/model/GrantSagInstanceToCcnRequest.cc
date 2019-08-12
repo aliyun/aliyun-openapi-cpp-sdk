@@ -55,7 +55,7 @@ std::string GrantSagInstanceToCcnRequest::getResourceOwnerAccount()const
 void GrantSagInstanceToCcnRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GrantSagInstanceToCcnRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string GrantSagInstanceToCcnRequest::getRegionId()const
 void GrantSagInstanceToCcnRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GrantSagInstanceToCcnRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string GrantSagInstanceToCcnRequest::getOwnerAccount()const
 void GrantSagInstanceToCcnRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string GrantSagInstanceToCcnRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string GrantSagInstanceToCcnRequest::getSmartAGId()const
 void GrantSagInstanceToCcnRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 std::string GrantSagInstanceToCcnRequest::getCcnInstanceId()const
@@ -99,7 +99,7 @@ std::string GrantSagInstanceToCcnRequest::getCcnInstanceId()const
 void GrantSagInstanceToCcnRequest::setCcnInstanceId(const std::string& ccnInstanceId)
 {
 	ccnInstanceId_ = ccnInstanceId;
-	setCoreParameter("CcnInstanceId", ccnInstanceId);
+	setCoreParameter("CcnInstanceId", std::to_string(ccnInstanceId));
 }
 
 long GrantSagInstanceToCcnRequest::getOwnerId()const

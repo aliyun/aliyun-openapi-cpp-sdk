@@ -33,7 +33,7 @@ std::string DeleteDataLimitRequest::getSourceIp()const
 void DeleteDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DeleteDataLimitRequest::getFeatureType()const
@@ -66,6 +66,6 @@ std::string DeleteDataLimitRequest::getLang()const
 void DeleteDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

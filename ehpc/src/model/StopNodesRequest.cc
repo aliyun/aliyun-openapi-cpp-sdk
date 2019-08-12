@@ -33,7 +33,7 @@ std::string StopNodesRequest::getRole()const
 void StopNodesRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::vector<StopNodesRequest::Instance> StopNodesRequest::getInstance()const
@@ -60,7 +60,7 @@ std::string StopNodesRequest::getClusterId()const
 void StopNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string StopNodesRequest::getAccessKeyId()const
@@ -71,6 +71,6 @@ std::string StopNodesRequest::getAccessKeyId()const
 void StopNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

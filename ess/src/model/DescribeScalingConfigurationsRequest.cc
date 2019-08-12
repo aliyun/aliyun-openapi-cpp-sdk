@@ -33,7 +33,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId6()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId6(const std::string& scalingConfigurationId6)
 {
 	scalingConfigurationId6_ = scalingConfigurationId6;
-	setCoreParameter("ScalingConfigurationId6", scalingConfigurationId6);
+	setCoreParameter("ScalingConfigurationId6", std::to_string(scalingConfigurationId6));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId7()const
@@ -44,7 +44,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId7()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId7(const std::string& scalingConfigurationId7)
 {
 	scalingConfigurationId7_ = scalingConfigurationId7;
-	setCoreParameter("ScalingConfigurationId7", scalingConfigurationId7);
+	setCoreParameter("ScalingConfigurationId7", std::to_string(scalingConfigurationId7));
 }
 
 long DescribeScalingConfigurationsRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId4()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId4(const std::string& scalingConfigurationId4)
 {
 	scalingConfigurationId4_ = scalingConfigurationId4;
-	setCoreParameter("ScalingConfigurationId4", scalingConfigurationId4);
+	setCoreParameter("ScalingConfigurationId4", std::to_string(scalingConfigurationId4));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId5()const
@@ -77,7 +77,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId5()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId5(const std::string& scalingConfigurationId5)
 {
 	scalingConfigurationId5_ = scalingConfigurationId5;
-	setCoreParameter("ScalingConfigurationId5", scalingConfigurationId5);
+	setCoreParameter("ScalingConfigurationId5", std::to_string(scalingConfigurationId5));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingGroupId()const
@@ -88,7 +88,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingGroupId()const
 void DescribeScalingConfigurationsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId8()const
@@ -99,7 +99,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId8()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId8(const std::string& scalingConfigurationId8)
 {
 	scalingConfigurationId8_ = scalingConfigurationId8;
-	setCoreParameter("ScalingConfigurationId8", scalingConfigurationId8);
+	setCoreParameter("ScalingConfigurationId8", std::to_string(scalingConfigurationId8));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId9()const
@@ -110,7 +110,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId9()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId9(const std::string& scalingConfigurationId9)
 {
 	scalingConfigurationId9_ = scalingConfigurationId9;
-	setCoreParameter("ScalingConfigurationId9", scalingConfigurationId9);
+	setCoreParameter("ScalingConfigurationId9", std::to_string(scalingConfigurationId9));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId10()const
@@ -121,7 +121,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId10()c
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId10(const std::string& scalingConfigurationId10)
 {
 	scalingConfigurationId10_ = scalingConfigurationId10;
-	setCoreParameter("ScalingConfigurationId10", scalingConfigurationId10);
+	setCoreParameter("ScalingConfigurationId10", std::to_string(scalingConfigurationId10));
 }
 
 int DescribeScalingConfigurationsRequest::getPageNumber()const
@@ -143,7 +143,7 @@ std::string DescribeScalingConfigurationsRequest::getAccessKeyId()const
 void DescribeScalingConfigurationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName2()const
@@ -154,7 +154,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName2()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName2(const std::string& scalingConfigurationName2)
 {
 	scalingConfigurationName2_ = scalingConfigurationName2;
-	setCoreParameter("ScalingConfigurationName2", scalingConfigurationName2);
+	setCoreParameter("ScalingConfigurationName2", std::to_string(scalingConfigurationName2));
 }
 
 std::string DescribeScalingConfigurationsRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeScalingConfigurationsRequest::getRegionId()const
 void DescribeScalingConfigurationsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName3()const
@@ -176,7 +176,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName3()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName3(const std::string& scalingConfigurationName3)
 {
 	scalingConfigurationName3_ = scalingConfigurationName3;
-	setCoreParameter("ScalingConfigurationName3", scalingConfigurationName3);
+	setCoreParameter("ScalingConfigurationName3", std::to_string(scalingConfigurationName3));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName1()const
@@ -187,7 +187,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName1()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName1(const std::string& scalingConfigurationName1)
 {
 	scalingConfigurationName1_ = scalingConfigurationName1;
-	setCoreParameter("ScalingConfigurationName1", scalingConfigurationName1);
+	setCoreParameter("ScalingConfigurationName1", std::to_string(scalingConfigurationName1));
 }
 
 int DescribeScalingConfigurationsRequest::getPageSize()const
@@ -209,7 +209,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId2()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId2(const std::string& scalingConfigurationId2)
 {
 	scalingConfigurationId2_ = scalingConfigurationId2;
-	setCoreParameter("ScalingConfigurationId2", scalingConfigurationId2);
+	setCoreParameter("ScalingConfigurationId2", std::to_string(scalingConfigurationId2));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId3()const
@@ -220,7 +220,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId3()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId3(const std::string& scalingConfigurationId3)
 {
 	scalingConfigurationId3_ = scalingConfigurationId3;
-	setCoreParameter("ScalingConfigurationId3", scalingConfigurationId3);
+	setCoreParameter("ScalingConfigurationId3", std::to_string(scalingConfigurationId3));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId1()const
@@ -231,7 +231,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationId1()co
 void DescribeScalingConfigurationsRequest::setScalingConfigurationId1(const std::string& scalingConfigurationId1)
 {
 	scalingConfigurationId1_ = scalingConfigurationId1;
-	setCoreParameter("ScalingConfigurationId1", scalingConfigurationId1);
+	setCoreParameter("ScalingConfigurationId1", std::to_string(scalingConfigurationId1));
 }
 
 std::string DescribeScalingConfigurationsRequest::getResourceOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeScalingConfigurationsRequest::getResourceOwnerAccount()const
 void DescribeScalingConfigurationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeScalingConfigurationsRequest::getOwnerAccount()const
@@ -253,7 +253,7 @@ std::string DescribeScalingConfigurationsRequest::getOwnerAccount()const
 void DescribeScalingConfigurationsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName6()const
@@ -264,7 +264,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName6()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName6(const std::string& scalingConfigurationName6)
 {
 	scalingConfigurationName6_ = scalingConfigurationName6;
-	setCoreParameter("ScalingConfigurationName6", scalingConfigurationName6);
+	setCoreParameter("ScalingConfigurationName6", std::to_string(scalingConfigurationName6));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName7()const
@@ -275,7 +275,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName7()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName7(const std::string& scalingConfigurationName7)
 {
 	scalingConfigurationName7_ = scalingConfigurationName7;
-	setCoreParameter("ScalingConfigurationName7", scalingConfigurationName7);
+	setCoreParameter("ScalingConfigurationName7", std::to_string(scalingConfigurationName7));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName4()const
@@ -286,7 +286,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName4()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName4(const std::string& scalingConfigurationName4)
 {
 	scalingConfigurationName4_ = scalingConfigurationName4;
-	setCoreParameter("ScalingConfigurationName4", scalingConfigurationName4);
+	setCoreParameter("ScalingConfigurationName4", std::to_string(scalingConfigurationName4));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName5()const
@@ -297,7 +297,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName5()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName5(const std::string& scalingConfigurationName5)
 {
 	scalingConfigurationName5_ = scalingConfigurationName5;
-	setCoreParameter("ScalingConfigurationName5", scalingConfigurationName5);
+	setCoreParameter("ScalingConfigurationName5", std::to_string(scalingConfigurationName5));
 }
 
 long DescribeScalingConfigurationsRequest::getOwnerId()const
@@ -319,7 +319,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName8()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName8(const std::string& scalingConfigurationName8)
 {
 	scalingConfigurationName8_ = scalingConfigurationName8;
-	setCoreParameter("ScalingConfigurationName8", scalingConfigurationName8);
+	setCoreParameter("ScalingConfigurationName8", std::to_string(scalingConfigurationName8));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName9()const
@@ -330,7 +330,7 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName9()
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName9(const std::string& scalingConfigurationName9)
 {
 	scalingConfigurationName9_ = scalingConfigurationName9;
-	setCoreParameter("ScalingConfigurationName9", scalingConfigurationName9);
+	setCoreParameter("ScalingConfigurationName9", std::to_string(scalingConfigurationName9));
 }
 
 std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName10()const
@@ -341,6 +341,6 @@ std::string DescribeScalingConfigurationsRequest::getScalingConfigurationName10(
 void DescribeScalingConfigurationsRequest::setScalingConfigurationName10(const std::string& scalingConfigurationName10)
 {
 	scalingConfigurationName10_ = scalingConfigurationName10;
-	setCoreParameter("ScalingConfigurationName10", scalingConfigurationName10);
+	setCoreParameter("ScalingConfigurationName10", std::to_string(scalingConfigurationName10));
 }
 

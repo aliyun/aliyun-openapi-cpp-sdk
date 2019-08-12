@@ -33,7 +33,7 @@ std::string ListPhotoFacesRequest::getLibraryId()const
 void ListPhotoFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long ListPhotoFacesRequest::getPhotoId()const
@@ -55,6 +55,6 @@ std::string ListPhotoFacesRequest::getStoreName()const
 void ListPhotoFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

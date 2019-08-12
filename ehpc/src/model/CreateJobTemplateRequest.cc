@@ -33,7 +33,7 @@ std::string CreateJobTemplateRequest::getStderrRedirectPath()const
 void CreateJobTemplateRequest::setStderrRedirectPath(const std::string& stderrRedirectPath)
 {
 	stderrRedirectPath_ = stderrRedirectPath;
-	setCoreParameter("StderrRedirectPath", stderrRedirectPath);
+	setCoreParameter("StderrRedirectPath", std::to_string(stderrRedirectPath));
 }
 
 std::string CreateJobTemplateRequest::getArrayRequest()const
@@ -44,7 +44,7 @@ std::string CreateJobTemplateRequest::getArrayRequest()const
 void CreateJobTemplateRequest::setArrayRequest(const std::string& arrayRequest)
 {
 	arrayRequest_ = arrayRequest;
-	setCoreParameter("ArrayRequest", arrayRequest);
+	setCoreParameter("ArrayRequest", std::to_string(arrayRequest));
 }
 
 std::string CreateJobTemplateRequest::getPackagePath()const
@@ -55,7 +55,7 @@ std::string CreateJobTemplateRequest::getPackagePath()const
 void CreateJobTemplateRequest::setPackagePath(const std::string& packagePath)
 {
 	packagePath_ = packagePath;
-	setCoreParameter("PackagePath", packagePath);
+	setCoreParameter("PackagePath", std::to_string(packagePath));
 }
 
 std::string CreateJobTemplateRequest::getVariables()const
@@ -66,7 +66,7 @@ std::string CreateJobTemplateRequest::getVariables()const
 void CreateJobTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setCoreParameter("Variables", std::to_string(variables));
 }
 
 std::string CreateJobTemplateRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreateJobTemplateRequest::getName()const
 void CreateJobTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateJobTemplateRequest::getRunasUser()const
@@ -88,7 +88,7 @@ std::string CreateJobTemplateRequest::getRunasUser()const
 void CreateJobTemplateRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", std::to_string(runasUser));
 }
 
 std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
@@ -99,7 +99,7 @@ std::string CreateJobTemplateRequest::getStdoutRedirectPath()const
 void CreateJobTemplateRequest::setStdoutRedirectPath(const std::string& stdoutRedirectPath)
 {
 	stdoutRedirectPath_ = stdoutRedirectPath;
-	setCoreParameter("StdoutRedirectPath", stdoutRedirectPath);
+	setCoreParameter("StdoutRedirectPath", std::to_string(stdoutRedirectPath));
 }
 
 bool CreateJobTemplateRequest::getReRunable()const
@@ -110,7 +110,7 @@ bool CreateJobTemplateRequest::getReRunable()const
 void CreateJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable);
+	setCoreParameter("ReRunable", reRunable ? "true" : "false");
 }
 
 int CreateJobTemplateRequest::getPriority()const
@@ -132,7 +132,7 @@ std::string CreateJobTemplateRequest::getCommandLine()const
 void CreateJobTemplateRequest::setCommandLine(const std::string& commandLine)
 {
 	commandLine_ = commandLine;
-	setCoreParameter("CommandLine", commandLine);
+	setCoreParameter("CommandLine", std::to_string(commandLine));
 }
 
 std::string CreateJobTemplateRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string CreateJobTemplateRequest::getAccessKeyId()const
 void CreateJobTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

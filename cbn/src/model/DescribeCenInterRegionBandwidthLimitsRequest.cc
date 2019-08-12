@@ -44,7 +44,7 @@ std::string DescribeCenInterRegionBandwidthLimitsRequest::getResourceOwnerAccoun
 void DescribeCenInterRegionBandwidthLimitsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenInterRegionBandwidthLimitsRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenInterRegionBandwidthLimitsRequest::getCenId()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DescribeCenInterRegionBandwidthLimitsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenInterRegionBandwidthLimitsRequest::getOwnerAccount()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeCenInterRegionBandwidthLimitsRequest::getPageSize()const

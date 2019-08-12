@@ -44,7 +44,7 @@ std::string CreateClusterHostGroupRequest::getRegionId()const
 void CreateClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateClusterHostGroupRequest::getComment()const
@@ -55,7 +55,7 @@ std::string CreateClusterHostGroupRequest::getComment()const
 void CreateClusterHostGroupRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setCoreParameter("Comment", std::to_string(comment));
 }
 
 std::string CreateClusterHostGroupRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateClusterHostGroupRequest::getClusterId()const
 void CreateClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string CreateClusterHostGroupRequest::getHostGroupName()const
@@ -77,7 +77,7 @@ std::string CreateClusterHostGroupRequest::getHostGroupName()const
 void CreateClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
 {
 	hostGroupName_ = hostGroupName;
-	setCoreParameter("HostGroupName", hostGroupName);
+	setCoreParameter("HostGroupName", std::to_string(hostGroupName));
 }
 
 std::string CreateClusterHostGroupRequest::getHostGroupType()const
@@ -88,7 +88,7 @@ std::string CreateClusterHostGroupRequest::getHostGroupType()const
 void CreateClusterHostGroupRequest::setHostGroupType(const std::string& hostGroupType)
 {
 	hostGroupType_ = hostGroupType;
-	setCoreParameter("HostGroupType", hostGroupType);
+	setCoreParameter("HostGroupType", std::to_string(hostGroupType));
 }
 
 std::string CreateClusterHostGroupRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateClusterHostGroupRequest::getAccessKeyId()const
 void CreateClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

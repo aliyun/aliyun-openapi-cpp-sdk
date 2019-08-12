@@ -33,7 +33,7 @@ std::string DescribeCpmcPunishListRequest::getSrcIP()const
 void DescribeCpmcPunishListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", std::to_string(srcIP));
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCpmcPunishListRequest::getSourceIp()const
 void DescribeCpmcPunishListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeCpmcPunishListRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeCpmcPunishListRequest::getPunishType()const
 void DescribeCpmcPunishListRequest::setPunishType(const std::string& punishType)
 {
 	punishType_ = punishType;
-	setCoreParameter("PunishType", punishType);
+	setCoreParameter("PunishType", std::to_string(punishType));
 }
 
 int DescribeCpmcPunishListRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeCpmcPunishListRequest::getPunishStatus()const
 void DescribeCpmcPunishListRequest::setPunishStatus(const std::string& punishStatus)
 {
 	punishStatus_ = punishStatus;
-	setCoreParameter("PunishStatus", punishStatus);
+	setCoreParameter("PunishStatus", std::to_string(punishStatus));
 }
 
 std::string DescribeCpmcPunishListRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeCpmcPunishListRequest::getLang()const
 void DescribeCpmcPunishListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceCode()const
@@ -110,6 +110,6 @@ std::string DescribeCpmcPunishListRequest::getSourceCode()const
 void DescribeCpmcPunishListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

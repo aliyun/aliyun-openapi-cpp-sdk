@@ -44,7 +44,7 @@ std::string MetastoreDropDatabaseRequest::getDbName()const
 void MetastoreDropDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreDropDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDropDatabaseRequest::getRegionId()const
 void MetastoreDropDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string MetastoreDropDatabaseRequest::getDatabaseId()const
@@ -66,7 +66,7 @@ std::string MetastoreDropDatabaseRequest::getDatabaseId()const
 void MetastoreDropDatabaseRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setCoreParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", std::to_string(databaseId));
 }
 
 std::string MetastoreDropDatabaseRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreDropDatabaseRequest::getAccessKeyId()const
 void MetastoreDropDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

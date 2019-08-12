@@ -44,7 +44,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()
 void CreateSmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getRegionId()const
 void CreateSmartAccessGatewayClientUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long CreateSmartAccessGatewayClientUserRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getOwnerAccount()const
 void CreateSmartAccessGatewayClientUserRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getClientIp()const
@@ -88,7 +88,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getClientIp()const
 void CreateSmartAccessGatewayClientUserRequest::setClientIp(const std::string& clientIp)
 {
 	clientIp_ = clientIp;
-	setCoreParameter("ClientIp", clientIp);
+	setCoreParameter("ClientIp", std::to_string(clientIp));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getSmartAGId()const
@@ -99,7 +99,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getSmartAGId()const
 void CreateSmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getUserMail()const
@@ -110,7 +110,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getUserMail()const
 void CreateSmartAccessGatewayClientUserRequest::setUserMail(const std::string& userMail)
 {
 	userMail_ = userMail;
-	setCoreParameter("UserMail", userMail);
+	setCoreParameter("UserMail", std::to_string(userMail));
 }
 
 long CreateSmartAccessGatewayClientUserRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string CreateSmartAccessGatewayClientUserRequest::getUserName()const
 void CreateSmartAccessGatewayClientUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

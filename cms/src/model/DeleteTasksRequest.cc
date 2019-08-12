@@ -44,6 +44,6 @@ std::string DeleteTasksRequest::getTaskIds()const
 void DeleteTasksRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setCoreParameter("TaskIds", taskIds);
+	setCoreParameter("TaskIds", std::to_string(taskIds));
 }
 

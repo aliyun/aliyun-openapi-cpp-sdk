@@ -33,7 +33,7 @@ std::string DescribeImageLibRequest::getSourceIp()const
 void DescribeImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeImageLibRequest::getServiceModule()const
@@ -44,6 +44,6 @@ std::string DescribeImageLibRequest::getServiceModule()const
 void DescribeImageLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setCoreParameter("ServiceModule", std::to_string(serviceModule));
 }
 

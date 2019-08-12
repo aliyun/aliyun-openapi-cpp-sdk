@@ -44,7 +44,7 @@ std::string ListVideoTasksRequest::getTaskType()const
 void ListVideoTasksRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setCoreParameter("TaskType", std::to_string(taskType));
 }
 
 std::string ListVideoTasksRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListVideoTasksRequest::getRegionId()const
 void ListVideoTasksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListVideoTasksRequest::getMarker()const
@@ -66,7 +66,7 @@ std::string ListVideoTasksRequest::getMarker()const
 void ListVideoTasksRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setCoreParameter("Marker", std::to_string(marker));
 }
 
 std::string ListVideoTasksRequest::getProject()const
@@ -77,7 +77,7 @@ std::string ListVideoTasksRequest::getProject()const
 void ListVideoTasksRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string ListVideoTasksRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListVideoTasksRequest::getAccessKeyId()const
 void ListVideoTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

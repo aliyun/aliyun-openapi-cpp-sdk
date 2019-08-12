@@ -44,7 +44,7 @@ std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
 void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeSecurityGroupAttributeRequest::getClusterId()const
 void DescribeSecurityGroupAttributeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeSecurityGroupAttributeRequest::getAccessKeyId()const
 void DescribeSecurityGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

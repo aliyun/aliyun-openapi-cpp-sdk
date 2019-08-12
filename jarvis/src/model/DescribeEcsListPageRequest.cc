@@ -33,7 +33,7 @@ std::string DescribeEcsListPageRequest::getSourceIp()const
 void DescribeEcsListPageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeEcsListPageRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeEcsListPageRequest::getLang()const
 void DescribeEcsListPageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeEcsListPageRequest::getSourceCode()const
@@ -77,6 +77,6 @@ std::string DescribeEcsListPageRequest::getSourceCode()const
 void DescribeEcsListPageRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

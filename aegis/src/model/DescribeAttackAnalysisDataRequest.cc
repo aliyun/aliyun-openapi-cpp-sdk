@@ -33,7 +33,7 @@ std::string DescribeAttackAnalysisDataRequest::getSourceIp()const
 void DescribeAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAttackAnalysisDataRequest::getData()const
@@ -44,7 +44,7 @@ std::string DescribeAttackAnalysisDataRequest::getData()const
 void DescribeAttackAnalysisDataRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string DescribeAttackAnalysisDataRequest::getBase64()const
@@ -55,7 +55,7 @@ std::string DescribeAttackAnalysisDataRequest::getBase64()const
 void DescribeAttackAnalysisDataRequest::setBase64(const std::string& base64)
 {
 	base64_ = base64;
-	setCoreParameter("Base64", base64);
+	setCoreParameter("Base64", std::to_string(base64));
 }
 
 int DescribeAttackAnalysisDataRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeAttackAnalysisDataRequest::getLang()const
 void DescribeAttackAnalysisDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAttackAnalysisDataRequest::getType()const
@@ -121,6 +121,6 @@ std::string DescribeAttackAnalysisDataRequest::getType()const
 void DescribeAttackAnalysisDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

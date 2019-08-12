@@ -33,7 +33,7 @@ std::string ModifyDefaultLevelRequest::getSourceIp()const
 void ModifyDefaultLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int ModifyDefaultLevelRequest::getFeatureType()const
@@ -66,7 +66,7 @@ std::string ModifyDefaultLevelRequest::getLang()const
 void ModifyDefaultLevelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ModifyDefaultLevelRequest::getSensitiveIds()const
@@ -77,6 +77,6 @@ std::string ModifyDefaultLevelRequest::getSensitiveIds()const
 void ModifyDefaultLevelRequest::setSensitiveIds(const std::string& sensitiveIds)
 {
 	sensitiveIds_ = sensitiveIds;
-	setCoreParameter("SensitiveIds", sensitiveIds);
+	setCoreParameter("SensitiveIds", std::to_string(sensitiveIds));
 }
 

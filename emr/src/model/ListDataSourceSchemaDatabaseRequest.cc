@@ -44,7 +44,7 @@ std::string ListDataSourceSchemaDatabaseRequest::getDbName()const
 void ListDataSourceSchemaDatabaseRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string ListDataSourceSchemaDatabaseRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListDataSourceSchemaDatabaseRequest::getRegionId()const
 void ListDataSourceSchemaDatabaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListDataSourceSchemaDatabaseRequest::getDataSourceId()const
@@ -66,7 +66,7 @@ std::string ListDataSourceSchemaDatabaseRequest::getDataSourceId()const
 void ListDataSourceSchemaDatabaseRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
 }
 
 std::string ListDataSourceSchemaDatabaseRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListDataSourceSchemaDatabaseRequest::getAccessKeyId()const
 void ListDataSourceSchemaDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

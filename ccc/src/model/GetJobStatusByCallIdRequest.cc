@@ -33,7 +33,7 @@ std::string GetJobStatusByCallIdRequest::getCallId()const
 void GetJobStatusByCallIdRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 std::string GetJobStatusByCallIdRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string GetJobStatusByCallIdRequest::getInstanceId()const
 void GetJobStatusByCallIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 

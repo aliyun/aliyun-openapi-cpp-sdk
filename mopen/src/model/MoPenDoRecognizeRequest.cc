@@ -66,7 +66,7 @@ std::string MoPenDoRecognizeRequest::getJsonConf()const
 void MoPenDoRecognizeRequest::setJsonConf(const std::string& jsonConf)
 {
 	jsonConf_ = jsonConf;
-	setCoreParameter("JsonConf", jsonConf);
+	setCoreParameter("JsonConf", std::to_string(jsonConf));
 }
 
 std::string MoPenDoRecognizeRequest::getExportType()const
@@ -77,7 +77,7 @@ std::string MoPenDoRecognizeRequest::getExportType()const
 void MoPenDoRecognizeRequest::setExportType(const std::string& exportType)
 {
 	exportType_ = exportType;
-	setCoreParameter("ExportType", exportType);
+	setCoreParameter("ExportType", std::to_string(exportType));
 }
 
 int MoPenDoRecognizeRequest::getStartY()const

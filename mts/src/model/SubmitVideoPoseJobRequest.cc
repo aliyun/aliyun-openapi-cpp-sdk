@@ -33,7 +33,7 @@ std::string SubmitVideoPoseJobRequest::getInput()const
 void SubmitVideoPoseJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setCoreParameter("Input", std::to_string(input));
 }
 
 std::string SubmitVideoPoseJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitVideoPoseJobRequest::getUserData()const
 void SubmitVideoPoseJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 long SubmitVideoPoseJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SubmitVideoPoseJobRequest::getOutputConfig()const
 void SubmitVideoPoseJobRequest::setOutputConfig(const std::string& outputConfig)
 {
 	outputConfig_ = outputConfig;
-	setCoreParameter("OutputConfig", outputConfig);
+	setCoreParameter("OutputConfig", std::to_string(outputConfig));
 }
 
 std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
 void SubmitVideoPoseJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SubmitVideoPoseJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitVideoPoseJobRequest::getOwnerAccount()const
 void SubmitVideoPoseJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SubmitVideoPoseJobRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
 void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SubmitVideoPoseJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitVideoPoseJobRequest::getPipelineId()const
 void SubmitVideoPoseJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

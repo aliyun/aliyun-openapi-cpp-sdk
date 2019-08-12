@@ -33,7 +33,7 @@ std::string DeleteTrafficSpecialControlRequest::getTrafficControlId()const
 void DeleteTrafficSpecialControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSpecialKey()const
@@ -44,7 +44,7 @@ std::string DeleteTrafficSpecialControlRequest::getSpecialKey()const
 void DeleteTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKey)
 {
 	specialKey_ = specialKey;
-	setCoreParameter("SpecialKey", specialKey);
+	setCoreParameter("SpecialKey", std::to_string(specialKey));
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DeleteTrafficSpecialControlRequest::getSecurityToken()const
 void DeleteTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSpecialType()const
@@ -66,7 +66,7 @@ std::string DeleteTrafficSpecialControlRequest::getSpecialType()const
 void DeleteTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
 {
 	specialType_ = specialType;
-	setCoreParameter("SpecialType", specialType);
+	setCoreParameter("SpecialType", std::to_string(specialType));
 }
 
 std::string DeleteTrafficSpecialControlRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteTrafficSpecialControlRequest::getAccessKeyId()const
 void DeleteTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

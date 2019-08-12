@@ -33,7 +33,7 @@ std::string DeleteTagSetRequest::getLazyMode()const
 void DeleteTagSetRequest::setLazyMode(const std::string& lazyMode)
 {
 	lazyMode_ = lazyMode;
-	setCoreParameter("LazyMode", lazyMode);
+	setCoreParameter("LazyMode", std::to_string(lazyMode));
 }
 
 std::string DeleteTagSetRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteTagSetRequest::getRegionId()const
 void DeleteTagSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteTagSetRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteTagSetRequest::getProject()const
 void DeleteTagSetRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string DeleteTagSetRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string DeleteTagSetRequest::getSetId()const
 void DeleteTagSetRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setCoreParameter("SetId", std::to_string(setId));
 }
 
 std::string DeleteTagSetRequest::getCheckEmpty()const
@@ -77,7 +77,7 @@ std::string DeleteTagSetRequest::getCheckEmpty()const
 void DeleteTagSetRequest::setCheckEmpty(const std::string& checkEmpty)
 {
 	checkEmpty_ = checkEmpty;
-	setCoreParameter("CheckEmpty", checkEmpty);
+	setCoreParameter("CheckEmpty", std::to_string(checkEmpty));
 }
 
 std::string DeleteTagSetRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteTagSetRequest::getAccessKeyId()const
 void DeleteTagSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

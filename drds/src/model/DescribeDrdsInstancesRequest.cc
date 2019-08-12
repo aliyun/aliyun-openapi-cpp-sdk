@@ -33,7 +33,7 @@ std::string DescribeDrdsInstancesRequest::getRegionId()const
 void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeDrdsInstancesRequest::getType()const
@@ -44,7 +44,7 @@ std::string DescribeDrdsInstancesRequest::getType()const
 void DescribeDrdsInstancesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
 void DescribeDrdsInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDrdsInstancesRequest::getTags()const
@@ -66,6 +66,6 @@ std::string DescribeDrdsInstancesRequest::getTags()const
 void DescribeDrdsInstancesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

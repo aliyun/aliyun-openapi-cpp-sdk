@@ -33,7 +33,7 @@ std::string ListNodesByQueueRequest::getQueueName()const
 void ListNodesByQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setCoreParameter("QueueName", std::to_string(queueName));
 }
 
 int ListNodesByQueueRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string ListNodesByQueueRequest::getClusterId()const
 void ListNodesByQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ListNodesByQueueRequest::getPageNumber()const
@@ -77,6 +77,6 @@ std::string ListNodesByQueueRequest::getAccessKeyId()const
 void ListNodesByQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

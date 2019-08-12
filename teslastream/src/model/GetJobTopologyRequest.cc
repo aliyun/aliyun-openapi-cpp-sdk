@@ -33,6 +33,6 @@ std::string GetJobTopologyRequest::getJobName()const
 void GetJobTopologyRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setCoreParameter("JobName", std::to_string(jobName));
 }
 

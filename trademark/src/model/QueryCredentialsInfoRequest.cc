@@ -33,7 +33,7 @@ std::string QueryCredentialsInfoRequest::getOssKey()const
 void QueryCredentialsInfoRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setCoreParameter("OssKey", std::to_string(ossKey));
 }
 
 std::string QueryCredentialsInfoRequest::getMaterialType()const
@@ -44,7 +44,7 @@ std::string QueryCredentialsInfoRequest::getMaterialType()const
 void QueryCredentialsInfoRequest::setMaterialType(const std::string& materialType)
 {
 	materialType_ = materialType;
-	setCoreParameter("MaterialType", materialType);
+	setCoreParameter("MaterialType", std::to_string(materialType));
 }
 
 std::string QueryCredentialsInfoRequest::getCompanyName()const
@@ -55,6 +55,6 @@ std::string QueryCredentialsInfoRequest::getCompanyName()const
 void QueryCredentialsInfoRequest::setCompanyName(const std::string& companyName)
 {
 	companyName_ = companyName;
-	setCoreParameter("CompanyName", companyName);
+	setCoreParameter("CompanyName", std::to_string(companyName));
 }
 

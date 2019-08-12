@@ -33,7 +33,7 @@ std::string ModifyWebLockStatusRequest::getSourceIp()const
 void ModifyWebLockStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyWebLockStatusRequest::getLang()const
@@ -44,7 +44,7 @@ std::string ModifyWebLockStatusRequest::getLang()const
 void ModifyWebLockStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ModifyWebLockStatusRequest::getUuid()const
@@ -55,7 +55,7 @@ std::string ModifyWebLockStatusRequest::getUuid()const
 void ModifyWebLockStatusRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 
 std::string ModifyWebLockStatusRequest::getStatus()const
@@ -66,6 +66,6 @@ std::string ModifyWebLockStatusRequest::getStatus()const
 void ModifyWebLockStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

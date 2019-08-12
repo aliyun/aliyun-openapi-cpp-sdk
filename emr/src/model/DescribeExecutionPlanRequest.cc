@@ -44,7 +44,7 @@ std::string DescribeExecutionPlanRequest::getRegionId()const
 void DescribeExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeExecutionPlanRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeExecutionPlanRequest::getId()const
 void DescribeExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeExecutionPlanRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeExecutionPlanRequest::getAccessKeyId()const
 void DescribeExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

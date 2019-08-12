@@ -44,7 +44,7 @@ std::string SearchMediaWorkflowRequest::getResourceOwnerAccount()const
 void SearchMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SearchMediaWorkflowRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SearchMediaWorkflowRequest::getOwnerAccount()const
 void SearchMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SearchMediaWorkflowRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string SearchMediaWorkflowRequest::getStateList()const
 void SearchMediaWorkflowRequest::setStateList(const std::string& stateList)
 {
 	stateList_ = stateList;
-	setCoreParameter("StateList", stateList);
+	setCoreParameter("StateList", std::to_string(stateList));
 }
 
 long SearchMediaWorkflowRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string SearchMediaWorkflowRequest::getAccessKeyId()const
 void SearchMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

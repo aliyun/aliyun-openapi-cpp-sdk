@@ -73,7 +73,7 @@ bool StartMPUTaskRequest::getProxy_original_security_transport()const
 void StartMPUTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string StartMPUTaskRequest::getProxy_original_source_ip()const
@@ -84,7 +84,7 @@ std::string StartMPUTaskRequest::getProxy_original_source_ip()const
 void StartMPUTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string StartMPUTaskRequest::getOwnerIdLoginEmail()const
@@ -95,7 +95,7 @@ std::string StartMPUTaskRequest::getOwnerIdLoginEmail()const
 void StartMPUTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string StartMPUTaskRequest::getCallerType()const
@@ -106,7 +106,7 @@ std::string StartMPUTaskRequest::getCallerType()const
 void StartMPUTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string StartMPUTaskRequest::getAccessKeyId()const
@@ -117,7 +117,7 @@ std::string StartMPUTaskRequest::getAccessKeyId()const
 void StartMPUTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 int StartMPUTaskRequest::getBackgroundColor()const
@@ -150,7 +150,7 @@ std::string StartMPUTaskRequest::getSecurityToken()const
 void StartMPUTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string StartMPUTaskRequest::getRequestContent()const
@@ -161,7 +161,7 @@ std::string StartMPUTaskRequest::getRequestContent()const
 void StartMPUTaskRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string StartMPUTaskRequest::getCallerBidEmail()const
@@ -172,7 +172,7 @@ std::string StartMPUTaskRequest::getCallerBidEmail()const
 void StartMPUTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string StartMPUTaskRequest::getTaskProfile()const
@@ -183,7 +183,7 @@ std::string StartMPUTaskRequest::getTaskProfile()const
 void StartMPUTaskRequest::setTaskProfile(const std::string& taskProfile)
 {
 	taskProfile_ = taskProfile;
-	setCoreParameter("TaskProfile", taskProfile);
+	setCoreParameter("TaskProfile", std::to_string(taskProfile));
 }
 
 std::vector<long> StartMPUTaskRequest::getLayoutIds()const
@@ -206,7 +206,7 @@ std::string StartMPUTaskRequest::getCallerUidEmail()const
 void StartMPUTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string StartMPUTaskRequest::getTaskId()const
@@ -217,7 +217,7 @@ std::string StartMPUTaskRequest::getTaskId()const
 void StartMPUTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 long StartMPUTaskRequest::getCallerUid()const
@@ -239,7 +239,7 @@ std::string StartMPUTaskRequest::getStreamURL()const
 void StartMPUTaskRequest::setStreamURL(const std::string& streamURL)
 {
 	streamURL_ = streamURL;
-	setCoreParameter("StreamURL", streamURL);
+	setCoreParameter("StreamURL", std::to_string(streamURL));
 }
 
 std::string StartMPUTaskRequest::getApp_ip()const
@@ -250,7 +250,7 @@ std::string StartMPUTaskRequest::getApp_ip()const
 void StartMPUTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string StartMPUTaskRequest::getPopProduct()const
@@ -261,7 +261,7 @@ std::string StartMPUTaskRequest::getPopProduct()const
 void StartMPUTaskRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string StartMPUTaskRequest::getCallerBid()const
@@ -272,7 +272,7 @@ std::string StartMPUTaskRequest::getCallerBid()const
 void StartMPUTaskRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long StartMPUTaskRequest::getOwnerId()const
@@ -294,7 +294,7 @@ std::string StartMPUTaskRequest::getVersion()const
 void StartMPUTaskRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool StartMPUTaskRequest::getProxy_trust_transport_info()const
@@ -305,7 +305,7 @@ bool StartMPUTaskRequest::getProxy_trust_transport_info()const
 void StartMPUTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool StartMPUTaskRequest::getAk_mfa_present()const
@@ -316,7 +316,7 @@ bool StartMPUTaskRequest::getAk_mfa_present()const
 void StartMPUTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool StartMPUTaskRequest::getSecurity_transport()const
@@ -327,7 +327,7 @@ bool StartMPUTaskRequest::getSecurity_transport()const
 void StartMPUTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string StartMPUTaskRequest::getServiceCode()const
@@ -338,7 +338,7 @@ std::string StartMPUTaskRequest::getServiceCode()const
 void StartMPUTaskRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", std::to_string(serviceCode));
 }
 
 std::string StartMPUTaskRequest::getRequestId()const
@@ -349,7 +349,7 @@ std::string StartMPUTaskRequest::getRequestId()const
 void StartMPUTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string StartMPUTaskRequest::getAppId()const
@@ -360,7 +360,7 @@ std::string StartMPUTaskRequest::getAppId()const
 void StartMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 int StartMPUTaskRequest::getMediaEncode()const
@@ -382,6 +382,6 @@ std::string StartMPUTaskRequest::getChannelId()const
 void StartMPUTaskRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", std::to_string(channelId));
 }
 

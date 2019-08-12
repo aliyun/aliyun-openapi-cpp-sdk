@@ -44,7 +44,7 @@ std::string DescribeInstancesByExpireTimeRequest::getResourceOwnerAccount()const
 void DescribeInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeInstancesByExpireTimeRequest::getOwnerAccount()const
 void DescribeInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeInstancesByExpireTimeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string DescribeInstancesByExpireTimeRequest::getAccessKeyId()const
 void DescribeInstancesByExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string DescribeInstancesByExpireTimeRequest::getSecurityToken()const
 void DescribeInstancesByExpireTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeInstancesByExpireTimeRequest::getRegionId()const
 void DescribeInstancesByExpireTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeInstancesByExpireTimeRequest::getHasExpiredRes()const
@@ -121,7 +121,7 @@ bool DescribeInstancesByExpireTimeRequest::getHasExpiredRes()const
 void DescribeInstancesByExpireTimeRequest::setHasExpiredRes(bool hasExpiredRes)
 {
 	hasExpiredRes_ = hasExpiredRes;
-	setCoreParameter("HasExpiredRes", hasExpiredRes);
+	setCoreParameter("HasExpiredRes", hasExpiredRes ? "true" : "false");
 }
 
 int DescribeInstancesByExpireTimeRequest::getPageSize()const
@@ -143,7 +143,7 @@ std::string DescribeInstancesByExpireTimeRequest::getInstanceType()const
 void DescribeInstancesByExpireTimeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 int DescribeInstancesByExpireTimeRequest::getExpirePeriod()const

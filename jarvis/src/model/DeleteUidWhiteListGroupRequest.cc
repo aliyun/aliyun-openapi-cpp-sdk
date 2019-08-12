@@ -33,7 +33,7 @@ std::string DeleteUidWhiteListGroupRequest::getGroupIdList()const
 void DeleteUidWhiteListGroupRequest::setGroupIdList(const std::string& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	setCoreParameter("GroupIdList", groupIdList);
+	setCoreParameter("GroupIdList", std::to_string(groupIdList));
 }
 
 std::string DeleteUidWhiteListGroupRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DeleteUidWhiteListGroupRequest::getSourceIp()const
 void DeleteUidWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteUidWhiteListGroupRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DeleteUidWhiteListGroupRequest::getLang()const
 void DeleteUidWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DeleteUidWhiteListGroupRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DeleteUidWhiteListGroupRequest::getSourceCode()const
 void DeleteUidWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

@@ -44,7 +44,7 @@ std::string EvaluateFailOverSwitchRequest::getSecurityToken()const
 void EvaluateFailOverSwitchRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string EvaluateFailOverSwitchRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EvaluateFailOverSwitchRequest::getResourceOwnerAccount()const
 void EvaluateFailOverSwitchRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EvaluateFailOverSwitchRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string EvaluateFailOverSwitchRequest::getRegionId()const
 void EvaluateFailOverSwitchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string EvaluateFailOverSwitchRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string EvaluateFailOverSwitchRequest::getOwnerAccount()const
 void EvaluateFailOverSwitchRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string EvaluateFailOverSwitchRequest::getReplicaId()const
@@ -88,7 +88,7 @@ std::string EvaluateFailOverSwitchRequest::getReplicaId()const
 void EvaluateFailOverSwitchRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 long EvaluateFailOverSwitchRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string EvaluateFailOverSwitchRequest::getAccessKeyId()const
 void EvaluateFailOverSwitchRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string SetListenerAccessControlStatusRequest::getAccess_key_id()const
 void SetListenerAccessControlStatusRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long SetListenerAccessControlStatusRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SetListenerAccessControlStatusRequest::getLoadBalancerId()const
 void SetListenerAccessControlStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string SetListenerAccessControlStatusRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SetListenerAccessControlStatusRequest::getRegionId()const
 void SetListenerAccessControlStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetListenerAccessControlStatusRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetListenerAccessControlStatusRequest::getResourceOwnerAccount()cons
 void SetListenerAccessControlStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetListenerAccessControlStatusRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string SetListenerAccessControlStatusRequest::getOwnerAccount()const
 void SetListenerAccessControlStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SetListenerAccessControlStatusRequest::getAccessControlStatus()const
@@ -110,7 +110,7 @@ std::string SetListenerAccessControlStatusRequest::getAccessControlStatus()const
 void SetListenerAccessControlStatusRequest::setAccessControlStatus(const std::string& accessControlStatus)
 {
 	accessControlStatus_ = accessControlStatus;
-	setCoreParameter("AccessControlStatus", accessControlStatus);
+	setCoreParameter("AccessControlStatus", std::to_string(accessControlStatus));
 }
 
 long SetListenerAccessControlStatusRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string SetListenerAccessControlStatusRequest::getListenerProtocol()const
 void SetListenerAccessControlStatusRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
 }
 
 std::string SetListenerAccessControlStatusRequest::getTags()const
@@ -143,6 +143,6 @@ std::string SetListenerAccessControlStatusRequest::getTags()const
 void SetListenerAccessControlStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

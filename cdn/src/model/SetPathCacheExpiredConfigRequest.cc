@@ -33,7 +33,7 @@ std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
 void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetPathCacheExpiredConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetPathCacheExpiredConfigRequest::getDomainName()const
 void SetPathCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SetPathCacheExpiredConfigRequest::getWeight()const
@@ -55,7 +55,7 @@ std::string SetPathCacheExpiredConfigRequest::getWeight()const
 void SetPathCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setCoreParameter("Weight", std::to_string(weight));
 }
 
 std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
@@ -66,7 +66,7 @@ std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
 void SetPathCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", cacheContent);
+	setCoreParameter("CacheContent", std::to_string(cacheContent));
 }
 
 long SetPathCacheExpiredConfigRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string SetPathCacheExpiredConfigRequest::getTTL()const
 void SetPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", tTL);
+	setCoreParameter("TTL", std::to_string(tTL));
 }
 

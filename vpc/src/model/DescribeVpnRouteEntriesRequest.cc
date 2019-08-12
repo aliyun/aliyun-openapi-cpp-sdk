@@ -44,7 +44,7 @@ std::string DescribeVpnRouteEntriesRequest::getResourceOwnerAccount()const
 void DescribeVpnRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpnRouteEntriesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnRouteEntriesRequest::getRegionId()const
 void DescribeVpnRouteEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpnRouteEntriesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeVpnRouteEntriesRequest::getOwnerAccount()const
 void DescribeVpnRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeVpnRouteEntriesRequest::getPageSize()const
@@ -88,7 +88,7 @@ std::string DescribeVpnRouteEntriesRequest::getVpnGatewayId()const
 void DescribeVpnRouteEntriesRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long DescribeVpnRouteEntriesRequest::getOwnerId()const

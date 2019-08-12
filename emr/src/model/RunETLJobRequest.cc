@@ -61,7 +61,7 @@ std::string RunETLJobRequest::getRegionId()const
 void RunETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool RunETLJobRequest::getIsDebug()const
@@ -72,7 +72,7 @@ bool RunETLJobRequest::getIsDebug()const
 void RunETLJobRequest::setIsDebug(bool isDebug)
 {
 	isDebug_ = isDebug;
-	setCoreParameter("IsDebug", isDebug);
+	setCoreParameter("IsDebug", isDebug ? "true" : "false");
 }
 
 std::string RunETLJobRequest::getId()const
@@ -83,7 +83,7 @@ std::string RunETLJobRequest::getId()const
 void RunETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string RunETLJobRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string RunETLJobRequest::getAccessKeyId()const
 void RunETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string AddLiveRecordNotifyConfigRequest::getOnDemandUrl()const
 void AddLiveRecordNotifyConfigRequest::setOnDemandUrl(const std::string& onDemandUrl)
 {
 	onDemandUrl_ = onDemandUrl;
-	setCoreParameter("OnDemandUrl", onDemandUrl);
+	setCoreParameter("OnDemandUrl", std::to_string(onDemandUrl));
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
 void AddLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
 void AddLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
@@ -66,7 +66,7 @@ std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
 void AddLiveRecordNotifyConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
+	setCoreParameter("NotifyUrl", std::to_string(notifyUrl));
 }
 
 long AddLiveRecordNotifyConfigRequest::getOwnerId()const
@@ -88,6 +88,6 @@ bool AddLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
 void AddLiveRecordNotifyConfigRequest::setNeedStatusNotify(bool needStatusNotify)
 {
 	needStatusNotify_ = needStatusNotify;
-	setCoreParameter("NeedStatusNotify", needStatusNotify);
+	setCoreParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
 }
 

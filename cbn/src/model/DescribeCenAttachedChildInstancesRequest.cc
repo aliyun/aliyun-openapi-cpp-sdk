@@ -44,7 +44,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getResourceOwnerAccount()c
 void DescribeCenAttachedChildInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getCenId()const
 void DescribeCenAttachedChildInstancesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getOwnerAccount()const
 void DescribeCenAttachedChildInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeCenAttachedChildInstancesRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceType()cons
 void DescribeCenAttachedChildInstancesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setCoreParameter("ChildInstanceType", std::to_string(childInstanceType));
 }
 
 int DescribeCenAttachedChildInstancesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceRegionId()
 void DescribeCenAttachedChildInstancesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setCoreParameter("ChildInstanceRegionId", std::to_string(childInstanceRegionId));
 }
 

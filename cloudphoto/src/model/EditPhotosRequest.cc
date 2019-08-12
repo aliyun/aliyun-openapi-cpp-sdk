@@ -44,7 +44,7 @@ std::string EditPhotosRequest::getLibraryId()const
 void EditPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 long EditPhotosRequest::getShareExpireTime()const
@@ -78,7 +78,7 @@ std::string EditPhotosRequest::getStoreName()const
 void EditPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 std::string EditPhotosRequest::getRemark()const
@@ -89,7 +89,7 @@ std::string EditPhotosRequest::getRemark()const
 void EditPhotosRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string EditPhotosRequest::getTitle()const
@@ -100,6 +100,6 @@ std::string EditPhotosRequest::getTitle()const
 void EditPhotosRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setCoreParameter("Title", std::to_string(title));
 }
 

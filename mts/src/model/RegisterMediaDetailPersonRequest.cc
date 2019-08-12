@@ -44,7 +44,7 @@ std::string RegisterMediaDetailPersonRequest::getImages()const
 void RegisterMediaDetailPersonRequest::setImages(const std::string& images)
 {
 	images_ = images;
-	setCoreParameter("Images", images);
+	setCoreParameter("Images", std::to_string(images));
 }
 
 std::string RegisterMediaDetailPersonRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RegisterMediaDetailPersonRequest::getResourceOwnerAccount()const
 void RegisterMediaDetailPersonRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RegisterMediaDetailPersonRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RegisterMediaDetailPersonRequest::getOwnerAccount()const
 void RegisterMediaDetailPersonRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RegisterMediaDetailPersonRequest::getPersonLib()const
@@ -77,7 +77,7 @@ std::string RegisterMediaDetailPersonRequest::getPersonLib()const
 void RegisterMediaDetailPersonRequest::setPersonLib(const std::string& personLib)
 {
 	personLib_ = personLib;
-	setCoreParameter("PersonLib", personLib);
+	setCoreParameter("PersonLib", std::to_string(personLib));
 }
 
 long RegisterMediaDetailPersonRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string RegisterMediaDetailPersonRequest::getCategory()const
 void RegisterMediaDetailPersonRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string RegisterMediaDetailPersonRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string RegisterMediaDetailPersonRequest::getAccessKeyId()const
 void RegisterMediaDetailPersonRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string RegisterMediaDetailPersonRequest::getPersonName()const
@@ -121,6 +121,6 @@ std::string RegisterMediaDetailPersonRequest::getPersonName()const
 void RegisterMediaDetailPersonRequest::setPersonName(const std::string& personName)
 {
 	personName_ = personName;
-	setCoreParameter("PersonName", personName);
+	setCoreParameter("PersonName", std::to_string(personName));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeReplicaUsageRequest::getSourceDBInstanceId()const
 void DescribeReplicaUsageRequest::setSourceDBInstanceId(const std::string& sourceDBInstanceId)
 {
 	sourceDBInstanceId_ = sourceDBInstanceId;
-	setCoreParameter("SourceDBInstanceId", sourceDBInstanceId);
+	setCoreParameter("SourceDBInstanceId", std::to_string(sourceDBInstanceId));
 }
 
 std::string DescribeReplicaUsageRequest::getDestinationDBInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeReplicaUsageRequest::getDestinationDBInstanceId()const
 void DescribeReplicaUsageRequest::setDestinationDBInstanceId(const std::string& destinationDBInstanceId)
 {
 	destinationDBInstanceId_ = destinationDBInstanceId;
-	setCoreParameter("DestinationDBInstanceId", destinationDBInstanceId);
+	setCoreParameter("DestinationDBInstanceId", std::to_string(destinationDBInstanceId));
 }
 
 std::string DescribeReplicaUsageRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string DescribeReplicaUsageRequest::getSecurityToken()const
 void DescribeReplicaUsageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeReplicaUsageRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeReplicaUsageRequest::getResourceOwnerAccount()const
 void DescribeReplicaUsageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeReplicaUsageRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeReplicaUsageRequest::getRegionId()const
 void DescribeReplicaUsageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeReplicaUsageRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeReplicaUsageRequest::getOwnerAccount()const
 void DescribeReplicaUsageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeReplicaUsageRequest::getReplicaId()const
@@ -110,7 +110,7 @@ std::string DescribeReplicaUsageRequest::getReplicaId()const
 void DescribeReplicaUsageRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 long DescribeReplicaUsageRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeReplicaUsageRequest::getAccessKeyId()const
 void DescribeReplicaUsageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

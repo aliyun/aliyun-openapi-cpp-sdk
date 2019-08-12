@@ -44,7 +44,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()con
 void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
 void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId()const
 void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
@@ -99,7 +99,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
 void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
@@ -110,7 +110,7 @@ bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
 void DescribeDBInstancesByExpireTimeRequest::setExpired(bool expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired);
+	setCoreParameter("Expired", expired ? "true" : "false");
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const
 void DescribeDBInstancesByExpireTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getPageSize()const
@@ -154,6 +154,6 @@ std::string DescribeDBInstancesByExpireTimeRequest::getProxyId()const
 void DescribeDBInstancesByExpireTimeRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", proxyId);
+	setCoreParameter("ProxyId", std::to_string(proxyId));
 }
 

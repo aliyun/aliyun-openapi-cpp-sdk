@@ -33,7 +33,7 @@ std::string DescribeChangeLogsRequest::getEntityType()const
 void DescribeChangeLogsRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", entityType);
+	setCoreParameter("EntityType", std::to_string(entityType));
 }
 
 int DescribeChangeLogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeChangeLogsRequest::getUserClientIp()const
 void DescribeChangeLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeChangeLogsRequest::getZoneId()const
@@ -66,7 +66,7 @@ std::string DescribeChangeLogsRequest::getZoneId()const
 void DescribeChangeLogsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeChangeLogsRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string DescribeChangeLogsRequest::getKeyword()const
 void DescribeChangeLogsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setCoreParameter("Keyword", std::to_string(keyword));
 }
 
 std::string DescribeChangeLogsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeChangeLogsRequest::getLang()const
 void DescribeChangeLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeChangeLogsRequest::getStartTimestamp()const

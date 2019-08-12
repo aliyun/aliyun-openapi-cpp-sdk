@@ -33,7 +33,7 @@ std::string ModifyFullTableScanRequest::getDbName()const
 void ModifyFullTableScanRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string ModifyFullTableScanRequest::getTableNames()const
@@ -44,7 +44,7 @@ std::string ModifyFullTableScanRequest::getTableNames()const
 void ModifyFullTableScanRequest::setTableNames(const std::string& tableNames)
 {
 	tableNames_ = tableNames;
-	setCoreParameter("TableNames", tableNames);
+	setCoreParameter("TableNames", std::to_string(tableNames));
 }
 
 std::string ModifyFullTableScanRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string ModifyFullTableScanRequest::getDrdsInstanceId()const
 void ModifyFullTableScanRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 bool ModifyFullTableScanRequest::getFullTableScan()const
@@ -66,7 +66,7 @@ bool ModifyFullTableScanRequest::getFullTableScan()const
 void ModifyFullTableScanRequest::setFullTableScan(bool fullTableScan)
 {
 	fullTableScan_ = fullTableScan;
-	setCoreParameter("FullTableScan", fullTableScan);
+	setCoreParameter("FullTableScan", fullTableScan ? "true" : "false");
 }
 
 std::string ModifyFullTableScanRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyFullTableScanRequest::getAccessKeyId()const
 void ModifyFullTableScanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

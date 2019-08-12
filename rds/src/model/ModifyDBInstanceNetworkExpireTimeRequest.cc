@@ -44,7 +44,7 @@ std::string ModifyDBInstanceNetworkExpireTimeRequest::getResourceOwnerAccount()c
 void ModifyDBInstanceNetworkExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceNetworkExpireTimeRequest::getConnectionString()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceNetworkExpireTimeRequest::getConnectionString()const
 void ModifyDBInstanceNetworkExpireTimeRequest::setConnectionString(const std::string& connectionString)
 {
 	connectionString_ = connectionString;
-	setCoreParameter("ConnectionString", connectionString);
+	setCoreParameter("ConnectionString", std::to_string(connectionString));
 }
 
 int ModifyDBInstanceNetworkExpireTimeRequest::getClassicExpiredDays()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceNetworkExpireTimeRequest::getOwnerAccount()const
 void ModifyDBInstanceNetworkExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBInstanceNetworkExpireTimeRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceNetworkExpireTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetworkExpireTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyDBInstanceNetworkExpireTimeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ModifyDBInstanceNetworkExpireTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetworkExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeAlarmEventDetailRequest::getAlarmUniqueInfo()const
 void DescribeAlarmEventDetailRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
 {
 	alarmUniqueInfo_ = alarmUniqueInfo;
-	setCoreParameter("AlarmUniqueInfo", alarmUniqueInfo);
+	setCoreParameter("AlarmUniqueInfo", std::to_string(alarmUniqueInfo));
 }
 
 std::string DescribeAlarmEventDetailRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeAlarmEventDetailRequest::getSourceIp()const
 void DescribeAlarmEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAlarmEventDetailRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeAlarmEventDetailRequest::getFrom()const
 void DescribeAlarmEventDetailRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeAlarmEventDetailRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeAlarmEventDetailRequest::getLang()const
 void DescribeAlarmEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

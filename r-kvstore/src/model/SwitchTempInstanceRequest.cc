@@ -44,7 +44,7 @@ std::string SwitchTempInstanceRequest::getTempInstanceId()const
 void SwitchTempInstanceRequest::setTempInstanceId(const std::string& tempInstanceId)
 {
 	tempInstanceId_ = tempInstanceId;
-	setCoreParameter("TempInstanceId", tempInstanceId);
+	setCoreParameter("TempInstanceId", std::to_string(tempInstanceId));
 }
 
 std::string SwitchTempInstanceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string SwitchTempInstanceRequest::getInstanceId()const
 void SwitchTempInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string SwitchTempInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SwitchTempInstanceRequest::getResourceOwnerAccount()const
 void SwitchTempInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SwitchTempInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SwitchTempInstanceRequest::getRegionId()const
 void SwitchTempInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SwitchTempInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SwitchTempInstanceRequest::getOwnerAccount()const
 void SwitchTempInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SwitchTempInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string SwitchTempInstanceRequest::getAccessKeyId()const
 void SwitchTempInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

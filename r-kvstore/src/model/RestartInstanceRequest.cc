@@ -44,7 +44,7 @@ std::string RestartInstanceRequest::getInstanceId()const
 void RestartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RestartInstanceRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string RestartInstanceRequest::getSecurityToken()const
 void RestartInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RestartInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RestartInstanceRequest::getResourceOwnerAccount()const
 void RestartInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RestartInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RestartInstanceRequest::getRegionId()const
 void RestartInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RestartInstanceRequest::getEffectiveTime()const
@@ -88,7 +88,7 @@ std::string RestartInstanceRequest::getEffectiveTime()const
 void RestartInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", effectiveTime);
+	setCoreParameter("EffectiveTime", std::to_string(effectiveTime));
 }
 
 std::string RestartInstanceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string RestartInstanceRequest::getOwnerAccount()const
 void RestartInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long RestartInstanceRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string RestartInstanceRequest::getAccessKeyId()const
 void RestartInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

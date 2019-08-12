@@ -53,7 +53,7 @@ std::string CreateDataAPIServiceRequest::getOriginSql()const
 void CreateDataAPIServiceRequest::setOriginSql(const std::string& originSql)
 {
 	originSql_ = originSql;
-	setCoreParameter("OriginSql", originSql);
+	setCoreParameter("OriginSql", std::to_string(originSql));
 }
 
 std::string CreateDataAPIServiceRequest::getDisplayName()const
@@ -64,7 +64,7 @@ std::string CreateDataAPIServiceRequest::getDisplayName()const
 void CreateDataAPIServiceRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setCoreParameter("DisplayName", std::to_string(displayName));
 }
 
 std::string CreateDataAPIServiceRequest::getApiPath()const
@@ -75,7 +75,7 @@ std::string CreateDataAPIServiceRequest::getApiPath()const
 void CreateDataAPIServiceRequest::setApiPath(const std::string& apiPath)
 {
 	apiPath_ = apiPath;
-	setCoreParameter("ApiPath", apiPath);
+	setCoreParameter("ApiPath", std::to_string(apiPath));
 }
 
 std::vector<CreateDataAPIServiceRequest::RequestParam> CreateDataAPIServiceRequest::getRequestParam()const
@@ -106,7 +106,7 @@ std::string CreateDataAPIServiceRequest::getFolderId()const
 void CreateDataAPIServiceRequest::setFolderId(const std::string& folderId)
 {
 	folderId_ = folderId;
-	setCoreParameter("FolderId", folderId);
+	setCoreParameter("FolderId", std::to_string(folderId));
 }
 
 std::string CreateDataAPIServiceRequest::getTemplateSql()const
@@ -117,7 +117,7 @@ std::string CreateDataAPIServiceRequest::getTemplateSql()const
 void CreateDataAPIServiceRequest::setTemplateSql(const std::string& templateSql)
 {
 	templateSql_ = templateSql;
-	setCoreParameter("TemplateSql", templateSql);
+	setCoreParameter("TemplateSql", std::to_string(templateSql));
 }
 
 std::string CreateDataAPIServiceRequest::getAccessKeyId()const
@@ -128,7 +128,7 @@ std::string CreateDataAPIServiceRequest::getAccessKeyId()const
 void CreateDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateDataAPIServiceRequest::getDesc()const
@@ -139,6 +139,6 @@ std::string CreateDataAPIServiceRequest::getDesc()const
 void CreateDataAPIServiceRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setCoreParameter("Desc", std::to_string(desc));
 }
 

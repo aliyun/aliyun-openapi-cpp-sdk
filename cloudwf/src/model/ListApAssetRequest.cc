@@ -33,7 +33,7 @@ std::string ListApAssetRequest::getOrderCol()const
 void ListApAssetRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", std::to_string(orderCol));
 }
 
 std::string ListApAssetRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApAssetRequest::getSearchName()const
 void ListApAssetRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setCoreParameter("SearchName", std::to_string(searchName));
 }
 
 std::string ListApAssetRequest::getSearchSerialNo()const
@@ -55,7 +55,7 @@ std::string ListApAssetRequest::getSearchSerialNo()const
 void ListApAssetRequest::setSearchSerialNo(const std::string& searchSerialNo)
 {
 	searchSerialNo_ = searchSerialNo;
-	setCoreParameter("SearchSerialNo", searchSerialNo);
+	setCoreParameter("SearchSerialNo", std::to_string(searchSerialNo));
 }
 
 int ListApAssetRequest::getLength()const
@@ -88,7 +88,7 @@ std::string ListApAssetRequest::getSearchMac()const
 void ListApAssetRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", std::to_string(searchMac));
 }
 
 std::string ListApAssetRequest::getOrderDir()const
@@ -99,7 +99,7 @@ std::string ListApAssetRequest::getOrderDir()const
 void ListApAssetRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", std::to_string(orderDir));
 }
 
 std::string ListApAssetRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ListApAssetRequest::getAccessKeyId()const
 void ListApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListApAssetRequest::getSearchModel()const
@@ -121,6 +121,6 @@ std::string ListApAssetRequest::getSearchModel()const
 void ListApAssetRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setCoreParameter("SearchModel", searchModel);
+	setCoreParameter("SearchModel", std::to_string(searchModel));
 }
 

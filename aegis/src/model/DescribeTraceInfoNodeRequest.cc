@@ -33,7 +33,7 @@ std::string DescribeTraceInfoNodeRequest::getSourceIp()const
 void DescribeTraceInfoNodeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeTraceInfoNodeRequest::getVertexId()const
@@ -44,7 +44,7 @@ std::string DescribeTraceInfoNodeRequest::getVertexId()const
 void DescribeTraceInfoNodeRequest::setVertexId(const std::string& vertexId)
 {
 	vertexId_ = vertexId;
-	setCoreParameter("VertexId", vertexId);
+	setCoreParameter("VertexId", std::to_string(vertexId));
 }
 
 std::string DescribeTraceInfoNodeRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeTraceInfoNodeRequest::getFrom()const
 void DescribeTraceInfoNodeRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string DescribeTraceInfoNodeRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeTraceInfoNodeRequest::getLang()const
 void DescribeTraceInfoNodeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeTraceInfoNodeRequest::getType()const
@@ -77,7 +77,7 @@ std::string DescribeTraceInfoNodeRequest::getType()const
 void DescribeTraceInfoNodeRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 long DescribeTraceInfoNodeRequest::getIncidentTime()const
@@ -99,7 +99,7 @@ std::string DescribeTraceInfoNodeRequest::getUuid()const
 void DescribeTraceInfoNodeRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setCoreParameter("Uuid", std::to_string(uuid));
 }
 
 std::string DescribeTraceInfoNodeRequest::getEventName()const
@@ -110,6 +110,6 @@ std::string DescribeTraceInfoNodeRequest::getEventName()const
 void DescribeTraceInfoNodeRequest::setEventName(const std::string& eventName)
 {
 	eventName_ = eventName;
-	setCoreParameter("EventName", eventName);
+	setCoreParameter("EventName", std::to_string(eventName));
 }
 

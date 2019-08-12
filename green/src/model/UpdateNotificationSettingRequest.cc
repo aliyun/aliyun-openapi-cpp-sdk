@@ -33,7 +33,7 @@ std::string UpdateNotificationSettingRequest::getRealtimeMessageList()const
 void UpdateNotificationSettingRequest::setRealtimeMessageList(const std::string& realtimeMessageList)
 {
 	realtimeMessageList_ = realtimeMessageList;
-	setCoreParameter("RealtimeMessageList", realtimeMessageList);
+	setCoreParameter("RealtimeMessageList", std::to_string(realtimeMessageList));
 }
 
 std::string UpdateNotificationSettingRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string UpdateNotificationSettingRequest::getSourceIp()const
 void UpdateNotificationSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UpdateNotificationSettingRequest::getReminderModeList()const
@@ -55,7 +55,7 @@ std::string UpdateNotificationSettingRequest::getReminderModeList()const
 void UpdateNotificationSettingRequest::setReminderModeList(const std::string& reminderModeList)
 {
 	reminderModeList_ = reminderModeList;
-	setCoreParameter("ReminderModeList", reminderModeList);
+	setCoreParameter("ReminderModeList", std::to_string(reminderModeList));
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTime()const
@@ -77,7 +77,7 @@ std::string UpdateNotificationSettingRequest::getLang()const
 void UpdateNotificationSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const

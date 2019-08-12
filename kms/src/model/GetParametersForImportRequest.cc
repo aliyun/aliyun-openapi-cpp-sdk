@@ -33,7 +33,7 @@ std::string GetParametersForImportRequest::getKeyId()const
 void GetParametersForImportRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setCoreParameter("KeyId", std::to_string(keyId));
 }
 
 std::string GetParametersForImportRequest::getWrappingAlgorithm()const
@@ -44,7 +44,7 @@ std::string GetParametersForImportRequest::getWrappingAlgorithm()const
 void GetParametersForImportRequest::setWrappingAlgorithm(const std::string& wrappingAlgorithm)
 {
 	wrappingAlgorithm_ = wrappingAlgorithm;
-	setCoreParameter("WrappingAlgorithm", wrappingAlgorithm);
+	setCoreParameter("WrappingAlgorithm", std::to_string(wrappingAlgorithm));
 }
 
 std::string GetParametersForImportRequest::getWrappingKeySpec()const
@@ -55,6 +55,6 @@ std::string GetParametersForImportRequest::getWrappingKeySpec()const
 void GetParametersForImportRequest::setWrappingKeySpec(const std::string& wrappingKeySpec)
 {
 	wrappingKeySpec_ = wrappingKeySpec;
-	setCoreParameter("WrappingKeySpec", wrappingKeySpec);
+	setCoreParameter("WrappingKeySpec", std::to_string(wrappingKeySpec));
 }
 

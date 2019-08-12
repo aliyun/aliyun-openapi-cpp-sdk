@@ -44,7 +44,7 @@ std::string DescribeTasksRequest::getResourceOwnerAccount()const
 void DescribeTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeTasksRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeTasksRequest::getOwnerAccount()const
 void DescribeTasksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeTasksRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeTasksRequest::getEndTime()const
 void DescribeTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeTasksRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeTasksRequest::getStartTime()const
 void DescribeTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeTasksRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeTasksRequest::getTaskIds()const
 void DescribeTasksRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setCoreParameter("TaskIds", taskIds);
+	setCoreParameter("TaskIds", std::to_string(taskIds));
 }
 
 int DescribeTasksRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string DescribeTasksRequest::getSourceRegionId()const
 void DescribeTasksRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeTasksRequest::getTaskStatus()const
@@ -132,7 +132,7 @@ std::string DescribeTasksRequest::getTaskStatus()const
 void DescribeTasksRequest::setTaskStatus(const std::string& taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", taskStatus);
+	setCoreParameter("TaskStatus", std::to_string(taskStatus));
 }
 
 std::string DescribeTasksRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeTasksRequest::getRegionId()const
 void DescribeTasksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeTasksRequest::getPageSize()const
@@ -165,6 +165,6 @@ std::string DescribeTasksRequest::getTaskAction()const
 void DescribeTasksRequest::setTaskAction(const std::string& taskAction)
 {
 	taskAction_ = taskAction;
-	setCoreParameter("TaskAction", taskAction);
+	setCoreParameter("TaskAction", std::to_string(taskAction));
 }
 

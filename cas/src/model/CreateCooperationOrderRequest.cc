@@ -33,7 +33,7 @@ std::string CreateCooperationOrderRequest::getProductCode()const
 void CreateCooperationOrderRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setCoreParameter("ProductCode", std::to_string(productCode));
 }
 
 std::string CreateCooperationOrderRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateCooperationOrderRequest::getSourceIp()const
 void CreateCooperationOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string CreateCooperationOrderRequest::getDomain()const
@@ -55,7 +55,7 @@ std::string CreateCooperationOrderRequest::getDomain()const
 void CreateCooperationOrderRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setCoreParameter("Domain", std::to_string(domain));
 }
 
 std::string CreateCooperationOrderRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string CreateCooperationOrderRequest::getFrom()const
 void CreateCooperationOrderRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string CreateCooperationOrderRequest::getLang()const
@@ -77,6 +77,6 @@ std::string CreateCooperationOrderRequest::getLang()const
 void CreateCooperationOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

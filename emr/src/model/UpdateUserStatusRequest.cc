@@ -33,7 +33,7 @@ std::string UpdateUserStatusRequest::getApp_ip()const
 void UpdateUserStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long UpdateUserStatusRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ bool UpdateUserStatusRequest::getProxy_original_security_transport()const
 void UpdateUserStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string UpdateUserStatusRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string UpdateUserStatusRequest::getCallerBid()const
 void UpdateUserStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string UpdateUserStatusRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string UpdateUserStatusRequest::getProxy_original_source_ip()const
 void UpdateUserStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 bool UpdateUserStatusRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool UpdateUserStatusRequest::getAk_mfa_present()const
 void UpdateUserStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool UpdateUserStatusRequest::getProxy_trust_transport_info()const
@@ -110,7 +110,7 @@ bool UpdateUserStatusRequest::getProxy_trust_transport_info()const
 void UpdateUserStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string UpdateUserStatusRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string UpdateUserStatusRequest::getCallerType()const
 void UpdateUserStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string UpdateUserStatusRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string UpdateUserStatusRequest::getAccessKeyId()const
 void UpdateUserStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool UpdateUserStatusRequest::getSecurity_transport()const
@@ -143,7 +143,7 @@ bool UpdateUserStatusRequest::getSecurity_transport()const
 void UpdateUserStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string UpdateUserStatusRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string UpdateUserStatusRequest::getSecurityToken()const
 void UpdateUserStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string UpdateUserStatusRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string UpdateUserStatusRequest::getRegionId()const
 void UpdateUserStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateUserStatusRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string UpdateUserStatusRequest::getRequestId()const
 void UpdateUserStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 long UpdateUserStatusRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string UpdateUserStatusRequest::getAliyunUserId()const
 void UpdateUserStatusRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", aliyunUserId);
+	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
 }
 
 std::string UpdateUserStatusRequest::getUpdateStatus()const
@@ -209,6 +209,6 @@ std::string UpdateUserStatusRequest::getUpdateStatus()const
 void UpdateUserStatusRequest::setUpdateStatus(const std::string& updateStatus)
 {
 	updateStatus_ = updateStatus;
-	setCoreParameter("UpdateStatus", updateStatus);
+	setCoreParameter("UpdateStatus", std::to_string(updateStatus));
 }
 

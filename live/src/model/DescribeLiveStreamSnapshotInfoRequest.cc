@@ -33,7 +33,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getAppName()const
 void DescribeLiveStreamSnapshotInfoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getSecurityToken()const
 void DescribeLiveStreamSnapshotInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getDomainName()const
 void DescribeLiveStreamSnapshotInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 int DescribeLiveStreamSnapshotInfoRequest::getLimit()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getEndTime()const
 void DescribeLiveStreamSnapshotInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getStartTime()const
 void DescribeLiveStreamSnapshotInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeLiveStreamSnapshotInfoRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getStreamName()const
 void DescribeLiveStreamSnapshotInfoRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getOrder()const
@@ -121,6 +121,6 @@ std::string DescribeLiveStreamSnapshotInfoRequest::getOrder()const
 void DescribeLiveStreamSnapshotInfoRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

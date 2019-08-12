@@ -33,7 +33,7 @@ std::string BindAliasRequest::getAliasName()const
 void BindAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setCoreParameter("AliasName", std::to_string(aliasName));
 }
 
 long BindAliasRequest::getAppKey()const
@@ -55,7 +55,7 @@ std::string BindAliasRequest::getDeviceId()const
 void BindAliasRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", std::to_string(deviceId));
 }
 
 std::string BindAliasRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string BindAliasRequest::getAccessKeyId()const
 void BindAliasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

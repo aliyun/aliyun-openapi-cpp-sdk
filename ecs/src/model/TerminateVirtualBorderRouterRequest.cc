@@ -44,7 +44,7 @@ std::string TerminateVirtualBorderRouterRequest::getRegionId()const
 void TerminateVirtualBorderRouterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string TerminateVirtualBorderRouterRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string TerminateVirtualBorderRouterRequest::getResourceOwnerAccount()const
 void TerminateVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string TerminateVirtualBorderRouterRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string TerminateVirtualBorderRouterRequest::getClientToken()const
 void TerminateVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string TerminateVirtualBorderRouterRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string TerminateVirtualBorderRouterRequest::getOwnerAccount()const
 void TerminateVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string TerminateVirtualBorderRouterRequest::getUserCidr()const
@@ -88,7 +88,7 @@ std::string TerminateVirtualBorderRouterRequest::getUserCidr()const
 void TerminateVirtualBorderRouterRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 std::string TerminateVirtualBorderRouterRequest::getVbrId()const
@@ -99,7 +99,7 @@ std::string TerminateVirtualBorderRouterRequest::getVbrId()const
 void TerminateVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", std::to_string(vbrId));
 }
 
 long TerminateVirtualBorderRouterRequest::getOwnerId()const

@@ -44,7 +44,7 @@ std::string QueryRobotTaskListRequest::getResourceOwnerAccount()const
 void QueryRobotTaskListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int QueryRobotTaskListRequest::getPageNo()const
@@ -77,7 +77,7 @@ std::string QueryRobotTaskListRequest::getTaskName()const
 void QueryRobotTaskListRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setCoreParameter("TaskName", std::to_string(taskName));
 }
 
 std::string QueryRobotTaskListRequest::getTime()const
@@ -88,7 +88,7 @@ std::string QueryRobotTaskListRequest::getTime()const
 void QueryRobotTaskListRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setCoreParameter("Time", std::to_string(time));
 }
 
 long QueryRobotTaskListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string QueryRobotTaskListRequest::getAccessKeyId()const
 void QueryRobotTaskListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string QueryRobotTaskListRequest::getStatus()const
@@ -121,6 +121,6 @@ std::string QueryRobotTaskListRequest::getStatus()const
 void QueryRobotTaskListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

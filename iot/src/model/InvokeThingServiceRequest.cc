@@ -33,7 +33,7 @@ std::string InvokeThingServiceRequest::getArgs()const
 void InvokeThingServiceRequest::setArgs(const std::string& args)
 {
 	args_ = args;
-	setCoreParameter("Args", args);
+	setCoreParameter("Args", std::to_string(args));
 }
 
 std::string InvokeThingServiceRequest::getIdentifier()const
@@ -44,7 +44,7 @@ std::string InvokeThingServiceRequest::getIdentifier()const
 void InvokeThingServiceRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setCoreParameter("Identifier", std::to_string(identifier));
 }
 
 std::string InvokeThingServiceRequest::getIotId()const
@@ -55,7 +55,7 @@ std::string InvokeThingServiceRequest::getIotId()const
 void InvokeThingServiceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string InvokeThingServiceRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ std::string InvokeThingServiceRequest::getIotInstanceId()const
 void InvokeThingServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string InvokeThingServiceRequest::getDeviceName()const
@@ -77,7 +77,7 @@ std::string InvokeThingServiceRequest::getDeviceName()const
 void InvokeThingServiceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string InvokeThingServiceRequest::getProductKey()const
@@ -88,7 +88,7 @@ std::string InvokeThingServiceRequest::getProductKey()const
 void InvokeThingServiceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string InvokeThingServiceRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string InvokeThingServiceRequest::getAccessKeyId()const
 void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

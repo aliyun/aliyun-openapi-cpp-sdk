@@ -44,7 +44,7 @@ std::string DescribeParameterTemplatesRequest::getResourceOwnerAccount()const
 void DescribeParameterTemplatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeParameterTemplatesRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeParameterTemplatesRequest::getClientToken()const
 void DescribeParameterTemplatesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DescribeParameterTemplatesRequest::getEngine()const
@@ -66,7 +66,7 @@ std::string DescribeParameterTemplatesRequest::getEngine()const
 void DescribeParameterTemplatesRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", engine);
+	setCoreParameter("Engine", std::to_string(engine));
 }
 
 std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeParameterTemplatesRequest::getOwnerAccount()const
 void DescribeParameterTemplatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeParameterTemplatesRequest::getEngineVersion()const
@@ -88,7 +88,7 @@ std::string DescribeParameterTemplatesRequest::getEngineVersion()const
 void DescribeParameterTemplatesRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long DescribeParameterTemplatesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeParameterTemplatesRequest::getCategory()const
 void DescribeParameterTemplatesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeParameterTemplatesRequest::getAccessKeyId()const
 void DescribeParameterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

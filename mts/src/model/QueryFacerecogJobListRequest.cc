@@ -44,7 +44,7 @@ std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
 void QueryFacerecogJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryFacerecogJobListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryFacerecogJobListRequest::getOwnerAccount()const
 void QueryFacerecogJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
@@ -66,7 +66,7 @@ std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
 void QueryFacerecogJobListRequest::setFacerecogJobIds(const std::string& facerecogJobIds)
 {
 	facerecogJobIds_ = facerecogJobIds;
-	setCoreParameter("FacerecogJobIds", facerecogJobIds);
+	setCoreParameter("FacerecogJobIds", std::to_string(facerecogJobIds));
 }
 
 long QueryFacerecogJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryFacerecogJobListRequest::getAccessKeyId()const
 void QueryFacerecogJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string PageListResourceUsersRequest::getApp_ip()const
 void PageListResourceUsersRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long PageListResourceUsersRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string PageListResourceUsersRequest::getResourceId()const
 void PageListResourceUsersRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 long PageListResourceUsersRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool PageListResourceUsersRequest::getProxy_original_security_transport()const
 void PageListResourceUsersRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string PageListResourceUsersRequest::getSearchKey()const
@@ -88,7 +88,7 @@ std::string PageListResourceUsersRequest::getSearchKey()const
 void PageListResourceUsersRequest::setSearchKey(const std::string& searchKey)
 {
 	searchKey_ = searchKey;
-	setCoreParameter("SearchKey", searchKey);
+	setCoreParameter("SearchKey", std::to_string(searchKey));
 }
 
 std::string PageListResourceUsersRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string PageListResourceUsersRequest::getCallerBid()const
 void PageListResourceUsersRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string PageListResourceUsersRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string PageListResourceUsersRequest::getProxy_original_source_ip()const
 void PageListResourceUsersRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string PageListResourceUsersRequest::getResourceType()const
@@ -121,7 +121,7 @@ std::string PageListResourceUsersRequest::getResourceType()const
 void PageListResourceUsersRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 bool PageListResourceUsersRequest::getAk_mfa_present()const
@@ -132,7 +132,7 @@ bool PageListResourceUsersRequest::getAk_mfa_present()const
 void PageListResourceUsersRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool PageListResourceUsersRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool PageListResourceUsersRequest::getProxy_trust_transport_info()const
 void PageListResourceUsersRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string PageListResourceUsersRequest::getCallerType()const
@@ -154,7 +154,7 @@ std::string PageListResourceUsersRequest::getCallerType()const
 void PageListResourceUsersRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int PageListResourceUsersRequest::getPageNumber()const
@@ -176,7 +176,7 @@ std::string PageListResourceUsersRequest::getAccessKeyId()const
 void PageListResourceUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool PageListResourceUsersRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool PageListResourceUsersRequest::getSecurity_transport()const
 void PageListResourceUsersRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string PageListResourceUsersRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string PageListResourceUsersRequest::getSecurityToken()const
 void PageListResourceUsersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string PageListResourceUsersRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string PageListResourceUsersRequest::getRegionId()const
 void PageListResourceUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string PageListResourceUsersRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string PageListResourceUsersRequest::getRequestId()const
 void PageListResourceUsersRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 int PageListResourceUsersRequest::getPageSize()const

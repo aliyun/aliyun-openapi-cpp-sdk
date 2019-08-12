@@ -33,7 +33,7 @@ std::string UpdateCustomizeReportStatusRequest::getSourceIp()const
 void UpdateCustomizeReportStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long UpdateCustomizeReportStatusRequest::getReportId()const
@@ -55,7 +55,7 @@ std::string UpdateCustomizeReportStatusRequest::getLang()const
 void UpdateCustomizeReportStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int UpdateCustomizeReportStatusRequest::getReportStatus()const

@@ -33,7 +33,7 @@ std::string UpdateGtmAddressPoolRequest::getAddrPoolId()const
 void UpdateGtmAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setCoreParameter("AddrPoolId", addrPoolId);
+	setCoreParameter("AddrPoolId", std::to_string(addrPoolId));
 }
 
 std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
 void UpdateGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string UpdateGtmAddressPoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateGtmAddressPoolRequest::getName()const
 void UpdateGtmAddressPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateGtmAddressPoolRequest::getLang()const
@@ -66,7 +66,7 @@ std::string UpdateGtmAddressPoolRequest::getLang()const
 void UpdateGtmAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string UpdateGtmAddressPoolRequest::getType()const
@@ -77,7 +77,7 @@ std::string UpdateGtmAddressPoolRequest::getType()const
 void UpdateGtmAddressPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::vector<UpdateGtmAddressPoolRequest::Addr> UpdateGtmAddressPoolRequest::getAddr()const

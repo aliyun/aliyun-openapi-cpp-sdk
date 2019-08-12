@@ -33,7 +33,7 @@ std::string CreateNotifyPolicyRequest::getPolicyType()const
 void CreateNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", std::to_string(policyType));
 }
 
 std::string CreateNotifyPolicyRequest::getAlertName()const
@@ -44,7 +44,7 @@ std::string CreateNotifyPolicyRequest::getAlertName()const
 void CreateNotifyPolicyRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", alertName);
+	setCoreParameter("AlertName", std::to_string(alertName));
 }
 
 std::string CreateNotifyPolicyRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string CreateNotifyPolicyRequest::getGroupId()const
 void CreateNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 long CreateNotifyPolicyRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string CreateNotifyPolicyRequest::getDimensions()const
 void CreateNotifyPolicyRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setCoreParameter("Dimensions", std::to_string(dimensions));
 }
 
 std::string CreateNotifyPolicyRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateNotifyPolicyRequest::getAccessKeyId()const
 void CreateNotifyPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

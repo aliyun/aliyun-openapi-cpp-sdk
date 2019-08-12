@@ -44,7 +44,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getConnectionStringPref
 void AllocateReadWriteSplittingConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getResourceOwnerAccount
 void AllocateReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getOwnerAccount()const
 void AllocateReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getWeight()const
@@ -77,7 +77,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getWeight()const
 void AllocateReadWriteSplittingConnectionRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setCoreParameter("Weight", std::to_string(weight));
 }
 
 long AllocateReadWriteSplittingConnectionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getAccessKeyId()const
 void AllocateReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getPort()const
@@ -110,7 +110,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getPort()const
 void AllocateReadWriteSplittingConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getDistributionType()const
@@ -121,7 +121,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getDistributionType()co
 void AllocateReadWriteSplittingConnectionRequest::setDistributionType(const std::string& distributionType)
 {
 	distributionType_ = distributionType;
-	setCoreParameter("DistributionType", distributionType);
+	setCoreParameter("DistributionType", std::to_string(distributionType));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getNetType()const
@@ -132,7 +132,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getNetType()const
 void AllocateReadWriteSplittingConnectionRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setCoreParameter("NetType", std::to_string(netType));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId()const
 void AllocateReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getMaxDelayTime()const
@@ -154,6 +154,6 @@ std::string AllocateReadWriteSplittingConnectionRequest::getMaxDelayTime()const
 void AllocateReadWriteSplittingConnectionRequest::setMaxDelayTime(const std::string& maxDelayTime)
 {
 	maxDelayTime_ = maxDelayTime;
-	setCoreParameter("MaxDelayTime", maxDelayTime);
+	setCoreParameter("MaxDelayTime", std::to_string(maxDelayTime));
 }
 

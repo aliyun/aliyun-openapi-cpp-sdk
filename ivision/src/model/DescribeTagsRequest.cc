@@ -44,7 +44,7 @@ std::string DescribeTagsRequest::getNextPageToken()const
 void DescribeTagsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
 }
 
 long DescribeTagsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ bool DescribeTagsRequest::getProxy_original_security_transport()const
 void DescribeTagsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeTagsRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeTagsRequest::getProxy_original_source_ip()const
 void DescribeTagsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeTagsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeTagsRequest::getOwnerIdLoginEmail()const
 void DescribeTagsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeTagsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeTagsRequest::getCallerType()const
 void DescribeTagsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeTagsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeTagsRequest::getAccessKeyId()const
 void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeTagsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeTagsRequest::getSecurityToken()const
 void DescribeTagsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeTagsRequest::getRegionId()const
 void DescribeTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeTagsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeTagsRequest::getRequestContent()const
 void DescribeTagsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 long DescribeTagsRequest::getPageSize()const
@@ -165,7 +165,7 @@ std::string DescribeTagsRequest::getCallerBidEmail()const
 void DescribeTagsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeTagsRequest::getProjectId()const
@@ -176,7 +176,7 @@ std::string DescribeTagsRequest::getProjectId()const
 void DescribeTagsRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeTagsRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeTagsRequest::getCallerUidEmail()const
 void DescribeTagsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeTagsRequest::getCallerUid()const
@@ -209,7 +209,7 @@ std::string DescribeTagsRequest::getShowLog()const
 void DescribeTagsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setCoreParameter("ShowLog", std::to_string(showLog));
 }
 
 std::string DescribeTagsRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeTagsRequest::getApp_ip()const
 void DescribeTagsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeTagsRequest::getPopProduct()const
@@ -231,7 +231,7 @@ std::string DescribeTagsRequest::getPopProduct()const
 void DescribeTagsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeTagsRequest::getTagIds()const
@@ -242,7 +242,7 @@ std::string DescribeTagsRequest::getTagIds()const
 void DescribeTagsRequest::setTagIds(const std::string& tagIds)
 {
 	tagIds_ = tagIds;
-	setCoreParameter("TagIds", tagIds);
+	setCoreParameter("TagIds", std::to_string(tagIds));
 }
 
 long DescribeTagsRequest::getCurrentPage()const
@@ -264,7 +264,7 @@ std::string DescribeTagsRequest::getCallerBid()const
 void DescribeTagsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeTagsRequest::getOwnerId()const
@@ -286,7 +286,7 @@ std::string DescribeTagsRequest::getVersion()const
 void DescribeTagsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeTagsRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ bool DescribeTagsRequest::getProxy_trust_transport_info()const
 void DescribeTagsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeTagsRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool DescribeTagsRequest::getAk_mfa_present()const
 void DescribeTagsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeTagsRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool DescribeTagsRequest::getSecurity_transport()const
 void DescribeTagsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeTagsRequest::getRequestId()const
@@ -330,7 +330,7 @@ std::string DescribeTagsRequest::getRequestId()const
 void DescribeTagsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeTagsRequest::getIterationId()const
@@ -341,6 +341,6 @@ std::string DescribeTagsRequest::getIterationId()const
 void DescribeTagsRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setCoreParameter("IterationId", iterationId);
+	setCoreParameter("IterationId", std::to_string(iterationId));
 }
 

@@ -44,7 +44,7 @@ std::string ApplyTemplateRequest::getApplyMode()const
 void ApplyTemplateRequest::setApplyMode(const std::string& applyMode)
 {
 	applyMode_ = applyMode;
-	setCoreParameter("ApplyMode", applyMode);
+	setCoreParameter("ApplyMode", std::to_string(applyMode));
 }
 
 std::string ApplyTemplateRequest::getTemplateIds()const
@@ -55,7 +55,7 @@ std::string ApplyTemplateRequest::getTemplateIds()const
 void ApplyTemplateRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setCoreParameter("TemplateIds", std::to_string(templateIds));
 }
 
 long ApplyTemplateRequest::getEnableEndTime()const

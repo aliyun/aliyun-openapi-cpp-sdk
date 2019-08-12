@@ -33,7 +33,7 @@ std::string GetEditingProjectRequest::getResourceOwnerId()const
 void GetEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetEditingProjectRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetEditingProjectRequest::getResourceOwnerAccount()const
 void GetEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string GetEditingProjectRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetEditingProjectRequest::getOwnerAccount()const
 void GetEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string GetEditingProjectRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string GetEditingProjectRequest::getOwnerId()const
 void GetEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetEditingProjectRequest::getProjectId()const
@@ -77,7 +77,7 @@ std::string GetEditingProjectRequest::getProjectId()const
 void GetEditingProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string GetEditingProjectRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetEditingProjectRequest::getAccessKeyId()const
 void GetEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

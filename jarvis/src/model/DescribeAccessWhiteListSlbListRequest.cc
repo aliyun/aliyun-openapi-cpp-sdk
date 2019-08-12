@@ -33,7 +33,7 @@ std::string DescribeAccessWhiteListSlbListRequest::getSourceIp()const
 void DescribeAccessWhiteListSlbListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAccessWhiteListSlbListRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAccessWhiteListSlbListRequest::getLang()const
 void DescribeAccessWhiteListSlbListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAccessWhiteListSlbListRequest::getSourceCode()const
@@ -55,6 +55,6 @@ std::string DescribeAccessWhiteListSlbListRequest::getSourceCode()const
 void DescribeAccessWhiteListSlbListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

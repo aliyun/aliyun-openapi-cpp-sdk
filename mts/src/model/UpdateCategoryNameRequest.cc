@@ -44,7 +44,7 @@ std::string UpdateCategoryNameRequest::getResourceOwnerAccount()const
 void UpdateCategoryNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdateCategoryNameRequest::getCateId()const
@@ -55,7 +55,7 @@ std::string UpdateCategoryNameRequest::getCateId()const
 void UpdateCategoryNameRequest::setCateId(const std::string& cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", cateId);
+	setCoreParameter("CateId", std::to_string(cateId));
 }
 
 std::string UpdateCategoryNameRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateCategoryNameRequest::getOwnerAccount()const
 void UpdateCategoryNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long UpdateCategoryNameRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string UpdateCategoryNameRequest::getAccessKeyId()const
 void UpdateCategoryNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdateCategoryNameRequest::getCateName()const
@@ -99,6 +99,6 @@ std::string UpdateCategoryNameRequest::getCateName()const
 void UpdateCategoryNameRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
+	setCoreParameter("CateName", std::to_string(cateName));
 }
 

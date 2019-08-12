@@ -44,7 +44,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidthPackageId()c
 void ModifyCommonBandwidthPackagePayTypeRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
 }
 
 bool ModifyCommonBandwidthPackagePayTypeRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool ModifyCommonBandwidthPackagePayTypeRequest::getAutoPay()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceOwnerAccount(
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidth()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getOwnerAccount()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyCommonBandwidthPackagePayTypeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getKbpsBandwidth()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setKbpsBandwidth(const std::string& kbpsBandwidth)
 {
 	kbpsBandwidth_ = kbpsBandwidth;
-	setCoreParameter("KbpsBandwidth", kbpsBandwidth);
+	setCoreParameter("KbpsBandwidth", std::to_string(kbpsBandwidth));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getRegionId()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long ModifyCommonBandwidthPackagePayTypeRequest::getResourceUid()const
@@ -154,7 +154,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceBid()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceBid(const std::string& resourceBid)
 {
 	resourceBid_ = resourceBid;
-	setCoreParameter("ResourceBid", resourceBid);
+	setCoreParameter("ResourceBid", std::to_string(resourceBid));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getPayType()const
@@ -165,7 +165,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getPayType()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setCoreParameter("PayType", std::to_string(payType));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getPricingCycle()const
@@ -176,6 +176,6 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getPricingCycle()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
 }
 

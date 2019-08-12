@@ -44,7 +44,7 @@ std::string CommonApiWhiteListRequest::getRegionId()const
 void CommonApiWhiteListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CommonApiWhiteListRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CommonApiWhiteListRequest::getAccessKeyId()const
 void CommonApiWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ bool DescribeLiveStreamsPublishListRequest::getProxy_original_security_transport
 void DescribeLiveStreamsPublishListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
 void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsPublishListRequest::getProxy_original_source_ip()
 void DescribeLiveStreamsPublishListRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsPublishListRequest::getOwnerIdLoginEmail()const
 void DescribeLiveStreamsPublishListRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeLiveStreamsPublishListRequest::getCallerType()const
 void DescribeLiveStreamsPublishListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEagleEyeRpcId()const
@@ -99,7 +99,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEagleEyeRpcId()const
 void DescribeLiveStreamsPublishListRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
+	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamsPublishListRequest::getAccessKeyId()const
 void DescribeLiveStreamsPublishListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEagleEyeTraceId()const
@@ -132,7 +132,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEagleEyeTraceId()const
 void DescribeLiveStreamsPublishListRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
+	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getAppName()const
@@ -143,7 +143,7 @@ std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 void DescribeLiveStreamsPublishListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DescribeLiveStreamsPublishListRequest::getSecurityToken()const
 void DescribeLiveStreamsPublishListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeLiveStreamsPublishListRequest::getRegionId()const
 void DescribeLiveStreamsPublishListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getRequestContent()const
@@ -176,7 +176,7 @@ std::string DescribeLiveStreamsPublishListRequest::getRequestContent()const
 void DescribeLiveStreamsPublishListRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageSize()const
@@ -198,7 +198,7 @@ std::string DescribeLiveStreamsPublishListRequest::getCallerBidEmail()const
 void DescribeLiveStreamsPublishListRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getCallerUidEmail()const
@@ -209,7 +209,7 @@ std::string DescribeLiveStreamsPublishListRequest::getCallerUidEmail()const
 void DescribeLiveStreamsPublishListRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
@@ -220,7 +220,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
 void DescribeLiveStreamsPublishListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
@@ -231,7 +231,7 @@ std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
 void DescribeLiveStreamsPublishListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 
 long DescribeLiveStreamsPublishListRequest::getCallerUid()const
@@ -253,7 +253,7 @@ std::string DescribeLiveStreamsPublishListRequest::getApp_ip()const
 void DescribeLiveStreamsPublishListRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getPopProduct()const
@@ -264,7 +264,7 @@ std::string DescribeLiveStreamsPublishListRequest::getPopProduct()const
 void DescribeLiveStreamsPublishListRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamType()const
@@ -275,7 +275,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamType()const
 void DescribeLiveStreamsPublishListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setCoreParameter("StreamType", std::to_string(streamType));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
@@ -286,7 +286,7 @@ std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
 void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
@@ -297,7 +297,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
 void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
@@ -308,7 +308,7 @@ std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
 void DescribeLiveStreamsPublishListRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getCallerBid()const
@@ -319,7 +319,7 @@ std::string DescribeLiveStreamsPublishListRequest::getCallerBid()const
 void DescribeLiveStreamsPublishListRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeLiveStreamsPublishListRequest::getOwnerId()const
@@ -341,7 +341,7 @@ std::string DescribeLiveStreamsPublishListRequest::getVersion()const
 void DescribeLiveStreamsPublishListRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool DescribeLiveStreamsPublishListRequest::getProxy_trust_transport_info()const
@@ -352,7 +352,7 @@ bool DescribeLiveStreamsPublishListRequest::getProxy_trust_transport_info()const
 void DescribeLiveStreamsPublishListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeLiveStreamsPublishListRequest::getAk_mfa_present()const
@@ -363,7 +363,7 @@ bool DescribeLiveStreamsPublishListRequest::getAk_mfa_present()const
 void DescribeLiveStreamsPublishListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeLiveStreamsPublishListRequest::getSecurity_transport()const
@@ -374,7 +374,7 @@ bool DescribeLiveStreamsPublishListRequest::getSecurity_transport()const
 void DescribeLiveStreamsPublishListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getServiceCode()const
@@ -385,7 +385,7 @@ std::string DescribeLiveStreamsPublishListRequest::getServiceCode()const
 void DescribeLiveStreamsPublishListRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", std::to_string(serviceCode));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getRequestId()const
@@ -396,7 +396,7 @@ std::string DescribeLiveStreamsPublishListRequest::getRequestId()const
 void DescribeLiveStreamsPublishListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEagleEyeUserData()const
@@ -407,6 +407,6 @@ std::string DescribeLiveStreamsPublishListRequest::getEagleEyeUserData()const
 void DescribeLiveStreamsPublishListRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
+	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
 }
 

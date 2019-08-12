@@ -33,7 +33,7 @@ std::string DeleteAppRequest::getSecurityToken()const
 void DeleteAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DeleteAppRequest::getAppId()const
@@ -72,6 +72,6 @@ std::string DeleteAppRequest::getAccessKeyId()const
 void DeleteAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

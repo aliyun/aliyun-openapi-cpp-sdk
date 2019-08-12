@@ -66,7 +66,7 @@ std::string ProfileHistoryListRequest::getAccessKeyId()const
 void ProfileHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 long ProfileHistoryListRequest::getAgsid()const

@@ -33,7 +33,7 @@ std::string DeleteMediaRequest::getInstanceId()const
 void DeleteMediaRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DeleteMediaRequest::getName()const
@@ -44,7 +44,7 @@ std::string DeleteMediaRequest::getName()const
 void DeleteMediaRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string DeleteMediaRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteMediaRequest::getAccessKeyId()const
 void DeleteMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

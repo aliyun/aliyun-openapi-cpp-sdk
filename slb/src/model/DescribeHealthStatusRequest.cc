@@ -33,7 +33,7 @@ std::string DescribeHealthStatusRequest::getAccess_key_id()const
 void DescribeHealthStatusRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeHealthStatusRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string DescribeHealthStatusRequest::getLoadBalancerId()const
 void DescribeHealthStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
 }
 
 std::string DescribeHealthStatusRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeHealthStatusRequest::getResourceOwnerAccount()const
 void DescribeHealthStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeHealthStatusRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeHealthStatusRequest::getRegionId()const
 void DescribeHealthStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeHealthStatusRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeHealthStatusRequest::getOwnerAccount()const
 void DescribeHealthStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeHealthStatusRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeHealthStatusRequest::getListenerProtocol()const
 void DescribeHealthStatusRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
 }
 
 std::string DescribeHealthStatusRequest::getTags()const
@@ -132,6 +132,6 @@ std::string DescribeHealthStatusRequest::getTags()const
 void DescribeHealthStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

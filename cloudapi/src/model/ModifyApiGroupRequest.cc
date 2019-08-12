@@ -33,7 +33,7 @@ std::string ModifyApiGroupRequest::getSecurityToken()const
 void ModifyApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyApiGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string ModifyApiGroupRequest::getGroupId()const
 void ModifyApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ModifyApiGroupRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string ModifyApiGroupRequest::getDescription()const
 void ModifyApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::vector<ModifyApiGroupRequest::Tag> ModifyApiGroupRequest::getTag()const
@@ -83,7 +83,7 @@ std::string ModifyApiGroupRequest::getGroupName()const
 void ModifyApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string ModifyApiGroupRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string ModifyApiGroupRequest::getAccessKeyId()const
 void ModifyApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

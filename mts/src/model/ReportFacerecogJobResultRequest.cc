@@ -33,7 +33,7 @@ std::string ReportFacerecogJobResultRequest::getJobId()const
 void ReportFacerecogJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 long ReportFacerecogJobResultRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ReportFacerecogJobResultRequest::getResourceOwnerAccount()const
 void ReportFacerecogJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ReportFacerecogJobResultRequest::getFacerecog()const
@@ -66,7 +66,7 @@ std::string ReportFacerecogJobResultRequest::getFacerecog()const
 void ReportFacerecogJobResultRequest::setFacerecog(const std::string& facerecog)
 {
 	facerecog_ = facerecog;
-	setCoreParameter("Facerecog", facerecog);
+	setCoreParameter("Facerecog", std::to_string(facerecog));
 }
 
 std::string ReportFacerecogJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportFacerecogJobResultRequest::getOwnerAccount()const
 void ReportFacerecogJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ReportFacerecogJobResultRequest::getDetails()const
@@ -88,7 +88,7 @@ std::string ReportFacerecogJobResultRequest::getDetails()const
 void ReportFacerecogJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setCoreParameter("Details", std::to_string(details));
 }
 
 long ReportFacerecogJobResultRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string ReportFacerecogJobResultRequest::getAccessKeyId()const
 void ReportFacerecogJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

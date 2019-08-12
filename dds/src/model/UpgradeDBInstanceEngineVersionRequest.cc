@@ -44,7 +44,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getSecurityToken()const
 void UpgradeDBInstanceEngineVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getResourceOwnerAccount()cons
 void UpgradeDBInstanceEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getRegionId()const
 void UpgradeDBInstanceEngineVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getOwnerAccount()const
 void UpgradeDBInstanceEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getDBInstanceId()const
 void UpgradeDBInstanceEngineVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion()const
@@ -99,7 +99,7 @@ std::string UpgradeDBInstanceEngineVersionRequest::getEngineVersion()const
 void UpgradeDBInstanceEngineVersionRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setCoreParameter("EngineVersion", std::to_string(engineVersion));
 }
 
 long UpgradeDBInstanceEngineVersionRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string UpgradeDBInstanceEngineVersionRequest::getAccessKeyId()const
 void UpgradeDBInstanceEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

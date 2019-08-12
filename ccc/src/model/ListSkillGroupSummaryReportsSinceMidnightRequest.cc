@@ -33,7 +33,7 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getInstanceId()con
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getSkillGroups()const
@@ -44,7 +44,7 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getSkillGroups()co
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setSkillGroups(const std::string& skillGroups)
 {
 	skillGroups_ = skillGroups;
-	setCoreParameter("SkillGroups", skillGroups);
+	setCoreParameter("SkillGroups", std::to_string(skillGroups));
 }
 
 int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getAccessKeyId()co
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

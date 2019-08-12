@@ -33,7 +33,7 @@ std::string SetMeRequest::getLibraryId()const
 void SetMeRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::string SetMeRequest::getStoreName()const
@@ -44,7 +44,7 @@ std::string SetMeRequest::getStoreName()const
 void SetMeRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 
 long SetMeRequest::getFaceId()const

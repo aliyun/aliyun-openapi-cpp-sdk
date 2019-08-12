@@ -33,7 +33,7 @@ std::string ModifyAutoDelConfigRequest::getSourceIp()const
 void ModifyAutoDelConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int ModifyAutoDelConfigRequest::getDays()const

@@ -44,7 +44,7 @@ std::string DescribeBinlogFilesRequest::getResourceOwnerAccount()const
 void DescribeBinlogFilesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBinlogFilesRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeBinlogFilesRequest::getOwnerAccount()const
 void DescribeBinlogFilesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeBinlogFilesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeBinlogFilesRequest::getEndTime()const
 void DescribeBinlogFilesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeBinlogFilesRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeBinlogFilesRequest::getDBInstanceId()const
 void DescribeBinlogFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeBinlogFilesRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string DescribeBinlogFilesRequest::getStartTime()const
 void DescribeBinlogFilesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeBinlogFilesRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string DescribeBinlogFilesRequest::getAccessKeyId()const
 void DescribeBinlogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

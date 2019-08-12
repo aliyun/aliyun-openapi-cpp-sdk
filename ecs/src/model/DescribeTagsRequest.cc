@@ -33,7 +33,7 @@ std::string DescribeTagsRequest::getSourceRegionId()const
 void DescribeTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeTagsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeTagsRequest::getResourceId()const
 void DescribeTagsRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setCoreParameter("ResourceId", std::to_string(resourceId));
 }
 
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeTagsRequest::getResourceOwnerAccount()const
 void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeTagsRequest::getRegionId()const
 void DescribeTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeTagsRequest::getPageSize()const
@@ -127,7 +127,7 @@ std::string DescribeTagsRequest::getCategory()const
 void DescribeTagsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string DescribeTagsRequest::getResourceType()const
@@ -138,7 +138,7 @@ std::string DescribeTagsRequest::getResourceType()const
 void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 int DescribeTagsRequest::getPageNumber()const

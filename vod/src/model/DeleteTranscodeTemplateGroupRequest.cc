@@ -44,7 +44,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void DeleteTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
@@ -55,7 +55,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
 void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateIds(const std::string& transcodeTemplateIds)
 {
 	transcodeTemplateIds_ = transcodeTemplateIds;
-	setCoreParameter("TranscodeTemplateIds", transcodeTemplateIds);
+	setCoreParameter("TranscodeTemplateIds", std::to_string(transcodeTemplateIds));
 }
 
 long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getAccessKeyId()const
 void DeleteTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -88,7 +88,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()co
 void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+	setCoreParameter("TranscodeTemplateGroupId", std::to_string(transcodeTemplateGroupId));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
@@ -99,6 +99,6 @@ std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
 void DeleteTranscodeTemplateGroupRequest::setForceDelGroup(const std::string& forceDelGroup)
 {
 	forceDelGroup_ = forceDelGroup;
-	setCoreParameter("ForceDelGroup", forceDelGroup);
+	setCoreParameter("ForceDelGroup", std::to_string(forceDelGroup));
 }
 

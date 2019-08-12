@@ -33,7 +33,7 @@ std::string GetAgentDataRequest::getInstanceId()const
 void GetAgentDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetAgentDataRequest::getStartDay()const
@@ -44,7 +44,7 @@ std::string GetAgentDataRequest::getStartDay()const
 void GetAgentDataRequest::setStartDay(const std::string& startDay)
 {
 	startDay_ = startDay;
-	setCoreParameter("StartDay", startDay);
+	setCoreParameter("StartDay", std::to_string(startDay));
 }
 
 std::string GetAgentDataRequest::getEndDay()const
@@ -55,7 +55,7 @@ std::string GetAgentDataRequest::getEndDay()const
 void GetAgentDataRequest::setEndDay(const std::string& endDay)
 {
 	endDay_ = endDay;
-	setCoreParameter("EndDay", endDay);
+	setCoreParameter("EndDay", std::to_string(endDay));
 }
 
 int GetAgentDataRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string GetAgentDataRequest::getUserId()const
 void GetAgentDataRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 int GetAgentDataRequest::getPageNumber()const
@@ -99,6 +99,6 @@ std::string GetAgentDataRequest::getAccessKeyId()const
 void GetAgentDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string RenewInstanceRequest::getPeriod()const
 void RenewInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string RenewInstanceRequest::getAutoPay()const
@@ -55,7 +55,7 @@ std::string RenewInstanceRequest::getAutoPay()const
 void RenewInstanceRequest::setAutoPay(const std::string& autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", std::to_string(autoPay));
 }
 
 std::string RenewInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RenewInstanceRequest::getResourceOwnerAccount()const
 void RenewInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RenewInstanceRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string RenewInstanceRequest::getClientToken()const
 void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RenewInstanceRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string RenewInstanceRequest::getDBInstanceId()const
 void RenewInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long RenewInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string RenewInstanceRequest::getBusinessInfo()const
 void RenewInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
 }
 
 std::string RenewInstanceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RenewInstanceRequest::getAccessKeyId()const
 void RenewInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

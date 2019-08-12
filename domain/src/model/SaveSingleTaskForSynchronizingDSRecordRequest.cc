@@ -33,7 +33,7 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForSynchronizingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SaveSingleTaskForSynchronizingDSRecordRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getUserClientIp()cons
 void SaveSingleTaskForSynchronizingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveSingleTaskForSynchronizingDSRecordRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getLang()const
 void SaveSingleTaskForSynchronizingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

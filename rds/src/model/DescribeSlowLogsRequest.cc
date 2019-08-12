@@ -44,7 +44,7 @@ std::string DescribeSlowLogsRequest::getResourceOwnerAccount()const
 void DescribeSlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSlowLogsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSlowLogsRequest::getOwnerAccount()const
 void DescribeSlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSlowLogsRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeSlowLogsRequest::getEndTime()const
 void DescribeSlowLogsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeSlowLogsRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeSlowLogsRequest::getStartTime()const
 void DescribeSlowLogsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeSlowLogsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string DescribeSlowLogsRequest::getAccessKeyId()const
 void DescribeSlowLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeSlowLogsRequest::getSortKey()const
@@ -121,7 +121,7 @@ std::string DescribeSlowLogsRequest::getSortKey()const
 void DescribeSlowLogsRequest::setSortKey(const std::string& sortKey)
 {
 	sortKey_ = sortKey;
-	setCoreParameter("SortKey", sortKey);
+	setCoreParameter("SortKey", std::to_string(sortKey));
 }
 
 std::string DescribeSlowLogsRequest::getDBName()const
@@ -132,7 +132,7 @@ std::string DescribeSlowLogsRequest::getDBName()const
 void DescribeSlowLogsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 int DescribeSlowLogsRequest::getPageSize()const
@@ -154,6 +154,6 @@ std::string DescribeSlowLogsRequest::getDBInstanceId()const
 void DescribeSlowLogsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 

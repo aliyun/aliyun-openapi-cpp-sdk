@@ -61,7 +61,7 @@ std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()con
 void DescribeExpressCloudConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
@@ -72,7 +72,7 @@ std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
 void DescribeExpressCloudConnectionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
@@ -83,7 +83,7 @@ std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
 void DescribeExpressCloudConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeExpressCloudConnectionsRequest::getPageSize()const

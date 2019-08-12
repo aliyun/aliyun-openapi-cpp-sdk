@@ -33,7 +33,7 @@ std::string SaveApConfigRequest::getCountry()const
 void SaveApConfigRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setCoreParameter("Country", std::to_string(country));
 }
 
 long SaveApConfigRequest::getApAssetId()const
@@ -66,7 +66,7 @@ std::string SaveApConfigRequest::getName()const
 void SaveApConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int SaveApConfigRequest::getEchoInt()const
@@ -99,7 +99,7 @@ std::string SaveApConfigRequest::getDescription()const
 void SaveApConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long SaveApConfigRequest::getId()const
@@ -121,7 +121,7 @@ std::string SaveApConfigRequest::getDai()const
 void SaveApConfigRequest::setDai(const std::string& dai)
 {
 	dai_ = dai;
-	setCoreParameter("Dai", dai);
+	setCoreParameter("Dai", std::to_string(dai));
 }
 
 std::string SaveApConfigRequest::getLogIp()const
@@ -132,7 +132,7 @@ std::string SaveApConfigRequest::getLogIp()const
 void SaveApConfigRequest::setLogIp(const std::string& logIp)
 {
 	logIp_ = logIp;
-	setCoreParameter("LogIp", logIp);
+	setCoreParameter("LogIp", std::to_string(logIp));
 }
 
 std::string SaveApConfigRequest::getMac()const
@@ -143,7 +143,7 @@ std::string SaveApConfigRequest::getMac()const
 void SaveApConfigRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setCoreParameter("Mac", std::to_string(mac));
 }
 
 std::string SaveApConfigRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ std::string SaveApConfigRequest::getAccessKeyId()const
 void SaveApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

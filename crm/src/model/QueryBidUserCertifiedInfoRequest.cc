@@ -33,7 +33,7 @@ std::string QueryBidUserCertifiedInfoRequest::getBidType()const
 void QueryBidUserCertifiedInfoRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", bidType);
+	setCoreParameter("BidType", std::to_string(bidType));
 }
 
 std::string QueryBidUserCertifiedInfoRequest::getPK()const
@@ -44,6 +44,6 @@ std::string QueryBidUserCertifiedInfoRequest::getPK()const
 void QueryBidUserCertifiedInfoRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setCoreParameter("PK", std::to_string(pK));
 }
 

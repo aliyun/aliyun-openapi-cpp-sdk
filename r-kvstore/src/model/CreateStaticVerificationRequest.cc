@@ -44,7 +44,7 @@ std::string CreateStaticVerificationRequest::getSecurityToken()const
 void CreateStaticVerificationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateStaticVerificationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateStaticVerificationRequest::getResourceOwnerAccount()const
 void CreateStaticVerificationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateStaticVerificationRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateStaticVerificationRequest::getRegionId()const
 void CreateStaticVerificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateStaticVerificationRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateStaticVerificationRequest::getOwnerAccount()const
 void CreateStaticVerificationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateStaticVerificationRequest::getReplicaId()const
@@ -88,7 +88,7 @@ std::string CreateStaticVerificationRequest::getReplicaId()const
 void CreateStaticVerificationRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", replicaId);
+	setCoreParameter("ReplicaId", std::to_string(replicaId));
 }
 
 std::string CreateStaticVerificationRequest::getDestinationInstanceId()const
@@ -99,7 +99,7 @@ std::string CreateStaticVerificationRequest::getDestinationInstanceId()const
 void CreateStaticVerificationRequest::setDestinationInstanceId(const std::string& destinationInstanceId)
 {
 	destinationInstanceId_ = destinationInstanceId;
-	setCoreParameter("DestinationInstanceId", destinationInstanceId);
+	setCoreParameter("DestinationInstanceId", std::to_string(destinationInstanceId));
 }
 
 std::string CreateStaticVerificationRequest::getSourceInstanceId()const
@@ -110,7 +110,7 @@ std::string CreateStaticVerificationRequest::getSourceInstanceId()const
 void CreateStaticVerificationRequest::setSourceInstanceId(const std::string& sourceInstanceId)
 {
 	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", sourceInstanceId);
+	setCoreParameter("SourceInstanceId", std::to_string(sourceInstanceId));
 }
 
 long CreateStaticVerificationRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string CreateStaticVerificationRequest::getAccessKeyId()const
 void CreateStaticVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

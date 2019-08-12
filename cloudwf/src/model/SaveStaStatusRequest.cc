@@ -33,7 +33,7 @@ std::string SaveStaStatusRequest::getDescription()const
 void SaveStaStatusRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long SaveStaStatusRequest::getId()const
@@ -55,6 +55,6 @@ std::string SaveStaStatusRequest::getAccessKeyId()const
 void SaveStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

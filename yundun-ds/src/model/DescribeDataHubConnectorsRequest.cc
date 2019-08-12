@@ -44,7 +44,7 @@ std::string DescribeDataHubConnectorsRequest::getSourceIp()const
 void DescribeDataHubConnectorsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDataHubConnectorsRequest::getFeatureType()const
@@ -99,7 +99,7 @@ std::string DescribeDataHubConnectorsRequest::getLang()const
 void DescribeDataHubConnectorsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeDataHubConnectorsRequest::getProjectId()const
@@ -121,6 +121,6 @@ std::string DescribeDataHubConnectorsRequest::getKey()const
 void DescribeDataHubConnectorsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setCoreParameter("Key", std::to_string(key));
 }
 

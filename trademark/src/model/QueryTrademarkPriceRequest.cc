@@ -33,7 +33,7 @@ std::string QueryTrademarkPriceRequest::getTmName()const
 void QueryTrademarkPriceRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setCoreParameter("TmName", std::to_string(tmName));
 }
 
 std::string QueryTrademarkPriceRequest::getTmIcon()const
@@ -44,7 +44,7 @@ std::string QueryTrademarkPriceRequest::getTmIcon()const
 void QueryTrademarkPriceRequest::setTmIcon(const std::string& tmIcon)
 {
 	tmIcon_ = tmIcon;
-	setCoreParameter("TmIcon", tmIcon);
+	setCoreParameter("TmIcon", std::to_string(tmIcon));
 }
 
 std::string QueryTrademarkPriceRequest::getOrderData()const
@@ -55,7 +55,7 @@ std::string QueryTrademarkPriceRequest::getOrderData()const
 void QueryTrademarkPriceRequest::setOrderData(const std::string& orderData)
 {
 	orderData_ = orderData;
-	setCoreParameter("OrderData", orderData);
+	setCoreParameter("OrderData", std::to_string(orderData));
 }
 
 int QueryTrademarkPriceRequest::getType()const

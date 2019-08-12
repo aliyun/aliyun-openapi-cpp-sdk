@@ -33,7 +33,7 @@ std::string ModifyAlarmRequest::getMetricType()const
 void ModifyAlarmRequest::setMetricType(const std::string& metricType)
 {
 	metricType_ = metricType;
-	setCoreParameter("MetricType", metricType);
+	setCoreParameter("MetricType", std::to_string(metricType));
 }
 
 int ModifyAlarmRequest::getPeriod()const
@@ -55,7 +55,7 @@ std::string ModifyAlarmRequest::getResourceOwnerAccount()const
 void ModifyAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ModifyAlarmRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string ModifyAlarmRequest::getDescription()const
 void ModifyAlarmRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::vector<std::string> ModifyAlarmRequest::getAlarmAction()const
@@ -122,7 +122,7 @@ std::string ModifyAlarmRequest::getAlarmTaskId()const
 void ModifyAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", alarmTaskId);
+	setCoreParameter("AlarmTaskId", std::to_string(alarmTaskId));
 }
 
 std::string ModifyAlarmRequest::getAccessKeyId()const
@@ -133,7 +133,7 @@ std::string ModifyAlarmRequest::getAccessKeyId()const
 void ModifyAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyAlarmRequest::getRegionId()const
@@ -144,7 +144,7 @@ std::string ModifyAlarmRequest::getRegionId()const
 void ModifyAlarmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyAlarmRequest::getName()const
@@ -155,7 +155,7 @@ std::string ModifyAlarmRequest::getName()const
 void ModifyAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int ModifyAlarmRequest::getEvaluationCount()const
@@ -177,7 +177,7 @@ std::string ModifyAlarmRequest::getMetricName()const
 void ModifyAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setCoreParameter("MetricName", std::to_string(metricName));
 }
 
 std::string ModifyAlarmRequest::getComparisonOperator()const
@@ -188,7 +188,7 @@ std::string ModifyAlarmRequest::getComparisonOperator()const
 void ModifyAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
 {
 	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", comparisonOperator);
+	setCoreParameter("ComparisonOperator", std::to_string(comparisonOperator));
 }
 
 std::vector<ModifyAlarmRequest::Dimension> ModifyAlarmRequest::getDimension()const
@@ -216,6 +216,6 @@ std::string ModifyAlarmRequest::getStatistics()const
 void ModifyAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", statistics);
+	setCoreParameter("Statistics", std::to_string(statistics));
 }
 

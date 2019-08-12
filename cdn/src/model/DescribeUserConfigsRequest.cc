@@ -33,7 +33,7 @@ std::string DescribeUserConfigsRequest::getSecurityToken()const
 void DescribeUserConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeUserConfigsRequest::getOwnerId()const
@@ -55,6 +55,6 @@ std::string DescribeUserConfigsRequest::getConfig()const
 void DescribeUserConfigsRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setCoreParameter("Config", std::to_string(config));
 }
 

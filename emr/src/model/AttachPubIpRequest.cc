@@ -44,7 +44,7 @@ std::string AttachPubIpRequest::getRegionId()const
 void AttachPubIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<std::string> AttachPubIpRequest::getInstanceIds()const
@@ -67,7 +67,7 @@ std::string AttachPubIpRequest::getClusterId()const
 void AttachPubIpRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string AttachPubIpRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string AttachPubIpRequest::getAccessKeyId()const
 void AttachPubIpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

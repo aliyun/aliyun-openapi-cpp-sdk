@@ -33,7 +33,7 @@ std::string SetDomainCertificateRequest::getSecurityToken()const
 void SetDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetDomainCertificateRequest::getCertificatePrivateKey()const
@@ -44,7 +44,7 @@ std::string SetDomainCertificateRequest::getCertificatePrivateKey()const
 void SetDomainCertificateRequest::setCertificatePrivateKey(const std::string& certificatePrivateKey)
 {
 	certificatePrivateKey_ = certificatePrivateKey;
-	setCoreParameter("CertificatePrivateKey", certificatePrivateKey);
+	setCoreParameter("CertificatePrivateKey", std::to_string(certificatePrivateKey));
 }
 
 std::string SetDomainCertificateRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string SetDomainCertificateRequest::getGroupId()const
 void SetDomainCertificateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string SetDomainCertificateRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string SetDomainCertificateRequest::getDomainName()const
 void SetDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SetDomainCertificateRequest::getCertificateName()const
@@ -77,7 +77,7 @@ std::string SetDomainCertificateRequest::getCertificateName()const
 void SetDomainCertificateRequest::setCertificateName(const std::string& certificateName)
 {
 	certificateName_ = certificateName;
-	setCoreParameter("CertificateName", certificateName);
+	setCoreParameter("CertificateName", std::to_string(certificateName));
 }
 
 std::string SetDomainCertificateRequest::getCertificateBody()const
@@ -88,7 +88,7 @@ std::string SetDomainCertificateRequest::getCertificateBody()const
 void SetDomainCertificateRequest::setCertificateBody(const std::string& certificateBody)
 {
 	certificateBody_ = certificateBody;
-	setCoreParameter("CertificateBody", certificateBody);
+	setCoreParameter("CertificateBody", std::to_string(certificateBody));
 }
 
 std::string SetDomainCertificateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SetDomainCertificateRequest::getAccessKeyId()const
 void SetDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

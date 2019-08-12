@@ -33,7 +33,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getAccess_key_id()co
 void DescribeMasterSlaveServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getMasterSlaveServer
 void DescribeMasterSlaveServerGroupAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
 {
 	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+	setCoreParameter("MasterSlaveServerGroupId", std::to_string(masterSlaveServerGroupId));
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerAcco
 void DescribeMasterSlaveServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getOwnerAccount()con
 void DescribeMasterSlaveServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeMasterSlaveServerGroupAttributeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getTags()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

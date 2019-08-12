@@ -33,7 +33,7 @@ std::string CreateEntityRequest::getRegex()const
 void CreateEntityRequest::setRegex(const std::string& regex)
 {
 	regex_ = regex;
-	setCoreParameter("Regex", regex);
+	setCoreParameter("Regex", std::to_string(regex));
 }
 
 std::string CreateEntityRequest::getEntityType()const
@@ -44,7 +44,7 @@ std::string CreateEntityRequest::getEntityType()const
 void CreateEntityRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", entityType);
+	setCoreParameter("EntityType", std::to_string(entityType));
 }
 
 std::string CreateEntityRequest::getMembers()const
@@ -55,7 +55,7 @@ std::string CreateEntityRequest::getMembers()const
 void CreateEntityRequest::setMembers(const std::string& members)
 {
 	members_ = members;
-	setCoreParameter("Members", members);
+	setCoreParameter("Members", std::to_string(members));
 }
 
 std::string CreateEntityRequest::getEntityName()const
@@ -66,7 +66,7 @@ std::string CreateEntityRequest::getEntityName()const
 void CreateEntityRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setCoreParameter("EntityName", std::to_string(entityName));
 }
 
 long CreateEntityRequest::getDialogId()const

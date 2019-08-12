@@ -33,7 +33,7 @@ std::string DeleteLiveStreamsNotifyUrlConfigRequest::getRegionId()const
 void DeleteLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DeleteLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void DeleteLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DeleteLiveStreamsNotifyUrlConfigRequest::getOwnerId()const

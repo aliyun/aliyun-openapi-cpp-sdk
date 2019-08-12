@@ -33,7 +33,7 @@ std::string DescribeSignatureTradeListRequest::getSourceIp()const
 void DescribeSignatureTradeListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeSignatureTradeListRequest::getShowSize()const
@@ -55,7 +55,7 @@ std::string DescribeSignatureTradeListRequest::getSearchType()const
 void DescribeSignatureTradeListRequest::setSearchType(const std::string& searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", searchType);
+	setCoreParameter("SearchType", std::to_string(searchType));
 }
 
 int DescribeSignatureTradeListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ std::string DescribeSignatureTradeListRequest::getLang()const
 void DescribeSignatureTradeListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchValue()const
@@ -88,6 +88,6 @@ std::string DescribeSignatureTradeListRequest::getSearchValue()const
 void DescribeSignatureTradeListRequest::setSearchValue(const std::string& searchValue)
 {
 	searchValue_ = searchValue;
-	setCoreParameter("SearchValue", searchValue);
+	setCoreParameter("SearchValue", std::to_string(searchValue));
 }
 

@@ -33,7 +33,7 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUs
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistrantProfileId()const
@@ -67,7 +67,7 @@ bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferO
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited);
+	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLang()const
@@ -78,6 +78,6 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLa
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

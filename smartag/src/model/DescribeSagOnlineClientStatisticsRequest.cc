@@ -44,7 +44,7 @@ std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()c
 void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSagOnlineClientStatisticsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeSagOnlineClientStatisticsRequest::getRegionId()const
 void DescribeSagOnlineClientStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSagOnlineClientStatisticsRequest::getOwnerAccount()const
 void DescribeSagOnlineClientStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::vector<std::string> DescribeSagOnlineClientStatisticsRequest::getSmartAGIds()const

@@ -44,7 +44,7 @@ std::string RunParagraphRequest::getRegionId()const
 void RunParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RunParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string RunParagraphRequest::getNoteId()const
 void RunParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 
 std::string RunParagraphRequest::getId()const
@@ -66,7 +66,7 @@ std::string RunParagraphRequest::getId()const
 void RunParagraphRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string RunParagraphRequest::getText()const
@@ -77,7 +77,7 @@ std::string RunParagraphRequest::getText()const
 void RunParagraphRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setCoreParameter("Text", std::to_string(text));
 }
 
 std::string RunParagraphRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string RunParagraphRequest::getAccessKeyId()const
 void RunParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

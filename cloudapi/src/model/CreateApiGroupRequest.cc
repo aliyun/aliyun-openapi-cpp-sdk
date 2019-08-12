@@ -33,7 +33,7 @@ std::string CreateApiGroupRequest::getInstanceId()const
 void CreateApiGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CreateApiGroupRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string CreateApiGroupRequest::getSecurityToken()const
 void CreateApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateApiGroupRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string CreateApiGroupRequest::getDescription()const
 void CreateApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateApiGroupRequest::getSource()const
@@ -66,7 +66,7 @@ std::string CreateApiGroupRequest::getSource()const
 void CreateApiGroupRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setCoreParameter("Source", std::to_string(source));
 }
 
 std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
@@ -94,7 +94,7 @@ std::string CreateApiGroupRequest::getGroupName()const
 void CreateApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string CreateApiGroupRequest::getAccessKeyId()const
@@ -105,6 +105,6 @@ std::string CreateApiGroupRequest::getAccessKeyId()const
 void CreateApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

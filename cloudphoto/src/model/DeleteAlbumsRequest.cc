@@ -33,7 +33,7 @@ std::string DeleteAlbumsRequest::getLibraryId()const
 void DeleteAlbumsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", std::to_string(libraryId));
 }
 
 std::vector<long> DeleteAlbumsRequest::getAlbumId()const
@@ -56,6 +56,6 @@ std::string DeleteAlbumsRequest::getStoreName()const
 void DeleteAlbumsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

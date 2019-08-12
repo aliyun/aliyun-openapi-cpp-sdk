@@ -33,7 +33,7 @@ std::string ListEventRulesRequest::getGroupId()const
 void ListEventRulesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string ListEventRulesRequest::getPageSize()const
@@ -44,7 +44,7 @@ std::string ListEventRulesRequest::getPageSize()const
 void ListEventRulesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListEventRulesRequest::getNamePrefix()const
@@ -55,7 +55,7 @@ std::string ListEventRulesRequest::getNamePrefix()const
 void ListEventRulesRequest::setNamePrefix(const std::string& namePrefix)
 {
 	namePrefix_ = namePrefix;
-	setCoreParameter("NamePrefix", namePrefix);
+	setCoreParameter("NamePrefix", std::to_string(namePrefix));
 }
 
 std::string ListEventRulesRequest::getPage()const
@@ -66,6 +66,6 @@ std::string ListEventRulesRequest::getPage()const
 void ListEventRulesRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 

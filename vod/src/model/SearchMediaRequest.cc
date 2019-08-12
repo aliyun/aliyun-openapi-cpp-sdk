@@ -44,7 +44,7 @@ std::string SearchMediaRequest::getResourceOwnerAccount()const
 void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SearchMediaRequest::getMatch()const
@@ -55,7 +55,7 @@ std::string SearchMediaRequest::getMatch()const
 void SearchMediaRequest::setMatch(const std::string& match)
 {
 	match_ = match;
-	setCoreParameter("Match", match);
+	setCoreParameter("Match", std::to_string(match));
 }
 
 std::string SearchMediaRequest::getSessionId()const
@@ -66,7 +66,7 @@ std::string SearchMediaRequest::getSessionId()const
 void SearchMediaRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setCoreParameter("SessionId", std::to_string(sessionId));
 }
 
 long SearchMediaRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string SearchMediaRequest::getScrollToken()const
 void SearchMediaRequest::setScrollToken(const std::string& scrollToken)
 {
 	scrollToken_ = scrollToken;
-	setCoreParameter("ScrollToken", scrollToken);
+	setCoreParameter("ScrollToken", std::to_string(scrollToken));
 }
 
 int SearchMediaRequest::getPageNo()const
@@ -110,7 +110,7 @@ std::string SearchMediaRequest::getSearchType()const
 void SearchMediaRequest::setSearchType(const std::string& searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", searchType);
+	setCoreParameter("SearchType", std::to_string(searchType));
 }
 
 int SearchMediaRequest::getPageSize()const
@@ -132,7 +132,7 @@ std::string SearchMediaRequest::getSortBy()const
 void SearchMediaRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", std::to_string(sortBy));
 }
 
 std::string SearchMediaRequest::getResultTypes()const
@@ -143,7 +143,7 @@ std::string SearchMediaRequest::getResultTypes()const
 void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
 {
 	resultTypes_ = resultTypes;
-	setCoreParameter("ResultTypes", resultTypes);
+	setCoreParameter("ResultTypes", std::to_string(resultTypes));
 }
 
 std::string SearchMediaRequest::getFields()const
@@ -154,6 +154,6 @@ std::string SearchMediaRequest::getFields()const
 void SearchMediaRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", fields);
+	setCoreParameter("Fields", std::to_string(fields));
 }
 

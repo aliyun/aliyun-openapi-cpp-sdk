@@ -33,7 +33,7 @@ std::string DescribePurchasedApiGroupsRequest::getSecurityToken()const
 void DescribePurchasedApiGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int DescribePurchasedApiGroupsRequest::getPageSize()const
@@ -66,6 +66,6 @@ std::string DescribePurchasedApiGroupsRequest::getAccessKeyId()const
 void DescribePurchasedApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

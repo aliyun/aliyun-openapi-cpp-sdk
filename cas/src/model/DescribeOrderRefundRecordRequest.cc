@@ -33,6 +33,6 @@ std::string DescribeOrderRefundRecordRequest::getSourceIp()const
 void DescribeOrderRefundRecordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 

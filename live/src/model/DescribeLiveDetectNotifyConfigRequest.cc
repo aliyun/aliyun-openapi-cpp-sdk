@@ -33,7 +33,7 @@ std::string DescribeLiveDetectNotifyConfigRequest::getSecurityToken()const
 void DescribeLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeLiveDetectNotifyConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDetectNotifyConfigRequest::getDomainName()const
 void DescribeLiveDetectNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long DescribeLiveDetectNotifyConfigRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string BatchRegisterApAssetRequest::getJsonData()const
 void BatchRegisterApAssetRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setCoreParameter("JsonData", std::to_string(jsonData));
 }
 
 std::string BatchRegisterApAssetRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string BatchRegisterApAssetRequest::getAccessKeyId()const
 void BatchRegisterApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

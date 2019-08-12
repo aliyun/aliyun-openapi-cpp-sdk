@@ -55,7 +55,7 @@ bool DescribeReservedInstancesRequest::getProxy_original_security_transport()con
 void DescribeReservedInstancesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeReservedInstancesRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeReservedInstancesRequest::getProxy_original_source_ip()const
 void DescribeReservedInstancesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeReservedInstancesRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeReservedInstancesRequest::getOwnerIdLoginEmail()const
 void DescribeReservedInstancesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeReservedInstancesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeReservedInstancesRequest::getCallerType()const
 void DescribeReservedInstancesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int DescribeReservedInstancesRequest::getPageNumber()const
@@ -110,7 +110,7 @@ std::string DescribeReservedInstancesRequest::getAccessKeyId()const
 void DescribeReservedInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeReservedInstancesRequest::getLockReason()const
@@ -121,7 +121,7 @@ std::string DescribeReservedInstancesRequest::getLockReason()const
 void DescribeReservedInstancesRequest::setLockReason(const std::string& lockReason)
 {
 	lockReason_ = lockReason;
-	setCoreParameter("LockReason", lockReason);
+	setCoreParameter("LockReason", std::to_string(lockReason));
 }
 
 std::string DescribeReservedInstancesRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeReservedInstancesRequest::getSecurityToken()const
 void DescribeReservedInstancesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeReservedInstancesRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeReservedInstancesRequest::getRegionId()const
 void DescribeReservedInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeReservedInstancesRequest::getEnable()const
@@ -154,7 +154,7 @@ bool DescribeReservedInstancesRequest::getEnable()const
 void DescribeReservedInstancesRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeReservedInstancesRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeReservedInstancesRequest::getRequestContent()const
 void DescribeReservedInstancesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string DescribeReservedInstancesRequest::getScope()const
@@ -176,7 +176,7 @@ std::string DescribeReservedInstancesRequest::getScope()const
 void DescribeReservedInstancesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setCoreParameter("Scope", std::to_string(scope));
 }
 
 int DescribeReservedInstancesRequest::getPageSize()const
@@ -198,7 +198,7 @@ std::string DescribeReservedInstancesRequest::getCallerBidEmail()const
 void DescribeReservedInstancesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string DescribeReservedInstancesRequest::getInstanceType()const
@@ -209,7 +209,7 @@ std::string DescribeReservedInstancesRequest::getInstanceType()const
 void DescribeReservedInstancesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::string DescribeReservedInstancesRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribeReservedInstancesRequest::getCallerUidEmail()const
 void DescribeReservedInstancesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeReservedInstancesRequest::getCallerUid()const
@@ -242,7 +242,7 @@ std::string DescribeReservedInstancesRequest::getApp_ip()const
 void DescribeReservedInstancesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeReservedInstancesRequest::getResourceOwnerAccount()const
@@ -253,7 +253,7 @@ std::string DescribeReservedInstancesRequest::getResourceOwnerAccount()const
 void DescribeReservedInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeReservedInstancesRequest::getOwnerAccount()const
@@ -264,7 +264,7 @@ std::string DescribeReservedInstancesRequest::getOwnerAccount()const
 void DescribeReservedInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeReservedInstancesRequest::getInstanceTypeFamily()const
@@ -275,7 +275,7 @@ std::string DescribeReservedInstancesRequest::getInstanceTypeFamily()const
 void DescribeReservedInstancesRequest::setInstanceTypeFamily(const std::string& instanceTypeFamily)
 {
 	instanceTypeFamily_ = instanceTypeFamily;
-	setCoreParameter("InstanceTypeFamily", instanceTypeFamily);
+	setCoreParameter("InstanceTypeFamily", std::to_string(instanceTypeFamily));
 }
 
 std::string DescribeReservedInstancesRequest::getCallerBid()const
@@ -286,7 +286,7 @@ std::string DescribeReservedInstancesRequest::getCallerBid()const
 void DescribeReservedInstancesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeReservedInstancesRequest::getOwnerId()const
@@ -308,7 +308,7 @@ bool DescribeReservedInstancesRequest::getProxy_trust_transport_info()const
 void DescribeReservedInstancesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeReservedInstancesRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool DescribeReservedInstancesRequest::getAk_mfa_present()const
 void DescribeReservedInstancesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeReservedInstancesRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool DescribeReservedInstancesRequest::getSecurity_transport()const
 void DescribeReservedInstancesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::vector<std::string> DescribeReservedInstancesRequest::getReservedInstanceId()const
@@ -353,7 +353,7 @@ std::string DescribeReservedInstancesRequest::getOfferingType()const
 void DescribeReservedInstancesRequest::setOfferingType(const std::string& offeringType)
 {
 	offeringType_ = offeringType;
-	setCoreParameter("OfferingType", offeringType);
+	setCoreParameter("OfferingType", std::to_string(offeringType));
 }
 
 std::string DescribeReservedInstancesRequest::getRequestId()const
@@ -364,7 +364,7 @@ std::string DescribeReservedInstancesRequest::getRequestId()const
 void DescribeReservedInstancesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeReservedInstancesRequest::getAkProxy()const
@@ -375,7 +375,7 @@ std::string DescribeReservedInstancesRequest::getAkProxy()const
 void DescribeReservedInstancesRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string DescribeReservedInstancesRequest::getZoneId()const
@@ -386,7 +386,7 @@ std::string DescribeReservedInstancesRequest::getZoneId()const
 void DescribeReservedInstancesRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string DescribeReservedInstancesRequest::getReservedInstanceName()const
@@ -397,7 +397,7 @@ std::string DescribeReservedInstancesRequest::getReservedInstanceName()const
 void DescribeReservedInstancesRequest::setReservedInstanceName(const std::string& reservedInstanceName)
 {
 	reservedInstanceName_ = reservedInstanceName;
-	setCoreParameter("ReservedInstanceName", reservedInstanceName);
+	setCoreParameter("ReservedInstanceName", std::to_string(reservedInstanceName));
 }
 
 std::vector<std::string> DescribeReservedInstancesRequest::getStatus()const

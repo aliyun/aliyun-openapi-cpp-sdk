@@ -44,7 +44,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getMigrateTaskId()const
 void DescribeOssDownloadsForSQLServerRequest::setMigrateTaskId(const std::string& migrateTaskId)
 {
 	migrateTaskId_ = migrateTaskId;
-	setCoreParameter("MigrateTaskId", migrateTaskId);
+	setCoreParameter("MigrateTaskId", std::to_string(migrateTaskId));
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getResourceOwnerAccount()co
 void DescribeOssDownloadsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeOssDownloadsForSQLServerRequest::getDBInstanceId()const
 void DescribeOssDownloadsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeOssDownloadsForSQLServerRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeOssDownloadsForSQLServerRequest::getAccessKeyId()const
 void DescribeOssDownloadsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

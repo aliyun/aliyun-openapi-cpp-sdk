@@ -33,7 +33,7 @@ std::string UnassociateHaVipRequest::getHaVipId()const
 void UnassociateHaVipRequest::setHaVipId(const std::string& haVipId)
 {
 	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
+	setCoreParameter("HaVipId", std::to_string(haVipId));
 }
 
 long UnassociateHaVipRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string UnassociateHaVipRequest::getInstanceId()const
 void UnassociateHaVipRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UnassociateHaVipRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnassociateHaVipRequest::getResourceOwnerAccount()const
 void UnassociateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnassociateHaVipRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string UnassociateHaVipRequest::getClientToken()const
 void UnassociateHaVipRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string UnassociateHaVipRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string UnassociateHaVipRequest::getRegionId()const
 void UnassociateHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnassociateHaVipRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string UnassociateHaVipRequest::getOwnerAccount()const
 void UnassociateHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnassociateHaVipRequest::getForce()const
@@ -110,7 +110,7 @@ std::string UnassociateHaVipRequest::getForce()const
 void UnassociateHaVipRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", std::to_string(force));
 }
 
 long UnassociateHaVipRequest::getOwnerId()const

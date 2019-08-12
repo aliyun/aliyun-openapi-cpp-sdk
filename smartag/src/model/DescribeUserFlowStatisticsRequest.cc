@@ -44,7 +44,7 @@ std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeUserFlowStatisticsRequest::getRegionId()const
 void DescribeUserFlowStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
 void DescribeUserFlowStatisticsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
@@ -88,7 +88,7 @@ std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
 void DescribeUserFlowStatisticsRequest::setStatisticsDate(const std::string& statisticsDate)
 {
 	statisticsDate_ = statisticsDate;
-	setCoreParameter("StatisticsDate", statisticsDate);
+	setCoreParameter("StatisticsDate", std::to_string(statisticsDate));
 }
 
 std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const

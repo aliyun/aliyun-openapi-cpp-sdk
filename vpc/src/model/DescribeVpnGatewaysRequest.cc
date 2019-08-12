@@ -33,7 +33,7 @@ std::string DescribeVpnGatewaysRequest::getBusinessStatus()const
 void DescribeVpnGatewaysRequest::setBusinessStatus(const std::string& businessStatus)
 {
 	businessStatus_ = businessStatus;
-	setCoreParameter("BusinessStatus", businessStatus);
+	setCoreParameter("BusinessStatus", std::to_string(businessStatus));
 }
 
 long DescribeVpnGatewaysRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnGatewaysRequest::getResourceOwnerAccount()const
 void DescribeVpnGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpnGatewaysRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpnGatewaysRequest::getRegionId()const
 void DescribeVpnGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpnGatewaysRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpnGatewaysRequest::getOwnerAccount()const
 void DescribeVpnGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeVpnGatewaysRequest::getVpcId()const
@@ -88,7 +88,7 @@ std::string DescribeVpnGatewaysRequest::getVpcId()const
 void DescribeVpnGatewaysRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 int DescribeVpnGatewaysRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeVpnGatewaysRequest::getVpnGatewayId()const
 void DescribeVpnGatewaysRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long DescribeVpnGatewaysRequest::getOwnerId()const
@@ -143,6 +143,6 @@ std::string DescribeVpnGatewaysRequest::getStatus()const
 void DescribeVpnGatewaysRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

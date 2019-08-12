@@ -33,7 +33,7 @@ std::string DeleteImageRequest::getRepoNamespace()const
 void DeleteImageRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
 }
 
 std::string DeleteImageRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string DeleteImageRequest::getRepoName()const
 void DeleteImageRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setCoreParameter("RepoName", std::to_string(repoName));
 }
 
 std::string DeleteImageRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteImageRequest::getRegionId()const
 void DeleteImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteImageRequest::getTag()const
@@ -66,6 +66,6 @@ std::string DeleteImageRequest::getTag()const
 void DeleteImageRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setCoreParameter("Tag", std::to_string(tag));
 }
 

@@ -33,7 +33,7 @@ std::string ModifyHttpHeaderConfigRequest::getHeaderValue()const
 void ModifyHttpHeaderConfigRequest::setHeaderValue(const std::string& headerValue)
 {
 	headerValue_ = headerValue;
-	setCoreParameter("HeaderValue", headerValue);
+	setCoreParameter("HeaderValue", std::to_string(headerValue));
 }
 
 std::string ModifyHttpHeaderConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyHttpHeaderConfigRequest::getSecurityToken()const
 void ModifyHttpHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyHttpHeaderConfigRequest::getConfigID()const
@@ -55,7 +55,7 @@ std::string ModifyHttpHeaderConfigRequest::getConfigID()const
 void ModifyHttpHeaderConfigRequest::setConfigID(const std::string& configID)
 {
 	configID_ = configID;
-	setCoreParameter("ConfigID", configID);
+	setCoreParameter("ConfigID", std::to_string(configID));
 }
 
 std::string ModifyHttpHeaderConfigRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string ModifyHttpHeaderConfigRequest::getDomainName()const
 void ModifyHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string ModifyHttpHeaderConfigRequest::getHeaderKey()const
@@ -77,7 +77,7 @@ std::string ModifyHttpHeaderConfigRequest::getHeaderKey()const
 void ModifyHttpHeaderConfigRequest::setHeaderKey(const std::string& headerKey)
 {
 	headerKey_ = headerKey;
-	setCoreParameter("HeaderKey", headerKey);
+	setCoreParameter("HeaderKey", std::to_string(headerKey));
 }
 
 long ModifyHttpHeaderConfigRequest::getOwnerId()const

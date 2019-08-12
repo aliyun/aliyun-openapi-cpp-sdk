@@ -44,7 +44,7 @@ std::string UnbindVbrRequest::getResourceOwnerAccount()const
 void UnbindVbrRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnbindVbrRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string UnbindVbrRequest::getRegionId()const
 void UnbindVbrRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnbindVbrRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnbindVbrRequest::getOwnerAccount()const
 void UnbindVbrRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UnbindVbrRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string UnbindVbrRequest::getSmartAGId()const
 void UnbindVbrRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long UnbindVbrRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string UnbindVbrRequest::getVbrId()const
 void UnbindVbrRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setCoreParameter("VbrId", std::to_string(vbrId));
 }
 
 std::string UnbindVbrRequest::getVbrRegionId()const
@@ -110,6 +110,6 @@ std::string UnbindVbrRequest::getVbrRegionId()const
 void UnbindVbrRequest::setVbrRegionId(const std::string& vbrRegionId)
 {
 	vbrRegionId_ = vbrRegionId;
-	setCoreParameter("VbrRegionId", vbrRegionId);
+	setCoreParameter("VbrRegionId", std::to_string(vbrRegionId));
 }
 

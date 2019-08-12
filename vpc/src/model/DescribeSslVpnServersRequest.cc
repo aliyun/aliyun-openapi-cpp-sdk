@@ -33,7 +33,7 @@ std::string DescribeSslVpnServersRequest::getSslVpnServerId()const
 void DescribeSslVpnServersRequest::setSslVpnServerId(const std::string& sslVpnServerId)
 {
 	sslVpnServerId_ = sslVpnServerId;
-	setCoreParameter("SslVpnServerId", sslVpnServerId);
+	setCoreParameter("SslVpnServerId", std::to_string(sslVpnServerId));
 }
 
 long DescribeSslVpnServersRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeSslVpnServersRequest::getResourceOwnerAccount()const
 void DescribeSslVpnServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSslVpnServersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeSslVpnServersRequest::getRegionId()const
 void DescribeSslVpnServersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSslVpnServersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSslVpnServersRequest::getOwnerAccount()const
 void DescribeSslVpnServersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSslVpnServersRequest::getName()const
@@ -88,7 +88,7 @@ std::string DescribeSslVpnServersRequest::getName()const
 void DescribeSslVpnServersRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 int DescribeSslVpnServersRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeSslVpnServersRequest::getVpnGatewayId()const
 void DescribeSslVpnServersRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long DescribeSslVpnServersRequest::getOwnerId()const

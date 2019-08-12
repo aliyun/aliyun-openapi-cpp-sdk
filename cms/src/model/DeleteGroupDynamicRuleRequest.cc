@@ -44,6 +44,6 @@ std::string DeleteGroupDynamicRuleRequest::getCategory()const
 void DeleteGroupDynamicRuleRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 

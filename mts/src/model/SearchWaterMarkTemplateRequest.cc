@@ -44,7 +44,7 @@ std::string SearchWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void SearchWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SearchWaterMarkTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SearchWaterMarkTemplateRequest::getOwnerAccount()const
 void SearchWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SearchWaterMarkTemplateRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string SearchWaterMarkTemplateRequest::getState()const
 void SearchWaterMarkTemplateRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 long SearchWaterMarkTemplateRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string SearchWaterMarkTemplateRequest::getAccessKeyId()const
 void SearchWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

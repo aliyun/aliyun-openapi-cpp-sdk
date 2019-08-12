@@ -53,7 +53,7 @@ std::string PutEventRuleRequest::getGroupId()const
 void PutEventRuleRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string PutEventRuleRequest::getName()const
@@ -64,7 +64,7 @@ std::string PutEventRuleRequest::getName()const
 void PutEventRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string PutEventRuleRequest::getDescription()const
@@ -75,7 +75,7 @@ std::string PutEventRuleRequest::getDescription()const
 void PutEventRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string PutEventRuleRequest::getEventType()const
@@ -86,7 +86,7 @@ std::string PutEventRuleRequest::getEventType()const
 void PutEventRuleRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 std::string PutEventRuleRequest::getState()const
@@ -97,6 +97,6 @@ std::string PutEventRuleRequest::getState()const
 void PutEventRuleRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 

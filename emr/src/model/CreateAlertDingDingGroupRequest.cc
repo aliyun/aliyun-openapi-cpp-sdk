@@ -44,7 +44,7 @@ std::string CreateAlertDingDingGroupRequest::getRegionId()const
 void CreateAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateAlertDingDingGroupRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateAlertDingDingGroupRequest::getName()const
 void CreateAlertDingDingGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string CreateAlertDingDingGroupRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateAlertDingDingGroupRequest::getDescription()const
 void CreateAlertDingDingGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateAlertDingDingGroupRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string CreateAlertDingDingGroupRequest::getAccessKeyId()const
 void CreateAlertDingDingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateAlertDingDingGroupRequest::getWebHookUrl()const
@@ -88,6 +88,6 @@ std::string CreateAlertDingDingGroupRequest::getWebHookUrl()const
 void CreateAlertDingDingGroupRequest::setWebHookUrl(const std::string& webHookUrl)
 {
 	webHookUrl_ = webHookUrl;
-	setCoreParameter("WebHookUrl", webHookUrl);
+	setCoreParameter("WebHookUrl", std::to_string(webHookUrl));
 }
 

@@ -33,7 +33,7 @@ std::string DeleteFlowJobRequest::getRegionId()const
 void DeleteFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteFlowJobRequest::getId()const
@@ -44,7 +44,7 @@ std::string DeleteFlowJobRequest::getId()const
 void DeleteFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteFlowJobRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string DeleteFlowJobRequest::getProjectId()const
 void DeleteFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

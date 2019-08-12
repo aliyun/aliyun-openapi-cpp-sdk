@@ -33,7 +33,7 @@ std::string SearchTracesRequest::getServiceIp()const
 void SearchTracesRequest::setServiceIp(const std::string& serviceIp)
 {
 	serviceIp_ = serviceIp;
-	setCoreParameter("ServiceIp", serviceIp);
+	setCoreParameter("ServiceIp", std::to_string(serviceIp));
 }
 
 std::string SearchTracesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string SearchTracesRequest::getRegionId()const
 void SearchTracesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SearchTracesRequest::getOperationName()const
@@ -55,7 +55,7 @@ std::string SearchTracesRequest::getOperationName()const
 void SearchTracesRequest::setOperationName(const std::string& operationName)
 {
 	operationName_ = operationName;
-	setCoreParameter("OperationName", operationName);
+	setCoreParameter("OperationName", std::to_string(operationName));
 }
 
 std::string SearchTracesRequest::getAppType()const
@@ -66,7 +66,7 @@ std::string SearchTracesRequest::getAppType()const
 void SearchTracesRequest::setAppType(const std::string& appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", appType);
+	setCoreParameter("AppType", std::to_string(appType));
 }
 
 int SearchTracesRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string SearchTracesRequest::getServiceName()const
 void SearchTracesRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 int SearchTracesRequest::getPageIndex()const
@@ -149,7 +149,7 @@ bool SearchTracesRequest::getReverse()const
 void SearchTracesRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse);
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
 long SearchTracesRequest::getMinDuration()const

@@ -44,7 +44,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getResourceOwnerAccount()co
 void DescribeDBClusterAccessWhitelistRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getDBClusterId()const
 void DescribeDBClusterAccessWhitelistRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getOwnerAccount()const
 void DescribeDBClusterAccessWhitelistRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeDBClusterAccessWhitelistRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeDBClusterAccessWhitelistRequest::getAccessKeyId()const
 void DescribeDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

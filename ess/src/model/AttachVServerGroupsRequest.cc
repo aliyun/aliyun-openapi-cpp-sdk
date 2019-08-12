@@ -33,7 +33,7 @@ std::string AttachVServerGroupsRequest::getResourceOwnerAccount()const
 void AttachVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AttachVServerGroupsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string AttachVServerGroupsRequest::getRegionId()const
 void AttachVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AttachVServerGroupsRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string AttachVServerGroupsRequest::getScalingGroupId()const
 void AttachVServerGroupsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 bool AttachVServerGroupsRequest::getForceAttach()const
@@ -66,7 +66,7 @@ bool AttachVServerGroupsRequest::getForceAttach()const
 void AttachVServerGroupsRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach);
+	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 long AttachVServerGroupsRequest::getOwnerId()const
@@ -105,6 +105,6 @@ std::string AttachVServerGroupsRequest::getAccessKeyId()const
 void AttachVServerGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -33,7 +33,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getInstanceId()const
 void UpdateWebsiteInstanceStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getSourceIp()const
 void UpdateWebsiteInstanceStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getLang()const
@@ -55,7 +55,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getLang()const
 void UpdateWebsiteInstanceStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getStatus()const
@@ -66,6 +66,6 @@ std::string UpdateWebsiteInstanceStatusRequest::getStatus()const
 void UpdateWebsiteInstanceStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

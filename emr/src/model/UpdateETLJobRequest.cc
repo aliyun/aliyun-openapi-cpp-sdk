@@ -44,7 +44,7 @@ std::string UpdateETLJobRequest::getClusterConfig()const
 void UpdateETLJobRequest::setClusterConfig(const std::string& clusterConfig)
 {
 	clusterConfig_ = clusterConfig;
-	setCoreParameter("ClusterConfig", clusterConfig);
+	setCoreParameter("ClusterConfig", std::to_string(clusterConfig));
 }
 
 std::vector<UpdateETLJobRequest::TriggerRule> UpdateETLJobRequest::getTriggerRule()const
@@ -74,7 +74,7 @@ std::string UpdateETLJobRequest::getAlertConfig()const
 void UpdateETLJobRequest::setAlertConfig(const std::string& alertConfig)
 {
 	alertConfig_ = alertConfig;
-	setCoreParameter("AlertConfig", alertConfig);
+	setCoreParameter("AlertConfig", std::to_string(alertConfig));
 }
 
 std::string UpdateETLJobRequest::getDescription()const
@@ -85,7 +85,7 @@ std::string UpdateETLJobRequest::getDescription()const
 void UpdateETLJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 bool UpdateETLJobRequest::getCheck()const
@@ -96,7 +96,7 @@ bool UpdateETLJobRequest::getCheck()const
 void UpdateETLJobRequest::setCheck(bool check)
 {
 	check_ = check;
-	setCoreParameter("Check", check);
+	setCoreParameter("Check", check ? "true" : "false");
 }
 
 std::string UpdateETLJobRequest::getAccessKeyId()const
@@ -107,7 +107,7 @@ std::string UpdateETLJobRequest::getAccessKeyId()const
 void UpdateETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::vector<UpdateETLJobRequest::StageConnection> UpdateETLJobRequest::getStageConnection()const
@@ -155,7 +155,7 @@ std::string UpdateETLJobRequest::getRegionId()const
 void UpdateETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UpdateETLJobRequest::getName()const
@@ -166,7 +166,7 @@ std::string UpdateETLJobRequest::getName()const
 void UpdateETLJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdateETLJobRequest::getId()const
@@ -177,6 +177,6 @@ std::string UpdateETLJobRequest::getId()const
 void UpdateETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

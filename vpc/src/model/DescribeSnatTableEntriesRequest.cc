@@ -44,7 +44,7 @@ std::string DescribeSnatTableEntriesRequest::getResourceOwnerAccount()const
 void DescribeSnatTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSnatTableEntriesRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSnatTableEntriesRequest::getOwnerAccount()const
 void DescribeSnatTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSnatTableEntriesRequest::getSourceCIDR()const
@@ -66,7 +66,7 @@ std::string DescribeSnatTableEntriesRequest::getSourceCIDR()const
 void DescribeSnatTableEntriesRequest::setSourceCIDR(const std::string& sourceCIDR)
 {
 	sourceCIDR_ = sourceCIDR;
-	setCoreParameter("SourceCIDR", sourceCIDR);
+	setCoreParameter("SourceCIDR", std::to_string(sourceCIDR));
 }
 
 std::string DescribeSnatTableEntriesRequest::getSnatTableId()const
@@ -77,7 +77,7 @@ std::string DescribeSnatTableEntriesRequest::getSnatTableId()const
 void DescribeSnatTableEntriesRequest::setSnatTableId(const std::string& snatTableId)
 {
 	snatTableId_ = snatTableId;
-	setCoreParameter("SnatTableId", snatTableId);
+	setCoreParameter("SnatTableId", std::to_string(snatTableId));
 }
 
 long DescribeSnatTableEntriesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeSnatTableEntriesRequest::getSnatIp()const
 void DescribeSnatTableEntriesRequest::setSnatIp(const std::string& snatIp)
 {
 	snatIp_ = snatIp;
-	setCoreParameter("SnatIp", snatIp);
+	setCoreParameter("SnatIp", std::to_string(snatIp));
 }
 
 int DescribeSnatTableEntriesRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string DescribeSnatTableEntriesRequest::getSourceVSwitchId()const
 void DescribeSnatTableEntriesRequest::setSourceVSwitchId(const std::string& sourceVSwitchId)
 {
 	sourceVSwitchId_ = sourceVSwitchId;
-	setCoreParameter("SourceVSwitchId", sourceVSwitchId);
+	setCoreParameter("SourceVSwitchId", std::to_string(sourceVSwitchId));
 }
 
 std::string DescribeSnatTableEntriesRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeSnatTableEntriesRequest::getRegionId()const
 void DescribeSnatTableEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSnatTableEntriesRequest::getSnatEntryName()const
@@ -143,7 +143,7 @@ std::string DescribeSnatTableEntriesRequest::getSnatEntryName()const
 void DescribeSnatTableEntriesRequest::setSnatEntryName(const std::string& snatEntryName)
 {
 	snatEntryName_ = snatEntryName;
-	setCoreParameter("SnatEntryName", snatEntryName);
+	setCoreParameter("SnatEntryName", std::to_string(snatEntryName));
 }
 
 int DescribeSnatTableEntriesRequest::getPageSize()const
@@ -165,6 +165,6 @@ std::string DescribeSnatTableEntriesRequest::getSnatEntryId()const
 void DescribeSnatTableEntriesRequest::setSnatEntryId(const std::string& snatEntryId)
 {
 	snatEntryId_ = snatEntryId;
-	setCoreParameter("SnatEntryId", snatEntryId);
+	setCoreParameter("SnatEntryId", std::to_string(snatEntryId));
 }
 

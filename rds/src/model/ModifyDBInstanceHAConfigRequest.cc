@@ -44,7 +44,7 @@ std::string ModifyDBInstanceHAConfigRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceHAConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceHAConfigRequest::getOwnerAccount()const
 void ModifyDBInstanceHAConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getSyncMode()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceHAConfigRequest::getSyncMode()const
 void ModifyDBInstanceHAConfigRequest::setSyncMode(const std::string& syncMode)
 {
 	syncMode_ = syncMode;
-	setCoreParameter("SyncMode", syncMode);
+	setCoreParameter("SyncMode", std::to_string(syncMode));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getDbInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceHAConfigRequest::getDbInstanceId()const
 void ModifyDBInstanceHAConfigRequest::setDbInstanceId(const std::string& dbInstanceId)
 {
 	dbInstanceId_ = dbInstanceId;
-	setCoreParameter("DbInstanceId", dbInstanceId);
+	setCoreParameter("DbInstanceId", std::to_string(dbInstanceId));
 }
 
 long ModifyDBInstanceHAConfigRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ModifyDBInstanceHAConfigRequest::getHAMode()const
 void ModifyDBInstanceHAConfigRequest::setHAMode(const std::string& hAMode)
 {
 	hAMode_ = hAMode;
-	setCoreParameter("HAMode", hAMode);
+	setCoreParameter("HAMode", std::to_string(hAMode));
 }
 
 std::string ModifyDBInstanceHAConfigRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ModifyDBInstanceHAConfigRequest::getAccessKeyId()const
 void ModifyDBInstanceHAConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

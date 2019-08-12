@@ -33,7 +33,7 @@ std::string CreateRoomRequest::getTemplateIds()const
 void CreateRoomRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setCoreParameter("TemplateIds", std::to_string(templateIds));
 }
 
 long CreateRoomRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ bool CreateRoomRequest::getProxy_original_security_transport()const
 void CreateRoomRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateRoomRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string CreateRoomRequest::getProxy_original_source_ip()const
 void CreateRoomRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string CreateRoomRequest::getAnchorId()const
@@ -77,7 +77,7 @@ std::string CreateRoomRequest::getAnchorId()const
 void CreateRoomRequest::setAnchorId(const std::string& anchorId)
 {
 	anchorId_ = anchorId;
-	setCoreParameter("AnchorId", anchorId);
+	setCoreParameter("AnchorId", std::to_string(anchorId));
 }
 
 bool CreateRoomRequest::getUseAppTranscode()const
@@ -88,7 +88,7 @@ bool CreateRoomRequest::getUseAppTranscode()const
 void CreateRoomRequest::setUseAppTranscode(bool useAppTranscode)
 {
 	useAppTranscode_ = useAppTranscode;
-	setCoreParameter("UseAppTranscode", useAppTranscode);
+	setCoreParameter("UseAppTranscode", useAppTranscode ? "true" : "false");
 }
 
 std::string CreateRoomRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string CreateRoomRequest::getOwnerIdLoginEmail()const
 void CreateRoomRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateRoomRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string CreateRoomRequest::getCallerType()const
 void CreateRoomRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateRoomRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateRoomRequest::getAccessKeyId()const
 void CreateRoomRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateRoomRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string CreateRoomRequest::getSecurityToken()const
 void CreateRoomRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateRoomRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string CreateRoomRequest::getRegionId()const
 void CreateRoomRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateRoomRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string CreateRoomRequest::getRequestContent()const
 void CreateRoomRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string CreateRoomRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string CreateRoomRequest::getCallerBidEmail()const
 void CreateRoomRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string CreateRoomRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string CreateRoomRequest::getCallerUidEmail()const
 void CreateRoomRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long CreateRoomRequest::getCallerUid()const
@@ -198,7 +198,7 @@ std::string CreateRoomRequest::getApp_ip()const
 void CreateRoomRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateRoomRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string CreateRoomRequest::getPopProduct()const
 void CreateRoomRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string CreateRoomRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string CreateRoomRequest::getCallerBid()const
 void CreateRoomRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long CreateRoomRequest::getOwnerId()const
@@ -242,7 +242,7 @@ std::string CreateRoomRequest::getVersion()const
 void CreateRoomRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool CreateRoomRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool CreateRoomRequest::getProxy_trust_transport_info()const
 void CreateRoomRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool CreateRoomRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool CreateRoomRequest::getAk_mfa_present()const
 void CreateRoomRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string CreateRoomRequest::getRoomId()const
@@ -275,7 +275,7 @@ std::string CreateRoomRequest::getRoomId()const
 void CreateRoomRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setCoreParameter("RoomId", std::to_string(roomId));
 }
 
 bool CreateRoomRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool CreateRoomRequest::getSecurity_transport()const
 void CreateRoomRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateRoomRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string CreateRoomRequest::getRequestId()const
 void CreateRoomRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateRoomRequest::getAppId()const
@@ -308,6 +308,6 @@ std::string CreateRoomRequest::getAppId()const
 void CreateRoomRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

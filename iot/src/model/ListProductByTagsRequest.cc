@@ -50,7 +50,7 @@ std::string ListProductByTagsRequest::getIotInstanceId()const
 void ListProductByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int ListProductByTagsRequest::getPageSize()const
@@ -83,6 +83,6 @@ std::string ListProductByTagsRequest::getAccessKeyId()const
 void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

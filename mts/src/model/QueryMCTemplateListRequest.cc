@@ -44,7 +44,7 @@ std::string QueryMCTemplateListRequest::getTemplateIds()const
 void QueryMCTemplateListRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setCoreParameter("TemplateIds", std::to_string(templateIds));
 }
 
 std::string QueryMCTemplateListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryMCTemplateListRequest::getResourceOwnerAccount()const
 void QueryMCTemplateListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryMCTemplateListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryMCTemplateListRequest::getOwnerAccount()const
 void QueryMCTemplateListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryMCTemplateListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryMCTemplateListRequest::getAccessKeyId()const
 void QueryMCTemplateListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

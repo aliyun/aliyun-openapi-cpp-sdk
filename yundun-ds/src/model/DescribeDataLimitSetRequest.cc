@@ -33,7 +33,7 @@ std::string DescribeDataLimitSetRequest::getSourceIp()const
 void DescribeDataLimitSetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeDataLimitSetRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeDataLimitSetRequest::getLang()const
 void DescribeDataLimitSetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 int DescribeDataLimitSetRequest::getResourceType()const

@@ -66,7 +66,7 @@ std::string ModifyHpHostRequest::getRackInfo()const
 void ModifyHpHostRequest::setRackInfo(const std::string& rackInfo)
 {
 	rackInfo_ = rackInfo;
-	setCoreParameter("RackInfo", rackInfo);
+	setCoreParameter("RackInfo", std::to_string(rackInfo));
 }
 
 std::string ModifyHpHostRequest::getRole()const
@@ -77,7 +77,7 @@ std::string ModifyHpHostRequest::getRole()const
 void ModifyHpHostRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::string ModifyHpHostRequest::getSerialNumber()const
@@ -88,7 +88,7 @@ std::string ModifyHpHostRequest::getSerialNumber()const
 void ModifyHpHostRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setCoreParameter("SerialNumber", std::to_string(serialNumber));
 }
 
 std::string ModifyHpHostRequest::getHostType()const
@@ -99,7 +99,7 @@ std::string ModifyHpHostRequest::getHostType()const
 void ModifyHpHostRequest::setHostType(const std::string& hostType)
 {
 	hostType_ = hostType;
-	setCoreParameter("HostType", hostType);
+	setCoreParameter("HostType", std::to_string(hostType));
 }
 
 std::string ModifyHpHostRequest::getSecurityGroupId()const
@@ -110,7 +110,7 @@ std::string ModifyHpHostRequest::getSecurityGroupId()const
 void ModifyHpHostRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 std::vector<ModifyHpHostRequest::HpHostDisk> ModifyHpHostRequest::getHpHostDisk()const
@@ -139,7 +139,7 @@ std::string ModifyHpHostRequest::getAccessKeyId()const
 void ModifyHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifyHpHostRequest::getVswitchId()const
@@ -150,7 +150,7 @@ std::string ModifyHpHostRequest::getVswitchId()const
 void ModifyHpHostRequest::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
+	setCoreParameter("VswitchId", std::to_string(vswitchId));
 }
 
 std::string ModifyHpHostRequest::getHpHostBizId()const
@@ -161,7 +161,7 @@ std::string ModifyHpHostRequest::getHpHostBizId()const
 void ModifyHpHostRequest::setHpHostBizId(const std::string& hpHostBizId)
 {
 	hpHostBizId_ = hpHostBizId;
-	setCoreParameter("HpHostBizId", hpHostBizId);
+	setCoreParameter("HpHostBizId", std::to_string(hpHostBizId));
 }
 
 std::string ModifyHpHostRequest::getExternalKey()const
@@ -172,7 +172,7 @@ std::string ModifyHpHostRequest::getExternalKey()const
 void ModifyHpHostRequest::setExternalKey(const std::string& externalKey)
 {
 	externalKey_ = externalKey;
-	setCoreParameter("ExternalKey", externalKey);
+	setCoreParameter("ExternalKey", std::to_string(externalKey));
 }
 
 std::string ModifyHpHostRequest::getHostName()const
@@ -183,7 +183,7 @@ std::string ModifyHpHostRequest::getHostName()const
 void ModifyHpHostRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string ModifyHpHostRequest::getRegionId()const
@@ -194,7 +194,7 @@ std::string ModifyHpHostRequest::getRegionId()const
 void ModifyHpHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyHpHostRequest::getVpcId()const
@@ -205,7 +205,7 @@ std::string ModifyHpHostRequest::getVpcId()const
 void ModifyHpHostRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string ModifyHpHostRequest::getInnerIp()const
@@ -216,7 +216,7 @@ std::string ModifyHpHostRequest::getInnerIp()const
 void ModifyHpHostRequest::setInnerIp(const std::string& innerIp)
 {
 	innerIp_ = innerIp;
-	setCoreParameter("InnerIp", innerIp);
+	setCoreParameter("InnerIp", std::to_string(innerIp));
 }
 
 std::string ModifyHpHostRequest::getExternalIp()const
@@ -227,6 +227,6 @@ std::string ModifyHpHostRequest::getExternalIp()const
 void ModifyHpHostRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", externalIp);
+	setCoreParameter("ExternalIp", std::to_string(externalIp));
 }
 

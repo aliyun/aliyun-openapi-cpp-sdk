@@ -33,7 +33,7 @@ std::string QueryDeviceListByDeviceGroupRequest::getIotInstanceId()const
 void QueryDeviceListByDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
 void QueryDeviceListByDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int QueryDeviceListByDeviceGroupRequest::getPageSize()const
@@ -77,6 +77,6 @@ std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const
 void QueryDeviceListByDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

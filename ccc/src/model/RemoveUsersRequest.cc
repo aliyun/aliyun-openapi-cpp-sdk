@@ -33,7 +33,7 @@ std::string RemoveUsersRequest::getInstanceId()const
 void RemoveUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> RemoveUsersRequest::getUserId()const
@@ -56,6 +56,6 @@ std::string RemoveUsersRequest::getAccessKeyId()const
 void RemoveUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

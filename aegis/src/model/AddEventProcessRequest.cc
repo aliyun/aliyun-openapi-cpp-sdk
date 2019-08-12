@@ -33,7 +33,7 @@ std::string AddEventProcessRequest::getSourceIp()const
 void AddEventProcessRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string AddEventProcessRequest::getWarningType()const
@@ -44,7 +44,7 @@ std::string AddEventProcessRequest::getWarningType()const
 void AddEventProcessRequest::setWarningType(const std::string& warningType)
 {
 	warningType_ = warningType;
-	setCoreParameter("WarningType", warningType);
+	setCoreParameter("WarningType", std::to_string(warningType));
 }
 
 std::string AddEventProcessRequest::getSuspiciousEventIds()const
@@ -55,7 +55,7 @@ std::string AddEventProcessRequest::getSuspiciousEventIds()const
 void AddEventProcessRequest::setSuspiciousEventIds(const std::string& suspiciousEventIds)
 {
 	suspiciousEventIds_ = suspiciousEventIds;
-	setCoreParameter("SuspiciousEventIds", suspiciousEventIds);
+	setCoreParameter("SuspiciousEventIds", std::to_string(suspiciousEventIds));
 }
 
 std::string AddEventProcessRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string AddEventProcessRequest::getFrom()const
 void AddEventProcessRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string AddEventProcessRequest::getLang()const
@@ -77,6 +77,6 @@ std::string AddEventProcessRequest::getLang()const
 void AddEventProcessRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

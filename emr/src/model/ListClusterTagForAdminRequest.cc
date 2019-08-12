@@ -56,7 +56,7 @@ std::string ListClusterTagForAdminRequest::getRegionId()const
 void ListClusterTagForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListClusterTagForAdminRequest::getUserId()const
@@ -67,7 +67,7 @@ std::string ListClusterTagForAdminRequest::getUserId()const
 void ListClusterTagForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string ListClusterTagForAdminRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string ListClusterTagForAdminRequest::getAccessKeyId()const
 void ListClusterTagForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

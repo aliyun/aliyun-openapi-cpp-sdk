@@ -33,7 +33,7 @@ std::string InsertTmMonitorRuleRequest::getStartApplyDate()const
 void InsertTmMonitorRuleRequest::setStartApplyDate(const std::string& startApplyDate)
 {
 	startApplyDate_ = startApplyDate;
-	setCoreParameter("StartApplyDate", startApplyDate);
+	setCoreParameter("StartApplyDate", std::to_string(startApplyDate));
 }
 
 std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
@@ -44,7 +44,7 @@ std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
 void InsertTmMonitorRuleRequest::setNotifyStatus(const std::string& notifyStatus)
 {
 	notifyStatus_ = notifyStatus;
-	setCoreParameter("NotifyStatus", notifyStatus);
+	setCoreParameter("NotifyStatus", std::to_string(notifyStatus));
 }
 
 int InsertTmMonitorRuleRequest::getRuleType()const
@@ -66,7 +66,7 @@ std::string InsertTmMonitorRuleRequest::getRuleSource()const
 void InsertTmMonitorRuleRequest::setRuleSource(const std::string& ruleSource)
 {
 	ruleSource_ = ruleSource;
-	setCoreParameter("RuleSource", ruleSource);
+	setCoreParameter("RuleSource", std::to_string(ruleSource));
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleName()const
@@ -77,7 +77,7 @@ std::string InsertTmMonitorRuleRequest::getRuleName()const
 void InsertTmMonitorRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", std::to_string(ruleName));
 }
 
 std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
@@ -88,7 +88,7 @@ std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
 void InsertTmMonitorRuleRequest::setEndApplyDate(const std::string& endApplyDate)
 {
 	endApplyDate_ = endApplyDate;
-	setCoreParameter("EndApplyDate", endApplyDate);
+	setCoreParameter("EndApplyDate", std::to_string(endApplyDate));
 }
 
 std::string InsertTmMonitorRuleRequest::getClassification()const
@@ -99,7 +99,7 @@ std::string InsertTmMonitorRuleRequest::getClassification()const
 void InsertTmMonitorRuleRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setCoreParameter("Classification", std::to_string(classification));
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleKeyword()const
@@ -110,6 +110,6 @@ std::string InsertTmMonitorRuleRequest::getRuleKeyword()const
 void InsertTmMonitorRuleRequest::setRuleKeyword(const std::string& ruleKeyword)
 {
 	ruleKeyword_ = ruleKeyword;
-	setCoreParameter("RuleKeyword", ruleKeyword);
+	setCoreParameter("RuleKeyword", std::to_string(ruleKeyword));
 }
 

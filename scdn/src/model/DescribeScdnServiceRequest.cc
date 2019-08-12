@@ -33,7 +33,7 @@ std::string DescribeScdnServiceRequest::getSecurityToken()const
 void DescribeScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeScdnServiceRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string CreateMcuTemplateRequest::get_Template()const
 void CreateMcuTemplateRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", _template);
+	setCoreParameter("_Template", std::to_string(_template));
 }
 
 long CreateMcuTemplateRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateMcuTemplateRequest::getResourceOwnerAccount()const
 void CreateMcuTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateMcuTemplateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateMcuTemplateRequest::getOwnerAccount()const
 void CreateMcuTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CreateMcuTemplateRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string CreateMcuTemplateRequest::getAccessKeyId()const
 void CreateMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

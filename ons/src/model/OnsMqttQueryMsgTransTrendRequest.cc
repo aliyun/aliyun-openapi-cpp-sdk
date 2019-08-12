@@ -33,7 +33,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getInstanceId()const
 void OnsMqttQueryMsgTransTrendRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 int OnsMqttQueryMsgTransTrendRequest::getQos()const
@@ -55,7 +55,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getTransType()const
 void OnsMqttQueryMsgTransTrendRequest::setTransType(const std::string& transType)
 {
 	transType_ = transType;
-	setCoreParameter("TransType", transType);
+	setCoreParameter("TransType", std::to_string(transType));
 }
 
 long OnsMqttQueryMsgTransTrendRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getTpsType()const
 void OnsMqttQueryMsgTransTrendRequest::setTpsType(const std::string& tpsType)
 {
 	tpsType_ = tpsType;
-	setCoreParameter("TpsType", tpsType);
+	setCoreParameter("TpsType", std::to_string(tpsType));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getParentTopic()const
@@ -99,7 +99,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getParentTopic()const
 void OnsMqttQueryMsgTransTrendRequest::setParentTopic(const std::string& parentTopic)
 {
 	parentTopic_ = parentTopic;
-	setCoreParameter("ParentTopic", parentTopic);
+	setCoreParameter("ParentTopic", std::to_string(parentTopic));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getMsgType()const
@@ -110,7 +110,7 @@ std::string OnsMqttQueryMsgTransTrendRequest::getMsgType()const
 void OnsMqttQueryMsgTransTrendRequest::setMsgType(const std::string& msgType)
 {
 	msgType_ = msgType;
-	setCoreParameter("MsgType", msgType);
+	setCoreParameter("MsgType", std::to_string(msgType));
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getSubTopic()const
@@ -121,6 +121,6 @@ std::string OnsMqttQueryMsgTransTrendRequest::getSubTopic()const
 void OnsMqttQueryMsgTransTrendRequest::setSubTopic(const std::string& subTopic)
 {
 	subTopic_ = subTopic;
-	setCoreParameter("SubTopic", subTopic);
+	setCoreParameter("SubTopic", std::to_string(subTopic));
 }
 

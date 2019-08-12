@@ -33,7 +33,7 @@ std::string ModifyBatchIgnoreVulRequest::getReason()const
 void ModifyBatchIgnoreVulRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setCoreParameter("Reason", std::to_string(reason));
 }
 
 std::string ModifyBatchIgnoreVulRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyBatchIgnoreVulRequest::getSourceIp()const
 void ModifyBatchIgnoreVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyBatchIgnoreVulRequest::getInfo()const
@@ -55,6 +55,6 @@ std::string ModifyBatchIgnoreVulRequest::getInfo()const
 void ModifyBatchIgnoreVulRequest::setInfo(const std::string& info)
 {
 	info_ = info;
-	setCoreParameter("Info", info);
+	setCoreParameter("Info", std::to_string(info));
 }
 

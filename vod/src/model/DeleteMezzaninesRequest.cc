@@ -44,7 +44,7 @@ std::string DeleteMezzaninesRequest::getResourceOwnerAccount()const
 void DeleteMezzaninesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 bool DeleteMezzaninesRequest::getForce()const
@@ -55,7 +55,7 @@ bool DeleteMezzaninesRequest::getForce()const
 void DeleteMezzaninesRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 long DeleteMezzaninesRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string DeleteMezzaninesRequest::getVideoIds()const
 void DeleteMezzaninesRequest::setVideoIds(const std::string& videoIds)
 {
 	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", videoIds);
+	setCoreParameter("VideoIds", std::to_string(videoIds));
 }
 

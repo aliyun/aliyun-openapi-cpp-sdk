@@ -44,7 +44,7 @@ std::string UpdatePipelineRequest::getRole()const
 void UpdatePipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setCoreParameter("Role", std::to_string(role));
 }
 
 std::string UpdatePipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdatePipelineRequest::getResourceOwnerAccount()const
 void UpdatePipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UpdatePipelineRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdatePipelineRequest::getOwnerAccount()const
 void UpdatePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string UpdatePipelineRequest::getName()const
@@ -77,7 +77,7 @@ std::string UpdatePipelineRequest::getName()const
 void UpdatePipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string UpdatePipelineRequest::getState()const
@@ -88,7 +88,7 @@ std::string UpdatePipelineRequest::getState()const
 void UpdatePipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string UpdatePipelineRequest::getNotifyConfig()const
@@ -99,7 +99,7 @@ std::string UpdatePipelineRequest::getNotifyConfig()const
 void UpdatePipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setCoreParameter("NotifyConfig", std::to_string(notifyConfig));
 }
 
 long UpdatePipelineRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string UpdatePipelineRequest::getAccessKeyId()const
 void UpdatePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string UpdatePipelineRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string UpdatePipelineRequest::getPipelineId()const
 void UpdatePipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 

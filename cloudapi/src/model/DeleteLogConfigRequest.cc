@@ -33,7 +33,7 @@ std::string DeleteLogConfigRequest::getLogType()const
 void DeleteLogConfigRequest::setLogType(const std::string& logType)
 {
 	logType_ = logType;
-	setCoreParameter("LogType", logType);
+	setCoreParameter("LogType", std::to_string(logType));
 }
 
 std::string DeleteLogConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLogConfigRequest::getSecurityToken()const
 void DeleteLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteLogConfigRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteLogConfigRequest::getRegionId()const
 void DeleteLogConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteLogConfigRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteLogConfigRequest::getAccessKeyId()const
 void DeleteLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

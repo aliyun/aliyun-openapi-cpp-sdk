@@ -44,7 +44,7 @@ std::string DescribeAvailableRecoveryTimeRequest::getResourceOwnerAccount()const
 void DescribeAvailableRecoveryTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
 void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
@@ -88,6 +88,6 @@ std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId()const
 void DescribeAvailableRecoveryTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

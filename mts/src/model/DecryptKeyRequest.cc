@@ -33,7 +33,7 @@ std::string DecryptKeyRequest::getRand()const
 void DecryptKeyRequest::setRand(const std::string& rand)
 {
 	rand_ = rand;
-	setCoreParameter("Rand", rand);
+	setCoreParameter("Rand", std::to_string(rand));
 }
 
 std::string DecryptKeyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ std::string DecryptKeyRequest::getResourceOwnerId()const
 void DecryptKeyRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DecryptKeyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DecryptKeyRequest::getResourceOwnerAccount()const
 void DecryptKeyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DecryptKeyRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DecryptKeyRequest::getOwnerAccount()const
 void DecryptKeyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DecryptKeyRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DecryptKeyRequest::getOwnerId()const
 void DecryptKeyRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DecryptKeyRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DecryptKeyRequest::getAccessKeyId()const
 void DecryptKeyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DecryptKeyRequest::getCiphertextBlob()const
@@ -99,6 +99,6 @@ std::string DecryptKeyRequest::getCiphertextBlob()const
 void DecryptKeyRequest::setCiphertextBlob(const std::string& ciphertextBlob)
 {
 	ciphertextBlob_ = ciphertextBlob;
-	setCoreParameter("CiphertextBlob", ciphertextBlob);
+	setCoreParameter("CiphertextBlob", std::to_string(ciphertextBlob));
 }
 

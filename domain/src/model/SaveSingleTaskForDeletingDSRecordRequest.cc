@@ -44,7 +44,7 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForDeletingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForDeletingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getLang()const
 void SaveSingleTaskForDeletingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

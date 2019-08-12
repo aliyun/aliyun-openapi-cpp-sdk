@@ -33,7 +33,7 @@ std::string GetThingTopoRequest::getIotId()const
 void GetThingTopoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 int GetThingTopoRequest::getPageNo()const
@@ -55,7 +55,7 @@ std::string GetThingTopoRequest::getIotInstanceId()const
 void GetThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
 }
 
 int GetThingTopoRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string GetThingTopoRequest::getDeviceName()const
 void GetThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string GetThingTopoRequest::getProductKey()const
@@ -88,7 +88,7 @@ std::string GetThingTopoRequest::getProductKey()const
 void GetThingTopoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 
 std::string GetThingTopoRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetThingTopoRequest::getAccessKeyId()const
 void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

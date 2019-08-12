@@ -44,7 +44,7 @@ std::string AbortDBClusterMigrationRequest::getSecurityToken()const
 void AbortDBClusterMigrationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AbortDBClusterMigrationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AbortDBClusterMigrationRequest::getResourceOwnerAccount()const
 void AbortDBClusterMigrationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AbortDBClusterMigrationRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AbortDBClusterMigrationRequest::getRegionId()const
 void AbortDBClusterMigrationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AbortDBClusterMigrationRequest::getDBClusterId()const
@@ -77,7 +77,7 @@ std::string AbortDBClusterMigrationRequest::getDBClusterId()const
 void AbortDBClusterMigrationRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
 }
 
 std::string AbortDBClusterMigrationRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string AbortDBClusterMigrationRequest::getOwnerAccount()const
 void AbortDBClusterMigrationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long AbortDBClusterMigrationRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string AbortDBClusterMigrationRequest::getAccessKeyId()const
 void AbortDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

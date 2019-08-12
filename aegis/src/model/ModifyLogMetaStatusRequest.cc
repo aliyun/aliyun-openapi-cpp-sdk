@@ -33,7 +33,7 @@ std::string ModifyLogMetaStatusRequest::getSourceIp()const
 void ModifyLogMetaStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyLogMetaStatusRequest::getProject()const
@@ -44,7 +44,7 @@ std::string ModifyLogMetaStatusRequest::getProject()const
 void ModifyLogMetaStatusRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string ModifyLogMetaStatusRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string ModifyLogMetaStatusRequest::getFrom()const
 void ModifyLogMetaStatusRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 std::string ModifyLogMetaStatusRequest::getLang()const
@@ -66,7 +66,7 @@ std::string ModifyLogMetaStatusRequest::getLang()const
 void ModifyLogMetaStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string ModifyLogMetaStatusRequest::getLogStore()const
@@ -77,7 +77,7 @@ std::string ModifyLogMetaStatusRequest::getLogStore()const
 void ModifyLogMetaStatusRequest::setLogStore(const std::string& logStore)
 {
 	logStore_ = logStore;
-	setCoreParameter("LogStore", logStore);
+	setCoreParameter("LogStore", std::to_string(logStore));
 }
 
 std::string ModifyLogMetaStatusRequest::getStatus()const
@@ -88,6 +88,6 @@ std::string ModifyLogMetaStatusRequest::getStatus()const
 void ModifyLogMetaStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

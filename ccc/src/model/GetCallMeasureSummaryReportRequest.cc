@@ -33,7 +33,7 @@ std::string GetCallMeasureSummaryReportRequest::getIntervalType()const
 void GetCallMeasureSummaryReportRequest::setIntervalType(const std::string& intervalType)
 {
 	intervalType_ = intervalType;
-	setCoreParameter("IntervalType", intervalType);
+	setCoreParameter("IntervalType", std::to_string(intervalType));
 }
 
 int GetCallMeasureSummaryReportRequest::getMonth()const
@@ -99,6 +99,6 @@ std::string GetCallMeasureSummaryReportRequest::getAccessKeyId()const
 void GetCallMeasureSummaryReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

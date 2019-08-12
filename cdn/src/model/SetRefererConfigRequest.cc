@@ -33,7 +33,7 @@ std::string SetRefererConfigRequest::getReferList()const
 void SetRefererConfigRequest::setReferList(const std::string& referList)
 {
 	referList_ = referList;
-	setCoreParameter("ReferList", referList);
+	setCoreParameter("ReferList", std::to_string(referList));
 }
 
 std::string SetRefererConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetRefererConfigRequest::getSecurityToken()const
 void SetRefererConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetRefererConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetRefererConfigRequest::getDomainName()const
 void SetRefererConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string SetRefererConfigRequest::getReferType()const
@@ -66,7 +66,7 @@ std::string SetRefererConfigRequest::getReferType()const
 void SetRefererConfigRequest::setReferType(const std::string& referType)
 {
 	referType_ = referType;
-	setCoreParameter("ReferType", referType);
+	setCoreParameter("ReferType", std::to_string(referType));
 }
 
 std::string SetRefererConfigRequest::getDisableAst()const
@@ -77,7 +77,7 @@ std::string SetRefererConfigRequest::getDisableAst()const
 void SetRefererConfigRequest::setDisableAst(const std::string& disableAst)
 {
 	disableAst_ = disableAst;
-	setCoreParameter("DisableAst", disableAst);
+	setCoreParameter("DisableAst", std::to_string(disableAst));
 }
 
 long SetRefererConfigRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string SetRefererConfigRequest::getAllowEmpty()const
 void SetRefererConfigRequest::setAllowEmpty(const std::string& allowEmpty)
 {
 	allowEmpty_ = allowEmpty;
-	setCoreParameter("AllowEmpty", allowEmpty);
+	setCoreParameter("AllowEmpty", std::to_string(allowEmpty));
 }
 

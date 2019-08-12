@@ -33,7 +33,7 @@ std::string OpenScdnServiceRequest::getEndDate()const
 void OpenScdnServiceRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string OpenScdnServiceRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string OpenScdnServiceRequest::getSecurityToken()const
 void OpenScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 int OpenScdnServiceRequest::getBandwidth()const
@@ -88,7 +88,7 @@ std::string OpenScdnServiceRequest::getProtectType()const
 void OpenScdnServiceRequest::setProtectType(const std::string& protectType)
 {
 	protectType_ = protectType;
-	setCoreParameter("ProtectType", protectType);
+	setCoreParameter("ProtectType", std::to_string(protectType));
 }
 
 std::string OpenScdnServiceRequest::getStartDate()const
@@ -99,7 +99,7 @@ std::string OpenScdnServiceRequest::getStartDate()const
 void OpenScdnServiceRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 
 int OpenScdnServiceRequest::getElasticProtection()const

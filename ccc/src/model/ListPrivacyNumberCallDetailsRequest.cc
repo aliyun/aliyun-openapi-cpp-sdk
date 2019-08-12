@@ -33,7 +33,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getAgentId()const
 void ListPrivacyNumberCallDetailsRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setCoreParameter("AgentId", std::to_string(agentId));
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
 void ListPrivacyNumberCallDetailsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getContactId()const
@@ -55,7 +55,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getContactId()const
 void ListPrivacyNumberCallDetailsRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setCoreParameter("ContactId", std::to_string(contactId));
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
@@ -66,7 +66,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
 void ListPrivacyNumberCallDetailsRequest::setAgentName(const std::string& agentName)
 {
 	agentName_ = agentName;
-	setCoreParameter("AgentName", agentName);
+	setCoreParameter("AgentName", std::to_string(agentName));
 }
 
 int ListPrivacyNumberCallDetailsRequest::getPageSize()const
@@ -121,6 +121,6 @@ std::string ListPrivacyNumberCallDetailsRequest::getAccessKeyId()const
 void ListPrivacyNumberCallDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

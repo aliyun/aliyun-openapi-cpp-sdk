@@ -33,7 +33,7 @@ std::string AttachAppPolicyToIdentityRequest::getIdentityName()const
 void AttachAppPolicyToIdentityRequest::setIdentityName(const std::string& identityName)
 {
 	identityName_ = identityName;
-	setCoreParameter("IdentityName", identityName);
+	setCoreParameter("IdentityName", std::to_string(identityName));
 }
 
 long AttachAppPolicyToIdentityRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AttachAppPolicyToIdentityRequest::getIdentityType()const
 void AttachAppPolicyToIdentityRequest::setIdentityType(const std::string& identityType)
 {
 	identityType_ = identityType;
-	setCoreParameter("IdentityType", identityType);
+	setCoreParameter("IdentityType", std::to_string(identityType));
 }
 
 std::string AttachAppPolicyToIdentityRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AttachAppPolicyToIdentityRequest::getResourceOwnerAccount()const
 void AttachAppPolicyToIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AttachAppPolicyToIdentityRequest::getAppId()const
@@ -77,7 +77,7 @@ std::string AttachAppPolicyToIdentityRequest::getAppId()const
 void AttachAppPolicyToIdentityRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string AttachAppPolicyToIdentityRequest::getPolicyNames()const
@@ -88,7 +88,7 @@ std::string AttachAppPolicyToIdentityRequest::getPolicyNames()const
 void AttachAppPolicyToIdentityRequest::setPolicyNames(const std::string& policyNames)
 {
 	policyNames_ = policyNames;
-	setCoreParameter("PolicyNames", policyNames);
+	setCoreParameter("PolicyNames", std::to_string(policyNames));
 }
 
 std::string AttachAppPolicyToIdentityRequest::getResourceRealOwnerId()const
@@ -99,7 +99,7 @@ std::string AttachAppPolicyToIdentityRequest::getResourceRealOwnerId()const
 void AttachAppPolicyToIdentityRequest::setResourceRealOwnerId(const std::string& resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long AttachAppPolicyToIdentityRequest::getOwnerId()const

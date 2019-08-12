@@ -33,7 +33,7 @@ std::string QueryCallDetailByCallIdRequest::getCallId()const
 void QueryCallDetailByCallIdRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setCoreParameter("CallId", std::to_string(callId));
 }
 
 long QueryCallDetailByCallIdRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string QueryCallDetailByCallIdRequest::getResourceOwnerAccount()const
 void QueryCallDetailByCallIdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 long QueryCallDetailByCallIdRequest::getProdId()const
@@ -99,6 +99,6 @@ std::string QueryCallDetailByCallIdRequest::getAccessKeyId()const
 void QueryCallDetailByCallIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

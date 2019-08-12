@@ -33,7 +33,7 @@ std::string SendRoomUserNotificationRequest::getData()const
 void SendRoomUserNotificationRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 long SendRoomUserNotificationRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ bool SendRoomUserNotificationRequest::getProxy_original_security_transport()cons
 void SendRoomUserNotificationRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string SendRoomUserNotificationRequest::getToAppUid()const
@@ -66,7 +66,7 @@ std::string SendRoomUserNotificationRequest::getToAppUid()const
 void SendRoomUserNotificationRequest::setToAppUid(const std::string& toAppUid)
 {
 	toAppUid_ = toAppUid;
-	setCoreParameter("ToAppUid", toAppUid);
+	setCoreParameter("ToAppUid", std::to_string(toAppUid));
 }
 
 std::string SendRoomUserNotificationRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string SendRoomUserNotificationRequest::getProxy_original_source_ip()const
 void SendRoomUserNotificationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string SendRoomUserNotificationRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string SendRoomUserNotificationRequest::getOwnerIdLoginEmail()const
 void SendRoomUserNotificationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string SendRoomUserNotificationRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string SendRoomUserNotificationRequest::getCallerType()const
 void SendRoomUserNotificationRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string SendRoomUserNotificationRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SendRoomUserNotificationRequest::getAccessKeyId()const
 void SendRoomUserNotificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SendRoomUserNotificationRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string SendRoomUserNotificationRequest::getSecurityToken()const
 void SendRoomUserNotificationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SendRoomUserNotificationRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string SendRoomUserNotificationRequest::getRegionId()const
 void SendRoomUserNotificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SendRoomUserNotificationRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string SendRoomUserNotificationRequest::getRequestContent()const
 void SendRoomUserNotificationRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string SendRoomUserNotificationRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string SendRoomUserNotificationRequest::getCallerBidEmail()const
 void SendRoomUserNotificationRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::string SendRoomUserNotificationRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string SendRoomUserNotificationRequest::getCallerUidEmail()const
 void SendRoomUserNotificationRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long SendRoomUserNotificationRequest::getCallerUid()const
@@ -187,7 +187,7 @@ std::string SendRoomUserNotificationRequest::getApp_ip()const
 void SendRoomUserNotificationRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string SendRoomUserNotificationRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string SendRoomUserNotificationRequest::getPopProduct()const
 void SendRoomUserNotificationRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", std::to_string(popProduct));
 }
 
 std::string SendRoomUserNotificationRequest::getAppUid()const
@@ -209,7 +209,7 @@ std::string SendRoomUserNotificationRequest::getAppUid()const
 void SendRoomUserNotificationRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setCoreParameter("AppUid", std::to_string(appUid));
 }
 
 std::string SendRoomUserNotificationRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string SendRoomUserNotificationRequest::getCallerBid()const
 void SendRoomUserNotificationRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long SendRoomUserNotificationRequest::getOwnerId()const
@@ -253,7 +253,7 @@ std::string SendRoomUserNotificationRequest::getVersion()const
 void SendRoomUserNotificationRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", version);
+	setCoreParameter("Version", std::to_string(version));
 }
 
 bool SendRoomUserNotificationRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool SendRoomUserNotificationRequest::getProxy_trust_transport_info()const
 void SendRoomUserNotificationRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool SendRoomUserNotificationRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool SendRoomUserNotificationRequest::getAk_mfa_present()const
 void SendRoomUserNotificationRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string SendRoomUserNotificationRequest::getRoomId()const
@@ -286,7 +286,7 @@ std::string SendRoomUserNotificationRequest::getRoomId()const
 void SendRoomUserNotificationRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setCoreParameter("RoomId", std::to_string(roomId));
 }
 
 bool SendRoomUserNotificationRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool SendRoomUserNotificationRequest::getSecurity_transport()const
 void SendRoomUserNotificationRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string SendRoomUserNotificationRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string SendRoomUserNotificationRequest::getRequestId()const
 void SendRoomUserNotificationRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string SendRoomUserNotificationRequest::getAppId()const
@@ -319,6 +319,6 @@ std::string SendRoomUserNotificationRequest::getAppId()const
 void SendRoomUserNotificationRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 

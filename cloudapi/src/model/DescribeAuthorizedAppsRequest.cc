@@ -33,7 +33,7 @@ std::string DescribeAuthorizedAppsRequest::getStageName()const
 void DescribeAuthorizedAppsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setCoreParameter("StageName", std::to_string(stageName));
 }
 
 std::string DescribeAuthorizedAppsRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string DescribeAuthorizedAppsRequest::getAppName()const
 void DescribeAuthorizedAppsRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
 void DescribeAuthorizedAppsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeAuthorizedAppsRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeAuthorizedAppsRequest::getGroupId()const
 void DescribeAuthorizedAppsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 long DescribeAuthorizedAppsRequest::getAppId()const
@@ -110,7 +110,7 @@ std::string DescribeAuthorizedAppsRequest::getApiId()const
 void DescribeAuthorizedAppsRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setCoreParameter("ApiId", std::to_string(apiId));
 }
 
 int DescribeAuthorizedAppsRequest::getPageNumber()const
@@ -132,6 +132,6 @@ std::string DescribeAuthorizedAppsRequest::getAccessKeyId()const
 void DescribeAuthorizedAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

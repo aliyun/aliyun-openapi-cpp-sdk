@@ -33,7 +33,7 @@ std::string DeleteFlowProjectUserRequest::getRegionId()const
 void DeleteFlowProjectUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteFlowProjectUserRequest::getProjectId()const
@@ -44,7 +44,7 @@ std::string DeleteFlowProjectUserRequest::getProjectId()const
 void DeleteFlowProjectUserRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DeleteFlowProjectUserRequest::getUserName()const
@@ -55,6 +55,6 @@ std::string DeleteFlowProjectUserRequest::getUserName()const
 void DeleteFlowProjectUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

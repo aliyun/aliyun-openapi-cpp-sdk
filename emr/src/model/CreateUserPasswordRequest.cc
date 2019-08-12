@@ -44,7 +44,7 @@ std::string CreateUserPasswordRequest::getPassword()const
 void CreateUserPasswordRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 std::string CreateUserPasswordRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateUserPasswordRequest::getRegionId()const
 void CreateUserPasswordRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateUserPasswordRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateUserPasswordRequest::getClusterId()const
 void CreateUserPasswordRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::vector<CreateUserPasswordRequest::UserInfo> CreateUserPasswordRequest::getUserInfo()const
@@ -96,6 +96,6 @@ std::string CreateUserPasswordRequest::getAccessKeyId()const
 void CreateUserPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

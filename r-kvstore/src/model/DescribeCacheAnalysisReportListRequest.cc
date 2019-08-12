@@ -44,7 +44,7 @@ std::string DescribeCacheAnalysisReportListRequest::getResourceOwnerAccount()con
 void DescribeCacheAnalysisReportListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeCacheAnalysisReportListRequest::getOwnerAccount()const
 void DescribeCacheAnalysisReportListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeCacheAnalysisReportListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
 void DescribeCacheAnalysisReportListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeCacheAnalysisReportListRequest::getInstanceId()const
 void DescribeCacheAnalysisReportListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
 void DescribeCacheAnalysisReportListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeCacheAnalysisReportListRequest::getRegionId()const
 void DescribeCacheAnalysisReportListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeCacheAnalysisReportListRequest::getPageSize()const
@@ -154,6 +154,6 @@ std::string DescribeCacheAnalysisReportListRequest::getNodeId()const
 void DescribeCacheAnalysisReportListRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 

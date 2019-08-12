@@ -33,7 +33,7 @@ std::string UpdateLiveTopLevelDomainRequest::getTopLevelDomain()const
 void UpdateLiveTopLevelDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
 }
 
 std::string UpdateLiveTopLevelDomainRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string UpdateLiveTopLevelDomainRequest::getSecurityToken()const
 void UpdateLiveTopLevelDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string UpdateLiveTopLevelDomainRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string UpdateLiveTopLevelDomainRequest::getDomainName()const
 void UpdateLiveTopLevelDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long UpdateLiveTopLevelDomainRequest::getOwnerId()const

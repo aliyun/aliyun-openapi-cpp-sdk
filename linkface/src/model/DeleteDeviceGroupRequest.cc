@@ -33,7 +33,7 @@ std::string DeleteDeviceGroupRequest::getIotId()const
 void DeleteDeviceGroupRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setCoreParameter("IotId", std::to_string(iotId));
 }
 
 std::string DeleteDeviceGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteDeviceGroupRequest::getGroupId()const
 void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteDeviceGroupRequest::getDeviceName()const
@@ -55,7 +55,7 @@ std::string DeleteDeviceGroupRequest::getDeviceName()const
 void DeleteDeviceGroupRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", std::to_string(deviceName));
 }
 
 std::string DeleteDeviceGroupRequest::getProductKey()const
@@ -66,6 +66,6 @@ std::string DeleteDeviceGroupRequest::getProductKey()const
 void DeleteDeviceGroupRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", std::to_string(productKey));
 }
 

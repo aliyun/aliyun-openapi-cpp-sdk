@@ -44,7 +44,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getResourceOwnerAccount()c
 void AllocateNodePrivateNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getOwnerAccount()const
 void AllocateNodePrivateNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long AllocateNodePrivateNetworkAddressRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccessKeyId()const
 void AllocateNodePrivateNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getAccountPassword()const
@@ -88,7 +88,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccountPassword()const
 void AllocateNodePrivateNetworkAddressRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setCoreParameter("AccountPassword", std::to_string(accountPassword));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getAccountName()const
@@ -99,7 +99,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getAccountName()const
 void AllocateNodePrivateNetworkAddressRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setCoreParameter("AccountName", std::to_string(accountName));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getSecurityToken()const
 void AllocateNodePrivateNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getRegionId()const
 void AllocateNodePrivateNetworkAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getZoneId()const
@@ -132,7 +132,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getZoneId()const
 void AllocateNodePrivateNetworkAddressRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string AllocateNodePrivateNetworkAddressRequest::getDBInstanceId()const
 void AllocateNodePrivateNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string AllocateNodePrivateNetworkAddressRequest::getNodeId()const
@@ -154,6 +154,6 @@ std::string AllocateNodePrivateNetworkAddressRequest::getNodeId()const
 void AllocateNodePrivateNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 

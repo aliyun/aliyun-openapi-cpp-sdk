@@ -45,7 +45,7 @@ std::string ListFlowNodeInstanceRequest::getRegionId()const
 void ListFlowNodeInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListFlowNodeInstanceRequest::getPageSize()const
@@ -67,7 +67,7 @@ std::string ListFlowNodeInstanceRequest::getOrderBy()const
 void ListFlowNodeInstanceRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 long ListFlowNodeInstanceRequest::getStartTime()const
@@ -89,7 +89,7 @@ std::string ListFlowNodeInstanceRequest::getProjectId()const
 void ListFlowNodeInstanceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 int ListFlowNodeInstanceRequest::getPageNumber()const
@@ -111,6 +111,6 @@ std::string ListFlowNodeInstanceRequest::getOrderType()const
 void ListFlowNodeInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setCoreParameter("OrderType", std::to_string(orderType));
 }
 

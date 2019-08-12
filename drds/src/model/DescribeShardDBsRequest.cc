@@ -33,7 +33,7 @@ std::string DescribeShardDBsRequest::getDbName()const
 void DescribeShardDBsRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string DescribeShardDBsRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeShardDBsRequest::getDrdsInstanceId()const
 void DescribeShardDBsRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string DescribeShardDBsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeShardDBsRequest::getAccessKeyId()const
 void DescribeShardDBsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

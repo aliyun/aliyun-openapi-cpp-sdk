@@ -33,7 +33,7 @@ std::string CallOnlinePrivacyNumberRequest::getTelA()const
 void CallOnlinePrivacyNumberRequest::setTelA(const std::string& telA)
 {
 	telA_ = telA;
-	setCoreParameter("TelA", telA);
+	setCoreParameter("TelA", std::to_string(telA));
 }
 
 std::string CallOnlinePrivacyNumberRequest::getTelB()const
@@ -44,7 +44,7 @@ std::string CallOnlinePrivacyNumberRequest::getTelB()const
 void CallOnlinePrivacyNumberRequest::setTelB(const std::string& telB)
 {
 	telB_ = telB;
-	setCoreParameter("TelB", telB);
+	setCoreParameter("TelB", std::to_string(telB));
 }
 
 std::string CallOnlinePrivacyNumberRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string CallOnlinePrivacyNumberRequest::getInstanceId()const
 void CallOnlinePrivacyNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string CallOnlinePrivacyNumberRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string CallOnlinePrivacyNumberRequest::getAccessKeyId()const
 void CallOnlinePrivacyNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

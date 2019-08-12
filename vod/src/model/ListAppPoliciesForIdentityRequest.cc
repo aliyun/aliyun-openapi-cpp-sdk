@@ -33,7 +33,7 @@ std::string ListAppPoliciesForIdentityRequest::getIdentityName()const
 void ListAppPoliciesForIdentityRequest::setIdentityName(const std::string& identityName)
 {
 	identityName_ = identityName;
-	setCoreParameter("IdentityName", identityName);
+	setCoreParameter("IdentityName", std::to_string(identityName));
 }
 
 long ListAppPoliciesForIdentityRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ListAppPoliciesForIdentityRequest::getIdentityType()const
 void ListAppPoliciesForIdentityRequest::setIdentityType(const std::string& identityType)
 {
 	identityType_ = identityType;
-	setCoreParameter("IdentityType", identityType);
+	setCoreParameter("IdentityType", std::to_string(identityType));
 }
 
 std::string ListAppPoliciesForIdentityRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ListAppPoliciesForIdentityRequest::getResourceOwnerAccount()const
 void ListAppPoliciesForIdentityRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ListAppPoliciesForIdentityRequest::getAppId()const
@@ -77,7 +77,7 @@ std::string ListAppPoliciesForIdentityRequest::getAppId()const
 void ListAppPoliciesForIdentityRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 long ListAppPoliciesForIdentityRequest::getOwnerId()const

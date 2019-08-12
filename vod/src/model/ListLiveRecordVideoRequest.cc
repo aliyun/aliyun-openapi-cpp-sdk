@@ -44,7 +44,7 @@ std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
 void ListLiveRecordVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ListLiveRecordVideoRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ListLiveRecordVideoRequest::getDomainName()const
 void ListLiveRecordVideoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string ListLiveRecordVideoRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string ListLiveRecordVideoRequest::getEndTime()const
 void ListLiveRecordVideoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ListLiveRecordVideoRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string ListLiveRecordVideoRequest::getStartTime()const
 void ListLiveRecordVideoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListLiveRecordVideoRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string ListLiveRecordVideoRequest::getAppName()const
 void ListLiveRecordVideoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setCoreParameter("AppName", std::to_string(appName));
 }
 
 int ListLiveRecordVideoRequest::getPageNo()const
@@ -132,7 +132,7 @@ std::string ListLiveRecordVideoRequest::getSortBy()const
 void ListLiveRecordVideoRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setCoreParameter("SortBy", std::to_string(sortBy));
 }
 
 std::string ListLiveRecordVideoRequest::getStreamName()const
@@ -143,7 +143,7 @@ std::string ListLiveRecordVideoRequest::getStreamName()const
 void ListLiveRecordVideoRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setCoreParameter("StreamName", std::to_string(streamName));
 }
 
 std::string ListLiveRecordVideoRequest::getQueryType()const
@@ -154,6 +154,6 @@ std::string ListLiveRecordVideoRequest::getQueryType()const
 void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setCoreParameter("QueryType", std::to_string(queryType));
 }
 

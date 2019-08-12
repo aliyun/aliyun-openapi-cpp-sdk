@@ -33,7 +33,7 @@ std::string CreateLaunchTemplateVersionRequest::getLaunchTemplateName()const
 void CreateLaunchTemplateVersionRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", launchTemplateName);
+	setCoreParameter("LaunchTemplateName", std::to_string(launchTemplateName));
 }
 
 long CreateLaunchTemplateVersionRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string CreateLaunchTemplateVersionRequest::getSecurityEnhancementStrategy()
 void CreateLaunchTemplateVersionRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
 {
 	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+	setCoreParameter("SecurityEnhancementStrategy", std::to_string(securityEnhancementStrategy));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getNetworkType()const
@@ -77,7 +77,7 @@ std::string CreateLaunchTemplateVersionRequest::getNetworkType()const
 void CreateLaunchTemplateVersionRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getKeyPairName()const
@@ -88,7 +88,7 @@ std::string CreateLaunchTemplateVersionRequest::getKeyPairName()const
 void CreateLaunchTemplateVersionRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setCoreParameter("KeyPairName", std::to_string(keyPairName));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string CreateLaunchTemplateVersionRequest::getProxy_original_source_ip()con
 void CreateLaunchTemplateVersionRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 float CreateLaunchTemplateVersionRequest::getSpotPriceLimit()const
@@ -121,7 +121,7 @@ std::string CreateLaunchTemplateVersionRequest::getOwnerIdLoginEmail()const
 void CreateLaunchTemplateVersionRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string CreateLaunchTemplateVersionRequest::getCallerType()const
 void CreateLaunchTemplateVersionRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getImageOwnerAlias()const
@@ -143,7 +143,7 @@ std::string CreateLaunchTemplateVersionRequest::getImageOwnerAlias()const
 void CreateLaunchTemplateVersionRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
+	setCoreParameter("ImageOwnerAlias", std::to_string(imageOwnerAlias));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSourceRegionId()const
@@ -154,7 +154,7 @@ std::string CreateLaunchTemplateVersionRequest::getSourceRegionId()const
 void CreateLaunchTemplateVersionRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getResourceGroupId()const
@@ -165,7 +165,7 @@ std::string CreateLaunchTemplateVersionRequest::getResourceGroupId()const
 void CreateLaunchTemplateVersionRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getHostName()const
@@ -176,7 +176,7 @@ std::string CreateLaunchTemplateVersionRequest::getHostName()const
 void CreateLaunchTemplateVersionRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setCoreParameter("HostName", std::to_string(hostName));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSecurityToken()const
@@ -187,7 +187,7 @@ std::string CreateLaunchTemplateVersionRequest::getSecurityToken()const
 void CreateLaunchTemplateVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 bool CreateLaunchTemplateVersionRequest::getEnable()const
@@ -198,7 +198,7 @@ bool CreateLaunchTemplateVersionRequest::getEnable()const
 void CreateLaunchTemplateVersionRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 int CreateLaunchTemplateVersionRequest::getSystemDiskIops()const
@@ -220,7 +220,7 @@ std::string CreateLaunchTemplateVersionRequest::getCallerBidEmail()const
 void CreateLaunchTemplateVersionRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::vector<CreateLaunchTemplateVersionRequest::Tag> CreateLaunchTemplateVersionRequest::getTag()const
@@ -270,7 +270,7 @@ std::string CreateLaunchTemplateVersionRequest::getLaunchTemplateId()const
 void CreateLaunchTemplateVersionRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", std::to_string(launchTemplateId));
 }
 
 long CreateLaunchTemplateVersionRequest::getOwnerId()const
@@ -292,7 +292,7 @@ bool CreateLaunchTemplateVersionRequest::getAk_mfa_present()const
 void CreateLaunchTemplateVersionRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateLaunchTemplateVersionRequest::getSecurity_transport()const
@@ -303,7 +303,7 @@ bool CreateLaunchTemplateVersionRequest::getSecurity_transport()const
 void CreateLaunchTemplateVersionRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getVSwitchId()const
@@ -314,7 +314,7 @@ std::string CreateLaunchTemplateVersionRequest::getVSwitchId()const
 void CreateLaunchTemplateVersionRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSpotStrategy()const
@@ -325,7 +325,7 @@ std::string CreateLaunchTemplateVersionRequest::getSpotStrategy()const
 void CreateLaunchTemplateVersionRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setCoreParameter("SpotStrategy", std::to_string(spotStrategy));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInstanceName()const
@@ -336,7 +336,7 @@ std::string CreateLaunchTemplateVersionRequest::getInstanceName()const
 void CreateLaunchTemplateVersionRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", std::to_string(instanceName));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getRequestId()const
@@ -347,7 +347,7 @@ std::string CreateLaunchTemplateVersionRequest::getRequestId()const
 void CreateLaunchTemplateVersionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getAkProxy()const
@@ -358,7 +358,7 @@ std::string CreateLaunchTemplateVersionRequest::getAkProxy()const
 void CreateLaunchTemplateVersionRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInternetChargeType()const
@@ -369,7 +369,7 @@ std::string CreateLaunchTemplateVersionRequest::getInternetChargeType()const
 void CreateLaunchTemplateVersionRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setCoreParameter("InternetChargeType", std::to_string(internetChargeType));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getZoneId()const
@@ -380,7 +380,7 @@ std::string CreateLaunchTemplateVersionRequest::getZoneId()const
 void CreateLaunchTemplateVersionRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setCoreParameter("ZoneId", std::to_string(zoneId));
 }
 
 int CreateLaunchTemplateVersionRequest::getInternetMaxBandwidthIn()const
@@ -402,7 +402,7 @@ std::string CreateLaunchTemplateVersionRequest::getVersionDescription()const
 void CreateLaunchTemplateVersionRequest::setVersionDescription(const std::string& versionDescription)
 {
 	versionDescription_ = versionDescription;
-	setCoreParameter("VersionDescription", versionDescription);
+	setCoreParameter("VersionDescription", std::to_string(versionDescription));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getImageId()const
@@ -413,7 +413,7 @@ std::string CreateLaunchTemplateVersionRequest::getImageId()const
 void CreateLaunchTemplateVersionRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setCoreParameter("ImageId", std::to_string(imageId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getIoOptimized()const
@@ -424,7 +424,7 @@ std::string CreateLaunchTemplateVersionRequest::getIoOptimized()const
 void CreateLaunchTemplateVersionRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setCoreParameter("IoOptimized", std::to_string(ioOptimized));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSecurityGroupId()const
@@ -435,7 +435,7 @@ std::string CreateLaunchTemplateVersionRequest::getSecurityGroupId()const
 void CreateLaunchTemplateVersionRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 int CreateLaunchTemplateVersionRequest::getInternetMaxBandwidthOut()const
@@ -457,7 +457,7 @@ bool CreateLaunchTemplateVersionRequest::getProxy_original_security_transport()c
 void CreateLaunchTemplateVersionRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getDescription()const
@@ -468,7 +468,7 @@ std::string CreateLaunchTemplateVersionRequest::getDescription()const
 void CreateLaunchTemplateVersionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSystemDiskCategory()const
@@ -479,7 +479,7 @@ std::string CreateLaunchTemplateVersionRequest::getSystemDiskCategory()const
 void CreateLaunchTemplateVersionRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setCoreParameter("SystemDiskCategory", std::to_string(systemDiskCategory));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getAccessKeyId()const
@@ -490,7 +490,7 @@ std::string CreateLaunchTemplateVersionRequest::getAccessKeyId()const
 void CreateLaunchTemplateVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getUserData()const
@@ -501,7 +501,7 @@ std::string CreateLaunchTemplateVersionRequest::getUserData()const
 void CreateLaunchTemplateVersionRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setCoreParameter("UserData", std::to_string(userData));
 }
 
 bool CreateLaunchTemplateVersionRequest::getPasswordInherit()const
@@ -512,7 +512,7 @@ bool CreateLaunchTemplateVersionRequest::getPasswordInherit()const
 void CreateLaunchTemplateVersionRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit);
+	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateLaunchTemplateVersionRequest::getRegionId()const
@@ -523,7 +523,7 @@ std::string CreateLaunchTemplateVersionRequest::getRegionId()const
 void CreateLaunchTemplateVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getRequestContent()const
@@ -534,7 +534,7 @@ std::string CreateLaunchTemplateVersionRequest::getRequestContent()const
 void CreateLaunchTemplateVersionRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInstanceType()const
@@ -545,7 +545,7 @@ std::string CreateLaunchTemplateVersionRequest::getInstanceType()const
 void CreateLaunchTemplateVersionRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setCoreParameter("InstanceType", std::to_string(instanceType));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getInstanceChargeType()const
@@ -556,7 +556,7 @@ std::string CreateLaunchTemplateVersionRequest::getInstanceChargeType()const
 void CreateLaunchTemplateVersionRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getCallerUidEmail()const
@@ -567,7 +567,7 @@ std::string CreateLaunchTemplateVersionRequest::getCallerUidEmail()const
 void CreateLaunchTemplateVersionRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 bool CreateLaunchTemplateVersionRequest::getEnableVmOsConfig()const
@@ -578,7 +578,7 @@ bool CreateLaunchTemplateVersionRequest::getEnableVmOsConfig()const
 void CreateLaunchTemplateVersionRequest::setEnableVmOsConfig(bool enableVmOsConfig)
 {
 	enableVmOsConfig_ = enableVmOsConfig;
-	setCoreParameter("EnableVmOsConfig", enableVmOsConfig);
+	setCoreParameter("EnableVmOsConfig", enableVmOsConfig ? "true" : "false");
 }
 
 std::vector<CreateLaunchTemplateVersionRequest::NetworkInterface> CreateLaunchTemplateVersionRequest::getNetworkInterface()const
@@ -609,7 +609,7 @@ std::string CreateLaunchTemplateVersionRequest::getApp_ip()const
 void CreateLaunchTemplateVersionRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getResourceOwnerAccount()const
@@ -620,7 +620,7 @@ std::string CreateLaunchTemplateVersionRequest::getResourceOwnerAccount()const
 void CreateLaunchTemplateVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getOwnerAccount()const
@@ -631,7 +631,7 @@ std::string CreateLaunchTemplateVersionRequest::getOwnerAccount()const
 void CreateLaunchTemplateVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSystemDiskDiskName()const
@@ -642,7 +642,7 @@ std::string CreateLaunchTemplateVersionRequest::getSystemDiskDiskName()const
 void CreateLaunchTemplateVersionRequest::setSystemDiskDiskName(const std::string& systemDiskDiskName)
 {
 	systemDiskDiskName_ = systemDiskDiskName;
-	setCoreParameter("SystemDiskDiskName", systemDiskDiskName);
+	setCoreParameter("SystemDiskDiskName", std::to_string(systemDiskDiskName));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getRamRoleName()const
@@ -653,7 +653,7 @@ std::string CreateLaunchTemplateVersionRequest::getRamRoleName()const
 void CreateLaunchTemplateVersionRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setCoreParameter("RamRoleName", std::to_string(ramRoleName));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getAutoReleaseTime()const
@@ -664,7 +664,7 @@ std::string CreateLaunchTemplateVersionRequest::getAutoReleaseTime()const
 void CreateLaunchTemplateVersionRequest::setAutoReleaseTime(const std::string& autoReleaseTime)
 {
 	autoReleaseTime_ = autoReleaseTime;
-	setCoreParameter("AutoReleaseTime", autoReleaseTime);
+	setCoreParameter("AutoReleaseTime", std::to_string(autoReleaseTime));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getCallerBid()const
@@ -675,7 +675,7 @@ std::string CreateLaunchTemplateVersionRequest::getCallerBid()const
 void CreateLaunchTemplateVersionRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 int CreateLaunchTemplateVersionRequest::getSpotDuration()const
@@ -720,7 +720,7 @@ bool CreateLaunchTemplateVersionRequest::getProxy_trust_transport_info()const
 void CreateLaunchTemplateVersionRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 int CreateLaunchTemplateVersionRequest::getSystemDiskSize()const
@@ -742,7 +742,7 @@ std::string CreateLaunchTemplateVersionRequest::getVpcId()const
 void CreateLaunchTemplateVersionRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", std::to_string(vpcId));
 }
 
 std::string CreateLaunchTemplateVersionRequest::getSystemDiskDescription()const
@@ -753,6 +753,6 @@ std::string CreateLaunchTemplateVersionRequest::getSystemDiskDescription()const
 void CreateLaunchTemplateVersionRequest::setSystemDiskDescription(const std::string& systemDiskDescription)
 {
 	systemDiskDescription_ = systemDiskDescription;
-	setCoreParameter("SystemDiskDescription", systemDiskDescription);
+	setCoreParameter("SystemDiskDescription", std::to_string(systemDiskDescription));
 }
 

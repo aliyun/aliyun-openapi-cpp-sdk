@@ -44,7 +44,7 @@ std::string MetastoreListDataSourceRequest::getRegionId()const
 void MetastoreListDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool MetastoreListDataSourceRequest::getClusterReleased()const
@@ -55,7 +55,7 @@ bool MetastoreListDataSourceRequest::getClusterReleased()const
 void MetastoreListDataSourceRequest::setClusterReleased(bool clusterReleased)
 {
 	clusterReleased_ = clusterReleased;
-	setCoreParameter("ClusterReleased", clusterReleased);
+	setCoreParameter("ClusterReleased", clusterReleased ? "true" : "false");
 }
 
 int MetastoreListDataSourceRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string MetastoreListDataSourceRequest::getSourceType()const
 void MetastoreListDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setCoreParameter("SourceType", std::to_string(sourceType));
 }
 
 std::string MetastoreListDataSourceRequest::getDataSourceName()const
@@ -88,7 +88,7 @@ std::string MetastoreListDataSourceRequest::getDataSourceName()const
 void MetastoreListDataSourceRequest::setDataSourceName(const std::string& dataSourceName)
 {
 	dataSourceName_ = dataSourceName;
-	setCoreParameter("DataSourceName", dataSourceName);
+	setCoreParameter("DataSourceName", std::to_string(dataSourceName));
 }
 
 int MetastoreListDataSourceRequest::getPageNumber()const
@@ -110,6 +110,6 @@ std::string MetastoreListDataSourceRequest::getAccessKeyId()const
 void MetastoreListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

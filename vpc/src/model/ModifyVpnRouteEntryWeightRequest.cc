@@ -44,7 +44,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getResourceOwnerAccount()const
 void ModifyVpnRouteEntryWeightRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyVpnRouteEntryWeightRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getClientToken()const
 void ModifyVpnRouteEntryWeightRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifyVpnRouteEntryWeightRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getOwnerAccount()const
 void ModifyVpnRouteEntryWeightRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int ModifyVpnRouteEntryWeightRequest::getWeight()const
@@ -88,7 +88,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getVpnGatewayId()const
 void ModifyVpnRouteEntryWeightRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long ModifyVpnRouteEntryWeightRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getRouteDest()const
 void ModifyVpnRouteEntryWeightRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setCoreParameter("RouteDest", std::to_string(routeDest));
 }
 
 std::string ModifyVpnRouteEntryWeightRequest::getNextHop()const
@@ -132,7 +132,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getNextHop()const
 void ModifyVpnRouteEntryWeightRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setCoreParameter("NextHop", std::to_string(nextHop));
 }
 
 std::string ModifyVpnRouteEntryWeightRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyVpnRouteEntryWeightRequest::getRegionId()const
 void ModifyVpnRouteEntryWeightRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyVpnRouteEntryWeightRequest::getOverlayMode()const
@@ -154,6 +154,6 @@ std::string ModifyVpnRouteEntryWeightRequest::getOverlayMode()const
 void ModifyVpnRouteEntryWeightRequest::setOverlayMode(const std::string& overlayMode)
 {
 	overlayMode_ = overlayMode;
-	setCoreParameter("OverlayMode", overlayMode);
+	setCoreParameter("OverlayMode", std::to_string(overlayMode));
 }
 

@@ -55,7 +55,7 @@ std::string ListBriefConfigByActionRequest::getFuzzySearch()const
 void ListBriefConfigByActionRequest::setFuzzySearch(const std::string& fuzzySearch)
 {
 	fuzzySearch_ = fuzzySearch;
-	setCoreParameter("FuzzySearch", fuzzySearch);
+	setCoreParameter("FuzzySearch", std::to_string(fuzzySearch));
 }
 
 std::string ListBriefConfigByActionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListBriefConfigByActionRequest::getAccessKeyId()const
 void ListBriefConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

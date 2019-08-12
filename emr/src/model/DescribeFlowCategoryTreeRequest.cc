@@ -33,7 +33,7 @@ std::string DescribeFlowCategoryTreeRequest::getRegionId()const
 void DescribeFlowCategoryTreeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeFlowCategoryTreeRequest::getType()const
@@ -44,7 +44,7 @@ std::string DescribeFlowCategoryTreeRequest::getType()const
 void DescribeFlowCategoryTreeRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string DescribeFlowCategoryTreeRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string DescribeFlowCategoryTreeRequest::getProjectId()const
 void DescribeFlowCategoryTreeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

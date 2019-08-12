@@ -33,7 +33,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getConnectionMode()const
 void ModifyDBInstanceConnectionModeRequest::setConnectionMode(const std::string& connectionMode)
 {
 	connectionMode_ = connectionMode;
-	setCoreParameter("ConnectionMode", connectionMode);
+	setCoreParameter("ConnectionMode", std::to_string(connectionMode));
 }
 
 long ModifyDBInstanceConnectionModeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getResourceOwnerAccount()cons
 void ModifyDBInstanceConnectionModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getOwnerAccount()const
 void ModifyDBInstanceConnectionModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
 void ModifyDBInstanceConnectionModeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long ModifyDBInstanceConnectionModeRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string ModifyDBInstanceConnectionModeRequest::getAccessKeyId()const
 void ModifyDBInstanceConnectionModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

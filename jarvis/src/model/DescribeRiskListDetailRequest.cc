@@ -33,7 +33,7 @@ std::string DescribeRiskListDetailRequest::getRiskType()const
 void DescribeRiskListDetailRequest::setRiskType(const std::string& riskType)
 {
 	riskType_ = riskType;
-	setCoreParameter("RiskType", riskType);
+	setCoreParameter("RiskType", std::to_string(riskType));
 }
 
 std::string DescribeRiskListDetailRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRiskListDetailRequest::getSourceIp()const
 void DescribeRiskListDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeRiskListDetailRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeRiskListDetailRequest::getQueryProduct()const
 void DescribeRiskListDetailRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setCoreParameter("QueryProduct", std::to_string(queryProduct));
 }
 
 int DescribeRiskListDetailRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ std::string DescribeRiskListDetailRequest::getRiskDescribe()const
 void DescribeRiskListDetailRequest::setRiskDescribe(const std::string& riskDescribe)
 {
 	riskDescribe_ = riskDescribe;
-	setCoreParameter("RiskDescribe", riskDescribe);
+	setCoreParameter("RiskDescribe", std::to_string(riskDescribe));
 }
 
 std::string DescribeRiskListDetailRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeRiskListDetailRequest::getLang()const
 void DescribeRiskListDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 long DescribeRiskListDetailRequest::getSrcUid()const
@@ -121,7 +121,7 @@ std::string DescribeRiskListDetailRequest::getSourceCode()const
 void DescribeRiskListDetailRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 
 std::string DescribeRiskListDetailRequest::getQueryRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeRiskListDetailRequest::getQueryRegionId()const
 void DescribeRiskListDetailRequest::setQueryRegionId(const std::string& queryRegionId)
 {
 	queryRegionId_ = queryRegionId;
-	setCoreParameter("QueryRegionId", queryRegionId);
+	setCoreParameter("QueryRegionId", std::to_string(queryRegionId));
 }
 
 std::string DescribeRiskListDetailRequest::getStatus()const
@@ -143,6 +143,6 @@ std::string DescribeRiskListDetailRequest::getStatus()const
 void DescribeRiskListDetailRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

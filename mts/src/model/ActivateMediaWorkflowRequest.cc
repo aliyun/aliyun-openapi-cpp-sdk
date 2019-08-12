@@ -44,7 +44,7 @@ std::string ActivateMediaWorkflowRequest::getResourceOwnerAccount()const
 void ActivateMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ActivateMediaWorkflowRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ActivateMediaWorkflowRequest::getOwnerAccount()const
 void ActivateMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ActivateMediaWorkflowRequest::getMediaWorkflowId()const
@@ -66,7 +66,7 @@ std::string ActivateMediaWorkflowRequest::getMediaWorkflowId()const
 void ActivateMediaWorkflowRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setCoreParameter("MediaWorkflowId", std::to_string(mediaWorkflowId));
 }
 
 long ActivateMediaWorkflowRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string ActivateMediaWorkflowRequest::getAccessKeyId()const
 void ActivateMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

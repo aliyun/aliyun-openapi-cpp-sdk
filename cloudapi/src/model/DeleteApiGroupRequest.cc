@@ -33,7 +33,7 @@ std::string DeleteApiGroupRequest::getSecurityToken()const
 void DeleteApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteApiGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteApiGroupRequest::getGroupId()const
 void DeleteApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::vector<DeleteApiGroupRequest::Tag> DeleteApiGroupRequest::getTag()const
@@ -72,6 +72,6 @@ std::string DeleteApiGroupRequest::getAccessKeyId()const
 void DeleteApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

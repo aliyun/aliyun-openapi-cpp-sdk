@@ -33,7 +33,7 @@ std::string SetDatasourceStatusRequest::getProjectName()const
 void SetDatasourceStatusRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", std::to_string(projectName));
 }
 
 std::string SetDatasourceStatusRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string SetDatasourceStatusRequest::getSourceIp()const
 void SetDatasourceStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string SetDatasourceStatusRequest::getLogStoreName()const
@@ -55,7 +55,7 @@ std::string SetDatasourceStatusRequest::getLogStoreName()const
 void SetDatasourceStatusRequest::setLogStoreName(const std::string& logStoreName)
 {
 	logStoreName_ = logStoreName;
-	setCoreParameter("LogStoreName", logStoreName);
+	setCoreParameter("LogStoreName", std::to_string(logStoreName));
 }
 
 int SetDatasourceStatusRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string SetDatasourceStatusRequest::getRegionNo()const
 void SetDatasourceStatusRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
+	setCoreParameter("RegionNo", std::to_string(regionNo));
 }
 

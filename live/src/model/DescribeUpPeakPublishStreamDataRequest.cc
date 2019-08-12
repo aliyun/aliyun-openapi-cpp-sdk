@@ -33,7 +33,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getRegionId()const
 void DescribeUpPeakPublishStreamDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
 void DescribeUpPeakPublishStreamDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getStartTime()const
 void DescribeUpPeakPublishStreamDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", domainSwitch);
+	setCoreParameter("DomainSwitch", std::to_string(domainSwitch));
 }
 

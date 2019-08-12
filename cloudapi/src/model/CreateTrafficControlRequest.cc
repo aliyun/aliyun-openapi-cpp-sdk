@@ -44,7 +44,7 @@ std::string CreateTrafficControlRequest::getSecurityToken()const
 void CreateTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateTrafficControlRequest::getTrafficControlName()const
@@ -55,7 +55,7 @@ std::string CreateTrafficControlRequest::getTrafficControlName()const
 void CreateTrafficControlRequest::setTrafficControlName(const std::string& trafficControlName)
 {
 	trafficControlName_ = trafficControlName;
-	setCoreParameter("TrafficControlName", trafficControlName);
+	setCoreParameter("TrafficControlName", std::to_string(trafficControlName));
 }
 
 std::string CreateTrafficControlRequest::getTrafficControlUnit()const
@@ -66,7 +66,7 @@ std::string CreateTrafficControlRequest::getTrafficControlUnit()const
 void CreateTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
 {
 	trafficControlUnit_ = trafficControlUnit;
-	setCoreParameter("TrafficControlUnit", trafficControlUnit);
+	setCoreParameter("TrafficControlUnit", std::to_string(trafficControlUnit));
 }
 
 std::string CreateTrafficControlRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateTrafficControlRequest::getDescription()const
 void CreateTrafficControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 int CreateTrafficControlRequest::getUserDefault()const
@@ -110,6 +110,6 @@ std::string CreateTrafficControlRequest::getAccessKeyId()const
 void CreateTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

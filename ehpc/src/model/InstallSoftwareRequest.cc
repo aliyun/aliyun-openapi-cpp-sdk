@@ -33,7 +33,7 @@ std::string InstallSoftwareRequest::getApplication()const
 void InstallSoftwareRequest::setApplication(const std::string& application)
 {
 	application_ = application;
-	setCoreParameter("Application", application);
+	setCoreParameter("Application", std::to_string(application));
 }
 
 std::string InstallSoftwareRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string InstallSoftwareRequest::getClusterId()const
 void InstallSoftwareRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string InstallSoftwareRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string InstallSoftwareRequest::getAccessKeyId()const
 void InstallSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

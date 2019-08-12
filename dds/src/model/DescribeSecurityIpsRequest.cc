@@ -44,7 +44,7 @@ std::string DescribeSecurityIpsRequest::getSecurityToken()const
 void DescribeSecurityIpsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeSecurityIpsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSecurityIpsRequest::getResourceOwnerAccount()const
 void DescribeSecurityIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSecurityIpsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeSecurityIpsRequest::getRegionId()const
 void DescribeSecurityIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSecurityIpsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSecurityIpsRequest::getOwnerAccount()const
 void DescribeSecurityIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeSecurityIpsRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeSecurityIpsRequest::getDBInstanceId()const
 void DescribeSecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeSecurityIpsRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeSecurityIpsRequest::getAccessKeyId()const
 void DescribeSecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

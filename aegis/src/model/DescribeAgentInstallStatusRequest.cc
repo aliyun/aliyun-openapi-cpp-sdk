@@ -33,7 +33,7 @@ std::string DescribeAgentInstallStatusRequest::getSourceIp()const
 void DescribeAgentInstallStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeAgentInstallStatusRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAgentInstallStatusRequest::getLang()const
 void DescribeAgentInstallStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeAgentInstallStatusRequest::getUuids()const
@@ -55,6 +55,6 @@ std::string DescribeAgentInstallStatusRequest::getUuids()const
 void DescribeAgentInstallStatusRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

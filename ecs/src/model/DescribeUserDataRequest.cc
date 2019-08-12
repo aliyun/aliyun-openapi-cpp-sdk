@@ -33,7 +33,7 @@ std::string DescribeUserDataRequest::getSourceRegionId()const
 void DescribeUserDataRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeUserDataRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeUserDataRequest::getInstanceId()const
 void DescribeUserDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeUserDataRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeUserDataRequest::getResourceOwnerAccount()const
 void DescribeUserDataRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeUserDataRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeUserDataRequest::getRegionId()const
 void DescribeUserDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long DescribeUserDataRequest::getOwnerId()const

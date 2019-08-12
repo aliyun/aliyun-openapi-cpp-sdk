@@ -33,7 +33,7 @@ std::string DeleteServerCertificateRequest::getAccess_key_id()const
 void DeleteServerCertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 long DeleteServerCertificateRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DeleteServerCertificateRequest::getResourceOwnerAccount()const
 void DeleteServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteServerCertificateRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteServerCertificateRequest::getRegionId()const
 void DeleteServerCertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteServerCertificateRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteServerCertificateRequest::getOwnerAccount()const
 void DeleteServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteServerCertificateRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DeleteServerCertificateRequest::getServerCertificateId()const
 void DeleteServerCertificateRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setCoreParameter("ServerCertificateId", std::to_string(serverCertificateId));
 }
 
 std::string DeleteServerCertificateRequest::getTags()const
@@ -110,6 +110,6 @@ std::string DeleteServerCertificateRequest::getTags()const
 void DeleteServerCertificateRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 

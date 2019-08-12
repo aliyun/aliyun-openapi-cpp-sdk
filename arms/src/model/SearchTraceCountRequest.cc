@@ -33,7 +33,7 @@ std::string SearchTraceCountRequest::getServiceIp()const
 void SearchTraceCountRequest::setServiceIp(const std::string& serviceIp)
 {
 	serviceIp_ = serviceIp;
-	setCoreParameter("ServiceIp", serviceIp);
+	setCoreParameter("ServiceIp", std::to_string(serviceIp));
 }
 
 std::string SearchTraceCountRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string SearchTraceCountRequest::getRegionId()const
 void SearchTraceCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SearchTraceCountRequest::getOperationName()const
@@ -55,7 +55,7 @@ std::string SearchTraceCountRequest::getOperationName()const
 void SearchTraceCountRequest::setOperationName(const std::string& operationName)
 {
 	operationName_ = operationName;
-	setCoreParameter("OperationName", operationName);
+	setCoreParameter("OperationName", std::to_string(operationName));
 }
 
 std::string SearchTraceCountRequest::getAppType()const
@@ -66,7 +66,7 @@ std::string SearchTraceCountRequest::getAppType()const
 void SearchTraceCountRequest::setAppType(const std::string& appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", appType);
+	setCoreParameter("AppType", std::to_string(appType));
 }
 
 long SearchTraceCountRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string SearchTraceCountRequest::getServiceName()const
 void SearchTraceCountRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 
 long SearchTraceCountRequest::getStartTime()const

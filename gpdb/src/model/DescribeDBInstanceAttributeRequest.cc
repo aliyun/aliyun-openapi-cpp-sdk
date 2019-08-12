@@ -33,7 +33,7 @@ std::string DescribeDBInstanceAttributeRequest::getDBInstanceId()const
 void DescribeDBInstanceAttributeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeDBInstanceAttributeRequest::getOwnerId()const
@@ -55,6 +55,6 @@ std::string DescribeDBInstanceAttributeRequest::getAccessKeyId()const
 void DescribeDBInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

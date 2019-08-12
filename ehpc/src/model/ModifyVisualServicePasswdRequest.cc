@@ -33,7 +33,7 @@ std::string ModifyVisualServicePasswdRequest::getPasswd()const
 void ModifyVisualServicePasswdRequest::setPasswd(const std::string& passwd)
 {
 	passwd_ = passwd;
-	setCoreParameter("Passwd", passwd);
+	setCoreParameter("Passwd", std::to_string(passwd));
 }
 
 std::string ModifyVisualServicePasswdRequest::getRunasUserPassword()const
@@ -44,7 +44,7 @@ std::string ModifyVisualServicePasswdRequest::getRunasUserPassword()const
 void ModifyVisualServicePasswdRequest::setRunasUserPassword(const std::string& runasUserPassword)
 {
 	runasUserPassword_ = runasUserPassword;
-	setCoreParameter("RunasUserPassword", runasUserPassword);
+	setCoreParameter("RunasUserPassword", std::to_string(runasUserPassword));
 }
 
 std::string ModifyVisualServicePasswdRequest::getRunasUser()const
@@ -55,7 +55,7 @@ std::string ModifyVisualServicePasswdRequest::getRunasUser()const
 void ModifyVisualServicePasswdRequest::setRunasUser(const std::string& runasUser)
 {
 	runasUser_ = runasUser;
-	setCoreParameter("RunasUser", runasUser);
+	setCoreParameter("RunasUser", std::to_string(runasUser));
 }
 
 std::string ModifyVisualServicePasswdRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyVisualServicePasswdRequest::getClusterId()const
 void ModifyVisualServicePasswdRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyVisualServicePasswdRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyVisualServicePasswdRequest::getAccessKeyId()const
 void ModifyVisualServicePasswdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string ModifyInstanceMinorVersionRequest::getInstanceId()const
 void ModifyInstanceMinorVersionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceMinorVersionRequest::getSecurityToken()const
 void ModifyInstanceMinorVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceMinorVersionRequest::getResourceOwnerAccount()const
 void ModifyInstanceMinorVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceMinorVersionRequest::getRegionId()const
 void ModifyInstanceMinorVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getMinorversion()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceMinorVersionRequest::getMinorversion()const
 void ModifyInstanceMinorVersionRequest::setMinorversion(const std::string& minorversion)
 {
 	minorversion_ = minorversion;
-	setCoreParameter("Minorversion", minorversion);
+	setCoreParameter("Minorversion", std::to_string(minorversion));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceMinorVersionRequest::getOwnerAccount()const
 void ModifyInstanceMinorVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceMinorVersionRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceMinorVersionRequest::getEffectTime()const
 void ModifyInstanceMinorVersionRequest::setEffectTime(const std::string& effectTime)
 {
 	effectTime_ = effectTime;
-	setCoreParameter("EffectTime", effectTime);
+	setCoreParameter("EffectTime", std::to_string(effectTime));
 }
 
 std::string ModifyInstanceMinorVersionRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyInstanceMinorVersionRequest::getAccessKeyId()const
 void ModifyInstanceMinorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

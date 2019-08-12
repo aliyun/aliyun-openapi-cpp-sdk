@@ -33,7 +33,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceId()const
 void DescribeRouteConflictRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setCoreParameter("ChildInstanceId", std::to_string(childInstanceId));
 }
 
 long DescribeRouteConflictRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeRouteConflictRequest::getResourceOwnerAccount()const
 void DescribeRouteConflictRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRouteConflictRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRouteConflictRequest::getOwnerAccount()const
 void DescribeRouteConflictRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeRouteConflictRequest::getDestinationCidrBlock()const
@@ -77,7 +77,7 @@ std::string DescribeRouteConflictRequest::getDestinationCidrBlock()const
 void DescribeRouteConflictRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setCoreParameter("DestinationCidrBlock", std::to_string(destinationCidrBlock));
 }
 
 int DescribeRouteConflictRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceType()const
 void DescribeRouteConflictRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setCoreParameter("ChildInstanceType", std::to_string(childInstanceType));
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceRouteTableId()const
@@ -121,7 +121,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceRouteTableId()const
 void DescribeRouteConflictRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	setCoreParameter("ChildInstanceRouteTableId", std::to_string(childInstanceRouteTableId));
 }
 
 int DescribeRouteConflictRequest::getPageNumber()const
@@ -143,6 +143,6 @@ std::string DescribeRouteConflictRequest::getChildInstanceRegionId()const
 void DescribeRouteConflictRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setCoreParameter("ChildInstanceRegionId", std::to_string(childInstanceRegionId));
 }
 

@@ -44,7 +44,7 @@ std::string MetastoreListTablesRequest::getDbName()const
 void MetastoreListTablesRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string MetastoreListTablesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListTablesRequest::getRegionId()const
 void MetastoreListTablesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int MetastoreListTablesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string MetastoreListTablesRequest::getTableId()const
 void MetastoreListTablesRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setCoreParameter("TableId", std::to_string(tableId));
 }
 
 std::string MetastoreListTablesRequest::getDatabaseId()const
@@ -88,7 +88,7 @@ std::string MetastoreListTablesRequest::getDatabaseId()const
 void MetastoreListTablesRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setCoreParameter("DatabaseId", databaseId);
+	setCoreParameter("DatabaseId", std::to_string(databaseId));
 }
 
 std::string MetastoreListTablesRequest::getTableName()const
@@ -99,7 +99,7 @@ std::string MetastoreListTablesRequest::getTableName()const
 void MetastoreListTablesRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", tableName);
+	setCoreParameter("TableName", std::to_string(tableName));
 }
 
 int MetastoreListTablesRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string MetastoreListTablesRequest::getFuzzyTableName()const
 void MetastoreListTablesRequest::setFuzzyTableName(const std::string& fuzzyTableName)
 {
 	fuzzyTableName_ = fuzzyTableName;
-	setCoreParameter("FuzzyTableName", fuzzyTableName);
+	setCoreParameter("FuzzyTableName", std::to_string(fuzzyTableName));
 }
 
 std::string MetastoreListTablesRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string MetastoreListTablesRequest::getAccessKeyId()const
 void MetastoreListTablesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

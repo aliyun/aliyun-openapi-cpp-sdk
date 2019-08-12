@@ -44,7 +44,7 @@ std::string DescribeMigrateTasksForSQLServerRequest::getResourceOwnerAccount()co
 void DescribeMigrateTasksForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int DescribeMigrateTasksForSQLServerRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeMigrateTasksForSQLServerRequest::getEndTime()const
 void DescribeMigrateTasksForSQLServerRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeMigrateTasksForSQLServerRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string DescribeMigrateTasksForSQLServerRequest::getDBInstanceId()const
 void DescribeMigrateTasksForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeMigrateTasksForSQLServerRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeMigrateTasksForSQLServerRequest::getStartTime()const
 void DescribeMigrateTasksForSQLServerRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeMigrateTasksForSQLServerRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DescribeMigrateTasksForSQLServerRequest::getAccessKeyId()const
 void DescribeMigrateTasksForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

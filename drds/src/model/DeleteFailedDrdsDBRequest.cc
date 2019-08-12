@@ -33,7 +33,7 @@ std::string DeleteFailedDrdsDBRequest::getDbName()const
 void DeleteFailedDrdsDBRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setCoreParameter("DbName", std::to_string(dbName));
 }
 
 std::string DeleteFailedDrdsDBRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DeleteFailedDrdsDBRequest::getDrdsInstanceId()const
 void DeleteFailedDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
 }
 
 std::string DeleteFailedDrdsDBRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteFailedDrdsDBRequest::getAccessKeyId()const
 void DeleteFailedDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

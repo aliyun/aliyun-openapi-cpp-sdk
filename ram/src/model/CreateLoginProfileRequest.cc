@@ -33,7 +33,7 @@ std::string CreateLoginProfileRequest::getPassword()const
 void CreateLoginProfileRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setCoreParameter("Password", std::to_string(password));
 }
 
 bool CreateLoginProfileRequest::getPasswordResetRequired()const
@@ -44,7 +44,7 @@ bool CreateLoginProfileRequest::getPasswordResetRequired()const
 void CreateLoginProfileRequest::setPasswordResetRequired(bool passwordResetRequired)
 {
 	passwordResetRequired_ = passwordResetRequired;
-	setCoreParameter("PasswordResetRequired", passwordResetRequired);
+	setCoreParameter("PasswordResetRequired", passwordResetRequired ? "true" : "false");
 }
 
 bool CreateLoginProfileRequest::getMFABindRequired()const
@@ -55,7 +55,7 @@ bool CreateLoginProfileRequest::getMFABindRequired()const
 void CreateLoginProfileRequest::setMFABindRequired(bool mFABindRequired)
 {
 	mFABindRequired_ = mFABindRequired;
-	setCoreParameter("MFABindRequired", mFABindRequired);
+	setCoreParameter("MFABindRequired", mFABindRequired ? "true" : "false");
 }
 
 std::string CreateLoginProfileRequest::getUserName()const
@@ -66,6 +66,6 @@ std::string CreateLoginProfileRequest::getUserName()const
 void CreateLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setCoreParameter("UserName", std::to_string(userName));
 }
 

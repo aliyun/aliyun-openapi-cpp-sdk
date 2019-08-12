@@ -44,7 +44,7 @@ std::string DescribeDBInstanceSSLRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDBInstanceSSLRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceSSLRequest::getOwnerAccount()const
 void DescribeDBInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDBInstanceSSLRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceSSLRequest::getDBInstanceId()const
 void DescribeDBInstanceSSLRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeDBInstanceSSLRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeDBInstanceSSLRequest::getAccessKeyId()const
 void DescribeDBInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

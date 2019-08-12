@@ -33,7 +33,7 @@ std::string RemoveUsersFromSkillGroupRequest::getInstanceId()const
 void RemoveUsersFromSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string RemoveUsersFromSkillGroupRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string RemoveUsersFromSkillGroupRequest::getSkillGroupId()const
 void RemoveUsersFromSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
 }
 
 std::vector<std::string> RemoveUsersFromSkillGroupRequest::getUserId()const
@@ -67,6 +67,6 @@ std::string RemoveUsersFromSkillGroupRequest::getAccessKeyId()const
 void RemoveUsersFromSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

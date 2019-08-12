@@ -33,6 +33,6 @@ std::string ListResourceTagsRequest::getKeyId()const
 void ListResourceTagsRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", keyId);
+	setCoreParameter("KeyId", std::to_string(keyId));
 }
 

@@ -33,7 +33,7 @@ std::string FindApproveServiceListRequest::getProjectName()const
 void FindApproveServiceListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", std::to_string(projectName));
 }
 
 std::string FindApproveServiceListRequest::getApproveLevel()const
@@ -44,7 +44,7 @@ std::string FindApproveServiceListRequest::getApproveLevel()const
 void FindApproveServiceListRequest::setApproveLevel(const std::string& approveLevel)
 {
 	approveLevel_ = approveLevel;
-	setCoreParameter("ApproveLevel", approveLevel);
+	setCoreParameter("ApproveLevel", std::to_string(approveLevel));
 }
 
 bool FindApproveServiceListRequest::getShowDelService()const
@@ -55,7 +55,7 @@ bool FindApproveServiceListRequest::getShowDelService()const
 void FindApproveServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setCoreParameter("ShowDelService", showDelService);
+	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
 long FindApproveServiceListRequest::getCsbId()const
@@ -77,7 +77,7 @@ std::string FindApproveServiceListRequest::getRegionId()const
 void FindApproveServiceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string FindApproveServiceListRequest::getAlias()const
@@ -88,7 +88,7 @@ std::string FindApproveServiceListRequest::getAlias()const
 void FindApproveServiceListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setCoreParameter("Alias", std::to_string(alias));
 }
 
 std::string FindApproveServiceListRequest::getServiceName()const
@@ -99,6 +99,6 @@ std::string FindApproveServiceListRequest::getServiceName()const
 void FindApproveServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", std::to_string(serviceName));
 }
 

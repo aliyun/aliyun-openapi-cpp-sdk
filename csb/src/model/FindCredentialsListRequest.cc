@@ -33,7 +33,7 @@ std::string FindCredentialsListRequest::getRegionId()const
 void FindCredentialsListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long FindCredentialsListRequest::getCsbId()const
@@ -66,6 +66,6 @@ std::string FindCredentialsListRequest::getGroupName()const
 void FindCredentialsListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 

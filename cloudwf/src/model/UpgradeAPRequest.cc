@@ -45,6 +45,6 @@ std::string UpgradeAPRequest::getAccessKeyId()const
 void UpgradeAPRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

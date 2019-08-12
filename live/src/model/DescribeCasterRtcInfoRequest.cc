@@ -33,7 +33,7 @@ std::string DescribeCasterRtcInfoRequest::getCasterId()const
 void DescribeCasterRtcInfoRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 long DescribeCasterRtcInfoRequest::getOwnerId()const

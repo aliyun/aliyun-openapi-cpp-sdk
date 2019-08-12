@@ -33,7 +33,7 @@ std::string StopJobsRequest::getJobs()const
 void StopJobsRequest::setJobs(const std::string& jobs)
 {
 	jobs_ = jobs;
-	setCoreParameter("Jobs", jobs);
+	setCoreParameter("Jobs", std::to_string(jobs));
 }
 
 std::string StopJobsRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string StopJobsRequest::getClusterId()const
 void StopJobsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string StopJobsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string StopJobsRequest::getAccessKeyId()const
 void StopJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -44,7 +44,7 @@ std::string CreateQosPolicyRequest::getSourcePortRange()const
 void CreateQosPolicyRequest::setSourcePortRange(const std::string& sourcePortRange)
 {
 	sourcePortRange_ = sourcePortRange;
-	setCoreParameter("SourcePortRange", sourcePortRange);
+	setCoreParameter("SourcePortRange", std::to_string(sourcePortRange));
 }
 
 std::string CreateQosPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateQosPolicyRequest::getResourceOwnerAccount()const
 void CreateQosPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateQosPolicyRequest::getIpProtocol()const
@@ -66,7 +66,7 @@ std::string CreateQosPolicyRequest::getIpProtocol()const
 void CreateQosPolicyRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", std::to_string(ipProtocol));
 }
 
 std::string CreateQosPolicyRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateQosPolicyRequest::getOwnerAccount()const
 void CreateQosPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string CreateQosPolicyRequest::getSourceCidr()const
@@ -88,7 +88,7 @@ std::string CreateQosPolicyRequest::getSourceCidr()const
 void CreateQosPolicyRequest::setSourceCidr(const std::string& sourceCidr)
 {
 	sourceCidr_ = sourceCidr;
-	setCoreParameter("SourceCidr", sourceCidr);
+	setCoreParameter("SourceCidr", std::to_string(sourceCidr));
 }
 
 std::string CreateQosPolicyRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateQosPolicyRequest::getDescription()const
 void CreateQosPolicyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateQosPolicyRequest::getEndTime()const
@@ -110,7 +110,7 @@ std::string CreateQosPolicyRequest::getEndTime()const
 void CreateQosPolicyRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string CreateQosPolicyRequest::getStartTime()const
@@ -121,7 +121,7 @@ std::string CreateQosPolicyRequest::getStartTime()const
 void CreateQosPolicyRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long CreateQosPolicyRequest::getOwnerId()const
@@ -154,7 +154,7 @@ std::string CreateQosPolicyRequest::getDestCidr()const
 void CreateQosPolicyRequest::setDestCidr(const std::string& destCidr)
 {
 	destCidr_ = destCidr;
-	setCoreParameter("DestCidr", destCidr);
+	setCoreParameter("DestCidr", std::to_string(destCidr));
 }
 
 std::string CreateQosPolicyRequest::getDestPortRange()const
@@ -165,7 +165,7 @@ std::string CreateQosPolicyRequest::getDestPortRange()const
 void CreateQosPolicyRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
-	setCoreParameter("DestPortRange", destPortRange);
+	setCoreParameter("DestPortRange", std::to_string(destPortRange));
 }
 
 std::string CreateQosPolicyRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string CreateQosPolicyRequest::getRegionId()const
 void CreateQosPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateQosPolicyRequest::getQosId()const
@@ -187,6 +187,6 @@ std::string CreateQosPolicyRequest::getQosId()const
 void CreateQosPolicyRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setCoreParameter("QosId", std::to_string(qosId));
 }
 

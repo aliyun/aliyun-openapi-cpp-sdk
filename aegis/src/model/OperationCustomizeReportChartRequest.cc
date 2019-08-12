@@ -33,7 +33,7 @@ std::string OperationCustomizeReportChartRequest::getSourceIp()const
 void OperationCustomizeReportChartRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long OperationCustomizeReportChartRequest::getReportId()const
@@ -55,7 +55,7 @@ std::string OperationCustomizeReportChartRequest::getChartIds()const
 void OperationCustomizeReportChartRequest::setChartIds(const std::string& chartIds)
 {
 	chartIds_ = chartIds;
-	setCoreParameter("ChartIds", chartIds);
+	setCoreParameter("ChartIds", std::to_string(chartIds));
 }
 
 std::string OperationCustomizeReportChartRequest::getLang()const
@@ -66,6 +66,6 @@ std::string OperationCustomizeReportChartRequest::getLang()const
 void OperationCustomizeReportChartRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

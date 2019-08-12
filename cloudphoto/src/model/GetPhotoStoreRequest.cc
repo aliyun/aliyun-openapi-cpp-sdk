@@ -33,6 +33,6 @@ std::string GetPhotoStoreRequest::getStoreName()const
 void GetPhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setCoreParameter("StoreName", std::to_string(storeName));
 }
 

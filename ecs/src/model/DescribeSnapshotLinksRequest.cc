@@ -33,7 +33,7 @@ std::string DescribeSnapshotLinksRequest::getSourceRegionId()const
 void DescribeSnapshotLinksRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long DescribeSnapshotLinksRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string DescribeSnapshotLinksRequest::getInstanceId()const
 void DescribeSnapshotLinksRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeSnapshotLinksRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSnapshotLinksRequest::getResourceOwnerAccount()const
 void DescribeSnapshotLinksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeSnapshotLinksRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeSnapshotLinksRequest::getRegionId()const
 void DescribeSnapshotLinksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeSnapshotLinksRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeSnapshotLinksRequest::getOwnerAccount()const
 void DescribeSnapshotLinksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeSnapshotLinksRequest::getPageSize()const
@@ -110,7 +110,7 @@ std::string DescribeSnapshotLinksRequest::getDiskIds()const
 void DescribeSnapshotLinksRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setCoreParameter("DiskIds", diskIds);
+	setCoreParameter("DiskIds", std::to_string(diskIds));
 }
 
 std::string DescribeSnapshotLinksRequest::getSnapshotLinkIds()const
@@ -121,7 +121,7 @@ std::string DescribeSnapshotLinksRequest::getSnapshotLinkIds()const
 void DescribeSnapshotLinksRequest::setSnapshotLinkIds(const std::string& snapshotLinkIds)
 {
 	snapshotLinkIds_ = snapshotLinkIds;
-	setCoreParameter("SnapshotLinkIds", snapshotLinkIds);
+	setCoreParameter("SnapshotLinkIds", std::to_string(snapshotLinkIds));
 }
 
 long DescribeSnapshotLinksRequest::getOwnerId()const

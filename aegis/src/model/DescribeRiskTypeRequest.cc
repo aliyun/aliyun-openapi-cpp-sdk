@@ -33,7 +33,7 @@ std::string DescribeRiskTypeRequest::getSourceIp()const
 void DescribeRiskTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 long DescribeRiskTypeRequest::getStrategyId()const
@@ -55,7 +55,7 @@ std::string DescribeRiskTypeRequest::getLang()const
 void DescribeRiskTypeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeRiskTypeRequest::getUuids()const
@@ -66,6 +66,6 @@ std::string DescribeRiskTypeRequest::getUuids()const
 void DescribeRiskTypeRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setCoreParameter("Uuids", std::to_string(uuids));
 }
 

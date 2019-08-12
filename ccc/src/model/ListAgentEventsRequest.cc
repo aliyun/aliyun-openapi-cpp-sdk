@@ -33,7 +33,7 @@ std::string ListAgentEventsRequest::getInstanceId()const
 void ListAgentEventsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 long ListAgentEventsRequest::getStartTime()const
@@ -90,6 +90,6 @@ std::string ListAgentEventsRequest::getAccessKeyId()const
 void ListAgentEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

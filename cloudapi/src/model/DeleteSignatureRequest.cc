@@ -33,7 +33,7 @@ std::string DeleteSignatureRequest::getSecurityToken()const
 void DeleteSignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteSignatureRequest::getSignatureId()const
@@ -44,7 +44,7 @@ std::string DeleteSignatureRequest::getSignatureId()const
 void DeleteSignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setCoreParameter("SignatureId", std::to_string(signatureId));
 }
 
 std::string DeleteSignatureRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteSignatureRequest::getAccessKeyId()const
 void DeleteSignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

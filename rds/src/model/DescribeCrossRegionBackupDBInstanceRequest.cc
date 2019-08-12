@@ -44,7 +44,7 @@ std::string DescribeCrossRegionBackupDBInstanceRequest::getResourceOwnerAccount(
 void DescribeCrossRegionBackupDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeCrossRegionBackupDBInstanceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCrossRegionBackupDBInstanceRequest::getRegionId()const
 void DescribeCrossRegionBackupDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeCrossRegionBackupDBInstanceRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeCrossRegionBackupDBInstanceRequest::getDBInstanceId()const
 void DescribeCrossRegionBackupDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DescribeCrossRegionBackupDBInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeCrossRegionBackupDBInstanceRequest::getAccessKeyId()const
 void DescribeCrossRegionBackupDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

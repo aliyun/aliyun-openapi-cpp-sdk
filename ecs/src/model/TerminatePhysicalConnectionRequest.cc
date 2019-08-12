@@ -44,7 +44,7 @@ std::string TerminatePhysicalConnectionRequest::getRegionId()const
 void TerminatePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string TerminatePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string TerminatePhysicalConnectionRequest::getResourceOwnerAccount()const
 void TerminatePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string TerminatePhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string TerminatePhysicalConnectionRequest::getClientToken()const
 void TerminatePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string TerminatePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string TerminatePhysicalConnectionRequest::getPhysicalConnectionId()const
 void TerminatePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
 }
 
 std::string TerminatePhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string TerminatePhysicalConnectionRequest::getOwnerAccount()const
 void TerminatePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string TerminatePhysicalConnectionRequest::getUserCidr()const
@@ -99,7 +99,7 @@ std::string TerminatePhysicalConnectionRequest::getUserCidr()const
 void TerminatePhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", userCidr);
+	setCoreParameter("UserCidr", std::to_string(userCidr));
 }
 
 long TerminatePhysicalConnectionRequest::getOwnerId()const

@@ -44,7 +44,7 @@ std::string ModifyCloudConnectNetworkRequest::getResourceOwnerAccount()const
 void ModifyCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyCloudConnectNetworkRequest::getRegionId()const
 void ModifyCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyCloudConnectNetworkRequest::getOwnerAccount()const
 void ModifyCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getCcnId()const
@@ -77,7 +77,7 @@ std::string ModifyCloudConnectNetworkRequest::getCcnId()const
 void ModifyCloudConnectNetworkRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setCoreParameter("CcnId", std::to_string(ccnId));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyCloudConnectNetworkRequest::getName()const
 void ModifyCloudConnectNetworkRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getCidrBlock()const
@@ -99,7 +99,7 @@ std::string ModifyCloudConnectNetworkRequest::getCidrBlock()const
 void ModifyCloudConnectNetworkRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string ModifyCloudConnectNetworkRequest::getDescription()const
 void ModifyCloudConnectNetworkRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 long ModifyCloudConnectNetworkRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string ModifyCloudConnectNetworkRequest::getInterworkingStatus()const
 void ModifyCloudConnectNetworkRequest::setInterworkingStatus(const std::string& interworkingStatus)
 {
 	interworkingStatus_ = interworkingStatus;
-	setCoreParameter("InterworkingStatus", interworkingStatus);
+	setCoreParameter("InterworkingStatus", std::to_string(interworkingStatus));
 }
 

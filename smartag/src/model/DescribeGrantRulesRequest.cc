@@ -44,7 +44,7 @@ std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const
 void DescribeGrantRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeGrantRulesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeGrantRulesRequest::getRegionId()const
 void DescribeGrantRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeGrantRulesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeGrantRulesRequest::getOwnerAccount()const
 void DescribeGrantRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeGrantRulesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeGrantRulesRequest::getPageSize()const
 void DescribeGrantRulesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
 void DescribeGrantRulesRequest::setAssociatedCcnId(const std::string& associatedCcnId)
 {
 	associatedCcnId_ = associatedCcnId;
-	setCoreParameter("AssociatedCcnId", associatedCcnId);
+	setCoreParameter("AssociatedCcnId", std::to_string(associatedCcnId));
 }
 
 long DescribeGrantRulesRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeGrantRulesRequest::getPageNumber()const
 void DescribeGrantRulesRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

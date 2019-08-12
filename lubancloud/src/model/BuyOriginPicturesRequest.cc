@@ -33,7 +33,7 @@ bool BuyOriginPicturesRequest::getSecurity_transport()const
 void BuyOriginPicturesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string BuyOriginPicturesRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string BuyOriginPicturesRequest::getApp_ip()const
 void BuyOriginPicturesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string BuyOriginPicturesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string BuyOriginPicturesRequest::getRegionId()const
 void BuyOriginPicturesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 long BuyOriginPicturesRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ std::string BuyOriginPicturesRequest::getRequestId()const
 void BuyOriginPicturesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string BuyOriginPicturesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string BuyOriginPicturesRequest::getCallerType()const
 void BuyOriginPicturesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 bool BuyOriginPicturesRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool BuyOriginPicturesRequest::getAk_mfa_present()const
 void BuyOriginPicturesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long BuyOriginPicturesRequest::getCallerUid()const

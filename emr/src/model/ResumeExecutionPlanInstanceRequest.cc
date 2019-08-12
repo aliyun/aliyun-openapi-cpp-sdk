@@ -44,7 +44,7 @@ std::string ResumeExecutionPlanInstanceRequest::getRegionId()const
 void ResumeExecutionPlanInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getId()const
@@ -55,7 +55,7 @@ std::string ResumeExecutionPlanInstanceRequest::getId()const
 void ResumeExecutionPlanInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ResumeExecutionPlanInstanceRequest::getAccessKeyId()const
 void ResumeExecutionPlanInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

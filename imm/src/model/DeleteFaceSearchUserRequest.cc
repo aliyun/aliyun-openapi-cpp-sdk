@@ -33,7 +33,7 @@ std::string DeleteFaceSearchUserRequest::getRegionId()const
 void DeleteFaceSearchUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteFaceSearchUserRequest::getProject()const
@@ -44,7 +44,7 @@ std::string DeleteFaceSearchUserRequest::getProject()const
 void DeleteFaceSearchUserRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string DeleteFaceSearchUserRequest::getGroupName()const
@@ -55,7 +55,7 @@ std::string DeleteFaceSearchUserRequest::getGroupName()const
 void DeleteFaceSearchUserRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setCoreParameter("GroupName", std::to_string(groupName));
 }
 
 std::string DeleteFaceSearchUserRequest::getUser()const
@@ -66,7 +66,7 @@ std::string DeleteFaceSearchUserRequest::getUser()const
 void DeleteFaceSearchUserRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setCoreParameter("User", std::to_string(user));
 }
 
 std::string DeleteFaceSearchUserRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteFaceSearchUserRequest::getAccessKeyId()const
 void DeleteFaceSearchUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

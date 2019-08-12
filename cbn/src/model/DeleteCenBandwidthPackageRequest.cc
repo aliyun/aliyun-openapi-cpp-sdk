@@ -44,7 +44,7 @@ std::string DeleteCenBandwidthPackageRequest::getResourceOwnerAccount()const
 void DeleteCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteCenBandwidthPackageRequest::getCenBandwidthPackageId()const
@@ -55,7 +55,7 @@ std::string DeleteCenBandwidthPackageRequest::getCenBandwidthPackageId()const
 void DeleteCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
 {
 	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+	setCoreParameter("CenBandwidthPackageId", std::to_string(cenBandwidthPackageId));
 }
 
 std::string DeleteCenBandwidthPackageRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteCenBandwidthPackageRequest::getOwnerAccount()const
 void DeleteCenBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteCenBandwidthPackageRequest::getOwnerId()const

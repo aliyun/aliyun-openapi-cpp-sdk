@@ -44,7 +44,7 @@ std::string DescribeBgpNetworksRequest::getResourceOwnerAccount()const
 void DescribeBgpNetworksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeBgpNetworksRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeBgpNetworksRequest::getRegionId()const
 void DescribeBgpNetworksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeBgpNetworksRequest::getRouterId()const
@@ -66,7 +66,7 @@ std::string DescribeBgpNetworksRequest::getRouterId()const
 void DescribeBgpNetworksRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setCoreParameter("RouterId", std::to_string(routerId));
 }
 
 std::string DescribeBgpNetworksRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBgpNetworksRequest::getOwnerAccount()const
 void DescribeBgpNetworksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeBgpNetworksRequest::getPageSize()const

@@ -44,7 +44,7 @@ std::string AssociateQosRequest::getResourceOwnerAccount()const
 void AssociateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AssociateQosRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AssociateQosRequest::getRegionId()const
 void AssociateQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AssociateQosRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AssociateQosRequest::getOwnerAccount()const
 void AssociateQosRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AssociateQosRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string AssociateQosRequest::getSmartAGId()const
 void AssociateQosRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long AssociateQosRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string AssociateQosRequest::getQosId()const
 void AssociateQosRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setCoreParameter("QosId", std::to_string(qosId));
 }
 

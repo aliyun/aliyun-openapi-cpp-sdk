@@ -55,7 +55,7 @@ std::string OfflineKafkaBrokerRequest::getRegionId()const
 void OfflineKafkaBrokerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string OfflineKafkaBrokerRequest::getHostId()const
@@ -66,7 +66,7 @@ std::string OfflineKafkaBrokerRequest::getHostId()const
 void OfflineKafkaBrokerRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setCoreParameter("HostId", std::to_string(hostId));
 }
 
 std::string OfflineKafkaBrokerRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string OfflineKafkaBrokerRequest::getClusterId()const
 void OfflineKafkaBrokerRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string OfflineKafkaBrokerRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string OfflineKafkaBrokerRequest::getAccessKeyId()const
 void OfflineKafkaBrokerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

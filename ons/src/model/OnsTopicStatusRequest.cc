@@ -33,7 +33,7 @@ std::string OnsTopicStatusRequest::getInstanceId()const
 void OnsTopicStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string OnsTopicStatusRequest::getTopic()const
@@ -44,6 +44,6 @@ std::string OnsTopicStatusRequest::getTopic()const
 void OnsTopicStatusRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setCoreParameter("Topic", std::to_string(topic));
 }
 

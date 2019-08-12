@@ -44,7 +44,7 @@ std::string QueryPornJobListRequest::getResourceOwnerAccount()const
 void QueryPornJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryPornJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryPornJobListRequest::getJobIds()const
 void QueryPornJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", std::to_string(jobIds));
 }
 
 std::string QueryPornJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryPornJobListRequest::getOwnerAccount()const
 void QueryPornJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryPornJobListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string QueryPornJobListRequest::getAccessKeyId()const
 void QueryPornJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

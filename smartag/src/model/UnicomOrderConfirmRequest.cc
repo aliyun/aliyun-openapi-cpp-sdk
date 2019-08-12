@@ -33,7 +33,7 @@ std::string UnicomOrderConfirmRequest::getTmsCode()const
 void UnicomOrderConfirmRequest::setTmsCode(const std::string& tmsCode)
 {
 	tmsCode_ = tmsCode;
-	setCoreParameter("TmsCode", tmsCode);
+	setCoreParameter("TmsCode", std::to_string(tmsCode));
 }
 
 long UnicomOrderConfirmRequest::getResourceOwnerId()const
@@ -78,7 +78,7 @@ std::string UnicomOrderConfirmRequest::getOwnerUserId()const
 void UnicomOrderConfirmRequest::setOwnerUserId(const std::string& ownerUserId)
 {
 	ownerUserId_ = ownerUserId;
-	setCoreParameter("OwnerUserId", ownerUserId);
+	setCoreParameter("OwnerUserId", std::to_string(ownerUserId));
 }
 
 std::string UnicomOrderConfirmRequest::getResourceOwnerAccount()const
@@ -89,7 +89,7 @@ std::string UnicomOrderConfirmRequest::getResourceOwnerAccount()const
 void UnicomOrderConfirmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string UnicomOrderConfirmRequest::getRegionId()const
@@ -100,7 +100,7 @@ std::string UnicomOrderConfirmRequest::getRegionId()const
 void UnicomOrderConfirmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string UnicomOrderConfirmRequest::getOwnerAccount()const
@@ -111,7 +111,7 @@ std::string UnicomOrderConfirmRequest::getOwnerAccount()const
 void UnicomOrderConfirmRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long UnicomOrderConfirmRequest::getOrderPostFee()const
@@ -144,7 +144,7 @@ std::string UnicomOrderConfirmRequest::getTmsOrderCode()const
 void UnicomOrderConfirmRequest::setTmsOrderCode(const std::string& tmsOrderCode)
 {
 	tmsOrderCode_ = tmsOrderCode;
-	setCoreParameter("TmsOrderCode", tmsOrderCode);
+	setCoreParameter("TmsOrderCode", std::to_string(tmsOrderCode));
 }
 
 std::string UnicomOrderConfirmRequest::getTradeId()const
@@ -155,6 +155,6 @@ std::string UnicomOrderConfirmRequest::getTradeId()const
 void UnicomOrderConfirmRequest::setTradeId(const std::string& tradeId)
 {
 	tradeId_ = tradeId;
-	setCoreParameter("TradeId", tradeId);
+	setCoreParameter("TradeId", std::to_string(tradeId));
 }
 

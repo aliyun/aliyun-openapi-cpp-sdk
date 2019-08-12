@@ -33,7 +33,7 @@ std::string DescribeDataSourceRequest::getConfigType()const
 void DescribeDataSourceRequest::setConfigType(const std::string& configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", configType);
+	setCoreParameter("ConfigType", std::to_string(configType));
 }
 
 std::string DescribeDataSourceRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeDataSourceRequest::getSourceIp()const
 void DescribeDataSourceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DescribeDataSourceRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeDataSourceRequest::getLang()const
 void DescribeDataSourceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

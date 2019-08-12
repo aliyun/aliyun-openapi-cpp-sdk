@@ -44,7 +44,7 @@ std::string ModifyInstanceConfigRequest::getInstanceId()const
 void ModifyInstanceConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceConfigRequest::getSecurityToken()const
 void ModifyInstanceConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string ModifyInstanceConfigRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceConfigRequest::getResourceOwnerAccount()const
 void ModifyInstanceConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyInstanceConfigRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceConfigRequest::getRegionId()const
 void ModifyInstanceConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyInstanceConfigRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceConfigRequest::getOwnerAccount()const
 void ModifyInstanceConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long ModifyInstanceConfigRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceConfigRequest::getConfig()const
 void ModifyInstanceConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setCoreParameter("Config", std::to_string(config));
 }
 
 std::string ModifyInstanceConfigRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyInstanceConfigRequest::getAccessKeyId()const
 void ModifyInstanceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

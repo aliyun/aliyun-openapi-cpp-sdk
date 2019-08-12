@@ -44,7 +44,7 @@ std::string DescribeClusterStatisticsRequest::getRegionId()const
 void DescribeClusterStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeClusterStatisticsRequest::getStrategy()const
@@ -55,7 +55,7 @@ std::string DescribeClusterStatisticsRequest::getStrategy()const
 void DescribeClusterStatisticsRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", strategy);
+	setCoreParameter("Strategy", std::to_string(strategy));
 }
 
 std::string DescribeClusterStatisticsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeClusterStatisticsRequest::getAccessKeyId()const
 void DescribeClusterStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

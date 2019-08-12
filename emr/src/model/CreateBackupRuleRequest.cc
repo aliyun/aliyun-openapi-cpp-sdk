@@ -33,7 +33,7 @@ std::string CreateBackupRuleRequest::getApp_ip()const
 void CreateBackupRuleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 long CreateBackupRuleRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateBackupRuleRequest::getBackupMethodType()const
 void CreateBackupRuleRequest::setBackupMethodType(const std::string& backupMethodType)
 {
 	backupMethodType_ = backupMethodType;
-	setCoreParameter("BackupMethodType", backupMethodType);
+	setCoreParameter("BackupMethodType", std::to_string(backupMethodType));
 }
 
 long CreateBackupRuleRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ bool CreateBackupRuleRequest::getProxy_original_security_transport()const
 void CreateBackupRuleRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string CreateBackupRuleRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateBackupRuleRequest::getDescription()const
 void CreateBackupRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setCoreParameter("Description", std::to_string(description));
 }
 
 std::string CreateBackupRuleRequest::getBackupPlanId()const
@@ -99,7 +99,7 @@ std::string CreateBackupRuleRequest::getBackupPlanId()const
 void CreateBackupRuleRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string CreateBackupRuleRequest::getCallerBid()const
@@ -110,7 +110,7 @@ std::string CreateBackupRuleRequest::getCallerBid()const
 void CreateBackupRuleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string CreateBackupRuleRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string CreateBackupRuleRequest::getProxy_original_source_ip()const
 void CreateBackupRuleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string CreateBackupRuleRequest::getMetadataType()const
@@ -132,7 +132,7 @@ std::string CreateBackupRuleRequest::getMetadataType()const
 void CreateBackupRuleRequest::setMetadataType(const std::string& metadataType)
 {
 	metadataType_ = metadataType;
-	setCoreParameter("MetadataType", metadataType);
+	setCoreParameter("MetadataType", std::to_string(metadataType));
 }
 
 bool CreateBackupRuleRequest::getAk_mfa_present()const
@@ -143,7 +143,7 @@ bool CreateBackupRuleRequest::getAk_mfa_present()const
 void CreateBackupRuleRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool CreateBackupRuleRequest::getProxy_trust_transport_info()const
@@ -154,7 +154,7 @@ bool CreateBackupRuleRequest::getProxy_trust_transport_info()const
 void CreateBackupRuleRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 std::string CreateBackupRuleRequest::getCallerType()const
@@ -165,7 +165,7 @@ std::string CreateBackupRuleRequest::getCallerType()const
 void CreateBackupRuleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 std::string CreateBackupRuleRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string CreateBackupRuleRequest::getAccessKeyId()const
 void CreateBackupRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool CreateBackupRuleRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ bool CreateBackupRuleRequest::getSecurity_transport()const
 void CreateBackupRuleRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string CreateBackupRuleRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string CreateBackupRuleRequest::getSecurityToken()const
 void CreateBackupRuleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string CreateBackupRuleRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string CreateBackupRuleRequest::getRegionId()const
 void CreateBackupRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateBackupRuleRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string CreateBackupRuleRequest::getRequestId()const
 void CreateBackupRuleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string CreateBackupRuleRequest::getName()const
@@ -231,7 +231,7 @@ std::string CreateBackupRuleRequest::getName()const
 void CreateBackupRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setCoreParameter("Name", std::to_string(name));
 }
 
 long CreateBackupRuleRequest::getCallerUid()const

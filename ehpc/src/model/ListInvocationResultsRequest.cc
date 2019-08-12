@@ -49,7 +49,7 @@ std::string ListInvocationResultsRequest::getInvokeRecordStatus()const
 void ListInvocationResultsRequest::setInvokeRecordStatus(const std::string& invokeRecordStatus)
 {
 	invokeRecordStatus_ = invokeRecordStatus;
-	setCoreParameter("InvokeRecordStatus", invokeRecordStatus);
+	setCoreParameter("InvokeRecordStatus", std::to_string(invokeRecordStatus));
 }
 
 int ListInvocationResultsRequest::getPageSize()const
@@ -71,7 +71,7 @@ std::string ListInvocationResultsRequest::getClusterId()const
 void ListInvocationResultsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ListInvocationResultsRequest::getCommandId()const
@@ -82,7 +82,7 @@ std::string ListInvocationResultsRequest::getCommandId()const
 void ListInvocationResultsRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", commandId);
+	setCoreParameter("CommandId", std::to_string(commandId));
 }
 
 int ListInvocationResultsRequest::getPageNumber()const
@@ -104,6 +104,6 @@ std::string ListInvocationResultsRequest::getAccessKeyId()const
 void ListInvocationResultsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -63,7 +63,7 @@ std::string ModifyCasterLayoutRequest::getRegionId()const
 void ModifyCasterLayoutRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::vector<ModifyCasterLayoutRequest::VideoLayer> ModifyCasterLayoutRequest::getVideoLayer()const
@@ -95,7 +95,7 @@ std::string ModifyCasterLayoutRequest::getCasterId()const
 void ModifyCasterLayoutRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setCoreParameter("CasterId", std::to_string(casterId));
 }
 
 std::vector<std::string> ModifyCasterLayoutRequest::getMixList()const
@@ -129,6 +129,6 @@ std::string ModifyCasterLayoutRequest::getLayoutId()const
 void ModifyCasterLayoutRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setCoreParameter("LayoutId", std::to_string(layoutId));
 }
 

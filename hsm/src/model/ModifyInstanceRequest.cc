@@ -44,7 +44,7 @@ std::string ModifyInstanceRequest::getInstanceId()const
 void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceRequest::getSourceIp()const
 void ModifyInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string ModifyInstanceRequest::getRemark()const
@@ -66,6 +66,6 @@ std::string ModifyInstanceRequest::getRemark()const
 void ModifyInstanceRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 

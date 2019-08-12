@@ -33,7 +33,7 @@ std::string DescribeDomainInfoRequest::getUserClientIp()const
 void DescribeDomainInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 std::string DescribeDomainInfoRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDomainInfoRequest::getDomainName()const
 void DescribeDomainInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string DescribeDomainInfoRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeDomainInfoRequest::getLang()const
 void DescribeDomainInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeDomainInfoRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string DescribeDomainInfoRequest::getAccessKeyId()const
 void DescribeDomainInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 bool DescribeDomainInfoRequest::getNeedDetailAttributes()const
@@ -77,6 +77,6 @@ bool DescribeDomainInfoRequest::getNeedDetailAttributes()const
 void DescribeDomainInfoRequest::setNeedDetailAttributes(bool needDetailAttributes)
 {
 	needDetailAttributes_ = needDetailAttributes;
-	setCoreParameter("NeedDetailAttributes", needDetailAttributes);
+	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
 }
 

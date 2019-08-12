@@ -44,7 +44,7 @@ bool ModifyIPv6TranslatorBandwidthRequest::getAutoPay()const
 void ModifyIPv6TranslatorBandwidthRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyIPv6TranslatorBandwidthRequest::getResourceOwnerAccount()const
 void ModifyIPv6TranslatorBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyIPv6TranslatorBandwidthRequest::getRegionId()const
 void ModifyIPv6TranslatorBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifyIPv6TranslatorBandwidthRequest::getClientToken()const
 void ModifyIPv6TranslatorBandwidthRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 int ModifyIPv6TranslatorBandwidthRequest::getBandwidth()const
@@ -99,7 +99,7 @@ std::string ModifyIPv6TranslatorBandwidthRequest::getOwnerAccount()const
 void ModifyIPv6TranslatorBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getIpv6TranslatorId()const
@@ -110,7 +110,7 @@ std::string ModifyIPv6TranslatorBandwidthRequest::getIpv6TranslatorId()const
 void ModifyIPv6TranslatorBandwidthRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
+	setCoreParameter("Ipv6TranslatorId", std::to_string(ipv6TranslatorId));
 }
 
 long ModifyIPv6TranslatorBandwidthRequest::getOwnerId()const

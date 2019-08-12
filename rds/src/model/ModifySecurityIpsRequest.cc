@@ -33,7 +33,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceIPArrayName()const
 void ModifySecurityIpsRequest::setDBInstanceIPArrayName(const std::string& dBInstanceIPArrayName)
 {
 	dBInstanceIPArrayName_ = dBInstanceIPArrayName;
-	setCoreParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+	setCoreParameter("DBInstanceIPArrayName", std::to_string(dBInstanceIPArrayName));
 }
 
 long ModifySecurityIpsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string ModifySecurityIpsRequest::getModifyMode()const
 void ModifySecurityIpsRequest::setModifyMode(const std::string& modifyMode)
 {
 	modifyMode_ = modifyMode;
-	setCoreParameter("ModifyMode", modifyMode);
+	setCoreParameter("ModifyMode", std::to_string(modifyMode));
 }
 
 std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySecurityIpsRequest::getResourceOwnerAccount()const
 void ModifySecurityIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string ModifySecurityIpsRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifySecurityIpsRequest::getClientToken()const
 void ModifySecurityIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string ModifySecurityIpsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifySecurityIpsRequest::getOwnerAccount()const
 void ModifySecurityIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIps()const
@@ -99,7 +99,7 @@ std::string ModifySecurityIpsRequest::getSecurityIps()const
 void ModifySecurityIpsRequest::setSecurityIps(const std::string& securityIps)
 {
 	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
+	setCoreParameter("SecurityIps", std::to_string(securityIps));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityGroupId()const
@@ -110,7 +110,7 @@ std::string ModifySecurityIpsRequest::getSecurityGroupId()const
 void ModifySecurityIpsRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
 }
 
 long ModifySecurityIpsRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string ModifySecurityIpsRequest::getAccessKeyId()const
 void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ModifySecurityIpsRequest::getWhitelistNetworkType()const
@@ -143,7 +143,7 @@ std::string ModifySecurityIpsRequest::getWhitelistNetworkType()const
 void ModifySecurityIpsRequest::setWhitelistNetworkType(const std::string& whitelistNetworkType)
 {
 	whitelistNetworkType_ = whitelistNetworkType;
-	setCoreParameter("WhitelistNetworkType", whitelistNetworkType);
+	setCoreParameter("WhitelistNetworkType", std::to_string(whitelistNetworkType));
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
@@ -154,7 +154,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
 void ModifySecurityIpsRequest::setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute)
 {
 	dBInstanceIPArrayAttribute_ = dBInstanceIPArrayAttribute;
-	setCoreParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+	setCoreParameter("DBInstanceIPArrayAttribute", std::to_string(dBInstanceIPArrayAttribute));
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIPType()const
@@ -165,7 +165,7 @@ std::string ModifySecurityIpsRequest::getSecurityIPType()const
 void ModifySecurityIpsRequest::setSecurityIPType(const std::string& securityIPType)
 {
 	securityIPType_ = securityIPType;
-	setCoreParameter("SecurityIPType", securityIPType);
+	setCoreParameter("SecurityIPType", std::to_string(securityIPType));
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
@@ -176,6 +176,6 @@ std::string ModifySecurityIpsRequest::getDBInstanceId()const
 void ModifySecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 

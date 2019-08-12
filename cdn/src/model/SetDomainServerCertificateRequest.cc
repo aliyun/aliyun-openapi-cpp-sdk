@@ -33,7 +33,7 @@ std::string SetDomainServerCertificateRequest::getPrivateKey()const
 void SetDomainServerCertificateRequest::setPrivateKey(const std::string& privateKey)
 {
 	privateKey_ = privateKey;
-	setCoreParameter("PrivateKey", privateKey);
+	setCoreParameter("PrivateKey", std::to_string(privateKey));
 }
 
 std::string SetDomainServerCertificateRequest::getForceSet()const
@@ -44,7 +44,7 @@ std::string SetDomainServerCertificateRequest::getForceSet()const
 void SetDomainServerCertificateRequest::setForceSet(const std::string& forceSet)
 {
 	forceSet_ = forceSet;
-	setCoreParameter("ForceSet", forceSet);
+	setCoreParameter("ForceSet", std::to_string(forceSet));
 }
 
 std::string SetDomainServerCertificateRequest::getServerCertificateStatus()const
@@ -55,7 +55,7 @@ std::string SetDomainServerCertificateRequest::getServerCertificateStatus()const
 void SetDomainServerCertificateRequest::setServerCertificateStatus(const std::string& serverCertificateStatus)
 {
 	serverCertificateStatus_ = serverCertificateStatus;
-	setCoreParameter("ServerCertificateStatus", serverCertificateStatus);
+	setCoreParameter("ServerCertificateStatus", std::to_string(serverCertificateStatus));
 }
 
 std::string SetDomainServerCertificateRequest::getServerCertificate()const
@@ -66,7 +66,7 @@ std::string SetDomainServerCertificateRequest::getServerCertificate()const
 void SetDomainServerCertificateRequest::setServerCertificate(const std::string& serverCertificate)
 {
 	serverCertificate_ = serverCertificate;
-	setCoreParameter("ServerCertificate", serverCertificate);
+	setCoreParameter("ServerCertificate", std::to_string(serverCertificate));
 }
 
 std::string SetDomainServerCertificateRequest::getSecurityToken()const
@@ -77,7 +77,7 @@ std::string SetDomainServerCertificateRequest::getSecurityToken()const
 void SetDomainServerCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetDomainServerCertificateRequest::getCertType()const
@@ -88,7 +88,7 @@ std::string SetDomainServerCertificateRequest::getCertType()const
 void SetDomainServerCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
-	setCoreParameter("CertType", certType);
+	setCoreParameter("CertType", std::to_string(certType));
 }
 
 std::string SetDomainServerCertificateRequest::getCertName()const
@@ -99,7 +99,7 @@ std::string SetDomainServerCertificateRequest::getCertName()const
 void SetDomainServerCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setCoreParameter("CertName", std::to_string(certName));
 }
 
 std::string SetDomainServerCertificateRequest::getDomainName()const
@@ -110,7 +110,7 @@ std::string SetDomainServerCertificateRequest::getDomainName()const
 void SetDomainServerCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetDomainServerCertificateRequest::getOwnerId()const
@@ -132,6 +132,6 @@ std::string SetDomainServerCertificateRequest::getRegion()const
 void SetDomainServerCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 

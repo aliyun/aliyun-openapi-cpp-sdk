@@ -44,7 +44,7 @@ std::string DescribeAuditRecordsRequest::getResourceOwnerAccount()const
 void DescribeAuditRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeAuditRecordsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAuditRecordsRequest::getOwnerAccount()const
 void DescribeAuditRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeAuditRecordsRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeAuditRecordsRequest::getEndTime()const
 void DescribeAuditRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeAuditRecordsRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeAuditRecordsRequest::getStartTime()const
 void DescribeAuditRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeAuditRecordsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string DescribeAuditRecordsRequest::getQueryKeywords()const
 void DescribeAuditRecordsRequest::setQueryKeywords(const std::string& queryKeywords)
 {
 	queryKeywords_ = queryKeywords;
-	setCoreParameter("QueryKeywords", queryKeywords);
+	setCoreParameter("QueryKeywords", std::to_string(queryKeywords));
 }
 
 int DescribeAuditRecordsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ std::string DescribeAuditRecordsRequest::getAccessKeyId()const
 void DescribeAuditRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeAuditRecordsRequest::getDatabase()const
@@ -132,7 +132,7 @@ std::string DescribeAuditRecordsRequest::getDatabase()const
 void DescribeAuditRecordsRequest::setDatabase(const std::string& database)
 {
 	database_ = database;
-	setCoreParameter("Database", database);
+	setCoreParameter("Database", std::to_string(database));
 }
 
 std::string DescribeAuditRecordsRequest::getForm()const
@@ -143,7 +143,7 @@ std::string DescribeAuditRecordsRequest::getForm()const
 void DescribeAuditRecordsRequest::setForm(const std::string& form)
 {
 	form_ = form;
-	setCoreParameter("Form", form);
+	setCoreParameter("Form", std::to_string(form));
 }
 
 std::string DescribeAuditRecordsRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DescribeAuditRecordsRequest::getSecurityToken()const
 void DescribeAuditRecordsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeAuditRecordsRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeAuditRecordsRequest::getRegionId()const
 void DescribeAuditRecordsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeAuditRecordsRequest::getPageSize()const
@@ -187,7 +187,7 @@ std::string DescribeAuditRecordsRequest::getDBInstanceId()const
 void DescribeAuditRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeAuditRecordsRequest::getNodeId()const
@@ -198,7 +198,7 @@ std::string DescribeAuditRecordsRequest::getNodeId()const
 void DescribeAuditRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 
 std::string DescribeAuditRecordsRequest::getUser()const
@@ -209,6 +209,6 @@ std::string DescribeAuditRecordsRequest::getUser()const
 void DescribeAuditRecordsRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setCoreParameter("User", std::to_string(user));
 }
 

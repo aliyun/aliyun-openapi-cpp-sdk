@@ -33,7 +33,7 @@ std::string DescribeDepartCountsRequest::getTypeCode()const
 void DescribeDepartCountsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
+	setCoreParameter("TypeCode", std::to_string(typeCode));
 }
 
 std::string DescribeDepartCountsRequest::getDepartName()const
@@ -44,7 +44,7 @@ std::string DescribeDepartCountsRequest::getDepartName()const
 void DescribeDepartCountsRequest::setDepartName(const std::string& departName)
 {
 	departName_ = departName;
-	setCoreParameter("DepartName", departName);
+	setCoreParameter("DepartName", std::to_string(departName));
 }
 
 std::string DescribeDepartCountsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeDepartCountsRequest::getSourceIp()const
 void DescribeDepartCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 int DescribeDepartCountsRequest::getFeatureType()const
@@ -99,6 +99,6 @@ std::string DescribeDepartCountsRequest::getLang()const
 void DescribeDepartCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 

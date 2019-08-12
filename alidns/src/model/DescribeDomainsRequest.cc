@@ -33,7 +33,7 @@ std::string DescribeDomainsRequest::getResourceGroupId()const
 void DescribeDomainsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
 }
 
 std::string DescribeDomainsRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeDomainsRequest::getGroupId()const
 void DescribeDomainsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeDomainsRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string DescribeDomainsRequest::getUserClientIp()const
 void DescribeDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", std::to_string(userClientIp));
 }
 
 long DescribeDomainsRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeDomainsRequest::getSearchMode()const
 void DescribeDomainsRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", searchMode);
+	setCoreParameter("SearchMode", std::to_string(searchMode));
 }
 
 std::string DescribeDomainsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeDomainsRequest::getLang()const
 void DescribeDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DescribeDomainsRequest::getKeyWord()const
@@ -99,7 +99,7 @@ std::string DescribeDomainsRequest::getKeyWord()const
 void DescribeDomainsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
+	setCoreParameter("KeyWord", std::to_string(keyWord));
 }
 
 long DescribeDomainsRequest::getPageNumber()const

@@ -33,7 +33,7 @@ std::string GetQueueInputStatisticInfoRequest::getFromDatetime()const
 void GetQueueInputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", std::to_string(fromDatetime));
 }
 
 long GetQueueInputStatisticInfoRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string GetQueueInputStatisticInfoRequest::getRegionId()const
 void GetQueueInputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string GetQueueInputStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetQueueInputStatisticInfoRequest::getClusterId()const
 void GetQueueInputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string GetQueueInputStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetQueueInputStatisticInfoRequest::getToDatetime()const
 void GetQueueInputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", std::to_string(toDatetime));
 }
 
 std::string GetQueueInputStatisticInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetQueueInputStatisticInfoRequest::getAccessKeyId()const
 void GetQueueInputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

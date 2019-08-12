@@ -33,7 +33,7 @@ std::string DescribeRefreshQuotaRequest::getSecurityToken()const
 void DescribeRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 long DescribeRefreshQuotaRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string CreateAutoSnapshotPolicyRequest::getSourceRegionId()const
 void CreateAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 long CreateAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string CreateAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void CreateAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateAutoSnapshotPolicyRequest::getRegionId()const
 void CreateAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getTimePoints()const
@@ -77,7 +77,7 @@ std::string CreateAutoSnapshotPolicyRequest::getTimePoints()const
 void CreateAutoSnapshotPolicyRequest::setTimePoints(const std::string& timePoints)
 {
 	timePoints_ = timePoints;
-	setCoreParameter("TimePoints", timePoints);
+	setCoreParameter("TimePoints", std::to_string(timePoints));
 }
 
 int CreateAutoSnapshotPolicyRequest::getRetentionDays()const
@@ -110,7 +110,7 @@ std::string CreateAutoSnapshotPolicyRequest::getRepeatWeekdays()const
 void CreateAutoSnapshotPolicyRequest::setRepeatWeekdays(const std::string& repeatWeekdays)
 {
 	repeatWeekdays_ = repeatWeekdays;
-	setCoreParameter("RepeatWeekdays", repeatWeekdays);
+	setCoreParameter("RepeatWeekdays", std::to_string(repeatWeekdays));
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getAutoSnapshotPolicyName()const
@@ -121,6 +121,6 @@ std::string CreateAutoSnapshotPolicyRequest::getAutoSnapshotPolicyName()const
 void CreateAutoSnapshotPolicyRequest::setAutoSnapshotPolicyName(const std::string& autoSnapshotPolicyName)
 {
 	autoSnapshotPolicyName_ = autoSnapshotPolicyName;
-	setCoreParameter("AutoSnapshotPolicyName", autoSnapshotPolicyName);
+	setCoreParameter("AutoSnapshotPolicyName", std::to_string(autoSnapshotPolicyName));
 }
 

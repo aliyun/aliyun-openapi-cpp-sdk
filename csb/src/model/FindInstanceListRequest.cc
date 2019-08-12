@@ -33,7 +33,7 @@ std::string FindInstanceListRequest::getRegionId()const
 void FindInstanceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string FindInstanceListRequest::getSearchTxt()const
@@ -44,7 +44,7 @@ std::string FindInstanceListRequest::getSearchTxt()const
 void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
 {
 	searchTxt_ = searchTxt;
-	setCoreParameter("SearchTxt", searchTxt);
+	setCoreParameter("SearchTxt", std::to_string(searchTxt));
 }
 
 long FindInstanceListRequest::getCsbId()const

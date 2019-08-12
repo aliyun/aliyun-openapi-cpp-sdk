@@ -33,7 +33,7 @@ bool SuspendJobsRequest::getAll()const
 void SuspendJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all);
+	setCoreParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> SuspendJobsRequest::getJobId()const
@@ -56,7 +56,7 @@ std::string SuspendJobsRequest::getInstanceId()const
 void SuspendJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::vector<std::string> SuspendJobsRequest::getJobReferenceId()const
@@ -79,7 +79,7 @@ std::string SuspendJobsRequest::getGroupId()const
 void SuspendJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string SuspendJobsRequest::getScenarioId()const
@@ -90,6 +90,6 @@ std::string SuspendJobsRequest::getScenarioId()const
 void SuspendJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setCoreParameter("ScenarioId", std::to_string(scenarioId));
 }
 

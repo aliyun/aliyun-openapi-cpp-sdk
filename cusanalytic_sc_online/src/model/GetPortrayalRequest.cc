@@ -33,7 +33,7 @@ std::string GetPortrayalRequest::getDate()const
 void GetPortrayalRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setCoreParameter("Date", std::to_string(date));
 }
 
 std::string GetPortrayalRequest::getLocationIds()const
@@ -44,7 +44,7 @@ std::string GetPortrayalRequest::getLocationIds()const
 void GetPortrayalRequest::setLocationIds(const std::string& locationIds)
 {
 	locationIds_ = locationIds;
-	setCoreParameter("LocationIds", locationIds);
+	setCoreParameter("LocationIds", std::to_string(locationIds));
 }
 
 std::string GetPortrayalRequest::getStoreIds()const
@@ -55,6 +55,6 @@ std::string GetPortrayalRequest::getStoreIds()const
 void GetPortrayalRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setCoreParameter("StoreIds", std::to_string(storeIds));
 }
 

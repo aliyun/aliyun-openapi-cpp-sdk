@@ -33,7 +33,7 @@ std::string ContextQueryLogRequest::getPackId()const
 void ContextQueryLogRequest::setPackId(const std::string& packId)
 {
 	packId_ = packId;
-	setCoreParameter("PackId", packId);
+	setCoreParameter("PackId", std::to_string(packId));
 }
 
 long ContextQueryLogRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ std::string ContextQueryLogRequest::getRegionId()const
 void ContextQueryLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ContextQueryLogRequest::getPackMeta()const
@@ -88,7 +88,7 @@ std::string ContextQueryLogRequest::getPackMeta()const
 void ContextQueryLogRequest::setPackMeta(const std::string& packMeta)
 {
 	packMeta_ = packMeta;
-	setCoreParameter("PackMeta", packMeta);
+	setCoreParameter("PackMeta", std::to_string(packMeta));
 }
 
 int ContextQueryLogRequest::getFrom()const
@@ -110,7 +110,7 @@ std::string ContextQueryLogRequest::getClusterId()const
 void ContextQueryLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 int ContextQueryLogRequest::getTo()const
@@ -132,7 +132,7 @@ bool ContextQueryLogRequest::getReverse()const
 void ContextQueryLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse);
+	setCoreParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string ContextQueryLogRequest::getLogStore()const
@@ -143,7 +143,7 @@ std::string ContextQueryLogRequest::getLogStore()const
 void ContextQueryLogRequest::setLogStore(const std::string& logStore)
 {
 	logStore_ = logStore;
-	setCoreParameter("LogStore", logStore);
+	setCoreParameter("LogStore", std::to_string(logStore));
 }
 
 std::string ContextQueryLogRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ std::string ContextQueryLogRequest::getAccessKeyId()const
 void ContextQueryLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

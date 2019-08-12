@@ -209,7 +209,7 @@ std::string EnableScalingGroupRequest::getActiveScalingConfigurationId()const
 void EnableScalingGroupRequest::setActiveScalingConfigurationId(const std::string& activeScalingConfigurationId)
 {
 	activeScalingConfigurationId_ = activeScalingConfigurationId;
-	setCoreParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
+	setCoreParameter("ActiveScalingConfigurationId", std::to_string(activeScalingConfigurationId));
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight1()const
@@ -231,7 +231,7 @@ std::string EnableScalingGroupRequest::getInstanceId1()const
 void EnableScalingGroupRequest::setInstanceId1(const std::string& instanceId1)
 {
 	instanceId1_ = instanceId1;
-	setCoreParameter("InstanceId1", instanceId1);
+	setCoreParameter("InstanceId1", std::to_string(instanceId1));
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight20()const
@@ -253,7 +253,7 @@ std::string EnableScalingGroupRequest::getInstanceId3()const
 void EnableScalingGroupRequest::setInstanceId3(const std::string& instanceId3)
 {
 	instanceId3_ = instanceId3;
-	setCoreParameter("InstanceId3", instanceId3);
+	setCoreParameter("InstanceId3", std::to_string(instanceId3));
 }
 
 std::string EnableScalingGroupRequest::getLaunchTemplateId()const
@@ -264,7 +264,7 @@ std::string EnableScalingGroupRequest::getLaunchTemplateId()const
 void EnableScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setCoreParameter("LaunchTemplateId", std::to_string(launchTemplateId));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId2()const
@@ -275,7 +275,7 @@ std::string EnableScalingGroupRequest::getInstanceId2()const
 void EnableScalingGroupRequest::setInstanceId2(const std::string& instanceId2)
 {
 	instanceId2_ = instanceId2;
-	setCoreParameter("InstanceId2", instanceId2);
+	setCoreParameter("InstanceId2", std::to_string(instanceId2));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId5()const
@@ -286,7 +286,7 @@ std::string EnableScalingGroupRequest::getInstanceId5()const
 void EnableScalingGroupRequest::setInstanceId5(const std::string& instanceId5)
 {
 	instanceId5_ = instanceId5;
-	setCoreParameter("InstanceId5", instanceId5);
+	setCoreParameter("InstanceId5", std::to_string(instanceId5));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId4()const
@@ -297,7 +297,7 @@ std::string EnableScalingGroupRequest::getInstanceId4()const
 void EnableScalingGroupRequest::setInstanceId4(const std::string& instanceId4)
 {
 	instanceId4_ = instanceId4;
-	setCoreParameter("InstanceId4", instanceId4);
+	setCoreParameter("InstanceId4", std::to_string(instanceId4));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId7()const
@@ -308,7 +308,7 @@ std::string EnableScalingGroupRequest::getInstanceId7()const
 void EnableScalingGroupRequest::setInstanceId7(const std::string& instanceId7)
 {
 	instanceId7_ = instanceId7;
-	setCoreParameter("InstanceId7", instanceId7);
+	setCoreParameter("InstanceId7", std::to_string(instanceId7));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId6()const
@@ -319,7 +319,7 @@ std::string EnableScalingGroupRequest::getInstanceId6()const
 void EnableScalingGroupRequest::setInstanceId6(const std::string& instanceId6)
 {
 	instanceId6_ = instanceId6;
-	setCoreParameter("InstanceId6", instanceId6);
+	setCoreParameter("InstanceId6", std::to_string(instanceId6));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId9()const
@@ -330,7 +330,7 @@ std::string EnableScalingGroupRequest::getInstanceId9()const
 void EnableScalingGroupRequest::setInstanceId9(const std::string& instanceId9)
 {
 	instanceId9_ = instanceId9;
-	setCoreParameter("InstanceId9", instanceId9);
+	setCoreParameter("InstanceId9", std::to_string(instanceId9));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId8()const
@@ -341,7 +341,7 @@ std::string EnableScalingGroupRequest::getInstanceId8()const
 void EnableScalingGroupRequest::setInstanceId8(const std::string& instanceId8)
 {
 	instanceId8_ = instanceId8;
-	setCoreParameter("InstanceId8", instanceId8);
+	setCoreParameter("InstanceId8", std::to_string(instanceId8));
 }
 
 long EnableScalingGroupRequest::getOwnerId()const
@@ -396,7 +396,7 @@ std::string EnableScalingGroupRequest::getInstanceId10()const
 void EnableScalingGroupRequest::setInstanceId10(const std::string& instanceId10)
 {
 	instanceId10_ = instanceId10;
-	setCoreParameter("InstanceId10", instanceId10);
+	setCoreParameter("InstanceId10", std::to_string(instanceId10));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId12()const
@@ -407,7 +407,7 @@ std::string EnableScalingGroupRequest::getInstanceId12()const
 void EnableScalingGroupRequest::setInstanceId12(const std::string& instanceId12)
 {
 	instanceId12_ = instanceId12;
-	setCoreParameter("InstanceId12", instanceId12);
+	setCoreParameter("InstanceId12", std::to_string(instanceId12));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId11()const
@@ -418,7 +418,7 @@ std::string EnableScalingGroupRequest::getInstanceId11()const
 void EnableScalingGroupRequest::setInstanceId11(const std::string& instanceId11)
 {
 	instanceId11_ = instanceId11;
-	setCoreParameter("InstanceId11", instanceId11);
+	setCoreParameter("InstanceId11", std::to_string(instanceId11));
 }
 
 std::string EnableScalingGroupRequest::getScalingGroupId()const
@@ -429,7 +429,7 @@ std::string EnableScalingGroupRequest::getScalingGroupId()const
 void EnableScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string EnableScalingGroupRequest::getAccessKeyId()const
@@ -440,7 +440,7 @@ std::string EnableScalingGroupRequest::getAccessKeyId()const
 void EnableScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId20()const
@@ -451,7 +451,7 @@ std::string EnableScalingGroupRequest::getInstanceId20()const
 void EnableScalingGroupRequest::setInstanceId20(const std::string& instanceId20)
 {
 	instanceId20_ = instanceId20;
-	setCoreParameter("InstanceId20", instanceId20);
+	setCoreParameter("InstanceId20", std::to_string(instanceId20));
 }
 
 std::string EnableScalingGroupRequest::getResourceOwnerAccount()const
@@ -462,7 +462,7 @@ std::string EnableScalingGroupRequest::getResourceOwnerAccount()const
 void EnableScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string EnableScalingGroupRequest::getOwnerAccount()const
@@ -473,7 +473,7 @@ std::string EnableScalingGroupRequest::getOwnerAccount()const
 void EnableScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string EnableScalingGroupRequest::getLaunchTemplateVersion()const
@@ -484,7 +484,7 @@ std::string EnableScalingGroupRequest::getLaunchTemplateVersion()const
 void EnableScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setCoreParameter("LaunchTemplateVersion", std::to_string(launchTemplateVersion));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId18()const
@@ -495,7 +495,7 @@ std::string EnableScalingGroupRequest::getInstanceId18()const
 void EnableScalingGroupRequest::setInstanceId18(const std::string& instanceId18)
 {
 	instanceId18_ = instanceId18;
-	setCoreParameter("InstanceId18", instanceId18);
+	setCoreParameter("InstanceId18", std::to_string(instanceId18));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId17()const
@@ -506,7 +506,7 @@ std::string EnableScalingGroupRequest::getInstanceId17()const
 void EnableScalingGroupRequest::setInstanceId17(const std::string& instanceId17)
 {
 	instanceId17_ = instanceId17;
-	setCoreParameter("InstanceId17", instanceId17);
+	setCoreParameter("InstanceId17", std::to_string(instanceId17));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId19()const
@@ -517,7 +517,7 @@ std::string EnableScalingGroupRequest::getInstanceId19()const
 void EnableScalingGroupRequest::setInstanceId19(const std::string& instanceId19)
 {
 	instanceId19_ = instanceId19;
-	setCoreParameter("InstanceId19", instanceId19);
+	setCoreParameter("InstanceId19", std::to_string(instanceId19));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId14()const
@@ -528,7 +528,7 @@ std::string EnableScalingGroupRequest::getInstanceId14()const
 void EnableScalingGroupRequest::setInstanceId14(const std::string& instanceId14)
 {
 	instanceId14_ = instanceId14;
-	setCoreParameter("InstanceId14", instanceId14);
+	setCoreParameter("InstanceId14", std::to_string(instanceId14));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId13()const
@@ -539,7 +539,7 @@ std::string EnableScalingGroupRequest::getInstanceId13()const
 void EnableScalingGroupRequest::setInstanceId13(const std::string& instanceId13)
 {
 	instanceId13_ = instanceId13;
-	setCoreParameter("InstanceId13", instanceId13);
+	setCoreParameter("InstanceId13", std::to_string(instanceId13));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId16()const
@@ -550,7 +550,7 @@ std::string EnableScalingGroupRequest::getInstanceId16()const
 void EnableScalingGroupRequest::setInstanceId16(const std::string& instanceId16)
 {
 	instanceId16_ = instanceId16;
-	setCoreParameter("InstanceId16", instanceId16);
+	setCoreParameter("InstanceId16", std::to_string(instanceId16));
 }
 
 std::string EnableScalingGroupRequest::getInstanceId15()const
@@ -561,6 +561,6 @@ std::string EnableScalingGroupRequest::getInstanceId15()const
 void EnableScalingGroupRequest::setInstanceId15(const std::string& instanceId15)
 {
 	instanceId15_ = instanceId15;
-	setCoreParameter("InstanceId15", instanceId15);
+	setCoreParameter("InstanceId15", std::to_string(instanceId15));
 }
 

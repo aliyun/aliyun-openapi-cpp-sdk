@@ -44,7 +44,7 @@ std::string DescribeInstanceSSLRequest::getInstanceId()const
 void DescribeInstanceSSLRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeInstanceSSLRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceSSLRequest::getSecurityToken()const
 void DescribeInstanceSSLRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeInstanceSSLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceSSLRequest::getResourceOwnerAccount()const
 void DescribeInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeInstanceSSLRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceSSLRequest::getRegionId()const
 void DescribeInstanceSSLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeInstanceSSLRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeInstanceSSLRequest::getOwnerAccount()const
 void DescribeInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeInstanceSSLRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DescribeInstanceSSLRequest::getAccessKeyId()const
 void DescribeInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

@@ -67,7 +67,7 @@ bool DescribeDisksFullStatusRequest::getProxy_original_security_transport()const
 void DescribeDisksFullStatusRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDisksFullStatusRequest::getProxy_original_source_ip()const
@@ -78,7 +78,7 @@ std::string DescribeDisksFullStatusRequest::getProxy_original_source_ip()const
 void DescribeDisksFullStatusRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
 }
 
 std::string DescribeDisksFullStatusRequest::getOwnerIdLoginEmail()const
@@ -89,7 +89,7 @@ std::string DescribeDisksFullStatusRequest::getOwnerIdLoginEmail()const
 void DescribeDisksFullStatusRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
 }
 
 std::string DescribeDisksFullStatusRequest::getCallerType()const
@@ -100,7 +100,7 @@ std::string DescribeDisksFullStatusRequest::getCallerType()const
 void DescribeDisksFullStatusRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", callerType);
+	setCoreParameter("CallerType", std::to_string(callerType));
 }
 
 int DescribeDisksFullStatusRequest::getPageNumber()const
@@ -122,7 +122,7 @@ std::string DescribeDisksFullStatusRequest::getAccessKeyId()const
 void DescribeDisksFullStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeDisksFullStatusRequest::getSourceRegionId()const
@@ -133,7 +133,7 @@ std::string DescribeDisksFullStatusRequest::getSourceRegionId()const
 void DescribeDisksFullStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
+	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
 }
 
 std::string DescribeDisksFullStatusRequest::getEventTimeStart()const
@@ -144,7 +144,7 @@ std::string DescribeDisksFullStatusRequest::getEventTimeStart()const
 void DescribeDisksFullStatusRequest::setEventTimeStart(const std::string& eventTimeStart)
 {
 	eventTimeStart_ = eventTimeStart;
-	setCoreParameter("EventTimeStart", eventTimeStart);
+	setCoreParameter("EventTimeStart", std::to_string(eventTimeStart));
 }
 
 std::string DescribeDisksFullStatusRequest::getSecurityToken()const
@@ -155,7 +155,7 @@ std::string DescribeDisksFullStatusRequest::getSecurityToken()const
 void DescribeDisksFullStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeDisksFullStatusRequest::getRegionId()const
@@ -166,7 +166,7 @@ std::string DescribeDisksFullStatusRequest::getRegionId()const
 void DescribeDisksFullStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 bool DescribeDisksFullStatusRequest::getEnable()const
@@ -177,7 +177,7 @@ bool DescribeDisksFullStatusRequest::getEnable()const
 void DescribeDisksFullStatusRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable);
+	setCoreParameter("Enable", enable ? "true" : "false");
 }
 
 std::string DescribeDisksFullStatusRequest::getRequestContent()const
@@ -188,7 +188,7 @@ std::string DescribeDisksFullStatusRequest::getRequestContent()const
 void DescribeDisksFullStatusRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", std::to_string(requestContent));
 }
 
 int DescribeDisksFullStatusRequest::getPageSize()const
@@ -210,7 +210,7 @@ std::string DescribeDisksFullStatusRequest::getCallerBidEmail()const
 void DescribeDisksFullStatusRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
 }
 
 std::vector<std::string> DescribeDisksFullStatusRequest::getDiskId()const
@@ -233,7 +233,7 @@ std::string DescribeDisksFullStatusRequest::getCallerUidEmail()const
 void DescribeDisksFullStatusRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
 }
 
 long DescribeDisksFullStatusRequest::getCallerUid()const
@@ -255,7 +255,7 @@ std::string DescribeDisksFullStatusRequest::getApp_ip()const
 void DescribeDisksFullStatusRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", std::to_string(app_ip));
 }
 
 std::string DescribeDisksFullStatusRequest::getResourceOwnerAccount()const
@@ -266,7 +266,7 @@ std::string DescribeDisksFullStatusRequest::getResourceOwnerAccount()const
 void DescribeDisksFullStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeDisksFullStatusRequest::getOwnerAccount()const
@@ -277,7 +277,7 @@ std::string DescribeDisksFullStatusRequest::getOwnerAccount()const
 void DescribeDisksFullStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeDisksFullStatusRequest::getCallerBid()const
@@ -288,7 +288,7 @@ std::string DescribeDisksFullStatusRequest::getCallerBid()const
 void DescribeDisksFullStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 long DescribeDisksFullStatusRequest::getOwnerId()const
@@ -310,7 +310,7 @@ bool DescribeDisksFullStatusRequest::getProxy_trust_transport_info()const
 void DescribeDisksFullStatusRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDisksFullStatusRequest::getAk_mfa_present()const
@@ -321,7 +321,7 @@ bool DescribeDisksFullStatusRequest::getAk_mfa_present()const
 void DescribeDisksFullStatusRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present);
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeDisksFullStatusRequest::getEventTimeEnd()const
@@ -332,7 +332,7 @@ std::string DescribeDisksFullStatusRequest::getEventTimeEnd()const
 void DescribeDisksFullStatusRequest::setEventTimeEnd(const std::string& eventTimeEnd)
 {
 	eventTimeEnd_ = eventTimeEnd;
-	setCoreParameter("EventTimeEnd", eventTimeEnd);
+	setCoreParameter("EventTimeEnd", std::to_string(eventTimeEnd));
 }
 
 bool DescribeDisksFullStatusRequest::getSecurity_transport()const
@@ -343,7 +343,7 @@ bool DescribeDisksFullStatusRequest::getSecurity_transport()const
 void DescribeDisksFullStatusRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport);
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDisksFullStatusRequest::getRequestId()const
@@ -354,7 +354,7 @@ std::string DescribeDisksFullStatusRequest::getRequestId()const
 void DescribeDisksFullStatusRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", requestId);
+	setCoreParameter("RequestId", std::to_string(requestId));
 }
 
 std::string DescribeDisksFullStatusRequest::getAkProxy()const
@@ -365,7 +365,7 @@ std::string DescribeDisksFullStatusRequest::getAkProxy()const
 void DescribeDisksFullStatusRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", akProxy);
+	setCoreParameter("AkProxy", std::to_string(akProxy));
 }
 
 std::string DescribeDisksFullStatusRequest::getHealthStatus()const
@@ -376,7 +376,7 @@ std::string DescribeDisksFullStatusRequest::getHealthStatus()const
 void DescribeDisksFullStatusRequest::setHealthStatus(const std::string& healthStatus)
 {
 	healthStatus_ = healthStatus;
-	setCoreParameter("HealthStatus", healthStatus);
+	setCoreParameter("HealthStatus", std::to_string(healthStatus));
 }
 
 std::string DescribeDisksFullStatusRequest::getEventType()const
@@ -387,7 +387,7 @@ std::string DescribeDisksFullStatusRequest::getEventType()const
 void DescribeDisksFullStatusRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 std::string DescribeDisksFullStatusRequest::getStatus()const
@@ -398,6 +398,6 @@ std::string DescribeDisksFullStatusRequest::getStatus()const
 void DescribeDisksFullStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

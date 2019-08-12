@@ -55,7 +55,7 @@ std::string GetEntityListRequest::getRemark()const
 void GetEntityListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 std::string GetEntityListRequest::getEventType()const
@@ -66,7 +66,7 @@ std::string GetEntityListRequest::getEventType()const
 void GetEntityListRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setCoreParameter("EventType", std::to_string(eventType));
 }
 
 int GetEntityListRequest::getCurrentPage()const
@@ -88,6 +88,6 @@ std::string GetEntityListRequest::getRegionNo()const
 void GetEntityListRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
+	setCoreParameter("RegionNo", std::to_string(regionNo));
 }
 

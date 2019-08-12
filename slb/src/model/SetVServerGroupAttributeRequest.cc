@@ -33,7 +33,7 @@ std::string SetVServerGroupAttributeRequest::getAccess_key_id()const
 void SetVServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", std::to_string(access_key_id));
 }
 
 std::string SetVServerGroupAttributeRequest::getVServerGroupId()const
@@ -44,7 +44,7 @@ std::string SetVServerGroupAttributeRequest::getVServerGroupId()const
 void SetVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setCoreParameter("VServerGroupId", std::to_string(vServerGroupId));
 }
 
 long SetVServerGroupAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ std::string SetVServerGroupAttributeRequest::getResourceOwnerAccount()const
 void SetVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SetVServerGroupAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string SetVServerGroupAttributeRequest::getRegionId()const
 void SetVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SetVServerGroupAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SetVServerGroupAttributeRequest::getOwnerAccount()const
 void SetVServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long SetVServerGroupAttributeRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string SetVServerGroupAttributeRequest::getBackendServers()const
 void SetVServerGroupAttributeRequest::setBackendServers(const std::string& backendServers)
 {
 	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
+	setCoreParameter("BackendServers", std::to_string(backendServers));
 }
 
 std::string SetVServerGroupAttributeRequest::getTags()const
@@ -121,7 +121,7 @@ std::string SetVServerGroupAttributeRequest::getTags()const
 void SetVServerGroupAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 std::string SetVServerGroupAttributeRequest::getVServerGroupName()const
@@ -132,6 +132,6 @@ std::string SetVServerGroupAttributeRequest::getVServerGroupName()const
 void SetVServerGroupAttributeRequest::setVServerGroupName(const std::string& vServerGroupName)
 {
 	vServerGroupName_ = vServerGroupName;
-	setCoreParameter("VServerGroupName", vServerGroupName);
+	setCoreParameter("VServerGroupName", std::to_string(vServerGroupName));
 }
 

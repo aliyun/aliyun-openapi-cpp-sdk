@@ -44,7 +44,7 @@ std::string DeleteDBInstanceRequest::getSecurityToken()const
 void DeleteDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DeleteDBInstanceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteDBInstanceRequest::getResourceOwnerAccount()const
 void DeleteDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteDBInstanceRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteDBInstanceRequest::getRegionId()const
 void DeleteDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteDBInstanceRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string DeleteDBInstanceRequest::getClientToken()const
 void DeleteDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteDBInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteDBInstanceRequest::getOwnerAccount()const
 void DeleteDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DeleteDBInstanceRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DeleteDBInstanceRequest::getDBInstanceId()const
 void DeleteDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 long DeleteDBInstanceRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string DeleteDBInstanceRequest::getAccessKeyId()const
 void DeleteDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

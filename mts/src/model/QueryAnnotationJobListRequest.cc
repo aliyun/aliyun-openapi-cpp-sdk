@@ -44,7 +44,7 @@ std::string QueryAnnotationJobListRequest::getResourceOwnerAccount()const
 void QueryAnnotationJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryAnnotationJobListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryAnnotationJobListRequest::getOwnerAccount()const
 void QueryAnnotationJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long QueryAnnotationJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string QueryAnnotationJobListRequest::getAnnotationJobIds()const
 void QueryAnnotationJobListRequest::setAnnotationJobIds(const std::string& annotationJobIds)
 {
 	annotationJobIds_ = annotationJobIds;
-	setCoreParameter("AnnotationJobIds", annotationJobIds);
+	setCoreParameter("AnnotationJobIds", std::to_string(annotationJobIds));
 }
 
 std::string QueryAnnotationJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryAnnotationJobListRequest::getAccessKeyId()const
 void QueryAnnotationJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

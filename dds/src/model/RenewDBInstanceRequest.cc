@@ -55,7 +55,7 @@ bool RenewDBInstanceRequest::getAutoPay()const
 void RenewDBInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay);
+	setCoreParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
 void RenewDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string RenewDBInstanceRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string RenewDBInstanceRequest::getClientToken()const
 void RenewDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string RenewDBInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RenewDBInstanceRequest::getOwnerAccount()const
 void RenewDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string RenewDBInstanceRequest::getCouponNo()const
@@ -99,7 +99,7 @@ std::string RenewDBInstanceRequest::getCouponNo()const
 void RenewDBInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setCoreParameter("CouponNo", std::to_string(couponNo));
 }
 
 long RenewDBInstanceRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string RenewDBInstanceRequest::getAccessKeyId()const
 void RenewDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string RenewDBInstanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string RenewDBInstanceRequest::getSecurityToken()const
 void RenewDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string RenewDBInstanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string RenewDBInstanceRequest::getRegionId()const
 void RenewDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string RenewDBInstanceRequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ std::string RenewDBInstanceRequest::getDBInstanceId()const
 void RenewDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string RenewDBInstanceRequest::getBusinessInfo()const
@@ -165,6 +165,6 @@ std::string RenewDBInstanceRequest::getBusinessInfo()const
 void RenewDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", businessInfo);
+	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
 }
 

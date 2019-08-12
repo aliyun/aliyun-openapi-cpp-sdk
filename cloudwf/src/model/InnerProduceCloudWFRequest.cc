@@ -33,7 +33,7 @@ std::string InnerProduceCloudWFRequest::getData()const
 void InnerProduceCloudWFRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setCoreParameter("Data", std::to_string(data));
 }
 
 std::string InnerProduceCloudWFRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string InnerProduceCloudWFRequest::getAccessKeyId()const
 void InnerProduceCloudWFRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

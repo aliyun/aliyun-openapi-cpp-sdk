@@ -44,7 +44,7 @@ std::string DescribeVpnConnectionsRequest::getResourceOwnerAccount()const
 void DescribeVpnConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVpnConnectionsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeVpnConnectionsRequest::getRegionId()const
 void DescribeVpnConnectionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVpnConnectionsRequest::getVpnConnectionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpnConnectionsRequest::getVpnConnectionId()const
 void DescribeVpnConnectionsRequest::setVpnConnectionId(const std::string& vpnConnectionId)
 {
 	vpnConnectionId_ = vpnConnectionId;
-	setCoreParameter("VpnConnectionId", vpnConnectionId);
+	setCoreParameter("VpnConnectionId", std::to_string(vpnConnectionId));
 }
 
 std::string DescribeVpnConnectionsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpnConnectionsRequest::getOwnerAccount()const
 void DescribeVpnConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 int DescribeVpnConnectionsRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeVpnConnectionsRequest::getVpnGatewayId()const
 void DescribeVpnConnectionsRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
 }
 
 long DescribeVpnConnectionsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeVpnConnectionsRequest::getCustomerGatewayId()const
 void DescribeVpnConnectionsRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setCoreParameter("CustomerGatewayId", std::to_string(customerGatewayId));
 }
 
 int DescribeVpnConnectionsRequest::getPageNumber()const

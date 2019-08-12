@@ -44,7 +44,7 @@ std::string SwitchCloudBoxHaStateRequest::getResourceOwnerAccount()const
 void SwitchCloudBoxHaStateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string SwitchCloudBoxHaStateRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SwitchCloudBoxHaStateRequest::getRegionId()const
 void SwitchCloudBoxHaStateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string SwitchCloudBoxHaStateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SwitchCloudBoxHaStateRequest::getOwnerAccount()const
 void SwitchCloudBoxHaStateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string SwitchCloudBoxHaStateRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string SwitchCloudBoxHaStateRequest::getSmartAGId()const
 void SwitchCloudBoxHaStateRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setCoreParameter("SmartAGId", std::to_string(smartAGId));
 }
 
 long SwitchCloudBoxHaStateRequest::getOwnerId()const

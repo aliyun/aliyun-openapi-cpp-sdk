@@ -33,7 +33,7 @@ std::string DescribeVSwitchAttributesRequest::getVSwitchId()const
 void DescribeVSwitchAttributesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
 }
 
 long DescribeVSwitchAttributesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ bool DescribeVSwitchAttributesRequest::getDryRun()const
 void DescribeVSwitchAttributesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun);
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeVSwitchAttributesRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeVSwitchAttributesRequest::getRegionId()const
 void DescribeVSwitchAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DescribeVSwitchAttributesRequest::getOwnerId()const

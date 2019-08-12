@@ -44,7 +44,7 @@ std::string AddDnatEntryRequest::getResourceOwnerAccount()const
 void AddDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddDnatEntryRequest::getIpProtocol()const
@@ -55,7 +55,7 @@ std::string AddDnatEntryRequest::getIpProtocol()const
 void AddDnatEntryRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setCoreParameter("IpProtocol", std::to_string(ipProtocol));
 }
 
 std::string AddDnatEntryRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddDnatEntryRequest::getOwnerAccount()const
 void AddDnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long AddDnatEntryRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string AddDnatEntryRequest::getType()const
 void AddDnatEntryRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string AddDnatEntryRequest::getInternalIp()const
@@ -99,7 +99,7 @@ std::string AddDnatEntryRequest::getInternalIp()const
 void AddDnatEntryRequest::setInternalIp(const std::string& internalIp)
 {
 	internalIp_ = internalIp;
-	setCoreParameter("InternalIp", internalIp);
+	setCoreParameter("InternalIp", std::to_string(internalIp));
 }
 
 std::string AddDnatEntryRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string AddDnatEntryRequest::getRegionId()const
 void AddDnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddDnatEntryRequest::getSagId()const
@@ -121,7 +121,7 @@ std::string AddDnatEntryRequest::getSagId()const
 void AddDnatEntryRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	setCoreParameter("SagId", std::to_string(sagId));
 }
 
 std::string AddDnatEntryRequest::getInternalPort()const
@@ -132,7 +132,7 @@ std::string AddDnatEntryRequest::getInternalPort()const
 void AddDnatEntryRequest::setInternalPort(const std::string& internalPort)
 {
 	internalPort_ = internalPort;
-	setCoreParameter("InternalPort", internalPort);
+	setCoreParameter("InternalPort", std::to_string(internalPort));
 }
 
 std::string AddDnatEntryRequest::getExternalIp()const
@@ -143,7 +143,7 @@ std::string AddDnatEntryRequest::getExternalIp()const
 void AddDnatEntryRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", externalIp);
+	setCoreParameter("ExternalIp", std::to_string(externalIp));
 }
 
 std::string AddDnatEntryRequest::getExternalPort()const
@@ -154,6 +154,6 @@ std::string AddDnatEntryRequest::getExternalPort()const
 void AddDnatEntryRequest::setExternalPort(const std::string& externalPort)
 {
 	externalPort_ = externalPort;
-	setCoreParameter("ExternalPort", externalPort);
+	setCoreParameter("ExternalPort", std::to_string(externalPort));
 }
 

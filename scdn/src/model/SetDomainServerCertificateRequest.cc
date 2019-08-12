@@ -33,7 +33,7 @@ std::string SetDomainServerCertificateRequest::getSecurityToken()const
 void SetDomainServerCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string SetDomainServerCertificateRequest::getSSLPub()const
@@ -44,7 +44,7 @@ std::string SetDomainServerCertificateRequest::getSSLPub()const
 void SetDomainServerCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	setCoreParameter("SSLPub", std::to_string(sSLPub));
 }
 
 std::string SetDomainServerCertificateRequest::getCertName()const
@@ -55,7 +55,7 @@ std::string SetDomainServerCertificateRequest::getCertName()const
 void SetDomainServerCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setCoreParameter("CertName", std::to_string(certName));
 }
 
 std::string SetDomainServerCertificateRequest::getSSLProtocol()const
@@ -66,7 +66,7 @@ std::string SetDomainServerCertificateRequest::getSSLProtocol()const
 void SetDomainServerCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", sSLProtocol);
+	setCoreParameter("SSLProtocol", std::to_string(sSLProtocol));
 }
 
 std::string SetDomainServerCertificateRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetDomainServerCertificateRequest::getDomainName()const
 void SetDomainServerCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 long SetDomainServerCertificateRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string SetDomainServerCertificateRequest::getRegion()const
 void SetDomainServerCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string SetDomainServerCertificateRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SetDomainServerCertificateRequest::getAccessKeyId()const
 void SetDomainServerCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string SetDomainServerCertificateRequest::getSSLPri()const
@@ -121,6 +121,6 @@ std::string SetDomainServerCertificateRequest::getSSLPri()const
 void SetDomainServerCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", sSLPri);
+	setCoreParameter("SSLPri", std::to_string(sSLPri));
 }
 

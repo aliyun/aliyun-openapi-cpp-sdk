@@ -33,7 +33,7 @@ std::string ListFaceGroupsRequest::getRegionId()const
 void ListFaceGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ListFaceGroupsRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string ListFaceGroupsRequest::getMarker()const
 void ListFaceGroupsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setCoreParameter("Marker", std::to_string(marker));
 }
 
 int ListFaceGroupsRequest::getLimit()const
@@ -66,7 +66,7 @@ std::string ListFaceGroupsRequest::getProject()const
 void ListFaceGroupsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setCoreParameter("Project", std::to_string(project));
 }
 
 std::string ListFaceGroupsRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string ListFaceGroupsRequest::getSetId()const
 void ListFaceGroupsRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", setId);
+	setCoreParameter("SetId", std::to_string(setId));
 }
 
 std::string ListFaceGroupsRequest::getOrderBy()const
@@ -88,7 +88,7 @@ std::string ListFaceGroupsRequest::getOrderBy()const
 void ListFaceGroupsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 std::string ListFaceGroupsRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListFaceGroupsRequest::getAccessKeyId()const
 void ListFaceGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string ListFaceGroupsRequest::getOrder()const
@@ -110,6 +110,6 @@ std::string ListFaceGroupsRequest::getOrder()const
 void ListFaceGroupsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setCoreParameter("Order", std::to_string(order));
 }
 

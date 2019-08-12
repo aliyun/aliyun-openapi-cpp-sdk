@@ -33,7 +33,7 @@ std::string AddTagsToResourceRequest::getTag4value()const
 void AddTagsToResourceRequest::setTag4value(const std::string& tag4value)
 {
 	tag4value_ = tag4value;
-	setCoreParameter("Tag4value", tag4value);
+	setCoreParameter("Tag4value", std::to_string(tag4value));
 }
 
 long AddTagsToResourceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string AddTagsToResourceRequest::getTag2key()const
 void AddTagsToResourceRequest::setTag2key(const std::string& tag2key)
 {
 	tag2key_ = tag2key;
-	setCoreParameter("Tag2key", tag2key);
+	setCoreParameter("Tag2key", std::to_string(tag2key));
 }
 
 std::string AddTagsToResourceRequest::getTag5key()const
@@ -66,7 +66,7 @@ std::string AddTagsToResourceRequest::getTag5key()const
 void AddTagsToResourceRequest::setTag5key(const std::string& tag5key)
 {
 	tag5key_ = tag5key;
-	setCoreParameter("Tag5key", tag5key);
+	setCoreParameter("Tag5key", std::to_string(tag5key));
 }
 
 std::string AddTagsToResourceRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AddTagsToResourceRequest::getResourceOwnerAccount()const
 void AddTagsToResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string AddTagsToResourceRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string AddTagsToResourceRequest::getClientToken()const
 void AddTagsToResourceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string AddTagsToResourceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string AddTagsToResourceRequest::getOwnerAccount()const
 void AddTagsToResourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string AddTagsToResourceRequest::getTag3key()const
@@ -110,7 +110,7 @@ std::string AddTagsToResourceRequest::getTag3key()const
 void AddTagsToResourceRequest::setTag3key(const std::string& tag3key)
 {
 	tag3key_ = tag3key;
-	setCoreParameter("Tag3key", tag3key);
+	setCoreParameter("Tag3key", std::to_string(tag3key));
 }
 
 long AddTagsToResourceRequest::getOwnerId()const
@@ -132,7 +132,7 @@ std::string AddTagsToResourceRequest::getTag5value()const
 void AddTagsToResourceRequest::setTag5value(const std::string& tag5value)
 {
 	tag5value_ = tag5value;
-	setCoreParameter("Tag5value", tag5value);
+	setCoreParameter("Tag5value", std::to_string(tag5value));
 }
 
 std::string AddTagsToResourceRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string AddTagsToResourceRequest::getAccessKeyId()const
 void AddTagsToResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string AddTagsToResourceRequest::getTags()const
@@ -154,7 +154,7 @@ std::string AddTagsToResourceRequest::getTags()const
 void AddTagsToResourceRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setCoreParameter("Tags", std::to_string(tags));
 }
 
 std::string AddTagsToResourceRequest::getTag1key()const
@@ -165,7 +165,7 @@ std::string AddTagsToResourceRequest::getTag1key()const
 void AddTagsToResourceRequest::setTag1key(const std::string& tag1key)
 {
 	tag1key_ = tag1key;
-	setCoreParameter("Tag1key", tag1key);
+	setCoreParameter("Tag1key", std::to_string(tag1key));
 }
 
 std::string AddTagsToResourceRequest::getTag1value()const
@@ -176,7 +176,7 @@ std::string AddTagsToResourceRequest::getTag1value()const
 void AddTagsToResourceRequest::setTag1value(const std::string& tag1value)
 {
 	tag1value_ = tag1value;
-	setCoreParameter("Tag1value", tag1value);
+	setCoreParameter("Tag1value", std::to_string(tag1value));
 }
 
 std::string AddTagsToResourceRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string AddTagsToResourceRequest::getRegionId()const
 void AddTagsToResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string AddTagsToResourceRequest::getTag2value()const
@@ -198,7 +198,7 @@ std::string AddTagsToResourceRequest::getTag2value()const
 void AddTagsToResourceRequest::setTag2value(const std::string& tag2value)
 {
 	tag2value_ = tag2value;
-	setCoreParameter("Tag2value", tag2value);
+	setCoreParameter("Tag2value", std::to_string(tag2value));
 }
 
 std::string AddTagsToResourceRequest::getTag4key()const
@@ -209,7 +209,7 @@ std::string AddTagsToResourceRequest::getTag4key()const
 void AddTagsToResourceRequest::setTag4key(const std::string& tag4key)
 {
 	tag4key_ = tag4key;
-	setCoreParameter("Tag4key", tag4key);
+	setCoreParameter("Tag4key", std::to_string(tag4key));
 }
 
 std::string AddTagsToResourceRequest::getDBInstanceId()const
@@ -220,7 +220,7 @@ std::string AddTagsToResourceRequest::getDBInstanceId()const
 void AddTagsToResourceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string AddTagsToResourceRequest::getTag3value()const
@@ -231,7 +231,7 @@ std::string AddTagsToResourceRequest::getTag3value()const
 void AddTagsToResourceRequest::setTag3value(const std::string& tag3value)
 {
 	tag3value_ = tag3value;
-	setCoreParameter("Tag3value", tag3value);
+	setCoreParameter("Tag3value", std::to_string(tag3value));
 }
 
 std::string AddTagsToResourceRequest::getProxyId()const
@@ -242,6 +242,6 @@ std::string AddTagsToResourceRequest::getProxyId()const
 void AddTagsToResourceRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", proxyId);
+	setCoreParameter("ProxyId", std::to_string(proxyId));
 }
 

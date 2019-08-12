@@ -33,7 +33,7 @@ std::string UpdateOssCallbackSettingRequest::getSourceIp()const
 void UpdateOssCallbackSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 bool UpdateOssCallbackSettingRequest::getScanCallback()const
@@ -44,7 +44,7 @@ bool UpdateOssCallbackSettingRequest::getScanCallback()const
 void UpdateOssCallbackSettingRequest::setScanCallback(bool scanCallback)
 {
 	scanCallback_ = scanCallback;
-	setCoreParameter("ScanCallback", scanCallback);
+	setCoreParameter("ScanCallback", scanCallback ? "true" : "false");
 }
 
 std::string UpdateOssCallbackSettingRequest::getScanCallbackSuggestions()const
@@ -55,7 +55,7 @@ std::string UpdateOssCallbackSettingRequest::getScanCallbackSuggestions()const
 void UpdateOssCallbackSettingRequest::setScanCallbackSuggestions(const std::string& scanCallbackSuggestions)
 {
 	scanCallbackSuggestions_ = scanCallbackSuggestions;
-	setCoreParameter("ScanCallbackSuggestions", scanCallbackSuggestions);
+	setCoreParameter("ScanCallbackSuggestions", std::to_string(scanCallbackSuggestions));
 }
 
 std::string UpdateOssCallbackSettingRequest::getCallbackSeed()const
@@ -66,7 +66,7 @@ std::string UpdateOssCallbackSettingRequest::getCallbackSeed()const
 void UpdateOssCallbackSettingRequest::setCallbackSeed(const std::string& callbackSeed)
 {
 	callbackSeed_ = callbackSeed;
-	setCoreParameter("CallbackSeed", callbackSeed);
+	setCoreParameter("CallbackSeed", std::to_string(callbackSeed));
 }
 
 bool UpdateOssCallbackSettingRequest::getAuditCallback()const
@@ -77,7 +77,7 @@ bool UpdateOssCallbackSettingRequest::getAuditCallback()const
 void UpdateOssCallbackSettingRequest::setAuditCallback(bool auditCallback)
 {
 	auditCallback_ = auditCallback;
-	setCoreParameter("AuditCallback", auditCallback);
+	setCoreParameter("AuditCallback", auditCallback ? "true" : "false");
 }
 
 std::string UpdateOssCallbackSettingRequest::getCallbackUrl()const
@@ -88,7 +88,7 @@ std::string UpdateOssCallbackSettingRequest::getCallbackUrl()const
 void UpdateOssCallbackSettingRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setCoreParameter("CallbackUrl", std::to_string(callbackUrl));
 }
 
 std::string UpdateOssCallbackSettingRequest::getServiceModules()const
@@ -99,6 +99,6 @@ std::string UpdateOssCallbackSettingRequest::getServiceModules()const
 void UpdateOssCallbackSettingRequest::setServiceModules(const std::string& serviceModules)
 {
 	serviceModules_ = serviceModules;
-	setCoreParameter("ServiceModules", serviceModules);
+	setCoreParameter("ServiceModules", std::to_string(serviceModules));
 }
 

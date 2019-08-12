@@ -44,7 +44,7 @@ std::string CancelPhysicalConnectionRequest::getRegionId()const
 void CancelPhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string CancelPhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelPhysicalConnectionRequest::getResourceOwnerAccount()const
 void CancelPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CancelPhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CancelPhysicalConnectionRequest::getClientToken()const
 void CancelPhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string CancelPhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string CancelPhysicalConnectionRequest::getPhysicalConnectionId()const
 void CancelPhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
 }
 
 std::string CancelPhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CancelPhysicalConnectionRequest::getOwnerAccount()const
 void CancelPhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long CancelPhysicalConnectionRequest::getOwnerId()const

@@ -44,7 +44,7 @@ std::string DeleteFlowlogRequest::getResourceOwnerAccount()const
 void DeleteFlowlogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DeleteFlowlogRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DeleteFlowlogRequest::getClientToken()const
 void DeleteFlowlogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string DeleteFlowlogRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteFlowlogRequest::getRegionId()const
 void DeleteFlowlogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string DeleteFlowlogRequest::getCenId()const
@@ -77,7 +77,7 @@ std::string DeleteFlowlogRequest::getCenId()const
 void DeleteFlowlogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setCoreParameter("CenId", std::to_string(cenId));
 }
 
 std::string DeleteFlowlogRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteFlowlogRequest::getOwnerAccount()const
 void DeleteFlowlogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 long DeleteFlowlogRequest::getOwnerId()const
@@ -110,6 +110,6 @@ std::string DeleteFlowlogRequest::getFlowLogId()const
 void DeleteFlowlogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setCoreParameter("FlowLogId", std::to_string(flowLogId));
 }
 

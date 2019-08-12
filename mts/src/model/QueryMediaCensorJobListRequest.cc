@@ -44,7 +44,7 @@ std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount()const
 void QueryMediaCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string QueryMediaCensorJobListRequest::getNextPageToken()const
@@ -55,7 +55,7 @@ std::string QueryMediaCensorJobListRequest::getNextPageToken()const
 void QueryMediaCensorJobListRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
 }
 
 std::string QueryMediaCensorJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryMediaCensorJobListRequest::getOwnerAccount()const
 void QueryMediaCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string QueryMediaCensorJobListRequest::getStartOfJobCreatedTimeRange()const
@@ -77,7 +77,7 @@ std::string QueryMediaCensorJobListRequest::getStartOfJobCreatedTimeRange()const
 void QueryMediaCensorJobListRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
-	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+	setCoreParameter("StartOfJobCreatedTimeRange", std::to_string(startOfJobCreatedTimeRange));
 }
 
 long QueryMediaCensorJobListRequest::getMaximumPageSize()const
@@ -110,7 +110,7 @@ std::string QueryMediaCensorJobListRequest::getAccessKeyId()const
 void QueryMediaCensorJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string QueryMediaCensorJobListRequest::getPipelineId()const
@@ -121,7 +121,7 @@ std::string QueryMediaCensorJobListRequest::getPipelineId()const
 void QueryMediaCensorJobListRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", std::to_string(pipelineId));
 }
 
 std::string QueryMediaCensorJobListRequest::getJobId()const
@@ -132,7 +132,7 @@ std::string QueryMediaCensorJobListRequest::getJobId()const
 void QueryMediaCensorJobListRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setCoreParameter("JobId", std::to_string(jobId));
 }
 
 std::string QueryMediaCensorJobListRequest::getState()const
@@ -143,7 +143,7 @@ std::string QueryMediaCensorJobListRequest::getState()const
 void QueryMediaCensorJobListRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 std::string QueryMediaCensorJobListRequest::getEndOfJobCreatedTimeRange()const
@@ -154,6 +154,6 @@ std::string QueryMediaCensorJobListRequest::getEndOfJobCreatedTimeRange()const
 void QueryMediaCensorJobListRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
 {
 	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+	setCoreParameter("EndOfJobCreatedTimeRange", std::to_string(endOfJobCreatedTimeRange));
 }
 

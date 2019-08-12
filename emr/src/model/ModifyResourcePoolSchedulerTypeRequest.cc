@@ -44,7 +44,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getRegionId()const
 void ModifyResourcePoolSchedulerTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getSchedulerType()const
@@ -55,7 +55,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getSchedulerType()const
 void ModifyResourcePoolSchedulerTypeRequest::setSchedulerType(const std::string& schedulerType)
 {
 	schedulerType_ = schedulerType;
-	setCoreParameter("SchedulerType", schedulerType);
+	setCoreParameter("SchedulerType", std::to_string(schedulerType));
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getClusterId()const
 void ModifyResourcePoolSchedulerTypeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getAccessKeyId()const
 void ModifyResourcePoolSchedulerTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

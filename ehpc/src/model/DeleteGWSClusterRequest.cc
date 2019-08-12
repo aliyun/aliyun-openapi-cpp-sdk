@@ -33,7 +33,7 @@ std::string DeleteGWSClusterRequest::getClusterId()const
 void DeleteGWSClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", std::to_string(clusterId));
 }
 
 std::string DeleteGWSClusterRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DeleteGWSClusterRequest::getAccessKeyId()const
 void DeleteGWSClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

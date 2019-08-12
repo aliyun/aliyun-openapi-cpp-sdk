@@ -44,7 +44,7 @@ std::string ListFailureJobExecutionInstancesRequest::getRegionId()const
 void ListFailureJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int ListFailureJobExecutionInstancesRequest::getCount()const
@@ -66,6 +66,6 @@ std::string ListFailureJobExecutionInstancesRequest::getAccessKeyId()const
 void ListFailureJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

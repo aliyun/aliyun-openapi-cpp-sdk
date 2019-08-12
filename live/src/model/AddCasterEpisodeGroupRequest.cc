@@ -33,7 +33,7 @@ std::string AddCasterEpisodeGroupRequest::getSideOutputUrl()const
 void AddCasterEpisodeGroupRequest::setSideOutputUrl(const std::string& sideOutputUrl)
 {
 	sideOutputUrl_ = sideOutputUrl;
-	setCoreParameter("SideOutputUrl", sideOutputUrl);
+	setCoreParameter("SideOutputUrl", std::to_string(sideOutputUrl));
 }
 
 std::vector<AddCasterEpisodeGroupRequest::Item> AddCasterEpisodeGroupRequest::getItem()const
@@ -61,7 +61,7 @@ std::string AddCasterEpisodeGroupRequest::getClientToken()const
 void AddCasterEpisodeGroupRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string AddCasterEpisodeGroupRequest::getDomainName()const
@@ -72,7 +72,7 @@ std::string AddCasterEpisodeGroupRequest::getDomainName()const
 void AddCasterEpisodeGroupRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setCoreParameter("DomainName", std::to_string(domainName));
 }
 
 std::string AddCasterEpisodeGroupRequest::getStartTime()const
@@ -83,7 +83,7 @@ std::string AddCasterEpisodeGroupRequest::getStartTime()const
 void AddCasterEpisodeGroupRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int AddCasterEpisodeGroupRequest::getRepeatNum()const
@@ -105,7 +105,7 @@ std::string AddCasterEpisodeGroupRequest::getCallbackUrl()const
 void AddCasterEpisodeGroupRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setCoreParameter("CallbackUrl", std::to_string(callbackUrl));
 }
 
 long AddCasterEpisodeGroupRequest::getOwnerId()const

@@ -33,7 +33,7 @@ std::string StopBackupPlanRequest::getStopMethod()const
 void StopBackupPlanRequest::setStopMethod(const std::string& stopMethod)
 {
 	stopMethod_ = stopMethod;
-	setCoreParameter("StopMethod", stopMethod);
+	setCoreParameter("StopMethod", std::to_string(stopMethod));
 }
 
 std::string StopBackupPlanRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string StopBackupPlanRequest::getRegionId()const
 void StopBackupPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 std::string StopBackupPlanRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string StopBackupPlanRequest::getClientToken()const
 void StopBackupPlanRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", std::to_string(clientToken));
 }
 
 std::string StopBackupPlanRequest::getBackupPlanId()const
@@ -66,7 +66,7 @@ std::string StopBackupPlanRequest::getBackupPlanId()const
 void StopBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
 }
 
 std::string StopBackupPlanRequest::getOwnerId()const
@@ -77,6 +77,6 @@ std::string StopBackupPlanRequest::getOwnerId()const
 void StopBackupPlanRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

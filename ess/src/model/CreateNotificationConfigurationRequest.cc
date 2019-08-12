@@ -33,7 +33,7 @@ std::string CreateNotificationConfigurationRequest::getResourceOwnerAccount()con
 void CreateNotificationConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string CreateNotificationConfigurationRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string CreateNotificationConfigurationRequest::getScalingGroupId()const
 void CreateNotificationConfigurationRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
 }
 
 std::string CreateNotificationConfigurationRequest::getNotificationArn()const
@@ -55,7 +55,7 @@ std::string CreateNotificationConfigurationRequest::getNotificationArn()const
 void CreateNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
+	setCoreParameter("NotificationArn", std::to_string(notificationArn));
 }
 
 std::vector<std::string> CreateNotificationConfigurationRequest::getNotificationType()const
@@ -89,6 +89,6 @@ std::string CreateNotificationConfigurationRequest::getAccessKeyId()const
 void CreateNotificationConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

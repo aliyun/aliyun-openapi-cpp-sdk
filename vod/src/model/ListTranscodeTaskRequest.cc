@@ -44,7 +44,7 @@ std::string ListTranscodeTaskRequest::getResourceOwnerAccount()const
 void ListTranscodeTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 int ListTranscodeTaskRequest::getPageNo()const
@@ -77,7 +77,7 @@ std::string ListTranscodeTaskRequest::getEndTime()const
 void ListTranscodeTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ListTranscodeTaskRequest::getVideoId()const
@@ -88,7 +88,7 @@ std::string ListTranscodeTaskRequest::getVideoId()const
 void ListTranscodeTaskRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setCoreParameter("VideoId", std::to_string(videoId));
 }
 
 std::string ListTranscodeTaskRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string ListTranscodeTaskRequest::getStartTime()const
 void ListTranscodeTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListTranscodeTaskRequest::getOwnerId()const
@@ -121,6 +121,6 @@ std::string ListTranscodeTaskRequest::getAccessKeyId()const
 void ListTranscodeTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 

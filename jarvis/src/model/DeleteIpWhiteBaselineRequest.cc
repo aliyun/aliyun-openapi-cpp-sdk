@@ -44,7 +44,7 @@ std::string DeleteIpWhiteBaselineRequest::getSourceIp()const
 void DeleteIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", std::to_string(sourceIp));
 }
 
 std::string DeleteIpWhiteBaselineRequest::getWblIpList()const
@@ -55,7 +55,7 @@ std::string DeleteIpWhiteBaselineRequest::getWblIpList()const
 void DeleteIpWhiteBaselineRequest::setWblIpList(const std::string& wblIpList)
 {
 	wblIpList_ = wblIpList;
-	setCoreParameter("WblIpList", wblIpList);
+	setCoreParameter("WblIpList", std::to_string(wblIpList));
 }
 
 std::string DeleteIpWhiteBaselineRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DeleteIpWhiteBaselineRequest::getLang()const
 void DeleteIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setCoreParameter("Lang", std::to_string(lang));
 }
 
 std::string DeleteIpWhiteBaselineRequest::getSourceCode()const
@@ -77,6 +77,6 @@ std::string DeleteIpWhiteBaselineRequest::getSourceCode()const
 void DeleteIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", std::to_string(sourceCode));
 }
 

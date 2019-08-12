@@ -55,7 +55,7 @@ std::string DescribeRunningLogRecordsRequest::getResourceOwnerAccount()const
 void DescribeRunningLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
 }
 
 std::string DescribeRunningLogRecordsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeRunningLogRecordsRequest::getOwnerAccount()const
 void DescribeRunningLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
 }
 
 std::string DescribeRunningLogRecordsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeRunningLogRecordsRequest::getEndTime()const
 void DescribeRunningLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeRunningLogRecordsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeRunningLogRecordsRequest::getStartTime()const
 void DescribeRunningLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long DescribeRunningLogRecordsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string DescribeRunningLogRecordsRequest::getAccessKeyId()const
 void DescribeRunningLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
 }
 
 std::string DescribeRunningLogRecordsRequest::getDBName()const
@@ -132,7 +132,7 @@ std::string DescribeRunningLogRecordsRequest::getDBName()const
 void DescribeRunningLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setCoreParameter("DBName", std::to_string(dBName));
 }
 
 std::string DescribeRunningLogRecordsRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeRunningLogRecordsRequest::getSecurityToken()const
 void DescribeRunningLogRecordsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", std::to_string(securityToken));
 }
 
 std::string DescribeRunningLogRecordsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeRunningLogRecordsRequest::getRegionId()const
 void DescribeRunningLogRecordsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setCoreParameter("RegionId", std::to_string(regionId));
 }
 
 int DescribeRunningLogRecordsRequest::getPageSize()const
@@ -176,7 +176,7 @@ std::string DescribeRunningLogRecordsRequest::getDBInstanceId()const
 void DescribeRunningLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
 }
 
 std::string DescribeRunningLogRecordsRequest::getRoleType()const
@@ -187,7 +187,7 @@ std::string DescribeRunningLogRecordsRequest::getRoleType()const
 void DescribeRunningLogRecordsRequest::setRoleType(const std::string& roleType)
 {
 	roleType_ = roleType;
-	setCoreParameter("RoleType", roleType);
+	setCoreParameter("RoleType", std::to_string(roleType));
 }
 
 std::string DescribeRunningLogRecordsRequest::getNodeId()const
@@ -198,6 +198,6 @@ std::string DescribeRunningLogRecordsRequest::getNodeId()const
 void DescribeRunningLogRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", std::to_string(nodeId));
 }
 
