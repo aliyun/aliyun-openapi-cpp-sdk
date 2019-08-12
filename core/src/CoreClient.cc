@@ -60,26 +60,30 @@ CoreClient::AttemptRequest(const std::string &endpoint,
 }
 
 Error CoreClient::buildCoreError(const HttpResponse &response) const {
-  if (response.bodySize() <= 0)
+  Json::Reader reader;
+  Json::Value value;
+  if (!reader.parse(std::string(response.body(), response.bodySize()), value))
   {
-    return Error("InvalidResponse", "body is empty");
-  }
-  try {
-    Json::Value value;
-    value = ReadJson(response.body());
-    Error error;
-    error.setErrorCode(value["Code"].asString());
-    error.setErrorMessage(value["Message"].asString());
-    error.setHost(value["HostId"].asString());
-    error.setRequestId(value["RequestId"].asString());
-    if (value["Code"].asString().empty() ||
-        value["Message"].asString().empty()) {
-      error.setDetail(std::string(response.body()));
+    if (response.bodySize() > 0)
+    {
+      return Error("InvalidResponse", response.body());
     }
-    return error;
-  } catch (JSONCPP_STRING errs) {
-    return Error("InvalidResponse", response.body());
+    else
+    {
+      return Error("InvalidResponse", "body is empty");
+    }
   }
+
+  Error error;
+  error.setErrorCode(value["Code"].asString());
+  error.setErrorMessage(value["Message"].asString());
+  error.setHost(value["HostId"].asString());
+  error.setRequestId(value["RequestId"].asString());
+  if (value["Code"].asString().empty() || value["Message"].asString().empty())
+  {
+    error.setDetail(std::string(response.body()));
+  }
+  return error;
 }
 
 bool CoreClient::hasResponseError(const HttpResponse &response) const {

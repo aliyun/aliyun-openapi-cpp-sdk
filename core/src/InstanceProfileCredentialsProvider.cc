@@ -62,12 +62,10 @@ void InstanceProfileCredentialsProvider::loadCredentials()
     {
       auto outcome = getMetadata();
       Json::Value value;
-      try
+      Json::Reader reader;
+      if (reader.parse(outcome, value))
       {
-        value = ReadJson(outcome);
-        if (value["Code"].empty() && value["AccessKeyId"].empty() &&
-            value["AccessKeySecret"].empty() &&
-            value["SecurityToken"].empty() && value["Expiration"].empty())
+        if (value["Code"].empty() && value["AccessKeyId"].empty() && value["AccessKeySecret"].empty() && value["SecurityToken"].empty() && value["Expiration"].empty())
         {
           cachedCredentials_ = Credentials("", "");
           return;
@@ -79,8 +77,9 @@ void InstanceProfileCredentialsProvider::loadCredentials()
         auto securityToken = value["SecurityToken"].asString();
         auto expiration = value["Expiration"].asString();
 
-        cachedCredentials_ =
-            Credentials(accessKeyId, accessKeySecret, securityToken);
+        cachedCredentials_ = Credentials(accessKeyId,
+                                         accessKeySecret,
+                                         securityToken);
 
         std::tm tm = {};
 #if defined(__GNUG__) && __GNUC__ < 5
@@ -90,10 +89,6 @@ void InstanceProfileCredentialsProvider::loadCredentials()
         ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
 #endif
         expiry_ = std::chrono::system_clock::from_time_t(std::mktime(&tm));
-      }
-      catch (JSONCPP_STRING errs)
-      {
-        return;
       }
     }
   }

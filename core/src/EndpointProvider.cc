@@ -58,7 +58,8 @@ static std::map<productType, productInfoType> allLocalEndpoints;
 
 static void LoadLocalEndpoints()
 {
-
+  Json::Reader reader;
+  Json::Value value;
   if (local_endpoints_loaded)
   {
     return;
@@ -72,8 +73,11 @@ static void LoadLocalEndpoints()
 
   try
   {
-    Json::Value value;
-    value = ReadJson(LOCAL_ENDPOINTS_CONFIG);
+    if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value))
+    {
+      return;
+    }
+    
     auto regions = value["regions"];
     for (const auto &region : regions)
     {

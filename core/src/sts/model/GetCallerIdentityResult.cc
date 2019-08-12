@@ -39,8 +39,9 @@ std::string GetCallerIdentityResult::arn() const { return arn_; }
 std::string GetCallerIdentityResult::userId() const { return userId_; }
 
 void GetCallerIdentityResult::parse(const std::string &payload) {
+  Json::Reader reader;
   Json::Value value;
-  value = ReadJson(payload);
+  reader.parse(payload, value);
 
   setRequestId(value["RequestId"].asString());
 

@@ -44,8 +44,9 @@ AssumeRoleResult::Credentials AssumeRoleResult::credentials() const
 
 void AssumeRoleResult::parse(const std::string &payload)
 {
+  Json::Reader reader;
   Json::Value value;
-  value = ReadJson(payload);
+  reader.parse(payload, value);
 
   setRequestId(value["RequestId"].asString());
 
