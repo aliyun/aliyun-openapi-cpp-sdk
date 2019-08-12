@@ -17,10 +17,10 @@ TEST(cdn, describeCdnService)
   string secret = utils.get_env("ENV_AccessKeySecret");
   string uid = utils.get_env("ENV_TEST_UID");
   InitializeSdk();
-  ClientConfiguration configuration("cn-hangzhou");
-  CdnClient client(key, secret, configuration);
-  Model::DescribeCdnServiceRequest request;
-  CdnClient::DescribeCdnServiceOutcome outcome = client.describeCdnService(request);
+  // ClientConfiguration configuration("cn-hangzhou");
+  // CdnClient client(key, secret, configuration);
+  // Model::DescribeCdnServiceRequest request;
+  // CdnClient::DescribeCdnServiceOutcome outcome = client.describeCdnService(request);
 
   // EXPECT_NO_THROW();
   ShutdownSdk();
