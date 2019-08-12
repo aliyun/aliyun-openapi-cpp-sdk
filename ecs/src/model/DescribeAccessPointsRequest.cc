@@ -42,15 +42,15 @@ void DescribeAccessPointsRequest::setFilter(const std::vector<Filter>& filter)
 	}
 }
 
-long DescribeAccessPointsRequest::getResourceOwnerId()const
+bool DescribeAccessPointsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeAccessPointsRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeAccessPointsRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeAccessPointsRequest::getResourceOwnerAccount()const
@@ -86,15 +86,15 @@ void DescribeAccessPointsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeAccessPointsRequest::getOwnerId()const
+bool DescribeAccessPointsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeAccessPointsRequest::setOwnerId(long ownerId)
+void DescribeAccessPointsRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 std::string DescribeAccessPointsRequest::getType()const

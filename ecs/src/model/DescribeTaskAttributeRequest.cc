@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
@@ -37,15 +36,15 @@ void DescribeTaskAttributeRequest::setSourceRegionId(const std::string& sourceRe
 	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
-long DescribeTaskAttributeRequest::getResourceOwnerId()const
+bool DescribeTaskAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeTaskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeTaskAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
@@ -70,15 +69,15 @@ void DescribeTaskAttributeRequest::setRegionId(const std::string& regionId)
 	setCoreParameter("RegionId", regionId);
 }
 
-long DescribeTaskAttributeRequest::getOwnerId()const
+bool DescribeTaskAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeTaskAttributeRequest::setOwnerId(long ownerId)
+void DescribeTaskAttributeRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 std::string DescribeTaskAttributeRequest::getTaskId()const
@@ -92,98 +91,3 @@ void DescribeTaskAttributeRequest::setTaskId(const std::string& taskId)
 	setCoreParameter("TaskId", taskId);
 }
 
-=======
-/*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#include <alibabacloud/ecs/model/DescribeTaskAttributeRequest.h>
-
-using AlibabaCloud::Ecs::Model::DescribeTaskAttributeRequest;
-
-DescribeTaskAttributeRequest::DescribeTaskAttributeRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "DescribeTaskAttribute")
-{}
-
-DescribeTaskAttributeRequest::~DescribeTaskAttributeRequest()
-{}
-
-std::string DescribeTaskAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void DescribeTaskAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-long DescribeTaskAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeTaskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeTaskAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeTaskAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTaskAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-long DescribeTaskAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeTaskAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeTaskAttributeRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void DescribeTaskAttributeRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
-}
-
->>>>>>> master

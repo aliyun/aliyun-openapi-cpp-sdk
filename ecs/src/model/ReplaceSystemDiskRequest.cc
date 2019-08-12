@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
@@ -26,15 +25,15 @@ ReplaceSystemDiskRequest::ReplaceSystemDiskRequest() :
 ReplaceSystemDiskRequest::~ReplaceSystemDiskRequest()
 {}
 
-long ReplaceSystemDiskRequest::getResourceOwnerId()const
+bool ReplaceSystemDiskRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ReplaceSystemDiskRequest::setResourceOwnerId(long resourceOwnerId)
+void ReplaceSystemDiskRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string ReplaceSystemDiskRequest::getImageId()const
@@ -103,15 +102,15 @@ void ReplaceSystemDiskRequest::setKeyPairName(const std::string& keyPairName)
 	setCoreParameter("KeyPairName", keyPairName);
 }
 
-long ReplaceSystemDiskRequest::getOwnerId()const
+bool ReplaceSystemDiskRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ReplaceSystemDiskRequest::setOwnerId(long ownerId)
+void ReplaceSystemDiskRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 std::string ReplaceSystemDiskRequest::getPlatform()const
@@ -213,219 +212,3 @@ void ReplaceSystemDiskRequest::setArchitecture(const std::string& architecture)
 	setCoreParameter("Architecture", architecture);
 }
 
-=======
-/*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#include <alibabacloud/ecs/model/ReplaceSystemDiskRequest.h>
-
-using AlibabaCloud::Ecs::Model::ReplaceSystemDiskRequest;
-
-ReplaceSystemDiskRequest::ReplaceSystemDiskRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "ReplaceSystemDisk")
-{}
-
-ReplaceSystemDiskRequest::~ReplaceSystemDiskRequest()
-{}
-
-long ReplaceSystemDiskRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ReplaceSystemDiskRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ReplaceSystemDiskRequest::getImageId()const
-{
-	return imageId_;
-}
-
-void ReplaceSystemDiskRequest::setImageId(const std::string& imageId)
-{
-	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
-}
-
-std::string ReplaceSystemDiskRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ReplaceSystemDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ReplaceSystemDiskRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void ReplaceSystemDiskRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string ReplaceSystemDiskRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ReplaceSystemDiskRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ReplaceSystemDiskRequest::getSecurityEnhancementStrategy()const
-{
-	return securityEnhancementStrategy_;
-}
-
-void ReplaceSystemDiskRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
-{
-	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
-}
-
-std::string ReplaceSystemDiskRequest::getKeyPairName()const
-{
-	return keyPairName_;
-}
-
-void ReplaceSystemDiskRequest::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
-}
-
-long ReplaceSystemDiskRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ReplaceSystemDiskRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ReplaceSystemDiskRequest::getPlatform()const
-{
-	return platform_;
-}
-
-void ReplaceSystemDiskRequest::setPlatform(const std::string& platform)
-{
-	platform_ = platform;
-	setCoreParameter("Platform", platform);
-}
-
-std::string ReplaceSystemDiskRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ReplaceSystemDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-std::string ReplaceSystemDiskRequest::getPassword()const
-{
-	return password_;
-}
-
-void ReplaceSystemDiskRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setCoreParameter("Password", password);
-}
-
-std::string ReplaceSystemDiskRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ReplaceSystemDiskRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-bool ReplaceSystemDiskRequest::getPasswordInherit()const
-{
-	return passwordInherit_;
-}
-
-void ReplaceSystemDiskRequest::setPasswordInherit(bool passwordInherit)
-{
-	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
-}
-
-int ReplaceSystemDiskRequest::getSystemDiskSize()const
-{
-	return systemDiskSize_;
-}
-
-void ReplaceSystemDiskRequest::setSystemDiskSize(int systemDiskSize)
-{
-	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
-}
-
-std::string ReplaceSystemDiskRequest::getDiskId()const
-{
-	return diskId_;
-}
-
-void ReplaceSystemDiskRequest::setDiskId(const std::string& diskId)
-{
-	diskId_ = diskId;
-	setCoreParameter("DiskId", diskId);
-}
-
-bool ReplaceSystemDiskRequest::getUseAdditionalService()const
-{
-	return useAdditionalService_;
-}
-
-void ReplaceSystemDiskRequest::setUseAdditionalService(bool useAdditionalService)
-{
-	useAdditionalService_ = useAdditionalService;
-	setCoreParameter("UseAdditionalService", useAdditionalService ? "true" : "false");
-}
-
-std::string ReplaceSystemDiskRequest::getArchitecture()const
-{
-	return architecture_;
-}
-
-void ReplaceSystemDiskRequest::setArchitecture(const std::string& architecture)
-{
-	architecture_ = architecture;
-	setCoreParameter("Architecture", architecture);
-}
-
->>>>>>> master

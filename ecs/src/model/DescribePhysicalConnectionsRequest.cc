@@ -42,15 +42,15 @@ void DescribePhysicalConnectionsRequest::setFilter(const std::vector<Filter>& fi
 	}
 }
 
-long DescribePhysicalConnectionsRequest::getResourceOwnerId()const
+bool DescribePhysicalConnectionsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribePhysicalConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribePhysicalConnectionsRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribePhysicalConnectionsRequest::getRegionId()const
@@ -119,15 +119,15 @@ void DescribePhysicalConnectionsRequest::setUserCidr(const std::string& userCidr
 	setCoreParameter("UserCidr", userCidr);
 }
 
-long DescribePhysicalConnectionsRequest::getOwnerId()const
+bool DescribePhysicalConnectionsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribePhysicalConnectionsRequest::setOwnerId(long ownerId)
+void DescribePhysicalConnectionsRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 int DescribePhysicalConnectionsRequest::getPageNumber()const

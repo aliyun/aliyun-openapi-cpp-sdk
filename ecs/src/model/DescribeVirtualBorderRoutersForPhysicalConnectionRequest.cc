@@ -42,15 +42,15 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setFilter(const s
 	}
 }
 
-long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerId()const
+bool DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -97,15 +97,15 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageSize(int p
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
+bool DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setOwnerId(long ownerId)
+void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageNumber()const

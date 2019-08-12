@@ -42,15 +42,15 @@ void DescribeHaVipsRequest::setFilter(const std::vector<Filter>& filter)
 	}
 }
 
-long DescribeHaVipsRequest::getResourceOwnerId()const
+bool DescribeHaVipsRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeHaVipsRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeHaVipsRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeHaVipsRequest::getResourceOwnerAccount()const
@@ -97,15 +97,15 @@ void DescribeHaVipsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeHaVipsRequest::getOwnerId()const
+bool DescribeHaVipsRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeHaVipsRequest::setOwnerId(long ownerId)
+void DescribeHaVipsRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 int DescribeHaVipsRequest::getPageNumber()const

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
@@ -26,26 +25,26 @@ AllocateEipAddressRequest::AllocateEipAddressRequest() :
 AllocateEipAddressRequest::~AllocateEipAddressRequest()
 {}
 
-long AllocateEipAddressRequest::getActivityId()const
+bool AllocateEipAddressRequest::getActivityId()const
 {
 	return activityId_;
 }
 
-void AllocateEipAddressRequest::setActivityId(long activityId)
+void AllocateEipAddressRequest::setActivityId(bool activityId)
 {
 	activityId_ = activityId;
-	setCoreParameter("ActivityId", std::to_string(activityId));
+	setCoreParameter("ActivityId", activityId ? "true" : "false");
 }
 
-long AllocateEipAddressRequest::getResourceOwnerId()const
+bool AllocateEipAddressRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
+void AllocateEipAddressRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
@@ -125,153 +124,14 @@ void AllocateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
-long AllocateEipAddressRequest::getOwnerId()const
+bool AllocateEipAddressRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void AllocateEipAddressRequest::setOwnerId(long ownerId)
+void AllocateEipAddressRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
-=======
-/*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#include <alibabacloud/ecs/model/AllocateEipAddressRequest.h>
-
-using AlibabaCloud::Ecs::Model::AllocateEipAddressRequest;
-
-AllocateEipAddressRequest::AllocateEipAddressRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "AllocateEipAddress")
-{}
-
-AllocateEipAddressRequest::~AllocateEipAddressRequest()
-{}
-
-long AllocateEipAddressRequest::getActivityId()const
-{
-	return activityId_;
-}
-
-void AllocateEipAddressRequest::setActivityId(long activityId)
-{
-	activityId_ = activityId;
-	setCoreParameter("ActivityId", std::to_string(activityId));
-}
-
-long AllocateEipAddressRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void AllocateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string AllocateEipAddressRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void AllocateEipAddressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string AllocateEipAddressRequest::getBandwidth()const
-{
-	return bandwidth_;
-}
-
-void AllocateEipAddressRequest::setBandwidth(const std::string& bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
-}
-
-std::string AllocateEipAddressRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void AllocateEipAddressRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
-}
-
-std::string AllocateEipAddressRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void AllocateEipAddressRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
-}
-
-std::string AllocateEipAddressRequest::getISP()const
-{
-	return iSP_;
-}
-
-void AllocateEipAddressRequest::setISP(const std::string& iSP)
-{
-	iSP_ = iSP;
-	setCoreParameter("ISP", iSP);
-}
-
-std::string AllocateEipAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void AllocateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-long AllocateEipAddressRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void AllocateEipAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
->>>>>>> master

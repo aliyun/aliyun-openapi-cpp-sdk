@@ -42,15 +42,15 @@ void DescribeVirtualBorderRoutersRequest::setFilter(const std::vector<Filter>& f
 	}
 }
 
-long DescribeVirtualBorderRoutersRequest::getResourceOwnerId()const
+bool DescribeVirtualBorderRoutersRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeVirtualBorderRoutersRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeVirtualBorderRoutersRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeVirtualBorderRoutersRequest::getResourceOwnerAccount()const
@@ -86,15 +86,15 @@ void DescribeVirtualBorderRoutersRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeVirtualBorderRoutersRequest::getOwnerId()const
+bool DescribeVirtualBorderRoutersRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeVirtualBorderRoutersRequest::setOwnerId(long ownerId)
+void DescribeVirtualBorderRoutersRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 int DescribeVirtualBorderRoutersRequest::getPageNumber()const

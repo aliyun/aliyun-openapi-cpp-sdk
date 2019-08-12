@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
  * 
@@ -59,15 +58,15 @@ void ModifyDedicatedHostAutoRenewAttributeRequest::setDedicatedHostIds(const std
 	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
-long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
+bool ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
+void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
@@ -136,164 +135,14 @@ void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::s
 	setCoreParameter("RenewalStatus", renewalStatus);
 }
 
-long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
+bool ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(long ownerId)
+void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
-=======
-/*
- * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#include <alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeRequest.h>
-
-using AlibabaCloud::Ecs::Model::ModifyDedicatedHostAutoRenewAttributeRequest;
-
-ModifyDedicatedHostAutoRenewAttributeRequest::ModifyDedicatedHostAutoRenewAttributeRequest() :
-	RpcServiceRequest("ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute")
-{}
-
-ModifyDedicatedHostAutoRenewAttributeRequest::~ModifyDedicatedHostAutoRenewAttributeRequest()
-{}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getSourceRegionId()const
-{
-	return sourceRegionId_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
-{
-	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", sourceRegionId);
-}
-
-int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
-{
-	return duration_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setDuration(int duration)
-{
-	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getDedicatedHostIds()const
-{
-	return dedicatedHostIds_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
-{
-	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
-}
-
-long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
-{
-	return periodUnit_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setPeriodUnit(const std::string& periodUnit)
-{
-	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
-}
-
-bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
-{
-	return autoRenew_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setAutoRenew(bool autoRenew)
-{
-	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
-}
-
-std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRenewalStatus()const
-{
-	return renewalStatus_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::string& renewalStatus)
-{
-	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", renewalStatus);
-}
-
-long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
->>>>>>> master

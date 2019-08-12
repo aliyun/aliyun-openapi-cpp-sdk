@@ -42,15 +42,15 @@ void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filte
 	}
 }
 
-long DescribeRouterInterfacesRequest::getResourceOwnerId()const
+bool DescribeRouterInterfacesRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
 }
 
-void DescribeRouterInterfacesRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeRouterInterfacesRequest::setResourceOwnerId(bool resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId ? "true" : "false");
 }
 
 std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
@@ -86,15 +86,15 @@ void DescribeRouterInterfacesRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
-long DescribeRouterInterfacesRequest::getOwnerId()const
+bool DescribeRouterInterfacesRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRouterInterfacesRequest::setOwnerId(long ownerId)
+void DescribeRouterInterfacesRequest::setOwnerId(bool ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId ? "true" : "false");
 }
 
 int DescribeRouterInterfacesRequest::getPageNumber()const
