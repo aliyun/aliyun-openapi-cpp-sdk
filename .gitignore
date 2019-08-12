@@ -13,3 +13,4 @@ test/httpserver/package-lock.json
 test/httpserver/nohup.out
 .idea
 build/
+cmake-build-debug/
