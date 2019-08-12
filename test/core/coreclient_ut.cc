@@ -31,9 +31,9 @@ public:
 
 TEST(CoreClient, basic)
 {
-  // ClientConfiguration configuration;
-  // string name = "test-service";
-  // TestCoreClient client(name, configuration);
+  ClientConfiguration configuration;
+  string name = "test-service";
+  TestCoreClient client(name, configuration);
 
   // HttpResponse res;
 
