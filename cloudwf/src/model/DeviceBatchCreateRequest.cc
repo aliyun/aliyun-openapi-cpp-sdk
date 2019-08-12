@@ -44,7 +44,7 @@ int DeviceBatchCreateRequest::getDeviceType()const
 void DeviceBatchCreateRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", deviceType);
 }
 
 std::string DeviceBatchCreateRequest::getAccessKeyId()const

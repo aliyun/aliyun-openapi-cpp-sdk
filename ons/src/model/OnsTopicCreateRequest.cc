@@ -44,7 +44,7 @@ int OnsTopicCreateRequest::getMessageType()const
 void OnsTopicCreateRequest::setMessageType(int messageType)
 {
 	messageType_ = messageType;
-	setCoreParameter("MessageType", std::to_string(messageType));
+	setCoreParameter("MessageType", messageType);
 }
 
 std::string OnsTopicCreateRequest::getTopic()const

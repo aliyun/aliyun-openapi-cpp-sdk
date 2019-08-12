@@ -55,6 +55,6 @@ bool OnsConsumerAccumulateRequest::getDetail()const
 void OnsConsumerAccumulateRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail ? "true" : "false");
+	setCoreParameter("Detail", detail);
 }
 

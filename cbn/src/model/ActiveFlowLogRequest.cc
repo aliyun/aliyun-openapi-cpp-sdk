@@ -33,7 +33,7 @@ long ActiveFlowLogRequest::getResourceOwnerId()const
 void ActiveFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ActiveFlowLogRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ActiveFlowLogRequest::getOwnerId()const
 void ActiveFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ActiveFlowLogRequest::getFlowLogId()const

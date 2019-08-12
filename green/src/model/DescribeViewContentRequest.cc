@@ -33,7 +33,7 @@ int DescribeViewContentRequest::getTotalCount()const
 void DescribeViewContentRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeViewContentRequest::getKeywordId()const
@@ -77,7 +77,7 @@ int DescribeViewContentRequest::getCurrentPage()const
 void DescribeViewContentRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeViewContentRequest::getLabel()const
@@ -198,7 +198,7 @@ int DescribeViewContentRequest::getPageSize()const
 void DescribeViewContentRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeViewContentRequest::getTaskId()const

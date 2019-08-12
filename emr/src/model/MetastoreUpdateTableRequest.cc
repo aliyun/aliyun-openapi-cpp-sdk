@@ -33,7 +33,7 @@ long MetastoreUpdateTableRequest::getResourceOwnerId()const
 void MetastoreUpdateTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreUpdateTableRequest::getRegionId()const
@@ -59,9 +59,9 @@ void MetastoreUpdateTableRequest::setAddColumn(const std::vector<AddColumn>& add
 	for(int i = 0; i!= addColumn.size(); i++)	{
 		auto obj = addColumn.at(i);
 		std::string str ="AddColumn."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Comment", std::to_string(obj.comment));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 	}
 }
 
@@ -77,9 +77,9 @@ void MetastoreUpdateTableRequest::setAddPartition(const std::vector<AddPartition
 	for(int i = 0; i!= addPartition.size(); i++)	{
 		auto obj = addPartition.at(i);
 		std::string str ="AddPartition."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Comment", std::to_string(obj.comment));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 	}
 }
 
@@ -92,7 +92,7 @@ void MetastoreUpdateTableRequest::setDeleteColumnName(const std::vector<std::str
 {
 	deleteColumnName_ = deleteColumnName;
 	for(int i = 0; i!= deleteColumnName.size(); i++)
-		setCoreParameter("DeleteColumnName."+ std::to_string(i), deleteColumnName.at(i));
+		setCoreParameter("DeleteColumnName."+ std::to_string(i), std::to_string(deleteColumnName.at(i)));
 }
 
 std::string MetastoreUpdateTableRequest::getTableId()const
@@ -115,7 +115,7 @@ void MetastoreUpdateTableRequest::setDeletePartitionName(const std::vector<std::
 {
 	deletePartitionName_ = deletePartitionName;
 	for(int i = 0; i!= deletePartitionName.size(); i++)
-		setCoreParameter("DeletePartitionName."+ std::to_string(i), deletePartitionName.at(i));
+		setCoreParameter("DeletePartitionName."+ std::to_string(i), std::to_string(deletePartitionName.at(i)));
 }
 
 std::string MetastoreUpdateTableRequest::getAccessKeyId()const

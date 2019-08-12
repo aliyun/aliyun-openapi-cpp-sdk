@@ -33,7 +33,7 @@ int GetSubscriptionPriceRequest::getServicePeriodQuantity()const
 void GetSubscriptionPriceRequest::setServicePeriodQuantity(int servicePeriodQuantity)
 {
 	servicePeriodQuantity_ = servicePeriodQuantity;
-	setCoreParameter("ServicePeriodQuantity", std::to_string(servicePeriodQuantity));
+	setCoreParameter("ServicePeriodQuantity", servicePeriodQuantity);
 }
 
 std::string GetSubscriptionPriceRequest::getProductCode()const
@@ -66,7 +66,7 @@ int GetSubscriptionPriceRequest::getQuantity()const
 void GetSubscriptionPriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string GetSubscriptionPriceRequest::getServicePeriodUnit()const
@@ -103,10 +103,10 @@ void GetSubscriptionPriceRequest::setModuleList(const std::vector<ModuleList>& m
 	for(int i = 0; i!= moduleList.size(); i++)	{
 		auto obj = moduleList.at(i);
 		std::string str ="ModuleList."+ std::to_string(i);
-		setCoreParameter(str + ".ModuleCode", obj.moduleCode);
-		setCoreParameter(str + ".ModuleStatus", std::to_string(obj.moduleStatus));
-		setCoreParameter(str + ".Tag", obj.tag);
-		setCoreParameter(str + ".Config", obj.config);
+		setCoreParameter(str + ".ModuleCode", std::to_string(obj.moduleCode));
+		setCoreParameter(str + ".ModuleStatus", obj.moduleStatus);
+		setCoreParameter(str + ".Tag", std::to_string(obj.tag));
+		setCoreParameter(str + ".Config", std::to_string(obj.config));
 	}
 }
 
@@ -118,7 +118,7 @@ long GetSubscriptionPriceRequest::getOwnerId()const
 void GetSubscriptionPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetSubscriptionPriceRequest::getRegion()const

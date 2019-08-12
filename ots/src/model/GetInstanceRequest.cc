@@ -44,7 +44,7 @@ long GetInstanceRequest::getResourceOwnerId()const
 void GetInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetInstanceRequest::getInstanceName()const

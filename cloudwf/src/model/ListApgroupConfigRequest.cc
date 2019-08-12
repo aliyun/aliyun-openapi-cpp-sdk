@@ -66,7 +66,7 @@ int ListApgroupConfigRequest::getLength()const
 void ListApgroupConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListApgroupConfigRequest::getPageIndex()const
@@ -77,7 +77,7 @@ int ListApgroupConfigRequest::getPageIndex()const
 void ListApgroupConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApgroupConfigRequest::getOrderDir()const

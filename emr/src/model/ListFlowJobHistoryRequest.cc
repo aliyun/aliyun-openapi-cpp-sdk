@@ -45,7 +45,7 @@ void ListFlowJobHistoryRequest::setStatusList(const std::vector<std::string>& st
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListFlowJobHistoryRequest::getInstanceId()const
@@ -78,7 +78,7 @@ int ListFlowJobHistoryRequest::getPageSize()const
 void ListFlowJobHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowJobHistoryRequest::getId()const
@@ -122,6 +122,6 @@ int ListFlowJobHistoryRequest::getPageNumber()const
 void ListFlowJobHistoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

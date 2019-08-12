@@ -55,7 +55,7 @@ int DescribeFlowTotalCountRequest::getFeatureType()const
 void DescribeFlowTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long DescribeFlowTotalCountRequest::getDepartId()const
@@ -66,7 +66,7 @@ long DescribeFlowTotalCountRequest::getDepartId()const
 void DescribeFlowTotalCountRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 std::string DescribeFlowTotalCountRequest::getLang()const

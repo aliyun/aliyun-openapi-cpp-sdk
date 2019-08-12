@@ -55,7 +55,7 @@ int ListUsersOfSkillGroupRequest::getPageSize()const
 void ListUsersOfSkillGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListUsersOfSkillGroupRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int ListUsersOfSkillGroupRequest::getPageNumber()const
 void ListUsersOfSkillGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListUsersOfSkillGroupRequest::getAccessKeyId()const

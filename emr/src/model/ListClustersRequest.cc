@@ -33,7 +33,7 @@ long ListClustersRequest::getResourceOwnerId()const
 void ListClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<std::string> ListClustersRequest::getStatusList()const
@@ -45,7 +45,7 @@ void ListClustersRequest::setStatusList(const std::vector<std::string>& statusLi
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListClustersRequest::getRegionId()const
@@ -67,7 +67,7 @@ int ListClustersRequest::getPageSize()const
 void ListClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::vector<std::string> ListClustersRequest::getClusterTypeList()const
@@ -79,7 +79,7 @@ void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clu
 {
 	clusterTypeList_ = clusterTypeList;
 	for(int i = 0; i!= clusterTypeList.size(); i++)
-		setCoreParameter("ClusterTypeList."+ std::to_string(i), clusterTypeList.at(i));
+		setCoreParameter("ClusterTypeList."+ std::to_string(i), std::to_string(clusterTypeList.at(i)));
 }
 
 bool ListClustersRequest::getIsDesc()const
@@ -90,7 +90,7 @@ bool ListClustersRequest::getIsDesc()const
 void ListClustersRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setCoreParameter("IsDesc", isDesc);
 }
 
 std::string ListClustersRequest::getCreateType()const
@@ -123,7 +123,7 @@ bool ListClustersRequest::getDefaultStatus()const
 void ListClustersRequest::setDefaultStatus(bool defaultStatus)
 {
 	defaultStatus_ = defaultStatus;
-	setCoreParameter("DefaultStatus", defaultStatus ? "true" : "false");
+	setCoreParameter("DefaultStatus", defaultStatus);
 }
 
 int ListClustersRequest::getPageNumber()const
@@ -134,7 +134,7 @@ int ListClustersRequest::getPageNumber()const
 void ListClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListClustersRequest::getAccessKeyId()const

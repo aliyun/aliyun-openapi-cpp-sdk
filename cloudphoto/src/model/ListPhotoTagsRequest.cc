@@ -44,7 +44,7 @@ long ListPhotoTagsRequest::getPhotoId()const
 void ListPhotoTagsRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string ListPhotoTagsRequest::getStoreName()const

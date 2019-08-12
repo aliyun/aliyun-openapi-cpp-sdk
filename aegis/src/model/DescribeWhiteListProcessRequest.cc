@@ -55,7 +55,7 @@ int DescribeWhiteListProcessRequest::getPageSize()const
 void DescribeWhiteListProcessRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeWhiteListProcessRequest::getProcessType()const
@@ -66,7 +66,7 @@ int DescribeWhiteListProcessRequest::getProcessType()const
 void DescribeWhiteListProcessRequest::setProcessType(int processType)
 {
 	processType_ = processType;
-	setCoreParameter("ProcessType", std::to_string(processType));
+	setCoreParameter("ProcessType", processType);
 }
 
 int DescribeWhiteListProcessRequest::getOrderBy()const
@@ -77,7 +77,7 @@ int DescribeWhiteListProcessRequest::getOrderBy()const
 void DescribeWhiteListProcessRequest::setOrderBy(int orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", std::to_string(orderBy));
+	setCoreParameter("OrderBy", orderBy);
 }
 
 long DescribeWhiteListProcessRequest::getStrategyId()const
@@ -88,7 +88,7 @@ long DescribeWhiteListProcessRequest::getStrategyId()const
 void DescribeWhiteListProcessRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribeWhiteListProcessRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribeWhiteListProcessRequest::getCurrentPage()const
 void DescribeWhiteListProcessRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWhiteListProcessRequest::getLang()const
@@ -121,6 +121,6 @@ int DescribeWhiteListProcessRequest::getDesc()const
 void DescribeWhiteListProcessRequest::setDesc(int desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", std::to_string(desc));
+	setCoreParameter("Desc", desc);
 }
 

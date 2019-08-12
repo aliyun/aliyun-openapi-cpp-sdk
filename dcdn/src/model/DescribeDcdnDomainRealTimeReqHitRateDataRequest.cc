@@ -33,7 +33,7 @@ long DescribeDcdnDomainRealTimeReqHitRateDataRequest::getResourceOwnerId()const
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeDcdnDomainRealTimeReqHitRateDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDcdnDomainRealTimeReqHitRateDataRequest::getCallerParentId()const
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getProxy_original_security
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDcdnDomainRealTimeReqHitRateDataRequest::getStartTime()const
@@ -165,7 +165,7 @@ long DescribeDcdnDomainRealTimeReqHitRateDataRequest::getCallerUid()const
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDcdnDomainRealTimeReqHitRateDataRequest::getApp_ip()const
@@ -231,7 +231,7 @@ long DescribeDcdnDomainRealTimeReqHitRateDataRequest::getOwnerId()const
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDcdnDomainRealTimeReqHitRateDataRequest::getVersion()const
@@ -253,7 +253,7 @@ bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getProxy_trust_transport_i
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getAk_mfa_present()const
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeDcdnDomainRealTimeReqHitRateDataRequest::getSecurity_transport()con
 void DescribeDcdnDomainRealTimeReqHitRateDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDcdnDomainRealTimeReqHitRateDataRequest::getRequestId()const

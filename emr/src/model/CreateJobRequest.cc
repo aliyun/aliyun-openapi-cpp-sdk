@@ -44,7 +44,7 @@ int CreateJobRequest::getRetryInterval()const
 void CreateJobRequest::setRetryInterval(int retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+	setCoreParameter("RetryInterval", retryInterval);
 }
 
 long CreateJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreateJobRequest::getResourceOwnerId()const
 void CreateJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateJobRequest::getRegionId()const
@@ -99,7 +99,7 @@ int CreateJobRequest::getMaxRetry()const
 void CreateJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", std::to_string(maxRetry));
+	setCoreParameter("MaxRetry", maxRetry);
 }
 
 std::string CreateJobRequest::getAccessKeyId()const

@@ -37,8 +37,8 @@ void DescribeExpressCloudConnectionsRequest::setFilter(const std::vector<Filter>
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), std::to_string(obj.value.at(i)));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -50,7 +50,7 @@ long DescribeExpressCloudConnectionsRequest::getResourceOwnerId()const
 void DescribeExpressCloudConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()const
@@ -94,7 +94,7 @@ int DescribeExpressCloudConnectionsRequest::getPageSize()const
 void DescribeExpressCloudConnectionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeExpressCloudConnectionsRequest::getOwnerId()const
@@ -105,7 +105,7 @@ long DescribeExpressCloudConnectionsRequest::getOwnerId()const
 void DescribeExpressCloudConnectionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeExpressCloudConnectionsRequest::getPageNumber()const
@@ -116,6 +116,6 @@ int DescribeExpressCloudConnectionsRequest::getPageNumber()const
 void DescribeExpressCloudConnectionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

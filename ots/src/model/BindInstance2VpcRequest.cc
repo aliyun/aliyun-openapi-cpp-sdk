@@ -55,7 +55,7 @@ long BindInstance2VpcRequest::getResourceOwnerId()const
 void BindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string BindInstance2VpcRequest::getInstanceName()const

@@ -33,7 +33,7 @@ long CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerId()const
 void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateSmartAccessGatewaySoftwareRequest::getPeriod()const
@@ -44,7 +44,7 @@ int CreateSmartAccessGatewaySoftwareRequest::getPeriod()const
 void CreateSmartAccessGatewaySoftwareRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool CreateSmartAccessGatewaySoftwareRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool CreateSmartAccessGatewaySoftwareRequest::getAutoPay()const
 void CreateSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
 void CreateSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setCoreParameter("UserCount", userCount);
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getChargeType()const
@@ -121,7 +121,7 @@ long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const
 void CreateSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long CreateSmartAccessGatewaySoftwareRequest::getDataPlan()const
@@ -132,6 +132,6 @@ long CreateSmartAccessGatewaySoftwareRequest::getDataPlan()const
 void CreateSmartAccessGatewaySoftwareRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setCoreParameter("DataPlan", dataPlan);
 }
 

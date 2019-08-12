@@ -33,7 +33,7 @@ long DescribeMigrateTasksForSQLServerRequest::getResourceOwnerId()const
 void DescribeMigrateTasksForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeMigrateTasksForSQLServerRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ int DescribeMigrateTasksForSQLServerRequest::getPageSize()const
 void DescribeMigrateTasksForSQLServerRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeMigrateTasksForSQLServerRequest::getEndTime()const
@@ -99,7 +99,7 @@ long DescribeMigrateTasksForSQLServerRequest::getOwnerId()const
 void DescribeMigrateTasksForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeMigrateTasksForSQLServerRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeMigrateTasksForSQLServerRequest::getPageNumber()const
 void DescribeMigrateTasksForSQLServerRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeMigrateTasksForSQLServerRequest::getAccessKeyId()const

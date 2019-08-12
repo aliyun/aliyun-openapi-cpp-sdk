@@ -44,7 +44,7 @@ int DescribeDataHubTopicsRequest::getFeatureType()const
 void DescribeDataHubTopicsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDataHubTopicsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeDataHubTopicsRequest::getPageSize()const
 void DescribeDataHubTopicsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeDataHubTopicsRequest::getDepartId()const
@@ -66,7 +66,7 @@ long DescribeDataHubTopicsRequest::getDepartId()const
 void DescribeDataHubTopicsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 int DescribeDataHubTopicsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeDataHubTopicsRequest::getCurrentPage()const
 void DescribeDataHubTopicsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDataHubTopicsRequest::getLang()const
@@ -99,7 +99,7 @@ long DescribeDataHubTopicsRequest::getProjectId()const
 void DescribeDataHubTopicsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DescribeDataHubTopicsRequest::getKey()const

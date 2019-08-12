@@ -77,7 +77,7 @@ int CreateBackupPlanRequest::getUsedTime()const
 void CreateBackupPlanRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setCoreParameter("UsedTime", usedTime);
 }
 
 std::string CreateBackupPlanRequest::getInstanceClass()const

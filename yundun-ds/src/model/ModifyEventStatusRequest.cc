@@ -44,7 +44,7 @@ bool ModifyEventStatusRequest::getBacked()const
 void ModifyEventStatusRequest::setBacked(bool backed)
 {
 	backed_ = backed;
-	setCoreParameter("Backed", backed ? "true" : "false");
+	setCoreParameter("Backed", backed);
 }
 
 int ModifyEventStatusRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int ModifyEventStatusRequest::getFeatureType()const
 void ModifyEventStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string ModifyEventStatusRequest::getDealReason()const
@@ -77,7 +77,7 @@ long ModifyEventStatusRequest::getId()const
 void ModifyEventStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyEventStatusRequest::getLang()const
@@ -99,6 +99,6 @@ int ModifyEventStatusRequest::getStatus()const
 void ModifyEventStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

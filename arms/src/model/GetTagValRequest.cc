@@ -44,7 +44,7 @@ long GetTagValRequest::getEndTime()const
 void GetTagValRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetTagValRequest::getServiceName()const
@@ -66,7 +66,7 @@ long GetTagValRequest::getStartTime()const
 void GetTagValRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string GetTagValRequest::getTagKey()const

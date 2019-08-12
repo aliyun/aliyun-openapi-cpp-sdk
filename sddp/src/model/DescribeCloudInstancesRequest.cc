@@ -55,7 +55,7 @@ long DescribeCloudInstancesRequest::getResourceType()const
 void DescribeCloudInstancesRequest::setResourceType(long resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string DescribeCloudInstancesRequest::getServiceRegionId()const

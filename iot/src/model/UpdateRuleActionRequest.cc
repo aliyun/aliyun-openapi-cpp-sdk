@@ -55,7 +55,7 @@ long UpdateRuleActionRequest::getActionId()const
 void UpdateRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
-	setCoreParameter("ActionId", std::to_string(actionId));
+	setCoreParameter("ActionId", actionId);
 }
 
 std::string UpdateRuleActionRequest::getType()const

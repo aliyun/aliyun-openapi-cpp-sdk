@@ -143,7 +143,7 @@ int InsertMaterialRequest::getType()const
 void InsertMaterialRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string InsertMaterialRequest::getContactName()const
@@ -242,7 +242,7 @@ int InsertMaterialRequest::getRegion()const
 void InsertMaterialRequest::setRegion(int region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string InsertMaterialRequest::getLoaOssKey()const

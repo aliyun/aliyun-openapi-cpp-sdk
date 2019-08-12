@@ -66,7 +66,7 @@ int ListNotifyPolicyRequest::getPageSize()const
 void ListNotifyPolicyRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListNotifyPolicyRequest::getId()const

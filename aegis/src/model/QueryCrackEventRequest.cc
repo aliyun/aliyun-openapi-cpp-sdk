@@ -44,7 +44,7 @@ int QueryCrackEventRequest::getCurrentPage()const
 void QueryCrackEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryCrackEventRequest::getStartTime()const
@@ -77,6 +77,6 @@ int QueryCrackEventRequest::getStatus()const
 void QueryCrackEventRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

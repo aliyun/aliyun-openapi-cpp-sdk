@@ -33,6 +33,6 @@ long DisableKnowledgeRequest::getKnowledgeId()const
 void DisableKnowledgeRequest::setKnowledgeId(long knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
+	setCoreParameter("KnowledgeId", knowledgeId);
 }
 

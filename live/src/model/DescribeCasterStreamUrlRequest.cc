@@ -55,6 +55,6 @@ long DescribeCasterStreamUrlRequest::getOwnerId()const
 void DescribeCasterStreamUrlRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

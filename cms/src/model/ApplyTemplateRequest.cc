@@ -33,7 +33,7 @@ long ApplyTemplateRequest::getEnableStartTime()const
 void ApplyTemplateRequest::setEnableStartTime(long enableStartTime)
 {
 	enableStartTime_ = enableStartTime;
-	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
+	setCoreParameter("EnableStartTime", enableStartTime);
 }
 
 std::string ApplyTemplateRequest::getApplyMode()const
@@ -66,7 +66,7 @@ long ApplyTemplateRequest::getEnableEndTime()const
 void ApplyTemplateRequest::setEnableEndTime(long enableEndTime)
 {
 	enableEndTime_ = enableEndTime;
-	setCoreParameter("EnableEndTime", std::to_string(enableEndTime));
+	setCoreParameter("EnableEndTime", enableEndTime);
 }
 
 long ApplyTemplateRequest::getGroupId()const
@@ -77,7 +77,7 @@ long ApplyTemplateRequest::getGroupId()const
 void ApplyTemplateRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 long ApplyTemplateRequest::getNotifyLevel()const
@@ -88,7 +88,7 @@ long ApplyTemplateRequest::getNotifyLevel()const
 void ApplyTemplateRequest::setNotifyLevel(long notifyLevel)
 {
 	notifyLevel_ = notifyLevel;
-	setCoreParameter("NotifyLevel", std::to_string(notifyLevel));
+	setCoreParameter("NotifyLevel", notifyLevel);
 }
 
 long ApplyTemplateRequest::getSilenceTime()const
@@ -99,6 +99,6 @@ long ApplyTemplateRequest::getSilenceTime()const
 void ApplyTemplateRequest::setSilenceTime(long silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", std::to_string(silenceTime));
+	setCoreParameter("SilenceTime", silenceTime);
 }
 

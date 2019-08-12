@@ -33,7 +33,7 @@ long DeleteScalingTaskGroupRequest::getResourceOwnerId()const
 void DeleteScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteScalingTaskGroupRequest::getRegionId()const

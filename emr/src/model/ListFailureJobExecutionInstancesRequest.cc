@@ -33,7 +33,7 @@ long ListFailureJobExecutionInstancesRequest::getResourceOwnerId()const
 void ListFailureJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListFailureJobExecutionInstancesRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListFailureJobExecutionInstancesRequest::getCount()const
 void ListFailureJobExecutionInstancesRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string ListFailureJobExecutionInstancesRequest::getAccessKeyId()const

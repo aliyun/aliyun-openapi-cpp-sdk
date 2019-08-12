@@ -33,7 +33,7 @@ bool QueryInstanceBillRequest::getIsBillingItem()const
 void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
 {
 	isBillingItem_ = isBillingItem;
-	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
+	setCoreParameter("IsBillingItem", isBillingItem);
 }
 
 std::string QueryInstanceBillRequest::getProductCode()const
@@ -55,7 +55,7 @@ bool QueryInstanceBillRequest::getIsHideZeroCharge()const
 void QueryInstanceBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
+	setCoreParameter("IsHideZeroCharge", isHideZeroCharge);
 }
 
 std::string QueryInstanceBillRequest::getSubscriptionType()const
@@ -77,7 +77,7 @@ int QueryInstanceBillRequest::getPageSize()const
 void QueryInstanceBillRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryInstanceBillRequest::getBillingCycle()const
@@ -99,7 +99,7 @@ long QueryInstanceBillRequest::getOwnerId()const
 void QueryInstanceBillRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int QueryInstanceBillRequest::getPageNum()const
@@ -110,7 +110,7 @@ int QueryInstanceBillRequest::getPageNum()const
 void QueryInstanceBillRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryInstanceBillRequest::getProductType()const

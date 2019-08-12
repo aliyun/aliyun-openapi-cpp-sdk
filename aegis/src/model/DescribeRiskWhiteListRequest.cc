@@ -55,7 +55,7 @@ int DescribeRiskWhiteListRequest::getPageSize()const
 void DescribeRiskWhiteListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeRiskWhiteListRequest::getCurrentPage()const
@@ -66,6 +66,6 @@ int DescribeRiskWhiteListRequest::getCurrentPage()const
 void DescribeRiskWhiteListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 

@@ -33,7 +33,7 @@ long DescribeRtcChannelUserListRequest::getResourceOwnerId()const
 void DescribeRtcChannelUserListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeRtcChannelUserListRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeRtcChannelUserListRequest::getCallerParentId()const
 void DescribeRtcChannelUserListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeRtcChannelUserListRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeRtcChannelUserListRequest::getProxy_original_security_transport()co
 void DescribeRtcChannelUserListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeRtcChannelUserListRequest::getProxy_original_source_ip()const
@@ -132,7 +132,7 @@ long DescribeRtcChannelUserListRequest::getPageSize()const
 void DescribeRtcChannelUserListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRtcChannelUserListRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ long DescribeRtcChannelUserListRequest::getCallerUid()const
 void DescribeRtcChannelUserListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeRtcChannelUserListRequest::getApp_ip()const
@@ -209,7 +209,7 @@ long DescribeRtcChannelUserListRequest::getOwnerId()const
 void DescribeRtcChannelUserListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRtcChannelUserListRequest::getVersion()const
@@ -231,7 +231,7 @@ bool DescribeRtcChannelUserListRequest::getProxy_trust_transport_info()const
 void DescribeRtcChannelUserListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeRtcChannelUserListRequest::getAk_mfa_present()const
@@ -242,7 +242,7 @@ bool DescribeRtcChannelUserListRequest::getAk_mfa_present()const
 void DescribeRtcChannelUserListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeRtcChannelUserListRequest::getSecurity_transport()const
@@ -253,7 +253,7 @@ bool DescribeRtcChannelUserListRequest::getSecurity_transport()const
 void DescribeRtcChannelUserListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeRtcChannelUserListRequest::getServiceCode()const
@@ -286,7 +286,7 @@ long DescribeRtcChannelUserListRequest::getPageNo()const
 void DescribeRtcChannelUserListRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 std::string DescribeRtcChannelUserListRequest::getAppId()const

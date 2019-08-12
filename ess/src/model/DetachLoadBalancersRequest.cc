@@ -34,7 +34,7 @@ void DetachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>&
 {
 	loadBalancer_ = loadBalancer;
 	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+		setCoreParameter("LoadBalancer."+ std::to_string(i), std::to_string(loadBalancer.at(i)));
 }
 
 std::string DetachLoadBalancersRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ bool DetachLoadBalancersRequest::getForceDetach()const
 void DetachLoadBalancersRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
+	setCoreParameter("ForceDetach", forceDetach);
 }
 
 long DetachLoadBalancersRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long DetachLoadBalancersRequest::getOwnerId()const
 void DetachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DetachLoadBalancersRequest::getAccessKeyId()const

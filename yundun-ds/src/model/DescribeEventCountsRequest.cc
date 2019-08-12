@@ -55,7 +55,7 @@ int DescribeEventCountsRequest::getFeatureType()const
 void DescribeEventCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeEventCountsRequest::getCountType()const
@@ -66,7 +66,7 @@ int DescribeEventCountsRequest::getCountType()const
 void DescribeEventCountsRequest::setCountType(int countType)
 {
 	countType_ = countType;
-	setCoreParameter("CountType", std::to_string(countType));
+	setCoreParameter("CountType", countType);
 }
 
 int DescribeEventCountsRequest::getDays()const
@@ -77,7 +77,7 @@ int DescribeEventCountsRequest::getDays()const
 void DescribeEventCountsRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", std::to_string(days));
+	setCoreParameter("Days", days);
 }
 
 std::string DescribeEventCountsRequest::getLang()const

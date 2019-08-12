@@ -55,7 +55,7 @@ long SubmitVideoPoseJobRequest::getResourceOwnerId()const
 void SubmitVideoPoseJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitVideoPoseJobRequest::getOutputConfig()const
@@ -99,7 +99,7 @@ long SubmitVideoPoseJobRequest::getOwnerId()const
 void SubmitVideoPoseJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitVideoPoseJobRequest::getAccessKeyId()const

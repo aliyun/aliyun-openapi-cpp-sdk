@@ -44,7 +44,7 @@ long ModifyDBClusterEndpointRequest::getResourceOwnerId()const
 void ModifyDBClusterEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBClusterEndpointRequest::getNodes()const
@@ -132,7 +132,7 @@ long ModifyDBClusterEndpointRequest::getOwnerId()const
 void ModifyDBClusterEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBClusterEndpointRequest::getAccessKeyId()const

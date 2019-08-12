@@ -33,7 +33,7 @@ bool GetMyGroupsRequest::getSelectContactGroups()const
 void GetMyGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setCoreParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
+	setCoreParameter("SelectContactGroups", selectContactGroups);
 }
 
 std::string GetMyGroupsRequest::getInstanceId()const
@@ -55,7 +55,7 @@ long GetMyGroupsRequest::getGroupId()const
 void GetMyGroupsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string GetMyGroupsRequest::getType()const

@@ -44,7 +44,7 @@ long MoveAppResourceRequest::getResourceOwnerId()const
 void MoveAppResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MoveAppResourceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long MoveAppResourceRequest::getResourceRealOwnerId()const
 void MoveAppResourceRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 long MoveAppResourceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long MoveAppResourceRequest::getOwnerId()const
 void MoveAppResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string MoveAppResourceRequest::getResourceType()const

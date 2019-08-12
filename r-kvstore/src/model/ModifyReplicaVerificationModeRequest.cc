@@ -33,7 +33,7 @@ long ModifyReplicaVerificationModeRequest::getResourceOwnerId()const
 void ModifyReplicaVerificationModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyReplicaVerificationModeRequest::getVerificationMode()const
@@ -110,7 +110,7 @@ long ModifyReplicaVerificationModeRequest::getOwnerId()const
 void ModifyReplicaVerificationModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyReplicaVerificationModeRequest::getAccessKeyId()const

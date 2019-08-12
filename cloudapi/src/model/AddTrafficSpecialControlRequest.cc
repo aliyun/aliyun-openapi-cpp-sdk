@@ -66,7 +66,7 @@ int AddTrafficSpecialControlRequest::getTrafficValue()const
 void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue)
 {
 	trafficValue_ = trafficValue;
-	setCoreParameter("TrafficValue", std::to_string(trafficValue));
+	setCoreParameter("TrafficValue", trafficValue);
 }
 
 std::string AddTrafficSpecialControlRequest::getSpecialType()const

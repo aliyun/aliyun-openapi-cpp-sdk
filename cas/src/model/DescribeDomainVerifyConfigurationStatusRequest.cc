@@ -44,7 +44,7 @@ long DescribeDomainVerifyConfigurationStatusRequest::getOrderId()const
 void DescribeDomainVerifyConfigurationStatusRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string DescribeDomainVerifyConfigurationStatusRequest::getLang()const

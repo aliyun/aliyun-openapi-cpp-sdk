@@ -33,7 +33,7 @@ long DescribeDcdnDomainLogRequest::getResourceOwnerId()const
 void DescribeDcdnDomainLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeDcdnDomainLogRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDcdnDomainLogRequest::getCallerParentId()const
 void DescribeDcdnDomainLogRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDcdnDomainLogRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDcdnDomainLogRequest::getProxy_original_security_transport()const
 void DescribeDcdnDomainLogRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDcdnDomainLogRequest::getStartTime()const
@@ -110,7 +110,7 @@ long DescribeDcdnDomainLogRequest::getPageNumber()const
 void DescribeDcdnDomainLogRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDcdnDomainLogRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ long DescribeDcdnDomainLogRequest::getPageSize()const
 void DescribeDcdnDomainLogRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDcdnDomainLogRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ long DescribeDcdnDomainLogRequest::getCallerUid()const
 void DescribeDcdnDomainLogRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDcdnDomainLogRequest::getApp_ip()const
@@ -253,7 +253,7 @@ long DescribeDcdnDomainLogRequest::getOwnerId()const
 void DescribeDcdnDomainLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDcdnDomainLogRequest::getVersion()const
@@ -275,7 +275,7 @@ bool DescribeDcdnDomainLogRequest::getProxy_trust_transport_info()const
 void DescribeDcdnDomainLogRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDcdnDomainLogRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeDcdnDomainLogRequest::getAk_mfa_present()const
 void DescribeDcdnDomainLogRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDcdnDomainLogRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeDcdnDomainLogRequest::getSecurity_transport()const
 void DescribeDcdnDomainLogRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDcdnDomainLogRequest::getRequestId()const

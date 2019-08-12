@@ -59,8 +59,8 @@ void CreateLoRaNodesTaskRequest::setDeviceInfo(const std::vector<DeviceInfo>& de
 	for(int i = 0; i!= deviceInfo.size(); i++)	{
 		auto obj = deviceInfo.at(i);
 		std::string str ="DeviceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PinCode", obj.pinCode);
-		setCoreParameter(str + ".DevEui", obj.devEui);
+		setCoreParameter(str + ".PinCode", std::to_string(obj.pinCode));
+		setCoreParameter(str + ".DevEui", std::to_string(obj.devEui));
 	}
 }
 

@@ -77,7 +77,7 @@ int InsertTradeIntentionUserRequest::getType()const
 void InsertTradeIntentionUserRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string InsertTradeIntentionUserRequest::getRegisterNumber()const

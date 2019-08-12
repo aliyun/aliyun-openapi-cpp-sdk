@@ -33,7 +33,7 @@ int GetUserInstanceRequest::getPageSize()const
 void GetUserInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetUserInstanceRequest::getPageNum()const
@@ -44,7 +44,7 @@ int GetUserInstanceRequest::getPageNum()const
 void GetUserInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string GetUserInstanceRequest::getRegion()const

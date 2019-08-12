@@ -44,7 +44,7 @@ long ListRolesRequest::getResourceOwnerId()const
 void ListRolesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long ListRolesRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ListRolesRequest::getCallerParentId()const
 void ListRolesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ListRolesRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool ListRolesRequest::getProxy_original_security_transport()const
 void ListRolesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ListRolesRequest::getCallerBid()const
@@ -110,7 +110,7 @@ bool ListRolesRequest::getAk_mfa_present()const
 void ListRolesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ListRolesRequest::getProxy_trust_transport_info()const
@@ -121,7 +121,7 @@ bool ListRolesRequest::getProxy_trust_transport_info()const
 void ListRolesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string ListRolesRequest::getCallerType()const
@@ -154,7 +154,7 @@ bool ListRolesRequest::getSecurity_transport()const
 void ListRolesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ListRolesRequest::getSecurityToken()const
@@ -198,6 +198,6 @@ long ListRolesRequest::getCallerUid()const
 void ListRolesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

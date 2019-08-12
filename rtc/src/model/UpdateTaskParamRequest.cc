@@ -37,9 +37,9 @@ void UpdateTaskParamRequest::setMixPanes(const std::vector<MixPanes>& mixPanes)
 	for(int i = 0; i!= mixPanes.size(); i++)	{
 		auto obj = mixPanes.at(i);
 		std::string str ="MixPanes."+ std::to_string(i);
-		setCoreParameter(str + ".PaneId", std::to_string(obj.paneId));
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".SourceType", obj.sourceType);
+		setCoreParameter(str + ".PaneId", obj.paneId);
+		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
+		setCoreParameter(str + ".SourceType", std::to_string(obj.sourceType));
 	}
 }
 
@@ -51,7 +51,7 @@ long UpdateTaskParamRequest::getCallerParentId()const
 void UpdateTaskParamRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UpdateTaskParamRequest::getProxy_original_security_transport()const
@@ -62,7 +62,7 @@ bool UpdateTaskParamRequest::getProxy_original_security_transport()const
 void UpdateTaskParamRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UpdateTaskParamRequest::getProxy_original_source_ip()const
@@ -161,7 +161,7 @@ long UpdateTaskParamRequest::getTaskId()const
 void UpdateTaskParamRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 long UpdateTaskParamRequest::getCallerUid()const
@@ -172,7 +172,7 @@ long UpdateTaskParamRequest::getCallerUid()const
 void UpdateTaskParamRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string UpdateTaskParamRequest::getApp_ip()const
@@ -216,7 +216,7 @@ long UpdateTaskParamRequest::getOwnerId()const
 void UpdateTaskParamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long UpdateTaskParamRequest::getTemplateId()const
@@ -227,7 +227,7 @@ long UpdateTaskParamRequest::getTemplateId()const
 void UpdateTaskParamRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string UpdateTaskParamRequest::getVersion()const
@@ -249,7 +249,7 @@ bool UpdateTaskParamRequest::getProxy_trust_transport_info()const
 void UpdateTaskParamRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool UpdateTaskParamRequest::getAk_mfa_present()const
@@ -260,7 +260,7 @@ bool UpdateTaskParamRequest::getAk_mfa_present()const
 void UpdateTaskParamRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UpdateTaskParamRequest::getSecurity_transport()const
@@ -271,7 +271,7 @@ bool UpdateTaskParamRequest::getSecurity_transport()const
 void UpdateTaskParamRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UpdateTaskParamRequest::getRequestId()const

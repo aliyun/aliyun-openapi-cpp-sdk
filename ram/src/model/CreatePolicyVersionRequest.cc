@@ -33,7 +33,7 @@ bool CreatePolicyVersionRequest::getSetAsDefault()const
 void CreatePolicyVersionRequest::setSetAsDefault(bool setAsDefault)
 {
 	setAsDefault_ = setAsDefault;
-	setCoreParameter("SetAsDefault", setAsDefault ? "true" : "false");
+	setCoreParameter("SetAsDefault", setAsDefault);
 }
 
 std::string CreatePolicyVersionRequest::getPolicyName()const

@@ -44,7 +44,7 @@ long BindAliasRequest::getAppKey()const
 void BindAliasRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string BindAliasRequest::getDeviceId()const

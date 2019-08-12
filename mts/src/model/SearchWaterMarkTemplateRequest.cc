@@ -33,7 +33,7 @@ long SearchWaterMarkTemplateRequest::getResourceOwnerId()const
 void SearchWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long SearchWaterMarkTemplateRequest::getPageSize()const
 void SearchWaterMarkTemplateRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string SearchWaterMarkTemplateRequest::getState()const
@@ -88,7 +88,7 @@ long SearchWaterMarkTemplateRequest::getOwnerId()const
 void SearchWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long SearchWaterMarkTemplateRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long SearchWaterMarkTemplateRequest::getPageNumber()const
 void SearchWaterMarkTemplateRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string SearchWaterMarkTemplateRequest::getAccessKeyId()const

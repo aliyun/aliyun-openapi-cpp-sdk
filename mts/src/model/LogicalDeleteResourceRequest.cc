@@ -44,7 +44,7 @@ long LogicalDeleteResourceRequest::getHid()const
 void LogicalDeleteResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", std::to_string(hid));
+	setCoreParameter("Hid", hid);
 }
 
 bool LogicalDeleteResourceRequest::getSuccess()const
@@ -55,7 +55,7 @@ bool LogicalDeleteResourceRequest::getSuccess()const
 void LogicalDeleteResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success ? "true" : "false");
+	setCoreParameter("Success", success);
 }
 
 bool LogicalDeleteResourceRequest::getInterrupt()const
@@ -66,7 +66,7 @@ bool LogicalDeleteResourceRequest::getInterrupt()const
 void LogicalDeleteResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt ? "true" : "false");
+	setCoreParameter("Interrupt", interrupt);
 }
 
 std::string LogicalDeleteResourceRequest::getGmtWakeup()const

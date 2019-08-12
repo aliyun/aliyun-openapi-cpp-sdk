@@ -33,7 +33,7 @@ long DescribeSagOnlineClientStatisticsRequest::getResourceOwnerId()const
 void DescribeSagOnlineClientStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSagOnlineClientStatisticsRequest::getResourceOwnerAccount()const
@@ -78,7 +78,7 @@ void DescribeSagOnlineClientStatisticsRequest::setSmartAGIds(const std::vector<s
 {
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+		setCoreParameter("SmartAGIds."+ std::to_string(i), std::to_string(smartAGIds.at(i)));
 }
 
 long DescribeSagOnlineClientStatisticsRequest::getOwnerId()const
@@ -89,6 +89,6 @@ long DescribeSagOnlineClientStatisticsRequest::getOwnerId()const
 void DescribeSagOnlineClientStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

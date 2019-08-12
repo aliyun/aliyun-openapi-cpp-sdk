@@ -33,7 +33,7 @@ long ModifyForwardEntryRequest::getResourceOwnerId()const
 void ModifyForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyForwardEntryRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ModifyForwardEntryRequest::getOwnerId()const
 void ModifyForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyForwardEntryRequest::getInternalIp()const

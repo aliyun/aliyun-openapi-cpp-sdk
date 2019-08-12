@@ -77,7 +77,7 @@ int ListApStaStatusRequest::getLength()const
 void ListApStaStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListApStaStatusRequest::getSearchUsername()const
@@ -110,7 +110,7 @@ int ListApStaStatusRequest::getPageIndex()const
 void ListApStaStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 long ListApStaStatusRequest::getId()const
@@ -121,7 +121,7 @@ long ListApStaStatusRequest::getId()const
 void ListApStaStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ListApStaStatusRequest::getOrderDir()const

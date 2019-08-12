@@ -44,7 +44,7 @@ long DescribeReplicationGroupRequest::getResourceOwnerId()const
 void DescribeReplicationGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeReplicationGroupRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ long DescribeReplicationGroupRequest::getOwnerId()const
 void DescribeReplicationGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeReplicationGroupRequest::getAccessKeyId()const

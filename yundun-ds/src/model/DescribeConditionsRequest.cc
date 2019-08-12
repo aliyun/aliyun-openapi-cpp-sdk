@@ -55,7 +55,7 @@ int DescribeConditionsRequest::getFeatureType()const
 void DescribeConditionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeConditionsRequest::getSearchType()const
@@ -66,7 +66,7 @@ int DescribeConditionsRequest::getSearchType()const
 void DescribeConditionsRequest::setSearchType(int searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", std::to_string(searchType));
+	setCoreParameter("SearchType", searchType);
 }
 
 std::string DescribeConditionsRequest::getLang()const
@@ -88,6 +88,6 @@ int DescribeConditionsRequest::getQueryType()const
 void DescribeConditionsRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 

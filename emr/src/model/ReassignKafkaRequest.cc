@@ -33,7 +33,7 @@ long ReassignKafkaRequest::getThrottle()const
 void ReassignKafkaRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", std::to_string(throttle));
+	setCoreParameter("Throttle", throttle);
 }
 
 long ReassignKafkaRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ReassignKafkaRequest::getResourceOwnerId()const
 void ReassignKafkaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReassignKafkaRequest::getTopicId()const
@@ -67,7 +67,7 @@ void ReassignKafkaRequest::setBrokerId(const std::vector<int>& brokerId)
 {
 	brokerId_ = brokerId;
 	for(int i = 0; i!= brokerId.size(); i++)
-		setCoreParameter("BrokerId."+ std::to_string(i), std::to_string(brokerId.at(i)));
+		setCoreParameter("BrokerId."+ std::to_string(i), brokerId.at(i));
 }
 
 std::string ReassignKafkaRequest::getRegionId()const

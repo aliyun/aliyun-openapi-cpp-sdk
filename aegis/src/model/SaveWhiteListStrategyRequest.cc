@@ -55,7 +55,7 @@ int SaveWhiteListStrategyRequest::getStudyTime()const
 void SaveWhiteListStrategyRequest::setStudyTime(int studyTime)
 {
 	studyTime_ = studyTime;
-	setCoreParameter("StudyTime", std::to_string(studyTime));
+	setCoreParameter("StudyTime", studyTime);
 }
 
 long SaveWhiteListStrategyRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long SaveWhiteListStrategyRequest::getStrategyId()const
 void SaveWhiteListStrategyRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string SaveWhiteListStrategyRequest::getLang()const

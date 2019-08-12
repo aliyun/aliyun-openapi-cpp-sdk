@@ -33,7 +33,7 @@ long DescribeTasksRequest::getResourceOwnerId()const
 void DescribeTasksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeTasksRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeTasksRequest::getOwnerId()const
 void DescribeTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeTasksRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeTasksRequest::getPageNumber()const
 void DescribeTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeTasksRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ int DescribeTasksRequest::getPageSize()const
 void DescribeTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeTasksRequest::getDBInstanceId()const

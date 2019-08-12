@@ -44,7 +44,7 @@ long CreateLoadBalancerRequest::getResourceOwnerId()const
 void CreateLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateLoadBalancerRequest::getClientToken()const
@@ -88,7 +88,7 @@ int CreateLoadBalancerRequest::getDuration()const
 void CreateLoadBalancerRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string CreateLoadBalancerRequest::getResourceGroupId()const
@@ -176,7 +176,7 @@ bool CreateLoadBalancerRequest::getAutoPay()const
 void CreateLoadBalancerRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateLoadBalancerRequest::getAddress()const
@@ -209,7 +209,7 @@ int CreateLoadBalancerRequest::getBandwidth()const
 void CreateLoadBalancerRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateLoadBalancerRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ long CreateLoadBalancerRequest::getOwnerId()const
 void CreateLoadBalancerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateLoadBalancerRequest::getTags()const
@@ -319,6 +319,6 @@ int CreateLoadBalancerRequest::getRatio()const
 void CreateLoadBalancerRequest::setRatio(int ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", std::to_string(ratio));
+	setCoreParameter("Ratio", ratio);
 }
 

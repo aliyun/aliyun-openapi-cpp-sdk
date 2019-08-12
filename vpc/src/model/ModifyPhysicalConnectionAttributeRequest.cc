@@ -55,7 +55,7 @@ long ModifyPhysicalConnectionAttributeRequest::getResourceOwnerId()const
 void ModifyPhysicalConnectionAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getPortType()const
@@ -88,7 +88,7 @@ int ModifyPhysicalConnectionAttributeRequest::getBandwidth()const
 void ModifyPhysicalConnectionAttributeRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getClientToken()const
@@ -143,7 +143,7 @@ long ModifyPhysicalConnectionAttributeRequest::getOwnerId()const
 void ModifyPhysicalConnectionAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getLineOperator()const

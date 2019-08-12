@@ -44,7 +44,7 @@ int DescribeAuthAccountsRequest::getFeatureType()const
 void DescribeAuthAccountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeAuthAccountsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAuthAccountsRequest::getPageSize()const
 void DescribeAuthAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeAuthAccountsRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeAuthAccountsRequest::getCurrentPage()const
 void DescribeAuthAccountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAuthAccountsRequest::getLang()const

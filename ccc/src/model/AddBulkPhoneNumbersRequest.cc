@@ -67,7 +67,7 @@ void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>&
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
@@ -79,7 +79,7 @@ void AddBulkPhoneNumbersRequest::setPhoneNumber(const std::vector<std::string>& 
 {
 	phoneNumber_ = phoneNumber;
 	for(int i = 0; i!= phoneNumber.size(); i++)
-		setCoreParameter("PhoneNumber."+ std::to_string(i), phoneNumber.at(i));
+		setCoreParameter("PhoneNumber."+ std::to_string(i), std::to_string(phoneNumber.at(i)));
 }
 
 std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const

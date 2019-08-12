@@ -44,7 +44,7 @@ int UpdateWhiteListStrategyRelationRequest::getProcessMethod()const
 void UpdateWhiteListStrategyRelationRequest::setProcessMethod(int processMethod)
 {
 	processMethod_ = processMethod;
-	setCoreParameter("ProcessMethod", std::to_string(processMethod));
+	setCoreParameter("ProcessMethod", processMethod);
 }
 
 long UpdateWhiteListStrategyRelationRequest::getStrategyId()const
@@ -55,7 +55,7 @@ long UpdateWhiteListStrategyRelationRequest::getStrategyId()const
 void UpdateWhiteListStrategyRelationRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string UpdateWhiteListStrategyRelationRequest::getLang()const
@@ -77,7 +77,7 @@ int UpdateWhiteListStrategyRelationRequest::getType()const
 void UpdateWhiteListStrategyRelationRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string UpdateWhiteListStrategyRelationRequest::getUuid()const
@@ -99,6 +99,6 @@ int UpdateWhiteListStrategyRelationRequest::getStatus()const
 void UpdateWhiteListStrategyRelationRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

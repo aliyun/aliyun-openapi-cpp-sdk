@@ -33,7 +33,7 @@ int SaveSingleTaskForCreatingOrderRenewRequest::getSubscriptionDuration()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setSubscriptionDuration(int subscriptionDuration)
 {
 	subscriptionDuration_ = subscriptionDuration;
-	setCoreParameter("SubscriptionDuration", std::to_string(subscriptionDuration));
+	setCoreParameter("SubscriptionDuration", subscriptionDuration);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getPromotionNo()const
@@ -55,7 +55,7 @@ long SaveSingleTaskForCreatingOrderRenewRequest::getCurrentExpirationDate()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+	setCoreParameter("CurrentExpirationDate", currentExpirationDate);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getUserClientIp()const
@@ -99,7 +99,7 @@ bool SaveSingleTaskForCreatingOrderRenewRequest::getUseCoupon()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setCoreParameter("UseCoupon", useCoupon);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getLang()const
@@ -121,6 +121,6 @@ bool SaveSingleTaskForCreatingOrderRenewRequest::getUsePromotion()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setCoreParameter("UsePromotion", usePromotion);
 }
 

@@ -70,8 +70,8 @@ void CreateIpControlRequest::setIpControlPolicys(const std::vector<IpControlPoli
 	for(int i = 0; i!= ipControlPolicys.size(); i++)	{
 		auto obj = ipControlPolicys.at(i);
 		std::string str ="IpControlPolicys."+ std::to_string(i);
-		setCoreParameter(str + ".AppId", obj.appId);
-		setCoreParameter(str + ".CidrIp", obj.cidrIp);
+		setCoreParameter(str + ".AppId", std::to_string(obj.appId));
+		setCoreParameter(str + ".CidrIp", std::to_string(obj.cidrIp));
 	}
 }
 

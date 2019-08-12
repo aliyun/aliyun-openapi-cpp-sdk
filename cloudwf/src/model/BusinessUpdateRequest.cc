@@ -33,7 +33,7 @@ int BusinessUpdateRequest::getWarn()const
 void BusinessUpdateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setCoreParameter("Warn", warn);
 }
 
 std::string BusinessUpdateRequest::getBusinessCity()const
@@ -77,7 +77,7 @@ long BusinessUpdateRequest::getBid()const
 void BusinessUpdateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string BusinessUpdateRequest::getBusinessManager()const

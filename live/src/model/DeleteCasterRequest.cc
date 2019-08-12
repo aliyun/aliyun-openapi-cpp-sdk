@@ -55,6 +55,6 @@ long DeleteCasterRequest::getOwnerId()const
 void DeleteCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

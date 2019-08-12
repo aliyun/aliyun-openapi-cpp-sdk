@@ -44,7 +44,7 @@ long DeleteMasterSlaveServerGroupRequest::getResourceOwnerId()const
 void DeleteMasterSlaveServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteMasterSlaveServerGroupRequest::getMasterSlaveServerGroupId()const
@@ -99,7 +99,7 @@ long DeleteMasterSlaveServerGroupRequest::getOwnerId()const
 void DeleteMasterSlaveServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMasterSlaveServerGroupRequest::getTags()const

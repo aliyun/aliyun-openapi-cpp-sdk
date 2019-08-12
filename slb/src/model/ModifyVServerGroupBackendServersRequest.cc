@@ -55,7 +55,7 @@ long ModifyVServerGroupBackendServersRequest::getResourceOwnerId()const
 void ModifyVServerGroupBackendServersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVServerGroupBackendServersRequest::getOldBackendServers()const
@@ -121,7 +121,7 @@ long ModifyVServerGroupBackendServersRequest::getOwnerId()const
 void ModifyVServerGroupBackendServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyVServerGroupBackendServersRequest::getTags()const

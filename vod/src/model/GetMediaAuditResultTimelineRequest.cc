@@ -33,7 +33,7 @@ long GetMediaAuditResultTimelineRequest::getResourceOwnerId()const
 void GetMediaAuditResultTimelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const

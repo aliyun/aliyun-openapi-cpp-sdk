@@ -33,7 +33,7 @@ long EnableCenVbrHealthCheckRequest::getResourceOwnerId()const
 void EnableCenVbrHealthCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string EnableCenVbrHealthCheckRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long EnableCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
 void EnableCenVbrHealthCheckRequest::setVbrInstanceOwnerId(long vbrInstanceOwnerId)
 {
 	vbrInstanceOwnerId_ = vbrInstanceOwnerId;
-	setCoreParameter("VbrInstanceOwnerId", std::to_string(vbrInstanceOwnerId));
+	setCoreParameter("VbrInstanceOwnerId", vbrInstanceOwnerId);
 }
 
 std::string EnableCenVbrHealthCheckRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ long EnableCenVbrHealthCheckRequest::getOwnerId()const
 void EnableCenVbrHealthCheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string EnableCenVbrHealthCheckRequest::getVbrInstanceRegionId()const

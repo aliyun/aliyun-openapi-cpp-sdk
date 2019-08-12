@@ -66,7 +66,7 @@ long CreateFlowForWebRequest::getStartSchedule()const
 void CreateFlowForWebRequest::setStartSchedule(long startSchedule)
 {
 	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", std::to_string(startSchedule));
+	setCoreParameter("StartSchedule", startSchedule);
 }
 
 std::string CreateFlowForWebRequest::getDescription()const
@@ -143,7 +143,7 @@ bool CreateFlowForWebRequest::getCreateCluster()const
 void CreateFlowForWebRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
-	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
+	setCoreParameter("CreateCluster", createCluster);
 }
 
 std::string CreateFlowForWebRequest::getName()const
@@ -165,7 +165,7 @@ long CreateFlowForWebRequest::getEndSchedule()const
 void CreateFlowForWebRequest::setEndSchedule(long endSchedule)
 {
 	endSchedule_ = endSchedule;
-	setCoreParameter("EndSchedule", std::to_string(endSchedule));
+	setCoreParameter("EndSchedule", endSchedule);
 }
 
 std::string CreateFlowForWebRequest::getAlertConf()const

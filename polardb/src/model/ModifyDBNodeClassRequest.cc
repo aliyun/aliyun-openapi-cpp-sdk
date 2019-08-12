@@ -33,7 +33,7 @@ long ModifyDBNodeClassRequest::getResourceOwnerId()const
 void ModifyDBNodeClassRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBNodeClassRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifyDBNodeClassRequest::getOwnerId()const
 void ModifyDBNodeClassRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBNodeClassRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long SetDomainExtensionAttributeRequest::getResourceOwnerId()const
 void SetDomainExtensionAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetDomainExtensionAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long SetDomainExtensionAttributeRequest::getOwnerId()const
 void SetDomainExtensionAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetDomainExtensionAttributeRequest::getServerCertificateId()const

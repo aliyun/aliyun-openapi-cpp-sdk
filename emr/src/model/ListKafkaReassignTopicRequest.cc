@@ -33,7 +33,7 @@ long ListKafkaReassignTopicRequest::getResourceOwnerId()const
 void ListKafkaReassignTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListKafkaReassignTopicRequest::getRegionId()const
@@ -66,7 +66,7 @@ int ListKafkaReassignTopicRequest::getPageSize()const
 void ListKafkaReassignTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListKafkaReassignTopicRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListKafkaReassignTopicRequest::getPageNumber()const
 void ListKafkaReassignTopicRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListKafkaReassignTopicRequest::getAccessKeyId()const

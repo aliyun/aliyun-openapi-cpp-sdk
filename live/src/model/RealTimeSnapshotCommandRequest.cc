@@ -33,7 +33,7 @@ int RealTimeSnapshotCommandRequest::getMode()const
 void RealTimeSnapshotCommandRequest::setMode(int mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", std::to_string(mode));
+	setCoreParameter("Mode", mode);
 }
 
 std::string RealTimeSnapshotCommandRequest::getAppName()const
@@ -77,7 +77,7 @@ int RealTimeSnapshotCommandRequest::getInterval()const
 void RealTimeSnapshotCommandRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 long RealTimeSnapshotCommandRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long RealTimeSnapshotCommandRequest::getOwnerId()const
 void RealTimeSnapshotCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RealTimeSnapshotCommandRequest::getCommand()const

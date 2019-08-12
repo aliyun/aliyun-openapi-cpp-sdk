@@ -44,7 +44,7 @@ int OnsMqttQueryMsgTransTrendRequest::getQos()const
 void OnsMqttQueryMsgTransTrendRequest::setQos(int qos)
 {
 	qos_ = qos;
-	setCoreParameter("Qos", std::to_string(qos));
+	setCoreParameter("Qos", qos);
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getTransType()const
@@ -66,7 +66,7 @@ long OnsMqttQueryMsgTransTrendRequest::getEndTime()const
 void OnsMqttQueryMsgTransTrendRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long OnsMqttQueryMsgTransTrendRequest::getBeginTime()const
@@ -77,7 +77,7 @@ long OnsMqttQueryMsgTransTrendRequest::getBeginTime()const
 void OnsMqttQueryMsgTransTrendRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", beginTime);
 }
 
 std::string OnsMqttQueryMsgTransTrendRequest::getTpsType()const

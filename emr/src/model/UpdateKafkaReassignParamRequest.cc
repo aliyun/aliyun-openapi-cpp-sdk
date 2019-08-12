@@ -33,7 +33,7 @@ long UpdateKafkaReassignParamRequest::getThrottle()const
 void UpdateKafkaReassignParamRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", std::to_string(throttle));
+	setCoreParameter("Throttle", throttle);
 }
 
 long UpdateKafkaReassignParamRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateKafkaReassignParamRequest::getResourceOwnerId()const
 void UpdateKafkaReassignParamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateKafkaReassignParamRequest::getRegionId()const

@@ -132,7 +132,7 @@ bool IndexVideoRequest::getSaveType()const
 void IndexVideoRequest::setSaveType(bool saveType)
 {
 	saveType_ = saveType;
-	setCoreParameter("SaveType", saveType ? "true" : "false");
+	setCoreParameter("SaveType", saveType);
 }
 
 std::string IndexVideoRequest::getRegionId()const

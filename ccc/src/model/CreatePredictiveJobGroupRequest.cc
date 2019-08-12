@@ -44,7 +44,7 @@ bool CreatePredictiveJobGroupRequest::getIsDraft()const
 void CreatePredictiveJobGroupRequest::setIsDraft(bool isDraft)
 {
 	isDraft_ = isDraft;
-	setCoreParameter("IsDraft", isDraft ? "true" : "false");
+	setCoreParameter("IsDraft", isDraft);
 }
 
 std::string CreatePredictiveJobGroupRequest::getSkillGroupId()const
@@ -99,7 +99,7 @@ bool CreatePredictiveJobGroupRequest::getTimingSchedule()const
 void CreatePredictiveJobGroupRequest::setTimingSchedule(bool timingSchedule)
 {
 	timingSchedule_ = timingSchedule;
-	setCoreParameter("TimingSchedule", timingSchedule ? "true" : "false");
+	setCoreParameter("TimingSchedule", timingSchedule);
 }
 
 std::vector<std::string> CreatePredictiveJobGroupRequest::getJobsJson()const
@@ -111,7 +111,7 @@ void CreatePredictiveJobGroupRequest::setJobsJson(const std::vector<std::string>
 {
 	jobsJson_ = jobsJson;
 	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
+		setCoreParameter("JobsJson."+ std::to_string(i), std::to_string(jobsJson.at(i)));
 }
 
 std::string CreatePredictiveJobGroupRequest::getJobFilePath()const

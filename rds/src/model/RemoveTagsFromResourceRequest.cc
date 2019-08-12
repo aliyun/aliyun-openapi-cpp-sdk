@@ -44,7 +44,7 @@ long RemoveTagsFromResourceRequest::getResourceOwnerId()const
 void RemoveTagsFromResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RemoveTagsFromResourceRequest::getTag2key()const
@@ -121,7 +121,7 @@ long RemoveTagsFromResourceRequest::getOwnerId()const
 void RemoveTagsFromResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RemoveTagsFromResourceRequest::getTag5value()const

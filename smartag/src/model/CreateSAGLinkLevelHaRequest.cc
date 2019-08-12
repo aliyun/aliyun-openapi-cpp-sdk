@@ -33,7 +33,7 @@ long CreateSAGLinkLevelHaRequest::getResourceOwnerId()const
 void CreateSAGLinkLevelHaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getBackupLinkId()const
@@ -110,7 +110,7 @@ long CreateSAGLinkLevelHaRequest::getOwnerId()const
 void CreateSAGLinkLevelHaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getMainLinkId()const

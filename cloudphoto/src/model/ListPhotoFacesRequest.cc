@@ -44,7 +44,7 @@ long ListPhotoFacesRequest::getPhotoId()const
 void ListPhotoFacesRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string ListPhotoFacesRequest::getStoreName()const

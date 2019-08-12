@@ -55,7 +55,7 @@ int DescribeDataLimitsRequest::getResourceType()const
 void DescribeDataLimitsRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string DescribeDataLimitsRequest::getParentId()const

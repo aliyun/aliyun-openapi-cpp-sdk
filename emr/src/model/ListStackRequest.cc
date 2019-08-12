@@ -33,7 +33,7 @@ long ListStackRequest::getResourceOwnerId()const
 void ListStackRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListStackRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListStackRequest::getPageSize()const
 void ListStackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListStackRequest::getStackName()const
@@ -88,7 +88,7 @@ int ListStackRequest::getPageNumber()const
 void ListStackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListStackRequest::getAccessKeyId()const

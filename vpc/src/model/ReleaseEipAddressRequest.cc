@@ -33,7 +33,7 @@ long ReleaseEipAddressRequest::getResourceOwnerId()const
 void ReleaseEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseEipAddressRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long ReleaseEipAddressRequest::getOwnerId()const
 void ReleaseEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

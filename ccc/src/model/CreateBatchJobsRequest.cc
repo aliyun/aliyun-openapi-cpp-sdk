@@ -34,7 +34,7 @@ void CreateBatchJobsRequest::setCallingNumber(const std::vector<std::string>& ca
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), std::to_string(callingNumber.at(i)));
 }
 
 std::string CreateBatchJobsRequest::getInstanceId()const
@@ -56,7 +56,7 @@ bool CreateBatchJobsRequest::getSubmitted()const
 void CreateBatchJobsRequest::setSubmitted(bool submitted)
 {
 	submitted_ = submitted;
-	setCoreParameter("Submitted", submitted ? "true" : "false");
+	setCoreParameter("Submitted", submitted);
 }
 
 std::string CreateBatchJobsRequest::getStrategyJson()const

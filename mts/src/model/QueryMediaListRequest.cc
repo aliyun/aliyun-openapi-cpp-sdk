@@ -33,7 +33,7 @@ long QueryMediaListRequest::getResourceOwnerId()const
 void QueryMediaListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool QueryMediaListRequest::getIncludeSummaryList()const
@@ -44,7 +44,7 @@ bool QueryMediaListRequest::getIncludeSummaryList()const
 void QueryMediaListRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
+	setCoreParameter("IncludeSummaryList", includeSummaryList);
 }
 
 std::string QueryMediaListRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ bool QueryMediaListRequest::getIncludeSnapshotList()const
 void QueryMediaListRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setCoreParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
+	setCoreParameter("IncludeSnapshotList", includeSnapshotList);
 }
 
 std::string QueryMediaListRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ long QueryMediaListRequest::getOwnerId()const
 void QueryMediaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool QueryMediaListRequest::getIncludePlayList()const
@@ -110,7 +110,7 @@ bool QueryMediaListRequest::getIncludePlayList()const
 void QueryMediaListRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
+	setCoreParameter("IncludePlayList", includePlayList);
 }
 
 std::string QueryMediaListRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ bool QueryMediaListRequest::getIncludeMediaInfo()const
 void QueryMediaListRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setCoreParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
+	setCoreParameter("IncludeMediaInfo", includeMediaInfo);
 }
 

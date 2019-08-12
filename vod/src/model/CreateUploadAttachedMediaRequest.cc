@@ -33,7 +33,7 @@ long CreateUploadAttachedMediaRequest::getResourceOwnerId()const
 void CreateUploadAttachedMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUploadAttachedMediaRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long CreateUploadAttachedMediaRequest::getOwnerId()const
 void CreateUploadAttachedMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateUploadAttachedMediaRequest::getTitle()const
@@ -198,7 +198,7 @@ long CreateUploadAttachedMediaRequest::getCateId()const
 void CreateUploadAttachedMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string CreateUploadAttachedMediaRequest::getAppId()const

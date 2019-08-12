@@ -33,7 +33,7 @@ long QueryCoverJobListRequest::getResourceOwnerId()const
 void QueryCoverJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryCoverJobListRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long QueryCoverJobListRequest::getMaximumPageSize()const
 void QueryCoverJobListRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setCoreParameter("MaximumPageSize", maximumPageSize);
 }
 
 long QueryCoverJobListRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long QueryCoverJobListRequest::getOwnerId()const
 void QueryCoverJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryCoverJobListRequest::getAccessKeyId()const

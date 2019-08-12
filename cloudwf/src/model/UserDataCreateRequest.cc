@@ -55,7 +55,7 @@ long UserDataCreateRequest::getBid()const
 void UserDataCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string UserDataCreateRequest::getType()const

@@ -33,7 +33,7 @@ long AllocateEipAddressRequest::getResourceOwnerId()const
 void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int AllocateEipAddressRequest::getPeriod()const
@@ -44,7 +44,7 @@ int AllocateEipAddressRequest::getPeriod()const
 void AllocateEipAddressRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool AllocateEipAddressRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool AllocateEipAddressRequest::getAutoPay()const
 void AllocateEipAddressRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
@@ -121,7 +121,7 @@ long AllocateEipAddressRequest::getOwnerId()const
 void AllocateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long AllocateEipAddressRequest::getActivityId()const
@@ -132,7 +132,7 @@ long AllocateEipAddressRequest::getActivityId()const
 void AllocateEipAddressRequest::setActivityId(long activityId)
 {
 	activityId_ = activityId;
-	setCoreParameter("ActivityId", std::to_string(activityId));
+	setCoreParameter("ActivityId", activityId);
 }
 
 std::string AllocateEipAddressRequest::getResourceGroupId()const

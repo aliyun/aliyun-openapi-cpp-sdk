@@ -33,7 +33,7 @@ long DescribeTagsRequest::getResourceOwnerId()const
 void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeTagsRequest::getOwnerId()const
 void DescribeTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeTagsRequest::getResourceType()const

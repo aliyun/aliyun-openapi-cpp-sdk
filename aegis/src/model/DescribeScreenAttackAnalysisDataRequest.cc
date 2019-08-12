@@ -66,7 +66,7 @@ int DescribeScreenAttackAnalysisDataRequest::getPageSize()const
 void DescribeScreenAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeScreenAttackAnalysisDataRequest::getEndTime()const
@@ -77,7 +77,7 @@ long DescribeScreenAttackAnalysisDataRequest::getEndTime()const
 void DescribeScreenAttackAnalysisDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int DescribeScreenAttackAnalysisDataRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeScreenAttackAnalysisDataRequest::getCurrentPage()const
 void DescribeScreenAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
@@ -99,7 +99,7 @@ long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
 void DescribeScreenAttackAnalysisDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getLang()const

@@ -33,7 +33,7 @@ long DescribeDataSourceSchemaTableRequest::getResourceOwnerId()const
 void DescribeDataSourceSchemaTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getDbName()const

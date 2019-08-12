@@ -44,6 +44,6 @@ int ListRolesRequest::getMaxItems()const
 void ListRolesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", maxItems);
 }
 

@@ -88,7 +88,7 @@ int CreateDataLimitRequest::getResourceType()const
 void CreateDataLimitRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string CreateDataLimitRequest::getServiceRegionId()const

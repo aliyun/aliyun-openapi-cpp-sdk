@@ -33,7 +33,7 @@ bool PickGlobalOutboundNumbersRequest::getIsVirtual()const
 void PickGlobalOutboundNumbersRequest::setIsVirtual(bool isVirtual)
 {
 	isVirtual_ = isVirtual;
-	setCoreParameter("IsVirtual", isVirtual ? "true" : "false");
+	setCoreParameter("IsVirtual", isVirtual);
 }
 
 std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
@@ -56,7 +56,7 @@ void PickGlobalOutboundNumbersRequest::setSkillGroupId(const std::vector<std::st
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
 }
 
 int PickGlobalOutboundNumbersRequest::getCount()const
@@ -67,7 +67,7 @@ int PickGlobalOutboundNumbersRequest::getCount()const
 void PickGlobalOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const

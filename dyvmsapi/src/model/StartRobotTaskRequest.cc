@@ -33,7 +33,7 @@ long StartRobotTaskRequest::getResourceOwnerId()const
 void StartRobotTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string StartRobotTaskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long StartRobotTaskRequest::getOwnerId()const
 void StartRobotTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long StartRobotTaskRequest::getTaskId()const
@@ -77,7 +77,7 @@ long StartRobotTaskRequest::getTaskId()const
 void StartRobotTaskRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string StartRobotTaskRequest::getAccessKeyId()const

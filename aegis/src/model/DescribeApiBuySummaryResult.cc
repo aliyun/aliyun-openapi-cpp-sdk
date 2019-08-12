@@ -37,10 +37,12 @@ void DescribeApiBuySummaryResult::parse(const std::string &payload)
 {
 	Json::CharReaderBuilder builder;
 	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *value;
+	Json::Value *val;
+	Json::Value value;
 	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
-	setRequestId((*value)["RequestId"].asString());
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
+	setRequestId(value["RequestId"].asString());
 	auto buySummaryNode = value["BuySummary"];
 	if(!buySummaryNode["Status"].isNull())
 		buySummary_.status = std::stol(buySummaryNode["Status"].asString());

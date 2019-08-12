@@ -33,7 +33,7 @@ int ListCommandsRequest::getPageSize()const
 void ListCommandsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListCommandsRequest::getClusterId()const
@@ -66,7 +66,7 @@ int ListCommandsRequest::getPageNumber()const
 void ListCommandsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListCommandsRequest::getAccessKeyId()const

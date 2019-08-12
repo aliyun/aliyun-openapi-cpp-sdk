@@ -44,7 +44,7 @@ int DescribeLiveUserDomainsRequest::getPageSize()const
 void DescribeLiveUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLiveUserDomainsRequest::getDomainName()const
@@ -77,7 +77,7 @@ long DescribeLiveUserDomainsRequest::getOwnerId()const
 void DescribeLiveUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeLiveUserDomainsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeLiveUserDomainsRequest::getPageNumber()const
 void DescribeLiveUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeLiveUserDomainsRequest::getDomainStatus()const

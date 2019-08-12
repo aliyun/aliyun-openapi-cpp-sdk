@@ -33,7 +33,7 @@ long SetWaitingRoomConfigRequest::getCallerParentId()const
 void SetWaitingRoomConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool SetWaitingRoomConfigRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool SetWaitingRoomConfigRequest::getProxy_original_security_transport()const
 void SetWaitingRoomConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string SetWaitingRoomConfigRequest::getProxy_original_source_ip()const
@@ -176,7 +176,7 @@ long SetWaitingRoomConfigRequest::getCallerUid()const
 void SetWaitingRoomConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string SetWaitingRoomConfigRequest::getApp_ip()const
@@ -209,7 +209,7 @@ int SetWaitingRoomConfigRequest::getMaxTimeWait()const
 void SetWaitingRoomConfigRequest::setMaxTimeWait(int maxTimeWait)
 {
 	maxTimeWait_ = maxTimeWait;
-	setCoreParameter("MaxTimeWait", std::to_string(maxTimeWait));
+	setCoreParameter("MaxTimeWait", maxTimeWait);
 }
 
 std::string SetWaitingRoomConfigRequest::getDomainName()const
@@ -231,7 +231,7 @@ int SetWaitingRoomConfigRequest::getAllowPct()const
 void SetWaitingRoomConfigRequest::setAllowPct(int allowPct)
 {
 	allowPct_ = allowPct;
-	setCoreParameter("AllowPct", std::to_string(allowPct));
+	setCoreParameter("AllowPct", allowPct);
 }
 
 std::string SetWaitingRoomConfigRequest::getCallerBid()const
@@ -253,7 +253,7 @@ int SetWaitingRoomConfigRequest::getGapTime()const
 void SetWaitingRoomConfigRequest::setGapTime(int gapTime)
 {
 	gapTime_ = gapTime;
-	setCoreParameter("GapTime", std::to_string(gapTime));
+	setCoreParameter("GapTime", gapTime);
 }
 
 long SetWaitingRoomConfigRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long SetWaitingRoomConfigRequest::getOwnerId()const
 void SetWaitingRoomConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetWaitingRoomConfigRequest::getVersion()const
@@ -286,7 +286,7 @@ bool SetWaitingRoomConfigRequest::getProxy_trust_transport_info()const
 void SetWaitingRoomConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool SetWaitingRoomConfigRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool SetWaitingRoomConfigRequest::getAk_mfa_present()const
 void SetWaitingRoomConfigRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SetWaitingRoomConfigRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool SetWaitingRoomConfigRequest::getSecurity_transport()const
 void SetWaitingRoomConfigRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SetWaitingRoomConfigRequest::getRequestId()const

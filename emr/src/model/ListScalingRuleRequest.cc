@@ -33,7 +33,7 @@ long ListScalingRuleRequest::getResourceOwnerId()const
 void ListScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListScalingRuleRequest::getRegionId()const
@@ -66,7 +66,7 @@ int ListScalingRuleRequest::getPageSize()const
 void ListScalingRuleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListScalingRuleRequest::getClusterId()const
@@ -88,7 +88,7 @@ int ListScalingRuleRequest::getPageNumber()const
 void ListScalingRuleRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListScalingRuleRequest::getAccessKeyId()const

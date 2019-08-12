@@ -33,7 +33,7 @@ long BatchRegisterDeviceWithApplyIdRequest::getApplyId()const
 void BatchRegisterDeviceWithApplyIdRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setCoreParameter("ApplyId", std::to_string(applyId));
+	setCoreParameter("ApplyId", applyId);
 }
 
 std::string BatchRegisterDeviceWithApplyIdRequest::getIotInstanceId()const

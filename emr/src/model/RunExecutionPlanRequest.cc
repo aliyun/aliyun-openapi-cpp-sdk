@@ -33,7 +33,7 @@ long RunExecutionPlanRequest::getResourceOwnerId()const
 void RunExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RunExecutionPlanRequest::getRegionId()const

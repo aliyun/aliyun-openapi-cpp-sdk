@@ -88,6 +88,6 @@ int RenewBackupPlanRequest::getUsedTime()const
 void RenewBackupPlanRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setCoreParameter("UsedTime", usedTime);
 }
 

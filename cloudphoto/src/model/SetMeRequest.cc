@@ -55,6 +55,6 @@ long SetMeRequest::getFaceId()const
 void SetMeRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setCoreParameter("FaceId", faceId);
 }
 

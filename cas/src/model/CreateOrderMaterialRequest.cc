@@ -121,7 +121,7 @@ int CreateOrderMaterialRequest::getDomainAuthType()const
 void CreateOrderMaterialRequest::setDomainAuthType(int domainAuthType)
 {
 	domainAuthType_ = domainAuthType;
-	setCoreParameter("DomainAuthType", std::to_string(domainAuthType));
+	setCoreParameter("DomainAuthType", domainAuthType);
 }
 
 std::string CreateOrderMaterialRequest::getLeaderPhone()const
@@ -198,7 +198,7 @@ long CreateOrderMaterialRequest::getOrderId()const
 void CreateOrderMaterialRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string CreateOrderMaterialRequest::getLeaderTitle()const
@@ -242,7 +242,7 @@ int CreateOrderMaterialRequest::getCreateCsr()const
 void CreateOrderMaterialRequest::setCreateCsr(int createCsr)
 {
 	createCsr_ = createCsr;
-	setCoreParameter("CreateCsr", std::to_string(createCsr));
+	setCoreParameter("CreateCsr", createCsr);
 }
 
 std::string CreateOrderMaterialRequest::getPersonPhone()const
@@ -286,7 +286,7 @@ int CreateOrderMaterialRequest::getCompanyType()const
 void CreateOrderMaterialRequest::setCompanyType(int companyType)
 {
 	companyType_ = companyType;
-	setCoreParameter("CompanyType", std::to_string(companyType));
+	setCoreParameter("CompanyType", companyType);
 }
 
 std::string CreateOrderMaterialRequest::getDomain()const

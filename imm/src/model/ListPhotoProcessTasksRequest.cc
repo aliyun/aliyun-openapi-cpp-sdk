@@ -33,7 +33,7 @@ int ListPhotoProcessTasksRequest::getMaxKeys()const
 void ListPhotoProcessTasksRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListPhotoProcessTasksRequest::getRegionId()const

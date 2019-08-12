@@ -33,7 +33,7 @@ int QueryTrademarkMonitorRulesRequest::getNotifyUpdate()const
 void QueryTrademarkMonitorRulesRequest::setNotifyUpdate(int notifyUpdate)
 {
 	notifyUpdate_ = notifyUpdate;
-	setCoreParameter("NotifyUpdate", std::to_string(notifyUpdate));
+	setCoreParameter("NotifyUpdate", notifyUpdate);
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryTrademarkMonitorRulesRequest::getPageSize()const
 void QueryTrademarkMonitorRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
@@ -77,6 +77,6 @@ int QueryTrademarkMonitorRulesRequest::getPageNum()const
 void QueryTrademarkMonitorRulesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

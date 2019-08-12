@@ -44,7 +44,7 @@ long DescribeNotificationTypesRequest::getOwnerId()const
 void DescribeNotificationTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeNotificationTypesRequest::getAccessKeyId()const

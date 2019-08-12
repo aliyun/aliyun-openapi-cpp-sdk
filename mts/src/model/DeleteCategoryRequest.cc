@@ -33,7 +33,7 @@ long DeleteCategoryRequest::getResourceOwnerId()const
 void DeleteCategoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteCategoryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long DeleteCategoryRequest::getCateId()const
 void DeleteCategoryRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string DeleteCategoryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ long DeleteCategoryRequest::getOwnerId()const
 void DeleteCategoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteCategoryRequest::getAccessKeyId()const

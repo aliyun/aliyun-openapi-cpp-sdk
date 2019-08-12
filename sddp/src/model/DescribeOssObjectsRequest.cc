@@ -55,7 +55,7 @@ int DescribeOssObjectsRequest::getFeatureType()const
 void DescribeOssObjectsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeOssObjectsRequest::getName()const
@@ -77,7 +77,7 @@ int DescribeOssObjectsRequest::getPageSize()const
 void DescribeOssObjectsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeOssObjectsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeOssObjectsRequest::getCurrentPage()const
 void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeOssObjectsRequest::getQueryName()const
@@ -110,7 +110,7 @@ int DescribeOssObjectsRequest::getRiskLevelId()const
 void DescribeOssObjectsRequest::setRiskLevelId(int riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setCoreParameter("RiskLevelId", riskLevelId);
 }
 
 std::string DescribeOssObjectsRequest::getLang()const
@@ -132,6 +132,6 @@ long DescribeOssObjectsRequest::getRuleId()const
 void DescribeOssObjectsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 

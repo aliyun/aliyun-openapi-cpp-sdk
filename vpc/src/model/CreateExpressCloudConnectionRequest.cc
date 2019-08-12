@@ -33,7 +33,7 @@ long CreateExpressCloudConnectionRequest::getResourceOwnerId()const
 void CreateExpressCloudConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateExpressCloudConnectionRequest::getPeerLocation()const
@@ -77,7 +77,7 @@ int CreateExpressCloudConnectionRequest::getBandwidth()const
 void CreateExpressCloudConnectionRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateExpressCloudConnectionRequest::getOwnerAccount()const
@@ -143,7 +143,7 @@ long CreateExpressCloudConnectionRequest::getOwnerId()const
 void CreateExpressCloudConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateExpressCloudConnectionRequest::getContactMail()const

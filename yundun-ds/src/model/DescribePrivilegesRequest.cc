@@ -33,7 +33,7 @@ long DescribePrivilegesRequest::getAccountId()const
 void DescribePrivilegesRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setCoreParameter("AccountId", accountId);
 }
 
 long DescribePrivilegesRequest::getUseAccountId()const
@@ -44,7 +44,7 @@ long DescribePrivilegesRequest::getUseAccountId()const
 void DescribePrivilegesRequest::setUseAccountId(long useAccountId)
 {
 	useAccountId_ = useAccountId;
-	setCoreParameter("UseAccountId", std::to_string(useAccountId));
+	setCoreParameter("UseAccountId", useAccountId);
 }
 
 std::string DescribePrivilegesRequest::getDataTypeIds()const
@@ -77,7 +77,7 @@ int DescribePrivilegesRequest::getFeatureType()const
 void DescribePrivilegesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribePrivilegesRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribePrivilegesRequest::getPageSize()const
 void DescribePrivilegesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribePrivilegesRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribePrivilegesRequest::getCurrentPage()const
 void DescribePrivilegesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribePrivilegesRequest::getLang()const

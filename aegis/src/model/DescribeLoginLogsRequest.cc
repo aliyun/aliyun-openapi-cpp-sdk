@@ -55,7 +55,7 @@ int DescribeLoginLogsRequest::getPageSize()const
 void DescribeLoginLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLoginLogsRequest::getStatuses()const
@@ -77,7 +77,7 @@ int DescribeLoginLogsRequest::getCurrentPage()const
 void DescribeLoginLogsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeLoginLogsRequest::getRemark()const

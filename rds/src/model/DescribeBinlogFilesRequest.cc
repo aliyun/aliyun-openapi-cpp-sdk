@@ -33,7 +33,7 @@ long DescribeBinlogFilesRequest::getResourceOwnerId()const
 void DescribeBinlogFilesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeBinlogFilesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int DescribeBinlogFilesRequest::getPageSize()const
 void DescribeBinlogFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeBinlogFilesRequest::getEndTime()const
@@ -110,7 +110,7 @@ long DescribeBinlogFilesRequest::getOwnerId()const
 void DescribeBinlogFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeBinlogFilesRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeBinlogFilesRequest::getPageNumber()const
 void DescribeBinlogFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeBinlogFilesRequest::getAccessKeyId()const

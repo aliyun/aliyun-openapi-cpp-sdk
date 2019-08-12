@@ -33,7 +33,7 @@ long ModifyAgentDeviceRequest::getAgentDeviceId()const
 void ModifyAgentDeviceRequest::setAgentDeviceId(long agentDeviceId)
 {
 	agentDeviceId_ = agentDeviceId;
-	setCoreParameter("AgentDeviceId", std::to_string(agentDeviceId));
+	setCoreParameter("AgentDeviceId", agentDeviceId);
 }
 
 std::string ModifyAgentDeviceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ int ModifyAgentDeviceRequest::getIsLogin()const
 void ModifyAgentDeviceRequest::setIsLogin(int isLogin)
 {
 	isLogin_ = isLogin;
-	setCoreParameter("IsLogin", std::to_string(isLogin));
+	setCoreParameter("IsLogin", isLogin);
 }
 
 std::string ModifyAgentDeviceRequest::getAccessKeyId()const

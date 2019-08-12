@@ -44,7 +44,7 @@ long DescribeSslVpnClientCertsRequest::getResourceOwnerId()const
 void DescribeSslVpnClientCertsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int DescribeSslVpnClientCertsRequest::getPageSize()const
 void DescribeSslVpnClientCertsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeSslVpnClientCertsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeSslVpnClientCertsRequest::getOwnerId()const
 void DescribeSslVpnClientCertsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getSslVpnClientCertId()const
@@ -132,6 +132,6 @@ int DescribeSslVpnClientCertsRequest::getPageNumber()const
 void DescribeSslVpnClientCertsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

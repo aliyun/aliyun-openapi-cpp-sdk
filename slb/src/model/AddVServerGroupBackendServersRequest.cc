@@ -55,7 +55,7 @@ long AddVServerGroupBackendServersRequest::getResourceOwnerId()const
 void AddVServerGroupBackendServersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddVServerGroupBackendServersRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long AddVServerGroupBackendServersRequest::getOwnerId()const
 void AddVServerGroupBackendServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddVServerGroupBackendServersRequest::getBackendServers()const

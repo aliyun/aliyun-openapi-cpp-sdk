@@ -34,7 +34,7 @@ void UpdateTmMonitorRuleRequest::setNotifyStatus(const std::vector<int>& notifyS
 {
 	notifyStatus_ = notifyStatus;
 	for(int i = 0; i!= notifyStatus.size(); i++)
-		setCoreParameter("NotifyStatus."+ std::to_string(i), std::to_string(notifyStatus.at(i)));
+		setCoreParameter("NotifyStatus."+ std::to_string(i), notifyStatus.at(i));
 }
 
 std::string UpdateTmMonitorRuleRequest::getRuleName()const
@@ -56,6 +56,6 @@ long UpdateTmMonitorRuleRequest::getId()const
 void UpdateTmMonitorRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

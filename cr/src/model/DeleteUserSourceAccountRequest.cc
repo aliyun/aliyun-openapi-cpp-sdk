@@ -33,7 +33,7 @@ long DeleteUserSourceAccountRequest::getSourceAccountId()const
 void DeleteUserSourceAccountRequest::setSourceAccountId(long sourceAccountId)
 {
 	sourceAccountId_ = sourceAccountId;
-	setCoreParameter("SourceAccountId", std::to_string(sourceAccountId));
+	setCoreParameter("SourceAccountId", sourceAccountId);
 }
 
 std::string DeleteUserSourceAccountRequest::getRegionId()const

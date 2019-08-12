@@ -33,7 +33,7 @@ long DeleteIPv6TranslatorRequest::getResourceOwnerId()const
 void DeleteIPv6TranslatorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteIPv6TranslatorRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DeleteIPv6TranslatorRequest::getOwnerId()const
 void DeleteIPv6TranslatorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

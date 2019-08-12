@@ -33,7 +33,7 @@ long CreateBandwidthPackageRequest::getResourceOwnerId()const
 void CreateBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int CreateBandwidthPackageRequest::getBandwidth()const
 void CreateBandwidthPackageRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateBandwidthPackageRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long CreateBandwidthPackageRequest::getOwnerId()const
 void CreateBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateBandwidthPackageRequest::getRegionId()const
@@ -176,6 +176,6 @@ int CreateBandwidthPackageRequest::getIpCount()const
 void CreateBandwidthPackageRequest::setIpCount(int ipCount)
 {
 	ipCount_ = ipCount;
-	setCoreParameter("IpCount", std::to_string(ipCount));
+	setCoreParameter("IpCount", ipCount);
 }
 

@@ -33,7 +33,7 @@ long MoPenDeleteGroupMemberRequest::getGroupId()const
 void MoPenDeleteGroupMemberRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string MoPenDeleteGroupMemberRequest::getDeviceName()const

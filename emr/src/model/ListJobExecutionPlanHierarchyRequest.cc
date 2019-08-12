@@ -33,7 +33,7 @@ long ListJobExecutionPlanHierarchyRequest::getResourceOwnerId()const
 void ListJobExecutionPlanHierarchyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long ListJobExecutionPlanHierarchyRequest::getCurrentId()const
@@ -44,7 +44,7 @@ long ListJobExecutionPlanHierarchyRequest::getCurrentId()const
 void ListJobExecutionPlanHierarchyRequest::setCurrentId(long currentId)
 {
 	currentId_ = currentId;
-	setCoreParameter("CurrentId", std::to_string(currentId));
+	setCoreParameter("CurrentId", currentId);
 }
 
 int ListJobExecutionPlanHierarchyRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListJobExecutionPlanHierarchyRequest::getPageSize()const
 void ListJobExecutionPlanHierarchyRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListJobExecutionPlanHierarchyRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int ListJobExecutionPlanHierarchyRequest::getPageNumber()const
 void ListJobExecutionPlanHierarchyRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListJobExecutionPlanHierarchyRequest::getAccessKeyId()const

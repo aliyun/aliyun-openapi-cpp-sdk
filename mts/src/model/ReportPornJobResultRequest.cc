@@ -44,7 +44,7 @@ long ReportPornJobResultRequest::getResourceOwnerId()const
 void ReportPornJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ReportPornJobResultRequest::getOwnerId()const
 void ReportPornJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReportPornJobResultRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long DescribeRouteConflictRequest::getResourceOwnerId()const
 void DescribeRouteConflictRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRouteConflictRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeRouteConflictRequest::getPageSize()const
 void DescribeRouteConflictRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeRouteConflictRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeRouteConflictRequest::getOwnerId()const
 void DescribeRouteConflictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceType()const
@@ -132,7 +132,7 @@ int DescribeRouteConflictRequest::getPageNumber()const
 void DescribeRouteConflictRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceRegionId()const

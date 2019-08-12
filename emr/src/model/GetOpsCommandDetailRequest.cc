@@ -33,7 +33,7 @@ long GetOpsCommandDetailRequest::getResourceOwnerId()const
 void GetOpsCommandDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetOpsCommandDetailRequest::getRegionId()const

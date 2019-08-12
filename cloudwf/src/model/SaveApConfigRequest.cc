@@ -44,7 +44,7 @@ long SaveApConfigRequest::getApAssetId()const
 void SaveApConfigRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setCoreParameter("ApAssetId", apAssetId);
 }
 
 int SaveApConfigRequest::getLogLevel()const
@@ -55,7 +55,7 @@ int SaveApConfigRequest::getLogLevel()const
 void SaveApConfigRequest::setLogLevel(int logLevel)
 {
 	logLevel_ = logLevel;
-	setCoreParameter("LogLevel", std::to_string(logLevel));
+	setCoreParameter("LogLevel", logLevel);
 }
 
 std::string SaveApConfigRequest::getName()const
@@ -77,7 +77,7 @@ int SaveApConfigRequest::getEchoInt()const
 void SaveApConfigRequest::setEchoInt(int echoInt)
 {
 	echoInt_ = echoInt;
-	setCoreParameter("EchoInt", std::to_string(echoInt));
+	setCoreParameter("EchoInt", echoInt);
 }
 
 int SaveApConfigRequest::getScan()const
@@ -88,7 +88,7 @@ int SaveApConfigRequest::getScan()const
 void SaveApConfigRequest::setScan(int scan)
 {
 	scan_ = scan;
-	setCoreParameter("Scan", std::to_string(scan));
+	setCoreParameter("Scan", scan);
 }
 
 std::string SaveApConfigRequest::getDescription()const
@@ -110,7 +110,7 @@ long SaveApConfigRequest::getId()const
 void SaveApConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string SaveApConfigRequest::getDai()const

@@ -66,7 +66,7 @@ int DescribeDepartCountsRequest::getFeatureType()const
 void DescribeDepartCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDepartCountsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeDepartCountsRequest::getPageSize()const
 void DescribeDepartCountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeDepartCountsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDepartCountsRequest::getCurrentPage()const
 void DescribeDepartCountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDepartCountsRequest::getLang()const

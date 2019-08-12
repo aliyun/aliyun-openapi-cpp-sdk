@@ -56,7 +56,7 @@ void CreateScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vS
 {
 	vSwitchIds_ = vSwitchIds;
 	for(int i = 0; i!= vSwitchIds.size(); i++)
-		setCoreParameter("VSwitchIds."+ std::to_string(i), vSwitchIds.at(i));
+		setCoreParameter("VSwitchIds."+ std::to_string(i), std::to_string(vSwitchIds.at(i)));
 }
 
 int CreateScalingGroupRequest::getOnDemandBaseCapacity()const
@@ -67,7 +67,7 @@ int CreateScalingGroupRequest::getOnDemandBaseCapacity()const
 void CreateScalingGroupRequest::setOnDemandBaseCapacity(int onDemandBaseCapacity)
 {
 	onDemandBaseCapacity_ = onDemandBaseCapacity;
-	setCoreParameter("OnDemandBaseCapacity", std::to_string(onDemandBaseCapacity));
+	setCoreParameter("OnDemandBaseCapacity", onDemandBaseCapacity);
 }
 
 std::string CreateScalingGroupRequest::getAccessKeyId()const
@@ -89,7 +89,7 @@ int CreateScalingGroupRequest::getOnDemandPercentageAboveBaseCapacity()const
 void CreateScalingGroupRequest::setOnDemandPercentageAboveBaseCapacity(int onDemandPercentageAboveBaseCapacity)
 {
 	onDemandPercentageAboveBaseCapacity_ = onDemandPercentageAboveBaseCapacity;
-	setCoreParameter("OnDemandPercentageAboveBaseCapacity", std::to_string(onDemandPercentageAboveBaseCapacity));
+	setCoreParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity);
 }
 
 bool CreateScalingGroupRequest::getSpotInstanceRemedy()const
@@ -100,7 +100,7 @@ bool CreateScalingGroupRequest::getSpotInstanceRemedy()const
 void CreateScalingGroupRequest::setSpotInstanceRemedy(bool spotInstanceRemedy)
 {
 	spotInstanceRemedy_ = spotInstanceRemedy;
-	setCoreParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
+	setCoreParameter("SpotInstanceRemedy", spotInstanceRemedy);
 }
 
 std::string CreateScalingGroupRequest::getRegionId()const
@@ -122,7 +122,7 @@ int CreateScalingGroupRequest::getDefaultCooldown()const
 void CreateScalingGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setCoreParameter("DefaultCooldown", defaultCooldown);
 }
 
 std::string CreateScalingGroupRequest::getRemovalPolicy1()const
@@ -232,7 +232,7 @@ int CreateScalingGroupRequest::getSpotInstancePools()const
 void CreateScalingGroupRequest::setSpotInstancePools(int spotInstancePools)
 {
 	spotInstancePools_ = spotInstancePools;
-	setCoreParameter("SpotInstancePools", std::to_string(spotInstancePools));
+	setCoreParameter("SpotInstancePools", spotInstancePools);
 }
 
 int CreateScalingGroupRequest::getMinSize()const
@@ -243,7 +243,7 @@ int CreateScalingGroupRequest::getMinSize()const
 void CreateScalingGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", std::to_string(minSize));
+	setCoreParameter("MinSize", minSize);
 }
 
 long CreateScalingGroupRequest::getOwnerId()const
@@ -254,7 +254,7 @@ long CreateScalingGroupRequest::getOwnerId()const
 void CreateScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateScalingGroupRequest::getLaunchTemplateVersion()const
@@ -298,7 +298,7 @@ int CreateScalingGroupRequest::getMaxSize()const
 void CreateScalingGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", std::to_string(maxSize));
+	setCoreParameter("MaxSize", maxSize);
 }
 
 std::vector<CreateScalingGroupRequest::LifecycleHook> CreateScalingGroupRequest::getLifecycleHook()const
@@ -313,12 +313,12 @@ void CreateScalingGroupRequest::setLifecycleHook(const std::vector<LifecycleHook
 	for(int i = 0; i!= lifecycleHook.size(); i++)	{
 		auto obj = lifecycleHook.at(i);
 		std::string str ="LifecycleHook."+ std::to_string(i);
-		setCoreParameter(str + ".DefaultResult", obj.defaultResult);
-		setCoreParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
-		setCoreParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
-		setCoreParameter(str + ".NotificationArn", obj.notificationArn);
-		setCoreParameter(str + ".NotificationMetadata", obj.notificationMetadata);
-		setCoreParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
+		setCoreParameter(str + ".DefaultResult", std::to_string(obj.defaultResult));
+		setCoreParameter(str + ".LifecycleHookName", std::to_string(obj.lifecycleHookName));
+		setCoreParameter(str + ".HeartbeatTimeout", obj.heartbeatTimeout);
+		setCoreParameter(str + ".NotificationArn", std::to_string(obj.notificationArn));
+		setCoreParameter(str + ".NotificationMetadata", std::to_string(obj.notificationMetadata));
+		setCoreParameter(str + ".LifecycleTransition", std::to_string(obj.lifecycleTransition));
 	}
 }
 
@@ -334,8 +334,8 @@ void CreateScalingGroupRequest::setVServerGroup(const std::vector<VServerGroup>&
 	for(int i = 0; i!= vServerGroup.size(); i++)	{
 		auto obj = vServerGroup.at(i);
 		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
-		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
+		setCoreParameter(str + ".LoadBalancerId", std::to_string(obj.loadBalancerId));
+		setCoreParameter(str + ".VServerGroupAttribute", obj.vServerGroupAttribute);
 	}
 }
 

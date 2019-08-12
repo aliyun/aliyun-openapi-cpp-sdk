@@ -44,7 +44,7 @@ long DescribeDeploymentRegionListRequest::getCertificateId()const
 void DescribeDeploymentRegionListRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string DescribeDeploymentRegionListRequest::getCloudProduct()const

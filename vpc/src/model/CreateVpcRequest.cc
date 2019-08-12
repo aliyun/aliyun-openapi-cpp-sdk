@@ -33,7 +33,7 @@ long CreateVpcRequest::getResourceOwnerId()const
 void CreateVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVpcRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ bool CreateVpcRequest::getEnableIpv6()const
 void CreateVpcRequest::setEnableIpv6(bool enableIpv6)
 {
 	enableIpv6_ = enableIpv6;
-	setCoreParameter("EnableIpv6", enableIpv6 ? "true" : "false");
+	setCoreParameter("EnableIpv6", enableIpv6);
 }
 
 std::string CreateVpcRequest::getDescription()const
@@ -99,7 +99,7 @@ long CreateVpcRequest::getOwnerId()const
 void CreateVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateVpcRequest::getIpv6CidrBlock()const

@@ -33,7 +33,7 @@ long ModifyDBInstanceConnectionStringRequest::getResourceOwnerId()const
 void ModifyDBInstanceConnectionStringRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ long ModifyDBInstanceConnectionStringRequest::getOwnerId()const
 void ModifyDBInstanceConnectionStringRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getNodeId()const

@@ -33,7 +33,7 @@ long ModifyScalingTaskGroupRequest::getResourceOwnerId()const
 void ModifyScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyScalingTaskGroupRequest::getRegionId()const
@@ -88,7 +88,7 @@ int ModifyScalingTaskGroupRequest::getMinSize()const
 void ModifyScalingTaskGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", std::to_string(minSize));
+	setCoreParameter("MinSize", minSize);
 }
 
 int ModifyScalingTaskGroupRequest::getMaxSize()const
@@ -99,7 +99,7 @@ int ModifyScalingTaskGroupRequest::getMaxSize()const
 void ModifyScalingTaskGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", std::to_string(maxSize));
+	setCoreParameter("MaxSize", maxSize);
 }
 
 int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
@@ -110,7 +110,7 @@ int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
 void ModifyScalingTaskGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setCoreParameter("DefaultCooldown", defaultCooldown);
 }
 
 std::string ModifyScalingTaskGroupRequest::getAccessKeyId()const

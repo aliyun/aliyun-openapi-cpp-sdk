@@ -33,7 +33,7 @@ int QueryTaskDetailListRequest::getTaskStatus()const
 void QueryTaskDetailListRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", std::to_string(taskStatus));
+	setCoreParameter("TaskStatus", taskStatus);
 }
 
 std::string QueryTaskDetailListRequest::getInstanceId()const
@@ -88,7 +88,7 @@ int QueryTaskDetailListRequest::getPageSize()const
 void QueryTaskDetailListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTaskDetailListRequest::getLang()const
@@ -110,6 +110,6 @@ int QueryTaskDetailListRequest::getPageNum()const
 void QueryTaskDetailListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

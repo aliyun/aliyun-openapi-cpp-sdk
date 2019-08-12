@@ -44,7 +44,7 @@ long UpdateCustomizeReportStatusRequest::getReportId()const
 void UpdateCustomizeReportStatusRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string UpdateCustomizeReportStatusRequest::getLang()const
@@ -66,6 +66,6 @@ int UpdateCustomizeReportStatusRequest::getReportStatus()const
 void UpdateCustomizeReportStatusRequest::setReportStatus(int reportStatus)
 {
 	reportStatus_ = reportStatus;
-	setCoreParameter("ReportStatus", std::to_string(reportStatus));
+	setCoreParameter("ReportStatus", reportStatus);
 }
 

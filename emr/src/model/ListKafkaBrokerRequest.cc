@@ -33,7 +33,7 @@ long ListKafkaBrokerRequest::getResourceOwnerId()const
 void ListKafkaBrokerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListKafkaBrokerRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListKafkaBrokerRequest::getPageSize()const
 void ListKafkaBrokerRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListKafkaBrokerRequest::getClusterId()const
@@ -77,7 +77,7 @@ int ListKafkaBrokerRequest::getPageNumber()const
 void ListKafkaBrokerRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListKafkaBrokerRequest::getAccessKeyId()const

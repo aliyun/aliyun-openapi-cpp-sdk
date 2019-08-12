@@ -33,7 +33,7 @@ long ReleaseReplicaRequest::getResourceOwnerId()const
 void ReleaseReplicaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseReplicaRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long ReleaseReplicaRequest::getOwnerId()const
 void ReleaseReplicaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReleaseReplicaRequest::getAccessKeyId()const

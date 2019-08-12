@@ -44,7 +44,7 @@ int GetQuotaInstanceRequest::getPageSize()const
 void GetQuotaInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetQuotaInstanceRequest::getQuotaId()const
@@ -66,7 +66,7 @@ int GetQuotaInstanceRequest::getPageNum()const
 void GetQuotaInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string GetQuotaInstanceRequest::getRegion()const

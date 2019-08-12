@@ -77,7 +77,7 @@ int ListJobsByGroupRequest::getPageSize()const
 void ListJobsByGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListJobsByGroupRequest::getPageNumber()const
@@ -88,6 +88,6 @@ int ListJobsByGroupRequest::getPageNumber()const
 void ListJobsByGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

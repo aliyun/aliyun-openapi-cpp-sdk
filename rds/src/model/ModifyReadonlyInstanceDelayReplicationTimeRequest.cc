@@ -33,7 +33,7 @@ long ModifyReadonlyInstanceDelayReplicationTimeRequest::getResourceOwnerId()cons
 void ModifyReadonlyInstanceDelayReplicationTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getReadSQLReplicationTime()const
@@ -77,7 +77,7 @@ long ModifyReadonlyInstanceDelayReplicationTimeRequest::getOwnerId()const
 void ModifyReadonlyInstanceDelayReplicationTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyReadonlyInstanceDelayReplicationTimeRequest::getAccessKeyId()const

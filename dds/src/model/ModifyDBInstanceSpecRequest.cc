@@ -33,7 +33,7 @@ long ModifyDBInstanceSpecRequest::getResourceOwnerId()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
@@ -55,7 +55,7 @@ bool ModifyDBInstanceSpecRequest::getAutoPay()const
 void ModifyDBInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyDBInstanceSpecRequest::getFromApp()const
@@ -121,7 +121,7 @@ long ModifyDBInstanceSpecRequest::getOwnerId()const
 void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getReplicationFactor()const

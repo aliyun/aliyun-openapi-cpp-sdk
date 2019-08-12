@@ -55,7 +55,7 @@ int ProfileMediaRequest::getDataType()const
 void ProfileMediaRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", dataType);
 }
 
 long ProfileMediaRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileMediaRequest::getGsid()const
 void ProfileMediaRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string ProfileMediaRequest::getAccessKeyId()const

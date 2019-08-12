@@ -55,7 +55,7 @@ long FindApprovalOrderListRequest::getCsbId()const
 void FindApprovalOrderListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindApprovalOrderListRequest::getAlias()const
@@ -88,7 +88,7 @@ long FindApprovalOrderListRequest::getServiceId()const
 void FindApprovalOrderListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 
 int FindApprovalOrderListRequest::getPageNum()const
@@ -99,7 +99,7 @@ int FindApprovalOrderListRequest::getPageNum()const
 void FindApprovalOrderListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 bool FindApprovalOrderListRequest::getOnlyPending()const
@@ -110,6 +110,6 @@ bool FindApprovalOrderListRequest::getOnlyPending()const
 void FindApprovalOrderListRequest::setOnlyPending(bool onlyPending)
 {
 	onlyPending_ = onlyPending;
-	setCoreParameter("OnlyPending", onlyPending ? "true" : "false");
+	setCoreParameter("OnlyPending", onlyPending);
 }
 

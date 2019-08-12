@@ -33,7 +33,7 @@ long ModifyAccountDescriptionRequest::getResourceOwnerId()const
 void ModifyAccountDescriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccountName()const
@@ -110,7 +110,7 @@ long ModifyAccountDescriptionRequest::getOwnerId()const
 void ModifyAccountDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccountDescription()const

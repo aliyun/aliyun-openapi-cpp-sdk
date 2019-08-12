@@ -33,7 +33,7 @@ long DescribePackagesRequest::getInstanceId()const
 void DescribePackagesRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribePackagesRequest::getSourceIp()const
@@ -55,7 +55,7 @@ long DescribePackagesRequest::getProductId()const
 void DescribePackagesRequest::setProductId(long productId)
 {
 	productId_ = productId;
-	setCoreParameter("ProductId", std::to_string(productId));
+	setCoreParameter("ProductId", productId);
 }
 
 int DescribePackagesRequest::getFeatureType()const
@@ -66,7 +66,7 @@ int DescribePackagesRequest::getFeatureType()const
 void DescribePackagesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribePackagesRequest::getName()const
@@ -88,7 +88,7 @@ int DescribePackagesRequest::getPageSize()const
 void DescribePackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribePackagesRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribePackagesRequest::getCurrentPage()const
 void DescribePackagesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribePackagesRequest::getQueryName()const
@@ -121,7 +121,7 @@ long DescribePackagesRequest::getRiskLevelId()const
 void DescribePackagesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setCoreParameter("RiskLevelId", riskLevelId);
 }
 
 std::string DescribePackagesRequest::getLang()const
@@ -143,7 +143,7 @@ long DescribePackagesRequest::getRuleId()const
 void DescribePackagesRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 int DescribePackagesRequest::getQueryType()const
@@ -154,6 +154,6 @@ int DescribePackagesRequest::getQueryType()const
 void DescribePackagesRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 

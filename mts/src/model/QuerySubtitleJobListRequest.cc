@@ -33,7 +33,7 @@ long QuerySubtitleJobListRequest::getResourceOwnerId()const
 void QuerySubtitleJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QuerySubtitleJobListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QuerySubtitleJobListRequest::getOwnerId()const
 void QuerySubtitleJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QuerySubtitleJobListRequest::getAccessKeyId()const

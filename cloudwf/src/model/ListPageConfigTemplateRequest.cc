@@ -33,7 +33,7 @@ int ListPageConfigTemplateRequest::getLength()const
 void ListPageConfigTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListPageConfigTemplateRequest::getPageIndex()const
@@ -44,7 +44,7 @@ int ListPageConfigTemplateRequest::getPageIndex()const
 void ListPageConfigTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListPageConfigTemplateRequest::getSearchTempName()const

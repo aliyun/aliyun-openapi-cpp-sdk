@@ -33,7 +33,7 @@ long ModifyTrainDataTagAttributeRequest::getResourceOwnerId()const
 void ModifyTrainDataTagAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long ModifyTrainDataTagAttributeRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyTrainDataTagAttributeRequest::getCallerParentId()const
 void ModifyTrainDataTagAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ModifyTrainDataTagAttributeRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool ModifyTrainDataTagAttributeRequest::getProxy_original_security_transport()c
 void ModifyTrainDataTagAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyTrainDataTagAttributeRequest::getProxy_original_source_ip()const
@@ -176,7 +176,7 @@ long ModifyTrainDataTagAttributeRequest::getCallerUid()const
 void ModifyTrainDataTagAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyTrainDataTagAttributeRequest::getShowLog()const
@@ -242,7 +242,7 @@ long ModifyTrainDataTagAttributeRequest::getOwnerId()const
 void ModifyTrainDataTagAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyTrainDataTagAttributeRequest::getVersion()const
@@ -264,7 +264,7 @@ bool ModifyTrainDataTagAttributeRequest::getProxy_trust_transport_info()const
 void ModifyTrainDataTagAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyTrainDataTagAttributeRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ModifyTrainDataTagAttributeRequest::getAk_mfa_present()const
 void ModifyTrainDataTagAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyTrainDataTagAttributeRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ModifyTrainDataTagAttributeRequest::getSecurity_transport()const
 void ModifyTrainDataTagAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyTrainDataTagAttributeRequest::getDataId()const

@@ -88,7 +88,7 @@ long UpdateRuleRequest::getRuleId()const
 void UpdateRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string UpdateRuleRequest::getProductKey()const
@@ -110,7 +110,7 @@ int UpdateRuleRequest::getTopicType()const
 void UpdateRuleRequest::setTopicType(int topicType)
 {
 	topicType_ = topicType;
-	setCoreParameter("TopicType", std::to_string(topicType));
+	setCoreParameter("TopicType", topicType);
 }
 
 std::string UpdateRuleRequest::getAccessKeyId()const

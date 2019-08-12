@@ -44,7 +44,7 @@ long GetUserSubmissionStatisticInfoRequest::getResourceOwnerId()const
 void GetUserSubmissionStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getRegionId()const

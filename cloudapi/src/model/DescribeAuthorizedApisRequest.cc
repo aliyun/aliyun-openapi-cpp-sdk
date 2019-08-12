@@ -44,7 +44,7 @@ long DescribeAuthorizedApisRequest::getAppId()const
 void DescribeAuthorizedApisRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 int DescribeAuthorizedApisRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAuthorizedApisRequest::getPageSize()const
 void DescribeAuthorizedApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeAuthorizedApisRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int DescribeAuthorizedApisRequest::getPageNumber()const
 void DescribeAuthorizedApisRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAuthorizedApisRequest::getAccessKeyId()const

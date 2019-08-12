@@ -33,7 +33,7 @@ long DescribeETLJobInstanceRequest::getResourceOwnerId()const
 void DescribeETLJobInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeETLJobInstanceRequest::getRegionId()const

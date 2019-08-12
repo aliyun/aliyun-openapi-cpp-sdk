@@ -33,7 +33,7 @@ long SwitchNetworkRequest::getResourceOwnerId()const
 void SwitchNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SwitchNetworkRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long SwitchNetworkRequest::getOwnerId()const
 void SwitchNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SwitchNetworkRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long RetryExecutionPlanInstanceRequest::getResourceOwnerId()const
 void RetryExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ bool RetryExecutionPlanInstanceRequest::getRerunFail()const
 void RetryExecutionPlanInstanceRequest::setRerunFail(bool rerunFail)
 {
 	rerunFail_ = rerunFail;
-	setCoreParameter("RerunFail", rerunFail ? "true" : "false");
+	setCoreParameter("RerunFail", rerunFail);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getAccessKeyId()const

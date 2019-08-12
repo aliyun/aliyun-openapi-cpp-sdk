@@ -44,7 +44,7 @@ int DescribeWhiteListStrategyStatisticsRequest::getPageSize()const
 void DescribeWhiteListStrategyStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeWhiteListStrategyStatisticsRequest::getStrategyIds()const
@@ -66,7 +66,7 @@ int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
 void DescribeWhiteListStrategyStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWhiteListStrategyStatisticsRequest::getLang()const

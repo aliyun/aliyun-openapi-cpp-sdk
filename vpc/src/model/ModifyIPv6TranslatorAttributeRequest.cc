@@ -33,7 +33,7 @@ long ModifyIPv6TranslatorAttributeRequest::getResourceOwnerId()const
 void ModifyIPv6TranslatorAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getResourceOwnerAccount()const
@@ -121,6 +121,6 @@ long ModifyIPv6TranslatorAttributeRequest::getOwnerId()const
 void ModifyIPv6TranslatorAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

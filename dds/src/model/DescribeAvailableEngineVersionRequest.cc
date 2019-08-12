@@ -33,7 +33,7 @@ long DescribeAvailableEngineVersionRequest::getResourceOwnerId()const
 void DescribeAvailableEngineVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long DescribeAvailableEngineVersionRequest::getOwnerId()const
 void DescribeAvailableEngineVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getAccessKeyId()const

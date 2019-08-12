@@ -55,7 +55,7 @@ int UpdateOssStockStatusRequest::getVideoFrameInterval()const
 void UpdateOssStockStatusRequest::setVideoFrameInterval(int videoFrameInterval)
 {
 	videoFrameInterval_ = videoFrameInterval;
-	setCoreParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
+	setCoreParameter("VideoFrameInterval", videoFrameInterval);
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxSize()const
@@ -66,7 +66,7 @@ int UpdateOssStockStatusRequest::getVideoMaxSize()const
 void UpdateOssStockStatusRequest::setVideoMaxSize(int videoMaxSize)
 {
 	videoMaxSize_ = videoMaxSize;
-	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
+	setCoreParameter("VideoMaxSize", videoMaxSize);
 }
 
 std::string UpdateOssStockStatusRequest::getStartDate()const
@@ -165,7 +165,7 @@ int UpdateOssStockStatusRequest::getVideoMaxFrames()const
 void UpdateOssStockStatusRequest::setVideoMaxFrames(int videoMaxFrames)
 {
 	videoMaxFrames_ = videoMaxFrames;
-	setCoreParameter("VideoMaxFrames", std::to_string(videoMaxFrames));
+	setCoreParameter("VideoMaxFrames", videoMaxFrames);
 }
 
 std::string UpdateOssStockStatusRequest::getOperation()const

@@ -33,7 +33,7 @@ int AddTrancodeSEIRequest::getDelay()const
 void AddTrancodeSEIRequest::setDelay(int delay)
 {
 	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
+	setCoreParameter("Delay", delay);
 }
 
 std::string AddTrancodeSEIRequest::getAppName()const
@@ -66,7 +66,7 @@ int AddTrancodeSEIRequest::getRepeat()const
 void AddTrancodeSEIRequest::setRepeat(int repeat)
 {
 	repeat_ = repeat;
-	setCoreParameter("Repeat", std::to_string(repeat));
+	setCoreParameter("Repeat", repeat);
 }
 
 std::string AddTrancodeSEIRequest::getDomainName()const
@@ -110,7 +110,7 @@ long AddTrancodeSEIRequest::getOwnerId()const
 void AddTrancodeSEIRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddTrancodeSEIRequest::getStreamName()const

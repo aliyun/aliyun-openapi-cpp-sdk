@@ -44,7 +44,7 @@ long MergeFacesRequest::getTargetFaceId()const
 void MergeFacesRequest::setTargetFaceId(long targetFaceId)
 {
 	targetFaceId_ = targetFaceId;
-	setCoreParameter("TargetFaceId", std::to_string(targetFaceId));
+	setCoreParameter("TargetFaceId", targetFaceId);
 }
 
 std::string MergeFacesRequest::getStoreName()const
@@ -67,6 +67,6 @@ void MergeFacesRequest::setFaceId(const std::vector<long>& faceId)
 {
 	faceId_ = faceId;
 	for(int i = 0; i!= faceId.size(); i++)
-		setCoreParameter("FaceId."+ std::to_string(i), std::to_string(faceId.at(i)));
+		setCoreParameter("FaceId."+ std::to_string(i), faceId.at(i));
 }
 

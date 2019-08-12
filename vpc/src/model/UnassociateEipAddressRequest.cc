@@ -44,7 +44,7 @@ long UnassociateEipAddressRequest::getResourceOwnerId()const
 void UnassociateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UnassociateEipAddressRequest::getInstanceId()const
@@ -110,7 +110,7 @@ bool UnassociateEipAddressRequest::getForce()const
 void UnassociateEipAddressRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 std::string UnassociateEipAddressRequest::getAllocationId()const
@@ -132,6 +132,6 @@ long UnassociateEipAddressRequest::getOwnerId()const
 void UnassociateEipAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -88,7 +88,7 @@ bool DescribeAlertHistoryListRequest::getAscending()const
 void DescribeAlertHistoryListRequest::setAscending(bool ascending)
 {
 	ascending_ = ascending;
-	setCoreParameter("Ascending", ascending ? "true" : "false");
+	setCoreParameter("Ascending", ascending);
 }
 
 std::string DescribeAlertHistoryListRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ bool DescribeAlertHistoryListRequest::getOnlyCount()const
 void DescribeAlertHistoryListRequest::setOnlyCount(bool onlyCount)
 {
 	onlyCount_ = onlyCount;
-	setCoreParameter("OnlyCount", onlyCount ? "true" : "false");
+	setCoreParameter("OnlyCount", onlyCount);
 }
 
 std::string DescribeAlertHistoryListRequest::get_Namespace()const
@@ -132,7 +132,7 @@ int DescribeAlertHistoryListRequest::getPageSize()const
 void DescribeAlertHistoryListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAlertHistoryListRequest::getState()const
@@ -154,7 +154,7 @@ int DescribeAlertHistoryListRequest::getPage()const
 void DescribeAlertHistoryListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string DescribeAlertHistoryListRequest::getMetricName()const

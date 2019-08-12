@@ -44,7 +44,7 @@ long UploadServerCertificateRequest::getResourceOwnerId()const
 void UploadServerCertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UploadServerCertificateRequest::getServerCertificate()const
@@ -110,7 +110,7 @@ long UploadServerCertificateRequest::getOwnerId()const
 void UploadServerCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UploadServerCertificateRequest::getTags()const

@@ -44,7 +44,7 @@ long ModifyReplicaDescriptionRequest::getResourceOwnerId()const
 void ModifyReplicaDescriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyReplicaDescriptionRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ long ModifyReplicaDescriptionRequest::getOwnerId()const
 void ModifyReplicaDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyReplicaDescriptionRequest::getAccessKeyId()const

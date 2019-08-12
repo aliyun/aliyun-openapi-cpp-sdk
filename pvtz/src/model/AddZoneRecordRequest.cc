@@ -88,7 +88,7 @@ int AddZoneRecordRequest::getPriority()const
 void AddZoneRecordRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 int AddZoneRecordRequest::getTtl()const
@@ -99,7 +99,7 @@ int AddZoneRecordRequest::getTtl()const
 void AddZoneRecordRequest::setTtl(int ttl)
 {
 	ttl_ = ttl;
-	setCoreParameter("Ttl", std::to_string(ttl));
+	setCoreParameter("Ttl", ttl);
 }
 
 std::string AddZoneRecordRequest::getValue()const

@@ -33,7 +33,7 @@ long DeleteClusterScriptRequest::getResourceOwnerId()const
 void DeleteClusterScriptRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteClusterScriptRequest::getRegionId()const

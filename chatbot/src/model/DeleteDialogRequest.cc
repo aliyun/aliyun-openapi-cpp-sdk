@@ -33,6 +33,6 @@ long DeleteDialogRequest::getDialogId()const
 void DeleteDialogRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setCoreParameter("DialogId", dialogId);
 }
 

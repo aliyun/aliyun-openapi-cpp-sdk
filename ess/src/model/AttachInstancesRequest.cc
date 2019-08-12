@@ -44,7 +44,7 @@ int AttachInstancesRequest::getLoadBalancerWeight6()const
 void AttachInstancesRequest::setLoadBalancerWeight6(int loadBalancerWeight6)
 {
 	loadBalancerWeight6_ = loadBalancerWeight6;
-	setCoreParameter("LoadBalancerWeight6", std::to_string(loadBalancerWeight6));
+	setCoreParameter("LoadBalancerWeight6", loadBalancerWeight6);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight11()const
@@ -55,7 +55,7 @@ int AttachInstancesRequest::getLoadBalancerWeight11()const
 void AttachInstancesRequest::setLoadBalancerWeight11(int loadBalancerWeight11)
 {
 	loadBalancerWeight11_ = loadBalancerWeight11;
-	setCoreParameter("LoadBalancerWeight11", std::to_string(loadBalancerWeight11));
+	setCoreParameter("LoadBalancerWeight11", loadBalancerWeight11);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight7()const
@@ -66,7 +66,7 @@ int AttachInstancesRequest::getLoadBalancerWeight7()const
 void AttachInstancesRequest::setLoadBalancerWeight7(int loadBalancerWeight7)
 {
 	loadBalancerWeight7_ = loadBalancerWeight7;
-	setCoreParameter("LoadBalancerWeight7", std::to_string(loadBalancerWeight7));
+	setCoreParameter("LoadBalancerWeight7", loadBalancerWeight7);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight12()const
@@ -77,7 +77,7 @@ int AttachInstancesRequest::getLoadBalancerWeight12()const
 void AttachInstancesRequest::setLoadBalancerWeight12(int loadBalancerWeight12)
 {
 	loadBalancerWeight12_ = loadBalancerWeight12;
-	setCoreParameter("LoadBalancerWeight12", std::to_string(loadBalancerWeight12));
+	setCoreParameter("LoadBalancerWeight12", loadBalancerWeight12);
 }
 
 long AttachInstancesRequest::getResourceOwnerId()const
@@ -88,7 +88,7 @@ long AttachInstancesRequest::getResourceOwnerId()const
 void AttachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AttachInstancesRequest::getInstanceId12()const
@@ -110,7 +110,7 @@ int AttachInstancesRequest::getLoadBalancerWeight8()const
 void AttachInstancesRequest::setLoadBalancerWeight8(int loadBalancerWeight8)
 {
 	loadBalancerWeight8_ = loadBalancerWeight8;
-	setCoreParameter("LoadBalancerWeight8", std::to_string(loadBalancerWeight8));
+	setCoreParameter("LoadBalancerWeight8", loadBalancerWeight8);
 }
 
 std::string AttachInstancesRequest::getInstanceId11()const
@@ -132,7 +132,7 @@ int AttachInstancesRequest::getLoadBalancerWeight9()const
 void AttachInstancesRequest::setLoadBalancerWeight9(int loadBalancerWeight9)
 {
 	loadBalancerWeight9_ = loadBalancerWeight9;
-	setCoreParameter("LoadBalancerWeight9", std::to_string(loadBalancerWeight9));
+	setCoreParameter("LoadBalancerWeight9", loadBalancerWeight9);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight10()const
@@ -143,7 +143,7 @@ int AttachInstancesRequest::getLoadBalancerWeight10()const
 void AttachInstancesRequest::setLoadBalancerWeight10(int loadBalancerWeight10)
 {
 	loadBalancerWeight10_ = loadBalancerWeight10;
-	setCoreParameter("LoadBalancerWeight10", std::to_string(loadBalancerWeight10));
+	setCoreParameter("LoadBalancerWeight10", loadBalancerWeight10);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight2()const
@@ -154,7 +154,7 @@ int AttachInstancesRequest::getLoadBalancerWeight2()const
 void AttachInstancesRequest::setLoadBalancerWeight2(int loadBalancerWeight2)
 {
 	loadBalancerWeight2_ = loadBalancerWeight2;
-	setCoreParameter("LoadBalancerWeight2", std::to_string(loadBalancerWeight2));
+	setCoreParameter("LoadBalancerWeight2", loadBalancerWeight2);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight15()const
@@ -165,7 +165,7 @@ int AttachInstancesRequest::getLoadBalancerWeight15()const
 void AttachInstancesRequest::setLoadBalancerWeight15(int loadBalancerWeight15)
 {
 	loadBalancerWeight15_ = loadBalancerWeight15;
-	setCoreParameter("LoadBalancerWeight15", std::to_string(loadBalancerWeight15));
+	setCoreParameter("LoadBalancerWeight15", loadBalancerWeight15);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight3()const
@@ -176,7 +176,7 @@ int AttachInstancesRequest::getLoadBalancerWeight3()const
 void AttachInstancesRequest::setLoadBalancerWeight3(int loadBalancerWeight3)
 {
 	loadBalancerWeight3_ = loadBalancerWeight3;
-	setCoreParameter("LoadBalancerWeight3", std::to_string(loadBalancerWeight3));
+	setCoreParameter("LoadBalancerWeight3", loadBalancerWeight3);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight16()const
@@ -187,7 +187,7 @@ int AttachInstancesRequest::getLoadBalancerWeight16()const
 void AttachInstancesRequest::setLoadBalancerWeight16(int loadBalancerWeight16)
 {
 	loadBalancerWeight16_ = loadBalancerWeight16;
-	setCoreParameter("LoadBalancerWeight16", std::to_string(loadBalancerWeight16));
+	setCoreParameter("LoadBalancerWeight16", loadBalancerWeight16);
 }
 
 std::string AttachInstancesRequest::getScalingGroupId()const
@@ -209,7 +209,7 @@ int AttachInstancesRequest::getLoadBalancerWeight4()const
 void AttachInstancesRequest::setLoadBalancerWeight4(int loadBalancerWeight4)
 {
 	loadBalancerWeight4_ = loadBalancerWeight4;
-	setCoreParameter("LoadBalancerWeight4", std::to_string(loadBalancerWeight4));
+	setCoreParameter("LoadBalancerWeight4", loadBalancerWeight4);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight13()const
@@ -220,7 +220,7 @@ int AttachInstancesRequest::getLoadBalancerWeight13()const
 void AttachInstancesRequest::setLoadBalancerWeight13(int loadBalancerWeight13)
 {
 	loadBalancerWeight13_ = loadBalancerWeight13;
-	setCoreParameter("LoadBalancerWeight13", std::to_string(loadBalancerWeight13));
+	setCoreParameter("LoadBalancerWeight13", loadBalancerWeight13);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight5()const
@@ -231,7 +231,7 @@ int AttachInstancesRequest::getLoadBalancerWeight5()const
 void AttachInstancesRequest::setLoadBalancerWeight5(int loadBalancerWeight5)
 {
 	loadBalancerWeight5_ = loadBalancerWeight5;
-	setCoreParameter("LoadBalancerWeight5", std::to_string(loadBalancerWeight5));
+	setCoreParameter("LoadBalancerWeight5", loadBalancerWeight5);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight14()const
@@ -242,7 +242,7 @@ int AttachInstancesRequest::getLoadBalancerWeight14()const
 void AttachInstancesRequest::setLoadBalancerWeight14(int loadBalancerWeight14)
 {
 	loadBalancerWeight14_ = loadBalancerWeight14;
-	setCoreParameter("LoadBalancerWeight14", std::to_string(loadBalancerWeight14));
+	setCoreParameter("LoadBalancerWeight14", loadBalancerWeight14);
 }
 
 int AttachInstancesRequest::getLoadBalancerWeight1()const
@@ -253,7 +253,7 @@ int AttachInstancesRequest::getLoadBalancerWeight1()const
 void AttachInstancesRequest::setLoadBalancerWeight1(int loadBalancerWeight1)
 {
 	loadBalancerWeight1_ = loadBalancerWeight1;
-	setCoreParameter("LoadBalancerWeight1", std::to_string(loadBalancerWeight1));
+	setCoreParameter("LoadBalancerWeight1", loadBalancerWeight1);
 }
 
 std::string AttachInstancesRequest::getAccessKeyId()const
@@ -297,7 +297,7 @@ int AttachInstancesRequest::getLoadBalancerWeight20()const
 void AttachInstancesRequest::setLoadBalancerWeight20(int loadBalancerWeight20)
 {
 	loadBalancerWeight20_ = loadBalancerWeight20;
-	setCoreParameter("LoadBalancerWeight20", std::to_string(loadBalancerWeight20));
+	setCoreParameter("LoadBalancerWeight20", loadBalancerWeight20);
 }
 
 std::string AttachInstancesRequest::getInstanceId3()const
@@ -418,7 +418,7 @@ long AttachInstancesRequest::getOwnerId()const
 void AttachInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AttachInstancesRequest::getInstanceId18()const
@@ -440,7 +440,7 @@ int AttachInstancesRequest::getLoadBalancerWeight19()const
 void AttachInstancesRequest::setLoadBalancerWeight19(int loadBalancerWeight19)
 {
 	loadBalancerWeight19_ = loadBalancerWeight19;
-	setCoreParameter("LoadBalancerWeight19", std::to_string(loadBalancerWeight19));
+	setCoreParameter("LoadBalancerWeight19", loadBalancerWeight19);
 }
 
 std::string AttachInstancesRequest::getInstanceId17()const
@@ -462,7 +462,7 @@ int AttachInstancesRequest::getLoadBalancerWeight17()const
 void AttachInstancesRequest::setLoadBalancerWeight17(int loadBalancerWeight17)
 {
 	loadBalancerWeight17_ = loadBalancerWeight17;
-	setCoreParameter("LoadBalancerWeight17", std::to_string(loadBalancerWeight17));
+	setCoreParameter("LoadBalancerWeight17", loadBalancerWeight17);
 }
 
 std::string AttachInstancesRequest::getInstanceId19()const
@@ -484,7 +484,7 @@ int AttachInstancesRequest::getLoadBalancerWeight18()const
 void AttachInstancesRequest::setLoadBalancerWeight18(int loadBalancerWeight18)
 {
 	loadBalancerWeight18_ = loadBalancerWeight18;
-	setCoreParameter("LoadBalancerWeight18", std::to_string(loadBalancerWeight18));
+	setCoreParameter("LoadBalancerWeight18", loadBalancerWeight18);
 }
 
 std::string AttachInstancesRequest::getInstanceId14()const

@@ -44,7 +44,7 @@ long CreateDdrInstanceRequest::getResourceOwnerId()const
 void CreateDdrInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateDdrInstanceRequest::getDBInstanceStorage()const
@@ -55,7 +55,7 @@ int CreateDdrInstanceRequest::getDBInstanceStorage()const
 void CreateDdrInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string CreateDdrInstanceRequest::getSystemDBCharset()const
@@ -297,7 +297,7 @@ long CreateDdrInstanceRequest::getOwnerId()const
 void CreateDdrInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDdrInstanceRequest::getUsedTime()const

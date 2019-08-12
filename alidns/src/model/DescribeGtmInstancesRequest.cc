@@ -55,7 +55,7 @@ int DescribeGtmInstancesRequest::getPageSize()const
 void DescribeGtmInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGtmInstancesRequest::getLang()const
@@ -88,6 +88,6 @@ int DescribeGtmInstancesRequest::getPageNumber()const
 void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

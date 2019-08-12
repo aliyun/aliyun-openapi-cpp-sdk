@@ -44,7 +44,7 @@ int QueryDeviceGroupByTagsRequest::getPageSize()const
 void QueryDeviceGroupByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryDeviceGroupByTagsRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int QueryDeviceGroupByTagsRequest::getCurrentPage()const
 void QueryDeviceGroupByTagsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::vector<QueryDeviceGroupByTagsRequest::Tag> QueryDeviceGroupByTagsRequest::getTag()const
@@ -70,8 +70,8 @@ void QueryDeviceGroupByTagsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
+		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
 	}
 }
 

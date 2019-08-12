@@ -33,7 +33,7 @@ int CreateSuspEventNoteRequest::getEventId()const
 void CreateSuspEventNoteRequest::setEventId(int eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", eventId);
 }
 
 std::string CreateSuspEventNoteRequest::getNote()const

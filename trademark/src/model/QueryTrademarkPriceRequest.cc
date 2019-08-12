@@ -66,7 +66,7 @@ int QueryTrademarkPriceRequest::getType()const
 void QueryTrademarkPriceRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 long QueryTrademarkPriceRequest::getUserId()const
@@ -77,6 +77,6 @@ long QueryTrademarkPriceRequest::getUserId()const
 void QueryTrademarkPriceRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 

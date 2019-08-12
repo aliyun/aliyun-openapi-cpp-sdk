@@ -88,7 +88,7 @@ int ListJobStatusRequest::getPageSize()const
 void ListJobStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListJobStatusRequest::getEndTime()const
@@ -99,7 +99,7 @@ long ListJobStatusRequest::getEndTime()const
 void ListJobStatusRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long ListJobStatusRequest::getStartTime()const
@@ -110,7 +110,7 @@ long ListJobStatusRequest::getStartTime()const
 void ListJobStatusRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string ListJobStatusRequest::getScenarioId()const
@@ -132,6 +132,6 @@ int ListJobStatusRequest::getPageNumber()const
 void ListJobStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

@@ -44,7 +44,7 @@ long MigrateAvailableZoneRequest::getResourceOwnerId()const
 void MigrateAvailableZoneRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MigrateAvailableZoneRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long MigrateAvailableZoneRequest::getOwnerId()const
 void MigrateAvailableZoneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string MigrateAvailableZoneRequest::getAccessKeyId()const

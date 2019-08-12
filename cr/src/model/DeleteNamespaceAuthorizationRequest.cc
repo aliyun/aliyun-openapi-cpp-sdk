@@ -44,7 +44,7 @@ long DeleteNamespaceAuthorizationRequest::getAuthorizeId()const
 void DeleteNamespaceAuthorizationRequest::setAuthorizeId(long authorizeId)
 {
 	authorizeId_ = authorizeId;
-	setCoreParameter("AuthorizeId", std::to_string(authorizeId));
+	setCoreParameter("AuthorizeId", authorizeId);
 }
 
 std::string DeleteNamespaceAuthorizationRequest::get_Namespace()const

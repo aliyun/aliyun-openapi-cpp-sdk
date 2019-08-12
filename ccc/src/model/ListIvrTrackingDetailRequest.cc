@@ -77,7 +77,7 @@ int ListIvrTrackingDetailRequest::getPageSize()const
 void ListIvrTrackingDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListIvrTrackingDetailRequest::getStartTime()const
@@ -88,7 +88,7 @@ long ListIvrTrackingDetailRequest::getStartTime()const
 void ListIvrTrackingDetailRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListIvrTrackingDetailRequest::getStopTime()const
@@ -99,7 +99,7 @@ long ListIvrTrackingDetailRequest::getStopTime()const
 void ListIvrTrackingDetailRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 int ListIvrTrackingDetailRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListIvrTrackingDetailRequest::getPageNumber()const
 void ListIvrTrackingDetailRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListIvrTrackingDetailRequest::getAccessKeyId()const

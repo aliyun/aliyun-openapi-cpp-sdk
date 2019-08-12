@@ -33,7 +33,7 @@ long RecoveryDBInstanceRequest::getResourceOwnerId()const
 void RecoveryDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RecoveryDBInstanceRequest::getRestoreTime()const
@@ -66,7 +66,7 @@ int RecoveryDBInstanceRequest::getDBInstanceStorage()const
 void RecoveryDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string RecoveryDBInstanceRequest::getResourceOwnerAccount()const
@@ -121,7 +121,7 @@ long RecoveryDBInstanceRequest::getOwnerId()const
 void RecoveryDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RecoveryDBInstanceRequest::getUsedTime()const

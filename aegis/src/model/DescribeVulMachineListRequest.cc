@@ -44,7 +44,7 @@ long DescribeVulMachineListRequest::getEndTs()const
 void DescribeVulMachineListRequest::setEndTs(long endTs)
 {
 	endTs_ = endTs;
-	setCoreParameter("EndTs", std::to_string(endTs));
+	setCoreParameter("EndTs", endTs);
 }
 
 std::string DescribeVulMachineListRequest::getFrom()const
@@ -66,7 +66,7 @@ long DescribeVulMachineListRequest::getStartTs()const
 void DescribeVulMachineListRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
-	setCoreParameter("StartTs", std::to_string(startTs));
+	setCoreParameter("StartTs", startTs);
 }
 
 std::string DescribeVulMachineListRequest::getIncludeApp()const

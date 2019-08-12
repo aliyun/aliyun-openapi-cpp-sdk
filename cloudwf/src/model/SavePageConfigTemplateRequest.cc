@@ -33,7 +33,7 @@ int SavePageConfigTemplateRequest::getTempType()const
 void SavePageConfigTemplateRequest::setTempType(int tempType)
 {
 	tempType_ = tempType;
-	setCoreParameter("TempType", std::to_string(tempType));
+	setCoreParameter("TempType", tempType);
 }
 
 std::string SavePageConfigTemplateRequest::getTempDesc()const
@@ -66,7 +66,7 @@ long SavePageConfigTemplateRequest::getId()const
 void SavePageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string SavePageConfigTemplateRequest::getTempPermission()const

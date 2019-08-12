@@ -66,7 +66,7 @@ long StopLiveIndexRequest::getOwnerId()const
 void StopLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StopLiveIndexRequest::getStreamName()const

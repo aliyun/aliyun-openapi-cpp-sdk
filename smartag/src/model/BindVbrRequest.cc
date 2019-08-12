@@ -33,7 +33,7 @@ long BindVbrRequest::getResourceOwnerId()const
 void BindVbrRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string BindVbrRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long BindVbrRequest::getOwnerId()const
 void BindVbrRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string BindVbrRequest::getVbrId()const

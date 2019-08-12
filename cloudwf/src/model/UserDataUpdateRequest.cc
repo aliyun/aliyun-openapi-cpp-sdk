@@ -33,7 +33,7 @@ long UserDataUpdateRequest::getIid()const
 void UserDataUpdateRequest::setIid(long iid)
 {
 	iid_ = iid;
-	setCoreParameter("Iid", std::to_string(iid));
+	setCoreParameter("Iid", iid);
 }
 
 std::string UserDataUpdateRequest::getUploadFile()const
@@ -66,7 +66,7 @@ long UserDataUpdateRequest::getBid()const
 void UserDataUpdateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string UserDataUpdateRequest::getType()const

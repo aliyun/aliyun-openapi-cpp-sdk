@@ -33,7 +33,7 @@ int DescribeLogItemsRequest::getLoginOffset()const
 void DescribeLogItemsRequest::setLoginOffset(int loginOffset)
 {
 	loginOffset_ = loginOffset;
-	setCoreParameter("LoginOffset", std::to_string(loginOffset));
+	setCoreParameter("LoginOffset", loginOffset);
 }
 
 int DescribeLogItemsRequest::getProcessSnapshotOffset()const
@@ -44,7 +44,7 @@ int DescribeLogItemsRequest::getProcessSnapshotOffset()const
 void DescribeLogItemsRequest::setProcessSnapshotOffset(int processSnapshotOffset)
 {
 	processSnapshotOffset_ = processSnapshotOffset;
-	setCoreParameter("ProcessSnapshotOffset", std::to_string(processSnapshotOffset));
+	setCoreParameter("ProcessSnapshotOffset", processSnapshotOffset);
 }
 
 int DescribeLogItemsRequest::getPortSnapshotOffset()const
@@ -55,7 +55,7 @@ int DescribeLogItemsRequest::getPortSnapshotOffset()const
 void DescribeLogItemsRequest::setPortSnapshotOffset(int portSnapshotOffset)
 {
 	portSnapshotOffset_ = portSnapshotOffset;
-	setCoreParameter("PortSnapshotOffset", std::to_string(portSnapshotOffset));
+	setCoreParameter("PortSnapshotOffset", portSnapshotOffset);
 }
 
 std::string DescribeLogItemsRequest::getQuery()const
@@ -99,7 +99,7 @@ int DescribeLogItemsRequest::getNetworkOffset()const
 void DescribeLogItemsRequest::setNetworkOffset(int networkOffset)
 {
 	networkOffset_ = networkOffset;
-	setCoreParameter("NetworkOffset", std::to_string(networkOffset));
+	setCoreParameter("NetworkOffset", networkOffset);
 }
 
 std::string DescribeLogItemsRequest::getStartTime()const
@@ -121,7 +121,7 @@ int DescribeLogItemsRequest::getAccountSnapshotOffset()const
 void DescribeLogItemsRequest::setAccountSnapshotOffset(int accountSnapshotOffset)
 {
 	accountSnapshotOffset_ = accountSnapshotOffset;
-	setCoreParameter("AccountSnapshotOffset", std::to_string(accountSnapshotOffset));
+	setCoreParameter("AccountSnapshotOffset", accountSnapshotOffset);
 }
 
 int DescribeLogItemsRequest::getProcessOffset()const
@@ -132,7 +132,7 @@ int DescribeLogItemsRequest::getProcessOffset()const
 void DescribeLogItemsRequest::setProcessOffset(int processOffset)
 {
 	processOffset_ = processOffset;
-	setCoreParameter("ProcessOffset", std::to_string(processOffset));
+	setCoreParameter("ProcessOffset", processOffset);
 }
 
 std::string DescribeLogItemsRequest::getSourceIp()const
@@ -154,7 +154,7 @@ int DescribeLogItemsRequest::getCrackOffset()const
 void DescribeLogItemsRequest::setCrackOffset(int crackOffset)
 {
 	crackOffset_ = crackOffset;
-	setCoreParameter("CrackOffset", std::to_string(crackOffset));
+	setCoreParameter("CrackOffset", crackOffset);
 }
 
 std::string DescribeLogItemsRequest::getPageSize()const

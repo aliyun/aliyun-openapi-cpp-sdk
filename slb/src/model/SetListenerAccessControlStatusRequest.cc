@@ -44,7 +44,7 @@ long SetListenerAccessControlStatusRequest::getResourceOwnerId()const
 void SetListenerAccessControlStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int SetListenerAccessControlStatusRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int SetListenerAccessControlStatusRequest::getListenerPort()const
 void SetListenerAccessControlStatusRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string SetListenerAccessControlStatusRequest::getLoadBalancerId()const
@@ -121,7 +121,7 @@ long SetListenerAccessControlStatusRequest::getOwnerId()const
 void SetListenerAccessControlStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetListenerAccessControlStatusRequest::getListenerProtocol()const

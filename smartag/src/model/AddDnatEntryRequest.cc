@@ -33,7 +33,7 @@ long AddDnatEntryRequest::getResourceOwnerId()const
 void AddDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddDnatEntryRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long AddDnatEntryRequest::getOwnerId()const
 void AddDnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddDnatEntryRequest::getType()const

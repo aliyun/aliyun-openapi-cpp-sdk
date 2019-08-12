@@ -33,7 +33,7 @@ long SwitchCloudBoxHaStateRequest::getResourceOwnerId()const
 void SwitchCloudBoxHaStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SwitchCloudBoxHaStateRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long SwitchCloudBoxHaStateRequest::getOwnerId()const
 void SwitchCloudBoxHaStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

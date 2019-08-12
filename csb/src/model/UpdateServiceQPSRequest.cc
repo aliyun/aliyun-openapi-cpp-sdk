@@ -55,6 +55,6 @@ long UpdateServiceQPSRequest::getServiceId()const
 void UpdateServiceQPSRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 

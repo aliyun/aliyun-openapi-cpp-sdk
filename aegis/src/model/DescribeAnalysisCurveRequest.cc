@@ -44,7 +44,7 @@ long DescribeAnalysisCurveRequest::getStartTimeStamp()const
 void DescribeAnalysisCurveRequest::setStartTimeStamp(long startTimeStamp)
 {
 	startTimeStamp_ = startTimeStamp;
-	setCoreParameter("StartTimeStamp", std::to_string(startTimeStamp));
+	setCoreParameter("StartTimeStamp", startTimeStamp);
 }
 
 long DescribeAnalysisCurveRequest::getEndTimeStamp()const
@@ -55,6 +55,6 @@ long DescribeAnalysisCurveRequest::getEndTimeStamp()const
 void DescribeAnalysisCurveRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
-	setCoreParameter("EndTimeStamp", std::to_string(endTimeStamp));
+	setCoreParameter("EndTimeStamp", endTimeStamp);
 }
 

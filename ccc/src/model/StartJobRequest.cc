@@ -45,7 +45,7 @@ void StartJobRequest::setCallingNumber(const std::vector<std::string>& callingNu
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), std::to_string(callingNumber.at(i)));
 }
 
 std::string StartJobRequest::getInstanceId()const
@@ -78,7 +78,7 @@ bool StartJobRequest::getSelfHostedCallCenter()const
 void StartJobRequest::setSelfHostedCallCenter(bool selfHostedCallCenter)
 {
 	selfHostedCallCenter_ = selfHostedCallCenter;
-	setCoreParameter("SelfHostedCallCenter", selfHostedCallCenter ? "true" : "false");
+	setCoreParameter("SelfHostedCallCenter", selfHostedCallCenter);
 }
 
 std::string StartJobRequest::getScenarioId()const

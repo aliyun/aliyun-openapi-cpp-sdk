@@ -33,6 +33,6 @@ long DeleteMaterialRequest::getId()const
 void DeleteMaterialRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

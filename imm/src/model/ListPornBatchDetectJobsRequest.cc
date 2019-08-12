@@ -33,7 +33,7 @@ int ListPornBatchDetectJobsRequest::getMaxKeys()const
 void ListPornBatchDetectJobsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListPornBatchDetectJobsRequest::getRegionId()const

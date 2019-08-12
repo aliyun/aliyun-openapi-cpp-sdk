@@ -44,7 +44,7 @@ long CreateAccessWhiteListGroupRequest::getResourceOwnerId()const
 void CreateAccessWhiteListGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSrcIP()const
@@ -77,7 +77,7 @@ int CreateAccessWhiteListGroupRequest::getDstPort()const
 void CreateAccessWhiteListGroupRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setCoreParameter("DstPort", dstPort);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
@@ -99,7 +99,7 @@ int CreateAccessWhiteListGroupRequest::getLiveTime()const
 void CreateAccessWhiteListGroupRequest::setLiveTime(int liveTime)
 {
 	liveTime_ = liveTime;
-	setCoreParameter("LiveTime", std::to_string(liveTime));
+	setCoreParameter("LiveTime", liveTime);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getProductName()const
@@ -121,7 +121,7 @@ int CreateAccessWhiteListGroupRequest::getWhiteListType()const
 void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const

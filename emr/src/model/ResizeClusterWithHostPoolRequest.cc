@@ -33,7 +33,7 @@ long ResizeClusterWithHostPoolRequest::getResourceOwnerId()const
 void ResizeClusterWithHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ResizeClusterWithHostPoolRequest::getRegionId()const
@@ -59,9 +59,9 @@ void ResizeClusterWithHostPoolRequest::setHostGroup(const std::vector<HostGroup>
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", obj.groupType);
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".GroupName", obj.groupName);
+		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
+		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
+		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
 	}
 }
 
@@ -77,14 +77,14 @@ void ResizeClusterWithHostPoolRequest::setHostInfo(const std::vector<HostInfo>& 
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		setCoreParameter(str + ".Role", obj.role);
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".PrivateIp", obj.privateIp);
-		setCoreParameter(str + ".ServiceComponentInfo", std::to_string(obj.serviceComponentInfo));
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
+		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
+		setCoreParameter(str + ".Role", std::to_string(obj.role));
+		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
+		setCoreParameter(str + ".PrivateIp", std::to_string(obj.privateIp));
+		setCoreParameter(str + ".ServiceComponentInfo", obj.serviceComponentInfo);
+		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
+		setCoreParameter(str + ".HostGroupType", std::to_string(obj.hostGroupType));
 	}
 }
 

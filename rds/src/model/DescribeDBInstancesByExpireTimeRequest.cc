@@ -33,7 +33,7 @@ long DescribeDBInstancesByExpireTimeRequest::getResourceOwnerId()const
 void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
 void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
 void DescribeDBInstancesByExpireTimeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
 void DescribeDBInstancesByExpireTimeRequest::setExpired(bool expired)
 {
 	expired_ = expired;
-	setCoreParameter("Expired", expired ? "true" : "false");
+	setCoreParameter("Expired", expired);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const
@@ -132,7 +132,7 @@ int DescribeDBInstancesByExpireTimeRequest::getPageSize()const
 void DescribeDBInstancesByExpireTimeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod()const
@@ -143,7 +143,7 @@ int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod()const
 void DescribeDBInstancesByExpireTimeRequest::setExpirePeriod(int expirePeriod)
 {
 	expirePeriod_ = expirePeriod;
-	setCoreParameter("ExpirePeriod", std::to_string(expirePeriod));
+	setCoreParameter("ExpirePeriod", expirePeriod);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getProxyId()const

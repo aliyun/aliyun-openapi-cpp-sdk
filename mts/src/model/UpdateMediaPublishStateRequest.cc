@@ -33,7 +33,7 @@ long UpdateMediaPublishStateRequest::getResourceOwnerId()const
 void UpdateMediaPublishStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateMediaPublishStateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ bool UpdateMediaPublishStateRequest::getPublish()const
 void UpdateMediaPublishStateRequest::setPublish(bool publish)
 {
 	publish_ = publish;
-	setCoreParameter("Publish", publish ? "true" : "false");
+	setCoreParameter("Publish", publish);
 }
 
 std::string UpdateMediaPublishStateRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ long UpdateMediaPublishStateRequest::getOwnerId()const
 void UpdateMediaPublishStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateMediaPublishStateRequest::getMediaId()const

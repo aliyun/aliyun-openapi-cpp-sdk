@@ -44,7 +44,7 @@ long UnicomOrderConfirmRequest::getResourceOwnerId()const
 void UnicomOrderConfirmRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<UnicomOrderConfirmRequest::OrderItem> UnicomOrderConfirmRequest::getOrderItem()const
@@ -59,14 +59,14 @@ void UnicomOrderConfirmRequest::setOrderItem(const std::vector<OrderItem>& order
 	for(int i = 0; i!= orderItem.size(); i++)	{
 		auto obj = orderItem.at(i);
 		std::string str ="OrderItem."+ std::to_string(i);
-		setCoreParameter(str + ".ScItemName", obj.scItemName);
-		setCoreParameter(str + ".ItemAmount", obj.itemAmount);
-		for(int i = 0; i!= obj.snList.size(); i++)				setCoreParameter(str + ".SnList."+ std::to_string(i), obj.snList.at(i));
-		setCoreParameter(str + ".OrderItemId", obj.orderItemId);
-		setCoreParameter(str + ".ScItemCode", obj.scItemCode);
-		setCoreParameter(str + ".ItemQuantity", std::to_string(obj.itemQuantity));
-		setCoreParameter(str + ".TradeId", obj.tradeId);
-		setCoreParameter(str + ".TradeItemId", obj.tradeItemId);
+		setCoreParameter(str + ".ScItemName", std::to_string(obj.scItemName));
+		setCoreParameter(str + ".ItemAmount", std::to_string(obj.itemAmount));
+		for(int i = 0; i!= obj.snList.size(); i++)				setCoreParameter(str + ".SnList."+ std::to_string(i), std::to_string(obj.snList.at(i)));
+		setCoreParameter(str + ".OrderItemId", std::to_string(obj.orderItemId));
+		setCoreParameter(str + ".ScItemCode", std::to_string(obj.scItemCode));
+		setCoreParameter(str + ".ItemQuantity", obj.itemQuantity);
+		setCoreParameter(str + ".TradeId", std::to_string(obj.tradeId));
+		setCoreParameter(str + ".TradeItemId", std::to_string(obj.tradeItemId));
 	}
 }
 
@@ -122,7 +122,7 @@ long UnicomOrderConfirmRequest::getOrderPostFee()const
 void UnicomOrderConfirmRequest::setOrderPostFee(long orderPostFee)
 {
 	orderPostFee_ = orderPostFee;
-	setCoreParameter("OrderPostFee", std::to_string(orderPostFee));
+	setCoreParameter("OrderPostFee", orderPostFee);
 }
 
 long UnicomOrderConfirmRequest::getOwnerId()const
@@ -133,7 +133,7 @@ long UnicomOrderConfirmRequest::getOwnerId()const
 void UnicomOrderConfirmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UnicomOrderConfirmRequest::getTmsOrderCode()const

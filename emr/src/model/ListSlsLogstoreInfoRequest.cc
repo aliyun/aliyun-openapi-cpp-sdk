@@ -33,7 +33,7 @@ long ListSlsLogstoreInfoRequest::getResourceOwnerId()const
 void ListSlsLogstoreInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListSlsLogstoreInfoRequest::getRegionId()const

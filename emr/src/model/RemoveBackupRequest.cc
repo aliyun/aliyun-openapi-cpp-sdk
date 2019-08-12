@@ -44,7 +44,7 @@ long RemoveBackupRequest::getResourceOwnerId()const
 void RemoveBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long RemoveBackupRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long RemoveBackupRequest::getCallerParentId()const
 void RemoveBackupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::vector<std::string> RemoveBackupRequest::getBackupId()const
@@ -67,7 +67,7 @@ void RemoveBackupRequest::setBackupId(const std::vector<std::string>& backupId)
 {
 	backupId_ = backupId;
 	for(int i = 0; i!= backupId.size(); i++)
-		setCoreParameter("BackupId."+ std::to_string(i), backupId.at(i));
+		setCoreParameter("BackupId."+ std::to_string(i), std::to_string(backupId.at(i)));
 }
 
 bool RemoveBackupRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool RemoveBackupRequest::getProxy_original_security_transport()const
 void RemoveBackupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RemoveBackupRequest::getBackupPlanId()const
@@ -122,7 +122,7 @@ bool RemoveBackupRequest::getAk_mfa_present()const
 void RemoveBackupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RemoveBackupRequest::getProxy_trust_transport_info()const
@@ -133,7 +133,7 @@ bool RemoveBackupRequest::getProxy_trust_transport_info()const
 void RemoveBackupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string RemoveBackupRequest::getCallerType()const
@@ -166,7 +166,7 @@ bool RemoveBackupRequest::getSecurity_transport()const
 void RemoveBackupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string RemoveBackupRequest::getSecurityToken()const
@@ -210,6 +210,6 @@ long RemoveBackupRequest::getCallerUid()const
 void RemoveBackupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

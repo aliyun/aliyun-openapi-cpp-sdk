@@ -44,7 +44,7 @@ int SaveApgroupConfigRequest::getLogLevel()const
 void SaveApgroupConfigRequest::setLogLevel(int logLevel)
 {
 	logLevel_ = logLevel;
-	setCoreParameter("LogLevel", std::to_string(logLevel));
+	setCoreParameter("LogLevel", logLevel);
 }
 
 std::string SaveApgroupConfigRequest::getName()const
@@ -66,7 +66,7 @@ int SaveApgroupConfigRequest::getEchoInt()const
 void SaveApgroupConfigRequest::setEchoInt(int echoInt)
 {
 	echoInt_ = echoInt;
-	setCoreParameter("EchoInt", std::to_string(echoInt));
+	setCoreParameter("EchoInt", echoInt);
 }
 
 int SaveApgroupConfigRequest::getScan()const
@@ -77,7 +77,7 @@ int SaveApgroupConfigRequest::getScan()const
 void SaveApgroupConfigRequest::setScan(int scan)
 {
 	scan_ = scan;
-	setCoreParameter("Scan", std::to_string(scan));
+	setCoreParameter("Scan", scan);
 }
 
 std::string SaveApgroupConfigRequest::getDescription()const
@@ -99,7 +99,7 @@ long SaveApgroupConfigRequest::getId()const
 void SaveApgroupConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string SaveApgroupConfigRequest::getDai()const

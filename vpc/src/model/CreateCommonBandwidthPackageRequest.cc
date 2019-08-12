@@ -33,7 +33,7 @@ long CreateCommonBandwidthPackageRequest::getResourceOwnerId()const
 void CreateCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int CreateCommonBandwidthPackageRequest::getBandwidth()const
 void CreateCommonBandwidthPackageRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long CreateCommonBandwidthPackageRequest::getOwnerId()const
 void CreateCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getResourceGroupId()const
@@ -176,6 +176,6 @@ int CreateCommonBandwidthPackageRequest::getRatio()const
 void CreateCommonBandwidthPackageRequest::setRatio(int ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", std::to_string(ratio));
+	setCoreParameter("Ratio", ratio);
 }
 

@@ -66,6 +66,6 @@ long AreaCreateRequest::getSid()const
 void AreaCreateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

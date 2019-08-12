@@ -44,7 +44,7 @@ long ModifyDBInstanceConnectionModeRequest::getResourceOwnerId()const
 void ModifyDBInstanceConnectionModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ModifyDBInstanceConnectionModeRequest::getOwnerId()const
 void ModifyDBInstanceConnectionModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getAccessKeyId()const

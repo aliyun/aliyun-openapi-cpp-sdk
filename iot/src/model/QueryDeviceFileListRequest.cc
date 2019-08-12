@@ -55,7 +55,7 @@ int QueryDeviceFileListRequest::getPageSize()const
 void QueryDeviceFileListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryDeviceFileListRequest::getDeviceName()const
@@ -77,7 +77,7 @@ int QueryDeviceFileListRequest::getCurrentPage()const
 void QueryDeviceFileListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryDeviceFileListRequest::getProductKey()const

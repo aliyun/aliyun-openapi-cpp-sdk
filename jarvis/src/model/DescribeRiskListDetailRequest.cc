@@ -55,7 +55,7 @@ int DescribeRiskListDetailRequest::getPageSize()const
 void DescribeRiskListDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRiskListDetailRequest::getQueryProduct()const
@@ -77,7 +77,7 @@ int DescribeRiskListDetailRequest::getCurrentPage()const
 void DescribeRiskListDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeRiskListDetailRequest::getRiskDescribe()const
@@ -110,7 +110,7 @@ long DescribeRiskListDetailRequest::getSrcUid()const
 void DescribeRiskListDetailRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", srcUid);
 }
 
 std::string DescribeRiskListDetailRequest::getSourceCode()const

@@ -44,7 +44,7 @@ int DescribeTopRiskyAssetsRequest::getPageSize()const
 void DescribeTopRiskyAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeTopRiskyAssetsRequest::getFrom()const

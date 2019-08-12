@@ -44,6 +44,6 @@ long ShopInfoRequest::getSid()const
 void ShopInfoRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

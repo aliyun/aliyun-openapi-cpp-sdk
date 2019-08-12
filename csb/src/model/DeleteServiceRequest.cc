@@ -55,6 +55,6 @@ long DeleteServiceRequest::getServiceId()const
 void DeleteServiceRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 

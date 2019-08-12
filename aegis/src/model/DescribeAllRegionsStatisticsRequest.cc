@@ -55,7 +55,7 @@ int DescribeAllRegionsStatisticsRequest::getRuleType()const
 void DescribeAllRegionsStatisticsRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", std::to_string(ruleType));
+	setCoreParameter("RuleType", ruleType);
 }
 
 long DescribeAllRegionsStatisticsRequest::getGroupId()const
@@ -66,7 +66,7 @@ long DescribeAllRegionsStatisticsRequest::getGroupId()const
 void DescribeAllRegionsStatisticsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getEndTime()const
@@ -110,7 +110,7 @@ int DescribeAllRegionsStatisticsRequest::getCurrentPage()const
 void DescribeAllRegionsStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getStartTime()const
@@ -176,7 +176,7 @@ long DescribeAllRegionsStatisticsRequest::getWebGroupId()const
 void DescribeAllRegionsStatisticsRequest::setWebGroupId(long webGroupId)
 {
 	webGroupId_ = webGroupId;
-	setCoreParameter("WebGroupId", std::to_string(webGroupId));
+	setCoreParameter("WebGroupId", webGroupId);
 }
 
 int DescribeAllRegionsStatisticsRequest::getPageSize()const
@@ -187,7 +187,7 @@ int DescribeAllRegionsStatisticsRequest::getPageSize()const
 void DescribeAllRegionsStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getFrom()const
@@ -209,7 +209,7 @@ int DescribeAllRegionsStatisticsRequest::getAction1()const
 void DescribeAllRegionsStatisticsRequest::setAction1(int action1)
 {
 	action1_ = action1;
-	setCoreParameter("Action1", std::to_string(action1));
+	setCoreParameter("Action1", action1);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getTag()const
@@ -231,7 +231,7 @@ int DescribeAllRegionsStatisticsRequest::getFlow()const
 void DescribeAllRegionsStatisticsRequest::setFlow(int flow)
 {
 	flow_ = flow;
-	setCoreParameter("Flow", std::to_string(flow));
+	setCoreParameter("Flow", flow);
 }
 
 int DescribeAllRegionsStatisticsRequest::getStatus()const
@@ -242,6 +242,6 @@ int DescribeAllRegionsStatisticsRequest::getStatus()const
 void DescribeAllRegionsStatisticsRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

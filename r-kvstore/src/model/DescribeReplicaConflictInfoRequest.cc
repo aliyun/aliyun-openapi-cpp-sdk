@@ -33,7 +33,7 @@ long DescribeReplicaConflictInfoRequest::getResourceOwnerId()const
 void DescribeReplicaConflictInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeReplicaConflictInfoRequest::getOwnerId()const
 void DescribeReplicaConflictInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeReplicaConflictInfoRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeReplicaConflictInfoRequest::getPageNumber()const
 void DescribeReplicaConflictInfoRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ int DescribeReplicaConflictInfoRequest::getPageSize()const
 void DescribeReplicaConflictInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 

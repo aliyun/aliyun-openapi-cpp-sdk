@@ -33,7 +33,7 @@ long ListBriefConfigByActionRequest::getAncestorApgroupId()const
 void ListBriefConfigByActionRequest::setAncestorApgroupId(long ancestorApgroupId)
 {
 	ancestorApgroupId_ = ancestorApgroupId;
-	setCoreParameter("AncestorApgroupId", std::to_string(ancestorApgroupId));
+	setCoreParameter("AncestorApgroupId", ancestorApgroupId);
 }
 
 int ListBriefConfigByActionRequest::getLimit()const
@@ -44,7 +44,7 @@ int ListBriefConfigByActionRequest::getLimit()const
 void ListBriefConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string ListBriefConfigByActionRequest::getFuzzySearch()const

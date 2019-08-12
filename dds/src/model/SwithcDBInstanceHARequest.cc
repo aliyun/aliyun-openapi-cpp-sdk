@@ -33,7 +33,7 @@ long SwithcDBInstanceHARequest::getResourceOwnerId()const
 void SwithcDBInstanceHARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SwithcDBInstanceHARequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long SwithcDBInstanceHARequest::getOwnerId()const
 void SwithcDBInstanceHARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SwithcDBInstanceHARequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ int SwithcDBInstanceHARequest::getTargetInstanceId()const
 void SwithcDBInstanceHARequest::setTargetInstanceId(int targetInstanceId)
 {
 	targetInstanceId_ = targetInstanceId;
-	setCoreParameter("TargetInstanceId", std::to_string(targetInstanceId));
+	setCoreParameter("TargetInstanceId", targetInstanceId);
 }
 
 std::string SwithcDBInstanceHARequest::getSecurityToken()const
@@ -121,7 +121,7 @@ int SwithcDBInstanceHARequest::getSwitchType()const
 void SwithcDBInstanceHARequest::setSwitchType(int switchType)
 {
 	switchType_ = switchType;
-	setCoreParameter("SwitchType", std::to_string(switchType));
+	setCoreParameter("SwitchType", switchType);
 }
 
 std::string SwithcDBInstanceHARequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ int SwithcDBInstanceHARequest::getSourceInstanceId()const
 void SwithcDBInstanceHARequest::setSourceInstanceId(int sourceInstanceId)
 {
 	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", std::to_string(sourceInstanceId));
+	setCoreParameter("SourceInstanceId", sourceInstanceId);
 }
 
 std::string SwithcDBInstanceHARequest::getNodeId()const

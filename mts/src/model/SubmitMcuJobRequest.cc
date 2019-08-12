@@ -66,7 +66,7 @@ long SubmitMcuJobRequest::getResourceOwnerId()const
 void SubmitMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitMcuJobRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long SubmitMcuJobRequest::getOwnerId()const
 void SubmitMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitMcuJobRequest::getTemplateId()const

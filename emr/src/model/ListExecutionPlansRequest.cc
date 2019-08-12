@@ -44,7 +44,7 @@ long ListExecutionPlansRequest::getResourceOwnerId()const
 void ListExecutionPlansRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<std::string> ListExecutionPlansRequest::getStatusList()const
@@ -56,7 +56,7 @@ void ListExecutionPlansRequest::setStatusList(const std::vector<std::string>& st
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListExecutionPlansRequest::getRegionId()const
@@ -78,7 +78,7 @@ int ListExecutionPlansRequest::getPageSize()const
 void ListExecutionPlansRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListExecutionPlansRequest::getQueryString()const
@@ -111,7 +111,7 @@ bool ListExecutionPlansRequest::getIsDesc()const
 void ListExecutionPlansRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setCoreParameter("IsDesc", isDesc);
 }
 
 std::string ListExecutionPlansRequest::getStrategy()const
@@ -133,7 +133,7 @@ int ListExecutionPlansRequest::getPageNumber()const
 void ListExecutionPlansRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListExecutionPlansRequest::getQueryType()const

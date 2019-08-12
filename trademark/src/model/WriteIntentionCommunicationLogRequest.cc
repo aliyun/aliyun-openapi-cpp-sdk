@@ -44,7 +44,7 @@ bool WriteIntentionCommunicationLogRequest::getReject()const
 void WriteIntentionCommunicationLogRequest::setReject(bool reject)
 {
 	reject_ = reject;
-	setCoreParameter("Reject", reject ? "true" : "false");
+	setCoreParameter("Reject", reject);
 }
 
 std::string WriteIntentionCommunicationLogRequest::getBizId()const

@@ -33,7 +33,7 @@ long OemMarketingPotentialRequest::getBid()const
 void OemMarketingPotentialRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string OemMarketingPotentialRequest::getAccessKeyId()const

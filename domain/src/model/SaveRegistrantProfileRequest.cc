@@ -77,7 +77,7 @@ long SaveRegistrantProfileRequest::getRegistrantProfileId()const
 void SaveRegistrantProfileRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 std::string SaveRegistrantProfileRequest::getZhAddress()const
@@ -132,7 +132,7 @@ bool SaveRegistrantProfileRequest::getDefaultRegistrantProfile()const
 void SaveRegistrantProfileRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
 {
 	defaultRegistrantProfile_ = defaultRegistrantProfile;
-	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
+	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile);
 }
 
 std::string SaveRegistrantProfileRequest::getZhCity()const

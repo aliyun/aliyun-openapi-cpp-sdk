@@ -55,7 +55,7 @@ long SubmitSnapshotJobRequest::getResourceOwnerId()const
 void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long SubmitSnapshotJobRequest::getOwnerId()const
 void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitSnapshotJobRequest::getSnapshotConfig()const

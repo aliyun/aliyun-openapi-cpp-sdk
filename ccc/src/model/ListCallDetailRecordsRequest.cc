@@ -88,7 +88,7 @@ long ListCallDetailRecordsRequest::getStartTime()const
 void ListCallDetailRecordsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListCallDetailRecordsRequest::getStopTime()const
@@ -99,7 +99,7 @@ long ListCallDetailRecordsRequest::getStopTime()const
 void ListCallDetailRecordsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 int ListCallDetailRecordsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListCallDetailRecordsRequest::getPageNumber()const
 void ListCallDetailRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListCallDetailRecordsRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ int ListCallDetailRecordsRequest::getPageSize()const
 void ListCallDetailRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 bool ListCallDetailRecordsRequest::getWithRecording()const
@@ -165,6 +165,6 @@ bool ListCallDetailRecordsRequest::getWithRecording()const
 void ListCallDetailRecordsRequest::setWithRecording(bool withRecording)
 {
 	withRecording_ = withRecording;
-	setCoreParameter("WithRecording", withRecording ? "true" : "false");
+	setCoreParameter("WithRecording", withRecording);
 }
 

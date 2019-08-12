@@ -66,7 +66,7 @@ int ModifySurveyRequest::getRound()const
 void ModifySurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setCoreParameter("Round", std::to_string(round));
+	setCoreParameter("Round", round);
 }
 
 std::string ModifySurveyRequest::getFlowJson()const

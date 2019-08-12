@@ -77,7 +77,7 @@ int AddGtmMonitorRequest::getEvaluationCount()const
 void AddGtmMonitorRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setCoreParameter("EvaluationCount", evaluationCount);
 }
 
 std::string AddGtmMonitorRequest::getProtocolType()const
@@ -99,7 +99,7 @@ int AddGtmMonitorRequest::getInterval()const
 void AddGtmMonitorRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string AddGtmMonitorRequest::getLang()const
@@ -121,7 +121,7 @@ int AddGtmMonitorRequest::getTimeout()const
 void AddGtmMonitorRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", timeout);
 }
 
 std::vector<AddGtmMonitorRequest::IspCityNode> AddGtmMonitorRequest::getIspCityNode()const
@@ -136,8 +136,8 @@ void AddGtmMonitorRequest::setIspCityNode(const std::vector<IspCityNode>& ispCit
 	for(int i = 0; i!= ispCityNode.size(); i++)	{
 		auto obj = ispCityNode.at(i);
 		std::string str ="IspCityNode."+ std::to_string(i);
-		setCoreParameter(str + ".CityCode", obj.cityCode);
-		setCoreParameter(str + ".IspCode", obj.ispCode);
+		setCoreParameter(str + ".CityCode", std::to_string(obj.cityCode));
+		setCoreParameter(str + ".IspCode", std::to_string(obj.ispCode));
 	}
 }
 

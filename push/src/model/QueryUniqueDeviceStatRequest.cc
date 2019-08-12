@@ -55,7 +55,7 @@ long QueryUniqueDeviceStatRequest::getAppKey()const
 void QueryUniqueDeviceStatRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string QueryUniqueDeviceStatRequest::getStartTime()const

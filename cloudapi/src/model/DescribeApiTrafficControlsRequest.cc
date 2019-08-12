@@ -66,7 +66,7 @@ int DescribeApiTrafficControlsRequest::getPageSize()const
 void DescribeApiTrafficControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeApiTrafficControlsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeApiTrafficControlsRequest::getPageNumber()const
 void DescribeApiTrafficControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeApiTrafficControlsRequest::getAccessKeyId()const

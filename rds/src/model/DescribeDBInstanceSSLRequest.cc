@@ -33,7 +33,7 @@ long DescribeDBInstanceSSLRequest::getResourceOwnerId()const
 void DescribeDBInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDBInstanceSSLRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DescribeDBInstanceSSLRequest::getOwnerId()const
 void DescribeDBInstanceSSLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDBInstanceSSLRequest::getAccessKeyId()const

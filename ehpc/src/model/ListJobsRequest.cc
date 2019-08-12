@@ -44,7 +44,7 @@ int ListJobsRequest::getPageSize()const
 void ListJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListJobsRequest::getClusterId()const
@@ -88,7 +88,7 @@ int ListJobsRequest::getPageNumber()const
 void ListJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListJobsRequest::getAccessKeyId()const

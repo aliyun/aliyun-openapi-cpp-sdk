@@ -44,7 +44,7 @@ long UpdateUserGroupRequest::getResourceOwnerId()const
 void UpdateUserGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long UpdateUserGroupRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long UpdateUserGroupRequest::getCallerParentId()const
 void UpdateUserGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::vector<long> UpdateUserGroupRequest::getRoleId()const
@@ -67,7 +67,7 @@ void UpdateUserGroupRequest::setRoleId(const std::vector<long>& roleId)
 {
 	roleId_ = roleId;
 	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), std::to_string(roleId.at(i)));
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
 }
 
 bool UpdateUserGroupRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool UpdateUserGroupRequest::getProxy_original_security_transport()const
 void UpdateUserGroupRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UpdateUserGroupRequest::getDescription()const
@@ -133,7 +133,7 @@ bool UpdateUserGroupRequest::getAk_mfa_present()const
 void UpdateUserGroupRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UpdateUserGroupRequest::getProxy_trust_transport_info()const
@@ -144,7 +144,7 @@ bool UpdateUserGroupRequest::getProxy_trust_transport_info()const
 void UpdateUserGroupRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string UpdateUserGroupRequest::getCallerType()const
@@ -177,7 +177,7 @@ bool UpdateUserGroupRequest::getSecurity_transport()const
 void UpdateUserGroupRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UpdateUserGroupRequest::getSecurityToken()const
@@ -232,7 +232,7 @@ long UpdateUserGroupRequest::getId()const
 void UpdateUserGroupRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long UpdateUserGroupRequest::getCallerUid()const
@@ -243,6 +243,6 @@ long UpdateUserGroupRequest::getCallerUid()const
 void UpdateUserGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

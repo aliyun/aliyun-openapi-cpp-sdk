@@ -33,7 +33,7 @@ long AttachPubIpRequest::getResourceOwnerId()const
 void AttachPubIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AttachPubIpRequest::getRegionId()const
@@ -56,7 +56,7 @@ void AttachPubIpRequest::setInstanceIds(const std::vector<std::string>& instance
 {
 	instanceIds_ = instanceIds;
 	for(int i = 0; i!= instanceIds.size(); i++)
-		setCoreParameter("InstanceIds."+ std::to_string(i), instanceIds.at(i));
+		setCoreParameter("InstanceIds."+ std::to_string(i), std::to_string(instanceIds.at(i)));
 }
 
 std::string AttachPubIpRequest::getClusterId()const

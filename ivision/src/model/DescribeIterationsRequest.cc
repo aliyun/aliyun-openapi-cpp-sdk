@@ -33,7 +33,7 @@ long DescribeIterationsRequest::getResourceOwnerId()const
 void DescribeIterationsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeIterationsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeIterationsRequest::getCallerParentId()const
 void DescribeIterationsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeIterationsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeIterationsRequest::getProxy_original_security_transport()const
 void DescribeIterationsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeIterationsRequest::getThreshold()const
@@ -187,7 +187,7 @@ long DescribeIterationsRequest::getCallerUid()const
 void DescribeIterationsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeIterationsRequest::getShowLog()const
@@ -253,7 +253,7 @@ long DescribeIterationsRequest::getOwnerId()const
 void DescribeIterationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeIterationsRequest::getVersion()const
@@ -275,7 +275,7 @@ bool DescribeIterationsRequest::getProxy_trust_transport_info()const
 void DescribeIterationsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeIterationsRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeIterationsRequest::getAk_mfa_present()const
 void DescribeIterationsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeIterationsRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeIterationsRequest::getSecurity_transport()const
 void DescribeIterationsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeIterationsRequest::getRequestId()const

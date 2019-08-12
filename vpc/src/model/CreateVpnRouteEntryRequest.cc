@@ -33,7 +33,7 @@ long CreateVpnRouteEntryRequest::getResourceOwnerId()const
 void CreateVpnRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVpnRouteEntryRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int CreateVpnRouteEntryRequest::getWeight()const
 void CreateVpnRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string CreateVpnRouteEntryRequest::getDescription()const
@@ -110,7 +110,7 @@ long CreateVpnRouteEntryRequest::getOwnerId()const
 void CreateVpnRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateVpnRouteEntryRequest::getRouteDest()const
@@ -143,7 +143,7 @@ bool CreateVpnRouteEntryRequest::getPublishVpc()const
 void CreateVpnRouteEntryRequest::setPublishVpc(bool publishVpc)
 {
 	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
+	setCoreParameter("PublishVpc", publishVpc);
 }
 
 std::string CreateVpnRouteEntryRequest::getRegionId()const

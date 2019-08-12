@@ -33,7 +33,7 @@ long GetOnlineApTimeSerRequest::getZoomStart()const
 void GetOnlineApTimeSerRequest::setZoomStart(long zoomStart)
 {
 	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+	setCoreParameter("ZoomStart", zoomStart);
 }
 
 long GetOnlineApTimeSerRequest::getCompanyId()const
@@ -44,7 +44,7 @@ long GetOnlineApTimeSerRequest::getCompanyId()const
 void GetOnlineApTimeSerRequest::setCompanyId(long companyId)
 {
 	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
+	setCoreParameter("CompanyId", companyId);
 }
 
 long GetOnlineApTimeSerRequest::getApgroupId()const
@@ -55,7 +55,7 @@ long GetOnlineApTimeSerRequest::getApgroupId()const
 void GetOnlineApTimeSerRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 long GetOnlineApTimeSerRequest::getStart()const
@@ -66,7 +66,7 @@ long GetOnlineApTimeSerRequest::getStart()const
 void GetOnlineApTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setCoreParameter("Start", start);
 }
 
 long GetOnlineApTimeSerRequest::getZoomEnd()const
@@ -77,7 +77,7 @@ long GetOnlineApTimeSerRequest::getZoomEnd()const
 void GetOnlineApTimeSerRequest::setZoomEnd(long zoomEnd)
 {
 	zoomEnd_ = zoomEnd;
-	setCoreParameter("ZoomEnd", std::to_string(zoomEnd));
+	setCoreParameter("ZoomEnd", zoomEnd);
 }
 
 long GetOnlineApTimeSerRequest::getEnd()const
@@ -88,7 +88,7 @@ long GetOnlineApTimeSerRequest::getEnd()const
 void GetOnlineApTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setCoreParameter("End", end);
 }
 
 std::string GetOnlineApTimeSerRequest::getAccessKeyId()const

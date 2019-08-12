@@ -33,7 +33,7 @@ long DescribeEipAddressesRequest::getResourceOwnerId()const
 void DescribeEipAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeEipAddressesRequest::getResourceOwnerAccount()const
@@ -121,7 +121,7 @@ long DescribeEipAddressesRequest::getOwnerId()const
 void DescribeEipAddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeEipAddressesRequest::getIncludeReservationData()const
@@ -132,7 +132,7 @@ bool DescribeEipAddressesRequest::getIncludeReservationData()const
 void DescribeEipAddressesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setCoreParameter("IncludeReservationData", includeReservationData);
 }
 
 std::string DescribeEipAddressesRequest::getEipAddress()const
@@ -154,7 +154,7 @@ int DescribeEipAddressesRequest::getPageNumber()const
 void DescribeEipAddressesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeEipAddressesRequest::getResourceGroupId()const
@@ -220,7 +220,7 @@ int DescribeEipAddressesRequest::getPageSize()const
 void DescribeEipAddressesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::vector<DescribeEipAddressesRequest::Tag> DescribeEipAddressesRequest::getTag()const
@@ -235,8 +235,8 @@ void DescribeEipAddressesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

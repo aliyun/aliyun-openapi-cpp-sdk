@@ -33,7 +33,7 @@ long DescribeVpnConnectionRequest::getResourceOwnerId()const
 void DescribeVpnConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeVpnConnectionRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DescribeVpnConnectionRequest::getOwnerId()const
 void DescribeVpnConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

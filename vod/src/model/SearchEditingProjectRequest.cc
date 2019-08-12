@@ -121,7 +121,7 @@ int SearchEditingProjectRequest::getPageNo()const
 void SearchEditingProjectRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 int SearchEditingProjectRequest::getPageSize()const
@@ -132,7 +132,7 @@ int SearchEditingProjectRequest::getPageSize()const
 void SearchEditingProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string SearchEditingProjectRequest::getSortBy()const

@@ -33,7 +33,7 @@ long ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerId()const
 void ModifyVirtualBorderRouterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getCircuitCode()const
@@ -66,7 +66,7 @@ int ModifyVirtualBorderRouterAttributeRequest::getVlanId()const
 void ModifyVirtualBorderRouterAttributeRequest::setVlanId(int vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", std::to_string(vlanId));
+	setCoreParameter("VlanId", vlanId);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getResourceOwnerAccount()const
@@ -132,7 +132,7 @@ long ModifyVirtualBorderRouterAttributeRequest::getOwnerId()const
 void ModifyVirtualBorderRouterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long ModifyVirtualBorderRouterAttributeRequest::getMinRxInterval()const
@@ -143,7 +143,7 @@ long ModifyVirtualBorderRouterAttributeRequest::getMinRxInterval()const
 void ModifyVirtualBorderRouterAttributeRequest::setMinRxInterval(long minRxInterval)
 {
 	minRxInterval_ = minRxInterval;
-	setCoreParameter("MinRxInterval", std::to_string(minRxInterval));
+	setCoreParameter("MinRxInterval", minRxInterval);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getPeerGatewayIp()const
@@ -165,7 +165,7 @@ long ModifyVirtualBorderRouterAttributeRequest::getDetectMultiplier()const
 void ModifyVirtualBorderRouterAttributeRequest::setDetectMultiplier(long detectMultiplier)
 {
 	detectMultiplier_ = detectMultiplier;
-	setCoreParameter("DetectMultiplier", std::to_string(detectMultiplier));
+	setCoreParameter("DetectMultiplier", detectMultiplier);
 }
 
 std::string ModifyVirtualBorderRouterAttributeRequest::getPeeringSubnetMask()const
@@ -220,6 +220,6 @@ long ModifyVirtualBorderRouterAttributeRequest::getMinTxInterval()const
 void ModifyVirtualBorderRouterAttributeRequest::setMinTxInterval(long minTxInterval)
 {
 	minTxInterval_ = minTxInterval;
-	setCoreParameter("MinTxInterval", std::to_string(minTxInterval));
+	setCoreParameter("MinTxInterval", minTxInterval);
 }
 

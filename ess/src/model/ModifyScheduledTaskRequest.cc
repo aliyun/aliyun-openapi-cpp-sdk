@@ -44,7 +44,7 @@ long ModifyScheduledTaskRequest::getResourceOwnerId()const
 void ModifyScheduledTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyScheduledTaskRequest::getScheduledAction()const
@@ -66,7 +66,7 @@ int ModifyScheduledTaskRequest::getMaxValue()const
 void ModifyScheduledTaskRequest::setMaxValue(int maxValue)
 {
 	maxValue_ = maxValue;
-	setCoreParameter("MaxValue", std::to_string(maxValue));
+	setCoreParameter("MaxValue", maxValue);
 }
 
 std::string ModifyScheduledTaskRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifyScheduledTaskRequest::getOwnerId()const
 void ModifyScheduledTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyScheduledTaskRequest::getRecurrenceValue()const
@@ -132,7 +132,7 @@ int ModifyScheduledTaskRequest::getLaunchExpirationTime()const
 void ModifyScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTime)
 {
 	launchExpirationTime_ = launchExpirationTime;
-	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
+	setCoreParameter("LaunchExpirationTime", launchExpirationTime);
 }
 
 std::string ModifyScheduledTaskRequest::getRecurrenceEndTime()const
@@ -165,7 +165,7 @@ int ModifyScheduledTaskRequest::getMinValue()const
 void ModifyScheduledTaskRequest::setMinValue(int minValue)
 {
 	minValue_ = minValue;
-	setCoreParameter("MinValue", std::to_string(minValue));
+	setCoreParameter("MinValue", minValue);
 }
 
 std::string ModifyScheduledTaskRequest::getScheduledTaskName()const
@@ -187,7 +187,7 @@ bool ModifyScheduledTaskRequest::getTaskEnabled()const
 void ModifyScheduledTaskRequest::setTaskEnabled(bool taskEnabled)
 {
 	taskEnabled_ = taskEnabled;
-	setCoreParameter("TaskEnabled", taskEnabled ? "true" : "false");
+	setCoreParameter("TaskEnabled", taskEnabled);
 }
 
 std::string ModifyScheduledTaskRequest::getScheduledTaskId()const

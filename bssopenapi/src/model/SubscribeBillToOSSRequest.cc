@@ -33,7 +33,7 @@ long SubscribeBillToOSSRequest::getBucketOwnerId()const
 void SubscribeBillToOSSRequest::setBucketOwnerId(long bucketOwnerId)
 {
 	bucketOwnerId_ = bucketOwnerId;
-	setCoreParameter("BucketOwnerId", std::to_string(bucketOwnerId));
+	setCoreParameter("BucketOwnerId", bucketOwnerId);
 }
 
 std::string SubscribeBillToOSSRequest::getSubscribeType()const

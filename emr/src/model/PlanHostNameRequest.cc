@@ -33,7 +33,7 @@ long PlanHostNameRequest::getResourceOwnerId()const
 void PlanHostNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PlanHostNameRequest::getRegionId()const
@@ -59,8 +59,8 @@ void PlanHostNameRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", obj.groupType);
-		setCoreParameter(str + ".GroupName", obj.groupName);
+		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
+		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
 	}
 }
 
@@ -76,8 +76,8 @@ void PlanHostNameRequest::setHostInfo(const std::vector<HostInfo>& hostInfo)
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
+		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
+		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
 	}
 }
 

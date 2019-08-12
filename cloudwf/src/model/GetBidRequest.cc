@@ -33,7 +33,7 @@ int GetBidRequest::getLength()const
 void GetBidRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int GetBidRequest::getPageIndex()const
@@ -44,7 +44,7 @@ int GetBidRequest::getPageIndex()const
 void GetBidRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string GetBidRequest::getAccessKeyId()const

@@ -55,7 +55,7 @@ long SaveWebRTCStatsRequest::getRecordTime()const
 void SaveWebRTCStatsRequest::setRecordTime(long recordTime)
 {
 	recordTime_ = recordTime;
-	setCoreParameter("RecordTime", std::to_string(recordTime));
+	setCoreParameter("RecordTime", recordTime);
 }
 
 std::string SaveWebRTCStatsRequest::getInstanceId()const
@@ -88,7 +88,7 @@ long SaveWebRTCStatsRequest::getCallStartTime()const
 void SaveWebRTCStatsRequest::setCallStartTime(long callStartTime)
 {
 	callStartTime_ = callStartTime;
-	setCoreParameter("CallStartTime", std::to_string(callStartTime));
+	setCoreParameter("CallStartTime", callStartTime);
 }
 
 std::string SaveWebRTCStatsRequest::getTenantId()const

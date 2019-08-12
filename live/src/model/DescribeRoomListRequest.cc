@@ -33,7 +33,7 @@ long DescribeRoomListRequest::getCallerParentId()const
 void DescribeRoomListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeRoomListRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeRoomListRequest::getProxy_original_security_transport()const
 void DescribeRoomListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeRoomListRequest::getStartTime()const
@@ -88,7 +88,7 @@ int DescribeRoomListRequest::getPageNum()const
 void DescribeRoomListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeRoomListRequest::getOwnerIdLoginEmail()const
@@ -154,7 +154,7 @@ int DescribeRoomListRequest::getRoomStatus()const
 void DescribeRoomListRequest::setRoomStatus(int roomStatus)
 {
 	roomStatus_ = roomStatus;
-	setCoreParameter("RoomStatus", std::to_string(roomStatus));
+	setCoreParameter("RoomStatus", roomStatus);
 }
 
 std::string DescribeRoomListRequest::getRequestContent()const
@@ -176,7 +176,7 @@ int DescribeRoomListRequest::getPageSize()const
 void DescribeRoomListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRoomListRequest::getCallerBidEmail()const
@@ -209,7 +209,7 @@ long DescribeRoomListRequest::getCallerUid()const
 void DescribeRoomListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeRoomListRequest::getOrder()const
@@ -275,7 +275,7 @@ long DescribeRoomListRequest::getOwnerId()const
 void DescribeRoomListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRoomListRequest::getVersion()const
@@ -297,7 +297,7 @@ bool DescribeRoomListRequest::getProxy_trust_transport_info()const
 void DescribeRoomListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeRoomListRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool DescribeRoomListRequest::getAk_mfa_present()const
 void DescribeRoomListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DescribeRoomListRequest::getRoomId()const
@@ -330,7 +330,7 @@ bool DescribeRoomListRequest::getSecurity_transport()const
 void DescribeRoomListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeRoomListRequest::getRequestId()const

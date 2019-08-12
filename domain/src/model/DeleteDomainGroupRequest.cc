@@ -55,6 +55,6 @@ long DeleteDomainGroupRequest::getDomainGroupId()const
 void DeleteDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", domainGroupId);
 }
 

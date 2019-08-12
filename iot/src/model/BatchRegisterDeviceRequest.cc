@@ -44,7 +44,7 @@ int BatchRegisterDeviceRequest::getCount()const
 void BatchRegisterDeviceRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string BatchRegisterDeviceRequest::getProductKey()const

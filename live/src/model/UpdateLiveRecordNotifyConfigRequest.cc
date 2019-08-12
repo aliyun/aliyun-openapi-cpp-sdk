@@ -77,7 +77,7 @@ long UpdateLiveRecordNotifyConfigRequest::getOwnerId()const
 void UpdateLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool UpdateLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
@@ -88,6 +88,6 @@ bool UpdateLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
 void UpdateLiveRecordNotifyConfigRequest::setNeedStatusNotify(bool needStatusNotify)
 {
 	needStatusNotify_ = needStatusNotify;
-	setCoreParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
+	setCoreParameter("NeedStatusNotify", needStatusNotify);
 }
 

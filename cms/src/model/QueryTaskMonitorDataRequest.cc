@@ -55,7 +55,7 @@ int QueryTaskMonitorDataRequest::getLength()const
 void QueryTaskMonitorDataRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string QueryTaskMonitorDataRequest::getEndTime()const

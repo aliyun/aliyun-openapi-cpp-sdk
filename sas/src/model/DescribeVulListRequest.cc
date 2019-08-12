@@ -55,7 +55,7 @@ int DescribeVulListRequest::getPageSize()const
 void DescribeVulListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeVulListRequest::getRemark()const
@@ -88,7 +88,7 @@ int DescribeVulListRequest::getCurrentPage()const
 void DescribeVulListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeVulListRequest::getLang()const

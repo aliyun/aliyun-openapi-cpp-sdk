@@ -33,7 +33,7 @@ long EditPhotosRequest::getTakenAt()const
 void EditPhotosRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setCoreParameter("TakenAt", takenAt);
 }
 
 std::string EditPhotosRequest::getLibraryId()const
@@ -55,7 +55,7 @@ long EditPhotosRequest::getShareExpireTime()const
 void EditPhotosRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
+	setCoreParameter("ShareExpireTime", shareExpireTime);
 }
 
 std::vector<long> EditPhotosRequest::getPhotoId()const
@@ -67,7 +67,7 @@ void EditPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
 }
 
 std::string EditPhotosRequest::getStoreName()const

@@ -44,7 +44,7 @@ int ModifyScalingConfigurationRequest::getMemory()const
 void ModifyScalingConfigurationRequest::setMemory(int memory)
 {
 	memory_ = memory;
-	setCoreParameter("Memory", std::to_string(memory));
+	setCoreParameter("Memory", memory);
 }
 
 std::string ModifyScalingConfigurationRequest::getHpcClusterId()const
@@ -78,7 +78,7 @@ void ModifyScalingConfigurationRequest::setInstanceTypes(const std::vector<std::
 {
 	instanceTypes_ = instanceTypes;
 	for(int i = 0; i!= instanceTypes.size(); i++)
-		setCoreParameter("InstanceTypes."+ std::to_string(i), instanceTypes.at(i));
+		setCoreParameter("InstanceTypes."+ std::to_string(i), std::to_string(instanceTypes.at(i)));
 }
 
 int ModifyScalingConfigurationRequest::getInternetMaxBandwidthOut()const
@@ -89,7 +89,7 @@ int ModifyScalingConfigurationRequest::getInternetMaxBandwidthOut()const
 void ModifyScalingConfigurationRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setCoreParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 }
 
 std::string ModifyScalingConfigurationRequest::getSecurityGroupId()const
@@ -126,8 +126,8 @@ void ModifyScalingConfigurationRequest::setSpotPriceLimit(const std::vector<Spot
 	for(int i = 0; i!= spotPriceLimit.size(); i++)	{
 		auto obj = spotPriceLimit.at(i);
 		std::string str ="SpotPriceLimit."+ std::to_string(i);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
+		setCoreParameter(str + ".PriceLimit", obj.priceLimit);
 	}
 }
 
@@ -194,7 +194,7 @@ bool ModifyScalingConfigurationRequest::getPasswordInherit()const
 void ModifyScalingConfigurationRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setCoreParameter("PasswordInherit", passwordInherit);
 }
 
 std::string ModifyScalingConfigurationRequest::getImageName()const
@@ -227,7 +227,7 @@ bool ModifyScalingConfigurationRequest::getOverride()const
 void ModifyScalingConfigurationRequest::setOverride(bool override)
 {
 	override_ = override;
-	setCoreParameter("Override", override ? "true" : "false");
+	setCoreParameter("Override", override);
 }
 
 std::string ModifyScalingConfigurationRequest::getDeploymentSetId()const
@@ -271,7 +271,7 @@ int ModifyScalingConfigurationRequest::getCpu()const
 void ModifyScalingConfigurationRequest::setCpu(int cpu)
 {
 	cpu_ = cpu;
-	setCoreParameter("Cpu", std::to_string(cpu));
+	setCoreParameter("Cpu", cpu);
 }
 
 std::string ModifyScalingConfigurationRequest::getSystemDiskDiskName()const
@@ -304,7 +304,7 @@ long ModifyScalingConfigurationRequest::getOwnerId()const
 void ModifyScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::vector<std::string> ModifyScalingConfigurationRequest::getSecurityGroupIds()const
@@ -316,7 +316,7 @@ void ModifyScalingConfigurationRequest::setSecurityGroupIds(const std::vector<st
 {
 	securityGroupIds_ = securityGroupIds;
 	for(int i = 0; i!= securityGroupIds.size(); i++)
-		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+		setCoreParameter("SecurityGroupIds."+ std::to_string(i), std::to_string(securityGroupIds.at(i)));
 }
 
 std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurationRequest::getDataDisk()const
@@ -331,14 +331,14 @@ void ModifyScalingConfigurationRequest::setDataDisk(const std::vector<DataDisk>&
 	for(int i = 0; i!= dataDisk.size(); i++)	{
 		auto obj = dataDisk.at(i);
 		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".Device", obj.device);
+		setCoreParameter(str + ".DiskName", std::to_string(obj.diskName));
+		setCoreParameter(str + ".SnapshotId", std::to_string(obj.snapshotId));
+		setCoreParameter(str + ".Size", obj.size);
+		setCoreParameter(str + ".Encrypted", std::to_string(obj.encrypted));
+		setCoreParameter(str + ".Description", std::to_string(obj.description));
+		setCoreParameter(str + ".Category", std::to_string(obj.category));
+		setCoreParameter(str + ".KMSKeyId", std::to_string(obj.kMSKeyId));
+		setCoreParameter(str + ".Device", std::to_string(obj.device));
 		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
 	}
 }
@@ -406,7 +406,7 @@ int ModifyScalingConfigurationRequest::getLoadBalancerWeight()const
 void ModifyScalingConfigurationRequest::setLoadBalancerWeight(int loadBalancerWeight)
 {
 	loadBalancerWeight_ = loadBalancerWeight;
-	setCoreParameter("LoadBalancerWeight", std::to_string(loadBalancerWeight));
+	setCoreParameter("LoadBalancerWeight", loadBalancerWeight);
 }
 
 int ModifyScalingConfigurationRequest::getSystemDiskSize()const
@@ -417,7 +417,7 @@ int ModifyScalingConfigurationRequest::getSystemDiskSize()const
 void ModifyScalingConfigurationRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setCoreParameter("SystemDiskSize", systemDiskSize);
 }
 
 std::string ModifyScalingConfigurationRequest::getInternetChargeType()const

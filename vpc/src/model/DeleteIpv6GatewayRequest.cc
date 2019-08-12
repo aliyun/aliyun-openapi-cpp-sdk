@@ -33,7 +33,7 @@ long DeleteIpv6GatewayRequest::getResourceOwnerId()const
 void DeleteIpv6GatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DeleteIpv6GatewayRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteIpv6GatewayRequest::getCallerParentId()const
 void DeleteIpv6GatewayRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteIpv6GatewayRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DeleteIpv6GatewayRequest::getProxy_original_security_transport()const
 void DeleteIpv6GatewayRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteIpv6GatewayRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DeleteIpv6GatewayRequest::getEnable()const
 void DeleteIpv6GatewayRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string DeleteIpv6GatewayRequest::getRequestContent()const
@@ -187,7 +187,7 @@ long DeleteIpv6GatewayRequest::getCallerUid()const
 void DeleteIpv6GatewayRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteIpv6GatewayRequest::getApp_ip()const
@@ -242,7 +242,7 @@ long DeleteIpv6GatewayRequest::getOwnerId()const
 void DeleteIpv6GatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DeleteIpv6GatewayRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DeleteIpv6GatewayRequest::getProxy_trust_transport_info()const
 void DeleteIpv6GatewayRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteIpv6GatewayRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DeleteIpv6GatewayRequest::getAk_mfa_present()const
 void DeleteIpv6GatewayRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteIpv6GatewayRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DeleteIpv6GatewayRequest::getSecurity_transport()const
 void DeleteIpv6GatewayRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteIpv6GatewayRequest::getRequestId()const

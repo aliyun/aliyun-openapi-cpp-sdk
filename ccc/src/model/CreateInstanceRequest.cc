@@ -34,7 +34,7 @@ void CreateInstanceRequest::setPhoneNumbers(const std::vector<std::string>& phon
 {
 	phoneNumbers_ = phoneNumbers;
 	for(int i = 0; i!= phoneNumbers.size(); i++)
-		setCoreParameter("PhoneNumbers."+ std::to_string(i), phoneNumbers.at(i));
+		setCoreParameter("PhoneNumbers."+ std::to_string(i), std::to_string(phoneNumbers.at(i)));
 }
 
 std::vector<std::string> CreateInstanceRequest::getUserObject()const
@@ -46,7 +46,7 @@ void CreateInstanceRequest::setUserObject(const std::vector<std::string>& userOb
 {
 	userObject_ = userObject;
 	for(int i = 0; i!= userObject.size(); i++)
-		setCoreParameter("UserObject."+ std::to_string(i), userObject.at(i));
+		setCoreParameter("UserObject."+ std::to_string(i), std::to_string(userObject.at(i)));
 }
 
 std::string CreateInstanceRequest::getName()const
@@ -101,7 +101,7 @@ int CreateInstanceRequest::getStorageMaxDays()const
 void CreateInstanceRequest::setStorageMaxDays(int storageMaxDays)
 {
 	storageMaxDays_ = storageMaxDays;
-	setCoreParameter("StorageMaxDays", std::to_string(storageMaxDays));
+	setCoreParameter("StorageMaxDays", storageMaxDays);
 }
 
 int CreateInstanceRequest::getStorageMaxSize()const
@@ -112,7 +112,7 @@ int CreateInstanceRequest::getStorageMaxSize()const
 void CreateInstanceRequest::setStorageMaxSize(int storageMaxSize)
 {
 	storageMaxSize_ = storageMaxSize;
-	setCoreParameter("StorageMaxSize", std::to_string(storageMaxSize));
+	setCoreParameter("StorageMaxSize", storageMaxSize);
 }
 
 std::string CreateInstanceRequest::getDirectoryId()const
@@ -135,7 +135,7 @@ void CreateInstanceRequest::setAdminRamId(const std::vector<std::string>& adminR
 {
 	adminRamId_ = adminRamId;
 	for(int i = 0; i!= adminRamId.size(); i++)
-		setCoreParameter("AdminRamId."+ std::to_string(i), adminRamId.at(i));
+		setCoreParameter("AdminRamId."+ std::to_string(i), std::to_string(adminRamId.at(i)));
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const

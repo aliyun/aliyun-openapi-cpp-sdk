@@ -34,7 +34,7 @@ void DeleteTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& d
 {
 	dstTopic_ = dstTopic;
 	for(int i = 0; i!= dstTopic.size(); i++)
-		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
+		setCoreParameter("DstTopic."+ std::to_string(i), std::to_string(dstTopic.at(i)));
 }
 
 std::string DeleteTopicRouteTableRequest::getRegionId()const

@@ -55,7 +55,7 @@ int DescribeIpWhiteBaselineRequest::getPageSize()const
 void DescribeIpWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeIpWhiteBaselineRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeIpWhiteBaselineRequest::getCurrentPage()const
 void DescribeIpWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeIpWhiteBaselineRequest::getRemark()const

@@ -44,7 +44,7 @@ long DeleteCertificateRequest::getCertificateId()const
 void DeleteCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string DeleteCertificateRequest::getLang()const

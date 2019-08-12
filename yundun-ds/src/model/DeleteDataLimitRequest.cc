@@ -44,7 +44,7 @@ int DeleteDataLimitRequest::getFeatureType()const
 void DeleteDataLimitRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long DeleteDataLimitRequest::getId()const
@@ -55,7 +55,7 @@ long DeleteDataLimitRequest::getId()const
 void DeleteDataLimitRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteDataLimitRequest::getLang()const

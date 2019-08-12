@@ -33,7 +33,7 @@ long ModifyParameterRequest::getResourceOwnerId()const
 void ModifyParameterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyParameterRequest::getParameterGroupId()const
@@ -99,7 +99,7 @@ bool ModifyParameterRequest::getForcerestart()const
 void ModifyParameterRequest::setForcerestart(bool forcerestart)
 {
 	forcerestart_ = forcerestart;
-	setCoreParameter("Forcerestart", forcerestart ? "true" : "false");
+	setCoreParameter("Forcerestart", forcerestart);
 }
 
 long ModifyParameterRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyParameterRequest::getOwnerId()const
 void ModifyParameterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyParameterRequest::getParameters()const

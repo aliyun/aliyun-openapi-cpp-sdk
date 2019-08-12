@@ -33,7 +33,7 @@ long DescribeSlowLogsRequest::getResourceOwnerId()const
 void DescribeSlowLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSlowLogsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeSlowLogsRequest::getOwnerId()const
 void DescribeSlowLogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeSlowLogsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeSlowLogsRequest::getPageNumber()const
 void DescribeSlowLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeSlowLogsRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ int DescribeSlowLogsRequest::getPageSize()const
 void DescribeSlowLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSlowLogsRequest::getDBInstanceId()const

@@ -66,7 +66,7 @@ int ModifyCasterVideoResourceRequest::getEndOffset()const
 void ModifyCasterVideoResourceRequest::setEndOffset(int endOffset)
 {
 	endOffset_ = endOffset;
-	setCoreParameter("EndOffset", std::to_string(endOffset));
+	setCoreParameter("EndOffset", endOffset);
 }
 
 long ModifyCasterVideoResourceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ModifyCasterVideoResourceRequest::getOwnerId()const
 void ModifyCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyCasterVideoResourceRequest::getMaterialId()const
@@ -99,7 +99,7 @@ int ModifyCasterVideoResourceRequest::getBeginOffset()const
 void ModifyCasterVideoResourceRequest::setBeginOffset(int beginOffset)
 {
 	beginOffset_ = beginOffset;
-	setCoreParameter("BeginOffset", std::to_string(beginOffset));
+	setCoreParameter("BeginOffset", beginOffset);
 }
 
 std::string ModifyCasterVideoResourceRequest::getLiveStreamUrl()const
@@ -132,7 +132,7 @@ int ModifyCasterVideoResourceRequest::getPtsCallbackInterval()const
 void ModifyCasterVideoResourceRequest::setPtsCallbackInterval(int ptsCallbackInterval)
 {
 	ptsCallbackInterval_ = ptsCallbackInterval;
-	setCoreParameter("PtsCallbackInterval", std::to_string(ptsCallbackInterval));
+	setCoreParameter("PtsCallbackInterval", ptsCallbackInterval);
 }
 
 std::string ModifyCasterVideoResourceRequest::getResourceName()const
@@ -154,6 +154,6 @@ int ModifyCasterVideoResourceRequest::getRepeatNum()const
 void ModifyCasterVideoResourceRequest::setRepeatNum(int repeatNum)
 {
 	repeatNum_ = repeatNum;
-	setCoreParameter("RepeatNum", std::to_string(repeatNum));
+	setCoreParameter("RepeatNum", repeatNum);
 }
 

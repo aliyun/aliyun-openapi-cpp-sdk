@@ -55,7 +55,7 @@ long SetL2OssKeyConfigRequest::getOwnerId()const
 void SetL2OssKeyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetL2OssKeyConfigRequest::getPrivateOssAuth()const

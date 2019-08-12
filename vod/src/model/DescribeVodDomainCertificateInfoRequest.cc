@@ -33,7 +33,7 @@ long DescribeVodDomainCertificateInfoRequest::getResourceOwnerId()const
 void DescribeVodDomainCertificateInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeVodDomainCertificateInfoRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeVodDomainCertificateInfoRequest::getCallerParentId()const
 void DescribeVodDomainCertificateInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeVodDomainCertificateInfoRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeVodDomainCertificateInfoRequest::getProxy_original_security_transpo
 void DescribeVodDomainCertificateInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeVodDomainCertificateInfoRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ long DescribeVodDomainCertificateInfoRequest::getCallerUid()const
 void DescribeVodDomainCertificateInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeVodDomainCertificateInfoRequest::getApp_ip()const
@@ -220,7 +220,7 @@ long DescribeVodDomainCertificateInfoRequest::getOwnerId()const
 void DescribeVodDomainCertificateInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeVodDomainCertificateInfoRequest::getVersion()const
@@ -242,7 +242,7 @@ bool DescribeVodDomainCertificateInfoRequest::getProxy_trust_transport_info()con
 void DescribeVodDomainCertificateInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeVodDomainCertificateInfoRequest::getAk_mfa_present()const
@@ -253,7 +253,7 @@ bool DescribeVodDomainCertificateInfoRequest::getAk_mfa_present()const
 void DescribeVodDomainCertificateInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeVodDomainCertificateInfoRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool DescribeVodDomainCertificateInfoRequest::getSecurity_transport()const
 void DescribeVodDomainCertificateInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeVodDomainCertificateInfoRequest::getServiceCode()const

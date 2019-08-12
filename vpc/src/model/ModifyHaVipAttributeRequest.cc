@@ -44,7 +44,7 @@ long ModifyHaVipAttributeRequest::getResourceOwnerId()const
 void ModifyHaVipAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyHaVipAttributeRequest::getResourceOwnerAccount()const
@@ -121,6 +121,6 @@ long ModifyHaVipAttributeRequest::getOwnerId()const
 void ModifyHaVipAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

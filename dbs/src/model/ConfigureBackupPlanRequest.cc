@@ -44,7 +44,7 @@ int ConfigureBackupPlanRequest::getDuplicationArchivePeriod()const
 void ConfigureBackupPlanRequest::setDuplicationArchivePeriod(int duplicationArchivePeriod)
 {
 	duplicationArchivePeriod_ = duplicationArchivePeriod;
-	setCoreParameter("DuplicationArchivePeriod", std::to_string(duplicationArchivePeriod));
+	setCoreParameter("DuplicationArchivePeriod", duplicationArchivePeriod);
 }
 
 long ConfigureBackupPlanRequest::getBackupGatewayId()const
@@ -55,7 +55,7 @@ long ConfigureBackupPlanRequest::getBackupGatewayId()const
 void ConfigureBackupPlanRequest::setBackupGatewayId(long backupGatewayId)
 {
 	backupGatewayId_ = backupGatewayId;
-	setCoreParameter("BackupGatewayId", std::to_string(backupGatewayId));
+	setCoreParameter("BackupGatewayId", backupGatewayId);
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceID()const
@@ -143,7 +143,7 @@ int ConfigureBackupPlanRequest::getSourceEndpointPort()const
 void ConfigureBackupPlanRequest::setSourceEndpointPort(int sourceEndpointPort)
 {
 	sourceEndpointPort_ = sourceEndpointPort;
-	setCoreParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
+	setCoreParameter("SourceEndpointPort", sourceEndpointPort);
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointDatabaseName()const
@@ -165,7 +165,7 @@ int ConfigureBackupPlanRequest::getBackupRetentionPeriod()const
 void ConfigureBackupPlanRequest::setBackupRetentionPeriod(int backupRetentionPeriod)
 {
 	backupRetentionPeriod_ = backupRetentionPeriod;
-	setCoreParameter("BackupRetentionPeriod", std::to_string(backupRetentionPeriod));
+	setCoreParameter("BackupRetentionPeriod", backupRetentionPeriod);
 }
 
 int ConfigureBackupPlanRequest::getDuplicationInfrequentAccessPeriod()const
@@ -176,7 +176,7 @@ int ConfigureBackupPlanRequest::getDuplicationInfrequentAccessPeriod()const
 void ConfigureBackupPlanRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod)
 {
 	duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
-	setCoreParameter("DuplicationInfrequentAccessPeriod", std::to_string(duplicationInfrequentAccessPeriod));
+	setCoreParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod);
 }
 
 std::string ConfigureBackupPlanRequest::getBackupPeriod()const
@@ -275,6 +275,6 @@ bool ConfigureBackupPlanRequest::getEnableBackupLog()const
 void ConfigureBackupPlanRequest::setEnableBackupLog(bool enableBackupLog)
 {
 	enableBackupLog_ = enableBackupLog;
-	setCoreParameter("EnableBackupLog", enableBackupLog ? "true" : "false");
+	setCoreParameter("EnableBackupLog", enableBackupLog);
 }
 

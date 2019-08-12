@@ -55,7 +55,7 @@ int CreateKeywordRequest::getKeywordLibId()const
 void CreateKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setCoreParameter("KeywordLibId", keywordLibId);
 }
 
 std::string CreateKeywordRequest::getLang()const

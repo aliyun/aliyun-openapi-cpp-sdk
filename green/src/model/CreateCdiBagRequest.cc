@@ -44,7 +44,7 @@ int CreateCdiBagRequest::getOrderNum()const
 void CreateCdiBagRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", std::to_string(orderNum));
+	setCoreParameter("OrderNum", orderNum);
 }
 
 std::string CreateCdiBagRequest::getCommodityCode()const
@@ -66,7 +66,7 @@ long CreateCdiBagRequest::getOwnerId()const
 void CreateCdiBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateCdiBagRequest::getFlowOutSpec()const
@@ -77,7 +77,7 @@ int CreateCdiBagRequest::getFlowOutSpec()const
 void CreateCdiBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
+	setCoreParameter("FlowOutSpec", flowOutSpec);
 }
 
 std::string CreateCdiBagRequest::getOrderType()const

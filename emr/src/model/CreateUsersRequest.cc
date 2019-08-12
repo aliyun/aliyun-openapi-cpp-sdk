@@ -33,7 +33,7 @@ long CreateUsersRequest::getResourceOwnerId()const
 void CreateUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUsersRequest::getRegionId()const
@@ -70,9 +70,9 @@ void CreateUsersRequest::setUserInfo(const std::vector<UserInfo>& userInfo)
 	for(int i = 0; i!= userInfo.size(); i++)	{
 		auto obj = userInfo.at(i);
 		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
+		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
+		setCoreParameter(str + ".UserName", std::to_string(obj.userName));
 	}
 }
 

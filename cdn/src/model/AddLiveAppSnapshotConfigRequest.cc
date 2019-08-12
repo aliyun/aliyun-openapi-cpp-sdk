@@ -33,7 +33,7 @@ int AddLiveAppSnapshotConfigRequest::getTimeInterval()const
 void AddLiveAppSnapshotConfigRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setCoreParameter("TimeInterval", std::to_string(timeInterval));
+	setCoreParameter("TimeInterval", timeInterval);
 }
 
 std::string AddLiveAppSnapshotConfigRequest::getOssBucket()const
@@ -121,6 +121,6 @@ long AddLiveAppSnapshotConfigRequest::getOwnerId()const
 void AddLiveAppSnapshotConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

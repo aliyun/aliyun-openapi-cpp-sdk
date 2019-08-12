@@ -44,7 +44,7 @@ long DescribeDataTotalCountRequest::getInstanceId()const
 void DescribeDataTotalCountRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeDataTotalCountRequest::getSourceIp()const
@@ -66,7 +66,7 @@ int DescribeDataTotalCountRequest::getFeatureType()const
 void DescribeDataTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDataTotalCountRequest::getCountType()const
@@ -77,7 +77,7 @@ int DescribeDataTotalCountRequest::getCountType()const
 void DescribeDataTotalCountRequest::setCountType(int countType)
 {
 	countType_ = countType;
-	setCoreParameter("CountType", std::to_string(countType));
+	setCoreParameter("CountType", countType);
 }
 
 std::string DescribeDataTotalCountRequest::getLang()const

@@ -55,7 +55,7 @@ int GetSearchRequest::getPageSize()const
 void GetSearchRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetSearchRequest::getPage()const
@@ -66,7 +66,7 @@ int GetSearchRequest::getPage()const
 void GetSearchRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string GetSearchRequest::getKeyword()const

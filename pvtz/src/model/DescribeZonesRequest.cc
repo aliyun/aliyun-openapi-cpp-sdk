@@ -55,7 +55,7 @@ int DescribeZonesRequest::getPageSize()const
 void DescribeZonesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeZonesRequest::getUserClientIp()const
@@ -110,7 +110,7 @@ int DescribeZonesRequest::getPageNumber()const
 void DescribeZonesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeZonesRequest::getQueryRegionId()const

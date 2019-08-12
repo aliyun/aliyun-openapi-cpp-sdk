@@ -44,7 +44,7 @@ long UpdateWorkspaceRepoSettingRequest::getResourceOwnerId()const
 void UpdateWorkspaceRepoSettingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long UpdateWorkspaceRepoSettingRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long UpdateWorkspaceRepoSettingRequest::getCallerParentId()const
 void UpdateWorkspaceRepoSettingRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UpdateWorkspaceRepoSettingRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool UpdateWorkspaceRepoSettingRequest::getProxy_original_security_transport()co
 void UpdateWorkspaceRepoSettingRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UpdateWorkspaceRepoSettingRequest::getCallerBid()const
@@ -99,7 +99,7 @@ bool UpdateWorkspaceRepoSettingRequest::getAk_mfa_present()const
 void UpdateWorkspaceRepoSettingRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool UpdateWorkspaceRepoSettingRequest::getProxy_trust_transport_info()const
@@ -110,7 +110,7 @@ bool UpdateWorkspaceRepoSettingRequest::getProxy_trust_transport_info()const
 void UpdateWorkspaceRepoSettingRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string UpdateWorkspaceRepoSettingRequest::getCallerType()const
@@ -143,7 +143,7 @@ bool UpdateWorkspaceRepoSettingRequest::getSecurity_transport()const
 void UpdateWorkspaceRepoSettingRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UpdateWorkspaceRepoSettingRequest::getSecurityToken()const
@@ -191,9 +191,9 @@ void UpdateWorkspaceRepoSettingRequest::setRepoMaven(const std::vector<RepoMaven
 	for(int i = 0; i!= repoMaven.size(); i++)	{
 		auto obj = repoMaven.at(i);
 		std::string str ="RepoMaven."+ std::to_string(i);
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".ArtifactId", obj.artifactId);
-		setCoreParameter(str + ".Version", obj.version);
+		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
+		setCoreParameter(str + ".ArtifactId", std::to_string(obj.artifactId));
+		setCoreParameter(str + ".Version", std::to_string(obj.version));
 	}
 }
 
@@ -209,8 +209,8 @@ void UpdateWorkspaceRepoSettingRequest::setRepoPip(const std::vector<RepoPip>& r
 	for(int i = 0; i!= repoPip.size(); i++)	{
 		auto obj = repoPip.at(i);
 		std::string str ="RepoPip."+ std::to_string(i);
-		setCoreParameter(str + ".PackageName", obj.packageName);
-		setCoreParameter(str + ".Version", obj.version);
+		setCoreParameter(str + ".PackageName", std::to_string(obj.packageName));
+		setCoreParameter(str + ".Version", std::to_string(obj.version));
 	}
 }
 
@@ -222,7 +222,7 @@ long UpdateWorkspaceRepoSettingRequest::getCallerUid()const
 void UpdateWorkspaceRepoSettingRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string UpdateWorkspaceRepoSettingRequest::getWorkspaceId()const

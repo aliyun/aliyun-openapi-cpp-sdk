@@ -33,7 +33,7 @@ long SampleRequest::getResourceOwnerId()const
 void SampleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SampleRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long SampleRequest::getOwnerId()const
 void SampleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SampleRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long ShopShowListRequest::getGid()const
 void ShopShowListRequest::setGid(long gid)
 {
 	gid_ = gid;
-	setCoreParameter("Gid", std::to_string(gid));
+	setCoreParameter("Gid", gid);
 }
 
 std::string ShopShowListRequest::getAddress()const
@@ -77,7 +77,7 @@ int ShopShowListRequest::getPage()const
 void ShopShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 long ShopShowListRequest::getBid()const
@@ -88,7 +88,7 @@ long ShopShowListRequest::getBid()const
 void ShopShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 int ShopShowListRequest::getPer()const
@@ -99,7 +99,7 @@ int ShopShowListRequest::getPer()const
 void ShopShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 int ShopShowListRequest::getShopStatus()const
@@ -110,7 +110,7 @@ int ShopShowListRequest::getShopStatus()const
 void ShopShowListRequest::setShopStatus(int shopStatus)
 {
 	shopStatus_ = shopStatus;
-	setCoreParameter("ShopStatus", std::to_string(shopStatus));
+	setCoreParameter("ShopStatus", shopStatus);
 }
 
 std::string ShopShowListRequest::getAccessKeyId()const

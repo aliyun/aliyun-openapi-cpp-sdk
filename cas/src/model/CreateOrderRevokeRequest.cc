@@ -55,7 +55,7 @@ long CreateOrderRevokeRequest::getOrderId()const
 void CreateOrderRevokeRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string CreateOrderRevokeRequest::getLang()const

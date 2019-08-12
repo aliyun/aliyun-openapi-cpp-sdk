@@ -44,7 +44,7 @@ long ModifyLoadBalancerPayTypeRequest::getResourceOwnerId()const
 void ModifyLoadBalancerPayTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyLoadBalancerPayTypeRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool ModifyLoadBalancerPayTypeRequest::getAutoPay()const
 void ModifyLoadBalancerPayTypeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ModifyLoadBalancerPayTypeRequest::getOwnerId()const
 void ModifyLoadBalancerPayTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getTags()const
@@ -110,7 +110,7 @@ int ModifyLoadBalancerPayTypeRequest::getDuration()const
 void ModifyLoadBalancerPayTypeRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string ModifyLoadBalancerPayTypeRequest::getLoadBalancerId()const

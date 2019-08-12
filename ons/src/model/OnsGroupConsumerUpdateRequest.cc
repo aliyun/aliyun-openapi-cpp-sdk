@@ -33,7 +33,7 @@ bool OnsGroupConsumerUpdateRequest::getReadEnable()const
 void OnsGroupConsumerUpdateRequest::setReadEnable(bool readEnable)
 {
 	readEnable_ = readEnable;
-	setCoreParameter("ReadEnable", readEnable ? "true" : "false");
+	setCoreParameter("ReadEnable", readEnable);
 }
 
 std::string OnsGroupConsumerUpdateRequest::getInstanceId()const

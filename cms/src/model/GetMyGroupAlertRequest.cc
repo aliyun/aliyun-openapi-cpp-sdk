@@ -33,7 +33,7 @@ long GetMyGroupAlertRequest::getGroupId()const
 void GetMyGroupAlertRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string GetMyGroupAlertRequest::getAlertName()const

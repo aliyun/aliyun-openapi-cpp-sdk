@@ -55,7 +55,7 @@ long RefreshVodObjectCachesRequest::getOwnerId()const
 void RefreshVodObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RefreshVodObjectCachesRequest::getObjectType()const

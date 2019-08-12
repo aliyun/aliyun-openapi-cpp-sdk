@@ -44,7 +44,7 @@ long UnassociateHaVipRequest::getResourceOwnerId()const
 void UnassociateHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UnassociateHaVipRequest::getInstanceId()const
@@ -121,6 +121,6 @@ long UnassociateHaVipRequest::getOwnerId()const
 void UnassociateHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

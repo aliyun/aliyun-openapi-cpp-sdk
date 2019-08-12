@@ -55,7 +55,7 @@ int MoPenQueryCanvasRequest::getPageId()const
 void MoPenQueryCanvasRequest::setPageId(int pageId)
 {
 	pageId_ = pageId;
-	setCoreParameter("PageId", std::to_string(pageId));
+	setCoreParameter("PageId", pageId);
 }
 
 int MoPenQueryCanvasRequest::getStatus()const
@@ -66,6 +66,6 @@ int MoPenQueryCanvasRequest::getStatus()const
 void MoPenQueryCanvasRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

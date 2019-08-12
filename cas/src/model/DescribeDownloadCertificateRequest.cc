@@ -55,7 +55,7 @@ long DescribeDownloadCertificateRequest::getCertificateId()const
 void DescribeDownloadCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string DescribeDownloadCertificateRequest::getLang()const

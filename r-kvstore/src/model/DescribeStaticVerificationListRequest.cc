@@ -33,7 +33,7 @@ long DescribeStaticVerificationListRequest::getResourceOwnerId()const
 void DescribeStaticVerificationListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeStaticVerificationListRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ long DescribeStaticVerificationListRequest::getOwnerId()const
 void DescribeStaticVerificationListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeStaticVerificationListRequest::getAccessKeyId()const

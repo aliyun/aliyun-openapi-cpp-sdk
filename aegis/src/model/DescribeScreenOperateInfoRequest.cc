@@ -44,7 +44,7 @@ long DescribeScreenOperateInfoRequest::getStartTime()const
 void DescribeScreenOperateInfoRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScreenOperateInfoRequest::getLang()const

@@ -33,7 +33,7 @@ long DescribeCenPrivateZoneRoutesRequest::getResourceOwnerId()const
 void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int DescribeCenPrivateZoneRoutesRequest::getPageSize()const
 void DescribeCenPrivateZoneRoutesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getHostRegionId()const
@@ -99,6 +99,6 @@ int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const
 void DescribeCenPrivateZoneRoutesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

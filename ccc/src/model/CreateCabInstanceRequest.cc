@@ -33,7 +33,7 @@ int CreateCabInstanceRequest::getMaxConcurrentConversation()const
 void CreateCabInstanceRequest::setMaxConcurrentConversation(int maxConcurrentConversation)
 {
 	maxConcurrentConversation_ = maxConcurrentConversation;
-	setCoreParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
+	setCoreParameter("MaxConcurrentConversation", maxConcurrentConversation);
 }
 
 std::string CreateCabInstanceRequest::getInstanceName()const

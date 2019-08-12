@@ -55,6 +55,6 @@ int UpdateSendMaterialNumRequest::getOperateType()const
 void UpdateSendMaterialNumRequest::setOperateType(int operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", std::to_string(operateType));
+	setCoreParameter("OperateType", operateType);
 }
 

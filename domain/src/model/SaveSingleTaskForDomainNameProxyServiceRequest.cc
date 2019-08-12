@@ -66,6 +66,6 @@ bool SaveSingleTaskForDomainNameProxyServiceRequest::getStatus()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setCoreParameter("Status", status);
 }
 

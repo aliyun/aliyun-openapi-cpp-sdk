@@ -44,7 +44,7 @@ int ListMomentPhotosRequest::getSize()const
 void ListMomentPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListMomentPhotosRequest::getLibraryId()const
@@ -88,7 +88,7 @@ long ListMomentPhotosRequest::getMomentId()const
 void ListMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
-	setCoreParameter("MomentId", std::to_string(momentId));
+	setCoreParameter("MomentId", momentId);
 }
 
 std::string ListMomentPhotosRequest::getDirection()const

@@ -33,7 +33,7 @@ long ModifyExecutionPlanScheduleInfoRequest::getResourceOwnerId()const
 void ModifyExecutionPlanScheduleInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ModifyExecutionPlanScheduleInfoRequest::getTimeInterval()const
@@ -44,7 +44,7 @@ int ModifyExecutionPlanScheduleInfoRequest::getTimeInterval()const
 void ModifyExecutionPlanScheduleInfoRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setCoreParameter("TimeInterval", std::to_string(timeInterval));
+	setCoreParameter("TimeInterval", timeInterval);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getRegionId()const
@@ -88,7 +88,7 @@ long ModifyExecutionPlanScheduleInfoRequest::getStartTime()const
 void ModifyExecutionPlanScheduleInfoRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getStrategy()const

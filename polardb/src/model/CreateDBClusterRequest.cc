@@ -33,7 +33,7 @@ long CreateDBClusterRequest::getResourceOwnerId()const
 void CreateDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateDBClusterRequest::getDBClusterDescription()const
@@ -99,7 +99,7 @@ long CreateDBClusterRequest::getOwnerId()const
 void CreateDBClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDBClusterRequest::getUsedTime()const
@@ -165,7 +165,7 @@ bool CreateDBClusterRequest::getAutoRenew()const
 void CreateDBClusterRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateDBClusterRequest::getRegionId()const

@@ -44,7 +44,7 @@ long GetDownloadUrlRequest::getPhotoId()const
 void GetDownloadUrlRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string GetDownloadUrlRequest::getStoreName()const

@@ -44,7 +44,7 @@ long SetLoadBalancerNameRequest::getResourceOwnerId()const
 void SetLoadBalancerNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetLoadBalancerNameRequest::getLoadBalancerName()const
@@ -110,7 +110,7 @@ long SetLoadBalancerNameRequest::getOwnerId()const
 void SetLoadBalancerNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetLoadBalancerNameRequest::getTags()const

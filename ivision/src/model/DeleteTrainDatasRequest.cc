@@ -33,7 +33,7 @@ long DeleteTrainDatasRequest::getResourceOwnerId()const
 void DeleteTrainDatasRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DeleteTrainDatasRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteTrainDatasRequest::getCallerParentId()const
 void DeleteTrainDatasRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DeleteTrainDatasRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DeleteTrainDatasRequest::getProxy_original_security_transport()const
 void DeleteTrainDatasRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteTrainDatasRequest::getDataIds()const
@@ -187,7 +187,7 @@ long DeleteTrainDatasRequest::getCallerUid()const
 void DeleteTrainDatasRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DeleteTrainDatasRequest::getShowLog()const
@@ -242,7 +242,7 @@ long DeleteTrainDatasRequest::getOwnerId()const
 void DeleteTrainDatasRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteTrainDatasRequest::getVersion()const
@@ -264,7 +264,7 @@ bool DeleteTrainDatasRequest::getProxy_trust_transport_info()const
 void DeleteTrainDatasRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DeleteTrainDatasRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DeleteTrainDatasRequest::getAk_mfa_present()const
 void DeleteTrainDatasRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteTrainDatasRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DeleteTrainDatasRequest::getSecurity_transport()const
 void DeleteTrainDatasRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteTrainDatasRequest::getRequestId()const

@@ -77,7 +77,7 @@ int ListRecordingsRequest::getPageSize()const
 void ListRecordingsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListRecordingsRequest::getStopTime()const
@@ -88,7 +88,7 @@ long ListRecordingsRequest::getStopTime()const
 void ListRecordingsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 long ListRecordingsRequest::getStartTime()const
@@ -99,7 +99,7 @@ long ListRecordingsRequest::getStartTime()const
 void ListRecordingsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int ListRecordingsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListRecordingsRequest::getPageNumber()const
 void ListRecordingsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListRecordingsRequest::getAccessKeyId()const

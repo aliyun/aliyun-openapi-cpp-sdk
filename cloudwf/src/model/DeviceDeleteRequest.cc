@@ -33,7 +33,7 @@ long DeviceDeleteRequest::getDid()const
 void DeviceDeleteRequest::setDid(long did)
 {
 	did_ = did;
-	setCoreParameter("Did", std::to_string(did));
+	setCoreParameter("Did", did);
 }
 
 std::string DeviceDeleteRequest::getMac()const

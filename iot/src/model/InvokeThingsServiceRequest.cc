@@ -67,7 +67,7 @@ void InvokeThingsServiceRequest::setDeviceName(const std::vector<std::string>& d
 {
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+		setCoreParameter("DeviceName."+ std::to_string(i), std::to_string(deviceName.at(i)));
 }
 
 std::string InvokeThingsServiceRequest::getProductKey()const

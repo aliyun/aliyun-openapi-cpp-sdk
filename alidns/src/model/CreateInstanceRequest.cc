@@ -33,7 +33,7 @@ int CreateInstanceRequest::getMonth()const
 void CreateInstanceRequest::setMonth(int month)
 {
 	month_ = month;
-	setCoreParameter("Month", std::to_string(month));
+	setCoreParameter("Month", month);
 }
 
 std::string CreateInstanceRequest::getUserClientIp()const
@@ -88,7 +88,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const

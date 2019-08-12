@@ -33,7 +33,7 @@ int CheckProcessingServerLockApplyRequest::getFeePeriod()const
 void CheckProcessingServerLockApplyRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", std::to_string(feePeriod));
+	setCoreParameter("FeePeriod", feePeriod);
 }
 
 std::string CheckProcessingServerLockApplyRequest::getDomainName()const

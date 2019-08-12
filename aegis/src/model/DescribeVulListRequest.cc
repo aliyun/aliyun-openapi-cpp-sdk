@@ -110,7 +110,7 @@ int DescribeVulListRequest::getCurrentPage()const
 void DescribeVulListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeVulListRequest::getType()const
@@ -132,7 +132,7 @@ long DescribeVulListRequest::getCreateTsStart()const
 void DescribeVulListRequest::setCreateTsStart(long createTsStart)
 {
 	createTsStart_ = createTsStart;
-	setCoreParameter("CreateTsStart", std::to_string(createTsStart));
+	setCoreParameter("CreateTsStart", createTsStart);
 }
 
 std::string DescribeVulListRequest::getBatchName()const
@@ -187,7 +187,7 @@ int DescribeVulListRequest::getPageSize()const
 void DescribeVulListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeVulListRequest::getIds()const
@@ -220,7 +220,7 @@ long DescribeVulListRequest::getCreateTsEnd()const
 void DescribeVulListRequest::setCreateTsEnd(long createTsEnd)
 {
 	createTsEnd_ = createTsEnd;
-	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
+	setCoreParameter("CreateTsEnd", createTsEnd);
 }
 
 std::string DescribeVulListRequest::getNecessity()const

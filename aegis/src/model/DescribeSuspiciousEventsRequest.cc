@@ -55,7 +55,7 @@ int DescribeSuspiciousEventsRequest::getPageSize()const
 void DescribeSuspiciousEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeSuspiciousEventsRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeSuspiciousEventsRequest::getCurrentPage()const
 void DescribeSuspiciousEventsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSuspiciousEventsRequest::getDealed()const

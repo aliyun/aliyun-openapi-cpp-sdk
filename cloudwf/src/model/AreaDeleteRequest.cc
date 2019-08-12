@@ -33,7 +33,7 @@ long AreaDeleteRequest::getAid()const
 void AreaDeleteRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", std::to_string(aid));
+	setCoreParameter("Aid", aid);
 }
 
 std::string AreaDeleteRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ long AreaDeleteRequest::getSid()const
 void AreaDeleteRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

@@ -44,6 +44,6 @@ long DescribeVulExportInfoRequest::getExportId()const
 void DescribeVulExportInfoRequest::setExportId(long exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", std::to_string(exportId));
+	setCoreParameter("ExportId", exportId);
 }
 

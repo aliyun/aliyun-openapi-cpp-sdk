@@ -33,7 +33,7 @@ long DeletePositionMapRequest::getMapId()const
 void DeletePositionMapRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setCoreParameter("MapId", mapId);
 }
 
 std::string DeletePositionMapRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ int ListContainerImagesRequest::getPageSize()const
 void ListContainerImagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListContainerImagesRequest::getClusterId()const
@@ -66,7 +66,7 @@ int ListContainerImagesRequest::getPageNumber()const
 void ListContainerImagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListContainerImagesRequest::getAccessKeyId()const

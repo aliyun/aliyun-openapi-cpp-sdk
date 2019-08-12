@@ -44,7 +44,7 @@ long GetJobOutputStatisticInfoRequest::getResourceOwnerId()const
 void GetJobOutputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetJobOutputStatisticInfoRequest::getRegionId()const
@@ -66,7 +66,7 @@ int GetJobOutputStatisticInfoRequest::getPageSize()const
 void GetJobOutputStatisticInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetJobOutputStatisticInfoRequest::getClusterId()const
@@ -99,7 +99,7 @@ int GetJobOutputStatisticInfoRequest::getPageNumber()const
 void GetJobOutputStatisticInfoRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GetJobOutputStatisticInfoRequest::getAccessKeyId()const

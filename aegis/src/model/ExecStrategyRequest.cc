@@ -44,6 +44,6 @@ int ExecStrategyRequest::getStrategyId()const
 void ExecStrategyRequest::setStrategyId(int strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 

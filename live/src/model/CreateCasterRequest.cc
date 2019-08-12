@@ -55,7 +55,7 @@ int CreateCasterRequest::getNormType()const
 void CreateCasterRequest::setNormType(int normType)
 {
 	normType_ = normType;
-	setCoreParameter("NormType", std::to_string(normType));
+	setCoreParameter("NormType", normType);
 }
 
 std::string CreateCasterRequest::getCasterName()const
@@ -99,7 +99,7 @@ long CreateCasterRequest::getOwnerId()const
 void CreateCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateCasterRequest::getPurchaseTime()const

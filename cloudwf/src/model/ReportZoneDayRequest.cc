@@ -66,6 +66,6 @@ long ReportZoneDayRequest::getAgsid()const
 void ReportZoneDayRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 

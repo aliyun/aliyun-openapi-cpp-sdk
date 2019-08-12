@@ -33,7 +33,7 @@ long DescribeCenRegionDomainRouteEntriesRequest::getResourceOwnerId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeCenRegionDomainRouteEntriesRequest::getPageSize()const
 void DescribeCenRegionDomainRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCenRegionDomainRouteEntriesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeCenRegionDomainRouteEntriesRequest::getOwnerId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeCenRegionDomainRouteEntriesRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeCenRegionDomainRouteEntriesRequest::getPageNumber()const
 void DescribeCenRegionDomainRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getStatus()const

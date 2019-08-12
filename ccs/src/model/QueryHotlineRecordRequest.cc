@@ -44,7 +44,7 @@ long QueryHotlineRecordRequest::getMaxTalkDuration()const
 void QueryHotlineRecordRequest::setMaxTalkDuration(long maxTalkDuration)
 {
 	maxTalkDuration_ = maxTalkDuration;
-	setCoreParameter("MaxTalkDuration", std::to_string(maxTalkDuration));
+	setCoreParameter("MaxTalkDuration", maxTalkDuration);
 }
 
 std::string QueryHotlineRecordRequest::getGroupId()const
@@ -88,7 +88,7 @@ int QueryHotlineRecordRequest::getPageNum()const
 void QueryHotlineRecordRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryHotlineRecordRequest::getSatisfaction()const
@@ -110,7 +110,7 @@ long QueryHotlineRecordRequest::getMinTalkDuratoin()const
 void QueryHotlineRecordRequest::setMinTalkDuratoin(long minTalkDuratoin)
 {
 	minTalkDuratoin_ = minTalkDuratoin;
-	setCoreParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
+	setCoreParameter("MinTalkDuratoin", minTalkDuratoin);
 }
 
 std::string QueryHotlineRecordRequest::getCategoryIds()const
@@ -143,7 +143,7 @@ int QueryHotlineRecordRequest::getPageSize()const
 void QueryHotlineRecordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryHotlineRecordRequest::getCallType()const

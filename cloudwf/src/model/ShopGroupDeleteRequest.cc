@@ -33,7 +33,7 @@ long ShopGroupDeleteRequest::getGid()const
 void ShopGroupDeleteRequest::setGid(long gid)
 {
 	gid_ = gid;
-	setCoreParameter("Gid", std::to_string(gid));
+	setCoreParameter("Gid", gid);
 }
 
 std::string ShopGroupDeleteRequest::getAccessKeyId()const

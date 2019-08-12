@@ -55,6 +55,6 @@ long UpdateProjectListStatusRequest::getCsbId()const
 void UpdateProjectListStatusRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 

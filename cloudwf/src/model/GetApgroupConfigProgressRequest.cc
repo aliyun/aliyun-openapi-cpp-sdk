@@ -33,7 +33,7 @@ long GetApgroupConfigProgressRequest::getId()const
 void GetApgroupConfigProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string GetApgroupConfigProgressRequest::getAccessKeyId()const

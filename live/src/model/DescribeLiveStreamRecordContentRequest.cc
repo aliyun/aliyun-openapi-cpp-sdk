@@ -88,7 +88,7 @@ long DescribeLiveStreamRecordContentRequest::getOwnerId()const
 void DescribeLiveStreamRecordContentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getStreamName()const

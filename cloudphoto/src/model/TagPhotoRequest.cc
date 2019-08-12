@@ -45,7 +45,7 @@ void TagPhotoRequest::setConfidence(const std::vector<float>& confidence)
 {
 	confidence_ = confidence;
 	for(int i = 0; i!= confidence.size(); i++)
-		setCoreParameter("Confidence."+ std::to_string(i), std::to_string(confidence.at(i)));
+		setCoreParameter("Confidence."+ std::to_string(i), confidence.at(i));
 }
 
 std::string TagPhotoRequest::getStoreName()const
@@ -67,7 +67,7 @@ long TagPhotoRequest::getPhotoId()const
 void TagPhotoRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::vector<std::string> TagPhotoRequest::getTagKey()const
@@ -79,6 +79,6 @@ void TagPhotoRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+		setCoreParameter("TagKey."+ std::to_string(i), std::to_string(tagKey.at(i)));
 }
 

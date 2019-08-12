@@ -33,7 +33,7 @@ bool DescribeAlarmsRequest::getIsEnable()const
 void DescribeAlarmsRequest::setIsEnable(bool isEnable)
 {
 	isEnable_ = isEnable;
-	setCoreParameter("IsEnable", isEnable ? "true" : "false");
+	setCoreParameter("IsEnable", isEnable);
 }
 
 std::string DescribeAlarmsRequest::getMetricType()const
@@ -88,7 +88,7 @@ int DescribeAlarmsRequest::getPageSize()const
 void DescribeAlarmsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAlarmsRequest::getState()const
@@ -110,7 +110,7 @@ long DescribeAlarmsRequest::getOwnerId()const
 void DescribeAlarmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAlarmsRequest::getAlarmTaskId()const
@@ -132,7 +132,7 @@ int DescribeAlarmsRequest::getPageNumber()const
 void DescribeAlarmsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAlarmsRequest::getAccessKeyId()const

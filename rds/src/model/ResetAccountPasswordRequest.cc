@@ -33,7 +33,7 @@ long ResetAccountPasswordRequest::getResourceOwnerId()const
 void ResetAccountPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ResetAccountPasswordRequest::getAccountPassword()const
@@ -99,7 +99,7 @@ long ResetAccountPasswordRequest::getOwnerId()const
 void ResetAccountPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ResetAccountPasswordRequest::getAccessKeyId()const

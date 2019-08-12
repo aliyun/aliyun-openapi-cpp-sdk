@@ -44,7 +44,7 @@ int DescribeOrderListRequest::getShowSize()const
 void DescribeOrderListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setCoreParameter("ShowSize", showSize);
 }
 
 long DescribeOrderListRequest::getBrandId()const
@@ -55,7 +55,7 @@ long DescribeOrderListRequest::getBrandId()const
 void DescribeOrderListRequest::setBrandId(long brandId)
 {
 	brandId_ = brandId;
-	setCoreParameter("BrandId", std::to_string(brandId));
+	setCoreParameter("BrandId", brandId);
 }
 
 int DescribeOrderListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeOrderListRequest::getCurrentPage()const
 void DescribeOrderListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::vector<DescribeOrderListRequest::Tag> DescribeOrderListRequest::getTag()const
@@ -81,8 +81,8 @@ void DescribeOrderListRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

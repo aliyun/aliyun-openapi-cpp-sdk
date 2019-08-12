@@ -34,7 +34,7 @@ void ListFlowNodeInstanceRequest::setStatusList(const std::vector<std::string>& 
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListFlowNodeInstanceRequest::getRegionId()const
@@ -56,7 +56,7 @@ int ListFlowNodeInstanceRequest::getPageSize()const
 void ListFlowNodeInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderBy()const
@@ -78,7 +78,7 @@ long ListFlowNodeInstanceRequest::getStartTime()const
 void ListFlowNodeInstanceRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string ListFlowNodeInstanceRequest::getProjectId()const
@@ -100,7 +100,7 @@ int ListFlowNodeInstanceRequest::getPageNumber()const
 void ListFlowNodeInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderType()const

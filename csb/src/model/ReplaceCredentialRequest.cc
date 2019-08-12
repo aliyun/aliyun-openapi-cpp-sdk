@@ -44,6 +44,6 @@ long ReplaceCredentialRequest::getCredentialId()const
 void ReplaceCredentialRequest::setCredentialId(long credentialId)
 {
 	credentialId_ = credentialId;
-	setCoreParameter("CredentialId", std::to_string(credentialId));
+	setCoreParameter("CredentialId", credentialId);
 }
 

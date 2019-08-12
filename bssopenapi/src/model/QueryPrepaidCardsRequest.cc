@@ -55,6 +55,6 @@ bool QueryPrepaidCardsRequest::getEffectiveOrNot()const
 void QueryPrepaidCardsRequest::setEffectiveOrNot(bool effectiveOrNot)
 {
 	effectiveOrNot_ = effectiveOrNot;
-	setCoreParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
+	setCoreParameter("EffectiveOrNot", effectiveOrNot);
 }
 

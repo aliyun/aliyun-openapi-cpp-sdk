@@ -77,7 +77,7 @@ long DescribeDcdnRefreshTasksRequest::getOwnerId()const
 void DescribeDcdnRefreshTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeDcdnRefreshTasksRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeDcdnRefreshTasksRequest::getPageNumber()const
 void DescribeDcdnRefreshTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ int DescribeDcdnRefreshTasksRequest::getPageSize()const
 void DescribeDcdnRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDcdnRefreshTasksRequest::getObjectType()const

@@ -44,7 +44,7 @@ long EditPhotoStoreRequest::getDefaultTrashQuota()const
 void EditPhotoStoreRequest::setDefaultTrashQuota(long defaultTrashQuota)
 {
 	defaultTrashQuota_ = defaultTrashQuota;
-	setCoreParameter("DefaultTrashQuota", std::to_string(defaultTrashQuota));
+	setCoreParameter("DefaultTrashQuota", defaultTrashQuota);
 }
 
 std::string EditPhotoStoreRequest::getStoreName()const
@@ -77,7 +77,7 @@ long EditPhotoStoreRequest::getDefaultQuota()const
 void EditPhotoStoreRequest::setDefaultQuota(long defaultQuota)
 {
 	defaultQuota_ = defaultQuota;
-	setCoreParameter("DefaultQuota", std::to_string(defaultQuota));
+	setCoreParameter("DefaultQuota", defaultQuota);
 }
 
 int EditPhotoStoreRequest::getAutoCleanDays()const
@@ -88,6 +88,6 @@ int EditPhotoStoreRequest::getAutoCleanDays()const
 void EditPhotoStoreRequest::setAutoCleanDays(int autoCleanDays)
 {
 	autoCleanDays_ = autoCleanDays;
-	setCoreParameter("AutoCleanDays", std::to_string(autoCleanDays));
+	setCoreParameter("AutoCleanDays", autoCleanDays);
 }
 

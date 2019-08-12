@@ -44,6 +44,6 @@ long DescribeScdnUserQuotaRequest::getOwnerId()const
 void DescribeScdnUserQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -55,7 +55,7 @@ int ShopUpdateRequest::getShopTopType()const
 void ShopUpdateRequest::setShopTopType(int shopTopType)
 {
 	shopTopType_ = shopTopType;
-	setCoreParameter("ShopTopType", std::to_string(shopTopType));
+	setCoreParameter("ShopTopType", shopTopType);
 }
 
 std::string ShopUpdateRequest::getShopAddress()const
@@ -77,7 +77,7 @@ int ShopUpdateRequest::getShopType()const
 void ShopUpdateRequest::setShopType(int shopType)
 {
 	shopType_ = shopType;
-	setCoreParameter("ShopType", std::to_string(shopType));
+	setCoreParameter("ShopType", shopType);
 }
 
 std::string ShopUpdateRequest::getWarnEmail()const
@@ -110,7 +110,7 @@ long ShopUpdateRequest::getSid()const
 void ShopUpdateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 
 std::string ShopUpdateRequest::getShopTel()const
@@ -143,7 +143,7 @@ int ShopUpdateRequest::getWarn()const
 void ShopUpdateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setCoreParameter("Warn", warn);
 }
 
 int ShopUpdateRequest::getShopArea()const
@@ -154,7 +154,7 @@ int ShopUpdateRequest::getShopArea()const
 void ShopUpdateRequest::setShopArea(int shopArea)
 {
 	shopArea_ = shopArea;
-	setCoreParameter("ShopArea", std::to_string(shopArea));
+	setCoreParameter("ShopArea", shopArea);
 }
 
 std::string ShopUpdateRequest::getShopRemarks()const
@@ -187,7 +187,7 @@ int ShopUpdateRequest::getShopSubtype()const
 void ShopUpdateRequest::setShopSubtype(int shopSubtype)
 {
 	shopSubtype_ = shopSubtype;
-	setCoreParameter("ShopSubtype", std::to_string(shopSubtype));
+	setCoreParameter("ShopSubtype", shopSubtype);
 }
 
 std::string ShopUpdateRequest::getShopBrand()const
@@ -220,7 +220,7 @@ int ShopUpdateRequest::getShopCloseWarn()const
 void ShopUpdateRequest::setShopCloseWarn(int shopCloseWarn)
 {
 	shopCloseWarn_ = shopCloseWarn;
-	setCoreParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
+	setCoreParameter("ShopCloseWarn", shopCloseWarn);
 }
 
 std::string ShopUpdateRequest::getShopManager()const

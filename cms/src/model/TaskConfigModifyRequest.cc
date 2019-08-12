@@ -34,7 +34,7 @@ void TaskConfigModifyRequest::setInstanceList(const std::vector<std::string>& in
 {
 	instanceList_ = instanceList;
 	for(int i = 0; i!= instanceList.size(); i++)
-		setCoreParameter("InstanceList."+ std::to_string(i), instanceList.at(i));
+		setCoreParameter("InstanceList."+ std::to_string(i), std::to_string(instanceList.at(i)));
 }
 
 std::string TaskConfigModifyRequest::getJsonData()const
@@ -89,7 +89,7 @@ long TaskConfigModifyRequest::getGroupId()const
 void TaskConfigModifyRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string TaskConfigModifyRequest::getTaskName()const
@@ -111,7 +111,7 @@ long TaskConfigModifyRequest::getId()const
 void TaskConfigModifyRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string TaskConfigModifyRequest::getGroupName()const

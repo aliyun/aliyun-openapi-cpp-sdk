@@ -44,7 +44,7 @@ long GetQueueInputStatisticInfoRequest::getResourceOwnerId()const
 void GetQueueInputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetQueueInputStatisticInfoRequest::getRegionId()const

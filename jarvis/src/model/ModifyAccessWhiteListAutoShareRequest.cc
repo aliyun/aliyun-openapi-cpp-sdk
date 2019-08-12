@@ -55,7 +55,7 @@ int ModifyAccessWhiteListAutoShareRequest::getAutoConfig()const
 void ModifyAccessWhiteListAutoShareRequest::setAutoConfig(int autoConfig)
 {
 	autoConfig_ = autoConfig;
-	setCoreParameter("AutoConfig", std::to_string(autoConfig));
+	setCoreParameter("AutoConfig", autoConfig);
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getProductName()const
@@ -77,7 +77,7 @@ int ModifyAccessWhiteListAutoShareRequest::getWhiteListType()const
 void ModifyAccessWhiteListAutoShareRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string ModifyAccessWhiteListAutoShareRequest::getLang()const

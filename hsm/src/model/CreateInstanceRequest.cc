@@ -33,7 +33,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string CreateInstanceRequest::getPeriodUnit()const
@@ -66,7 +66,7 @@ int CreateInstanceRequest::getQuantity()const
 void CreateInstanceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string CreateInstanceRequest::getHsmDeviceType()const

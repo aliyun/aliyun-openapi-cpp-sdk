@@ -48,7 +48,7 @@ void SetQueueRequest::setNode(const std::vector<Node>& node)
 	for(int i = 0; i!= node.size(); i++)	{
 		auto obj = node.at(i);
 		std::string str ="Node."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
 	}
 }
 

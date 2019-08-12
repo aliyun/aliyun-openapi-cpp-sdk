@@ -67,7 +67,7 @@ void ModifyNotificationConfigurationRequest::setNotificationType(const std::vect
 {
 	notificationType_ = notificationType;
 	for(int i = 0; i!= notificationType.size(); i++)
-		setCoreParameter("NotificationType."+ std::to_string(i), notificationType.at(i));
+		setCoreParameter("NotificationType."+ std::to_string(i), std::to_string(notificationType.at(i)));
 }
 
 long ModifyNotificationConfigurationRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long ModifyNotificationConfigurationRequest::getOwnerId()const
 void ModifyNotificationConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyNotificationConfigurationRequest::getAccessKeyId()const

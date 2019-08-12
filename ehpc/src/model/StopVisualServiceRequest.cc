@@ -33,7 +33,7 @@ int StopVisualServiceRequest::getPort()const
 void StopVisualServiceRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string StopVisualServiceRequest::getClusterId()const

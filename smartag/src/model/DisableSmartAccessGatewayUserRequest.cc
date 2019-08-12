@@ -33,7 +33,7 @@ long DisableSmartAccessGatewayUserRequest::getResourceOwnerId()const
 void DisableSmartAccessGatewayUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DisableSmartAccessGatewayUserRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DisableSmartAccessGatewayUserRequest::getOwnerId()const
 void DisableSmartAccessGatewayUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DisableSmartAccessGatewayUserRequest::getUserName()const

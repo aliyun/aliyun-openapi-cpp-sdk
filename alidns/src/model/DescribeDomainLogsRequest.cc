@@ -66,7 +66,7 @@ long DescribeDomainLogsRequest::getPageSize()const
 void DescribeDomainLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDomainLogsRequest::getLang()const
@@ -121,6 +121,6 @@ long DescribeDomainLogsRequest::getPageNumber()const
 void DescribeDomainLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

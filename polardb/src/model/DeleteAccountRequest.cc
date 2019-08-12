@@ -33,7 +33,7 @@ long DeleteAccountRequest::getResourceOwnerId()const
 void DeleteAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteAccountRequest::getAccountName()const
@@ -88,7 +88,7 @@ long DeleteAccountRequest::getOwnerId()const
 void DeleteAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteAccountRequest::getAccessKeyId()const

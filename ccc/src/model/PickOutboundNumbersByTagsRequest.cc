@@ -34,7 +34,7 @@ void PickOutboundNumbersByTagsRequest::setPrioritizedCallerArea(const std::vecto
 {
 	prioritizedCallerArea_ = prioritizedCallerArea;
 	for(int i = 0; i!= prioritizedCallerArea.size(); i++)
-		setCoreParameter("PrioritizedCallerArea."+ std::to_string(i), prioritizedCallerArea.at(i));
+		setCoreParameter("PrioritizedCallerArea."+ std::to_string(i), std::to_string(prioritizedCallerArea.at(i)));
 }
 
 std::string PickOutboundNumbersByTagsRequest::getInstanceId()const
@@ -57,7 +57,7 @@ void PickOutboundNumbersByTagsRequest::setServiceTag(const std::vector<std::stri
 {
 	serviceTag_ = serviceTag;
 	for(int i = 0; i!= serviceTag.size(); i++)
-		setCoreParameter("ServiceTag."+ std::to_string(i), serviceTag.at(i));
+		setCoreParameter("ServiceTag."+ std::to_string(i), std::to_string(serviceTag.at(i)));
 }
 
 std::vector<std::string> PickOutboundNumbersByTagsRequest::getSkillGroupId()const
@@ -69,7 +69,7 @@ void PickOutboundNumbersByTagsRequest::setSkillGroupId(const std::vector<std::st
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
 }
 
 int PickOutboundNumbersByTagsRequest::getCount()const
@@ -80,7 +80,7 @@ int PickOutboundNumbersByTagsRequest::getCount()const
 void PickOutboundNumbersByTagsRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string PickOutboundNumbersByTagsRequest::getCalleeNumber()const

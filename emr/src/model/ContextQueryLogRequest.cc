@@ -44,7 +44,7 @@ long ContextQueryLogRequest::getResourceOwnerId()const
 void ContextQueryLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ContextQueryLogRequest::getTotalOffset()const
@@ -55,7 +55,7 @@ int ContextQueryLogRequest::getTotalOffset()const
 void ContextQueryLogRequest::setTotalOffset(int totalOffset)
 {
 	totalOffset_ = totalOffset;
-	setCoreParameter("TotalOffset", std::to_string(totalOffset));
+	setCoreParameter("TotalOffset", totalOffset);
 }
 
 int ContextQueryLogRequest::getSize()const
@@ -66,7 +66,7 @@ int ContextQueryLogRequest::getSize()const
 void ContextQueryLogRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ContextQueryLogRequest::getRegionId()const
@@ -99,7 +99,7 @@ int ContextQueryLogRequest::getFrom()const
 void ContextQueryLogRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string ContextQueryLogRequest::getClusterId()const
@@ -121,7 +121,7 @@ int ContextQueryLogRequest::getTo()const
 void ContextQueryLogRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", std::to_string(to));
+	setCoreParameter("To", to);
 }
 
 bool ContextQueryLogRequest::getReverse()const
@@ -132,7 +132,7 @@ bool ContextQueryLogRequest::getReverse()const
 void ContextQueryLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setCoreParameter("Reverse", reverse);
 }
 
 std::string ContextQueryLogRequest::getLogStore()const

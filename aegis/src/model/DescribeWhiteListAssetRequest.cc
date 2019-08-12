@@ -44,7 +44,7 @@ long DescribeWhiteListAssetRequest::getLastMaxId()const
 void DescribeWhiteListAssetRequest::setLastMaxId(long lastMaxId)
 {
 	lastMaxId_ = lastMaxId;
-	setCoreParameter("LastMaxId", std::to_string(lastMaxId));
+	setCoreParameter("LastMaxId", lastMaxId);
 }
 
 int DescribeWhiteListAssetRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeWhiteListAssetRequest::getPageSize()const
 void DescribeWhiteListAssetRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeWhiteListAssetRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long DescribeWhiteListAssetRequest::getStrategyId()const
 void DescribeWhiteListAssetRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string DescribeWhiteListAssetRequest::getLang()const
@@ -88,6 +88,6 @@ int DescribeWhiteListAssetRequest::getType()const
 void DescribeWhiteListAssetRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

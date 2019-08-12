@@ -55,7 +55,7 @@ int GetJobListRequest::getPageSize()const
 void GetJobListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetJobListRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int GetJobListRequest::getPageNumber()const
 void GetJobListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 int GetJobListRequest::getStatus()const
@@ -77,7 +77,7 @@ int GetJobListRequest::getStatus()const
 void GetJobListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 
 bool GetJobListRequest::getQueryAll()const
@@ -88,6 +88,6 @@ bool GetJobListRequest::getQueryAll()const
 void GetJobListRequest::setQueryAll(bool queryAll)
 {
 	queryAll_ = queryAll;
-	setCoreParameter("QueryAll", queryAll ? "true" : "false");
+	setCoreParameter("QueryAll", queryAll);
 }
 

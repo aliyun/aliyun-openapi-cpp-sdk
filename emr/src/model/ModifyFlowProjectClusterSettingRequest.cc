@@ -34,7 +34,7 @@ void ModifyFlowProjectClusterSettingRequest::setUserList(const std::vector<std::
 {
 	userList_ = userList;
 	for(int i = 0; i!= userList.size(); i++)
-		setCoreParameter("UserList."+ std::to_string(i), userList.at(i));
+		setCoreParameter("UserList."+ std::to_string(i), std::to_string(userList.at(i)));
 }
 
 std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getQueueList()const
@@ -46,7 +46,7 @@ void ModifyFlowProjectClusterSettingRequest::setQueueList(const std::vector<std:
 {
 	queueList_ = queueList;
 	for(int i = 0; i!= queueList.size(); i++)
-		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
+		setCoreParameter("QueueList."+ std::to_string(i), std::to_string(queueList.at(i)));
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getRegionId()const
@@ -69,7 +69,7 @@ void ModifyFlowProjectClusterSettingRequest::setHostList(const std::vector<std::
 {
 	hostList_ = hostList;
 	for(int i = 0; i!= hostList.size(); i++)
-		setCoreParameter("HostList."+ std::to_string(i), hostList.at(i));
+		setCoreParameter("HostList."+ std::to_string(i), std::to_string(hostList.at(i)));
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getClusterId()const

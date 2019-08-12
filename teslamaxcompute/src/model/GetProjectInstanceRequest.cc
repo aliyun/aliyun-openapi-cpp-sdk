@@ -33,7 +33,7 @@ int GetProjectInstanceRequest::getPageSize()const
 void GetProjectInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetProjectInstanceRequest::getProject()const
@@ -55,7 +55,7 @@ int GetProjectInstanceRequest::getPageNum()const
 void GetProjectInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string GetProjectInstanceRequest::getRegion()const

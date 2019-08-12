@@ -33,7 +33,7 @@ int ListTimeLinePhotosRequest::getSize()const
 void ListTimeLinePhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListTimeLinePhotosRequest::getLibraryId()const
@@ -55,7 +55,7 @@ long ListTimeLinePhotosRequest::getEndTime()const
 void ListTimeLinePhotosRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string ListTimeLinePhotosRequest::getStoreName()const
@@ -77,7 +77,7 @@ int ListTimeLinePhotosRequest::getPage()const
 void ListTimeLinePhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 long ListTimeLinePhotosRequest::getStartTime()const
@@ -88,7 +88,7 @@ long ListTimeLinePhotosRequest::getStartTime()const
 void ListTimeLinePhotosRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string ListTimeLinePhotosRequest::getFilterBy()const

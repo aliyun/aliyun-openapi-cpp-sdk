@@ -44,7 +44,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -77,7 +77,7 @@ int CreateInstanceRequest::getRenewPeriod()const
 void CreateInstanceRequest::setRenewPeriod(int renewPeriod)
 {
 	renewPeriod_ = renewPeriod;
-	setCoreParameter("RenewPeriod", std::to_string(renewPeriod));
+	setCoreParameter("RenewPeriod", renewPeriod);
 }
 
 std::vector<CreateInstanceRequest::Parameter> CreateInstanceRequest::getParameter()const
@@ -92,8 +92,8 @@ void CreateInstanceRequest::setParameter(const std::vector<Parameter>& parameter
 	for(int i = 0; i!= parameter.size(); i++)	{
 		auto obj = parameter.at(i);
 		std::string str ="Parameter."+ std::to_string(i);
-		setCoreParameter(str + ".Code", obj.code);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Code", std::to_string(obj.code));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -116,7 +116,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateInstanceRequest::getProductType()const

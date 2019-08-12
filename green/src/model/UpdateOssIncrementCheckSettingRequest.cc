@@ -121,7 +121,7 @@ int UpdateOssIncrementCheckSettingRequest::getVideoFrameInterval()const
 void UpdateOssIncrementCheckSettingRequest::setVideoFrameInterval(int videoFrameInterval)
 {
 	videoFrameInterval_ = videoFrameInterval;
-	setCoreParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
+	setCoreParameter("VideoFrameInterval", videoFrameInterval);
 }
 
 int UpdateOssIncrementCheckSettingRequest::getVideoMaxSize()const
@@ -132,7 +132,7 @@ int UpdateOssIncrementCheckSettingRequest::getVideoMaxSize()const
 void UpdateOssIncrementCheckSettingRequest::setVideoMaxSize(int videoMaxSize)
 {
 	videoMaxSize_ = videoMaxSize;
-	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
+	setCoreParameter("VideoMaxSize", videoMaxSize);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getLang()const
@@ -154,6 +154,6 @@ int UpdateOssIncrementCheckSettingRequest::getVideoMaxFrames()const
 void UpdateOssIncrementCheckSettingRequest::setVideoMaxFrames(int videoMaxFrames)
 {
 	videoMaxFrames_ = videoMaxFrames;
-	setCoreParameter("VideoMaxFrames", std::to_string(videoMaxFrames));
+	setCoreParameter("VideoMaxFrames", videoMaxFrames);
 }
 

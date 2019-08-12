@@ -77,7 +77,7 @@ long AddCdnDomainRequest::getOwnerId()const
 void AddCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddCdnDomainRequest::getResourceGroupId()const
@@ -99,7 +99,7 @@ int AddCdnDomainRequest::getSourcePort()const
 void AddCdnDomainRequest::setSourcePort(int sourcePort)
 {
 	sourcePort_ = sourcePort;
-	setCoreParameter("SourcePort", std::to_string(sourcePort));
+	setCoreParameter("SourcePort", sourcePort);
 }
 
 std::string AddCdnDomainRequest::getPriorities()const

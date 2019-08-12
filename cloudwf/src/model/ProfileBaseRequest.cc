@@ -55,7 +55,7 @@ int ProfileBaseRequest::getDataType()const
 void ProfileBaseRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", dataType);
 }
 
 long ProfileBaseRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileBaseRequest::getGsid()const
 void ProfileBaseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string ProfileBaseRequest::getAccessKeyId()const

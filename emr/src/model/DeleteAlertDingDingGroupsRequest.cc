@@ -33,7 +33,7 @@ long DeleteAlertDingDingGroupsRequest::getResourceOwnerId()const
 void DeleteAlertDingDingGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteAlertDingDingGroupsRequest::getRegionId()const

@@ -33,7 +33,7 @@ long DeleteBgpGroupRequest::getResourceOwnerId()const
 void DeleteBgpGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteBgpGroupRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DeleteBgpGroupRequest::getOwnerId()const
 void DeleteBgpGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

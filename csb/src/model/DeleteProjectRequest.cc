@@ -44,7 +44,7 @@ long DeleteProjectRequest::getCsbId()const
 void DeleteProjectRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 long DeleteProjectRequest::getProjectId()const
@@ -55,6 +55,6 @@ long DeleteProjectRequest::getProjectId()const
 void DeleteProjectRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 

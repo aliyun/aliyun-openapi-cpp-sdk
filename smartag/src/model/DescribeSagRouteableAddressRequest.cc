@@ -33,7 +33,7 @@ long DescribeSagRouteableAddressRequest::getResourceOwnerId()const
 void DescribeSagRouteableAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSagRouteableAddressRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DescribeSagRouteableAddressRequest::getOwnerId()const
 void DescribeSagRouteableAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

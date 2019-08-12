@@ -33,7 +33,7 @@ long DescribeDataHubSubscriptionsRequest::getTopicId()const
 void DescribeDataHubSubscriptionsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ int DescribeDataHubSubscriptionsRequest::getFeatureType()const
 void DescribeDataHubSubscriptionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDataHubSubscriptionsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDataHubSubscriptionsRequest::getPageSize()const
 void DescribeDataHubSubscriptionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeDataHubSubscriptionsRequest::getDepartId()const
@@ -77,7 +77,7 @@ long DescribeDataHubSubscriptionsRequest::getDepartId()const
 void DescribeDataHubSubscriptionsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
 void DescribeDataHubSubscriptionsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getLang()const
@@ -110,7 +110,7 @@ long DescribeDataHubSubscriptionsRequest::getProjectId()const
 void DescribeDataHubSubscriptionsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getKey()const

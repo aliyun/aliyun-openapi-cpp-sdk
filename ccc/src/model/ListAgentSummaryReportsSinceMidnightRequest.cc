@@ -66,7 +66,7 @@ int ListAgentSummaryReportsSinceMidnightRequest::getPageSize()const
 void ListAgentSummaryReportsSinceMidnightRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListAgentSummaryReportsSinceMidnightRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListAgentSummaryReportsSinceMidnightRequest::getPageNumber()const
 void ListAgentSummaryReportsSinceMidnightRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListAgentSummaryReportsSinceMidnightRequest::getAccessKeyId()const

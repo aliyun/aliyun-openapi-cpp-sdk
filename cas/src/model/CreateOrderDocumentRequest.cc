@@ -55,7 +55,7 @@ long CreateOrderDocumentRequest::getOrderId()const
 void CreateOrderDocumentRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 int CreateOrderDocumentRequest::getDocumentType()const
@@ -66,7 +66,7 @@ int CreateOrderDocumentRequest::getDocumentType()const
 void CreateOrderDocumentRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
-	setCoreParameter("DocumentType", std::to_string(documentType));
+	setCoreParameter("DocumentType", documentType);
 }
 
 std::string CreateOrderDocumentRequest::getLang()const

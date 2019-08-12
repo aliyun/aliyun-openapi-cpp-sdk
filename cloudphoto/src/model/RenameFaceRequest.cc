@@ -55,7 +55,7 @@ long RenameFaceRequest::getFaceId()const
 void RenameFaceRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setCoreParameter("FaceId", faceId);
 }
 
 std::string RenameFaceRequest::getFaceName()const

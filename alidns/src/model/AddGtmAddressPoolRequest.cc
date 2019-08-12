@@ -92,9 +92,9 @@ void AddGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 	for(int i = 0; i!= addr.size(); i++)	{
 		auto obj = addr.at(i);
 		std::string str ="Addr."+ std::to_string(i);
-		setCoreParameter(str + ".Mode", obj.mode);
-		setCoreParameter(str + ".LbaWeight", std::to_string(obj.lbaWeight));
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Mode", std::to_string(obj.mode));
+		setCoreParameter(str + ".LbaWeight", obj.lbaWeight);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -106,6 +106,6 @@ int AddGtmAddressPoolRequest::getMinAvailableAddrNum()const
 void AddGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
 {
 	minAvailableAddrNum_ = minAvailableAddrNum;
-	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
+	setCoreParameter("MinAvailableAddrNum", minAvailableAddrNum);
 }
 

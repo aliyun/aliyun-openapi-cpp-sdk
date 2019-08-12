@@ -44,7 +44,7 @@ long CreateCredentialsRequest::getCsbId()const
 void CreateCredentialsRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string CreateCredentialsRequest::getRegionId()const

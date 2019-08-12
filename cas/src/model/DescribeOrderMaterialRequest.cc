@@ -44,7 +44,7 @@ long DescribeOrderMaterialRequest::getOrderId()const
 void DescribeOrderMaterialRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string DescribeOrderMaterialRequest::getLang()const

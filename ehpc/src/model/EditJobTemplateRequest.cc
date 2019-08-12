@@ -66,7 +66,7 @@ bool EditJobTemplateRequest::getReRunable()const
 void EditJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+	setCoreParameter("ReRunable", reRunable);
 }
 
 std::string EditJobTemplateRequest::getTemplateId()const
@@ -88,7 +88,7 @@ int EditJobTemplateRequest::getPriority()const
 void EditJobTemplateRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string EditJobTemplateRequest::getCommandLine()const

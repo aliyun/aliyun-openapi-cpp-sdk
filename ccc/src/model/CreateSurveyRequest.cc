@@ -55,7 +55,7 @@ int CreateSurveyRequest::getRound()const
 void CreateSurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setCoreParameter("Round", std::to_string(round));
+	setCoreParameter("Round", round);
 }
 
 std::string CreateSurveyRequest::getFlowJson()const

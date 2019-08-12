@@ -33,7 +33,7 @@ long QueryCustomerAddressListRequest::getCallerBid()const
 void QueryCustomerAddressListRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long QueryCustomerAddressListRequest::getOwnerId()const
@@ -44,7 +44,7 @@ long QueryCustomerAddressListRequest::getOwnerId()const
 void QueryCustomerAddressListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long QueryCustomerAddressListRequest::getCallerUid()const
@@ -55,6 +55,6 @@ long QueryCustomerAddressListRequest::getCallerUid()const
 void QueryCustomerAddressListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

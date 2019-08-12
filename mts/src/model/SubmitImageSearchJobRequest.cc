@@ -55,7 +55,7 @@ long SubmitImageSearchJobRequest::getResourceOwnerId()const
 void SubmitImageSearchJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitImageSearchJobRequest::getFpDBId()const
@@ -110,7 +110,7 @@ long SubmitImageSearchJobRequest::getOwnerId()const
 void SubmitImageSearchJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitImageSearchJobRequest::getConfig()const

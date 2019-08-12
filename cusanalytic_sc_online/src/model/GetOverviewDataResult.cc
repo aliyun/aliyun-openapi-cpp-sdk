@@ -37,10 +37,12 @@ void GetOverviewDataResult::parse(const std::string &payload)
 {
 	Json::CharReaderBuilder builder;
 	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *value;
+	Json::Value *val;
+	Json::Value value;
 	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
-	setRequestId((*value)["RequestId"].asString());
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
+	setRequestId(value["RequestId"].asString());
 	if(!value["StayDeepAvg"].isNull())
 		stayDeepAvg_ = std::stof(value["StayDeepAvg"].asString());
 	if(!value["UvWeekGrowthPercent"].isNull())

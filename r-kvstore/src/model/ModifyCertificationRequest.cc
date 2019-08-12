@@ -33,7 +33,7 @@ long ModifyCertificationRequest::getResourceOwnerId()const
 void ModifyCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyCertificationRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long ModifyCertificationRequest::getOwnerId()const
 void ModifyCertificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyCertificationRequest::getNoCertification()const
@@ -110,7 +110,7 @@ bool ModifyCertificationRequest::getNoCertification()const
 void ModifyCertificationRequest::setNoCertification(bool noCertification)
 {
 	noCertification_ = noCertification;
-	setCoreParameter("NoCertification", noCertification ? "true" : "false");
+	setCoreParameter("NoCertification", noCertification);
 }
 
 std::string ModifyCertificationRequest::getAccessKeyId()const

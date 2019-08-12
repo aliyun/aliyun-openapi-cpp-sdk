@@ -33,7 +33,7 @@ long DescribeACLsRequest::getResourceOwnerId()const
 void DescribeACLsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeACLsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int DescribeACLsRequest::getPageSize()const
 void DescribeACLsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeACLsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeACLsRequest::getOwnerId()const
 void DescribeACLsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeACLsRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeACLsRequest::getPageNumber()const
 void DescribeACLsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

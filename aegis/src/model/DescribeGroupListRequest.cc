@@ -55,7 +55,7 @@ long DescribeGroupListRequest::getRuleGroupId()const
 void DescribeGroupListRequest::setRuleGroupId(long ruleGroupId)
 {
 	ruleGroupId_ = ruleGroupId;
-	setCoreParameter("RuleGroupId", std::to_string(ruleGroupId));
+	setCoreParameter("RuleGroupId", ruleGroupId);
 }
 
 int DescribeGroupListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeGroupListRequest::getPageSize()const
 void DescribeGroupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeGroupListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeGroupListRequest::getCurrentPage()const
 void DescribeGroupListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeGroupListRequest::getLang()const
@@ -99,6 +99,6 @@ long DescribeGroupListRequest::getExGroupId()const
 void DescribeGroupListRequest::setExGroupId(long exGroupId)
 {
 	exGroupId_ = exGroupId;
-	setCoreParameter("ExGroupId", std::to_string(exGroupId));
+	setCoreParameter("ExGroupId", exGroupId);
 }
 

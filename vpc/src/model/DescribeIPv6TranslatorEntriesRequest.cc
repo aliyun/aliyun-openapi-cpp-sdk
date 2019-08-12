@@ -33,7 +33,7 @@ int DescribeIPv6TranslatorEntriesRequest::getBackendIpv4Port()const
 void DescribeIPv6TranslatorEntriesRequest::setBackendIpv4Port(int backendIpv4Port)
 {
 	backendIpv4Port_ = backendIpv4Port;
-	setCoreParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
+	setCoreParameter("BackendIpv4Port", backendIpv4Port);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getAclId()const
@@ -55,7 +55,7 @@ long DescribeIPv6TranslatorEntriesRequest::getResourceOwnerId()const
 void DescribeIPv6TranslatorEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getIpv6TranslatorEntryId()const
@@ -132,7 +132,7 @@ long DescribeIPv6TranslatorEntriesRequest::getOwnerId()const
 void DescribeIPv6TranslatorEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getAclStatus()const
@@ -154,7 +154,7 @@ int DescribeIPv6TranslatorEntriesRequest::getPageNumber()const
 void DescribeIPv6TranslatorEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getAclType()const
@@ -176,7 +176,7 @@ int DescribeIPv6TranslatorEntriesRequest::getAllocateIpv6Port()const
 void DescribeIPv6TranslatorEntriesRequest::setAllocateIpv6Port(int allocateIpv6Port)
 {
 	allocateIpv6Port_ = allocateIpv6Port;
-	setCoreParameter("AllocateIpv6Port", std::to_string(allocateIpv6Port));
+	setCoreParameter("AllocateIpv6Port", allocateIpv6Port);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getRegionId()const
@@ -198,7 +198,7 @@ int DescribeIPv6TranslatorEntriesRequest::getPageSize()const
 void DescribeIPv6TranslatorEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeIPv6TranslatorEntriesRequest::getBackendIpv4Addr()const

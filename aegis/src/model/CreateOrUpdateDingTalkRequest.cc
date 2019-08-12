@@ -66,7 +66,7 @@ long CreateOrUpdateDingTalkRequest::getId()const
 void CreateOrUpdateDingTalkRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long CreateOrUpdateDingTalkRequest::getIntervalTime()const
@@ -77,6 +77,6 @@ long CreateOrUpdateDingTalkRequest::getIntervalTime()const
 void CreateOrUpdateDingTalkRequest::setIntervalTime(long intervalTime)
 {
 	intervalTime_ = intervalTime;
-	setCoreParameter("IntervalTime", std::to_string(intervalTime));
+	setCoreParameter("IntervalTime", intervalTime);
 }
 

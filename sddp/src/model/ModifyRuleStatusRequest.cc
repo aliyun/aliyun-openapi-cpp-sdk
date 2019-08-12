@@ -44,7 +44,7 @@ int ModifyRuleStatusRequest::getFeatureType()const
 void ModifyRuleStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long ModifyRuleStatusRequest::getId()const
@@ -55,7 +55,7 @@ long ModifyRuleStatusRequest::getId()const
 void ModifyRuleStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyRuleStatusRequest::getLang()const
@@ -77,6 +77,6 @@ int ModifyRuleStatusRequest::getStatus()const
 void ModifyRuleStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

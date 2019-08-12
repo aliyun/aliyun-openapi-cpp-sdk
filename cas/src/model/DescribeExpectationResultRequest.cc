@@ -44,7 +44,7 @@ long DescribeExpectationResultRequest::getOrderId()const
 void DescribeExpectationResultRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string DescribeExpectationResultRequest::getExpectationType()const

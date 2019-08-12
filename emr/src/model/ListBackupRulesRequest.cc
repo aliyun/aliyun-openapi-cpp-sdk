@@ -33,7 +33,7 @@ long ListBackupRulesRequest::getResourceOwnerId()const
 void ListBackupRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ListBackupRulesRequest::getPageCount()const
@@ -44,7 +44,7 @@ int ListBackupRulesRequest::getPageCount()const
 void ListBackupRulesRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", std::to_string(pageCount));
+	setCoreParameter("PageCount", pageCount);
 }
 
 std::string ListBackupRulesRequest::getOrderMode()const
@@ -66,7 +66,7 @@ long ListBackupRulesRequest::getCallerParentId()const
 void ListBackupRulesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ListBackupRulesRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool ListBackupRulesRequest::getProxy_original_security_transport()const
 void ListBackupRulesRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ListBackupRulesRequest::getBackupPlanId()const
@@ -121,7 +121,7 @@ int ListBackupRulesRequest::getPageNumber()const
 void ListBackupRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListBackupRulesRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ int ListBackupRulesRequest::getLimit()const
 void ListBackupRulesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 int ListBackupRulesRequest::getPageSize()const
@@ -176,7 +176,7 @@ int ListBackupRulesRequest::getPageSize()const
 void ListBackupRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListBackupRulesRequest::getId()const
@@ -187,7 +187,7 @@ long ListBackupRulesRequest::getId()const
 void ListBackupRulesRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int ListBackupRulesRequest::getCurrentSize()const
@@ -198,7 +198,7 @@ int ListBackupRulesRequest::getCurrentSize()const
 void ListBackupRulesRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 long ListBackupRulesRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long ListBackupRulesRequest::getCallerUid()const
 void ListBackupRulesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ListBackupRulesRequest::getOrderField()const
@@ -253,7 +253,7 @@ bool ListBackupRulesRequest::getAk_mfa_present()const
 void ListBackupRulesRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ListBackupRulesRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ListBackupRulesRequest::getProxy_trust_transport_info()const
 void ListBackupRulesRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ListBackupRulesRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool ListBackupRulesRequest::getSecurity_transport()const
 void ListBackupRulesRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ListBackupRulesRequest::getRequestId()const

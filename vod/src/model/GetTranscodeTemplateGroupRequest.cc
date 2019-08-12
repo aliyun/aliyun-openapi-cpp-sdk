@@ -33,7 +33,7 @@ long GetTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void GetTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long GetTranscodeTemplateGroupRequest::getOwnerId()const
 void GetTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetTranscodeTemplateGroupRequest::getAccessKeyId()const

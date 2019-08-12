@@ -44,7 +44,7 @@ long CreateRulesRequest::getResourceOwnerId()const
 void CreateRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateRulesRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int CreateRulesRequest::getListenerPort()const
 void CreateRulesRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string CreateRulesRequest::getLoadBalancerId()const
@@ -121,7 +121,7 @@ long CreateRulesRequest::getOwnerId()const
 void CreateRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRulesRequest::getListenerProtocol()const

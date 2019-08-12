@@ -44,7 +44,7 @@ int DescribeVpcAccessesRequest::getPageSize()const
 void DescribeVpcAccessesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeVpcAccessesRequest::getPageNumber()const
@@ -55,7 +55,7 @@ int DescribeVpcAccessesRequest::getPageNumber()const
 void DescribeVpcAccessesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeVpcAccessesRequest::getAccessKeyId()const

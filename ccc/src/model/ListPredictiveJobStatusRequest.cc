@@ -88,7 +88,7 @@ int ListPredictiveJobStatusRequest::getPageSize()const
 void ListPredictiveJobStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListPredictiveJobStatusRequest::getEndTime()const
@@ -99,7 +99,7 @@ long ListPredictiveJobStatusRequest::getEndTime()const
 void ListPredictiveJobStatusRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long ListPredictiveJobStatusRequest::getStartTime()const
@@ -110,7 +110,7 @@ long ListPredictiveJobStatusRequest::getStartTime()const
 void ListPredictiveJobStatusRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int ListPredictiveJobStatusRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int ListPredictiveJobStatusRequest::getPageNumber()const
 void ListPredictiveJobStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

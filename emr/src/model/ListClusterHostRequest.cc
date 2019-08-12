@@ -33,7 +33,7 @@ long ListClusterHostRequest::getResourceOwnerId()const
 void ListClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListClusterHostRequest::getHostInstanceId()const
@@ -56,7 +56,7 @@ void ListClusterHostRequest::setStatusList(const std::vector<std::string>& statu
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListClusterHostRequest::getPrivateIp()const
@@ -111,7 +111,7 @@ int ListClusterHostRequest::getPageNumber()const
 void ListClusterHostRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListClusterHostRequest::getAccessKeyId()const
@@ -177,6 +177,6 @@ int ListClusterHostRequest::getPageSize()const
 void ListClusterHostRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 

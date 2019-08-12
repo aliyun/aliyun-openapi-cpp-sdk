@@ -66,7 +66,7 @@ int PutMetricAlarmRequest::getLevel()const
 void PutMetricAlarmRequest::setLevel(int level)
 {
 	level_ = level;
-	setCoreParameter("Level", std::to_string(level));
+	setCoreParameter("Level", level);
 }
 
 std::string PutMetricAlarmRequest::getSubject()const
@@ -209,7 +209,7 @@ int PutMetricAlarmRequest::getEvaluationCount()const
 void PutMetricAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setCoreParameter("EvaluationCount", evaluationCount);
 }
 
 int PutMetricAlarmRequest::getSilenceTime()const
@@ -220,7 +220,7 @@ int PutMetricAlarmRequest::getSilenceTime()const
 void PutMetricAlarmRequest::setSilenceTime(int silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", std::to_string(silenceTime));
+	setCoreParameter("SilenceTime", silenceTime);
 }
 
 std::string PutMetricAlarmRequest::getInterval()const

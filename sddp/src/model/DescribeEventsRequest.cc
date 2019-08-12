@@ -44,7 +44,7 @@ int DescribeEventsRequest::getFeatureType()const
 void DescribeEventsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeEventsRequest::getEndTime()const
@@ -66,7 +66,7 @@ int DescribeEventsRequest::getCurrentPage()const
 void DescribeEventsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeEventsRequest::getStartTime()const
@@ -88,7 +88,7 @@ long DescribeEventsRequest::getUserId()const
 void DescribeEventsRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string DescribeEventsRequest::getTypeCode()const
@@ -143,7 +143,7 @@ int DescribeEventsRequest::getPageSize()const
 void DescribeEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeEventsRequest::getDepartId()const
@@ -154,7 +154,7 @@ long DescribeEventsRequest::getDepartId()const
 void DescribeEventsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 std::string DescribeEventsRequest::getLang()const

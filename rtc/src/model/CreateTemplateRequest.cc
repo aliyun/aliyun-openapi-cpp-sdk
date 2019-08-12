@@ -33,7 +33,7 @@ int CreateTemplateRequest::getServiceMode()const
 void CreateTemplateRequest::setServiceMode(int serviceMode)
 {
 	serviceMode_ = serviceMode;
-	setCoreParameter("ServiceMode", std::to_string(serviceMode));
+	setCoreParameter("ServiceMode", serviceMode);
 }
 
 std::vector<CreateTemplateRequest::LiveConfig> CreateTemplateRequest::getLiveConfig()const
@@ -48,8 +48,8 @@ void CreateTemplateRequest::setLiveConfig(const std::vector<LiveConfig>& liveCon
 	for(int i = 0; i!= liveConfig.size(); i++)	{
 		auto obj = liveConfig.at(i);
 		std::string str ="LiveConfig."+ std::to_string(i);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".AppName", obj.appName);
+		setCoreParameter(str + ".DomainName", std::to_string(obj.domainName));
+		setCoreParameter(str + ".AppName", std::to_string(obj.appName));
 	}
 }
 
@@ -61,7 +61,7 @@ long CreateTemplateRequest::getCallerParentId()const
 void CreateTemplateRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateTemplateRequest::getProxy_original_security_transport()const
@@ -72,7 +72,7 @@ bool CreateTemplateRequest::getProxy_original_security_transport()const
 void CreateTemplateRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 int CreateTemplateRequest::getMediaConfig()const
@@ -83,7 +83,7 @@ int CreateTemplateRequest::getMediaConfig()const
 void CreateTemplateRequest::setMediaConfig(int mediaConfig)
 {
 	mediaConfig_ = mediaConfig;
-	setCoreParameter("MediaConfig", std::to_string(mediaConfig));
+	setCoreParameter("MediaConfig", mediaConfig);
 }
 
 int CreateTemplateRequest::getMaxMixStreamCount()const
@@ -94,7 +94,7 @@ int CreateTemplateRequest::getMaxMixStreamCount()const
 void CreateTemplateRequest::setMaxMixStreamCount(int maxMixStreamCount)
 {
 	maxMixStreamCount_ = maxMixStreamCount;
-	setCoreParameter("MaxMixStreamCount", std::to_string(maxMixStreamCount));
+	setCoreParameter("MaxMixStreamCount", maxMixStreamCount);
 }
 
 std::string CreateTemplateRequest::getProxy_original_source_ip()const
@@ -142,11 +142,11 @@ void CreateTemplateRequest::setRecordConfig(const std::vector<RecordConfig>& rec
 	for(int i = 0; i!= recordConfig.size(); i++)	{
 		auto obj = recordConfig.at(i);
 		std::string str ="RecordConfig."+ std::to_string(i);
-		setCoreParameter(str + ".StorageType", obj.storageType);
-		setCoreParameter(str + ".FileFormat", std::to_string(obj.fileFormat));
-		setCoreParameter(str + ".OssEndPoint", obj.ossEndPoint);
-		setCoreParameter(str + ".OssBucket", obj.ossBucket);
-		setCoreParameter(str + ".VodTransCodeGroupId", std::to_string(obj.vodTransCodeGroupId));
+		setCoreParameter(str + ".StorageType", std::to_string(obj.storageType));
+		setCoreParameter(str + ".FileFormat", obj.fileFormat);
+		setCoreParameter(str + ".OssEndPoint", std::to_string(obj.ossEndPoint));
+		setCoreParameter(str + ".OssBucket", std::to_string(obj.ossBucket));
+		setCoreParameter(str + ".VodTransCodeGroupId", obj.vodTransCodeGroupId);
 	}
 }
 
@@ -213,7 +213,7 @@ long CreateTemplateRequest::getCallerUid()const
 void CreateTemplateRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateTemplateRequest::getApp_ip()const
@@ -257,7 +257,7 @@ long CreateTemplateRequest::getOwnerId()const
 void CreateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateTemplateRequest::getVersion()const
@@ -279,7 +279,7 @@ bool CreateTemplateRequest::getProxy_trust_transport_info()const
 void CreateTemplateRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateTemplateRequest::getAk_mfa_present()const
@@ -290,7 +290,7 @@ bool CreateTemplateRequest::getAk_mfa_present()const
 void CreateTemplateRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateTemplateRequest::getSecurity_transport()const
@@ -301,7 +301,7 @@ bool CreateTemplateRequest::getSecurity_transport()const
 void CreateTemplateRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<CreateTemplateRequest::LayOut> CreateTemplateRequest::getLayOut()const
@@ -316,9 +316,9 @@ void CreateTemplateRequest::setLayOut(const std::vector<LayOut>& layOut)
 	for(int i = 0; i!= layOut.size(); i++)	{
 		auto obj = layOut.at(i);
 		std::string str ="LayOut."+ std::to_string(i);
-		setCoreParameter(str + ".Color", obj.color);
-		setCoreParameter(str + ".CutMode", std::to_string(obj.cutMode));
-		setCoreParameter(str + ".LayOutId", std::to_string(obj.layOutId));
+		setCoreParameter(str + ".Color", std::to_string(obj.color));
+		setCoreParameter(str + ".CutMode", obj.cutMode);
+		setCoreParameter(str + ".LayOutId", obj.layOutId);
 	}
 }
 
@@ -363,6 +363,6 @@ int CreateTemplateRequest::getMixMode()const
 void CreateTemplateRequest::setMixMode(int mixMode)
 {
 	mixMode_ = mixMode;
-	setCoreParameter("MixMode", std::to_string(mixMode));
+	setCoreParameter("MixMode", mixMode);
 }
 

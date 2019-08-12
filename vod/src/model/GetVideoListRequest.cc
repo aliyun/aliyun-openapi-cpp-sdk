@@ -33,7 +33,7 @@ long GetVideoListRequest::getResourceOwnerId()const
 void GetVideoListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetVideoListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long GetVideoListRequest::getCateId()const
 void GetVideoListRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 int GetVideoListRequest::getPageNo()const
@@ -66,7 +66,7 @@ int GetVideoListRequest::getPageNo()const
 void GetVideoListRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 int GetVideoListRequest::getPageSize()const
@@ -77,7 +77,7 @@ int GetVideoListRequest::getPageSize()const
 void GetVideoListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetVideoListRequest::getEndTime()const
@@ -121,7 +121,7 @@ long GetVideoListRequest::getOwnerId()const
 void GetVideoListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetVideoListRequest::getStatus()const

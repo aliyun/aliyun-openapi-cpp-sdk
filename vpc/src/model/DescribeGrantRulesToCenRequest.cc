@@ -44,7 +44,7 @@ long DescribeGrantRulesToCenRequest::getResourceOwnerId()const
 void DescribeGrantRulesToCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeGrantRulesToCenRequest::getInstanceId()const
@@ -121,6 +121,6 @@ long DescribeGrantRulesToCenRequest::getOwnerId()const
 void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

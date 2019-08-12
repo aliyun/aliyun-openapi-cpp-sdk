@@ -55,7 +55,7 @@ long StopMPUTaskRequest::getResourceOwnerId()const
 void StopMPUTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long StopMPUTaskRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long StopMPUTaskRequest::getCallerParentId()const
 void StopMPUTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool StopMPUTaskRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool StopMPUTaskRequest::getProxy_original_security_transport()const
 void StopMPUTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string StopMPUTaskRequest::getCallerBid()const
@@ -99,7 +99,7 @@ long StopMPUTaskRequest::getOwnerId()const
 void StopMPUTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StopMPUTaskRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool StopMPUTaskRequest::getProxy_trust_transport_info()const
 void StopMPUTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool StopMPUTaskRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool StopMPUTaskRequest::getAk_mfa_present()const
 void StopMPUTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string StopMPUTaskRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ bool StopMPUTaskRequest::getSecurity_transport()const
 void StopMPUTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string StopMPUTaskRequest::getSecurityToken()const
@@ -275,6 +275,6 @@ long StopMPUTaskRequest::getCallerUid()const
 void StopMPUTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

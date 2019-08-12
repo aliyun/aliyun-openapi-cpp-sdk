@@ -44,7 +44,7 @@ long GetVideoCoverRequest::getPhotoId()const
 void GetVideoCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string GetVideoCoverRequest::getStoreName()const

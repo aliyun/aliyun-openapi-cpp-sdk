@@ -44,7 +44,7 @@ long ReportTerrorismJobResultRequest::getResourceOwnerId()const
 void ReportTerrorismJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReportTerrorismJobResultRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ReportTerrorismJobResultRequest::getOwnerId()const
 void ReportTerrorismJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReportTerrorismJobResultRequest::getAccessKeyId()const

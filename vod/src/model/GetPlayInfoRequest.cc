@@ -33,7 +33,7 @@ long GetPlayInfoRequest::getResourceOwnerId()const
 void GetPlayInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetPlayInfoRequest::getStreamType()const
@@ -110,7 +110,7 @@ long GetPlayInfoRequest::getOwnerId()const
 void GetPlayInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetPlayInfoRequest::getResultType()const
@@ -187,7 +187,7 @@ long GetPlayInfoRequest::getAuthTimeout()const
 void GetPlayInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setCoreParameter("AuthTimeout", authTimeout);
 }
 
 std::string GetPlayInfoRequest::getAuthInfo()const

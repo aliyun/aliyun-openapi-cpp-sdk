@@ -33,7 +33,7 @@ long CreateCdnSubscriptionRequest::getResourceOwnerId()const
 void CreateCdnSubscriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateCdnSubscriptionRequest::getSourceIp()const

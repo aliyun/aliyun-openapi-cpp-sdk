@@ -37,11 +37,11 @@ void CreateDataAPIServiceRequest::setResponseParam(const std::vector<ResponsePar
 	for(int i = 0; i!= responseParam.size(); i++)	{
 		auto obj = responseParam.at(i);
 		std::string str ="ResponseParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+		setCoreParameter(str + ".Desc", std::to_string(obj.desc));
+		setCoreParameter(str + ".Example", std::to_string(obj.example));
 	}
 }
 
@@ -90,11 +90,11 @@ void CreateDataAPIServiceRequest::setRequestParam(const std::vector<RequestParam
 	for(int i = 0; i!= requestParam.size(); i++)	{
 		auto obj = requestParam.at(i);
 		std::string str ="RequestParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+		setCoreParameter(str + ".Desc", std::to_string(obj.desc));
+		setCoreParameter(str + ".Example", std::to_string(obj.example));
 	}
 }
 

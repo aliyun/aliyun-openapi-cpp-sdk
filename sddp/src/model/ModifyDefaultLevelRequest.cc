@@ -44,7 +44,7 @@ int ModifyDefaultLevelRequest::getFeatureType()const
 void ModifyDefaultLevelRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long ModifyDefaultLevelRequest::getDefaultId()const
@@ -55,7 +55,7 @@ long ModifyDefaultLevelRequest::getDefaultId()const
 void ModifyDefaultLevelRequest::setDefaultId(long defaultId)
 {
 	defaultId_ = defaultId;
-	setCoreParameter("DefaultId", std::to_string(defaultId));
+	setCoreParameter("DefaultId", defaultId);
 }
 
 std::string ModifyDefaultLevelRequest::getLang()const

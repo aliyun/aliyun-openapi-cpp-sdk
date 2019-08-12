@@ -33,7 +33,7 @@ long ListClusterHostComponentForAdminRequest::getResourceOwnerId()const
 void ListClusterHostComponentForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListClusterHostComponentForAdminRequest::getHostInstanceId()const
@@ -88,7 +88,7 @@ int ListClusterHostComponentForAdminRequest::getPageNumber()const
 void ListClusterHostComponentForAdminRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListClusterHostComponentForAdminRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ int ListClusterHostComponentForAdminRequest::getPageSize()const
 void ListClusterHostComponentForAdminRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListClusterHostComponentForAdminRequest::getServiceName()const

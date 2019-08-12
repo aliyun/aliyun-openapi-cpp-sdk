@@ -55,7 +55,7 @@ int ListFaceGroupsRequest::getLimit()const
 void ListFaceGroupsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string ListFaceGroupsRequest::getProject()const

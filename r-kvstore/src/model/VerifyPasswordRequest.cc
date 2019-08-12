@@ -33,7 +33,7 @@ long VerifyPasswordRequest::getResourceOwnerId()const
 void VerifyPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string VerifyPasswordRequest::getPassword()const
@@ -110,7 +110,7 @@ long VerifyPasswordRequest::getOwnerId()const
 void VerifyPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string VerifyPasswordRequest::getAccessKeyId()const

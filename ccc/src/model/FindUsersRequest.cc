@@ -55,7 +55,7 @@ int FindUsersRequest::getPageSize()const
 void FindUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int FindUsersRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int FindUsersRequest::getPageNumber()const
 void FindUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string FindUsersRequest::getAccessKeyId()const

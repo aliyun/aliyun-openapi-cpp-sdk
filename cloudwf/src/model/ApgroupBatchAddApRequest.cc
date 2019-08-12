@@ -44,7 +44,7 @@ long ApgroupBatchAddApRequest::getApgroupId()const
 void ApgroupBatchAddApRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 std::string ApgroupBatchAddApRequest::getAccessKeyId()const

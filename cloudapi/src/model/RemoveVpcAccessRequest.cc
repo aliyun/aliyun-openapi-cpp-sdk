@@ -55,7 +55,7 @@ int RemoveVpcAccessRequest::getPort()const
 void RemoveVpcAccessRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string RemoveVpcAccessRequest::getVpcId()const

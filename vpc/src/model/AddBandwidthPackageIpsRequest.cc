@@ -33,7 +33,7 @@ long AddBandwidthPackageIpsRequest::getResourceOwnerId()const
 void AddBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddBandwidthPackageIpsRequest::getBandwidthPackageId()const
@@ -99,7 +99,7 @@ long AddBandwidthPackageIpsRequest::getOwnerId()const
 void AddBandwidthPackageIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddBandwidthPackageIpsRequest::getIpCount()const

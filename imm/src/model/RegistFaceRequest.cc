@@ -33,7 +33,7 @@ bool RegistFaceRequest::getChooseBiggestFace()const
 void RegistFaceRequest::setChooseBiggestFace(bool chooseBiggestFace)
 {
 	chooseBiggestFace_ = chooseBiggestFace;
-	setCoreParameter("ChooseBiggestFace", chooseBiggestFace ? "true" : "false");
+	setCoreParameter("ChooseBiggestFace", chooseBiggestFace);
 }
 
 std::string RegistFaceRequest::getRegionId()const
@@ -55,7 +55,7 @@ bool RegistFaceRequest::getIsQualityLimit()const
 void RegistFaceRequest::setIsQualityLimit(bool isQualityLimit)
 {
 	isQualityLimit_ = isQualityLimit;
-	setCoreParameter("IsQualityLimit", isQualityLimit ? "true" : "false");
+	setCoreParameter("IsQualityLimit", isQualityLimit);
 }
 
 std::string RegistFaceRequest::getProject()const

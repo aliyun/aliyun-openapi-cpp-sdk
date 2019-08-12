@@ -44,7 +44,7 @@ long BandStopSpeedUpRequest::getResourceOwnerId()const
 void BandStopSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string BandStopSpeedUpRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int BandStopSpeedUpRequest::getPort()const
 void BandStopSpeedUpRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 long BandStopSpeedUpRequest::getBandId()const
@@ -77,7 +77,7 @@ long BandStopSpeedUpRequest::getBandId()const
 void BandStopSpeedUpRequest::setBandId(long bandId)
 {
 	bandId_ = bandId;
-	setCoreParameter("BandId", std::to_string(bandId));
+	setCoreParameter("BandId", bandId);
 }
 
 long BandStopSpeedUpRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long BandStopSpeedUpRequest::getOwnerId()const
 void BandStopSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string BandStopSpeedUpRequest::getAccessKeyId()const

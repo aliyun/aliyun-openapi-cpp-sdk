@@ -33,7 +33,7 @@ long DeleteMediaRequest::getResourceOwnerId()const
 void DeleteMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteMediaRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DeleteMediaRequest::getOwnerId()const
 void DeleteMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMediaRequest::getAccessKeyId()const

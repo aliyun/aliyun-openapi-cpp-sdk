@@ -33,7 +33,7 @@ int CreateProductRequest::getDataFormat()const
 void CreateProductRequest::setDataFormat(int dataFormat)
 {
 	dataFormat_ = dataFormat;
-	setCoreParameter("DataFormat", std::to_string(dataFormat));
+	setCoreParameter("DataFormat", dataFormat);
 }
 
 int CreateProductRequest::getNodeType()const
@@ -44,7 +44,7 @@ int CreateProductRequest::getNodeType()const
 void CreateProductRequest::setNodeType(int nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", std::to_string(nodeType));
+	setCoreParameter("NodeType", nodeType);
 }
 
 bool CreateProductRequest::getId2()const
@@ -55,7 +55,7 @@ bool CreateProductRequest::getId2()const
 void CreateProductRequest::setId2(bool id2)
 {
 	id2_ = id2;
-	setCoreParameter("Id2", id2 ? "true" : "false");
+	setCoreParameter("Id2", id2);
 }
 
 std::string CreateProductRequest::getIotInstanceId()const
@@ -143,7 +143,7 @@ long CreateProductRequest::getCategoryId()const
 void CreateProductRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
-	setCoreParameter("CategoryId", std::to_string(categoryId));
+	setCoreParameter("CategoryId", categoryId);
 }
 
 std::string CreateProductRequest::getAccessKeyId()const

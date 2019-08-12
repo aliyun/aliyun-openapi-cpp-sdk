@@ -66,7 +66,7 @@ int GenerateAgentStatisticReportRequest::getPageSize()const
 void GenerateAgentStatisticReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GenerateAgentStatisticReportRequest::getStartDate()const
@@ -88,7 +88,7 @@ int GenerateAgentStatisticReportRequest::getPageNumber()const
 void GenerateAgentStatisticReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GenerateAgentStatisticReportRequest::getAccessKeyId()const

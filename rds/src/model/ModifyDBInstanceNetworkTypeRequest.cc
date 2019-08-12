@@ -33,7 +33,7 @@ long ModifyDBInstanceNetworkTypeRequest::getResourceOwnerId()const
 void ModifyDBInstanceNetworkTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long ModifyDBInstanceNetworkTypeRequest::getOwnerId()const
 void ModifyDBInstanceNetworkTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
@@ -176,6 +176,6 @@ int ModifyDBInstanceNetworkTypeRequest::getReadWriteSplittingClassicExpiredDays(
 void ModifyDBInstanceNetworkTypeRequest::setReadWriteSplittingClassicExpiredDays(int readWriteSplittingClassicExpiredDays)
 {
 	readWriteSplittingClassicExpiredDays_ = readWriteSplittingClassicExpiredDays;
-	setCoreParameter("ReadWriteSplittingClassicExpiredDays", std::to_string(readWriteSplittingClassicExpiredDays));
+	setCoreParameter("ReadWriteSplittingClassicExpiredDays", readWriteSplittingClassicExpiredDays);
 }
 

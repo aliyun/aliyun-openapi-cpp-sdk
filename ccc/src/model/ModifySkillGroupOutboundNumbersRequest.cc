@@ -45,7 +45,7 @@ void ModifySkillGroupOutboundNumbersRequest::setOutboundPhoneNumberId(const std:
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
 	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), std::to_string(outboundPhoneNumberId.at(i)));
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
@@ -67,7 +67,7 @@ int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
 void ModifySkillGroupOutboundNumbersRequest::setOperationType(int operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", std::to_string(operationType));
+	setCoreParameter("OperationType", operationType);
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const

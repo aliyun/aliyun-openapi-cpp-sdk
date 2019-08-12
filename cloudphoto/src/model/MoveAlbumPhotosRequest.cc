@@ -33,7 +33,7 @@ long MoveAlbumPhotosRequest::getSourceAlbumId()const
 void MoveAlbumPhotosRequest::setSourceAlbumId(long sourceAlbumId)
 {
 	sourceAlbumId_ = sourceAlbumId;
-	setCoreParameter("SourceAlbumId", std::to_string(sourceAlbumId));
+	setCoreParameter("SourceAlbumId", sourceAlbumId);
 }
 
 long MoveAlbumPhotosRequest::getTargetAlbumId()const
@@ -44,7 +44,7 @@ long MoveAlbumPhotosRequest::getTargetAlbumId()const
 void MoveAlbumPhotosRequest::setTargetAlbumId(long targetAlbumId)
 {
 	targetAlbumId_ = targetAlbumId;
-	setCoreParameter("TargetAlbumId", std::to_string(targetAlbumId));
+	setCoreParameter("TargetAlbumId", targetAlbumId);
 }
 
 std::string MoveAlbumPhotosRequest::getLibraryId()const
@@ -67,7 +67,7 @@ void MoveAlbumPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
 }
 
 std::string MoveAlbumPhotosRequest::getStoreName()const

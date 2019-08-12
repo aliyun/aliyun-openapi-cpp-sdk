@@ -33,7 +33,7 @@ int ListNotaryOrdersRequest::getSortKeyType()const
 void ListNotaryOrdersRequest::setSortKeyType(int sortKeyType)
 {
 	sortKeyType_ = sortKeyType;
-	setCoreParameter("SortKeyType", std::to_string(sortKeyType));
+	setCoreParameter("SortKeyType", sortKeyType);
 }
 
 std::string ListNotaryOrdersRequest::getSortByType()const
@@ -55,7 +55,7 @@ long ListNotaryOrdersRequest::getStartOrderDate()const
 void ListNotaryOrdersRequest::setStartOrderDate(long startOrderDate)
 {
 	startOrderDate_ = startOrderDate;
-	setCoreParameter("StartOrderDate", std::to_string(startOrderDate));
+	setCoreParameter("StartOrderDate", startOrderDate);
 }
 
 int ListNotaryOrdersRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListNotaryOrdersRequest::getPageSize()const
 void ListNotaryOrdersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListNotaryOrdersRequest::getBizId()const
@@ -88,7 +88,7 @@ int ListNotaryOrdersRequest::getNotaryType()const
 void ListNotaryOrdersRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", std::to_string(notaryType));
+	setCoreParameter("NotaryType", notaryType);
 }
 
 long ListNotaryOrdersRequest::getEndOrderDate()const
@@ -99,7 +99,7 @@ long ListNotaryOrdersRequest::getEndOrderDate()const
 void ListNotaryOrdersRequest::setEndOrderDate(long endOrderDate)
 {
 	endOrderDate_ = endOrderDate;
-	setCoreParameter("EndOrderDate", std::to_string(endOrderDate));
+	setCoreParameter("EndOrderDate", endOrderDate);
 }
 
 std::string ListNotaryOrdersRequest::getAliyunOrderId()const
@@ -121,7 +121,7 @@ int ListNotaryOrdersRequest::getPageNum()const
 void ListNotaryOrdersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 int ListNotaryOrdersRequest::getNotaryStatus()const
@@ -132,6 +132,6 @@ int ListNotaryOrdersRequest::getNotaryStatus()const
 void ListNotaryOrdersRequest::setNotaryStatus(int notaryStatus)
 {
 	notaryStatus_ = notaryStatus;
-	setCoreParameter("NotaryStatus", std::to_string(notaryStatus));
+	setCoreParameter("NotaryStatus", notaryStatus);
 }
 

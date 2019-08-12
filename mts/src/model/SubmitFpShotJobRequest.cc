@@ -55,7 +55,7 @@ long SubmitFpShotJobRequest::getResourceOwnerId()const
 void SubmitFpShotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitFpShotJobRequest::getFpShotConfig()const
@@ -99,7 +99,7 @@ long SubmitFpShotJobRequest::getOwnerId()const
 void SubmitFpShotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitFpShotJobRequest::getAccessKeyId()const

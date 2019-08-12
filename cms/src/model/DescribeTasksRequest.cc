@@ -44,7 +44,7 @@ int DescribeTasksRequest::getPageSize()const
 void DescribeTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeTasksRequest::getPage()const
@@ -55,7 +55,7 @@ int DescribeTasksRequest::getPage()const
 void DescribeTasksRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string DescribeTasksRequest::getKeyword()const

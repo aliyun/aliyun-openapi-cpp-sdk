@@ -44,7 +44,7 @@ bool UpdateKeywordLibRequest::getEnable()const
 void UpdateKeywordLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string UpdateKeywordLibRequest::getName()const
@@ -77,7 +77,7 @@ int UpdateKeywordLibRequest::getId()const
 void UpdateKeywordLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateKeywordLibRequest::getLang()const

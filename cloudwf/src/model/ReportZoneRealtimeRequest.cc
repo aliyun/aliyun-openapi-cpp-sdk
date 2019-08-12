@@ -44,6 +44,6 @@ long ReportZoneRealtimeRequest::getAgsid()const
 void ReportZoneRealtimeRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 

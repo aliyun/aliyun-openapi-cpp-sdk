@@ -33,7 +33,7 @@ long DeletePipelineRequest::getResourceOwnerId()const
 void DeletePipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeletePipelineRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DeletePipelineRequest::getOwnerId()const
 void DeletePipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeletePipelineRequest::getAccessKeyId()const

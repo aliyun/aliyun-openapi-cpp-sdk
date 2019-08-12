@@ -55,7 +55,7 @@ long CreateRuleActionRequest::getRuleId()const
 void CreateRuleActionRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string CreateRuleActionRequest::getType()const
@@ -88,6 +88,6 @@ bool CreateRuleActionRequest::getErrorActionFlag()const
 void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
 {
 	errorActionFlag_ = errorActionFlag;
-	setCoreParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
+	setCoreParameter("ErrorActionFlag", errorActionFlag);
 }
 

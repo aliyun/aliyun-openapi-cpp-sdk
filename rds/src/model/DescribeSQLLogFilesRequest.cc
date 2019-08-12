@@ -33,7 +33,7 @@ long DescribeSQLLogFilesRequest::getResourceOwnerId()const
 void DescribeSQLLogFilesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSQLLogFilesRequest::getFileName()const
@@ -77,7 +77,7 @@ int DescribeSQLLogFilesRequest::getPageSize()const
 void DescribeSQLLogFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSQLLogFilesRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ long DescribeSQLLogFilesRequest::getOwnerId()const
 void DescribeSQLLogFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeSQLLogFilesRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeSQLLogFilesRequest::getPageNumber()const
 void DescribeSQLLogFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeSQLLogFilesRequest::getAccessKeyId()const

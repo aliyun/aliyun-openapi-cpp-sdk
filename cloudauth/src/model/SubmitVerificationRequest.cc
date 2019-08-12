@@ -33,7 +33,7 @@ long SubmitVerificationRequest::getResourceOwnerId()const
 void SubmitVerificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitVerificationRequest::getBiz()const
@@ -70,8 +70,8 @@ void SubmitVerificationRequest::setMaterial(const std::vector<Material>& materia
 	for(int i = 0; i!= material.size(); i++)	{
 		auto obj = material.at(i);
 		std::string str ="Material."+ std::to_string(i);
-		setCoreParameter(str + ".MaterialType", obj.materialType);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".MaterialType", std::to_string(obj.materialType));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 

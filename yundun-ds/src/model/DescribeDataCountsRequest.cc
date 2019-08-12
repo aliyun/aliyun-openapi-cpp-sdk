@@ -44,7 +44,7 @@ int DescribeDataCountsRequest::getFeatureType()const
 void DescribeDataCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeDataCountsRequest::getLang()const

@@ -45,7 +45,7 @@ void DeleteAlbumsRequest::setAlbumId(const std::vector<long>& albumId)
 {
 	albumId_ = albumId;
 	for(int i = 0; i!= albumId.size(); i++)
-		setCoreParameter("AlbumId."+ std::to_string(i), std::to_string(albumId.at(i)));
+		setCoreParameter("AlbumId."+ std::to_string(i), albumId.at(i));
 }
 
 std::string DeleteAlbumsRequest::getStoreName()const

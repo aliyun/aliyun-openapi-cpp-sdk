@@ -33,7 +33,7 @@ long QueryRobotTaskListRequest::getResourceOwnerId()const
 void QueryRobotTaskListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryRobotTaskListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ int QueryRobotTaskListRequest::getPageNo()const
 void QueryRobotTaskListRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 int QueryRobotTaskListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QueryRobotTaskListRequest::getPageSize()const
 void QueryRobotTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryRobotTaskListRequest::getTaskName()const
@@ -99,7 +99,7 @@ long QueryRobotTaskListRequest::getOwnerId()const
 void QueryRobotTaskListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryRobotTaskListRequest::getAccessKeyId()const

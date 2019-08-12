@@ -44,6 +44,6 @@ long SearchPersonByImgRequest::getStoreId()const
 void SearchPersonByImgRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setCoreParameter("StoreId", storeId);
 }
 

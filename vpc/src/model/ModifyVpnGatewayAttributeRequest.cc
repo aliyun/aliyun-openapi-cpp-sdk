@@ -33,7 +33,7 @@ long ModifyVpnGatewayAttributeRequest::getResourceOwnerId()const
 void ModifyVpnGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVpnGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -121,6 +121,6 @@ long ModifyVpnGatewayAttributeRequest::getOwnerId()const
 void ModifyVpnGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

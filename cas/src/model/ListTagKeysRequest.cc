@@ -55,7 +55,7 @@ int ListTagKeysRequest::getPageSize()const
 void ListTagKeysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListTagKeysRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int ListTagKeysRequest::getCurrentPage()const
 void ListTagKeysRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string ListTagKeysRequest::getResourceType()const

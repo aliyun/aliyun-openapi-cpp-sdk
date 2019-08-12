@@ -44,7 +44,7 @@ long DescribeDBInstancesByPerformanceRequest::getResourceOwnerId()const
 void DescribeDBInstancesByPerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag2key()const
@@ -88,7 +88,7 @@ int DescribeDBInstancesByPerformanceRequest::getPageNumber()const
 void DescribeDBInstancesByPerformanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ int DescribeDBInstancesByPerformanceRequest::getPageSize()const
 void DescribeDBInstancesByPerformanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getDBInstanceId()const
@@ -220,7 +220,7 @@ long DescribeDBInstancesByPerformanceRequest::getOwnerId()const
 void DescribeDBInstancesByPerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag5value()const

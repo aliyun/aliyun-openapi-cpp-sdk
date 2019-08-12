@@ -77,7 +77,7 @@ long SaveSingleTaskForUpdatingContactInfoRequest::getRegistrantProfileId()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
@@ -88,7 +88,7 @@ bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setAddTransferLock(bool addTransferLock)
 {
 	addTransferLock_ = addTransferLock;
-	setCoreParameter("AddTransferLock", addTransferLock ? "true" : "false");
+	setCoreParameter("AddTransferLock", addTransferLock);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const

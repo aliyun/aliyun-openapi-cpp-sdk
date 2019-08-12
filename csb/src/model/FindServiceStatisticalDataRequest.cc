@@ -33,7 +33,7 @@ long FindServiceStatisticalDataRequest::getCsbId()const
 void FindServiceStatisticalDataRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindServiceStatisticalDataRequest::getRegionId()const
@@ -55,7 +55,7 @@ long FindServiceStatisticalDataRequest::getEndTime()const
 void FindServiceStatisticalDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string FindServiceStatisticalDataRequest::getServiceName()const
@@ -77,6 +77,6 @@ long FindServiceStatisticalDataRequest::getStartTime()const
 void FindServiceStatisticalDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

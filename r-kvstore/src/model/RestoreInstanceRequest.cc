@@ -33,7 +33,7 @@ long RestoreInstanceRequest::getResourceOwnerId()const
 void RestoreInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RestoreInstanceRequest::getInstanceId()const
@@ -110,7 +110,7 @@ long RestoreInstanceRequest::getOwnerId()const
 void RestoreInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RestoreInstanceRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long SetCenInterRegionBandwidthLimitRequest::getResourceOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const
 void SetCenInterRegionBandwidthLimitRequest::setBandwidthLimit(long bandwidthLimit)
 {
 	bandwidthLimit_ = bandwidthLimit;
-	setCoreParameter("BandwidthLimit", std::to_string(bandwidthLimit));
+	setCoreParameter("BandwidthLimit", bandwidthLimit);
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

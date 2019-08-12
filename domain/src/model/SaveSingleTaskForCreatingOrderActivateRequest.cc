@@ -44,7 +44,7 @@ int SaveSingleTaskForCreatingOrderActivateRequest::getSubscriptionDuration()cons
 void SaveSingleTaskForCreatingOrderActivateRequest::setSubscriptionDuration(int subscriptionDuration)
 {
 	subscriptionDuration_ = subscriptionDuration;
-	setCoreParameter("SubscriptionDuration", std::to_string(subscriptionDuration));
+	setCoreParameter("SubscriptionDuration", subscriptionDuration);
 }
 
 bool SaveSingleTaskForCreatingOrderActivateRequest::getPermitPremiumActivation()const
@@ -55,7 +55,7 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getPermitPremiumActivation()
 void SaveSingleTaskForCreatingOrderActivateRequest::setPermitPremiumActivation(bool permitPremiumActivation)
 {
 	permitPremiumActivation_ = permitPremiumActivation;
-	setCoreParameter("PermitPremiumActivation", permitPremiumActivation ? "true" : "false");
+	setCoreParameter("PermitPremiumActivation", permitPremiumActivation);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getCity()const
@@ -99,7 +99,7 @@ long SaveSingleTaskForCreatingOrderActivateRequest::getRegistrantProfileId()cons
 void SaveSingleTaskForCreatingOrderActivateRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getCouponNo()const
@@ -121,7 +121,7 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getAliyunDns()const
 void SaveSingleTaskForCreatingOrderActivateRequest::setAliyunDns(bool aliyunDns)
 {
 	aliyunDns_ = aliyunDns;
-	setCoreParameter("AliyunDns", aliyunDns ? "true" : "false");
+	setCoreParameter("AliyunDns", aliyunDns);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhCity()const
@@ -286,7 +286,7 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getTrademarkDomainActivation
 void SaveSingleTaskForCreatingOrderActivateRequest::setTrademarkDomainActivation(bool trademarkDomainActivation)
 {
 	trademarkDomainActivation_ = trademarkDomainActivation;
-	setCoreParameter("TrademarkDomainActivation", trademarkDomainActivation ? "true" : "false");
+	setCoreParameter("TrademarkDomainActivation", trademarkDomainActivation);
 }
 
 bool SaveSingleTaskForCreatingOrderActivateRequest::getUseCoupon()const
@@ -297,7 +297,7 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getUseCoupon()const
 void SaveSingleTaskForCreatingOrderActivateRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setCoreParameter("UseCoupon", useCoupon);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getZhProvince()const
@@ -341,7 +341,7 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getEnableDomainProxy()const
 void SaveSingleTaskForCreatingOrderActivateRequest::setEnableDomainProxy(bool enableDomainProxy)
 {
 	enableDomainProxy_ = enableDomainProxy;
-	setCoreParameter("EnableDomainProxy", enableDomainProxy ? "true" : "false");
+	setCoreParameter("EnableDomainProxy", enableDomainProxy);
 }
 
 std::string SaveSingleTaskForCreatingOrderActivateRequest::getUserClientIp()const
@@ -374,6 +374,6 @@ bool SaveSingleTaskForCreatingOrderActivateRequest::getUsePromotion()const
 void SaveSingleTaskForCreatingOrderActivateRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setCoreParameter("UsePromotion", usePromotion);
 }
 

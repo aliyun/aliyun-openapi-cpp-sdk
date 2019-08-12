@@ -66,7 +66,7 @@ long SubmitJobsRequest::getResourceOwnerId()const
 void SubmitJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitJobsRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long SubmitJobsRequest::getOwnerId()const
 void SubmitJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitJobsRequest::getAccessKeyId()const

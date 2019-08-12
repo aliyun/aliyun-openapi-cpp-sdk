@@ -33,7 +33,7 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getWhiteListGroupName()const
@@ -121,7 +121,7 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const

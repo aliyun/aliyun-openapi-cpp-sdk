@@ -33,7 +33,7 @@ bool DescribeClusterUserKubeconfigRequest::getPrivateIpAddress()const
 void DescribeClusterUserKubeconfigRequest::setPrivateIpAddress(bool privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress ? "true" : "false");
+	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string DescribeClusterUserKubeconfigRequest::getClusterId()const

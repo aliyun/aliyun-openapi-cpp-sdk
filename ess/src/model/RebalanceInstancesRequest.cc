@@ -33,7 +33,7 @@ long RebalanceInstancesRequest::getResourceOwnerId()const
 void RebalanceInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long RebalanceInstancesRequest::getOwnerId()const
 void RebalanceInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RebalanceInstancesRequest::getAccessKeyId()const

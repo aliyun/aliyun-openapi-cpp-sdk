@@ -110,7 +110,7 @@ bool CreateJobTemplateRequest::getReRunable()const
 void CreateJobTemplateRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+	setCoreParameter("ReRunable", reRunable);
 }
 
 int CreateJobTemplateRequest::getPriority()const
@@ -121,7 +121,7 @@ int CreateJobTemplateRequest::getPriority()const
 void CreateJobTemplateRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string CreateJobTemplateRequest::getCommandLine()const

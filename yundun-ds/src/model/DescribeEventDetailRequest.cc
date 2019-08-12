@@ -44,7 +44,7 @@ long DescribeEventDetailRequest::getFeatureType()const
 void DescribeEventDetailRequest::setFeatureType(long featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long DescribeEventDetailRequest::getId()const
@@ -55,7 +55,7 @@ long DescribeEventDetailRequest::getId()const
 void DescribeEventDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeEventDetailRequest::getLang()const

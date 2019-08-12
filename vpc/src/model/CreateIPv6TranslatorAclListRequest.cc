@@ -33,7 +33,7 @@ long CreateIPv6TranslatorAclListRequest::getResourceOwnerId()const
 void CreateIPv6TranslatorAclListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateIPv6TranslatorAclListRequest::getAclName()const
@@ -99,6 +99,6 @@ long CreateIPv6TranslatorAclListRequest::getOwnerId()const
 void CreateIPv6TranslatorAclListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

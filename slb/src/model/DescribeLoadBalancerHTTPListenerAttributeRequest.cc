@@ -44,7 +44,7 @@ long DescribeLoadBalancerHTTPListenerAttributeRequest::getResourceOwnerId()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeLoadBalancerHTTPListenerAttributeRequest::getListenerPort()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DescribeLoadBalancerHTTPListenerAttributeRequest::getOwnerId()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getTags()const

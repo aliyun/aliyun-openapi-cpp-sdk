@@ -33,7 +33,7 @@ long ResolveAndRouteServiceInCenRequest::getResourceOwnerId()const
 void ResolveAndRouteServiceInCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<std::string> ResolveAndRouteServiceInCenRequest::getAccessRegionIds()const
@@ -45,7 +45,7 @@ void ResolveAndRouteServiceInCenRequest::setAccessRegionIds(const std::vector<st
 {
 	accessRegionIds_ = accessRegionIds;
 	for(int i = 0; i!= accessRegionIds.size(); i++)
-		setCoreParameter("AccessRegionIds."+ std::to_string(i), accessRegionIds.at(i));
+		setCoreParameter("AccessRegionIds."+ std::to_string(i), std::to_string(accessRegionIds.at(i)));
 }
 
 std::string ResolveAndRouteServiceInCenRequest::getResourceOwnerAccount()const
@@ -122,7 +122,7 @@ long ResolveAndRouteServiceInCenRequest::getOwnerId()const
 void ResolveAndRouteServiceInCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long ResolveAndRouteServiceInCenRequest::getUpdateInterval()const
@@ -133,6 +133,6 @@ long ResolveAndRouteServiceInCenRequest::getUpdateInterval()const
 void ResolveAndRouteServiceInCenRequest::setUpdateInterval(long updateInterval)
 {
 	updateInterval_ = updateInterval;
-	setCoreParameter("UpdateInterval", std::to_string(updateInterval));
+	setCoreParameter("UpdateInterval", updateInterval);
 }
 

@@ -77,7 +77,7 @@ bool DeleteVideoRequest::getResources()const
 void DeleteVideoRequest::setResources(bool resources)
 {
 	resources_ = resources;
-	setCoreParameter("Resources", resources ? "true" : "false");
+	setCoreParameter("Resources", resources);
 }
 
 std::string DeleteVideoRequest::getAccessKeyId()const

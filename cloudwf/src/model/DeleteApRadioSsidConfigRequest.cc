@@ -33,7 +33,7 @@ int DeleteApRadioSsidConfigRequest::getInstantlyEffective()const
 void DeleteApRadioSsidConfigRequest::setInstantlyEffective(int instantlyEffective)
 {
 	instantlyEffective_ = instantlyEffective;
-	setCoreParameter("InstantlyEffective", std::to_string(instantlyEffective));
+	setCoreParameter("InstantlyEffective", instantlyEffective);
 }
 
 long DeleteApRadioSsidConfigRequest::getId()const
@@ -44,7 +44,7 @@ long DeleteApRadioSsidConfigRequest::getId()const
 void DeleteApRadioSsidConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteApRadioSsidConfigRequest::getAccessKeyId()const

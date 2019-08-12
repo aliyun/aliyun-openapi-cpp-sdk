@@ -33,7 +33,7 @@ long DeleteZoneRecordRequest::getRecordId()const
 void DeleteZoneRecordRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string DeleteZoneRecordRequest::getUserClientIp()const

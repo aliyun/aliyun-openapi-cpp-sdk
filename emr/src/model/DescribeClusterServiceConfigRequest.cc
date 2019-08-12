@@ -33,7 +33,7 @@ long DescribeClusterServiceConfigRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getHostInstanceId()const

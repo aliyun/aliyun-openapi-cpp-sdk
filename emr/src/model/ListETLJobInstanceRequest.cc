@@ -33,7 +33,7 @@ long ListETLJobInstanceRequest::getResourceOwnerId()const
 void ListETLJobInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListETLJobInstanceRequest::getInstanceId()const
@@ -77,7 +77,7 @@ int ListETLJobInstanceRequest::getPageSize()const
 void ListETLJobInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListETLJobInstanceRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListETLJobInstanceRequest::getPageNumber()const
 void ListETLJobInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListETLJobInstanceRequest::getAccessKeyId()const

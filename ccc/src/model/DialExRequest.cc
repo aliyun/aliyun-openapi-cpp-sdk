@@ -88,7 +88,7 @@ int DialExRequest::getAnswerMode()const
 void DialExRequest::setAnswerMode(int answerMode)
 {
 	answerMode_ = answerMode;
-	setCoreParameter("AnswerMode", std::to_string(answerMode));
+	setCoreParameter("AnswerMode", answerMode);
 }
 
 std::string DialExRequest::getAccessKeyId()const

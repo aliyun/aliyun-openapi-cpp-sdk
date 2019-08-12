@@ -44,7 +44,7 @@ int DescribeUidWhiteListGroupRequest::getPageSize()const
 void DescribeUidWhiteListGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeUidWhiteListGroupRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeUidWhiteListGroupRequest::getCurrentPage()const
 void DescribeUidWhiteListGroupRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeUidWhiteListGroupRequest::getWhiteListType()const
@@ -66,7 +66,7 @@ int DescribeUidWhiteListGroupRequest::getWhiteListType()const
 void DescribeUidWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string DescribeUidWhiteListGroupRequest::getDstIP()const

@@ -44,7 +44,7 @@ int ListFlowProjectClusterSettingRequest::getPageSize()const
 void ListFlowProjectClusterSettingRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowProjectClusterSettingRequest::getProjectId()const
@@ -66,6 +66,6 @@ int ListFlowProjectClusterSettingRequest::getPageNumber()const
 void ListFlowProjectClusterSettingRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

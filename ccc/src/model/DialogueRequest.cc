@@ -77,7 +77,7 @@ long DialogueRequest::getInstanceOwnerId()const
 void DialogueRequest::setInstanceOwnerId(long instanceOwnerId)
 {
 	instanceOwnerId_ = instanceOwnerId;
-	setCoreParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+	setCoreParameter("InstanceOwnerId", instanceOwnerId);
 }
 
 std::string DialogueRequest::getActionKey()const

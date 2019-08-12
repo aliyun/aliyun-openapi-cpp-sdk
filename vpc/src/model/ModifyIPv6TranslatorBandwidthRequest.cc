@@ -33,7 +33,7 @@ long ModifyIPv6TranslatorBandwidthRequest::getResourceOwnerId()const
 void ModifyIPv6TranslatorBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyIPv6TranslatorBandwidthRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool ModifyIPv6TranslatorBandwidthRequest::getAutoPay()const
 void ModifyIPv6TranslatorBandwidthRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int ModifyIPv6TranslatorBandwidthRequest::getBandwidth()const
 void ModifyIPv6TranslatorBandwidthRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyIPv6TranslatorBandwidthRequest::getOwnerAccount()const
@@ -121,6 +121,6 @@ long ModifyIPv6TranslatorBandwidthRequest::getOwnerId()const
 void ModifyIPv6TranslatorBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

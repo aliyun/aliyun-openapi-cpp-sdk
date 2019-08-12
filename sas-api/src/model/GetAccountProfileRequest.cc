@@ -44,7 +44,7 @@ int GetAccountProfileRequest::getCarrier()const
 void GetAccountProfileRequest::setCarrier(int carrier)
 {
 	carrier_ = carrier;
-	setCoreParameter("Carrier", std::to_string(carrier));
+	setCoreParameter("Carrier", carrier);
 }
 
 std::string GetAccountProfileRequest::getOs()const
@@ -110,7 +110,7 @@ int GetAccountProfileRequest::getConnectionType()const
 void GetAccountProfileRequest::setConnectionType(int connectionType)
 {
 	connectionType_ = connectionType;
-	setCoreParameter("ConnectionType", std::to_string(connectionType));
+	setCoreParameter("ConnectionType", connectionType);
 }
 
 int GetAccountProfileRequest::getSensType()const
@@ -121,7 +121,7 @@ int GetAccountProfileRequest::getSensType()const
 void GetAccountProfileRequest::setSensType(int sensType)
 {
 	sensType_ = sensType;
-	setCoreParameter("SensType", std::to_string(sensType));
+	setCoreParameter("SensType", sensType);
 }
 
 int GetAccountProfileRequest::getDeviceType()const
@@ -132,7 +132,7 @@ int GetAccountProfileRequest::getDeviceType()const
 void GetAccountProfileRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", deviceType);
 }
 
 long GetAccountProfileRequest::getAccessTimestamp()const
@@ -143,7 +143,7 @@ long GetAccountProfileRequest::getAccessTimestamp()const
 void GetAccountProfileRequest::setAccessTimestamp(long accessTimestamp)
 {
 	accessTimestamp_ = accessTimestamp;
-	setCoreParameter("AccessTimestamp", std::to_string(accessTimestamp));
+	setCoreParameter("AccessTimestamp", accessTimestamp);
 }
 
 int GetAccountProfileRequest::getBusinessType()const
@@ -154,6 +154,6 @@ int GetAccountProfileRequest::getBusinessType()const
 void GetAccountProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setCoreParameter("BusinessType", businessType);
 }
 

@@ -33,7 +33,7 @@ int DescribeScreenCityMonitorDataRequest::getScreenId()const
 void DescribeScreenCityMonitorDataRequest::setScreenId(int screenId)
 {
 	screenId_ = screenId;
-	setCoreParameter("ScreenId", std::to_string(screenId));
+	setCoreParameter("ScreenId", screenId);
 }
 
 std::string DescribeScreenCityMonitorDataRequest::getDateType()const

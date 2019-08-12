@@ -55,7 +55,7 @@ long DescribeCdnDomainLogsRequest::getPageSize()const
 void DescribeCdnDomainLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCdnDomainLogsRequest::getEndTime()const
@@ -88,7 +88,7 @@ long DescribeCdnDomainLogsRequest::getOwnerId()const
 void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long DescribeCdnDomainLogsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long DescribeCdnDomainLogsRequest::getPageNumber()const
 void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeCdnDomainLogsRequest::getLogDay()const

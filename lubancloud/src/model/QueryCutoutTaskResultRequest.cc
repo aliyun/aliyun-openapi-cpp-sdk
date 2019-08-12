@@ -33,7 +33,7 @@ bool QueryCutoutTaskResultRequest::getSecurity_transport()const
 void QueryCutoutTaskResultRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string QueryCutoutTaskResultRequest::getApp_ip()const
@@ -77,7 +77,7 @@ long QueryCutoutTaskResultRequest::getCallerParentId()const
 void QueryCutoutTaskResultRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string QueryCutoutTaskResultRequest::getCallerType()const
@@ -99,7 +99,7 @@ bool QueryCutoutTaskResultRequest::getAk_mfa_present()const
 void QueryCutoutTaskResultRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 long QueryCutoutTaskResultRequest::getCallerUid()const
@@ -110,7 +110,7 @@ long QueryCutoutTaskResultRequest::getCallerUid()const
 void QueryCutoutTaskResultRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 long QueryCutoutTaskResultRequest::getTaskId()const
@@ -121,6 +121,6 @@ long QueryCutoutTaskResultRequest::getTaskId()const
 void QueryCutoutTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

@@ -33,7 +33,7 @@ long SearchMediaRequest::getResourceOwnerId()const
 void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchMediaRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long SearchMediaRequest::getOwnerId()const
 void SearchMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SearchMediaRequest::getScrollToken()const
@@ -99,7 +99,7 @@ int SearchMediaRequest::getPageNo()const
 void SearchMediaRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 std::string SearchMediaRequest::getSearchType()const
@@ -121,7 +121,7 @@ int SearchMediaRequest::getPageSize()const
 void SearchMediaRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string SearchMediaRequest::getSortBy()const

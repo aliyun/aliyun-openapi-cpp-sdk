@@ -66,6 +66,6 @@ long DeleteLiveDomainRequest::getOwnerId()const
 void DeleteLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

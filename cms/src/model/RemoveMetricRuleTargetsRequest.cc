@@ -34,7 +34,7 @@ void RemoveMetricRuleTargetsRequest::setContactGroupTargetIds(const std::vector<
 {
 	contactGroupTargetIds_ = contactGroupTargetIds;
 	for(int i = 0; i!= contactGroupTargetIds.size(); i++)
-		setCoreParameter("ContactGroupTargetIds."+ std::to_string(i), contactGroupTargetIds.at(i));
+		setCoreParameter("ContactGroupTargetIds."+ std::to_string(i), std::to_string(contactGroupTargetIds.at(i)));
 }
 
 std::vector<std::string> RemoveMetricRuleTargetsRequest::getTargetIds()const
@@ -46,7 +46,7 @@ void RemoveMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>
 {
 	targetIds_ = targetIds;
 	for(int i = 0; i!= targetIds.size(); i++)
-		setCoreParameter("TargetIds."+ std::to_string(i), targetIds.at(i));
+		setCoreParameter("TargetIds."+ std::to_string(i), std::to_string(targetIds.at(i)));
 }
 
 std::vector<std::string> RemoveMetricRuleTargetsRequest::getWebhookTargetIds()const
@@ -58,7 +58,7 @@ void RemoveMetricRuleTargetsRequest::setWebhookTargetIds(const std::vector<std::
 {
 	webhookTargetIds_ = webhookTargetIds;
 	for(int i = 0; i!= webhookTargetIds.size(); i++)
-		setCoreParameter("WebhookTargetIds."+ std::to_string(i), webhookTargetIds.at(i));
+		setCoreParameter("WebhookTargetIds."+ std::to_string(i), std::to_string(webhookTargetIds.at(i)));
 }
 
 std::string RemoveMetricRuleTargetsRequest::getRuleName()const

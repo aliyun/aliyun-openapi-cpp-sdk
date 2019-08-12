@@ -44,7 +44,7 @@ long DescribeDnsProductInstancesRequest::getPageSize()const
 void DescribeDnsProductInstancesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDnsProductInstancesRequest::getLang()const
@@ -77,7 +77,7 @@ long DescribeDnsProductInstancesRequest::getPageNumber()const
 void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const

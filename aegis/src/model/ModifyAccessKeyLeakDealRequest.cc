@@ -55,7 +55,7 @@ long ModifyAccessKeyLeakDealRequest::getId()const
 void ModifyAccessKeyLeakDealRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyAccessKeyLeakDealRequest::getType()const

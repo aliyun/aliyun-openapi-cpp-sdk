@@ -33,7 +33,7 @@ long DescribeTaskInfoRequest::getResourceOwnerId()const
 void DescribeTaskInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeTaskInfoRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeTaskInfoRequest::getOwnerId()const
 void DescribeTaskInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long DescribeTaskInfoRequest::getTaskId()const
@@ -99,7 +99,7 @@ long DescribeTaskInfoRequest::getTaskId()const
 void DescribeTaskInfoRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DescribeTaskInfoRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long DescribeETLJobStageOutputSchemaRequest::getResourceOwnerId()const
 void DescribeETLJobStageOutputSchemaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeETLJobStageOutputSchemaRequest::getRegionId()const

@@ -33,7 +33,7 @@ long GetAuditLogsRequest::getResourceOwnerId()const
 void GetAuditLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int GetAuditLogsRequest::getPageCount()const
@@ -44,7 +44,7 @@ int GetAuditLogsRequest::getPageCount()const
 void GetAuditLogsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", std::to_string(pageCount));
+	setCoreParameter("PageCount", pageCount);
 }
 
 std::string GetAuditLogsRequest::getOrderMode()const
@@ -66,7 +66,7 @@ long GetAuditLogsRequest::getCallerParentId()const
 void GetAuditLogsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool GetAuditLogsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool GetAuditLogsRequest::getProxy_original_security_transport()const
 void GetAuditLogsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string GetAuditLogsRequest::getEntityId()const
@@ -121,7 +121,7 @@ int GetAuditLogsRequest::getPageNumber()const
 void GetAuditLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GetAuditLogsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ int GetAuditLogsRequest::getLimit()const
 void GetAuditLogsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 int GetAuditLogsRequest::getPageSize()const
@@ -176,7 +176,7 @@ int GetAuditLogsRequest::getPageSize()const
 void GetAuditLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetAuditLogsRequest::getCurrentSize()const
@@ -187,7 +187,7 @@ int GetAuditLogsRequest::getCurrentSize()const
 void GetAuditLogsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 long GetAuditLogsRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long GetAuditLogsRequest::getCallerUid()const
 void GetAuditLogsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string GetAuditLogsRequest::getOrderField()const
@@ -242,7 +242,7 @@ bool GetAuditLogsRequest::getAk_mfa_present()const
 void GetAuditLogsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool GetAuditLogsRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool GetAuditLogsRequest::getProxy_trust_transport_info()const
 void GetAuditLogsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool GetAuditLogsRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool GetAuditLogsRequest::getSecurity_transport()const
 void GetAuditLogsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string GetAuditLogsRequest::getRequestId()const

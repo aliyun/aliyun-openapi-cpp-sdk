@@ -44,7 +44,7 @@ long ModifyAutoRenewAttributeRequest::getResourceOwnerId()const
 void ModifyAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyAutoRenewAttributeRequest::getPeriodUnit()const
@@ -110,7 +110,7 @@ long ModifyAutoRenewAttributeRequest::getOwnerId()const
 void ModifyAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAutoRenewAttributeRequest::getAccessKeyId()const

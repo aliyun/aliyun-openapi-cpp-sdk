@@ -44,7 +44,7 @@ long ModifyAuditLogFilterRequest::getResourceOwnerId()const
 void ModifyAuditLogFilterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyAuditLogFilterRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ long ModifyAuditLogFilterRequest::getOwnerId()const
 void ModifyAuditLogFilterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAuditLogFilterRequest::getAccessKeyId()const

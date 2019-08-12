@@ -33,7 +33,7 @@ int RenewInstanceRequest::getPeriod()const
 void RenewInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string RenewInstanceRequest::getPeriodUnit()const

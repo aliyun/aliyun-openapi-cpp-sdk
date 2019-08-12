@@ -34,7 +34,7 @@ void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::str
 {
 	identifier_ = identifier;
 	for(int i = 0; i!= identifier.size(); i++)
-		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
+		setCoreParameter("Identifier."+ std::to_string(i), std::to_string(identifier.at(i)));
 }
 
 std::string QueryDeviceDesiredPropertyRequest::getIotId()const

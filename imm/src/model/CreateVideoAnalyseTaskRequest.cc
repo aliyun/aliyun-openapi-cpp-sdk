@@ -110,7 +110,7 @@ bool CreateVideoAnalyseTaskRequest::getSaveType()const
 void CreateVideoAnalyseTaskRequest::setSaveType(bool saveType)
 {
 	saveType_ = saveType;
-	setCoreParameter("SaveType", saveType ? "true" : "false");
+	setCoreParameter("SaveType", saveType);
 }
 
 std::string CreateVideoAnalyseTaskRequest::getRegionId()const

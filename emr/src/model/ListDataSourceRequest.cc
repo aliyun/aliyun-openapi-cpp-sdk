@@ -33,7 +33,7 @@ long ListDataSourceRequest::getResourceOwnerId()const
 void ListDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListDataSourceRequest::getCreateFrom()const
@@ -66,7 +66,7 @@ int ListDataSourceRequest::getPageSize()const
 void ListDataSourceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListDataSourceRequest::getName()const
@@ -121,7 +121,7 @@ int ListDataSourceRequest::getPageNumber()const
 void ListDataSourceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListDataSourceRequest::getAccessKeyId()const

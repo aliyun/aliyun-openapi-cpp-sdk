@@ -55,7 +55,7 @@ int DescribeDBInstancesRequest::getPageSize()const
 void DescribeDBInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
@@ -81,8 +81,8 @@ void DescribeDBInstancesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -94,7 +94,7 @@ long DescribeDBInstancesRequest::getOwnerId()const
 void DescribeDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDBInstancesRequest::getInstanceNetworkType()const
@@ -116,7 +116,7 @@ int DescribeDBInstancesRequest::getPageNumber()const
 void DescribeDBInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDBInstancesRequest::getAccessKeyId()const

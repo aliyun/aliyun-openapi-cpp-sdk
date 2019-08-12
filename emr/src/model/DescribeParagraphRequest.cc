@@ -33,7 +33,7 @@ long DescribeParagraphRequest::getResourceOwnerId()const
 void DescribeParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeParagraphRequest::getRegionId()const

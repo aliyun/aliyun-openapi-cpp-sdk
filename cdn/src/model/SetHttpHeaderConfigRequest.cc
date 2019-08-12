@@ -55,7 +55,7 @@ long SetHttpHeaderConfigRequest::getConfigId()const
 void SetHttpHeaderConfigRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setCoreParameter("ConfigId", configId);
 }
 
 std::string SetHttpHeaderConfigRequest::getDomainName()const
@@ -88,6 +88,6 @@ long SetHttpHeaderConfigRequest::getOwnerId()const
 void SetHttpHeaderConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

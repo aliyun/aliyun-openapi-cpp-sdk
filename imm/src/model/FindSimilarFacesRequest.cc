@@ -55,7 +55,7 @@ float FindSimilarFacesRequest::getMinSimilarity()const
 void FindSimilarFacesRequest::setMinSimilarity(float minSimilarity)
 {
 	minSimilarity_ = minSimilarity;
-	setCoreParameter("MinSimilarity", std::to_string(minSimilarity));
+	setCoreParameter("MinSimilarity", minSimilarity);
 }
 
 std::string FindSimilarFacesRequest::getResponseFormat()const
@@ -77,7 +77,7 @@ int FindSimilarFacesRequest::getLimit()const
 void FindSimilarFacesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string FindSimilarFacesRequest::getProject()const

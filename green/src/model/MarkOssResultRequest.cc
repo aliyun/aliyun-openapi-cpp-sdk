@@ -66,7 +66,7 @@ bool MarkOssResultRequest::getStock()const
 void MarkOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setCoreParameter("Stock", stock);
 }
 
 std::string MarkOssResultRequest::getOperation()const

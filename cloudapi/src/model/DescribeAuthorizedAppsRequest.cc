@@ -77,7 +77,7 @@ long DescribeAuthorizedAppsRequest::getAppId()const
 void DescribeAuthorizedAppsRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 long DescribeAuthorizedAppsRequest::getAppOwnerId()const
@@ -88,7 +88,7 @@ long DescribeAuthorizedAppsRequest::getAppOwnerId()const
 void DescribeAuthorizedAppsRequest::setAppOwnerId(long appOwnerId)
 {
 	appOwnerId_ = appOwnerId;
-	setCoreParameter("AppOwnerId", std::to_string(appOwnerId));
+	setCoreParameter("AppOwnerId", appOwnerId);
 }
 
 int DescribeAuthorizedAppsRequest::getPageSize()const
@@ -99,7 +99,7 @@ int DescribeAuthorizedAppsRequest::getPageSize()const
 void DescribeAuthorizedAppsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAuthorizedAppsRequest::getApiId()const
@@ -121,7 +121,7 @@ int DescribeAuthorizedAppsRequest::getPageNumber()const
 void DescribeAuthorizedAppsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAuthorizedAppsRequest::getAccessKeyId()const

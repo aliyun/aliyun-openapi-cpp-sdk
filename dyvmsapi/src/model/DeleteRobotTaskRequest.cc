@@ -33,7 +33,7 @@ long DeleteRobotTaskRequest::getResourceOwnerId()const
 void DeleteRobotTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteRobotTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long DeleteRobotTaskRequest::getOwnerId()const
 void DeleteRobotTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long DeleteRobotTaskRequest::getTaskId()const
@@ -66,7 +66,7 @@ long DeleteRobotTaskRequest::getTaskId()const
 void DeleteRobotTaskRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DeleteRobotTaskRequest::getAccessKeyId()const

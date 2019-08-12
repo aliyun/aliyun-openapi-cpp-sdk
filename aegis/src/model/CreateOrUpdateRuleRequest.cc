@@ -66,7 +66,7 @@ long CreateOrUpdateRuleRequest::getDataSourceId()const
 void CreateOrUpdateRuleRequest::setDataSourceId(long dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string CreateOrUpdateRuleRequest::getDescription()const
@@ -99,7 +99,7 @@ long CreateOrUpdateRuleRequest::getId()const
 void CreateOrUpdateRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string CreateOrUpdateRuleRequest::getLang()const

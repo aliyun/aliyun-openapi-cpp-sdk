@@ -33,7 +33,7 @@ long DeleteClusterHostGroupRequest::getResourceOwnerId()const
 void DeleteClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteClusterHostGroupRequest::getRegionId()const

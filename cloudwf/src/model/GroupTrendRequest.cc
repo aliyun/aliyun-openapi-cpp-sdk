@@ -33,7 +33,7 @@ long GroupTrendRequest::getGsid()const
 void GroupTrendRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string GroupTrendRequest::getAccessKeyId()const

@@ -77,7 +77,7 @@ long CompleteLifecycleActionRequest::getOwnerId()const
 void CompleteLifecycleActionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CompleteLifecycleActionRequest::getLifecycleActionResult()const

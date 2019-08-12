@@ -33,7 +33,7 @@ long DeleteVodTemplateRequest::getResourceOwnerId()const
 void DeleteVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVodTemplateRequest::getResourceOwnerAccount()const
@@ -66,6 +66,6 @@ long DeleteVodTemplateRequest::getOwnerId()const
 void DeleteVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

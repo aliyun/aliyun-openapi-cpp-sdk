@@ -34,7 +34,7 @@ void GetAllActiveShopByGroupRequest::setGids(const std::vector<long>& gids)
 {
 	gids_ = gids;
 	for(int i = 0; i!= gids.size(); i++)
-		setCoreParameter("Gids."+ std::to_string(i), std::to_string(gids.at(i)));
+		setCoreParameter("Gids."+ std::to_string(i), gids.at(i));
 }
 
 long GetAllActiveShopByGroupRequest::getBid()const
@@ -45,7 +45,7 @@ long GetAllActiveShopByGroupRequest::getBid()const
 void GetAllActiveShopByGroupRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string GetAllActiveShopByGroupRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long QueryDeviceInfoRequest::getAppKey()const
 void QueryDeviceInfoRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string QueryDeviceInfoRequest::getDeviceId()const

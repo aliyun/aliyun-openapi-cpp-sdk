@@ -33,7 +33,7 @@ long DescribeIndexRecommendationRequest::getResourceOwnerId()const
 void DescribeIndexRecommendationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeIndexRecommendationRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long DescribeIndexRecommendationRequest::getOwnerId()const
 void DescribeIndexRecommendationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeIndexRecommendationRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeIndexRecommendationRequest::getPageNumber()const
 void DescribeIndexRecommendationRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeIndexRecommendationRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ int DescribeIndexRecommendationRequest::getPageSize()const
 void DescribeIndexRecommendationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeIndexRecommendationRequest::getNodeId()const

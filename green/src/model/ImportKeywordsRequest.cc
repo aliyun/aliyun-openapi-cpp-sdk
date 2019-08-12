@@ -44,7 +44,7 @@ int ImportKeywordsRequest::getKeywordLibId()const
 void ImportKeywordsRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setCoreParameter("KeywordLibId", keywordLibId);
 }
 
 std::string ImportKeywordsRequest::getKeywordsObject()const

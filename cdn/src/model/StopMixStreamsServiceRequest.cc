@@ -77,7 +77,7 @@ long StopMixStreamsServiceRequest::getOwnerId()const
 void StopMixStreamsServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StopMixStreamsServiceRequest::getMainAppName()const

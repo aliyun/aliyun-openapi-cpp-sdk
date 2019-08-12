@@ -44,7 +44,7 @@ long CreateTransactionRequest::getSize()const
 void CreateTransactionRequest::setSize(long size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string CreateTransactionRequest::getLibraryId()const

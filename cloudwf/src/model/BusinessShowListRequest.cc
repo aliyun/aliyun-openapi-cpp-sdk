@@ -33,7 +33,7 @@ int BusinessShowListRequest::getPage()const
 void BusinessShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 int BusinessShowListRequest::getPer()const
@@ -44,7 +44,7 @@ int BusinessShowListRequest::getPer()const
 void BusinessShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 std::string BusinessShowListRequest::getAccessKeyId()const

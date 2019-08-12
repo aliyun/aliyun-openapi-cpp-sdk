@@ -33,7 +33,7 @@ int FetchAlbumTagPhotosRequest::getSize()const
 void FetchAlbumTagPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 long FetchAlbumTagPhotosRequest::getTagId()const
@@ -44,7 +44,7 @@ long FetchAlbumTagPhotosRequest::getTagId()const
 void FetchAlbumTagPhotosRequest::setTagId(long tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", std::to_string(tagId));
+	setCoreParameter("TagId", tagId);
 }
 
 std::string FetchAlbumTagPhotosRequest::getLibraryId()const
@@ -66,7 +66,7 @@ long FetchAlbumTagPhotosRequest::getAlbumId()const
 void FetchAlbumTagPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setCoreParameter("AlbumId", albumId);
 }
 
 std::string FetchAlbumTagPhotosRequest::getStoreName()const
@@ -88,6 +88,6 @@ int FetchAlbumTagPhotosRequest::getPage()const
 void FetchAlbumTagPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 

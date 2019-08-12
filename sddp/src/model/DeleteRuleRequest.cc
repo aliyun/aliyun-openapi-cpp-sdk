@@ -44,7 +44,7 @@ int DeleteRuleRequest::getFeatureType()const
 void DeleteRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long DeleteRuleRequest::getId()const
@@ -55,7 +55,7 @@ long DeleteRuleRequest::getId()const
 void DeleteRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteRuleRequest::getLang()const

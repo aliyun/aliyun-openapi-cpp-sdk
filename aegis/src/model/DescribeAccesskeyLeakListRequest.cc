@@ -55,7 +55,7 @@ int DescribeAccesskeyLeakListRequest::getPageSize()const
 void DescribeAccesskeyLeakListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeAccesskeyLeakListRequest::getStartTs()const
@@ -66,7 +66,7 @@ long DescribeAccesskeyLeakListRequest::getStartTs()const
 void DescribeAccesskeyLeakListRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
-	setCoreParameter("StartTs", std::to_string(startTs));
+	setCoreParameter("StartTs", startTs);
 }
 
 int DescribeAccesskeyLeakListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAccesskeyLeakListRequest::getCurrentPage()const
 void DescribeAccesskeyLeakListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAccesskeyLeakListRequest::getStatus()const

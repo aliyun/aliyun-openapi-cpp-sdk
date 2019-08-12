@@ -33,7 +33,7 @@ long DeleteBandwidthPackageRequest::getResourceOwnerId()const
 void DeleteBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteBandwidthPackageRequest::getBandwidthPackageId()const
@@ -88,7 +88,7 @@ bool DeleteBandwidthPackageRequest::getForce()const
 void DeleteBandwidthPackageRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 long DeleteBandwidthPackageRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DeleteBandwidthPackageRequest::getOwnerId()const
 void DeleteBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

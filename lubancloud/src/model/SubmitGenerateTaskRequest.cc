@@ -44,7 +44,7 @@ int SubmitGenerateTaskRequest::getImageCount()const
 void SubmitGenerateTaskRequest::setImageCount(int imageCount)
 {
 	imageCount_ = imageCount;
-	setCoreParameter("ImageCount", std::to_string(imageCount));
+	setCoreParameter("ImageCount", imageCount);
 }
 
 long SubmitGenerateTaskRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long SubmitGenerateTaskRequest::getCallerParentId()const
 void SubmitGenerateTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string SubmitGenerateTaskRequest::getActionPoint()const
@@ -88,7 +88,7 @@ int SubmitGenerateTaskRequest::getType()const
 void SubmitGenerateTaskRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string SubmitGenerateTaskRequest::getCallerType()const
@@ -110,7 +110,7 @@ bool SubmitGenerateTaskRequest::getAk_mfa_present()const
 void SubmitGenerateTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SubmitGenerateTaskRequest::getSecurity_transport()const
@@ -121,7 +121,7 @@ bool SubmitGenerateTaskRequest::getSecurity_transport()const
 void SubmitGenerateTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::vector<std::string> SubmitGenerateTaskRequest::getMajorImagePath()const
@@ -133,7 +133,7 @@ void SubmitGenerateTaskRequest::setMajorImagePath(const std::vector<std::string>
 {
 	majorImagePath_ = majorImagePath;
 	for(int i = 0; i!= majorImagePath.size(); i++)
-		setCoreParameter("MajorImagePath."+ std::to_string(i), majorImagePath.at(i));
+		setCoreParameter("MajorImagePath."+ std::to_string(i), std::to_string(majorImagePath.at(i)));
 }
 
 std::string SubmitGenerateTaskRequest::getRegionId()const
@@ -166,7 +166,7 @@ int SubmitGenerateTaskRequest::getWidth()const
 void SubmitGenerateTaskRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
+	setCoreParameter("Width", width);
 }
 
 std::vector<std::string> SubmitGenerateTaskRequest::getCopyWrite()const
@@ -178,7 +178,7 @@ void SubmitGenerateTaskRequest::setCopyWrite(const std::vector<std::string>& cop
 {
 	copyWrite_ = copyWrite;
 	for(int i = 0; i!= copyWrite.size(); i++)
-		setCoreParameter("CopyWrite."+ std::to_string(i), copyWrite.at(i));
+		setCoreParameter("CopyWrite."+ std::to_string(i), std::to_string(copyWrite.at(i)));
 }
 
 std::vector<long> SubmitGenerateTaskRequest::getPropertyId()const
@@ -190,7 +190,7 @@ void SubmitGenerateTaskRequest::setPropertyId(const std::vector<long>& propertyI
 {
 	propertyId_ = propertyId;
 	for(int i = 0; i!= propertyId.size(); i++)
-		setCoreParameter("PropertyId."+ std::to_string(i), std::to_string(propertyId.at(i)));
+		setCoreParameter("PropertyId."+ std::to_string(i), propertyId.at(i));
 }
 
 long SubmitGenerateTaskRequest::getCallerUid()const
@@ -201,7 +201,7 @@ long SubmitGenerateTaskRequest::getCallerUid()const
 void SubmitGenerateTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 int SubmitGenerateTaskRequest::getHeight()const
@@ -212,6 +212,6 @@ int SubmitGenerateTaskRequest::getHeight()const
 void SubmitGenerateTaskRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", std::to_string(height));
+	setCoreParameter("Height", height);
 }
 

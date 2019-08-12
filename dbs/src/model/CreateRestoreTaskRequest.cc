@@ -33,7 +33,7 @@ long CreateRestoreTaskRequest::getBackupGatewayId()const
 void CreateRestoreTaskRequest::setBackupGatewayId(long backupGatewayId)
 {
 	backupGatewayId_ = backupGatewayId;
-	setCoreParameter("BackupGatewayId", std::to_string(backupGatewayId));
+	setCoreParameter("BackupGatewayId", backupGatewayId);
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointOracleSID()const
@@ -55,7 +55,7 @@ long CreateRestoreTaskRequest::getRestoreTime()const
 void CreateRestoreTaskRequest::setRestoreTime(long restoreTime)
 {
 	restoreTime_ = restoreTime;
-	setCoreParameter("RestoreTime", std::to_string(restoreTime));
+	setCoreParameter("RestoreTime", restoreTime);
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointInstanceType()const
@@ -99,7 +99,7 @@ int CreateRestoreTaskRequest::getDestinationEndpointPort()const
 void CreateRestoreTaskRequest::setDestinationEndpointPort(int destinationEndpointPort)
 {
 	destinationEndpointPort_ = destinationEndpointPort;
-	setCoreParameter("DestinationEndpointPort", std::to_string(destinationEndpointPort));
+	setCoreParameter("DestinationEndpointPort", destinationEndpointPort);
 }
 
 std::string CreateRestoreTaskRequest::getBackupPlanId()const

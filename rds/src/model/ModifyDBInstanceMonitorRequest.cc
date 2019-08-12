@@ -33,7 +33,7 @@ long ModifyDBInstanceMonitorRequest::getResourceOwnerId()const
 void ModifyDBInstanceMonitorRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getPeriod()const
@@ -99,7 +99,7 @@ long ModifyDBInstanceMonitorRequest::getOwnerId()const
 void ModifyDBInstanceMonitorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceMonitorRequest::getAccessKeyId()const

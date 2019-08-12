@@ -66,7 +66,7 @@ int DescribeLiveStreamSnapshotInfoRequest::getLimit()const
 void DescribeLiveStreamSnapshotInfoRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getEndTime()const
@@ -99,7 +99,7 @@ long DescribeLiveStreamSnapshotInfoRequest::getOwnerId()const
 void DescribeLiveStreamSnapshotInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLiveStreamSnapshotInfoRequest::getStreamName()const

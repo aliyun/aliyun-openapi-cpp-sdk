@@ -33,7 +33,7 @@ long DescribeDomainFlowDataRequest::getResourceOwnerId()const
 void DescribeDomainFlowDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeDomainFlowDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDomainFlowDataRequest::getCallerParentId()const
 void DescribeDomainFlowDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDomainFlowDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDomainFlowDataRequest::getProxy_original_security_transport()const
 void DescribeDomainFlowDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainFlowDataRequest::getLocationNameEn()const
@@ -198,7 +198,7 @@ long DescribeDomainFlowDataRequest::getCallerUid()const
 void DescribeDomainFlowDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDomainFlowDataRequest::getApp_ip()const
@@ -275,7 +275,7 @@ long DescribeDomainFlowDataRequest::getOwnerId()const
 void DescribeDomainFlowDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainFlowDataRequest::getVersion()const
@@ -297,7 +297,7 @@ bool DescribeDomainFlowDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainFlowDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainFlowDataRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool DescribeDomainFlowDataRequest::getAk_mfa_present()const
 void DescribeDomainFlowDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDomainFlowDataRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool DescribeDomainFlowDataRequest::getSecurity_transport()const
 void DescribeDomainFlowDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainFlowDataRequest::getRequestId()const

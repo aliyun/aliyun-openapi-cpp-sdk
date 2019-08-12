@@ -33,7 +33,7 @@ long ModifyInstanceMajorVersionRequest::getResourceOwnerId()const
 void ModifyInstanceMajorVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getInstanceId()const
@@ -110,7 +110,7 @@ long ModifyInstanceMajorVersionRequest::getOwnerId()const
 void ModifyInstanceMajorVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getEffectTime()const

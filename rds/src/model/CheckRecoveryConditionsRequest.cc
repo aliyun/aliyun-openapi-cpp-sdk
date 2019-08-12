@@ -33,7 +33,7 @@ long CheckRecoveryConditionsRequest::getResourceOwnerId()const
 void CheckRecoveryConditionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CheckRecoveryConditionsRequest::getRestoreTime()const
@@ -110,7 +110,7 @@ long CheckRecoveryConditionsRequest::getOwnerId()const
 void CheckRecoveryConditionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CheckRecoveryConditionsRequest::getAccessKeyId()const

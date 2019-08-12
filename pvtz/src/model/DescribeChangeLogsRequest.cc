@@ -44,7 +44,7 @@ int DescribeChangeLogsRequest::getPageSize()const
 void DescribeChangeLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeChangeLogsRequest::getUserClientIp()const
@@ -99,7 +99,7 @@ long DescribeChangeLogsRequest::getStartTimestamp()const
 void DescribeChangeLogsRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+	setCoreParameter("StartTimestamp", startTimestamp);
 }
 
 int DescribeChangeLogsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeChangeLogsRequest::getPageNumber()const
 void DescribeChangeLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 long DescribeChangeLogsRequest::getEndTimestamp()const
@@ -121,6 +121,6 @@ long DescribeChangeLogsRequest::getEndTimestamp()const
 void DescribeChangeLogsRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+	setCoreParameter("EndTimestamp", endTimestamp);
 }
 

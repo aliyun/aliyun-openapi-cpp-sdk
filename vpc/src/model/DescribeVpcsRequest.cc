@@ -33,7 +33,7 @@ long DescribeVpcsRequest::getResourceOwnerId()const
 void DescribeVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool DescribeVpcsRequest::getDryRun()const
@@ -44,7 +44,7 @@ bool DescribeVpcsRequest::getDryRun()const
 void DescribeVpcsRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DescribeVpcsRequest::getOwnerId()const
 void DescribeVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVpcsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeVpcsRequest::getPageNumber()const
 void DescribeVpcsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeVpcsRequest::getVpcName()const
@@ -143,7 +143,7 @@ int DescribeVpcsRequest::getPageSize()const
 void DescribeVpcsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::vector<DescribeVpcsRequest::Tag> DescribeVpcsRequest::getTag()const
@@ -158,8 +158,8 @@ void DescribeVpcsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -171,6 +171,6 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault);
 }
 

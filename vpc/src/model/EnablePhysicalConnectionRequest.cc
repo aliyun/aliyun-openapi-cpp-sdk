@@ -33,7 +33,7 @@ long EnablePhysicalConnectionRequest::getResourceOwnerId()const
 void EnablePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string EnablePhysicalConnectionRequest::getRegionId()const
@@ -99,6 +99,6 @@ long EnablePhysicalConnectionRequest::getOwnerId()const
 void EnablePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

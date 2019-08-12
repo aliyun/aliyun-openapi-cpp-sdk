@@ -66,6 +66,6 @@ long DescribeBatchResultCountRequest::getTaskId()const
 void DescribeBatchResultCountRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

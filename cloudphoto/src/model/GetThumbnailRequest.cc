@@ -44,7 +44,7 @@ long GetThumbnailRequest::getPhotoId()const
 void GetThumbnailRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string GetThumbnailRequest::getStoreName()const

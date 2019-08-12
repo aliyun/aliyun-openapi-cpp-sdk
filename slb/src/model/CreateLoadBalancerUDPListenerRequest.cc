@@ -44,7 +44,7 @@ int CreateLoadBalancerUDPListenerRequest::getHealthCheckConnectTimeout()const
 void CreateLoadBalancerUDPListenerRequest::setHealthCheckConnectTimeout(int healthCheckConnectTimeout)
 {
 	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
-	setCoreParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
+	setCoreParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout);
 }
 
 long CreateLoadBalancerUDPListenerRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreateLoadBalancerUDPListenerRequest::getResourceOwnerId()const
 void CreateLoadBalancerUDPListenerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getDescription()const
@@ -77,7 +77,7 @@ int CreateLoadBalancerUDPListenerRequest::getUnhealthyThreshold()const
 void CreateLoadBalancerUDPListenerRequest::setUnhealthyThreshold(int unhealthyThreshold)
 {
 	unhealthyThreshold_ = unhealthyThreshold;
-	setCoreParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
+	setCoreParameter("UnhealthyThreshold", unhealthyThreshold);
 }
 
 int CreateLoadBalancerUDPListenerRequest::getHealthyThreshold()const
@@ -88,7 +88,7 @@ int CreateLoadBalancerUDPListenerRequest::getHealthyThreshold()const
 void CreateLoadBalancerUDPListenerRequest::setHealthyThreshold(int healthyThreshold)
 {
 	healthyThreshold_ = healthyThreshold;
-	setCoreParameter("HealthyThreshold", std::to_string(healthyThreshold));
+	setCoreParameter("HealthyThreshold", healthyThreshold);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getAclStatus()const
@@ -132,7 +132,7 @@ int CreateLoadBalancerUDPListenerRequest::getMaxConnection()const
 void CreateLoadBalancerUDPListenerRequest::setMaxConnection(int maxConnection)
 {
 	maxConnection_ = maxConnection;
-	setCoreParameter("MaxConnection", std::to_string(maxConnection));
+	setCoreParameter("MaxConnection", maxConnection);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getRegionId()const
@@ -154,7 +154,7 @@ int CreateLoadBalancerUDPListenerRequest::getPersistenceTimeout()const
 void CreateLoadBalancerUDPListenerRequest::setPersistenceTimeout(int persistenceTimeout)
 {
 	persistenceTimeout_ = persistenceTimeout;
-	setCoreParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
+	setCoreParameter("PersistenceTimeout", persistenceTimeout);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getVpcIds()const
@@ -198,7 +198,7 @@ int CreateLoadBalancerUDPListenerRequest::getListenerPort()const
 void CreateLoadBalancerUDPListenerRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ int CreateLoadBalancerUDPListenerRequest::getBandwidth()const
 void CreateLoadBalancerUDPListenerRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ long CreateLoadBalancerUDPListenerRequest::getOwnerId()const
 void CreateLoadBalancerUDPListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getTags()const
@@ -297,7 +297,7 @@ int CreateLoadBalancerUDPListenerRequest::getBackendServerPort()const
 void CreateLoadBalancerUDPListenerRequest::setBackendServerPort(int backendServerPort)
 {
 	backendServerPort_ = backendServerPort;
-	setCoreParameter("BackendServerPort", std::to_string(backendServerPort));
+	setCoreParameter("BackendServerPort", backendServerPort);
 }
 
 int CreateLoadBalancerUDPListenerRequest::getHealthCheckInterval()const
@@ -308,7 +308,7 @@ int CreateLoadBalancerUDPListenerRequest::getHealthCheckInterval()const
 void CreateLoadBalancerUDPListenerRequest::setHealthCheckInterval(int healthCheckInterval)
 {
 	healthCheckInterval_ = healthCheckInterval;
-	setCoreParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
+	setCoreParameter("HealthCheckInterval", healthCheckInterval);
 }
 
 std::string CreateLoadBalancerUDPListenerRequest::getHealthCheckExp()const
@@ -330,6 +330,6 @@ int CreateLoadBalancerUDPListenerRequest::getHealthCheckConnectPort()const
 void CreateLoadBalancerUDPListenerRequest::setHealthCheckConnectPort(int healthCheckConnectPort)
 {
 	healthCheckConnectPort_ = healthCheckConnectPort;
-	setCoreParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
+	setCoreParameter("HealthCheckConnectPort", healthCheckConnectPort);
 }
 

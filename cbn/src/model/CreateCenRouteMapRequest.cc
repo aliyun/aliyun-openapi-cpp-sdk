@@ -34,7 +34,7 @@ void CreateCenRouteMapRequest::setRouteTypes(const std::vector<std::string>& rou
 {
 	routeTypes_ = routeTypes;
 	for(int i = 0; i!= routeTypes.size(); i++)
-		setCoreParameter("RouteTypes."+ std::to_string(i), routeTypes.at(i));
+		setCoreParameter("RouteTypes."+ std::to_string(i), std::to_string(routeTypes.at(i)));
 }
 
 long CreateCenRouteMapRequest::getResourceOwnerId()const
@@ -45,7 +45,7 @@ long CreateCenRouteMapRequest::getResourceOwnerId()const
 void CreateCenRouteMapRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateCenRouteMapRequest::getCidrMatchMode()const
@@ -100,7 +100,7 @@ int CreateCenRouteMapRequest::getAsPathLength()const
 void CreateCenRouteMapRequest::setAsPathLength(int asPathLength)
 {
 	asPathLength_ = asPathLength;
-	setCoreParameter("AsPathLength", std::to_string(asPathLength));
+	setCoreParameter("AsPathLength", asPathLength);
 }
 
 std::string CreateCenRouteMapRequest::getDescription()const
@@ -122,7 +122,7 @@ bool CreateCenRouteMapRequest::getSourceInstanceIdsReverseMatch()const
 void CreateCenRouteMapRequest::setSourceInstanceIdsReverseMatch(bool sourceInstanceIdsReverseMatch)
 {
 	sourceInstanceIdsReverseMatch_ = sourceInstanceIdsReverseMatch;
-	setCoreParameter("SourceInstanceIdsReverseMatch", sourceInstanceIdsReverseMatch ? "true" : "false");
+	setCoreParameter("SourceInstanceIdsReverseMatch", sourceInstanceIdsReverseMatch);
 }
 
 int CreateCenRouteMapRequest::getNextPriority()const
@@ -133,7 +133,7 @@ int CreateCenRouteMapRequest::getNextPriority()const
 void CreateCenRouteMapRequest::setNextPriority(int nextPriority)
 {
 	nextPriority_ = nextPriority;
-	setCoreParameter("NextPriority", std::to_string(nextPriority));
+	setCoreParameter("NextPriority", nextPriority);
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getDestinationCidrBlocks()const
@@ -145,7 +145,7 @@ void CreateCenRouteMapRequest::setDestinationCidrBlocks(const std::vector<std::s
 {
 	destinationCidrBlocks_ = destinationCidrBlocks;
 	for(int i = 0; i!= destinationCidrBlocks.size(); i++)
-		setCoreParameter("DestinationCidrBlocks."+ std::to_string(i), destinationCidrBlocks.at(i));
+		setCoreParameter("DestinationCidrBlocks."+ std::to_string(i), std::to_string(destinationCidrBlocks.at(i)));
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getDestinationRouteTableIds()const
@@ -157,7 +157,7 @@ void CreateCenRouteMapRequest::setDestinationRouteTableIds(const std::vector<std
 {
 	destinationRouteTableIds_ = destinationRouteTableIds;
 	for(int i = 0; i!= destinationRouteTableIds.size(); i++)
-		setCoreParameter("DestinationRouteTableIds."+ std::to_string(i), destinationRouteTableIds.at(i));
+		setCoreParameter("DestinationRouteTableIds."+ std::to_string(i), std::to_string(destinationRouteTableIds.at(i)));
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getSourceInstanceIds()const
@@ -169,7 +169,7 @@ void CreateCenRouteMapRequest::setSourceInstanceIds(const std::vector<std::strin
 {
 	sourceInstanceIds_ = sourceInstanceIds;
 	for(int i = 0; i!= sourceInstanceIds.size(); i++)
-		setCoreParameter("SourceInstanceIds."+ std::to_string(i), sourceInstanceIds.at(i));
+		setCoreParameter("SourceInstanceIds."+ std::to_string(i), std::to_string(sourceInstanceIds.at(i)));
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getSourceRegionIds()const
@@ -181,7 +181,7 @@ void CreateCenRouteMapRequest::setSourceRegionIds(const std::vector<std::string>
 {
 	sourceRegionIds_ = sourceRegionIds;
 	for(int i = 0; i!= sourceRegionIds.size(); i++)
-		setCoreParameter("SourceRegionIds."+ std::to_string(i), sourceRegionIds.at(i));
+		setCoreParameter("SourceRegionIds."+ std::to_string(i), std::to_string(sourceRegionIds.at(i)));
 }
 
 std::string CreateCenRouteMapRequest::getTransmitDirection()const
@@ -204,7 +204,7 @@ void CreateCenRouteMapRequest::setDestinationInstanceIds(const std::vector<std::
 {
 	destinationInstanceIds_ = destinationInstanceIds;
 	for(int i = 0; i!= destinationInstanceIds.size(); i++)
-		setCoreParameter("DestinationInstanceIds."+ std::to_string(i), destinationInstanceIds.at(i));
+		setCoreParameter("DestinationInstanceIds."+ std::to_string(i), std::to_string(destinationInstanceIds.at(i)));
 }
 
 std::vector<long> CreateCenRouteMapRequest::getMatchAsns()const
@@ -216,7 +216,7 @@ void CreateCenRouteMapRequest::setMatchAsns(const std::vector<long>& matchAsns)
 {
 	matchAsns_ = matchAsns;
 	for(int i = 0; i!= matchAsns.size(); i++)
-		setCoreParameter("MatchAsns."+ std::to_string(i), std::to_string(matchAsns.at(i)));
+		setCoreParameter("MatchAsns."+ std::to_string(i), matchAsns.at(i));
 }
 
 std::string CreateCenRouteMapRequest::getResourceOwnerAccount()const
@@ -249,7 +249,7 @@ int CreateCenRouteMapRequest::getPreference()const
 void CreateCenRouteMapRequest::setPreference(int preference)
 {
 	preference_ = preference;
-	setCoreParameter("Preference", std::to_string(preference));
+	setCoreParameter("Preference", preference);
 }
 
 bool CreateCenRouteMapRequest::getDestinationInstanceIdsReverseMatch()const
@@ -260,7 +260,7 @@ bool CreateCenRouteMapRequest::getDestinationInstanceIdsReverseMatch()const
 void CreateCenRouteMapRequest::setDestinationInstanceIdsReverseMatch(bool destinationInstanceIdsReverseMatch)
 {
 	destinationInstanceIdsReverseMatch_ = destinationInstanceIdsReverseMatch;
-	setCoreParameter("DestinationInstanceIdsReverseMatch", destinationInstanceIdsReverseMatch ? "true" : "false");
+	setCoreParameter("DestinationInstanceIdsReverseMatch", destinationInstanceIdsReverseMatch);
 }
 
 long CreateCenRouteMapRequest::getOwnerId()const
@@ -271,7 +271,7 @@ long CreateCenRouteMapRequest::getOwnerId()const
 void CreateCenRouteMapRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateCenRouteMapRequest::getPriority()const
@@ -282,7 +282,7 @@ int CreateCenRouteMapRequest::getPriority()const
 void CreateCenRouteMapRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getDestinationChildInstanceTypes()const
@@ -294,7 +294,7 @@ void CreateCenRouteMapRequest::setDestinationChildInstanceTypes(const std::vecto
 {
 	destinationChildInstanceTypes_ = destinationChildInstanceTypes;
 	for(int i = 0; i!= destinationChildInstanceTypes.size(); i++)
-		setCoreParameter("DestinationChildInstanceTypes."+ std::to_string(i), destinationChildInstanceTypes.at(i));
+		setCoreParameter("DestinationChildInstanceTypes."+ std::to_string(i), std::to_string(destinationChildInstanceTypes.at(i)));
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getSourceRouteTableIds()const
@@ -306,7 +306,7 @@ void CreateCenRouteMapRequest::setSourceRouteTableIds(const std::vector<std::str
 {
 	sourceRouteTableIds_ = sourceRouteTableIds;
 	for(int i = 0; i!= sourceRouteTableIds.size(); i++)
-		setCoreParameter("SourceRouteTableIds."+ std::to_string(i), sourceRouteTableIds.at(i));
+		setCoreParameter("SourceRouteTableIds."+ std::to_string(i), std::to_string(sourceRouteTableIds.at(i)));
 }
 
 std::string CreateCenRouteMapRequest::getAsPathMatchMode()const
@@ -329,7 +329,7 @@ void CreateCenRouteMapRequest::setSourceChildInstanceTypes(const std::vector<std
 {
 	sourceChildInstanceTypes_ = sourceChildInstanceTypes;
 	for(int i = 0; i!= sourceChildInstanceTypes.size(); i++)
-		setCoreParameter("SourceChildInstanceTypes."+ std::to_string(i), sourceChildInstanceTypes.at(i));
+		setCoreParameter("SourceChildInstanceTypes."+ std::to_string(i), std::to_string(sourceChildInstanceTypes.at(i)));
 }
 
 std::vector<std::string> CreateCenRouteMapRequest::getMatchCommunitySet()const
@@ -341,7 +341,7 @@ void CreateCenRouteMapRequest::setMatchCommunitySet(const std::vector<std::strin
 {
 	matchCommunitySet_ = matchCommunitySet;
 	for(int i = 0; i!= matchCommunitySet.size(); i++)
-		setCoreParameter("MatchCommunitySet."+ std::to_string(i), matchCommunitySet.at(i));
+		setCoreParameter("MatchCommunitySet."+ std::to_string(i), std::to_string(matchCommunitySet.at(i)));
 }
 
 std::string CreateCenRouteMapRequest::getCommunityOperateMode()const
@@ -375,6 +375,6 @@ void CreateCenRouteMapRequest::setOperateCommunitySet(const std::vector<std::str
 {
 	operateCommunitySet_ = operateCommunitySet;
 	for(int i = 0; i!= operateCommunitySet.size(); i++)
-		setCoreParameter("OperateCommunitySet."+ std::to_string(i), operateCommunitySet.at(i));
+		setCoreParameter("OperateCommunitySet."+ std::to_string(i), std::to_string(operateCommunitySet.at(i)));
 }
 

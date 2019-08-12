@@ -44,7 +44,7 @@ long SendCustomizeReportRequest::getReportId()const
 void SendCustomizeReportRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string SendCustomizeReportRequest::getLang()const

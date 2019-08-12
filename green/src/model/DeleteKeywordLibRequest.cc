@@ -44,7 +44,7 @@ int DeleteKeywordLibRequest::getId()const
 void DeleteKeywordLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteKeywordLibRequest::getLang()const

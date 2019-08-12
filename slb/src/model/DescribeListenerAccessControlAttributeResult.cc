@@ -37,10 +37,12 @@ void DescribeListenerAccessControlAttributeResult::parse(const std::string &payl
 {
 	Json::CharReaderBuilder builder;
 	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *value;
+	Json::Value *val;
+	Json::Value value;
 	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
-	setRequestId((*value)["RequestId"].asString());
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
+	setRequestId(value["RequestId"].asString());
 	if(!value["AccessControlStatus"].isNull())
 		accessControlStatus_ = value["AccessControlStatus"].asString();
 	if(!value["SourceItems"].isNull())

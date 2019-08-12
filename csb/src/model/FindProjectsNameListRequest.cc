@@ -55,6 +55,6 @@ long FindProjectsNameListRequest::getCsbId()const
 void FindProjectsNameListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 

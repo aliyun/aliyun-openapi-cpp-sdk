@@ -33,7 +33,7 @@ long QueryPipelineListRequest::getResourceOwnerId()const
 void QueryPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryPipelineListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryPipelineListRequest::getOwnerId()const
 void QueryPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryPipelineListRequest::getAccessKeyId()const

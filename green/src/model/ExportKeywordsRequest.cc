@@ -44,6 +44,6 @@ long ExportKeywordsRequest::getKeywordLibId()const
 void ExportKeywordsRequest::setKeywordLibId(long keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setCoreParameter("KeywordLibId", keywordLibId);
 }
 

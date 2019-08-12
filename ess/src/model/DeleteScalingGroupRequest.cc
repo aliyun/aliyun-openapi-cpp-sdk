@@ -55,7 +55,7 @@ bool DeleteScalingGroupRequest::getForceDelete()const
 void DeleteScalingGroupRequest::setForceDelete(bool forceDelete)
 {
 	forceDelete_ = forceDelete;
-	setCoreParameter("ForceDelete", forceDelete ? "true" : "false");
+	setCoreParameter("ForceDelete", forceDelete);
 }
 
 std::string DeleteScalingGroupRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ long DeleteScalingGroupRequest::getOwnerId()const
 void DeleteScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteScalingGroupRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long UpdateMyGroupMembersRequest::getGroupId()const
 void UpdateMyGroupMembersRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string UpdateMyGroupMembersRequest::getMasters()const

@@ -55,6 +55,6 @@ long DescribeLivePullStreamConfigRequest::getOwnerId()const
 void DescribeLivePullStreamConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -66,7 +66,7 @@ long ModifyDataLimitRequest::getId()const
 void ModifyDataLimitRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyDataLimitRequest::getLang()const
@@ -88,7 +88,7 @@ int ModifyDataLimitRequest::getResourceType()const
 void ModifyDataLimitRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string ModifyDataLimitRequest::getServiceRegionId()const

@@ -44,7 +44,7 @@ long DescribeMasterSlaveServerGroupsRequest::getResourceOwnerId()const
 void DescribeMasterSlaveServerGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeMasterSlaveServerGroupsRequest::getLoadBalancerId()const
@@ -88,7 +88,7 @@ bool DescribeMasterSlaveServerGroupsRequest::getIncludeListener()const
 void DescribeMasterSlaveServerGroupsRequest::setIncludeListener(bool includeListener)
 {
 	includeListener_ = includeListener;
-	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
+	setCoreParameter("IncludeListener", includeListener);
 }
 
 std::string DescribeMasterSlaveServerGroupsRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long DescribeMasterSlaveServerGroupsRequest::getOwnerId()const
 void DescribeMasterSlaveServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeMasterSlaveServerGroupsRequest::getTags()const

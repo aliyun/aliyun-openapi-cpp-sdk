@@ -33,7 +33,7 @@ long PeripheryAnalyseRequest::getGsid()const
 void PeripheryAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string PeripheryAnalyseRequest::getAccessKeyId()const

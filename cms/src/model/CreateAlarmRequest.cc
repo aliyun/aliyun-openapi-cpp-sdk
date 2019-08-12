@@ -33,7 +33,7 @@ int CreateAlarmRequest::getPeriod()const
 void CreateAlarmRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string CreateAlarmRequest::getWebhook()const
@@ -55,7 +55,7 @@ bool CreateAlarmRequest::getDryRun()const
 void CreateAlarmRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string CreateAlarmRequest::getContactGroups()const
@@ -77,7 +77,7 @@ int CreateAlarmRequest::getEndTime()const
 void CreateAlarmRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string CreateAlarmRequest::getThreshold()const
@@ -99,7 +99,7 @@ int CreateAlarmRequest::getStartTime()const
 void CreateAlarmRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string CreateAlarmRequest::getName()const
@@ -132,7 +132,7 @@ int CreateAlarmRequest::getEvaluationCount()const
 void CreateAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setCoreParameter("EvaluationCount", evaluationCount);
 }
 
 int CreateAlarmRequest::getSilenceTime()const
@@ -143,7 +143,7 @@ int CreateAlarmRequest::getSilenceTime()const
 void CreateAlarmRequest::setSilenceTime(int silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", std::to_string(silenceTime));
+	setCoreParameter("SilenceTime", silenceTime);
 }
 
 std::string CreateAlarmRequest::getMetricName()const
@@ -165,7 +165,7 @@ int CreateAlarmRequest::getNotifyType()const
 void CreateAlarmRequest::setNotifyType(int notifyType)
 {
 	notifyType_ = notifyType;
-	setCoreParameter("NotifyType", std::to_string(notifyType));
+	setCoreParameter("NotifyType", notifyType);
 }
 
 std::string CreateAlarmRequest::getComparisonOperator()const

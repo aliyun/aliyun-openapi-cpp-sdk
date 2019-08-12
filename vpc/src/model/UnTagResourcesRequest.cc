@@ -34,7 +34,7 @@ void UnTagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 {
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+		setCoreParameter("ResourceId."+ std::to_string(i), std::to_string(resourceId.at(i)));
 }
 
 std::string UnTagResourcesRequest::getRegionId()const
@@ -57,7 +57,7 @@ void UnTagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+		setCoreParameter("TagKey."+ std::to_string(i), std::to_string(tagKey.at(i)));
 }
 
 std::string UnTagResourcesRequest::getResourceType()const

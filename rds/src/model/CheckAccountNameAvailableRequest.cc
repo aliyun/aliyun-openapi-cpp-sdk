@@ -33,7 +33,7 @@ long CheckAccountNameAvailableRequest::getResourceOwnerId()const
 void CheckAccountNameAvailableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CheckAccountNameAvailableRequest::getAccountName()const
@@ -99,7 +99,7 @@ long CheckAccountNameAvailableRequest::getOwnerId()const
 void CheckAccountNameAvailableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CheckAccountNameAvailableRequest::getAccessKeyId()const

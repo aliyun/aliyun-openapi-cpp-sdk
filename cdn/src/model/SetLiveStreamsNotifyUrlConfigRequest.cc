@@ -66,6 +66,6 @@ long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -33,7 +33,7 @@ long ReleaseClusterRequest::getResourceOwnerId()const
 void ReleaseClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseClusterRequest::getRegionId()const
@@ -55,7 +55,7 @@ bool ReleaseClusterRequest::getForceRelease()const
 void ReleaseClusterRequest::setForceRelease(bool forceRelease)
 {
 	forceRelease_ = forceRelease;
-	setCoreParameter("ForceRelease", forceRelease ? "true" : "false");
+	setCoreParameter("ForceRelease", forceRelease);
 }
 
 std::string ReleaseClusterRequest::getId()const

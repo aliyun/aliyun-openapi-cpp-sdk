@@ -33,7 +33,7 @@ long UserAnalyseRequest::getGsid()const
 void UserAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string UserAnalyseRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long ResumeExecutionPlanInstanceRequest::getResourceOwnerId()const
 void ResumeExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getRegionId()const

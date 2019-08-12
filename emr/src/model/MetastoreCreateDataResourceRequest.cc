@@ -33,7 +33,7 @@ long MetastoreCreateDataResourceRequest::getResourceOwnerId()const
 void MetastoreCreateDataResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool MetastoreCreateDataResourceRequest::getDefault()const
@@ -44,7 +44,7 @@ bool MetastoreCreateDataResourceRequest::getDefault()const
 void MetastoreCreateDataResourceRequest::setDefault(bool default)
 {
 	default_ = default;
-	setCoreParameter("Default", default ? "true" : "false");
+	setCoreParameter("Default", default);
 }
 
 std::string MetastoreCreateDataResourceRequest::getAccessType()const

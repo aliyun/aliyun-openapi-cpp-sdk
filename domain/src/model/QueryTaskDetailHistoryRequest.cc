@@ -33,7 +33,7 @@ int QueryTaskDetailHistoryRequest::getTaskStatus()const
 void QueryTaskDetailHistoryRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", std::to_string(taskStatus));
+	setCoreParameter("TaskStatus", taskStatus);
 }
 
 std::string QueryTaskDetailHistoryRequest::getUserClientIp()const
@@ -77,7 +77,7 @@ int QueryTaskDetailHistoryRequest::getPageSize()const
 void QueryTaskDetailHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTaskDetailHistoryRequest::getTaskDetailNoCursor()const

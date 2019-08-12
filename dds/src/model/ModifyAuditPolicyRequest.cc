@@ -33,7 +33,7 @@ long ModifyAuditPolicyRequest::getResourceOwnerId()const
 void ModifyAuditPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyAuditPolicyRequest::getAuditStatus()const
@@ -55,7 +55,7 @@ int ModifyAuditPolicyRequest::getStoragePeriod()const
 void ModifyAuditPolicyRequest::setStoragePeriod(int storagePeriod)
 {
 	storagePeriod_ = storagePeriod;
-	setCoreParameter("StoragePeriod", std::to_string(storagePeriod));
+	setCoreParameter("StoragePeriod", storagePeriod);
 }
 
 std::string ModifyAuditPolicyRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ long ModifyAuditPolicyRequest::getOwnerId()const
 void ModifyAuditPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAuditPolicyRequest::getAccessKeyId()const

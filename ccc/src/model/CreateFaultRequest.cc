@@ -44,7 +44,7 @@ long CreateFaultRequest::getAgentId()const
 void CreateFaultRequest::setAgentId(long agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
+	setCoreParameter("AgentId", agentId);
 }
 
 std::string CreateFaultRequest::getAgentOssFileName()const
@@ -77,7 +77,7 @@ long CreateFaultRequest::getEndTime()const
 void CreateFaultRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string CreateFaultRequest::getOperatingSystemVersion()const
@@ -99,7 +99,7 @@ long CreateFaultRequest::getStartTime()const
 void CreateFaultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string CreateFaultRequest::getMicrophoneList()const

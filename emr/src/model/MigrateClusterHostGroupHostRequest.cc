@@ -34,7 +34,7 @@ void MigrateClusterHostGroupHostRequest::setHostInstanceIdList(const std::vector
 {
 	hostInstanceIdList_ = hostInstanceIdList;
 	for(int i = 0; i!= hostInstanceIdList.size(); i++)
-		setCoreParameter("HostInstanceIdList."+ std::to_string(i), hostInstanceIdList.at(i));
+		setCoreParameter("HostInstanceIdList."+ std::to_string(i), std::to_string(hostInstanceIdList.at(i)));
 }
 
 long MigrateClusterHostGroupHostRequest::getResourceOwnerId()const
@@ -45,7 +45,7 @@ long MigrateClusterHostGroupHostRequest::getResourceOwnerId()const
 void MigrateClusterHostGroupHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MigrateClusterHostGroupHostRequest::getRegionId()const

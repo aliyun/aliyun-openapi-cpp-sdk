@@ -44,6 +44,6 @@ long DescribeExportInfoRequest::getExportId()const
 void DescribeExportInfoRequest::setExportId(long exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", std::to_string(exportId));
+	setCoreParameter("ExportId", exportId);
 }
 

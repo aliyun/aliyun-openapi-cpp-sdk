@@ -48,16 +48,16 @@ void OperateBatchDomainRequest::setDomainRecordInfo(const std::vector<DomainReco
 	for(int i = 0; i!= domainRecordInfo.size(); i++)	{
 		auto obj = domainRecordInfo.at(i);
 		std::string str ="DomainRecordInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Rr", obj.rr);
-		setCoreParameter(str + ".NewType", obj.newType);
-		setCoreParameter(str + ".NewValue", obj.newValue);
-		setCoreParameter(str + ".Line", obj.line);
-		setCoreParameter(str + ".Domain", obj.domain);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Priority", std::to_string(obj.priority));
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Ttl", std::to_string(obj.ttl));
-		setCoreParameter(str + ".NewRr", obj.newRr);
+		setCoreParameter(str + ".Rr", std::to_string(obj.rr));
+		setCoreParameter(str + ".NewType", std::to_string(obj.newType));
+		setCoreParameter(str + ".NewValue", std::to_string(obj.newValue));
+		setCoreParameter(str + ".Line", std::to_string(obj.line));
+		setCoreParameter(str + ".Domain", std::to_string(obj.domain));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
+		setCoreParameter(str + ".Priority", obj.priority);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Ttl", obj.ttl);
+		setCoreParameter(str + ".NewRr", std::to_string(obj.newRr));
 	}
 }
 

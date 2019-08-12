@@ -77,7 +77,7 @@ long SetApisAuthoritiesRequest::getAppId()const
 void SetApisAuthoritiesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string SetApisAuthoritiesRequest::getDescription()const

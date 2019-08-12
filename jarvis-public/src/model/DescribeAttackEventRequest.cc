@@ -55,7 +55,7 @@ int DescribeAttackEventRequest::getPageSize()const
 void DescribeAttackEventRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeAttackEventRequest::getEndTime()const
@@ -66,7 +66,7 @@ int DescribeAttackEventRequest::getEndTime()const
 void DescribeAttackEventRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int DescribeAttackEventRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAttackEventRequest::getCurrentPage()const
 void DescribeAttackEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeAttackEventRequest::getStartTime()const
@@ -88,7 +88,7 @@ int DescribeAttackEventRequest::getStartTime()const
 void DescribeAttackEventRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeAttackEventRequest::getLang()const

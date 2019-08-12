@@ -33,7 +33,7 @@ long DescribeErrorLogRecordsRequest::getSQLId()const
 void DescribeErrorLogRecordsRequest::setSQLId(long sQLId)
 {
 	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
+	setCoreParameter("SQLId", sQLId);
 }
 
 long DescribeErrorLogRecordsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeErrorLogRecordsRequest::getResourceOwnerId()const
 void DescribeErrorLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeErrorLogRecordsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DescribeErrorLogRecordsRequest::getOwnerId()const
 void DescribeErrorLogRecordsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeErrorLogRecordsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeErrorLogRecordsRequest::getPageNumber()const
 void DescribeErrorLogRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeErrorLogRecordsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ int DescribeErrorLogRecordsRequest::getPageSize()const
 void DescribeErrorLogRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeErrorLogRecordsRequest::getDBInstanceId()const

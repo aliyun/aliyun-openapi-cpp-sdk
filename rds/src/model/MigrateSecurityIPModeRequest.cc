@@ -33,7 +33,7 @@ long MigrateSecurityIPModeRequest::getResourceOwnerId()const
 void MigrateSecurityIPModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MigrateSecurityIPModeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long MigrateSecurityIPModeRequest::getOwnerId()const
 void MigrateSecurityIPModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string MigrateSecurityIPModeRequest::getAccessKeyId()const

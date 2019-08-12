@@ -44,7 +44,7 @@ int ListConfigByActionRequest::getLimit()const
 void ListConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string ListConfigByActionRequest::getActionName()const

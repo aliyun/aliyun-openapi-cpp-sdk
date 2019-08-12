@@ -44,7 +44,7 @@ int CreateScalingRuleRequest::getAdjustmentValue()const
 void CreateScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
 {
 	adjustmentValue_ = adjustmentValue;
-	setCoreParameter("AdjustmentValue", std::to_string(adjustmentValue));
+	setCoreParameter("AdjustmentValue", adjustmentValue);
 }
 
 std::vector<CreateScalingRuleRequest::StepAdjustment> CreateScalingRuleRequest::getStepAdjustment()const
@@ -59,9 +59,9 @@ void CreateScalingRuleRequest::setStepAdjustment(const std::vector<StepAdjustmen
 	for(int i = 0; i!= stepAdjustment.size(); i++)	{
 		auto obj = stepAdjustment.at(i);
 		std::string str ="StepAdjustment."+ std::to_string(i);
-		setCoreParameter(str + ".MetricIntervalLowerBound", std::to_string(obj.metricIntervalLowerBound));
-		setCoreParameter(str + ".MetricIntervalUpperBound", std::to_string(obj.metricIntervalUpperBound));
-		setCoreParameter(str + ".ScalingAdjustment", std::to_string(obj.scalingAdjustment));
+		setCoreParameter(str + ".MetricIntervalLowerBound", obj.metricIntervalLowerBound);
+		setCoreParameter(str + ".MetricIntervalUpperBound", obj.metricIntervalUpperBound);
+		setCoreParameter(str + ".ScalingAdjustment", obj.scalingAdjustment);
 	}
 }
 
@@ -84,7 +84,7 @@ int CreateScalingRuleRequest::getEstimatedInstanceWarmup()const
 void CreateScalingRuleRequest::setEstimatedInstanceWarmup(int estimatedInstanceWarmup)
 {
 	estimatedInstanceWarmup_ = estimatedInstanceWarmup;
-	setCoreParameter("EstimatedInstanceWarmup", std::to_string(estimatedInstanceWarmup));
+	setCoreParameter("EstimatedInstanceWarmup", estimatedInstanceWarmup);
 }
 
 std::string CreateScalingRuleRequest::getOwnerAccount()const
@@ -106,7 +106,7 @@ int CreateScalingRuleRequest::getPredictiveTaskBufferTime()const
 void CreateScalingRuleRequest::setPredictiveTaskBufferTime(int predictiveTaskBufferTime)
 {
 	predictiveTaskBufferTime_ = predictiveTaskBufferTime;
-	setCoreParameter("PredictiveTaskBufferTime", std::to_string(predictiveTaskBufferTime));
+	setCoreParameter("PredictiveTaskBufferTime", predictiveTaskBufferTime);
 }
 
 std::string CreateScalingRuleRequest::getAdjustmentType()const
@@ -128,7 +128,7 @@ bool CreateScalingRuleRequest::getDisableScaleIn()const
 void CreateScalingRuleRequest::setDisableScaleIn(bool disableScaleIn)
 {
 	disableScaleIn_ = disableScaleIn;
-	setCoreParameter("DisableScaleIn", disableScaleIn ? "true" : "false");
+	setCoreParameter("DisableScaleIn", disableScaleIn);
 }
 
 long CreateScalingRuleRequest::getOwnerId()const
@@ -139,7 +139,7 @@ long CreateScalingRuleRequest::getOwnerId()const
 void CreateScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateScalingRuleRequest::getInitialMaxSize()const
@@ -150,7 +150,7 @@ int CreateScalingRuleRequest::getInitialMaxSize()const
 void CreateScalingRuleRequest::setInitialMaxSize(int initialMaxSize)
 {
 	initialMaxSize_ = initialMaxSize;
-	setCoreParameter("InitialMaxSize", std::to_string(initialMaxSize));
+	setCoreParameter("InitialMaxSize", initialMaxSize);
 }
 
 std::string CreateScalingRuleRequest::getAccessKeyId()const
@@ -172,7 +172,7 @@ int CreateScalingRuleRequest::getPredictiveValueBuffer()const
 void CreateScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffer)
 {
 	predictiveValueBuffer_ = predictiveValueBuffer;
-	setCoreParameter("PredictiveValueBuffer", std::to_string(predictiveValueBuffer));
+	setCoreParameter("PredictiveValueBuffer", predictiveValueBuffer);
 }
 
 std::string CreateScalingRuleRequest::getScalingRuleName()const
@@ -194,7 +194,7 @@ int CreateScalingRuleRequest::getCooldown()const
 void CreateScalingRuleRequest::setCooldown(int cooldown)
 {
 	cooldown_ = cooldown;
-	setCoreParameter("Cooldown", std::to_string(cooldown));
+	setCoreParameter("Cooldown", cooldown);
 }
 
 int CreateScalingRuleRequest::getMinAdjustmentMagnitude()const
@@ -205,7 +205,7 @@ int CreateScalingRuleRequest::getMinAdjustmentMagnitude()const
 void CreateScalingRuleRequest::setMinAdjustmentMagnitude(int minAdjustmentMagnitude)
 {
 	minAdjustmentMagnitude_ = minAdjustmentMagnitude;
-	setCoreParameter("MinAdjustmentMagnitude", std::to_string(minAdjustmentMagnitude));
+	setCoreParameter("MinAdjustmentMagnitude", minAdjustmentMagnitude);
 }
 
 std::string CreateScalingRuleRequest::getPredictiveValueBehavior()const
@@ -227,7 +227,7 @@ float CreateScalingRuleRequest::getTargetValue()const
 void CreateScalingRuleRequest::setTargetValue(float targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", std::to_string(targetValue));
+	setCoreParameter("TargetValue", targetValue);
 }
 
 std::string CreateScalingRuleRequest::getScalingRuleType()const

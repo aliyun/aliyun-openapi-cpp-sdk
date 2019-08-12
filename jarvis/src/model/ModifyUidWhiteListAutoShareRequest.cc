@@ -44,7 +44,7 @@ int ModifyUidWhiteListAutoShareRequest::getAutoConfig()const
 void ModifyUidWhiteListAutoShareRequest::setAutoConfig(int autoConfig)
 {
 	autoConfig_ = autoConfig;
-	setCoreParameter("AutoConfig", std::to_string(autoConfig));
+	setCoreParameter("AutoConfig", autoConfig);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getProductName()const
@@ -66,7 +66,7 @@ int ModifyUidWhiteListAutoShareRequest::getWhiteListType()const
 void ModifyUidWhiteListAutoShareRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getLang()const

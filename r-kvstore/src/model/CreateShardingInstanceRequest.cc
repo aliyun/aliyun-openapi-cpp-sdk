@@ -33,7 +33,7 @@ int CreateShardingInstanceRequest::getShardStorageQuantity()const
 void CreateShardingInstanceRequest::setShardStorageQuantity(int shardStorageQuantity)
 {
 	shardStorageQuantity_ = shardStorageQuantity;
-	setCoreParameter("ShardStorageQuantity", std::to_string(shardStorageQuantity));
+	setCoreParameter("ShardStorageQuantity", shardStorageQuantity);
 }
 
 long CreateShardingInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateShardingInstanceRequest::getResourceOwnerId()const
 void CreateShardingInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateShardingInstanceRequest::getNodeType()const
@@ -121,7 +121,7 @@ long CreateShardingInstanceRequest::getCapacity()const
 void CreateShardingInstanceRequest::setCapacity(long capacity)
 {
 	capacity_ = capacity;
-	setCoreParameter("Capacity", std::to_string(capacity));
+	setCoreParameter("Capacity", capacity);
 }
 
 std::string CreateShardingInstanceRequest::getPassword()const
@@ -264,7 +264,7 @@ long CreateShardingInstanceRequest::getOwnerId()const
 void CreateShardingInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateShardingInstanceRequest::getToken()const
@@ -286,7 +286,7 @@ int CreateShardingInstanceRequest::getShardQuantity()const
 void CreateShardingInstanceRequest::setShardQuantity(int shardQuantity)
 {
 	shardQuantity_ = shardQuantity;
-	setCoreParameter("ShardQuantity", std::to_string(shardQuantity));
+	setCoreParameter("ShardQuantity", shardQuantity);
 }
 
 std::string CreateShardingInstanceRequest::getVSwitchId()const
@@ -341,7 +341,7 @@ int CreateShardingInstanceRequest::getShardReplicaQuantity()const
 void CreateShardingInstanceRequest::setShardReplicaQuantity(int shardReplicaQuantity)
 {
 	shardReplicaQuantity_ = shardReplicaQuantity;
-	setCoreParameter("ShardReplicaQuantity", std::to_string(shardReplicaQuantity));
+	setCoreParameter("ShardReplicaQuantity", shardReplicaQuantity);
 }
 
 std::string CreateShardingInstanceRequest::getArchitectureType()const
@@ -407,7 +407,7 @@ int CreateShardingInstanceRequest::getProxyQuantity()const
 void CreateShardingInstanceRequest::setProxyQuantity(int proxyQuantity)
 {
 	proxyQuantity_ = proxyQuantity;
-	setCoreParameter("ProxyQuantity", std::to_string(proxyQuantity));
+	setCoreParameter("ProxyQuantity", proxyQuantity);
 }
 
 std::string CreateShardingInstanceRequest::getConfig()const

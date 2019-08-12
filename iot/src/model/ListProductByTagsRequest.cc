@@ -37,8 +37,8 @@ void ListProductByTagsRequest::setProductTag(const std::vector<ProductTag>& prod
 	for(int i = 0; i!= productTag.size(); i++)	{
 		auto obj = productTag.at(i);
 		std::string str ="ProductTag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
+		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
 	}
 }
 
@@ -61,7 +61,7 @@ int ListProductByTagsRequest::getPageSize()const
 void ListProductByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListProductByTagsRequest::getCurrentPage()const
@@ -72,7 +72,7 @@ int ListProductByTagsRequest::getCurrentPage()const
 void ListProductByTagsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string ListProductByTagsRequest::getAccessKeyId()const

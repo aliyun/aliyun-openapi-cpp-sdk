@@ -209,7 +209,7 @@ long UpdateMaterialRequest::getId()const
 void UpdateMaterialRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateMaterialRequest::getCardNumber()const
@@ -231,7 +231,7 @@ long UpdateMaterialRequest::getLoaId()const
 void UpdateMaterialRequest::setLoaId(long loaId)
 {
 	loaId_ = loaId;
-	setCoreParameter("LoaId", std::to_string(loaId));
+	setCoreParameter("LoaId", loaId);
 }
 
 std::string UpdateMaterialRequest::getLoaOssKey()const

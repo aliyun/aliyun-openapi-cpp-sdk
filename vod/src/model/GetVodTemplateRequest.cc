@@ -33,7 +33,7 @@ long GetVodTemplateRequest::getResourceOwnerId()const
 void GetVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetVodTemplateRequest::getResourceOwnerAccount()const
@@ -66,6 +66,6 @@ long GetVodTemplateRequest::getOwnerId()const
 void GetVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

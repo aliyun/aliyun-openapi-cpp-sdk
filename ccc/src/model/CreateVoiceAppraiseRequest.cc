@@ -55,7 +55,7 @@ bool CreateVoiceAppraiseRequest::getIsAppraise()const
 void CreateVoiceAppraiseRequest::setIsAppraise(bool isAppraise)
 {
 	isAppraise_ = isAppraise;
-	setCoreParameter("IsAppraise", isAppraise ? "true" : "false");
+	setCoreParameter("IsAppraise", isAppraise);
 }
 
 std::string CreateVoiceAppraiseRequest::getContent()const

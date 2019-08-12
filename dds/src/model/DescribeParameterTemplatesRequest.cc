@@ -33,7 +33,7 @@ long DescribeParameterTemplatesRequest::getResourceOwnerId()const
 void DescribeParameterTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeParameterTemplatesRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ long DescribeParameterTemplatesRequest::getOwnerId()const
 void DescribeParameterTemplatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeParameterTemplatesRequest::getAccessKeyId()const

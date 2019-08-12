@@ -33,7 +33,7 @@ long CreateStreamPredictRequest::getResourceOwnerId()const
 void CreateStreamPredictRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long CreateStreamPredictRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateStreamPredictRequest::getCallerParentId()const
 void CreateStreamPredictRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateStreamPredictRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateStreamPredictRequest::getProxy_original_security_transport()const
 void CreateStreamPredictRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateStreamPredictRequest::getProxy_original_source_ip()const
@@ -209,7 +209,7 @@ long CreateStreamPredictRequest::getCallerUid()const
 void CreateStreamPredictRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateStreamPredictRequest::getShowLog()const
@@ -256,6 +256,17 @@ void CreateStreamPredictRequest::setStreamType(const std::string& streamType)
 	setCoreParameter("StreamType", streamType);
 }
 
+std::string CreateStreamPredictRequest::getFaceGroupId()const
+{
+	return faceGroupId_;
+}
+
+void CreateStreamPredictRequest::setFaceGroupId(const std::string& faceGroupId)
+{
+	faceGroupId_ = faceGroupId;
+	setCoreParameter("FaceGroupId", faceGroupId);
+}
+
 std::string CreateStreamPredictRequest::getStreamId()const
 {
 	return streamId_;
@@ -297,7 +308,7 @@ long CreateStreamPredictRequest::getOwnerId()const
 void CreateStreamPredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateStreamPredictRequest::getVersion()const
@@ -319,7 +330,7 @@ bool CreateStreamPredictRequest::getProxy_trust_transport_info()const
 void CreateStreamPredictRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateStreamPredictRequest::getAk_mfa_present()const
@@ -330,7 +341,7 @@ bool CreateStreamPredictRequest::getAk_mfa_present()const
 void CreateStreamPredictRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateStreamPredictRequest::getSecurity_transport()const
@@ -341,7 +352,7 @@ bool CreateStreamPredictRequest::getSecurity_transport()const
 void CreateStreamPredictRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateStreamPredictRequest::getServiceCode()const

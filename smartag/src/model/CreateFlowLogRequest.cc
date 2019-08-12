@@ -33,7 +33,7 @@ long CreateFlowLogRequest::getResourceOwnerId()const
 void CreateFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateFlowLogRequest::getProjectName()const
@@ -88,7 +88,7 @@ int CreateFlowLogRequest::getNetflowServerPort()const
 void CreateFlowLogRequest::setNetflowServerPort(int netflowServerPort)
 {
 	netflowServerPort_ = netflowServerPort;
-	setCoreParameter("NetflowServerPort", std::to_string(netflowServerPort));
+	setCoreParameter("NetflowServerPort", netflowServerPort);
 }
 
 std::string CreateFlowLogRequest::getNetflowVersion()const
@@ -121,7 +121,7 @@ long CreateFlowLogRequest::getOwnerId()const
 void CreateFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateFlowLogRequest::getInactiveAging()const
@@ -132,7 +132,7 @@ int CreateFlowLogRequest::getInactiveAging()const
 void CreateFlowLogRequest::setInactiveAging(int inactiveAging)
 {
 	inactiveAging_ = inactiveAging;
-	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
+	setCoreParameter("InactiveAging", inactiveAging);
 }
 
 std::string CreateFlowLogRequest::getNetflowServerIp()const
@@ -187,7 +187,7 @@ int CreateFlowLogRequest::getActiveAging()const
 void CreateFlowLogRequest::setActiveAging(int activeAging)
 {
 	activeAging_ = activeAging;
-	setCoreParameter("ActiveAging", std::to_string(activeAging));
+	setCoreParameter("ActiveAging", activeAging);
 }
 
 std::string CreateFlowLogRequest::getOutputType()const

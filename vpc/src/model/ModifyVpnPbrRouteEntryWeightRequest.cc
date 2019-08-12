@@ -44,7 +44,7 @@ long ModifyVpnPbrRouteEntryWeightRequest::getResourceOwnerId()const
 void ModifyVpnPbrRouteEntryWeightRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVpnPbrRouteEntryWeightRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int ModifyVpnPbrRouteEntryWeightRequest::getWeight()const
 void ModifyVpnPbrRouteEntryWeightRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string ModifyVpnPbrRouteEntryWeightRequest::getVpnGatewayId()const
@@ -110,7 +110,7 @@ long ModifyVpnPbrRouteEntryWeightRequest::getOwnerId()const
 void ModifyVpnPbrRouteEntryWeightRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyVpnPbrRouteEntryWeightRequest::getNewWeight()const
@@ -121,7 +121,7 @@ int ModifyVpnPbrRouteEntryWeightRequest::getNewWeight()const
 void ModifyVpnPbrRouteEntryWeightRequest::setNewWeight(int newWeight)
 {
 	newWeight_ = newWeight;
-	setCoreParameter("NewWeight", std::to_string(newWeight));
+	setCoreParameter("NewWeight", newWeight);
 }
 
 std::string ModifyVpnPbrRouteEntryWeightRequest::getRouteDest()const

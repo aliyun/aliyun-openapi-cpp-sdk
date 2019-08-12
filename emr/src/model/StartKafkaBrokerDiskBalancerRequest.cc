@@ -33,7 +33,7 @@ long StartKafkaBrokerDiskBalancerRequest::getThrottle()const
 void StartKafkaBrokerDiskBalancerRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", std::to_string(throttle));
+	setCoreParameter("Throttle", throttle);
 }
 
 long StartKafkaBrokerDiskBalancerRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long StartKafkaBrokerDiskBalancerRequest::getResourceOwnerId()const
 void StartKafkaBrokerDiskBalancerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int StartKafkaBrokerDiskBalancerRequest::getBrokerId()const
@@ -55,7 +55,7 @@ int StartKafkaBrokerDiskBalancerRequest::getBrokerId()const
 void StartKafkaBrokerDiskBalancerRequest::setBrokerId(int brokerId)
 {
 	brokerId_ = brokerId;
-	setCoreParameter("BrokerId", std::to_string(brokerId));
+	setCoreParameter("BrokerId", brokerId);
 }
 
 std::string StartKafkaBrokerDiskBalancerRequest::getRegionId()const

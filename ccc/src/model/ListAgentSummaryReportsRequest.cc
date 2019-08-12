@@ -66,7 +66,7 @@ int ListAgentSummaryReportsRequest::getPageSize()const
 void ListAgentSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListAgentSummaryReportsRequest::getEndTime()const
@@ -99,7 +99,7 @@ int ListAgentSummaryReportsRequest::getPageNumber()const
 void ListAgentSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListAgentSummaryReportsRequest::getAccessKeyId()const

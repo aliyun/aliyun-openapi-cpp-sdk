@@ -55,7 +55,7 @@ int DescribeCpmcPunishListRequest::getPageSize()const
 void DescribeCpmcPunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishType()const
@@ -77,7 +77,7 @@ int DescribeCpmcPunishListRequest::getCurrentPage()const
 void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishStatus()const

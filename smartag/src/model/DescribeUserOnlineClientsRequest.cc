@@ -33,7 +33,7 @@ long DescribeUserOnlineClientsRequest::getResourceOwnerId()const
 void DescribeUserOnlineClientsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeUserOnlineClientsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeUserOnlineClientsRequest::getOwnerId()const
 void DescribeUserOnlineClientsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeUserOnlineClientsRequest::getUserName()const

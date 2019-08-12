@@ -44,7 +44,7 @@ int DescribeCheckWarningsRequest::getPageSize()const
 void DescribeCheckWarningsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeCheckWarningsRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeCheckWarningsRequest::getCurrentPage()const
 void DescribeCheckWarningsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCheckWarningsRequest::getLang()const
@@ -77,7 +77,7 @@ long DescribeCheckWarningsRequest::getRiskId()const
 void DescribeCheckWarningsRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setCoreParameter("RiskId", riskId);
 }
 
 std::string DescribeCheckWarningsRequest::getUuid()const

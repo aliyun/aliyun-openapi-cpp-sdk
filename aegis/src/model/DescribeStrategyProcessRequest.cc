@@ -44,6 +44,6 @@ long DescribeStrategyProcessRequest::getStrategyId()const
 void DescribeStrategyProcessRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 

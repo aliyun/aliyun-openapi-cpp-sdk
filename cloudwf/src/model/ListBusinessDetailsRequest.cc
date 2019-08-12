@@ -55,7 +55,7 @@ int ListBusinessDetailsRequest::getLength()const
 void ListBusinessDetailsRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListBusinessDetailsRequest::getPageIndex()const
@@ -66,7 +66,7 @@ int ListBusinessDetailsRequest::getPageIndex()const
 void ListBusinessDetailsRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListBusinessDetailsRequest::getOrderDir()const

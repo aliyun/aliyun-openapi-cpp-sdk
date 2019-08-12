@@ -44,7 +44,7 @@ long DeleteVpnPbrRouteEntryRequest::getResourceOwnerId()const
 void DeleteVpnPbrRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DeleteVpnPbrRouteEntryRequest::getWeight()const
 void DeleteVpnPbrRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string DeleteVpnPbrRouteEntryRequest::getVpnGatewayId()const
@@ -110,7 +110,7 @@ long DeleteVpnPbrRouteEntryRequest::getOwnerId()const
 void DeleteVpnPbrRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteVpnPbrRouteEntryRequest::getRouteDest()const

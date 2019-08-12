@@ -77,6 +77,6 @@ bool CreateAlertContactRequest::getSystemNoc()const
 void CreateAlertContactRequest::setSystemNoc(bool systemNoc)
 {
 	systemNoc_ = systemNoc;
-	setCoreParameter("SystemNoc", systemNoc ? "true" : "false");
+	setCoreParameter("SystemNoc", systemNoc);
 }
 

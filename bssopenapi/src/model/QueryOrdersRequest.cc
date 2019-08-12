@@ -55,7 +55,7 @@ int QueryOrdersRequest::getPageSize()const
 void QueryOrdersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryOrdersRequest::getPaymentStatus()const
@@ -88,7 +88,7 @@ int QueryOrdersRequest::getPageNum()const
 void QueryOrdersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 long QueryOrdersRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long QueryOrdersRequest::getOwnerId()const
 void QueryOrdersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryOrdersRequest::getCreateTimeEnd()const

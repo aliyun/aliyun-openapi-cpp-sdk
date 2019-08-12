@@ -33,7 +33,7 @@ long CreateUserStatisticsRequest::getResourceOwnerId()const
 void CreateUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUserStatisticsRequest::getRegionId()const

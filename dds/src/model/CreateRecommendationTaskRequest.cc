@@ -33,7 +33,7 @@ long CreateRecommendationTaskRequest::getResourceOwnerId()const
 void CreateRecommendationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateRecommendationTaskRequest::getInstanceId()const
@@ -121,7 +121,7 @@ long CreateRecommendationTaskRequest::getOwnerId()const
 void CreateRecommendationTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRecommendationTaskRequest::getNodeId()const

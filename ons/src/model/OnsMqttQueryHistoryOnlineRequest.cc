@@ -55,7 +55,7 @@ long OnsMqttQueryHistoryOnlineRequest::getEndTime()const
 void OnsMqttQueryHistoryOnlineRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
@@ -66,6 +66,6 @@ long OnsMqttQueryHistoryOnlineRequest::getBeginTime()const
 void OnsMqttQueryHistoryOnlineRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", beginTime);
 }
 

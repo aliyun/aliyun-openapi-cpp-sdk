@@ -44,7 +44,7 @@ bool SetEarlyWarningRequest::getWarnOpen()const
 void SetEarlyWarningRequest::setWarnOpen(bool warnOpen)
 {
 	warnOpen_ = warnOpen;
-	setCoreParameter("WarnOpen", warnOpen ? "true" : "false");
+	setCoreParameter("WarnOpen", warnOpen);
 }
 
 std::string SetEarlyWarningRequest::getSourceIp()const
@@ -88,7 +88,7 @@ bool SetEarlyWarningRequest::getTimeOpen()const
 void SetEarlyWarningRequest::setTimeOpen(bool timeOpen)
 {
 	timeOpen_ = timeOpen;
-	setCoreParameter("TimeOpen", timeOpen ? "true" : "false");
+	setCoreParameter("TimeOpen", timeOpen);
 }
 
 std::string SetEarlyWarningRequest::getTimeBegin()const

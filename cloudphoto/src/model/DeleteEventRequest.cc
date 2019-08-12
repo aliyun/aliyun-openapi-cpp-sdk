@@ -33,7 +33,7 @@ long DeleteEventRequest::getEventId()const
 void DeleteEventRequest::setEventId(long eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", eventId);
 }
 
 std::string DeleteEventRequest::getLibraryId()const

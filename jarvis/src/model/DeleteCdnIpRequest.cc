@@ -33,7 +33,7 @@ int DeleteCdnIpRequest::getItemId()const
 void DeleteCdnIpRequest::setItemId(int itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
+	setCoreParameter("ItemId", itemId);
 }
 
 long DeleteCdnIpRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteCdnIpRequest::getResourceOwnerId()const
 void DeleteCdnIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteCdnIpRequest::getSourceIp()const

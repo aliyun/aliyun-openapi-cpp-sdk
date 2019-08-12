@@ -33,7 +33,7 @@ long ModifyCommonBandwidthPackageAttributeRequest::getResourceOwnerId()const
 void ModifyCommonBandwidthPackageAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyCommonBandwidthPackageAttributeRequest::getBandwidthPackageId()const
@@ -110,6 +110,6 @@ long ModifyCommonBandwidthPackageAttributeRequest::getOwnerId()const
 void ModifyCommonBandwidthPackageAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

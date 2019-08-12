@@ -44,7 +44,7 @@ bool UpdateOssCallbackSettingRequest::getScanCallback()const
 void UpdateOssCallbackSettingRequest::setScanCallback(bool scanCallback)
 {
 	scanCallback_ = scanCallback;
-	setCoreParameter("ScanCallback", scanCallback ? "true" : "false");
+	setCoreParameter("ScanCallback", scanCallback);
 }
 
 std::string UpdateOssCallbackSettingRequest::getScanCallbackSuggestions()const
@@ -77,7 +77,7 @@ bool UpdateOssCallbackSettingRequest::getAuditCallback()const
 void UpdateOssCallbackSettingRequest::setAuditCallback(bool auditCallback)
 {
 	auditCallback_ = auditCallback;
-	setCoreParameter("AuditCallback", auditCallback ? "true" : "false");
+	setCoreParameter("AuditCallback", auditCallback);
 }
 
 std::string UpdateOssCallbackSettingRequest::getCallbackUrl()const

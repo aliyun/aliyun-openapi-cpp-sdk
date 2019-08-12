@@ -33,7 +33,7 @@ int ModifyHpHostRequest::getCpuCore()const
 void ModifyHpHostRequest::setCpuCore(int cpuCore)
 {
 	cpuCore_ = cpuCore;
-	setCoreParameter("CpuCore", std::to_string(cpuCore));
+	setCoreParameter("CpuCore", cpuCore);
 }
 
 int ModifyHpHostRequest::getMemSize()const
@@ -44,7 +44,7 @@ int ModifyHpHostRequest::getMemSize()const
 void ModifyHpHostRequest::setMemSize(int memSize)
 {
 	memSize_ = memSize;
-	setCoreParameter("MemSize", std::to_string(memSize));
+	setCoreParameter("MemSize", memSize);
 }
 
 long ModifyHpHostRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ModifyHpHostRequest::getResourceOwnerId()const
 void ModifyHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyHpHostRequest::getRackInfo()const
@@ -125,9 +125,9 @@ void ModifyHpHostRequest::setHpHostDisk(const std::vector<HpHostDisk>& hpHostDis
 	for(int i = 0; i!= hpHostDisk.size(); i++)	{
 		auto obj = hpHostDisk.at(i);
 		std::string str ="HpHostDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskSize", obj.diskSize);
-		setCoreParameter(str + ".MountPath", obj.mountPath);
-		setCoreParameter(str + ".DiskDevice", obj.diskDevice);
+		setCoreParameter(str + ".DiskSize", std::to_string(obj.diskSize));
+		setCoreParameter(str + ".MountPath", std::to_string(obj.mountPath));
+		setCoreParameter(str + ".DiskDevice", std::to_string(obj.diskDevice));
 	}
 }
 

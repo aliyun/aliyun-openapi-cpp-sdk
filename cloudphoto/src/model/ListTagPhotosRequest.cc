@@ -44,7 +44,7 @@ int ListTagPhotosRequest::getSize()const
 void ListTagPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 long ListTagPhotosRequest::getTagId()const
@@ -55,7 +55,7 @@ long ListTagPhotosRequest::getTagId()const
 void ListTagPhotosRequest::setTagId(long tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", std::to_string(tagId));
+	setCoreParameter("TagId", tagId);
 }
 
 std::string ListTagPhotosRequest::getLibraryId()const

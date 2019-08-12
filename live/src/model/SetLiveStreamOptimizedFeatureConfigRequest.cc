@@ -33,7 +33,7 @@ long SetLiveStreamOptimizedFeatureConfigRequest::getCallerParentId()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool SetLiveStreamOptimizedFeatureConfigRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool SetLiveStreamOptimizedFeatureConfigRequest::getProxy_original_security_tran
 void SetLiveStreamOptimizedFeatureConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getProxy_original_source_ip()const
@@ -198,7 +198,7 @@ long SetLiveStreamOptimizedFeatureConfigRequest::getCallerUid()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getApp_ip()const
@@ -264,7 +264,7 @@ long SetLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getVersion()const
@@ -286,7 +286,7 @@ bool SetLiveStreamOptimizedFeatureConfigRequest::getProxy_trust_transport_info()
 void SetLiveStreamOptimizedFeatureConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool SetLiveStreamOptimizedFeatureConfigRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool SetLiveStreamOptimizedFeatureConfigRequest::getAk_mfa_present()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SetLiveStreamOptimizedFeatureConfigRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool SetLiveStreamOptimizedFeatureConfigRequest::getSecurity_transport()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getServiceCode()const

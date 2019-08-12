@@ -37,10 +37,12 @@ void GetNumberRegionInfoResult::parse(const std::string &payload)
 {
 	Json::CharReaderBuilder builder;
 	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *value;
+	Json::Value *val;
+	Json::Value value;
 	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), value, errs);
-	setRequestId((*value)["RequestId"].asString());
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
+	setRequestId(value["RequestId"].asString());
 	auto phoneNumberNode = value["PhoneNumber"];
 	if(!phoneNumberNode["Number"].isNull())
 		phoneNumber_.number = phoneNumberNode["Number"].asString();

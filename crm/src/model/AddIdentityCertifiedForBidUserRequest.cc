@@ -99,6 +99,6 @@ bool AddIdentityCertifiedForBidUserRequest::getIsEnterprise()const
 void AddIdentityCertifiedForBidUserRequest::setIsEnterprise(bool isEnterprise)
 {
 	isEnterprise_ = isEnterprise;
-	setCoreParameter("IsEnterprise", isEnterprise ? "true" : "false");
+	setCoreParameter("IsEnterprise", isEnterprise);
 }
 

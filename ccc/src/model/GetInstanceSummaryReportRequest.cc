@@ -44,7 +44,7 @@ int GetInstanceSummaryReportRequest::getPageSize()const
 void GetInstanceSummaryReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetInstanceSummaryReportRequest::getEndTime()const
@@ -77,7 +77,7 @@ int GetInstanceSummaryReportRequest::getPageNumber()const
 void GetInstanceSummaryReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GetInstanceSummaryReportRequest::getAccessKeyId()const

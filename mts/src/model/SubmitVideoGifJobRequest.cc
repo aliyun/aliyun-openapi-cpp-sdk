@@ -55,7 +55,7 @@ long SubmitVideoGifJobRequest::getResourceOwnerId()const
 void SubmitVideoGifJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitVideoGifJobRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long SubmitVideoGifJobRequest::getOwnerId()const
 void SubmitVideoGifJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitVideoGifJobRequest::getAccessKeyId()const

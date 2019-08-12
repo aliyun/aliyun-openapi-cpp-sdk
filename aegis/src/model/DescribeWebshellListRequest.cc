@@ -55,7 +55,7 @@ int DescribeWebshellListRequest::getPageSize()const
 void DescribeWebshellListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeWebshellListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeWebshellListRequest::getCurrentPage()const
 void DescribeWebshellListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWebshellListRequest::getDealed()const
@@ -110,6 +110,6 @@ int DescribeWebshellListRequest::getStatus()const
 void DescribeWebshellListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

@@ -66,7 +66,7 @@ int DescribeRestoreTaskListRequest::getPageSize()const
 void DescribeRestoreTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRestoreTaskListRequest::getBackupPlanId()const
@@ -88,7 +88,7 @@ int DescribeRestoreTaskListRequest::getPageNum()const
 void DescribeRestoreTaskListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeRestoreTaskListRequest::getOwnerId()const

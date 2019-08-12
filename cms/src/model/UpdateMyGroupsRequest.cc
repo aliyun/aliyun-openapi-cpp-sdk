@@ -55,7 +55,7 @@ long UpdateMyGroupsRequest::getServiceId()const
 void UpdateMyGroupsRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 
 std::string UpdateMyGroupsRequest::getType()const

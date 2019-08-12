@@ -66,7 +66,7 @@ long ShopGroupCreateRequest::getBid()const
 void ShopGroupCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string ShopGroupCreateRequest::getAccessKeyId()const

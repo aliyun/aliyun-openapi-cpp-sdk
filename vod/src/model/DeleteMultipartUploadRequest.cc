@@ -66,7 +66,7 @@ long DeleteMultipartUploadRequest::getResourceRealOwnerId()const
 void DeleteMultipartUploadRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 std::string DeleteMultipartUploadRequest::getOwnerId()const

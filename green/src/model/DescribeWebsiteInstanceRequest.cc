@@ -33,7 +33,7 @@ int DescribeWebsiteInstanceRequest::getTotalCount()const
 void DescribeWebsiteInstanceRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeWebsiteInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ int DescribeWebsiteInstanceRequest::getPageSize()const
 void DescribeWebsiteInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeWebsiteInstanceRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeWebsiteInstanceRequest::getCurrentPage()const
 void DescribeWebsiteInstanceRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWebsiteInstanceRequest::getLang()const

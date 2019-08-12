@@ -44,7 +44,7 @@ int DescribeCdnVendorRequest::getPageSize()const
 void DescribeCdnVendorRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeCdnVendorRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeCdnVendorRequest::getCurrentPage()const
 void DescribeCdnVendorRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCdnVendorRequest::getLang()const

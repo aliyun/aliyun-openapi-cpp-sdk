@@ -33,7 +33,7 @@ long DeleteSnatEntryRequest::getResourceOwnerId()const
 void DeleteSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteSnatEntryRequest::getInstanceId()const
@@ -99,6 +99,6 @@ long DeleteSnatEntryRequest::getOwnerId()const
 void DeleteSnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -66,7 +66,7 @@ int DescribeApiIpControlsRequest::getPageSize()const
 void DescribeApiIpControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeApiIpControlsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeApiIpControlsRequest::getPageNumber()const
 void DescribeApiIpControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeApiIpControlsRequest::getAccessKeyId()const

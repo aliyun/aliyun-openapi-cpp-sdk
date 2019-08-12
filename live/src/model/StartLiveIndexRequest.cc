@@ -88,7 +88,7 @@ long StartLiveIndexRequest::getOwnerId()const
 void StartLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StartLiveIndexRequest::getAppName()const
@@ -121,7 +121,7 @@ int StartLiveIndexRequest::getInterval()const
 void StartLiveIndexRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string StartLiveIndexRequest::getOssRamRole()const

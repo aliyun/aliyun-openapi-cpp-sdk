@@ -33,7 +33,7 @@ long SetZoneRecordStatusRequest::getRecordId()const
 void SetZoneRecordStatusRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string SetZoneRecordStatusRequest::getUserClientIp()const

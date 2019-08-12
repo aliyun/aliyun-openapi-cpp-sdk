@@ -34,7 +34,7 @@ void ToggleFeaturesRequest::setDisabledFeatures(const std::vector<std::string>& 
 {
 	disabledFeatures_ = disabledFeatures;
 	for(int i = 0; i!= disabledFeatures.size(); i++)
-		setCoreParameter("DisabledFeatures."+ std::to_string(i), disabledFeatures.at(i));
+		setCoreParameter("DisabledFeatures."+ std::to_string(i), std::to_string(disabledFeatures.at(i)));
 }
 
 std::string ToggleFeaturesRequest::getStoreName()const
@@ -57,6 +57,6 @@ void ToggleFeaturesRequest::setEnabledFeatures(const std::vector<std::string>& e
 {
 	enabledFeatures_ = enabledFeatures;
 	for(int i = 0; i!= enabledFeatures.size(); i++)
-		setCoreParameter("EnabledFeatures."+ std::to_string(i), enabledFeatures.at(i));
+		setCoreParameter("EnabledFeatures."+ std::to_string(i), std::to_string(enabledFeatures.at(i)));
 }
 

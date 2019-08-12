@@ -66,7 +66,7 @@ long OnsConsumerResetOffsetRequest::getResetTimestamp()const
 void OnsConsumerResetOffsetRequest::setResetTimestamp(long resetTimestamp)
 {
 	resetTimestamp_ = resetTimestamp;
-	setCoreParameter("ResetTimestamp", std::to_string(resetTimestamp));
+	setCoreParameter("ResetTimestamp", resetTimestamp);
 }
 
 int OnsConsumerResetOffsetRequest::getType()const
@@ -77,6 +77,6 @@ int OnsConsumerResetOffsetRequest::getType()const
 void OnsConsumerResetOffsetRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

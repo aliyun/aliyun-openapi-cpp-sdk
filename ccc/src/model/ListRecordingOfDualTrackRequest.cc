@@ -77,7 +77,7 @@ int ListRecordingOfDualTrackRequest::getPageSize()const
 void ListRecordingOfDualTrackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListRecordingOfDualTrackRequest::getStartTime()const
@@ -88,7 +88,7 @@ long ListRecordingOfDualTrackRequest::getStartTime()const
 void ListRecordingOfDualTrackRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListRecordingOfDualTrackRequest::getStopTime()const
@@ -99,7 +99,7 @@ long ListRecordingOfDualTrackRequest::getStopTime()const
 void ListRecordingOfDualTrackRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 std::string ListRecordingOfDualTrackRequest::getConnectId()const
@@ -121,7 +121,7 @@ int ListRecordingOfDualTrackRequest::getPageNumber()const
 void ListRecordingOfDualTrackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const

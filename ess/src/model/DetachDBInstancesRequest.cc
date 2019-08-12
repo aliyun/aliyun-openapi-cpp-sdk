@@ -56,7 +56,7 @@ void DetachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBI
 {
 	dBInstance_ = dBInstance;
 	for(int i = 0; i!= dBInstance.size(); i++)
-		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+		setCoreParameter("DBInstance."+ std::to_string(i), std::to_string(dBInstance.at(i)));
 }
 
 bool DetachDBInstancesRequest::getForceDetach()const
@@ -67,7 +67,7 @@ bool DetachDBInstancesRequest::getForceDetach()const
 void DetachDBInstancesRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
+	setCoreParameter("ForceDetach", forceDetach);
 }
 
 long DetachDBInstancesRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long DetachDBInstancesRequest::getOwnerId()const
 void DetachDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DetachDBInstancesRequest::getAccessKeyId()const

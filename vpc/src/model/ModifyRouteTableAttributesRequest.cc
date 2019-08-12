@@ -33,7 +33,7 @@ long ModifyRouteTableAttributesRequest::getResourceOwnerId()const
 void ModifyRouteTableAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyRouteTableAttributesRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ModifyRouteTableAttributesRequest::getOwnerId()const
 void ModifyRouteTableAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyRouteTableAttributesRequest::getKbpsBandwidth()const
@@ -132,7 +132,7 @@ long ModifyRouteTableAttributesRequest::getResourceUid()const
 void ModifyRouteTableAttributesRequest::setResourceUid(long resourceUid)
 {
 	resourceUid_ = resourceUid;
-	setCoreParameter("ResourceUid", std::to_string(resourceUid));
+	setCoreParameter("ResourceUid", resourceUid);
 }
 
 std::string ModifyRouteTableAttributesRequest::getResourceBid()const

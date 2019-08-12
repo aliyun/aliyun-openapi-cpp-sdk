@@ -33,7 +33,7 @@ long ModifyEipAddressAttributeRequest::getResourceOwnerId()const
 void ModifyEipAddressAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyEipAddressAttributeRequest::getResourceOwnerAccount()const
@@ -121,6 +121,6 @@ long ModifyEipAddressAttributeRequest::getOwnerId()const
 void ModifyEipAddressAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

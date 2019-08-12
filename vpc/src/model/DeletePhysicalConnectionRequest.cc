@@ -33,7 +33,7 @@ long DeletePhysicalConnectionRequest::getResourceOwnerId()const
 void DeletePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeletePhysicalConnectionRequest::getRegionId()const
@@ -110,6 +110,6 @@ long DeletePhysicalConnectionRequest::getOwnerId()const
 void DeletePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -44,7 +44,7 @@ bool FindOrderedListRequest::getShowDelOrder()const
 void FindOrderedListRequest::setShowDelOrder(bool showDelOrder)
 {
 	showDelOrder_ = showDelOrder;
-	setCoreParameter("ShowDelOrder", showDelOrder ? "true" : "false");
+	setCoreParameter("ShowDelOrder", showDelOrder);
 }
 
 std::string FindOrderedListRequest::getRegionId()const
@@ -66,7 +66,7 @@ long FindOrderedListRequest::getCsbId()const
 void FindOrderedListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindOrderedListRequest::getAlias()const
@@ -99,7 +99,7 @@ int FindOrderedListRequest::getPageNum()const
 void FindOrderedListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 long FindOrderedListRequest::getServiceId()const
@@ -110,7 +110,7 @@ long FindOrderedListRequest::getServiceId()const
 void FindOrderedListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 
 std::string FindOrderedListRequest::getStatus()const

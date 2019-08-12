@@ -55,7 +55,7 @@ bool SubmitBeautifyJobsRequest::getAsync()const
 void SubmitBeautifyJobsRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
+	setCoreParameter("Async", async);
 }
 
 long SubmitBeautifyJobsRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long SubmitBeautifyJobsRequest::getResourceOwnerId()const
 void SubmitBeautifyJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitBeautifyJobsRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long SubmitBeautifyJobsRequest::getOwnerId()const
 void SubmitBeautifyJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitBeautifyJobsRequest::getAccessKeyId()const

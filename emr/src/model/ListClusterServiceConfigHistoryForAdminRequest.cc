@@ -33,7 +33,7 @@ long ListClusterServiceConfigHistoryForAdminRequest::getResourceOwnerId()const
 void ListClusterServiceConfigHistoryForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListClusterServiceConfigHistoryForAdminRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListClusterServiceConfigHistoryForAdminRequest::getPageSize()const
 void ListClusterServiceConfigHistoryForAdminRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListClusterServiceConfigHistoryForAdminRequest::getServiceName()const
@@ -99,7 +99,7 @@ int ListClusterServiceConfigHistoryForAdminRequest::getPageNumber()const
 void ListClusterServiceConfigHistoryForAdminRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListClusterServiceConfigHistoryForAdminRequest::getAccessKeyId()const

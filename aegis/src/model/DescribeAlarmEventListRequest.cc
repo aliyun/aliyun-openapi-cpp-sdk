@@ -121,7 +121,7 @@ int DescribeAlarmEventListRequest::getCurrentPage()const
 void DescribeAlarmEventListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAlarmEventListRequest::getLang()const

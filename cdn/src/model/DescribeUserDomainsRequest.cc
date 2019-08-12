@@ -66,7 +66,7 @@ long DescribeUserDomainsRequest::getOwnerId()const
 void DescribeUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeUserDomainsRequest::getFuncId()const
@@ -88,7 +88,7 @@ int DescribeUserDomainsRequest::getPageNumber()const
 void DescribeUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeUserDomainsRequest::getDomainStatus()const
@@ -121,7 +121,7 @@ bool DescribeUserDomainsRequest::getCheckDomainShow()const
 void DescribeUserDomainsRequest::setCheckDomainShow(bool checkDomainShow)
 {
 	checkDomainShow_ = checkDomainShow;
-	setCoreParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
+	setCoreParameter("CheckDomainShow", checkDomainShow);
 }
 
 std::string DescribeUserDomainsRequest::getResourceGroupId()const
@@ -165,6 +165,6 @@ int DescribeUserDomainsRequest::getPageSize()const
 void DescribeUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 

@@ -33,7 +33,7 @@ long ListTranscodeTaskRequest::getResourceOwnerId()const
 void ListTranscodeTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListTranscodeTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ int ListTranscodeTaskRequest::getPageNo()const
 void ListTranscodeTaskRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 int ListTranscodeTaskRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListTranscodeTaskRequest::getPageSize()const
 void ListTranscodeTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListTranscodeTaskRequest::getEndTime()const
@@ -110,7 +110,7 @@ long ListTranscodeTaskRequest::getOwnerId()const
 void ListTranscodeTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListTranscodeTaskRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long ShopActionCustomeRequest::getGsid()const
 void ShopActionCustomeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string ShopActionCustomeRequest::getAccessKeyId()const

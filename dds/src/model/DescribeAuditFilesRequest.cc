@@ -33,7 +33,7 @@ long DescribeAuditFilesRequest::getResourceOwnerId()const
 void DescribeAuditFilesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAuditFilesRequest::getSecurityToken()const
@@ -88,7 +88,7 @@ int DescribeAuditFilesRequest::getPageSize()const
 void DescribeAuditFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAuditFilesRequest::getDBInstanceId()const
@@ -110,7 +110,7 @@ long DescribeAuditFilesRequest::getOwnerId()const
 void DescribeAuditFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAuditFilesRequest::getNodeId()const
@@ -132,7 +132,7 @@ int DescribeAuditFilesRequest::getPageNumber()const
 void DescribeAuditFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAuditFilesRequest::getAccessKeyId()const

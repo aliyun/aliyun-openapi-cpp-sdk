@@ -44,7 +44,7 @@ int QueryCommunicationLogsRequest::getPageSize()const
 void QueryCommunicationLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryCommunicationLogsRequest::getType()const
@@ -55,7 +55,7 @@ int QueryCommunicationLogsRequest::getType()const
 void QueryCommunicationLogsRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 int QueryCommunicationLogsRequest::getPageNum()const
@@ -66,6 +66,6 @@ int QueryCommunicationLogsRequest::getPageNum()const
 void QueryCommunicationLogsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

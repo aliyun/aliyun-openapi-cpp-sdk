@@ -55,7 +55,7 @@ bool PublishContactFlowVersionRequest::getUseTianGong()const
 void PublishContactFlowVersionRequest::setUseTianGong(bool useTianGong)
 {
 	useTianGong_ = useTianGong;
-	setCoreParameter("UseTianGong", useTianGong ? "true" : "false");
+	setCoreParameter("UseTianGong", useTianGong);
 }
 
 std::string PublishContactFlowVersionRequest::getAccessKeyId()const

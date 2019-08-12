@@ -66,7 +66,7 @@ int DescribeApiSignaturesRequest::getPageSize()const
 void DescribeApiSignaturesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeApiSignaturesRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeApiSignaturesRequest::getPageNumber()const
 void DescribeApiSignaturesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeApiSignaturesRequest::getAccessKeyId()const

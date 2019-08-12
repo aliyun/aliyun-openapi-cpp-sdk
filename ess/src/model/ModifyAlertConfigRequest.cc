@@ -33,7 +33,7 @@ int ModifyAlertConfigRequest::getSuccessConfig()const
 void ModifyAlertConfigRequest::setSuccessConfig(int successConfig)
 {
 	successConfig_ = successConfig;
-	setCoreParameter("SuccessConfig", std::to_string(successConfig));
+	setCoreParameter("SuccessConfig", successConfig);
 }
 
 int ModifyAlertConfigRequest::getRejectConfig()const
@@ -44,7 +44,7 @@ int ModifyAlertConfigRequest::getRejectConfig()const
 void ModifyAlertConfigRequest::setRejectConfig(int rejectConfig)
 {
 	rejectConfig_ = rejectConfig;
-	setCoreParameter("RejectConfig", std::to_string(rejectConfig));
+	setCoreParameter("RejectConfig", rejectConfig);
 }
 
 std::string ModifyAlertConfigRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long ModifyAlertConfigRequest::getOwnerId()const
 void ModifyAlertConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyAlertConfigRequest::getFailConfig()const
@@ -88,7 +88,7 @@ int ModifyAlertConfigRequest::getFailConfig()const
 void ModifyAlertConfigRequest::setFailConfig(int failConfig)
 {
 	failConfig_ = failConfig;
-	setCoreParameter("FailConfig", std::to_string(failConfig));
+	setCoreParameter("FailConfig", failConfig);
 }
 
 std::string ModifyAlertConfigRequest::getAccessKeyId()const

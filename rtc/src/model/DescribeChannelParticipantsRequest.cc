@@ -33,7 +33,7 @@ long DescribeChannelParticipantsRequest::getResourceOwnerId()const
 void DescribeChannelParticipantsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeChannelParticipantsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeChannelParticipantsRequest::getCallerParentId()const
 void DescribeChannelParticipantsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeChannelParticipantsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeChannelParticipantsRequest::getProxy_original_security_transport()c
 void DescribeChannelParticipantsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeChannelParticipantsRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ int DescribeChannelParticipantsRequest::getPageNum()const
 void DescribeChannelParticipantsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeChannelParticipantsRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ int DescribeChannelParticipantsRequest::getPageSize()const
 void DescribeChannelParticipantsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeChannelParticipantsRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ long DescribeChannelParticipantsRequest::getCallerUid()const
 void DescribeChannelParticipantsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeChannelParticipantsRequest::getOrder()const
@@ -231,7 +231,7 @@ long DescribeChannelParticipantsRequest::getOwnerId()const
 void DescribeChannelParticipantsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeChannelParticipantsRequest::getVersion()const
@@ -253,7 +253,7 @@ bool DescribeChannelParticipantsRequest::getProxy_trust_transport_info()const
 void DescribeChannelParticipantsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeChannelParticipantsRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeChannelParticipantsRequest::getAk_mfa_present()const
 void DescribeChannelParticipantsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeChannelParticipantsRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeChannelParticipantsRequest::getSecurity_transport()const
 void DescribeChannelParticipantsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeChannelParticipantsRequest::getServiceCode()const

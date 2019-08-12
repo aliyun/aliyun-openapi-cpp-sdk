@@ -44,7 +44,7 @@ long CreateAlertUserGroupRequest::getResourceOwnerId()const
 void CreateAlertUserGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateAlertUserGroupRequest::getRegionId()const

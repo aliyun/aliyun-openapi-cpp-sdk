@@ -33,7 +33,7 @@ long DescribeInstanceAttributeRequest::getResourceOwnerId()const
 void DescribeInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceAttributeRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeInstanceAttributeRequest::getOwnerId()const
 void DescribeInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeInstanceAttributeRequest::getAccessKeyId()const

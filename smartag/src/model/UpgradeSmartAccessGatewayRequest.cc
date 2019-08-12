@@ -33,7 +33,7 @@ long UpgradeSmartAccessGatewayRequest::getResourceOwnerId()const
 void UpgradeSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool UpgradeSmartAccessGatewayRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool UpgradeSmartAccessGatewayRequest::getAutoPay()const
 void UpgradeSmartAccessGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 long UpgradeSmartAccessGatewayRequest::getBandWidthSpec()const
@@ -55,7 +55,7 @@ long UpgradeSmartAccessGatewayRequest::getBandWidthSpec()const
 void UpgradeSmartAccessGatewayRequest::setBandWidthSpec(long bandWidthSpec)
 {
 	bandWidthSpec_ = bandWidthSpec;
-	setCoreParameter("BandWidthSpec", std::to_string(bandWidthSpec));
+	setCoreParameter("BandWidthSpec", bandWidthSpec);
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int UpgradeSmartAccessGatewayRequest::getUserCount()const
 void UpgradeSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setCoreParameter("UserCount", userCount);
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getSmartAGId()const
@@ -121,7 +121,7 @@ long UpgradeSmartAccessGatewayRequest::getOwnerId()const
 void UpgradeSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long UpgradeSmartAccessGatewayRequest::getDataPlan()const
@@ -132,6 +132,6 @@ long UpgradeSmartAccessGatewayRequest::getDataPlan()const
 void UpgradeSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setCoreParameter("DataPlan", dataPlan);
 }
 

@@ -33,7 +33,7 @@ int SetScanModeRequest::getOperation()const
 void SetScanModeRequest::setOperation(int operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 
 std::vector<std::string> SetScanModeRequest::getMacList()const
@@ -45,7 +45,7 @@ void SetScanModeRequest::setMacList(const std::vector<std::string>& macList)
 {
 	macList_ = macList;
 	for(int i = 0; i!= macList.size(); i++)
-		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
+		setCoreParameter("MacList."+ std::to_string(i), std::to_string(macList.at(i)));
 }
 
 std::string SetScanModeRequest::getAccessKeyId()const

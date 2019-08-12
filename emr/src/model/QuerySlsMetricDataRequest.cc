@@ -33,7 +33,7 @@ long QuerySlsMetricDataRequest::getResourceOwnerId()const
 void QuerySlsMetricDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long QuerySlsMetricDataRequest::getPeriod()const
@@ -44,7 +44,7 @@ long QuerySlsMetricDataRequest::getPeriod()const
 void QuerySlsMetricDataRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string QuerySlsMetricDataRequest::getRegionId()const
@@ -77,7 +77,7 @@ long QuerySlsMetricDataRequest::getStartTimeStamp()const
 void QuerySlsMetricDataRequest::setStartTimeStamp(long startTimeStamp)
 {
 	startTimeStamp_ = startTimeStamp;
-	setCoreParameter("StartTimeStamp", std::to_string(startTimeStamp));
+	setCoreParameter("StartTimeStamp", startTimeStamp);
 }
 
 std::string QuerySlsMetricDataRequest::getMetricName()const
@@ -121,6 +121,6 @@ long QuerySlsMetricDataRequest::getEndTimeStamp()const
 void QuerySlsMetricDataRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
-	setCoreParameter("EndTimeStamp", std::to_string(endTimeStamp));
+	setCoreParameter("EndTimeStamp", endTimeStamp);
 }
 

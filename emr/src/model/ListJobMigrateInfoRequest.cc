@@ -33,7 +33,7 @@ long ListJobMigrateInfoRequest::getResourceOwnerId()const
 void ListJobMigrateInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListJobMigrateInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListJobMigrateInfoRequest::getPageSize()const
 void ListJobMigrateInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListJobMigrateInfoRequest::getUserId()const
@@ -77,7 +77,7 @@ int ListJobMigrateInfoRequest::getCurrentSize()const
 void ListJobMigrateInfoRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 std::string ListJobMigrateInfoRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long ListETLJobReleaseRequest::getResourceOwnerId()const
 void ListETLJobReleaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListETLJobReleaseRequest::getRegionId()const
@@ -77,7 +77,7 @@ int ListETLJobReleaseRequest::getPageSize()const
 void ListETLJobReleaseRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListETLJobReleaseRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListETLJobReleaseRequest::getPageNumber()const
 void ListETLJobReleaseRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 int ListETLJobReleaseRequest::getReleaseVersion()const
@@ -99,7 +99,7 @@ int ListETLJobReleaseRequest::getReleaseVersion()const
 void ListETLJobReleaseRequest::setReleaseVersion(int releaseVersion)
 {
 	releaseVersion_ = releaseVersion;
-	setCoreParameter("ReleaseVersion", std::to_string(releaseVersion));
+	setCoreParameter("ReleaseVersion", releaseVersion);
 }
 
 std::string ListETLJobReleaseRequest::getAccessKeyId()const

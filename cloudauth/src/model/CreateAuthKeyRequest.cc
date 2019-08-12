@@ -66,7 +66,7 @@ bool CreateAuthKeyRequest::getTest()const
 void CreateAuthKeyRequest::setTest(bool test)
 {
 	test_ = test;
-	setCoreParameter("Test", test ? "true" : "false");
+	setCoreParameter("Test", test);
 }
 
 int CreateAuthKeyRequest::getAuthYears()const
@@ -77,7 +77,7 @@ int CreateAuthKeyRequest::getAuthYears()const
 void CreateAuthKeyRequest::setAuthYears(int authYears)
 {
 	authYears_ = authYears;
-	setCoreParameter("AuthYears", std::to_string(authYears));
+	setCoreParameter("AuthYears", authYears);
 }
 
 std::string CreateAuthKeyRequest::getLang()const

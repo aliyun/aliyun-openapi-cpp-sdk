@@ -44,7 +44,7 @@ int QueryDeviceRequest::getPageSize()const
 void QueryDeviceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryDeviceRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int QueryDeviceRequest::getCurrentPage()const
 void QueryDeviceRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryDeviceRequest::getProductKey()const

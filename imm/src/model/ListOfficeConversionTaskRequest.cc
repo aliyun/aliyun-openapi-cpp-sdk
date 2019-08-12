@@ -33,7 +33,7 @@ int ListOfficeConversionTaskRequest::getMaxKeys()const
 void ListOfficeConversionTaskRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListOfficeConversionTaskRequest::getRegionId()const

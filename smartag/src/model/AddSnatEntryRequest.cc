@@ -33,7 +33,7 @@ long AddSnatEntryRequest::getResourceOwnerId()const
 void AddSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddSnatEntryRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long AddSnatEntryRequest::getOwnerId()const
 void AddSnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddSnatEntryRequest::getSnatIp()const

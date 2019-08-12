@@ -66,7 +66,7 @@ long DescribeLiveStreamsPublishListRequest::getPageSize()const
 void DescribeLiveStreamsPublishListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
@@ -99,7 +99,7 @@ long DescribeLiveStreamsPublishListRequest::getOwnerId()const
 void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
@@ -121,6 +121,6 @@ long DescribeLiveStreamsPublishListRequest::getPageNumber()const
 void DescribeLiveStreamsPublishListRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

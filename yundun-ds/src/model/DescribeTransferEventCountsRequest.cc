@@ -44,7 +44,7 @@ int DescribeTransferEventCountsRequest::getFeatureType()const
 void DescribeTransferEventCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeTransferEventCountsRequest::getLang()const

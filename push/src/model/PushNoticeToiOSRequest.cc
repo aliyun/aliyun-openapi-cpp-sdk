@@ -55,7 +55,7 @@ long PushNoticeToiOSRequest::getAppKey()const
 void PushNoticeToiOSRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string PushNoticeToiOSRequest::getTargetValue()const

@@ -33,7 +33,7 @@ long SwitchDBInstanceHARequest::getResourceOwnerId()const
 void SwitchDBInstanceHARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SwitchDBInstanceHARequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long SwitchDBInstanceHARequest::getOwnerId()const
 void SwitchDBInstanceHARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SwitchDBInstanceHARequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ int SwitchDBInstanceHARequest::getTargetInstanceId()const
 void SwitchDBInstanceHARequest::setTargetInstanceId(int targetInstanceId)
 {
 	targetInstanceId_ = targetInstanceId;
-	setCoreParameter("TargetInstanceId", std::to_string(targetInstanceId));
+	setCoreParameter("TargetInstanceId", targetInstanceId);
 }
 
 std::string SwitchDBInstanceHARequest::getRoleIds()const
@@ -132,7 +132,7 @@ int SwitchDBInstanceHARequest::getSwitchType()const
 void SwitchDBInstanceHARequest::setSwitchType(int switchType)
 {
 	switchType_ = switchType;
-	setCoreParameter("SwitchType", std::to_string(switchType));
+	setCoreParameter("SwitchType", switchType);
 }
 
 std::string SwitchDBInstanceHARequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ int SwitchDBInstanceHARequest::getSourceInstanceId()const
 void SwitchDBInstanceHARequest::setSourceInstanceId(int sourceInstanceId)
 {
 	sourceInstanceId_ = sourceInstanceId;
-	setCoreParameter("SourceInstanceId", std::to_string(sourceInstanceId));
+	setCoreParameter("SourceInstanceId", sourceInstanceId);
 }
 
 std::string SwitchDBInstanceHARequest::getNodeId()const

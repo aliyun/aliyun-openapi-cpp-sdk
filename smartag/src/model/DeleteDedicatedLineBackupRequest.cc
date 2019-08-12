@@ -33,7 +33,7 @@ long DeleteDedicatedLineBackupRequest::getResourceOwnerId()const
 void DeleteDedicatedLineBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteDedicatedLineBackupRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DeleteDedicatedLineBackupRequest::getOwnerId()const
 void DeleteDedicatedLineBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

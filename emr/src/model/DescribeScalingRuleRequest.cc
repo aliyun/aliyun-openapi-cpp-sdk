@@ -33,7 +33,7 @@ long DescribeScalingRuleRequest::getResourceOwnerId()const
 void DescribeScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeScalingRuleRequest::getRegionId()const

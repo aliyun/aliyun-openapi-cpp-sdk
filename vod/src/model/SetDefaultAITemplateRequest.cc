@@ -33,7 +33,7 @@ long SetDefaultAITemplateRequest::getResourceOwnerId()const
 void SetDefaultAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetDefaultAITemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long SetDefaultAITemplateRequest::getOwnerId()const
 void SetDefaultAITemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetDefaultAITemplateRequest::getTemplateId()const

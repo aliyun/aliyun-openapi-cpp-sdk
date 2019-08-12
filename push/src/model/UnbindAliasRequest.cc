@@ -44,7 +44,7 @@ long UnbindAliasRequest::getAppKey()const
 void UnbindAliasRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string UnbindAliasRequest::getDeviceId()const
@@ -77,6 +77,6 @@ bool UnbindAliasRequest::getUnbindAll()const
 void UnbindAliasRequest::setUnbindAll(bool unbindAll)
 {
 	unbindAll_ = unbindAll;
-	setCoreParameter("UnbindAll", unbindAll ? "true" : "false");
+	setCoreParameter("UnbindAll", unbindAll);
 }
 

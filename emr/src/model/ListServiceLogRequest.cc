@@ -33,7 +33,7 @@ long ListServiceLogRequest::getResourceOwnerId()const
 void ListServiceLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListServiceLogRequest::getHostName()const
@@ -55,7 +55,7 @@ int ListServiceLogRequest::getMaxKeys()const
 void ListServiceLogRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListServiceLogRequest::getLogstoreName()const

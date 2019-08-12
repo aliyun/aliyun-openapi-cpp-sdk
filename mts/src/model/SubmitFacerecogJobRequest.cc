@@ -55,7 +55,7 @@ long SubmitFacerecogJobRequest::getResourceOwnerId()const
 void SubmitFacerecogJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitFacerecogJobRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long SubmitFacerecogJobRequest::getOwnerId()const
 void SubmitFacerecogJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitFacerecogJobRequest::getFacerecogConfig()const

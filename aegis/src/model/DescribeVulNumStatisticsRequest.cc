@@ -44,7 +44,7 @@ long DescribeVulNumStatisticsRequest::getEndTs()const
 void DescribeVulNumStatisticsRequest::setEndTs(long endTs)
 {
 	endTs_ = endTs;
-	setCoreParameter("EndTs", std::to_string(endTs));
+	setCoreParameter("EndTs", endTs);
 }
 
 std::string DescribeVulNumStatisticsRequest::getFrom()const
@@ -66,7 +66,7 @@ long DescribeVulNumStatisticsRequest::getStartTs()const
 void DescribeVulNumStatisticsRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
-	setCoreParameter("StartTs", std::to_string(startTs));
+	setCoreParameter("StartTs", startTs);
 }
 
 long DescribeVulNumStatisticsRequest::getCreateTsEnd()const
@@ -77,7 +77,7 @@ long DescribeVulNumStatisticsRequest::getCreateTsEnd()const
 void DescribeVulNumStatisticsRequest::setCreateTsEnd(long createTsEnd)
 {
 	createTsEnd_ = createTsEnd;
-	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
+	setCoreParameter("CreateTsEnd", createTsEnd);
 }
 
 std::string DescribeVulNumStatisticsRequest::getIncludeApp()const
@@ -99,7 +99,7 @@ long DescribeVulNumStatisticsRequest::getCreateTsStart()const
 void DescribeVulNumStatisticsRequest::setCreateTsStart(long createTsStart)
 {
 	createTsStart_ = createTsStart;
-	setCoreParameter("CreateTsStart", std::to_string(createTsStart));
+	setCoreParameter("CreateTsStart", createTsStart);
 }
 
 std::string DescribeVulNumStatisticsRequest::getUuids()const

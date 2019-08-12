@@ -33,7 +33,7 @@ int ListKeysRequest::getPageSize()const
 void ListKeysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListKeysRequest::getPageNumber()const
@@ -44,6 +44,6 @@ int ListKeysRequest::getPageNumber()const
 void ListKeysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

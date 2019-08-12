@@ -33,7 +33,7 @@ long ModifyInstanceAttributeRequest::getResourceOwnerId()const
 void ModifyInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceId()const
@@ -110,7 +110,7 @@ long ModifyInstanceAttributeRequest::getOwnerId()const
 void ModifyInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceAttributeRequest::getNewPassword()const

@@ -44,7 +44,7 @@ int QueryMaterialListRequest::getPageSize()const
 void QueryMaterialListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryMaterialListRequest::getCardNumber()const
@@ -66,7 +66,7 @@ int QueryMaterialListRequest::getType()const
 void QueryMaterialListRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 int QueryMaterialListRequest::getRegion()const
@@ -77,7 +77,7 @@ int QueryMaterialListRequest::getRegion()const
 void QueryMaterialListRequest::setRegion(int region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 int QueryMaterialListRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryMaterialListRequest::getPageNum()const
 void QueryMaterialListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 int QueryMaterialListRequest::getStatus()const
@@ -99,6 +99,6 @@ int QueryMaterialListRequest::getStatus()const
 void QueryMaterialListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

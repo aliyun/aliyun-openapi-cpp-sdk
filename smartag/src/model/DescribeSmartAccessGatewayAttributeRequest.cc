@@ -33,7 +33,7 @@ long DescribeSmartAccessGatewayAttributeRequest::getResourceOwnerId()const
 void DescribeSmartAccessGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSmartAccessGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DescribeSmartAccessGatewayAttributeRequest::getOwnerId()const
 void DescribeSmartAccessGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

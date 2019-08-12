@@ -33,7 +33,7 @@ long GrantSagInstanceToCcnRequest::getResourceOwnerId()const
 void GrantSagInstanceToCcnRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long GrantSagInstanceToCcnRequest::getCcnUid()const
@@ -44,7 +44,7 @@ long GrantSagInstanceToCcnRequest::getCcnUid()const
 void GrantSagInstanceToCcnRequest::setCcnUid(long ccnUid)
 {
 	ccnUid_ = ccnUid;
-	setCoreParameter("CcnUid", std::to_string(ccnUid));
+	setCoreParameter("CcnUid", ccnUid);
 }
 
 std::string GrantSagInstanceToCcnRequest::getResourceOwnerAccount()const
@@ -110,6 +110,6 @@ long GrantSagInstanceToCcnRequest::getOwnerId()const
 void GrantSagInstanceToCcnRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

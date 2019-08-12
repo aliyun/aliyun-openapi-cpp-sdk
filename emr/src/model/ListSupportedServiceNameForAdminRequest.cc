@@ -33,7 +33,7 @@ long ListSupportedServiceNameForAdminRequest::getResourceOwnerId()const
 void ListSupportedServiceNameForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListSupportedServiceNameForAdminRequest::getRegionId()const

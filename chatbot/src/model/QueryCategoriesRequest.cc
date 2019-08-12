@@ -33,7 +33,7 @@ bool QueryCategoriesRequest::getShowChildrens()const
 void QueryCategoriesRequest::setShowChildrens(bool showChildrens)
 {
 	showChildrens_ = showChildrens;
-	setCoreParameter("ShowChildrens", showChildrens ? "true" : "false");
+	setCoreParameter("ShowChildrens", showChildrens);
 }
 
 long QueryCategoriesRequest::getParentCategoryId()const
@@ -44,6 +44,6 @@ long QueryCategoriesRequest::getParentCategoryId()const
 void QueryCategoriesRequest::setParentCategoryId(long parentCategoryId)
 {
 	parentCategoryId_ = parentCategoryId;
-	setCoreParameter("ParentCategoryId", std::to_string(parentCategoryId));
+	setCoreParameter("ParentCategoryId", parentCategoryId);
 }
 

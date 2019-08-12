@@ -33,7 +33,7 @@ long DescribeCrossRegionBackupsRequest::getResourceOwnerId()const
 void DescribeCrossRegionBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DescribeCrossRegionBackupsRequest::getOwnerId()const
 void DescribeCrossRegionBackupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getCrossBackupRegion()const
@@ -99,7 +99,7 @@ int DescribeCrossRegionBackupsRequest::getPageNumber()const
 void DescribeCrossRegionBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ int DescribeCrossRegionBackupsRequest::getPageSize()const
 void DescribeCrossRegionBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getDBInstanceId()const
@@ -154,6 +154,6 @@ int DescribeCrossRegionBackupsRequest::getCrossBackupId()const
 void DescribeCrossRegionBackupsRequest::setCrossBackupId(int crossBackupId)
 {
 	crossBackupId_ = crossBackupId;
-	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
+	setCoreParameter("CrossBackupId", crossBackupId);
 }
 

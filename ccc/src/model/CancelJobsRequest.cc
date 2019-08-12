@@ -33,7 +33,7 @@ bool CancelJobsRequest::getAll()const
 void CancelJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setCoreParameter("All", all);
 }
 
 std::vector<std::string> CancelJobsRequest::getJobId()const
@@ -45,7 +45,7 @@ void CancelJobsRequest::setJobId(const std::vector<std::string>& jobId)
 {
 	jobId_ = jobId;
 	for(int i = 0; i!= jobId.size(); i++)
-		setCoreParameter("JobId."+ std::to_string(i), jobId.at(i));
+		setCoreParameter("JobId."+ std::to_string(i), std::to_string(jobId.at(i)));
 }
 
 std::string CancelJobsRequest::getInstanceId()const
@@ -68,7 +68,7 @@ void CancelJobsRequest::setJobReferenceId(const std::vector<std::string>& jobRef
 {
 	jobReferenceId_ = jobReferenceId;
 	for(int i = 0; i!= jobReferenceId.size(); i++)
-		setCoreParameter("JobReferenceId."+ std::to_string(i), jobReferenceId.at(i));
+		setCoreParameter("JobReferenceId."+ std::to_string(i), std::to_string(jobReferenceId.at(i)));
 }
 
 std::string CancelJobsRequest::getGroupId()const

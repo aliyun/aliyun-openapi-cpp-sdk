@@ -33,7 +33,7 @@ long CheckCreateDdrDBInstanceRequest::getResourceOwnerId()const
 void CheckCreateDdrDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getRestoreTime()const
@@ -55,7 +55,7 @@ int CheckCreateDdrDBInstanceRequest::getDBInstanceStorage()const
 void CheckCreateDdrDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getSourceDBInstanceName()const
@@ -132,7 +132,7 @@ long CheckCreateDdrDBInstanceRequest::getOwnerId()const
 void CheckCreateDdrDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getUserBakSetURL()const

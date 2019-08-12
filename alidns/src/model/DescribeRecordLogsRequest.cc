@@ -66,7 +66,7 @@ long DescribeRecordLogsRequest::getPageSize()const
 void DescribeRecordLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRecordLogsRequest::getLang()const
@@ -110,7 +110,7 @@ long DescribeRecordLogsRequest::getPageNumber()const
 void DescribeRecordLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeRecordLogsRequest::getAccessKeyId()const

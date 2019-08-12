@@ -44,7 +44,7 @@ long AppendEntityMemberRequest::getEntityId()const
 void AppendEntityMemberRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setCoreParameter("EntityId", entityId);
 }
 
 std::string AppendEntityMemberRequest::getApplyType()const

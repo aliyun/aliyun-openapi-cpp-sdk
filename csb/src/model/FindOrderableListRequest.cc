@@ -44,7 +44,7 @@ long FindOrderableListRequest::getCsbId()const
 void FindOrderableListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindOrderableListRequest::getRegionId()const
@@ -88,6 +88,6 @@ int FindOrderableListRequest::getPageNum()const
 void FindOrderableListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

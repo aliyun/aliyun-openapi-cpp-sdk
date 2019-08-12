@@ -132,7 +132,7 @@ long ModifyCasterComponentRequest::getOwnerId()const
 void ModifyCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyCasterComponentRequest::getTextLayerContent()const

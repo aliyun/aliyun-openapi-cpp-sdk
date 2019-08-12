@@ -44,7 +44,7 @@ long PredictiveRecordFailureRequest::getActualTime()const
 void PredictiveRecordFailureRequest::setActualTime(long actualTime)
 {
 	actualTime_ = actualTime;
-	setCoreParameter("ActualTime", std::to_string(actualTime));
+	setCoreParameter("ActualTime", actualTime);
 }
 
 std::string PredictiveRecordFailureRequest::getCallingNumber()const
@@ -121,6 +121,6 @@ long PredictiveRecordFailureRequest::getCabInstanceOwnerId()const
 void PredictiveRecordFailureRequest::setCabInstanceOwnerId(long cabInstanceOwnerId)
 {
 	cabInstanceOwnerId_ = cabInstanceOwnerId;
-	setCoreParameter("CabInstanceOwnerId", std::to_string(cabInstanceOwnerId));
+	setCoreParameter("CabInstanceOwnerId", cabInstanceOwnerId);
 }
 

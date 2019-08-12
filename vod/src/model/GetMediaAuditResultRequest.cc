@@ -33,7 +33,7 @@ long GetMediaAuditResultRequest::getResourceOwnerId()const
 void GetMediaAuditResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetMediaAuditResultRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long GetMediaAuditResultRequest::getResourceRealOwnerId()const
 void GetMediaAuditResultRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 std::string GetMediaAuditResultRequest::getOwnerId()const

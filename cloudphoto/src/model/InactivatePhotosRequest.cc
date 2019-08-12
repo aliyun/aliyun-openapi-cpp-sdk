@@ -45,7 +45,7 @@ void InactivatePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
 }
 
 std::string InactivatePhotosRequest::getStoreName()const
@@ -67,6 +67,6 @@ long InactivatePhotosRequest::getInactiveTime()const
 void InactivatePhotosRequest::setInactiveTime(long inactiveTime)
 {
 	inactiveTime_ = inactiveTime;
-	setCoreParameter("InactiveTime", std::to_string(inactiveTime));
+	setCoreParameter("InactiveTime", inactiveTime);
 }
 

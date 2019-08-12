@@ -33,7 +33,7 @@ long QueryMediaCensorJobListRequest::getResourceOwnerId()const
 void QueryMediaCensorJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryMediaCensorJobListRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long QueryMediaCensorJobListRequest::getMaximumPageSize()const
 void QueryMediaCensorJobListRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setCoreParameter("MaximumPageSize", maximumPageSize);
 }
 
 long QueryMediaCensorJobListRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long QueryMediaCensorJobListRequest::getOwnerId()const
 void QueryMediaCensorJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryMediaCensorJobListRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long DeleteQosCarRequest::getResourceOwnerId()const
 void DeleteQosCarRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteQosCarRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DeleteQosCarRequest::getOwnerId()const
 void DeleteQosCarRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteQosCarRequest::getQosId()const

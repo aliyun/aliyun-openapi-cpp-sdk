@@ -33,7 +33,7 @@ long DescribeRenewalPriceRequest::getResourceOwnerId()const
 void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeRenewalPriceRequest::getQuantity()const
@@ -44,7 +44,7 @@ int DescribeRenewalPriceRequest::getQuantity()const
 void DescribeRenewalPriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DescribeRenewalPriceRequest::getOwnerId()const
 void DescribeRenewalPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRenewalPriceRequest::getUsedTime()const

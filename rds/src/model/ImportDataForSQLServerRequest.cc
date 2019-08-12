@@ -33,7 +33,7 @@ long ImportDataForSQLServerRequest::getResourceOwnerId()const
 void ImportDataForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ImportDataForSQLServerRequest::getFileName()const
@@ -88,7 +88,7 @@ long ImportDataForSQLServerRequest::getOwnerId()const
 void ImportDataForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ImportDataForSQLServerRequest::getAccessKeyId()const

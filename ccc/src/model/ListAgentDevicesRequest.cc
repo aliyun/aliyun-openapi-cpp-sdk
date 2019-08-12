@@ -55,7 +55,7 @@ long ListAgentDevicesRequest::getStartTime()const
 void ListAgentDevicesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListAgentDevicesRequest::getStopTime()const
@@ -66,7 +66,7 @@ long ListAgentDevicesRequest::getStopTime()const
 void ListAgentDevicesRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 std::string ListAgentDevicesRequest::getAccessKeyId()const

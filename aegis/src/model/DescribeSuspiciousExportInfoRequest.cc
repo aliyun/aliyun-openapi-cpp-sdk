@@ -44,6 +44,6 @@ int DescribeSuspiciousExportInfoRequest::getExportId()const
 void DescribeSuspiciousExportInfoRequest::setExportId(int exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", std::to_string(exportId));
+	setCoreParameter("ExportId", exportId);
 }
 

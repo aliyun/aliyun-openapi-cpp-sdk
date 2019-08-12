@@ -33,7 +33,7 @@ bool DescribeAlarmsForResourcesRequest::getEnableState()const
 void DescribeAlarmsForResourcesRequest::setEnableState(bool enableState)
 {
 	enableState_ = enableState;
-	setCoreParameter("EnableState", enableState ? "true" : "false");
+	setCoreParameter("EnableState", enableState);
 }
 
 std::string DescribeAlarmsForResourcesRequest::getGroupId()const

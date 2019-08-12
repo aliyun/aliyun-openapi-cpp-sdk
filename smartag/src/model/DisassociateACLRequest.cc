@@ -44,7 +44,7 @@ long DisassociateACLRequest::getResourceOwnerId()const
 void DisassociateACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DisassociateACLRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DisassociateACLRequest::getOwnerId()const
 void DisassociateACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

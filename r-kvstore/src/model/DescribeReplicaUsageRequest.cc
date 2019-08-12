@@ -33,7 +33,7 @@ long DescribeReplicaUsageRequest::getResourceOwnerId()const
 void DescribeReplicaUsageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeReplicaUsageRequest::getSourceDBInstanceId()const
@@ -121,7 +121,7 @@ long DescribeReplicaUsageRequest::getOwnerId()const
 void DescribeReplicaUsageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeReplicaUsageRequest::getAccessKeyId()const

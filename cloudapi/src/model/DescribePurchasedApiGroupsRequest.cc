@@ -44,7 +44,7 @@ int DescribePurchasedApiGroupsRequest::getPageSize()const
 void DescribePurchasedApiGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribePurchasedApiGroupsRequest::getPageNumber()const
@@ -55,7 +55,7 @@ int DescribePurchasedApiGroupsRequest::getPageNumber()const
 void DescribePurchasedApiGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribePurchasedApiGroupsRequest::getAccessKeyId()const

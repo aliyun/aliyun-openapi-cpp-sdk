@@ -55,6 +55,6 @@ long DescribeCheckWarningDetailRequest::getCheckWarningId()const
 void DescribeCheckWarningDetailRequest::setCheckWarningId(long checkWarningId)
 {
 	checkWarningId_ = checkWarningId;
-	setCoreParameter("CheckWarningId", std::to_string(checkWarningId));
+	setCoreParameter("CheckWarningId", checkWarningId);
 }
 

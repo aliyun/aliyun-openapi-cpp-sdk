@@ -33,7 +33,7 @@ long DescribeReplicasRequest::getResourceOwnerId()const
 void DescribeReplicasRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeReplicasRequest::getSecurityToken()const
@@ -77,7 +77,7 @@ bool DescribeReplicasRequest::getAttachDbInstanceData()const
 void DescribeReplicasRequest::setAttachDbInstanceData(bool attachDbInstanceData)
 {
 	attachDbInstanceData_ = attachDbInstanceData;
-	setCoreParameter("AttachDbInstanceData", attachDbInstanceData ? "true" : "false");
+	setCoreParameter("AttachDbInstanceData", attachDbInstanceData);
 }
 
 std::string DescribeReplicasRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ int DescribeReplicasRequest::getPageSize()const
 void DescribeReplicasRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeReplicasRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeReplicasRequest::getOwnerId()const
 void DescribeReplicasRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeReplicasRequest::getPageNumber()const
@@ -132,7 +132,7 @@ int DescribeReplicasRequest::getPageNumber()const
 void DescribeReplicasRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeReplicasRequest::getAccessKeyId()const

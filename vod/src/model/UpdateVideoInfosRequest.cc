@@ -33,7 +33,7 @@ long UpdateVideoInfosRequest::getResourceOwnerId()const
 void UpdateVideoInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateVideoInfosRequest::getUpdateContent()const
@@ -66,6 +66,6 @@ long UpdateVideoInfosRequest::getOwnerId()const
 void UpdateVideoInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -55,7 +55,7 @@ int ListFlowProjectRequest::getPageSize()const
 void ListFlowProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowProjectRequest::getProjectId()const
@@ -77,6 +77,6 @@ int ListFlowProjectRequest::getPageNumber()const
 void ListFlowProjectRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

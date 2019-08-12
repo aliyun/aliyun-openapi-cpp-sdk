@@ -33,7 +33,7 @@ long ListExecutePlanMigrateInfoRequest::getResourceOwnerId()const
 void ListExecutePlanMigrateInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ int ListExecutePlanMigrateInfoRequest::getPageSize()const
 void ListExecutePlanMigrateInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getUserId()const
@@ -77,7 +77,7 @@ int ListExecutePlanMigrateInfoRequest::getCurrentSize()const
 void ListExecutePlanMigrateInfoRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 std::string ListExecutePlanMigrateInfoRequest::getAccessKeyId()const

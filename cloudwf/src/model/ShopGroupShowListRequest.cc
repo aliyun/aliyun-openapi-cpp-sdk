@@ -33,7 +33,7 @@ int ShopGroupShowListRequest::getPage()const
 void ShopGroupShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 long ShopGroupShowListRequest::getBid()const
@@ -44,7 +44,7 @@ long ShopGroupShowListRequest::getBid()const
 void ShopGroupShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 int ShopGroupShowListRequest::getPer()const
@@ -55,7 +55,7 @@ int ShopGroupShowListRequest::getPer()const
 void ShopGroupShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 std::string ShopGroupShowListRequest::getAccessKeyId()const

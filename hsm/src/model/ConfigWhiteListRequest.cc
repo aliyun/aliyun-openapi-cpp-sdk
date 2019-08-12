@@ -33,7 +33,7 @@ long ConfigWhiteListRequest::getResourceOwnerId()const
 void ConfigWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ConfigWhiteListRequest::getInstanceId()const

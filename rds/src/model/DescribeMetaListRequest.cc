@@ -33,7 +33,7 @@ long DescribeMetaListRequest::getResourceOwnerId()const
 void DescribeMetaListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeMetaListRequest::getRestoreTime()const
@@ -99,7 +99,7 @@ long DescribeMetaListRequest::getOwnerId()const
 void DescribeMetaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeMetaListRequest::getAccessKeyId()const

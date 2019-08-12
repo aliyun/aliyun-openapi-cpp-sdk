@@ -55,7 +55,7 @@ int OpenScdnServiceRequest::getBandwidth()const
 void OpenScdnServiceRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 int OpenScdnServiceRequest::getDomainCount()const
@@ -66,7 +66,7 @@ int OpenScdnServiceRequest::getDomainCount()const
 void OpenScdnServiceRequest::setDomainCount(int domainCount)
 {
 	domainCount_ = domainCount;
-	setCoreParameter("DomainCount", std::to_string(domainCount));
+	setCoreParameter("DomainCount", domainCount);
 }
 
 long OpenScdnServiceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long OpenScdnServiceRequest::getOwnerId()const
 void OpenScdnServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string OpenScdnServiceRequest::getProtectType()const
@@ -110,7 +110,7 @@ int OpenScdnServiceRequest::getElasticProtection()const
 void OpenScdnServiceRequest::setElasticProtection(int elasticProtection)
 {
 	elasticProtection_ = elasticProtection;
-	setCoreParameter("ElasticProtection", std::to_string(elasticProtection));
+	setCoreParameter("ElasticProtection", elasticProtection);
 }
 
 int OpenScdnServiceRequest::getDDoSBasic()const
@@ -121,7 +121,7 @@ int OpenScdnServiceRequest::getDDoSBasic()const
 void OpenScdnServiceRequest::setDDoSBasic(int dDoSBasic)
 {
 	dDoSBasic_ = dDoSBasic;
-	setCoreParameter("DDoSBasic", std::to_string(dDoSBasic));
+	setCoreParameter("DDoSBasic", dDoSBasic);
 }
 
 int OpenScdnServiceRequest::getCcProtection()const
@@ -132,6 +132,6 @@ int OpenScdnServiceRequest::getCcProtection()const
 void OpenScdnServiceRequest::setCcProtection(int ccProtection)
 {
 	ccProtection_ = ccProtection;
-	setCoreParameter("CcProtection", std::to_string(ccProtection));
+	setCoreParameter("CcProtection", ccProtection);
 }
 

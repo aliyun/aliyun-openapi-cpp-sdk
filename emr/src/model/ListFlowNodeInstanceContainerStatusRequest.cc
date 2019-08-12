@@ -44,7 +44,7 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageSize()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowNodeInstanceContainerStatusRequest::getNodeInstanceId()const
@@ -77,6 +77,6 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageNumber()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

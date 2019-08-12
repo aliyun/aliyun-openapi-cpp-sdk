@@ -55,7 +55,7 @@ long SaveStatsRequest::getRecordTime()const
 void SaveStatsRequest::setRecordTime(long recordTime)
 {
 	recordTime_ = recordTime;
-	setCoreParameter("RecordTime", std::to_string(recordTime));
+	setCoreParameter("RecordTime", recordTime);
 }
 
 std::string SaveStatsRequest::getInstanceId()const
@@ -88,7 +88,7 @@ long SaveStatsRequest::getCallStartTime()const
 void SaveStatsRequest::setCallStartTime(long callStartTime)
 {
 	callStartTime_ = callStartTime;
-	setCoreParameter("CallStartTime", std::to_string(callStartTime));
+	setCoreParameter("CallStartTime", callStartTime);
 }
 
 std::string SaveStatsRequest::getTenantId()const

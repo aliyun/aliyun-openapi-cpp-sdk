@@ -44,6 +44,6 @@ int ModifyAutoDelConfigRequest::getDays()const
 void ModifyAutoDelConfigRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", std::to_string(days));
+	setCoreParameter("Days", days);
 }
 

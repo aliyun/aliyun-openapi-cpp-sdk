@@ -37,8 +37,8 @@ void ModifyNotificationConfigRequest::setSubscriptions(const std::vector<Subscri
 	for(int i = 0; i!= subscriptions.size(); i++)	{
 		auto obj = subscriptions.at(i);
 		std::string str ="Subscriptions."+ std::to_string(i);
-		setCoreParameter(str + ".DisplayName", obj.displayName);
-		setCoreParameter(str + ".Name", obj.name);
+		setCoreParameter(str + ".DisplayName", std::to_string(obj.displayName));
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
 		setCoreParameter(str + ".Selected", obj.selected ? "true" : "false");
 	}
 }

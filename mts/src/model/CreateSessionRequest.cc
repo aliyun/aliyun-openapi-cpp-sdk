@@ -44,7 +44,7 @@ int CreateSessionRequest::getSessionTime()const
 void CreateSessionRequest::setSessionTime(int sessionTime)
 {
 	sessionTime_ = sessionTime;
-	setCoreParameter("SessionTime", std::to_string(sessionTime));
+	setCoreParameter("SessionTime", sessionTime);
 }
 
 std::string CreateSessionRequest::getResourceOwnerAccount()const

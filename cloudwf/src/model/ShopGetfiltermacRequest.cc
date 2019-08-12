@@ -44,6 +44,6 @@ long ShopGetfiltermacRequest::getSid()const
 void ShopGetfiltermacRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

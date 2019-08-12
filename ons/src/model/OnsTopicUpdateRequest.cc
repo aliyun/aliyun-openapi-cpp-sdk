@@ -44,7 +44,7 @@ int OnsTopicUpdateRequest::getPerm()const
 void OnsTopicUpdateRequest::setPerm(int perm)
 {
 	perm_ = perm;
-	setCoreParameter("Perm", std::to_string(perm));
+	setCoreParameter("Perm", perm);
 }
 
 std::string OnsTopicUpdateRequest::getTopic()const

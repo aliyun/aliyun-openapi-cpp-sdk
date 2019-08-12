@@ -55,7 +55,7 @@ long QueryRegistrantProfilesRequest::getRegistrantProfileId()const
 void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 int QueryRegistrantProfilesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QueryRegistrantProfilesRequest::getPageSize()const
 void QueryRegistrantProfilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryRegistrantProfilesRequest::getRegistrantType()const
@@ -121,7 +121,7 @@ int QueryRegistrantProfilesRequest::getPageNum()const
 void QueryRegistrantProfilesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
@@ -132,7 +132,7 @@ bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
 void QueryRegistrantProfilesRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
 {
 	defaultRegistrantProfile_ = defaultRegistrantProfile;
-	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
+	setCoreParameter("DefaultRegistrantProfile", defaultRegistrantProfile);
 }
 
 std::string QueryRegistrantProfilesRequest::getEmail()const

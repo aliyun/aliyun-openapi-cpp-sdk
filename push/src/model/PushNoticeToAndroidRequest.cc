@@ -44,7 +44,7 @@ long PushNoticeToAndroidRequest::getAppKey()const
 void PushNoticeToAndroidRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string PushNoticeToAndroidRequest::getTargetValue()const

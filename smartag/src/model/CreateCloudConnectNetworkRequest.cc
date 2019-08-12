@@ -33,7 +33,7 @@ long CreateCloudConnectNetworkRequest::getResourceOwnerId()const
 void CreateCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -121,7 +121,7 @@ bool CreateCloudConnectNetworkRequest::getIsDefault()const
 void CreateCloudConnectNetworkRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault);
 }
 
 long CreateCloudConnectNetworkRequest::getOwnerId()const
@@ -132,6 +132,6 @@ long CreateCloudConnectNetworkRequest::getOwnerId()const
 void CreateCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

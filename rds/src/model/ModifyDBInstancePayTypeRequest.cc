@@ -33,7 +33,7 @@ long ModifyDBInstancePayTypeRequest::getResourceOwnerId()const
 void ModifyDBInstancePayTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstancePayTypeRequest::getPeriod()const
@@ -121,7 +121,7 @@ long ModifyDBInstancePayTypeRequest::getOwnerId()const
 void ModifyDBInstancePayTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyDBInstancePayTypeRequest::getUsedTime()const
@@ -132,7 +132,7 @@ int ModifyDBInstancePayTypeRequest::getUsedTime()const
 void ModifyDBInstancePayTypeRequest::setUsedTime(int usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setCoreParameter("UsedTime", usedTime);
 }
 
 std::string ModifyDBInstancePayTypeRequest::getAccessKeyId()const

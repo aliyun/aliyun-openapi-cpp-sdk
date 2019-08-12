@@ -44,7 +44,7 @@ long DescribeACLAttributeRequest::getResourceOwnerId()const
 void DescribeACLAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeACLAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeACLAttributeRequest::getPageSize()const
 void DescribeACLAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeACLAttributeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeACLAttributeRequest::getOwnerId()const
 void DescribeACLAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeACLAttributeRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeACLAttributeRequest::getPageNumber()const
 void DescribeACLAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeACLAttributeRequest::getDirection()const

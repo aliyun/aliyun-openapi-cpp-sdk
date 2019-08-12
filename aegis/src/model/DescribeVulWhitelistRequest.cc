@@ -44,7 +44,7 @@ int DescribeVulWhitelistRequest::getPageSize()const
 void DescribeVulWhitelistRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeVulWhitelistRequest::getCurrentPage()const
@@ -55,6 +55,6 @@ int DescribeVulWhitelistRequest::getCurrentPage()const
 void DescribeVulWhitelistRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 

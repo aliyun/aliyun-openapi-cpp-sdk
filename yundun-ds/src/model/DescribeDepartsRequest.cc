@@ -44,7 +44,7 @@ int DescribeDepartsRequest::getFeatureType()const
 void DescribeDepartsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDepartsRequest::getAccountType()const
@@ -55,7 +55,7 @@ int DescribeDepartsRequest::getAccountType()const
 void DescribeDepartsRequest::setAccountType(int accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", std::to_string(accountType));
+	setCoreParameter("AccountType", accountType);
 }
 
 int DescribeDepartsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDepartsRequest::getPageSize()const
 void DescribeDepartsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeDepartsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeDepartsRequest::getCurrentPage()const
 void DescribeDepartsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDepartsRequest::getLang()const

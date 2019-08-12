@@ -33,7 +33,7 @@ long RenewMultiInstanceRequest::getResourceOwnerId()const
 void RenewMultiInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long RenewMultiInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ long RenewMultiInstanceRequest::getPeriod()const
 void RenewMultiInstanceRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool RenewMultiInstanceRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool RenewMultiInstanceRequest::getAutoPay()const
 void RenewMultiInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string RenewMultiInstanceRequest::getFromApp()const
@@ -110,7 +110,7 @@ long RenewMultiInstanceRequest::getOwnerId()const
 void RenewMultiInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RenewMultiInstanceRequest::getAccessKeyId()const

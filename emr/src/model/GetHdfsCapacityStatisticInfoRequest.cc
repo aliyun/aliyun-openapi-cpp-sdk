@@ -44,7 +44,7 @@ long GetHdfsCapacityStatisticInfoRequest::getResourceOwnerId()const
 void GetHdfsCapacityStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetHdfsCapacityStatisticInfoRequest::getRegionId()const

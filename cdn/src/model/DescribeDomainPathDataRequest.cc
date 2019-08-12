@@ -33,7 +33,7 @@ long DescribeDomainPathDataRequest::getCallerParentId()const
 void DescribeDomainPathDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDomainPathDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainPathDataRequest::getProxy_original_security_transport()const
 void DescribeDomainPathDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainPathDataRequest::getStartTime()const
@@ -99,7 +99,7 @@ int DescribeDomainPathDataRequest::getPageNumber()const
 void DescribeDomainPathDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDomainPathDataRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ int DescribeDomainPathDataRequest::getPageSize()const
 void DescribeDomainPathDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDomainPathDataRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ long DescribeDomainPathDataRequest::getCallerUid()const
 void DescribeDomainPathDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDomainPathDataRequest::getApp_ip()const
@@ -264,7 +264,7 @@ long DescribeDomainPathDataRequest::getOwnerId()const
 void DescribeDomainPathDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainPathDataRequest::getVersion()const
@@ -286,7 +286,7 @@ bool DescribeDomainPathDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainPathDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainPathDataRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeDomainPathDataRequest::getAk_mfa_present()const
 void DescribeDomainPathDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDomainPathDataRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeDomainPathDataRequest::getSecurity_transport()const
 void DescribeDomainPathDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainPathDataRequest::getRequestId()const

@@ -33,7 +33,7 @@ int ListClusterLogsRequest::getPageSize()const
 void ListClusterLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListClusterLogsRequest::getClusterId()const
@@ -55,7 +55,7 @@ int ListClusterLogsRequest::getPageNumber()const
 void ListClusterLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListClusterLogsRequest::getAccessKeyId()const

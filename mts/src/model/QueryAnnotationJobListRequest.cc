@@ -33,7 +33,7 @@ long QueryAnnotationJobListRequest::getResourceOwnerId()const
 void QueryAnnotationJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryAnnotationJobListRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long QueryAnnotationJobListRequest::getOwnerId()const
 void QueryAnnotationJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryAnnotationJobListRequest::getAnnotationJobIds()const

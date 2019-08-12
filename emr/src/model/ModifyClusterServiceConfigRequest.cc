@@ -33,7 +33,7 @@ bool ModifyClusterServiceConfigRequest::getRefreshHostConfig()const
 void ModifyClusterServiceConfigRequest::setRefreshHostConfig(bool refreshHostConfig)
 {
 	refreshHostConfig_ = refreshHostConfig;
-	setCoreParameter("RefreshHostConfig", refreshHostConfig ? "true" : "false");
+	setCoreParameter("RefreshHostConfig", refreshHostConfig);
 }
 
 long ModifyClusterServiceConfigRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyClusterServiceConfigRequest::getResourceOwnerId()const
 void ModifyClusterServiceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigType()const
@@ -155,7 +155,7 @@ void ModifyClusterServiceConfigRequest::setGatewayClusterIdList(const std::vecto
 {
 	gatewayClusterIdList_ = gatewayClusterIdList;
 	for(int i = 0; i!= gatewayClusterIdList.size(); i++)
-		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), gatewayClusterIdList.at(i));
+		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), std::to_string(gatewayClusterIdList.at(i)));
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigParams()const

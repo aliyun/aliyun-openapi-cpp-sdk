@@ -33,7 +33,7 @@ long ModifyParametersRequest::getResourceOwnerId()const
 void ModifyParametersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyParametersRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long ModifyParametersRequest::getOwnerId()const
 void ModifyParametersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyParametersRequest::getNodeId()const

@@ -99,7 +99,7 @@ int DescribeGroupedVulRequest::getCurrentPage()const
 void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeGroupedVulRequest::getType()const
@@ -121,7 +121,7 @@ long DescribeGroupedVulRequest::getLastTsEnd()const
 void DescribeGroupedVulRequest::setLastTsEnd(long lastTsEnd)
 {
 	lastTsEnd_ = lastTsEnd;
-	setCoreParameter("LastTsEnd", std::to_string(lastTsEnd));
+	setCoreParameter("LastTsEnd", lastTsEnd);
 }
 
 long DescribeGroupedVulRequest::getCreateTsStart()const
@@ -132,7 +132,7 @@ long DescribeGroupedVulRequest::getCreateTsStart()const
 void DescribeGroupedVulRequest::setCreateTsStart(long createTsStart)
 {
 	createTsStart_ = createTsStart;
-	setCoreParameter("CreateTsStart", std::to_string(createTsStart));
+	setCoreParameter("CreateTsStart", createTsStart);
 }
 
 std::string DescribeGroupedVulRequest::getAliasName()const
@@ -154,7 +154,7 @@ long DescribeGroupedVulRequest::getPatchId()const
 void DescribeGroupedVulRequest::setPatchId(long patchId)
 {
 	patchId_ = patchId;
-	setCoreParameter("PatchId", std::to_string(patchId));
+	setCoreParameter("PatchId", patchId);
 }
 
 std::string DescribeGroupedVulRequest::getSourceIp()const
@@ -187,7 +187,7 @@ int DescribeGroupedVulRequest::getPageSize()const
 void DescribeGroupedVulRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGroupedVulRequest::getLang()const
@@ -209,7 +209,7 @@ long DescribeGroupedVulRequest::getCreateTsEnd()const
 void DescribeGroupedVulRequest::setCreateTsEnd(long createTsEnd)
 {
 	createTsEnd_ = createTsEnd;
-	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
+	setCoreParameter("CreateTsEnd", createTsEnd);
 }
 
 long DescribeGroupedVulRequest::getLastTsStart()const
@@ -220,7 +220,7 @@ long DescribeGroupedVulRequest::getLastTsStart()const
 void DescribeGroupedVulRequest::setLastTsStart(long lastTsStart)
 {
 	lastTsStart_ = lastTsStart;
-	setCoreParameter("LastTsStart", std::to_string(lastTsStart));
+	setCoreParameter("LastTsStart", lastTsStart);
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const

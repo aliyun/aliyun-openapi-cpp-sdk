@@ -33,6 +33,6 @@ long DeleteCategoryRequest::getCategoryId()const
 void DeleteCategoryRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
-	setCoreParameter("CategoryId", std::to_string(categoryId));
+	setCoreParameter("CategoryId", categoryId);
 }
 

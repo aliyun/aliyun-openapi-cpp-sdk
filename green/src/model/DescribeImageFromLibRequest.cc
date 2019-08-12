@@ -33,7 +33,7 @@ int DescribeImageFromLibRequest::getTotalCount()const
 void DescribeImageFromLibRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeImageFromLibRequest::getEndDate()const
@@ -66,7 +66,7 @@ int DescribeImageFromLibRequest::getImageLibId()const
 void DescribeImageFromLibRequest::setImageLibId(int imageLibId)
 {
 	imageLibId_ = imageLibId;
-	setCoreParameter("ImageLibId", std::to_string(imageLibId));
+	setCoreParameter("ImageLibId", imageLibId);
 }
 
 int DescribeImageFromLibRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeImageFromLibRequest::getPageSize()const
 void DescribeImageFromLibRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeImageFromLibRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeImageFromLibRequest::getCurrentPage()const
 void DescribeImageFromLibRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 long DescribeImageFromLibRequest::getId()const
@@ -99,7 +99,7 @@ long DescribeImageFromLibRequest::getId()const
 void DescribeImageFromLibRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeImageFromLibRequest::getStartDate()const

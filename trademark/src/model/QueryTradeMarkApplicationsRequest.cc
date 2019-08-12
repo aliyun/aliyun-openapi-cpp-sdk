@@ -55,7 +55,7 @@ int QueryTradeMarkApplicationsRequest::getHidden()const
 void QueryTradeMarkApplicationsRequest::setHidden(int hidden)
 {
 	hidden_ = hidden;
-	setCoreParameter("Hidden", std::to_string(hidden));
+	setCoreParameter("Hidden", hidden);
 }
 
 std::string QueryTradeMarkApplicationsRequest::getOrderId()const
@@ -99,7 +99,7 @@ int QueryTradeMarkApplicationsRequest::getPageNum()const
 void QueryTradeMarkApplicationsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryTradeMarkApplicationsRequest::getType()const
@@ -121,7 +121,7 @@ int QueryTradeMarkApplicationsRequest::getSupplementStatus()const
 void QueryTradeMarkApplicationsRequest::setSupplementStatus(int supplementStatus)
 {
 	supplementStatus_ = supplementStatus;
-	setCoreParameter("SupplementStatus", std::to_string(supplementStatus));
+	setCoreParameter("SupplementStatus", supplementStatus);
 }
 
 int QueryTradeMarkApplicationsRequest::getPageSize()const
@@ -132,7 +132,7 @@ int QueryTradeMarkApplicationsRequest::getPageSize()const
 void QueryTradeMarkApplicationsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTradeMarkApplicationsRequest::getBizId()const
@@ -165,6 +165,6 @@ int QueryTradeMarkApplicationsRequest::getStatus()const
 void QueryTradeMarkApplicationsRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

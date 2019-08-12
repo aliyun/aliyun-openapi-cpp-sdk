@@ -33,7 +33,7 @@ long TransformToPrePaidRequest::getResourceOwnerId()const
 void TransformToPrePaidRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long TransformToPrePaidRequest::getPeriod()const
@@ -44,7 +44,7 @@ long TransformToPrePaidRequest::getPeriod()const
 void TransformToPrePaidRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string TransformToPrePaidRequest::getInstanceId()const
@@ -66,7 +66,7 @@ bool TransformToPrePaidRequest::getAutoPay()const
 void TransformToPrePaidRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string TransformToPrePaidRequest::getFromApp()const
@@ -132,7 +132,7 @@ long TransformToPrePaidRequest::getOwnerId()const
 void TransformToPrePaidRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string TransformToPrePaidRequest::getAccessKeyId()const

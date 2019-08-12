@@ -110,7 +110,7 @@ long SetLiveDomainCertificateRequest::getOwnerId()const
 void SetLiveDomainCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPri()const

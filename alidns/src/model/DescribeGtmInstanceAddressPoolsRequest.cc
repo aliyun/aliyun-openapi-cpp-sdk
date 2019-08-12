@@ -55,7 +55,7 @@ int DescribeGtmInstanceAddressPoolsRequest::getPageSize()const
 void DescribeGtmInstanceAddressPoolsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGtmInstanceAddressPoolsRequest::getLang()const
@@ -77,6 +77,6 @@ int DescribeGtmInstanceAddressPoolsRequest::getPageNumber()const
 void DescribeGtmInstanceAddressPoolsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

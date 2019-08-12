@@ -44,7 +44,7 @@ long SubmitCabRecordingRequest::getInstanceOwnerId()const
 void SubmitCabRecordingRequest::setInstanceOwnerId(long instanceOwnerId)
 {
 	instanceOwnerId_ = instanceOwnerId;
-	setCoreParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+	setCoreParameter("InstanceOwnerId", instanceOwnerId);
 }
 
 std::string SubmitCabRecordingRequest::getMergedRecording()const

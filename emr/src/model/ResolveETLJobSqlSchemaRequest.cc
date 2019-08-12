@@ -44,7 +44,7 @@ long ResolveETLJobSqlSchemaRequest::getResourceOwnerId()const
 void ResolveETLJobSqlSchemaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ResolveETLJobSqlSchemaRequest::getRegionId()const

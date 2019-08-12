@@ -44,7 +44,7 @@ int SearchFaceRequest::getResultNum()const
 void SearchFaceRequest::setResultNum(int resultNum)
 {
 	resultNum_ = resultNum;
-	setCoreParameter("ResultNum", std::to_string(resultNum));
+	setCoreParameter("ResultNum", resultNum);
 }
 
 std::string SearchFaceRequest::getProject()const
@@ -88,7 +88,7 @@ bool SearchFaceRequest::getIsThreshold()const
 void SearchFaceRequest::setIsThreshold(bool isThreshold)
 {
 	isThreshold_ = isThreshold;
-	setCoreParameter("IsThreshold", isThreshold ? "true" : "false");
+	setCoreParameter("IsThreshold", isThreshold);
 }
 
 std::string SearchFaceRequest::getGroupName()const

@@ -33,7 +33,7 @@ long ListScalingActivityRequest::getResourceOwnerId()const
 void ListScalingActivityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListScalingActivityRequest::getRegionId()const
@@ -66,7 +66,7 @@ int ListScalingActivityRequest::getPageSize()const
 void ListScalingActivityRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListScalingActivityRequest::getClusterId()const
@@ -88,7 +88,7 @@ int ListScalingActivityRequest::getPageNumber()const
 void ListScalingActivityRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListScalingActivityRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ int ModifyRuleRequest::getFeatureType()const
 void ModifyRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string ModifyRuleRequest::getName()const
@@ -66,7 +66,7 @@ long ModifyRuleRequest::getId()const
 void ModifyRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long ModifyRuleRequest::getRiskLevelId()const
@@ -77,7 +77,7 @@ long ModifyRuleRequest::getRiskLevelId()const
 void ModifyRuleRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setCoreParameter("RiskLevelId", riskLevelId);
 }
 
 std::string ModifyRuleRequest::getLang()const
@@ -99,7 +99,7 @@ int ModifyRuleRequest::getCustomType()const
 void ModifyRuleRequest::setCustomType(int customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setCoreParameter("CustomType", customType);
 }
 
 int ModifyRuleRequest::getCategory()const
@@ -110,7 +110,7 @@ int ModifyRuleRequest::getCategory()const
 void ModifyRuleRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 
 std::string ModifyRuleRequest::getContent()const

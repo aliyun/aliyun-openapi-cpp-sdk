@@ -34,7 +34,7 @@ void QueryMonitorKeywordsRequest::setKeywords(const std::vector<std::string>& ke
 {
 	keywords_ = keywords;
 	for(int i = 0; i!= keywords.size(); i++)
-		setCoreParameter("Keywords."+ std::to_string(i), keywords.at(i));
+		setCoreParameter("Keywords."+ std::to_string(i), std::to_string(keywords.at(i)));
 }
 
 int QueryMonitorKeywordsRequest::getRuleType()const
@@ -45,6 +45,6 @@ int QueryMonitorKeywordsRequest::getRuleType()const
 void QueryMonitorKeywordsRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", std::to_string(ruleType));
+	setCoreParameter("RuleType", ruleType);
 }
 

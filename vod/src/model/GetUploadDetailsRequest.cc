@@ -33,7 +33,7 @@ long GetUploadDetailsRequest::getResourceOwnerId()const
 void GetUploadDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long GetUploadDetailsRequest::getResourceRealOwnerId()const
 void GetUploadDetailsRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 std::string GetUploadDetailsRequest::getMediaIds()const
@@ -77,7 +77,7 @@ long GetUploadDetailsRequest::getOwnerId()const
 void GetUploadDetailsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetUploadDetailsRequest::getMediaType()const

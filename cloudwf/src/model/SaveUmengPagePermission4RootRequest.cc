@@ -44,7 +44,7 @@ long SaveUmengPagePermission4RootRequest::getAliyunPk()const
 void SaveUmengPagePermission4RootRequest::setAliyunPk(long aliyunPk)
 {
 	aliyunPk_ = aliyunPk;
-	setCoreParameter("AliyunPk", std::to_string(aliyunPk));
+	setCoreParameter("AliyunPk", aliyunPk);
 }
 
 long SaveUmengPagePermission4RootRequest::getPagePermission()const
@@ -55,7 +55,7 @@ long SaveUmengPagePermission4RootRequest::getPagePermission()const
 void SaveUmengPagePermission4RootRequest::setPagePermission(long pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setCoreParameter("PagePermission", std::to_string(pagePermission));
+	setCoreParameter("PagePermission", pagePermission);
 }
 
 long SaveUmengPagePermission4RootRequest::getId()const
@@ -66,7 +66,7 @@ long SaveUmengPagePermission4RootRequest::getId()const
 void SaveUmengPagePermission4RootRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long SaveUmengPagePermission4RootRequest::getBid()const
@@ -77,7 +77,7 @@ long SaveUmengPagePermission4RootRequest::getBid()const
 void SaveUmengPagePermission4RootRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long DescribeInstanceSSLRequest::getResourceOwnerId()const
 void DescribeInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstanceSSLRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeInstanceSSLRequest::getOwnerId()const
 void DescribeInstanceSSLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeInstanceSSLRequest::getAccessKeyId()const

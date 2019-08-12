@@ -44,7 +44,7 @@ long CreateOrUpdateJoinRuleRequest::getDataSourceId2()const
 void CreateOrUpdateJoinRuleRequest::setDataSourceId2(long dataSourceId2)
 {
 	dataSourceId2_ = dataSourceId2;
-	setCoreParameter("DataSourceId2", std::to_string(dataSourceId2));
+	setCoreParameter("DataSourceId2", dataSourceId2);
 }
 
 long CreateOrUpdateJoinRuleRequest::getDataSourceId1()const
@@ -55,7 +55,7 @@ long CreateOrUpdateJoinRuleRequest::getDataSourceId1()const
 void CreateOrUpdateJoinRuleRequest::setDataSourceId1(long dataSourceId1)
 {
 	dataSourceId1_ = dataSourceId1;
-	setCoreParameter("DataSourceId1", std::to_string(dataSourceId1));
+	setCoreParameter("DataSourceId1", dataSourceId1);
 }
 
 long CreateOrUpdateJoinRuleRequest::getTimeWindow()const
@@ -66,7 +66,7 @@ long CreateOrUpdateJoinRuleRequest::getTimeWindow()const
 void CreateOrUpdateJoinRuleRequest::setTimeWindow(long timeWindow)
 {
 	timeWindow_ = timeWindow;
-	setCoreParameter("TimeWindow", std::to_string(timeWindow));
+	setCoreParameter("TimeWindow", timeWindow);
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getDescription()const
@@ -154,7 +154,7 @@ long CreateOrUpdateJoinRuleRequest::getRuleId()const
 void CreateOrUpdateJoinRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string CreateOrUpdateJoinRuleRequest::getActions()const

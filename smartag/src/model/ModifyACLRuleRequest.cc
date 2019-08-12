@@ -44,7 +44,7 @@ long ModifyACLRuleRequest::getResourceOwnerId()const
 void ModifyACLRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyACLRuleRequest::getSourcePortRange()const
@@ -121,7 +121,7 @@ long ModifyACLRuleRequest::getOwnerId()const
 void ModifyACLRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyACLRuleRequest::getPriority()const
@@ -132,7 +132,7 @@ int ModifyACLRuleRequest::getPriority()const
 void ModifyACLRuleRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string ModifyACLRuleRequest::getType()const

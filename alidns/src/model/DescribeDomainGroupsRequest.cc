@@ -44,7 +44,7 @@ long DescribeDomainGroupsRequest::getPageSize()const
 void DescribeDomainGroupsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDomainGroupsRequest::getLang()const
@@ -77,6 +77,6 @@ long DescribeDomainGroupsRequest::getPageNumber()const
 void DescribeDomainGroupsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

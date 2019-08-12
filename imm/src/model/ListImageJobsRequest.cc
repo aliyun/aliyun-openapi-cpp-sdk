@@ -33,7 +33,7 @@ int ListImageJobsRequest::getMaxKeys()const
 void ListImageJobsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListImageJobsRequest::getRegionId()const

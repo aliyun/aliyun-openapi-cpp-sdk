@@ -67,7 +67,7 @@ void DescribeLifecycleHooksRequest::setLifecycleHookId(const std::vector<std::st
 {
 	lifecycleHookId_ = lifecycleHookId;
 	for(int i = 0; i!= lifecycleHookId.size(); i++)
-		setCoreParameter("LifecycleHookId."+ std::to_string(i), lifecycleHookId.at(i));
+		setCoreParameter("LifecycleHookId."+ std::to_string(i), std::to_string(lifecycleHookId.at(i)));
 }
 
 std::string DescribeLifecycleHooksRequest::getOwnerAccount()const
@@ -89,7 +89,7 @@ int DescribeLifecycleHooksRequest::getPageSize()const
 void DescribeLifecycleHooksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeLifecycleHooksRequest::getOwnerId()const
@@ -100,7 +100,7 @@ long DescribeLifecycleHooksRequest::getOwnerId()const
 void DescribeLifecycleHooksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeLifecycleHooksRequest::getPageNumber()const
@@ -111,7 +111,7 @@ int DescribeLifecycleHooksRequest::getPageNumber()const
 void DescribeLifecycleHooksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeLifecycleHooksRequest::getAccessKeyId()const

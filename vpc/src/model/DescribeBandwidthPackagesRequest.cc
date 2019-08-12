@@ -33,7 +33,7 @@ long DescribeBandwidthPackagesRequest::getResourceOwnerId()const
 void DescribeBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeBandwidthPackagesRequest::getBandwidthPackageId()const
@@ -88,7 +88,7 @@ int DescribeBandwidthPackagesRequest::getPageSize()const
 void DescribeBandwidthPackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeBandwidthPackagesRequest::getNatGatewayId()const
@@ -110,7 +110,7 @@ long DescribeBandwidthPackagesRequest::getOwnerId()const
 void DescribeBandwidthPackagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeBandwidthPackagesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeBandwidthPackagesRequest::getPageNumber()const
 void DescribeBandwidthPackagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

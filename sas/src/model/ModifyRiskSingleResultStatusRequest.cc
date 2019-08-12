@@ -33,7 +33,7 @@ long ModifyRiskSingleResultStatusRequest::getResourceOwnerId()const
 void ModifyRiskSingleResultStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
@@ -56,7 +56,7 @@ void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string>&
 {
 	ids_ = ids;
 	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
+		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getLang()const
@@ -78,7 +78,7 @@ long ModifyRiskSingleResultStatusRequest::getTaskId()const
 void ModifyRiskSingleResultStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getStatus()const

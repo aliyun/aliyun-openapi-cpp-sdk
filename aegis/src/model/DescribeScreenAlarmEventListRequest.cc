@@ -110,7 +110,7 @@ int DescribeScreenAlarmEventListRequest::getCurrentPage()const
 void DescribeScreenAlarmEventListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeScreenAlarmEventListRequest::getLang()const

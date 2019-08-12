@@ -33,7 +33,7 @@ long CreateMyGroupAlertBatchRequest::getGroupId()const
 void CreateMyGroupAlertBatchRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string CreateMyGroupAlertBatchRequest::getGroupAlertJsonArray()const

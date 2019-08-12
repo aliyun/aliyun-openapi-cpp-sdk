@@ -44,7 +44,7 @@ long DescribeDomainExtensionsRequest::getResourceOwnerId()const
 void DescribeDomainExtensionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeDomainExtensionsRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeDomainExtensionsRequest::getListenerPort()const
 void DescribeDomainExtensionsRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string DescribeDomainExtensionsRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DescribeDomainExtensionsRequest::getOwnerId()const
 void DescribeDomainExtensionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainExtensionsRequest::getTags()const

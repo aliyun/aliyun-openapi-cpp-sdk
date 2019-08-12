@@ -33,7 +33,7 @@ bool SubmitEmailVerificationRequest::getSendIfExist()const
 void SubmitEmailVerificationRequest::setSendIfExist(bool sendIfExist)
 {
 	sendIfExist_ = sendIfExist;
-	setCoreParameter("SendIfExist", sendIfExist ? "true" : "false");
+	setCoreParameter("SendIfExist", sendIfExist);
 }
 
 std::string SubmitEmailVerificationRequest::getUserClientIp()const

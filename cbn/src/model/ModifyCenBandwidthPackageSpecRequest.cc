@@ -33,7 +33,7 @@ long ModifyCenBandwidthPackageSpecRequest::getResourceOwnerId()const
 void ModifyCenBandwidthPackageSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyCenBandwidthPackageSpecRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ int ModifyCenBandwidthPackageSpecRequest::getBandwidth()const
 void ModifyCenBandwidthPackageSpecRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyCenBandwidthPackageSpecRequest::getCenBandwidthPackageId()const
@@ -88,6 +88,6 @@ long ModifyCenBandwidthPackageSpecRequest::getOwnerId()const
 void ModifyCenBandwidthPackageSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

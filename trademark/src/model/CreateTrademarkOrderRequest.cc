@@ -99,7 +99,7 @@ int CreateTrademarkOrderRequest::getType()const
 void CreateTrademarkOrderRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string CreateTrademarkOrderRequest::getMaterialId()const
@@ -121,7 +121,7 @@ long CreateTrademarkOrderRequest::getUserId()const
 void CreateTrademarkOrderRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string CreateTrademarkOrderRequest::getTmComment()const
@@ -187,7 +187,7 @@ bool CreateTrademarkOrderRequest::getIsBlackIcon()const
 void CreateTrademarkOrderRequest::setIsBlackIcon(bool isBlackIcon)
 {
 	isBlackIcon_ = isBlackIcon;
-	setCoreParameter("IsBlackIcon", isBlackIcon ? "true" : "false");
+	setCoreParameter("IsBlackIcon", isBlackIcon);
 }
 
 std::string CreateTrademarkOrderRequest::getRenewInfoId()const

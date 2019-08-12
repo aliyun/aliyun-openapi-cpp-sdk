@@ -55,6 +55,6 @@ long DescribeL2VipsByDomainRequest::getOwnerId()const
 void DescribeL2VipsByDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

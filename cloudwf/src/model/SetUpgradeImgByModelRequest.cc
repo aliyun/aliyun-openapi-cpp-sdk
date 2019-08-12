@@ -55,7 +55,7 @@ long SetUpgradeImgByModelRequest::getApModelId()const
 void SetUpgradeImgByModelRequest::setApModelId(long apModelId)
 {
 	apModelId_ = apModelId;
-	setCoreParameter("ApModelId", std::to_string(apModelId));
+	setCoreParameter("ApModelId", apModelId);
 }
 
 std::string SetUpgradeImgByModelRequest::getComment()const

@@ -66,6 +66,6 @@ long SaveDomainGroupRequest::getDomainGroupId()const
 void SaveDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", domainGroupId);
 }
 

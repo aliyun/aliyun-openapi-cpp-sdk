@@ -33,7 +33,7 @@ long AddCoverPipelineRequest::getResourceOwnerId()const
 void AddCoverPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddCoverPipelineRequest::getRole()const
@@ -99,7 +99,7 @@ long AddCoverPipelineRequest::getOwnerId()const
 void AddCoverPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddCoverPipelineRequest::getPriority()const

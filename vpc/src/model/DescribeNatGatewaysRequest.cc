@@ -33,7 +33,7 @@ long DescribeNatGatewaysRequest::getResourceOwnerId()const
 void DescribeNatGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DescribeNatGatewaysRequest::getOwnerId()const
 void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeNatGatewaysRequest::getSpec()const
@@ -88,7 +88,7 @@ int DescribeNatGatewaysRequest::getPageNumber()const
 void DescribeNatGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeNatGatewaysRequest::getRegionId()const
@@ -132,7 +132,7 @@ int DescribeNatGatewaysRequest::getPageSize()const
 void DescribeNatGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeNatGatewaysRequest::getNatGatewayId()const

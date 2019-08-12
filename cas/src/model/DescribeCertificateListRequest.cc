@@ -77,7 +77,7 @@ int DescribeCertificateListRequest::getShowSize()const
 void DescribeCertificateListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setCoreParameter("ShowSize", showSize);
 }
 
 std::string DescribeCertificateListRequest::getSortColumn()const
@@ -99,7 +99,7 @@ int DescribeCertificateListRequest::getCurrentPage()const
 void DescribeCertificateListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::vector<DescribeCertificateListRequest::Tag> DescribeCertificateListRequest::getTag()const
@@ -114,8 +114,8 @@ void DescribeCertificateListRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

@@ -55,7 +55,7 @@ long DeleteVServerGroupRequest::getResourceOwnerId()const
 void DeleteVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVServerGroupRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DeleteVServerGroupRequest::getOwnerId()const
 void DeleteVServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteVServerGroupRequest::getTags()const

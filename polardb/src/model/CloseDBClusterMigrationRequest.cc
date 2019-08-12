@@ -33,7 +33,7 @@ long CloseDBClusterMigrationRequest::getResourceOwnerId()const
 void CloseDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
@@ -44,7 +44,7 @@ bool CloseDBClusterMigrationRequest::getContinueEnableBinlog()const
 void CloseDBClusterMigrationRequest::setContinueEnableBinlog(bool continueEnableBinlog)
 {
 	continueEnableBinlog_ = continueEnableBinlog;
-	setCoreParameter("ContinueEnableBinlog", continueEnableBinlog ? "true" : "false");
+	setCoreParameter("ContinueEnableBinlog", continueEnableBinlog);
 }
 
 std::string CloseDBClusterMigrationRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ long CloseDBClusterMigrationRequest::getOwnerId()const
 void CloseDBClusterMigrationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CloseDBClusterMigrationRequest::getAccessKeyId()const

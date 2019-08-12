@@ -44,7 +44,7 @@ long GetSimilarPhotosRequest::getPhotoId()const
 void GetSimilarPhotosRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string GetSimilarPhotosRequest::getStoreName()const

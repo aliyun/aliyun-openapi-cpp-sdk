@@ -33,7 +33,7 @@ int DetectFaceAttributesRequest::getMaxNumPhotosPerCategory()const
 void DetectFaceAttributesRequest::setMaxNumPhotosPerCategory(int maxNumPhotosPerCategory)
 {
 	maxNumPhotosPerCategory_ = maxNumPhotosPerCategory;
-	setCoreParameter("MaxNumPhotosPerCategory", std::to_string(maxNumPhotosPerCategory));
+	setCoreParameter("MaxNumPhotosPerCategory", maxNumPhotosPerCategory);
 }
 
 int DetectFaceAttributesRequest::getMaxFaceNum()const
@@ -44,7 +44,7 @@ int DetectFaceAttributesRequest::getMaxFaceNum()const
 void DetectFaceAttributesRequest::setMaxFaceNum(int maxFaceNum)
 {
 	maxFaceNum_ = maxFaceNum;
-	setCoreParameter("MaxFaceNum", std::to_string(maxFaceNum));
+	setCoreParameter("MaxFaceNum", maxFaceNum);
 }
 
 long DetectFaceAttributesRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long DetectFaceAttributesRequest::getResourceOwnerId()const
 void DetectFaceAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DetectFaceAttributesRequest::getSourceIp()const
@@ -99,7 +99,7 @@ bool DetectFaceAttributesRequest::getDontSaveDB()const
 void DetectFaceAttributesRequest::setDontSaveDB(bool dontSaveDB)
 {
 	dontSaveDB_ = dontSaveDB;
-	setCoreParameter("DontSaveDB", dontSaveDB ? "true" : "false");
+	setCoreParameter("DontSaveDB", dontSaveDB);
 }
 
 std::string DetectFaceAttributesRequest::getClientTag()const

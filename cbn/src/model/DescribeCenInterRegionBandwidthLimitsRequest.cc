@@ -33,7 +33,7 @@ long DescribeCenInterRegionBandwidthLimitsRequest::getResourceOwnerId()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCenInterRegionBandwidthLimitsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int DescribeCenInterRegionBandwidthLimitsRequest::getPageSize()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCenInterRegionBandwidthLimitsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCenInterRegionBandwidthLimitsRequest::getOwnerId()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeCenInterRegionBandwidthLimitsRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int DescribeCenInterRegionBandwidthLimitsRequest::getPageNumber()const
 void DescribeCenInterRegionBandwidthLimitsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

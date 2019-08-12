@@ -44,7 +44,7 @@ long ModifyBackupSourceEndpointRequest::getBackupGatewayId()const
 void ModifyBackupSourceEndpointRequest::setBackupGatewayId(long backupGatewayId)
 {
 	backupGatewayId_ = backupGatewayId;
-	setCoreParameter("BackupGatewayId", std::to_string(backupGatewayId));
+	setCoreParameter("BackupGatewayId", backupGatewayId);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceID()const
@@ -132,7 +132,7 @@ int ModifyBackupSourceEndpointRequest::getSourceEndpointPort()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointPort(int sourceEndpointPort)
 {
 	sourceEndpointPort_ = sourceEndpointPort;
-	setCoreParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
+	setCoreParameter("SourceEndpointPort", sourceEndpointPort);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()const

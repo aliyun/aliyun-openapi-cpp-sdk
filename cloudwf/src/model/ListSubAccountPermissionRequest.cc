@@ -33,7 +33,7 @@ long ListSubAccountPermissionRequest::getSearchUid()const
 void ListSubAccountPermissionRequest::setSearchUid(long searchUid)
 {
 	searchUid_ = searchUid;
-	setCoreParameter("SearchUid", std::to_string(searchUid));
+	setCoreParameter("SearchUid", searchUid);
 }
 
 int ListSubAccountPermissionRequest::getLength()const
@@ -44,7 +44,7 @@ int ListSubAccountPermissionRequest::getLength()const
 void ListSubAccountPermissionRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListSubAccountPermissionRequest::getPageIndex()const
@@ -55,7 +55,7 @@ int ListSubAccountPermissionRequest::getPageIndex()const
 void ListSubAccountPermissionRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListSubAccountPermissionRequest::getAccessKeyId()const

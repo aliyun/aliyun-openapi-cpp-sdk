@@ -33,7 +33,7 @@ long RemoveTerminalsRequest::getResourceOwnerId()const
 void RemoveTerminalsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long RemoveTerminalsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long RemoveTerminalsRequest::getCallerParentId()const
 void RemoveTerminalsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool RemoveTerminalsRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool RemoveTerminalsRequest::getProxy_original_security_transport()const
 void RemoveTerminalsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RemoveTerminalsRequest::getProxy_original_source_ip()const
@@ -144,7 +144,7 @@ void RemoveTerminalsRequest::setTerminalIds(const std::vector<std::string>& term
 {
 	terminalIds_ = terminalIds;
 	for(int i = 0; i!= terminalIds.size(); i++)
-		setCoreParameter("TerminalIds."+ std::to_string(i), terminalIds.at(i));
+		setCoreParameter("TerminalIds."+ std::to_string(i), std::to_string(terminalIds.at(i)));
 }
 
 std::string RemoveTerminalsRequest::getCallerUidEmail()const
@@ -166,7 +166,7 @@ long RemoveTerminalsRequest::getCallerUid()const
 void RemoveTerminalsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string RemoveTerminalsRequest::getApp_ip()const
@@ -210,7 +210,7 @@ long RemoveTerminalsRequest::getOwnerId()const
 void RemoveTerminalsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RemoveTerminalsRequest::getVersion()const
@@ -232,7 +232,7 @@ bool RemoveTerminalsRequest::getProxy_trust_transport_info()const
 void RemoveTerminalsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool RemoveTerminalsRequest::getAk_mfa_present()const
@@ -243,7 +243,7 @@ bool RemoveTerminalsRequest::getAk_mfa_present()const
 void RemoveTerminalsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RemoveTerminalsRequest::getSecurity_transport()const
@@ -254,7 +254,7 @@ bool RemoveTerminalsRequest::getSecurity_transport()const
 void RemoveTerminalsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string RemoveTerminalsRequest::getServiceCode()const

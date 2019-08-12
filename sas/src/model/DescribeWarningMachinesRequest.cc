@@ -44,7 +44,7 @@ int DescribeWarningMachinesRequest::getPageSize()const
 void DescribeWarningMachinesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeWarningMachinesRequest::getMachineName()const
@@ -66,7 +66,7 @@ long DescribeWarningMachinesRequest::getStrategyId()const
 void DescribeWarningMachinesRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribeWarningMachinesRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeWarningMachinesRequest::getCurrentPage()const
 void DescribeWarningMachinesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWarningMachinesRequest::getLang()const
@@ -99,7 +99,7 @@ long DescribeWarningMachinesRequest::getRiskId()const
 void DescribeWarningMachinesRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setCoreParameter("RiskId", riskId);
 }
 
 std::string DescribeWarningMachinesRequest::getUuids()const

@@ -33,7 +33,7 @@ long DeleteUidWhiteBaselineRequest::getResourceOwnerId()const
 void DeleteUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getWblUidList()const

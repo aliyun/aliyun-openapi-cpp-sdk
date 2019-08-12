@@ -33,7 +33,7 @@ int CreateQosCarRequest::getMaxBandwidthAbs()const
 void CreateQosCarRequest::setMaxBandwidthAbs(int maxBandwidthAbs)
 {
 	maxBandwidthAbs_ = maxBandwidthAbs;
-	setCoreParameter("MaxBandwidthAbs", std::to_string(maxBandwidthAbs));
+	setCoreParameter("MaxBandwidthAbs", maxBandwidthAbs);
 }
 
 long CreateQosCarRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateQosCarRequest::getResourceOwnerId()const
 void CreateQosCarRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateQosCarRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int CreateQosCarRequest::getMinBandwidthAbs()const
 void CreateQosCarRequest::setMinBandwidthAbs(int minBandwidthAbs)
 {
 	minBandwidthAbs_ = minBandwidthAbs;
-	setCoreParameter("MinBandwidthAbs", std::to_string(minBandwidthAbs));
+	setCoreParameter("MinBandwidthAbs", minBandwidthAbs);
 }
 
 int CreateQosCarRequest::getMaxBandwidthPercent()const
@@ -77,7 +77,7 @@ int CreateQosCarRequest::getMaxBandwidthPercent()const
 void CreateQosCarRequest::setMaxBandwidthPercent(int maxBandwidthPercent)
 {
 	maxBandwidthPercent_ = maxBandwidthPercent;
-	setCoreParameter("MaxBandwidthPercent", std::to_string(maxBandwidthPercent));
+	setCoreParameter("MaxBandwidthPercent", maxBandwidthPercent);
 }
 
 std::string CreateQosCarRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long CreateQosCarRequest::getOwnerId()const
 void CreateQosCarRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateQosCarRequest::getPriority()const
@@ -121,7 +121,7 @@ int CreateQosCarRequest::getPriority()const
 void CreateQosCarRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 int CreateQosCarRequest::getMinBandwidthPercent()const
@@ -132,7 +132,7 @@ int CreateQosCarRequest::getMinBandwidthPercent()const
 void CreateQosCarRequest::setMinBandwidthPercent(int minBandwidthPercent)
 {
 	minBandwidthPercent_ = minBandwidthPercent;
-	setCoreParameter("MinBandwidthPercent", std::to_string(minBandwidthPercent));
+	setCoreParameter("MinBandwidthPercent", minBandwidthPercent);
 }
 
 std::string CreateQosCarRequest::getLimitType()const

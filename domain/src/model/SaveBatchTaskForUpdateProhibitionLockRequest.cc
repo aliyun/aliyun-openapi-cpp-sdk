@@ -45,7 +45,7 @@ void SaveBatchTaskForUpdateProhibitionLockRequest::setDomainName(const std::vect
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 std::string SaveBatchTaskForUpdateProhibitionLockRequest::getLang()const
@@ -67,6 +67,6 @@ bool SaveBatchTaskForUpdateProhibitionLockRequest::getStatus()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setCoreParameter("Status", status);
 }
 

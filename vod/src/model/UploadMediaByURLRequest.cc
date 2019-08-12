@@ -33,7 +33,7 @@ long UploadMediaByURLRequest::getResourceOwnerId()const
 void UploadMediaByURLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UploadMediaByURLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long UploadMediaByURLRequest::getOwnerId()const
 void UploadMediaByURLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UploadMediaByURLRequest::getPriority()const

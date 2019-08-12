@@ -44,7 +44,7 @@ long SdkGenerateByAppRequest::getAppId()const
 void SdkGenerateByAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string SdkGenerateByAppRequest::getLanguage()const

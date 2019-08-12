@@ -33,7 +33,7 @@ long CreateRouteEntryRequest::getResourceOwnerId()const
 void CreateRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateRouteEntryRequest::getRouteEntryName()const
@@ -99,7 +99,7 @@ long CreateRouteEntryRequest::getOwnerId()const
 void CreateRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRouteEntryRequest::getPrivateIpAddress()const
@@ -158,9 +158,9 @@ void CreateRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	for(int i = 0; i!= nextHopList.size(); i++)	{
 		auto obj = nextHopList.at(i);
 		std::string str ="NextHopList."+ std::to_string(i);
-		setCoreParameter(str + ".Weight", std::to_string(obj.weight));
-		setCoreParameter(str + ".NextHopId", obj.nextHopId);
-		setCoreParameter(str + ".NextHopType", obj.nextHopType);
+		setCoreParameter(str + ".Weight", obj.weight);
+		setCoreParameter(str + ".NextHopId", std::to_string(obj.nextHopId));
+		setCoreParameter(str + ".NextHopType", std::to_string(obj.nextHopType));
 	}
 }
 

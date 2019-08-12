@@ -33,7 +33,7 @@ bool DeleteCasServiceRequest::getLeafOnly()const
 void DeleteCasServiceRequest::setLeafOnly(bool leafOnly)
 {
 	leafOnly_ = leafOnly;
-	setCoreParameter("LeafOnly", leafOnly ? "true" : "false");
+	setCoreParameter("LeafOnly", leafOnly);
 }
 
 std::string DeleteCasServiceRequest::getCasCsbName()const

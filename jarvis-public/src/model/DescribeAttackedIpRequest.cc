@@ -55,7 +55,7 @@ int DescribeAttackedIpRequest::getPageSize()const
 void DescribeAttackedIpRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeAttackedIpRequest::getEndTime()const
@@ -66,7 +66,7 @@ int DescribeAttackedIpRequest::getEndTime()const
 void DescribeAttackedIpRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int DescribeAttackedIpRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAttackedIpRequest::getCurrentPage()const
 void DescribeAttackedIpRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeAttackedIpRequest::getStartTime()const
@@ -88,7 +88,7 @@ int DescribeAttackedIpRequest::getStartTime()const
 void DescribeAttackedIpRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeAttackedIpRequest::getLang()const

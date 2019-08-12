@@ -55,7 +55,7 @@ int InsertTmMonitorRuleRequest::getRuleType()const
 void InsertTmMonitorRuleRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", std::to_string(ruleType));
+	setCoreParameter("RuleType", ruleType);
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleSource()const

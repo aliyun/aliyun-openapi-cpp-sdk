@@ -44,6 +44,6 @@ long ShopGetredressRequest::getSid()const
 void ShopGetredressRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

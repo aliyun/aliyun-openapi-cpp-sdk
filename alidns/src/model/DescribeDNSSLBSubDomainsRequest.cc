@@ -55,7 +55,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageSize()const
 void DescribeDNSSLBSubDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getLang()const
@@ -77,7 +77,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
 void DescribeDNSSLBSubDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getAccessKeyId()const

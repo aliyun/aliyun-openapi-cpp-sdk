@@ -33,7 +33,7 @@ int FetchMomentPhotosRequest::getSize()const
 void FetchMomentPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string FetchMomentPhotosRequest::getLibraryId()const
@@ -77,7 +77,7 @@ int FetchMomentPhotosRequest::getPage()const
 void FetchMomentPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 long FetchMomentPhotosRequest::getMomentId()const
@@ -88,7 +88,7 @@ long FetchMomentPhotosRequest::getMomentId()const
 void FetchMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
-	setCoreParameter("MomentId", std::to_string(momentId));
+	setCoreParameter("MomentId", momentId);
 }
 
 std::string FetchMomentPhotosRequest::getOrder()const

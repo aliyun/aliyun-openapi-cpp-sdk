@@ -99,7 +99,7 @@ long SetMessageCallbackRequest::getResourceRealOwnerId()const
 void SetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 std::string SetMessageCallbackRequest::getOwnerId()const

@@ -66,7 +66,7 @@ int ListApStatusRequest::getSearchStatus()const
 void ListApStatusRequest::setSearchStatus(int searchStatus)
 {
 	searchStatus_ = searchStatus;
-	setCoreParameter("SearchStatus", std::to_string(searchStatus));
+	setCoreParameter("SearchStatus", searchStatus);
 }
 
 std::string ListApStatusRequest::getSearchWanIp()const
@@ -99,7 +99,7 @@ int ListApStatusRequest::getLength()const
 void ListApStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListApStatusRequest::getOrderDir()const
@@ -132,7 +132,7 @@ int ListApStatusRequest::getSearchBssEquals()const
 void ListApStatusRequest::setSearchBssEquals(int searchBssEquals)
 {
 	searchBssEquals_ = searchBssEquals;
-	setCoreParameter("SearchBssEquals", std::to_string(searchBssEquals));
+	setCoreParameter("SearchBssEquals", searchBssEquals);
 }
 
 long ListApStatusRequest::getSearchSwVersion()const
@@ -143,7 +143,7 @@ long ListApStatusRequest::getSearchSwVersion()const
 void ListApStatusRequest::setSearchSwVersion(long searchSwVersion)
 {
 	searchSwVersion_ = searchSwVersion;
-	setCoreParameter("SearchSwVersion", std::to_string(searchSwVersion));
+	setCoreParameter("SearchSwVersion", searchSwVersion);
 }
 
 std::string ListApStatusRequest::getSearchCompanyName()const
@@ -176,6 +176,6 @@ int ListApStatusRequest::getPageIndex()const
 void ListApStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 

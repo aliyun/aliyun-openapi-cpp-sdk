@@ -44,7 +44,7 @@ long CreateUidWhiteListGroupRequest::getResourceOwnerId()const
 void CreateUidWhiteListGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUidWhiteListGroupRequest::getSourceIp()const
@@ -66,7 +66,7 @@ int CreateUidWhiteListGroupRequest::getDstPort()const
 void CreateUidWhiteListGroupRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setCoreParameter("DstPort", dstPort);
 }
 
 std::string CreateUidWhiteListGroupRequest::getInstanceIdList()const
@@ -88,7 +88,7 @@ int CreateUidWhiteListGroupRequest::getLiveTime()const
 void CreateUidWhiteListGroupRequest::setLiveTime(int liveTime)
 {
 	liveTime_ = liveTime;
-	setCoreParameter("LiveTime", std::to_string(liveTime));
+	setCoreParameter("LiveTime", liveTime);
 }
 
 std::string CreateUidWhiteListGroupRequest::getProductName()const
@@ -110,7 +110,7 @@ int CreateUidWhiteListGroupRequest::getWhiteListType()const
 void CreateUidWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string CreateUidWhiteListGroupRequest::getLang()const

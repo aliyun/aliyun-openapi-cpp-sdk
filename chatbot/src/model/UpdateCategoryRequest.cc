@@ -44,6 +44,6 @@ long UpdateCategoryRequest::getCategoryId()const
 void UpdateCategoryRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
-	setCoreParameter("CategoryId", std::to_string(categoryId));
+	setCoreParameter("CategoryId", categoryId);
 }
 

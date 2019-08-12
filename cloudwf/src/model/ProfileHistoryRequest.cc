@@ -33,7 +33,7 @@ long ProfileHistoryRequest::getIdtype()const
 void ProfileHistoryRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
+	setCoreParameter("Idtype", idtype);
 }
 
 std::string ProfileHistoryRequest::getEndMonth()const
@@ -77,6 +77,6 @@ long ProfileHistoryRequest::getAgsid()const
 void ProfileHistoryRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 

@@ -55,7 +55,7 @@ long ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerId()const
 void ModifyLoadBalancerInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerId()const
@@ -77,7 +77,7 @@ bool ModifyLoadBalancerInstanceSpecRequest::getAutoPay()const
 void ModifyLoadBalancerInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getRegionId()const
@@ -121,7 +121,7 @@ long ModifyLoadBalancerInstanceSpecRequest::getOwnerId()const
 void ModifyLoadBalancerInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getTags()const

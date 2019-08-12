@@ -33,7 +33,7 @@ long DescribeDomainBpsDataRequest::getResourceOwnerId()const
 void DescribeDomainBpsDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DescribeDomainBpsDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDomainBpsDataRequest::getCallerParentId()const
 void DescribeDomainBpsDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDomainBpsDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool DescribeDomainBpsDataRequest::getProxy_original_security_transport()const
 void DescribeDomainBpsDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainBpsDataRequest::getLocationNameEn()const
@@ -198,7 +198,7 @@ long DescribeDomainBpsDataRequest::getCallerUid()const
 void DescribeDomainBpsDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDomainBpsDataRequest::getApp_ip()const
@@ -286,7 +286,7 @@ long DescribeDomainBpsDataRequest::getOwnerId()const
 void DescribeDomainBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainBpsDataRequest::getVersion()const
@@ -308,7 +308,7 @@ bool DescribeDomainBpsDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainBpsDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainBpsDataRequest::getAk_mfa_present()const
@@ -319,7 +319,7 @@ bool DescribeDomainBpsDataRequest::getAk_mfa_present()const
 void DescribeDomainBpsDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDomainBpsDataRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ bool DescribeDomainBpsDataRequest::getSecurity_transport()const
 void DescribeDomainBpsDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainBpsDataRequest::getRequestId()const

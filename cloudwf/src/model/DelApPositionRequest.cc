@@ -33,7 +33,7 @@ long DelApPositionRequest::getApAssetId()const
 void DelApPositionRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setCoreParameter("ApAssetId", apAssetId);
 }
 
 long DelApPositionRequest::getMapId()const
@@ -44,7 +44,7 @@ long DelApPositionRequest::getMapId()const
 void DelApPositionRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setCoreParameter("MapId", mapId);
 }
 
 std::string DelApPositionRequest::getAccessKeyId()const

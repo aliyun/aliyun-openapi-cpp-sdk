@@ -66,7 +66,7 @@ int GetRepoBuildListRequest::getPageSize()const
 void GetRepoBuildListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetRepoBuildListRequest::getPage()const
@@ -77,6 +77,6 @@ int GetRepoBuildListRequest::getPage()const
 void GetRepoBuildListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 

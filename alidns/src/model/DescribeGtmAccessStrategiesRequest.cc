@@ -55,7 +55,7 @@ int DescribeGtmAccessStrategiesRequest::getPageSize()const
 void DescribeGtmAccessStrategiesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGtmAccessStrategiesRequest::getLang()const
@@ -77,6 +77,6 @@ int DescribeGtmAccessStrategiesRequest::getPageNumber()const
 void DescribeGtmAccessStrategiesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

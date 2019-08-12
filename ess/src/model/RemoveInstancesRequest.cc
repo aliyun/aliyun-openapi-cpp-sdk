@@ -33,7 +33,7 @@ long RemoveInstancesRequest::getResourceOwnerId()const
 void RemoveInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<std::string> RemoveInstancesRequest::getInstanceId()const
@@ -45,7 +45,7 @@ void RemoveInstancesRequest::setInstanceId(const std::vector<std::string>& insta
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string RemoveInstancesRequest::getRemovePolicy()const
@@ -100,7 +100,7 @@ long RemoveInstancesRequest::getOwnerId()const
 void RemoveInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RemoveInstancesRequest::getAccessKeyId()const

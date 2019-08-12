@@ -44,7 +44,7 @@ long WithdrawPublishedRouteEntriesRequest::getResourceOwnerId()const
 void WithdrawPublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getResourceOwnerAccount()const

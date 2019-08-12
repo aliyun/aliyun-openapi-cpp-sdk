@@ -33,7 +33,7 @@ long AttachNetworkOptimizationSagsRequest::getResourceOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
@@ -89,7 +89,7 @@ void AttachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::
 {
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+		setCoreParameter("SmartAGIds."+ std::to_string(i), std::to_string(smartAGIds.at(i)));
 }
 
 long AttachNetworkOptimizationSagsRequest::getOwnerId()const
@@ -100,6 +100,6 @@ long AttachNetworkOptimizationSagsRequest::getOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

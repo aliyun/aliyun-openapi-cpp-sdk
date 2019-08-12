@@ -33,7 +33,7 @@ long DescribeLiveStreamsPublishListRequest::getCallerParentId()const
 void DescribeLiveStreamsPublishListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeLiveStreamsPublishListRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeLiveStreamsPublishListRequest::getProxy_original_security_transport
 void DescribeLiveStreamsPublishListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
@@ -110,7 +110,7 @@ int DescribeLiveStreamsPublishListRequest::getPageNumber()const
 void DescribeLiveStreamsPublishListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ int DescribeLiveStreamsPublishListRequest::getPageSize()const
 void DescribeLiveStreamsPublishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ long DescribeLiveStreamsPublishListRequest::getCallerUid()const
 void DescribeLiveStreamsPublishListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getApp_ip()const
@@ -330,7 +330,7 @@ long DescribeLiveStreamsPublishListRequest::getOwnerId()const
 void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getVersion()const
@@ -352,7 +352,7 @@ bool DescribeLiveStreamsPublishListRequest::getProxy_trust_transport_info()const
 void DescribeLiveStreamsPublishListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeLiveStreamsPublishListRequest::getAk_mfa_present()const
@@ -363,7 +363,7 @@ bool DescribeLiveStreamsPublishListRequest::getAk_mfa_present()const
 void DescribeLiveStreamsPublishListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeLiveStreamsPublishListRequest::getSecurity_transport()const
@@ -374,7 +374,7 @@ bool DescribeLiveStreamsPublishListRequest::getSecurity_transport()const
 void DescribeLiveStreamsPublishListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getServiceCode()const

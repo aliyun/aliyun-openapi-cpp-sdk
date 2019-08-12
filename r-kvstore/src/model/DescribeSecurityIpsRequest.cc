@@ -33,7 +33,7 @@ long DescribeSecurityIpsRequest::getResourceOwnerId()const
 void DescribeSecurityIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSecurityIpsRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeSecurityIpsRequest::getOwnerId()const
 void DescribeSecurityIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeSecurityIpsRequest::getAccessKeyId()const

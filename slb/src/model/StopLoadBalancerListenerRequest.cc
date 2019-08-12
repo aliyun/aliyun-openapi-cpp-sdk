@@ -44,7 +44,7 @@ long StopLoadBalancerListenerRequest::getResourceOwnerId()const
 void StopLoadBalancerListenerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int StopLoadBalancerListenerRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int StopLoadBalancerListenerRequest::getListenerPort()const
 void StopLoadBalancerListenerRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string StopLoadBalancerListenerRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long StopLoadBalancerListenerRequest::getOwnerId()const
 void StopLoadBalancerListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StopLoadBalancerListenerRequest::getListenerProtocol()const

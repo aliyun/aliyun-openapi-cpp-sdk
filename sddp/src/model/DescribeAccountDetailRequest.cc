@@ -55,7 +55,7 @@ long DescribeAccountDetailRequest::getUserId()const
 void DescribeAccountDetailRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 long DescribeAccountDetailRequest::getAccountTypeId()const
@@ -66,6 +66,6 @@ long DescribeAccountDetailRequest::getAccountTypeId()const
 void DescribeAccountDetailRequest::setAccountTypeId(long accountTypeId)
 {
 	accountTypeId_ = accountTypeId;
-	setCoreParameter("AccountTypeId", std::to_string(accountTypeId));
+	setCoreParameter("AccountTypeId", accountTypeId);
 }
 

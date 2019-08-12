@@ -66,7 +66,7 @@ int UpLoadMapRequest::getChunkIndex()const
 void UpLoadMapRequest::setChunkIndex(int chunkIndex)
 {
 	chunkIndex_ = chunkIndex;
-	setCoreParameter("ChunkIndex", std::to_string(chunkIndex));
+	setCoreParameter("ChunkIndex", chunkIndex);
 }
 
 std::string UpLoadMapRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ int UpLoadMapRequest::getChunkCnt()const
 void UpLoadMapRequest::setChunkCnt(int chunkCnt)
 {
 	chunkCnt_ = chunkCnt;
-	setCoreParameter("ChunkCnt", std::to_string(chunkCnt));
+	setCoreParameter("ChunkCnt", chunkCnt);
 }
 

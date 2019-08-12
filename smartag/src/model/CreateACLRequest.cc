@@ -33,7 +33,7 @@ long CreateACLRequest::getResourceOwnerId()const
 void CreateACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateACLRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long CreateACLRequest::getOwnerId()const
 void CreateACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -44,7 +44,7 @@ int ListAlbumPhotosRequest::getSize()const
 void ListAlbumPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListAlbumPhotosRequest::getLibraryId()const
@@ -66,7 +66,7 @@ long ListAlbumPhotosRequest::getAlbumId()const
 void ListAlbumPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setCoreParameter("AlbumId", albumId);
 }
 
 std::string ListAlbumPhotosRequest::getStoreName()const

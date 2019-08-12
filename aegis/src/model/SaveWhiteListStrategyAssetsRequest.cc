@@ -44,7 +44,7 @@ int SaveWhiteListStrategyAssetsRequest::getRelationType()const
 void SaveWhiteListStrategyAssetsRequest::setRelationType(int relationType)
 {
 	relationType_ = relationType;
-	setCoreParameter("RelationType", std::to_string(relationType));
+	setCoreParameter("RelationType", relationType);
 }
 
 std::string SaveWhiteListStrategyAssetsRequest::getSourceIp()const
@@ -66,7 +66,7 @@ long SaveWhiteListStrategyAssetsRequest::getStrategyId()const
 void SaveWhiteListStrategyAssetsRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string SaveWhiteListStrategyAssetsRequest::getLang()const

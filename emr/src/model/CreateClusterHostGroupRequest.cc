@@ -33,7 +33,7 @@ long CreateClusterHostGroupRequest::getResourceOwnerId()const
 void CreateClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateClusterHostGroupRequest::getRegionId()const

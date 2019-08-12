@@ -33,7 +33,7 @@ long StartKafkaPreferredReplicaElectionRequest::getResourceOwnerId()const
 void StartKafkaPreferredReplicaElectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string StartKafkaPreferredReplicaElectionRequest::getTopicId()const

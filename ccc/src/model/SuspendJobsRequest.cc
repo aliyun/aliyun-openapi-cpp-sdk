@@ -33,7 +33,7 @@ bool SuspendJobsRequest::getAll()const
 void SuspendJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setCoreParameter("All", all);
 }
 
 std::vector<std::string> SuspendJobsRequest::getJobId()const
@@ -45,7 +45,7 @@ void SuspendJobsRequest::setJobId(const std::vector<std::string>& jobId)
 {
 	jobId_ = jobId;
 	for(int i = 0; i!= jobId.size(); i++)
-		setCoreParameter("JobId."+ std::to_string(i), jobId.at(i));
+		setCoreParameter("JobId."+ std::to_string(i), std::to_string(jobId.at(i)));
 }
 
 std::string SuspendJobsRequest::getInstanceId()const
@@ -68,7 +68,7 @@ void SuspendJobsRequest::setJobReferenceId(const std::vector<std::string>& jobRe
 {
 	jobReferenceId_ = jobReferenceId;
 	for(int i = 0; i!= jobReferenceId.size(); i++)
-		setCoreParameter("JobReferenceId."+ std::to_string(i), jobReferenceId.at(i));
+		setCoreParameter("JobReferenceId."+ std::to_string(i), std::to_string(jobReferenceId.at(i)));
 }
 
 std::string SuspendJobsRequest::getGroupId()const

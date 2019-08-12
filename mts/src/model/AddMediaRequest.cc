@@ -33,7 +33,7 @@ long AddMediaRequest::getResourceOwnerId()const
 void AddMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddMediaRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long AddMediaRequest::getOwnerId()const
 void AddMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddMediaRequest::getTitle()const
@@ -110,7 +110,7 @@ bool AddMediaRequest::getInputUnbind()const
 void AddMediaRequest::setInputUnbind(bool inputUnbind)
 {
 	inputUnbind_ = inputUnbind;
-	setCoreParameter("InputUnbind", inputUnbind ? "true" : "false");
+	setCoreParameter("InputUnbind", inputUnbind);
 }
 
 std::string AddMediaRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ long AddMediaRequest::getCateId()const
 void AddMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string AddMediaRequest::getFileURL()const

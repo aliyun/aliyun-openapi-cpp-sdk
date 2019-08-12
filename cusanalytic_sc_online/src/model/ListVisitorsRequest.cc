@@ -55,7 +55,7 @@ long ListVisitorsRequest::getUkId()const
 void ListVisitorsRequest::setUkId(long ukId)
 {
 	ukId_ = ukId;
-	setCoreParameter("UkId", std::to_string(ukId));
+	setCoreParameter("UkId", ukId);
 }
 
 int ListVisitorsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListVisitorsRequest::getPageSize()const
 void ListVisitorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListVisitorsRequest::getLocationIds()const
@@ -99,7 +99,7 @@ long ListVisitorsRequest::getEnterCount()const
 void ListVisitorsRequest::setEnterCount(long enterCount)
 {
 	enterCount_ = enterCount;
-	setCoreParameter("EnterCount", std::to_string(enterCount));
+	setCoreParameter("EnterCount", enterCount);
 }
 
 int ListVisitorsRequest::getPageIndex()const
@@ -110,7 +110,7 @@ int ListVisitorsRequest::getPageIndex()const
 void ListVisitorsRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListVisitorsRequest::getStartTime()const
@@ -132,7 +132,7 @@ long ListVisitorsRequest::getAgeStart()const
 void ListVisitorsRequest::setAgeStart(long ageStart)
 {
 	ageStart_ = ageStart;
-	setCoreParameter("AgeStart", std::to_string(ageStart));
+	setCoreParameter("AgeStart", ageStart);
 }
 
 long ListVisitorsRequest::getAgeEnd()const
@@ -143,7 +143,7 @@ long ListVisitorsRequest::getAgeEnd()const
 void ListVisitorsRequest::setAgeEnd(long ageEnd)
 {
 	ageEnd_ = ageEnd;
-	setCoreParameter("AgeEnd", std::to_string(ageEnd));
+	setCoreParameter("AgeEnd", ageEnd);
 }
 
 std::string ListVisitorsRequest::getStoreIds()const

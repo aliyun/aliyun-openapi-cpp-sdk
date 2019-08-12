@@ -33,7 +33,7 @@ long MetastoreListKafkaConsumerGroupRequest::getResourceOwnerId()const
 void MetastoreListKafkaConsumerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getTopicId()const
@@ -66,7 +66,7 @@ int MetastoreListKafkaConsumerGroupRequest::getPageSize()const
 void MetastoreListKafkaConsumerGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int MetastoreListKafkaConsumerGroupRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int MetastoreListKafkaConsumerGroupRequest::getPageNumber()const
 void MetastoreListKafkaConsumerGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getAccessKeyId()const

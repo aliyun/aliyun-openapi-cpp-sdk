@@ -33,7 +33,7 @@ long DescribeVSwitchesRequest::getResourceOwnerId()const
 void DescribeVSwitchesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool DescribeVSwitchesRequest::getDryRun()const
@@ -44,7 +44,7 @@ bool DescribeVSwitchesRequest::getDryRun()const
 void DescribeVSwitchesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string DescribeVSwitchesRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DescribeVSwitchesRequest::getOwnerId()const
 void DescribeVSwitchesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVSwitchesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeVSwitchesRequest::getPageNumber()const
 void DescribeVSwitchesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeVSwitchesRequest::getVSwitchId()const
@@ -154,7 +154,7 @@ int DescribeVSwitchesRequest::getPageSize()const
 void DescribeVSwitchesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeVSwitchesRequest::getZoneId()const
@@ -180,8 +180,8 @@ void DescribeVSwitchesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -193,7 +193,7 @@ bool DescribeVSwitchesRequest::getIsDefault()const
 void DescribeVSwitchesRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault);
 }
 
 std::string DescribeVSwitchesRequest::getRouteTableId()const

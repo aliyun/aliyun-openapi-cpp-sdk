@@ -44,7 +44,7 @@ bool QuerySettlementBillRequest::getIsHideZeroCharge()const
 void QuerySettlementBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
+	setCoreParameter("IsHideZeroCharge", isHideZeroCharge);
 }
 
 std::string QuerySettlementBillRequest::getSubscriptionType()const
@@ -66,7 +66,7 @@ int QuerySettlementBillRequest::getPageSize()const
 void QuerySettlementBillRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QuerySettlementBillRequest::getEndTime()const
@@ -110,7 +110,7 @@ long QuerySettlementBillRequest::getOwnerId()const
 void QuerySettlementBillRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int QuerySettlementBillRequest::getPageNum()const
@@ -121,7 +121,7 @@ int QuerySettlementBillRequest::getPageNum()const
 void QuerySettlementBillRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QuerySettlementBillRequest::getType()const

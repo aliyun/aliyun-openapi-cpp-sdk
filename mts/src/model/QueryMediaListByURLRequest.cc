@@ -33,7 +33,7 @@ long QueryMediaListByURLRequest::getResourceOwnerId()const
 void QueryMediaListByURLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool QueryMediaListByURLRequest::getIncludeSummaryList()const
@@ -44,7 +44,7 @@ bool QueryMediaListByURLRequest::getIncludeSummaryList()const
 void QueryMediaListByURLRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
+	setCoreParameter("IncludeSummaryList", includeSummaryList);
 }
 
 std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
 void QueryMediaListByURLRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setCoreParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
+	setCoreParameter("IncludeSnapshotList", includeSnapshotList);
 }
 
 std::string QueryMediaListByURLRequest::getFileURLs()const
@@ -99,7 +99,7 @@ long QueryMediaListByURLRequest::getOwnerId()const
 void QueryMediaListByURLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool QueryMediaListByURLRequest::getIncludePlayList()const
@@ -110,7 +110,7 @@ bool QueryMediaListByURLRequest::getIncludePlayList()const
 void QueryMediaListByURLRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
+	setCoreParameter("IncludePlayList", includePlayList);
 }
 
 std::string QueryMediaListByURLRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
 void QueryMediaListByURLRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setCoreParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
+	setCoreParameter("IncludeMediaInfo", includeMediaInfo);
 }
 

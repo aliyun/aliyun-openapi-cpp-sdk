@@ -44,7 +44,7 @@ int ShopMarketingListRequest::getPage()const
 void ShopMarketingListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 int ShopMarketingListRequest::getPer()const
@@ -55,7 +55,7 @@ int ShopMarketingListRequest::getPer()const
 void ShopMarketingListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 std::string ShopMarketingListRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ long ShopMarketingListRequest::getSid()const
 void ShopMarketingListRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

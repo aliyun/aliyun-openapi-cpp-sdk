@@ -33,7 +33,7 @@ long CancelETLJobReleaseRequest::getResourceOwnerId()const
 void CancelETLJobReleaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CancelETLJobReleaseRequest::getRegionId()const

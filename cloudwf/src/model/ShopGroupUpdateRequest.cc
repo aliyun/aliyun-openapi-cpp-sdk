@@ -33,7 +33,7 @@ long ShopGroupUpdateRequest::getGid()const
 void ShopGroupUpdateRequest::setGid(long gid)
 {
 	gid_ = gid;
-	setCoreParameter("Gid", std::to_string(gid));
+	setCoreParameter("Gid", gid);
 }
 
 std::string ShopGroupUpdateRequest::getShopIds()const

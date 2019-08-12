@@ -44,7 +44,7 @@ long AuthorizeSecurityGroupRequest::getResourceOwnerId()const
 void AuthorizeSecurityGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AuthorizeSecurityGroupRequest::getBizContent()const

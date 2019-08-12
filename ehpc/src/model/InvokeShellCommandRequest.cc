@@ -37,7 +37,7 @@ void InvokeShellCommandRequest::setInstance(const std::vector<Instance>& instanc
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
 	}
 }
 
@@ -82,7 +82,7 @@ int InvokeShellCommandRequest::getTimeout()const
 void InvokeShellCommandRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", timeout);
 }
 
 std::string InvokeShellCommandRequest::getAccessKeyId()const

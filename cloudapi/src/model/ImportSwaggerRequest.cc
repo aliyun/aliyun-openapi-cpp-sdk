@@ -66,6 +66,6 @@ bool ImportSwaggerRequest::getOverwrite()const
 void ImportSwaggerRequest::setOverwrite(bool overwrite)
 {
 	overwrite_ = overwrite;
-	setCoreParameter("Overwrite", overwrite ? "true" : "false");
+	setCoreParameter("Overwrite", overwrite);
 }
 

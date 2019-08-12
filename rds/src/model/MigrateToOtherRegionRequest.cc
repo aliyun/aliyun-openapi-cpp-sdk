@@ -33,7 +33,7 @@ long MigrateToOtherRegionRequest::getResourceOwnerId()const
 void MigrateToOtherRegionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MigrateToOtherRegionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long MigrateToOtherRegionRequest::getOwnerId()const
 void MigrateToOtherRegionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string MigrateToOtherRegionRequest::getAccessKeyId()const

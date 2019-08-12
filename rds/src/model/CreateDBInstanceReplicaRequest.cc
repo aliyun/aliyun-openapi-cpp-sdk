@@ -66,7 +66,7 @@ long CreateDBInstanceReplicaRequest::getResourceOwnerId()const
 void CreateDBInstanceReplicaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateDBInstanceReplicaRequest::getDBInstanceStorage()const
@@ -77,7 +77,7 @@ int CreateDBInstanceReplicaRequest::getDBInstanceStorage()const
 void CreateDBInstanceReplicaRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string CreateDBInstanceReplicaRequest::getSystemDBCharset()const
@@ -209,7 +209,7 @@ long CreateDBInstanceReplicaRequest::getOwnerId()const
 void CreateDBInstanceReplicaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDBInstanceReplicaRequest::getUsedTime()const

@@ -33,7 +33,7 @@ long AssociatePhysicalConnectionToVirtualBorderRouterRequest::getResourceOwnerId
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getCircuitCode()const
@@ -110,7 +110,7 @@ long AssociatePhysicalConnectionToVirtualBorderRouterRequest::getOwnerId()const
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeerGatewayIp()const

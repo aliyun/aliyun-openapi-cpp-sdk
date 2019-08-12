@@ -44,7 +44,7 @@ long DescribeScalingRulesRequest::getResourceOwnerId()const
 void DescribeScalingRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleName2()const
@@ -165,7 +165,7 @@ int DescribeScalingRulesRequest::getPageNumber()const
 void DescribeScalingRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeScalingRulesRequest::getAccessKeyId()const
@@ -198,7 +198,7 @@ int DescribeScalingRulesRequest::getPageSize()const
 void DescribeScalingRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleType()const
@@ -253,7 +253,7 @@ long DescribeScalingRulesRequest::getOwnerId()const
 void DescribeScalingRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleAri1()const
@@ -407,7 +407,7 @@ bool DescribeScalingRulesRequest::getShowAlarmRules()const
 void DescribeScalingRulesRequest::setShowAlarmRules(bool showAlarmRules)
 {
 	showAlarmRules_ = showAlarmRules;
-	setCoreParameter("ShowAlarmRules", showAlarmRules ? "true" : "false");
+	setCoreParameter("ShowAlarmRules", showAlarmRules);
 }
 
 std::string DescribeScalingRulesRequest::getScalingRuleId5()const

@@ -44,7 +44,7 @@ bool DescribeLoadBalancerAttributeRequest::getIncludeReservedData()const
 void DescribeLoadBalancerAttributeRequest::setIncludeReservedData(bool includeReservedData)
 {
 	includeReservedData_ = includeReservedData;
-	setCoreParameter("IncludeReservedData", includeReservedData ? "true" : "false");
+	setCoreParameter("IncludeReservedData", includeReservedData);
 }
 
 long DescribeLoadBalancerAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long DescribeLoadBalancerAttributeRequest::getResourceOwnerId()const
 void DescribeLoadBalancerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DescribeLoadBalancerAttributeRequest::getOwnerId()const
 void DescribeLoadBalancerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLoadBalancerAttributeRequest::getTags()const

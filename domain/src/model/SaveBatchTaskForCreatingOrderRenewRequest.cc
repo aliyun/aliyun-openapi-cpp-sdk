@@ -59,9 +59,9 @@ void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::ve
 	for(int i = 0; i!= orderRenewParam.size(); i++)	{
 		auto obj = orderRenewParam.at(i);
 		std::string str ="OrderRenewParam."+ std::to_string(i);
-		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setCoreParameter(str + ".DomainName", obj.domainName);
+		setCoreParameter(str + ".SubscriptionDuration", obj.subscriptionDuration);
+		setCoreParameter(str + ".CurrentExpirationDate", obj.currentExpirationDate);
+		setCoreParameter(str + ".DomainName", std::to_string(obj.domainName));
 	}
 }
 
@@ -84,7 +84,7 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setCoreParameter("UseCoupon", useCoupon);
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
@@ -106,6 +106,6 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setCoreParameter("UsePromotion", usePromotion);
 }
 

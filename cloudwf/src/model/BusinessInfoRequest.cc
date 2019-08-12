@@ -33,7 +33,7 @@ long BusinessInfoRequest::getBid()const
 void BusinessInfoRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string BusinessInfoRequest::getAccessKeyId()const

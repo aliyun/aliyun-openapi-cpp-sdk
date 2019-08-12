@@ -33,7 +33,7 @@ long QueryTransferInListRequest::getSubmissionStartDate()const
 void QueryTransferInListRequest::setSubmissionStartDate(long submissionStartDate)
 {
 	submissionStartDate_ = submissionStartDate;
-	setCoreParameter("SubmissionStartDate", std::to_string(submissionStartDate));
+	setCoreParameter("SubmissionStartDate", submissionStartDate);
 }
 
 std::string QueryTransferInListRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ long QueryTransferInListRequest::getSubmissionEndDate()const
 void QueryTransferInListRequest::setSubmissionEndDate(long submissionEndDate)
 {
 	submissionEndDate_ = submissionEndDate;
-	setCoreParameter("SubmissionEndDate", std::to_string(submissionEndDate));
+	setCoreParameter("SubmissionEndDate", submissionEndDate);
 }
 
 std::string QueryTransferInListRequest::getDomainName()const
@@ -88,7 +88,7 @@ int QueryTransferInListRequest::getPageSize()const
 void QueryTransferInListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTransferInListRequest::getLang()const
@@ -110,6 +110,6 @@ int QueryTransferInListRequest::getPageNum()const
 void QueryTransferInListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

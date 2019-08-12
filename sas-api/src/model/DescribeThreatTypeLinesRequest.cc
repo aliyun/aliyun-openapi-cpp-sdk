@@ -44,6 +44,6 @@ int DescribeThreatTypeLinesRequest::getApiType()const
 void DescribeThreatTypeLinesRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setCoreParameter("ApiType", apiType);
 }
 

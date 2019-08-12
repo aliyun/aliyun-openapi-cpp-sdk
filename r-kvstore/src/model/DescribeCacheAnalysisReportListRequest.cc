@@ -33,7 +33,7 @@ long DescribeCacheAnalysisReportListRequest::getResourceOwnerId()const
 void DescribeCacheAnalysisReportListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DescribeCacheAnalysisReportListRequest::getOwnerId()const
 void DescribeCacheAnalysisReportListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ int DescribeCacheAnalysisReportListRequest::getPageSize()const
 void DescribeCacheAnalysisReportListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
@@ -132,7 +132,7 @@ int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
 void DescribeCacheAnalysisReportListRequest::setPageNumbers(int pageNumbers)
 {
 	pageNumbers_ = pageNumbers;
-	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
+	setCoreParameter("PageNumbers", pageNumbers);
 }
 
 int DescribeCacheAnalysisReportListRequest::getDays()const
@@ -143,7 +143,7 @@ int DescribeCacheAnalysisReportListRequest::getDays()const
 void DescribeCacheAnalysisReportListRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", std::to_string(days));
+	setCoreParameter("Days", days);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getNodeId()const

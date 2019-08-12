@@ -33,7 +33,7 @@ long RenewInstanceRequest::getResourceOwnerId()const
 void RenewInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long RenewInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ long RenewInstanceRequest::getPeriod()const
 void RenewInstanceRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool RenewInstanceRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool RenewInstanceRequest::getAutoPay()const
 void RenewInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string RenewInstanceRequest::getFromApp()const
@@ -110,7 +110,7 @@ long RenewInstanceRequest::getOwnerId()const
 void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RenewInstanceRequest::getInstanceClass()const
@@ -187,7 +187,7 @@ bool RenewInstanceRequest::getForceUpgrade()const
 void RenewInstanceRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
-	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+	setCoreParameter("ForceUpgrade", forceUpgrade);
 }
 
 std::string RenewInstanceRequest::getBusinessInfo()const

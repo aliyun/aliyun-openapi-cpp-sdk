@@ -44,7 +44,7 @@ int SetCasterChannelRequest::getPlayStatus()const
 void SetCasterChannelRequest::setPlayStatus(int playStatus)
 {
 	playStatus_ = playStatus;
-	setCoreParameter("PlayStatus", std::to_string(playStatus));
+	setCoreParameter("PlayStatus", playStatus);
 }
 
 std::string SetCasterChannelRequest::getRegionId()const
@@ -77,7 +77,7 @@ long SetCasterChannelRequest::getOwnerId()const
 void SetCasterChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int SetCasterChannelRequest::getSeekOffset()const
@@ -88,7 +88,7 @@ int SetCasterChannelRequest::getSeekOffset()const
 void SetCasterChannelRequest::setSeekOffset(int seekOffset)
 {
 	seekOffset_ = seekOffset;
-	setCoreParameter("SeekOffset", std::to_string(seekOffset));
+	setCoreParameter("SeekOffset", seekOffset);
 }
 
 std::string SetCasterChannelRequest::getChannelId()const

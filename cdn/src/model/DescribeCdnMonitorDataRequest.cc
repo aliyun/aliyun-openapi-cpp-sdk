@@ -33,7 +33,7 @@ long DescribeCdnMonitorDataRequest::getCallerParentId()const
 void DescribeCdnMonitorDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeCdnMonitorDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeCdnMonitorDataRequest::getProxy_original_security_transport()const
 void DescribeCdnMonitorDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeCdnMonitorDataRequest::getStartTime()const
@@ -154,7 +154,7 @@ long DescribeCdnMonitorDataRequest::getCallerUid()const
 void DescribeCdnMonitorDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeCdnMonitorDataRequest::getApp_ip()const
@@ -231,7 +231,7 @@ long DescribeCdnMonitorDataRequest::getOwnerId()const
 void DescribeCdnMonitorDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCdnMonitorDataRequest::getVersion()const
@@ -253,7 +253,7 @@ bool DescribeCdnMonitorDataRequest::getProxy_trust_transport_info()const
 void DescribeCdnMonitorDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeCdnMonitorDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeCdnMonitorDataRequest::getAk_mfa_present()const
 void DescribeCdnMonitorDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeCdnMonitorDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeCdnMonitorDataRequest::getSecurity_transport()const
 void DescribeCdnMonitorDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeCdnMonitorDataRequest::getRequestId()const

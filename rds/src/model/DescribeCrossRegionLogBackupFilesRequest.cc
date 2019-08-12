@@ -33,7 +33,7 @@ long DescribeCrossRegionLogBackupFilesRequest::getResourceOwnerId()const
 void DescribeCrossRegionLogBackupFilesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int DescribeCrossRegionLogBackupFilesRequest::getPageSize()const
 void DescribeCrossRegionLogBackupFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getEndTime()const
@@ -110,7 +110,7 @@ long DescribeCrossRegionLogBackupFilesRequest::getOwnerId()const
 void DescribeCrossRegionLogBackupFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getCrossBackupRegion()const
@@ -132,7 +132,7 @@ int DescribeCrossRegionLogBackupFilesRequest::getPageNumber()const
 void DescribeCrossRegionLogBackupFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeCrossRegionLogBackupFilesRequest::getAccessKeyId()const

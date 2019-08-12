@@ -55,7 +55,7 @@ int ListNodesRequest::getPageSize()const
 void ListNodesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListNodesRequest::getClusterId()const
@@ -77,7 +77,7 @@ int ListNodesRequest::getPageNumber()const
 void ListNodesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListNodesRequest::getAccessKeyId()const

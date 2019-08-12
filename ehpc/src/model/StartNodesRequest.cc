@@ -48,7 +48,7 @@ void StartNodesRequest::setInstance(const std::vector<Instance>& instance)
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
 	}
 }
 

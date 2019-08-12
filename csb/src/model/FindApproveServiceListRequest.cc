@@ -55,7 +55,7 @@ bool FindApproveServiceListRequest::getShowDelService()const
 void FindApproveServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
+	setCoreParameter("ShowDelService", showDelService);
 }
 
 long FindApproveServiceListRequest::getCsbId()const
@@ -66,7 +66,7 @@ long FindApproveServiceListRequest::getCsbId()const
 void FindApproveServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindApproveServiceListRequest::getRegionId()const

@@ -92,8 +92,8 @@ void ModifyInstanceRequest::setParameter(const std::vector<Parameter>& parameter
 	for(int i = 0; i!= parameter.size(); i++)	{
 		auto obj = parameter.at(i);
 		std::string str ="Parameter."+ std::to_string(i);
-		setCoreParameter(str + ".Code", obj.code);
-		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Code", std::to_string(obj.code));
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
 	}
 }
 
@@ -105,7 +105,7 @@ long ModifyInstanceRequest::getOwnerId()const
 void ModifyInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceRequest::getProductType()const

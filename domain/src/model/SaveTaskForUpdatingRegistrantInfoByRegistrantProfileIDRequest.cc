@@ -44,7 +44,7 @@ long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistran
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getDomainName()const
@@ -56,7 +56,7 @@ void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setDomainNam
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferOutProhibited()const
@@ -67,7 +67,7 @@ bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferO
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setCoreParameter("TransferOutProhibited", transferOutProhibited);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLang()const

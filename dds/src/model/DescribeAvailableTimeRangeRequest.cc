@@ -33,7 +33,7 @@ long DescribeAvailableTimeRangeRequest::getResourceOwnerId()const
 void DescribeAvailableTimeRangeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAvailableTimeRangeRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeAvailableTimeRangeRequest::getOwnerId()const
 void DescribeAvailableTimeRangeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAvailableTimeRangeRequest::getNodeId()const

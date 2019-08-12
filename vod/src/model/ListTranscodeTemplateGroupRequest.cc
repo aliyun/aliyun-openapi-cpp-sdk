@@ -33,7 +33,7 @@ long ListTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ int ListTranscodeTemplateGroupRequest::getPageNo()const
 void ListTranscodeTemplateGroupRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAppId()const
@@ -77,7 +77,7 @@ int ListTranscodeTemplateGroupRequest::getPageSize()const
 void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListTranscodeTemplateGroupRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListTranscodeTemplateGroupRequest::getOwnerId()const
 void ListTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const

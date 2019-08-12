@@ -55,7 +55,7 @@ long InsertRenewInfoRequest::getRegisterTime()const
 void InsertRenewInfoRequest::setRegisterTime(long registerTime)
 {
 	registerTime_ = registerTime;
-	setCoreParameter("RegisterTime", std::to_string(registerTime));
+	setCoreParameter("RegisterTime", registerTime);
 }
 
 std::string InsertRenewInfoRequest::getEngAddress()const

@@ -33,7 +33,7 @@ long RegisterFaceRequest::getResourceOwnerId()const
 void RegisterFaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long RegisterFaceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long RegisterFaceRequest::getCallerParentId()const
 void RegisterFaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool RegisterFaceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool RegisterFaceRequest::getProxy_original_security_transport()const
 void RegisterFaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string RegisterFaceRequest::getProxy_original_source_ip()const
@@ -187,7 +187,7 @@ long RegisterFaceRequest::getCallerUid()const
 void RegisterFaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string RegisterFaceRequest::getShowLog()const
@@ -253,7 +253,7 @@ long RegisterFaceRequest::getOwnerId()const
 void RegisterFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RegisterFaceRequest::getVersion()const
@@ -275,7 +275,7 @@ bool RegisterFaceRequest::getProxy_trust_transport_info()const
 void RegisterFaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool RegisterFaceRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool RegisterFaceRequest::getAk_mfa_present()const
 void RegisterFaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool RegisterFaceRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool RegisterFaceRequest::getSecurity_transport()const
 void RegisterFaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string RegisterFaceRequest::getServiceCode()const

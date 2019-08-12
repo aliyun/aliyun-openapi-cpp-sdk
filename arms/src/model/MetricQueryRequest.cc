@@ -33,7 +33,7 @@ long MetricQueryRequest::getEndTime()const
 void MetricQueryRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string MetricQueryRequest::getOrderBy()const
@@ -59,8 +59,8 @@ void MetricQueryRequest::setFilters(const std::vector<Filters>& filters)
 	for(int i = 0; i!= filters.size(); i++)	{
 		auto obj = filters.at(i);
 		std::string str ="Filters."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -72,7 +72,7 @@ long MetricQueryRequest::getStartTime()const
 void MetricQueryRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string MetricQueryRequest::getAccessKeyId()const
@@ -94,7 +94,7 @@ int MetricQueryRequest::getIintervalInSec()const
 void MetricQueryRequest::setIintervalInSec(int iintervalInSec)
 {
 	iintervalInSec_ = iintervalInSec;
-	setCoreParameter("IintervalInSec", std::to_string(iintervalInSec));
+	setCoreParameter("IintervalInSec", iintervalInSec);
 }
 
 std::vector<std::string> MetricQueryRequest::getMeasures()const
@@ -106,7 +106,7 @@ void MetricQueryRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
 	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+		setCoreParameter("Measures."+ std::to_string(i), std::to_string(measures.at(i)));
 }
 
 std::string MetricQueryRequest::getMetric()const
@@ -161,7 +161,7 @@ int MetricQueryRequest::getLimit()const
 void MetricQueryRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string MetricQueryRequest::getWhere()const
@@ -184,7 +184,7 @@ void MetricQueryRequest::setDimensions(const std::vector<std::string>& dimension
 {
 	dimensions_ = dimensions;
 	for(int i = 0; i!= dimensions.size(); i++)
-		setCoreParameter("Dimensions."+ std::to_string(i), dimensions.at(i));
+		setCoreParameter("Dimensions."+ std::to_string(i), std::to_string(dimensions.at(i)));
 }
 
 std::string MetricQueryRequest::getOrder()const

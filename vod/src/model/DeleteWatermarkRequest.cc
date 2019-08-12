@@ -44,7 +44,7 @@ long DeleteWatermarkRequest::getResourceOwnerId()const
 void DeleteWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DeleteWatermarkRequest::getOwnerId()const
 void DeleteWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteWatermarkRequest::getAccessKeyId()const

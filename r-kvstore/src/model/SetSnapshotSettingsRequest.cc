@@ -33,7 +33,7 @@ long SetSnapshotSettingsRequest::getResourceOwnerId()const
 void SetSnapshotSettingsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int SetSnapshotSettingsRequest::getEndHour()const
@@ -44,7 +44,7 @@ int SetSnapshotSettingsRequest::getEndHour()const
 void SetSnapshotSettingsRequest::setEndHour(int endHour)
 {
 	endHour_ = endHour;
-	setCoreParameter("EndHour", std::to_string(endHour));
+	setCoreParameter("EndHour", endHour);
 }
 
 std::string SetSnapshotSettingsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int SetSnapshotSettingsRequest::getDayList()const
 void SetSnapshotSettingsRequest::setDayList(int dayList)
 {
 	dayList_ = dayList;
-	setCoreParameter("DayList", std::to_string(dayList));
+	setCoreParameter("DayList", dayList);
 }
 
 long SetSnapshotSettingsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SetSnapshotSettingsRequest::getOwnerId()const
 void SetSnapshotSettingsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetSnapshotSettingsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ int SetSnapshotSettingsRequest::getRetentionDay()const
 void SetSnapshotSettingsRequest::setRetentionDay(int retentionDay)
 {
 	retentionDay_ = retentionDay;
-	setCoreParameter("RetentionDay", std::to_string(retentionDay));
+	setCoreParameter("RetentionDay", retentionDay);
 }
 
 std::string SetSnapshotSettingsRequest::getRegionId()const
@@ -143,7 +143,7 @@ int SetSnapshotSettingsRequest::getMaxManualSnapshots()const
 void SetSnapshotSettingsRequest::setMaxManualSnapshots(int maxManualSnapshots)
 {
 	maxManualSnapshots_ = maxManualSnapshots;
-	setCoreParameter("MaxManualSnapshots", std::to_string(maxManualSnapshots));
+	setCoreParameter("MaxManualSnapshots", maxManualSnapshots);
 }
 
 int SetSnapshotSettingsRequest::getMaxAutoSnapshots()const
@@ -154,7 +154,7 @@ int SetSnapshotSettingsRequest::getMaxAutoSnapshots()const
 void SetSnapshotSettingsRequest::setMaxAutoSnapshots(int maxAutoSnapshots)
 {
 	maxAutoSnapshots_ = maxAutoSnapshots;
-	setCoreParameter("MaxAutoSnapshots", std::to_string(maxAutoSnapshots));
+	setCoreParameter("MaxAutoSnapshots", maxAutoSnapshots);
 }
 
 int SetSnapshotSettingsRequest::getBeginHour()const
@@ -165,6 +165,6 @@ int SetSnapshotSettingsRequest::getBeginHour()const
 void SetSnapshotSettingsRequest::setBeginHour(int beginHour)
 {
 	beginHour_ = beginHour;
-	setCoreParameter("BeginHour", std::to_string(beginHour));
+	setCoreParameter("BeginHour", beginHour);
 }
 

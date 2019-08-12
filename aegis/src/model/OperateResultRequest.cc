@@ -55,6 +55,6 @@ long OperateResultRequest::getStatus()const
 void OperateResultRequest::setStatus(long status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

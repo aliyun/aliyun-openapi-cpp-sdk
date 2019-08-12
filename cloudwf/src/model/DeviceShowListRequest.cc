@@ -44,7 +44,7 @@ int DeviceShowListRequest::getPage()const
 void DeviceShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 int DeviceShowListRequest::getPer()const
@@ -55,7 +55,7 @@ int DeviceShowListRequest::getPer()const
 void DeviceShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 int DeviceShowListRequest::getDeviceType()const
@@ -66,7 +66,7 @@ int DeviceShowListRequest::getDeviceType()const
 void DeviceShowListRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", deviceType);
 }
 
 std::string DeviceShowListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ long DeviceShowListRequest::getSid()const
 void DeviceShowListRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

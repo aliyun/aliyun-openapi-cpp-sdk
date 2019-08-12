@@ -37,8 +37,8 @@ void DescribePhysicalConnectionsRequest::setFilter(const std::vector<Filter>& fi
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), std::to_string(obj.value.at(i)));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -50,7 +50,7 @@ long DescribePhysicalConnectionsRequest::getResourceOwnerId()const
 void DescribePhysicalConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribePhysicalConnectionsRequest::getRegionId()const
@@ -105,7 +105,7 @@ int DescribePhysicalConnectionsRequest::getPageSize()const
 void DescribePhysicalConnectionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribePhysicalConnectionsRequest::getOwnerId()const
@@ -116,7 +116,7 @@ long DescribePhysicalConnectionsRequest::getOwnerId()const
 void DescribePhysicalConnectionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribePhysicalConnectionsRequest::getIncludeReservationData()const
@@ -127,7 +127,7 @@ bool DescribePhysicalConnectionsRequest::getIncludeReservationData()const
 void DescribePhysicalConnectionsRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setCoreParameter("IncludeReservationData", includeReservationData);
 }
 
 int DescribePhysicalConnectionsRequest::getPageNumber()const
@@ -138,6 +138,6 @@ int DescribePhysicalConnectionsRequest::getPageNumber()const
 void DescribePhysicalConnectionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

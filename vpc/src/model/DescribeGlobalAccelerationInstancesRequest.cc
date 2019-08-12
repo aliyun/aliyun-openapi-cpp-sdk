@@ -44,7 +44,7 @@ long DescribeGlobalAccelerationInstancesRequest::getResourceOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getBandwidthType()const
@@ -99,7 +99,7 @@ long DescribeGlobalAccelerationInstancesRequest::getOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()const
@@ -110,7 +110,7 @@ bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()cons
 void DescribeGlobalAccelerationInstancesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setCoreParameter("IncludeReservationData", includeReservationData);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationInstanceId()const
@@ -143,7 +143,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageNumber()const
 void DescribeGlobalAccelerationInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getRegionId()const
@@ -176,7 +176,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageSize()const
 void DescribeGlobalAccelerationInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getStatus()const

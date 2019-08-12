@@ -44,7 +44,7 @@ long DescribeCenGeographicSpanRemainingBandwidthRequest::getResourceOwnerId()con
 void DescribeCenGeographicSpanRemainingBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCenGeographicSpanRemainingBandwidthRequest::getGeographicRegionAId()const
@@ -99,7 +99,7 @@ int DescribeCenGeographicSpanRemainingBandwidthRequest::getPageSize()const
 void DescribeCenGeographicSpanRemainingBandwidthRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCenGeographicSpanRemainingBandwidthRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeCenGeographicSpanRemainingBandwidthRequest::getOwnerId()const
 void DescribeCenGeographicSpanRemainingBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeCenGeographicSpanRemainingBandwidthRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeCenGeographicSpanRemainingBandwidthRequest::getPageNumber()const
 void DescribeCenGeographicSpanRemainingBandwidthRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

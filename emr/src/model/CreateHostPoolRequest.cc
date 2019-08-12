@@ -33,7 +33,7 @@ long CreateHostPoolRequest::getResourceOwnerId()const
 void CreateHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateHostPoolRequest::getRegionId()const
@@ -81,10 +81,10 @@ void CreateHostPoolRequest::setKubeClusterInfo(const std::vector<KubeClusterInfo
 	for(int i = 0; i!= kubeClusterInfo.size(); i++)	{
 		auto obj = kubeClusterInfo.at(i);
 		std::string str ="KubeClusterInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ExternalKey", obj.externalKey);
-		setCoreParameter(str + ".InternalConfig", obj.internalConfig);
-		setCoreParameter(str + ".PublicConfig", obj.publicConfig);
-		setCoreParameter(str + ".SshConfig", obj.sshConfig);
+		setCoreParameter(str + ".ExternalKey", std::to_string(obj.externalKey));
+		setCoreParameter(str + ".InternalConfig", std::to_string(obj.internalConfig));
+		setCoreParameter(str + ".PublicConfig", std::to_string(obj.publicConfig));
+		setCoreParameter(str + ".SshConfig", std::to_string(obj.sshConfig));
 	}
 }
 

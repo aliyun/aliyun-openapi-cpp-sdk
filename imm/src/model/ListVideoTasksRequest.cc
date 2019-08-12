@@ -33,7 +33,7 @@ int ListVideoTasksRequest::getMaxKeys()const
 void ListVideoTasksRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListVideoTasksRequest::getTaskType()const

@@ -33,7 +33,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
 void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys)
 {
 	allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
-	setCoreParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
+	setCoreParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys);
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
@@ -44,7 +44,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
 void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices)
 {
 	allowUserToManageMFADevices_ = allowUserToManageMFADevices;
-	setCoreParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
+	setCoreParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices);
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
@@ -55,7 +55,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
 void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys)
 {
 	allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
-	setCoreParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
+	setCoreParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys);
 }
 
 bool SetSecurityPreferenceRequest::getEnableSaveMFATicket()const
@@ -66,7 +66,7 @@ bool SetSecurityPreferenceRequest::getEnableSaveMFATicket()const
 void SetSecurityPreferenceRequest::setEnableSaveMFATicket(bool enableSaveMFATicket)
 {
 	enableSaveMFATicket_ = enableSaveMFATicket;
-	setCoreParameter("EnableSaveMFATicket", enableSaveMFATicket ? "true" : "false");
+	setCoreParameter("EnableSaveMFATicket", enableSaveMFATicket);
 }
 
 std::string SetSecurityPreferenceRequest::getLoginNetworkMasks()const
@@ -88,7 +88,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToChangePassword()const
 void SetSecurityPreferenceRequest::setAllowUserToChangePassword(bool allowUserToChangePassword)
 {
 	allowUserToChangePassword_ = allowUserToChangePassword;
-	setCoreParameter("AllowUserToChangePassword", allowUserToChangePassword ? "true" : "false");
+	setCoreParameter("AllowUserToChangePassword", allowUserToChangePassword);
 }
 
 int SetSecurityPreferenceRequest::getLoginSessionDuration()const
@@ -99,6 +99,6 @@ int SetSecurityPreferenceRequest::getLoginSessionDuration()const
 void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDuration)
 {
 	loginSessionDuration_ = loginSessionDuration;
-	setCoreParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
+	setCoreParameter("LoginSessionDuration", loginSessionDuration);
 }
 

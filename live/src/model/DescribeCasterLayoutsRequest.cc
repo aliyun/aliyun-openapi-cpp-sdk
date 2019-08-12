@@ -44,7 +44,7 @@ long DescribeCasterLayoutsRequest::getOwnerId()const
 void DescribeCasterLayoutsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCasterLayoutsRequest::getLayoutId()const

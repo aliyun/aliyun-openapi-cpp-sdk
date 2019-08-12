@@ -44,7 +44,7 @@ long SetLiveStreamDelayConfigRequest::getCallerParentId()const
 void SetLiveStreamDelayConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool SetLiveStreamDelayConfigRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool SetLiveStreamDelayConfigRequest::getProxy_original_security_transport()cons
 void SetLiveStreamDelayConfigRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getProxy_original_source_ip()const
@@ -176,7 +176,7 @@ long SetLiveStreamDelayConfigRequest::getCallerUid()const
 void SetLiveStreamDelayConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getApp_ip()const
@@ -209,7 +209,7 @@ int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
 void SetLiveStreamDelayConfigRequest::setRtmpDelay(int rtmpDelay)
 {
 	rtmpDelay_ = rtmpDelay;
-	setCoreParameter("RtmpDelay", std::to_string(rtmpDelay));
+	setCoreParameter("RtmpDelay", rtmpDelay);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getDomainName()const
@@ -242,7 +242,7 @@ long SetLiveStreamDelayConfigRequest::getOwnerId()const
 void SetLiveStreamDelayConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getVersion()const
@@ -264,7 +264,7 @@ bool SetLiveStreamDelayConfigRequest::getProxy_trust_transport_info()const
 void SetLiveStreamDelayConfigRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool SetLiveStreamDelayConfigRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool SetLiveStreamDelayConfigRequest::getAk_mfa_present()const
 void SetLiveStreamDelayConfigRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SetLiveStreamDelayConfigRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool SetLiveStreamDelayConfigRequest::getSecurity_transport()const
 void SetLiveStreamDelayConfigRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRequestId()const
@@ -308,7 +308,7 @@ int SetLiveStreamDelayConfigRequest::getFlvDelay()const
 void SetLiveStreamDelayConfigRequest::setFlvDelay(int flvDelay)
 {
 	flvDelay_ = flvDelay;
-	setCoreParameter("FlvDelay", std::to_string(flvDelay));
+	setCoreParameter("FlvDelay", flvDelay);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
@@ -330,6 +330,6 @@ int SetLiveStreamDelayConfigRequest::getHlsDelay()const
 void SetLiveStreamDelayConfigRequest::setHlsDelay(int hlsDelay)
 {
 	hlsDelay_ = hlsDelay;
-	setCoreParameter("HlsDelay", std::to_string(hlsDelay));
+	setCoreParameter("HlsDelay", hlsDelay);
 }
 

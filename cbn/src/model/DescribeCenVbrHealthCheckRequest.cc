@@ -33,7 +33,7 @@ long DescribeCenVbrHealthCheckRequest::getResourceOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DescribeCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceOwnerId(long vbrInstanceOwnerId)
 {
 	vbrInstanceOwnerId_ = vbrInstanceOwnerId;
-	setCoreParameter("VbrInstanceOwnerId", std::to_string(vbrInstanceOwnerId));
+	setCoreParameter("VbrInstanceOwnerId", vbrInstanceOwnerId);
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ int DescribeCenVbrHealthCheckRequest::getPageSize()const
 void DescribeCenVbrHealthCheckRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCenVbrHealthCheckRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeCenVbrHealthCheckRequest::getOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
@@ -132,6 +132,6 @@ int DescribeCenVbrHealthCheckRequest::getPageNumber()const
 void DescribeCenVbrHealthCheckRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

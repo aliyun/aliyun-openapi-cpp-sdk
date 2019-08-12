@@ -55,6 +55,6 @@ int ListPoliciesRequest::getMaxItems()const
 void ListPoliciesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", maxItems);
 }
 

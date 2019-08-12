@@ -44,7 +44,7 @@ long DescribeScreenScoreThreadRequest::getEndTime()const
 void DescribeScreenScoreThreadRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeScreenScoreThreadRequest::getStartTime()const
@@ -55,6 +55,6 @@ long DescribeScreenScoreThreadRequest::getStartTime()const
 void DescribeScreenScoreThreadRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

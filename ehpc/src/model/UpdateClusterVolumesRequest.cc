@@ -37,15 +37,15 @@ void UpdateClusterVolumesRequest::setAdditionalVolumes(const std::vector<Additio
 	for(int i = 0; i!= additionalVolumes.size(); i++)	{
 		auto obj = additionalVolumes.at(i);
 		std::string str ="AdditionalVolumes."+ std::to_string(i);
-		setCoreParameter(str + ".VolumeType", obj.volumeType);
-		setCoreParameter(str + ".VolumeProtocol", obj.volumeProtocol);
-		setCoreParameter(str + ".LocalDirectory", obj.localDirectory);
-		setCoreParameter(str + ".RemoteDirectory", obj.remoteDirectory);
-		setCoreParameter(str + ".Roles", std::to_string(obj.roles));
-		setCoreParameter(str + ".VolumeId", obj.volumeId);
-		setCoreParameter(str + ".VolumeMountpoint", obj.volumeMountpoint);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".JobQueue", obj.jobQueue);
+		setCoreParameter(str + ".VolumeType", std::to_string(obj.volumeType));
+		setCoreParameter(str + ".VolumeProtocol", std::to_string(obj.volumeProtocol));
+		setCoreParameter(str + ".LocalDirectory", std::to_string(obj.localDirectory));
+		setCoreParameter(str + ".RemoteDirectory", std::to_string(obj.remoteDirectory));
+		setCoreParameter(str + ".Roles", obj.roles);
+		setCoreParameter(str + ".VolumeId", std::to_string(obj.volumeId));
+		setCoreParameter(str + ".VolumeMountpoint", std::to_string(obj.volumeMountpoint));
+		setCoreParameter(str + ".Location", std::to_string(obj.location));
+		setCoreParameter(str + ".JobQueue", std::to_string(obj.jobQueue));
 	}
 }
 

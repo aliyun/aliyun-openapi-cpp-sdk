@@ -33,7 +33,7 @@ long QueryMcuJobRequest::getResourceOwnerId()const
 void QueryMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryMcuJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryMcuJobRequest::getOwnerId()const
 void QueryMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryMcuJobRequest::getAccessKeyId()const

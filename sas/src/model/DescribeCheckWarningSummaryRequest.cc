@@ -55,7 +55,7 @@ int DescribeCheckWarningSummaryRequest::getRiskStatus()const
 void DescribeCheckWarningSummaryRequest::setRiskStatus(int riskStatus)
 {
 	riskStatus_ = riskStatus;
-	setCoreParameter("RiskStatus", std::to_string(riskStatus));
+	setCoreParameter("RiskStatus", riskStatus);
 }
 
 int DescribeCheckWarningSummaryRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeCheckWarningSummaryRequest::getPageSize()const
 void DescribeCheckWarningSummaryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCheckWarningSummaryRequest::getStrategyId()const
@@ -77,7 +77,7 @@ long DescribeCheckWarningSummaryRequest::getStrategyId()const
 void DescribeCheckWarningSummaryRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribeCheckWarningSummaryRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeCheckWarningSummaryRequest::getCurrentPage()const
 void DescribeCheckWarningSummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getLang()const

@@ -44,7 +44,7 @@ int DescribeGWSInstancesRequest::getPageSize()const
 void DescribeGWSInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGWSInstancesRequest::getClusterId()const
@@ -66,7 +66,7 @@ int DescribeGWSInstancesRequest::getPageNumber()const
 void DescribeGWSInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeGWSInstancesRequest::getAccessKeyId()const

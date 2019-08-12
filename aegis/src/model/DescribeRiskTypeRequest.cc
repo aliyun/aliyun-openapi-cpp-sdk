@@ -44,7 +44,7 @@ long DescribeRiskTypeRequest::getStrategyId()const
 void DescribeRiskTypeRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string DescribeRiskTypeRequest::getLang()const

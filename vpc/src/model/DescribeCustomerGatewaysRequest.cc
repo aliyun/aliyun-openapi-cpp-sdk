@@ -33,7 +33,7 @@ long DescribeCustomerGatewaysRequest::getResourceOwnerId()const
 void DescribeCustomerGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCustomerGatewaysRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int DescribeCustomerGatewaysRequest::getPageSize()const
 void DescribeCustomerGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeCustomerGatewaysRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCustomerGatewaysRequest::getOwnerId()const
 void DescribeCustomerGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCustomerGatewaysRequest::getCustomerGatewayId()const
@@ -110,6 +110,6 @@ int DescribeCustomerGatewaysRequest::getPageNumber()const
 void DescribeCustomerGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

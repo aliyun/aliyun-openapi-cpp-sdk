@@ -66,6 +66,6 @@ bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setCoreParameter("Status", status);
 }
 

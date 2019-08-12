@@ -33,7 +33,7 @@ long DescribeProxyFunctionSupportRequest::getResourceOwnerId()const
 void DescribeProxyFunctionSupportRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeProxyFunctionSupportRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long DescribeProxyFunctionSupportRequest::getOwnerId()const
 void DescribeProxyFunctionSupportRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeProxyFunctionSupportRequest::getAccessKeyId()const

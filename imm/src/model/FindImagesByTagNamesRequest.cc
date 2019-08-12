@@ -55,7 +55,7 @@ int FindImagesByTagNamesRequest::getLimit()const
 void FindImagesByTagNamesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string FindImagesByTagNamesRequest::getProject()const

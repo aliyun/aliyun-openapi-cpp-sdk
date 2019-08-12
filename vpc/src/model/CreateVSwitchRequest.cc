@@ -33,7 +33,7 @@ long CreateVSwitchRequest::getResourceOwnerId()const
 void CreateVSwitchRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVSwitchRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long CreateVSwitchRequest::getOwnerId()const
 void CreateVSwitchRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateVSwitchRequest::getIpv6CidrBlock()const
@@ -99,7 +99,7 @@ int CreateVSwitchRequest::getIpv6CidrBlock()const
 void CreateVSwitchRequest::setIpv6CidrBlock(int ipv6CidrBlock)
 {
 	ipv6CidrBlock_ = ipv6CidrBlock;
-	setCoreParameter("Ipv6CidrBlock", std::to_string(ipv6CidrBlock));
+	setCoreParameter("Ipv6CidrBlock", ipv6CidrBlock);
 }
 
 std::string CreateVSwitchRequest::getRegionId()const

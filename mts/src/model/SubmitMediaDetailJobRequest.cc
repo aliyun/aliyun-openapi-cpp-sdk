@@ -55,7 +55,7 @@ long SubmitMediaDetailJobRequest::getResourceOwnerId()const
 void SubmitMediaDetailJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
@@ -99,7 +99,7 @@ long SubmitMediaDetailJobRequest::getOwnerId()const
 void SubmitMediaDetailJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitMediaDetailJobRequest::getAccessKeyId()const

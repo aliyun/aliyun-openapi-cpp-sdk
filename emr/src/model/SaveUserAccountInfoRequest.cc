@@ -44,7 +44,7 @@ long SaveUserAccountInfoRequest::getResourceOwnerId()const
 void SaveUserAccountInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long SaveUserAccountInfoRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long SaveUserAccountInfoRequest::getCallerParentId()const
 void SaveUserAccountInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string SaveUserAccountInfoRequest::getAccountType()const
@@ -77,7 +77,7 @@ bool SaveUserAccountInfoRequest::getProxy_original_security_transport()const
 void SaveUserAccountInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string SaveUserAccountInfoRequest::getCallerBid()const
@@ -121,7 +121,7 @@ bool SaveUserAccountInfoRequest::getAk_mfa_present()const
 void SaveUserAccountInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SaveUserAccountInfoRequest::getProxy_trust_transport_info()const
@@ -132,7 +132,7 @@ bool SaveUserAccountInfoRequest::getProxy_trust_transport_info()const
 void SaveUserAccountInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string SaveUserAccountInfoRequest::getCallerType()const
@@ -176,7 +176,7 @@ bool SaveUserAccountInfoRequest::getSecurity_transport()const
 void SaveUserAccountInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SaveUserAccountInfoRequest::getAccountPassword()const
@@ -231,7 +231,7 @@ long SaveUserAccountInfoRequest::getCallerUid()const
 void SaveUserAccountInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string SaveUserAccountInfoRequest::getAliyunUserId()const

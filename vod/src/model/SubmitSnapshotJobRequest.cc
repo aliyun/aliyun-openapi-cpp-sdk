@@ -33,7 +33,7 @@ long SubmitSnapshotJobRequest::getResourceOwnerId()const
 void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long SubmitSnapshotJobRequest::getCount()const
 void SubmitSnapshotJobRequest::setCount(long count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string SubmitSnapshotJobRequest::getVideoId()const
@@ -77,7 +77,7 @@ long SubmitSnapshotJobRequest::getOwnerId()const
 void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitSnapshotJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
 void SubmitSnapshotJobRequest::setSpecifiedOffsetTime(long specifiedOffsetTime)
 {
 	specifiedOffsetTime_ = specifiedOffsetTime;
-	setCoreParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
+	setCoreParameter("SpecifiedOffsetTime", specifiedOffsetTime);
 }
 
 std::string SubmitSnapshotJobRequest::getWidth()const
@@ -132,7 +132,7 @@ long SubmitSnapshotJobRequest::getInterval()const
 void SubmitSnapshotJobRequest::setInterval(long interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const

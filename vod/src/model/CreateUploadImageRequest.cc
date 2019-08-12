@@ -33,7 +33,7 @@ long CreateUploadImageRequest::getResourceOwnerId()const
 void CreateUploadImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUploadImageRequest::getImageType()const
@@ -88,7 +88,7 @@ long CreateUploadImageRequest::getOwnerId()const
 void CreateUploadImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateUploadImageRequest::getTitle()const
@@ -165,7 +165,7 @@ long CreateUploadImageRequest::getCateId()const
 void CreateUploadImageRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string CreateUploadImageRequest::getAppId()const

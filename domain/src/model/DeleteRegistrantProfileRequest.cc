@@ -44,7 +44,7 @@ long DeleteRegistrantProfileRequest::getRegistrantProfileId()const
 void DeleteRegistrantProfileRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 std::string DeleteRegistrantProfileRequest::getLang()const

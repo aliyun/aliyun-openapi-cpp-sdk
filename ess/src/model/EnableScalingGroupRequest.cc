@@ -33,7 +33,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight6()const
 void EnableScalingGroupRequest::setLoadBalancerWeight6(int loadBalancerWeight6)
 {
 	loadBalancerWeight6_ = loadBalancerWeight6;
-	setCoreParameter("LoadBalancerWeight6", std::to_string(loadBalancerWeight6));
+	setCoreParameter("LoadBalancerWeight6", loadBalancerWeight6);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight11()const
@@ -44,7 +44,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight11()const
 void EnableScalingGroupRequest::setLoadBalancerWeight11(int loadBalancerWeight11)
 {
 	loadBalancerWeight11_ = loadBalancerWeight11;
-	setCoreParameter("LoadBalancerWeight11", std::to_string(loadBalancerWeight11));
+	setCoreParameter("LoadBalancerWeight11", loadBalancerWeight11);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight7()const
@@ -55,7 +55,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight7()const
 void EnableScalingGroupRequest::setLoadBalancerWeight7(int loadBalancerWeight7)
 {
 	loadBalancerWeight7_ = loadBalancerWeight7;
-	setCoreParameter("LoadBalancerWeight7", std::to_string(loadBalancerWeight7));
+	setCoreParameter("LoadBalancerWeight7", loadBalancerWeight7);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight12()const
@@ -66,7 +66,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight12()const
 void EnableScalingGroupRequest::setLoadBalancerWeight12(int loadBalancerWeight12)
 {
 	loadBalancerWeight12_ = loadBalancerWeight12;
-	setCoreParameter("LoadBalancerWeight12", std::to_string(loadBalancerWeight12));
+	setCoreParameter("LoadBalancerWeight12", loadBalancerWeight12);
 }
 
 long EnableScalingGroupRequest::getResourceOwnerId()const
@@ -77,7 +77,7 @@ long EnableScalingGroupRequest::getResourceOwnerId()const
 void EnableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight8()const
@@ -88,7 +88,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight8()const
 void EnableScalingGroupRequest::setLoadBalancerWeight8(int loadBalancerWeight8)
 {
 	loadBalancerWeight8_ = loadBalancerWeight8;
-	setCoreParameter("LoadBalancerWeight8", std::to_string(loadBalancerWeight8));
+	setCoreParameter("LoadBalancerWeight8", loadBalancerWeight8);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight9()const
@@ -99,7 +99,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight9()const
 void EnableScalingGroupRequest::setLoadBalancerWeight9(int loadBalancerWeight9)
 {
 	loadBalancerWeight9_ = loadBalancerWeight9;
-	setCoreParameter("LoadBalancerWeight9", std::to_string(loadBalancerWeight9));
+	setCoreParameter("LoadBalancerWeight9", loadBalancerWeight9);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight10()const
@@ -110,7 +110,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight10()const
 void EnableScalingGroupRequest::setLoadBalancerWeight10(int loadBalancerWeight10)
 {
 	loadBalancerWeight10_ = loadBalancerWeight10;
-	setCoreParameter("LoadBalancerWeight10", std::to_string(loadBalancerWeight10));
+	setCoreParameter("LoadBalancerWeight10", loadBalancerWeight10);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight2()const
@@ -121,7 +121,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight2()const
 void EnableScalingGroupRequest::setLoadBalancerWeight2(int loadBalancerWeight2)
 {
 	loadBalancerWeight2_ = loadBalancerWeight2;
-	setCoreParameter("LoadBalancerWeight2", std::to_string(loadBalancerWeight2));
+	setCoreParameter("LoadBalancerWeight2", loadBalancerWeight2);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight15()const
@@ -132,7 +132,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight15()const
 void EnableScalingGroupRequest::setLoadBalancerWeight15(int loadBalancerWeight15)
 {
 	loadBalancerWeight15_ = loadBalancerWeight15;
-	setCoreParameter("LoadBalancerWeight15", std::to_string(loadBalancerWeight15));
+	setCoreParameter("LoadBalancerWeight15", loadBalancerWeight15);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight3()const
@@ -143,7 +143,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight3()const
 void EnableScalingGroupRequest::setLoadBalancerWeight3(int loadBalancerWeight3)
 {
 	loadBalancerWeight3_ = loadBalancerWeight3;
-	setCoreParameter("LoadBalancerWeight3", std::to_string(loadBalancerWeight3));
+	setCoreParameter("LoadBalancerWeight3", loadBalancerWeight3);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight16()const
@@ -154,7 +154,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight16()const
 void EnableScalingGroupRequest::setLoadBalancerWeight16(int loadBalancerWeight16)
 {
 	loadBalancerWeight16_ = loadBalancerWeight16;
-	setCoreParameter("LoadBalancerWeight16", std::to_string(loadBalancerWeight16));
+	setCoreParameter("LoadBalancerWeight16", loadBalancerWeight16);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight4()const
@@ -165,7 +165,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight4()const
 void EnableScalingGroupRequest::setLoadBalancerWeight4(int loadBalancerWeight4)
 {
 	loadBalancerWeight4_ = loadBalancerWeight4;
-	setCoreParameter("LoadBalancerWeight4", std::to_string(loadBalancerWeight4));
+	setCoreParameter("LoadBalancerWeight4", loadBalancerWeight4);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight13()const
@@ -176,7 +176,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight13()const
 void EnableScalingGroupRequest::setLoadBalancerWeight13(int loadBalancerWeight13)
 {
 	loadBalancerWeight13_ = loadBalancerWeight13;
-	setCoreParameter("LoadBalancerWeight13", std::to_string(loadBalancerWeight13));
+	setCoreParameter("LoadBalancerWeight13", loadBalancerWeight13);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight5()const
@@ -187,7 +187,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight5()const
 void EnableScalingGroupRequest::setLoadBalancerWeight5(int loadBalancerWeight5)
 {
 	loadBalancerWeight5_ = loadBalancerWeight5;
-	setCoreParameter("LoadBalancerWeight5", std::to_string(loadBalancerWeight5));
+	setCoreParameter("LoadBalancerWeight5", loadBalancerWeight5);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight14()const
@@ -198,7 +198,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight14()const
 void EnableScalingGroupRequest::setLoadBalancerWeight14(int loadBalancerWeight14)
 {
 	loadBalancerWeight14_ = loadBalancerWeight14;
-	setCoreParameter("LoadBalancerWeight14", std::to_string(loadBalancerWeight14));
+	setCoreParameter("LoadBalancerWeight14", loadBalancerWeight14);
 }
 
 std::string EnableScalingGroupRequest::getActiveScalingConfigurationId()const
@@ -220,7 +220,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight1()const
 void EnableScalingGroupRequest::setLoadBalancerWeight1(int loadBalancerWeight1)
 {
 	loadBalancerWeight1_ = loadBalancerWeight1;
-	setCoreParameter("LoadBalancerWeight1", std::to_string(loadBalancerWeight1));
+	setCoreParameter("LoadBalancerWeight1", loadBalancerWeight1);
 }
 
 std::string EnableScalingGroupRequest::getInstanceId1()const
@@ -242,7 +242,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight20()const
 void EnableScalingGroupRequest::setLoadBalancerWeight20(int loadBalancerWeight20)
 {
 	loadBalancerWeight20_ = loadBalancerWeight20;
-	setCoreParameter("LoadBalancerWeight20", std::to_string(loadBalancerWeight20));
+	setCoreParameter("LoadBalancerWeight20", loadBalancerWeight20);
 }
 
 std::string EnableScalingGroupRequest::getInstanceId3()const
@@ -352,7 +352,7 @@ long EnableScalingGroupRequest::getOwnerId()const
 void EnableScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight19()const
@@ -363,7 +363,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight19()const
 void EnableScalingGroupRequest::setLoadBalancerWeight19(int loadBalancerWeight19)
 {
 	loadBalancerWeight19_ = loadBalancerWeight19;
-	setCoreParameter("LoadBalancerWeight19", std::to_string(loadBalancerWeight19));
+	setCoreParameter("LoadBalancerWeight19", loadBalancerWeight19);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight17()const
@@ -374,7 +374,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight17()const
 void EnableScalingGroupRequest::setLoadBalancerWeight17(int loadBalancerWeight17)
 {
 	loadBalancerWeight17_ = loadBalancerWeight17;
-	setCoreParameter("LoadBalancerWeight17", std::to_string(loadBalancerWeight17));
+	setCoreParameter("LoadBalancerWeight17", loadBalancerWeight17);
 }
 
 int EnableScalingGroupRequest::getLoadBalancerWeight18()const
@@ -385,7 +385,7 @@ int EnableScalingGroupRequest::getLoadBalancerWeight18()const
 void EnableScalingGroupRequest::setLoadBalancerWeight18(int loadBalancerWeight18)
 {
 	loadBalancerWeight18_ = loadBalancerWeight18;
-	setCoreParameter("LoadBalancerWeight18", std::to_string(loadBalancerWeight18));
+	setCoreParameter("LoadBalancerWeight18", loadBalancerWeight18);
 }
 
 std::string EnableScalingGroupRequest::getInstanceId10()const

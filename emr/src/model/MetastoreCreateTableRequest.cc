@@ -33,7 +33,7 @@ long MetastoreCreateTableRequest::getResourceOwnerId()const
 void MetastoreCreateTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreCreateTableRequest::getFieldDelimiter()const
@@ -59,9 +59,9 @@ void MetastoreCreateTableRequest::setColumn(const std::vector<Column>& column)
 	for(int i = 0; i!= column.size(); i++)	{
 		auto obj = column.at(i);
 		std::string str ="Column."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Comment", std::to_string(obj.comment));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 	}
 }
 
@@ -99,9 +99,9 @@ void MetastoreCreateTableRequest::setPartition(const std::vector<Partition>& par
 	for(int i = 0; i!= partition.size(); i++)	{
 		auto obj = partition.at(i);
 		std::string str ="Partition."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Comment", std::to_string(obj.comment));
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
 	}
 }
 

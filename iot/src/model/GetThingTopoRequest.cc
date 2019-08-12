@@ -44,7 +44,7 @@ int GetThingTopoRequest::getPageNo()const
 void GetThingTopoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 std::string GetThingTopoRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ int GetThingTopoRequest::getPageSize()const
 void GetThingTopoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetThingTopoRequest::getDeviceName()const

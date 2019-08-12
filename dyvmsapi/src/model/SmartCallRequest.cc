@@ -33,7 +33,7 @@ long SmartCallRequest::getResourceOwnerId()const
 void SmartCallRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SmartCallRequest::getVoiceCodeParam()const
@@ -55,7 +55,7 @@ bool SmartCallRequest::getEarlyMediaAsr()const
 void SmartCallRequest::setEarlyMediaAsr(bool earlyMediaAsr)
 {
 	earlyMediaAsr_ = earlyMediaAsr;
-	setCoreParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
+	setCoreParameter("EarlyMediaAsr", earlyMediaAsr);
 }
 
 int SmartCallRequest::getSpeed()const
@@ -66,7 +66,7 @@ int SmartCallRequest::getSpeed()const
 void SmartCallRequest::setSpeed(int speed)
 {
 	speed_ = speed;
-	setCoreParameter("Speed", std::to_string(speed));
+	setCoreParameter("Speed", speed);
 }
 
 std::string SmartCallRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ int SmartCallRequest::getSessionTimeout()const
 void SmartCallRequest::setSessionTimeout(int sessionTimeout)
 {
 	sessionTimeout_ = sessionTimeout;
-	setCoreParameter("SessionTimeout", std::to_string(sessionTimeout));
+	setCoreParameter("SessionTimeout", sessionTimeout);
 }
 
 std::string SmartCallRequest::getDynamicId()const
@@ -132,7 +132,7 @@ int SmartCallRequest::getTtsSpeed()const
 void SmartCallRequest::setTtsSpeed(int ttsSpeed)
 {
 	ttsSpeed_ = ttsSpeed;
-	setCoreParameter("TtsSpeed", std::to_string(ttsSpeed));
+	setCoreParameter("TtsSpeed", ttsSpeed);
 }
 
 std::string SmartCallRequest::getVoiceCode()const
@@ -165,7 +165,7 @@ int SmartCallRequest::getActionCodeTimeBreak()const
 void SmartCallRequest::setActionCodeTimeBreak(int actionCodeTimeBreak)
 {
 	actionCodeTimeBreak_ = actionCodeTimeBreak;
-	setCoreParameter("ActionCodeTimeBreak", std::to_string(actionCodeTimeBreak));
+	setCoreParameter("ActionCodeTimeBreak", actionCodeTimeBreak);
 }
 
 bool SmartCallRequest::getTtsConf()const
@@ -176,7 +176,7 @@ bool SmartCallRequest::getTtsConf()const
 void SmartCallRequest::setTtsConf(bool ttsConf)
 {
 	ttsConf_ = ttsConf;
-	setCoreParameter("TtsConf", ttsConf ? "true" : "false");
+	setCoreParameter("TtsConf", ttsConf);
 }
 
 bool SmartCallRequest::getActionCodeBreak()const
@@ -187,7 +187,7 @@ bool SmartCallRequest::getActionCodeBreak()const
 void SmartCallRequest::setActionCodeBreak(bool actionCodeBreak)
 {
 	actionCodeBreak_ = actionCodeBreak;
-	setCoreParameter("ActionCodeBreak", actionCodeBreak ? "true" : "false");
+	setCoreParameter("ActionCodeBreak", actionCodeBreak);
 }
 
 std::string SmartCallRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ bool SmartCallRequest::getRecordFlag()const
 void SmartCallRequest::setRecordFlag(bool recordFlag)
 {
 	recordFlag_ = recordFlag;
-	setCoreParameter("RecordFlag", recordFlag ? "true" : "false");
+	setCoreParameter("RecordFlag", recordFlag);
 }
 
 long SmartCallRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long SmartCallRequest::getOwnerId()const
 void SmartCallRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int SmartCallRequest::getTtsVolume()const
@@ -231,7 +231,7 @@ int SmartCallRequest::getTtsVolume()const
 void SmartCallRequest::setTtsVolume(int ttsVolume)
 {
 	ttsVolume_ = ttsVolume;
-	setCoreParameter("TtsVolume", std::to_string(ttsVolume));
+	setCoreParameter("TtsVolume", ttsVolume);
 }
 
 int SmartCallRequest::getVolume()const
@@ -242,7 +242,7 @@ int SmartCallRequest::getVolume()const
 void SmartCallRequest::setVolume(int volume)
 {
 	volume_ = volume;
-	setCoreParameter("Volume", std::to_string(volume));
+	setCoreParameter("Volume", volume);
 }
 
 int SmartCallRequest::getMuteTime()const
@@ -253,7 +253,7 @@ int SmartCallRequest::getMuteTime()const
 void SmartCallRequest::setMuteTime(int muteTime)
 {
 	muteTime_ = muteTime;
-	setCoreParameter("MuteTime", std::to_string(muteTime));
+	setCoreParameter("MuteTime", muteTime);
 }
 
 std::string SmartCallRequest::getOutId()const
@@ -286,7 +286,7 @@ int SmartCallRequest::getPauseTime()const
 void SmartCallRequest::setPauseTime(int pauseTime)
 {
 	pauseTime_ = pauseTime;
-	setCoreParameter("PauseTime", std::to_string(pauseTime));
+	setCoreParameter("PauseTime", pauseTime);
 }
 
 std::string SmartCallRequest::getTtsStyle()const

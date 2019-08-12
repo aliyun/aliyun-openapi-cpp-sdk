@@ -55,7 +55,7 @@ long FindInstanceListRequest::getCsbId()const
 void FindInstanceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 int FindInstanceListRequest::getPageNum()const
@@ -66,7 +66,7 @@ int FindInstanceListRequest::getPageNum()const
 void FindInstanceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 int FindInstanceListRequest::getStatus()const
@@ -77,6 +77,6 @@ int FindInstanceListRequest::getStatus()const
 void FindInstanceListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

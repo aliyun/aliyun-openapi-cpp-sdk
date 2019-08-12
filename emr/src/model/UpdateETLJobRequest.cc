@@ -33,7 +33,7 @@ long UpdateETLJobRequest::getResourceOwnerId()const
 void UpdateETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateETLJobRequest::getClusterConfig()const
@@ -59,9 +59,9 @@ void UpdateETLJobRequest::setTriggerRule(const std::vector<TriggerRule>& trigger
 	for(int i = 0; i!= triggerRule.size(); i++)	{
 		auto obj = triggerRule.at(i);
 		std::string str ="TriggerRule."+ std::to_string(i);
-		setCoreParameter(str + ".CronExpr", obj.cronExpr);
-		setCoreParameter(str + ".EndTime", std::to_string(obj.endTime));
-		setCoreParameter(str + ".StartTime", std::to_string(obj.startTime));
+		setCoreParameter(str + ".CronExpr", std::to_string(obj.cronExpr));
+		setCoreParameter(str + ".EndTime", obj.endTime);
+		setCoreParameter(str + ".StartTime", obj.startTime);
 		setCoreParameter(str + ".Enabled", obj.enabled ? "true" : "false");
 	}
 }
@@ -96,7 +96,7 @@ bool UpdateETLJobRequest::getCheck()const
 void UpdateETLJobRequest::setCheck(bool check)
 {
 	check_ = check;
-	setCoreParameter("Check", check ? "true" : "false");
+	setCoreParameter("Check", check);
 }
 
 std::string UpdateETLJobRequest::getAccessKeyId()const
@@ -122,9 +122,9 @@ void UpdateETLJobRequest::setStageConnection(const std::vector<StageConnection>&
 	for(int i = 0; i!= stageConnection.size(); i++)	{
 		auto obj = stageConnection.at(i);
 		std::string str ="StageConnection."+ std::to_string(i);
-		setCoreParameter(str + ".Port", obj.port);
-		setCoreParameter(str + ".From", obj.from);
-		setCoreParameter(str + ".To", obj.to);
+		setCoreParameter(str + ".Port", std::to_string(obj.port));
+		setCoreParameter(str + ".From", std::to_string(obj.from));
+		setCoreParameter(str + ".To", std::to_string(obj.to));
 	}
 }
 
@@ -140,10 +140,10 @@ void UpdateETLJobRequest::setStage(const std::vector<Stage>& stage)
 	for(int i = 0; i!= stage.size(); i++)	{
 		auto obj = stage.at(i);
 		std::string str ="Stage."+ std::to_string(i);
-		setCoreParameter(str + ".StageName", obj.stageName);
-		setCoreParameter(str + ".StageConf", obj.stageConf);
-		setCoreParameter(str + ".StageType", obj.stageType);
-		setCoreParameter(str + ".StagePlugin", obj.stagePlugin);
+		setCoreParameter(str + ".StageName", std::to_string(obj.stageName));
+		setCoreParameter(str + ".StageConf", std::to_string(obj.stageConf));
+		setCoreParameter(str + ".StageType", std::to_string(obj.stageType));
+		setCoreParameter(str + ".StagePlugin", std::to_string(obj.stagePlugin));
 	}
 }
 

@@ -33,7 +33,7 @@ int DescribeSuspEventDetailRequest::getSuspiciousEventId()const
 void DescribeSuspEventDetailRequest::setSuspiciousEventId(int suspiciousEventId)
 {
 	suspiciousEventId_ = suspiciousEventId;
-	setCoreParameter("SuspiciousEventId", std::to_string(suspiciousEventId));
+	setCoreParameter("SuspiciousEventId", suspiciousEventId);
 }
 
 std::string DescribeSuspEventDetailRequest::getSourceIp()const

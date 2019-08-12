@@ -88,7 +88,7 @@ long SetDomainServerCertificateRequest::getOwnerId()const
 void SetDomainServerCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetDomainServerCertificateRequest::getRegion()const

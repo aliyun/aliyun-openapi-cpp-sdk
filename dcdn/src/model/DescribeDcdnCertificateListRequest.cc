@@ -55,6 +55,6 @@ long DescribeDcdnCertificateListRequest::getOwnerId()const
 void DescribeDcdnCertificateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

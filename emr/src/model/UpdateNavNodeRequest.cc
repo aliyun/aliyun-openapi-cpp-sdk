@@ -33,7 +33,7 @@ long UpdateNavNodeRequest::getResourceOwnerId()const
 void UpdateNavNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateNavNodeRequest::getRegionId()const

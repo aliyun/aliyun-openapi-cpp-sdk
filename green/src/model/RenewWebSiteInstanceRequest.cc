@@ -33,7 +33,7 @@ int RenewWebSiteInstanceRequest::getDuration()const
 void RenewWebSiteInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string RenewWebSiteInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ int RenewWebSiteInstanceRequest::getOrderNum()const
 void RenewWebSiteInstanceRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", std::to_string(orderNum));
+	setCoreParameter("OrderNum", orderNum);
 }
 
 std::string RenewWebSiteInstanceRequest::getCommodityCode()const
@@ -88,7 +88,7 @@ long RenewWebSiteInstanceRequest::getOwnerId()const
 void RenewWebSiteInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RenewWebSiteInstanceRequest::getPricingCycle()const

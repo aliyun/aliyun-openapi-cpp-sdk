@@ -33,7 +33,7 @@ long DescribeClusterOperationHostTaskLogRequest::getResourceOwnerId()const
 void DescribeClusterOperationHostTaskLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getRegionId()const

@@ -33,7 +33,7 @@ long ListLiveRecordVideoRequest::getResourceOwnerId()const
 void ListLiveRecordVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ListLiveRecordVideoRequest::getOwnerId()const
 void ListLiveRecordVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListLiveRecordVideoRequest::getAppName()const
@@ -110,7 +110,7 @@ int ListLiveRecordVideoRequest::getPageNo()const
 void ListLiveRecordVideoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 int ListLiveRecordVideoRequest::getPageSize()const
@@ -121,7 +121,7 @@ int ListLiveRecordVideoRequest::getPageSize()const
 void ListLiveRecordVideoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListLiveRecordVideoRequest::getSortBy()const

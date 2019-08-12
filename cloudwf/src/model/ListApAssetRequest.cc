@@ -66,7 +66,7 @@ int ListApAssetRequest::getLength()const
 void ListApAssetRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListApAssetRequest::getPageIndex()const
@@ -77,7 +77,7 @@ int ListApAssetRequest::getPageIndex()const
 void ListApAssetRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApAssetRequest::getSearchMac()const

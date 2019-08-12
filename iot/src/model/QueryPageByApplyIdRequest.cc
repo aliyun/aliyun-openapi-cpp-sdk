@@ -33,7 +33,7 @@ long QueryPageByApplyIdRequest::getApplyId()const
 void QueryPageByApplyIdRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setCoreParameter("ApplyId", std::to_string(applyId));
+	setCoreParameter("ApplyId", applyId);
 }
 
 std::string QueryPageByApplyIdRequest::getIotInstanceId()const
@@ -55,7 +55,7 @@ int QueryPageByApplyIdRequest::getPageSize()const
 void QueryPageByApplyIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryPageByApplyIdRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int QueryPageByApplyIdRequest::getCurrentPage()const
 void QueryPageByApplyIdRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryPageByApplyIdRequest::getAccessKeyId()const

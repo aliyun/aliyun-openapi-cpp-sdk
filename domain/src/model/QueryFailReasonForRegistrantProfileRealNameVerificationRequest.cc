@@ -44,7 +44,7 @@ long QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getRegistra
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
+	setCoreParameter("RegistrantProfileID", registrantProfileID);
 }
 
 std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getLang()const

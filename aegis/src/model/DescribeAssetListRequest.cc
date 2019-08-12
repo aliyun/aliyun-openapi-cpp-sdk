@@ -44,7 +44,7 @@ int DescribeAssetListRequest::getPageSize()const
 void DescribeAssetListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAssetListRequest::getFrom()const
@@ -66,7 +66,7 @@ int DescribeAssetListRequest::getCurrentPage()const
 void DescribeAssetListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAssetListRequest::getLang()const

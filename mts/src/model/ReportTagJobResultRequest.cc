@@ -55,7 +55,7 @@ long ReportTagJobResultRequest::getResourceOwnerId()const
 void ReportTagJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ReportTagJobResultRequest::getOwnerId()const
 void ReportTagJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReportTagJobResultRequest::getAccessKeyId()const

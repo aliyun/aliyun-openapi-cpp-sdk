@@ -55,6 +55,6 @@ int RollbackSuspEventQuaraFileRequest::getQuaraFileId()const
 void RollbackSuspEventQuaraFileRequest::setQuaraFileId(int quaraFileId)
 {
 	quaraFileId_ = quaraFileId;
-	setCoreParameter("QuaraFileId", std::to_string(quaraFileId));
+	setCoreParameter("QuaraFileId", quaraFileId);
 }
 

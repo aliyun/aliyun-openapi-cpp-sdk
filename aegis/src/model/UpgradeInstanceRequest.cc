@@ -55,7 +55,7 @@ int UpgradeInstanceRequest::getVmNumber()const
 void UpgradeInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setCoreParameter("VmNumber", std::to_string(vmNumber));
+	setCoreParameter("VmNumber", vmNumber);
 }
 
 long UpgradeInstanceRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long UpgradeInstanceRequest::getOwnerId()const
 void UpgradeInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int UpgradeInstanceRequest::getVersionCode()const
@@ -77,6 +77,6 @@ int UpgradeInstanceRequest::getVersionCode()const
 void UpgradeInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", std::to_string(versionCode));
+	setCoreParameter("VersionCode", versionCode);
 }
 

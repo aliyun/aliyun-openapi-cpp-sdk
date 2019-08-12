@@ -33,7 +33,7 @@ long DeleteFlowlogRequest::getResourceOwnerId()const
 void DeleteFlowlogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteFlowlogRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DeleteFlowlogRequest::getOwnerId()const
 void DeleteFlowlogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteFlowlogRequest::getFlowLogId()const

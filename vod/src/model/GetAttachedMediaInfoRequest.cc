@@ -33,7 +33,7 @@ long GetAttachedMediaInfoRequest::getResourceOwnerId()const
 void GetAttachedMediaInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetAttachedMediaInfoRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long GetAttachedMediaInfoRequest::getResourceRealOwnerId()const
 void GetAttachedMediaInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 long GetAttachedMediaInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long GetAttachedMediaInfoRequest::getOwnerId()const
 void GetAttachedMediaInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long GetAttachedMediaInfoRequest::getAuthTimeout()const
@@ -99,7 +99,7 @@ long GetAttachedMediaInfoRequest::getAuthTimeout()const
 void GetAttachedMediaInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setCoreParameter("AuthTimeout", authTimeout);
 }
 
 std::string GetAttachedMediaInfoRequest::getAccessKeyId()const

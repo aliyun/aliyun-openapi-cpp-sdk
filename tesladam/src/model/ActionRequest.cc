@@ -33,7 +33,7 @@ int ActionRequest::getOrderId()const
 void ActionRequest::setOrderId(int orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string ActionRequest::getStepCode()const

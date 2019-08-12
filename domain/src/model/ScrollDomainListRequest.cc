@@ -33,7 +33,7 @@ long ScrollDomainListRequest::getEndExpirationDate()const
 void ScrollDomainListRequest::setEndExpirationDate(long endExpirationDate)
 {
 	endExpirationDate_ = endExpirationDate;
-	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
+	setCoreParameter("EndExpirationDate", endExpirationDate);
 }
 
 std::string ScrollDomainListRequest::getProductDomainType()const
@@ -66,7 +66,7 @@ long ScrollDomainListRequest::getStartExpirationDate()const
 void ScrollDomainListRequest::setStartExpirationDate(long startExpirationDate)
 {
 	startExpirationDate_ = startExpirationDate;
-	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
+	setCoreParameter("StartExpirationDate", startExpirationDate);
 }
 
 int ScrollDomainListRequest::getDomainStatus()const
@@ -77,7 +77,7 @@ int ScrollDomainListRequest::getDomainStatus()const
 void ScrollDomainListRequest::setDomainStatus(int domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", std::to_string(domainStatus));
+	setCoreParameter("DomainStatus", domainStatus);
 }
 
 long ScrollDomainListRequest::getDomainGroupId()const
@@ -88,7 +88,7 @@ long ScrollDomainListRequest::getDomainGroupId()const
 void ScrollDomainListRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", domainGroupId);
 }
 
 bool ScrollDomainListRequest::getKeyWordSuffix()const
@@ -99,7 +99,7 @@ bool ScrollDomainListRequest::getKeyWordSuffix()const
 void ScrollDomainListRequest::setKeyWordSuffix(bool keyWordSuffix)
 {
 	keyWordSuffix_ = keyWordSuffix;
-	setCoreParameter("KeyWordSuffix", keyWordSuffix ? "true" : "false");
+	setCoreParameter("KeyWordSuffix", keyWordSuffix);
 }
 
 std::string ScrollDomainListRequest::getScrollId()const
@@ -132,7 +132,7 @@ bool ScrollDomainListRequest::getKeyWordPrefix()const
 void ScrollDomainListRequest::setKeyWordPrefix(bool keyWordPrefix)
 {
 	keyWordPrefix_ = keyWordPrefix;
-	setCoreParameter("KeyWordPrefix", keyWordPrefix ? "true" : "false");
+	setCoreParameter("KeyWordPrefix", keyWordPrefix);
 }
 
 int ScrollDomainListRequest::getStartLength()const
@@ -143,7 +143,7 @@ int ScrollDomainListRequest::getStartLength()const
 void ScrollDomainListRequest::setStartLength(int startLength)
 {
 	startLength_ = startLength;
-	setCoreParameter("StartLength", std::to_string(startLength));
+	setCoreParameter("StartLength", startLength);
 }
 
 int ScrollDomainListRequest::getTradeType()const
@@ -154,7 +154,7 @@ int ScrollDomainListRequest::getTradeType()const
 void ScrollDomainListRequest::setTradeType(int tradeType)
 {
 	tradeType_ = tradeType;
-	setCoreParameter("TradeType", std::to_string(tradeType));
+	setCoreParameter("TradeType", tradeType);
 }
 
 bool ScrollDomainListRequest::getExcludedSuffix()const
@@ -165,7 +165,7 @@ bool ScrollDomainListRequest::getExcludedSuffix()const
 void ScrollDomainListRequest::setExcludedSuffix(bool excludedSuffix)
 {
 	excludedSuffix_ = excludedSuffix;
-	setCoreParameter("ExcludedSuffix", excludedSuffix ? "true" : "false");
+	setCoreParameter("ExcludedSuffix", excludedSuffix);
 }
 
 long ScrollDomainListRequest::getEndRegistrationDate()const
@@ -176,7 +176,7 @@ long ScrollDomainListRequest::getEndRegistrationDate()const
 void ScrollDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
 {
 	endRegistrationDate_ = endRegistrationDate;
-	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
+	setCoreParameter("EndRegistrationDate", endRegistrationDate);
 }
 
 int ScrollDomainListRequest::getForm()const
@@ -187,7 +187,7 @@ int ScrollDomainListRequest::getForm()const
 void ScrollDomainListRequest::setForm(int form)
 {
 	form_ = form;
-	setCoreParameter("Form", std::to_string(form));
+	setCoreParameter("Form", form);
 }
 
 std::string ScrollDomainListRequest::getUserClientIp()const
@@ -209,7 +209,7 @@ int ScrollDomainListRequest::getPageSize()const
 void ScrollDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ScrollDomainListRequest::getLang()const
@@ -231,7 +231,7 @@ bool ScrollDomainListRequest::getExcludedPrefix()const
 void ScrollDomainListRequest::setExcludedPrefix(bool excludedPrefix)
 {
 	excludedPrefix_ = excludedPrefix;
-	setCoreParameter("ExcludedPrefix", excludedPrefix ? "true" : "false");
+	setCoreParameter("ExcludedPrefix", excludedPrefix);
 }
 
 std::string ScrollDomainListRequest::getKeyWord()const
@@ -253,7 +253,7 @@ long ScrollDomainListRequest::getStartRegistrationDate()const
 void ScrollDomainListRequest::setStartRegistrationDate(long startRegistrationDate)
 {
 	startRegistrationDate_ = startRegistrationDate;
-	setCoreParameter("StartRegistrationDate", std::to_string(startRegistrationDate));
+	setCoreParameter("StartRegistrationDate", startRegistrationDate);
 }
 
 int ScrollDomainListRequest::getEndLength()const
@@ -264,6 +264,6 @@ int ScrollDomainListRequest::getEndLength()const
 void ScrollDomainListRequest::setEndLength(int endLength)
 {
 	endLength_ = endLength;
-	setCoreParameter("EndLength", std::to_string(endLength));
+	setCoreParameter("EndLength", endLength);
 }
 

@@ -55,7 +55,7 @@ long AssumeRoleRequest::getDurationSeconds()const
 void AssumeRoleRequest::setDurationSeconds(long durationSeconds)
 {
 	durationSeconds_ = durationSeconds;
-	setCoreParameter("DurationSeconds", std::to_string(durationSeconds));
+	setCoreParameter("DurationSeconds", durationSeconds);
 }
 
 std::string AssumeRoleRequest::getPolicy()const

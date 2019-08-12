@@ -33,7 +33,7 @@ long ModifyQosRequest::getResourceOwnerId()const
 void ModifyQosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyQosRequest::getQosName()const
@@ -88,7 +88,7 @@ long ModifyQosRequest::getOwnerId()const
 void ModifyQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyQosRequest::getQosId()const

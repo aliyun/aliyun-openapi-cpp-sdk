@@ -33,7 +33,7 @@ bool CreateDrdsInstanceRequest::getIsAutoRenew()const
 void CreateDrdsInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
+	setCoreParameter("IsAutoRenew", isAutoRenew);
 }
 
 int CreateDrdsInstanceRequest::getQuantity()const
@@ -44,7 +44,7 @@ int CreateDrdsInstanceRequest::getQuantity()const
 void CreateDrdsInstanceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string CreateDrdsInstanceRequest::getClientToken()const
@@ -121,7 +121,7 @@ int CreateDrdsInstanceRequest::getDuration()const
 void CreateDrdsInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 bool CreateDrdsInstanceRequest::getIsHa()const
@@ -132,7 +132,7 @@ bool CreateDrdsInstanceRequest::getIsHa()const
 void CreateDrdsInstanceRequest::setIsHa(bool isHa)
 {
 	isHa_ = isHa;
-	setCoreParameter("IsHa", isHa ? "true" : "false");
+	setCoreParameter("IsHa", isHa);
 }
 
 std::string CreateDrdsInstanceRequest::getRegionId()const

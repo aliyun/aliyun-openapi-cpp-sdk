@@ -44,7 +44,7 @@ long DescribeEventTypesRequest::getParentTypeId()const
 void DescribeEventTypesRequest::setParentTypeId(long parentTypeId)
 {
 	parentTypeId_ = parentTypeId;
-	setCoreParameter("ParentTypeId", std::to_string(parentTypeId));
+	setCoreParameter("ParentTypeId", parentTypeId);
 }
 
 std::string DescribeEventTypesRequest::getLang()const

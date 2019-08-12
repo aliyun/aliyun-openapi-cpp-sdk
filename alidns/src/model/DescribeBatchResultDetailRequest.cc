@@ -55,7 +55,7 @@ int DescribeBatchResultDetailRequest::getPageSize()const
 void DescribeBatchResultDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeBatchResultDetailRequest::getLang()const
@@ -77,7 +77,7 @@ int DescribeBatchResultDetailRequest::getPageNumber()const
 void DescribeBatchResultDetailRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 long DescribeBatchResultDetailRequest::getTaskId()const
@@ -88,6 +88,6 @@ long DescribeBatchResultDetailRequest::getTaskId()const
 void DescribeBatchResultDetailRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

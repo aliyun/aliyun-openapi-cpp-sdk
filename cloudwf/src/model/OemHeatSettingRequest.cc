@@ -33,7 +33,7 @@ long OemHeatSettingRequest::getGsid()const
 void OemHeatSettingRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string OemHeatSettingRequest::getAccessKeyId()const

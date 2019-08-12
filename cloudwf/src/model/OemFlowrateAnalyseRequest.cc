@@ -33,7 +33,7 @@ long OemFlowrateAnalyseRequest::getGsid()const
 void OemFlowrateAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string OemFlowrateAnalyseRequest::getAccessKeyId()const

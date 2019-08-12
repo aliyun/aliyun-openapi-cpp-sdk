@@ -55,6 +55,6 @@ int DescribeDataLimitSetRequest::getResourceType()const
 void DescribeDataLimitSetRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

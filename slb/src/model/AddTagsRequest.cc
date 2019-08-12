@@ -44,7 +44,7 @@ long AddTagsRequest::getResourceOwnerId()const
 void AddTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddTagsRequest::getLoadBalancerId()const
@@ -99,7 +99,7 @@ long AddTagsRequest::getOwnerId()const
 void AddTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddTagsRequest::getTags()const

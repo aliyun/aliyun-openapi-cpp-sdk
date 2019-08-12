@@ -33,7 +33,7 @@ int FetchPhotosRequest::getSize()const
 void FetchPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string FetchPhotosRequest::getLibraryId()const
@@ -88,7 +88,7 @@ int FetchPhotosRequest::getPage()const
 void FetchPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string FetchPhotosRequest::getOrder()const

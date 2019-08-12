@@ -44,7 +44,7 @@ long AddUserResourceRoleRequest::getResourceOwnerId()const
 void AddUserResourceRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddUserResourceRoleRequest::getResourceId()const
@@ -66,7 +66,7 @@ long AddUserResourceRoleRequest::getCallerParentId()const
 void AddUserResourceRoleRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 long AddUserResourceRoleRequest::getRoleId()const
@@ -77,7 +77,7 @@ long AddUserResourceRoleRequest::getRoleId()const
 void AddUserResourceRoleRequest::setRoleId(long roleId)
 {
 	roleId_ = roleId;
-	setCoreParameter("RoleId", std::to_string(roleId));
+	setCoreParameter("RoleId", roleId);
 }
 
 bool AddUserResourceRoleRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool AddUserResourceRoleRequest::getProxy_original_security_transport()const
 void AddUserResourceRoleRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string AddUserResourceRoleRequest::getCallerBid()const
@@ -132,7 +132,7 @@ bool AddUserResourceRoleRequest::getAk_mfa_present()const
 void AddUserResourceRoleRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool AddUserResourceRoleRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool AddUserResourceRoleRequest::getProxy_trust_transport_info()const
 void AddUserResourceRoleRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string AddUserResourceRoleRequest::getCallerType()const
@@ -176,7 +176,7 @@ bool AddUserResourceRoleRequest::getSecurity_transport()const
 void AddUserResourceRoleRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string AddUserResourceRoleRequest::getSecurityToken()const
@@ -220,7 +220,7 @@ long AddUserResourceRoleRequest::getCallerUid()const
 void AddUserResourceRoleRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string AddUserResourceRoleRequest::getAliyunUserId()const

@@ -33,7 +33,7 @@ long ListUserStatisticsRequest::getResourceOwnerId()const
 void ListUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListUserStatisticsRequest::getRegionId()const
@@ -66,7 +66,7 @@ int ListUserStatisticsRequest::getPageSize()const
 void ListUserStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListUserStatisticsRequest::getOrderFieldName()const
@@ -88,7 +88,7 @@ int ListUserStatisticsRequest::getCurrentSize()const
 void ListUserStatisticsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 std::string ListUserStatisticsRequest::getAccessKeyId()const

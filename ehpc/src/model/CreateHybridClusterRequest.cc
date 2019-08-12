@@ -246,8 +246,8 @@ void CreateHybridClusterRequest::setPostInstallScript(const std::vector<PostInst
 	for(int i = 0; i!= postInstallScript.size(); i++)	{
 		auto obj = postInstallScript.at(i);
 		std::string str ="PostInstallScript."+ std::to_string(i);
-		setCoreParameter(str + ".Args", obj.args);
-		setCoreParameter(str + ".Url", obj.url);
+		setCoreParameter(str + ".Args", std::to_string(obj.args));
+		setCoreParameter(str + ".Url", std::to_string(obj.url));
 	}
 }
 
@@ -274,11 +274,11 @@ void CreateHybridClusterRequest::setNodes(const std::vector<Nodes>& nodes)
 	for(int i = 0; i!= nodes.size(); i++)	{
 		auto obj = nodes.at(i);
 		std::string str ="Nodes."+ std::to_string(i);
-		setCoreParameter(str + ".IpAddress", obj.ipAddress);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		setCoreParameter(str + ".Role", obj.role);
-		setCoreParameter(str + ".AccountType", obj.accountType);
-		setCoreParameter(str + ".SchedulerType", obj.schedulerType);
+		setCoreParameter(str + ".IpAddress", std::to_string(obj.ipAddress));
+		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
+		setCoreParameter(str + ".Role", std::to_string(obj.role));
+		setCoreParameter(str + ".AccountType", std::to_string(obj.accountType));
+		setCoreParameter(str + ".SchedulerType", std::to_string(obj.schedulerType));
 	}
 }
 
@@ -294,7 +294,7 @@ void CreateHybridClusterRequest::setApplication(const std::vector<Application>& 
 	for(int i = 0; i!= application.size(); i++)	{
 		auto obj = application.at(i);
 		std::string str ="Application."+ std::to_string(i);
-		setCoreParameter(str + ".Tag", obj.tag);
+		setCoreParameter(str + ".Tag", std::to_string(obj.tag));
 	}
 }
 
@@ -372,7 +372,7 @@ bool CreateHybridClusterRequest::getSchedulerPreInstall()const
 void CreateHybridClusterRequest::setSchedulerPreInstall(bool schedulerPreInstall)
 {
 	schedulerPreInstall_ = schedulerPreInstall;
-	setCoreParameter("SchedulerPreInstall", schedulerPreInstall ? "true" : "false");
+	setCoreParameter("SchedulerPreInstall", schedulerPreInstall);
 }
 
 std::string CreateHybridClusterRequest::getLocation()const

@@ -55,7 +55,7 @@ int QueryDeviceListByDeviceGroupRequest::getPageSize()const
 void QueryDeviceListByDeviceGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
 void QueryDeviceListByDeviceGroupRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const

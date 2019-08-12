@@ -34,6 +34,6 @@ void TaskConfigUnhealthyRequest::setTaskIdList(const std::vector<long>& taskIdLi
 {
 	taskIdList_ = taskIdList;
 	for(int i = 0; i!= taskIdList.size(); i++)
-		setCoreParameter("TaskIdList."+ std::to_string(i), std::to_string(taskIdList.at(i)));
+		setCoreParameter("TaskIdList."+ std::to_string(i), taskIdList.at(i));
 }
 

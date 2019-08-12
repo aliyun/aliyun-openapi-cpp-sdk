@@ -33,7 +33,7 @@ long DelPortalTempRequest::getId()const
 void DelPortalTempRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DelPortalTempRequest::getAccessKeyId()const

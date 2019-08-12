@@ -37,7 +37,7 @@ void DeleteContainerAppsRequest::setContainerApp(const std::vector<ContainerApp>
 	for(int i = 0; i!= containerApp.size(); i++)	{
 		auto obj = containerApp.at(i);
 		std::string str ="ContainerApp."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
 	}
 }
 

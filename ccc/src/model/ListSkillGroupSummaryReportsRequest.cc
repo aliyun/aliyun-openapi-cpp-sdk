@@ -55,7 +55,7 @@ int ListSkillGroupSummaryReportsRequest::getPageSize()const
 void ListSkillGroupSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getEndTime()const
@@ -88,7 +88,7 @@ int ListSkillGroupSummaryReportsRequest::getPageNumber()const
 void ListSkillGroupSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getAccessKeyId()const

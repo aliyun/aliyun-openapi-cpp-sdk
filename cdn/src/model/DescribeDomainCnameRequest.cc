@@ -55,7 +55,7 @@ long DescribeDomainCnameRequest::getCallerParentId()const
 void DescribeDomainCnameRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string DescribeDomainCnameRequest::getDomainName()const
@@ -77,7 +77,7 @@ bool DescribeDomainCnameRequest::getProxy_original_security_transport()const
 void DescribeDomainCnameRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainCnameRequest::getCallerBid()const
@@ -99,7 +99,7 @@ long DescribeDomainCnameRequest::getOwnerId()const
 void DescribeDomainCnameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainCnameRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool DescribeDomainCnameRequest::getProxy_trust_transport_info()const
 void DescribeDomainCnameRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainCnameRequest::getAk_mfa_present()const
@@ -165,7 +165,7 @@ bool DescribeDomainCnameRequest::getAk_mfa_present()const
 void DescribeDomainCnameRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DescribeDomainCnameRequest::getAccessKeyId()const
@@ -187,7 +187,7 @@ bool DescribeDomainCnameRequest::getSecurity_transport()const
 void DescribeDomainCnameRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainCnameRequest::getSecurityToken()const
@@ -253,6 +253,6 @@ long DescribeDomainCnameRequest::getCallerUid()const
 void DescribeDomainCnameRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

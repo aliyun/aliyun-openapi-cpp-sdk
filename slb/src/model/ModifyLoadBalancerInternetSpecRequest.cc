@@ -44,7 +44,7 @@ long ModifyLoadBalancerInternetSpecRequest::getResourceOwnerId()const
 void ModifyLoadBalancerInternetSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyLoadBalancerInternetSpecRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool ModifyLoadBalancerInternetSpecRequest::getAutoPay()const
 void ModifyLoadBalancerInternetSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int ModifyLoadBalancerInternetSpecRequest::getBandwidth()const
 void ModifyLoadBalancerInternetSpecRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ long ModifyLoadBalancerInternetSpecRequest::getOwnerId()const
 void ModifyLoadBalancerInternetSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getTags()const
@@ -154,6 +154,6 @@ int ModifyLoadBalancerInternetSpecRequest::getRatio()const
 void ModifyLoadBalancerInternetSpecRequest::setRatio(int ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", std::to_string(ratio));
+	setCoreParameter("Ratio", ratio);
 }
 

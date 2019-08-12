@@ -33,7 +33,7 @@ int QueryRenewPriceRequest::getTimeCycleNum()const
 void QueryRenewPriceRequest::setTimeCycleNum(int timeCycleNum)
 {
 	timeCycleNum_ = timeCycleNum;
-	setCoreParameter("TimeCycleNum", std::to_string(timeCycleNum));
+	setCoreParameter("TimeCycleNum", timeCycleNum);
 }
 
 std::vector<std::string> QueryRenewPriceRequest::getApList()const
@@ -45,7 +45,7 @@ void QueryRenewPriceRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
 	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
+		setCoreParameter("ApList."+ std::to_string(i), std::to_string(apList.at(i)));
 }
 
 std::string QueryRenewPriceRequest::getAccessKeyId()const

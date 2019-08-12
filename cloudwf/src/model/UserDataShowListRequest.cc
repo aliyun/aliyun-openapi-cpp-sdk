@@ -33,7 +33,7 @@ long UserDataShowListRequest::getIid()const
 void UserDataShowListRequest::setIid(long iid)
 {
 	iid_ = iid;
-	setCoreParameter("Iid", std::to_string(iid));
+	setCoreParameter("Iid", iid);
 }
 
 std::string UserDataShowListRequest::getName()const
@@ -55,7 +55,7 @@ int UserDataShowListRequest::getPage()const
 void UserDataShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 long UserDataShowListRequest::getBid()const
@@ -66,7 +66,7 @@ long UserDataShowListRequest::getBid()const
 void UserDataShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 int UserDataShowListRequest::getPer()const
@@ -77,7 +77,7 @@ int UserDataShowListRequest::getPer()const
 void UserDataShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 std::string UserDataShowListRequest::getAccessKeyId()const

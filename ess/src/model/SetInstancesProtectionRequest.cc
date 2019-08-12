@@ -34,7 +34,7 @@ void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
 }
 
 std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ long SetInstancesProtectionRequest::getOwnerId()const
 void SetInstancesProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetInstancesProtectionRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
 void SetInstancesProtectionRequest::setProtectedFromScaleIn(bool protectedFromScaleIn)
 {
 	protectedFromScaleIn_ = protectedFromScaleIn;
-	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn ? "true" : "false");
+	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn);
 }
 

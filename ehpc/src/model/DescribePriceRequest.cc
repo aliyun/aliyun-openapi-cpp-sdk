@@ -48,13 +48,13 @@ void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commod
 	for(int i = 0; i!= commodities.size(); i++)	{
 		auto obj = commodities.at(i);
 		std::string str ="Commodities."+ std::to_string(i);
-		setCoreParameter(str + ".Amount", std::to_string(obj.amount));
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".NodeType", obj.nodeType);
-		setCoreParameter(str + ".SystemDiskCategory", obj.systemDiskCategory);
-		setCoreParameter(str + ".SystemDiskSize", std::to_string(obj.systemDiskSize));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".NetworkType", obj.networkType);
+		setCoreParameter(str + ".Amount", obj.amount);
+		setCoreParameter(str + ".Period", obj.period);
+		setCoreParameter(str + ".NodeType", std::to_string(obj.nodeType));
+		setCoreParameter(str + ".SystemDiskCategory", std::to_string(obj.systemDiskCategory));
+		setCoreParameter(str + ".SystemDiskSize", obj.systemDiskSize);
+		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
+		setCoreParameter(str + ".NetworkType", std::to_string(obj.networkType));
 	}
 }
 

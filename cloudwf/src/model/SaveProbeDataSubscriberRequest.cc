@@ -88,7 +88,7 @@ long SaveProbeDataSubscriberRequest::getId()const
 void SaveProbeDataSubscriberRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int SaveProbeDataSubscriberRequest::getType()const
@@ -99,7 +99,7 @@ int SaveProbeDataSubscriberRequest::getType()const
 void SaveProbeDataSubscriberRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string SaveProbeDataSubscriberRequest::getAccessKeyId()const
@@ -122,6 +122,6 @@ void SaveProbeDataSubscriberRequest::setResourceIds(const std::vector<long>& res
 {
 	resourceIds_ = resourceIds;
 	for(int i = 0; i!= resourceIds.size(); i++)
-		setCoreParameter("ResourceIds."+ std::to_string(i), std::to_string(resourceIds.at(i)));
+		setCoreParameter("ResourceIds."+ std::to_string(i), resourceIds.at(i));
 }
 

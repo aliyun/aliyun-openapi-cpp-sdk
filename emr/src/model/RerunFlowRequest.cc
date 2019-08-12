@@ -66,6 +66,6 @@ bool RerunFlowRequest::getReRunFail()const
 void RerunFlowRequest::setReRunFail(bool reRunFail)
 {
 	reRunFail_ = reRunFail;
-	setCoreParameter("ReRunFail", reRunFail ? "true" : "false");
+	setCoreParameter("ReRunFail", reRunFail);
 }
 

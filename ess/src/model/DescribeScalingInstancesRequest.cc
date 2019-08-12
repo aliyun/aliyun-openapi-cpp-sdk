@@ -44,7 +44,7 @@ long DescribeScalingInstancesRequest::getResourceOwnerId()const
 void DescribeScalingInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId12()const
@@ -110,7 +110,7 @@ int DescribeScalingInstancesRequest::getPageNumber()const
 void DescribeScalingInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeScalingInstancesRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ int DescribeScalingInstancesRequest::getPageSize()const
 void DescribeScalingInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeScalingInstancesRequest::getInstanceId20()const
@@ -286,7 +286,7 @@ long DescribeScalingInstancesRequest::getOwnerId()const
 void DescribeScalingInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeScalingInstancesRequest::getScalingConfigurationId()const

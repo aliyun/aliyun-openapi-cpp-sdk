@@ -44,7 +44,7 @@ int ListFacePhotosRequest::getSize()const
 void ListFacePhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListFacePhotosRequest::getLibraryId()const
@@ -77,7 +77,7 @@ long ListFacePhotosRequest::getFaceId()const
 void ListFacePhotosRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setCoreParameter("FaceId", faceId);
 }
 
 std::string ListFacePhotosRequest::getState()const

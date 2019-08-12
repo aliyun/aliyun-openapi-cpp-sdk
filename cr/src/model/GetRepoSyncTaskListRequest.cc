@@ -66,7 +66,7 @@ int GetRepoSyncTaskListRequest::getPageSize()const
 void GetRepoSyncTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetRepoSyncTaskListRequest::getPage()const
@@ -77,6 +77,6 @@ int GetRepoSyncTaskListRequest::getPage()const
 void GetRepoSyncTaskListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 

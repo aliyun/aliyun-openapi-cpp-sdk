@@ -33,7 +33,7 @@ long ModifyQosPolicyRequest::getResourceOwnerId()const
 void ModifyQosPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyQosPolicyRequest::getSourcePortRange()const
@@ -143,7 +143,7 @@ long ModifyQosPolicyRequest::getOwnerId()const
 void ModifyQosPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyQosPolicyRequest::getPriority()const
@@ -154,7 +154,7 @@ int ModifyQosPolicyRequest::getPriority()const
 void ModifyQosPolicyRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string ModifyQosPolicyRequest::getDestCidr()const

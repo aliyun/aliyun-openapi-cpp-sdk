@@ -88,7 +88,7 @@ int DescribeWarningRequest::getPageSize()const
 void DescribeWarningRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeWarningRequest::getStrategyId()const
@@ -99,7 +99,7 @@ long DescribeWarningRequest::getStrategyId()const
 void DescribeWarningRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribeWarningRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeWarningRequest::getCurrentPage()const
 void DescribeWarningRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWarningRequest::getDealed()const

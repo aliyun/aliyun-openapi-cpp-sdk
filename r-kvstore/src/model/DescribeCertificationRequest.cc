@@ -33,7 +33,7 @@ long DescribeCertificationRequest::getResourceOwnerId()const
 void DescribeCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCertificationRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeCertificationRequest::getOwnerId()const
 void DescribeCertificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCertificationRequest::getParameters()const

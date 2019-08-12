@@ -70,10 +70,10 @@ void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordForm
 	for(int i = 0; i!= recordFormat.size(); i++)	{
 		auto obj = recordFormat.at(i);
 		std::string str ="RecordFormat."+ std::to_string(i);
-		setCoreParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".OssObjectPrefix", obj.ossObjectPrefix);
-		setCoreParameter(str + ".CycleDuration", std::to_string(obj.cycleDuration));
+		setCoreParameter(str + ".SliceOssObjectPrefix", std::to_string(obj.sliceOssObjectPrefix));
+		setCoreParameter(str + ".Format", std::to_string(obj.format));
+		setCoreParameter(str + ".OssObjectPrefix", std::to_string(obj.ossObjectPrefix));
+		setCoreParameter(str + ".CycleDuration", obj.cycleDuration);
 	}
 }
 
@@ -129,7 +129,7 @@ long AddLiveAppRecordConfigRequest::getOwnerId()const
 void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int AddLiveAppRecordConfigRequest::getOnDemand()const
@@ -140,7 +140,7 @@ int AddLiveAppRecordConfigRequest::getOnDemand()const
 void AddLiveAppRecordConfigRequest::setOnDemand(int onDemand)
 {
 	onDemand_ = onDemand;
-	setCoreParameter("OnDemand", std::to_string(onDemand));
+	setCoreParameter("OnDemand", onDemand);
 }
 
 std::string AddLiveAppRecordConfigRequest::getStreamName()const

@@ -33,7 +33,7 @@ bool ModifyDrdsIpWhiteListRequest::getMode()const
 void ModifyDrdsIpWhiteListRequest::setMode(bool mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode ? "true" : "false");
+	setCoreParameter("Mode", mode);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getDbName()const

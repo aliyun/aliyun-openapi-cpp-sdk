@@ -44,7 +44,7 @@ bool OnsConsumerStatusRequest::getNeedJstack()const
 void OnsConsumerStatusRequest::setNeedJstack(bool needJstack)
 {
 	needJstack_ = needJstack;
-	setCoreParameter("NeedJstack", needJstack ? "true" : "false");
+	setCoreParameter("NeedJstack", needJstack);
 }
 
 std::string OnsConsumerStatusRequest::getGroupId()const
@@ -66,6 +66,6 @@ bool OnsConsumerStatusRequest::getDetail()const
 void OnsConsumerStatusRequest::setDetail(bool detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail ? "true" : "false");
+	setCoreParameter("Detail", detail);
 }
 

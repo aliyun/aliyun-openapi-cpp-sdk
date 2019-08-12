@@ -66,7 +66,7 @@ long UpgradeCdiBaseBagRequest::getOwnerId()const
 void UpgradeCdiBaseBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int UpgradeCdiBaseBagRequest::getFlowOutSpec()const
@@ -77,7 +77,7 @@ int UpgradeCdiBaseBagRequest::getFlowOutSpec()const
 void UpgradeCdiBaseBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
+	setCoreParameter("FlowOutSpec", flowOutSpec);
 }
 
 std::string UpgradeCdiBaseBagRequest::getOrderType()const

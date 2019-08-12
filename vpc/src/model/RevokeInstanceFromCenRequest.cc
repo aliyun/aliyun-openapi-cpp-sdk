@@ -33,7 +33,7 @@ long RevokeInstanceFromCenRequest::getResourceOwnerId()const
 void RevokeInstanceFromCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RevokeInstanceFromCenRequest::getInstanceId()const
@@ -121,7 +121,7 @@ long RevokeInstanceFromCenRequest::getCenOwnerId()const
 void RevokeInstanceFromCenRequest::setCenOwnerId(long cenOwnerId)
 {
 	cenOwnerId_ = cenOwnerId;
-	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+	setCoreParameter("CenOwnerId", cenOwnerId);
 }
 
 long RevokeInstanceFromCenRequest::getOwnerId()const
@@ -132,6 +132,6 @@ long RevokeInstanceFromCenRequest::getOwnerId()const
 void RevokeInstanceFromCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

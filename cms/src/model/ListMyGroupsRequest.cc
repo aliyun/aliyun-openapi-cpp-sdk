@@ -33,7 +33,7 @@ bool ListMyGroupsRequest::getSelectContactGroups()const
 void ListMyGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setCoreParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
+	setCoreParameter("SelectContactGroups", selectContactGroups);
 }
 
 std::string ListMyGroupsRequest::getInstanceId()const
@@ -55,7 +55,7 @@ int ListMyGroupsRequest::getPageSize()const
 void ListMyGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListMyGroupsRequest::getType()const
@@ -99,7 +99,7 @@ int ListMyGroupsRequest::getPageNumber()const
 void ListMyGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListMyGroupsRequest::getBindUrls()const

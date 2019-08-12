@@ -33,7 +33,7 @@ long DeleteExpressConnectRequest::getResourceOwnerId()const
 void DeleteExpressConnectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteExpressConnectRequest::getRegionId()const
@@ -88,7 +88,7 @@ bool DeleteExpressConnectRequest::getForce()const
 void DeleteExpressConnectRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 std::string DeleteExpressConnectRequest::getRouterInterfaceId()const
@@ -110,6 +110,6 @@ long DeleteExpressConnectRequest::getOwnerId()const
 void DeleteExpressConnectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -44,7 +44,7 @@ long SubmitMCJobRequest::getResourceOwnerId()const
 void SubmitMCJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitMCJobRequest::getImages()const
@@ -110,7 +110,7 @@ long SubmitMCJobRequest::getOwnerId()const
 void SubmitMCJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitMCJobRequest::getCensorConfig()const

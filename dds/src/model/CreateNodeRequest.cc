@@ -33,7 +33,7 @@ long CreateNodeRequest::getResourceOwnerId()const
 void CreateNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateNodeRequest::getNodeType()const
@@ -55,7 +55,7 @@ bool CreateNodeRequest::getAutoPay()const
 void CreateNodeRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateNodeRequest::getFromApp()const
@@ -99,7 +99,7 @@ int CreateNodeRequest::getNodeStorage()const
 void CreateNodeRequest::setNodeStorage(int nodeStorage)
 {
 	nodeStorage_ = nodeStorage;
-	setCoreParameter("NodeStorage", std::to_string(nodeStorage));
+	setCoreParameter("NodeStorage", nodeStorage);
 }
 
 std::string CreateNodeRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ long CreateNodeRequest::getOwnerId()const
 void CreateNodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateNodeRequest::getNodeClass()const

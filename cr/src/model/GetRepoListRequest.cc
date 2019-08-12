@@ -44,7 +44,7 @@ int GetRepoListRequest::getPageSize()const
 void GetRepoListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetRepoListRequest::getPage()const
@@ -55,7 +55,7 @@ int GetRepoListRequest::getPage()const
 void GetRepoListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string GetRepoListRequest::getStatus()const

@@ -55,7 +55,7 @@ bool SaveApPortalConfigRequest::getPortalStatus()const
 void SaveApPortalConfigRequest::setPortalStatus(bool portalStatus)
 {
 	portalStatus_ = portalStatus;
-	setCoreParameter("PortalStatus", portalStatus ? "true" : "false");
+	setCoreParameter("PortalStatus", portalStatus);
 }
 
 std::string SaveApPortalConfigRequest::getWhitelist()const
@@ -88,7 +88,7 @@ long SaveApPortalConfigRequest::getApConfigId()const
 void SaveApPortalConfigRequest::setApConfigId(long apConfigId)
 {
 	apConfigId_ = apConfigId;
-	setCoreParameter("ApConfigId", std::to_string(apConfigId));
+	setCoreParameter("ApConfigId", apConfigId);
 }
 
 std::string SaveApPortalConfigRequest::getAuthSecret()const
@@ -132,6 +132,6 @@ int SaveApPortalConfigRequest::getNetwork()const
 void SaveApPortalConfigRequest::setNetwork(int network)
 {
 	network_ = network;
-	setCoreParameter("Network", std::to_string(network));
+	setCoreParameter("Network", network);
 }
 

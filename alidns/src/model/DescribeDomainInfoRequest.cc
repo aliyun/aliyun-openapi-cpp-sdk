@@ -77,6 +77,6 @@ bool DescribeDomainInfoRequest::getNeedDetailAttributes()const
 void DescribeDomainInfoRequest::setNeedDetailAttributes(bool needDetailAttributes)
 {
 	needDetailAttributes_ = needDetailAttributes;
-	setCoreParameter("NeedDetailAttributes", needDetailAttributes ? "true" : "false");
+	setCoreParameter("NeedDetailAttributes", needDetailAttributes);
 }
 

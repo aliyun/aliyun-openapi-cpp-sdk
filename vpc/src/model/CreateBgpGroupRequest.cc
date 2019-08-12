@@ -44,7 +44,7 @@ long CreateBgpGroupRequest::getResourceOwnerId()const
 void CreateBgpGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateBgpGroupRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long CreateBgpGroupRequest::getOwnerId()const
 void CreateBgpGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long CreateBgpGroupRequest::getPeerAsn()const
@@ -110,7 +110,7 @@ long CreateBgpGroupRequest::getPeerAsn()const
 void CreateBgpGroupRequest::setPeerAsn(long peerAsn)
 {
 	peerAsn_ = peerAsn;
-	setCoreParameter("PeerAsn", std::to_string(peerAsn));
+	setCoreParameter("PeerAsn", peerAsn);
 }
 
 bool CreateBgpGroupRequest::getIsFakeAsn()const
@@ -121,7 +121,7 @@ bool CreateBgpGroupRequest::getIsFakeAsn()const
 void CreateBgpGroupRequest::setIsFakeAsn(bool isFakeAsn)
 {
 	isFakeAsn_ = isFakeAsn;
-	setCoreParameter("IsFakeAsn", isFakeAsn ? "true" : "false");
+	setCoreParameter("IsFakeAsn", isFakeAsn);
 }
 
 std::string CreateBgpGroupRequest::getRegionId()const

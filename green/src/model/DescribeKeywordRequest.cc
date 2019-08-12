@@ -33,7 +33,7 @@ int DescribeKeywordRequest::getTotalCount()const
 void DescribeKeywordRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeKeywordRequest::getSourceIp()const
@@ -55,7 +55,7 @@ int DescribeKeywordRequest::getKeywordLibId()const
 void DescribeKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setCoreParameter("KeywordLibId", keywordLibId);
 }
 
 int DescribeKeywordRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeKeywordRequest::getPageSize()const
 void DescribeKeywordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeKeywordRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeKeywordRequest::getCurrentPage()const
 void DescribeKeywordRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeKeywordRequest::getLang()const

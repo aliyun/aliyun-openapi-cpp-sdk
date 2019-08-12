@@ -33,7 +33,7 @@ long CreateShardingDBInstanceRequest::getResourceOwnerId()const
 void CreateShardingDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateShardingDBInstanceRequest::getClientToken()const
@@ -81,8 +81,8 @@ void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<ReplicaSet
 	for(int i = 0; i!= replicaSet.size(); i++)	{
 		auto obj = replicaSet.at(i);
 		std::string str ="ReplicaSet."+ std::to_string(i);
-		setCoreParameter(str + ".Storage", std::to_string(obj.storage));
-		setCoreParameter(str + ".Class", obj.class);
+		setCoreParameter(str + ".Storage", obj.storage);
+		setCoreParameter(str + ".Class", std::to_string(obj.class));
 	}
 }
 
@@ -160,7 +160,7 @@ int CreateShardingDBInstanceRequest::getPeriod()const
 void CreateShardingDBInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string CreateShardingDBInstanceRequest::getRestoreTime()const
@@ -219,8 +219,8 @@ void CreateShardingDBInstanceRequest::setConfigServer(const std::vector<ConfigSe
 	for(int i = 0; i!= configServer.size(); i++)	{
 		auto obj = configServer.at(i);
 		std::string str ="ConfigServer."+ std::to_string(i);
-		setCoreParameter(str + ".Storage", std::to_string(obj.storage));
-		setCoreParameter(str + ".Class", obj.class);
+		setCoreParameter(str + ".Storage", obj.storage);
+		setCoreParameter(str + ".Class", std::to_string(obj.class));
 	}
 }
 
@@ -232,7 +232,7 @@ long CreateShardingDBInstanceRequest::getOwnerId()const
 void CreateShardingDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::vector<CreateShardingDBInstanceRequest::Mongos> CreateShardingDBInstanceRequest::getMongos()const
@@ -247,7 +247,7 @@ void CreateShardingDBInstanceRequest::setMongos(const std::vector<Mongos>& mongo
 	for(int i = 0; i!= mongos.size(); i++)	{
 		auto obj = mongos.at(i);
 		std::string str ="Mongos."+ std::to_string(i);
-		setCoreParameter(str + ".Class", obj.class);
+		setCoreParameter(str + ".Class", std::to_string(obj.class));
 	}
 }
 

@@ -33,7 +33,7 @@ int CreateSmartAccessGatewayRequest::getMaxBandWidth()const
 void CreateSmartAccessGatewayRequest::setMaxBandWidth(int maxBandWidth)
 {
 	maxBandWidth_ = maxBandWidth;
-	setCoreParameter("MaxBandWidth", std::to_string(maxBandWidth));
+	setCoreParameter("MaxBandWidth", maxBandWidth);
 }
 
 long CreateSmartAccessGatewayRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateSmartAccessGatewayRequest::getResourceOwnerId()const
 void CreateSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSmartAccessGatewayRequest::getDescription()const
@@ -99,7 +99,7 @@ int CreateSmartAccessGatewayRequest::getUserCount()const
 void CreateSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setCoreParameter("UserCount", userCount);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverAddress()const
@@ -187,7 +187,7 @@ int CreateSmartAccessGatewayRequest::getPeriod()const
 void CreateSmartAccessGatewayRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool CreateSmartAccessGatewayRequest::getAutoPay()const
@@ -198,7 +198,7 @@ bool CreateSmartAccessGatewayRequest::getAutoPay()const
 void CreateSmartAccessGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverMobile()const
@@ -242,7 +242,7 @@ long CreateSmartAccessGatewayRequest::getOwnerId()const
 void CreateSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverPhone()const
@@ -319,7 +319,7 @@ long CreateSmartAccessGatewayRequest::getDataPlan()const
 void CreateSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setCoreParameter("DataPlan", dataPlan);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverZip()const

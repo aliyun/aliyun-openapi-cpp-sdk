@@ -66,6 +66,6 @@ long UpdateRepoBuildRuleRequest::getBuildRuleId()const
 void UpdateRepoBuildRuleRequest::setBuildRuleId(long buildRuleId)
 {
 	buildRuleId_ = buildRuleId;
-	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
+	setCoreParameter("BuildRuleId", buildRuleId);
 }
 

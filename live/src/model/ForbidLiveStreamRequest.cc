@@ -88,7 +88,7 @@ long ForbidLiveStreamRequest::getOwnerId()const
 void ForbidLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ForbidLiveStreamRequest::getOneshot()const

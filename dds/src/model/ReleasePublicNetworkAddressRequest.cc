@@ -33,7 +33,7 @@ long ReleasePublicNetworkAddressRequest::getResourceOwnerId()const
 void ReleasePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long ReleasePublicNetworkAddressRequest::getOwnerId()const
 void ReleasePublicNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getNodeId()const

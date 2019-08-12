@@ -66,6 +66,6 @@ long CreatePhotoStoreRequest::getDefaultQuota()const
 void CreatePhotoStoreRequest::setDefaultQuota(long defaultQuota)
 {
 	defaultQuota_ = defaultQuota;
-	setCoreParameter("DefaultQuota", std::to_string(defaultQuota));
+	setCoreParameter("DefaultQuota", defaultQuota);
 }
 

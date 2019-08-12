@@ -77,7 +77,7 @@ long DescribeRequestGraphRequest::getStartTimestamp()const
 void DescribeRequestGraphRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+	setCoreParameter("StartTimestamp", startTimestamp);
 }
 
 long DescribeRequestGraphRequest::getEndTimestamp()const
@@ -88,6 +88,6 @@ long DescribeRequestGraphRequest::getEndTimestamp()const
 void DescribeRequestGraphRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+	setCoreParameter("EndTimestamp", endTimestamp);
 }
 

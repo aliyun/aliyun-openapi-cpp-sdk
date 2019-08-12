@@ -66,7 +66,7 @@ int GetAgentDataRequest::getPageSize()const
 void GetAgentDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetAgentDataRequest::getUserId()const
@@ -88,7 +88,7 @@ int GetAgentDataRequest::getPageNumber()const
 void GetAgentDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GetAgentDataRequest::getAccessKeyId()const

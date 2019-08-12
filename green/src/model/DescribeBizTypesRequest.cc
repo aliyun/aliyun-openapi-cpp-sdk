@@ -44,6 +44,6 @@ bool DescribeBizTypesRequest::getImportFlag()const
 void DescribeBizTypesRequest::setImportFlag(bool importFlag)
 {
 	importFlag_ = importFlag;
-	setCoreParameter("ImportFlag", importFlag ? "true" : "false");
+	setCoreParameter("ImportFlag", importFlag);
 }
 

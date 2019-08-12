@@ -44,7 +44,7 @@ long DeleteBatchResourceUsersRequest::getResourceOwnerId()const
 void DeleteBatchResourceUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteBatchResourceUsersRequest::getResourceId()const
@@ -66,7 +66,7 @@ long DeleteBatchResourceUsersRequest::getCallerParentId()const
 void DeleteBatchResourceUsersRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::vector<std::string> DeleteBatchResourceUsersRequest::getUserIdList()const
@@ -78,7 +78,7 @@ void DeleteBatchResourceUsersRequest::setUserIdList(const std::vector<std::strin
 {
 	userIdList_ = userIdList;
 	for(int i = 0; i!= userIdList.size(); i++)
-		setCoreParameter("UserIdList."+ std::to_string(i), userIdList.at(i));
+		setCoreParameter("UserIdList."+ std::to_string(i), std::to_string(userIdList.at(i)));
 }
 
 bool DeleteBatchResourceUsersRequest::getProxy_original_security_transport()const
@@ -89,7 +89,7 @@ bool DeleteBatchResourceUsersRequest::getProxy_original_security_transport()cons
 void DeleteBatchResourceUsersRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DeleteBatchResourceUsersRequest::getCallerBid()const
@@ -133,7 +133,7 @@ bool DeleteBatchResourceUsersRequest::getAk_mfa_present()const
 void DeleteBatchResourceUsersRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DeleteBatchResourceUsersRequest::getProxy_trust_transport_info()const
@@ -144,7 +144,7 @@ bool DeleteBatchResourceUsersRequest::getProxy_trust_transport_info()const
 void DeleteBatchResourceUsersRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string DeleteBatchResourceUsersRequest::getCallerType()const
@@ -177,7 +177,7 @@ bool DeleteBatchResourceUsersRequest::getSecurity_transport()const
 void DeleteBatchResourceUsersRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DeleteBatchResourceUsersRequest::getSecurityToken()const
@@ -221,6 +221,6 @@ long DeleteBatchResourceUsersRequest::getCallerUid()const
 void DeleteBatchResourceUsersRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

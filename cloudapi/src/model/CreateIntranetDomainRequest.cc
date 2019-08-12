@@ -33,7 +33,7 @@ bool CreateIntranetDomainRequest::getDeleteInternetDomain()const
 void CreateIntranetDomainRequest::setDeleteInternetDomain(bool deleteInternetDomain)
 {
 	deleteInternetDomain_ = deleteInternetDomain;
-	setCoreParameter("DeleteInternetDomain", deleteInternetDomain ? "true" : "false");
+	setCoreParameter("DeleteInternetDomain", deleteInternetDomain);
 }
 
 std::string CreateIntranetDomainRequest::getSecurityToken()const

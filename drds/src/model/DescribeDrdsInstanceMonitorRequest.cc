@@ -33,7 +33,7 @@ long DescribeDrdsInstanceMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeDrdsInstanceMonitorRequest::getStartTime()const
@@ -44,7 +44,7 @@ long DescribeDrdsInstanceMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
@@ -88,6 +88,6 @@ int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const
 void DescribeDrdsInstanceMonitorRequest::setPeriodMultiple(int periodMultiple)
 {
 	periodMultiple_ = periodMultiple;
-	setCoreParameter("PeriodMultiple", std::to_string(periodMultiple));
+	setCoreParameter("PeriodMultiple", periodMultiple);
 }
 

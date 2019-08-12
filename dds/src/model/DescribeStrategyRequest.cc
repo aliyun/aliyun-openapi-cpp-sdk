@@ -33,7 +33,7 @@ long DescribeStrategyRequest::getResourceOwnerId()const
 void DescribeStrategyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeStrategyRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long DescribeStrategyRequest::getOwnerId()const
 void DescribeStrategyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeStrategyRequest::getAccessKeyId()const

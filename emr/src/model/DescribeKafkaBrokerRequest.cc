@@ -33,7 +33,7 @@ long DescribeKafkaBrokerRequest::getResourceOwnerId()const
 void DescribeKafkaBrokerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeKafkaBrokerRequest::getRegionId()const

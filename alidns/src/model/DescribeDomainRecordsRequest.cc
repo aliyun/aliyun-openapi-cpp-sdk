@@ -55,7 +55,7 @@ long DescribeDomainRecordsRequest::getGroupId()const
 void DescribeDomainRecordsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainRecordsRequest::getDomainName()const
@@ -99,7 +99,7 @@ long DescribeDomainRecordsRequest::getPageNumber()const
 void DescribeDomainRecordsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDomainRecordsRequest::getUserClientIp()const
@@ -121,7 +121,7 @@ long DescribeDomainRecordsRequest::getPageSize()const
 void DescribeDomainRecordsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDomainRecordsRequest::getSearchMode()const

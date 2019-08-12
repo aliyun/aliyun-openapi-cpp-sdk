@@ -59,8 +59,8 @@ void CreateFlowProjectUserRequest::setUser(const std::vector<User>& user)
 	for(int i = 0; i!= user.size(); i++)	{
 		auto obj = user.at(i);
 		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
+		setCoreParameter(str + ".UserName", std::to_string(obj.userName));
 	}
 }
 

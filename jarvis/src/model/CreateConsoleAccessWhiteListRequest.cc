@@ -44,7 +44,7 @@ long CreateConsoleAccessWhiteListRequest::getResourceOwnerId()const
 void CreateConsoleAccessWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getSrcIP()const
@@ -77,7 +77,7 @@ int CreateConsoleAccessWhiteListRequest::getDstPort()const
 void CreateConsoleAccessWhiteListRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setCoreParameter("DstPort", dstPort);
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getInstanceIdList()const
@@ -99,7 +99,7 @@ int CreateConsoleAccessWhiteListRequest::getLiveTime()const
 void CreateConsoleAccessWhiteListRequest::setLiveTime(int liveTime)
 {
 	liveTime_ = liveTime;
-	setCoreParameter("LiveTime", std::to_string(liveTime));
+	setCoreParameter("LiveTime", liveTime);
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getProductName()const
@@ -121,7 +121,7 @@ int CreateConsoleAccessWhiteListRequest::getWhiteListType()const
 void CreateConsoleAccessWhiteListRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string CreateConsoleAccessWhiteListRequest::getInstanceInfoList()const

@@ -55,7 +55,7 @@ int DescribeGtmLogsRequest::getPageSize()const
 void DescribeGtmLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGtmLogsRequest::getLang()const
@@ -88,7 +88,7 @@ long DescribeGtmLogsRequest::getStartTimestamp()const
 void DescribeGtmLogsRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
+	setCoreParameter("StartTimestamp", startTimestamp);
 }
 
 int DescribeGtmLogsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeGtmLogsRequest::getPageNumber()const
 void DescribeGtmLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 long DescribeGtmLogsRequest::getEndTimestamp()const
@@ -110,6 +110,6 @@ long DescribeGtmLogsRequest::getEndTimestamp()const
 void DescribeGtmLogsRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
+	setCoreParameter("EndTimestamp", endTimestamp);
 }
 

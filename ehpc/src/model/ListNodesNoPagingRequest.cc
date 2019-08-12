@@ -66,7 +66,7 @@ bool ListNodesNoPagingRequest::getOnlyDetached()const
 void ListNodesNoPagingRequest::setOnlyDetached(bool onlyDetached)
 {
 	onlyDetached_ = onlyDetached;
-	setCoreParameter("OnlyDetached", onlyDetached ? "true" : "false");
+	setCoreParameter("OnlyDetached", onlyDetached);
 }
 
 std::string ListNodesNoPagingRequest::getAccessKeyId()const

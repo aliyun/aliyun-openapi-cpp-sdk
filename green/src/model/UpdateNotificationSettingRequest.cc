@@ -66,7 +66,7 @@ int UpdateNotificationSettingRequest::getScheduleMessageTime()const
 void UpdateNotificationSettingRequest::setScheduleMessageTime(int scheduleMessageTime)
 {
 	scheduleMessageTime_ = scheduleMessageTime;
-	setCoreParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
+	setCoreParameter("ScheduleMessageTime", scheduleMessageTime);
 }
 
 std::string UpdateNotificationSettingRequest::getLang()const
@@ -88,6 +88,6 @@ int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const
 void UpdateNotificationSettingRequest::setScheduleMessageTimeZone(int scheduleMessageTimeZone)
 {
 	scheduleMessageTimeZone_ = scheduleMessageTimeZone;
-	setCoreParameter("ScheduleMessageTimeZone", std::to_string(scheduleMessageTimeZone));
+	setCoreParameter("ScheduleMessageTimeZone", scheduleMessageTimeZone);
 }
 

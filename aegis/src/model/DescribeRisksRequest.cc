@@ -55,7 +55,7 @@ int DescribeRisksRequest::getLimit()const
 void DescribeRisksRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string DescribeRisksRequest::getLang()const
@@ -77,6 +77,6 @@ long DescribeRisksRequest::getRiskId()const
 void DescribeRisksRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setCoreParameter("RiskId", riskId);
 }
 

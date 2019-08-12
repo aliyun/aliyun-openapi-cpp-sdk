@@ -44,7 +44,7 @@ long CreateCustomerGatewayRequest::getResourceOwnerId()const
 void CreateCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateCustomerGatewayRequest::getResourceOwnerAccount()const
@@ -121,6 +121,6 @@ long CreateCustomerGatewayRequest::getOwnerId()const
 void CreateCustomerGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

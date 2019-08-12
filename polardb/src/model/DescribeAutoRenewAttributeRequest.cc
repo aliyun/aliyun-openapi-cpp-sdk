@@ -33,7 +33,7 @@ long DescribeAutoRenewAttributeRequest::getResourceOwnerId()const
 void DescribeAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int DescribeAutoRenewAttributeRequest::getPageSize()const
 void DescribeAutoRenewAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeAutoRenewAttributeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeAutoRenewAttributeRequest::getOwnerId()const
 void DescribeAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeAutoRenewAttributeRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeAutoRenewAttributeRequest::getPageNumber()const
 void DescribeAutoRenewAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getAccessKeyId()const

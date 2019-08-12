@@ -33,7 +33,7 @@ long GroupIntimeRequest::getGsid()const
 void GroupIntimeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string GroupIntimeRequest::getAccessKeyId()const

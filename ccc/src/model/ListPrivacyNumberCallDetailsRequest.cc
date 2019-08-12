@@ -77,7 +77,7 @@ int ListPrivacyNumberCallDetailsRequest::getPageSize()const
 void ListPrivacyNumberCallDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListPrivacyNumberCallDetailsRequest::getEndTime()const
@@ -88,7 +88,7 @@ long ListPrivacyNumberCallDetailsRequest::getEndTime()const
 void ListPrivacyNumberCallDetailsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long ListPrivacyNumberCallDetailsRequest::getStartTime()const
@@ -99,7 +99,7 @@ long ListPrivacyNumberCallDetailsRequest::getStartTime()const
 void ListPrivacyNumberCallDetailsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int ListPrivacyNumberCallDetailsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListPrivacyNumberCallDetailsRequest::getPageNumber()const
 void ListPrivacyNumberCallDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getAccessKeyId()const

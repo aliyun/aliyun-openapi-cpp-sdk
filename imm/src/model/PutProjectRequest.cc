@@ -33,7 +33,7 @@ int PutProjectRequest::getCU()const
 void PutProjectRequest::setCU(int cU)
 {
 	cU_ = cU;
-	setCoreParameter("CU", std::to_string(cU));
+	setCoreParameter("CU", cU);
 }
 
 std::string PutProjectRequest::getRegionId()const

@@ -33,7 +33,7 @@ long DescribeVerificationListRequest::getResourceOwnerId()const
 void DescribeVerificationListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeVerificationListRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeVerificationListRequest::getOwnerId()const
 void DescribeVerificationListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVerificationListRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeVerificationListRequest::getPageNumber()const
 void DescribeVerificationListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeVerificationListRequest::getAccessKeyId()const
@@ -154,6 +154,6 @@ int DescribeVerificationListRequest::getPageSize()const
 void DescribeVerificationListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 

@@ -33,7 +33,7 @@ long CancelOrderRobotTaskRequest::getResourceOwnerId()const
 void CancelOrderRobotTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CancelOrderRobotTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long CancelOrderRobotTaskRequest::getOwnerId()const
 void CancelOrderRobotTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long CancelOrderRobotTaskRequest::getTaskId()const
@@ -66,7 +66,7 @@ long CancelOrderRobotTaskRequest::getTaskId()const
 void CancelOrderRobotTaskRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string CancelOrderRobotTaskRequest::getAccessKeyId()const

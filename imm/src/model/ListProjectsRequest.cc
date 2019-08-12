@@ -33,7 +33,7 @@ int ListProjectsRequest::getMaxKeys()const
 void ListProjectsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListProjectsRequest::getRegionId()const

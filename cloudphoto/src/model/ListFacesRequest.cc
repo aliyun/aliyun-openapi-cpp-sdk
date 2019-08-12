@@ -55,7 +55,7 @@ int ListFacesRequest::getSize()const
 void ListFacesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListFacesRequest::getLibraryId()const

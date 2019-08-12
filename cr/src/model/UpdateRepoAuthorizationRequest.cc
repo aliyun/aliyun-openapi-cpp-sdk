@@ -66,6 +66,6 @@ long UpdateRepoAuthorizationRequest::getAuthorizeId()const
 void UpdateRepoAuthorizationRequest::setAuthorizeId(long authorizeId)
 {
 	authorizeId_ = authorizeId;
-	setCoreParameter("AuthorizeId", std::to_string(authorizeId));
+	setCoreParameter("AuthorizeId", authorizeId);
 }
 

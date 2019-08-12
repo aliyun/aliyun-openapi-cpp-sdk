@@ -33,7 +33,7 @@ long ProfileHistoryListRequest::getIdtype()const
 void ProfileHistoryListRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
+	setCoreParameter("Idtype", idtype);
 }
 
 int ProfileHistoryListRequest::getPage()const
@@ -44,7 +44,7 @@ int ProfileHistoryListRequest::getPage()const
 void ProfileHistoryListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 int ProfileHistoryListRequest::getPer()const
@@ -55,7 +55,7 @@ int ProfileHistoryListRequest::getPer()const
 void ProfileHistoryListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setCoreParameter("Per", per);
 }
 
 std::string ProfileHistoryListRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ long ProfileHistoryListRequest::getAgsid()const
 void ProfileHistoryListRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 

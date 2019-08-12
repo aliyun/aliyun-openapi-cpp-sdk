@@ -44,6 +44,6 @@ long GetHeatMapDataRequest::getStoreId()const
 void GetHeatMapDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setCoreParameter("StoreId", storeId);
 }
 

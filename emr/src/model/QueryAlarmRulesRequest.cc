@@ -33,7 +33,7 @@ long QueryAlarmRulesRequest::getResourceOwnerId()const
 void QueryAlarmRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryAlarmRulesRequest::getRegionId()const

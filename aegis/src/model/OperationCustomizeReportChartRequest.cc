@@ -44,7 +44,7 @@ long OperationCustomizeReportChartRequest::getReportId()const
 void OperationCustomizeReportChartRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string OperationCustomizeReportChartRequest::getChartIds()const

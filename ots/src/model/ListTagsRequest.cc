@@ -44,7 +44,7 @@ long ListTagsRequest::getResourceOwnerId()const
 void ListTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListTagsRequest::getInstanceName()const
@@ -66,7 +66,7 @@ long ListTagsRequest::getPageSize()const
 void ListTagsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListTagsRequest::getPageNum()const
@@ -77,7 +77,7 @@ long ListTagsRequest::getPageNum()const
 void ListTagsRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::vector<ListTagsRequest::TagInfo> ListTagsRequest::getTagInfo()const
@@ -92,8 +92,8 @@ void ListTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
+		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
 	}
 }
 

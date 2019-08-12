@@ -44,7 +44,7 @@ int HostGetsRequest::getEndTime()const
 void HostGetsRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int HostGetsRequest::getStartTime()const
@@ -55,7 +55,7 @@ int HostGetsRequest::getStartTime()const
 void HostGetsRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string HostGetsRequest::getQueryType()const

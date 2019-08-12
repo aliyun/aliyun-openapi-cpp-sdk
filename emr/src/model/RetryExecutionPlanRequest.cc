@@ -33,7 +33,7 @@ long RetryExecutionPlanRequest::getResourceOwnerId()const
 void RetryExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RetryExecutionPlanRequest::getRegionId()const

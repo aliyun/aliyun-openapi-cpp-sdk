@@ -44,7 +44,7 @@ long CreateSslVpnServerRequest::getResourceOwnerId()const
 void CreateSslVpnServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSslVpnServerRequest::getClientIpPool()const
@@ -88,7 +88,7 @@ bool CreateSslVpnServerRequest::getCompress()const
 void CreateSslVpnServerRequest::setCompress(bool compress)
 {
 	compress_ = compress;
-	setCoreParameter("Compress", compress ? "true" : "false");
+	setCoreParameter("Compress", compress);
 }
 
 std::string CreateSslVpnServerRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ long CreateSslVpnServerRequest::getOwnerId()const
 void CreateSslVpnServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateSslVpnServerRequest::getLocalSubnet()const
@@ -154,7 +154,7 @@ int CreateSslVpnServerRequest::getPort()const
 void CreateSslVpnServerRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string CreateSslVpnServerRequest::getProto()const

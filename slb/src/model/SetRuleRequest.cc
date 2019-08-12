@@ -44,7 +44,7 @@ long SetRuleRequest::getResourceOwnerId()const
 void SetRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int SetRuleRequest::getHealthCheckTimeout()const
@@ -55,7 +55,7 @@ int SetRuleRequest::getHealthCheckTimeout()const
 void SetRuleRequest::setHealthCheckTimeout(int healthCheckTimeout)
 {
 	healthCheckTimeout_ = healthCheckTimeout;
-	setCoreParameter("HealthCheckTimeout", std::to_string(healthCheckTimeout));
+	setCoreParameter("HealthCheckTimeout", healthCheckTimeout);
 }
 
 std::string SetRuleRequest::getHealthCheckURI()const
@@ -88,7 +88,7 @@ int SetRuleRequest::getUnhealthyThreshold()const
 void SetRuleRequest::setUnhealthyThreshold(int unhealthyThreshold)
 {
 	unhealthyThreshold_ = unhealthyThreshold;
-	setCoreParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
+	setCoreParameter("UnhealthyThreshold", unhealthyThreshold);
 }
 
 int SetRuleRequest::getHealthyThreshold()const
@@ -99,7 +99,7 @@ int SetRuleRequest::getHealthyThreshold()const
 void SetRuleRequest::setHealthyThreshold(int healthyThreshold)
 {
 	healthyThreshold_ = healthyThreshold;
-	setCoreParameter("HealthyThreshold", std::to_string(healthyThreshold));
+	setCoreParameter("HealthyThreshold", healthyThreshold);
 }
 
 std::string SetRuleRequest::getScheduler()const
@@ -154,7 +154,7 @@ int SetRuleRequest::getCookieTimeout()const
 void SetRuleRequest::setCookieTimeout(int cookieTimeout)
 {
 	cookieTimeout_ = cookieTimeout;
-	setCoreParameter("CookieTimeout", std::to_string(cookieTimeout));
+	setCoreParameter("CookieTimeout", cookieTimeout);
 }
 
 std::string SetRuleRequest::getStickySessionType()const
@@ -242,7 +242,7 @@ long SetRuleRequest::getOwnerId()const
 void SetRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetRuleRequest::getTags()const
@@ -264,7 +264,7 @@ int SetRuleRequest::getHealthCheckInterval()const
 void SetRuleRequest::setHealthCheckInterval(int healthCheckInterval)
 {
 	healthCheckInterval_ = healthCheckInterval;
-	setCoreParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
+	setCoreParameter("HealthCheckInterval", healthCheckInterval);
 }
 
 std::string SetRuleRequest::getRuleId()const
@@ -286,7 +286,7 @@ int SetRuleRequest::getHealthCheckConnectPort()const
 void SetRuleRequest::setHealthCheckConnectPort(int healthCheckConnectPort)
 {
 	healthCheckConnectPort_ = healthCheckConnectPort;
-	setCoreParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
+	setCoreParameter("HealthCheckConnectPort", healthCheckConnectPort);
 }
 
 std::string SetRuleRequest::getHealthCheckHttpCode()const

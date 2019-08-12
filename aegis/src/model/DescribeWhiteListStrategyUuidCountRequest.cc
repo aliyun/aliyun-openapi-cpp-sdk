@@ -44,7 +44,7 @@ long DescribeWhiteListStrategyUuidCountRequest::getStrategyId()const
 void DescribeWhiteListStrategyUuidCountRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string DescribeWhiteListStrategyUuidCountRequest::getLang()const
@@ -66,6 +66,6 @@ int DescribeWhiteListStrategyUuidCountRequest::getType()const
 void DescribeWhiteListStrategyUuidCountRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

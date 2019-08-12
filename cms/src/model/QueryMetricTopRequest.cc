@@ -44,7 +44,7 @@ long QueryMetricTopRequest::getResourceOwnerId()const
 void QueryMetricTopRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryMetricTopRequest::getMetric()const

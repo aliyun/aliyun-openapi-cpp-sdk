@@ -33,7 +33,7 @@ long ModifySecurityGroupConfigurationRequest::getResourceOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long ModifySecurityGroupConfigurationRequest::getOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const

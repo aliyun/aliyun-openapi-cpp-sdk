@@ -33,7 +33,7 @@ bool DescribeAlarmsRequest::getEnableState()const
 void DescribeAlarmsRequest::setEnableState(bool enableState)
 {
 	enableState_ = enableState;
-	setCoreParameter("EnableState", enableState ? "true" : "false");
+	setCoreParameter("EnableState", enableState);
 }
 
 std::string DescribeAlarmsRequest::getNames()const

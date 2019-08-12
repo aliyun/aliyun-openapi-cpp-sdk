@@ -33,7 +33,7 @@ int RunCloudMetricProfilingRequest::getDuration()const
 void RunCloudMetricProfilingRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string RunCloudMetricProfilingRequest::getHostName()const
@@ -66,7 +66,7 @@ int RunCloudMetricProfilingRequest::getProcessId()const
 void RunCloudMetricProfilingRequest::setProcessId(int processId)
 {
 	processId_ = processId;
-	setCoreParameter("ProcessId", std::to_string(processId));
+	setCoreParameter("ProcessId", processId);
 }
 
 int RunCloudMetricProfilingRequest::getFreq()const
@@ -77,7 +77,7 @@ int RunCloudMetricProfilingRequest::getFreq()const
 void RunCloudMetricProfilingRequest::setFreq(int freq)
 {
 	freq_ = freq;
-	setCoreParameter("Freq", std::to_string(freq));
+	setCoreParameter("Freq", freq);
 }
 
 std::string RunCloudMetricProfilingRequest::getClusterId()const

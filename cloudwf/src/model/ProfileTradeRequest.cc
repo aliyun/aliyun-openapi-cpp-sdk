@@ -55,7 +55,7 @@ int ProfileTradeRequest::getDataType()const
 void ProfileTradeRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", dataType);
 }
 
 long ProfileTradeRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileTradeRequest::getGsid()const
 void ProfileTradeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string ProfileTradeRequest::getAccessKeyId()const

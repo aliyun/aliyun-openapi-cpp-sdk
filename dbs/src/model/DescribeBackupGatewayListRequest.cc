@@ -66,7 +66,7 @@ int DescribeBackupGatewayListRequest::getPageSize()const
 void DescribeBackupGatewayListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeBackupGatewayListRequest::getRegion()const
@@ -88,7 +88,7 @@ int DescribeBackupGatewayListRequest::getPageNum()const
 void DescribeBackupGatewayListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeBackupGatewayListRequest::getOwnerId()const

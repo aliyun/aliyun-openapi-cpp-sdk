@@ -55,7 +55,7 @@ int ListImagesRequest::getLimit()const
 void ListImagesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string ListImagesRequest::getProject()const

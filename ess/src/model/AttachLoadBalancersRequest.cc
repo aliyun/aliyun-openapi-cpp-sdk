@@ -34,7 +34,7 @@ void AttachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>&
 {
 	loadBalancer_ = loadBalancer;
 	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+		setCoreParameter("LoadBalancer."+ std::to_string(i), std::to_string(loadBalancer.at(i)));
 }
 
 std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ bool AttachLoadBalancersRequest::getForceAttach()const
 void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+	setCoreParameter("ForceAttach", forceAttach);
 }
 
 long AttachLoadBalancersRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long AttachLoadBalancersRequest::getOwnerId()const
 void AttachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AttachLoadBalancersRequest::getAccessKeyId()const

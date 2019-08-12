@@ -33,7 +33,7 @@ long AttachClusterForNoteRequest::getResourceOwnerId()const
 void AttachClusterForNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AttachClusterForNoteRequest::getRegionId()const

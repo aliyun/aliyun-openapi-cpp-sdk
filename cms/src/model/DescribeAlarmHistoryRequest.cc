@@ -88,7 +88,7 @@ bool DescribeAlarmHistoryRequest::getAscending()const
 void DescribeAlarmHistoryRequest::setAscending(bool ascending)
 {
 	ascending_ = ascending;
-	setCoreParameter("Ascending", ascending ? "true" : "false");
+	setCoreParameter("Ascending", ascending);
 }
 
 std::string DescribeAlarmHistoryRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ bool DescribeAlarmHistoryRequest::getOnlyCount()const
 void DescribeAlarmHistoryRequest::setOnlyCount(bool onlyCount)
 {
 	onlyCount_ = onlyCount;
-	setCoreParameter("OnlyCount", onlyCount ? "true" : "false");
+	setCoreParameter("OnlyCount", onlyCount);
 }
 
 std::string DescribeAlarmHistoryRequest::get_Namespace()const
@@ -132,7 +132,7 @@ int DescribeAlarmHistoryRequest::getPageSize()const
 void DescribeAlarmHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAlarmHistoryRequest::getState()const
@@ -154,7 +154,7 @@ int DescribeAlarmHistoryRequest::getPage()const
 void DescribeAlarmHistoryRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string DescribeAlarmHistoryRequest::getMetricName()const

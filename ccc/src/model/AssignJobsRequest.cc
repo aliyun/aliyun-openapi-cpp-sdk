@@ -34,7 +34,7 @@ void AssignJobsRequest::setCallingNumber(const std::vector<std::string>& calling
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), std::to_string(callingNumber.at(i)));
 }
 
 std::string AssignJobsRequest::getInstanceId()const
@@ -90,6 +90,6 @@ void AssignJobsRequest::setJobsJson(const std::vector<std::string>& jobsJson)
 {
 	jobsJson_ = jobsJson;
 	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
+		setCoreParameter("JobsJson."+ std::to_string(i), std::to_string(jobsJson.at(i)));
 }
 

@@ -44,7 +44,7 @@ long UpdateNamespaceAuthorizationRequest::getAuthorizeId()const
 void UpdateNamespaceAuthorizationRequest::setAuthorizeId(long authorizeId)
 {
 	authorizeId_ = authorizeId;
-	setCoreParameter("AuthorizeId", std::to_string(authorizeId));
+	setCoreParameter("AuthorizeId", authorizeId);
 }
 
 std::string UpdateNamespaceAuthorizationRequest::get_Namespace()const

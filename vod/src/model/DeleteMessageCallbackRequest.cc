@@ -77,7 +77,7 @@ long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
 void DeleteMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 std::string DeleteMessageCallbackRequest::getOwnerId()const

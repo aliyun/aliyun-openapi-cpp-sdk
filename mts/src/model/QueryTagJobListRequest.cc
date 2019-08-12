@@ -33,7 +33,7 @@ long QueryTagJobListRequest::getResourceOwnerId()const
 void QueryTagJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryTagJobListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryTagJobListRequest::getOwnerId()const
 void QueryTagJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryTagJobListRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ int SearchPhotosRequest::getSize()const
 void SearchPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string SearchPhotosRequest::getLibraryId()const
@@ -66,7 +66,7 @@ int SearchPhotosRequest::getPage()const
 void SearchPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string SearchPhotosRequest::getKeyword()const

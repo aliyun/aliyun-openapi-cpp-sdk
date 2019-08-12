@@ -44,7 +44,7 @@ long DescribeOrderAuditFailRecordRequest::getOrderId()const
 void DescribeOrderAuditFailRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getLang()const

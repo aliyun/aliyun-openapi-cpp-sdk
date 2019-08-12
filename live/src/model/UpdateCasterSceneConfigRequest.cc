@@ -34,7 +34,7 @@ void UpdateCasterSceneConfigRequest::setComponentId(const std::vector<std::strin
 {
 	componentId_ = componentId;
 	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+		setCoreParameter("ComponentId."+ std::to_string(i), std::to_string(componentId.at(i)));
 }
 
 std::string UpdateCasterSceneConfigRequest::getRegionId()const
@@ -78,7 +78,7 @@ long UpdateCasterSceneConfigRequest::getOwnerId()const
 void UpdateCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateCasterSceneConfigRequest::getLayoutId()const

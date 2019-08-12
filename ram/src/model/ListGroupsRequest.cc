@@ -44,6 +44,6 @@ int ListGroupsRequest::getMaxItems()const
 void ListGroupsRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", maxItems);
 }
 

@@ -33,7 +33,7 @@ long CreateAccountRequest::getResourceOwnerId()const
 void CreateAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateAccountRequest::getAccountPassword()const
@@ -110,7 +110,7 @@ long CreateAccountRequest::getOwnerId()const
 void CreateAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateAccountRequest::getAccountDescription()const

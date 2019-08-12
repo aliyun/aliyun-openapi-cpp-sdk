@@ -44,7 +44,7 @@ int ListMediasRequest::getPageSize()const
 void ListMediasRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListMediasRequest::getNamePrefix()const
@@ -66,7 +66,7 @@ int ListMediasRequest::getPageNumber()const
 void ListMediasRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListMediasRequest::getAccessKeyId()const

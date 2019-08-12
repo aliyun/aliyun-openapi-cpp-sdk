@@ -33,7 +33,7 @@ long UnicomSignConfirmRequest::getResourceOwnerId()const
 void UnicomSignConfirmRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UnicomSignConfirmRequest::getResourceOwnerAccount()const
@@ -70,10 +70,10 @@ void UnicomSignConfirmRequest::setTmsOrder(const std::vector<TmsOrder>& tmsOrder
 	for(int i = 0; i!= tmsOrder.size(); i++)	{
 		auto obj = tmsOrder.at(i);
 		std::string str ="TmsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".TmsCode", obj.tmsCode);
-		setCoreParameter(str + ".SigningTime", obj.signingTime);
-		setCoreParameter(str + ".TmsOrderCode", obj.tmsOrderCode);
-		setCoreParameter(str + ".TradeId", obj.tradeId);
+		setCoreParameter(str + ".TmsCode", std::to_string(obj.tmsCode));
+		setCoreParameter(str + ".SigningTime", std::to_string(obj.signingTime));
+		setCoreParameter(str + ".TmsOrderCode", std::to_string(obj.tmsOrderCode));
+		setCoreParameter(str + ".TradeId", std::to_string(obj.tradeId));
 	}
 }
 
@@ -85,6 +85,6 @@ long UnicomSignConfirmRequest::getOwnerId()const
 void UnicomSignConfirmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

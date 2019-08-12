@@ -33,7 +33,7 @@ long DeleteSAGLinkLevelHaRequest::getResourceOwnerId()const
 void DeleteSAGLinkLevelHaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteSAGLinkLevelHaRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DeleteSAGLinkLevelHaRequest::getOwnerId()const
 void DeleteSAGLinkLevelHaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

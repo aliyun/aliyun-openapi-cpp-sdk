@@ -66,7 +66,7 @@ int DescribeLiveRecordConfigRequest::getPageSize()const
 void DescribeLiveRecordConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeLiveRecordConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeLiveRecordConfigRequest::getOwnerId()const
 void DescribeLiveRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeLiveRecordConfigRequest::getPageNum()const
@@ -88,7 +88,7 @@ int DescribeLiveRecordConfigRequest::getPageNum()const
 void DescribeLiveRecordConfigRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeLiveRecordConfigRequest::getStreamName()const

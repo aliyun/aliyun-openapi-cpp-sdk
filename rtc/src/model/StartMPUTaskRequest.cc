@@ -33,7 +33,7 @@ long StartMPUTaskRequest::getResourceOwnerId()const
 void StartMPUTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<StartMPUTaskRequest::UserPanes> StartMPUTaskRequest::getUserPanes()const
@@ -48,9 +48,9 @@ void StartMPUTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 	for(int i = 0; i!= userPanes.size(); i++)	{
 		auto obj = userPanes.at(i);
 		std::string str ="UserPanes."+ std::to_string(i);
-		setCoreParameter(str + ".PaneId", std::to_string(obj.paneId));
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".SourceType", obj.sourceType);
+		setCoreParameter(str + ".PaneId", obj.paneId);
+		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
+		setCoreParameter(str + ".SourceType", std::to_string(obj.sourceType));
 	}
 }
 
@@ -62,7 +62,7 @@ long StartMPUTaskRequest::getCallerParentId()const
 void StartMPUTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool StartMPUTaskRequest::getProxy_original_security_transport()const
@@ -73,7 +73,7 @@ bool StartMPUTaskRequest::getProxy_original_security_transport()const
 void StartMPUTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string StartMPUTaskRequest::getProxy_original_source_ip()const
@@ -128,7 +128,7 @@ int StartMPUTaskRequest::getBackgroundColor()const
 void StartMPUTaskRequest::setBackgroundColor(int backgroundColor)
 {
 	backgroundColor_ = backgroundColor;
-	setCoreParameter("BackgroundColor", std::to_string(backgroundColor));
+	setCoreParameter("BackgroundColor", backgroundColor);
 }
 
 int StartMPUTaskRequest::getCropMode()const
@@ -139,7 +139,7 @@ int StartMPUTaskRequest::getCropMode()const
 void StartMPUTaskRequest::setCropMode(int cropMode)
 {
 	cropMode_ = cropMode;
-	setCoreParameter("CropMode", std::to_string(cropMode));
+	setCoreParameter("CropMode", cropMode);
 }
 
 std::string StartMPUTaskRequest::getSecurityToken()const
@@ -195,7 +195,7 @@ void StartMPUTaskRequest::setLayoutIds(const std::vector<long>& layoutIds)
 {
 	layoutIds_ = layoutIds;
 	for(int i = 0; i!= layoutIds.size(); i++)
-		setCoreParameter("LayoutIds."+ std::to_string(i), std::to_string(layoutIds.at(i)));
+		setCoreParameter("LayoutIds."+ std::to_string(i), layoutIds.at(i));
 }
 
 std::string StartMPUTaskRequest::getCallerUidEmail()const
@@ -228,7 +228,7 @@ long StartMPUTaskRequest::getCallerUid()const
 void StartMPUTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string StartMPUTaskRequest::getStreamURL()const
@@ -283,7 +283,7 @@ long StartMPUTaskRequest::getOwnerId()const
 void StartMPUTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string StartMPUTaskRequest::getVersion()const
@@ -305,7 +305,7 @@ bool StartMPUTaskRequest::getProxy_trust_transport_info()const
 void StartMPUTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool StartMPUTaskRequest::getAk_mfa_present()const
@@ -316,7 +316,7 @@ bool StartMPUTaskRequest::getAk_mfa_present()const
 void StartMPUTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool StartMPUTaskRequest::getSecurity_transport()const
@@ -327,7 +327,7 @@ bool StartMPUTaskRequest::getSecurity_transport()const
 void StartMPUTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string StartMPUTaskRequest::getServiceCode()const
@@ -371,7 +371,7 @@ int StartMPUTaskRequest::getMediaEncode()const
 void StartMPUTaskRequest::setMediaEncode(int mediaEncode)
 {
 	mediaEncode_ = mediaEncode;
-	setCoreParameter("MediaEncode", std::to_string(mediaEncode));
+	setCoreParameter("MediaEncode", mediaEncode);
 }
 
 std::string StartMPUTaskRequest::getChannelId()const

@@ -33,7 +33,7 @@ long UpdateMediaWorkflowRequest::getResourceOwnerId()const
 void UpdateMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long UpdateMediaWorkflowRequest::getOwnerId()const
 void UpdateMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateMediaWorkflowRequest::getAccessKeyId()const

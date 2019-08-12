@@ -55,7 +55,7 @@ bool CreateKeywordLibRequest::getEnable()const
 void CreateKeywordLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateKeywordLibRequest::getName()const

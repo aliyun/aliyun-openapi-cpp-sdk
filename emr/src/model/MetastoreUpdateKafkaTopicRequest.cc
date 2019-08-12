@@ -33,7 +33,7 @@ long MetastoreUpdateKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreUpdateKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreUpdateKafkaTopicRequest::getTopicId()const
@@ -70,8 +70,8 @@ void MetastoreUpdateKafkaTopicRequest::setAdvancedConfig(const std::vector<Advan
 	for(int i = 0; i!= advancedConfig.size(); i++)	{
 		auto obj = advancedConfig.at(i);
 		std::string str ="AdvancedConfig."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -83,7 +83,7 @@ int MetastoreUpdateKafkaTopicRequest::getNumPartitions()const
 void MetastoreUpdateKafkaTopicRequest::setNumPartitions(int numPartitions)
 {
 	numPartitions_ = numPartitions;
-	setCoreParameter("NumPartitions", std::to_string(numPartitions));
+	setCoreParameter("NumPartitions", numPartitions);
 }
 
 std::string MetastoreUpdateKafkaTopicRequest::getAccessKeyId()const

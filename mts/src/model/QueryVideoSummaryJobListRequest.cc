@@ -33,7 +33,7 @@ long QueryVideoSummaryJobListRequest::getResourceOwnerId()const
 void QueryVideoSummaryJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryVideoSummaryJobListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryVideoSummaryJobListRequest::getOwnerId()const
 void QueryVideoSummaryJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryVideoSummaryJobListRequest::getAccessKeyId()const

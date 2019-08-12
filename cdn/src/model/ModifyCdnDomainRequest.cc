@@ -44,7 +44,7 @@ int ModifyCdnDomainRequest::getSourcePort()const
 void ModifyCdnDomainRequest::setSourcePort(int sourcePort)
 {
 	sourcePort_ = sourcePort;
-	setCoreParameter("SourcePort", std::to_string(sourcePort));
+	setCoreParameter("SourcePort", sourcePort);
 }
 
 std::string ModifyCdnDomainRequest::getResourceGroupId()const
@@ -121,6 +121,6 @@ long ModifyCdnDomainRequest::getOwnerId()const
 void ModifyCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

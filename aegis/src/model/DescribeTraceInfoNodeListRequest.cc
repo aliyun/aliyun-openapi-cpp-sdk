@@ -66,7 +66,7 @@ int DescribeTraceInfoNodeListRequest::getPageSize()const
 void DescribeTraceInfoNodeListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeTraceInfoNodeListRequest::getFrom()const
@@ -88,7 +88,7 @@ int DescribeTraceInfoNodeListRequest::getPage()const
 void DescribeTraceInfoNodeListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string DescribeTraceInfoNodeListRequest::getLang()const
@@ -132,6 +132,6 @@ long DescribeTraceInfoNodeListRequest::getIncidentTime()const
 void DescribeTraceInfoNodeListRequest::setIncidentTime(long incidentTime)
 {
 	incidentTime_ = incidentTime;
-	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+	setCoreParameter("IncidentTime", incidentTime);
 }
 

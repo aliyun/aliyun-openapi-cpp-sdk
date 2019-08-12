@@ -33,7 +33,7 @@ long ModifyCustomerGatewayAttributeRequest::getResourceOwnerId()const
 void ModifyCustomerGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifyCustomerGatewayAttributeRequest::getOwnerId()const
 void ModifyCustomerGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getCustomerGatewayId()const

@@ -44,7 +44,7 @@ int PubRequest::getQos()const
 void PubRequest::setQos(int qos)
 {
 	qos_ = qos;
-	setCoreParameter("Qos", std::to_string(qos));
+	setCoreParameter("Qos", qos);
 }
 
 std::string PubRequest::getMessageContent()const

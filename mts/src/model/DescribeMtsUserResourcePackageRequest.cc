@@ -44,6 +44,6 @@ long DescribeMtsUserResourcePackageRequest::getOwnerId()const
 void DescribeMtsUserResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

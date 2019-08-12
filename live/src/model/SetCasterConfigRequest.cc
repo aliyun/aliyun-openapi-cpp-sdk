@@ -55,7 +55,7 @@ int SetCasterConfigRequest::getChannelEnable()const
 void SetCasterConfigRequest::setChannelEnable(int channelEnable)
 {
 	channelEnable_ = channelEnable;
-	setCoreParameter("ChannelEnable", std::to_string(channelEnable));
+	setCoreParameter("ChannelEnable", channelEnable);
 }
 
 std::string SetCasterConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ int SetCasterConfigRequest::getProgramEffect()const
 void SetCasterConfigRequest::setProgramEffect(int programEffect)
 {
 	programEffect_ = programEffect;
-	setCoreParameter("ProgramEffect", std::to_string(programEffect));
+	setCoreParameter("ProgramEffect", programEffect);
 }
 
 std::string SetCasterConfigRequest::getProgramName()const
@@ -99,7 +99,7 @@ long SetCasterConfigRequest::getOwnerId()const
 void SetCasterConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetCasterConfigRequest::getRecordConfig()const
@@ -143,7 +143,7 @@ float SetCasterConfigRequest::getDelay()const
 void SetCasterConfigRequest::setDelay(float delay)
 {
 	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
+	setCoreParameter("Delay", delay);
 }
 
 std::string SetCasterConfigRequest::getRegionId()const

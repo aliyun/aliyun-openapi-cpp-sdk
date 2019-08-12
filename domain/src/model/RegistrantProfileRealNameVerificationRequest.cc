@@ -55,7 +55,7 @@ long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
 void RegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
+	setCoreParameter("RegistrantProfileID", registrantProfileID);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredential()const

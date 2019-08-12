@@ -44,7 +44,7 @@ long UpdateDialogRequest::getDialogId()const
 void UpdateDialogRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setCoreParameter("DialogId", dialogId);
 }
 
 std::string UpdateDialogRequest::getDialogName()const

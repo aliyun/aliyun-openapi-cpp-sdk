@@ -33,7 +33,7 @@ long ModifyResourceQueueRequest::getResourceOwnerId()const
 void ModifyResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long ModifyResourceQueueRequest::getParentQueueId()const
@@ -44,7 +44,7 @@ long ModifyResourceQueueRequest::getParentQueueId()const
 void ModifyResourceQueueRequest::setParentQueueId(long parentQueueId)
 {
 	parentQueueId_ = parentQueueId;
-	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
+	setCoreParameter("ParentQueueId", parentQueueId);
 }
 
 std::string ModifyResourceQueueRequest::getRegionId()const
@@ -88,7 +88,7 @@ long ModifyResourceQueueRequest::getResourcePoolId()const
 void ModifyResourceQueueRequest::setResourcePoolId(long resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
+	setCoreParameter("ResourcePoolId", resourcePoolId);
 }
 
 std::string ModifyResourceQueueRequest::getId()const
@@ -121,7 +121,7 @@ bool ModifyResourceQueueRequest::getLeaf()const
 void ModifyResourceQueueRequest::setLeaf(bool leaf)
 {
 	leaf_ = leaf;
-	setCoreParameter("Leaf", leaf ? "true" : "false");
+	setCoreParameter("Leaf", leaf);
 }
 
 std::vector<ModifyResourceQueueRequest::Config> ModifyResourceQueueRequest::getConfig()const
@@ -136,11 +136,11 @@ void ModifyResourceQueueRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".Note", obj.note);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".Id", std::to_string(obj.id));
-		setCoreParameter(str + ".Category", obj.category);
+		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
+		setCoreParameter(str + ".Note", std::to_string(obj.note));
+		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
+		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Category", std::to_string(obj.category));
 	}
 }
 

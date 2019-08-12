@@ -33,7 +33,7 @@ long DeleteRouteEntryRequest::getResourceOwnerId()const
 void DeleteRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long DeleteRouteEntryRequest::getOwnerId()const
 void DeleteRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::vector<DeleteRouteEntryRequest::NextHopList> DeleteRouteEntryRequest::getNextHopList()const
@@ -125,8 +125,8 @@ void DeleteRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nex
 	for(int i = 0; i!= nextHopList.size(); i++)	{
 		auto obj = nextHopList.at(i);
 		std::string str ="NextHopList."+ std::to_string(i);
-		setCoreParameter(str + ".NextHopId", obj.nextHopId);
-		setCoreParameter(str + ".NextHopType", obj.nextHopType);
+		setCoreParameter(str + ".NextHopId", std::to_string(obj.nextHopId));
+		setCoreParameter(str + ".NextHopType", std::to_string(obj.nextHopType));
 	}
 }
 

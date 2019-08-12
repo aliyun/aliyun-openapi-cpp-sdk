@@ -33,7 +33,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getOffset()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setCoreParameter("Offset", offset);
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
@@ -55,7 +55,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getStart()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setStart(int start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setCoreParameter("Start", start);
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getLength()const
@@ -66,7 +66,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getLength()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 long DescribeFlowNodeInstanceLauncherLogRequest::getEndTime()const
@@ -77,7 +77,7 @@ long DescribeFlowNodeInstanceLauncherLogRequest::getEndTime()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeFlowNodeInstanceLauncherLogRequest::getStartTime()const
@@ -88,7 +88,7 @@ long DescribeFlowNodeInstanceLauncherLogRequest::getStartTime()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
@@ -99,7 +99,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setLines(int lines)
 {
 	lines_ = lines;
-	setCoreParameter("Lines", std::to_string(lines));
+	setCoreParameter("Lines", lines);
 }
 
 bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
@@ -110,7 +110,7 @@ bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setCoreParameter("Reverse", reverse);
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getNodeInstanceId()const

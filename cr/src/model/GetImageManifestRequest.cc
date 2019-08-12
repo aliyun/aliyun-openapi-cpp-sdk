@@ -77,6 +77,6 @@ int GetImageManifestRequest::getSchemaVersion()const
 void GetImageManifestRequest::setSchemaVersion(int schemaVersion)
 {
 	schemaVersion_ = schemaVersion;
-	setCoreParameter("SchemaVersion", std::to_string(schemaVersion));
+	setCoreParameter("SchemaVersion", schemaVersion);
 }
 

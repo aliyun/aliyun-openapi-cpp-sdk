@@ -33,7 +33,7 @@ int QueryTradeProduceListRequest::getBuyerStatus()const
 void QueryTradeProduceListRequest::setBuyerStatus(int buyerStatus)
 {
 	buyerStatus_ = buyerStatus;
-	setCoreParameter("BuyerStatus", std::to_string(buyerStatus));
+	setCoreParameter("BuyerStatus", buyerStatus);
 }
 
 int QueryTradeProduceListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryTradeProduceListRequest::getPageSize()const
 void QueryTradeProduceListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTradeProduceListRequest::getPreOrderId()const
@@ -88,7 +88,7 @@ int QueryTradeProduceListRequest::getPageNum()const
 void QueryTradeProduceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryTradeProduceListRequest::getSortFiled()const

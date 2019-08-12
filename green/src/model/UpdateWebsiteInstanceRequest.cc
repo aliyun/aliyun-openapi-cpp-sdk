@@ -66,7 +66,7 @@ int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
 void UpdateWebsiteInstanceRequest::setWebsiteScanInterval(int websiteScanInterval)
 {
 	websiteScanInterval_ = websiteScanInterval;
-	setCoreParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
+	setCoreParameter("WebsiteScanInterval", websiteScanInterval);
 }
 
 std::string UpdateWebsiteInstanceRequest::getDomain()const
@@ -110,6 +110,6 @@ int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const
 void UpdateWebsiteInstanceRequest::setIndexPageScanInterval(int indexPageScanInterval)
 {
 	indexPageScanInterval_ = indexPageScanInterval;
-	setCoreParameter("IndexPageScanInterval", std::to_string(indexPageScanInterval));
+	setCoreParameter("IndexPageScanInterval", indexPageScanInterval);
 }
 

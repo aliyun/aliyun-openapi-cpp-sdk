@@ -33,7 +33,7 @@ long MetastoreSearchTablesRequest::getResourceOwnerId()const
 void MetastoreSearchTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreSearchTablesRequest::getDbName()const

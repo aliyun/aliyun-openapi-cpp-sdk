@@ -44,7 +44,7 @@ long DeleteLoadBalancerListenerRequest::getResourceOwnerId()const
 void DeleteLoadBalancerListenerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DeleteLoadBalancerListenerRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DeleteLoadBalancerListenerRequest::getListenerPort()const
 void DeleteLoadBalancerListenerRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string DeleteLoadBalancerListenerRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DeleteLoadBalancerListenerRequest::getOwnerId()const
 void DeleteLoadBalancerListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteLoadBalancerListenerRequest::getListenerProtocol()const

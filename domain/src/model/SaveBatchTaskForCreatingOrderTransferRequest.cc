@@ -49,9 +49,9 @@ void SaveBatchTaskForCreatingOrderTransferRequest::setOrderTransferParam(const s
 		auto obj = orderTransferParam.at(i);
 		std::string str ="OrderTransferParam."+ std::to_string(i);
 		setCoreParameter(str + ".PermitPremiumTransfer", obj.permitPremiumTransfer ? "true" : "false");
-		setCoreParameter(str + ".AuthorizationCode", obj.authorizationCode);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
+		setCoreParameter(str + ".AuthorizationCode", std::to_string(obj.authorizationCode));
+		setCoreParameter(str + ".DomainName", std::to_string(obj.domainName));
+		setCoreParameter(str + ".RegistrantProfileId", obj.registrantProfileId);
 	}
 }
 
@@ -85,7 +85,7 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setCoreParameter("UseCoupon", useCoupon);
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const
@@ -107,6 +107,6 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setCoreParameter("UsePromotion", usePromotion);
 }
 

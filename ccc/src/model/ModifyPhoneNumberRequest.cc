@@ -78,7 +78,7 @@ void ModifyPhoneNumberRequest::setSkillGroupId(const std::vector<std::string>& s
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
 }
 
 std::string ModifyPhoneNumberRequest::getAccessKeyId()const

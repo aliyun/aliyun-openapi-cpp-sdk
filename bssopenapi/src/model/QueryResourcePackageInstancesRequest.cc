@@ -55,7 +55,7 @@ int QueryResourcePackageInstancesRequest::getPageSize()const
 void QueryResourcePackageInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long QueryResourcePackageInstancesRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryResourcePackageInstancesRequest::getOwnerId()const
 void QueryResourcePackageInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryResourcePackageInstancesRequest::getExpiryTimeStart()const
@@ -88,6 +88,6 @@ int QueryResourcePackageInstancesRequest::getPageNum()const
 void QueryResourcePackageInstancesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

@@ -55,7 +55,7 @@ long SendPredefinedShortMessageRequest::getConfigId()const
 void SendPredefinedShortMessageRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setCoreParameter("ConfigId", configId);
 }
 
 std::string SendPredefinedShortMessageRequest::getAccessKeyId()const

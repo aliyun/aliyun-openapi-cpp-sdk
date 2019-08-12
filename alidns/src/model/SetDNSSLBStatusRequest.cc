@@ -77,7 +77,7 @@ bool SetDNSSLBStatusRequest::getOpen()const
 void SetDNSSLBStatusRequest::setOpen(bool open)
 {
 	open_ = open;
-	setCoreParameter("Open", open ? "true" : "false");
+	setCoreParameter("Open", open);
 }
 
 std::string SetDNSSLBStatusRequest::getAccessKeyId()const

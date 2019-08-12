@@ -33,7 +33,7 @@ long KickOutClientsRequest::getResourceOwnerId()const
 void KickOutClientsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string KickOutClientsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long KickOutClientsRequest::getOwnerId()const
 void KickOutClientsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string KickOutClientsRequest::getUsername()const

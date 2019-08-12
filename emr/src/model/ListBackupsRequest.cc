@@ -33,7 +33,7 @@ long ListBackupsRequest::getResourceOwnerId()const
 void ListBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ListBackupsRequest::getPageCount()const
@@ -44,7 +44,7 @@ int ListBackupsRequest::getPageCount()const
 void ListBackupsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", std::to_string(pageCount));
+	setCoreParameter("PageCount", pageCount);
 }
 
 std::string ListBackupsRequest::getOrderMode()const
@@ -66,7 +66,7 @@ long ListBackupsRequest::getCallerParentId()const
 void ListBackupsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool ListBackupsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool ListBackupsRequest::getProxy_original_security_transport()const
 void ListBackupsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ListBackupsRequest::getBackupPlanId()const
@@ -121,7 +121,7 @@ int ListBackupsRequest::getPageNumber()const
 void ListBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListBackupsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ int ListBackupsRequest::getLimit()const
 void ListBackupsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 int ListBackupsRequest::getPageSize()const
@@ -176,7 +176,7 @@ int ListBackupsRequest::getPageSize()const
 void ListBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListBackupsRequest::getServiceName()const
@@ -198,7 +198,7 @@ long ListBackupsRequest::getId()const
 void ListBackupsRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int ListBackupsRequest::getCurrentSize()const
@@ -209,7 +209,7 @@ int ListBackupsRequest::getCurrentSize()const
 void ListBackupsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 long ListBackupsRequest::getCallerUid()const
@@ -220,7 +220,7 @@ long ListBackupsRequest::getCallerUid()const
 void ListBackupsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ListBackupsRequest::getOrderField()const
@@ -254,7 +254,7 @@ void ListBackupsRequest::setBackupId(const std::vector<std::string>& backupId)
 {
 	backupId_ = backupId;
 	for(int i = 0; i!= backupId.size(); i++)
-		setCoreParameter("BackupId."+ std::to_string(i), backupId.at(i));
+		setCoreParameter("BackupId."+ std::to_string(i), std::to_string(backupId.at(i)));
 }
 
 std::string ListBackupsRequest::getCallerBid()const
@@ -298,7 +298,7 @@ bool ListBackupsRequest::getAk_mfa_present()const
 void ListBackupsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ListBackupsRequest::getProxy_trust_transport_info()const
@@ -309,7 +309,7 @@ bool ListBackupsRequest::getProxy_trust_transport_info()const
 void ListBackupsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ListBackupsRequest::getSecurity_transport()const
@@ -320,7 +320,7 @@ bool ListBackupsRequest::getSecurity_transport()const
 void ListBackupsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ListBackupsRequest::getRequestId()const

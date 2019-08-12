@@ -44,7 +44,7 @@ int CreateCADConversionTaskRequest::getBaseCol()const
 void CreateCADConversionTaskRequest::setBaseCol(int baseCol)
 {
 	baseCol_ = baseCol;
-	setCoreParameter("BaseCol", std::to_string(baseCol));
+	setCoreParameter("BaseCol", baseCol);
 }
 
 std::string CreateCADConversionTaskRequest::getNotifyTopicName()const
@@ -66,7 +66,7 @@ long CreateCADConversionTaskRequest::getUnitWidth()const
 void CreateCADConversionTaskRequest::setUnitWidth(long unitWidth)
 {
 	unitWidth_ = unitWidth;
-	setCoreParameter("UnitWidth", std::to_string(unitWidth));
+	setCoreParameter("UnitWidth", unitWidth);
 }
 
 int CreateCADConversionTaskRequest::getZoomLevel()const
@@ -77,7 +77,7 @@ int CreateCADConversionTaskRequest::getZoomLevel()const
 void CreateCADConversionTaskRequest::setZoomLevel(int zoomLevel)
 {
 	zoomLevel_ = zoomLevel;
-	setCoreParameter("ZoomLevel", std::to_string(zoomLevel));
+	setCoreParameter("ZoomLevel", zoomLevel);
 }
 
 int CreateCADConversionTaskRequest::getBaseRow()const
@@ -88,7 +88,7 @@ int CreateCADConversionTaskRequest::getBaseRow()const
 void CreateCADConversionTaskRequest::setBaseRow(int baseRow)
 {
 	baseRow_ = baseRow;
-	setCoreParameter("BaseRow", std::to_string(baseRow));
+	setCoreParameter("BaseRow", baseRow);
 }
 
 std::string CreateCADConversionTaskRequest::getModelId()const
@@ -121,7 +121,7 @@ int CreateCADConversionTaskRequest::getZoomFactor()const
 void CreateCADConversionTaskRequest::setZoomFactor(int zoomFactor)
 {
 	zoomFactor_ = zoomFactor;
-	setCoreParameter("ZoomFactor", std::to_string(zoomFactor));
+	setCoreParameter("ZoomFactor", zoomFactor);
 }
 
 std::string CreateCADConversionTaskRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ long CreateCADConversionTaskRequest::getUnitHeight()const
 void CreateCADConversionTaskRequest::setUnitHeight(long unitHeight)
 {
 	unitHeight_ = unitHeight;
-	setCoreParameter("UnitHeight", std::to_string(unitHeight));
+	setCoreParameter("UnitHeight", unitHeight);
 }
 
 std::string CreateCADConversionTaskRequest::getRegionId()const
@@ -198,7 +198,7 @@ bool CreateCADConversionTaskRequest::getThumbnails()const
 void CreateCADConversionTaskRequest::setThumbnails(bool thumbnails)
 {
 	thumbnails_ = thumbnails;
-	setCoreParameter("Thumbnails", thumbnails ? "true" : "false");
+	setCoreParameter("Thumbnails", thumbnails);
 }
 
 std::string CreateCADConversionTaskRequest::getTgtUri()const

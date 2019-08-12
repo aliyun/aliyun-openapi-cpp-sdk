@@ -44,7 +44,7 @@ long CreateUnDeploymentRequest::getDeploymentId()const
 void CreateUnDeploymentRequest::setDeploymentId(long deploymentId)
 {
 	deploymentId_ = deploymentId;
-	setCoreParameter("DeploymentId", std::to_string(deploymentId));
+	setCoreParameter("DeploymentId", deploymentId);
 }
 
 std::string CreateUnDeploymentRequest::getLang()const

@@ -44,7 +44,7 @@ int ModifyAlarmRequest::getPeriod()const
 void ModifyAlarmRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string ModifyAlarmRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int ModifyAlarmRequest::getGroupId()const
 void ModifyAlarmRequest::setGroupId(int groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ModifyAlarmRequest::getDescription()const
@@ -89,7 +89,7 @@ void ModifyAlarmRequest::setAlarmAction(const std::vector<std::string>& alarmAct
 {
 	alarmAction_ = alarmAction;
 	for(int i = 0; i!= alarmAction.size(); i++)
-		setCoreParameter("AlarmAction."+ std::to_string(i), alarmAction.at(i));
+		setCoreParameter("AlarmAction."+ std::to_string(i), std::to_string(alarmAction.at(i)));
 }
 
 float ModifyAlarmRequest::getThreshold()const
@@ -100,7 +100,7 @@ float ModifyAlarmRequest::getThreshold()const
 void ModifyAlarmRequest::setThreshold(float threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
+	setCoreParameter("Threshold", threshold);
 }
 
 long ModifyAlarmRequest::getOwnerId()const
@@ -111,7 +111,7 @@ long ModifyAlarmRequest::getOwnerId()const
 void ModifyAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAlarmRequest::getAlarmTaskId()const
@@ -166,7 +166,7 @@ int ModifyAlarmRequest::getEvaluationCount()const
 void ModifyAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setCoreParameter("EvaluationCount", evaluationCount);
 }
 
 std::string ModifyAlarmRequest::getMetricName()const
@@ -203,8 +203,8 @@ void ModifyAlarmRequest::setDimension(const std::vector<Dimension>& dimension)
 	for(int i = 0; i!= dimension.size(); i++)	{
 		auto obj = dimension.at(i);
 		std::string str ="Dimension."+ std::to_string(i);
-		setCoreParameter(str + ".DimensionValue", obj.dimensionValue);
-		setCoreParameter(str + ".DimensionKey", obj.dimensionKey);
+		setCoreParameter(str + ".DimensionValue", std::to_string(obj.dimensionValue));
+		setCoreParameter(str + ".DimensionKey", std::to_string(obj.dimensionKey));
 	}
 }
 

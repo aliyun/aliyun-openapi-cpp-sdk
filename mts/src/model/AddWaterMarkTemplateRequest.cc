@@ -33,7 +33,7 @@ long AddWaterMarkTemplateRequest::getResourceOwnerId()const
 void AddWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long AddWaterMarkTemplateRequest::getOwnerId()const
 void AddWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddWaterMarkTemplateRequest::getConfig()const

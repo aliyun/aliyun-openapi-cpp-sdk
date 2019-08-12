@@ -55,7 +55,7 @@ int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
 void RecordLifecycleActionHeartbeatRequest::setHeartbeatTimeout(int heartbeatTimeout)
 {
 	heartbeatTimeout_ = heartbeatTimeout;
-	setCoreParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+	setCoreParameter("HeartbeatTimeout", heartbeatTimeout);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
@@ -88,7 +88,7 @@ long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const

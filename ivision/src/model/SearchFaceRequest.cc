@@ -33,7 +33,7 @@ long SearchFaceRequest::getResourceOwnerId()const
 void SearchFaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long SearchFaceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long SearchFaceRequest::getCallerParentId()const
 void SearchFaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool SearchFaceRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool SearchFaceRequest::getProxy_original_security_transport()const
 void SearchFaceRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string SearchFaceRequest::getProxy_original_source_ip()const
@@ -176,7 +176,7 @@ float SearchFaceRequest::getProbabilityThreshold()const
 void SearchFaceRequest::setProbabilityThreshold(float probabilityThreshold)
 {
 	probabilityThreshold_ = probabilityThreshold;
-	setCoreParameter("ProbabilityThreshold", std::to_string(probabilityThreshold));
+	setCoreParameter("ProbabilityThreshold", probabilityThreshold);
 }
 
 std::string SearchFaceRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ long SearchFaceRequest::getCallerUid()const
 void SearchFaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string SearchFaceRequest::getShowLog()const
@@ -253,7 +253,7 @@ int SearchFaceRequest::getCount()const
 void SearchFaceRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string SearchFaceRequest::getCallerBid()const
@@ -275,7 +275,7 @@ long SearchFaceRequest::getOwnerId()const
 void SearchFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SearchFaceRequest::getVersion()const
@@ -297,7 +297,7 @@ bool SearchFaceRequest::getProxy_trust_transport_info()const
 void SearchFaceRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool SearchFaceRequest::getAk_mfa_present()const
@@ -308,7 +308,7 @@ bool SearchFaceRequest::getAk_mfa_present()const
 void SearchFaceRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool SearchFaceRequest::getSecurity_transport()const
@@ -319,7 +319,7 @@ bool SearchFaceRequest::getSecurity_transport()const
 void SearchFaceRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SearchFaceRequest::getServiceCode()const

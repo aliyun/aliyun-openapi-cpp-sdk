@@ -33,7 +33,7 @@ long ModifyDBEndpointAddressRequest::getResourceOwnerId()const
 void ModifyDBEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBEndpointAddressRequest::getConnectionStringPrefix()const
@@ -110,7 +110,7 @@ long ModifyDBEndpointAddressRequest::getOwnerId()const
 void ModifyDBEndpointAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBEndpointAddressRequest::getAccessKeyId()const

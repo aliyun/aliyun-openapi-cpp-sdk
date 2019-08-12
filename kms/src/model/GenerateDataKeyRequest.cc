@@ -66,6 +66,6 @@ int GenerateDataKeyRequest::getNumberOfBytes()const
 void GenerateDataKeyRequest::setNumberOfBytes(int numberOfBytes)
 {
 	numberOfBytes_ = numberOfBytes;
-	setCoreParameter("NumberOfBytes", std::to_string(numberOfBytes));
+	setCoreParameter("NumberOfBytes", numberOfBytes);
 }
 

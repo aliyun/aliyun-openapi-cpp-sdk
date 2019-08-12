@@ -44,7 +44,7 @@ long CreateResourcePoolRequest::getResourceOwnerId()const
 void CreateResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateResourcePoolRequest::getRegionId()const
@@ -77,7 +77,7 @@ bool CreateResourcePoolRequest::getActive()const
 void CreateResourcePoolRequest::setActive(bool active)
 {
 	active_ = active;
-	setCoreParameter("Active", active ? "true" : "false");
+	setCoreParameter("Active", active);
 }
 
 std::string CreateResourcePoolRequest::getClusterId()const
@@ -114,12 +114,12 @@ void CreateResourcePoolRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".Note", obj.note);
-		setCoreParameter(str + ".configType", obj.configType);
-		setCoreParameter(str + ".TargetId", obj.targetId);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".Category", obj.category);
+		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
+		setCoreParameter(str + ".Note", std::to_string(obj.note));
+		setCoreParameter(str + ".configType", std::to_string(obj.configType));
+		setCoreParameter(str + ".TargetId", std::to_string(obj.targetId));
+		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
+		setCoreParameter(str + ".Category", std::to_string(obj.category));
 	}
 }
 

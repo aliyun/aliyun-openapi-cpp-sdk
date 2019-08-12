@@ -33,7 +33,7 @@ int DescribeOssResultItemsRequest::getTotalCount()const
 void DescribeOssResultItemsRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 float DescribeOssResultItemsRequest::getMinScore()const
@@ -44,7 +44,7 @@ float DescribeOssResultItemsRequest::getMinScore()const
 void DescribeOssResultItemsRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
-	setCoreParameter("MinScore", std::to_string(minScore));
+	setCoreParameter("MinScore", minScore);
 }
 
 std::string DescribeOssResultItemsRequest::getSuggestion()const
@@ -66,7 +66,7 @@ int DescribeOssResultItemsRequest::getCurrentPage()const
 void DescribeOssResultItemsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 float DescribeOssResultItemsRequest::getMaxScore()const
@@ -77,7 +77,7 @@ float DescribeOssResultItemsRequest::getMaxScore()const
 void DescribeOssResultItemsRequest::setMaxScore(float maxScore)
 {
 	maxScore_ = maxScore;
-	setCoreParameter("MaxScore", std::to_string(maxScore));
+	setCoreParameter("MaxScore", maxScore);
 }
 
 std::string DescribeOssResultItemsRequest::getStartDate()const
@@ -165,7 +165,7 @@ int DescribeOssResultItemsRequest::getPageSize()const
 void DescribeOssResultItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeOssResultItemsRequest::getLang()const
@@ -187,7 +187,7 @@ bool DescribeOssResultItemsRequest::getStock()const
 void DescribeOssResultItemsRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setCoreParameter("Stock", stock);
 }
 
 std::string DescribeOssResultItemsRequest::getObject()const

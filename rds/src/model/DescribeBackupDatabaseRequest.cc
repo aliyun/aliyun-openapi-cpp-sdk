@@ -33,7 +33,7 @@ long DescribeBackupDatabaseRequest::getResourceOwnerId()const
 void DescribeBackupDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeBackupDatabaseRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long DescribeBackupDatabaseRequest::getOwnerId()const
 void DescribeBackupDatabaseRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeBackupDatabaseRequest::getAccessKeyId()const

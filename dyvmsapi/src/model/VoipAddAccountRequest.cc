@@ -33,7 +33,7 @@ long VoipAddAccountRequest::getResourceOwnerId()const
 void VoipAddAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string VoipAddAccountRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long VoipAddAccountRequest::getOwnerId()const
 void VoipAddAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string VoipAddAccountRequest::getDeviceId()const

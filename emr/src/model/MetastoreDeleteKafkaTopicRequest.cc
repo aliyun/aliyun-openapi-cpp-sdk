@@ -33,7 +33,7 @@ long MetastoreDeleteKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreDeleteKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreDeleteKafkaTopicRequest::getTopicId()const

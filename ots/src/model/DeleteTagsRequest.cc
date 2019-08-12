@@ -44,7 +44,7 @@ long DeleteTagsRequest::getResourceOwnerId()const
 void DeleteTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteTagsRequest::getInstanceName()const
@@ -70,8 +70,8 @@ void DeleteTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
+		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
 	}
 }
 

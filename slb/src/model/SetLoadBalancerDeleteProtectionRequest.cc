@@ -44,7 +44,7 @@ long SetLoadBalancerDeleteProtectionRequest::getResourceOwnerId()const
 void SetLoadBalancerDeleteProtectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getLoadBalancerId()const
@@ -99,7 +99,7 @@ long SetLoadBalancerDeleteProtectionRequest::getOwnerId()const
 void SetLoadBalancerDeleteProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getDeleteProtection()const

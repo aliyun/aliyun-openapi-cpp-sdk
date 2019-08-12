@@ -33,7 +33,7 @@ long BandOfferOrderRequest::getResourceOwnerId()const
 void BandOfferOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string BandOfferOrderRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long BandOfferOrderRequest::getOwnerId()const
 void BandOfferOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string BandOfferOrderRequest::getAccessKeyId()const

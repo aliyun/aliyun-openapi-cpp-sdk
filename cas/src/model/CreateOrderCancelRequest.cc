@@ -44,7 +44,7 @@ long CreateOrderCancelRequest::getOrderId()const
 void CreateOrderCancelRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string CreateOrderCancelRequest::getLang()const

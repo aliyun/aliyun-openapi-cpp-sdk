@@ -33,7 +33,7 @@ long AddCensorPipelineRequest::getResourceOwnerId()const
 void AddCensorPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddCensorPipelineRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long AddCensorPipelineRequest::getOwnerId()const
 void AddCensorPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int AddCensorPipelineRequest::getPriority()const
@@ -99,7 +99,7 @@ int AddCensorPipelineRequest::getPriority()const
 void AddCensorPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string AddCensorPipelineRequest::getAccessKeyId()const

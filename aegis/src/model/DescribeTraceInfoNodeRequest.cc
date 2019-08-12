@@ -88,7 +88,7 @@ long DescribeTraceInfoNodeRequest::getIncidentTime()const
 void DescribeTraceInfoNodeRequest::setIncidentTime(long incidentTime)
 {
 	incidentTime_ = incidentTime;
-	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+	setCoreParameter("IncidentTime", incidentTime);
 }
 
 std::string DescribeTraceInfoNodeRequest::getUuid()const

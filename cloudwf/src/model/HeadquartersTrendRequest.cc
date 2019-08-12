@@ -33,7 +33,7 @@ long HeadquartersTrendRequest::getBid()const
 void HeadquartersTrendRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string HeadquartersTrendRequest::getAccessKeyId()const

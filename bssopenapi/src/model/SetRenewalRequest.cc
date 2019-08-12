@@ -88,7 +88,7 @@ int SetRenewalRequest::getRenewalPeriod()const
 void SetRenewalRequest::setRenewalPeriod(int renewalPeriod)
 {
 	renewalPeriod_ = renewalPeriod;
-	setCoreParameter("RenewalPeriod", std::to_string(renewalPeriod));
+	setCoreParameter("RenewalPeriod", renewalPeriod);
 }
 
 long SetRenewalRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SetRenewalRequest::getOwnerId()const
 void SetRenewalRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetRenewalRequest::getProductType()const

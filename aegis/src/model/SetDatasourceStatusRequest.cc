@@ -66,7 +66,7 @@ int SetDatasourceStatusRequest::getStatus()const
 void SetDatasourceStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 
 std::string SetDatasourceStatusRequest::getRegionNo()const

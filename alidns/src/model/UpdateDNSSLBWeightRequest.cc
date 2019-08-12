@@ -55,7 +55,7 @@ int UpdateDNSSLBWeightRequest::getWeight()const
 void UpdateDNSSLBWeightRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string UpdateDNSSLBWeightRequest::getLang()const

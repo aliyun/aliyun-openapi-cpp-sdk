@@ -66,7 +66,7 @@ int DescribeEventCountCurveRequest::getLastDays()const
 void DescribeEventCountCurveRequest::setLastDays(int lastDays)
 {
 	lastDays_ = lastDays;
-	setCoreParameter("LastDays", std::to_string(lastDays));
+	setCoreParameter("LastDays", lastDays);
 }
 
 std::string DescribeEventCountCurveRequest::getHealthEventLevels()const

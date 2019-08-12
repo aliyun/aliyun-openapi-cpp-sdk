@@ -44,7 +44,7 @@ long ExecuteRuleEngineActualTimeRequest::getRuleId()const
 void ExecuteRuleEngineActualTimeRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string ExecuteRuleEngineActualTimeRequest::getMessage()const

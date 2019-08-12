@@ -55,7 +55,7 @@ int SearchRepoRequest::getPageSize()const
 void SearchRepoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int SearchRepoRequest::getPage()const
@@ -66,7 +66,7 @@ int SearchRepoRequest::getPage()const
 void SearchRepoRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string SearchRepoRequest::getKeyword()const

@@ -33,7 +33,7 @@ long UpdateTerrorismPipelineRequest::getResourceOwnerId()const
 void UpdateTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateTerrorismPipelineRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long UpdateTerrorismPipelineRequest::getOwnerId()const
 void UpdateTerrorismPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int UpdateTerrorismPipelineRequest::getPriority()const
@@ -110,7 +110,7 @@ int UpdateTerrorismPipelineRequest::getPriority()const
 void UpdateTerrorismPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string UpdateTerrorismPipelineRequest::getAccessKeyId()const

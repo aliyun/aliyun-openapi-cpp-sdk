@@ -33,7 +33,7 @@ long ModifyInstanceSpecRequest::getResourceOwnerId()const
 void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyInstanceSpecRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool ModifyInstanceSpecRequest::getAutoPay()const
 void ModifyInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyInstanceSpecRequest::getFromApp()const
@@ -99,7 +99,7 @@ long ModifyInstanceSpecRequest::getOwnerId()const
 void ModifyInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceClass()const
@@ -176,7 +176,7 @@ bool ModifyInstanceSpecRequest::getForceUpgrade()const
 void ModifyInstanceSpecRequest::setForceUpgrade(bool forceUpgrade)
 {
 	forceUpgrade_ = forceUpgrade;
-	setCoreParameter("ForceUpgrade", forceUpgrade ? "true" : "false");
+	setCoreParameter("ForceUpgrade", forceUpgrade);
 }
 
 std::string ModifyInstanceSpecRequest::getBusinessInfo()const

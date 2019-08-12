@@ -33,7 +33,7 @@ int SaveSingleTaskForAddingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForAddingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", std::to_string(keyTag));
+	setCoreParameter("KeyTag", keyTag);
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getDomainName()const
@@ -66,7 +66,7 @@ int SaveSingleTaskForAddingDSRecordRequest::getDigestType()const
 void SaveSingleTaskForAddingDSRecordRequest::setDigestType(int digestType)
 {
 	digestType_ = digestType;
-	setCoreParameter("DigestType", std::to_string(digestType));
+	setCoreParameter("DigestType", digestType);
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getDigest()const
@@ -99,6 +99,6 @@ int SaveSingleTaskForAddingDSRecordRequest::getAlgorithm()const
 void SaveSingleTaskForAddingDSRecordRequest::setAlgorithm(int algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", std::to_string(algorithm));
+	setCoreParameter("Algorithm", algorithm);
 }
 

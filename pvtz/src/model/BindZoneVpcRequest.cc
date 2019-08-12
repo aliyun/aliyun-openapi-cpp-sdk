@@ -70,8 +70,8 @@ void BindZoneVpcRequest::setVpcs(const std::vector<Vpcs>& vpcs)
 	for(int i = 0; i!= vpcs.size(); i++)	{
 		auto obj = vpcs.at(i);
 		std::string str ="Vpcs."+ std::to_string(i);
-		setCoreParameter(str + ".RegionId", obj.regionId);
-		setCoreParameter(str + ".VpcId", obj.vpcId);
+		setCoreParameter(str + ".RegionId", std::to_string(obj.regionId));
+		setCoreParameter(str + ".VpcId", std::to_string(obj.vpcId));
 	}
 }
 

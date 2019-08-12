@@ -33,7 +33,7 @@ long GetStatusRequest::getResourceOwnerId()const
 void GetStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetStatusRequest::getBiz()const

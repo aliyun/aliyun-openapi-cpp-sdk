@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setPopProduct(const std::string& popProduct);
 				std::string getStreamType()const;
 				void setStreamType(const std::string& streamType);
+				std::string getFaceGroupId()const;
+				void setFaceGroupId(const std::string& faceGroupId);
 				std::string getStreamId()const;
 				void setStreamId(const std::string& streamId);
 				std::string getCallerBid()const;
@@ -124,6 +126,7 @@ namespace AlibabaCloud
 				std::string app_ip_;
 				std::string popProduct_;
 				std::string streamType_;
+				std::string faceGroupId_;
 				std::string streamId_;
 				std::string callerBid_;
 				std::string detectIntervals_;

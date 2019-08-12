@@ -59,9 +59,9 @@ void GetPayAsYouGoPriceRequest::setModuleList(const std::vector<ModuleList>& mod
 	for(int i = 0; i!= moduleList.size(); i++)	{
 		auto obj = moduleList.at(i);
 		std::string str ="ModuleList."+ std::to_string(i);
-		setCoreParameter(str + ".ModuleCode", obj.moduleCode);
-		setCoreParameter(str + ".PriceType", obj.priceType);
-		setCoreParameter(str + ".Config", obj.config);
+		setCoreParameter(str + ".ModuleCode", std::to_string(obj.moduleCode));
+		setCoreParameter(str + ".PriceType", std::to_string(obj.priceType));
+		setCoreParameter(str + ".Config", std::to_string(obj.config));
 	}
 }
 
@@ -73,7 +73,7 @@ long GetPayAsYouGoPriceRequest::getOwnerId()const
 void GetPayAsYouGoPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetPayAsYouGoPriceRequest::getRegion()const

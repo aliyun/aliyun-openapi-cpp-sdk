@@ -33,7 +33,7 @@ long ModifyUidWhiteBaselineRequest::getResourceOwnerId()const
 void ModifyUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyUidWhiteBaselineRequest::getSourceIp()const
@@ -66,7 +66,7 @@ int ModifyUidWhiteBaselineRequest::getId()const
 void ModifyUidWhiteBaselineRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyUidWhiteBaselineRequest::getLang()const
@@ -88,7 +88,7 @@ long ModifyUidWhiteBaselineRequest::getSrcUid()const
 void ModifyUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", srcUid);
 }
 
 std::string ModifyUidWhiteBaselineRequest::getSourceCode()const

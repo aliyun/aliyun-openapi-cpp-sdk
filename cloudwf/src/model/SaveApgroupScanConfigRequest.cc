@@ -44,7 +44,7 @@ long SaveApgroupScanConfigRequest::getApgroupId()const
 void SaveApgroupScanConfigRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 std::string SaveApgroupScanConfigRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ bool ListFlowCategoryRequest::getRoot()const
 void ListFlowCategoryRequest::setRoot(bool root)
 {
 	root_ = root;
-	setCoreParameter("Root", root ? "true" : "false");
+	setCoreParameter("Root", root);
 }
 
 int ListFlowCategoryRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListFlowCategoryRequest::getPageSize()const
 void ListFlowCategoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowCategoryRequest::getProjectId()const
@@ -88,6 +88,6 @@ int ListFlowCategoryRequest::getPageNumber()const
 void ListFlowCategoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

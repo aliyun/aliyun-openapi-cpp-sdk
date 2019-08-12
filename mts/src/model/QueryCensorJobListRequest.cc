@@ -33,7 +33,7 @@ long QueryCensorJobListRequest::getResourceOwnerId()const
 void QueryCensorJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryCensorJobListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryCensorJobListRequest::getOwnerId()const
 void QueryCensorJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryCensorJobListRequest::getAccessKeyId()const

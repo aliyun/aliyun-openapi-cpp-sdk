@@ -55,6 +55,6 @@ int UploadImageToLibRequest::getImageLibId()const
 void UploadImageToLibRequest::setImageLibId(int imageLibId)
 {
 	imageLibId_ = imageLibId;
-	setCoreParameter("ImageLibId", std::to_string(imageLibId));
+	setCoreParameter("ImageLibId", imageLibId);
 }
 

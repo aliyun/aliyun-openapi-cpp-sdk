@@ -66,7 +66,7 @@ long RealTimeRecordCommandRequest::getOwnerId()const
 void RealTimeRecordCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RealTimeRecordCommandRequest::getCommand()const

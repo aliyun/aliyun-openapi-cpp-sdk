@@ -33,7 +33,7 @@ int ListDomainsRequest::getPageSize()const
 void ListDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListDomainsRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int ListDomainsRequest::getPageNumber()const
 void ListDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListDomainsRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long CommonApiWhiteListRequest::getResourceOwnerId()const
 void CommonApiWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CommonApiWhiteListRequest::getRegionId()const

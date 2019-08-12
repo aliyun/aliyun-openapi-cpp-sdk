@@ -44,7 +44,7 @@ long CopyCustomizeReportConfigRequest::getReportId()const
 void CopyCustomizeReportConfigRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string CopyCustomizeReportConfigRequest::getLang()const

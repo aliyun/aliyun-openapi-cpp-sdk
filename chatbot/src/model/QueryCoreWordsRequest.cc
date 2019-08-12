@@ -44,7 +44,7 @@ int QueryCoreWordsRequest::getPageSize()const
 void QueryCoreWordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryCoreWordsRequest::getCoreWordName()const
@@ -66,6 +66,6 @@ int QueryCoreWordsRequest::getPageNumber()const
 void QueryCoreWordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

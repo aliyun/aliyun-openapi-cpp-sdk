@@ -44,7 +44,7 @@ long RegisterMediaRequest::getResourceOwnerId()const
 void RegisterMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RegisterMediaRequest::getTemplateGroupId()const
@@ -77,7 +77,7 @@ long RegisterMediaRequest::getOwnerId()const
 void RegisterMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RegisterMediaRequest::getRegisterMetadatas()const

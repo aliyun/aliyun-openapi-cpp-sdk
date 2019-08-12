@@ -77,7 +77,7 @@ int PollTaskResultRequest::getPageSize()const
 void PollTaskResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string PollTaskResultRequest::getLang()const
@@ -99,7 +99,7 @@ int PollTaskResultRequest::getPageNum()const
 void PollTaskResultRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 int PollTaskResultRequest::getTaskResultStatus()const
@@ -110,6 +110,6 @@ int PollTaskResultRequest::getTaskResultStatus()const
 void PollTaskResultRequest::setTaskResultStatus(int taskResultStatus)
 {
 	taskResultStatus_ = taskResultStatus;
-	setCoreParameter("TaskResultStatus", std::to_string(taskResultStatus));
+	setCoreParameter("TaskResultStatus", taskResultStatus);
 }
 

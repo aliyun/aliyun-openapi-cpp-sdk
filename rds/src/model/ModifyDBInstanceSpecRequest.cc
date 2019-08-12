@@ -33,7 +33,7 @@ long ModifyDBInstanceSpecRequest::getResourceOwnerId()const
 void ModifyDBInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
@@ -44,7 +44,7 @@ int ModifyDBInstanceSpecRequest::getDBInstanceStorage()const
 void ModifyDBInstanceSpecRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string ModifyDBInstanceSpecRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long ModifyDBInstanceSpecRequest::getOwnerId()const
 void ModifyDBInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId()const

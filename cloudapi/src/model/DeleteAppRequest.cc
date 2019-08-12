@@ -44,7 +44,7 @@ long DeleteAppRequest::getAppId()const
 void DeleteAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::vector<DeleteAppRequest::Tag> DeleteAppRequest::getTag()const
@@ -59,8 +59,8 @@ void DeleteAppRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 

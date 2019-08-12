@@ -33,7 +33,7 @@ long RunOpsCommandRequest::getResourceOwnerId()const
 void RunOpsCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RunOpsCommandRequest::getRegionId()const
@@ -100,7 +100,7 @@ void RunOpsCommandRequest::setHostIdList(const std::vector<std::string>& hostIdL
 {
 	hostIdList_ = hostIdList;
 	for(int i = 0; i!= hostIdList.size(); i++)
-		setCoreParameter("HostIdList."+ std::to_string(i), hostIdList.at(i));
+		setCoreParameter("HostIdList."+ std::to_string(i), std::to_string(hostIdList.at(i)));
 }
 
 std::string RunOpsCommandRequest::getDimension()const

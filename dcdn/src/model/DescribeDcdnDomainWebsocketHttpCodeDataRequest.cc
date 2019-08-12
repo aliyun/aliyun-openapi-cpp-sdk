@@ -33,7 +33,7 @@ long DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerParentId()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_original_security_
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getLocationNameEn()const
@@ -176,7 +176,7 @@ long DescribeDcdnDomainWebsocketHttpCodeDataRequest::getCallerUid()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getApp_ip()const
@@ -242,7 +242,7 @@ long DescribeDcdnDomainWebsocketHttpCodeDataRequest::getOwnerId()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getVersion()const
@@ -264,7 +264,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getProxy_trust_transport_in
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getAk_mfa_present()const
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool DescribeDcdnDomainWebsocketHttpCodeDataRequest::getSecurity_transport()cons
 void DescribeDcdnDomainWebsocketHttpCodeDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDcdnDomainWebsocketHttpCodeDataRequest::getRequestId()const

@@ -44,7 +44,7 @@ long SubmitEditingJobsRequest::getResourceOwnerId()const
 void SubmitEditingJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
@@ -99,7 +99,7 @@ long SubmitEditingJobsRequest::getOwnerId()const
 void SubmitEditingJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitEditingJobsRequest::getEditingInputs()const

@@ -44,7 +44,7 @@ long DescribeListenerAccessControlAttributeRequest::getResourceOwnerId()const
 void DescribeListenerAccessControlAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
 void DescribeListenerAccessControlAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DescribeListenerAccessControlAttributeRequest::getOwnerId()const
 void DescribeListenerAccessControlAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getListenerProtocol()const

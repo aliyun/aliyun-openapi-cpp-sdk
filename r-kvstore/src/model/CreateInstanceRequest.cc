@@ -33,7 +33,7 @@ long CreateInstanceRequest::getResourceOwnerId()const
 void CreateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateInstanceRequest::getNodeType()const
@@ -121,7 +121,7 @@ long CreateInstanceRequest::getCapacity()const
 void CreateInstanceRequest::setCapacity(long capacity)
 {
 	capacity_ = capacity;
-	setCoreParameter("Capacity", std::to_string(capacity));
+	setCoreParameter("Capacity", capacity);
 }
 
 std::string CreateInstanceRequest::getPassword()const
@@ -253,7 +253,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateInstanceRequest::getToken()const

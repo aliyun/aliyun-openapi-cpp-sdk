@@ -59,9 +59,9 @@ void ModifyImageGatewayConfigRequest::setRepo(const std::vector<Repo>& repo)
 	for(int i = 0; i!= repo.size(); i++)	{
 		auto obj = repo.at(i);
 		std::string str ="Repo."+ std::to_string(i);
-		setCoreParameter(str + ".Auth", obj.auth);
-		setCoreParameter(str + ".Location", obj.location);
-		setCoreParameter(str + ".URL", obj.uRL);
+		setCoreParameter(str + ".Auth", std::to_string(obj.auth));
+		setCoreParameter(str + ".Location", std::to_string(obj.location));
+		setCoreParameter(str + ".URL", std::to_string(obj.uRL));
 	}
 }
 
@@ -106,7 +106,7 @@ int ModifyImageGatewayConfigRequest::getPullUpdateTimeout()const
 void ModifyImageGatewayConfigRequest::setPullUpdateTimeout(int pullUpdateTimeout)
 {
 	pullUpdateTimeout_ = pullUpdateTimeout;
-	setCoreParameter("PullUpdateTimeout", std::to_string(pullUpdateTimeout));
+	setCoreParameter("PullUpdateTimeout", pullUpdateTimeout);
 }
 
 std::string ModifyImageGatewayConfigRequest::getClusterId()const

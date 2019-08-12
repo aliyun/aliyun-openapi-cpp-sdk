@@ -33,7 +33,7 @@ long HeadquartersToolsO2ORequest::getBid()const
 void HeadquartersToolsO2ORequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string HeadquartersToolsO2ORequest::getAccessKeyId()const

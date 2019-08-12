@@ -33,7 +33,7 @@ long DescribeRiskCheckSummaryRequest::getResourceOwnerId()const
 void DescribeRiskCheckSummaryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRiskCheckSummaryRequest::getSourceIp()const

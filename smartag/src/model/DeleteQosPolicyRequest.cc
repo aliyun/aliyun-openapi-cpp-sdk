@@ -33,7 +33,7 @@ long DeleteQosPolicyRequest::getResourceOwnerId()const
 void DeleteQosPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteQosPolicyRequest::getQosPolicyId()const
@@ -88,7 +88,7 @@ long DeleteQosPolicyRequest::getOwnerId()const
 void DeleteQosPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteQosPolicyRequest::getQosId()const

@@ -33,7 +33,7 @@ long CreateProjectRequest::getResourceOwnerId()const
 void CreateProjectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long CreateProjectRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateProjectRequest::getCallerParentId()const
 void CreateProjectRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateProjectRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateProjectRequest::getProxy_original_security_transport()const
 void CreateProjectRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateProjectRequest::getDescription()const
@@ -176,7 +176,7 @@ long CreateProjectRequest::getCallerUid()const
 void CreateProjectRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateProjectRequest::getShowLog()const
@@ -242,7 +242,7 @@ long CreateProjectRequest::getOwnerId()const
 void CreateProjectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateProjectRequest::getVersion()const
@@ -264,7 +264,7 @@ bool CreateProjectRequest::getProxy_trust_transport_info()const
 void CreateProjectRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateProjectRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool CreateProjectRequest::getAk_mfa_present()const
 void CreateProjectRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool CreateProjectRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool CreateProjectRequest::getSecurity_transport()const
 void CreateProjectRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateProjectRequest::getProType()const

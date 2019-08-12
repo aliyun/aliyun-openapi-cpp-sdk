@@ -55,7 +55,7 @@ long DescribeScreenBizStatSimpleQueryResultRequest::getEndTime()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeScreenBizStatSimpleQueryResultRequest::getStartTime()const
@@ -66,7 +66,7 @@ long DescribeScreenBizStatSimpleQueryResultRequest::getStartTime()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScreenBizStatSimpleQueryResultRequest::getCustomQuery()const
@@ -88,6 +88,6 @@ int DescribeScreenBizStatSimpleQueryResultRequest::getRangeValue()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setRangeValue(int rangeValue)
 {
 	rangeValue_ = rangeValue;
-	setCoreParameter("RangeValue", std::to_string(rangeValue));
+	setCoreParameter("RangeValue", rangeValue);
 }
 

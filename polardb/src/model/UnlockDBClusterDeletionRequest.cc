@@ -33,7 +33,7 @@ long UnlockDBClusterDeletionRequest::getResourceOwnerId()const
 void UnlockDBClusterDeletionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UnlockDBClusterDeletionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long UnlockDBClusterDeletionRequest::getOwnerId()const
 void UnlockDBClusterDeletionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UnlockDBClusterDeletionRequest::getAccessKeyId()const

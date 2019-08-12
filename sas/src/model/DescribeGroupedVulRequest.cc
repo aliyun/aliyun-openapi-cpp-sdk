@@ -55,7 +55,7 @@ int DescribeGroupedVulRequest::getPageSize()const
 void DescribeGroupedVulRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGroupedVulRequest::getDealed()const
@@ -77,7 +77,7 @@ int DescribeGroupedVulRequest::getCurrentPage()const
 void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeGroupedVulRequest::getLang()const

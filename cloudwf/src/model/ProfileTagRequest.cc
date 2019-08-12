@@ -33,7 +33,7 @@ long ProfileTagRequest::getIdtype()const
 void ProfileTagRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
+	setCoreParameter("Idtype", idtype);
 }
 
 std::string ProfileTagRequest::getBeginDate()const
@@ -66,7 +66,7 @@ int ProfileTagRequest::getAppType()const
 void ProfileTagRequest::setAppType(int appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", std::to_string(appType));
+	setCoreParameter("AppType", appType);
 }
 
 std::string ProfileTagRequest::getTag()const
@@ -99,7 +99,7 @@ long ProfileTagRequest::getAgsid()const
 void ProfileTagRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 
 int ProfileTagRequest::getAreaNumber()const
@@ -110,6 +110,6 @@ int ProfileTagRequest::getAreaNumber()const
 void ProfileTagRequest::setAreaNumber(int areaNumber)
 {
 	areaNumber_ = areaNumber;
-	setCoreParameter("AreaNumber", std::to_string(areaNumber));
+	setCoreParameter("AreaNumber", areaNumber);
 }
 

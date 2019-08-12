@@ -55,6 +55,6 @@ long UpdateServiceRequest::getCsbId()const
 void UpdateServiceRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 

@@ -33,7 +33,7 @@ long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
 void QueryBatchRegisterDeviceStatusRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setCoreParameter("ApplyId", std::to_string(applyId));
+	setCoreParameter("ApplyId", applyId);
 }
 
 std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const

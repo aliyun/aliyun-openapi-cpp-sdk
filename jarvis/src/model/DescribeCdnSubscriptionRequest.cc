@@ -44,7 +44,7 @@ int DescribeCdnSubscriptionRequest::getSubscriptionState()const
 void DescribeCdnSubscriptionRequest::setSubscriptionState(int subscriptionState)
 {
 	subscriptionState_ = subscriptionState;
-	setCoreParameter("SubscriptionState", std::to_string(subscriptionState));
+	setCoreParameter("SubscriptionState", subscriptionState);
 }
 
 int DescribeCdnSubscriptionRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeCdnSubscriptionRequest::getPageSize()const
 void DescribeCdnSubscriptionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeCdnSubscriptionRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeCdnSubscriptionRequest::getCurrentPage()const
 void DescribeCdnSubscriptionRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCdnSubscriptionRequest::getLang()const

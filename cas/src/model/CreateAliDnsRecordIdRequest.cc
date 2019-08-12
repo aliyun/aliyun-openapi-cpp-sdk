@@ -55,7 +55,7 @@ long CreateAliDnsRecordIdRequest::getOrderId()const
 void CreateAliDnsRecordIdRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string CreateAliDnsRecordIdRequest::getLang()const

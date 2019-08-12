@@ -33,7 +33,7 @@ long BatchRobotSmartCallRequest::getResourceOwnerId()const
 void BatchRobotSmartCallRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool BatchRobotSmartCallRequest::getEarlyMediaAsr()const
@@ -44,7 +44,7 @@ bool BatchRobotSmartCallRequest::getEarlyMediaAsr()const
 void BatchRobotSmartCallRequest::setEarlyMediaAsr(bool earlyMediaAsr)
 {
 	earlyMediaAsr_ = earlyMediaAsr;
-	setCoreParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
+	setCoreParameter("EarlyMediaAsr", earlyMediaAsr);
 }
 
 std::string BatchRobotSmartCallRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long BatchRobotSmartCallRequest::getOwnerId()const
 void BatchRobotSmartCallRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string BatchRobotSmartCallRequest::getDialogId()const
@@ -143,7 +143,7 @@ long BatchRobotSmartCallRequest::getScheduleTime()const
 void BatchRobotSmartCallRequest::setScheduleTime(long scheduleTime)
 {
 	scheduleTime_ = scheduleTime;
-	setCoreParameter("ScheduleTime", std::to_string(scheduleTime));
+	setCoreParameter("ScheduleTime", scheduleTime);
 }
 
 std::string BatchRobotSmartCallRequest::getCalledShowNumber()const
@@ -176,7 +176,7 @@ bool BatchRobotSmartCallRequest::getScheduleCall()const
 void BatchRobotSmartCallRequest::setScheduleCall(bool scheduleCall)
 {
 	scheduleCall_ = scheduleCall;
-	setCoreParameter("ScheduleCall", scheduleCall ? "true" : "false");
+	setCoreParameter("ScheduleCall", scheduleCall);
 }
 
 bool BatchRobotSmartCallRequest::getIsSelfLine()const
@@ -187,6 +187,6 @@ bool BatchRobotSmartCallRequest::getIsSelfLine()const
 void BatchRobotSmartCallRequest::setIsSelfLine(bool isSelfLine)
 {
 	isSelfLine_ = isSelfLine;
-	setCoreParameter("IsSelfLine", isSelfLine ? "true" : "false");
+	setCoreParameter("IsSelfLine", isSelfLine);
 }
 

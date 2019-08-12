@@ -33,7 +33,7 @@ bool SubmitCutoutTaskRequest::getSecurity_transport()const
 void SubmitCutoutTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string SubmitCutoutTaskRequest::getApp_ip()const
@@ -66,7 +66,7 @@ long SubmitCutoutTaskRequest::getCallerParentId()const
 void SubmitCutoutTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string SubmitCutoutTaskRequest::getRequestId()const
@@ -99,7 +99,7 @@ bool SubmitCutoutTaskRequest::getAk_mfa_present()const
 void SubmitCutoutTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 long SubmitCutoutTaskRequest::getCallerUid()const
@@ -110,7 +110,7 @@ long SubmitCutoutTaskRequest::getCallerUid()const
 void SubmitCutoutTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::vector<std::string> SubmitCutoutTaskRequest::getPictureUrl()const
@@ -122,6 +122,6 @@ void SubmitCutoutTaskRequest::setPictureUrl(const std::vector<std::string>& pict
 {
 	pictureUrl_ = pictureUrl;
 	for(int i = 0; i!= pictureUrl.size(); i++)
-		setCoreParameter("PictureUrl."+ std::to_string(i), pictureUrl.at(i));
+		setCoreParameter("PictureUrl."+ std::to_string(i), std::to_string(pictureUrl.at(i)));
 }
 

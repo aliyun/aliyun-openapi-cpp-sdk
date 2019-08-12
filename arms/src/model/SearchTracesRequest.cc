@@ -77,7 +77,7 @@ int SearchTracesRequest::getPageSize()const
 void SearchTracesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long SearchTracesRequest::getEndTime()const
@@ -88,7 +88,7 @@ long SearchTracesRequest::getEndTime()const
 void SearchTracesRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string SearchTracesRequest::getServiceName()const
@@ -110,7 +110,7 @@ int SearchTracesRequest::getPageIndex()const
 void SearchTracesRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 long SearchTracesRequest::getStartTime()const
@@ -121,7 +121,7 @@ long SearchTracesRequest::getStartTime()const
 void SearchTracesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::vector<SearchTracesRequest::Tag> SearchTracesRequest::getTag()const
@@ -136,8 +136,8 @@ void SearchTracesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -149,7 +149,7 @@ bool SearchTracesRequest::getReverse()const
 void SearchTracesRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setCoreParameter("Reverse", reverse);
 }
 
 long SearchTracesRequest::getMinDuration()const
@@ -160,6 +160,6 @@ long SearchTracesRequest::getMinDuration()const
 void SearchTracesRequest::setMinDuration(long minDuration)
 {
 	minDuration_ = minDuration;
-	setCoreParameter("MinDuration", std::to_string(minDuration));
+	setCoreParameter("MinDuration", minDuration);
 }
 

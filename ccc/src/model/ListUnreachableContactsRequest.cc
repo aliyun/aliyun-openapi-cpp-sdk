@@ -55,7 +55,7 @@ int ListUnreachableContactsRequest::getPageSize()const
 void ListUnreachableContactsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListUnreachableContactsRequest::getPageNumber()const
@@ -66,6 +66,6 @@ int ListUnreachableContactsRequest::getPageNumber()const
 void ListUnreachableContactsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

@@ -44,7 +44,7 @@ long DescribeHpHostRequest::getResourceOwnerId()const
 void DescribeHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeHpHostRequest::getRegionId()const

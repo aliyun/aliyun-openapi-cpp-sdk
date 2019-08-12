@@ -33,7 +33,7 @@ long AllocateIpv6InternetBandwidthRequest::getResourceOwnerId()const
 void AllocateIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getClientToken()const
@@ -55,7 +55,7 @@ long AllocateIpv6InternetBandwidthRequest::getCallerParentId()const
 void AllocateIpv6InternetBandwidthRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool AllocateIpv6InternetBandwidthRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool AllocateIpv6InternetBandwidthRequest::getProxy_original_security_transport(
 void AllocateIpv6InternetBandwidthRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool AllocateIpv6InternetBandwidthRequest::getEnable()const
 void AllocateIpv6InternetBandwidthRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getRequestContent()const
@@ -198,7 +198,7 @@ long AllocateIpv6InternetBandwidthRequest::getCallerUid()const
 void AllocateIpv6InternetBandwidthRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getApp_ip()const
@@ -220,7 +220,7 @@ int AllocateIpv6InternetBandwidthRequest::getBandwidth()const
 void AllocateIpv6InternetBandwidthRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
@@ -264,7 +264,7 @@ long AllocateIpv6InternetBandwidthRequest::getOwnerId()const
 void AllocateIpv6InternetBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool AllocateIpv6InternetBandwidthRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ bool AllocateIpv6InternetBandwidthRequest::getProxy_trust_transport_info()const
 void AllocateIpv6InternetBandwidthRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool AllocateIpv6InternetBandwidthRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool AllocateIpv6InternetBandwidthRequest::getAk_mfa_present()const
 void AllocateIpv6InternetBandwidthRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool AllocateIpv6InternetBandwidthRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool AllocateIpv6InternetBandwidthRequest::getSecurity_transport()const
 void AllocateIpv6InternetBandwidthRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getIpv6AddressId()const

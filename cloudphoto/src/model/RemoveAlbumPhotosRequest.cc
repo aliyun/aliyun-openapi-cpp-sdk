@@ -44,7 +44,7 @@ long RemoveAlbumPhotosRequest::getAlbumId()const
 void RemoveAlbumPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setCoreParameter("AlbumId", albumId);
 }
 
 std::vector<long> RemoveAlbumPhotosRequest::getPhotoId()const
@@ -56,7 +56,7 @@ void RemoveAlbumPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
 }
 
 std::string RemoveAlbumPhotosRequest::getStoreName()const

@@ -44,7 +44,7 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()const
@@ -66,6 +66,6 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

@@ -55,7 +55,7 @@ long DescribeConferenceAuthInfoRequest::getCallerParentId()const
 void DescribeConferenceAuthInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeConferenceAuthInfoRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DescribeConferenceAuthInfoRequest::getProxy_original_security_transport()co
 void DescribeConferenceAuthInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getCallerBid()const
@@ -88,7 +88,7 @@ long DescribeConferenceAuthInfoRequest::getOwnerId()const
 void DescribeConferenceAuthInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getProxy_original_source_ip()const
@@ -143,7 +143,7 @@ bool DescribeConferenceAuthInfoRequest::getProxy_trust_transport_info()const
 void DescribeConferenceAuthInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeConferenceAuthInfoRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool DescribeConferenceAuthInfoRequest::getAk_mfa_present()const
 void DescribeConferenceAuthInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ bool DescribeConferenceAuthInfoRequest::getSecurity_transport()const
 void DescribeConferenceAuthInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getSecurityToken()const
@@ -264,6 +264,6 @@ long DescribeConferenceAuthInfoRequest::getCallerUid()const
 void DescribeConferenceAuthInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

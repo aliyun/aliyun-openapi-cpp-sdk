@@ -66,7 +66,7 @@ int DescribeAttackAnalysisDataRequest::getPageSize()const
 void DescribeAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeAttackAnalysisDataRequest::getEndTime()const
@@ -77,7 +77,7 @@ long DescribeAttackAnalysisDataRequest::getEndTime()const
 void DescribeAttackAnalysisDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int DescribeAttackAnalysisDataRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeAttackAnalysisDataRequest::getCurrentPage()const
 void DescribeAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 long DescribeAttackAnalysisDataRequest::getStartTime()const
@@ -99,7 +99,7 @@ long DescribeAttackAnalysisDataRequest::getStartTime()const
 void DescribeAttackAnalysisDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeAttackAnalysisDataRequest::getLang()const

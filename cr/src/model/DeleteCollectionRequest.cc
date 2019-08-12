@@ -44,6 +44,6 @@ long DeleteCollectionRequest::getCollectionId()const
 void DeleteCollectionRequest::setCollectionId(long collectionId)
 {
 	collectionId_ = collectionId;
-	setCoreParameter("CollectionId", std::to_string(collectionId));
+	setCoreParameter("CollectionId", collectionId);
 }
 

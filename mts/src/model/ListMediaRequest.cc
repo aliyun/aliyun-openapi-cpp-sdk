@@ -33,7 +33,7 @@ long ListMediaRequest::getResourceOwnerId()const
 void ListMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListMediaRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long ListMediaRequest::getMaximumPageSize()const
 void ListMediaRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setCoreParameter("MaximumPageSize", maximumPageSize);
 }
 
 std::string ListMediaRequest::getFrom()const
@@ -110,7 +110,7 @@ long ListMediaRequest::getOwnerId()const
 void ListMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListMediaRequest::getAccessKeyId()const

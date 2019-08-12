@@ -44,7 +44,7 @@ long UpdateMediaRequest::getResourceOwnerId()const
 void UpdateMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateMediaRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long UpdateMediaRequest::getCateId()const
 void UpdateMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string UpdateMediaRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ long UpdateMediaRequest::getOwnerId()const
 void UpdateMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateMediaRequest::getMediaId()const

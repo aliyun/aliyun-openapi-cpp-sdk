@@ -44,7 +44,7 @@ long CreateRoomRequest::getCallerParentId()const
 void CreateRoomRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool CreateRoomRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ bool CreateRoomRequest::getProxy_original_security_transport()const
 void CreateRoomRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string CreateRoomRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ bool CreateRoomRequest::getUseAppTranscode()const
 void CreateRoomRequest::setUseAppTranscode(bool useAppTranscode)
 {
 	useAppTranscode_ = useAppTranscode;
-	setCoreParameter("UseAppTranscode", useAppTranscode ? "true" : "false");
+	setCoreParameter("UseAppTranscode", useAppTranscode);
 }
 
 std::string CreateRoomRequest::getOwnerIdLoginEmail()const
@@ -187,7 +187,7 @@ long CreateRoomRequest::getCallerUid()const
 void CreateRoomRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string CreateRoomRequest::getApp_ip()const
@@ -231,7 +231,7 @@ long CreateRoomRequest::getOwnerId()const
 void CreateRoomRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateRoomRequest::getVersion()const
@@ -253,7 +253,7 @@ bool CreateRoomRequest::getProxy_trust_transport_info()const
 void CreateRoomRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool CreateRoomRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool CreateRoomRequest::getAk_mfa_present()const
 void CreateRoomRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string CreateRoomRequest::getRoomId()const
@@ -286,7 +286,7 @@ bool CreateRoomRequest::getSecurity_transport()const
 void CreateRoomRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string CreateRoomRequest::getRequestId()const

@@ -33,7 +33,7 @@ long RenewDBInstanceRequest::getResourceOwnerId()const
 void RenewDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int RenewDBInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ int RenewDBInstanceRequest::getPeriod()const
 void RenewDBInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool RenewDBInstanceRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool RenewDBInstanceRequest::getAutoPay()const
 void RenewDBInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long RenewDBInstanceRequest::getOwnerId()const
 void RenewDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RenewDBInstanceRequest::getAccessKeyId()const

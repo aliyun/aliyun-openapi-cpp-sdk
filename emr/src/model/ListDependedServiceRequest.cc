@@ -33,7 +33,7 @@ long ListDependedServiceRequest::getResourceOwnerId()const
 void ListDependedServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListDependedServiceRequest::getRegionId()const

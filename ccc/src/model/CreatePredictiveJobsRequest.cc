@@ -67,6 +67,6 @@ void CreatePredictiveJobsRequest::setJobsJson(const std::vector<std::string>& jo
 {
 	jobsJson_ = jobsJson;
 	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
+		setCoreParameter("JobsJson."+ std::to_string(i), std::to_string(jobsJson.at(i)));
 }
 

@@ -44,7 +44,7 @@ long GetIpOrHostsRequest::getEndTime()const
 void GetIpOrHostsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetIpOrHostsRequest::getServiceName()const
@@ -66,6 +66,6 @@ long GetIpOrHostsRequest::getStartTime()const
 void GetIpOrHostsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

@@ -44,7 +44,7 @@ int QueryLoginEventRequest::getCurrentPage()const
 void QueryLoginEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryLoginEventRequest::getStartTime()const
@@ -77,6 +77,6 @@ int QueryLoginEventRequest::getStatus()const
 void QueryLoginEventRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

@@ -44,7 +44,7 @@ long DescribeRuleAttributeRequest::getResourceOwnerId()const
 void DescribeRuleAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeRuleAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeRuleAttributeRequest::getOwnerId()const
 void DescribeRuleAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeRuleAttributeRequest::getRuleId()const

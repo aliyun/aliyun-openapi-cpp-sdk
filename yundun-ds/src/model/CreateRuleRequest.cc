@@ -44,7 +44,7 @@ int CreateRuleRequest::getFeatureType()const
 void CreateRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string CreateRuleRequest::getName()const
@@ -66,7 +66,7 @@ long CreateRuleRequest::getRiskLevelId()const
 void CreateRuleRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setCoreParameter("RiskLevelId", riskLevelId);
 }
 
 std::string CreateRuleRequest::getLang()const
@@ -88,7 +88,7 @@ long CreateRuleRequest::getCustomType()const
 void CreateRuleRequest::setCustomType(long customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setCoreParameter("CustomType", customType);
 }
 
 int CreateRuleRequest::getCategory()const
@@ -99,7 +99,7 @@ int CreateRuleRequest::getCategory()const
 void CreateRuleRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 
 std::string CreateRuleRequest::getContent()const

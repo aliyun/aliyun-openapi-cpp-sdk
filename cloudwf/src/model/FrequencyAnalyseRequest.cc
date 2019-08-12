@@ -33,7 +33,7 @@ long FrequencyAnalyseRequest::getGsid()const
 void FrequencyAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string FrequencyAnalyseRequest::getAccessKeyId()const

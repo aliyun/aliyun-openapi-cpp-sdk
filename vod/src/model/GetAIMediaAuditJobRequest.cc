@@ -44,7 +44,7 @@ long GetAIMediaAuditJobRequest::getResourceOwnerId()const
 void GetAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const

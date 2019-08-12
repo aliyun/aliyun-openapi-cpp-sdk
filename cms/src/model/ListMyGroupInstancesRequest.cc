@@ -33,7 +33,7 @@ bool ListMyGroupInstancesRequest::getTotal()const
 void ListMyGroupInstancesRequest::setTotal(bool total)
 {
 	total_ = total;
-	setCoreParameter("Total", total ? "true" : "false");
+	setCoreParameter("Total", total);
 }
 
 std::string ListMyGroupInstancesRequest::getInstanceIds()const
@@ -55,7 +55,7 @@ long ListMyGroupInstancesRequest::getGroupId()const
 void ListMyGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int ListMyGroupInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListMyGroupInstancesRequest::getPageSize()const
 void ListMyGroupInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListMyGroupInstancesRequest::getCategory()const
@@ -99,6 +99,6 @@ int ListMyGroupInstancesRequest::getPageNumber()const
 void ListMyGroupInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

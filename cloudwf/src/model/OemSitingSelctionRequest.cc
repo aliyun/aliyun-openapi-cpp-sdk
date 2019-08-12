@@ -33,7 +33,7 @@ long OemSitingSelctionRequest::getBid()const
 void OemSitingSelctionRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string OemSitingSelctionRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long DescribeDeploymentProductRequest::getCertificateId()const
 void DescribeDeploymentProductRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string DescribeDeploymentProductRequest::getLang()const

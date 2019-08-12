@@ -33,7 +33,7 @@ long QueryFpImportResultRequest::getResourceOwnerId()const
 void QueryFpImportResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryFpImportResultRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long QueryFpImportResultRequest::getPageSize()const
 void QueryFpImportResultRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long QueryFpImportResultRequest::getEndTime()const
@@ -77,7 +77,7 @@ long QueryFpImportResultRequest::getEndTime()const
 void QueryFpImportResultRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long QueryFpImportResultRequest::getPageIndex()const
@@ -88,7 +88,7 @@ long QueryFpImportResultRequest::getPageIndex()const
 void QueryFpImportResultRequest::setPageIndex(long pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 long QueryFpImportResultRequest::getStartTime()const
@@ -99,7 +99,7 @@ long QueryFpImportResultRequest::getStartTime()const
 void QueryFpImportResultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long QueryFpImportResultRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long QueryFpImportResultRequest::getOwnerId()const
 void QueryFpImportResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryFpImportResultRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ long CopyDatabaseBetweenInstancesRequest::getResourceOwnerId()const
 void CopyDatabaseBetweenInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getRestoreTime()const
@@ -99,7 +99,7 @@ long CopyDatabaseBetweenInstancesRequest::getOwnerId()const
 void CopyDatabaseBetweenInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CopyDatabaseBetweenInstancesRequest::getSyncUserPrivilege()const

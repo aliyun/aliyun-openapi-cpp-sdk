@@ -77,7 +77,7 @@ long CreateAccountRequest::getOwnerId()const
 void CreateAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateAccountRequest::getAccountDescription()const

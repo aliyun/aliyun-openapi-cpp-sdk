@@ -33,7 +33,7 @@ long DeleteNodeRequest::getResourceOwnerId()const
 void DeleteNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteNodeRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ long DeleteNodeRequest::getOwnerId()const
 void DeleteNodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteNodeRequest::getNodeId()const

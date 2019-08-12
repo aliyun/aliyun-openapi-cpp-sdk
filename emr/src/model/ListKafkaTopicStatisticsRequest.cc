@@ -33,7 +33,7 @@ long ListKafkaTopicStatisticsRequest::getResourceOwnerId()const
 void ListKafkaTopicStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ListKafkaTopicStatisticsRequest::getActiveOnly()const
@@ -44,7 +44,7 @@ bool ListKafkaTopicStatisticsRequest::getActiveOnly()const
 void ListKafkaTopicStatisticsRequest::setActiveOnly(bool activeOnly)
 {
 	activeOnly_ = activeOnly;
-	setCoreParameter("ActiveOnly", activeOnly ? "true" : "false");
+	setCoreParameter("ActiveOnly", activeOnly);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getRegionId()const
@@ -66,7 +66,7 @@ int ListKafkaTopicStatisticsRequest::getPageSize()const
 void ListKafkaTopicStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getDataSourceId()const
@@ -110,7 +110,7 @@ int ListKafkaTopicStatisticsRequest::getPageNumber()const
 void ListKafkaTopicStatisticsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getFuzzyTopicName()const

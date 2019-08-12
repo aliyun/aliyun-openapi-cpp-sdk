@@ -44,7 +44,7 @@ long DeleteCustomizeReportRequest::getReportId()const
 void DeleteCustomizeReportRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string DeleteCustomizeReportRequest::getLang()const

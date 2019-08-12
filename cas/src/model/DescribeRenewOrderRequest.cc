@@ -44,6 +44,6 @@ long DescribeRenewOrderRequest::getOrderId()const
 void DescribeRenewOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 

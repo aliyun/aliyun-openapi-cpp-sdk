@@ -55,7 +55,7 @@ int DescribeAnalysisLogsRequest::getPageSize()const
 void DescribeAnalysisLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeAnalysisLogsRequest::getFrom()const
@@ -66,7 +66,7 @@ int DescribeAnalysisLogsRequest::getFrom()const
 void DescribeAnalysisLogsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeAnalysisLogsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAnalysisLogsRequest::getCurrentPage()const
 void DescribeAnalysisLogsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeAnalysisLogsRequest::getTo()const
@@ -88,7 +88,7 @@ int DescribeAnalysisLogsRequest::getTo()const
 void DescribeAnalysisLogsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", std::to_string(to));
+	setCoreParameter("To", to);
 }
 
 bool DescribeAnalysisLogsRequest::getReverse()const
@@ -99,6 +99,6 @@ bool DescribeAnalysisLogsRequest::getReverse()const
 void DescribeAnalysisLogsRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setCoreParameter("Reverse", reverse);
 }
 

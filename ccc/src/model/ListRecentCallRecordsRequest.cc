@@ -55,7 +55,7 @@ int ListRecentCallRecordsRequest::getPageSize()const
 void ListRecentCallRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListRecentCallRecordsRequest::getStartTime()const
@@ -66,7 +66,7 @@ long ListRecentCallRecordsRequest::getStartTime()const
 void ListRecentCallRecordsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListRecentCallRecordsRequest::getStopTime()const
@@ -77,7 +77,7 @@ long ListRecentCallRecordsRequest::getStopTime()const
 void ListRecentCallRecordsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setCoreParameter("StopTime", stopTime);
 }
 
 int ListRecentCallRecordsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListRecentCallRecordsRequest::getPageNumber()const
 void ListRecentCallRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListRecentCallRecordsRequest::getAccessKeyId()const

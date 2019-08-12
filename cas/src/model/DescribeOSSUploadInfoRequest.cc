@@ -44,7 +44,7 @@ long DescribeOSSUploadInfoRequest::getOrderId()const
 void DescribeOSSUploadInfoRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 int DescribeOSSUploadInfoRequest::getDocumentType()const
@@ -55,7 +55,7 @@ int DescribeOSSUploadInfoRequest::getDocumentType()const
 void DescribeOSSUploadInfoRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
-	setCoreParameter("DocumentType", std::to_string(documentType));
+	setCoreParameter("DocumentType", documentType);
 }
 
 std::string DescribeOSSUploadInfoRequest::getLang()const

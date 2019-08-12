@@ -77,7 +77,7 @@ long AddCategoryRequest::getParentId()const
 void AddCategoryRequest::setParentId(long parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setCoreParameter("ParentId", parentId);
 }
 
 std::string AddCategoryRequest::getCateName()const

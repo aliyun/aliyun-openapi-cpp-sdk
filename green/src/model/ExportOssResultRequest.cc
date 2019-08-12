@@ -33,7 +33,7 @@ int ExportOssResultRequest::getTotalCount()const
 void ExportOssResultRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 float ExportOssResultRequest::getMinScore()const
@@ -44,7 +44,7 @@ float ExportOssResultRequest::getMinScore()const
 void ExportOssResultRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
-	setCoreParameter("MinScore", std::to_string(minScore));
+	setCoreParameter("MinScore", minScore);
 }
 
 std::string ExportOssResultRequest::getSuggestion()const
@@ -66,7 +66,7 @@ int ExportOssResultRequest::getCurrentPage()const
 void ExportOssResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 float ExportOssResultRequest::getMaxScore()const
@@ -77,7 +77,7 @@ float ExportOssResultRequest::getMaxScore()const
 void ExportOssResultRequest::setMaxScore(float maxScore)
 {
 	maxScore_ = maxScore;
-	setCoreParameter("MaxScore", std::to_string(maxScore));
+	setCoreParameter("MaxScore", maxScore);
 }
 
 std::string ExportOssResultRequest::getStartDate()const
@@ -154,7 +154,7 @@ int ExportOssResultRequest::getPageSize()const
 void ExportOssResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ExportOssResultRequest::getLang()const
@@ -176,6 +176,6 @@ bool ExportOssResultRequest::getStock()const
 void ExportOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setCoreParameter("Stock", stock);
 }
 

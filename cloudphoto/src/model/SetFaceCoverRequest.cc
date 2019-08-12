@@ -44,7 +44,7 @@ long SetFaceCoverRequest::getPhotoId()const
 void SetFaceCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string SetFaceCoverRequest::getStoreName()const
@@ -66,6 +66,6 @@ long SetFaceCoverRequest::getFaceId()const
 void SetFaceCoverRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setCoreParameter("FaceId", faceId);
 }
 

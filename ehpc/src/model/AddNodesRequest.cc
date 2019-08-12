@@ -33,7 +33,7 @@ int AddNodesRequest::getAutoRenewPeriod()const
 void AddNodesRequest::setAutoRenewPeriod(int autoRenewPeriod)
 {
 	autoRenewPeriod_ = autoRenewPeriod;
-	setCoreParameter("AutoRenewPeriod", std::to_string(autoRenewPeriod));
+	setCoreParameter("AutoRenewPeriod", autoRenewPeriod);
 }
 
 int AddNodesRequest::getPeriod()const
@@ -44,7 +44,7 @@ int AddNodesRequest::getPeriod()const
 void AddNodesRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string AddNodesRequest::getImageId()const
@@ -66,7 +66,7 @@ int AddNodesRequest::getCount()const
 void AddNodesRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::string AddNodesRequest::getClusterId()const
@@ -198,7 +198,7 @@ int AddNodesRequest::getSystemDiskSize()const
 void AddNodesRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setCoreParameter("SystemDiskSize", systemDiskSize);
 }
 
 std::string AddNodesRequest::getInstanceType()const

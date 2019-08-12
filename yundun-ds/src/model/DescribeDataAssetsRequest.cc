@@ -33,7 +33,7 @@ int DescribeDataAssetsRequest::getRangeId()const
 void DescribeDataAssetsRequest::setRangeId(int rangeId)
 {
 	rangeId_ = rangeId;
-	setCoreParameter("RangeId", std::to_string(rangeId));
+	setCoreParameter("RangeId", rangeId);
 }
 
 std::string DescribeDataAssetsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ int DescribeDataAssetsRequest::getFeatureType()const
 void DescribeDataAssetsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeDataAssetsRequest::getRiskLevels()const
@@ -88,7 +88,7 @@ int DescribeDataAssetsRequest::getPageSize()const
 void DescribeDataAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeDataAssetsRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribeDataAssetsRequest::getCurrentPage()const
 void DescribeDataAssetsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDataAssetsRequest::getLang()const
@@ -121,6 +121,6 @@ long DescribeDataAssetsRequest::getRuleId()const
 void DescribeDataAssetsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 

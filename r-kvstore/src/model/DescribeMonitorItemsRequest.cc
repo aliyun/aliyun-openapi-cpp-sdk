@@ -33,7 +33,7 @@ long DescribeMonitorItemsRequest::getResourceOwnerId()const
 void DescribeMonitorItemsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeMonitorItemsRequest::getSecurityToken()const
@@ -88,7 +88,7 @@ long DescribeMonitorItemsRequest::getOwnerId()const
 void DescribeMonitorItemsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeMonitorItemsRequest::getAccessKeyId()const

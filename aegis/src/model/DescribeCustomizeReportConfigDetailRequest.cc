@@ -44,7 +44,7 @@ long DescribeCustomizeReportConfigDetailRequest::getReportId()const
 void DescribeCustomizeReportConfigDetailRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string DescribeCustomizeReportConfigDetailRequest::getLang()const

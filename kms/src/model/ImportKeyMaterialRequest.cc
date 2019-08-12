@@ -55,7 +55,7 @@ long ImportKeyMaterialRequest::getKeyMaterialExpireUnix()const
 void ImportKeyMaterialRequest::setKeyMaterialExpireUnix(long keyMaterialExpireUnix)
 {
 	keyMaterialExpireUnix_ = keyMaterialExpireUnix;
-	setCoreParameter("KeyMaterialExpireUnix", std::to_string(keyMaterialExpireUnix));
+	setCoreParameter("KeyMaterialExpireUnix", keyMaterialExpireUnix);
 }
 
 std::string ImportKeyMaterialRequest::getKeyId()const

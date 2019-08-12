@@ -34,6 +34,6 @@ void BatchGetAliyunIdByAliyunPkRequest::setPkList(const std::vector<std::string>
 {
 	pkList_ = pkList;
 	for(int i = 0; i!= pkList.size(); i++)
-		setCoreParameter("PkList."+ std::to_string(i), pkList.at(i));
+		setCoreParameter("PkList."+ std::to_string(i), std::to_string(pkList.at(i)));
 }
 

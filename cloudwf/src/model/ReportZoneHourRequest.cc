@@ -66,6 +66,6 @@ long ReportZoneHourRequest::getAgsid()const
 void ReportZoneHourRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", agsid);
 }
 

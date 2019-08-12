@@ -44,7 +44,7 @@ int ListUsersForGroupRequest::getMaxItems()const
 void ListUsersForGroupRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", maxItems);
 }
 
 std::string ListUsersForGroupRequest::getGroupName()const

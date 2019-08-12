@@ -33,7 +33,7 @@ long ListEmrAvailableConfigRequest::getResourceOwnerId()const
 void ListEmrAvailableConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListEmrAvailableConfigRequest::getRegionId()const

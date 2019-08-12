@@ -33,7 +33,7 @@ long GetUpgradeImgRequest::getId()const
 void GetUpgradeImgRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string GetUpgradeImgRequest::getAccessKeyId()const

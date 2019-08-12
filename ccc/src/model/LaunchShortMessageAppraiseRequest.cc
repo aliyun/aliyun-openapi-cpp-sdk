@@ -55,7 +55,7 @@ int LaunchShortMessageAppraiseRequest::getContactType()const
 void LaunchShortMessageAppraiseRequest::setContactType(int contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", std::to_string(contactType));
+	setCoreParameter("ContactType", contactType);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const

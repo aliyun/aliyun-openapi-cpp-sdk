@@ -44,7 +44,7 @@ long SendSmsRequest::getResourceOwnerId()const
 void SendSmsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SendSmsRequest::getSignName()const
@@ -99,7 +99,7 @@ long SendSmsRequest::getOwnerId()const
 void SendSmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SendSmsRequest::getTemplateCode()const

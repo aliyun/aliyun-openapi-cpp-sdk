@@ -33,7 +33,7 @@ int SaveSingleTaskForDeletingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForDeletingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", std::to_string(keyTag));
+	setCoreParameter("KeyTag", keyTag);
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getDomainName()const

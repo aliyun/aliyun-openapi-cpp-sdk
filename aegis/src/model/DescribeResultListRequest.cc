@@ -44,7 +44,7 @@ int DescribeResultListRequest::getPageSize()const
 void DescribeResultListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeResultListRequest::getEndTime()const
@@ -55,7 +55,7 @@ long DescribeResultListRequest::getEndTime()const
 void DescribeResultListRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeResultListRequest::getRuleName()const
@@ -110,7 +110,7 @@ int DescribeResultListRequest::getCurrentPage()const
 void DescribeResultListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 long DescribeResultListRequest::getStartTime()const
@@ -121,6 +121,6 @@ long DescribeResultListRequest::getStartTime()const
 void DescribeResultListRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

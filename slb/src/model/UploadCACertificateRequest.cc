@@ -55,7 +55,7 @@ long UploadCACertificateRequest::getResourceOwnerId()const
 void UploadCACertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UploadCACertificateRequest::getCACertificate()const
@@ -121,6 +121,6 @@ long UploadCACertificateRequest::getOwnerId()const
 void UploadCACertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

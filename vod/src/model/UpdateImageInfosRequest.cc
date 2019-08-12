@@ -33,7 +33,7 @@ long UpdateImageInfosRequest::getResourceOwnerId()const
 void UpdateImageInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateImageInfosRequest::getUpdateContent()const
@@ -66,7 +66,7 @@ long UpdateImageInfosRequest::getResourceRealOwnerId()const
 void UpdateImageInfosRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
 }
 
 long UpdateImageInfosRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateImageInfosRequest::getOwnerId()const
 void UpdateImageInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateImageInfosRequest::getAccessKeyId()const

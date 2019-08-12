@@ -33,7 +33,7 @@ long CreateMigrateTaskForSQLServerRequest::getResourceOwnerId()const
 void CreateMigrateTaskForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getTaskType()const
@@ -99,7 +99,7 @@ long CreateMigrateTaskForSQLServerRequest::getOwnerId()const
 void CreateMigrateTaskForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getAccessKeyId()const

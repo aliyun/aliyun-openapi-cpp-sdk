@@ -45,7 +45,7 @@ void SaveBatchTaskForDomainNameProxyServiceRequest::setDomainName(const std::vec
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 std::string SaveBatchTaskForDomainNameProxyServiceRequest::getLang()const
@@ -67,6 +67,6 @@ bool SaveBatchTaskForDomainNameProxyServiceRequest::getStatus()const
 void SaveBatchTaskForDomainNameProxyServiceRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setCoreParameter("Status", status);
 }
 

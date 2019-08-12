@@ -44,7 +44,7 @@ long SetServerCertificateNameRequest::getResourceOwnerId()const
 void SetServerCertificateNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetServerCertificateNameRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long SetServerCertificateNameRequest::getOwnerId()const
 void SetServerCertificateNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetServerCertificateNameRequest::getServerCertificateId()const

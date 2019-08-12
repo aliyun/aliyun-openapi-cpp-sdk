@@ -33,7 +33,7 @@ long DeleteVpnGatewayRequest::getResourceOwnerId()const
 void DeleteVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVpnGatewayRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DeleteVpnGatewayRequest::getOwnerId()const
 void DeleteVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

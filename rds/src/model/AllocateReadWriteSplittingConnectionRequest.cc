@@ -33,7 +33,7 @@ long AllocateReadWriteSplittingConnectionRequest::getResourceOwnerId()const
 void AllocateReadWriteSplittingConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getConnectionStringPrefix()const
@@ -88,7 +88,7 @@ long AllocateReadWriteSplittingConnectionRequest::getOwnerId()const
 void AllocateReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getAccessKeyId()const

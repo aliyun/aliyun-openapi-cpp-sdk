@@ -44,7 +44,7 @@ int QueryProductListRequest::getPageSize()const
 void QueryProductListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryProductListRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int QueryProductListRequest::getCurrentPage()const
 void QueryProductListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string QueryProductListRequest::getAliyunCommodityCode()const

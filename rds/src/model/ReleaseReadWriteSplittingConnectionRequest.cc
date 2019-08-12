@@ -33,7 +33,7 @@ long ReleaseReadWriteSplittingConnectionRequest::getResourceOwnerId()const
 void ReleaseReadWriteSplittingConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long ReleaseReadWriteSplittingConnectionRequest::getOwnerId()const
 void ReleaseReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReleaseReadWriteSplittingConnectionRequest::getAccessKeyId()const

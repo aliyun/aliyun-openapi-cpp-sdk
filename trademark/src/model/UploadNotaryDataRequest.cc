@@ -55,6 +55,6 @@ int UploadNotaryDataRequest::getNotaryType()const
 void UploadNotaryDataRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", std::to_string(notaryType));
+	setCoreParameter("NotaryType", notaryType);
 }
 

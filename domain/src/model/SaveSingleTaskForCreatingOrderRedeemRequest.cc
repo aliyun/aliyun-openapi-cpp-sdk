@@ -44,7 +44,7 @@ long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()cons
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+	setCoreParameter("CurrentExpirationDate", currentExpirationDate);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
@@ -88,7 +88,7 @@ bool SaveSingleTaskForCreatingOrderRedeemRequest::getUseCoupon()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setCoreParameter("UseCoupon", useCoupon);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
@@ -110,6 +110,6 @@ bool SaveSingleTaskForCreatingOrderRedeemRequest::getUsePromotion()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setCoreParameter("UsePromotion", usePromotion);
 }
 

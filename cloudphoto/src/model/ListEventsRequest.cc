@@ -44,7 +44,7 @@ int ListEventsRequest::getSize()const
 void ListEventsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 std::string ListEventsRequest::getStoreName()const

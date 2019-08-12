@@ -33,7 +33,7 @@ int ListAliasesRequest::getPageSize()const
 void ListAliasesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int ListAliasesRequest::getPageNumber()const
@@ -44,6 +44,6 @@ int ListAliasesRequest::getPageNumber()const
 void ListAliasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

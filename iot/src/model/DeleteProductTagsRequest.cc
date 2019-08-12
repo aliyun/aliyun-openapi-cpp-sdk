@@ -45,7 +45,7 @@ void DeleteProductTagsRequest::setProductTagKey(const std::vector<std::string>& 
 {
 	productTagKey_ = productTagKey;
 	for(int i = 0; i!= productTagKey.size(); i++)
-		setCoreParameter("ProductTagKey."+ std::to_string(i), productTagKey.at(i));
+		setCoreParameter("ProductTagKey."+ std::to_string(i), std::to_string(productTagKey.at(i)));
 }
 
 std::string DeleteProductTagsRequest::getProductKey()const

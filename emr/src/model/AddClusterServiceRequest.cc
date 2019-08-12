@@ -33,7 +33,7 @@ long AddClusterServiceRequest::getResourceOwnerId()const
 void AddClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddClusterServiceRequest::getRegionId()const
@@ -59,7 +59,7 @@ void AddClusterServiceRequest::setService(const std::vector<Service>& service)
 	for(int i = 0; i!= service.size(); i++)	{
 		auto obj = service.at(i);
 		std::string str ="Service."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
 	}
 }
 

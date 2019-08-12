@@ -44,7 +44,7 @@ long DescribeDataLimitDetailRequest::getId()const
 void DescribeDataLimitDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int DescribeDataLimitDetailRequest::getNetworkType()const
@@ -55,7 +55,7 @@ int DescribeDataLimitDetailRequest::getNetworkType()const
 void DescribeDataLimitDetailRequest::setNetworkType(int networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 
 std::string DescribeDataLimitDetailRequest::getLang()const

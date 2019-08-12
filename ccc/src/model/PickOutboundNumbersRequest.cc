@@ -44,7 +44,7 @@ int PickOutboundNumbersRequest::getCount()const
 void PickOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setCoreParameter("Count", count);
 }
 
 std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
@@ -56,7 +56,7 @@ void PickOutboundNumbersRequest::setCandidateNumber(const std::vector<std::strin
 {
 	candidateNumber_ = candidateNumber;
 	for(int i = 0; i!= candidateNumber.size(); i++)
-		setCoreParameter("CandidateNumber."+ std::to_string(i), candidateNumber.at(i));
+		setCoreParameter("CandidateNumber."+ std::to_string(i), std::to_string(candidateNumber.at(i)));
 }
 
 std::string PickOutboundNumbersRequest::getCalleeNumber()const

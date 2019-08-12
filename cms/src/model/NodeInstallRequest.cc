@@ -44,7 +44,7 @@ bool NodeInstallRequest::getForce()const
 void NodeInstallRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 std::string NodeInstallRequest::getUserId()const

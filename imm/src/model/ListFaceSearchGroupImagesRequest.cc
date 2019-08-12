@@ -33,7 +33,7 @@ int ListFaceSearchGroupImagesRequest::getMaxKeys()const
 void ListFaceSearchGroupImagesRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListFaceSearchGroupImagesRequest::getRegionId()const

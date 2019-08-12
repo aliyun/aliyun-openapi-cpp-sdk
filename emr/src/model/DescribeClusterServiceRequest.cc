@@ -33,7 +33,7 @@ long DescribeClusterServiceRequest::getResourceOwnerId()const
 void DescribeClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeClusterServiceRequest::getRegionId()const

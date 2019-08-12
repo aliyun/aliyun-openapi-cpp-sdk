@@ -44,7 +44,7 @@ int QueryGroupUsersRequest::getPageSize()const
 void QueryGroupUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryGroupUsersRequest::getCurrentPage()const
@@ -55,6 +55,6 @@ int QueryGroupUsersRequest::getCurrentPage()const
 void QueryGroupUsersRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 

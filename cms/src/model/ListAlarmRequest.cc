@@ -33,7 +33,7 @@ bool ListAlarmRequest::getIsEnable()const
 void ListAlarmRequest::setIsEnable(bool isEnable)
 {
 	isEnable_ = isEnable;
-	setCoreParameter("IsEnable", isEnable ? "true" : "false");
+	setCoreParameter("IsEnable", isEnable);
 }
 
 std::string ListAlarmRequest::getName()const
@@ -66,7 +66,7 @@ int ListAlarmRequest::getPageSize()const
 void ListAlarmRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListAlarmRequest::getId()const
@@ -110,6 +110,6 @@ int ListAlarmRequest::getPageNumber()const
 void ListAlarmRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

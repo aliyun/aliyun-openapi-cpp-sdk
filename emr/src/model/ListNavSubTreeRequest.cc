@@ -33,7 +33,7 @@ long ListNavSubTreeRequest::getResourceOwnerId()const
 void ListNavSubTreeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ListNavSubTreeRequest::getDepth()const
@@ -44,7 +44,7 @@ int ListNavSubTreeRequest::getDepth()const
 void ListNavSubTreeRequest::setDepth(int depth)
 {
 	depth_ = depth;
-	setCoreParameter("Depth", std::to_string(depth));
+	setCoreParameter("Depth", depth);
 }
 
 std::string ListNavSubTreeRequest::getRegionId()const
@@ -77,7 +77,7 @@ int ListNavSubTreeRequest::getPageSize()const
 void ListNavSubTreeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListNavSubTreeRequest::getType()const
@@ -121,7 +121,7 @@ int ListNavSubTreeRequest::getPageNumber()const
 void ListNavSubTreeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListNavSubTreeRequest::getAccessKeyId()const

@@ -33,7 +33,7 @@ int CreateCpmcPunishFeedBackRequest::getFeedBack()const
 void CreateCpmcPunishFeedBackRequest::setFeedBack(int feedBack)
 {
 	feedBack_ = feedBack;
-	setCoreParameter("FeedBack", std::to_string(feedBack));
+	setCoreParameter("FeedBack", feedBack);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getSrcIP()const
@@ -66,7 +66,7 @@ int CreateCpmcPunishFeedBackRequest::getDstPort()const
 void CreateCpmcPunishFeedBackRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setCoreParameter("DstPort", dstPort);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getProtocolName()const
@@ -88,7 +88,7 @@ int CreateCpmcPunishFeedBackRequest::getSrcPort()const
 void CreateCpmcPunishFeedBackRequest::setSrcPort(int srcPort)
 {
 	srcPort_ = srcPort;
-	setCoreParameter("SrcPort", std::to_string(srcPort));
+	setCoreParameter("SrcPort", srcPort);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getPunishType()const

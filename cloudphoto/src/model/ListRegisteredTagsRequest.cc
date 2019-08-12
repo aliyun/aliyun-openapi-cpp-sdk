@@ -45,6 +45,6 @@ void ListRegisteredTagsRequest::setLang(const std::vector<std::string>& lang)
 {
 	lang_ = lang;
 	for(int i = 0; i!= lang.size(); i++)
-		setCoreParameter("Lang."+ std::to_string(i), lang.at(i));
+		setCoreParameter("Lang."+ std::to_string(i), std::to_string(lang.at(i)));
 }
 

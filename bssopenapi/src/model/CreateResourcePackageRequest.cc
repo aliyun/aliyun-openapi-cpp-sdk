@@ -33,7 +33,7 @@ int CreateResourcePackageRequest::getDuration()const
 void CreateResourcePackageRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string CreateResourcePackageRequest::getProductCode()const
@@ -66,7 +66,7 @@ long CreateResourcePackageRequest::getOwnerId()const
 void CreateResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateResourcePackageRequest::getPackageType()const

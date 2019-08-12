@@ -33,7 +33,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getOffset()const
 void DescribeFlowNodeInstanceContainerLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setCoreParameter("Offset", offset);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getRegionId()const
@@ -77,7 +77,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getLength()const
 void DescribeFlowNodeInstanceContainerLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getContainerId()const

@@ -33,7 +33,7 @@ long ListApDetailInfoRequest::getApAssetId()const
 void ListApDetailInfoRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setCoreParameter("ApAssetId", apAssetId);
 }
 
 std::string ListApDetailInfoRequest::getAccessKeyId()const

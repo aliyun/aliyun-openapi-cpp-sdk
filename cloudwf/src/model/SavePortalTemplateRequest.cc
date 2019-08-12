@@ -77,7 +77,7 @@ long SavePortalTemplateRequest::getId()const
 void SavePortalTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long SavePortalTemplateRequest::getOssFileId()const
@@ -88,7 +88,7 @@ long SavePortalTemplateRequest::getOssFileId()const
 void SavePortalTemplateRequest::setOssFileId(long ossFileId)
 {
 	ossFileId_ = ossFileId;
-	setCoreParameter("OssFileId", std::to_string(ossFileId));
+	setCoreParameter("OssFileId", ossFileId);
 }
 
 std::string SavePortalTemplateRequest::getAccessKeyId()const

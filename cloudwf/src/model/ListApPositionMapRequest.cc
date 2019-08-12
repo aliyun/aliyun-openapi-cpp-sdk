@@ -55,7 +55,7 @@ int ListApPositionMapRequest::getTotalItem()const
 void ListApPositionMapRequest::setTotalItem(int totalItem)
 {
 	totalItem_ = totalItem;
-	setCoreParameter("TotalItem", std::to_string(totalItem));
+	setCoreParameter("TotalItem", totalItem);
 }
 
 int ListApPositionMapRequest::getLength()const
@@ -66,7 +66,7 @@ int ListApPositionMapRequest::getLength()const
 void ListApPositionMapRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListApPositionMapRequest::getMapType()const
@@ -77,7 +77,7 @@ int ListApPositionMapRequest::getMapType()const
 void ListApPositionMapRequest::setMapType(int mapType)
 {
 	mapType_ = mapType;
-	setCoreParameter("MapType", std::to_string(mapType));
+	setCoreParameter("MapType", mapType);
 }
 
 int ListApPositionMapRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListApPositionMapRequest::getPageIndex()const
 void ListApPositionMapRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApPositionMapRequest::getSearchApgroupName()const

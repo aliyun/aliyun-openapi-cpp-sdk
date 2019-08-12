@@ -99,7 +99,7 @@ long AddDomainRecordRequest::getPriority()const
 void AddDomainRecordRequest::setPriority(long priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string AddDomainRecordRequest::getValue()const
@@ -121,7 +121,7 @@ long AddDomainRecordRequest::getTTL()const
 void AddDomainRecordRequest::setTTL(long tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", std::to_string(tTL));
+	setCoreParameter("TTL", tTL);
 }
 
 std::string AddDomainRecordRequest::getAccessKeyId()const

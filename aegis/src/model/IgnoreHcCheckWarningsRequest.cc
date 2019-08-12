@@ -88,6 +88,6 @@ long IgnoreHcCheckWarningsRequest::getType()const
 void IgnoreHcCheckWarningsRequest::setType(long type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

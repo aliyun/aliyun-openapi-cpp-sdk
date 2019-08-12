@@ -37,8 +37,8 @@ void ModifySmartAccessGatewayRequest::setSnatEntries(const std::vector<SnatEntri
 	for(int i = 0; i!= snatEntries.size(); i++)	{
 		auto obj = snatEntries.at(i);
 		std::string str ="SnatEntries."+ std::to_string(i);
-		setCoreParameter(str + ".CidrBlock", obj.cidrBlock);
-		setCoreParameter(str + ".SnatIp", obj.snatIp);
+		setCoreParameter(str + ".CidrBlock", std::to_string(obj.cidrBlock));
+		setCoreParameter(str + ".SnatIp", std::to_string(obj.snatIp));
 	}
 }
 
@@ -50,7 +50,7 @@ long ModifySmartAccessGatewayRequest::getResourceOwnerId()const
 void ModifySmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifySmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -105,7 +105,7 @@ long ModifySmartAccessGatewayRequest::getOwnerId()const
 void ModifySmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
@@ -116,7 +116,7 @@ int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
 void ModifySmartAccessGatewayRequest::setSecurityLockThreshold(int securityLockThreshold)
 {
 	securityLockThreshold_ = securityLockThreshold;
-	setCoreParameter("SecurityLockThreshold", std::to_string(securityLockThreshold));
+	setCoreParameter("SecurityLockThreshold", securityLockThreshold);
 }
 
 std::string ModifySmartAccessGatewayRequest::getRoutingStrategy()const

@@ -33,7 +33,7 @@ long ModifyInstanceSpecPreCheckRequest::getResourceOwnerId()const
 void ModifyInstanceSpecPreCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long ModifyInstanceSpecPreCheckRequest::getOwnerId()const
 void ModifyInstanceSpecPreCheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getTargetInstanceClass()const

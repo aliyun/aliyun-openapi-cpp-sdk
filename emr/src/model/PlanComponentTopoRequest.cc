@@ -44,7 +44,7 @@ long PlanComponentTopoRequest::getResourceOwnerId()const
 void PlanComponentTopoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PlanComponentTopoRequest::getRegionId()const
@@ -70,9 +70,9 @@ void PlanComponentTopoRequest::setHostGroup(const std::vector<HostGroup>& hostGr
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", obj.groupType);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".GroupName", obj.groupName);
+		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
+		setCoreParameter(str + ".NodeCount", obj.nodeCount);
+		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
 	}
 }
 
@@ -88,8 +88,8 @@ void PlanComponentTopoRequest::setHostInfo(const std::vector<HostInfo>& hostInfo
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
+		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
+		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
 	}
 }
 
@@ -138,9 +138,9 @@ void PlanComponentTopoRequest::setServiceInfo(const std::vector<ServiceInfo>& se
 	for(int i = 0; i!= serviceInfo.size(); i++)	{
 		auto obj = serviceInfo.at(i);
 		std::string str ="ServiceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceEcmVersion", obj.serviceEcmVersion);
-		setCoreParameter(str + ".ServiceVersion", obj.serviceVersion);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ServiceEcmVersion", std::to_string(obj.serviceEcmVersion));
+		setCoreParameter(str + ".ServiceVersion", std::to_string(obj.serviceVersion));
+		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
 	}
 }
 

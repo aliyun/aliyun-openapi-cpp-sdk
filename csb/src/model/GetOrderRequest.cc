@@ -44,7 +44,7 @@ long GetOrderRequest::getOrderId()const
 void GetOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", orderId);
 }
 
 std::string GetOrderRequest::getServiceName()const

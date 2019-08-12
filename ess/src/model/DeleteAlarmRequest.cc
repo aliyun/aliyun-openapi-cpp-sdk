@@ -55,7 +55,7 @@ long DeleteAlarmRequest::getOwnerId()const
 void DeleteAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteAlarmRequest::getAlarmTaskId()const

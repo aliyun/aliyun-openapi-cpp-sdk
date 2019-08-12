@@ -33,7 +33,7 @@ long ModifyJobExecutionPlanFolderRequest::getResourceOwnerId()const
 void ModifyJobExecutionPlanFolderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyJobExecutionPlanFolderRequest::getName()const
@@ -55,7 +55,7 @@ long ModifyJobExecutionPlanFolderRequest::getId()const
 void ModifyJobExecutionPlanFolderRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long ModifyJobExecutionPlanFolderRequest::getParentId()const
@@ -66,7 +66,7 @@ long ModifyJobExecutionPlanFolderRequest::getParentId()const
 void ModifyJobExecutionPlanFolderRequest::setParentId(long parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setCoreParameter("ParentId", parentId);
 }
 
 std::string ModifyJobExecutionPlanFolderRequest::getAccessKeyId()const

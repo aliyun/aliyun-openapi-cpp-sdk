@@ -33,7 +33,7 @@ long CreateUserPasswordRequest::getResourceOwnerId()const
 void CreateUserPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateUserPasswordRequest::getPassword()const
@@ -81,10 +81,10 @@ void CreateUserPasswordRequest::setUserInfo(const std::vector<UserInfo>& userInf
 	for(int i = 0; i!= userInfo.size(); i++)	{
 		auto obj = userInfo.at(i);
 		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".GroupName", obj.groupName);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+		setCoreParameter(str + ".Type", std::to_string(obj.type));
+		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
+		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
+		setCoreParameter(str + ".UserName", std::to_string(obj.userName));
 	}
 }
 

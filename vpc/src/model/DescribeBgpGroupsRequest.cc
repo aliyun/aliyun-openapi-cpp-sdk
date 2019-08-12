@@ -33,7 +33,7 @@ long DescribeBgpGroupsRequest::getResourceOwnerId()const
 void DescribeBgpGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeBgpGroupsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeBgpGroupsRequest::getPageSize()const
 void DescribeBgpGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeBgpGroupsRequest::getBgpGroupId()const
@@ -110,7 +110,7 @@ bool DescribeBgpGroupsRequest::getIsDefault()const
 void DescribeBgpGroupsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setCoreParameter("IsDefault", isDefault);
 }
 
 long DescribeBgpGroupsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeBgpGroupsRequest::getOwnerId()const
 void DescribeBgpGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeBgpGroupsRequest::getPageNumber()const
@@ -132,6 +132,6 @@ int DescribeBgpGroupsRequest::getPageNumber()const
 void DescribeBgpGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

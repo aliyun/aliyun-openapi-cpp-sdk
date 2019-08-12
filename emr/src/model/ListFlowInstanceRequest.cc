@@ -56,7 +56,7 @@ void ListFlowInstanceRequest::setStatusList(const std::vector<std::string>& stat
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
 }
 
 std::string ListFlowInstanceRequest::getOrderBy()const
@@ -78,7 +78,7 @@ int ListFlowInstanceRequest::getPageNumber()const
 void ListFlowInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListFlowInstanceRequest::getInstanceId()const
@@ -111,7 +111,7 @@ int ListFlowInstanceRequest::getPageSize()const
 void ListFlowInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowInstanceRequest::getFlowName()const

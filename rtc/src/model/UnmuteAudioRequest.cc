@@ -56,7 +56,7 @@ void UnmuteAudioRequest::setParticipantIds(const std::vector<std::string>& parti
 {
 	participantIds_ = participantIds;
 	for(int i = 0; i!= participantIds.size(); i++)
-		setCoreParameter("ParticipantIds."+ std::to_string(i), participantIds.at(i));
+		setCoreParameter("ParticipantIds."+ std::to_string(i), std::to_string(participantIds.at(i)));
 }
 
 long UnmuteAudioRequest::getCallerParentId()const
@@ -67,7 +67,7 @@ long UnmuteAudioRequest::getCallerParentId()const
 void UnmuteAudioRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool UnmuteAudioRequest::getProxy_original_security_transport()const
@@ -78,7 +78,7 @@ bool UnmuteAudioRequest::getProxy_original_security_transport()const
 void UnmuteAudioRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string UnmuteAudioRequest::getCallerBid()const
@@ -100,7 +100,7 @@ long UnmuteAudioRequest::getOwnerId()const
 void UnmuteAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UnmuteAudioRequest::getProxy_original_source_ip()const
@@ -155,7 +155,7 @@ bool UnmuteAudioRequest::getProxy_trust_transport_info()const
 void UnmuteAudioRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool UnmuteAudioRequest::getAk_mfa_present()const
@@ -166,7 +166,7 @@ bool UnmuteAudioRequest::getAk_mfa_present()const
 void UnmuteAudioRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string UnmuteAudioRequest::getAccessKeyId()const
@@ -188,7 +188,7 @@ bool UnmuteAudioRequest::getSecurity_transport()const
 void UnmuteAudioRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string UnmuteAudioRequest::getSecurityToken()const
@@ -276,6 +276,6 @@ long UnmuteAudioRequest::getCallerUid()const
 void UnmuteAudioRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

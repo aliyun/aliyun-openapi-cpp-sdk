@@ -33,7 +33,7 @@ long DeleteClusterTemplateRequest::getResourceOwnerId()const
 void DeleteClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteClusterTemplateRequest::getRegionId()const

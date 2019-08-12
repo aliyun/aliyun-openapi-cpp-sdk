@@ -33,7 +33,7 @@ long DowngradeSmartAccessGatewayRequest::getResourceOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool DowngradeSmartAccessGatewayRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool DowngradeSmartAccessGatewayRequest::getAutoPay()const
 void DowngradeSmartAccessGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 long DowngradeSmartAccessGatewayRequest::getBandWidthSpec()const
@@ -55,7 +55,7 @@ long DowngradeSmartAccessGatewayRequest::getBandWidthSpec()const
 void DowngradeSmartAccessGatewayRequest::setBandWidthSpec(long bandWidthSpec)
 {
 	bandWidthSpec_ = bandWidthSpec;
-	setCoreParameter("BandWidthSpec", std::to_string(bandWidthSpec));
+	setCoreParameter("BandWidthSpec", bandWidthSpec);
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ int DowngradeSmartAccessGatewayRequest::getUserCount()const
 void DowngradeSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setCoreParameter("UserCount", userCount);
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getSmartAGId()const
@@ -121,7 +121,7 @@ long DowngradeSmartAccessGatewayRequest::getOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long DowngradeSmartAccessGatewayRequest::getDataPlan()const
@@ -132,6 +132,6 @@ long DowngradeSmartAccessGatewayRequest::getDataPlan()const
 void DowngradeSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setCoreParameter("DataPlan", dataPlan);
 }
 

@@ -66,7 +66,7 @@ bool DetachVServerGroupsRequest::getForceDetach()const
 void DetachVServerGroupsRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
+	setCoreParameter("ForceDetach", forceDetach);
 }
 
 long DetachVServerGroupsRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DetachVServerGroupsRequest::getOwnerId()const
 void DetachVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::vector<DetachVServerGroupsRequest::VServerGroup> DetachVServerGroupsRequest::getVServerGroup()const
@@ -92,8 +92,8 @@ void DetachVServerGroupsRequest::setVServerGroup(const std::vector<VServerGroup>
 	for(int i = 0; i!= vServerGroup.size(); i++)	{
 		auto obj = vServerGroup.at(i);
 		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
-		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
+		setCoreParameter(str + ".LoadBalancerId", std::to_string(obj.loadBalancerId));
+		setCoreParameter(str + ".VServerGroupAttribute", obj.vServerGroupAttribute);
 	}
 }
 

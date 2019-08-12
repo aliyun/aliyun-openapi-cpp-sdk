@@ -44,7 +44,7 @@ long RegisterMediaDetailScenarioRequest::getResourceOwnerId()const
 void RegisterMediaDetailScenarioRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long RegisterMediaDetailScenarioRequest::getOwnerId()const
 void RegisterMediaDetailScenarioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getAccessKeyId()const

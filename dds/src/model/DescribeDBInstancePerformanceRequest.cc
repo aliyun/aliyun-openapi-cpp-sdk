@@ -33,7 +33,7 @@ long DescribeDBInstancePerformanceRequest::getResourceOwnerId()const
 void DescribeDBInstancePerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DescribeDBInstancePerformanceRequest::getOwnerId()const
 void DescribeDBInstancePerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const

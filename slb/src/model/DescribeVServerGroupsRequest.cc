@@ -44,7 +44,7 @@ bool DescribeVServerGroupsRequest::getIncludeRule()const
 void DescribeVServerGroupsRequest::setIncludeRule(bool includeRule)
 {
 	includeRule_ = includeRule;
-	setCoreParameter("IncludeRule", includeRule ? "true" : "false");
+	setCoreParameter("IncludeRule", includeRule);
 }
 
 long DescribeVServerGroupsRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long DescribeVServerGroupsRequest::getResourceOwnerId()const
 void DescribeVServerGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
@@ -99,7 +99,7 @@ bool DescribeVServerGroupsRequest::getIncludeListener()const
 void DescribeVServerGroupsRequest::setIncludeListener(bool includeListener)
 {
 	includeListener_ = includeListener;
-	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
+	setCoreParameter("IncludeListener", includeListener);
 }
 
 std::string DescribeVServerGroupsRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ long DescribeVServerGroupsRequest::getOwnerId()const
 void DescribeVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeVServerGroupsRequest::getTags()const

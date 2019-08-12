@@ -33,7 +33,7 @@ long BindSmartAccessGatewayRequest::getResourceOwnerId()const
 void BindSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long BindSmartAccessGatewayRequest::getSmartAGUid()const
@@ -44,7 +44,7 @@ long BindSmartAccessGatewayRequest::getSmartAGUid()const
 void BindSmartAccessGatewayRequest::setSmartAGUid(long smartAGUid)
 {
 	smartAGUid_ = smartAGUid;
-	setCoreParameter("SmartAGUid", std::to_string(smartAGUid));
+	setCoreParameter("SmartAGUid", smartAGUid);
 }
 
 std::string BindSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -110,6 +110,6 @@ long BindSmartAccessGatewayRequest::getOwnerId()const
 void BindSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

@@ -33,7 +33,7 @@ long ModifyExecutionPlanJobInfoRequest::getResourceOwnerId()const
 void ModifyExecutionPlanJobInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyExecutionPlanJobInfoRequest::getRegionId()const
@@ -67,7 +67,7 @@ void ModifyExecutionPlanJobInfoRequest::setJobIdList(const std::vector<std::stri
 {
 	jobIdList_ = jobIdList;
 	for(int i = 0; i!= jobIdList.size(); i++)
-		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
+		setCoreParameter("JobIdList."+ std::to_string(i), std::to_string(jobIdList.at(i)));
 }
 
 std::string ModifyExecutionPlanJobInfoRequest::getAccessKeyId()const

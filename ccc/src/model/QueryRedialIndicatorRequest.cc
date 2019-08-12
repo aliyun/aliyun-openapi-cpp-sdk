@@ -55,7 +55,7 @@ bool QueryRedialIndicatorRequest::getMockResponse()const
 void QueryRedialIndicatorRequest::setMockResponse(bool mockResponse)
 {
 	mockResponse_ = mockResponse;
-	setCoreParameter("MockResponse", mockResponse ? "true" : "false");
+	setCoreParameter("MockResponse", mockResponse);
 }
 
 std::string QueryRedialIndicatorRequest::getAccessKeyId()const

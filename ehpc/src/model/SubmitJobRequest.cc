@@ -99,7 +99,7 @@ bool SubmitJobRequest::getReRunable()const
 void SubmitJobRequest::setReRunable(bool reRunable)
 {
 	reRunable_ = reRunable;
-	setCoreParameter("ReRunable", reRunable ? "true" : "false");
+	setCoreParameter("ReRunable", reRunable);
 }
 
 int SubmitJobRequest::getPriority()const
@@ -110,7 +110,7 @@ int SubmitJobRequest::getPriority()const
 void SubmitJobRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setCoreParameter("Priority", priority);
 }
 
 std::string SubmitJobRequest::getCommandLine()const

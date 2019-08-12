@@ -44,7 +44,7 @@ long SubmitMediaFpDeleteJobRequest::getResourceOwnerId()const
 void SubmitMediaFpDeleteJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getFpDBId()const
@@ -88,7 +88,7 @@ long SubmitMediaFpDeleteJobRequest::getOwnerId()const
 void SubmitMediaFpDeleteJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getAccessKeyId()const

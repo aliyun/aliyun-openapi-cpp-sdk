@@ -55,7 +55,7 @@ int ProfileDistrictRequest::getDataType()const
 void ProfileDistrictRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", dataType);
 }
 
 long ProfileDistrictRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileDistrictRequest::getGsid()const
 void ProfileDistrictRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", gsid);
 }
 
 std::string ProfileDistrictRequest::getAccessKeyId()const

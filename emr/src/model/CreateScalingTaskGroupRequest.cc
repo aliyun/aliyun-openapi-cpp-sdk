@@ -33,7 +33,7 @@ long CreateScalingTaskGroupRequest::getResourceOwnerId()const
 void CreateScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateScalingTaskGroupRequest::getDataDiskCategory()const
@@ -66,7 +66,7 @@ int CreateScalingTaskGroupRequest::getMinSize()const
 void CreateScalingTaskGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", std::to_string(minSize));
+	setCoreParameter("MinSize", minSize);
 }
 
 std::string CreateScalingTaskGroupRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ int CreateScalingTaskGroupRequest::getDataDiskSize()const
 void CreateScalingTaskGroupRequest::setDataDiskSize(int dataDiskSize)
 {
 	dataDiskSize_ = dataDiskSize;
-	setCoreParameter("DataDiskSize", std::to_string(dataDiskSize));
+	setCoreParameter("DataDiskSize", dataDiskSize);
 }
 
 std::vector<CreateScalingTaskGroupRequest::SpotPriceLimits> CreateScalingTaskGroupRequest::getSpotPriceLimits()const
@@ -114,8 +114,8 @@ void CreateScalingTaskGroupRequest::setSpotPriceLimits(const std::vector<SpotPri
 	for(int i = 0; i!= spotPriceLimits.size(); i++)	{
 		auto obj = spotPriceLimits.at(i);
 		std::string str ="SpotPriceLimits."+ std::to_string(i);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
+		setCoreParameter(str + ".PriceLimit", obj.priceLimit);
 	}
 }
 
@@ -142,18 +142,18 @@ void CreateScalingTaskGroupRequest::setScalingRule(const std::vector<ScalingRule
 	for(int i = 0; i!= scalingRule.size(); i++)	{
 		auto obj = scalingRule.at(i);
 		std::string str ="ScalingRule."+ std::to_string(i);
-		setCoreParameter(str + ".LaunchTime", obj.launchTime);
-		setCoreParameter(str + ".RuleCategory", obj.ruleCategory);
-		setCoreParameter(str + ".AdjustmentValue", std::to_string(obj.adjustmentValue));
-		setCoreParameter(str + ".SchedulerTrigger", std::to_string(obj.schedulerTrigger));
-		setCoreParameter(str + ".AdjustmentType", obj.adjustmentType);
-		setCoreParameter(str + ".Cooldown", std::to_string(obj.cooldown));
-		setCoreParameter(str + ".RuleName", obj.ruleName);
-		setCoreParameter(str + ".LaunchExpirationTime", std::to_string(obj.launchExpirationTime));
-		setCoreParameter(str + ".RecurrenceValue", obj.recurrenceValue);
-		setCoreParameter(str + ".RecurrenceEndTime", obj.recurrenceEndTime);
-		setCoreParameter(str + ".CloudWatchTrigger", std::to_string(obj.cloudWatchTrigger));
-		setCoreParameter(str + ".RecurrenceType", obj.recurrenceType);
+		setCoreParameter(str + ".LaunchTime", std::to_string(obj.launchTime));
+		setCoreParameter(str + ".RuleCategory", std::to_string(obj.ruleCategory));
+		setCoreParameter(str + ".AdjustmentValue", obj.adjustmentValue);
+		setCoreParameter(str + ".SchedulerTrigger", obj.schedulerTrigger);
+		setCoreParameter(str + ".AdjustmentType", std::to_string(obj.adjustmentType));
+		setCoreParameter(str + ".Cooldown", obj.cooldown);
+		setCoreParameter(str + ".RuleName", std::to_string(obj.ruleName));
+		setCoreParameter(str + ".LaunchExpirationTime", obj.launchExpirationTime);
+		setCoreParameter(str + ".RecurrenceValue", std::to_string(obj.recurrenceValue));
+		setCoreParameter(str + ".RecurrenceEndTime", std::to_string(obj.recurrenceEndTime));
+		setCoreParameter(str + ".CloudWatchTrigger", obj.cloudWatchTrigger);
+		setCoreParameter(str + ".RecurrenceType", std::to_string(obj.recurrenceType));
 	}
 }
 
@@ -176,7 +176,7 @@ int CreateScalingTaskGroupRequest::getMaxSize()const
 void CreateScalingTaskGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", std::to_string(maxSize));
+	setCoreParameter("MaxSize", maxSize);
 }
 
 int CreateScalingTaskGroupRequest::getDataDiskCount()const
@@ -187,7 +187,7 @@ int CreateScalingTaskGroupRequest::getDataDiskCount()const
 void CreateScalingTaskGroupRequest::setDataDiskCount(int dataDiskCount)
 {
 	dataDiskCount_ = dataDiskCount;
-	setCoreParameter("DataDiskCount", std::to_string(dataDiskCount));
+	setCoreParameter("DataDiskCount", dataDiskCount);
 }
 
 int CreateScalingTaskGroupRequest::getDefaultCooldown()const
@@ -198,7 +198,7 @@ int CreateScalingTaskGroupRequest::getDefaultCooldown()const
 void CreateScalingTaskGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setCoreParameter("DefaultCooldown", defaultCooldown);
 }
 
 std::string CreateScalingTaskGroupRequest::getPayType()const
@@ -221,6 +221,6 @@ void CreateScalingTaskGroupRequest::setInstanceTypeList(const std::vector<std::s
 {
 	instanceTypeList_ = instanceTypeList;
 	for(int i = 0; i!= instanceTypeList.size(); i++)
-		setCoreParameter("InstanceTypeList."+ std::to_string(i), instanceTypeList.at(i));
+		setCoreParameter("InstanceTypeList."+ std::to_string(i), std::to_string(instanceTypeList.at(i)));
 }
 

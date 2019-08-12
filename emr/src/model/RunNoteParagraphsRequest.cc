@@ -33,7 +33,7 @@ long RunNoteParagraphsRequest::getResourceOwnerId()const
 void RunNoteParagraphsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RunNoteParagraphsRequest::getRegionId()const

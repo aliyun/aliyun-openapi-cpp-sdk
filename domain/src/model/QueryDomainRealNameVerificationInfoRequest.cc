@@ -33,7 +33,7 @@ bool QueryDomainRealNameVerificationInfoRequest::getFetchImage()const
 void QueryDomainRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 {
 	fetchImage_ = fetchImage;
-	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
+	setCoreParameter("FetchImage", fetchImage);
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const

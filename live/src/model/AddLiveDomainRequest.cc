@@ -88,7 +88,7 @@ long AddLiveDomainRequest::getOwnerId()const
 void AddLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddLiveDomainRequest::getRegion()const

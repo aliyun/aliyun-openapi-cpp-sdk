@@ -44,7 +44,7 @@ long PhysicalDeleteResourceRequest::getHid()const
 void PhysicalDeleteResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", std::to_string(hid));
+	setCoreParameter("Hid", hid);
 }
 
 bool PhysicalDeleteResourceRequest::getSuccess()const
@@ -55,7 +55,7 @@ bool PhysicalDeleteResourceRequest::getSuccess()const
 void PhysicalDeleteResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success ? "true" : "false");
+	setCoreParameter("Success", success);
 }
 
 bool PhysicalDeleteResourceRequest::getInterrupt()const
@@ -66,7 +66,7 @@ bool PhysicalDeleteResourceRequest::getInterrupt()const
 void PhysicalDeleteResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt ? "true" : "false");
+	setCoreParameter("Interrupt", interrupt);
 }
 
 std::string PhysicalDeleteResourceRequest::getGmtWakeup()const

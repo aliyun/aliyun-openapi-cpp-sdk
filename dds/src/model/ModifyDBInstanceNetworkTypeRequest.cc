@@ -33,7 +33,7 @@ long ModifyDBInstanceNetworkTypeRequest::getResourceOwnerId()const
 void ModifyDBInstanceNetworkTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long ModifyDBInstanceNetworkTypeRequest::getOwnerId()const
 void ModifyDBInstanceNetworkTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ int ModifyDBInstanceNetworkTypeRequest::getClassicExpiredDays()const
 void ModifyDBInstanceNetworkTypeRequest::setClassicExpiredDays(int classicExpiredDays)
 {
 	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
+	setCoreParameter("ClassicExpiredDays", classicExpiredDays);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVpcId()const

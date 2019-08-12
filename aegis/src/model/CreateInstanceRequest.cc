@@ -33,7 +33,7 @@ int CreateInstanceRequest::getDuration()const
 void CreateInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 bool CreateInstanceRequest::getIsAutoRenew()const
@@ -44,7 +44,7 @@ bool CreateInstanceRequest::getIsAutoRenew()const
 void CreateInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
+	setCoreParameter("IsAutoRenew", isAutoRenew);
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -66,7 +66,7 @@ int CreateInstanceRequest::getVmNumber()const
 void CreateInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setCoreParameter("VmNumber", std::to_string(vmNumber));
+	setCoreParameter("VmNumber", vmNumber);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int CreateInstanceRequest::getVersionCode()const
@@ -88,7 +88,7 @@ int CreateInstanceRequest::getVersionCode()const
 void CreateInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", std::to_string(versionCode));
+	setCoreParameter("VersionCode", versionCode);
 }
 
 std::string CreateInstanceRequest::getPricingCycle()const
@@ -110,6 +110,6 @@ int CreateInstanceRequest::getAutoRenewDuration()const
 void CreateInstanceRequest::setAutoRenewDuration(int autoRenewDuration)
 {
 	autoRenewDuration_ = autoRenewDuration;
-	setCoreParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
+	setCoreParameter("AutoRenewDuration", autoRenewDuration);
 }
 

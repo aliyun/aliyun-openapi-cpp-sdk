@@ -33,7 +33,7 @@ int ListPushRecordsRequest::getPageSize()const
 void ListPushRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListPushRecordsRequest::getEndTime()const
@@ -55,7 +55,7 @@ long ListPushRecordsRequest::getAppKey()const
 void ListPushRecordsRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string ListPushRecordsRequest::getStartTime()const
@@ -77,7 +77,7 @@ int ListPushRecordsRequest::getPage()const
 void ListPushRecordsRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string ListPushRecordsRequest::getPushType()const

@@ -44,7 +44,7 @@ bool CreateImageLibRequest::getEnable()const
 void CreateImageLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string CreateImageLibRequest::getName()const

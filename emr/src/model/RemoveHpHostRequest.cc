@@ -44,7 +44,7 @@ long RemoveHpHostRequest::getResourceOwnerId()const
 void RemoveHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RemoveHpHostRequest::getRegionId()const

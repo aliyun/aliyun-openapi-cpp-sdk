@@ -34,7 +34,7 @@ void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& cal
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+		setCoreParameter("CallingNumber."+ std::to_string(i), std::to_string(callingNumber.at(i)));
 }
 
 std::string CreateJobGroupRequest::getInstanceId()const

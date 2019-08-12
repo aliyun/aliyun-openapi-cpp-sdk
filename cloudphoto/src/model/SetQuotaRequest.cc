@@ -33,7 +33,7 @@ long SetQuotaRequest::getTotalQuota()const
 void SetQuotaRequest::setTotalQuota(long totalQuota)
 {
 	totalQuota_ = totalQuota;
-	setCoreParameter("TotalQuota", std::to_string(totalQuota));
+	setCoreParameter("TotalQuota", totalQuota);
 }
 
 std::string SetQuotaRequest::getLibraryId()const

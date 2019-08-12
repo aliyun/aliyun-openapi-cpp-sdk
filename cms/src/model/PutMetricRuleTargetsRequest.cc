@@ -59,9 +59,9 @@ void PutMetricRuleTargetsRequest::setTargets(const std::vector<Targets>& targets
 	for(int i = 0; i!= targets.size(); i++)	{
 		auto obj = targets.at(i);
 		std::string str ="Targets."+ std::to_string(i);
-		setCoreParameter(str + ".Level", obj.level);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Arn", obj.arn);
+		setCoreParameter(str + ".Level", std::to_string(obj.level));
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
+		setCoreParameter(str + ".Arn", std::to_string(obj.arn));
 	}
 }
 

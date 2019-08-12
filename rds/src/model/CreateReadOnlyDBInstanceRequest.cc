@@ -33,7 +33,7 @@ long CreateReadOnlyDBInstanceRequest::getResourceOwnerId()const
 void CreateReadOnlyDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateReadOnlyDBInstanceRequest::getDBInstanceStorage()const
@@ -44,7 +44,7 @@ int CreateReadOnlyDBInstanceRequest::getDBInstanceStorage()const
 void CreateReadOnlyDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage)
 {
 	dBInstanceStorage_ = dBInstanceStorage;
-	setCoreParameter("DBInstanceStorage", std::to_string(dBInstanceStorage));
+	setCoreParameter("DBInstanceStorage", dBInstanceStorage);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long CreateReadOnlyDBInstanceRequest::getOwnerId()const
 void CreateReadOnlyDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getAccessKeyId()const

@@ -44,6 +44,6 @@ int DescribePerDateDataRequest::getApiType()const
 void DescribePerDateDataRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setCoreParameter("ApiType", apiType);
 }
 

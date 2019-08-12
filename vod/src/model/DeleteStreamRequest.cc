@@ -33,7 +33,7 @@ long DeleteStreamRequest::getResourceOwnerId()const
 void DeleteStreamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteStreamRequest::getResourceOwnerAccount()const
@@ -77,6 +77,6 @@ long DeleteStreamRequest::getOwnerId()const
 void DeleteStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

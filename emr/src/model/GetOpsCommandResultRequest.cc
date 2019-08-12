@@ -33,7 +33,7 @@ long GetOpsCommandResultRequest::getResourceOwnerId()const
 void GetOpsCommandResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetOpsCommandResultRequest::getRegionId()const
@@ -55,7 +55,7 @@ long GetOpsCommandResultRequest::getEndCursor()const
 void GetOpsCommandResultRequest::setEndCursor(long endCursor)
 {
 	endCursor_ = endCursor;
-	setCoreParameter("EndCursor", std::to_string(endCursor));
+	setCoreParameter("EndCursor", endCursor);
 }
 
 long GetOpsCommandResultRequest::getStartCursor()const
@@ -66,7 +66,7 @@ long GetOpsCommandResultRequest::getStartCursor()const
 void GetOpsCommandResultRequest::setStartCursor(long startCursor)
 {
 	startCursor_ = startCursor;
-	setCoreParameter("StartCursor", std::to_string(startCursor));
+	setCoreParameter("StartCursor", startCursor);
 }
 
 std::string GetOpsCommandResultRequest::getClusterId()const
@@ -88,7 +88,7 @@ long GetOpsCommandResultRequest::getTaskId()const
 void GetOpsCommandResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string GetOpsCommandResultRequest::getAccessKeyId()const

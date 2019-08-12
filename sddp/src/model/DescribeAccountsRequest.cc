@@ -55,7 +55,7 @@ int DescribeAccountsRequest::getFeatureType()const
 void DescribeAccountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeAccountsRequest::getColumnId()const
@@ -88,7 +88,7 @@ int DescribeAccountsRequest::getCurrentPage()const
 void DescribeAccountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeAccountsRequest::getInstanceId()const
@@ -121,7 +121,7 @@ int DescribeAccountsRequest::getPageSize()const
 void DescribeAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeAccountsRequest::getDepartId()const
@@ -132,7 +132,7 @@ long DescribeAccountsRequest::getDepartId()const
 void DescribeAccountsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 int DescribeAccountsRequest::getOperationId()const
@@ -143,7 +143,7 @@ int DescribeAccountsRequest::getOperationId()const
 void DescribeAccountsRequest::setOperationId(int operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", std::to_string(operationId));
+	setCoreParameter("OperationId", operationId);
 }
 
 std::string DescribeAccountsRequest::getTableId()const
@@ -187,6 +187,6 @@ int DescribeAccountsRequest::getQueryType()const
 void DescribeAccountsRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 

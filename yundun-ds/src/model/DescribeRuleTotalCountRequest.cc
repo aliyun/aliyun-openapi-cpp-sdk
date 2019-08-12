@@ -44,7 +44,7 @@ int DescribeRuleTotalCountRequest::getFeatureType()const
 void DescribeRuleTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string DescribeRuleTotalCountRequest::getLang()const

@@ -55,7 +55,7 @@ long AreaUpdateRequest::getAid()const
 void AreaUpdateRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", std::to_string(aid));
+	setCoreParameter("Aid", aid);
 }
 
 std::string AreaUpdateRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ long AreaUpdateRequest::getSid()const
 void AreaUpdateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

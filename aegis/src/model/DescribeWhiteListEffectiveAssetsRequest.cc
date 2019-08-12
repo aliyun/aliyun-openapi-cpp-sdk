@@ -44,7 +44,7 @@ int DescribeWhiteListEffectiveAssetsRequest::getPageSize()const
 void DescribeWhiteListEffectiveAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeWhiteListEffectiveAssetsRequest::getRemark()const
@@ -66,7 +66,7 @@ long DescribeWhiteListEffectiveAssetsRequest::getStrategyId()const
 void DescribeWhiteListEffectiveAssetsRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeWhiteListEffectiveAssetsRequest::getCurrentPage()const
 void DescribeWhiteListEffectiveAssetsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWhiteListEffectiveAssetsRequest::getLang()const
@@ -99,6 +99,6 @@ int DescribeWhiteListEffectiveAssetsRequest::getNeedStatistics()const
 void DescribeWhiteListEffectiveAssetsRequest::setNeedStatistics(int needStatistics)
 {
 	needStatistics_ = needStatistics;
-	setCoreParameter("NeedStatistics", std::to_string(needStatistics));
+	setCoreParameter("NeedStatistics", needStatistics);
 }
 

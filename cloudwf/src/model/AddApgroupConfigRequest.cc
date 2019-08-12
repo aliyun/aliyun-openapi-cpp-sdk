@@ -33,7 +33,7 @@ long AddApgroupConfigRequest::getParentApgroupId()const
 void AddApgroupConfigRequest::setParentApgroupId(long parentApgroupId)
 {
 	parentApgroupId_ = parentApgroupId;
-	setCoreParameter("ParentApgroupId", std::to_string(parentApgroupId));
+	setCoreParameter("ParentApgroupId", parentApgroupId);
 }
 
 std::string AddApgroupConfigRequest::getName()const

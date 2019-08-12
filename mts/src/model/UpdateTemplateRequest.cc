@@ -44,7 +44,7 @@ long UpdateTemplateRequest::getResourceOwnerId()const
 void UpdateTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateTemplateRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long UpdateTemplateRequest::getOwnerId()const
 void UpdateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateTemplateRequest::getTemplateId()const

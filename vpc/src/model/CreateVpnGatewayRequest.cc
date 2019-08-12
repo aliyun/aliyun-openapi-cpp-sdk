@@ -33,7 +33,7 @@ long CreateVpnGatewayRequest::getResourceOwnerId()const
 void CreateVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateVpnGatewayRequest::getPeriod()const
@@ -44,7 +44,7 @@ int CreateVpnGatewayRequest::getPeriod()const
 void CreateVpnGatewayRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 bool CreateVpnGatewayRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool CreateVpnGatewayRequest::getAutoPay()const
 void CreateVpnGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateVpnGatewayRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int CreateVpnGatewayRequest::getBandwidth()const
 void CreateVpnGatewayRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 bool CreateVpnGatewayRequest::getEnableIpsec()const
@@ -88,7 +88,7 @@ bool CreateVpnGatewayRequest::getEnableIpsec()const
 void CreateVpnGatewayRequest::setEnableIpsec(bool enableIpsec)
 {
 	enableIpsec_ = enableIpsec;
-	setCoreParameter("EnableIpsec", enableIpsec ? "true" : "false");
+	setCoreParameter("EnableIpsec", enableIpsec);
 }
 
 std::string CreateVpnGatewayRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long CreateVpnGatewayRequest::getOwnerId()const
 void CreateVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool CreateVpnGatewayRequest::getEnableSsl()const
@@ -121,7 +121,7 @@ bool CreateVpnGatewayRequest::getEnableSsl()const
 void CreateVpnGatewayRequest::setEnableSsl(bool enableSsl)
 {
 	enableSsl_ = enableSsl;
-	setCoreParameter("EnableSsl", enableSsl ? "true" : "false");
+	setCoreParameter("EnableSsl", enableSsl);
 }
 
 int CreateVpnGatewayRequest::getSslConnections()const
@@ -132,7 +132,7 @@ int CreateVpnGatewayRequest::getSslConnections()const
 void CreateVpnGatewayRequest::setSslConnections(int sslConnections)
 {
 	sslConnections_ = sslConnections;
-	setCoreParameter("SslConnections", std::to_string(sslConnections));
+	setCoreParameter("SslConnections", sslConnections);
 }
 
 std::string CreateVpnGatewayRequest::getRegionId()const

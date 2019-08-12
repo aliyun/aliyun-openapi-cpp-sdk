@@ -55,6 +55,6 @@ int CreateUserSettingRequest::getInvalidWarningKeepDays()const
 void CreateUserSettingRequest::setInvalidWarningKeepDays(int invalidWarningKeepDays)
 {
 	invalidWarningKeepDays_ = invalidWarningKeepDays;
-	setCoreParameter("InvalidWarningKeepDays", std::to_string(invalidWarningKeepDays));
+	setCoreParameter("InvalidWarningKeepDays", invalidWarningKeepDays);
 }
 

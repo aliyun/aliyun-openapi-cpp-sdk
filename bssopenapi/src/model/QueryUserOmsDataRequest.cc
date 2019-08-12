@@ -55,7 +55,7 @@ int QueryUserOmsDataRequest::getPageSize()const
 void QueryUserOmsDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryUserOmsDataRequest::getEndTime()const
@@ -88,7 +88,7 @@ long QueryUserOmsDataRequest::getOwnerId()const
 void QueryUserOmsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryUserOmsDataRequest::getTable()const

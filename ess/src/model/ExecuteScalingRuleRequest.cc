@@ -33,7 +33,7 @@ long ExecuteScalingRuleRequest::getResourceOwnerId()const
 void ExecuteScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
@@ -77,7 +77,7 @@ float ExecuteScalingRuleRequest::getBreachThreshold()const
 void ExecuteScalingRuleRequest::setBreachThreshold(float breachThreshold)
 {
 	breachThreshold_ = breachThreshold;
-	setCoreParameter("BreachThreshold", std::to_string(breachThreshold));
+	setCoreParameter("BreachThreshold", breachThreshold);
 }
 
 std::string ExecuteScalingRuleRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ long ExecuteScalingRuleRequest::getOwnerId()const
 void ExecuteScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 float ExecuteScalingRuleRequest::getMetricValue()const
@@ -110,7 +110,7 @@ float ExecuteScalingRuleRequest::getMetricValue()const
 void ExecuteScalingRuleRequest::setMetricValue(float metricValue)
 {
 	metricValue_ = metricValue;
-	setCoreParameter("MetricValue", std::to_string(metricValue));
+	setCoreParameter("MetricValue", metricValue);
 }
 
 std::string ExecuteScalingRuleRequest::getAccessKeyId()const

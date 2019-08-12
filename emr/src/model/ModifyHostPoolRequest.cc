@@ -33,7 +33,7 @@ long ModifyHostPoolRequest::getResourceOwnerId()const
 void ModifyHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyHostPoolRequest::getRegionId()const

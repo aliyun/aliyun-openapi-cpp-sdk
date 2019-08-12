@@ -44,7 +44,7 @@ long DescribeCustomizeReportChartDataRequest::getReportId()const
 void DescribeCustomizeReportChartDataRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string DescribeCustomizeReportChartDataRequest::getChartIds()const

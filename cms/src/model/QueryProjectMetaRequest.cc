@@ -33,7 +33,7 @@ int QueryProjectMetaRequest::getPageSize()const
 void QueryProjectMetaRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int QueryProjectMetaRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int QueryProjectMetaRequest::getPageNumber()const
 void QueryProjectMetaRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string QueryProjectMetaRequest::getLabels()const

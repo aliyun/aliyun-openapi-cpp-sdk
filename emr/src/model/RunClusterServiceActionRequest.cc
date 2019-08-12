@@ -45,7 +45,7 @@ void RunClusterServiceActionRequest::setHostGroupIdList(const std::vector<std::s
 {
 	hostGroupIdList_ = hostGroupIdList;
 	for(int i = 0; i!= hostGroupIdList.size(); i++)
-		setCoreParameter("HostGroupIdList."+ std::to_string(i), hostGroupIdList.at(i));
+		setCoreParameter("HostGroupIdList."+ std::to_string(i), std::to_string(hostGroupIdList.at(i)));
 }
 
 long RunClusterServiceActionRequest::getResourceOwnerId()const
@@ -56,7 +56,7 @@ long RunClusterServiceActionRequest::getResourceOwnerId()const
 void RunClusterServiceActionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
@@ -67,7 +67,7 @@ bool RunClusterServiceActionRequest::getOnlyRestartStaleConfigNodes()const
 void RunClusterServiceActionRequest::setOnlyRestartStaleConfigNodes(bool onlyRestartStaleConfigNodes)
 {
 	onlyRestartStaleConfigNodes_ = onlyRestartStaleConfigNodes;
-	setCoreParameter("OnlyRestartStaleConfigNodes", onlyRestartStaleConfigNodes ? "true" : "false");
+	setCoreParameter("OnlyRestartStaleConfigNodes", onlyRestartStaleConfigNodes);
 }
 
 int RunClusterServiceActionRequest::getNodeCountPerBatch()const
@@ -78,7 +78,7 @@ int RunClusterServiceActionRequest::getNodeCountPerBatch()const
 void RunClusterServiceActionRequest::setNodeCountPerBatch(int nodeCountPerBatch)
 {
 	nodeCountPerBatch_ = nodeCountPerBatch;
-	setCoreParameter("NodeCountPerBatch", std::to_string(nodeCountPerBatch));
+	setCoreParameter("NodeCountPerBatch", nodeCountPerBatch);
 }
 
 std::string RunClusterServiceActionRequest::getClusterId()const
@@ -155,7 +155,7 @@ bool RunClusterServiceActionRequest::getIsRolling()const
 void RunClusterServiceActionRequest::setIsRolling(bool isRolling)
 {
 	isRolling_ = isRolling;
-	setCoreParameter("IsRolling", isRolling ? "true" : "false");
+	setCoreParameter("IsRolling", isRolling);
 }
 
 int RunClusterServiceActionRequest::getTotlerateFailCount()const
@@ -166,7 +166,7 @@ int RunClusterServiceActionRequest::getTotlerateFailCount()const
 void RunClusterServiceActionRequest::setTotlerateFailCount(int totlerateFailCount)
 {
 	totlerateFailCount_ = totlerateFailCount;
-	setCoreParameter("TotlerateFailCount", std::to_string(totlerateFailCount));
+	setCoreParameter("TotlerateFailCount", totlerateFailCount);
 }
 
 std::string RunClusterServiceActionRequest::getServiceName()const
@@ -210,7 +210,7 @@ long RunClusterServiceActionRequest::getInterval()const
 void RunClusterServiceActionRequest::setInterval(long interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string RunClusterServiceActionRequest::getHostIdList()const
@@ -232,6 +232,6 @@ bool RunClusterServiceActionRequest::getTurnOnMaintenanceMode()const
 void RunClusterServiceActionRequest::setTurnOnMaintenanceMode(bool turnOnMaintenanceMode)
 {
 	turnOnMaintenanceMode_ = turnOnMaintenanceMode;
-	setCoreParameter("TurnOnMaintenanceMode", turnOnMaintenanceMode ? "true" : "false");
+	setCoreParameter("TurnOnMaintenanceMode", turnOnMaintenanceMode);
 }
 

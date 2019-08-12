@@ -34,7 +34,7 @@ void RemoveBandwidthPackageIpsRequest::setRemovedIpAddresses(const std::vector<s
 {
 	removedIpAddresses_ = removedIpAddresses;
 	for(int i = 0; i!= removedIpAddresses.size(); i++)
-		setCoreParameter("RemovedIpAddresses."+ std::to_string(i), removedIpAddresses.at(i));
+		setCoreParameter("RemovedIpAddresses."+ std::to_string(i), std::to_string(removedIpAddresses.at(i)));
 }
 
 long RemoveBandwidthPackageIpsRequest::getResourceOwnerId()const
@@ -45,7 +45,7 @@ long RemoveBandwidthPackageIpsRequest::getResourceOwnerId()const
 void RemoveBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const
@@ -111,6 +111,6 @@ long RemoveBandwidthPackageIpsRequest::getOwnerId()const
 void RemoveBandwidthPackageIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

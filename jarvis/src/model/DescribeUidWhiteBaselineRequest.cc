@@ -44,7 +44,7 @@ int DescribeUidWhiteBaselineRequest::getPageSize()const
 void DescribeUidWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeUidWhiteBaselineRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeUidWhiteBaselineRequest::getCurrentPage()const
 void DescribeUidWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getRemark()const
@@ -88,7 +88,7 @@ long DescribeUidWhiteBaselineRequest::getSrcUid()const
 void DescribeUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", srcUid);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getSourceCode()const

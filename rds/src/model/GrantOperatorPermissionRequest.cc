@@ -44,7 +44,7 @@ long GrantOperatorPermissionRequest::getResourceOwnerId()const
 void GrantOperatorPermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GrantOperatorPermissionRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long GrantOperatorPermissionRequest::getOwnerId()const
 void GrantOperatorPermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GrantOperatorPermissionRequest::getAccessKeyId()const

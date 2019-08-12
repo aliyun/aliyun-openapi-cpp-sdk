@@ -44,7 +44,7 @@ int CreateSignatureRequest::getQuantity()const
 void CreateSignatureRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setCoreParameter("Quantity", quantity);
 }
 
 std::string CreateSignatureRequest::getHandSignImg()const
@@ -88,7 +88,7 @@ int CreateSignatureRequest::getPositionPage()const
 void CreateSignatureRequest::setPositionPage(int positionPage)
 {
 	positionPage_ = positionPage;
-	setCoreParameter("PositionPage", std::to_string(positionPage));
+	setCoreParameter("PositionPage", positionPage);
 }
 
 std::string CreateSignatureRequest::getDocTitle()const
@@ -110,7 +110,7 @@ int CreateSignatureRequest::getPositionX()const
 void CreateSignatureRequest::setPositionX(int positionX)
 {
 	positionX_ = positionX;
-	setCoreParameter("PositionX", std::to_string(positionX));
+	setCoreParameter("PositionX", positionX);
 }
 
 int CreateSignatureRequest::getPositionY()const
@@ -121,7 +121,7 @@ int CreateSignatureRequest::getPositionY()const
 void CreateSignatureRequest::setPositionY(int positionY)
 {
 	positionY_ = positionY;
-	setCoreParameter("PositionY", std::to_string(positionY));
+	setCoreParameter("PositionY", positionY);
 }
 
 std::string CreateSignatureRequest::getSourceIp()const
@@ -154,7 +154,7 @@ int CreateSignatureRequest::getPositionType()const
 void CreateSignatureRequest::setPositionType(int positionType)
 {
 	positionType_ = positionType;
-	setCoreParameter("PositionType", std::to_string(positionType));
+	setCoreParameter("PositionType", positionType);
 }
 
 std::string CreateSignatureRequest::getSignKeyword()const
@@ -187,7 +187,7 @@ int CreateSignatureRequest::getValidity()const
 void CreateSignatureRequest::setValidity(int validity)
 {
 	validity_ = validity;
-	setCoreParameter("Validity", std::to_string(validity));
+	setCoreParameter("Validity", validity);
 }
 
 std::string CreateSignatureRequest::getReturnUrl()const
@@ -220,6 +220,6 @@ int CreateSignatureRequest::getKeywordStrategy()const
 void CreateSignatureRequest::setKeywordStrategy(int keywordStrategy)
 {
 	keywordStrategy_ = keywordStrategy;
-	setCoreParameter("KeywordStrategy", std::to_string(keywordStrategy));
+	setCoreParameter("KeywordStrategy", keywordStrategy);
 }
 

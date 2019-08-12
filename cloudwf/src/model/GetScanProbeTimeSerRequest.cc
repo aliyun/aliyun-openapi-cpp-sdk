@@ -33,7 +33,7 @@ long GetScanProbeTimeSerRequest::getZoomStart()const
 void GetScanProbeTimeSerRequest::setZoomStart(long zoomStart)
 {
 	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+	setCoreParameter("ZoomStart", zoomStart);
 }
 
 long GetScanProbeTimeSerRequest::getCompanyId()const
@@ -44,7 +44,7 @@ long GetScanProbeTimeSerRequest::getCompanyId()const
 void GetScanProbeTimeSerRequest::setCompanyId(long companyId)
 {
 	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
+	setCoreParameter("CompanyId", companyId);
 }
 
 long GetScanProbeTimeSerRequest::getApgroupId()const
@@ -55,7 +55,7 @@ long GetScanProbeTimeSerRequest::getApgroupId()const
 void GetScanProbeTimeSerRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 long GetScanProbeTimeSerRequest::getStart()const
@@ -66,7 +66,7 @@ long GetScanProbeTimeSerRequest::getStart()const
 void GetScanProbeTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setCoreParameter("Start", start);
 }
 
 long GetScanProbeTimeSerRequest::getZoomEnd()const
@@ -77,7 +77,7 @@ long GetScanProbeTimeSerRequest::getZoomEnd()const
 void GetScanProbeTimeSerRequest::setZoomEnd(long zoomEnd)
 {
 	zoomEnd_ = zoomEnd;
-	setCoreParameter("ZoomEnd", std::to_string(zoomEnd));
+	setCoreParameter("ZoomEnd", zoomEnd);
 }
 
 long GetScanProbeTimeSerRequest::getEnd()const
@@ -88,7 +88,7 @@ long GetScanProbeTimeSerRequest::getEnd()const
 void GetScanProbeTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setCoreParameter("End", end);
 }
 
 std::string GetScanProbeTimeSerRequest::getAccessKeyId()const

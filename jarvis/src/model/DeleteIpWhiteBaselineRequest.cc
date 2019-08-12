@@ -33,7 +33,7 @@ long DeleteIpWhiteBaselineRequest::getResourceOwnerId()const
 void DeleteIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteIpWhiteBaselineRequest::getSourceIp()const

@@ -48,8 +48,8 @@ void ModifyUserGroupsRequest::setUser(const std::vector<User>& user)
 	for(int i = 0; i!= user.size(); i++)	{
 		auto obj = user.at(i);
 		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Group", obj.group);
+		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Group", std::to_string(obj.group));
 	}
 }
 

@@ -44,7 +44,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
@@ -55,7 +55,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const

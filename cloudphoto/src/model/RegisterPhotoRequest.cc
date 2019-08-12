@@ -44,7 +44,7 @@ float RegisterPhotoRequest::getLatitude()const
 void RegisterPhotoRequest::setLatitude(float latitude)
 {
 	latitude_ = latitude;
-	setCoreParameter("Latitude", std::to_string(latitude));
+	setCoreParameter("Latitude", latitude);
 }
 
 std::string RegisterPhotoRequest::getPhotoTitle()const
@@ -99,7 +99,7 @@ long RegisterPhotoRequest::getSize()const
 void RegisterPhotoRequest::setSize(long size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setCoreParameter("Size", size);
 }
 
 long RegisterPhotoRequest::getTakenAt()const
@@ -110,7 +110,7 @@ long RegisterPhotoRequest::getTakenAt()const
 void RegisterPhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setCoreParameter("TakenAt", takenAt);
 }
 
 int RegisterPhotoRequest::getWidth()const
@@ -121,7 +121,7 @@ int RegisterPhotoRequest::getWidth()const
 void RegisterPhotoRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
+	setCoreParameter("Width", width);
 }
 
 std::string RegisterPhotoRequest::getLocation()const
@@ -143,7 +143,7 @@ float RegisterPhotoRequest::getLongitude()const
 void RegisterPhotoRequest::setLongitude(float longitude)
 {
 	longitude_ = longitude;
-	setCoreParameter("Longitude", std::to_string(longitude));
+	setCoreParameter("Longitude", longitude);
 }
 
 int RegisterPhotoRequest::getHeight()const
@@ -154,7 +154,7 @@ int RegisterPhotoRequest::getHeight()const
 void RegisterPhotoRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", std::to_string(height));
+	setCoreParameter("Height", height);
 }
 
 std::string RegisterPhotoRequest::getMd5()const

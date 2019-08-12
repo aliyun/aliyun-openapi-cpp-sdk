@@ -33,7 +33,7 @@ long CreateClusterWithHostPoolRequest::getResourceOwnerId()const
 void CreateClusterWithHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateClusterWithHostPoolRequest::getClusterName()const
@@ -55,7 +55,7 @@ bool CreateClusterWithHostPoolRequest::getEasEnable()const
 void CreateClusterWithHostPoolRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+	setCoreParameter("EasEnable", easEnable);
 }
 
 std::vector<CreateClusterWithHostPoolRequest::HostInfo> CreateClusterWithHostPoolRequest::getHostInfo()const
@@ -70,13 +70,13 @@ void CreateClusterWithHostPoolRequest::setHostInfo(const std::vector<HostInfo>& 
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		setCoreParameter(str + ".Role", obj.role);
-		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
-		setCoreParameter(str + ".PrivateIp", obj.privateIp);
-		setCoreParameter(str + ".ServiceComponentInfo", std::to_string(obj.serviceComponentInfo));
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
+		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
+		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
+		setCoreParameter(str + ".Role", std::to_string(obj.role));
+		setCoreParameter(str + ".GroupId", obj.groupId);
+		setCoreParameter(str + ".PrivateIp", std::to_string(obj.privateIp));
+		setCoreParameter(str + ".ServiceComponentInfo", obj.serviceComponentInfo);
+		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
 	}
 }
 
@@ -136,9 +136,9 @@ void CreateClusterWithHostPoolRequest::setHostGroup(const std::vector<HostGroup>
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", obj.groupType);
-		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
-		setCoreParameter(str + ".GroupName", obj.groupName);
+		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
+		setCoreParameter(str + ".GroupId", obj.groupId);
+		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
 	}
 }
 
@@ -176,9 +176,9 @@ void CreateClusterWithHostPoolRequest::setServiceInfo(const std::vector<ServiceI
 	for(int i = 0; i!= serviceInfo.size(); i++)	{
 		auto obj = serviceInfo.at(i);
 		std::string str ="ServiceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceEcmVersion", obj.serviceEcmVersion);
-		setCoreParameter(str + ".ServiceVersion", obj.serviceVersion);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ServiceEcmVersion", std::to_string(obj.serviceEcmVersion));
+		setCoreParameter(str + ".ServiceVersion", std::to_string(obj.serviceVersion));
+		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
 	}
 }
 
@@ -194,10 +194,10 @@ void CreateClusterWithHostPoolRequest::setConfig(const std::vector<Config>& conf
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".FileName", obj.fileName);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
+		setCoreParameter(str + ".FileName", std::to_string(obj.fileName));
+		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
+		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
 	}
 }
 

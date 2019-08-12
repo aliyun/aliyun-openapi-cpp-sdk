@@ -44,7 +44,7 @@ long DeleteRepoWebhookRequest::getWebhookId()const
 void DeleteRepoWebhookRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setCoreParameter("WebhookId", std::to_string(webhookId));
+	setCoreParameter("WebhookId", webhookId);
 }
 
 std::string DeleteRepoWebhookRequest::getRepoName()const

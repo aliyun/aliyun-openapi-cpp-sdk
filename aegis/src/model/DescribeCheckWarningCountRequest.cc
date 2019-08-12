@@ -55,7 +55,7 @@ long DescribeCheckWarningCountRequest::getRiskId()const
 void DescribeCheckWarningCountRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setCoreParameter("RiskId", riskId);
 }
 
 long DescribeCheckWarningCountRequest::getCheckId()const
@@ -66,7 +66,7 @@ long DescribeCheckWarningCountRequest::getCheckId()const
 void DescribeCheckWarningCountRequest::setCheckId(long checkId)
 {
 	checkId_ = checkId;
-	setCoreParameter("CheckId", std::to_string(checkId));
+	setCoreParameter("CheckId", checkId);
 }
 
 int DescribeCheckWarningCountRequest::getStatus()const
@@ -77,6 +77,6 @@ int DescribeCheckWarningCountRequest::getStatus()const
 void DescribeCheckWarningCountRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

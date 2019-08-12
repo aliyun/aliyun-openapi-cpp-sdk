@@ -33,7 +33,7 @@ long ListJobExecutionInstancesRequest::getResourceOwnerId()const
 void ListJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
@@ -66,7 +66,7 @@ int ListJobExecutionInstancesRequest::getPageSize()const
 void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 bool ListJobExecutionInstancesRequest::getIsDesc()const
@@ -77,7 +77,7 @@ bool ListJobExecutionInstancesRequest::getIsDesc()const
 void ListJobExecutionInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setCoreParameter("IsDesc", isDesc);
 }
 
 int ListJobExecutionInstancesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListJobExecutionInstancesRequest::getPageNumber()const
 void ListJobExecutionInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListJobExecutionInstancesRequest::getAccessKeyId()const

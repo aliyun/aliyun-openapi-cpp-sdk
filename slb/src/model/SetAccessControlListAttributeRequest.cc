@@ -55,7 +55,7 @@ long SetAccessControlListAttributeRequest::getResourceOwnerId()const
 void SetAccessControlListAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetAccessControlListAttributeRequest::getAclName()const
@@ -110,7 +110,7 @@ long SetAccessControlListAttributeRequest::getOwnerId()const
 void SetAccessControlListAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetAccessControlListAttributeRequest::getAccessKeyId()const

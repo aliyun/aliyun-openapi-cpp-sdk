@@ -33,7 +33,7 @@ long ModifyNatGatewaySpecRequest::getResourceOwnerId()const
 void ModifyNatGatewaySpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool ModifyNatGatewaySpecRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool ModifyNatGatewaySpecRequest::getAutoPay()const
 void ModifyNatGatewaySpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifyNatGatewaySpecRequest::getOwnerId()const
 void ModifyNatGatewaySpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyNatGatewaySpecRequest::getSpec()const

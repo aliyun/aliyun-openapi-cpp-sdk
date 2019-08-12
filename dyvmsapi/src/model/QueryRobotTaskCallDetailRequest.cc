@@ -33,7 +33,7 @@ long QueryRobotTaskCallDetailRequest::getResourceOwnerId()const
 void QueryRobotTaskCallDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long QueryRobotTaskCallDetailRequest::getQueryDate()const
@@ -44,7 +44,7 @@ long QueryRobotTaskCallDetailRequest::getQueryDate()const
 void QueryRobotTaskCallDetailRequest::setQueryDate(long queryDate)
 {
 	queryDate_ = queryDate;
-	setCoreParameter("QueryDate", std::to_string(queryDate));
+	setCoreParameter("QueryDate", queryDate);
 }
 
 std::string QueryRobotTaskCallDetailRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryRobotTaskCallDetailRequest::getOwnerId()const
 void QueryRobotTaskCallDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long QueryRobotTaskCallDetailRequest::getTaskId()const
@@ -88,7 +88,7 @@ long QueryRobotTaskCallDetailRequest::getTaskId()const
 void QueryRobotTaskCallDetailRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const

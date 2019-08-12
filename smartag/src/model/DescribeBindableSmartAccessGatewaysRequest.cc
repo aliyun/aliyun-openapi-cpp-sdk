@@ -33,7 +33,7 @@ long DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerId()const
 void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
 void DescribeBindableSmartAccessGatewaysRequest::setCrossAccount(bool crossAccount)
 {
 	crossAccount_ = crossAccount;
-	setCoreParameter("CrossAccount", crossAccount ? "true" : "false");
+	setCoreParameter("CrossAccount", crossAccount);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ long DescribeBindableSmartAccessGatewaysRequest::getOwnerId()const
 void DescribeBindableSmartAccessGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const

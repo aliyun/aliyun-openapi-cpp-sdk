@@ -33,7 +33,7 @@ long ListJobInstanceWorkersRequest::getResourceOwnerId()const
 void ListJobInstanceWorkersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListJobInstanceWorkersRequest::getRegionId()const

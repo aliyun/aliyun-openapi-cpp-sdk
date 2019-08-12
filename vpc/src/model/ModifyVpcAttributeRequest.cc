@@ -44,7 +44,7 @@ long ModifyVpcAttributeRequest::getResourceOwnerId()const
 void ModifyVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVpcAttributeRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ bool ModifyVpcAttributeRequest::getEnableIPv6()const
 void ModifyVpcAttributeRequest::setEnableIPv6(bool enableIPv6)
 {
 	enableIPv6_ = enableIPv6;
-	setCoreParameter("EnableIPv6", enableIPv6 ? "true" : "false");
+	setCoreParameter("EnableIPv6", enableIPv6);
 }
 
 std::string ModifyVpcAttributeRequest::getDescription()const
@@ -132,6 +132,6 @@ long ModifyVpcAttributeRequest::getOwnerId()const
 void ModifyVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

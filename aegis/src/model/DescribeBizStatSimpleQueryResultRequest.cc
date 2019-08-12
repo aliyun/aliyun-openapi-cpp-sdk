@@ -66,7 +66,7 @@ int DescribeBizStatSimpleQueryResultRequest::getCustomTimeRange()const
 void DescribeBizStatSimpleQueryResultRequest::setCustomTimeRange(int customTimeRange)
 {
 	customTimeRange_ = customTimeRange;
-	setCoreParameter("CustomTimeRange", std::to_string(customTimeRange));
+	setCoreParameter("CustomTimeRange", customTimeRange);
 }
 
 std::string DescribeBizStatSimpleQueryResultRequest::getCustomQuery()const

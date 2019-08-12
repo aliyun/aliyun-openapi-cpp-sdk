@@ -44,6 +44,6 @@ long UpdateIntentRequest::getIntentId()const
 void UpdateIntentRequest::setIntentId(long intentId)
 {
 	intentId_ = intentId;
-	setCoreParameter("IntentId", std::to_string(intentId));
+	setCoreParameter("IntentId", intentId);
 }
 

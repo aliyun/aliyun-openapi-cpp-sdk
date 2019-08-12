@@ -88,7 +88,7 @@ int DescribesummaryRequest::getPageSize()const
 void DescribesummaryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribesummaryRequest::getDealed()const
@@ -110,7 +110,7 @@ long DescribesummaryRequest::getStrategyId()const
 void DescribesummaryRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 int DescribesummaryRequest::getCurrentPage()const
@@ -121,7 +121,7 @@ int DescribesummaryRequest::getCurrentPage()const
 void DescribesummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribesummaryRequest::getSubTypeNames()const

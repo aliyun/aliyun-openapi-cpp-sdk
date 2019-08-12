@@ -59,8 +59,8 @@ void BatchDeleteDeviceGroupRelationsRequest::setDevice(const std::vector<Device>
 	for(int i = 0; i!= device.size(); i++)	{
 		auto obj = device.at(i);
 		std::string str ="Device."+ std::to_string(i);
-		setCoreParameter(str + ".DeviceName", obj.deviceName);
-		setCoreParameter(str + ".ProductKey", obj.productKey);
+		setCoreParameter(str + ".DeviceName", std::to_string(obj.deviceName));
+		setCoreParameter(str + ".ProductKey", std::to_string(obj.productKey));
 	}
 }
 

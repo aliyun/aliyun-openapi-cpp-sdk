@@ -33,7 +33,7 @@ long CreateVirtualBorderRouterRequest::getResourceOwnerId()const
 void CreateVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getCircuitCode()const
@@ -55,7 +55,7 @@ int CreateVirtualBorderRouterRequest::getVlanId()const
 void CreateVirtualBorderRouterRequest::setVlanId(int vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", std::to_string(vlanId));
+	setCoreParameter("VlanId", vlanId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getClientToken()const
@@ -110,7 +110,7 @@ long CreateVirtualBorderRouterRequest::getOwnerId()const
 void CreateVirtualBorderRouterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateVirtualBorderRouterRequest::getPeerGatewayIp()const
@@ -187,6 +187,6 @@ long CreateVirtualBorderRouterRequest::getVbrOwnerId()const
 void CreateVirtualBorderRouterRequest::setVbrOwnerId(long vbrOwnerId)
 {
 	vbrOwnerId_ = vbrOwnerId;
-	setCoreParameter("VbrOwnerId", std::to_string(vbrOwnerId));
+	setCoreParameter("VbrOwnerId", vbrOwnerId);
 }
 

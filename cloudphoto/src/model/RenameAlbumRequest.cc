@@ -55,7 +55,7 @@ long RenameAlbumRequest::getAlbumId()const
 void RenameAlbumRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setCoreParameter("AlbumId", albumId);
 }
 
 std::string RenameAlbumRequest::getStoreName()const

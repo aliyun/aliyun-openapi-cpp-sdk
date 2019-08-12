@@ -33,7 +33,7 @@ long GetSnapshotSettingsRequest::getResourceOwnerId()const
 void GetSnapshotSettingsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetSnapshotSettingsRequest::getInstanceId()const
@@ -88,7 +88,7 @@ long GetSnapshotSettingsRequest::getOwnerId()const
 void GetSnapshotSettingsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetSnapshotSettingsRequest::getAccessKeyId()const

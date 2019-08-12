@@ -33,7 +33,7 @@ long CreateNatGatewayRequest::getResourceOwnerId()const
 void CreateNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool CreateNatGatewayRequest::getAutoPay()const
@@ -44,7 +44,7 @@ bool CreateNatGatewayRequest::getAutoPay()const
 void CreateNatGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long CreateNatGatewayRequest::getOwnerId()const
 void CreateNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateNatGatewayRequest::getSpec()const
@@ -169,11 +169,11 @@ void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPac
 	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
 		auto obj = bandwidthPackage.at(i);
 		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
-		setCoreParameter(str + ".Zone", obj.zone);
-		setCoreParameter(str + ".InternetChargeType", obj.internetChargeType);
-		setCoreParameter(str + ".ISP", obj.iSP);
-		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
+		setCoreParameter(str + ".Bandwidth", obj.bandwidth);
+		setCoreParameter(str + ".Zone", std::to_string(obj.zone));
+		setCoreParameter(str + ".InternetChargeType", std::to_string(obj.internetChargeType));
+		setCoreParameter(str + ".ISP", std::to_string(obj.iSP));
+		setCoreParameter(str + ".IpCount", obj.ipCount);
 	}
 }
 

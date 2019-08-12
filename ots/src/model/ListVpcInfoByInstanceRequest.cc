@@ -44,7 +44,7 @@ long ListVpcInfoByInstanceRequest::getResourceOwnerId()const
 void ListVpcInfoByInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListVpcInfoByInstanceRequest::getInstanceName()const
@@ -66,7 +66,7 @@ long ListVpcInfoByInstanceRequest::getPageSize()const
 void ListVpcInfoByInstanceRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long ListVpcInfoByInstanceRequest::getPageNum()const
@@ -77,6 +77,6 @@ long ListVpcInfoByInstanceRequest::getPageNum()const
 void ListVpcInfoByInstanceRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

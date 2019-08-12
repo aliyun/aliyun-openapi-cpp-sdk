@@ -121,6 +121,6 @@ long PredictiveRecordSuccessRequest::getCabInstanceOwnerId()const
 void PredictiveRecordSuccessRequest::setCabInstanceOwnerId(long cabInstanceOwnerId)
 {
 	cabInstanceOwnerId_ = cabInstanceOwnerId;
-	setCoreParameter("CabInstanceOwnerId", std::to_string(cabInstanceOwnerId));
+	setCoreParameter("CabInstanceOwnerId", cabInstanceOwnerId);
 }
 

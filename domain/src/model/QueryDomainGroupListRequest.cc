@@ -66,6 +66,6 @@ bool QueryDomainGroupListRequest::getShowDeletingGroup()const
 void QueryDomainGroupListRequest::setShowDeletingGroup(bool showDeletingGroup)
 {
 	showDeletingGroup_ = showDeletingGroup;
-	setCoreParameter("ShowDeletingGroup", showDeletingGroup ? "true" : "false");
+	setCoreParameter("ShowDeletingGroup", showDeletingGroup);
 }
 

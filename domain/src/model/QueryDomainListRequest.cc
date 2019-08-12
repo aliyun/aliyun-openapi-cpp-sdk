@@ -33,7 +33,7 @@ long QueryDomainListRequest::getEndExpirationDate()const
 void QueryDomainListRequest::setEndExpirationDate(long endExpirationDate)
 {
 	endExpirationDate_ = endExpirationDate;
-	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
+	setCoreParameter("EndExpirationDate", endExpirationDate);
 }
 
 std::string QueryDomainListRequest::getProductDomainType()const
@@ -77,7 +77,7 @@ long QueryDomainListRequest::getStartExpirationDate()const
 void QueryDomainListRequest::setStartExpirationDate(long startExpirationDate)
 {
 	startExpirationDate_ = startExpirationDate;
-	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
+	setCoreParameter("StartExpirationDate", startExpirationDate);
 }
 
 int QueryDomainListRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryDomainListRequest::getPageNum()const
 void QueryDomainListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryDomainListRequest::getOrderByType()const
@@ -121,7 +121,7 @@ long QueryDomainListRequest::getEndRegistrationDate()const
 void QueryDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
 {
 	endRegistrationDate_ = endRegistrationDate;
-	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
+	setCoreParameter("EndRegistrationDate", endRegistrationDate);
 }
 
 std::string QueryDomainListRequest::getUserClientIp()const
@@ -143,7 +143,7 @@ int QueryDomainListRequest::getPageSize()const
 void QueryDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryDomainListRequest::getLang()const
@@ -176,6 +176,6 @@ long QueryDomainListRequest::getStartRegistrationDate()const
 void QueryDomainListRequest::setStartRegistrationDate(long startRegistrationDate)
 {
 	startRegistrationDate_ = startRegistrationDate;
-	setCoreParameter("StartRegistrationDate", std::to_string(startRegistrationDate));
+	setCoreParameter("StartRegistrationDate", startRegistrationDate);
 }
 

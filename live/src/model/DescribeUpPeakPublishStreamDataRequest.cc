@@ -77,7 +77,7 @@ long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
 void DescribeUpPeakPublishStreamDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const

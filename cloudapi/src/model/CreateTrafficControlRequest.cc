@@ -33,7 +33,7 @@ int CreateTrafficControlRequest::getApiDefault()const
 void CreateTrafficControlRequest::setApiDefault(int apiDefault)
 {
 	apiDefault_ = apiDefault;
-	setCoreParameter("ApiDefault", std::to_string(apiDefault));
+	setCoreParameter("ApiDefault", apiDefault);
 }
 
 std::string CreateTrafficControlRequest::getSecurityToken()const
@@ -88,7 +88,7 @@ int CreateTrafficControlRequest::getUserDefault()const
 void CreateTrafficControlRequest::setUserDefault(int userDefault)
 {
 	userDefault_ = userDefault;
-	setCoreParameter("UserDefault", std::to_string(userDefault));
+	setCoreParameter("UserDefault", userDefault);
 }
 
 int CreateTrafficControlRequest::getAppDefault()const
@@ -99,7 +99,7 @@ int CreateTrafficControlRequest::getAppDefault()const
 void CreateTrafficControlRequest::setAppDefault(int appDefault)
 {
 	appDefault_ = appDefault;
-	setCoreParameter("AppDefault", std::to_string(appDefault));
+	setCoreParameter("AppDefault", appDefault);
 }
 
 std::string CreateTrafficControlRequest::getAccessKeyId()const

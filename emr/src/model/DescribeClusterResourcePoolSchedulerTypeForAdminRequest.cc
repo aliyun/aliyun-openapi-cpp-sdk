@@ -33,7 +33,7 @@ long DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getResourceOwnerId
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getRegionId()const

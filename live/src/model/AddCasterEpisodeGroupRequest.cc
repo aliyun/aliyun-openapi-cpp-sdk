@@ -48,8 +48,8 @@ void AddCasterEpisodeGroupRequest::setItem(const std::vector<Item>& item)
 	for(int i = 0; i!= item.size(); i++)	{
 		auto obj = item.at(i);
 		std::string str ="Item."+ std::to_string(i);
-		setCoreParameter(str + ".VodUrl", obj.vodUrl);
-		setCoreParameter(str + ".ItemName", obj.itemName);
+		setCoreParameter(str + ".VodUrl", std::to_string(obj.vodUrl));
+		setCoreParameter(str + ".ItemName", std::to_string(obj.itemName));
 	}
 }
 
@@ -94,7 +94,7 @@ int AddCasterEpisodeGroupRequest::getRepeatNum()const
 void AddCasterEpisodeGroupRequest::setRepeatNum(int repeatNum)
 {
 	repeatNum_ = repeatNum;
-	setCoreParameter("RepeatNum", std::to_string(repeatNum));
+	setCoreParameter("RepeatNum", repeatNum);
 }
 
 std::string AddCasterEpisodeGroupRequest::getCallbackUrl()const
@@ -116,6 +116,6 @@ long AddCasterEpisodeGroupRequest::getOwnerId()const
 void AddCasterEpisodeGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

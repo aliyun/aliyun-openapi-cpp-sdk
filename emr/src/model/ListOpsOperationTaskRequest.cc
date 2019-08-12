@@ -33,7 +33,7 @@ long ListOpsOperationTaskRequest::getResourceOwnerId()const
 void ListOpsOperationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListOpsOperationTaskRequest::getRegionId()const
@@ -55,7 +55,7 @@ long ListOpsOperationTaskRequest::getOperationId()const
 void ListOpsOperationTaskRequest::setOperationId(long operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", std::to_string(operationId));
+	setCoreParameter("OperationId", operationId);
 }
 
 long ListOpsOperationTaskRequest::getPageNumber()const
@@ -66,7 +66,7 @@ long ListOpsOperationTaskRequest::getPageNumber()const
 void ListOpsOperationTaskRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListOpsOperationTaskRequest::getAccessKeyId()const

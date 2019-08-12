@@ -33,7 +33,7 @@ long DeleteCloudConnectNetworkRequest::getResourceOwnerId()const
 void DeleteCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DeleteCloudConnectNetworkRequest::getOwnerId()const
 void DeleteCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

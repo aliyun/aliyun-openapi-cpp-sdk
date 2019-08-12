@@ -55,7 +55,7 @@ int DescribeThreatDistributeRequest::getHitDay()const
 void DescribeThreatDistributeRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
-	setCoreParameter("HitDay", std::to_string(hitDay));
+	setCoreParameter("HitDay", hitDay);
 }
 
 std::string DescribeThreatDistributeRequest::getStartDate()const
@@ -77,6 +77,6 @@ int DescribeThreatDistributeRequest::getApiType()const
 void DescribeThreatDistributeRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setCoreParameter("ApiType", apiType);
 }
 

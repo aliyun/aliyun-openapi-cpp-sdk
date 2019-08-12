@@ -88,7 +88,7 @@ int AddLiveSnapshotDetectPornConfigRequest::getInterval()const
 void AddLiveSnapshotDetectPornConfigRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 long AddLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AddLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void AddLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getOssObject()const
@@ -122,6 +122,6 @@ void AddLiveSnapshotDetectPornConfigRequest::setScene(const std::vector<std::str
 {
 	scene_ = scene;
 	for(int i = 0; i!= scene.size(); i++)
-		setCoreParameter("Scene."+ std::to_string(i), scene.at(i));
+		setCoreParameter("Scene."+ std::to_string(i), std::to_string(scene.at(i)));
 }
 

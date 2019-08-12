@@ -55,7 +55,7 @@ int DescribeIncrementBackupListRequest::getPageSize()const
 void DescribeIncrementBackupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
@@ -77,7 +77,7 @@ int DescribeIncrementBackupListRequest::getPageNum()const
 void DescribeIncrementBackupListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeIncrementBackupListRequest::getOwnerId()const

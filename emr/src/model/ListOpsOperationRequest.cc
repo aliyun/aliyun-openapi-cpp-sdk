@@ -33,7 +33,7 @@ long ListOpsOperationRequest::getResourceOwnerId()const
 void ListOpsOperationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListOpsOperationRequest::getRegionId()const
@@ -66,7 +66,7 @@ long ListOpsOperationRequest::getPageNumber()const
 void ListOpsOperationRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListOpsOperationRequest::getAccessKeyId()const

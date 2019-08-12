@@ -55,7 +55,7 @@ long SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getRegistr
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", registrantProfileId);
 }
 
 std::vector<std::string> SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getDomainName()const
@@ -67,7 +67,7 @@ void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setDomainN
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 bool SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getTransferOutProhibited()const
@@ -78,7 +78,7 @@ bool SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getTransfe
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setCoreParameter("TransferOutProhibited", transferOutProhibited);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getLang()const

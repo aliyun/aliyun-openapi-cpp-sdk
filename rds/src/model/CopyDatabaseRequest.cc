@@ -33,7 +33,7 @@ long CopyDatabaseRequest::getResourceOwnerId()const
 void CopyDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CopyDatabaseRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long CopyDatabaseRequest::getOwnerId()const
 void CopyDatabaseRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CopyDatabaseRequest::getAccessKeyId()const

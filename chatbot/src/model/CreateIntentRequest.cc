@@ -44,6 +44,6 @@ long CreateIntentRequest::getDialogId()const
 void CreateIntentRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setCoreParameter("DialogId", dialogId);
 }
 

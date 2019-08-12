@@ -55,7 +55,7 @@ long UpdateCategoryRequest::getCateId()const
 void UpdateCategoryRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 std::string UpdateCategoryRequest::getOwnerId()const

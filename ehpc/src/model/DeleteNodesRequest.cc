@@ -33,7 +33,7 @@ bool DeleteNodesRequest::getReleaseInstance()const
 void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
 {
 	releaseInstance_ = releaseInstance;
-	setCoreParameter("ReleaseInstance", releaseInstance ? "true" : "false");
+	setCoreParameter("ReleaseInstance", releaseInstance);
 }
 
 std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance()const
@@ -48,7 +48,7 @@ void DeleteNodesRequest::setInstance(const std::vector<Instance>& instance)
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
 	}
 }
 

@@ -66,7 +66,7 @@ int GetResolveStatisticsRequest::getTimeSpan()const
 void GetResolveStatisticsRequest::setTimeSpan(int timeSpan)
 {
 	timeSpan_ = timeSpan;
-	setCoreParameter("TimeSpan", std::to_string(timeSpan));
+	setCoreParameter("TimeSpan", timeSpan);
 }
 
 std::string GetResolveStatisticsRequest::getAccessKeyId()const

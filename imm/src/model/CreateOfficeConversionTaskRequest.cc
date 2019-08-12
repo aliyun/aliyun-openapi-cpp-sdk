@@ -66,7 +66,7 @@ bool CreateOfficeConversionTaskRequest::getPdfVector()const
 void CreateOfficeConversionTaskRequest::setPdfVector(bool pdfVector)
 {
 	pdfVector_ = pdfVector;
-	setCoreParameter("PdfVector", pdfVector ? "true" : "false");
+	setCoreParameter("PdfVector", pdfVector);
 }
 
 std::string CreateOfficeConversionTaskRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ long CreateOfficeConversionTaskRequest::getStartPage()const
 void CreateOfficeConversionTaskRequest::setStartPage(long startPage)
 {
 	startPage_ = startPage;
-	setCoreParameter("StartPage", std::to_string(startPage));
+	setCoreParameter("StartPage", startPage);
 }
 
 std::string CreateOfficeConversionTaskRequest::getRegionId()const
@@ -132,7 +132,7 @@ bool CreateOfficeConversionTaskRequest::getFitToPagesWide()const
 void CreateOfficeConversionTaskRequest::setFitToPagesWide(bool fitToPagesWide)
 {
 	fitToPagesWide_ = fitToPagesWide;
-	setCoreParameter("FitToPagesWide", fitToPagesWide ? "true" : "false");
+	setCoreParameter("FitToPagesWide", fitToPagesWide);
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtFilePrefix()const
@@ -176,7 +176,7 @@ int CreateOfficeConversionTaskRequest::getDisplayDpi()const
 void CreateOfficeConversionTaskRequest::setDisplayDpi(int displayDpi)
 {
 	displayDpi_ = displayDpi;
-	setCoreParameter("DisplayDpi", std::to_string(displayDpi));
+	setCoreParameter("DisplayDpi", displayDpi);
 }
 
 long CreateOfficeConversionTaskRequest::getMaxSheetRow()const
@@ -187,7 +187,7 @@ long CreateOfficeConversionTaskRequest::getMaxSheetRow()const
 void CreateOfficeConversionTaskRequest::setMaxSheetRow(long maxSheetRow)
 {
 	maxSheetRow_ = maxSheetRow;
-	setCoreParameter("MaxSheetRow", std::to_string(maxSheetRow));
+	setCoreParameter("MaxSheetRow", maxSheetRow);
 }
 
 long CreateOfficeConversionTaskRequest::getMaxSheetCount()const
@@ -198,7 +198,7 @@ long CreateOfficeConversionTaskRequest::getMaxSheetCount()const
 void CreateOfficeConversionTaskRequest::setMaxSheetCount(long maxSheetCount)
 {
 	maxSheetCount_ = maxSheetCount;
-	setCoreParameter("MaxSheetCount", std::to_string(maxSheetCount));
+	setCoreParameter("MaxSheetCount", maxSheetCount);
 }
 
 long CreateOfficeConversionTaskRequest::getEndPage()const
@@ -209,7 +209,7 @@ long CreateOfficeConversionTaskRequest::getEndPage()const
 void CreateOfficeConversionTaskRequest::setEndPage(long endPage)
 {
 	endPage_ = endPage;
-	setCoreParameter("EndPage", std::to_string(endPage));
+	setCoreParameter("EndPage", endPage);
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtFileSuffix()const
@@ -231,7 +231,7 @@ bool CreateOfficeConversionTaskRequest::getSheetOnePage()const
 void CreateOfficeConversionTaskRequest::setSheetOnePage(bool sheetOnePage)
 {
 	sheetOnePage_ = sheetOnePage;
-	setCoreParameter("SheetOnePage", sheetOnePage ? "true" : "false");
+	setCoreParameter("SheetOnePage", sheetOnePage);
 }
 
 long CreateOfficeConversionTaskRequest::getMaxSheetCol()const
@@ -242,7 +242,7 @@ long CreateOfficeConversionTaskRequest::getMaxSheetCol()const
 void CreateOfficeConversionTaskRequest::setMaxSheetCol(long maxSheetCol)
 {
 	maxSheetCol_ = maxSheetCol;
-	setCoreParameter("MaxSheetCol", std::to_string(maxSheetCol));
+	setCoreParameter("MaxSheetCol", maxSheetCol);
 }
 
 std::string CreateOfficeConversionTaskRequest::getTgtType()const
@@ -264,7 +264,7 @@ bool CreateOfficeConversionTaskRequest::getHidecomments()const
 void CreateOfficeConversionTaskRequest::setHidecomments(bool hidecomments)
 {
 	hidecomments_ = hidecomments;
-	setCoreParameter("Hidecomments", hidecomments ? "true" : "false");
+	setCoreParameter("Hidecomments", hidecomments);
 }
 
 bool CreateOfficeConversionTaskRequest::getFitToPagesTall()const
@@ -275,7 +275,7 @@ bool CreateOfficeConversionTaskRequest::getFitToPagesTall()const
 void CreateOfficeConversionTaskRequest::setFitToPagesTall(bool fitToPagesTall)
 {
 	fitToPagesTall_ = fitToPagesTall;
-	setCoreParameter("FitToPagesTall", fitToPagesTall ? "true" : "false");
+	setCoreParameter("FitToPagesTall", fitToPagesTall);
 }
 
 std::string CreateOfficeConversionTaskRequest::getSrcUri()const

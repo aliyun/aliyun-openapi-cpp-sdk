@@ -33,7 +33,7 @@ int QueryDevicePropertyDataRequest::getAsc()const
 void QueryDevicePropertyDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setCoreParameter("Asc", std::to_string(asc));
+	setCoreParameter("Asc", asc);
 }
 
 std::string QueryDevicePropertyDataRequest::getIdentifier()const
@@ -77,7 +77,7 @@ int QueryDevicePropertyDataRequest::getPageSize()const
 void QueryDevicePropertyDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long QueryDevicePropertyDataRequest::getEndTime()const
@@ -88,7 +88,7 @@ long QueryDevicePropertyDataRequest::getEndTime()const
 void QueryDevicePropertyDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string QueryDevicePropertyDataRequest::getDeviceName()const
@@ -110,7 +110,7 @@ long QueryDevicePropertyDataRequest::getStartTime()const
 void QueryDevicePropertyDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string QueryDevicePropertyDataRequest::getProductKey()const

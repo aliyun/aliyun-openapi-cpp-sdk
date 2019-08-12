@@ -33,7 +33,7 @@ long DeleteSnapshotRequest::getResourceOwnerId()const
 void DeleteSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteSnapshotRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DeleteSnapshotRequest::getOwnerId()const
 void DeleteSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteSnapshotRequest::getAccessKeyId()const

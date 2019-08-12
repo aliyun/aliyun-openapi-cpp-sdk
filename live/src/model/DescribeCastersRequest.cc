@@ -66,7 +66,7 @@ int DescribeCastersRequest::getPageSize()const
 void DescribeCastersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeCastersRequest::getEndTime()const
@@ -99,7 +99,7 @@ long DescribeCastersRequest::getOwnerId()const
 void DescribeCastersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeCastersRequest::getPageNum()const
@@ -110,7 +110,7 @@ int DescribeCastersRequest::getPageNum()const
 void DescribeCastersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 int DescribeCastersRequest::getStatus()const
@@ -121,6 +121,6 @@ int DescribeCastersRequest::getStatus()const
 void DescribeCastersRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

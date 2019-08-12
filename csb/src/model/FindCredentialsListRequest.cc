@@ -44,7 +44,7 @@ long FindCredentialsListRequest::getCsbId()const
 void FindCredentialsListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 int FindCredentialsListRequest::getPageNum()const
@@ -55,7 +55,7 @@ int FindCredentialsListRequest::getPageNum()const
 void FindCredentialsListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string FindCredentialsListRequest::getGroupName()const

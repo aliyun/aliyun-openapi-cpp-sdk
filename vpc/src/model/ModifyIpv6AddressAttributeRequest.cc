@@ -33,7 +33,7 @@ long ModifyIpv6AddressAttributeRequest::getResourceOwnerId()const
 void ModifyIpv6AddressAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long ModifyIpv6AddressAttributeRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyIpv6AddressAttributeRequest::getCallerParentId()const
 void ModifyIpv6AddressAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getDescription()const
@@ -66,7 +66,7 @@ bool ModifyIpv6AddressAttributeRequest::getProxy_original_security_transport()co
 void ModifyIpv6AddressAttributeRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getProxy_original_source_ip()const
@@ -154,7 +154,7 @@ bool ModifyIpv6AddressAttributeRequest::getEnable()const
 void ModifyIpv6AddressAttributeRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getRequestContent()const
@@ -198,7 +198,7 @@ long ModifyIpv6AddressAttributeRequest::getCallerUid()const
 void ModifyIpv6AddressAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getApp_ip()const
@@ -253,7 +253,7 @@ long ModifyIpv6AddressAttributeRequest::getOwnerId()const
 void ModifyIpv6AddressAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 bool ModifyIpv6AddressAttributeRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool ModifyIpv6AddressAttributeRequest::getProxy_trust_transport_info()const
 void ModifyIpv6AddressAttributeRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool ModifyIpv6AddressAttributeRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ bool ModifyIpv6AddressAttributeRequest::getAk_mfa_present()const
 void ModifyIpv6AddressAttributeRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool ModifyIpv6AddressAttributeRequest::getSecurity_transport()const
@@ -286,7 +286,7 @@ bool ModifyIpv6AddressAttributeRequest::getSecurity_transport()const
 void ModifyIpv6AddressAttributeRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string ModifyIpv6AddressAttributeRequest::getIpv6AddressId()const

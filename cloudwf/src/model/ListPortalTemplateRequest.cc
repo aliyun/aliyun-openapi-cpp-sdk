@@ -44,7 +44,7 @@ int ListPortalTemplateRequest::getLength()const
 void ListPortalTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListPortalTemplateRequest::getPageIndex()const
@@ -55,7 +55,7 @@ int ListPortalTemplateRequest::getPageIndex()const
 void ListPortalTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListPortalTemplateRequest::getOrderDir()const

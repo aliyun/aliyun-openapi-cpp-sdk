@@ -55,7 +55,7 @@ int ListFlowJobRequest::getPageSize()const
 void ListFlowJobRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListFlowJobRequest::getId()const
@@ -88,7 +88,7 @@ bool ListFlowJobRequest::getAdhoc()const
 void ListFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc ? "true" : "false");
+	setCoreParameter("Adhoc", adhoc);
 }
 
 std::string ListFlowJobRequest::getProjectId()const
@@ -110,6 +110,6 @@ int ListFlowJobRequest::getPageNumber()const
 void ListFlowJobRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

@@ -44,7 +44,7 @@ long SubmitTranscodeJobsRequest::getResourceOwnerId()const
 void SubmitTranscodeJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
@@ -99,7 +99,7 @@ long SubmitTranscodeJobsRequest::getOwnerId()const
 void SubmitTranscodeJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitTranscodeJobsRequest::getPriority()const

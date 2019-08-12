@@ -33,7 +33,7 @@ long DescribeCloudConnectNetworksRequest::getResourceOwnerId()const
 void DescribeCloudConnectNetworksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getResourceOwnerAccount()const
@@ -114,8 +114,8 @@ void DescribeCloudConnectNetworksRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -127,7 +127,7 @@ long DescribeCloudConnectNetworksRequest::getOwnerId()const
 void DescribeCloudConnectNetworksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getPageNumber()const

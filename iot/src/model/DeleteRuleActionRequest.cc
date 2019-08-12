@@ -44,7 +44,7 @@ long DeleteRuleActionRequest::getActionId()const
 void DeleteRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
-	setCoreParameter("ActionId", std::to_string(actionId));
+	setCoreParameter("ActionId", actionId);
 }
 
 std::string DeleteRuleActionRequest::getAccessKeyId()const

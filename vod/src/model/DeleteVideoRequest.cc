@@ -33,7 +33,7 @@ long DeleteVideoRequest::getResourceOwnerId()const
 void DeleteVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVideoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ long DeleteVideoRequest::getOwnerId()const
 void DeleteVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteVideoRequest::getVideoIds()const

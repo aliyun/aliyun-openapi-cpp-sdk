@@ -55,7 +55,7 @@ long CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerId()const
 void CreatePhysicalConnectionSetupOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getPortType()const
@@ -77,7 +77,7 @@ bool CreatePhysicalConnectionSetupOrderRequest::getAutoPay()const
 void CreatePhysicalConnectionSetupOrderRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getRegionId()const
@@ -132,7 +132,7 @@ long CreatePhysicalConnectionSetupOrderRequest::getOwnerId()const
 void CreatePhysicalConnectionSetupOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getLineOperator()const

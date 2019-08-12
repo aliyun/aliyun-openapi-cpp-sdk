@@ -33,7 +33,7 @@ long DisassociateQosRequest::getResourceOwnerId()const
 void DisassociateQosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DisassociateQosRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DisassociateQosRequest::getOwnerId()const
 void DisassociateQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DisassociateQosRequest::getQosId()const

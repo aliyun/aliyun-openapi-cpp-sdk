@@ -33,7 +33,7 @@ long RestoreDBInstanceRequest::getResourceOwnerId()const
 void RestoreDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RestoreDBInstanceRequest::getRestoreTime()const
@@ -110,7 +110,7 @@ long RestoreDBInstanceRequest::getOwnerId()const
 void RestoreDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RestoreDBInstanceRequest::getAccessKeyId()const

@@ -77,7 +77,7 @@ bool ModifyApiRequest::getDisableInternet()const
 void ModifyApiRequest::setDisableInternet(bool disableInternet)
 {
 	disableInternet_ = disableInternet;
-	setCoreParameter("DisableInternet", disableInternet ? "true" : "false");
+	setCoreParameter("DisableInternet", disableInternet);
 }
 
 std::string ModifyApiRequest::getConstantParameters()const
@@ -286,7 +286,7 @@ bool ModifyApiRequest::getForceNonceCheck()const
 void ModifyApiRequest::setForceNonceCheck(bool forceNonceCheck)
 {
 	forceNonceCheck_ = forceNonceCheck;
-	setCoreParameter("ForceNonceCheck", forceNonceCheck ? "true" : "false");
+	setCoreParameter("ForceNonceCheck", forceNonceCheck);
 }
 
 std::string ModifyApiRequest::getRequestConfig()const

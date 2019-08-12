@@ -33,7 +33,7 @@ long AddPipelineRequest::getResourceOwnerId()const
 void AddPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddPipelineRequest::getRole()const
@@ -99,7 +99,7 @@ long AddPipelineRequest::getOwnerId()const
 void AddPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long AddPipelineRequest::getSpeedLevel()const
@@ -110,7 +110,7 @@ long AddPipelineRequest::getSpeedLevel()const
 void AddPipelineRequest::setSpeedLevel(long speedLevel)
 {
 	speedLevel_ = speedLevel;
-	setCoreParameter("SpeedLevel", std::to_string(speedLevel));
+	setCoreParameter("SpeedLevel", speedLevel);
 }
 
 std::string AddPipelineRequest::getSpeed()const

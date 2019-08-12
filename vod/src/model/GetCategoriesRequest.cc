@@ -55,7 +55,7 @@ long GetCategoriesRequest::getCateId()const
 void GetCategoriesRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", cateId);
 }
 
 long GetCategoriesRequest::getPageNo()const
@@ -66,7 +66,7 @@ long GetCategoriesRequest::getPageNo()const
 void GetCategoriesRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 long GetCategoriesRequest::getPageSize()const
@@ -77,7 +77,7 @@ long GetCategoriesRequest::getPageSize()const
 void GetCategoriesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetCategoriesRequest::getSortBy()const

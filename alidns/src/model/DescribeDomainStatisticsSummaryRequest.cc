@@ -55,7 +55,7 @@ long DescribeDomainStatisticsSummaryRequest::getPageSize()const
 void DescribeDomainStatisticsSummaryRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getOrderBy()const
@@ -88,7 +88,7 @@ long DescribeDomainStatisticsSummaryRequest::getThreshold()const
 void DescribeDomainStatisticsSummaryRequest::setThreshold(long threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
+	setCoreParameter("Threshold", threshold);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getLang()const
@@ -132,7 +132,7 @@ long DescribeDomainStatisticsSummaryRequest::getPageNumber()const
 void DescribeDomainStatisticsSummaryRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getDirection()const

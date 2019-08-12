@@ -55,6 +55,6 @@ bool QueryCashCouponsRequest::getEffectiveOrNot()const
 void QueryCashCouponsRequest::setEffectiveOrNot(bool effectiveOrNot)
 {
 	effectiveOrNot_ = effectiveOrNot;
-	setCoreParameter("EffectiveOrNot", effectiveOrNot ? "true" : "false");
+	setCoreParameter("EffectiveOrNot", effectiveOrNot);
 }
 

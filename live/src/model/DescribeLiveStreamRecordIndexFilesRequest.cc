@@ -66,7 +66,7 @@ int DescribeLiveStreamRecordIndexFilesRequest::getPageSize()const
 void DescribeLiveStreamRecordIndexFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getEndTime()const
@@ -99,7 +99,7 @@ long DescribeLiveStreamRecordIndexFilesRequest::getOwnerId()const
 void DescribeLiveStreamRecordIndexFilesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeLiveStreamRecordIndexFilesRequest::getPageNum()const
@@ -110,7 +110,7 @@ int DescribeLiveStreamRecordIndexFilesRequest::getPageNum()const
 void DescribeLiveStreamRecordIndexFilesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeLiveStreamRecordIndexFilesRequest::getStreamName()const

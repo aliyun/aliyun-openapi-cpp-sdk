@@ -33,7 +33,7 @@ long DescribeAvailableRecoveryTimeRequest::getResourceOwnerId()const
 void DescribeAvailableRecoveryTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
 void DescribeAvailableRecoveryTimeRequest::setCrossBackupId(int crossBackupId)
 {
 	crossBackupId_ = crossBackupId;
-	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
+	setCoreParameter("CrossBackupId", crossBackupId);
 }
 
 long DescribeAvailableRecoveryTimeRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeAvailableRecoveryTimeRequest::getOwnerId()const
 void DescribeAvailableRecoveryTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId()const

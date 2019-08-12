@@ -33,7 +33,7 @@ long CreateDedicatedLineBackupRequest::getResourceOwnerId()const
 void CreateDedicatedLineBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateDedicatedLineBackupRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long CreateDedicatedLineBackupRequest::getOwnerId()const
 void CreateDedicatedLineBackupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDedicatedLineBackupRequest::getVbrId()const

@@ -33,7 +33,7 @@ long DescribeForbidPushStreamRoomListRequest::getCallerParentId()const
 void DescribeForbidPushStreamRoomListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeForbidPushStreamRoomListRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeForbidPushStreamRoomListRequest::getProxy_original_security_transpo
 void DescribeForbidPushStreamRoomListRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageNum()const
 void DescribeForbidPushStreamRoomListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageSize()const
 void DescribeForbidPushStreamRoomListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ long DescribeForbidPushStreamRoomListRequest::getCallerUid()const
 void DescribeForbidPushStreamRoomListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getOrder()const
@@ -231,7 +231,7 @@ long DescribeForbidPushStreamRoomListRequest::getOwnerId()const
 void DescribeForbidPushStreamRoomListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getVersion()const
@@ -253,7 +253,7 @@ bool DescribeForbidPushStreamRoomListRequest::getProxy_trust_transport_info()con
 void DescribeForbidPushStreamRoomListRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeForbidPushStreamRoomListRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeForbidPushStreamRoomListRequest::getAk_mfa_present()const
 void DescribeForbidPushStreamRoomListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeForbidPushStreamRoomListRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeForbidPushStreamRoomListRequest::getSecurity_transport()const
 void DescribeForbidPushStreamRoomListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getRequestId()const

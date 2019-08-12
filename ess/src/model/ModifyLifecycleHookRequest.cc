@@ -55,7 +55,7 @@ int ModifyLifecycleHookRequest::getHeartbeatTimeout()const
 void ModifyLifecycleHookRequest::setHeartbeatTimeout(int heartbeatTimeout)
 {
 	heartbeatTimeout_ = heartbeatTimeout;
-	setCoreParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+	setCoreParameter("HeartbeatTimeout", heartbeatTimeout);
 }
 
 std::string ModifyLifecycleHookRequest::getLifecycleHookId()const
@@ -110,7 +110,7 @@ long ModifyLifecycleHookRequest::getOwnerId()const
 void ModifyLifecycleHookRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyLifecycleHookRequest::getLifecycleTransition()const

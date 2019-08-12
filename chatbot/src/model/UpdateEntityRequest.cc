@@ -77,6 +77,6 @@ long UpdateEntityRequest::getEntityId()const
 void UpdateEntityRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setCoreParameter("EntityId", entityId);
 }
 

@@ -55,7 +55,7 @@ bool DeleteCredentialsListRequest::getIgnoreDauth()const
 void DeleteCredentialsListRequest::setIgnoreDauth(bool ignoreDauth)
 {
 	ignoreDauth_ = ignoreDauth;
-	setCoreParameter("IgnoreDauth", ignoreDauth ? "true" : "false");
+	setCoreParameter("IgnoreDauth", ignoreDauth);
 }
 
 bool DeleteCredentialsListRequest::getForce()const
@@ -66,6 +66,6 @@ bool DeleteCredentialsListRequest::getForce()const
 void DeleteCredentialsListRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 

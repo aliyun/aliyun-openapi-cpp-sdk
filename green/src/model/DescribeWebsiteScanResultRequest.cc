@@ -33,7 +33,7 @@ int DescribeWebsiteScanResultRequest::getTotalCount()const
 void DescribeWebsiteScanResultRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeWebsiteScanResultRequest::getSubServiceModule()const
@@ -99,7 +99,7 @@ int DescribeWebsiteScanResultRequest::getPageSize()const
 void DescribeWebsiteScanResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeWebsiteScanResultRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeWebsiteScanResultRequest::getCurrentPage()const
 void DescribeWebsiteScanResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWebsiteScanResultRequest::getLabel()const

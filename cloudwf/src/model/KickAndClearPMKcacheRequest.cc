@@ -33,7 +33,7 @@ long KickAndClearPMKcacheRequest::getId()const
 void KickAndClearPMKcacheRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string KickAndClearPMKcacheRequest::getAccessKeyId()const

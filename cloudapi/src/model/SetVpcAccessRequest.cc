@@ -55,7 +55,7 @@ int SetVpcAccessRequest::getPort()const
 void SetVpcAccessRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string SetVpcAccessRequest::getVpcId()const

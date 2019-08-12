@@ -44,7 +44,7 @@ long SaveStaStatusRequest::getId()const
 void SaveStaStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string SaveStaStatusRequest::getAccessKeyId()const

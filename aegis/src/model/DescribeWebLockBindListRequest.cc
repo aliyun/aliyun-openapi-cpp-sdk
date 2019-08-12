@@ -44,7 +44,7 @@ int DescribeWebLockBindListRequest::getPageSize()const
 void DescribeWebLockBindListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeWebLockBindListRequest::getRemark()const
@@ -66,7 +66,7 @@ int DescribeWebLockBindListRequest::getCurrentPage()const
 void DescribeWebLockBindListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWebLockBindListRequest::getLang()const

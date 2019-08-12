@@ -44,7 +44,7 @@ int QueryAdvancedDomainListRequest::getPageNum()const
 void QueryAdvancedDomainListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryAdvancedDomainListRequest::getExcluded()const
@@ -66,7 +66,7 @@ int QueryAdvancedDomainListRequest::getStartLength()const
 void QueryAdvancedDomainListRequest::setStartLength(int startLength)
 {
 	startLength_ = startLength;
-	setCoreParameter("StartLength", std::to_string(startLength));
+	setCoreParameter("StartLength", startLength);
 }
 
 bool QueryAdvancedDomainListRequest::getExcludedSuffix()const
@@ -77,7 +77,7 @@ bool QueryAdvancedDomainListRequest::getExcludedSuffix()const
 void QueryAdvancedDomainListRequest::setExcludedSuffix(bool excludedSuffix)
 {
 	excludedSuffix_ = excludedSuffix;
-	setCoreParameter("ExcludedSuffix", excludedSuffix ? "true" : "false");
+	setCoreParameter("ExcludedSuffix", excludedSuffix);
 }
 
 int QueryAdvancedDomainListRequest::getPageSize()const
@@ -88,7 +88,7 @@ int QueryAdvancedDomainListRequest::getPageSize()const
 void QueryAdvancedDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryAdvancedDomainListRequest::getLang()const
@@ -110,7 +110,7 @@ bool QueryAdvancedDomainListRequest::getExcludedPrefix()const
 void QueryAdvancedDomainListRequest::setExcludedPrefix(bool excludedPrefix)
 {
 	excludedPrefix_ = excludedPrefix;
-	setCoreParameter("ExcludedPrefix", excludedPrefix ? "true" : "false");
+	setCoreParameter("ExcludedPrefix", excludedPrefix);
 }
 
 std::string QueryAdvancedDomainListRequest::getKeyWord()const
@@ -132,7 +132,7 @@ bool QueryAdvancedDomainListRequest::getProductDomainTypeSort()const
 void QueryAdvancedDomainListRequest::setProductDomainTypeSort(bool productDomainTypeSort)
 {
 	productDomainTypeSort_ = productDomainTypeSort;
-	setCoreParameter("ProductDomainTypeSort", productDomainTypeSort ? "true" : "false");
+	setCoreParameter("ProductDomainTypeSort", productDomainTypeSort);
 }
 
 long QueryAdvancedDomainListRequest::getEndExpirationDate()const
@@ -143,7 +143,7 @@ long QueryAdvancedDomainListRequest::getEndExpirationDate()const
 void QueryAdvancedDomainListRequest::setEndExpirationDate(long endExpirationDate)
 {
 	endExpirationDate_ = endExpirationDate;
-	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
+	setCoreParameter("EndExpirationDate", endExpirationDate);
 }
 
 std::string QueryAdvancedDomainListRequest::getSuffixs()const
@@ -165,7 +165,7 @@ bool QueryAdvancedDomainListRequest::getDomainNameSort()const
 void QueryAdvancedDomainListRequest::setDomainNameSort(bool domainNameSort)
 {
 	domainNameSort_ = domainNameSort;
-	setCoreParameter("DomainNameSort", domainNameSort ? "true" : "false");
+	setCoreParameter("DomainNameSort", domainNameSort);
 }
 
 bool QueryAdvancedDomainListRequest::getExpirationDateSort()const
@@ -176,7 +176,7 @@ bool QueryAdvancedDomainListRequest::getExpirationDateSort()const
 void QueryAdvancedDomainListRequest::setExpirationDateSort(bool expirationDateSort)
 {
 	expirationDateSort_ = expirationDateSort;
-	setCoreParameter("ExpirationDateSort", expirationDateSort ? "true" : "false");
+	setCoreParameter("ExpirationDateSort", expirationDateSort);
 }
 
 long QueryAdvancedDomainListRequest::getStartExpirationDate()const
@@ -187,7 +187,7 @@ long QueryAdvancedDomainListRequest::getStartExpirationDate()const
 void QueryAdvancedDomainListRequest::setStartExpirationDate(long startExpirationDate)
 {
 	startExpirationDate_ = startExpirationDate;
-	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
+	setCoreParameter("StartExpirationDate", startExpirationDate);
 }
 
 int QueryAdvancedDomainListRequest::getDomainStatus()const
@@ -198,7 +198,7 @@ int QueryAdvancedDomainListRequest::getDomainStatus()const
 void QueryAdvancedDomainListRequest::setDomainStatus(int domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", std::to_string(domainStatus));
+	setCoreParameter("DomainStatus", domainStatus);
 }
 
 long QueryAdvancedDomainListRequest::getDomainGroupId()const
@@ -209,7 +209,7 @@ long QueryAdvancedDomainListRequest::getDomainGroupId()const
 void QueryAdvancedDomainListRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", domainGroupId);
 }
 
 bool QueryAdvancedDomainListRequest::getKeyWordSuffix()const
@@ -220,7 +220,7 @@ bool QueryAdvancedDomainListRequest::getKeyWordSuffix()const
 void QueryAdvancedDomainListRequest::setKeyWordSuffix(bool keyWordSuffix)
 {
 	keyWordSuffix_ = keyWordSuffix;
-	setCoreParameter("KeyWordSuffix", keyWordSuffix ? "true" : "false");
+	setCoreParameter("KeyWordSuffix", keyWordSuffix);
 }
 
 bool QueryAdvancedDomainListRequest::getKeyWordPrefix()const
@@ -231,7 +231,7 @@ bool QueryAdvancedDomainListRequest::getKeyWordPrefix()const
 void QueryAdvancedDomainListRequest::setKeyWordPrefix(bool keyWordPrefix)
 {
 	keyWordPrefix_ = keyWordPrefix;
-	setCoreParameter("KeyWordPrefix", keyWordPrefix ? "true" : "false");
+	setCoreParameter("KeyWordPrefix", keyWordPrefix);
 }
 
 int QueryAdvancedDomainListRequest::getTradeType()const
@@ -242,7 +242,7 @@ int QueryAdvancedDomainListRequest::getTradeType()const
 void QueryAdvancedDomainListRequest::setTradeType(int tradeType)
 {
 	tradeType_ = tradeType;
-	setCoreParameter("TradeType", std::to_string(tradeType));
+	setCoreParameter("TradeType", tradeType);
 }
 
 long QueryAdvancedDomainListRequest::getEndRegistrationDate()const
@@ -253,7 +253,7 @@ long QueryAdvancedDomainListRequest::getEndRegistrationDate()const
 void QueryAdvancedDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
 {
 	endRegistrationDate_ = endRegistrationDate;
-	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
+	setCoreParameter("EndRegistrationDate", endRegistrationDate);
 }
 
 int QueryAdvancedDomainListRequest::getForm()const
@@ -264,7 +264,7 @@ int QueryAdvancedDomainListRequest::getForm()const
 void QueryAdvancedDomainListRequest::setForm(int form)
 {
 	form_ = form;
-	setCoreParameter("Form", std::to_string(form));
+	setCoreParameter("Form", form);
 }
 
 std::string QueryAdvancedDomainListRequest::getUserClientIp()const
@@ -286,7 +286,7 @@ bool QueryAdvancedDomainListRequest::getRegistrationDateSort()const
 void QueryAdvancedDomainListRequest::setRegistrationDateSort(bool registrationDateSort)
 {
 	registrationDateSort_ = registrationDateSort;
-	setCoreParameter("RegistrationDateSort", registrationDateSort ? "true" : "false");
+	setCoreParameter("RegistrationDateSort", registrationDateSort);
 }
 
 long QueryAdvancedDomainListRequest::getStartRegistrationDate()const
@@ -297,7 +297,7 @@ long QueryAdvancedDomainListRequest::getStartRegistrationDate()const
 void QueryAdvancedDomainListRequest::setStartRegistrationDate(long startRegistrationDate)
 {
 	startRegistrationDate_ = startRegistrationDate;
-	setCoreParameter("StartRegistrationDate", std::to_string(startRegistrationDate));
+	setCoreParameter("StartRegistrationDate", startRegistrationDate);
 }
 
 int QueryAdvancedDomainListRequest::getEndLength()const
@@ -308,6 +308,6 @@ int QueryAdvancedDomainListRequest::getEndLength()const
 void QueryAdvancedDomainListRequest::setEndLength(int endLength)
 {
 	endLength_ = endLength;
-	setCoreParameter("EndLength", std::to_string(endLength));
+	setCoreParameter("EndLength", endLength);
 }
 

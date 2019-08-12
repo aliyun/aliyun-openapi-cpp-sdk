@@ -33,7 +33,7 @@ long MetastoreRetryTaskRequest::getResourceOwnerId()const
 void MetastoreRetryTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreRetryTaskRequest::getRegionId()const

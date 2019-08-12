@@ -33,7 +33,7 @@ long AddBgpNetworkRequest::getResourceOwnerId()const
 void AddBgpNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddBgpNetworkRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long AddBgpNetworkRequest::getOwnerId()const
 void AddBgpNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddBgpNetworkRequest::getDstCidrBlock()const

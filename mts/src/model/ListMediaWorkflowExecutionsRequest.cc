@@ -33,7 +33,7 @@ long ListMediaWorkflowExecutionsRequest::getResourceOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ListMediaWorkflowExecutionsRequest::getMaximumPageSize()const
 void ListMediaWorkflowExecutionsRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setCoreParameter("MaximumPageSize", maximumPageSize);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
@@ -110,7 +110,7 @@ long ListMediaWorkflowExecutionsRequest::getOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowName()const

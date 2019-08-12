@@ -33,7 +33,7 @@ long DescibeImportsFromDatabaseRequest::getResourceOwnerId()const
 void DescibeImportsFromDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescibeImportsFromDatabaseRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long DescibeImportsFromDatabaseRequest::getOwnerId()const
 void DescibeImportsFromDatabaseRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescibeImportsFromDatabaseRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescibeImportsFromDatabaseRequest::getPageNumber()const
 void DescibeImportsFromDatabaseRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescibeImportsFromDatabaseRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ int DescibeImportsFromDatabaseRequest::getImportId()const
 void DescibeImportsFromDatabaseRequest::setImportId(int importId)
 {
 	importId_ = importId;
-	setCoreParameter("ImportId", std::to_string(importId));
+	setCoreParameter("ImportId", importId);
 }
 
 std::string DescibeImportsFromDatabaseRequest::getEngine()const
@@ -154,7 +154,7 @@ int DescibeImportsFromDatabaseRequest::getPageSize()const
 void DescibeImportsFromDatabaseRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescibeImportsFromDatabaseRequest::getDBInstanceId()const

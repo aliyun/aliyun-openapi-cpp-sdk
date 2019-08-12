@@ -33,7 +33,7 @@ long QueryTaskInfoHistoryRequest::getBeginCreateTime()const
 void QueryTaskInfoHistoryRequest::setBeginCreateTime(long beginCreateTime)
 {
 	beginCreateTime_ = beginCreateTime;
-	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
+	setCoreParameter("BeginCreateTime", beginCreateTime);
 }
 
 long QueryTaskInfoHistoryRequest::getEndCreateTime()const
@@ -44,7 +44,7 @@ long QueryTaskInfoHistoryRequest::getEndCreateTime()const
 void QueryTaskInfoHistoryRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
-	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
+	setCoreParameter("EndCreateTime", endCreateTime);
 }
 
 std::string QueryTaskInfoHistoryRequest::getTaskNoCursor()const
@@ -77,7 +77,7 @@ int QueryTaskInfoHistoryRequest::getPageSize()const
 void QueryTaskInfoHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryTaskInfoHistoryRequest::getLang()const
@@ -99,6 +99,6 @@ long QueryTaskInfoHistoryRequest::getCreateTimeCursor()const
 void QueryTaskInfoHistoryRequest::setCreateTimeCursor(long createTimeCursor)
 {
 	createTimeCursor_ = createTimeCursor;
-	setCoreParameter("CreateTimeCursor", std::to_string(createTimeCursor));
+	setCoreParameter("CreateTimeCursor", createTimeCursor);
 }
 

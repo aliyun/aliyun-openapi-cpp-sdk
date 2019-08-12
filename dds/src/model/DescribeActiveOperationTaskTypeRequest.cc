@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskTypeRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeActiveOperationTaskTypeRequest::getIsHistory()const
@@ -44,7 +44,7 @@ int DescribeActiveOperationTaskTypeRequest::getIsHistory()const
 void DescribeActiveOperationTaskTypeRequest::setIsHistory(int isHistory)
 {
 	isHistory_ = isHistory;
-	setCoreParameter("IsHistory", std::to_string(isHistory));
+	setCoreParameter("IsHistory", isHistory);
 }
 
 std::string DescribeActiveOperationTaskTypeRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long DescribeActiveOperationTaskTypeRequest::getOwnerId()const
 void DescribeActiveOperationTaskTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeActiveOperationTaskTypeRequest::getAccessKeyId()const

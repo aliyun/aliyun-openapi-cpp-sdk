@@ -33,7 +33,7 @@ long CreateUserAuthRequest::getAccountId()const
 void CreateUserAuthRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setCoreParameter("AccountId", accountId);
 }
 
 std::string CreateUserAuthRequest::getSourceIp()const

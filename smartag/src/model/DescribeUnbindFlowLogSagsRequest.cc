@@ -33,7 +33,7 @@ long DescribeUnbindFlowLogSagsRequest::getResourceOwnerId()const
 void DescribeUnbindFlowLogSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeUnbindFlowLogSagsRequest::getResourceOwnerAccount()const
@@ -77,6 +77,6 @@ long DescribeUnbindFlowLogSagsRequest::getOwnerId()const
 void DescribeUnbindFlowLogSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

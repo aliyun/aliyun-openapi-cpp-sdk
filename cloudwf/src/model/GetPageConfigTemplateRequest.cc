@@ -33,7 +33,7 @@ long GetPageConfigTemplateRequest::getId()const
 void GetPageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string GetPageConfigTemplateRequest::getAccessKeyId()const

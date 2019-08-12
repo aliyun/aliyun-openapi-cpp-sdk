@@ -33,7 +33,7 @@ long ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerId()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ModifyGlobalAccelerationInstanceSpecRequest::getOwnerId()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getGlobalAccelerationInstanceId()const

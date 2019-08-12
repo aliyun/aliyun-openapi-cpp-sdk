@@ -33,7 +33,7 @@ long DescribeVpnSslServerLogsRequest::getResourceOwnerId()const
 void DescribeVpnSslServerLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeVpnSslServerLogsRequest::getMinutePeriod()const
@@ -44,7 +44,7 @@ int DescribeVpnSslServerLogsRequest::getMinutePeriod()const
 void DescribeVpnSslServerLogsRequest::setMinutePeriod(int minutePeriod)
 {
 	minutePeriod_ = minutePeriod;
-	setCoreParameter("MinutePeriod", std::to_string(minutePeriod));
+	setCoreParameter("MinutePeriod", minutePeriod);
 }
 
 std::string DescribeVpnSslServerLogsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ int DescribeVpnSslServerLogsRequest::getPageSize()const
 void DescribeVpnSslServerLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeVpnSslServerLogsRequest::getVpnSslServerId()const
@@ -110,7 +110,7 @@ int DescribeVpnSslServerLogsRequest::getFrom()const
 void DescribeVpnSslServerLogsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeVpnSslServerLogsRequest::getTo()const
@@ -121,7 +121,7 @@ int DescribeVpnSslServerLogsRequest::getTo()const
 void DescribeVpnSslServerLogsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", std::to_string(to));
+	setCoreParameter("To", to);
 }
 
 long DescribeVpnSslServerLogsRequest::getOwnerId()const
@@ -132,7 +132,7 @@ long DescribeVpnSslServerLogsRequest::getOwnerId()const
 void DescribeVpnSslServerLogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeVpnSslServerLogsRequest::getPageNumber()const
@@ -143,6 +143,6 @@ int DescribeVpnSslServerLogsRequest::getPageNumber()const
 void DescribeVpnSslServerLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

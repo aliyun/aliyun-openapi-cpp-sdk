@@ -33,7 +33,7 @@ int ListBriefApConfigRequest::getSearchScan()const
 void ListBriefApConfigRequest::setSearchScan(int searchScan)
 {
 	searchScan_ = searchScan;
-	setCoreParameter("SearchScan", std::to_string(searchScan));
+	setCoreParameter("SearchScan", searchScan);
 }
 
 std::string ListBriefApConfigRequest::getOrderCol()const
@@ -66,7 +66,7 @@ int ListBriefApConfigRequest::getLength()const
 void ListBriefApConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListBriefApConfigRequest::getSearchMac()const
@@ -88,7 +88,7 @@ int ListBriefApConfigRequest::getPageIndex()const
 void ListBriefApConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListBriefApConfigRequest::getOrderDir()const

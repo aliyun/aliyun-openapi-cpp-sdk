@@ -55,7 +55,7 @@ int QueryFailingReasonListForQualificationRequest::getLimit()const
 void QueryFailingReasonListForQualificationRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getLang()const

@@ -33,7 +33,7 @@ long GetApDetailedConfigRequest::getId()const
 void GetApDetailedConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string GetApDetailedConfigRequest::getAccessKeyId()const

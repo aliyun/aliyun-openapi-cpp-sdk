@@ -33,7 +33,7 @@ long RoutePrivateZoneInCenToVpcRequest::getResourceOwnerId()const
 void RoutePrivateZoneInCenToVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long RoutePrivateZoneInCenToVpcRequest::getOwnerId()const
 void RoutePrivateZoneInCenToVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getHostVpcId()const

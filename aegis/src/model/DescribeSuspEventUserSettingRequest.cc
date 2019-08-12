@@ -55,6 +55,6 @@ int DescribeSuspEventUserSettingRequest::getId()const
 void DescribeSuspEventUserSettingRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

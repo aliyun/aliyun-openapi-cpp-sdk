@@ -33,7 +33,7 @@ long DescribeUserFlowStatisticsRequest::getResourceOwnerId()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
@@ -100,7 +100,7 @@ void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::stri
 {
 	userNames_ = userNames;
 	for(int i = 0; i!= userNames.size(); i++)
-		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
+		setCoreParameter("UserNames."+ std::to_string(i), std::to_string(userNames.at(i)));
 }
 
 long DescribeUserFlowStatisticsRequest::getOwnerId()const
@@ -111,6 +111,6 @@ long DescribeUserFlowStatisticsRequest::getOwnerId()const
 void DescribeUserFlowStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

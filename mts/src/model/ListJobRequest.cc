@@ -33,7 +33,7 @@ long ListJobRequest::getResourceOwnerId()const
 void ListJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListJobRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ListJobRequest::getMaximumPageSize()const
 void ListJobRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setCoreParameter("MaximumPageSize", maximumPageSize);
 }
 
 std::string ListJobRequest::getState()const
@@ -110,7 +110,7 @@ long ListJobRequest::getOwnerId()const
 void ListJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ListJobRequest::getAccessKeyId()const

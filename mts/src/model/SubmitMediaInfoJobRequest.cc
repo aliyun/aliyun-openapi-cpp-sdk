@@ -55,7 +55,7 @@ bool SubmitMediaInfoJobRequest::getAsync()const
 void SubmitMediaInfoJobRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
+	setCoreParameter("Async", async);
 }
 
 long SubmitMediaInfoJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long SubmitMediaInfoJobRequest::getResourceOwnerId()const
 void SubmitMediaInfoJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitMediaInfoJobRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ long SubmitMediaInfoJobRequest::getOwnerId()const
 void SubmitMediaInfoJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitMediaInfoJobRequest::getAccessKeyId()const

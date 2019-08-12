@@ -55,7 +55,7 @@ long DescribeEntityListRequest::getGroupId()const
 void DescribeEntityListRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeEntityListRequest::getHealth()const
@@ -77,7 +77,7 @@ int DescribeEntityListRequest::getCurrentPage()const
 void DescribeEntityListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeEntityListRequest::getRemark()const
@@ -154,7 +154,7 @@ int DescribeEntityListRequest::getPageSize()const
 void DescribeEntityListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeEntityListRequest::getFrom()const

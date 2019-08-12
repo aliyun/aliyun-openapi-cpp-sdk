@@ -55,7 +55,7 @@ int ShopCreateRequest::getShopTopType()const
 void ShopCreateRequest::setShopTopType(int shopTopType)
 {
 	shopTopType_ = shopTopType;
-	setCoreParameter("ShopTopType", std::to_string(shopTopType));
+	setCoreParameter("ShopTopType", shopTopType);
 }
 
 std::string ShopCreateRequest::getShopAddress()const
@@ -77,7 +77,7 @@ int ShopCreateRequest::getShopType()const
 void ShopCreateRequest::setShopType(int shopType)
 {
 	shopType_ = shopType;
-	setCoreParameter("ShopType", std::to_string(shopType));
+	setCoreParameter("ShopType", shopType);
 }
 
 std::string ShopCreateRequest::getWarnEmail()const
@@ -132,7 +132,7 @@ int ShopCreateRequest::getWarn()const
 void ShopCreateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setCoreParameter("Warn", warn);
 }
 
 int ShopCreateRequest::getShopArea()const
@@ -143,7 +143,7 @@ int ShopCreateRequest::getShopArea()const
 void ShopCreateRequest::setShopArea(int shopArea)
 {
 	shopArea_ = shopArea;
-	setCoreParameter("ShopArea", std::to_string(shopArea));
+	setCoreParameter("ShopArea", shopArea);
 }
 
 std::string ShopCreateRequest::getShopRemarks()const
@@ -176,7 +176,7 @@ int ShopCreateRequest::getShopSubtype()const
 void ShopCreateRequest::setShopSubtype(int shopSubtype)
 {
 	shopSubtype_ = shopSubtype;
-	setCoreParameter("ShopSubtype", std::to_string(shopSubtype));
+	setCoreParameter("ShopSubtype", shopSubtype);
 }
 
 std::string ShopCreateRequest::getShopBrand()const
@@ -209,7 +209,7 @@ int ShopCreateRequest::getShopCloseWarn()const
 void ShopCreateRequest::setShopCloseWarn(int shopCloseWarn)
 {
 	shopCloseWarn_ = shopCloseWarn;
-	setCoreParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
+	setCoreParameter("ShopCloseWarn", shopCloseWarn);
 }
 
 long ShopCreateRequest::getBid()const
@@ -220,7 +220,7 @@ long ShopCreateRequest::getBid()const
 void ShopCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string ShopCreateRequest::getShopManager()const

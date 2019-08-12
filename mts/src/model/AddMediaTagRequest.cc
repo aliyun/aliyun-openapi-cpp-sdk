@@ -33,7 +33,7 @@ long AddMediaTagRequest::getResourceOwnerId()const
 void AddMediaTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddMediaTagRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long AddMediaTagRequest::getOwnerId()const
 void AddMediaTagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddMediaTagRequest::getMediaId()const

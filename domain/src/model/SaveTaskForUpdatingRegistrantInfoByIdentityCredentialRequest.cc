@@ -111,7 +111,7 @@ void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setDomainName
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getIdentityCredential()const
@@ -144,7 +144,7 @@ bool SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getTransferOu
 void SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setCoreParameter("TransferOutProhibited", transferOutProhibited);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest::getZhCity()const

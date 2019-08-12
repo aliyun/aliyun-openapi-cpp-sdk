@@ -88,7 +88,7 @@ int BusinessCreateRequest::getBusinessType()const
 void BusinessCreateRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setCoreParameter("BusinessType", businessType);
 }
 
 int BusinessCreateRequest::getWarn()const
@@ -99,7 +99,7 @@ int BusinessCreateRequest::getWarn()const
 void BusinessCreateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setCoreParameter("Warn", warn);
 }
 
 std::string BusinessCreateRequest::getBusinessName()const
@@ -121,7 +121,7 @@ int BusinessCreateRequest::getBusinessTopType()const
 void BusinessCreateRequest::setBusinessTopType(int businessTopType)
 {
 	businessTopType_ = businessTopType;
-	setCoreParameter("BusinessTopType", std::to_string(businessTopType));
+	setCoreParameter("BusinessTopType", businessTopType);
 }
 
 std::string BusinessCreateRequest::getBusinessAddress()const
@@ -165,6 +165,6 @@ int BusinessCreateRequest::getBusinessSubtype()const
 void BusinessCreateRequest::setBusinessSubtype(int businessSubtype)
 {
 	businessSubtype_ = businessSubtype;
-	setCoreParameter("BusinessSubtype", std::to_string(businessSubtype));
+	setCoreParameter("BusinessSubtype", businessSubtype);
 }
 

@@ -33,7 +33,7 @@ long ModifySQLCollectorPolicyRequest::getResourceOwnerId()const
 void ModifySQLCollectorPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ModifySQLCollectorPolicyRequest::getStoragePeriod()const
@@ -44,7 +44,7 @@ int ModifySQLCollectorPolicyRequest::getStoragePeriod()const
 void ModifySQLCollectorPolicyRequest::setStoragePeriod(int storagePeriod)
 {
 	storagePeriod_ = storagePeriod;
-	setCoreParameter("StoragePeriod", std::to_string(storagePeriod));
+	setCoreParameter("StoragePeriod", storagePeriod);
 }
 
 std::string ModifySQLCollectorPolicyRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifySQLCollectorPolicyRequest::getOwnerId()const
 void ModifySQLCollectorPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifySQLCollectorPolicyRequest::getAccessKeyId()const

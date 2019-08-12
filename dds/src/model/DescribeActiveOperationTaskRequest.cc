@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeActiveOperationTaskRequest::getTaskType()const
@@ -77,7 +77,7 @@ long DescribeActiveOperationTaskRequest::getOwnerId()const
 void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeActiveOperationTaskRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeActiveOperationTaskRequest::getPageNumber()const
 void DescribeActiveOperationTaskRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeActiveOperationTaskRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ int DescribeActiveOperationTaskRequest::getIsHistory()const
 void DescribeActiveOperationTaskRequest::setIsHistory(int isHistory)
 {
 	isHistory_ = isHistory;
-	setCoreParameter("IsHistory", std::to_string(isHistory));
+	setCoreParameter("IsHistory", isHistory);
 }
 
 std::string DescribeActiveOperationTaskRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ int DescribeActiveOperationTaskRequest::getPageSize()const
 void DescribeActiveOperationTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeActiveOperationTaskRequest::getRegion()const

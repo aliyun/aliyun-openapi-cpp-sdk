@@ -33,7 +33,7 @@ long QueryMCTemplateListRequest::getResourceOwnerId()const
 void QueryMCTemplateListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryMCTemplateListRequest::getTemplateIds()const
@@ -77,7 +77,7 @@ long QueryMCTemplateListRequest::getOwnerId()const
 void QueryMCTemplateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryMCTemplateListRequest::getAccessKeyId()const

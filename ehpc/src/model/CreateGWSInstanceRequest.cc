@@ -55,7 +55,7 @@ bool CreateGWSInstanceRequest::getAllocatePublicAddress()const
 void CreateGWSInstanceRequest::setAllocatePublicAddress(bool allocatePublicAddress)
 {
 	allocatePublicAddress_ = allocatePublicAddress;
-	setCoreParameter("AllocatePublicAddress", allocatePublicAddress ? "true" : "false");
+	setCoreParameter("AllocatePublicAddress", allocatePublicAddress);
 }
 
 std::string CreateGWSInstanceRequest::getAppList()const
@@ -77,7 +77,7 @@ int CreateGWSInstanceRequest::getInternetMaxBandwidthOut()const
 void CreateGWSInstanceRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setCoreParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut);
 }
 
 std::string CreateGWSInstanceRequest::getClusterId()const
@@ -132,7 +132,7 @@ bool CreateGWSInstanceRequest::getAutoRenew()const
 void CreateGWSInstanceRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string CreateGWSInstanceRequest::getSystemDiskCategory()const
@@ -165,7 +165,7 @@ int CreateGWSInstanceRequest::getSystemDiskSize()const
 void CreateGWSInstanceRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setCoreParameter("SystemDiskSize", systemDiskSize);
 }
 
 std::string CreateGWSInstanceRequest::getName()const
@@ -209,6 +209,6 @@ int CreateGWSInstanceRequest::getInternetMaxBandwidthIn()const
 void CreateGWSInstanceRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setCoreParameter("InternetMaxBandwidthIn", internetMaxBandwidthIn);
 }
 

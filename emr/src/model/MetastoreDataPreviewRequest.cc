@@ -33,7 +33,7 @@ long MetastoreDataPreviewRequest::getResourceOwnerId()const
 void MetastoreDataPreviewRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreDataPreviewRequest::getDbName()const

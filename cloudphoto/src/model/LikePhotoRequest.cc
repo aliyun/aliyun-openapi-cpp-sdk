@@ -44,7 +44,7 @@ long LikePhotoRequest::getPhotoId()const
 void LikePhotoRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", photoId);
 }
 
 std::string LikePhotoRequest::getStoreName()const

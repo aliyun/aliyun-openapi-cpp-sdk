@@ -55,7 +55,7 @@ bool ListAvailableEcsTypesRequest::getShowSoldOut()const
 void ListAvailableEcsTypesRequest::setShowSoldOut(bool showSoldOut)
 {
 	showSoldOut_ = showSoldOut;
-	setCoreParameter("ShowSoldOut", showSoldOut ? "true" : "false");
+	setCoreParameter("ShowSoldOut", showSoldOut);
 }
 
 std::string ListAvailableEcsTypesRequest::getInstanceChargeType()const

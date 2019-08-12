@@ -37,7 +37,7 @@ void ListInvocationResultsRequest::setInstance(const std::vector<Instance>& inst
 	for(int i = 0; i!= instance.size(); i++)	{
 		auto obj = instance.at(i);
 		std::string str ="Instance."+ std::to_string(i);
-		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
 	}
 }
 
@@ -60,7 +60,7 @@ int ListInvocationResultsRequest::getPageSize()const
 void ListInvocationResultsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListInvocationResultsRequest::getClusterId()const
@@ -93,7 +93,7 @@ int ListInvocationResultsRequest::getPageNumber()const
 void ListInvocationResultsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListInvocationResultsRequest::getAccessKeyId()const

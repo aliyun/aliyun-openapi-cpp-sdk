@@ -66,7 +66,7 @@ long AssumeRoleWithSAMLRequest::getDurationSeconds()const
 void AssumeRoleWithSAMLRequest::setDurationSeconds(long durationSeconds)
 {
 	durationSeconds_ = durationSeconds;
-	setCoreParameter("DurationSeconds", std::to_string(durationSeconds));
+	setCoreParameter("DurationSeconds", durationSeconds);
 }
 
 std::string AssumeRoleWithSAMLRequest::getPolicy()const

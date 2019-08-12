@@ -44,7 +44,7 @@ int DescribeRulesRequest::getPageSize()const
 void DescribeRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeRulesRequest::getName()const
@@ -66,7 +66,7 @@ int DescribeRulesRequest::getCurrentPage()const
 void DescribeRulesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 long DescribeRulesRequest::getRiskLevelId()const
@@ -77,7 +77,7 @@ long DescribeRulesRequest::getRiskLevelId()const
 void DescribeRulesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setCoreParameter("RiskLevelId", riskLevelId);
 }
 
 std::string DescribeRulesRequest::getLang()const
@@ -99,7 +99,7 @@ int DescribeRulesRequest::getCustomType()const
 void DescribeRulesRequest::setCustomType(int customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setCoreParameter("CustomType", customType);
 }
 
 int DescribeRulesRequest::getCategory()const
@@ -110,6 +110,6 @@ int DescribeRulesRequest::getCategory()const
 void DescribeRulesRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 

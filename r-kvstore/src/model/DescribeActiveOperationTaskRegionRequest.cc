@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskRegionRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskRegionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeActiveOperationTaskRegionRequest::getIsHistory()const
@@ -44,7 +44,7 @@ int DescribeActiveOperationTaskRegionRequest::getIsHistory()const
 void DescribeActiveOperationTaskRegionRequest::setIsHistory(int isHistory)
 {
 	isHistory_ = isHistory;
-	setCoreParameter("IsHistory", std::to_string(isHistory));
+	setCoreParameter("IsHistory", isHistory);
 }
 
 std::string DescribeActiveOperationTaskRegionRequest::getTaskType()const
@@ -110,7 +110,7 @@ long DescribeActiveOperationTaskRegionRequest::getOwnerId()const
 void DescribeActiveOperationTaskRegionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeActiveOperationTaskRegionRequest::getAccessKeyId()const

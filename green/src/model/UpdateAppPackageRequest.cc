@@ -33,7 +33,7 @@ bool UpdateAppPackageRequest::getDebug()const
 void UpdateAppPackageRequest::setDebug(bool debug)
 {
 	debug_ = debug;
-	setCoreParameter("Debug", debug ? "true" : "false");
+	setCoreParameter("Debug", debug);
 }
 
 std::string UpdateAppPackageRequest::getSourceIp()const
@@ -66,7 +66,7 @@ long UpdateAppPackageRequest::getId()const
 void UpdateAppPackageRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateAppPackageRequest::getLang()const

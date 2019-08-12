@@ -67,7 +67,7 @@ void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest:
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getLang()const

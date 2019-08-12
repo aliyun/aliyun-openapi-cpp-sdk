@@ -55,7 +55,7 @@ long OnsTraceQueryByMsgKeyRequest::getEndTime()const
 void OnsTraceQueryByMsgKeyRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long OnsTraceQueryByMsgKeyRequest::getBeginTime()const
@@ -66,7 +66,7 @@ long OnsTraceQueryByMsgKeyRequest::getBeginTime()const
 void OnsTraceQueryByMsgKeyRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", std::to_string(beginTime));
+	setCoreParameter("BeginTime", beginTime);
 }
 
 std::string OnsTraceQueryByMsgKeyRequest::getMsgKey()const

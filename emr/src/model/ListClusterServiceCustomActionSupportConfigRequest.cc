@@ -44,7 +44,7 @@ long ListClusterServiceCustomActionSupportConfigRequest::getResourceOwnerId()con
 void ListClusterServiceCustomActionSupportConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListClusterServiceCustomActionSupportConfigRequest::getRegionId()const

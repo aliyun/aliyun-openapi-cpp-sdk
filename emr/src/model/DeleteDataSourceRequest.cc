@@ -33,7 +33,7 @@ long DeleteDataSourceRequest::getResourceOwnerId()const
 void DeleteDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteDataSourceRequest::getRegionId()const

@@ -33,7 +33,7 @@ long ShopDeletemarketingRequest::getId()const
 void ShopDeletemarketingRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ShopDeletemarketingRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ long ShopDeletemarketingRequest::getSid()const
 void ShopDeletemarketingRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setCoreParameter("Sid", sid);
 }
 

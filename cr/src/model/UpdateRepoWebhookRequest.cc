@@ -44,7 +44,7 @@ long UpdateRepoWebhookRequest::getWebhookId()const
 void UpdateRepoWebhookRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setCoreParameter("WebhookId", std::to_string(webhookId));
+	setCoreParameter("WebhookId", webhookId);
 }
 
 std::string UpdateRepoWebhookRequest::getRepoName()const

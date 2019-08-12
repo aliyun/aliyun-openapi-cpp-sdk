@@ -33,7 +33,7 @@ long ModifyInstanceConfigRequest::getResourceOwnerId()const
 void ModifyInstanceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyInstanceConfigRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long ModifyInstanceConfigRequest::getOwnerId()const
 void ModifyInstanceConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyInstanceConfigRequest::getConfig()const

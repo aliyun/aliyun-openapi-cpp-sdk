@@ -33,7 +33,7 @@ bool ListPhoneNumbersRequest::getOutboundOnly()const
 void ListPhoneNumbersRequest::setOutboundOnly(bool outboundOnly)
 {
 	outboundOnly_ = outboundOnly;
-	setCoreParameter("OutboundOnly", outboundOnly ? "true" : "false");
+	setCoreParameter("OutboundOnly", outboundOnly);
 }
 
 std::string ListPhoneNumbersRequest::getInstanceId()const

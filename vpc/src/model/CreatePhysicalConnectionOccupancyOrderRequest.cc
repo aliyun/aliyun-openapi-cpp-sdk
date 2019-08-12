@@ -33,7 +33,7 @@ int CreatePhysicalConnectionOccupancyOrderRequest::getPeriod()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 long CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerId()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool CreatePhysicalConnectionOccupancyOrderRequest::getAutoPay()const
@@ -55,7 +55,7 @@ bool CreatePhysicalConnectionOccupancyOrderRequest::getAutoPay()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setCoreParameter("AutoPay", autoPay);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getRegionId()const
@@ -121,7 +121,7 @@ long CreatePhysicalConnectionOccupancyOrderRequest::getOwnerId()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getInstanceChargeType()const

@@ -33,7 +33,7 @@ long ModifyIpWhiteBaselineRequest::getResourceOwnerId()const
 void ModifyIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSrcIp()const
@@ -77,7 +77,7 @@ int ModifyIpWhiteBaselineRequest::getId()const
 void ModifyIpWhiteBaselineRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getLang()const

@@ -55,7 +55,7 @@ int DescribeSasAssetStatisticsRequest::getPageSize()const
 void DescribeSasAssetStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSasAssetStatisticsRequest::getFrom()const
@@ -77,7 +77,7 @@ int DescribeSasAssetStatisticsRequest::getCurrentPage()const
 void DescribeSasAssetStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSasAssetStatisticsRequest::getUuids()const

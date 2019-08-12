@@ -44,7 +44,7 @@ long ModifyAssetGroupRequest::getGroupId()const
 void ModifyAssetGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ModifyAssetGroupRequest::getUuids()const

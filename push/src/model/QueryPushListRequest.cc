@@ -33,7 +33,7 @@ int QueryPushListRequest::getPageSize()const
 void QueryPushListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryPushListRequest::getEndTime()const
@@ -55,7 +55,7 @@ long QueryPushListRequest::getAppKey()const
 void QueryPushListRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string QueryPushListRequest::getStartTime()const
@@ -77,7 +77,7 @@ int QueryPushListRequest::getPage()const
 void QueryPushListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string QueryPushListRequest::getPushType()const

@@ -44,7 +44,7 @@ int ListCloudMetricProfilingsRequest::getPageSize()const
 void ListCloudMetricProfilingsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListCloudMetricProfilingsRequest::getClusterId()const
@@ -66,7 +66,7 @@ int ListCloudMetricProfilingsRequest::getPageNumber()const
 void ListCloudMetricProfilingsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListCloudMetricProfilingsRequest::getAccessKeyId()const

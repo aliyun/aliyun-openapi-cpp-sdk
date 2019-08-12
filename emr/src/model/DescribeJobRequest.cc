@@ -33,7 +33,7 @@ long DescribeJobRequest::getResourceOwnerId()const
 void DescribeJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeJobRequest::getRegionId()const

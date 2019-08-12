@@ -44,7 +44,7 @@ int DescribeEcsListPageRequest::getPageSize()const
 void DescribeEcsListPageRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeEcsListPageRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeEcsListPageRequest::getCurrentPage()const
 void DescribeEcsListPageRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeEcsListPageRequest::getLang()const

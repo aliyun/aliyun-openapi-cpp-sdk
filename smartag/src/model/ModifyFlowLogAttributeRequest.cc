@@ -33,7 +33,7 @@ long ModifyFlowLogAttributeRequest::getResourceOwnerId()const
 void ModifyFlowLogAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyFlowLogAttributeRequest::getProjectName()const
@@ -88,7 +88,7 @@ int ModifyFlowLogAttributeRequest::getNetflowServerPort()const
 void ModifyFlowLogAttributeRequest::setNetflowServerPort(int netflowServerPort)
 {
 	netflowServerPort_ = netflowServerPort;
-	setCoreParameter("NetflowServerPort", std::to_string(netflowServerPort));
+	setCoreParameter("NetflowServerPort", netflowServerPort);
 }
 
 std::string ModifyFlowLogAttributeRequest::getNetflowVersion()const
@@ -121,7 +121,7 @@ long ModifyFlowLogAttributeRequest::getOwnerId()const
 void ModifyFlowLogAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyFlowLogAttributeRequest::getInactiveAging()const
@@ -132,7 +132,7 @@ int ModifyFlowLogAttributeRequest::getInactiveAging()const
 void ModifyFlowLogAttributeRequest::setInactiveAging(int inactiveAging)
 {
 	inactiveAging_ = inactiveAging;
-	setCoreParameter("InactiveAging", std::to_string(inactiveAging));
+	setCoreParameter("InactiveAging", inactiveAging);
 }
 
 std::string ModifyFlowLogAttributeRequest::getNetflowServerIp()const
@@ -187,7 +187,7 @@ int ModifyFlowLogAttributeRequest::getActiveAging()const
 void ModifyFlowLogAttributeRequest::setActiveAging(int activeAging)
 {
 	activeAging_ = activeAging;
-	setCoreParameter("ActiveAging", std::to_string(activeAging));
+	setCoreParameter("ActiveAging", activeAging);
 }
 
 std::string ModifyFlowLogAttributeRequest::getOutputType()const

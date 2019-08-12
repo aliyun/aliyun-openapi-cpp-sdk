@@ -44,7 +44,7 @@ bool FindServiceListRequest::getShowDelService()const
 void FindServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
+	setCoreParameter("ShowDelService", showDelService);
 }
 
 int FindServiceListRequest::getCasShowType()const
@@ -55,7 +55,7 @@ int FindServiceListRequest::getCasShowType()const
 void FindServiceListRequest::setCasShowType(int casShowType)
 {
 	casShowType_ = casShowType;
-	setCoreParameter("CasShowType", std::to_string(casShowType));
+	setCoreParameter("CasShowType", casShowType);
 }
 
 long FindServiceListRequest::getCsbId()const
@@ -66,7 +66,7 @@ long FindServiceListRequest::getCsbId()const
 void FindServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", csbId);
 }
 
 std::string FindServiceListRequest::getRegionId()const
@@ -110,6 +110,6 @@ int FindServiceListRequest::getPageNum()const
 void FindServiceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 

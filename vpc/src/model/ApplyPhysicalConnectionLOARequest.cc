@@ -33,7 +33,7 @@ long ApplyPhysicalConnectionLOARequest::getResourceOwnerId()const
 void ApplyPhysicalConnectionLOARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getPeerLocation()const
@@ -77,7 +77,7 @@ int ApplyPhysicalConnectionLOARequest::getBandwidth()const
 void ApplyPhysicalConnectionLOARequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getLineType()const
@@ -121,7 +121,7 @@ long ApplyPhysicalConnectionLOARequest::getOwnerId()const
 void ApplyPhysicalConnectionLOARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ApplyPhysicalConnectionLOARequest::getInstanceId()const
@@ -180,11 +180,11 @@ void ApplyPhysicalConnectionLOARequest::setPMInfo(const std::vector<PMInfo>& pMI
 	for(int i = 0; i!= pMInfo.size(); i++)	{
 		auto obj = pMInfo.at(i);
 		std::string str ="PMInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PMCertificateNo", obj.pMCertificateNo);
-		setCoreParameter(str + ".PMName", obj.pMName);
-		setCoreParameter(str + ".PMCertificateType", obj.pMCertificateType);
-		setCoreParameter(str + ".PMContactInfo", obj.pMContactInfo);
-		setCoreParameter(str + ".PMGender", obj.pMGender);
+		setCoreParameter(str + ".PMCertificateNo", std::to_string(obj.pMCertificateNo));
+		setCoreParameter(str + ".PMName", std::to_string(obj.pMName));
+		setCoreParameter(str + ".PMCertificateType", std::to_string(obj.pMCertificateType));
+		setCoreParameter(str + ".PMContactInfo", std::to_string(obj.pMContactInfo));
+		setCoreParameter(str + ".PMGender", std::to_string(obj.pMGender));
 	}
 }
 

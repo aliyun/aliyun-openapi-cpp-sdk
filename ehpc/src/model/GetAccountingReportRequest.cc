@@ -44,7 +44,7 @@ int GetAccountingReportRequest::getEndTime()const
 void GetAccountingReportRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetAccountingReportRequest::getClusterId()const
@@ -66,7 +66,7 @@ int GetAccountingReportRequest::getStartTime()const
 void GetAccountingReportRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string GetAccountingReportRequest::getAccessKeyId()const

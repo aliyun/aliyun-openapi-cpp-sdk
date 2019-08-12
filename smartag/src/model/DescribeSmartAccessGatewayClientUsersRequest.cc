@@ -33,7 +33,7 @@ long DescribeSmartAccessGatewayClientUsersRequest::getResourceOwnerId()const
 void DescribeSmartAccessGatewayClientUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSmartAccessGatewayClientUsersRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ int DescribeSmartAccessGatewayClientUsersRequest::getPageSize()const
 void DescribeSmartAccessGatewayClientUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSmartAccessGatewayClientUsersRequest::getSmartAGId()const
@@ -99,7 +99,7 @@ long DescribeSmartAccessGatewayClientUsersRequest::getOwnerId()const
 void DescribeSmartAccessGatewayClientUsersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeSmartAccessGatewayClientUsersRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeSmartAccessGatewayClientUsersRequest::getPageNumber()const
 void DescribeSmartAccessGatewayClientUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeSmartAccessGatewayClientUsersRequest::getUserName()const

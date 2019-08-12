@@ -33,7 +33,7 @@ long DescribeSecurityGroupAttributeRequest::getResourceOwnerId()const
 void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getRegionId()const

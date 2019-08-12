@@ -33,7 +33,7 @@ long MetastoreCreateKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreCreateKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreCreateKafkaTopicRequest::getRegionId()const
@@ -81,8 +81,8 @@ void MetastoreCreateKafkaTopicRequest::setAdvancedConfig(const std::vector<Advan
 	for(int i = 0; i!= advancedConfig.size(); i++)	{
 		auto obj = advancedConfig.at(i);
 		std::string str ="AdvancedConfig."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -94,7 +94,7 @@ int MetastoreCreateKafkaTopicRequest::getNumPartitions()const
 void MetastoreCreateKafkaTopicRequest::setNumPartitions(int numPartitions)
 {
 	numPartitions_ = numPartitions;
-	setCoreParameter("NumPartitions", std::to_string(numPartitions));
+	setCoreParameter("NumPartitions", numPartitions);
 }
 
 int MetastoreCreateKafkaTopicRequest::getReplicationFactor()const
@@ -105,7 +105,7 @@ int MetastoreCreateKafkaTopicRequest::getReplicationFactor()const
 void MetastoreCreateKafkaTopicRequest::setReplicationFactor(int replicationFactor)
 {
 	replicationFactor_ = replicationFactor;
-	setCoreParameter("ReplicationFactor", std::to_string(replicationFactor));
+	setCoreParameter("ReplicationFactor", replicationFactor);
 }
 
 std::string MetastoreCreateKafkaTopicRequest::getAccessKeyId()const

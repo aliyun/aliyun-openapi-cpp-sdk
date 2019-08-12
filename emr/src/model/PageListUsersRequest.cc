@@ -44,7 +44,7 @@ long PageListUsersRequest::getResourceOwnerId()const
 void PageListUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PageListUsersRequest::getFuzzyName()const
@@ -66,7 +66,7 @@ long PageListUsersRequest::getCallerParentId()const
 void PageListUsersRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool PageListUsersRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool PageListUsersRequest::getProxy_original_security_transport()const
 void PageListUsersRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string PageListUsersRequest::getCallerBid()const
@@ -110,7 +110,7 @@ bool PageListUsersRequest::getAk_mfa_present()const
 void PageListUsersRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool PageListUsersRequest::getProxy_trust_transport_info()const
@@ -121,7 +121,7 @@ bool PageListUsersRequest::getProxy_trust_transport_info()const
 void PageListUsersRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 std::string PageListUsersRequest::getCallerType()const
@@ -143,7 +143,7 @@ int PageListUsersRequest::getPageNumber()const
 void PageListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string PageListUsersRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ bool PageListUsersRequest::getSecurity_transport()const
 void PageListUsersRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string PageListUsersRequest::getSecurityToken()const
@@ -209,7 +209,7 @@ int PageListUsersRequest::getPageSize()const
 void PageListUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long PageListUsersRequest::getCallerUid()const
@@ -220,6 +220,6 @@ long PageListUsersRequest::getCallerUid()const
 void PageListUsersRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

@@ -45,7 +45,7 @@ void AddCasterEpisodeRequest::setComponentId(const std::vector<std::string>& com
 {
 	componentId_ = componentId;
 	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+		setCoreParameter("ComponentId."+ std::to_string(i), std::to_string(componentId.at(i)));
 }
 
 std::string AddCasterEpisodeRequest::getSwitchType()const
@@ -122,6 +122,6 @@ long AddCasterEpisodeRequest::getOwnerId()const
 void AddCasterEpisodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

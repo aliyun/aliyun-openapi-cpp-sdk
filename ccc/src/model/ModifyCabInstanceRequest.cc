@@ -33,7 +33,7 @@ int ModifyCabInstanceRequest::getMaxConcurrentConversation()const
 void ModifyCabInstanceRequest::setMaxConcurrentConversation(int maxConcurrentConversation)
 {
 	maxConcurrentConversation_ = maxConcurrentConversation;
-	setCoreParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
+	setCoreParameter("MaxConcurrentConversation", maxConcurrentConversation);
 }
 
 std::string ModifyCabInstanceRequest::getInstanceId()const

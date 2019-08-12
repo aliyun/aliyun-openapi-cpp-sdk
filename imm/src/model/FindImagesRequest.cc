@@ -143,7 +143,7 @@ int FindImagesRequest::getLimit()const
 void FindImagesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 std::string FindImagesRequest::getRemarksDPrefix()const

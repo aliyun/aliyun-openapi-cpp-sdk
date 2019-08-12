@@ -44,7 +44,7 @@ long RemoveListenerWhiteListItemRequest::getResourceOwnerId()const
 void RemoveListenerWhiteListItemRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int RemoveListenerWhiteListItemRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int RemoveListenerWhiteListItemRequest::getListenerPort()const
 void RemoveListenerWhiteListItemRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string RemoveListenerWhiteListItemRequest::getLoadBalancerId()const
@@ -121,7 +121,7 @@ long RemoveListenerWhiteListItemRequest::getOwnerId()const
 void RemoveListenerWhiteListItemRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RemoveListenerWhiteListItemRequest::getListenerProtocol()const

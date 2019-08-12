@@ -33,7 +33,7 @@ int ModifyUserStatisticsRequest::getJobMigratedNum()const
 void ModifyUserStatisticsRequest::setJobMigratedNum(int jobMigratedNum)
 {
 	jobMigratedNum_ = jobMigratedNum;
-	setCoreParameter("JobMigratedNum", std::to_string(jobMigratedNum));
+	setCoreParameter("JobMigratedNum", jobMigratedNum);
 }
 
 long ModifyUserStatisticsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyUserStatisticsRequest::getResourceOwnerId()const
 void ModifyUserStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int ModifyUserStatisticsRequest::getExecutePlanNum()const
@@ -55,7 +55,7 @@ int ModifyUserStatisticsRequest::getExecutePlanNum()const
 void ModifyUserStatisticsRequest::setExecutePlanNum(int executePlanNum)
 {
 	executePlanNum_ = executePlanNum;
-	setCoreParameter("ExecutePlanNum", std::to_string(executePlanNum));
+	setCoreParameter("ExecutePlanNum", executePlanNum);
 }
 
 std::string ModifyUserStatisticsRequest::getRegionId()const
@@ -77,7 +77,7 @@ int ModifyUserStatisticsRequest::getJobNum()const
 void ModifyUserStatisticsRequest::setJobNum(int jobNum)
 {
 	jobNum_ = jobNum;
-	setCoreParameter("JobNum", std::to_string(jobNum));
+	setCoreParameter("JobNum", jobNum);
 }
 
 int ModifyUserStatisticsRequest::getExecutePlanMigratedNum()const
@@ -88,7 +88,7 @@ int ModifyUserStatisticsRequest::getExecutePlanMigratedNum()const
 void ModifyUserStatisticsRequest::setExecutePlanMigratedNum(int executePlanMigratedNum)
 {
 	executePlanMigratedNum_ = executePlanMigratedNum;
-	setCoreParameter("ExecutePlanMigratedNum", std::to_string(executePlanMigratedNum));
+	setCoreParameter("ExecutePlanMigratedNum", executePlanMigratedNum);
 }
 
 int ModifyUserStatisticsRequest::getInteractionJobMigratedNum()const
@@ -99,7 +99,7 @@ int ModifyUserStatisticsRequest::getInteractionJobMigratedNum()const
 void ModifyUserStatisticsRequest::setInteractionJobMigratedNum(int interactionJobMigratedNum)
 {
 	interactionJobMigratedNum_ = interactionJobMigratedNum;
-	setCoreParameter("InteractionJobMigratedNum", std::to_string(interactionJobMigratedNum));
+	setCoreParameter("InteractionJobMigratedNum", interactionJobMigratedNum);
 }
 
 std::string ModifyUserStatisticsRequest::getUserId()const
@@ -132,6 +132,6 @@ int ModifyUserStatisticsRequest::getInteractionJobNum()const
 void ModifyUserStatisticsRequest::setInteractionJobNum(int interactionJobNum)
 {
 	interactionJobNum_ = interactionJobNum;
-	setCoreParameter("InteractionJobNum", std::to_string(interactionJobNum));
+	setCoreParameter("InteractionJobNum", interactionJobNum);
 }
 

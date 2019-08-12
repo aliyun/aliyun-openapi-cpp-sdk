@@ -33,7 +33,7 @@ long GetOpsCommandResultOnceRequest::getResourceOwnerId()const
 void GetOpsCommandResultOnceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetOpsCommandResultOnceRequest::getRegionId()const
@@ -66,7 +66,7 @@ long GetOpsCommandResultOnceRequest::getTaskId()const
 void GetOpsCommandResultOnceRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string GetOpsCommandResultOnceRequest::getAccessKeyId()const

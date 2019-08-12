@@ -33,7 +33,7 @@ long CreateDatabaseRequest::getResourceOwnerId()const
 void CreateDatabaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateDatabaseRequest::getDBName()const
@@ -110,7 +110,7 @@ long CreateDatabaseRequest::getOwnerId()const
 void CreateDatabaseRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDatabaseRequest::getCharacterSetName()const

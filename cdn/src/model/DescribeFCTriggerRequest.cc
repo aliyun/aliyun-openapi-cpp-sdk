@@ -77,7 +77,7 @@ long DescribeFCTriggerRequest::getCallerParentId()const
 void DescribeFCTriggerRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeFCTriggerRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ bool DescribeFCTriggerRequest::getProxy_original_security_transport()const
 void DescribeFCTriggerRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeFCTriggerRequest::getCallerBid()const
@@ -110,7 +110,7 @@ long DescribeFCTriggerRequest::getOwnerId()const
 void DescribeFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeFCTriggerRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool DescribeFCTriggerRequest::getProxy_trust_transport_info()const
 void DescribeFCTriggerRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeFCTriggerRequest::getAk_mfa_present()const
@@ -176,7 +176,7 @@ bool DescribeFCTriggerRequest::getAk_mfa_present()const
 void DescribeFCTriggerRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DescribeFCTriggerRequest::getAccessKeyId()const
@@ -198,7 +198,7 @@ bool DescribeFCTriggerRequest::getSecurity_transport()const
 void DescribeFCTriggerRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeFCTriggerRequest::getSecurityToken()const
@@ -264,6 +264,6 @@ long DescribeFCTriggerRequest::getCallerUid()const
 void DescribeFCTriggerRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

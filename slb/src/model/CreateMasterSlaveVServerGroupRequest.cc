@@ -44,7 +44,7 @@ long CreateMasterSlaveVServerGroupRequest::getResourceOwnerId()const
 void CreateMasterSlaveVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateMasterSlaveVServerGroupRequest::getMasterSlaveBackendServers()const
@@ -121,7 +121,7 @@ long CreateMasterSlaveVServerGroupRequest::getOwnerId()const
 void CreateMasterSlaveVServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateMasterSlaveVServerGroupRequest::getAccessKeyId()const

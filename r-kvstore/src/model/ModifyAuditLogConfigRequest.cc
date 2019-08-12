@@ -33,7 +33,7 @@ long ModifyAuditLogConfigRequest::getResourceOwnerId()const
 void ModifyAuditLogConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyAuditLogConfigRequest::getInstanceId()const
@@ -110,7 +110,7 @@ long ModifyAuditLogConfigRequest::getOwnerId()const
 void ModifyAuditLogConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ModifyAuditLogConfigRequest::getRetention()const

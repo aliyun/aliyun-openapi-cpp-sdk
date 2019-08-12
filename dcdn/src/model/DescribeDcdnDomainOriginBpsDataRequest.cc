@@ -33,7 +33,7 @@ long DescribeDcdnDomainOriginBpsDataRequest::getCallerParentId()const
 void DescribeDcdnDomainOriginBpsDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDcdnDomainOriginBpsDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDcdnDomainOriginBpsDataRequest::getProxy_original_security_transpor
 void DescribeDcdnDomainOriginBpsDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDcdnDomainOriginBpsDataRequest::getStartTime()const
@@ -154,7 +154,7 @@ long DescribeDcdnDomainOriginBpsDataRequest::getCallerUid()const
 void DescribeDcdnDomainOriginBpsDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDcdnDomainOriginBpsDataRequest::getApp_ip()const
@@ -253,7 +253,7 @@ long DescribeDcdnDomainOriginBpsDataRequest::getOwnerId()const
 void DescribeDcdnDomainOriginBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDcdnDomainOriginBpsDataRequest::getVersion()const
@@ -275,7 +275,7 @@ bool DescribeDcdnDomainOriginBpsDataRequest::getProxy_trust_transport_info()cons
 void DescribeDcdnDomainOriginBpsDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDcdnDomainOriginBpsDataRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ bool DescribeDcdnDomainOriginBpsDataRequest::getAk_mfa_present()const
 void DescribeDcdnDomainOriginBpsDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDcdnDomainOriginBpsDataRequest::getSecurity_transport()const
@@ -297,7 +297,7 @@ bool DescribeDcdnDomainOriginBpsDataRequest::getSecurity_transport()const
 void DescribeDcdnDomainOriginBpsDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDcdnDomainOriginBpsDataRequest::getRequestId()const

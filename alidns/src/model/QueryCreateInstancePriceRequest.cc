@@ -33,7 +33,7 @@ int QueryCreateInstancePriceRequest::getMonth()const
 void QueryCreateInstancePriceRequest::setMonth(int month)
 {
 	month_ = month;
-	setCoreParameter("Month", std::to_string(month));
+	setCoreParameter("Month", month);
 }
 
 std::string QueryCreateInstancePriceRequest::getUserClientIp()const
@@ -77,7 +77,7 @@ long QueryCreateInstancePriceRequest::getOwnerId()const
 void QueryCreateInstancePriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryCreateInstancePriceRequest::getAccessKeyId()const

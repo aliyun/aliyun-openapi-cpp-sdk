@@ -44,7 +44,7 @@ long ReportMediaDetailJobResultRequest::getResourceOwnerId()const
 void ReportMediaDetailJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReportMediaDetailJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long ReportMediaDetailJobResultRequest::getOwnerId()const
 void ReportMediaDetailJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ReportMediaDetailJobResultRequest::getResults()const

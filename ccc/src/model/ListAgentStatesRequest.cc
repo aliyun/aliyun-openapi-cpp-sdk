@@ -66,7 +66,7 @@ int ListAgentStatesRequest::getPageSize()const
 void ListAgentStatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListAgentStatesRequest::getState()const
@@ -88,7 +88,7 @@ int ListAgentStatesRequest::getPageNumber()const
 void ListAgentStatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListAgentStatesRequest::getAccessKeyId()const

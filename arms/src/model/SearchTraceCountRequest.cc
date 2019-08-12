@@ -77,7 +77,7 @@ long SearchTraceCountRequest::getEndTime()const
 void SearchTraceCountRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string SearchTraceCountRequest::getServiceName()const
@@ -99,7 +99,7 @@ long SearchTraceCountRequest::getStartTime()const
 void SearchTraceCountRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::vector<SearchTraceCountRequest::Tag> SearchTraceCountRequest::getTag()const
@@ -114,8 +114,8 @@ void SearchTraceCountRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Key", std::to_string(obj.key));
 	}
 }
 
@@ -127,6 +127,6 @@ long SearchTraceCountRequest::getMinDuration()const
 void SearchTraceCountRequest::setMinDuration(long minDuration)
 {
 	minDuration_ = minDuration;
-	setCoreParameter("MinDuration", std::to_string(minDuration));
+	setCoreParameter("MinDuration", minDuration);
 }
 

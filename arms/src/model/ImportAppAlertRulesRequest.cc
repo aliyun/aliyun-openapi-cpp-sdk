@@ -33,7 +33,7 @@ bool ImportAppAlertRulesRequest::getIsAutoStart()const
 void ImportAppAlertRulesRequest::setIsAutoStart(bool isAutoStart)
 {
 	isAutoStart_ = isAutoStart;
-	setCoreParameter("IsAutoStart", isAutoStart ? "true" : "false");
+	setCoreParameter("IsAutoStart", isAutoStart);
 }
 
 std::string ImportAppAlertRulesRequest::getRegionId()const

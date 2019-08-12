@@ -33,7 +33,7 @@ long DeleteDBNodesRequest::getResourceOwnerId()const
 void DeleteDBNodesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::vector<std::string> DeleteDBNodesRequest::getDBNodeId()const
@@ -45,7 +45,7 @@ void DeleteDBNodesRequest::setDBNodeId(const std::vector<std::string>& dBNodeId)
 {
 	dBNodeId_ = dBNodeId;
 	for(int i = 0; i!= dBNodeId.size(); i++)
-		setCoreParameter("DBNodeId."+ std::to_string(i), dBNodeId.at(i));
+		setCoreParameter("DBNodeId."+ std::to_string(i), std::to_string(dBNodeId.at(i)));
 }
 
 std::string DeleteDBNodesRequest::getResourceOwnerAccount()const
@@ -100,7 +100,7 @@ long DeleteDBNodesRequest::getOwnerId()const
 void DeleteDBNodesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteDBNodesRequest::getAccessKeyId()const

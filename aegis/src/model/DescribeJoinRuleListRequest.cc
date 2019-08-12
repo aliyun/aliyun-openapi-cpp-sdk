@@ -55,7 +55,7 @@ int DescribeJoinRuleListRequest::getPageSize()const
 void DescribeJoinRuleListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeJoinRuleListRequest::getRemark()const
@@ -66,7 +66,7 @@ long DescribeJoinRuleListRequest::getRemark()const
 void DescribeJoinRuleListRequest::setRemark(long remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 int DescribeJoinRuleListRequest::getCurrentPage()const
@@ -77,6 +77,6 @@ int DescribeJoinRuleListRequest::getCurrentPage()const
 void DescribeJoinRuleListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 

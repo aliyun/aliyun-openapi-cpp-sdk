@@ -33,7 +33,7 @@ long SearchLogRequest::getResourceOwnerId()const
 void SearchLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchLogRequest::getLogstoreName()const
@@ -55,7 +55,7 @@ int SearchLogRequest::getFromTimestamp()const
 void SearchLogRequest::setFromTimestamp(int fromTimestamp)
 {
 	fromTimestamp_ = fromTimestamp;
-	setCoreParameter("FromTimestamp", std::to_string(fromTimestamp));
+	setCoreParameter("FromTimestamp", fromTimestamp);
 }
 
 int SearchLogRequest::getOffset()const
@@ -66,7 +66,7 @@ int SearchLogRequest::getOffset()const
 void SearchLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setCoreParameter("Offset", offset);
 }
 
 int SearchLogRequest::getLine()const
@@ -77,7 +77,7 @@ int SearchLogRequest::getLine()const
 void SearchLogRequest::setLine(int line)
 {
 	line_ = line;
-	setCoreParameter("Line", std::to_string(line));
+	setCoreParameter("Line", line);
 }
 
 std::string SearchLogRequest::getClusterId()const
@@ -99,7 +99,7 @@ bool SearchLogRequest::getReverse()const
 void SearchLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setCoreParameter("Reverse", reverse);
 }
 
 std::string SearchLogRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ int SearchLogRequest::getToTimestamp()const
 void SearchLogRequest::setToTimestamp(int toTimestamp)
 {
 	toTimestamp_ = toTimestamp;
-	setCoreParameter("ToTimestamp", std::to_string(toTimestamp));
+	setCoreParameter("ToTimestamp", toTimestamp);
 }
 
 std::string SearchLogRequest::getSlsQueryString()const

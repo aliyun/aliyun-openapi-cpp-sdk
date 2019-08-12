@@ -88,7 +88,7 @@ long AddVodDomainRequest::getOwnerId()const
 void AddVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddVodDomainRequest::getCheckUrl()const

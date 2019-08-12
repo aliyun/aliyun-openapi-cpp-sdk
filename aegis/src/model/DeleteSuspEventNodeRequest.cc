@@ -44,6 +44,6 @@ int DeleteSuspEventNodeRequest::getNoteId()const
 void DeleteSuspEventNodeRequest::setNoteId(int noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", std::to_string(noteId));
+	setCoreParameter("NoteId", noteId);
 }
 

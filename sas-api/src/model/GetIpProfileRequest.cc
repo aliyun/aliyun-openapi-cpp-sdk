@@ -44,7 +44,7 @@ int GetIpProfileRequest::getCarrier()const
 void GetIpProfileRequest::setCarrier(int carrier)
 {
 	carrier_ = carrier;
-	setCoreParameter("Carrier", std::to_string(carrier));
+	setCoreParameter("Carrier", carrier);
 }
 
 std::string GetIpProfileRequest::getOs()const
@@ -99,7 +99,7 @@ int GetIpProfileRequest::getConnectionType()const
 void GetIpProfileRequest::setConnectionType(int connectionType)
 {
 	connectionType_ = connectionType;
-	setCoreParameter("ConnectionType", std::to_string(connectionType));
+	setCoreParameter("ConnectionType", connectionType);
 }
 
 int GetIpProfileRequest::getSensType()const
@@ -110,7 +110,7 @@ int GetIpProfileRequest::getSensType()const
 void GetIpProfileRequest::setSensType(int sensType)
 {
 	sensType_ = sensType;
-	setCoreParameter("SensType", std::to_string(sensType));
+	setCoreParameter("SensType", sensType);
 }
 
 int GetIpProfileRequest::getDeviceType()const
@@ -121,7 +121,7 @@ int GetIpProfileRequest::getDeviceType()const
 void GetIpProfileRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", deviceType);
 }
 
 int GetIpProfileRequest::getBusinessType()const
@@ -132,6 +132,6 @@ int GetIpProfileRequest::getBusinessType()const
 void GetIpProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setCoreParameter("BusinessType", businessType);
 }
 

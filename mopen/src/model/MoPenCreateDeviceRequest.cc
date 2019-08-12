@@ -44,6 +44,6 @@ int MoPenCreateDeviceRequest::getDeviceType()const
 void MoPenCreateDeviceRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setCoreParameter("DeviceType", deviceType);
 }
 

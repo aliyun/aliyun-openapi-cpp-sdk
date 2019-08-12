@@ -66,7 +66,7 @@ long SetCcConfigRequest::getOwnerId()const
 void SetCcConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetCcConfigRequest::getBlockIps()const

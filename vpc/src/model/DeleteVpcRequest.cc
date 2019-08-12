@@ -33,7 +33,7 @@ long DeleteVpcRequest::getResourceOwnerId()const
 void DeleteVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteVpcRequest::getResourceOwnerAccount()const
@@ -88,6 +88,6 @@ long DeleteVpcRequest::getOwnerId()const
 void DeleteVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

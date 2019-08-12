@@ -33,7 +33,7 @@ long DescribeDomainReqHitRateDataRequest::getCallerParentId()const
 void DescribeDomainReqHitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDomainReqHitRateDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainReqHitRateDataRequest::getProxy_original_security_transport()
 void DescribeDomainReqHitRateDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainReqHitRateDataRequest::getStartTime()const
@@ -154,7 +154,7 @@ long DescribeDomainReqHitRateDataRequest::getCallerUid()const
 void DescribeDomainReqHitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDomainReqHitRateDataRequest::getApp_ip()const
@@ -231,7 +231,7 @@ long DescribeDomainReqHitRateDataRequest::getOwnerId()const
 void DescribeDomainReqHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainReqHitRateDataRequest::getVersion()const
@@ -253,7 +253,7 @@ bool DescribeDomainReqHitRateDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainReqHitRateDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainReqHitRateDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeDomainReqHitRateDataRequest::getAk_mfa_present()const
 void DescribeDomainReqHitRateDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDomainReqHitRateDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeDomainReqHitRateDataRequest::getSecurity_transport()const
 void DescribeDomainReqHitRateDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainReqHitRateDataRequest::getRequestId()const

@@ -44,7 +44,7 @@ long ListApAssetCanBeAddedRequest::getApgroupId()const
 void ListApAssetCanBeAddedRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 int ListApAssetCanBeAddedRequest::getLength()const
@@ -55,7 +55,7 @@ int ListApAssetCanBeAddedRequest::getLength()const
 void ListApAssetCanBeAddedRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 int ListApAssetCanBeAddedRequest::getPageIndex()const
@@ -66,7 +66,7 @@ int ListApAssetCanBeAddedRequest::getPageIndex()const
 void ListApAssetCanBeAddedRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApAssetCanBeAddedRequest::getSearchMac()const

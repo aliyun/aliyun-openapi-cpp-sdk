@@ -44,7 +44,7 @@ int GetQuotaHistoryInfoRequest::getEndTime()const
 void GetQuotaHistoryInfoRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int GetQuotaHistoryInfoRequest::getStartTime()const
@@ -55,7 +55,7 @@ int GetQuotaHistoryInfoRequest::getStartTime()const
 void GetQuotaHistoryInfoRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string GetQuotaHistoryInfoRequest::getRegion()const

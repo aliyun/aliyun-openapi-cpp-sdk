@@ -66,7 +66,7 @@ int GetRepoTagsRequest::getPageSize()const
 void GetRepoTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetRepoTagsRequest::getPage()const
@@ -77,6 +77,6 @@ int GetRepoTagsRequest::getPage()const
 void GetRepoTagsRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 

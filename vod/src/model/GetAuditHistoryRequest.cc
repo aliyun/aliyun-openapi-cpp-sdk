@@ -33,7 +33,7 @@ long GetAuditHistoryRequest::getPageNo()const
 void GetAuditHistoryRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", pageNo);
 }
 
 long GetAuditHistoryRequest::getPageSize()const
@@ -44,7 +44,7 @@ long GetAuditHistoryRequest::getPageSize()const
 void GetAuditHistoryRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string GetAuditHistoryRequest::getVideoId()const

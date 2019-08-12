@@ -88,7 +88,7 @@ int ExportWarningRequest::getIsSummaryExport()const
 void ExportWarningRequest::setIsSummaryExport(int isSummaryExport)
 {
 	isSummaryExport_ = isSummaryExport;
-	setCoreParameter("IsSummaryExport", std::to_string(isSummaryExport));
+	setCoreParameter("IsSummaryExport", isSummaryExport);
 }
 
 std::string ExportWarningRequest::getRiskName()const
@@ -132,7 +132,7 @@ long ExportWarningRequest::getStrategyId()const
 void ExportWarningRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string ExportWarningRequest::getLang()const

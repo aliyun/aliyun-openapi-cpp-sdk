@@ -33,7 +33,7 @@ long ModifyRiskCheckStatusRequest::getItemId()const
 void ModifyRiskCheckStatusRequest::setItemId(long itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
+	setCoreParameter("ItemId", itemId);
 }
 
 long ModifyRiskCheckStatusRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyRiskCheckStatusRequest::getResourceOwnerId()const
 void ModifyRiskCheckStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyRiskCheckStatusRequest::getSourceIp()const
@@ -77,7 +77,7 @@ long ModifyRiskCheckStatusRequest::getTaskId()const
 void ModifyRiskCheckStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string ModifyRiskCheckStatusRequest::getStatus()const

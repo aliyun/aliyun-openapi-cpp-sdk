@@ -44,7 +44,7 @@ int DescribeWebshellRequest::getGroupId()const
 void DescribeWebshellRequest::setGroupId(int groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeWebshellRequest::getRemark()const
@@ -77,6 +77,6 @@ int DescribeWebshellRequest::getTag()const
 void DescribeWebshellRequest::setTag(int tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 

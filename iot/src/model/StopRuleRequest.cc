@@ -44,7 +44,7 @@ long StopRuleRequest::getRuleId()const
 void StopRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string StopRuleRequest::getAccessKeyId()const

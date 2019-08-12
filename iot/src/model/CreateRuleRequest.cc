@@ -110,7 +110,7 @@ int CreateRuleRequest::getTopicType()const
 void CreateRuleRequest::setTopicType(int topicType)
 {
 	topicType_ = topicType;
-	setCoreParameter("TopicType", std::to_string(topicType));
+	setCoreParameter("TopicType", topicType);
 }
 
 std::string CreateRuleRequest::getAccessKeyId()const

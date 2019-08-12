@@ -111,7 +111,7 @@ void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setDomainName(const
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelephone()const
@@ -133,7 +133,7 @@ bool SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTransferOutProhi
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setCoreParameter("TransferOutProhibited", transferOutProhibited);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhCity()const

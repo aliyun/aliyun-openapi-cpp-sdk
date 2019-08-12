@@ -33,7 +33,7 @@ long MetastoreDescribeKafkaConsumerGroupRequest::getResourceOwnerId()const
 void MetastoreDescribeKafkaConsumerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreDescribeKafkaConsumerGroupRequest::getTopicId()const

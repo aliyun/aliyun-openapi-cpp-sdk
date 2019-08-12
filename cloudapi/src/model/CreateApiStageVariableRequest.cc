@@ -33,7 +33,7 @@ bool CreateApiStageVariableRequest::getSupportRoute()const
 void CreateApiStageVariableRequest::setSupportRoute(bool supportRoute)
 {
 	supportRoute_ = supportRoute;
-	setCoreParameter("SupportRoute", supportRoute ? "true" : "false");
+	setCoreParameter("SupportRoute", supportRoute);
 }
 
 std::string CreateApiStageVariableRequest::getSecurityToken()const

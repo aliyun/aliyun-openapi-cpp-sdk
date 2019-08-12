@@ -33,7 +33,7 @@ long QueryChangeLogListRequest::getEndDate()const
 void QueryChangeLogListRequest::setEndDate(long endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string QueryChangeLogListRequest::getUserClientIp()const
@@ -66,7 +66,7 @@ int QueryChangeLogListRequest::getPageSize()const
 void QueryChangeLogListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryChangeLogListRequest::getLang()const
@@ -88,7 +88,7 @@ int QueryChangeLogListRequest::getPageNum()const
 void QueryChangeLogListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 long QueryChangeLogListRequest::getStartDate()const
@@ -99,6 +99,6 @@ long QueryChangeLogListRequest::getStartDate()const
 void QueryChangeLogListRequest::setStartDate(long startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 

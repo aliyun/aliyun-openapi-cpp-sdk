@@ -44,7 +44,7 @@ bool ResizeClusterV2Request::getIsOpenPublicIp()const
 void ResizeClusterV2Request::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
+	setCoreParameter("IsOpenPublicIp", isOpenPublicIp);
 }
 
 bool ResizeClusterV2Request::getAutoPayOrder()const
@@ -55,7 +55,7 @@ bool ResizeClusterV2Request::getAutoPayOrder()const
 void ResizeClusterV2Request::setAutoPayOrder(bool autoPayOrder)
 {
 	autoPayOrder_ = autoPayOrder;
-	setCoreParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
+	setCoreParameter("AutoPayOrder", autoPayOrder);
 }
 
 std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::getHostComponentInfo()const
@@ -70,9 +70,9 @@ void ResizeClusterV2Request::setHostComponentInfo(const std::vector<HostComponen
 	for(int i = 0; i!= hostComponentInfo.size(); i++)	{
 		auto obj = hostComponentInfo.at(i);
 		std::string str ="HostComponentInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		for(int i = 0; i!= obj.componentNameList.size(); i++)				setCoreParameter(str + ".ComponentNameList."+ std::to_string(i), obj.componentNameList.at(i));
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
+		for(int i = 0; i!= obj.componentNameList.size(); i++)				setCoreParameter(str + ".ComponentNameList."+ std::to_string(i), std::to_string(obj.componentNameList.at(i)));
+		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
 	}
 }
 
@@ -99,25 +99,25 @@ void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGrou
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setCoreParameter(str + ".HostKeyPairName", obj.hostKeyPairName);
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
-		setCoreParameter(str + ".ClusterId", obj.clusterId);
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".VswitchId", std::to_string(obj.vswitchId));
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
+		setCoreParameter(str + ".Period", obj.period);
+		setCoreParameter(str + ".SysDiskCapacity", obj.sysDiskCapacity);
+		setCoreParameter(str + ".HostKeyPairName", std::to_string(obj.hostKeyPairName));
+		setCoreParameter(str + ".DiskCapacity", obj.diskCapacity);
+		setCoreParameter(str + ".SysDiskType", std::to_string(obj.sysDiskType));
+		setCoreParameter(str + ".ClusterId", std::to_string(obj.clusterId));
+		setCoreParameter(str + ".DiskType", std::to_string(obj.diskType));
+		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
+		setCoreParameter(str + ".VswitchId", obj.vswitchId);
+		setCoreParameter(str + ".DiskCount", obj.diskCount);
 		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
-		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".ChargeType", obj.chargeType);
-		setCoreParameter(str + ".CreateType", obj.createType);
-		setCoreParameter(str + ".HostPassword", obj.hostPassword);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+		setCoreParameter(str + ".HostGroupId", std::to_string(obj.hostGroupId));
+		setCoreParameter(str + ".NodeCount", obj.nodeCount);
+		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
+		setCoreParameter(str + ".Comment", std::to_string(obj.comment));
+		setCoreParameter(str + ".ChargeType", std::to_string(obj.chargeType));
+		setCoreParameter(str + ".CreateType", std::to_string(obj.createType));
+		setCoreParameter(str + ".HostPassword", std::to_string(obj.hostPassword));
+		setCoreParameter(str + ".HostGroupType", std::to_string(obj.hostGroupType));
 	}
 }
 

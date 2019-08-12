@@ -121,7 +121,7 @@ int UpdateGtmInstanceGlobalConfigRequest::getTtl()const
 void UpdateGtmInstanceGlobalConfigRequest::setTtl(int ttl)
 {
 	ttl_ = ttl;
-	setCoreParameter("Ttl", std::to_string(ttl));
+	setCoreParameter("Ttl", ttl);
 }
 
 std::string UpdateGtmInstanceGlobalConfigRequest::getCnameCustomDomainName()const

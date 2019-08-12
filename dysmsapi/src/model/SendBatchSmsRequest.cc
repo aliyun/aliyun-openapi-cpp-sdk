@@ -44,7 +44,7 @@ long SendBatchSmsRequest::getResourceOwnerId()const
 void SendBatchSmsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SendBatchSmsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long SendBatchSmsRequest::getOwnerId()const
 void SendBatchSmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SendBatchSmsRequest::getSignNameJson()const

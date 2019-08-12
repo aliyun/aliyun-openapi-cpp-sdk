@@ -44,7 +44,7 @@ bool UpdateImageLibRequest::getEnable()const
 void UpdateImageLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setCoreParameter("Enable", enable);
 }
 
 std::string UpdateImageLibRequest::getName()const
@@ -77,7 +77,7 @@ int UpdateImageLibRequest::getId()const
 void UpdateImageLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateImageLibRequest::getCategory()const

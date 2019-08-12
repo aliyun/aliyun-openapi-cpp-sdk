@@ -33,7 +33,7 @@ long PushMessageToAndroidRequest::getAppKey()const
 void PushMessageToAndroidRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string PushMessageToAndroidRequest::getTargetValue()const

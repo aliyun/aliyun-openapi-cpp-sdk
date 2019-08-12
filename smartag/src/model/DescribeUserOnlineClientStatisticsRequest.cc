@@ -33,7 +33,7 @@ long DescribeUserOnlineClientStatisticsRequest::getResourceOwnerId()const
 void DescribeUserOnlineClientStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeUserOnlineClientStatisticsRequest::getResourceOwnerAccount()const
@@ -89,7 +89,7 @@ void DescribeUserOnlineClientStatisticsRequest::setUserNames(const std::vector<s
 {
 	userNames_ = userNames;
 	for(int i = 0; i!= userNames.size(); i++)
-		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
+		setCoreParameter("UserNames."+ std::to_string(i), std::to_string(userNames.at(i)));
 }
 
 long DescribeUserOnlineClientStatisticsRequest::getOwnerId()const
@@ -100,6 +100,6 @@ long DescribeUserOnlineClientStatisticsRequest::getOwnerId()const
 void DescribeUserOnlineClientStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

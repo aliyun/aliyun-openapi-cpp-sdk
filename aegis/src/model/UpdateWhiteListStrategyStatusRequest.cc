@@ -66,6 +66,6 @@ int UpdateWhiteListStrategyStatusRequest::getStatus()const
 void UpdateWhiteListStrategyStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

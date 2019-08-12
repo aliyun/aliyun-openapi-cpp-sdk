@@ -33,7 +33,7 @@ int QueryInstanceInfoByConnRequest::getPort()const
 void QueryInstanceInfoByConnRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string QueryInstanceInfoByConnRequest::getHost()const

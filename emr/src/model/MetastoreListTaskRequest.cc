@@ -33,7 +33,7 @@ long MetastoreListTaskRequest::getResourceOwnerId()const
 void MetastoreListTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string MetastoreListTaskRequest::getTaskStatus()const
@@ -88,7 +88,7 @@ int MetastoreListTaskRequest::getPageSize()const
 void MetastoreListTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string MetastoreListTaskRequest::getDataSourceId()const
@@ -110,7 +110,7 @@ int MetastoreListTaskRequest::getPageNumber()const
 void MetastoreListTaskRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string MetastoreListTaskRequest::getTaskId()const

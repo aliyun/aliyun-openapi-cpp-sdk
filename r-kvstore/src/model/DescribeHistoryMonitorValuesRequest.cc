@@ -33,7 +33,7 @@ long DescribeHistoryMonitorValuesRequest::getResourceOwnerId()const
 void DescribeHistoryMonitorValuesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeHistoryMonitorValuesRequest::getOwnerId()const
 void DescribeHistoryMonitorValuesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId()const

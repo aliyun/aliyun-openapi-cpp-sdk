@@ -33,7 +33,7 @@ long GetSmartAccessGatewayUseLimitRequest::getResourceOwnerId()const
 void GetSmartAccessGatewayUseLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetSmartAccessGatewayUseLimitRequest::getResourceOwnerAccount()const
@@ -77,6 +77,6 @@ long GetSmartAccessGatewayUseLimitRequest::getOwnerId()const
 void GetSmartAccessGatewayUseLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

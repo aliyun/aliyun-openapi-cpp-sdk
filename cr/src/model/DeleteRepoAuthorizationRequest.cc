@@ -66,6 +66,6 @@ long DeleteRepoAuthorizationRequest::getAuthorizeId()const
 void DeleteRepoAuthorizationRequest::setAuthorizeId(long authorizeId)
 {
 	authorizeId_ = authorizeId;
-	setCoreParameter("AuthorizeId", std::to_string(authorizeId));
+	setCoreParameter("AuthorizeId", authorizeId);
 }
 

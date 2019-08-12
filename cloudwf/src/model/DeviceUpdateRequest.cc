@@ -55,7 +55,7 @@ long DeviceUpdateRequest::getDid()const
 void DeviceUpdateRequest::setDid(long did)
 {
 	did_ = did;
-	setCoreParameter("Did", std::to_string(did));
+	setCoreParameter("Did", did);
 }
 
 std::string DeviceUpdateRequest::getAccessKeyId()const

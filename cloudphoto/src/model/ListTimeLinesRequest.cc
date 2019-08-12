@@ -33,7 +33,7 @@ long ListTimeLinesRequest::getCursor()const
 void ListTimeLinesRequest::setCursor(long cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListTimeLinesRequest::getPhotoSize()const
@@ -44,7 +44,7 @@ int ListTimeLinesRequest::getPhotoSize()const
 void ListTimeLinesRequest::setPhotoSize(int photoSize)
 {
 	photoSize_ = photoSize;
-	setCoreParameter("PhotoSize", std::to_string(photoSize));
+	setCoreParameter("PhotoSize", photoSize);
 }
 
 int ListTimeLinesRequest::getTimeLineCount()const
@@ -55,7 +55,7 @@ int ListTimeLinesRequest::getTimeLineCount()const
 void ListTimeLinesRequest::setTimeLineCount(int timeLineCount)
 {
 	timeLineCount_ = timeLineCount;
-	setCoreParameter("TimeLineCount", std::to_string(timeLineCount));
+	setCoreParameter("TimeLineCount", timeLineCount);
 }
 
 std::string ListTimeLinesRequest::getLibraryId()const

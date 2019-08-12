@@ -44,7 +44,7 @@ int CreateScreenSettingRequest::getScreenDefault()const
 void CreateScreenSettingRequest::setScreenDefault(int screenDefault)
 {
 	screenDefault_ = screenDefault;
-	setCoreParameter("ScreenDefault", std::to_string(screenDefault));
+	setCoreParameter("ScreenDefault", screenDefault);
 }
 
 bool CreateScreenSettingRequest::getLogoPower()const
@@ -55,7 +55,7 @@ bool CreateScreenSettingRequest::getLogoPower()const
 void CreateScreenSettingRequest::setLogoPower(bool logoPower)
 {
 	logoPower_ = logoPower;
-	setCoreParameter("LogoPower", logoPower ? "true" : "false");
+	setCoreParameter("LogoPower", logoPower);
 }
 
 std::string CreateScreenSettingRequest::getMonitorUrl()const
@@ -88,7 +88,7 @@ int CreateScreenSettingRequest::getId()const
 void CreateScreenSettingRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string CreateScreenSettingRequest::getTitle()const

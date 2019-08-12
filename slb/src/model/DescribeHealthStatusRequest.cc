@@ -44,7 +44,7 @@ long DescribeHealthStatusRequest::getResourceOwnerId()const
 void DescribeHealthStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int DescribeHealthStatusRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeHealthStatusRequest::getListenerPort()const
 void DescribeHealthStatusRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string DescribeHealthStatusRequest::getLoadBalancerId()const
@@ -110,7 +110,7 @@ long DescribeHealthStatusRequest::getOwnerId()const
 void DescribeHealthStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeHealthStatusRequest::getListenerProtocol()const

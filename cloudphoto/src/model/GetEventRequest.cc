@@ -33,7 +33,7 @@ long GetEventRequest::getEventId()const
 void GetEventRequest::setEventId(long eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", eventId);
 }
 
 std::string GetEventRequest::getLibraryId()const

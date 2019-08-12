@@ -33,7 +33,7 @@ long DescribeDatabasesRequest::getResourceOwnerId()const
 void DescribeDatabasesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeDatabasesRequest::getDBName()const
@@ -88,7 +88,7 @@ long DescribeDatabasesRequest::getOwnerId()const
 void DescribeDatabasesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDatabasesRequest::getAccessKeyId()const

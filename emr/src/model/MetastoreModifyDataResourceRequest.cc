@@ -33,7 +33,7 @@ long MetastoreModifyDataResourceRequest::getResourceOwnerId()const
 void MetastoreModifyDataResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool MetastoreModifyDataResourceRequest::getDefault()const
@@ -44,7 +44,7 @@ bool MetastoreModifyDataResourceRequest::getDefault()const
 void MetastoreModifyDataResourceRequest::setDefault(bool default)
 {
 	default_ = default;
-	setCoreParameter("Default", default ? "true" : "false");
+	setCoreParameter("Default", default);
 }
 
 std::string MetastoreModifyDataResourceRequest::getRegionId()const

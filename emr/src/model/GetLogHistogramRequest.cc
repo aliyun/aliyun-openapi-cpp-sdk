@@ -33,7 +33,7 @@ long GetLogHistogramRequest::getResourceOwnerId()const
 void GetLogHistogramRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetLogHistogramRequest::getHostInnerIp()const
@@ -77,7 +77,7 @@ int GetLogHistogramRequest::getFromTimestamp()const
 void GetLogHistogramRequest::setFromTimestamp(int fromTimestamp)
 {
 	fromTimestamp_ = fromTimestamp;
-	setCoreParameter("FromTimestamp", std::to_string(fromTimestamp));
+	setCoreParameter("FromTimestamp", fromTimestamp);
 }
 
 std::string GetLogHistogramRequest::getRegionId()const
@@ -99,7 +99,7 @@ int GetLogHistogramRequest::getToTimestamp()const
 void GetLogHistogramRequest::setToTimestamp(int toTimestamp)
 {
 	toTimestamp_ = toTimestamp;
-	setCoreParameter("ToTimestamp", std::to_string(toTimestamp));
+	setCoreParameter("ToTimestamp", toTimestamp);
 }
 
 std::string GetLogHistogramRequest::getSlsQueryString()const

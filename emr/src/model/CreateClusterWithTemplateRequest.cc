@@ -33,7 +33,7 @@ long CreateClusterWithTemplateRequest::getResourceOwnerId()const
 void CreateClusterWithTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateClusterWithTemplateRequest::getUniqueTag()const

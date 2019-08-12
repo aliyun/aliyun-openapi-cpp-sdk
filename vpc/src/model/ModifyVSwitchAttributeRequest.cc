@@ -44,7 +44,7 @@ long ModifyVSwitchAttributeRequest::getResourceOwnerId()const
 void ModifyVSwitchAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVSwitchAttributeRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long ModifyVSwitchAttributeRequest::getOwnerId()const
 void ModifyVSwitchAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyVSwitchAttributeRequest::getIpv6CidrBlock()const
@@ -121,6 +121,6 @@ int ModifyVSwitchAttributeRequest::getIpv6CidrBlock()const
 void ModifyVSwitchAttributeRequest::setIpv6CidrBlock(int ipv6CidrBlock)
 {
 	ipv6CidrBlock_ = ipv6CidrBlock;
-	setCoreParameter("Ipv6CidrBlock", std::to_string(ipv6CidrBlock));
+	setCoreParameter("Ipv6CidrBlock", ipv6CidrBlock);
 }
 

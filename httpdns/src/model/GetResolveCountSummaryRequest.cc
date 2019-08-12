@@ -44,7 +44,7 @@ int GetResolveCountSummaryRequest::getTimeSpan()const
 void GetResolveCountSummaryRequest::setTimeSpan(int timeSpan)
 {
 	timeSpan_ = timeSpan;
-	setCoreParameter("TimeSpan", std::to_string(timeSpan));
+	setCoreParameter("TimeSpan", timeSpan);
 }
 
 std::string GetResolveCountSummaryRequest::getAccessKeyId()const

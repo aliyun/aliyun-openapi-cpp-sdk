@@ -33,7 +33,7 @@ long DescribeCharacterSetNameRequest::getResourceOwnerId()const
 void DescribeCharacterSetNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeCharacterSetNameRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeCharacterSetNameRequest::getOwnerId()const
 void DescribeCharacterSetNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeCharacterSetNameRequest::getAccessKeyId()const

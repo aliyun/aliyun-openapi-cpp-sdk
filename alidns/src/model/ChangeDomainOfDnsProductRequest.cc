@@ -66,7 +66,7 @@ bool ChangeDomainOfDnsProductRequest::getForce()const
 void ChangeDomainOfDnsProductRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setCoreParameter("Force", force);
 }
 
 std::string ChangeDomainOfDnsProductRequest::getLang()const

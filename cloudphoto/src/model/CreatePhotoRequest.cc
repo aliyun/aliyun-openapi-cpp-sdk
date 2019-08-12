@@ -33,7 +33,7 @@ long CreatePhotoRequest::getTakenAt()const
 void CreatePhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setCoreParameter("TakenAt", takenAt);
 }
 
 std::string CreatePhotoRequest::getPhotoTitle()const
@@ -66,7 +66,7 @@ long CreatePhotoRequest::getShareExpireTime()const
 void CreatePhotoRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
+	setCoreParameter("ShareExpireTime", shareExpireTime);
 }
 
 std::string CreatePhotoRequest::getStoreName()const

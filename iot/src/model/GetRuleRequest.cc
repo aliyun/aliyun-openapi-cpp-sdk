@@ -44,7 +44,7 @@ long GetRuleRequest::getRuleId()const
 void GetRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setCoreParameter("RuleId", ruleId);
 }
 
 std::string GetRuleRequest::getAccessKeyId()const

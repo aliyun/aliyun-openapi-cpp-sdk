@@ -33,7 +33,7 @@ long QueryFacerecogJobListRequest::getResourceOwnerId()const
 void QueryFacerecogJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryFacerecogJobListRequest::getOwnerId()const
 void QueryFacerecogJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryFacerecogJobListRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long GetSpanNamesRequest::getEndTime()const
 void GetSpanNamesRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetSpanNamesRequest::getServiceName()const
@@ -66,6 +66,6 @@ long GetSpanNamesRequest::getStartTime()const
 void GetSpanNamesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

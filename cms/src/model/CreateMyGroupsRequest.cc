@@ -66,7 +66,7 @@ long CreateMyGroupsRequest::getServiceId()const
 void CreateMyGroupsRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setCoreParameter("ServiceId", serviceId);
 }
 
 std::string CreateMyGroupsRequest::getGroupName()const

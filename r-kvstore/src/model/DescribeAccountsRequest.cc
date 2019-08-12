@@ -33,7 +33,7 @@ long DescribeAccountsRequest::getResourceOwnerId()const
 void DescribeAccountsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAccountsRequest::getInstanceId()const
@@ -110,7 +110,7 @@ long DescribeAccountsRequest::getOwnerId()const
 void DescribeAccountsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAccountsRequest::getAccessKeyId()const

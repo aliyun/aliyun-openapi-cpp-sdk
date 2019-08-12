@@ -33,7 +33,7 @@ long DescribeUserCustomerLabelsRequest::getUid()const
 void DescribeUserCustomerLabelsRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setCoreParameter("Uid", uid);
 }
 
 std::string DescribeUserCustomerLabelsRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ long DescribeUserCustomerLabelsRequest::getOwnerId()const
 void DescribeUserCustomerLabelsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeUserCustomerLabelsRequest::getAccessKeyId()const

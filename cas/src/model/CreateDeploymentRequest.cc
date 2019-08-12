@@ -44,7 +44,7 @@ long CreateDeploymentRequest::getCertificateId()const
 void CreateDeploymentRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string CreateDeploymentRequest::getDomain()const

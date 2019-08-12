@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskCountRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskCountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getSecurityToken()const
@@ -88,7 +88,7 @@ long DescribeActiveOperationTaskCountRequest::getOwnerId()const
 void DescribeActiveOperationTaskCountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getAccessKeyId()const

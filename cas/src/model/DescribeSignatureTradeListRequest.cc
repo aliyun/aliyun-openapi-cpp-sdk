@@ -44,7 +44,7 @@ int DescribeSignatureTradeListRequest::getShowSize()const
 void DescribeSignatureTradeListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setCoreParameter("ShowSize", showSize);
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchType()const
@@ -66,7 +66,7 @@ int DescribeSignatureTradeListRequest::getCurrentPage()const
 void DescribeSignatureTradeListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSignatureTradeListRequest::getLang()const

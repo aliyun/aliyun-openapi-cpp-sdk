@@ -44,7 +44,7 @@ long QueryDevicesByAliasRequest::getAppKey()const
 void QueryDevicesByAliasRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string QueryDevicesByAliasRequest::getAccessKeyId()const

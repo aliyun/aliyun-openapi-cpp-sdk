@@ -33,7 +33,7 @@ long GetVideoPlayAuthRequest::getResourceOwnerId()const
 void GetVideoPlayAuthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetVideoPlayAuthRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long GetVideoPlayAuthRequest::getAuthInfoTimeout()const
 void GetVideoPlayAuthRequest::setAuthInfoTimeout(long authInfoTimeout)
 {
 	authInfoTimeout_ = authInfoTimeout;
-	setCoreParameter("AuthInfoTimeout", std::to_string(authInfoTimeout));
+	setCoreParameter("AuthInfoTimeout", authInfoTimeout);
 }
 
 std::string GetVideoPlayAuthRequest::getVideoId()const
@@ -99,6 +99,6 @@ long GetVideoPlayAuthRequest::getOwnerId()const
 void GetVideoPlayAuthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

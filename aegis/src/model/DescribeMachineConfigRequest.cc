@@ -33,7 +33,7 @@ long DescribeMachineConfigRequest::getResourceOwnerId()const
 void DescribeMachineConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeMachineConfigRequest::getTypes()const
@@ -66,7 +66,7 @@ int DescribeMachineConfigRequest::getPageSize()const
 void DescribeMachineConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeMachineConfigRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeMachineConfigRequest::getCurrentPage()const
 void DescribeMachineConfigRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeMachineConfigRequest::getType()const

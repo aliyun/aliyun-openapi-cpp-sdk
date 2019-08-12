@@ -33,7 +33,7 @@ int PushRequest::getAndroidNotificationBarType()const
 void PushRequest::setAndroidNotificationBarType(int androidNotificationBarType)
 {
 	androidNotificationBarType_ = androidNotificationBarType;
-	setCoreParameter("AndroidNotificationBarType", std::to_string(androidNotificationBarType));
+	setCoreParameter("AndroidNotificationBarType", androidNotificationBarType);
 }
 
 int PushRequest::getSmsSendPolicy()const
@@ -44,7 +44,7 @@ int PushRequest::getSmsSendPolicy()const
 void PushRequest::setSmsSendPolicy(int smsSendPolicy)
 {
 	smsSendPolicy_ = smsSendPolicy;
-	setCoreParameter("SmsSendPolicy", std::to_string(smsSendPolicy));
+	setCoreParameter("SmsSendPolicy", smsSendPolicy);
 }
 
 std::string PushRequest::getAndroidExtParameters()const
@@ -66,7 +66,7 @@ int PushRequest::getIOSBadge()const
 void PushRequest::setIOSBadge(int iOSBadge)
 {
 	iOSBadge_ = iOSBadge;
-	setCoreParameter("IOSBadge", std::to_string(iOSBadge));
+	setCoreParameter("IOSBadge", iOSBadge);
 }
 
 bool PushRequest::getIOSBadgeAutoIncrement()const
@@ -77,7 +77,7 @@ bool PushRequest::getIOSBadgeAutoIncrement()const
 void PushRequest::setIOSBadgeAutoIncrement(bool iOSBadgeAutoIncrement)
 {
 	iOSBadgeAutoIncrement_ = iOSBadgeAutoIncrement;
-	setCoreParameter("IOSBadgeAutoIncrement", iOSBadgeAutoIncrement ? "true" : "false");
+	setCoreParameter("IOSBadgeAutoIncrement", iOSBadgeAutoIncrement);
 }
 
 std::string PushRequest::getAndroidOpenType()const
@@ -154,7 +154,7 @@ int PushRequest::getSmsDelaySecs()const
 void PushRequest::setSmsDelaySecs(int smsDelaySecs)
 {
 	smsDelaySecs_ = smsDelaySecs;
-	setCoreParameter("SmsDelaySecs", std::to_string(smsDelaySecs));
+	setCoreParameter("SmsDelaySecs", smsDelaySecs);
 }
 
 int PushRequest::getSendSpeed()const
@@ -165,7 +165,7 @@ int PushRequest::getSendSpeed()const
 void PushRequest::setSendSpeed(int sendSpeed)
 {
 	sendSpeed_ = sendSpeed;
-	setCoreParameter("SendSpeed", std::to_string(sendSpeed));
+	setCoreParameter("SendSpeed", sendSpeed);
 }
 
 std::string PushRequest::getAndroidPopupActivity()const
@@ -253,7 +253,7 @@ bool PushRequest::getIOSMutableContent()const
 void PushRequest::setIOSMutableContent(bool iOSMutableContent)
 {
 	iOSMutableContent_ = iOSMutableContent;
-	setCoreParameter("IOSMutableContent", iOSMutableContent ? "true" : "false");
+	setCoreParameter("IOSMutableContent", iOSMutableContent);
 }
 
 int PushRequest::getAndroidNotificationBarPriority()const
@@ -264,7 +264,7 @@ int PushRequest::getAndroidNotificationBarPriority()const
 void PushRequest::setAndroidNotificationBarPriority(int androidNotificationBarPriority)
 {
 	androidNotificationBarPriority_ = androidNotificationBarPriority;
-	setCoreParameter("AndroidNotificationBarPriority", std::to_string(androidNotificationBarPriority));
+	setCoreParameter("AndroidNotificationBarPriority", androidNotificationBarPriority);
 }
 
 std::string PushRequest::getExpireTime()const
@@ -319,7 +319,7 @@ bool PushRequest::getStoreOffline()const
 void PushRequest::setStoreOffline(bool storeOffline)
 {
 	storeOffline_ = storeOffline;
-	setCoreParameter("StoreOffline", storeOffline ? "true" : "false");
+	setCoreParameter("StoreOffline", storeOffline);
 }
 
 bool PushRequest::getIOSSilentNotification()const
@@ -330,7 +330,7 @@ bool PushRequest::getIOSSilentNotification()const
 void PushRequest::setIOSSilentNotification(bool iOSSilentNotification)
 {
 	iOSSilentNotification_ = iOSSilentNotification;
-	setCoreParameter("IOSSilentNotification", iOSSilentNotification ? "true" : "false");
+	setCoreParameter("IOSSilentNotification", iOSSilentNotification);
 }
 
 std::string PushRequest::getSmsParams()const
@@ -396,7 +396,7 @@ bool PushRequest::getAndroidRemind()const
 void PushRequest::setAndroidRemind(bool androidRemind)
 {
 	androidRemind_ = androidRemind;
-	setCoreParameter("AndroidRemind", androidRemind ? "true" : "false");
+	setCoreParameter("AndroidRemind", androidRemind);
 }
 
 std::string PushRequest::getAndroidActivity()const
@@ -451,7 +451,7 @@ bool PushRequest::getIOSRemind()const
 void PushRequest::setIOSRemind(bool iOSRemind)
 {
 	iOSRemind_ = iOSRemind;
-	setCoreParameter("IOSRemind", iOSRemind ? "true" : "false");
+	setCoreParameter("IOSRemind", iOSRemind);
 }
 
 long PushRequest::getAppKey()const
@@ -462,7 +462,7 @@ long PushRequest::getAppKey()const
 void PushRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string PushRequest::getTargetValue()const

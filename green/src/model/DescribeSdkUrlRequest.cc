@@ -33,7 +33,7 @@ bool DescribeSdkUrlRequest::getDebug()const
 void DescribeSdkUrlRequest::setDebug(bool debug)
 {
 	debug_ = debug;
-	setCoreParameter("Debug", debug ? "true" : "false");
+	setCoreParameter("Debug", debug);
 }
 
 std::string DescribeSdkUrlRequest::getSourceIp()const
@@ -55,7 +55,7 @@ long DescribeSdkUrlRequest::getId()const
 void DescribeSdkUrlRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeSdkUrlRequest::getLang()const

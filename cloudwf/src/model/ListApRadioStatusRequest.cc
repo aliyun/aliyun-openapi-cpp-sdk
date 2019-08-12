@@ -33,7 +33,7 @@ int ListApRadioStatusRequest::getSearchDisabled()const
 void ListApRadioStatusRequest::setSearchDisabled(int searchDisabled)
 {
 	searchDisabled_ = searchDisabled;
-	setCoreParameter("SearchDisabled", std::to_string(searchDisabled));
+	setCoreParameter("SearchDisabled", searchDisabled);
 }
 
 std::string ListApRadioStatusRequest::getOrderCol()const
@@ -66,7 +66,7 @@ int ListApRadioStatusRequest::getSearchChannelEquals()const
 void ListApRadioStatusRequest::setSearchChannelEquals(int searchChannelEquals)
 {
 	searchChannelEquals_ = searchChannelEquals;
-	setCoreParameter("SearchChannelEquals", std::to_string(searchChannelEquals));
+	setCoreParameter("SearchChannelEquals", searchChannelEquals);
 }
 
 int ListApRadioStatusRequest::getLength()const
@@ -77,7 +77,7 @@ int ListApRadioStatusRequest::getLength()const
 void ListApRadioStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListApRadioStatusRequest::getSearchMac()const
@@ -110,7 +110,7 @@ int ListApRadioStatusRequest::getPageIndex()const
 void ListApRadioStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApRadioStatusRequest::getOrderDir()const
@@ -132,7 +132,7 @@ int ListApRadioStatusRequest::getSearchApStatus()const
 void ListApRadioStatusRequest::setSearchApStatus(int searchApStatus)
 {
 	searchApStatus_ = searchApStatus;
-	setCoreParameter("SearchApStatus", std::to_string(searchApStatus));
+	setCoreParameter("SearchApStatus", searchApStatus);
 }
 
 std::string ListApRadioStatusRequest::getAccessKeyId()const

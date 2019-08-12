@@ -154,7 +154,7 @@ long PlayInfoRequest::getAuthTimeout()const
 void PlayInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setCoreParameter("AuthTimeout", authTimeout);
 }
 
 std::string PlayInfoRequest::getAuthInfo()const

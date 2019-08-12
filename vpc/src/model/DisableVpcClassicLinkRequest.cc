@@ -33,7 +33,7 @@ long DisableVpcClassicLinkRequest::getResourceOwnerId()const
 void DisableVpcClassicLinkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DisableVpcClassicLinkRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DisableVpcClassicLinkRequest::getOwnerId()const
 void DisableVpcClassicLinkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

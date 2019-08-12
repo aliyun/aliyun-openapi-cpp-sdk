@@ -44,7 +44,7 @@ int ListAccountConfigRequest::getLength()const
 void ListAccountConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListAccountConfigRequest::getSearchEmail()const
@@ -66,7 +66,7 @@ int ListAccountConfigRequest::getPageIndex()const
 void ListAccountConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListAccountConfigRequest::getOrderDir()const

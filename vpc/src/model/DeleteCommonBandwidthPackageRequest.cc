@@ -33,7 +33,7 @@ long DeleteCommonBandwidthPackageRequest::getResourceOwnerId()const
 void DeleteCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getBandwidthPackageId()const
@@ -99,6 +99,6 @@ long DeleteCommonBandwidthPackageRequest::getOwnerId()const
 void DeleteCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

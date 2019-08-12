@@ -44,7 +44,7 @@ long CreateVServerGroupRequest::getResourceOwnerId()const
 void CreateVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateVServerGroupRequest::getLoadBalancerId()const
@@ -99,7 +99,7 @@ long CreateVServerGroupRequest::getOwnerId()const
 void CreateVServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateVServerGroupRequest::getBackendServers()const

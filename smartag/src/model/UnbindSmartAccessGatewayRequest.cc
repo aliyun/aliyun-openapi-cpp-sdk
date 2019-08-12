@@ -33,7 +33,7 @@ long UnbindSmartAccessGatewayRequest::getResourceOwnerId()const
 void UnbindSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long UnbindSmartAccessGatewayRequest::getSmartAGUid()const
@@ -44,7 +44,7 @@ long UnbindSmartAccessGatewayRequest::getSmartAGUid()const
 void UnbindSmartAccessGatewayRequest::setSmartAGUid(long smartAGUid)
 {
 	smartAGUid_ = smartAGUid;
-	setCoreParameter("SmartAGUid", std::to_string(smartAGUid));
+	setCoreParameter("SmartAGUid", smartAGUid);
 }
 
 std::string UnbindSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -110,6 +110,6 @@ long UnbindSmartAccessGatewayRequest::getOwnerId()const
 void UnbindSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

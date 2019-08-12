@@ -44,7 +44,7 @@ long ModifyVRouterAttributeRequest::getResourceOwnerId()const
 void ModifyVRouterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ModifyVRouterAttributeRequest::getVRouterId()const
@@ -110,6 +110,6 @@ long ModifyVRouterAttributeRequest::getOwnerId()const
 void ModifyVRouterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

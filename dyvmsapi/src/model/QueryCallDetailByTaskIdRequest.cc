@@ -33,7 +33,7 @@ long QueryCallDetailByTaskIdRequest::getResourceOwnerId()const
 void QueryCallDetailByTaskIdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long QueryCallDetailByTaskIdRequest::getQueryDate()const
@@ -44,7 +44,7 @@ long QueryCallDetailByTaskIdRequest::getQueryDate()const
 void QueryCallDetailByTaskIdRequest::setQueryDate(long queryDate)
 {
 	queryDate_ = queryDate;
-	setCoreParameter("QueryDate", std::to_string(queryDate));
+	setCoreParameter("QueryDate", queryDate);
 }
 
 std::string QueryCallDetailByTaskIdRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ long QueryCallDetailByTaskIdRequest::getOwnerId()const
 void QueryCallDetailByTaskIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string QueryCallDetailByTaskIdRequest::getTaskId()const

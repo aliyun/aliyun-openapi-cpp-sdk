@@ -33,7 +33,7 @@ long DescribeDataHubConnectorsRequest::getTopicId()const
 void DescribeDataHubConnectorsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string DescribeDataHubConnectorsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ int DescribeDataHubConnectorsRequest::getFeatureType()const
 void DescribeDataHubConnectorsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeDataHubConnectorsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDataHubConnectorsRequest::getPageSize()const
 void DescribeDataHubConnectorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeDataHubConnectorsRequest::getDepartId()const
@@ -77,7 +77,7 @@ long DescribeDataHubConnectorsRequest::getDepartId()const
 void DescribeDataHubConnectorsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setCoreParameter("DepartId", departId);
 }
 
 int DescribeDataHubConnectorsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDataHubConnectorsRequest::getCurrentPage()const
 void DescribeDataHubConnectorsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDataHubConnectorsRequest::getLang()const
@@ -110,7 +110,7 @@ long DescribeDataHubConnectorsRequest::getProjectId()const
 void DescribeDataHubConnectorsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DescribeDataHubConnectorsRequest::getKey()const

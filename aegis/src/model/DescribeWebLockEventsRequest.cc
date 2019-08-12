@@ -77,7 +77,7 @@ int DescribeWebLockEventsRequest::getPageSize()const
 void DescribeWebLockEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeWebLockEventsRequest::getRemark()const
@@ -110,7 +110,7 @@ int DescribeWebLockEventsRequest::getCurrentPage()const
 void DescribeWebLockEventsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeWebLockEventsRequest::getTag()const

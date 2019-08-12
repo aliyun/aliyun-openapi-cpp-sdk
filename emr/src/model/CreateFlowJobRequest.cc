@@ -114,8 +114,8 @@ void CreateFlowJobRequest::setResourceList(const std::vector<ResourceList>& reso
 	for(int i = 0; i!= resourceList.size(); i++)	{
 		auto obj = resourceList.at(i);
 		std::string str ="ResourceList."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Alias", obj.alias);
+		setCoreParameter(str + ".Path", std::to_string(obj.path));
+		setCoreParameter(str + ".Alias", std::to_string(obj.alias));
 	}
 }
 
@@ -149,7 +149,7 @@ long CreateFlowJobRequest::getRetryInterval()const
 void CreateFlowJobRequest::setRetryInterval(long retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+	setCoreParameter("RetryInterval", retryInterval);
 }
 
 std::string CreateFlowJobRequest::getMonitorConf()const
@@ -193,7 +193,7 @@ int CreateFlowJobRequest::getMaxRetry()const
 void CreateFlowJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", std::to_string(maxRetry));
+	setCoreParameter("MaxRetry", maxRetry);
 }
 
 bool CreateFlowJobRequest::getAdhoc()const
@@ -204,7 +204,7 @@ bool CreateFlowJobRequest::getAdhoc()const
 void CreateFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc ? "true" : "false");
+	setCoreParameter("Adhoc", adhoc);
 }
 
 std::string CreateFlowJobRequest::getAlertConf()const

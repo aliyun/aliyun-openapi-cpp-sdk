@@ -99,6 +99,6 @@ long DescribeTraceInfoDetailRequest::getIncidentTime()const
 void DescribeTraceInfoDetailRequest::setIncidentTime(long incidentTime)
 {
 	incidentTime_ = incidentTime;
-	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+	setCoreParameter("IncidentTime", incidentTime);
 }
 

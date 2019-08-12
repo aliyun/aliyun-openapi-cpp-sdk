@@ -66,7 +66,7 @@ int ListApUpgradeRequest::getLength()const
 void ListApUpgradeRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListApUpgradeRequest::getSearchMac()const
@@ -88,7 +88,7 @@ int ListApUpgradeRequest::getPageIndex()const
 void ListApUpgradeRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListApUpgradeRequest::getOrderDir()const

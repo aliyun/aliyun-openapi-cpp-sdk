@@ -33,7 +33,7 @@ int ListUsersRequest::getPageSize()const
 void ListUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListUsersRequest::getClusterId()const
@@ -55,7 +55,7 @@ int ListUsersRequest::getPageNumber()const
 void ListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListUsersRequest::getAccessKeyId()const

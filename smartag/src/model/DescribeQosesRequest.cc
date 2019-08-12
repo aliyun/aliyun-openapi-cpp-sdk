@@ -33,7 +33,7 @@ long DescribeQosesRequest::getResourceOwnerId()const
 void DescribeQosesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeQosesRequest::getQosName()const
@@ -99,7 +99,7 @@ int DescribeQosesRequest::getPageSize()const
 void DescribeQosesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeQosesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeQosesRequest::getOwnerId()const
 void DescribeQosesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeQosesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeQosesRequest::getPageNumber()const
 void DescribeQosesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

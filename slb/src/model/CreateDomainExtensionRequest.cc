@@ -44,7 +44,7 @@ long CreateDomainExtensionRequest::getResourceOwnerId()const
 void CreateDomainExtensionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateDomainExtensionRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int CreateDomainExtensionRequest::getListenerPort()const
 void CreateDomainExtensionRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setCoreParameter("ListenerPort", listenerPort);
 }
 
 std::string CreateDomainExtensionRequest::getLoadBalancerId()const
@@ -121,7 +121,7 @@ long CreateDomainExtensionRequest::getOwnerId()const
 void CreateDomainExtensionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateDomainExtensionRequest::getServerCertificateId()const

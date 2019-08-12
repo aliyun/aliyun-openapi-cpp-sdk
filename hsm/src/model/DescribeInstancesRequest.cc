@@ -33,7 +33,7 @@ long DescribeInstancesRequest::getResourceOwnerId()const
 void DescribeInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeInstancesRequest::getInstanceId()const
@@ -66,7 +66,7 @@ int DescribeInstancesRequest::getPageSize()const
 void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeInstancesRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeInstancesRequest::getCurrentPage()const
 void DescribeInstancesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeInstancesRequest::getHsmStatus()const
@@ -88,6 +88,6 @@ int DescribeInstancesRequest::getHsmStatus()const
 void DescribeInstancesRequest::setHsmStatus(int hsmStatus)
 {
 	hsmStatus_ = hsmStatus;
-	setCoreParameter("HsmStatus", std::to_string(hsmStatus));
+	setCoreParameter("HsmStatus", hsmStatus);
 }
 

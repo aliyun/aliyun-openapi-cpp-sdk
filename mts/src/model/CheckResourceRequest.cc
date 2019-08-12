@@ -44,7 +44,7 @@ long CheckResourceRequest::getHid()const
 void CheckResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", std::to_string(hid));
+	setCoreParameter("Hid", hid);
 }
 
 long CheckResourceRequest::getLevel()const
@@ -55,7 +55,7 @@ long CheckResourceRequest::getLevel()const
 void CheckResourceRequest::setLevel(long level)
 {
 	level_ = level;
-	setCoreParameter("Level", std::to_string(level));
+	setCoreParameter("Level", level);
 }
 
 std::string CheckResourceRequest::getInvoker()const
@@ -99,7 +99,7 @@ bool CheckResourceRequest::getSuccess()const
 void CheckResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success ? "true" : "false");
+	setCoreParameter("Success", success);
 }
 
 bool CheckResourceRequest::getInterrupt()const
@@ -110,7 +110,7 @@ bool CheckResourceRequest::getInterrupt()const
 void CheckResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt ? "true" : "false");
+	setCoreParameter("Interrupt", interrupt);
 }
 
 std::string CheckResourceRequest::getGmtWakeup()const

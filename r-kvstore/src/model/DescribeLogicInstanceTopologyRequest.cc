@@ -33,7 +33,7 @@ long DescribeLogicInstanceTopologyRequest::getResourceOwnerId()const
 void DescribeLogicInstanceTopologyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeLogicInstanceTopologyRequest::getInstanceId()const
@@ -99,7 +99,7 @@ long DescribeLogicInstanceTopologyRequest::getOwnerId()const
 void DescribeLogicInstanceTopologyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeLogicInstanceTopologyRequest::getAccessKeyId()const

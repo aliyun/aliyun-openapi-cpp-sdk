@@ -33,7 +33,7 @@ long DeleteNavNodeRequest::getResourceOwnerId()const
 void DeleteNavNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteNavNodeRequest::getRegionId()const

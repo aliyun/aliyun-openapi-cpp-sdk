@@ -55,7 +55,7 @@ long DescribeDdosDefenseInfoRequest::getSrcUid()const
 void DescribeDdosDefenseInfoRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", srcUid);
 }
 
 std::string DescribeDdosDefenseInfoRequest::getSourceCode()const

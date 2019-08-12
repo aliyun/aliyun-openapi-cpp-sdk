@@ -44,7 +44,7 @@ long DescribeVulLevelStatisticsRequest::getEndTs()const
 void DescribeVulLevelStatisticsRequest::setEndTs(long endTs)
 {
 	endTs_ = endTs;
-	setCoreParameter("EndTs", std::to_string(endTs));
+	setCoreParameter("EndTs", endTs);
 }
 
 std::string DescribeVulLevelStatisticsRequest::getFrom()const
@@ -66,7 +66,7 @@ long DescribeVulLevelStatisticsRequest::getStartTs()const
 void DescribeVulLevelStatisticsRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
-	setCoreParameter("StartTs", std::to_string(startTs));
+	setCoreParameter("StartTs", startTs);
 }
 
 std::string DescribeVulLevelStatisticsRequest::getIncludeApp()const

@@ -56,6 +56,6 @@ void DeleteFacesRequest::setFaceId(const std::vector<long>& faceId)
 {
 	faceId_ = faceId;
 	for(int i = 0; i!= faceId.size(); i++)
-		setCoreParameter("FaceId."+ std::to_string(i), std::to_string(faceId.at(i)));
+		setCoreParameter("FaceId."+ std::to_string(i), faceId.at(i));
 }
 

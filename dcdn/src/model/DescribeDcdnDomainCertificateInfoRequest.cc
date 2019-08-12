@@ -66,7 +66,7 @@ long DescribeDcdnDomainCertificateInfoRequest::getCallerParentId()const
 void DescribeDcdnDomainCertificateInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 std::string DescribeDcdnDomainCertificateInfoRequest::getDomainName()const
@@ -88,7 +88,7 @@ bool DescribeDcdnDomainCertificateInfoRequest::getProxy_original_security_transp
 void DescribeDcdnDomainCertificateInfoRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDcdnDomainCertificateInfoRequest::getCallerBid()const
@@ -110,7 +110,7 @@ long DescribeDcdnDomainCertificateInfoRequest::getOwnerId()const
 void DescribeDcdnDomainCertificateInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDcdnDomainCertificateInfoRequest::getProxy_original_source_ip()const
@@ -165,7 +165,7 @@ bool DescribeDcdnDomainCertificateInfoRequest::getProxy_trust_transport_info()co
 void DescribeDcdnDomainCertificateInfoRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDcdnDomainCertificateInfoRequest::getAk_mfa_present()const
@@ -176,7 +176,7 @@ bool DescribeDcdnDomainCertificateInfoRequest::getAk_mfa_present()const
 void DescribeDcdnDomainCertificateInfoRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 std::string DescribeDcdnDomainCertificateInfoRequest::getAccessKeyId()const
@@ -198,7 +198,7 @@ bool DescribeDcdnDomainCertificateInfoRequest::getSecurity_transport()const
 void DescribeDcdnDomainCertificateInfoRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDcdnDomainCertificateInfoRequest::getSecurityToken()const
@@ -264,6 +264,6 @@ long DescribeDcdnDomainCertificateInfoRequest::getCallerUid()const
 void DescribeDcdnDomainCertificateInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 

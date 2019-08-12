@@ -33,7 +33,7 @@ long DescribeAuditRecordsRequest::getResourceOwnerId()const
 void DescribeAuditRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeAuditRecordsRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long DescribeAuditRecordsRequest::getOwnerId()const
 void DescribeAuditRecordsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeAuditRecordsRequest::getQueryKeywords()const
@@ -110,7 +110,7 @@ int DescribeAuditRecordsRequest::getPageNumber()const
 void DescribeAuditRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeAuditRecordsRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ int DescribeAuditRecordsRequest::getPageSize()const
 void DescribeAuditRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeAuditRecordsRequest::getDBInstanceId()const

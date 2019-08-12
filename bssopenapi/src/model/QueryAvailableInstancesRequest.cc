@@ -55,7 +55,7 @@ long QueryAvailableInstancesRequest::getOwnerId()const
 void QueryAvailableInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int QueryAvailableInstancesRequest::getPageNum()const
@@ -66,7 +66,7 @@ int QueryAvailableInstancesRequest::getPageNum()const
 void QueryAvailableInstancesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string QueryAvailableInstancesRequest::getEndTimeStart()const
@@ -132,7 +132,7 @@ int QueryAvailableInstancesRequest::getPageSize()const
 void QueryAvailableInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string QueryAvailableInstancesRequest::getCreateTimeStart()const

@@ -33,7 +33,7 @@ long DescribeZonesRequest::getResourceOwnerId()const
 void DescribeZonesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeZonesRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ long DescribeZonesRequest::getOwnerId()const
 void DescribeZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeZonesRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long DescribeDomainsRequest::getPageSize()const
 void DescribeDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 long DescribeDomainsRequest::getPageNumber()const
@@ -55,7 +55,7 @@ long DescribeDomainsRequest::getPageNumber()const
 void DescribeDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDomainsRequest::getAccessKeyId()const

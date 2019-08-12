@@ -33,7 +33,7 @@ long CloneETLJobRequest::getResourceOwnerId()const
 void CloneETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CloneETLJobRequest::getRegionId()const

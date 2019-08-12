@@ -33,7 +33,7 @@ long HeadquartersRankingRequest::getBid()const
 void HeadquartersRankingRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string HeadquartersRankingRequest::getAccessKeyId()const

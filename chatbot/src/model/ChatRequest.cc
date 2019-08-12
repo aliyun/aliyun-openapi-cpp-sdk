@@ -78,7 +78,7 @@ void ChatRequest::setPerspective(const std::vector<std::string>& perspective)
 {
 	perspective_ = perspective;
 	for(int i = 0; i!= perspective.size(); i++)
-		setCoreParameter("Perspective."+ std::to_string(i), perspective.at(i));
+		setCoreParameter("Perspective."+ std::to_string(i), std::to_string(perspective.at(i)));
 }
 
 bool ChatRequest::getRecommend()const
@@ -89,7 +89,7 @@ bool ChatRequest::getRecommend()const
 void ChatRequest::setRecommend(bool recommend)
 {
 	recommend_ = recommend;
-	setCoreParameter("Recommend", recommend ? "true" : "false");
+	setCoreParameter("Recommend", recommend);
 }
 
 std::string ChatRequest::getSessionId()const

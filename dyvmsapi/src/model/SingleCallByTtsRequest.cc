@@ -33,7 +33,7 @@ long SingleCallByTtsRequest::getResourceOwnerId()const
 void SingleCallByTtsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SingleCallByTtsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int SingleCallByTtsRequest::getPlayTimes()const
 void SingleCallByTtsRequest::setPlayTimes(int playTimes)
 {
 	playTimes_ = playTimes;
-	setCoreParameter("PlayTimes", std::to_string(playTimes));
+	setCoreParameter("PlayTimes", playTimes);
 }
 
 std::string SingleCallByTtsRequest::getTtsParam()const
@@ -88,7 +88,7 @@ long SingleCallByTtsRequest::getOwnerId()const
 void SingleCallByTtsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int SingleCallByTtsRequest::getSpeed()const
@@ -99,7 +99,7 @@ int SingleCallByTtsRequest::getSpeed()const
 void SingleCallByTtsRequest::setSpeed(int speed)
 {
 	speed_ = speed;
-	setCoreParameter("Speed", std::to_string(speed));
+	setCoreParameter("Speed", speed);
 }
 
 std::string SingleCallByTtsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ int SingleCallByTtsRequest::getVolume()const
 void SingleCallByTtsRequest::setVolume(int volume)
 {
 	volume_ = volume;
-	setCoreParameter("Volume", std::to_string(volume));
+	setCoreParameter("Volume", volume);
 }
 
 std::string SingleCallByTtsRequest::getCalledNumber()const

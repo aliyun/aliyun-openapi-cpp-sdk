@@ -33,7 +33,7 @@ long GetAnalyzePlaceDataRequest::getEndUVCount()const
 void GetAnalyzePlaceDataRequest::setEndUVCount(long endUVCount)
 {
 	endUVCount_ = endUVCount;
-	setCoreParameter("EndUVCount", std::to_string(endUVCount));
+	setCoreParameter("EndUVCount", endUVCount);
 }
 
 long GetAnalyzePlaceDataRequest::getParentAmount()const
@@ -44,7 +44,7 @@ long GetAnalyzePlaceDataRequest::getParentAmount()const
 void GetAnalyzePlaceDataRequest::setParentAmount(long parentAmount)
 {
 	parentAmount_ = parentAmount;
-	setCoreParameter("ParentAmount", std::to_string(parentAmount));
+	setCoreParameter("ParentAmount", parentAmount);
 }
 
 std::string GetAnalyzePlaceDataRequest::getEndDate()const
@@ -66,7 +66,7 @@ long GetAnalyzePlaceDataRequest::getLocationId()const
 void GetAnalyzePlaceDataRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
+	setCoreParameter("LocationId", locationId);
 }
 
 std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
@@ -99,7 +99,7 @@ long GetAnalyzePlaceDataRequest::getStartUVCount()const
 void GetAnalyzePlaceDataRequest::setStartUVCount(long startUVCount)
 {
 	startUVCount_ = startUVCount;
-	setCoreParameter("StartUVCount", std::to_string(startUVCount));
+	setCoreParameter("StartUVCount", startUVCount);
 }
 
 long GetAnalyzePlaceDataRequest::getStoreId()const
@@ -110,6 +110,6 @@ long GetAnalyzePlaceDataRequest::getStoreId()const
 void GetAnalyzePlaceDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setCoreParameter("StoreId", storeId);
 }
 

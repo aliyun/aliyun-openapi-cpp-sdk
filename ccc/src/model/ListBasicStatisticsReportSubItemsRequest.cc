@@ -55,7 +55,7 @@ int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
 void ListBasicStatisticsReportSubItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
@@ -77,6 +77,6 @@ int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
 void ListBasicStatisticsReportSubItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

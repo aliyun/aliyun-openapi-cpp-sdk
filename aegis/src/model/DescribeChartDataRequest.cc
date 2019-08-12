@@ -33,7 +33,7 @@ long DescribeChartDataRequest::getTimeEnd()const
 void DescribeChartDataRequest::setTimeEnd(long timeEnd)
 {
 	timeEnd_ = timeEnd;
-	setCoreParameter("TimeEnd", std::to_string(timeEnd));
+	setCoreParameter("TimeEnd", timeEnd);
 }
 
 std::string DescribeChartDataRequest::getRangeUnit()const
@@ -88,6 +88,6 @@ long DescribeChartDataRequest::getTimeStart()const
 void DescribeChartDataRequest::setTimeStart(long timeStart)
 {
 	timeStart_ = timeStart;
-	setCoreParameter("TimeStart", std::to_string(timeStart));
+	setCoreParameter("TimeStart", timeStart);
 }
 

@@ -44,7 +44,7 @@ long GetRuleActionRequest::getActionId()const
 void GetRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
-	setCoreParameter("ActionId", std::to_string(actionId));
+	setCoreParameter("ActionId", actionId);
 }
 
 std::string GetRuleActionRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ long GetRepoWebhookLogListRequest::getWebhookId()const
 void GetRepoWebhookLogListRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setCoreParameter("WebhookId", std::to_string(webhookId));
+	setCoreParameter("WebhookId", webhookId);
 }
 
 std::string GetRepoWebhookLogListRequest::getRepoName()const

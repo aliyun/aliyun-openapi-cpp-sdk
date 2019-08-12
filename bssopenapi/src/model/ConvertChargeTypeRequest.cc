@@ -33,7 +33,7 @@ int ConvertChargeTypeRequest::getPeriod()const
 void ConvertChargeTypeRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string ConvertChargeTypeRequest::getProductCode()const
@@ -77,7 +77,7 @@ long ConvertChargeTypeRequest::getOwnerId()const
 void ConvertChargeTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string ConvertChargeTypeRequest::getProductType()const

@@ -55,7 +55,7 @@ int DescribeAnalysisHistogramsRequest::getFrom()const
 void DescribeAnalysisHistogramsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeAnalysisHistogramsRequest::getTo()const
@@ -66,6 +66,6 @@ int DescribeAnalysisHistogramsRequest::getTo()const
 void DescribeAnalysisHistogramsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", std::to_string(to));
+	setCoreParameter("To", to);
 }
 

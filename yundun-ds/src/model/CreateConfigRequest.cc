@@ -55,7 +55,7 @@ int CreateConfigRequest::getFeatureType()const
 void CreateConfigRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 std::string CreateConfigRequest::getDescription()const

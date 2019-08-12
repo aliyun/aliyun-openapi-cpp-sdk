@@ -67,6 +67,6 @@ void GetPhotosByMd5sRequest::setMd5(const std::vector<std::string>& md5)
 {
 	md5_ = md5;
 	for(int i = 0; i!= md5.size(); i++)
-		setCoreParameter("Md5."+ std::to_string(i), md5.at(i));
+		setCoreParameter("Md5."+ std::to_string(i), std::to_string(md5.at(i)));
 }
 

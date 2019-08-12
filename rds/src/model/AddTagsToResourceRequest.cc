@@ -44,7 +44,7 @@ long AddTagsToResourceRequest::getResourceOwnerId()const
 void AddTagsToResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddTagsToResourceRequest::getTag2key()const
@@ -121,7 +121,7 @@ long AddTagsToResourceRequest::getOwnerId()const
 void AddTagsToResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string AddTagsToResourceRequest::getTag5value()const

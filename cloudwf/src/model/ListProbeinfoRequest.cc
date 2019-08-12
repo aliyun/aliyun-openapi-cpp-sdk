@@ -66,7 +66,7 @@ int ListProbeinfoRequest::getLength()const
 void ListProbeinfoRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListProbeinfoRequest::getSearchSensorName()const
@@ -88,7 +88,7 @@ int ListProbeinfoRequest::getPageIndex()const
 void ListProbeinfoRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListProbeinfoRequest::getOrderDir()const

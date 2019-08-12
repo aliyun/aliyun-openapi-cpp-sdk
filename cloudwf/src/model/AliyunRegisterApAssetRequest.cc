@@ -33,7 +33,7 @@ long AliyunRegisterApAssetRequest::getApgroupId()const
 void AliyunRegisterApAssetRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", apgroupId);
 }
 
 std::string AliyunRegisterApAssetRequest::getMac()const

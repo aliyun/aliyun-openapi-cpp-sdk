@@ -33,7 +33,7 @@ long ListPornPipelineRequest::getResourceOwnerId()const
 void ListPornPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListPornPipelineRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long ListPornPipelineRequest::getPageSize()const
 void ListPornPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string ListPornPipelineRequest::getState()const
@@ -88,7 +88,7 @@ long ListPornPipelineRequest::getOwnerId()const
 void ListPornPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long ListPornPipelineRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long ListPornPipelineRequest::getPageNumber()const
 void ListPornPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string ListPornPipelineRequest::getAccessKeyId()const

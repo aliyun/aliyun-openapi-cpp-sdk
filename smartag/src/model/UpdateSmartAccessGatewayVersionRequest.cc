@@ -33,7 +33,7 @@ long UpdateSmartAccessGatewayVersionRequest::getResourceOwnerId()const
 void UpdateSmartAccessGatewayVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateSmartAccessGatewayVersionRequest::getSerialNumber()const
@@ -99,7 +99,7 @@ long UpdateSmartAccessGatewayVersionRequest::getOwnerId()const
 void UpdateSmartAccessGatewayVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateSmartAccessGatewayVersionRequest::getVersionCode()const

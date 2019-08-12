@@ -55,7 +55,7 @@ long ApplyNotaryPostRequest::getNotaryOrderId()const
 void ApplyNotaryPostRequest::setNotaryOrderId(long notaryOrderId)
 {
 	notaryOrderId_ = notaryOrderId;
-	setCoreParameter("NotaryOrderId", std::to_string(notaryOrderId));
+	setCoreParameter("NotaryOrderId", notaryOrderId);
 }
 
 std::string ApplyNotaryPostRequest::getReceiverAddress()const

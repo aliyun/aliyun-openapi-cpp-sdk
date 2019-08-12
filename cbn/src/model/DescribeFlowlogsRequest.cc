@@ -33,7 +33,7 @@ long DescribeFlowlogsRequest::getResourceOwnerId()const
 void DescribeFlowlogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeFlowlogsRequest::getProjectName()const
@@ -121,7 +121,7 @@ long DescribeFlowlogsRequest::getOwnerId()const
 void DescribeFlowlogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int DescribeFlowlogsRequest::getPageNumber()const
@@ -132,7 +132,7 @@ int DescribeFlowlogsRequest::getPageNumber()const
 void DescribeFlowlogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeFlowlogsRequest::getRegionId()const
@@ -154,7 +154,7 @@ int DescribeFlowlogsRequest::getPageSize()const
 void DescribeFlowlogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeFlowlogsRequest::getFlowLogId()const

@@ -88,7 +88,7 @@ long CreateScheduledTaskRequest::getOwnerId()const
 void CreateScheduledTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceValue()const
@@ -110,7 +110,7 @@ int CreateScheduledTaskRequest::getLaunchExpirationTime()const
 void CreateScheduledTaskRequest::setLaunchExpirationTime(int launchExpirationTime)
 {
 	launchExpirationTime_ = launchExpirationTime;
-	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
+	setCoreParameter("LaunchExpirationTime", launchExpirationTime);
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceEndTime()const
@@ -165,7 +165,7 @@ bool CreateScheduledTaskRequest::getTaskEnabled()const
 void CreateScheduledTaskRequest::setTaskEnabled(bool taskEnabled)
 {
 	taskEnabled_ = taskEnabled;
-	setCoreParameter("TaskEnabled", taskEnabled ? "true" : "false");
+	setCoreParameter("TaskEnabled", taskEnabled);
 }
 
 std::string CreateScheduledTaskRequest::getRecurrenceType()const

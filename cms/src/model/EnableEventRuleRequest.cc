@@ -34,7 +34,7 @@ void EnableEventRuleRequest::setRuleNames(const std::vector<std::string>& ruleNa
 {
 	ruleNames_ = ruleNames;
 	for(int i = 0; i!= ruleNames.size(); i++)
-		setCoreParameter("RuleNames."+ std::to_string(i), ruleNames.at(i));
+		setCoreParameter("RuleNames."+ std::to_string(i), std::to_string(ruleNames.at(i)));
 }
 
 std::string EnableEventRuleRequest::getRuleName()const

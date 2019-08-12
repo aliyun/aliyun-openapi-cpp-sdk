@@ -33,7 +33,7 @@ long GetFlowAuditLogsRequest::getResourceOwnerId()const
 void GetFlowAuditLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int GetFlowAuditLogsRequest::getPageCount()const
@@ -44,7 +44,7 @@ int GetFlowAuditLogsRequest::getPageCount()const
 void GetFlowAuditLogsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", std::to_string(pageCount));
+	setCoreParameter("PageCount", pageCount);
 }
 
 std::string GetFlowAuditLogsRequest::getOrderMode()const
@@ -66,7 +66,7 @@ long GetFlowAuditLogsRequest::getCallerParentId()const
 void GetFlowAuditLogsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool GetFlowAuditLogsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ bool GetFlowAuditLogsRequest::getProxy_original_security_transport()const
 void GetFlowAuditLogsRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string GetFlowAuditLogsRequest::getEntityId()const
@@ -121,7 +121,7 @@ int GetFlowAuditLogsRequest::getPageNumber()const
 void GetFlowAuditLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string GetFlowAuditLogsRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ int GetFlowAuditLogsRequest::getLimit()const
 void GetFlowAuditLogsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setCoreParameter("Limit", limit);
 }
 
 int GetFlowAuditLogsRequest::getPageSize()const
@@ -176,7 +176,7 @@ int GetFlowAuditLogsRequest::getPageSize()const
 void GetFlowAuditLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetFlowAuditLogsRequest::getCurrentSize()const
@@ -187,7 +187,7 @@ int GetFlowAuditLogsRequest::getCurrentSize()const
 void GetFlowAuditLogsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
+	setCoreParameter("CurrentSize", currentSize);
 }
 
 long GetFlowAuditLogsRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long GetFlowAuditLogsRequest::getCallerUid()const
 void GetFlowAuditLogsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string GetFlowAuditLogsRequest::getOrderField()const
@@ -253,7 +253,7 @@ bool GetFlowAuditLogsRequest::getAk_mfa_present()const
 void GetFlowAuditLogsRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool GetFlowAuditLogsRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ bool GetFlowAuditLogsRequest::getProxy_trust_transport_info()const
 void GetFlowAuditLogsRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool GetFlowAuditLogsRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool GetFlowAuditLogsRequest::getSecurity_transport()const
 void GetFlowAuditLogsRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string GetFlowAuditLogsRequest::getEntityType()const

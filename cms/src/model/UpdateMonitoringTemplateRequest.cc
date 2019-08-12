@@ -55,7 +55,7 @@ long UpdateMonitoringTemplateRequest::getRestVersion()const
 void UpdateMonitoringTemplateRequest::setRestVersion(long restVersion)
 {
 	restVersion_ = restVersion;
-	setCoreParameter("RestVersion", std::to_string(restVersion));
+	setCoreParameter("RestVersion", restVersion);
 }
 
 std::string UpdateMonitoringTemplateRequest::getDescription()const
@@ -77,7 +77,7 @@ long UpdateMonitoringTemplateRequest::getId()const
 void UpdateMonitoringTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateMonitoringTemplateRequest::getAlertTemplatesJson()const

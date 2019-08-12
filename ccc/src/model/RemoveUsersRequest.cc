@@ -45,7 +45,7 @@ void RemoveUsersRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
 	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
+		setCoreParameter("UserId."+ std::to_string(i), std::to_string(userId.at(i)));
 }
 
 std::string RemoveUsersRequest::getAccessKeyId()const

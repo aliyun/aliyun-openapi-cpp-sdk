@@ -55,6 +55,6 @@ int DescribeSuspEventExportInfoRequest::getExportId()const
 void DescribeSuspEventExportInfoRequest::setExportId(int exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", std::to_string(exportId));
+	setCoreParameter("ExportId", exportId);
 }
 

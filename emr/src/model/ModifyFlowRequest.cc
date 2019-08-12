@@ -66,7 +66,7 @@ bool ModifyFlowRequest::getPeriodic()const
 void ModifyFlowRequest::setPeriodic(bool periodic)
 {
 	periodic_ = periodic;
-	setCoreParameter("Periodic", periodic ? "true" : "false");
+	setCoreParameter("Periodic", periodic);
 }
 
 long ModifyFlowRequest::getStartSchedule()const
@@ -77,7 +77,7 @@ long ModifyFlowRequest::getStartSchedule()const
 void ModifyFlowRequest::setStartSchedule(long startSchedule)
 {
 	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", std::to_string(startSchedule));
+	setCoreParameter("StartSchedule", startSchedule);
 }
 
 std::string ModifyFlowRequest::getDescription()const
@@ -154,7 +154,7 @@ bool ModifyFlowRequest::getCreateCluster()const
 void ModifyFlowRequest::setCreateCluster(bool createCluster)
 {
 	createCluster_ = createCluster;
-	setCoreParameter("CreateCluster", createCluster ? "true" : "false");
+	setCoreParameter("CreateCluster", createCluster);
 }
 
 std::string ModifyFlowRequest::getName()const
@@ -176,7 +176,7 @@ long ModifyFlowRequest::getEndSchedule()const
 void ModifyFlowRequest::setEndSchedule(long endSchedule)
 {
 	endSchedule_ = endSchedule;
-	setCoreParameter("EndSchedule", std::to_string(endSchedule));
+	setCoreParameter("EndSchedule", endSchedule);
 }
 
 std::string ModifyFlowRequest::getId()const

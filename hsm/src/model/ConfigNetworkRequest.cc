@@ -44,7 +44,7 @@ long ConfigNetworkRequest::getResourceOwnerId()const
 void ConfigNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ConfigNetworkRequest::getInstanceId()const

@@ -33,7 +33,7 @@ long DescribeChildInstanceRegionsRequest::getResourceOwnerId()const
 void DescribeChildInstanceRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DescribeChildInstanceRegionsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long DescribeChildInstanceRegionsRequest::getOwnerId()const
 void DescribeChildInstanceRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeChildInstanceRegionsRequest::getProductType()const

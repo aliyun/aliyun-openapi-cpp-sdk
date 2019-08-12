@@ -55,7 +55,7 @@ int GetRepoListByNamespaceRequest::getPageSize()const
 void GetRepoListByNamespaceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetRepoListByNamespaceRequest::getPage()const
@@ -66,7 +66,7 @@ int GetRepoListByNamespaceRequest::getPage()const
 void GetRepoListByNamespaceRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setCoreParameter("Page", page);
 }
 
 std::string GetRepoListByNamespaceRequest::getStatus()const

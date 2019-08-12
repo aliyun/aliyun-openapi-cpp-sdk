@@ -44,7 +44,7 @@ int CheckDomainRequest::getFeePeriod()const
 void CheckDomainRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", std::to_string(feePeriod));
+	setCoreParameter("FeePeriod", feePeriod);
 }
 
 std::string CheckDomainRequest::getDomainName()const

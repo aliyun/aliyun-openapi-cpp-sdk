@@ -44,7 +44,7 @@ long RemoveTagRequest::getAppKey()const
 void RemoveTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::string RemoveTagRequest::getAccessKeyId()const

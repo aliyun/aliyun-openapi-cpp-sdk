@@ -34,7 +34,7 @@ void CreateSkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
 	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+		setCoreParameter("SkillLevel."+ std::to_string(i), skillLevel.at(i));
 }
 
 std::string CreateSkillGroupRequest::getInstanceId()const
@@ -56,7 +56,7 @@ bool CreateSkillGroupRequest::getAllowPrivateOutboundNumber()const
 void CreateSkillGroupRequest::setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber)
 {
 	allowPrivateOutboundNumber_ = allowPrivateOutboundNumber;
-	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
+	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber);
 }
 
 std::vector<std::string> CreateSkillGroupRequest::getOutboundPhoneNumberId()const
@@ -68,7 +68,7 @@ void CreateSkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::st
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
 	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), std::to_string(outboundPhoneNumberId.at(i)));
 }
 
 std::string CreateSkillGroupRequest::getName()const
@@ -113,7 +113,7 @@ void CreateSkillGroupRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
 	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
+		setCoreParameter("UserId."+ std::to_string(i), std::to_string(userId.at(i)));
 }
 
 std::string CreateSkillGroupRequest::getAccessKeyId()const

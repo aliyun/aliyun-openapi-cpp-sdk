@@ -33,7 +33,7 @@ int DescribeImagePriceRequest::getPeriod()const
 void DescribeImagePriceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 int DescribeImagePriceRequest::getAmount()const
@@ -44,7 +44,7 @@ int DescribeImagePriceRequest::getAmount()const
 void DescribeImagePriceRequest::setAmount(int amount)
 {
 	amount_ = amount;
-	setCoreParameter("Amount", std::to_string(amount));
+	setCoreParameter("Amount", amount);
 }
 
 std::string DescribeImagePriceRequest::getImageId()const

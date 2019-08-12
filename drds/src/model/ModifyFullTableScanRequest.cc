@@ -66,7 +66,7 @@ bool ModifyFullTableScanRequest::getFullTableScan()const
 void ModifyFullTableScanRequest::setFullTableScan(bool fullTableScan)
 {
 	fullTableScan_ = fullTableScan;
-	setCoreParameter("FullTableScan", fullTableScan ? "true" : "false");
+	setCoreParameter("FullTableScan", fullTableScan);
 }
 
 std::string ModifyFullTableScanRequest::getAccessKeyId()const

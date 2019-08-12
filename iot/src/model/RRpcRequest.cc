@@ -88,7 +88,7 @@ int RRpcRequest::getTimeout()const
 void RRpcRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", timeout);
 }
 
 std::string RRpcRequest::getAccessKeyId()const

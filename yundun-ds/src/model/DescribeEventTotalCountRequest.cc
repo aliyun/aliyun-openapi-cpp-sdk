@@ -55,7 +55,7 @@ int DescribeEventTotalCountRequest::getFeatureType()const
 void DescribeEventTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 int DescribeEventTotalCountRequest::getCountType()const
@@ -66,7 +66,7 @@ int DescribeEventTotalCountRequest::getCountType()const
 void DescribeEventTotalCountRequest::setCountType(int countType)
 {
 	countType_ = countType;
-	setCoreParameter("CountType", std::to_string(countType));
+	setCoreParameter("CountType", countType);
 }
 
 std::string DescribeEventTotalCountRequest::getLang()const

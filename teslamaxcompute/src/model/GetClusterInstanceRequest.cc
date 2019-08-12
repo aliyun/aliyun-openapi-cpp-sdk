@@ -44,7 +44,7 @@ int GetClusterInstanceRequest::getPageSize()const
 void GetClusterInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int GetClusterInstanceRequest::getPageNum()const
@@ -55,7 +55,7 @@ int GetClusterInstanceRequest::getPageNum()const
 void GetClusterInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", pageNum);
 }
 
 std::string GetClusterInstanceRequest::getRegion()const

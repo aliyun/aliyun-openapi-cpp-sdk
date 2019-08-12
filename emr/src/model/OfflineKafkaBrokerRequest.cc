@@ -33,7 +33,7 @@ long OfflineKafkaBrokerRequest::getThrottle()const
 void OfflineKafkaBrokerRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", std::to_string(throttle));
+	setCoreParameter("Throttle", throttle);
 }
 
 long OfflineKafkaBrokerRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long OfflineKafkaBrokerRequest::getResourceOwnerId()const
 void OfflineKafkaBrokerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string OfflineKafkaBrokerRequest::getRegionId()const

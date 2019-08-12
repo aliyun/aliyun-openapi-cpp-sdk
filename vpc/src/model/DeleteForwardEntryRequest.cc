@@ -33,7 +33,7 @@ long DeleteForwardEntryRequest::getResourceOwnerId()const
 void DeleteForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteForwardEntryRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DeleteForwardEntryRequest::getOwnerId()const
 void DeleteForwardEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

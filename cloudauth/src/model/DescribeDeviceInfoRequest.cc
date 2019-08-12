@@ -55,7 +55,7 @@ int DescribeDeviceInfoRequest::getTotalCount()const
 void DescribeDeviceInfoRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setCoreParameter("TotalCount", totalCount);
 }
 
 std::string DescribeDeviceInfoRequest::getSourceIp()const
@@ -77,7 +77,7 @@ int DescribeDeviceInfoRequest::getPageSize()const
 void DescribeDeviceInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeDeviceInfoRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDeviceInfoRequest::getCurrentPage()const
 void DescribeDeviceInfoRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeDeviceInfoRequest::getLang()const

@@ -45,7 +45,7 @@ void ListConfigRequest::setConfigItem(const std::vector<std::string>& configItem
 {
 	configItem_ = configItem;
 	for(int i = 0; i!= configItem.size(); i++)
-		setCoreParameter("ConfigItem."+ std::to_string(i), configItem.at(i));
+		setCoreParameter("ConfigItem."+ std::to_string(i), std::to_string(configItem.at(i)));
 }
 
 std::string ListConfigRequest::getAccessKeyId()const

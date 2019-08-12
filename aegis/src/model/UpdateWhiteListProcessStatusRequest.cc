@@ -55,7 +55,7 @@ long UpdateWhiteListProcessStatusRequest::getStrategyId()const
 void UpdateWhiteListProcessStatusRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setCoreParameter("StrategyId", strategyId);
 }
 
 std::string UpdateWhiteListProcessStatusRequest::getLang()const
@@ -77,6 +77,6 @@ int UpdateWhiteListProcessStatusRequest::getStatus()const
 void UpdateWhiteListProcessStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

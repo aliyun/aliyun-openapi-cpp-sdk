@@ -33,7 +33,7 @@ long SearchPipelineRequest::getResourceOwnerId()const
 void SearchPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchPipelineRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ long SearchPipelineRequest::getPageSize()const
 void SearchPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string SearchPipelineRequest::getState()const
@@ -88,7 +88,7 @@ long SearchPipelineRequest::getOwnerId()const
 void SearchPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 long SearchPipelineRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long SearchPipelineRequest::getPageNumber()const
 void SearchPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string SearchPipelineRequest::getAccessKeyId()const

@@ -44,7 +44,7 @@ bool DescribeScdnUserDomainsRequest::getCheckDomainShow()const
 void DescribeScdnUserDomainsRequest::setCheckDomainShow(bool checkDomainShow)
 {
 	checkDomainShow_ = checkDomainShow;
-	setCoreParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
+	setCoreParameter("CheckDomainShow", checkDomainShow);
 }
 
 std::string DescribeScdnUserDomainsRequest::getResourceGroupId()const
@@ -77,7 +77,7 @@ int DescribeScdnUserDomainsRequest::getPageSize()const
 void DescribeScdnUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeScdnUserDomainsRequest::getDomainName()const
@@ -99,7 +99,7 @@ long DescribeScdnUserDomainsRequest::getOwnerId()const
 void DescribeScdnUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeScdnUserDomainsRequest::getFuncId()const
@@ -121,7 +121,7 @@ int DescribeScdnUserDomainsRequest::getPageNumber()const
 void DescribeScdnUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeScdnUserDomainsRequest::getDomainStatus()const

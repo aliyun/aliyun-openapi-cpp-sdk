@@ -55,7 +55,7 @@ int DescribeConsoleAccessWhiteListRequest::getPageSize()const
 void DescribeConsoleAccessWhiteListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeConsoleAccessWhiteListRequest::getQueryProduct()const
@@ -77,7 +77,7 @@ int DescribeConsoleAccessWhiteListRequest::getCurrentPage()const
 void DescribeConsoleAccessWhiteListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 int DescribeConsoleAccessWhiteListRequest::getWhiteListType()const
@@ -88,7 +88,7 @@ int DescribeConsoleAccessWhiteListRequest::getWhiteListType()const
 void DescribeConsoleAccessWhiteListRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setCoreParameter("WhiteListType", whiteListType);
 }
 
 std::string DescribeConsoleAccessWhiteListRequest::getDstIP()const

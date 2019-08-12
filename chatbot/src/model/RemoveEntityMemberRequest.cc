@@ -55,6 +55,6 @@ long RemoveEntityMemberRequest::getEntityId()const
 void RemoveEntityMemberRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setCoreParameter("EntityId", entityId);
 }
 

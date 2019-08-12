@@ -44,7 +44,7 @@ long DescribeVSwitchAttributesRequest::getResourceOwnerId()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool DescribeVSwitchAttributesRequest::getDryRun()const
@@ -55,7 +55,7 @@ bool DescribeVSwitchAttributesRequest::getDryRun()const
 void DescribeVSwitchAttributesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setCoreParameter("DryRun", dryRun);
 }
 
 std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
@@ -99,6 +99,6 @@ long DescribeVSwitchAttributesRequest::getOwnerId()const
 void DescribeVSwitchAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

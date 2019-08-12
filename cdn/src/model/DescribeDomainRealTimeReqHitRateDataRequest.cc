@@ -33,7 +33,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getCallerParentId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", callerParentId);
 }
 
 bool DescribeDomainRealTimeReqHitRateDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainRealTimeReqHitRateDataRequest::getProxy_original_security_tra
 void DescribeDomainRealTimeReqHitRateDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getStartTime()const
@@ -154,7 +154,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getCallerUid()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", callerUid);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getApp_ip()const
@@ -220,7 +220,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getOwnerId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getVersion()const
@@ -242,7 +242,7 @@ bool DescribeDomainRealTimeReqHitRateDataRequest::getProxy_trust_transport_info(
 void DescribeDomainRealTimeReqHitRateDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info);
 }
 
 bool DescribeDomainRealTimeReqHitRateDataRequest::getAk_mfa_present()const
@@ -253,7 +253,7 @@ bool DescribeDomainRealTimeReqHitRateDataRequest::getAk_mfa_present()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present);
 }
 
 bool DescribeDomainRealTimeReqHitRateDataRequest::getSecurity_transport()const
@@ -264,7 +264,7 @@ bool DescribeDomainRealTimeReqHitRateDataRequest::getSecurity_transport()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setCoreParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getRequestId()const

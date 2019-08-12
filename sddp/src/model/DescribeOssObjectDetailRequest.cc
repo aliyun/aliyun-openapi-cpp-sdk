@@ -44,7 +44,7 @@ int DescribeOssObjectDetailRequest::getFeatureType()const
 void DescribeOssObjectDetailRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setCoreParameter("FeatureType", featureType);
 }
 
 long DescribeOssObjectDetailRequest::getId()const
@@ -55,7 +55,7 @@ long DescribeOssObjectDetailRequest::getId()const
 void DescribeOssObjectDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeOssObjectDetailRequest::getLang()const

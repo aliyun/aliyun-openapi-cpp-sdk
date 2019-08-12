@@ -77,6 +77,6 @@ int UpdateProjectRequest::getNewCU()const
 void UpdateProjectRequest::setNewCU(int newCU)
 {
 	newCU_ = newCU;
-	setCoreParameter("NewCU", std::to_string(newCU));
+	setCoreParameter("NewCU", newCU);
 }
 

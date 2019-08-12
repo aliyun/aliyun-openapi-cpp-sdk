@@ -33,7 +33,7 @@ int GetResourcePackagePriceRequest::getDuration()const
 void GetResourcePackagePriceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string GetResourcePackagePriceRequest::getProductCode()const
@@ -66,7 +66,7 @@ long GetResourcePackagePriceRequest::getOwnerId()const
 void GetResourcePackagePriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetResourcePackagePriceRequest::getPackageType()const

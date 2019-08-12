@@ -37,11 +37,11 @@ void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& event
 	for(int i = 0; i!= eventPattern.size(); i++)	{
 		auto obj = eventPattern.at(i);
 		std::string str ="EventPattern."+ std::to_string(i);
-		for(int i = 0; i!= obj.levelList.size(); i++)				setCoreParameter(str + ".LevelList."+ std::to_string(i), obj.levelList.at(i));
-		setCoreParameter(str + ".Product", obj.product);
-		for(int i = 0; i!= obj.statusList.size(); i++)				setCoreParameter(str + ".StatusList."+ std::to_string(i), obj.statusList.at(i));
-		for(int i = 0; i!= obj.nameList.size(); i++)				setCoreParameter(str + ".NameList."+ std::to_string(i), obj.nameList.at(i));
-		for(int i = 0; i!= obj.eventTypeList.size(); i++)				setCoreParameter(str + ".EventTypeList."+ std::to_string(i), obj.eventTypeList.at(i));
+		for(int i = 0; i!= obj.levelList.size(); i++)				setCoreParameter(str + ".LevelList."+ std::to_string(i), std::to_string(obj.levelList.at(i)));
+		setCoreParameter(str + ".Product", std::to_string(obj.product));
+		for(int i = 0; i!= obj.statusList.size(); i++)				setCoreParameter(str + ".StatusList."+ std::to_string(i), std::to_string(obj.statusList.at(i)));
+		for(int i = 0; i!= obj.nameList.size(); i++)				setCoreParameter(str + ".NameList."+ std::to_string(i), std::to_string(obj.nameList.at(i)));
+		for(int i = 0; i!= obj.eventTypeList.size(); i++)				setCoreParameter(str + ".EventTypeList."+ std::to_string(i), std::to_string(obj.eventTypeList.at(i)));
 	}
 }
 

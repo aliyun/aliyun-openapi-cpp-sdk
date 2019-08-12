@@ -55,7 +55,7 @@ int DescribeCdnIpListRequest::getWlState()const
 void DescribeCdnIpListRequest::setWlState(int wlState)
 {
 	wlState_ = wlState;
-	setCoreParameter("WlState", std::to_string(wlState));
+	setCoreParameter("WlState", wlState);
 }
 
 int DescribeCdnIpListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeCdnIpListRequest::getPageSize()const
 void DescribeCdnIpListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 int DescribeCdnIpListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeCdnIpListRequest::getCurrentPage()const
 void DescribeCdnIpListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeCdnIpListRequest::getLang()const

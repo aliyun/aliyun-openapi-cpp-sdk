@@ -33,7 +33,7 @@ long CancelImportRequest::getResourceOwnerId()const
 void CancelImportRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CancelImportRequest::getImportId()const
@@ -44,7 +44,7 @@ int CancelImportRequest::getImportId()const
 void CancelImportRequest::setImportId(int importId)
 {
 	importId_ = importId;
-	setCoreParameter("ImportId", std::to_string(importId));
+	setCoreParameter("ImportId", importId);
 }
 
 std::string CancelImportRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ long CancelImportRequest::getOwnerId()const
 void CancelImportRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CancelImportRequest::getAccessKeyId()const

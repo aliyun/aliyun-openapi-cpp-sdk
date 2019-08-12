@@ -66,7 +66,7 @@ int ListStaOnoffLogRequest::getLength()const
 void ListStaOnoffLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListStaOnoffLogRequest::getSearchUsername()const
@@ -88,7 +88,7 @@ int ListStaOnoffLogRequest::getPageIndex()const
 void ListStaOnoffLogRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 long ListStaOnoffLogRequest::getId()const
@@ -99,7 +99,7 @@ long ListStaOnoffLogRequest::getId()const
 void ListStaOnoffLogRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ListStaOnoffLogRequest::getOrderDir()const

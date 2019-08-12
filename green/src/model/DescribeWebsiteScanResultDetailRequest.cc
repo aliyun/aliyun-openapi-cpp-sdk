@@ -44,7 +44,7 @@ int DescribeWebsiteScanResultDetailRequest::getId()const
 void DescribeWebsiteScanResultDetailRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeWebsiteScanResultDetailRequest::getLang()const

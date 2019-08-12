@@ -33,7 +33,7 @@ int SaveCustomizeReportConfigRequest::getReportSendType()const
 void SaveCustomizeReportConfigRequest::setReportSendType(int reportSendType)
 {
 	reportSendType_ = reportSendType;
-	setCoreParameter("ReportSendType", std::to_string(reportSendType));
+	setCoreParameter("ReportSendType", reportSendType);
 }
 
 int SaveCustomizeReportConfigRequest::getReportType()const
@@ -44,7 +44,7 @@ int SaveCustomizeReportConfigRequest::getReportType()const
 void SaveCustomizeReportConfigRequest::setReportType(int reportType)
 {
 	reportType_ = reportType;
-	setCoreParameter("ReportType", std::to_string(reportType));
+	setCoreParameter("ReportType", reportType);
 }
 
 std::string SaveCustomizeReportConfigRequest::getSourceIp()const
@@ -66,7 +66,7 @@ long SaveCustomizeReportConfigRequest::getReportId()const
 void SaveCustomizeReportConfigRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", std::to_string(reportId));
+	setCoreParameter("ReportId", reportId);
 }
 
 std::string SaveCustomizeReportConfigRequest::getReportEndDate()const
@@ -154,6 +154,6 @@ int SaveCustomizeReportConfigRequest::getReportStatus()const
 void SaveCustomizeReportConfigRequest::setReportStatus(int reportStatus)
 {
 	reportStatus_ = reportStatus;
-	setCoreParameter("ReportStatus", std::to_string(reportStatus));
+	setCoreParameter("ReportStatus", reportStatus);
 }
 

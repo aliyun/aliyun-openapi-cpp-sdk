@@ -55,7 +55,7 @@ int ListStaStatusRequest::getSearchStatus()const
 void ListStaStatusRequest::setSearchStatus(int searchStatus)
 {
 	searchStatus_ = searchStatus;
-	setCoreParameter("SearchStatus", std::to_string(searchStatus));
+	setCoreParameter("SearchStatus", searchStatus);
 }
 
 int ListStaStatusRequest::getLength()const
@@ -66,7 +66,7 @@ int ListStaStatusRequest::getLength()const
 void ListStaStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListStaStatusRequest::getSearchUsername()const
@@ -154,7 +154,7 @@ int ListStaStatusRequest::getPageIndex()const
 void ListStaStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListStaStatusRequest::getSearchMac()const

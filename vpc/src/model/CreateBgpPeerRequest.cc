@@ -33,7 +33,7 @@ long CreateBgpPeerRequest::getResourceOwnerId()const
 void CreateBgpPeerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 bool CreateBgpPeerRequest::getEnableBfd()const
@@ -44,7 +44,7 @@ bool CreateBgpPeerRequest::getEnableBfd()const
 void CreateBgpPeerRequest::setEnableBfd(bool enableBfd)
 {
 	enableBfd_ = enableBfd;
-	setCoreParameter("EnableBfd", enableBfd ? "true" : "false");
+	setCoreParameter("EnableBfd", enableBfd);
 }
 
 std::string CreateBgpPeerRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ long CreateBgpPeerRequest::getOwnerId()const
 void CreateBgpPeerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string CreateBgpPeerRequest::getPeerIpAddress()const

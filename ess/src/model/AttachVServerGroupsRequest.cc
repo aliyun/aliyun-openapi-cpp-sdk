@@ -66,7 +66,7 @@ bool AttachVServerGroupsRequest::getForceAttach()const
 void AttachVServerGroupsRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+	setCoreParameter("ForceAttach", forceAttach);
 }
 
 long AttachVServerGroupsRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long AttachVServerGroupsRequest::getOwnerId()const
 void AttachVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::vector<AttachVServerGroupsRequest::VServerGroup> AttachVServerGroupsRequest::getVServerGroup()const
@@ -92,8 +92,8 @@ void AttachVServerGroupsRequest::setVServerGroup(const std::vector<VServerGroup>
 	for(int i = 0; i!= vServerGroup.size(); i++)	{
 		auto obj = vServerGroup.at(i);
 		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
-		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
+		setCoreParameter(str + ".LoadBalancerId", std::to_string(obj.loadBalancerId));
+		setCoreParameter(str + ".VServerGroupAttribute", obj.vServerGroupAttribute);
 	}
 }
 

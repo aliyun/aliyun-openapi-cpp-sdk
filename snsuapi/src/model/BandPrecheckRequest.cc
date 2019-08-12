@@ -44,7 +44,7 @@ long BandPrecheckRequest::getResourceOwnerId()const
 void BandPrecheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string BandPrecheckRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ int BandPrecheckRequest::getPort()const
 void BandPrecheckRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 long BandPrecheckRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long BandPrecheckRequest::getOwnerId()const
 void BandPrecheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string BandPrecheckRequest::getAccessKeyId()const

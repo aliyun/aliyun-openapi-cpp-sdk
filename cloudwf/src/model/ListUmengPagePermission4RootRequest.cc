@@ -44,7 +44,7 @@ int ListUmengPagePermission4RootRequest::getLength()const
 void ListUmengPagePermission4RootRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setCoreParameter("Length", length);
 }
 
 std::string ListUmengPagePermission4RootRequest::getSearchEmail()const
@@ -66,7 +66,7 @@ int ListUmengPagePermission4RootRequest::getPageIndex()const
 void ListUmengPagePermission4RootRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", pageIndex);
 }
 
 std::string ListUmengPagePermission4RootRequest::getOrderDir()const

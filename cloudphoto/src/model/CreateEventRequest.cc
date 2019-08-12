@@ -132,7 +132,7 @@ long CreateEventRequest::getEndAt()const
 void CreateEventRequest::setEndAt(long endAt)
 {
 	endAt_ = endAt;
-	setCoreParameter("EndAt", std::to_string(endAt));
+	setCoreParameter("EndAt", endAt);
 }
 
 long CreateEventRequest::getStartAt()const
@@ -143,6 +143,6 @@ long CreateEventRequest::getStartAt()const
 void CreateEventRequest::setStartAt(long startAt)
 {
 	startAt_ = startAt;
-	setCoreParameter("StartAt", std::to_string(startAt));
+	setCoreParameter("StartAt", startAt);
 }
 
