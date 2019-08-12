@@ -33,7 +33,7 @@ std::string SendWebsiteFeedbackRequest::getFeedback()const
 void SendWebsiteFeedbackRequest::setFeedback(const std::string& feedback)
 {
 	feedback_ = feedback;
-	setCoreParameter("Feedback", std::to_string(feedback));
+	setCoreParameter("Feedback", feedback);
 }
 
 std::string SendWebsiteFeedbackRequest::getUrls()const
@@ -44,7 +44,7 @@ std::string SendWebsiteFeedbackRequest::getUrls()const
 void SendWebsiteFeedbackRequest::setUrls(const std::string& urls)
 {
 	urls_ = urls;
-	setCoreParameter("Urls", std::to_string(urls));
+	setCoreParameter("Urls", urls);
 }
 
 std::string SendWebsiteFeedbackRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string SendWebsiteFeedbackRequest::getSourceIp()const
 void SendWebsiteFeedbackRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string SendWebsiteFeedbackRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SendWebsiteFeedbackRequest::getLang()const
 void SendWebsiteFeedbackRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

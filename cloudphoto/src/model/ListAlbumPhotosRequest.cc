@@ -33,7 +33,7 @@ std::string ListAlbumPhotosRequest::getCursor()const
 void ListAlbumPhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListAlbumPhotosRequest::getSize()const
@@ -44,7 +44,7 @@ int ListAlbumPhotosRequest::getSize()const
 void ListAlbumPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListAlbumPhotosRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string ListAlbumPhotosRequest::getLibraryId()const
 void ListAlbumPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long ListAlbumPhotosRequest::getAlbumId()const
@@ -66,7 +66,7 @@ long ListAlbumPhotosRequest::getAlbumId()const
 void ListAlbumPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", albumId);
+	setCoreParameter("AlbumId", std::to_string(albumId));
 }
 
 std::string ListAlbumPhotosRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string ListAlbumPhotosRequest::getStoreName()const
 void ListAlbumPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListAlbumPhotosRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListAlbumPhotosRequest::getState()const
 void ListAlbumPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListAlbumPhotosRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListAlbumPhotosRequest::getDirection()const
 void ListAlbumPhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

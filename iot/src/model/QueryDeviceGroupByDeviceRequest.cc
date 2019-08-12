@@ -33,7 +33,7 @@ std::string QueryDeviceGroupByDeviceRequest::getIotInstanceId()const
 void QueryDeviceGroupByDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryDeviceGroupByDeviceRequest::getDeviceName()const
@@ -44,7 +44,7 @@ std::string QueryDeviceGroupByDeviceRequest::getDeviceName()const
 void QueryDeviceGroupByDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string QueryDeviceGroupByDeviceRequest::getProductKey()const
@@ -55,7 +55,7 @@ std::string QueryDeviceGroupByDeviceRequest::getProductKey()const
 void QueryDeviceGroupByDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceGroupByDeviceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryDeviceGroupByDeviceRequest::getAccessKeyId()const
 void QueryDeviceGroupByDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

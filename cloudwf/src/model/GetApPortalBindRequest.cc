@@ -33,7 +33,7 @@ int GetApPortalBindRequest::getConfigType()const
 void GetApPortalBindRequest::setConfigType(int configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", configType);
+	setCoreParameter("ConfigType", std::to_string(configType));
 }
 
 long GetApPortalBindRequest::getBindId()const
@@ -44,7 +44,7 @@ long GetApPortalBindRequest::getBindId()const
 void GetApPortalBindRequest::setBindId(long bindId)
 {
 	bindId_ = bindId;
-	setCoreParameter("BindId", bindId);
+	setCoreParameter("BindId", std::to_string(bindId));
 }
 
 std::string GetApPortalBindRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetApPortalBindRequest::getAccessKeyId()const
 void GetApPortalBindRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

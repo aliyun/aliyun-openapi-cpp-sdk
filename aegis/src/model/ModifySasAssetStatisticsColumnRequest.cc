@@ -33,7 +33,7 @@ std::string ModifySasAssetStatisticsColumnRequest::getSourceIp()const
 void ModifySasAssetStatisticsColumnRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifySasAssetStatisticsColumnRequest::getStatisticsColumn()const
@@ -44,6 +44,6 @@ std::string ModifySasAssetStatisticsColumnRequest::getStatisticsColumn()const
 void ModifySasAssetStatisticsColumnRequest::setStatisticsColumn(const std::string& statisticsColumn)
 {
 	statisticsColumn_ = statisticsColumn;
-	setCoreParameter("StatisticsColumn", std::to_string(statisticsColumn));
+	setCoreParameter("StatisticsColumn", statisticsColumn);
 }
 

@@ -34,7 +34,7 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string>& resource
 {
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), std::to_string(resourceId.at(i)));
+		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
 std::string TagResourcesRequest::getSourceIp()const
@@ -45,7 +45,7 @@ std::string TagResourcesRequest::getSourceIp()const
 void TagResourcesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string TagResourcesRequest::getRegionId()const
@@ -56,7 +56,7 @@ std::string TagResourcesRequest::getRegionId()const
 void TagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string TagResourcesRequest::getScope()const
@@ -67,7 +67,7 @@ std::string TagResourcesRequest::getScope()const
 void TagResourcesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", std::to_string(scope));
+	setCoreParameter("Scope", scope);
 }
 
 std::string TagResourcesRequest::getTagOwnerUid()const
@@ -78,7 +78,7 @@ std::string TagResourcesRequest::getTagOwnerUid()const
 void TagResourcesRequest::setTagOwnerUid(const std::string& tagOwnerUid)
 {
 	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
+	setCoreParameter("TagOwnerUid", tagOwnerUid);
 }
 
 std::string TagResourcesRequest::getTagOwnerBid()const
@@ -89,7 +89,7 @@ std::string TagResourcesRequest::getTagOwnerBid()const
 void TagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
 {
 	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", std::to_string(tagOwnerBid));
+	setCoreParameter("TagOwnerBid", tagOwnerBid);
 }
 
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
@@ -104,8 +104,8 @@ void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -117,6 +117,6 @@ std::string TagResourcesRequest::getResourceType()const
 void TagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

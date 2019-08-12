@@ -33,7 +33,7 @@ long GetTranscodeSummaryRequest::getResourceOwnerId()const
 void GetTranscodeSummaryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetTranscodeSummaryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetTranscodeSummaryRequest::getResourceOwnerAccount()const
 void GetTranscodeSummaryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetTranscodeSummaryRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long GetTranscodeSummaryRequest::getOwnerId()const
 void GetTranscodeSummaryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetTranscodeSummaryRequest::getVideoIds()const
@@ -66,7 +66,7 @@ std::string GetTranscodeSummaryRequest::getVideoIds()const
 void GetTranscodeSummaryRequest::setVideoIds(const std::string& videoIds)
 {
 	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", std::to_string(videoIds));
+	setCoreParameter("VideoIds", videoIds);
 }
 
 std::string GetTranscodeSummaryRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetTranscodeSummaryRequest::getAccessKeyId()const
 void GetTranscodeSummaryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

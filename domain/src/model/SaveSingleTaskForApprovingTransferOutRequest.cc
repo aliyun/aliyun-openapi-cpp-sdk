@@ -33,7 +33,7 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getDomainName()const
 void SaveSingleTaskForApprovingTransferOutRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForApprovingTransferOutRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getUserClientIp()const
 void SaveSingleTaskForApprovingTransferOutRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForApprovingTransferOutRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getLang()const
 void SaveSingleTaskForApprovingTransferOutRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

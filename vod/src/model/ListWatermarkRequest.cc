@@ -33,7 +33,7 @@ long ListWatermarkRequest::getResourceOwnerId()const
 void ListWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListWatermarkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListWatermarkRequest::getResourceOwnerAccount()const
 void ListWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ListWatermarkRequest::getPageNo()const
@@ -55,7 +55,7 @@ int ListWatermarkRequest::getPageNo()const
 void ListWatermarkRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListWatermarkRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string ListWatermarkRequest::getAppId()const
 void ListWatermarkRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 int ListWatermarkRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListWatermarkRequest::getPageSize()const
 void ListWatermarkRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListWatermarkRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListWatermarkRequest::getOwnerId()const
 void ListWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListWatermarkRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListWatermarkRequest::getAccessKeyId()const
 void ListWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ShopGetfiltermacRequest::getAccessKeyId()const
 void ShopGetfiltermacRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopGetfiltermacRequest::getSid()const
@@ -44,6 +44,6 @@ long ShopGetfiltermacRequest::getSid()const
 void ShopGetfiltermacRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

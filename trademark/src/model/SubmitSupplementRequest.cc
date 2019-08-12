@@ -33,7 +33,7 @@ std::string SubmitSupplementRequest::getUploadOssKeyList()const
 void SubmitSupplementRequest::setUploadOssKeyList(const std::string& uploadOssKeyList)
 {
 	uploadOssKeyList_ = uploadOssKeyList;
-	setCoreParameter("UploadOssKeyList", std::to_string(uploadOssKeyList));
+	setCoreParameter("UploadOssKeyList", uploadOssKeyList);
 }
 
 long SubmitSupplementRequest::getId()const
@@ -44,7 +44,7 @@ long SubmitSupplementRequest::getId()const
 void SubmitSupplementRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string SubmitSupplementRequest::getContent()const
@@ -55,6 +55,6 @@ std::string SubmitSupplementRequest::getContent()const
 void SubmitSupplementRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", std::to_string(content));
+	setCoreParameter("Content", content);
 }
 

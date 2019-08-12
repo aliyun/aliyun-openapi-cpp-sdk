@@ -44,7 +44,7 @@ std::string QueryGenerateTaskResultRequest::getApp_ip()const
 void QueryGenerateTaskResultRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string QueryGenerateTaskResultRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string QueryGenerateTaskResultRequest::getRegionId()const
 void QueryGenerateTaskResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryGenerateTaskResultRequest::getRequestId()const
@@ -66,7 +66,7 @@ std::string QueryGenerateTaskResultRequest::getRequestId()const
 void QueryGenerateTaskResultRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long QueryGenerateTaskResultRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ long QueryGenerateTaskResultRequest::getCallerParentId()const
 void QueryGenerateTaskResultRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string QueryGenerateTaskResultRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string QueryGenerateTaskResultRequest::getCallerType()const
 void QueryGenerateTaskResultRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool QueryGenerateTaskResultRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ long QueryGenerateTaskResultRequest::getCallerUid()const
 void QueryGenerateTaskResultRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 long QueryGenerateTaskResultRequest::getTaskId()const
@@ -121,6 +121,6 @@ long QueryGenerateTaskResultRequest::getTaskId()const
 void QueryGenerateTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

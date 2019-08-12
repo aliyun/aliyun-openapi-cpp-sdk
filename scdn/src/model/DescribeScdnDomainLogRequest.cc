@@ -33,7 +33,7 @@ long DescribeScdnDomainLogRequest::getResourceOwnerId()const
 void DescribeScdnDomainLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeScdnDomainLogRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeScdnDomainLogRequest::getCallerParentId()const
 void DescribeScdnDomainLogRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeScdnDomainLogRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeScdnDomainLogRequest::getStartTime()const
 void DescribeScdnDomainLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainLogRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeScdnDomainLogRequest::getProxy_original_source_ip()const
 void DescribeScdnDomainLogRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeScdnDomainLogRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeScdnDomainLogRequest::getOwnerIdLoginEmail()const
 void DescribeScdnDomainLogRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeScdnDomainLogRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeScdnDomainLogRequest::getCallerType()const
 void DescribeScdnDomainLogRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 long DescribeScdnDomainLogRequest::getPageNumber()const
@@ -110,7 +110,7 @@ long DescribeScdnDomainLogRequest::getPageNumber()const
 void DescribeScdnDomainLogRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeScdnDomainLogRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeScdnDomainLogRequest::getAccessKeyId()const
 void DescribeScdnDomainLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScdnDomainLogRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeScdnDomainLogRequest::getSecurityToken()const
 void DescribeScdnDomainLogRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainLogRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeScdnDomainLogRequest::getRequestContent()const
 void DescribeScdnDomainLogRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeScdnDomainLogRequest::getPageSize()const
@@ -154,7 +154,7 @@ long DescribeScdnDomainLogRequest::getPageSize()const
 void DescribeScdnDomainLogRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeScdnDomainLogRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeScdnDomainLogRequest::getCallerBidEmail()const
 void DescribeScdnDomainLogRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeScdnDomainLogRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeScdnDomainLogRequest::getCallerUidEmail()const
 void DescribeScdnDomainLogRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeScdnDomainLogRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeScdnDomainLogRequest::getCallerUid()const
 void DescribeScdnDomainLogRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeScdnDomainLogRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeScdnDomainLogRequest::getApp_ip()const
 void DescribeScdnDomainLogRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeScdnDomainLogRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeScdnDomainLogRequest::getPopProduct()const
 void DescribeScdnDomainLogRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainLogRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string DescribeScdnDomainLogRequest::getDomainName()const
 void DescribeScdnDomainLogRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainLogRequest::getEndTime()const
@@ -231,7 +231,7 @@ std::string DescribeScdnDomainLogRequest::getEndTime()const
 void DescribeScdnDomainLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeScdnDomainLogRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeScdnDomainLogRequest::getCallerBid()const
 void DescribeScdnDomainLogRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeScdnDomainLogRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeScdnDomainLogRequest::getOwnerId()const
 void DescribeScdnDomainLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainLogRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeScdnDomainLogRequest::getVersion()const
 void DescribeScdnDomainLogRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeScdnDomainLogRequest::getProxy_trust_transport_info()const
@@ -308,6 +308,6 @@ std::string DescribeScdnDomainLogRequest::getRequestId()const
 void DescribeScdnDomainLogRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

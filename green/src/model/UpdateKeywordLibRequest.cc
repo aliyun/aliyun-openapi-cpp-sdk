@@ -33,7 +33,7 @@ std::string UpdateKeywordLibRequest::getSourceIp()const
 void UpdateKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 bool UpdateKeywordLibRequest::getEnable()const
@@ -55,7 +55,7 @@ std::string UpdateKeywordLibRequest::getName()const
 void UpdateKeywordLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateKeywordLibRequest::getBizTypes()const
@@ -66,7 +66,7 @@ std::string UpdateKeywordLibRequest::getBizTypes()const
 void UpdateKeywordLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", std::to_string(bizTypes));
+	setCoreParameter("BizTypes", bizTypes);
 }
 
 int UpdateKeywordLibRequest::getId()const
@@ -77,7 +77,7 @@ int UpdateKeywordLibRequest::getId()const
 void UpdateKeywordLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateKeywordLibRequest::getLang()const
@@ -88,7 +88,7 @@ std::string UpdateKeywordLibRequest::getLang()const
 void UpdateKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateKeywordLibRequest::getMatchMode()const
@@ -99,6 +99,6 @@ std::string UpdateKeywordLibRequest::getMatchMode()const
 void UpdateKeywordLibRequest::setMatchMode(const std::string& matchMode)
 {
 	matchMode_ = matchMode;
-	setCoreParameter("MatchMode", std::to_string(matchMode));
+	setCoreParameter("MatchMode", matchMode);
 }
 

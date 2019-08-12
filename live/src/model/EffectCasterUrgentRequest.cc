@@ -33,7 +33,7 @@ std::string EffectCasterUrgentRequest::getRegionId()const
 void EffectCasterUrgentRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string EffectCasterUrgentRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string EffectCasterUrgentRequest::getCasterId()const
 void EffectCasterUrgentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string EffectCasterUrgentRequest::getSceneId()const
@@ -55,7 +55,7 @@ std::string EffectCasterUrgentRequest::getSceneId()const
 void EffectCasterUrgentRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", std::to_string(sceneId));
+	setCoreParameter("SceneId", sceneId);
 }
 
 long EffectCasterUrgentRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long EffectCasterUrgentRequest::getOwnerId()const
 void EffectCasterUrgentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

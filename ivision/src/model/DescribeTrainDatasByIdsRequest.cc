@@ -33,7 +33,7 @@ long DescribeTrainDatasByIdsRequest::getResourceOwnerId()const
 void DescribeTrainDatasByIdsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeTrainDatasByIdsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeTrainDatasByIdsRequest::getCallerParentId()const
 void DescribeTrainDatasByIdsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeTrainDatasByIdsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeTrainDatasByIdsRequest::getDataIds()const
 void DescribeTrainDatasByIdsRequest::setDataIds(const std::string& dataIds)
 {
 	dataIds_ = dataIds;
-	setCoreParameter("DataIds", std::to_string(dataIds));
+	setCoreParameter("DataIds", dataIds);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeTrainDatasByIdsRequest::getProxy_original_source_ip()const
 void DescribeTrainDatasByIdsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeTrainDatasByIdsRequest::getOwnerIdLoginEmail()const
 void DescribeTrainDatasByIdsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeTrainDatasByIdsRequest::getCallerType()const
 void DescribeTrainDatasByIdsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeTrainDatasByIdsRequest::getAccessKeyId()const
 void DescribeTrainDatasByIdsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeTrainDatasByIdsRequest::getSecurityToken()const
 void DescribeTrainDatasByIdsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeTrainDatasByIdsRequest::getRegionId()const
 void DescribeTrainDatasByIdsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeTrainDatasByIdsRequest::getRequestContent()const
 void DescribeTrainDatasByIdsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeTrainDatasByIdsRequest::getCallerBidEmail()const
 void DescribeTrainDatasByIdsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string DescribeTrainDatasByIdsRequest::getProjectId()const
 void DescribeTrainDatasByIdsRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeTrainDatasByIdsRequest::getCallerUidEmail()const
 void DescribeTrainDatasByIdsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeTrainDatasByIdsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeTrainDatasByIdsRequest::getCallerUid()const
 void DescribeTrainDatasByIdsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeTrainDatasByIdsRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string DescribeTrainDatasByIdsRequest::getShowLog()const
 void DescribeTrainDatasByIdsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeTrainDatasByIdsRequest::getApp_ip()const
 void DescribeTrainDatasByIdsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeTrainDatasByIdsRequest::getPopProduct()const
 void DescribeTrainDatasByIdsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeTrainDatasByIdsRequest::getCallerBid()const
 void DescribeTrainDatasByIdsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeTrainDatasByIdsRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeTrainDatasByIdsRequest::getOwnerId()const
 void DescribeTrainDatasByIdsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTrainDatasByIdsRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeTrainDatasByIdsRequest::getVersion()const
 void DescribeTrainDatasByIdsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeTrainDatasByIdsRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DescribeTrainDatasByIdsRequest::getRequestId()const
 void DescribeTrainDatasByIdsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeTrainDatasByIdsRequest::getIterationId()const
@@ -308,6 +308,6 @@ std::string DescribeTrainDatasByIdsRequest::getIterationId()const
 void DescribeTrainDatasByIdsRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setCoreParameter("IterationId", std::to_string(iterationId));
+	setCoreParameter("IterationId", iterationId);
 }
 

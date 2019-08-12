@@ -33,7 +33,7 @@ long DescribeClusterScriptRequest::getResourceOwnerId()const
 void DescribeClusterScriptRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterScriptRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterScriptRequest::getRegionId()const
 void DescribeClusterScriptRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterScriptRequest::getId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterScriptRequest::getId()const
 void DescribeClusterScriptRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DescribeClusterScriptRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeClusterScriptRequest::getAccessKeyId()const
 void DescribeClusterScriptRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

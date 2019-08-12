@@ -33,7 +33,7 @@ std::string ListPoliciesRequest::getPolicyType()const
 void ListPoliciesRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", std::to_string(policyType));
+	setCoreParameter("PolicyType", policyType);
 }
 
 std::string ListPoliciesRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string ListPoliciesRequest::getMarker()const
 void ListPoliciesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 int ListPoliciesRequest::getMaxItems()const
@@ -55,6 +55,6 @@ int ListPoliciesRequest::getMaxItems()const
 void ListPoliciesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", maxItems);
+	setCoreParameter("MaxItems", std::to_string(maxItems));
 }
 

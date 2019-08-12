@@ -33,7 +33,7 @@ long GetStaDetailedStatusRequest::getId()const
 void GetStaDetailedStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetStaDetailedStatusRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetStaDetailedStatusRequest::getAccessKeyId()const
 void GetStaDetailedStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

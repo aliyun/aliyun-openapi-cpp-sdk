@@ -33,7 +33,7 @@ std::string QueryOrdersRequest::getProductCode()const
 void QueryOrdersRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string QueryOrdersRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryOrdersRequest::getSubscriptionType()const
 void QueryOrdersRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int QueryOrdersRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryOrdersRequest::getPageSize()const
 void QueryOrdersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryOrdersRequest::getPaymentStatus()const
@@ -66,7 +66,7 @@ std::string QueryOrdersRequest::getPaymentStatus()const
 void QueryOrdersRequest::setPaymentStatus(const std::string& paymentStatus)
 {
 	paymentStatus_ = paymentStatus;
-	setCoreParameter("PaymentStatus", std::to_string(paymentStatus));
+	setCoreParameter("PaymentStatus", paymentStatus);
 }
 
 std::string QueryOrdersRequest::getCreateTimeStart()const
@@ -77,7 +77,7 @@ std::string QueryOrdersRequest::getCreateTimeStart()const
 void QueryOrdersRequest::setCreateTimeStart(const std::string& createTimeStart)
 {
 	createTimeStart_ = createTimeStart;
-	setCoreParameter("CreateTimeStart", std::to_string(createTimeStart));
+	setCoreParameter("CreateTimeStart", createTimeStart);
 }
 
 int QueryOrdersRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryOrdersRequest::getPageNum()const
 void QueryOrdersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 long QueryOrdersRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long QueryOrdersRequest::getOwnerId()const
 void QueryOrdersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryOrdersRequest::getCreateTimeEnd()const
@@ -110,7 +110,7 @@ std::string QueryOrdersRequest::getCreateTimeEnd()const
 void QueryOrdersRequest::setCreateTimeEnd(const std::string& createTimeEnd)
 {
 	createTimeEnd_ = createTimeEnd;
-	setCoreParameter("CreateTimeEnd", std::to_string(createTimeEnd));
+	setCoreParameter("CreateTimeEnd", createTimeEnd);
 }
 
 std::string QueryOrdersRequest::getProductType()const
@@ -121,7 +121,7 @@ std::string QueryOrdersRequest::getProductType()const
 void QueryOrdersRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 
 std::string QueryOrdersRequest::getOrderType()const
@@ -132,6 +132,6 @@ std::string QueryOrdersRequest::getOrderType()const
 void QueryOrdersRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

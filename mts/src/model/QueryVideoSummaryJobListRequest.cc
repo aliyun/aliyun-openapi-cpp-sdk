@@ -33,7 +33,7 @@ long QueryVideoSummaryJobListRequest::getResourceOwnerId()const
 void QueryVideoSummaryJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVideoSummaryJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryVideoSummaryJobListRequest::getResourceOwnerAccount()const
 void QueryVideoSummaryJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVideoSummaryJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryVideoSummaryJobListRequest::getJobIds()const
 void QueryVideoSummaryJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", std::to_string(jobIds));
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryVideoSummaryJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryVideoSummaryJobListRequest::getOwnerAccount()const
 void QueryVideoSummaryJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryVideoSummaryJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryVideoSummaryJobListRequest::getOwnerId()const
 void QueryVideoSummaryJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVideoSummaryJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryVideoSummaryJobListRequest::getAccessKeyId()const
 void QueryVideoSummaryJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

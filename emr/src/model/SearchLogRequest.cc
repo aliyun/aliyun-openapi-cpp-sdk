@@ -33,7 +33,7 @@ long SearchLogRequest::getResourceOwnerId()const
 void SearchLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SearchLogRequest::getLogstoreName()const
@@ -44,7 +44,7 @@ std::string SearchLogRequest::getLogstoreName()const
 void SearchLogRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", std::to_string(logstoreName));
+	setCoreParameter("LogstoreName", logstoreName);
 }
 
 int SearchLogRequest::getFromTimestamp()const
@@ -55,7 +55,7 @@ int SearchLogRequest::getFromTimestamp()const
 void SearchLogRequest::setFromTimestamp(int fromTimestamp)
 {
 	fromTimestamp_ = fromTimestamp;
-	setCoreParameter("FromTimestamp", fromTimestamp);
+	setCoreParameter("FromTimestamp", std::to_string(fromTimestamp));
 }
 
 int SearchLogRequest::getOffset()const
@@ -66,7 +66,7 @@ int SearchLogRequest::getOffset()const
 void SearchLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", offset);
+	setCoreParameter("Offset", std::to_string(offset));
 }
 
 int SearchLogRequest::getLine()const
@@ -77,7 +77,7 @@ int SearchLogRequest::getLine()const
 void SearchLogRequest::setLine(int line)
 {
 	line_ = line;
-	setCoreParameter("Line", line);
+	setCoreParameter("Line", std::to_string(line));
 }
 
 std::string SearchLogRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string SearchLogRequest::getClusterId()const
 void SearchLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 bool SearchLogRequest::getReverse()const
@@ -110,7 +110,7 @@ std::string SearchLogRequest::getAccessKeyId()const
 void SearchLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SearchLogRequest::getHostInnerIp()const
@@ -121,7 +121,7 @@ std::string SearchLogRequest::getHostInnerIp()const
 void SearchLogRequest::setHostInnerIp(const std::string& hostInnerIp)
 {
 	hostInnerIp_ = hostInnerIp;
-	setCoreParameter("HostInnerIp", std::to_string(hostInnerIp));
+	setCoreParameter("HostInnerIp", hostInnerIp);
 }
 
 std::string SearchLogRequest::getHostName()const
@@ -132,7 +132,7 @@ std::string SearchLogRequest::getHostName()const
 void SearchLogRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 std::string SearchLogRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string SearchLogRequest::getRegionId()const
 void SearchLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int SearchLogRequest::getToTimestamp()const
@@ -154,7 +154,7 @@ int SearchLogRequest::getToTimestamp()const
 void SearchLogRequest::setToTimestamp(int toTimestamp)
 {
 	toTimestamp_ = toTimestamp;
-	setCoreParameter("ToTimestamp", toTimestamp);
+	setCoreParameter("ToTimestamp", std::to_string(toTimestamp));
 }
 
 std::string SearchLogRequest::getSlsQueryString()const
@@ -165,6 +165,6 @@ std::string SearchLogRequest::getSlsQueryString()const
 void SearchLogRequest::setSlsQueryString(const std::string& slsQueryString)
 {
 	slsQueryString_ = slsQueryString;
-	setCoreParameter("SlsQueryString", std::to_string(slsQueryString));
+	setCoreParameter("SlsQueryString", slsQueryString);
 }
 

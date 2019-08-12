@@ -33,7 +33,7 @@ std::string DescribeGrayFuncRequest::getCondition()const
 void DescribeGrayFuncRequest::setCondition(const std::string& condition)
 {
 	condition_ = condition;
-	setCoreParameter("Condition", std::to_string(condition));
+	setCoreParameter("Condition", condition);
 }
 
 std::string DescribeGrayFuncRequest::getSourceIp()const
@@ -44,6 +44,6 @@ std::string DescribeGrayFuncRequest::getSourceIp()const
 void DescribeGrayFuncRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

@@ -33,7 +33,7 @@ std::string ListPhotoTagsRequest::getLibraryId()const
 void ListPhotoTagsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long ListPhotoTagsRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long ListPhotoTagsRequest::getPhotoId()const
 void ListPhotoTagsRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", photoId);
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string ListPhotoTagsRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string ListPhotoTagsRequest::getStoreName()const
 void ListPhotoTagsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListPhotoTagsRequest::getLang()const
@@ -66,6 +66,6 @@ std::string ListPhotoTagsRequest::getLang()const
 void ListPhotoTagsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

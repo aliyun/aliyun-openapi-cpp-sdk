@@ -33,7 +33,7 @@ std::string DescribeDdosDefenseInfoRequest::getSourceIp()const
 void DescribeDdosDefenseInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDdosDefenseInfoRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeDdosDefenseInfoRequest::getLang()const
 void DescribeDdosDefenseInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDdosDefenseInfoRequest::getSrcUid()const
@@ -55,7 +55,7 @@ long DescribeDdosDefenseInfoRequest::getSrcUid()const
 void DescribeDdosDefenseInfoRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribeDdosDefenseInfoRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DescribeDdosDefenseInfoRequest::getSourceCode()const
 void DescribeDdosDefenseInfoRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

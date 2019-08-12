@@ -33,7 +33,7 @@ std::string DescribeDomainCCAttackInfoRequest::getSecurityToken()const
 void DescribeDomainCCAttackInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainCCAttackInfoRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDomainCCAttackInfoRequest::getDomainName()const
 void DescribeDomainCCAttackInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainCCAttackInfoRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeDomainCCAttackInfoRequest::getEndTime()const
 void DescribeDomainCCAttackInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainCCAttackInfoRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDomainCCAttackInfoRequest::getStartTime()const
 void DescribeDomainCCAttackInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeDomainCCAttackInfoRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DescribeDomainCCAttackInfoRequest::getOwnerId()const
 void DescribeDomainCCAttackInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

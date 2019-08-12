@@ -33,7 +33,7 @@ std::string CreateSignatureRequest::getSecurityToken()const
 void CreateSignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateSignatureRequest::getSignatureName()const
@@ -44,7 +44,7 @@ std::string CreateSignatureRequest::getSignatureName()const
 void CreateSignatureRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", std::to_string(signatureName));
+	setCoreParameter("SignatureName", signatureName);
 }
 
 std::string CreateSignatureRequest::getSignatureKey()const
@@ -55,7 +55,7 @@ std::string CreateSignatureRequest::getSignatureKey()const
 void CreateSignatureRequest::setSignatureKey(const std::string& signatureKey)
 {
 	signatureKey_ = signatureKey;
-	setCoreParameter("SignatureKey", std::to_string(signatureKey));
+	setCoreParameter("SignatureKey", signatureKey);
 }
 
 std::string CreateSignatureRequest::getSignatureSecret()const
@@ -66,7 +66,7 @@ std::string CreateSignatureRequest::getSignatureSecret()const
 void CreateSignatureRequest::setSignatureSecret(const std::string& signatureSecret)
 {
 	signatureSecret_ = signatureSecret;
-	setCoreParameter("SignatureSecret", std::to_string(signatureSecret));
+	setCoreParameter("SignatureSecret", signatureSecret);
 }
 
 std::string CreateSignatureRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CreateSignatureRequest::getAccessKeyId()const
 void CreateSignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

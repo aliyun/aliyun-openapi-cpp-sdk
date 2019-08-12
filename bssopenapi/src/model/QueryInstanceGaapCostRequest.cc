@@ -33,7 +33,7 @@ std::string QueryInstanceGaapCostRequest::getProductCode()const
 void QueryInstanceGaapCostRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string QueryInstanceGaapCostRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryInstanceGaapCostRequest::getSubscriptionType()const
 void QueryInstanceGaapCostRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int QueryInstanceGaapCostRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryInstanceGaapCostRequest::getPageSize()const
 void QueryInstanceGaapCostRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryInstanceGaapCostRequest::getBillingCycle()const
@@ -66,7 +66,7 @@ std::string QueryInstanceGaapCostRequest::getBillingCycle()const
 void QueryInstanceGaapCostRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", std::to_string(billingCycle));
+	setCoreParameter("BillingCycle", billingCycle);
 }
 
 int QueryInstanceGaapCostRequest::getPageNum()const
@@ -77,7 +77,7 @@ int QueryInstanceGaapCostRequest::getPageNum()const
 void QueryInstanceGaapCostRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryInstanceGaapCostRequest::getProductType()const
@@ -88,6 +88,6 @@ std::string QueryInstanceGaapCostRequest::getProductType()const
 void QueryInstanceGaapCostRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 

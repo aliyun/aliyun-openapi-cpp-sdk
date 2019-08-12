@@ -33,7 +33,7 @@ std::string ModifySearchConditionRequest::getSourceIp()const
 void ModifySearchConditionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifySearchConditionRequest::getName()const
@@ -44,7 +44,7 @@ std::string ModifySearchConditionRequest::getName()const
 void ModifySearchConditionRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySearchConditionRequest::getFilterConditions()const
@@ -55,6 +55,6 @@ std::string ModifySearchConditionRequest::getFilterConditions()const
 void ModifySearchConditionRequest::setFilterConditions(const std::string& filterConditions)
 {
 	filterConditions_ = filterConditions;
-	setCoreParameter("FilterConditions", std::to_string(filterConditions));
+	setCoreParameter("FilterConditions", filterConditions);
 }
 

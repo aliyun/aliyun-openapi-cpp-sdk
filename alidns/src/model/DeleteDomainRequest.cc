@@ -33,7 +33,7 @@ std::string DeleteDomainRequest::getUserClientIp()const
 void DeleteDomainRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DeleteDomainRequest::getDomainName()const
 void DeleteDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DeleteDomainRequest::getLang()const
 void DeleteDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteDomainRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteDomainRequest::getAccessKeyId()const
 void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

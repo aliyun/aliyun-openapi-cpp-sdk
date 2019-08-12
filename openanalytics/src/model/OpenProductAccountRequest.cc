@@ -33,7 +33,7 @@ long OpenProductAccountRequest::getCallerParentId()const
 void OpenProductAccountRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long OpenProductAccountRequest::getCallerBid()const
@@ -44,7 +44,7 @@ long OpenProductAccountRequest::getCallerBid()const
 void OpenProductAccountRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string OpenProductAccountRequest::getCallerType()const
@@ -55,7 +55,7 @@ std::string OpenProductAccountRequest::getCallerType()const
 void OpenProductAccountRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool OpenProductAccountRequest::getAk_mfa_present()const
@@ -77,7 +77,7 @@ std::string OpenProductAccountRequest::getAccessKeyId()const
 void OpenProductAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool OpenProductAccountRequest::getSecurity_transport()const
@@ -99,7 +99,7 @@ std::string OpenProductAccountRequest::getRegionID()const
 void OpenProductAccountRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", std::to_string(regionID));
+	setCoreParameter("RegionID", regionID);
 }
 
 std::string OpenProductAccountRequest::getRequestId()const
@@ -110,7 +110,7 @@ std::string OpenProductAccountRequest::getRequestId()const
 void OpenProductAccountRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long OpenProductAccountRequest::getCallerUid()const
@@ -121,7 +121,7 @@ long OpenProductAccountRequest::getCallerUid()const
 void OpenProductAccountRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string OpenProductAccountRequest::getProductCode()const
@@ -132,7 +132,7 @@ std::string OpenProductAccountRequest::getProductCode()const
 void OpenProductAccountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string OpenProductAccountRequest::getProductAccessKey()const
@@ -143,7 +143,7 @@ std::string OpenProductAccountRequest::getProductAccessKey()const
 void OpenProductAccountRequest::setProductAccessKey(const std::string& productAccessKey)
 {
 	productAccessKey_ = productAccessKey;
-	setCoreParameter("ProductAccessKey", std::to_string(productAccessKey));
+	setCoreParameter("ProductAccessKey", productAccessKey);
 }
 
 std::string OpenProductAccountRequest::getTargetUid()const
@@ -154,7 +154,7 @@ std::string OpenProductAccountRequest::getTargetUid()const
 void OpenProductAccountRequest::setTargetUid(const std::string& targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", std::to_string(targetUid));
+	setCoreParameter("TargetUid", targetUid);
 }
 
 std::string OpenProductAccountRequest::getTargetArnRole()const
@@ -165,6 +165,6 @@ std::string OpenProductAccountRequest::getTargetArnRole()const
 void OpenProductAccountRequest::setTargetArnRole(const std::string& targetArnRole)
 {
 	targetArnRole_ = targetArnRole;
-	setCoreParameter("TargetArnRole", std::to_string(targetArnRole));
+	setCoreParameter("TargetArnRole", targetArnRole);
 }
 

@@ -33,7 +33,7 @@ std::string GetInstanceSummaryReportRequest::getInstanceId()const
 void GetInstanceSummaryReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int GetInstanceSummaryReportRequest::getPageSize()const
@@ -44,7 +44,7 @@ int GetInstanceSummaryReportRequest::getPageSize()const
 void GetInstanceSummaryReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetInstanceSummaryReportRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string GetInstanceSummaryReportRequest::getEndTime()const
 void GetInstanceSummaryReportRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string GetInstanceSummaryReportRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string GetInstanceSummaryReportRequest::getStartTime()const
 void GetInstanceSummaryReportRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int GetInstanceSummaryReportRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int GetInstanceSummaryReportRequest::getPageNumber()const
 void GetInstanceSummaryReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetInstanceSummaryReportRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetInstanceSummaryReportRequest::getAccessKeyId()const
 void GetInstanceSummaryReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeDcdnTopDomainsByFlowRequest::getCallerParentId()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDcdnTopDomainsByFlowRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getStartTime()const
 void DescribeDcdnTopDomainsByFlowRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getProxy_original_source_ip()co
 void DescribeDcdnTopDomainsByFlowRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getOwnerIdLoginEmail()const
 void DescribeDcdnTopDomainsByFlowRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getCallerType()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getAccessKeyId()const
 void DescribeDcdnTopDomainsByFlowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getSecurityToken()const
 void DescribeDcdnTopDomainsByFlowRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getRequestContent()const
 void DescribeDcdnTopDomainsByFlowRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeDcdnTopDomainsByFlowRequest::getLimit()const
@@ -132,7 +132,7 @@ long DescribeDcdnTopDomainsByFlowRequest::getLimit()const
 void DescribeDcdnTopDomainsByFlowRequest::setLimit(long limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getCallerBidEmail()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getCallerUidEmail()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDcdnTopDomainsByFlowRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long DescribeDcdnTopDomainsByFlowRequest::getCallerUid()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getApp_ip()const
@@ -176,7 +176,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getApp_ip()const
 void DescribeDcdnTopDomainsByFlowRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getPopProduct()const
@@ -187,7 +187,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getPopProduct()const
 void DescribeDcdnTopDomainsByFlowRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getProduct()const
@@ -198,7 +198,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getProduct()const
 void DescribeDcdnTopDomainsByFlowRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getEndTime()const
 void DescribeDcdnTopDomainsByFlowRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getCallerBid()const
 void DescribeDcdnTopDomainsByFlowRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDcdnTopDomainsByFlowRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeDcdnTopDomainsByFlowRequest::getOwnerId()const
 void DescribeDcdnTopDomainsByFlowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getVersion()const
 void DescribeDcdnTopDomainsByFlowRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDcdnTopDomainsByFlowRequest::getProxy_trust_transport_info()const
@@ -286,6 +286,6 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getRequestId()const
 void DescribeDcdnTopDomainsByFlowRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

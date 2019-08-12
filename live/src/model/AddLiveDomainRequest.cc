@@ -33,7 +33,7 @@ std::string AddLiveDomainRequest::getTopLevelDomain()const
 void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string AddLiveDomainRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AddLiveDomainRequest::getSecurityToken()const
 void AddLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveDomainRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddLiveDomainRequest::getOwnerAccount()const
 void AddLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddLiveDomainRequest::getScope()const
@@ -66,7 +66,7 @@ std::string AddLiveDomainRequest::getScope()const
 void AddLiveDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", std::to_string(scope));
+	setCoreParameter("Scope", scope);
 }
 
 std::string AddLiveDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string AddLiveDomainRequest::getDomainName()const
 void AddLiveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long AddLiveDomainRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AddLiveDomainRequest::getOwnerId()const
 void AddLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveDomainRequest::getRegion()const
@@ -99,7 +99,7 @@ std::string AddLiveDomainRequest::getRegion()const
 void AddLiveDomainRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string AddLiveDomainRequest::getCheckUrl()const
@@ -110,7 +110,7 @@ std::string AddLiveDomainRequest::getCheckUrl()const
 void AddLiveDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", std::to_string(checkUrl));
+	setCoreParameter("CheckUrl", checkUrl);
 }
 
 std::string AddLiveDomainRequest::getLiveDomainType()const
@@ -121,6 +121,6 @@ std::string AddLiveDomainRequest::getLiveDomainType()const
 void AddLiveDomainRequest::setLiveDomainType(const std::string& liveDomainType)
 {
 	liveDomainType_ = liveDomainType;
-	setCoreParameter("LiveDomainType", std::to_string(liveDomainType));
+	setCoreParameter("LiveDomainType", liveDomainType);
 }
 

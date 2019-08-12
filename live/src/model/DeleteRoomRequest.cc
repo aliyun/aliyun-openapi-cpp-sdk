@@ -33,7 +33,7 @@ std::string DeleteRoomRequest::getApp_ip()const
 void DeleteRoomRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteRoomRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DeleteRoomRequest::getPopProduct()const
 void DeleteRoomRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DeleteRoomRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteRoomRequest::getCallerParentId()const
 void DeleteRoomRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteRoomRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DeleteRoomRequest::getCallerBid()const
 void DeleteRoomRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteRoomRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteRoomRequest::getOwnerId()const
 void DeleteRoomRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteRoomRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DeleteRoomRequest::getProxy_original_source_ip()const
 void DeleteRoomRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteRoomRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string DeleteRoomRequest::getVersion()const
 void DeleteRoomRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string DeleteRoomRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string DeleteRoomRequest::getOwnerIdLoginEmail()const
 void DeleteRoomRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteRoomRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string DeleteRoomRequest::getCallerType()const
 void DeleteRoomRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DeleteRoomRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ std::string DeleteRoomRequest::getRoomId()const
 void DeleteRoomRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", std::to_string(roomId));
+	setCoreParameter("RoomId", roomId);
 }
 
 std::string DeleteRoomRequest::getAccessKeyId()const
@@ -176,7 +176,7 @@ std::string DeleteRoomRequest::getAccessKeyId()const
 void DeleteRoomRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteRoomRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ std::string DeleteRoomRequest::getSecurityToken()const
 void DeleteRoomRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteRoomRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string DeleteRoomRequest::getRegionId()const
 void DeleteRoomRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteRoomRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string DeleteRoomRequest::getRequestId()const
 void DeleteRoomRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteRoomRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string DeleteRoomRequest::getRequestContent()const
 void DeleteRoomRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteRoomRequest::getAppId()const
@@ -242,7 +242,7 @@ std::string DeleteRoomRequest::getAppId()const
 void DeleteRoomRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string DeleteRoomRequest::getCallerBidEmail()const
@@ -253,7 +253,7 @@ std::string DeleteRoomRequest::getCallerBidEmail()const
 void DeleteRoomRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteRoomRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string DeleteRoomRequest::getCallerUidEmail()const
 void DeleteRoomRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteRoomRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long DeleteRoomRequest::getCallerUid()const
 void DeleteRoomRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

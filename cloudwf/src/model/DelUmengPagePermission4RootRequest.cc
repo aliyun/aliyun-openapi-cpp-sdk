@@ -33,7 +33,7 @@ long DelUmengPagePermission4RootRequest::getId()const
 void DelUmengPagePermission4RootRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DelUmengPagePermission4RootRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DelUmengPagePermission4RootRequest::getAccessKeyId()const
 void DelUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

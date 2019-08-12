@@ -33,7 +33,7 @@ long CancelETLJobReleaseRequest::getResourceOwnerId()const
 void CancelETLJobReleaseRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelETLJobReleaseRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CancelETLJobReleaseRequest::getRegionId()const
 void CancelETLJobReleaseRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelETLJobReleaseRequest::getEtlJobId()const
@@ -55,7 +55,7 @@ std::string CancelETLJobReleaseRequest::getEtlJobId()const
 void CancelETLJobReleaseRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", std::to_string(etlJobId));
+	setCoreParameter("EtlJobId", etlJobId);
 }
 
 std::string CancelETLJobReleaseRequest::getReleaseId()const
@@ -66,7 +66,7 @@ std::string CancelETLJobReleaseRequest::getReleaseId()const
 void CancelETLJobReleaseRequest::setReleaseId(const std::string& releaseId)
 {
 	releaseId_ = releaseId;
-	setCoreParameter("ReleaseId", std::to_string(releaseId));
+	setCoreParameter("ReleaseId", releaseId);
 }
 
 std::string CancelETLJobReleaseRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CancelETLJobReleaseRequest::getAccessKeyId()const
 void CancelETLJobReleaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

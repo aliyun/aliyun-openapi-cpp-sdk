@@ -33,7 +33,7 @@ std::string DescribeSupervisonInfoRequest::getSourceIp()const
 void DescribeSupervisonInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSupervisonInfoRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeSupervisonInfoRequest::getLang()const
 void DescribeSupervisonInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

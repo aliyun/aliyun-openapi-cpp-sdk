@@ -33,7 +33,7 @@ long ListStackServiceRequest::getResourceOwnerId()const
 void ListStackServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListStackServiceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListStackServiceRequest::getRegionId()const
 void ListStackServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListStackServiceRequest::getStackName()const
@@ -55,7 +55,7 @@ std::string ListStackServiceRequest::getStackName()const
 void ListStackServiceRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", std::to_string(stackName));
+	setCoreParameter("StackName", stackName);
 }
 
 std::string ListStackServiceRequest::getStackVersion()const
@@ -66,7 +66,7 @@ std::string ListStackServiceRequest::getStackVersion()const
 void ListStackServiceRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", std::to_string(stackVersion));
+	setCoreParameter("StackVersion", stackVersion);
 }
 
 std::string ListStackServiceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListStackServiceRequest::getAccessKeyId()const
 void ListStackServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

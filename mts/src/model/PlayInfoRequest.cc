@@ -33,7 +33,7 @@ std::string PlayInfoRequest::getPlayDomain()const
 void PlayInfoRequest::setPlayDomain(const std::string& playDomain)
 {
 	playDomain_ = playDomain;
-	setCoreParameter("PlayDomain", std::to_string(playDomain));
+	setCoreParameter("PlayDomain", playDomain);
 }
 
 std::string PlayInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ std::string PlayInfoRequest::getResourceOwnerId()const
 void PlayInfoRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PlayInfoRequest::getFormats()const
@@ -55,7 +55,7 @@ std::string PlayInfoRequest::getFormats()const
 void PlayInfoRequest::setFormats(const std::string& formats)
 {
 	formats_ = formats;
-	setCoreParameter("Formats", std::to_string(formats));
+	setCoreParameter("Formats", formats);
 }
 
 std::string PlayInfoRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string PlayInfoRequest::getResourceOwnerAccount()const
 void PlayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PlayInfoRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string PlayInfoRequest::getOwnerAccount()const
 void PlayInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string PlayInfoRequest::getHlsUriToken()const
@@ -88,7 +88,7 @@ std::string PlayInfoRequest::getHlsUriToken()const
 void PlayInfoRequest::setHlsUriToken(const std::string& hlsUriToken)
 {
 	hlsUriToken_ = hlsUriToken;
-	setCoreParameter("HlsUriToken", std::to_string(hlsUriToken));
+	setCoreParameter("HlsUriToken", hlsUriToken);
 }
 
 std::string PlayInfoRequest::getTerminal()const
@@ -99,7 +99,7 @@ std::string PlayInfoRequest::getTerminal()const
 void PlayInfoRequest::setTerminal(const std::string& terminal)
 {
 	terminal_ = terminal;
-	setCoreParameter("Terminal", std::to_string(terminal));
+	setCoreParameter("Terminal", terminal);
 }
 
 std::string PlayInfoRequest::getOwnerId()const
@@ -110,7 +110,7 @@ std::string PlayInfoRequest::getOwnerId()const
 void PlayInfoRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string PlayInfoRequest::getMediaId()const
@@ -121,7 +121,7 @@ std::string PlayInfoRequest::getMediaId()const
 void PlayInfoRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string PlayInfoRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string PlayInfoRequest::getAccessKeyId()const
 void PlayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PlayInfoRequest::getRand()const
@@ -143,7 +143,7 @@ std::string PlayInfoRequest::getRand()const
 void PlayInfoRequest::setRand(const std::string& rand)
 {
 	rand_ = rand;
-	setCoreParameter("Rand", std::to_string(rand));
+	setCoreParameter("Rand", rand);
 }
 
 long PlayInfoRequest::getAuthTimeout()const
@@ -154,7 +154,7 @@ long PlayInfoRequest::getAuthTimeout()const
 void PlayInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", authTimeout);
+	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string PlayInfoRequest::getAuthInfo()const
@@ -165,6 +165,6 @@ std::string PlayInfoRequest::getAuthInfo()const
 void PlayInfoRequest::setAuthInfo(const std::string& authInfo)
 {
 	authInfo_ = authInfo;
-	setCoreParameter("AuthInfo", std::to_string(authInfo));
+	setCoreParameter("AuthInfo", authInfo);
 }
 

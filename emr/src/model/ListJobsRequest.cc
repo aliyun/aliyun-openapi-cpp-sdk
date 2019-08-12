@@ -33,7 +33,7 @@ long ListJobsRequest::getResourceOwnerId()const
 void ListJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListJobsRequest::getRegionId()const
 void ListJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListJobsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListJobsRequest::getPageSize()const
 void ListJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListJobsRequest::getQueryString()const
@@ -66,7 +66,7 @@ std::string ListJobsRequest::getQueryString()const
 void ListJobsRequest::setQueryString(const std::string& queryString)
 {
 	queryString_ = queryString;
-	setCoreParameter("QueryString", std::to_string(queryString));
+	setCoreParameter("QueryString", queryString);
 }
 
 bool ListJobsRequest::getIsDesc()const
@@ -88,7 +88,7 @@ int ListJobsRequest::getPageNumber()const
 void ListJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobsRequest::getQueryType()const
@@ -99,7 +99,7 @@ std::string ListJobsRequest::getQueryType()const
 void ListJobsRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 
 std::string ListJobsRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListJobsRequest::getAccessKeyId()const
 void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -34,7 +34,7 @@ void AssignUsersRequest::setUserRamId(const std::vector<std::string>& userRamId)
 {
 	userRamId_ = userRamId;
 	for(int i = 0; i!= userRamId.size(); i++)
-		setCoreParameter("UserRamId."+ std::to_string(i), std::to_string(userRamId.at(i)));
+		setCoreParameter("UserRamId."+ std::to_string(i), userRamId.at(i));
 }
 
 std::vector<int> AssignUsersRequest::getSkillLevel()const
@@ -46,7 +46,7 @@ void AssignUsersRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
 	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), skillLevel.at(i));
+		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
 }
 
 std::string AssignUsersRequest::getInstanceId()const
@@ -57,7 +57,7 @@ std::string AssignUsersRequest::getInstanceId()const
 void AssignUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> AssignUsersRequest::getRoleId()const
@@ -69,7 +69,7 @@ void AssignUsersRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
 	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), std::to_string(roleId.at(i)));
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
 }
 
 std::vector<std::string> AssignUsersRequest::getSkillGroupId()const
@@ -81,7 +81,7 @@ void AssignUsersRequest::setSkillGroupId(const std::vector<std::string>& skillGr
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 std::string AssignUsersRequest::getAccessKeyId()const
@@ -92,6 +92,6 @@ std::string AssignUsersRequest::getAccessKeyId()const
 void AssignUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long AddSnatEntryRequest::getResourceOwnerId()const
 void AddSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddSnatEntryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddSnatEntryRequest::getResourceOwnerAccount()const
 void AddSnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddSnatEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AddSnatEntryRequest::getRegionId()const
 void AddSnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddSnatEntryRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddSnatEntryRequest::getOwnerAccount()const
 void AddSnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddSnatEntryRequest::getCidrBlock()const
@@ -77,7 +77,7 @@ std::string AddSnatEntryRequest::getCidrBlock()const
 void AddSnatEntryRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 
 std::string AddSnatEntryRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string AddSnatEntryRequest::getSmartAGId()const
 void AddSnatEntryRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long AddSnatEntryRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AddSnatEntryRequest::getOwnerId()const
 void AddSnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddSnatEntryRequest::getSnatIp()const
@@ -110,6 +110,6 @@ std::string AddSnatEntryRequest::getSnatIp()const
 void AddSnatEntryRequest::setSnatIp(const std::string& snatIp)
 {
 	snatIp_ = snatIp;
-	setCoreParameter("SnatIp", std::to_string(snatIp));
+	setCoreParameter("SnatIp", snatIp);
 }
 

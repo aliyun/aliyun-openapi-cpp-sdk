@@ -33,7 +33,7 @@ long ListClusterServiceComponentHealthInfoRequest::getResourceOwnerId()const
 void ListClusterServiceComponentHealthInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterServiceComponentHealthInfoRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListClusterServiceComponentHealthInfoRequest::getRegionId()const
 void ListClusterServiceComponentHealthInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListClusterServiceComponentHealthInfoRequest::getServiceName()const
@@ -55,7 +55,7 @@ std::string ListClusterServiceComponentHealthInfoRequest::getServiceName()const
 void ListClusterServiceComponentHealthInfoRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ListClusterServiceComponentHealthInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ListClusterServiceComponentHealthInfoRequest::getClusterId()const
 void ListClusterServiceComponentHealthInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListClusterServiceComponentHealthInfoRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListClusterServiceComponentHealthInfoRequest::getAccessKeyId()const
 void ListClusterServiceComponentHealthInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

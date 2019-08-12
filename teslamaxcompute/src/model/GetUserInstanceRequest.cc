@@ -33,7 +33,7 @@ int GetUserInstanceRequest::getPageSize()const
 void GetUserInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetUserInstanceRequest::getPageNum()const
@@ -44,7 +44,7 @@ int GetUserInstanceRequest::getPageNum()const
 void GetUserInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetUserInstanceRequest::getRegion()const
@@ -55,7 +55,7 @@ std::string GetUserInstanceRequest::getRegion()const
 void GetUserInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string GetUserInstanceRequest::getUser()const
@@ -66,7 +66,7 @@ std::string GetUserInstanceRequest::getUser()const
 void GetUserInstanceRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", std::to_string(user));
+	setCoreParameter("User", user);
 }
 
 std::string GetUserInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetUserInstanceRequest::getStatus()const
 void GetUserInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

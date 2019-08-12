@@ -33,7 +33,7 @@ long ListStackRequest::getResourceOwnerId()const
 void ListStackRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListStackRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListStackRequest::getRegionId()const
 void ListStackRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListStackRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListStackRequest::getPageSize()const
 void ListStackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListStackRequest::getStackName()const
@@ -66,7 +66,7 @@ std::string ListStackRequest::getStackName()const
 void ListStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", std::to_string(stackName));
+	setCoreParameter("StackName", stackName);
 }
 
 std::string ListStackRequest::getStackVersion()const
@@ -77,7 +77,7 @@ std::string ListStackRequest::getStackVersion()const
 void ListStackRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", std::to_string(stackVersion));
+	setCoreParameter("StackVersion", stackVersion);
 }
 
 int ListStackRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListStackRequest::getPageNumber()const
 void ListStackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListStackRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListStackRequest::getAccessKeyId()const
 void ListStackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

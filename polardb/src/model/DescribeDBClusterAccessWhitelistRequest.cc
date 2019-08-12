@@ -33,7 +33,7 @@ long DescribeDBClusterAccessWhitelistRequest::getResourceOwnerId()const
 void DescribeDBClusterAccessWhitelistRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getResourceOwnerAccount()co
 void DescribeDBClusterAccessWhitelistRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getDBClusterId()const
 void DescribeDBClusterAccessWhitelistRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBClusterAccessWhitelistRequest::getOwnerAccount()const
 void DescribeDBClusterAccessWhitelistRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClusterAccessWhitelistRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeDBClusterAccessWhitelistRequest::getOwnerId()const
 void DescribeDBClusterAccessWhitelistRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBClusterAccessWhitelistRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDBClusterAccessWhitelistRequest::getAccessKeyId()const
 void DescribeDBClusterAccessWhitelistRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

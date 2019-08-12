@@ -33,7 +33,7 @@ std::string ListRolesRequest::getApp_ip()const
 void ListRolesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long ListRolesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ListRolesRequest::getResourceOwnerId()const
 void ListRolesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListRolesRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ListRolesRequest::getCallerParentId()const
 void ListRolesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ListRolesRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ListRolesRequest::getCallerBid()const
 void ListRolesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string ListRolesRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string ListRolesRequest::getProxy_original_source_ip()const
 void ListRolesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ListRolesRequest::getResourceType()const
@@ -99,7 +99,7 @@ std::string ListRolesRequest::getResourceType()const
 void ListRolesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 bool ListRolesRequest::getAk_mfa_present()const
@@ -132,7 +132,7 @@ std::string ListRolesRequest::getCallerType()const
 void ListRolesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ListRolesRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string ListRolesRequest::getAccessKeyId()const
 void ListRolesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool ListRolesRequest::getSecurity_transport()const
@@ -165,7 +165,7 @@ std::string ListRolesRequest::getSecurityToken()const
 void ListRolesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ListRolesRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ListRolesRequest::getRegionId()const
 void ListRolesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListRolesRequest::getRequestId()const
@@ -187,7 +187,7 @@ std::string ListRolesRequest::getRequestId()const
 void ListRolesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long ListRolesRequest::getCallerUid()const
@@ -198,6 +198,6 @@ long ListRolesRequest::getCallerUid()const
 void ListRolesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

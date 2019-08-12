@@ -33,7 +33,7 @@ std::string OnsGroupSubDetailRequest::getInstanceId()const
 void OnsGroupSubDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupSubDetailRequest::getGroupId()const
@@ -44,6 +44,6 @@ std::string OnsGroupSubDetailRequest::getGroupId()const
 void OnsGroupSubDetailRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 

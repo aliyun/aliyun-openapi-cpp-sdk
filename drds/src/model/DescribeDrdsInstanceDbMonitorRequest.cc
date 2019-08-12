@@ -33,7 +33,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDbName()const
 void DescribeDrdsInstanceDbMonitorRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 long DescribeDrdsInstanceDbMonitorRequest::getEndTime()const
@@ -44,7 +44,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
@@ -55,7 +55,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceDbMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
@@ -77,7 +77,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
 void DescribeDrdsInstanceDbMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceDbMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

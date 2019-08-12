@@ -33,7 +33,7 @@ long GetUploadDetailsRequest::getResourceOwnerId()const
 void GetUploadDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
 void GetUploadDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetUploadDetailsRequest::getResourceRealOwnerId()const
@@ -55,7 +55,7 @@ long GetUploadDetailsRequest::getResourceRealOwnerId()const
 void GetUploadDetailsRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetUploadDetailsRequest::getMediaIds()const
@@ -66,7 +66,7 @@ std::string GetUploadDetailsRequest::getMediaIds()const
 void GetUploadDetailsRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", std::to_string(mediaIds));
+	setCoreParameter("MediaIds", mediaIds);
 }
 
 long GetUploadDetailsRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long GetUploadDetailsRequest::getOwnerId()const
 void GetUploadDetailsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetUploadDetailsRequest::getMediaType()const
@@ -88,7 +88,7 @@ std::string GetUploadDetailsRequest::getMediaType()const
 void GetUploadDetailsRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
-	setCoreParameter("MediaType", std::to_string(mediaType));
+	setCoreParameter("MediaType", mediaType);
 }
 
 std::string GetUploadDetailsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetUploadDetailsRequest::getAccessKeyId()const
 void GetUploadDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

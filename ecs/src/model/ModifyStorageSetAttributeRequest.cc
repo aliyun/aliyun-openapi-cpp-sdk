@@ -33,7 +33,7 @@ long ModifyStorageSetAttributeRequest::getResourceOwnerId()const
 void ModifyStorageSetAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyStorageSetAttributeRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string ModifyStorageSetAttributeRequest::getClientToken()const
 void ModifyStorageSetAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long ModifyStorageSetAttributeRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ModifyStorageSetAttributeRequest::getCallerParentId()const
 void ModifyStorageSetAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyStorageSetAttributeRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ModifyStorageSetAttributeRequest::getDescription()const
 void ModifyStorageSetAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyStorageSetAttributeRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string ModifyStorageSetAttributeRequest::getProxy_original_source_ip()const
 void ModifyStorageSetAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyStorageSetAttributeRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string ModifyStorageSetAttributeRequest::getOwnerIdLoginEmail()const
 void ModifyStorageSetAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyStorageSetAttributeRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string ModifyStorageSetAttributeRequest::getCallerType()const
 void ModifyStorageSetAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyStorageSetAttributeRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyStorageSetAttributeRequest::getAccessKeyId()const
 void ModifyStorageSetAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string ModifyStorageSetAttributeRequest::getResourceGroupId()const
 void ModifyStorageSetAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string ModifyStorageSetAttributeRequest::getSecurityToken()const
 void ModifyStorageSetAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyStorageSetAttributeRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string ModifyStorageSetAttributeRequest::getRegionId()const
 void ModifyStorageSetAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyStorageSetAttributeRequest::getEnable()const
@@ -176,7 +176,7 @@ std::string ModifyStorageSetAttributeRequest::getRequestContent()const
 void ModifyStorageSetAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyStorageSetAttributeRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string ModifyStorageSetAttributeRequest::getCallerBidEmail()const
 void ModifyStorageSetAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyStorageSetAttributeRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string ModifyStorageSetAttributeRequest::getCallerUidEmail()const
 void ModifyStorageSetAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyStorageSetAttributeRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long ModifyStorageSetAttributeRequest::getCallerUid()const
 void ModifyStorageSetAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyStorageSetAttributeRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string ModifyStorageSetAttributeRequest::getApp_ip()const
 void ModifyStorageSetAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyStorageSetAttributeRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string ModifyStorageSetAttributeRequest::getResourceOwnerAccount()const
 void ModifyStorageSetAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyStorageSetAttributeRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string ModifyStorageSetAttributeRequest::getOwnerAccount()const
 void ModifyStorageSetAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyStorageSetAttributeRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string ModifyStorageSetAttributeRequest::getCallerBid()const
 void ModifyStorageSetAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyStorageSetAttributeRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long ModifyStorageSetAttributeRequest::getOwnerId()const
 void ModifyStorageSetAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyStorageSetAttributeRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string ModifyStorageSetAttributeRequest::getStorageSetId()const
 void ModifyStorageSetAttributeRequest::setStorageSetId(const std::string& storageSetId)
 {
 	storageSetId_ = storageSetId;
-	setCoreParameter("StorageSetId", std::to_string(storageSetId));
+	setCoreParameter("StorageSetId", storageSetId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string ModifyStorageSetAttributeRequest::getRequestId()const
 void ModifyStorageSetAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyStorageSetAttributeRequest::getAkProxy()const
@@ -330,7 +330,7 @@ std::string ModifyStorageSetAttributeRequest::getAkProxy()const
 void ModifyStorageSetAttributeRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string ModifyStorageSetAttributeRequest::getStorageSetName()const
@@ -341,6 +341,6 @@ std::string ModifyStorageSetAttributeRequest::getStorageSetName()const
 void ModifyStorageSetAttributeRequest::setStorageSetName(const std::string& storageSetName)
 {
 	storageSetName_ = storageSetName;
-	setCoreParameter("StorageSetName", std::to_string(storageSetName));
+	setCoreParameter("StorageSetName", storageSetName);
 }
 

@@ -33,7 +33,7 @@ long DeleteQosPolicyRequest::getResourceOwnerId()const
 void DeleteQosPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteQosPolicyRequest::getQosPolicyId()const
@@ -44,7 +44,7 @@ std::string DeleteQosPolicyRequest::getQosPolicyId()const
 void DeleteQosPolicyRequest::setQosPolicyId(const std::string& qosPolicyId)
 {
 	qosPolicyId_ = qosPolicyId;
-	setCoreParameter("QosPolicyId", std::to_string(qosPolicyId));
+	setCoreParameter("QosPolicyId", qosPolicyId);
 }
 
 std::string DeleteQosPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteQosPolicyRequest::getResourceOwnerAccount()const
 void DeleteQosPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteQosPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteQosPolicyRequest::getRegionId()const
 void DeleteQosPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteQosPolicyRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteQosPolicyRequest::getOwnerAccount()const
 void DeleteQosPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteQosPolicyRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteQosPolicyRequest::getOwnerId()const
 void DeleteQosPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteQosPolicyRequest::getQosId()const
@@ -99,6 +99,6 @@ std::string DeleteQosPolicyRequest::getQosId()const
 void DeleteQosPolicyRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", std::to_string(qosId));
+	setCoreParameter("QosId", qosId);
 }
 

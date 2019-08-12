@@ -33,7 +33,7 @@ std::string ListPredictiveJobGroupsRequest::getInstanceId()const
 void ListPredictiveJobGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListPredictiveJobGroupsRequest::getCriteria()const
@@ -44,7 +44,7 @@ std::string ListPredictiveJobGroupsRequest::getCriteria()const
 void ListPredictiveJobGroupsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", std::to_string(criteria));
+	setCoreParameter("Criteria", criteria);
 }
 
 std::string ListPredictiveJobGroupsRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListPredictiveJobGroupsRequest::getSkillGroupId()const
 void ListPredictiveJobGroupsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string ListPredictiveJobGroupsRequest::getName()const
@@ -66,7 +66,7 @@ std::string ListPredictiveJobGroupsRequest::getName()const
 void ListPredictiveJobGroupsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int ListPredictiveJobGroupsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListPredictiveJobGroupsRequest::getPageSize()const
 void ListPredictiveJobGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListPredictiveJobGroupsRequest::getEndTime()const
@@ -88,7 +88,7 @@ long ListPredictiveJobGroupsRequest::getEndTime()const
 void ListPredictiveJobGroupsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long ListPredictiveJobGroupsRequest::getStartTime()const
@@ -99,7 +99,7 @@ long ListPredictiveJobGroupsRequest::getStartTime()const
 void ListPredictiveJobGroupsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListPredictiveJobGroupsRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int ListPredictiveJobGroupsRequest::getPageNumber()const
 void ListPredictiveJobGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

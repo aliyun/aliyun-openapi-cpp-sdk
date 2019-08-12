@@ -33,6 +33,6 @@ std::string ListProductOfActiveAlertRequest::getUserId()const
 void ListProductOfActiveAlertRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 

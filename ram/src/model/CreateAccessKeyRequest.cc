@@ -33,6 +33,6 @@ std::string CreateAccessKeyRequest::getUserName()const
 void CreateAccessKeyRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

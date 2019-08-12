@@ -33,7 +33,7 @@ std::string SaveApgroupSsidConfigRequest::getJsonData()const
 void SaveApgroupSsidConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string SaveApgroupSsidConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string SaveApgroupSsidConfigRequest::getAccessKeyId()const
 void SaveApgroupSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

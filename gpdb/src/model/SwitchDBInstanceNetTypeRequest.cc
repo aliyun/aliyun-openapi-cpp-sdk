@@ -33,7 +33,7 @@ std::string SwitchDBInstanceNetTypeRequest::getConnectionStringPrefix()const
 void SwitchDBInstanceNetTypeRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
+	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string SwitchDBInstanceNetTypeRequest::getPort()const
@@ -44,7 +44,7 @@ std::string SwitchDBInstanceNetTypeRequest::getPort()const
 void SwitchDBInstanceNetTypeRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string SwitchDBInstanceNetTypeRequest::getDBInstanceId()const
@@ -55,7 +55,7 @@ std::string SwitchDBInstanceNetTypeRequest::getDBInstanceId()const
 void SwitchDBInstanceNetTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string SwitchDBInstanceNetTypeRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SwitchDBInstanceNetTypeRequest::getAccessKeyId()const
 void SwitchDBInstanceNetTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

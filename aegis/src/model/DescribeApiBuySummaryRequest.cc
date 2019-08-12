@@ -33,6 +33,6 @@ std::string DescribeApiBuySummaryRequest::getSourceIp()const
 void DescribeApiBuySummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

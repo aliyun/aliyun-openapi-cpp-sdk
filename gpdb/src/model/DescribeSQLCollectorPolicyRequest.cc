@@ -33,7 +33,7 @@ std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId()const
 void DescribeSQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSQLCollectorPolicyRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeSQLCollectorPolicyRequest::getAccessKeyId()const
 void DescribeSQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

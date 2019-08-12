@@ -33,7 +33,7 @@ std::string SaveStatsRequest::getCallId()const
 void SaveStatsRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", std::to_string(callId));
+	setCoreParameter("CallId", callId);
 }
 
 std::string SaveStatsRequest::getUid()const
@@ -44,7 +44,7 @@ std::string SaveStatsRequest::getUid()const
 void SaveStatsRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setCoreParameter("Uid", uid);
 }
 
 long SaveStatsRequest::getRecordTime()const
@@ -55,7 +55,7 @@ long SaveStatsRequest::getRecordTime()const
 void SaveStatsRequest::setRecordTime(long recordTime)
 {
 	recordTime_ = recordTime;
-	setCoreParameter("RecordTime", recordTime);
+	setCoreParameter("RecordTime", std::to_string(recordTime));
 }
 
 std::string SaveStatsRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string SaveStatsRequest::getInstanceId()const
 void SaveStatsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SaveStatsRequest::getStats()const
@@ -77,7 +77,7 @@ std::string SaveStatsRequest::getStats()const
 void SaveStatsRequest::setStats(const std::string& stats)
 {
 	stats_ = stats;
-	setCoreParameter("Stats", std::to_string(stats));
+	setCoreParameter("Stats", stats);
 }
 
 long SaveStatsRequest::getCallStartTime()const
@@ -88,7 +88,7 @@ long SaveStatsRequest::getCallStartTime()const
 void SaveStatsRequest::setCallStartTime(long callStartTime)
 {
 	callStartTime_ = callStartTime;
-	setCoreParameter("CallStartTime", callStartTime);
+	setCoreParameter("CallStartTime", std::to_string(callStartTime));
 }
 
 std::string SaveStatsRequest::getTenantId()const
@@ -99,7 +99,7 @@ std::string SaveStatsRequest::getTenantId()const
 void SaveStatsRequest::setTenantId(const std::string& tenantId)
 {
 	tenantId_ = tenantId;
-	setCoreParameter("TenantId", std::to_string(tenantId));
+	setCoreParameter("TenantId", tenantId);
 }
 
 std::string SaveStatsRequest::getCalleeNumber()const
@@ -110,7 +110,7 @@ std::string SaveStatsRequest::getCalleeNumber()const
 void SaveStatsRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
+	setCoreParameter("CalleeNumber", calleeNumber);
 }
 
 std::string SaveStatsRequest::getCallerNumber()const
@@ -121,6 +121,6 @@ std::string SaveStatsRequest::getCallerNumber()const
 void SaveStatsRequest::setCallerNumber(const std::string& callerNumber)
 {
 	callerNumber_ = callerNumber;
-	setCoreParameter("CallerNumber", std::to_string(callerNumber));
+	setCoreParameter("CallerNumber", callerNumber);
 }
 

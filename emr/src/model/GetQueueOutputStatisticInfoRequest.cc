@@ -33,7 +33,7 @@ std::string GetQueueOutputStatisticInfoRequest::getFromDatetime()const
 void GetQueueOutputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", std::to_string(fromDatetime));
+	setCoreParameter("FromDatetime", fromDatetime);
 }
 
 long GetQueueOutputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetQueueOutputStatisticInfoRequest::getResourceOwnerId()const
 void GetQueueOutputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetQueueOutputStatisticInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetQueueOutputStatisticInfoRequest::getRegionId()const
 void GetQueueOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetQueueOutputStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetQueueOutputStatisticInfoRequest::getClusterId()const
 void GetQueueOutputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetQueueOutputStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetQueueOutputStatisticInfoRequest::getToDatetime()const
 void GetQueueOutputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", std::to_string(toDatetime));
+	setCoreParameter("ToDatetime", toDatetime);
 }
 
 std::string GetQueueOutputStatisticInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetQueueOutputStatisticInfoRequest::getAccessKeyId()const
 void GetQueueOutputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

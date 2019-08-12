@@ -33,7 +33,7 @@ std::string DescribeAccessControlListsRequest::getAccess_key_id()const
 void DescribeAccessControlListsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DescribeAccessControlListsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeAccessControlListsRequest::getResourceOwnerId()const
 void DescribeAccessControlListsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAccessControlListsRequest::getAclName()const
@@ -55,7 +55,7 @@ std::string DescribeAccessControlListsRequest::getAclName()const
 void DescribeAccessControlListsRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setCoreParameter("AclName", std::to_string(aclName));
+	setCoreParameter("AclName", aclName);
 }
 
 std::string DescribeAccessControlListsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeAccessControlListsRequest::getResourceOwnerAccount()const
 void DescribeAccessControlListsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAccessControlListsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeAccessControlListsRequest::getOwnerAccount()const
 void DescribeAccessControlListsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAccessControlListsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeAccessControlListsRequest::getOwnerId()const
 void DescribeAccessControlListsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAccessControlListsRequest::getAddressIPVersion()const
@@ -99,7 +99,7 @@ std::string DescribeAccessControlListsRequest::getAddressIPVersion()const
 void DescribeAccessControlListsRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
 	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", std::to_string(addressIPVersion));
+	setCoreParameter("AddressIPVersion", addressIPVersion);
 }
 
 int DescribeAccessControlListsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeAccessControlListsRequest::getPageNumber()const
 void DescribeAccessControlListsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAccessControlListsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeAccessControlListsRequest::getAccessKeyId()const
 void DescribeAccessControlListsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAccessControlListsRequest::getTags()const
@@ -132,7 +132,7 @@ std::string DescribeAccessControlListsRequest::getTags()const
 void DescribeAccessControlListsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 std::string DescribeAccessControlListsRequest::getResourceGroupId()const
@@ -143,7 +143,7 @@ std::string DescribeAccessControlListsRequest::getResourceGroupId()const
 void DescribeAccessControlListsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeAccessControlListsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeAccessControlListsRequest::getRegionId()const
 void DescribeAccessControlListsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeAccessControlListsRequest::getPageSize()const
@@ -165,7 +165,7 @@ int DescribeAccessControlListsRequest::getPageSize()const
 void DescribeAccessControlListsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeAccessControlListsRequest::Tag> DescribeAccessControlListsRequest::getTag()const
@@ -180,8 +180,8 @@ void DescribeAccessControlListsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 

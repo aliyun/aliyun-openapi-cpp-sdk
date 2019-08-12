@@ -33,7 +33,7 @@ std::string DescribeLogInfoRequest::getSourceIp()const
 void DescribeLogInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeLogInfoRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeLogInfoRequest::getQuery()const
 void DescribeLogInfoRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", std::to_string(query));
+	setCoreParameter("Query", query);
 }
 
 std::string DescribeLogInfoRequest::getPageSize()const
@@ -55,7 +55,7 @@ std::string DescribeLogInfoRequest::getPageSize()const
 void DescribeLogInfoRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeLogInfoRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLogInfoRequest::getEndTime()const
 void DescribeLogInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLogInfoRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ std::string DescribeLogInfoRequest::getCurrentPage()const
 void DescribeLogInfoRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeLogInfoRequest::getStartTime()const
@@ -88,6 +88,6 @@ std::string DescribeLogInfoRequest::getStartTime()const
 void DescribeLogInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 

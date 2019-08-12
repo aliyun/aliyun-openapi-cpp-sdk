@@ -33,7 +33,7 @@ long ModifyExpressCloudConnectionBandwidthRequest::getResourceOwnerId()const
 void ModifyExpressCloudConnectionBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyExpressCloudConnectionBandwidthRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyExpressCloudConnectionBandwidthRequest::getResourceOwnerAccoun
 void ModifyExpressCloudConnectionBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyExpressCloudConnectionBandwidthRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyExpressCloudConnectionBandwidthRequest::getRegionId()const
 void ModifyExpressCloudConnectionBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyExpressCloudConnectionBandwidthRequest::getBandwidth()const
@@ -66,7 +66,7 @@ std::string ModifyExpressCloudConnectionBandwidthRequest::getBandwidth()const
 void ModifyExpressCloudConnectionBandwidthRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyExpressCloudConnectionBandwidthRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyExpressCloudConnectionBandwidthRequest::getOwnerAccount()const
 void ModifyExpressCloudConnectionBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyExpressCloudConnectionBandwidthRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ModifyExpressCloudConnectionBandwidthRequest::getOwnerId()const
 void ModifyExpressCloudConnectionBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyExpressCloudConnectionBandwidthRequest::getEccId()const
@@ -99,6 +99,6 @@ std::string ModifyExpressCloudConnectionBandwidthRequest::getEccId()const
 void ModifyExpressCloudConnectionBandwidthRequest::setEccId(const std::string& eccId)
 {
 	eccId_ = eccId;
-	setCoreParameter("EccId", std::to_string(eccId));
+	setCoreParameter("EccId", eccId);
 }
 

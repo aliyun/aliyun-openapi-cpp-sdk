@@ -33,7 +33,7 @@ std::string DescribeConferenceAuthInfoRequest::getApp_ip()const
 void DescribeConferenceAuthInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DescribeConferenceAuthInfoRequest::getPopProduct()const
 void DescribeConferenceAuthInfoRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DescribeConferenceAuthInfoRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeConferenceAuthInfoRequest::getCallerParentId()const
 void DescribeConferenceAuthInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeConferenceAuthInfoRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeConferenceAuthInfoRequest::getCallerBid()const
 void DescribeConferenceAuthInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeConferenceAuthInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeConferenceAuthInfoRequest::getOwnerId()const
 void DescribeConferenceAuthInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeConferenceAuthInfoRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeConferenceAuthInfoRequest::getProxy_original_source_ip()cons
 void DescribeConferenceAuthInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string DescribeConferenceAuthInfoRequest::getVersion()const
 void DescribeConferenceAuthInfoRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string DescribeConferenceAuthInfoRequest::getOwnerIdLoginEmail()const
 void DescribeConferenceAuthInfoRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string DescribeConferenceAuthInfoRequest::getCallerType()const
 void DescribeConferenceAuthInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeConferenceAuthInfoRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ std::string DescribeConferenceAuthInfoRequest::getAccessKeyId()const
 void DescribeConferenceAuthInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeConferenceAuthInfoRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ std::string DescribeConferenceAuthInfoRequest::getSecurityToken()const
 void DescribeConferenceAuthInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getConferenceId()const
@@ -198,7 +198,7 @@ std::string DescribeConferenceAuthInfoRequest::getConferenceId()const
 void DescribeConferenceAuthInfoRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", std::to_string(conferenceId));
+	setCoreParameter("ConferenceId", conferenceId);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DescribeConferenceAuthInfoRequest::getRequestId()const
 void DescribeConferenceAuthInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string DescribeConferenceAuthInfoRequest::getRequestContent()const
 void DescribeConferenceAuthInfoRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string DescribeConferenceAuthInfoRequest::getAppId()const
 void DescribeConferenceAuthInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DescribeConferenceAuthInfoRequest::getCallerBidEmail()const
 void DescribeConferenceAuthInfoRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeConferenceAuthInfoRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string DescribeConferenceAuthInfoRequest::getCallerUidEmail()const
 void DescribeConferenceAuthInfoRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeConferenceAuthInfoRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long DescribeConferenceAuthInfoRequest::getCallerUid()const
 void DescribeConferenceAuthInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

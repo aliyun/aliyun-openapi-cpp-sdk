@@ -33,7 +33,7 @@ std::string ListVpcInfoByVpcRequest::getAccess_key_id()const
 void ListVpcInfoByVpcRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long ListVpcInfoByVpcRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ListVpcInfoByVpcRequest::getResourceOwnerId()const
 void ListVpcInfoByVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListVpcInfoByVpcRequest::getVpcId()const
@@ -55,7 +55,7 @@ std::string ListVpcInfoByVpcRequest::getVpcId()const
 void ListVpcInfoByVpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 long ListVpcInfoByVpcRequest::getPageSize()const
@@ -66,7 +66,7 @@ long ListVpcInfoByVpcRequest::getPageSize()const
 void ListVpcInfoByVpcRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListVpcInfoByVpcRequest::getPageNum()const
@@ -77,7 +77,7 @@ long ListVpcInfoByVpcRequest::getPageNum()const
 void ListVpcInfoByVpcRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::vector<ListVpcInfoByVpcRequest::TagInfo> ListVpcInfoByVpcRequest::getTagInfo()const
@@ -92,8 +92,8 @@ void ListVpcInfoByVpcRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
-		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 

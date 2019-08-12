@@ -33,7 +33,7 @@ long DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerId()const
 void DescribeDBInstanceProxyConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getResourceOwnerAccount
 void DescribeDBInstanceProxyConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getDBInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getDBInstanceId()const
 void DescribeDBInstanceProxyConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceProxyConfigurationRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeDBInstanceProxyConfigurationRequest::getOwnerId()const
 void DescribeDBInstanceProxyConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceProxyConfigurationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeDBInstanceProxyConfigurationRequest::getAccessKeyId()const
 void DescribeDBInstanceProxyConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long MetastoreSearchTablesRequest::getResourceOwnerId()const
 void MetastoreSearchTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreSearchTablesRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreSearchTablesRequest::getDbName()const
 void MetastoreSearchTablesRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreSearchTablesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreSearchTablesRequest::getRegionId()const
 void MetastoreSearchTablesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreSearchTablesRequest::getTableName()const
@@ -66,7 +66,7 @@ std::string MetastoreSearchTablesRequest::getTableName()const
 void MetastoreSearchTablesRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", std::to_string(tableName));
+	setCoreParameter("TableName", tableName);
 }
 
 std::string MetastoreSearchTablesRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreSearchTablesRequest::getAccessKeyId()const
 void MetastoreSearchTablesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

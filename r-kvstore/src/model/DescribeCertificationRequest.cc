@@ -33,7 +33,7 @@ long DescribeCertificationRequest::getResourceOwnerId()const
 void DescribeCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCertificationRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeCertificationRequest::getInstanceId()const
 void DescribeCertificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeCertificationRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeCertificationRequest::getSecurityToken()const
 void DescribeCertificationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCertificationRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCertificationRequest::getResourceOwnerAccount()const
 void DescribeCertificationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCertificationRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeCertificationRequest::getRegionId()const
 void DescribeCertificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeCertificationRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeCertificationRequest::getOwnerAccount()const
 void DescribeCertificationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCertificationRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeCertificationRequest::getOwnerId()const
 void DescribeCertificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCertificationRequest::getParameters()const
@@ -110,7 +110,7 @@ std::string DescribeCertificationRequest::getParameters()const
 void DescribeCertificationRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
-	setCoreParameter("Parameters", std::to_string(parameters));
+	setCoreParameter("Parameters", parameters);
 }
 
 std::string DescribeCertificationRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeCertificationRequest::getAccessKeyId()const
 void DescribeCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

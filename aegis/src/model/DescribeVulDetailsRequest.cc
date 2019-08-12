@@ -33,7 +33,7 @@ std::string DescribeVulDetailsRequest::getAliasName()const
 void DescribeVulDetailsRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", std::to_string(aliasName));
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string DescribeVulDetailsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeVulDetailsRequest::getSourceIp()const
 void DescribeVulDetailsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVulDetailsRequest::getName()const
@@ -55,7 +55,7 @@ std::string DescribeVulDetailsRequest::getName()const
 void DescribeVulDetailsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string DescribeVulDetailsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeVulDetailsRequest::getLang()const
 void DescribeVulDetailsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeVulDetailsRequest::getType()const
@@ -77,6 +77,6 @@ std::string DescribeVulDetailsRequest::getType()const
 void DescribeVulDetailsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

@@ -33,7 +33,7 @@ long ModifySmartAccessGatewayClientUserRequest::getResourceOwnerId()const
 void ModifySmartAccessGatewayClientUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifySmartAccessGatewayClientUserRequest::getResourceOwnerAccount()
 void ModifySmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifySmartAccessGatewayClientUserRequest::getRegionId()const
 void ModifySmartAccessGatewayClientUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ModifySmartAccessGatewayClientUserRequest::getBandwidth()const
@@ -66,7 +66,7 @@ int ModifySmartAccessGatewayClientUserRequest::getBandwidth()const
 void ModifySmartAccessGatewayClientUserRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifySmartAccessGatewayClientUserRequest::getOwnerAccount()const
 void ModifySmartAccessGatewayClientUserRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string ModifySmartAccessGatewayClientUserRequest::getSmartAGId()const
 void ModifySmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long ModifySmartAccessGatewayClientUserRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifySmartAccessGatewayClientUserRequest::getOwnerId()const
 void ModifySmartAccessGatewayClientUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySmartAccessGatewayClientUserRequest::getUserName()const
@@ -110,6 +110,6 @@ std::string ModifySmartAccessGatewayClientUserRequest::getUserName()const
 void ModifySmartAccessGatewayClientUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

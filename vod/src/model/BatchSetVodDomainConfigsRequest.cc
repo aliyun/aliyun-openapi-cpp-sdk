@@ -33,7 +33,7 @@ std::string BatchSetVodDomainConfigsRequest::getFunctions()const
 void BatchSetVodDomainConfigsRequest::setFunctions(const std::string& functions)
 {
 	functions_ = functions;
-	setCoreParameter("Functions", std::to_string(functions));
+	setCoreParameter("Functions", functions);
 }
 
 std::string BatchSetVodDomainConfigsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string BatchSetVodDomainConfigsRequest::getSecurityToken()const
 void BatchSetVodDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchSetVodDomainConfigsRequest::getDomainNames()const
@@ -55,7 +55,7 @@ std::string BatchSetVodDomainConfigsRequest::getDomainNames()const
 void BatchSetVodDomainConfigsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", std::to_string(domainNames));
+	setCoreParameter("DomainNames", domainNames);
 }
 
 std::string BatchSetVodDomainConfigsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string BatchSetVodDomainConfigsRequest::getOwnerAccount()const
 void BatchSetVodDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long BatchSetVodDomainConfigsRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long BatchSetVodDomainConfigsRequest::getOwnerId()const
 void BatchSetVodDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

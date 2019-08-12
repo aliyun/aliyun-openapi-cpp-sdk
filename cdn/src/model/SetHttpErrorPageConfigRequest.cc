@@ -33,7 +33,7 @@ std::string SetHttpErrorPageConfigRequest::getSecurityToken()const
 void SetHttpErrorPageConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetHttpErrorPageConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetHttpErrorPageConfigRequest::getDomainName()const
 void SetHttpErrorPageConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetHttpErrorPageConfigRequest::getPageUrl()const
@@ -55,7 +55,7 @@ std::string SetHttpErrorPageConfigRequest::getPageUrl()const
 void SetHttpErrorPageConfigRequest::setPageUrl(const std::string& pageUrl)
 {
 	pageUrl_ = pageUrl;
-	setCoreParameter("PageUrl", std::to_string(pageUrl));
+	setCoreParameter("PageUrl", pageUrl);
 }
 
 long SetHttpErrorPageConfigRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long SetHttpErrorPageConfigRequest::getOwnerId()const
 void SetHttpErrorPageConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetHttpErrorPageConfigRequest::getErrorCode()const
@@ -77,6 +77,6 @@ std::string SetHttpErrorPageConfigRequest::getErrorCode()const
 void SetHttpErrorPageConfigRequest::setErrorCode(const std::string& errorCode)
 {
 	errorCode_ = errorCode;
-	setCoreParameter("ErrorCode", std::to_string(errorCode));
+	setCoreParameter("ErrorCode", errorCode);
 }
 

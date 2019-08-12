@@ -33,7 +33,7 @@ std::string SearchRepoRequest::getRegionId()const
 void SearchRepoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SearchRepoRequest::getOrigin()const
@@ -44,7 +44,7 @@ std::string SearchRepoRequest::getOrigin()const
 void SearchRepoRequest::setOrigin(const std::string& origin)
 {
 	origin_ = origin;
-	setCoreParameter("Origin", std::to_string(origin));
+	setCoreParameter("Origin", origin);
 }
 
 int SearchRepoRequest::getPageSize()const
@@ -55,7 +55,7 @@ int SearchRepoRequest::getPageSize()const
 void SearchRepoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int SearchRepoRequest::getPage()const
@@ -66,7 +66,7 @@ int SearchRepoRequest::getPage()const
 void SearchRepoRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string SearchRepoRequest::getKeyword()const
@@ -77,6 +77,6 @@ std::string SearchRepoRequest::getKeyword()const
 void SearchRepoRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 

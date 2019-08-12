@@ -33,7 +33,7 @@ std::string ResumeLiveStreamRequest::getAppName()const
 void ResumeLiveStreamRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string ResumeLiveStreamRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ResumeLiveStreamRequest::getSecurityToken()const
 void ResumeLiveStreamRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ResumeLiveStreamRequest::getLiveStreamType()const
@@ -55,7 +55,7 @@ std::string ResumeLiveStreamRequest::getLiveStreamType()const
 void ResumeLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
 {
 	liveStreamType_ = liveStreamType;
-	setCoreParameter("LiveStreamType", std::to_string(liveStreamType));
+	setCoreParameter("LiveStreamType", liveStreamType);
 }
 
 std::string ResumeLiveStreamRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string ResumeLiveStreamRequest::getDomainName()const
 void ResumeLiveStreamRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long ResumeLiveStreamRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ResumeLiveStreamRequest::getOwnerId()const
 void ResumeLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ResumeLiveStreamRequest::getStreamName()const
@@ -88,6 +88,6 @@ std::string ResumeLiveStreamRequest::getStreamName()const
 void ResumeLiveStreamRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 

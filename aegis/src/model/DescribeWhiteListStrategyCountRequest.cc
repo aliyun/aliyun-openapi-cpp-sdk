@@ -33,7 +33,7 @@ std::string DescribeWhiteListStrategyCountRequest::getSourceIp()const
 void DescribeWhiteListStrategyCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWhiteListStrategyCountRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeWhiteListStrategyCountRequest::getLang()const
 void DescribeWhiteListStrategyCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

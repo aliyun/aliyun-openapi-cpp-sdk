@@ -33,7 +33,7 @@ std::string AssumeRoleWithSAMLRequest::getRoleArn()const
 void AssumeRoleWithSAMLRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", std::to_string(roleArn));
+	setCoreParameter("RoleArn", roleArn);
 }
 
 std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn()const
@@ -44,7 +44,7 @@ std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn()const
 void AssumeRoleWithSAMLRequest::setSAMLProviderArn(const std::string& sAMLProviderArn)
 {
 	sAMLProviderArn_ = sAMLProviderArn;
-	setCoreParameter("SAMLProviderArn", std::to_string(sAMLProviderArn));
+	setCoreParameter("SAMLProviderArn", sAMLProviderArn);
 }
 
 std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
@@ -55,7 +55,7 @@ std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
 void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string& sAMLAssertion)
 {
 	sAMLAssertion_ = sAMLAssertion;
-	setCoreParameter("SAMLAssertion", std::to_string(sAMLAssertion));
+	setCoreParameter("SAMLAssertion", sAMLAssertion);
 }
 
 long AssumeRoleWithSAMLRequest::getDurationSeconds()const
@@ -66,7 +66,7 @@ long AssumeRoleWithSAMLRequest::getDurationSeconds()const
 void AssumeRoleWithSAMLRequest::setDurationSeconds(long durationSeconds)
 {
 	durationSeconds_ = durationSeconds;
-	setCoreParameter("DurationSeconds", durationSeconds);
+	setCoreParameter("DurationSeconds", std::to_string(durationSeconds));
 }
 
 std::string AssumeRoleWithSAMLRequest::getPolicy()const
@@ -77,6 +77,6 @@ std::string AssumeRoleWithSAMLRequest::getPolicy()const
 void AssumeRoleWithSAMLRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", std::to_string(policy));
+	setCoreParameter("Policy", policy);
 }
 

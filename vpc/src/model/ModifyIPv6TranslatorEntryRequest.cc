@@ -33,7 +33,7 @@ int ModifyIPv6TranslatorEntryRequest::getBackendIpv4Port()const
 void ModifyIPv6TranslatorEntryRequest::setBackendIpv4Port(int backendIpv4Port)
 {
 	backendIpv4Port_ = backendIpv4Port;
-	setCoreParameter("BackendIpv4Port", backendIpv4Port);
+	setCoreParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getAclId()const
@@ -44,7 +44,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getAclId()const
 void ModifyIPv6TranslatorEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", std::to_string(aclId));
+	setCoreParameter("AclId", aclId);
 }
 
 long ModifyIPv6TranslatorEntryRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ModifyIPv6TranslatorEntryRequest::getResourceOwnerId()const
 void ModifyIPv6TranslatorEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
@@ -66,7 +66,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
 void ModifyIPv6TranslatorEntryRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
 {
 	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
-	setCoreParameter("Ipv6TranslatorEntryId", std::to_string(ipv6TranslatorEntryId));
+	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
 void ModifyIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getEntryName()const
@@ -88,7 +88,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getEntryName()const
 void ModifyIPv6TranslatorEntryRequest::setEntryName(const std::string& entryName)
 {
 	entryName_ = entryName;
-	setCoreParameter("EntryName", std::to_string(entryName));
+	setCoreParameter("EntryName", entryName);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getOwnerAccount()const
 void ModifyIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyIPv6TranslatorEntryRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyIPv6TranslatorEntryRequest::getOwnerId()const
 void ModifyIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getAclStatus()const
@@ -121,7 +121,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getAclStatus()const
 void ModifyIPv6TranslatorEntryRequest::setAclStatus(const std::string& aclStatus)
 {
 	aclStatus_ = aclStatus;
-	setCoreParameter("AclStatus", std::to_string(aclStatus));
+	setCoreParameter("AclStatus", aclStatus);
 }
 
 int ModifyIPv6TranslatorEntryRequest::getEntryBandwidth()const
@@ -132,7 +132,7 @@ int ModifyIPv6TranslatorEntryRequest::getEntryBandwidth()const
 void ModifyIPv6TranslatorEntryRequest::setEntryBandwidth(int entryBandwidth)
 {
 	entryBandwidth_ = entryBandwidth;
-	setCoreParameter("EntryBandwidth", entryBandwidth);
+	setCoreParameter("EntryBandwidth", std::to_string(entryBandwidth));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getAclType()const
@@ -143,7 +143,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getAclType()const
 void ModifyIPv6TranslatorEntryRequest::setAclType(const std::string& aclType)
 {
 	aclType_ = aclType;
-	setCoreParameter("AclType", std::to_string(aclType));
+	setCoreParameter("AclType", aclType);
 }
 
 int ModifyIPv6TranslatorEntryRequest::getAllocateIpv6Port()const
@@ -154,7 +154,7 @@ int ModifyIPv6TranslatorEntryRequest::getAllocateIpv6Port()const
 void ModifyIPv6TranslatorEntryRequest::setAllocateIpv6Port(int allocateIpv6Port)
 {
 	allocateIpv6Port_ = allocateIpv6Port;
-	setCoreParameter("AllocateIpv6Port", allocateIpv6Port);
+	setCoreParameter("AllocateIpv6Port", std::to_string(allocateIpv6Port));
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getEntryDescription()const
@@ -165,7 +165,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getEntryDescription()const
 void ModifyIPv6TranslatorEntryRequest::setEntryDescription(const std::string& entryDescription)
 {
 	entryDescription_ = entryDescription;
-	setCoreParameter("EntryDescription", std::to_string(entryDescription));
+	setCoreParameter("EntryDescription", entryDescription);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getRegionId()const
 void ModifyIPv6TranslatorEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getBackendIpv4Addr()const
@@ -187,7 +187,7 @@ std::string ModifyIPv6TranslatorEntryRequest::getBackendIpv4Addr()const
 void ModifyIPv6TranslatorEntryRequest::setBackendIpv4Addr(const std::string& backendIpv4Addr)
 {
 	backendIpv4Addr_ = backendIpv4Addr;
-	setCoreParameter("BackendIpv4Addr", std::to_string(backendIpv4Addr));
+	setCoreParameter("BackendIpv4Addr", backendIpv4Addr);
 }
 
 std::string ModifyIPv6TranslatorEntryRequest::getTransProtocol()const
@@ -198,6 +198,6 @@ std::string ModifyIPv6TranslatorEntryRequest::getTransProtocol()const
 void ModifyIPv6TranslatorEntryRequest::setTransProtocol(const std::string& transProtocol)
 {
 	transProtocol_ = transProtocol;
-	setCoreParameter("TransProtocol", std::to_string(transProtocol));
+	setCoreParameter("TransProtocol", transProtocol);
 }
 

@@ -34,7 +34,7 @@ void CreateInstanceRequest::setPhoneNumbers(const std::vector<std::string>& phon
 {
 	phoneNumbers_ = phoneNumbers;
 	for(int i = 0; i!= phoneNumbers.size(); i++)
-		setCoreParameter("PhoneNumbers."+ std::to_string(i), std::to_string(phoneNumbers.at(i)));
+		setCoreParameter("PhoneNumbers."+ std::to_string(i), phoneNumbers.at(i));
 }
 
 std::vector<std::string> CreateInstanceRequest::getUserObject()const
@@ -46,7 +46,7 @@ void CreateInstanceRequest::setUserObject(const std::vector<std::string>& userOb
 {
 	userObject_ = userObject;
 	for(int i = 0; i!= userObject.size(); i++)
-		setCoreParameter("UserObject."+ std::to_string(i), std::to_string(userObject.at(i)));
+		setCoreParameter("UserObject."+ std::to_string(i), userObject.at(i));
 }
 
 std::string CreateInstanceRequest::getName()const
@@ -57,7 +57,7 @@ std::string CreateInstanceRequest::getName()const
 void CreateInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateInstanceRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string CreateInstanceRequest::getDomainName()const
 void CreateInstanceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CreateInstanceRequest::getPhoneNumber()const
@@ -79,7 +79,7 @@ std::string CreateInstanceRequest::getPhoneNumber()const
 void CreateInstanceRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
+	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
 std::string CreateInstanceRequest::getDescription()const
@@ -90,7 +90,7 @@ std::string CreateInstanceRequest::getDescription()const
 void CreateInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 int CreateInstanceRequest::getStorageMaxDays()const
@@ -101,7 +101,7 @@ int CreateInstanceRequest::getStorageMaxDays()const
 void CreateInstanceRequest::setStorageMaxDays(int storageMaxDays)
 {
 	storageMaxDays_ = storageMaxDays;
-	setCoreParameter("StorageMaxDays", storageMaxDays);
+	setCoreParameter("StorageMaxDays", std::to_string(storageMaxDays));
 }
 
 int CreateInstanceRequest::getStorageMaxSize()const
@@ -112,7 +112,7 @@ int CreateInstanceRequest::getStorageMaxSize()const
 void CreateInstanceRequest::setStorageMaxSize(int storageMaxSize)
 {
 	storageMaxSize_ = storageMaxSize;
-	setCoreParameter("StorageMaxSize", storageMaxSize);
+	setCoreParameter("StorageMaxSize", std::to_string(storageMaxSize));
 }
 
 std::string CreateInstanceRequest::getDirectoryId()const
@@ -123,7 +123,7 @@ std::string CreateInstanceRequest::getDirectoryId()const
 void CreateInstanceRequest::setDirectoryId(const std::string& directoryId)
 {
 	directoryId_ = directoryId;
-	setCoreParameter("DirectoryId", std::to_string(directoryId));
+	setCoreParameter("DirectoryId", directoryId);
 }
 
 std::vector<std::string> CreateInstanceRequest::getAdminRamId()const
@@ -135,7 +135,7 @@ void CreateInstanceRequest::setAdminRamId(const std::vector<std::string>& adminR
 {
 	adminRamId_ = adminRamId;
 	for(int i = 0; i!= adminRamId.size(); i++)
-		setCoreParameter("AdminRamId."+ std::to_string(i), std::to_string(adminRamId.at(i)));
+		setCoreParameter("AdminRamId."+ std::to_string(i), adminRamId.at(i));
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const
@@ -146,6 +146,6 @@ std::string CreateInstanceRequest::getAccessKeyId()const
 void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

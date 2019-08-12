@@ -33,7 +33,7 @@ std::string ListSkillGroupSummaryReportsRequest::getInstanceId()const
 void ListSkillGroupSummaryReportsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
@@ -44,7 +44,7 @@ std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
 void ListSkillGroupSummaryReportsRequest::setSkillGroupIds(const std::string& skillGroupIds)
 {
 	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", std::to_string(skillGroupIds));
+	setCoreParameter("SkillGroupIds", skillGroupIds);
 }
 
 int ListSkillGroupSummaryReportsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListSkillGroupSummaryReportsRequest::getPageSize()const
 void ListSkillGroupSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string ListSkillGroupSummaryReportsRequest::getEndTime()const
 void ListSkillGroupSummaryReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string ListSkillGroupSummaryReportsRequest::getStartTime()const
 void ListSkillGroupSummaryReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int ListSkillGroupSummaryReportsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListSkillGroupSummaryReportsRequest::getPageNumber()const
 void ListSkillGroupSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListSkillGroupSummaryReportsRequest::getAccessKeyId()const
 void ListSkillGroupSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

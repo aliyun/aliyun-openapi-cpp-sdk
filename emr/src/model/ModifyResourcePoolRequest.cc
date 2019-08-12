@@ -33,7 +33,7 @@ long ModifyResourcePoolRequest::getResourceOwnerId()const
 void ModifyResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyResourcePoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ModifyResourcePoolRequest::getRegionId()const
 void ModifyResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyResourcePoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyResourcePoolRequest::getName()const
 void ModifyResourcePoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 bool ModifyResourcePoolRequest::getActive()const
@@ -77,7 +77,7 @@ std::string ModifyResourcePoolRequest::getId()const
 void ModifyResourcePoolRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyResourcePoolRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string ModifyResourcePoolRequest::getClusterId()const
 void ModifyResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyResourcePoolRequest::getYarnsiteconfig()const
@@ -99,7 +99,7 @@ std::string ModifyResourcePoolRequest::getYarnsiteconfig()const
 void ModifyResourcePoolRequest::setYarnsiteconfig(const std::string& yarnsiteconfig)
 {
 	yarnsiteconfig_ = yarnsiteconfig;
-	setCoreParameter("Yarnsiteconfig", std::to_string(yarnsiteconfig));
+	setCoreParameter("Yarnsiteconfig", yarnsiteconfig);
 }
 
 std::vector<ModifyResourcePoolRequest::Config> ModifyResourcePoolRequest::getConfig()const
@@ -114,11 +114,11 @@ void ModifyResourcePoolRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
-		setCoreParameter(str + ".Note", std::to_string(obj.note));
-		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
-		setCoreParameter(str + ".Id", std::to_string(obj.id));
-		setCoreParameter(str + ".Category", std::to_string(obj.category));
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".Note", obj.note);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Category", obj.category);
 	}
 }
 
@@ -130,6 +130,6 @@ std::string ModifyResourcePoolRequest::getAccessKeyId()const
 void ModifyResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

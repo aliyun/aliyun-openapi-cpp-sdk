@@ -33,7 +33,7 @@ long DeleteGroupDynamicRuleRequest::getGroupId()const
 void DeleteGroupDynamicRuleRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteGroupDynamicRuleRequest::getCategory()const
@@ -44,6 +44,6 @@ std::string DeleteGroupDynamicRuleRequest::getCategory()const
 void DeleteGroupDynamicRuleRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 

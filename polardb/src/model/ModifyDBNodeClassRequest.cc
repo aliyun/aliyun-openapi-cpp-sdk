@@ -33,7 +33,7 @@ long ModifyDBNodeClassRequest::getResourceOwnerId()const
 void ModifyDBNodeClassRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBNodeClassRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyDBNodeClassRequest::getResourceOwnerAccount()const
 void ModifyDBNodeClassRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBNodeClassRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string ModifyDBNodeClassRequest::getClientToken()const
 void ModifyDBNodeClassRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyDBNodeClassRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyDBNodeClassRequest::getDBClusterId()const
 void ModifyDBNodeClassRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBNodeClassRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBNodeClassRequest::getOwnerAccount()const
 void ModifyDBNodeClassRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBNodeClassRequest::getModifyType()const
@@ -88,7 +88,7 @@ std::string ModifyDBNodeClassRequest::getModifyType()const
 void ModifyDBNodeClassRequest::setModifyType(const std::string& modifyType)
 {
 	modifyType_ = modifyType;
-	setCoreParameter("ModifyType", std::to_string(modifyType));
+	setCoreParameter("ModifyType", modifyType);
 }
 
 std::string ModifyDBNodeClassRequest::getDBNodeTargetClass()const
@@ -99,7 +99,7 @@ std::string ModifyDBNodeClassRequest::getDBNodeTargetClass()const
 void ModifyDBNodeClassRequest::setDBNodeTargetClass(const std::string& dBNodeTargetClass)
 {
 	dBNodeTargetClass_ = dBNodeTargetClass;
-	setCoreParameter("DBNodeTargetClass", std::to_string(dBNodeTargetClass));
+	setCoreParameter("DBNodeTargetClass", dBNodeTargetClass);
 }
 
 long ModifyDBNodeClassRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyDBNodeClassRequest::getOwnerId()const
 void ModifyDBNodeClassRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBNodeClassRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyDBNodeClassRequest::getAccessKeyId()const
 void ModifyDBNodeClassRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

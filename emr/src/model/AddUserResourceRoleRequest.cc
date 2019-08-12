@@ -33,7 +33,7 @@ std::string AddUserResourceRoleRequest::getApp_ip()const
 void AddUserResourceRoleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long AddUserResourceRoleRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AddUserResourceRoleRequest::getResourceOwnerId()const
 void AddUserResourceRoleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddUserResourceRoleRequest::getResourceId()const
@@ -55,7 +55,7 @@ std::string AddUserResourceRoleRequest::getResourceId()const
 void AddUserResourceRoleRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", std::to_string(resourceId));
+	setCoreParameter("ResourceId", resourceId);
 }
 
 long AddUserResourceRoleRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long AddUserResourceRoleRequest::getCallerParentId()const
 void AddUserResourceRoleRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long AddUserResourceRoleRequest::getRoleId()const
@@ -77,7 +77,7 @@ long AddUserResourceRoleRequest::getRoleId()const
 void AddUserResourceRoleRequest::setRoleId(long roleId)
 {
 	roleId_ = roleId;
-	setCoreParameter("RoleId", roleId);
+	setCoreParameter("RoleId", std::to_string(roleId));
 }
 
 bool AddUserResourceRoleRequest::getProxy_original_security_transport()const
@@ -99,7 +99,7 @@ std::string AddUserResourceRoleRequest::getCallerBid()const
 void AddUserResourceRoleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string AddUserResourceRoleRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string AddUserResourceRoleRequest::getProxy_original_source_ip()const
 void AddUserResourceRoleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string AddUserResourceRoleRequest::getResourceType()const
@@ -121,7 +121,7 @@ std::string AddUserResourceRoleRequest::getResourceType()const
 void AddUserResourceRoleRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 bool AddUserResourceRoleRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ std::string AddUserResourceRoleRequest::getCallerType()const
 void AddUserResourceRoleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string AddUserResourceRoleRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string AddUserResourceRoleRequest::getAccessKeyId()const
 void AddUserResourceRoleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool AddUserResourceRoleRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ std::string AddUserResourceRoleRequest::getSecurityToken()const
 void AddUserResourceRoleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddUserResourceRoleRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string AddUserResourceRoleRequest::getRegionId()const
 void AddUserResourceRoleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddUserResourceRoleRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string AddUserResourceRoleRequest::getRequestId()const
 void AddUserResourceRoleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long AddUserResourceRoleRequest::getCallerUid()const
@@ -220,7 +220,7 @@ long AddUserResourceRoleRequest::getCallerUid()const
 void AddUserResourceRoleRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string AddUserResourceRoleRequest::getAliyunUserId()const
@@ -231,6 +231,6 @@ std::string AddUserResourceRoleRequest::getAliyunUserId()const
 void AddUserResourceRoleRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
+	setCoreParameter("AliyunUserId", aliyunUserId);
 }
 

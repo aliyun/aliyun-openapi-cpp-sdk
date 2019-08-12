@@ -33,7 +33,7 @@ long DescribeClusterServiceConfigTagForAdminRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigTagForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getRegionId()const
 void DescribeClusterServiceConfigTagForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getConfigTag()const
@@ -55,7 +55,7 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getConfigTag()const
 void DescribeClusterServiceConfigTagForAdminRequest::setConfigTag(const std::string& configTag)
 {
 	configTag_ = configTag;
-	setCoreParameter("ConfigTag", std::to_string(configTag));
+	setCoreParameter("ConfigTag", configTag);
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getServiceName()cons
 void DescribeClusterServiceConfigTagForAdminRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getClusterId()const
 void DescribeClusterServiceConfigTagForAdminRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getUserId()const
@@ -88,7 +88,7 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getUserId()const
 void DescribeClusterServiceConfigTagForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string DescribeClusterServiceConfigTagForAdminRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DescribeClusterServiceConfigTagForAdminRequest::getAccessKeyId()cons
 void DescribeClusterServiceConfigTagForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

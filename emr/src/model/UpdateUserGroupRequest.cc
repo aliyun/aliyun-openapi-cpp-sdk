@@ -33,7 +33,7 @@ std::string UpdateUserGroupRequest::getApp_ip()const
 void UpdateUserGroupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long UpdateUserGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateUserGroupRequest::getResourceOwnerId()const
 void UpdateUserGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UpdateUserGroupRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long UpdateUserGroupRequest::getCallerParentId()const
 void UpdateUserGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::vector<long> UpdateUserGroupRequest::getRoleId()const
@@ -67,7 +67,7 @@ void UpdateUserGroupRequest::setRoleId(const std::vector<long>& roleId)
 {
 	roleId_ = roleId;
 	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+		setCoreParameter("RoleId."+ std::to_string(i), std::to_string(roleId.at(i)));
 }
 
 bool UpdateUserGroupRequest::getProxy_original_security_transport()const
@@ -89,7 +89,7 @@ std::string UpdateUserGroupRequest::getDescription()const
 void UpdateUserGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string UpdateUserGroupRequest::getCallerBid()const
@@ -100,7 +100,7 @@ std::string UpdateUserGroupRequest::getCallerBid()const
 void UpdateUserGroupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string UpdateUserGroupRequest::getProxy_original_source_ip()const
@@ -111,7 +111,7 @@ std::string UpdateUserGroupRequest::getProxy_original_source_ip()const
 void UpdateUserGroupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UpdateUserGroupRequest::getType()const
@@ -122,7 +122,7 @@ std::string UpdateUserGroupRequest::getType()const
 void UpdateUserGroupRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 bool UpdateUserGroupRequest::getAk_mfa_present()const
@@ -155,7 +155,7 @@ std::string UpdateUserGroupRequest::getCallerType()const
 void UpdateUserGroupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UpdateUserGroupRequest::getAccessKeyId()const
@@ -166,7 +166,7 @@ std::string UpdateUserGroupRequest::getAccessKeyId()const
 void UpdateUserGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool UpdateUserGroupRequest::getSecurity_transport()const
@@ -188,7 +188,7 @@ std::string UpdateUserGroupRequest::getSecurityToken()const
 void UpdateUserGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateUserGroupRequest::getRegionId()const
@@ -199,7 +199,7 @@ std::string UpdateUserGroupRequest::getRegionId()const
 void UpdateUserGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateUserGroupRequest::getRequestId()const
@@ -210,7 +210,7 @@ std::string UpdateUserGroupRequest::getRequestId()const
 void UpdateUserGroupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UpdateUserGroupRequest::getName()const
@@ -221,7 +221,7 @@ std::string UpdateUserGroupRequest::getName()const
 void UpdateUserGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long UpdateUserGroupRequest::getId()const
@@ -232,7 +232,7 @@ long UpdateUserGroupRequest::getId()const
 void UpdateUserGroupRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 long UpdateUserGroupRequest::getCallerUid()const
@@ -243,6 +243,6 @@ long UpdateUserGroupRequest::getCallerUid()const
 void UpdateUserGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

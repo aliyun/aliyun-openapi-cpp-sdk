@@ -33,7 +33,7 @@ std::string ProceedTicketRequest::getMemo()const
 void ProceedTicketRequest::setMemo(const std::string& memo)
 {
 	memo_ = memo;
-	setCoreParameter("Memo", std::to_string(memo));
+	setCoreParameter("Memo", memo);
 }
 
 std::string ProceedTicketRequest::getId()const
@@ -44,7 +44,7 @@ std::string ProceedTicketRequest::getId()const
 void ProceedTicketRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ProceedTicketRequest::getCcsInstanceId()const
@@ -55,7 +55,7 @@ std::string ProceedTicketRequest::getCcsInstanceId()const
 void ProceedTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", std::to_string(ccsInstanceId));
+	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 
 std::string ProceedTicketRequest::getOperation()const
@@ -66,7 +66,7 @@ std::string ProceedTicketRequest::getOperation()const
 void ProceedTicketRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 
 std::string ProceedTicketRequest::getOperatorId()const
@@ -77,6 +77,6 @@ std::string ProceedTicketRequest::getOperatorId()const
 void ProceedTicketRequest::setOperatorId(const std::string& operatorId)
 {
 	operatorId_ = operatorId;
-	setCoreParameter("OperatorId", std::to_string(operatorId));
+	setCoreParameter("OperatorId", operatorId);
 }
 

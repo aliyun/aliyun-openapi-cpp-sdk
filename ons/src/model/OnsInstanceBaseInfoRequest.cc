@@ -33,6 +33,6 @@ std::string OnsInstanceBaseInfoRequest::getInstanceId()const
 void OnsInstanceBaseInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 

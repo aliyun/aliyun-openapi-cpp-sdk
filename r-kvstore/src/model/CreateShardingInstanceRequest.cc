@@ -33,7 +33,7 @@ int CreateShardingInstanceRequest::getShardStorageQuantity()const
 void CreateShardingInstanceRequest::setShardStorageQuantity(int shardStorageQuantity)
 {
 	shardStorageQuantity_ = shardStorageQuantity;
-	setCoreParameter("ShardStorageQuantity", shardStorageQuantity);
+	setCoreParameter("ShardStorageQuantity", std::to_string(shardStorageQuantity));
 }
 
 long CreateShardingInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateShardingInstanceRequest::getResourceOwnerId()const
 void CreateShardingInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateShardingInstanceRequest::getNodeType()const
@@ -55,7 +55,7 @@ std::string CreateShardingInstanceRequest::getNodeType()const
 void CreateShardingInstanceRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", std::to_string(nodeType));
+	setCoreParameter("NodeType", nodeType);
 }
 
 std::string CreateShardingInstanceRequest::getCouponNo()const
@@ -66,7 +66,7 @@ std::string CreateShardingInstanceRequest::getCouponNo()const
 void CreateShardingInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 std::string CreateShardingInstanceRequest::getNetworkType()const
@@ -77,7 +77,7 @@ std::string CreateShardingInstanceRequest::getNetworkType()const
 void CreateShardingInstanceRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 
 std::string CreateShardingInstanceRequest::getEngineVersion()const
@@ -88,7 +88,7 @@ std::string CreateShardingInstanceRequest::getEngineVersion()const
 void CreateShardingInstanceRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", std::to_string(engineVersion));
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateShardingInstanceRequest::getInstanceClass()const
@@ -99,7 +99,7 @@ std::string CreateShardingInstanceRequest::getInstanceClass()const
 void CreateShardingInstanceRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", std::to_string(instanceClass));
+	setCoreParameter("InstanceClass", instanceClass);
 }
 
 std::string CreateShardingInstanceRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateShardingInstanceRequest::getAccessKeyId()const
 void CreateShardingInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long CreateShardingInstanceRequest::getCapacity()const
@@ -121,7 +121,7 @@ long CreateShardingInstanceRequest::getCapacity()const
 void CreateShardingInstanceRequest::setCapacity(long capacity)
 {
 	capacity_ = capacity;
-	setCoreParameter("Capacity", capacity);
+	setCoreParameter("Capacity", std::to_string(capacity));
 }
 
 std::string CreateShardingInstanceRequest::getPassword()const
@@ -132,7 +132,7 @@ std::string CreateShardingInstanceRequest::getPassword()const
 void CreateShardingInstanceRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string CreateShardingInstanceRequest::getShardReplicaClass()const
@@ -143,7 +143,7 @@ std::string CreateShardingInstanceRequest::getShardReplicaClass()const
 void CreateShardingInstanceRequest::setShardReplicaClass(const std::string& shardReplicaClass)
 {
 	shardReplicaClass_ = shardReplicaClass;
-	setCoreParameter("ShardReplicaClass", std::to_string(shardReplicaClass));
+	setCoreParameter("ShardReplicaClass", shardReplicaClass);
 }
 
 std::string CreateShardingInstanceRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string CreateShardingInstanceRequest::getSecurityToken()const
 void CreateShardingInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateShardingInstanceRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string CreateShardingInstanceRequest::getRegionId()const
 void CreateShardingInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateShardingInstanceRequest::getIncrementalBackupMode()const
@@ -176,7 +176,7 @@ std::string CreateShardingInstanceRequest::getIncrementalBackupMode()const
 void CreateShardingInstanceRequest::setIncrementalBackupMode(const std::string& incrementalBackupMode)
 {
 	incrementalBackupMode_ = incrementalBackupMode;
-	setCoreParameter("IncrementalBackupMode", std::to_string(incrementalBackupMode));
+	setCoreParameter("IncrementalBackupMode", incrementalBackupMode);
 }
 
 std::string CreateShardingInstanceRequest::getInstanceType()const
@@ -187,7 +187,7 @@ std::string CreateShardingInstanceRequest::getInstanceType()const
 void CreateShardingInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string CreateShardingInstanceRequest::getBusinessInfo()const
@@ -198,7 +198,7 @@ std::string CreateShardingInstanceRequest::getBusinessInfo()const
 void CreateShardingInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 
 std::string CreateShardingInstanceRequest::getPeriod()const
@@ -209,7 +209,7 @@ std::string CreateShardingInstanceRequest::getPeriod()const
 void CreateShardingInstanceRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string CreateShardingInstanceRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string CreateShardingInstanceRequest::getResourceOwnerAccount()const
 void CreateShardingInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateShardingInstanceRequest::getSrcDBInstanceId()const
@@ -231,7 +231,7 @@ std::string CreateShardingInstanceRequest::getSrcDBInstanceId()const
 void CreateShardingInstanceRequest::setSrcDBInstanceId(const std::string& srcDBInstanceId)
 {
 	srcDBInstanceId_ = srcDBInstanceId;
-	setCoreParameter("SrcDBInstanceId", std::to_string(srcDBInstanceId));
+	setCoreParameter("SrcDBInstanceId", srcDBInstanceId);
 }
 
 std::string CreateShardingInstanceRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string CreateShardingInstanceRequest::getOwnerAccount()const
 void CreateShardingInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateShardingInstanceRequest::getBackupId()const
@@ -253,7 +253,7 @@ std::string CreateShardingInstanceRequest::getBackupId()const
 void CreateShardingInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", std::to_string(backupId));
+	setCoreParameter("BackupId", backupId);
 }
 
 long CreateShardingInstanceRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long CreateShardingInstanceRequest::getOwnerId()const
 void CreateShardingInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateShardingInstanceRequest::getToken()const
@@ -275,7 +275,7 @@ std::string CreateShardingInstanceRequest::getToken()const
 void CreateShardingInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", std::to_string(token));
+	setCoreParameter("Token", token);
 }
 
 int CreateShardingInstanceRequest::getShardQuantity()const
@@ -286,7 +286,7 @@ int CreateShardingInstanceRequest::getShardQuantity()const
 void CreateShardingInstanceRequest::setShardQuantity(int shardQuantity)
 {
 	shardQuantity_ = shardQuantity;
-	setCoreParameter("ShardQuantity", shardQuantity);
+	setCoreParameter("ShardQuantity", std::to_string(shardQuantity));
 }
 
 std::string CreateShardingInstanceRequest::getVSwitchId()const
@@ -297,7 +297,7 @@ std::string CreateShardingInstanceRequest::getVSwitchId()const
 void CreateShardingInstanceRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateShardingInstanceRequest::getPrivateIpAddress()const
@@ -308,7 +308,7 @@ std::string CreateShardingInstanceRequest::getPrivateIpAddress()const
 void CreateShardingInstanceRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
+	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string CreateShardingInstanceRequest::getSecurityIPList()const
@@ -319,7 +319,7 @@ std::string CreateShardingInstanceRequest::getSecurityIPList()const
 void CreateShardingInstanceRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", std::to_string(securityIPList));
+	setCoreParameter("SecurityIPList", securityIPList);
 }
 
 std::string CreateShardingInstanceRequest::getInstanceName()const
@@ -330,7 +330,7 @@ std::string CreateShardingInstanceRequest::getInstanceName()const
 void CreateShardingInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 int CreateShardingInstanceRequest::getShardReplicaQuantity()const
@@ -341,7 +341,7 @@ int CreateShardingInstanceRequest::getShardReplicaQuantity()const
 void CreateShardingInstanceRequest::setShardReplicaQuantity(int shardReplicaQuantity)
 {
 	shardReplicaQuantity_ = shardReplicaQuantity;
-	setCoreParameter("ShardReplicaQuantity", shardReplicaQuantity);
+	setCoreParameter("ShardReplicaQuantity", std::to_string(shardReplicaQuantity));
 }
 
 std::string CreateShardingInstanceRequest::getArchitectureType()const
@@ -352,7 +352,7 @@ std::string CreateShardingInstanceRequest::getArchitectureType()const
 void CreateShardingInstanceRequest::setArchitectureType(const std::string& architectureType)
 {
 	architectureType_ = architectureType;
-	setCoreParameter("ArchitectureType", std::to_string(architectureType));
+	setCoreParameter("ArchitectureType", architectureType);
 }
 
 std::string CreateShardingInstanceRequest::getVpcId()const
@@ -363,7 +363,7 @@ std::string CreateShardingInstanceRequest::getVpcId()const
 void CreateShardingInstanceRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string CreateShardingInstanceRequest::getRedisManagerClass()const
@@ -374,7 +374,7 @@ std::string CreateShardingInstanceRequest::getRedisManagerClass()const
 void CreateShardingInstanceRequest::setRedisManagerClass(const std::string& redisManagerClass)
 {
 	redisManagerClass_ = redisManagerClass;
-	setCoreParameter("RedisManagerClass", std::to_string(redisManagerClass));
+	setCoreParameter("RedisManagerClass", redisManagerClass);
 }
 
 std::string CreateShardingInstanceRequest::getZoneId()const
@@ -385,7 +385,7 @@ std::string CreateShardingInstanceRequest::getZoneId()const
 void CreateShardingInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string CreateShardingInstanceRequest::getChargeType()const
@@ -396,7 +396,7 @@ std::string CreateShardingInstanceRequest::getChargeType()const
 void CreateShardingInstanceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", std::to_string(chargeType));
+	setCoreParameter("ChargeType", chargeType);
 }
 
 int CreateShardingInstanceRequest::getProxyQuantity()const
@@ -407,7 +407,7 @@ int CreateShardingInstanceRequest::getProxyQuantity()const
 void CreateShardingInstanceRequest::setProxyQuantity(int proxyQuantity)
 {
 	proxyQuantity_ = proxyQuantity;
-	setCoreParameter("ProxyQuantity", proxyQuantity);
+	setCoreParameter("ProxyQuantity", std::to_string(proxyQuantity));
 }
 
 std::string CreateShardingInstanceRequest::getConfig()const
@@ -418,7 +418,7 @@ std::string CreateShardingInstanceRequest::getConfig()const
 void CreateShardingInstanceRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", std::to_string(config));
+	setCoreParameter("Config", config);
 }
 
 std::string CreateShardingInstanceRequest::getProxyMode()const
@@ -429,6 +429,6 @@ std::string CreateShardingInstanceRequest::getProxyMode()const
 void CreateShardingInstanceRequest::setProxyMode(const std::string& proxyMode)
 {
 	proxyMode_ = proxyMode;
-	setCoreParameter("ProxyMode", std::to_string(proxyMode));
+	setCoreParameter("ProxyMode", proxyMode);
 }
 

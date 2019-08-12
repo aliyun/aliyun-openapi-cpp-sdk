@@ -33,7 +33,7 @@ long HeadquartersToolsContrastRequest::getBid()const
 void HeadquartersToolsContrastRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", bid);
+	setCoreParameter("Bid", std::to_string(bid));
 }
 
 std::string HeadquartersToolsContrastRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string HeadquartersToolsContrastRequest::getAccessKeyId()const
 void HeadquartersToolsContrastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getResourceOwnerId
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getRegionId
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getClusterI
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getUserId()const
@@ -66,7 +66,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getUserId()
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeClusterResourcePoolSchedulerTypeForAdminRequest::getAccessKe
 void DescribeClusterResourcePoolSchedulerTypeForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeRiskCheckItemResultRequest::getItemId()const
 void DescribeRiskCheckItemResultRequest::setItemId(long itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", itemId);
+	setCoreParameter("ItemId", std::to_string(itemId));
 }
 
 long DescribeRiskCheckItemResultRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeRiskCheckItemResultRequest::getResourceOwnerId()const
 void DescribeRiskCheckItemResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskCheckItemResultRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeRiskCheckItemResultRequest::getSourceIp()const
 void DescribeRiskCheckItemResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeRiskCheckItemResultRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeRiskCheckItemResultRequest::getPageSize()const
 void DescribeRiskCheckItemResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeRiskCheckItemResultRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeRiskCheckItemResultRequest::getCurrentPage()const
 void DescribeRiskCheckItemResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeRiskCheckItemResultRequest::getLang()const
@@ -88,6 +88,6 @@ std::string DescribeRiskCheckItemResultRequest::getLang()const
 void DescribeRiskCheckItemResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

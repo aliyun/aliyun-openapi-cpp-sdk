@@ -33,7 +33,7 @@ std::string DeleteJobTemplatesRequest::getTemplates()const
 void DeleteJobTemplatesRequest::setTemplates(const std::string& templates)
 {
 	templates_ = templates;
-	setCoreParameter("Templates", std::to_string(templates));
+	setCoreParameter("Templates", templates);
 }
 
 std::string DeleteJobTemplatesRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DeleteJobTemplatesRequest::getAccessKeyId()const
 void DeleteJobTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

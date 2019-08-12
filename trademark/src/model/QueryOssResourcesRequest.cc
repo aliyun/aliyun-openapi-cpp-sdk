@@ -33,6 +33,6 @@ std::string QueryOssResourcesRequest::getBizId()const
 void QueryOssResourcesRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 

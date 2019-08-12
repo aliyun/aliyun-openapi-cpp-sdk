@@ -33,6 +33,6 @@ std::string QueryTradeProduceDetailRequest::getBizId()const
 void QueryTradeProduceDetailRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 

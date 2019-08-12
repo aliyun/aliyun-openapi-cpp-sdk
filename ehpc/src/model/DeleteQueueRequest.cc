@@ -33,7 +33,7 @@ std::string DeleteQueueRequest::getQueueName()const
 void DeleteQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", std::to_string(queueName));
+	setCoreParameter("QueueName", queueName);
 }
 
 std::string DeleteQueueRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteQueueRequest::getClusterId()const
 void DeleteQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteQueueRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteQueueRequest::getAccessKeyId()const
 void DeleteQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

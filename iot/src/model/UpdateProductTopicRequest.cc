@@ -33,7 +33,7 @@ std::string UpdateProductTopicRequest::getTopicId()const
 void UpdateProductTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string UpdateProductTopicRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string UpdateProductTopicRequest::getIotInstanceId()const
 void UpdateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string UpdateProductTopicRequest::getOperation()const
@@ -55,7 +55,7 @@ std::string UpdateProductTopicRequest::getOperation()const
 void UpdateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 
 std::string UpdateProductTopicRequest::getTopicShortName()const
@@ -66,7 +66,7 @@ std::string UpdateProductTopicRequest::getTopicShortName()const
 void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setCoreParameter("TopicShortName", std::to_string(topicShortName));
+	setCoreParameter("TopicShortName", topicShortName);
 }
 
 std::string UpdateProductTopicRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string UpdateProductTopicRequest::getAccessKeyId()const
 void UpdateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateProductTopicRequest::getDesc()const
@@ -88,6 +88,6 @@ std::string UpdateProductTopicRequest::getDesc()const
 void UpdateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", std::to_string(desc));
+	setCoreParameter("Desc", desc);
 }
 

@@ -33,7 +33,7 @@ long DeleteScalingTaskGroupRequest::getResourceOwnerId()const
 void DeleteScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteScalingTaskGroupRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteScalingTaskGroupRequest::getRegionId()const
 void DeleteScalingTaskGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteScalingTaskGroupRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string DeleteScalingTaskGroupRequest::getHostGroupId()const
 void DeleteScalingTaskGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string DeleteScalingTaskGroupRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DeleteScalingTaskGroupRequest::getClusterId()const
 void DeleteScalingTaskGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteScalingTaskGroupRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteScalingTaskGroupRequest::getAccessKeyId()const
 void DeleteScalingTaskGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long LockDBClusterDeletionRequest::getResourceOwnerId()const
 void LockDBClusterDeletionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string LockDBClusterDeletionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string LockDBClusterDeletionRequest::getResourceOwnerAccount()const
 void LockDBClusterDeletionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string LockDBClusterDeletionRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string LockDBClusterDeletionRequest::getDBClusterId()const
 void LockDBClusterDeletionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string LockDBClusterDeletionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string LockDBClusterDeletionRequest::getOwnerAccount()const
 void LockDBClusterDeletionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long LockDBClusterDeletionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long LockDBClusterDeletionRequest::getOwnerId()const
 void LockDBClusterDeletionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string LockDBClusterDeletionRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string LockDBClusterDeletionRequest::getAccessKeyId()const
 void LockDBClusterDeletionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

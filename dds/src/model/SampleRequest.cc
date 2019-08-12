@@ -33,7 +33,7 @@ long SampleRequest::getResourceOwnerId()const
 void SampleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SampleRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SampleRequest::getSecurityToken()const
 void SampleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SampleRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SampleRequest::getResourceOwnerAccount()const
 void SampleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SampleRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string SampleRequest::getRegionId()const
 void SampleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SampleRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SampleRequest::getOwnerAccount()const
 void SampleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SampleRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string SampleRequest::getDBInstanceId()const
 void SampleRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long SampleRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SampleRequest::getOwnerId()const
 void SampleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SampleRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string SampleRequest::getAccessKeyId()const
 void SampleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

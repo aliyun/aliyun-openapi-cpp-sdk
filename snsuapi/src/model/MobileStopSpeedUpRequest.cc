@@ -33,7 +33,7 @@ long MobileStopSpeedUpRequest::getResourceOwnerId()const
 void MobileStopSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MobileStopSpeedUpRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string MobileStopSpeedUpRequest::getResourceOwnerAccount()const
 void MobileStopSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MobileStopSpeedUpRequest::getCorrelationId()const
@@ -55,7 +55,7 @@ std::string MobileStopSpeedUpRequest::getCorrelationId()const
 void MobileStopSpeedUpRequest::setCorrelationId(const std::string& correlationId)
 {
 	correlationId_ = correlationId;
-	setCoreParameter("CorrelationId", std::to_string(correlationId));
+	setCoreParameter("CorrelationId", correlationId);
 }
 
 long MobileStopSpeedUpRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long MobileStopSpeedUpRequest::getOwnerId()const
 void MobileStopSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MobileStopSpeedUpRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MobileStopSpeedUpRequest::getAccessKeyId()const
 void MobileStopSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

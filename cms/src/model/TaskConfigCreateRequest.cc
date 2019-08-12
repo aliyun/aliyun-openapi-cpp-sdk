@@ -34,7 +34,7 @@ void TaskConfigCreateRequest::setInstanceList(const std::vector<std::string>& in
 {
 	instanceList_ = instanceList;
 	for(int i = 0; i!= instanceList.size(); i++)
-		setCoreParameter("InstanceList."+ std::to_string(i), std::to_string(instanceList.at(i)));
+		setCoreParameter("InstanceList."+ std::to_string(i), instanceList.at(i));
 }
 
 std::string TaskConfigCreateRequest::getJsonData()const
@@ -45,7 +45,7 @@ std::string TaskConfigCreateRequest::getJsonData()const
 void TaskConfigCreateRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string TaskConfigCreateRequest::getTaskType()const
@@ -56,7 +56,7 @@ std::string TaskConfigCreateRequest::getTaskType()const
 void TaskConfigCreateRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", std::to_string(taskType));
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string TaskConfigCreateRequest::getTaskScope()const
@@ -67,7 +67,7 @@ std::string TaskConfigCreateRequest::getTaskScope()const
 void TaskConfigCreateRequest::setTaskScope(const std::string& taskScope)
 {
 	taskScope_ = taskScope;
-	setCoreParameter("TaskScope", std::to_string(taskScope));
+	setCoreParameter("TaskScope", taskScope);
 }
 
 std::string TaskConfigCreateRequest::getAlertConfig()const
@@ -78,7 +78,7 @@ std::string TaskConfigCreateRequest::getAlertConfig()const
 void TaskConfigCreateRequest::setAlertConfig(const std::string& alertConfig)
 {
 	alertConfig_ = alertConfig;
-	setCoreParameter("AlertConfig", std::to_string(alertConfig));
+	setCoreParameter("AlertConfig", alertConfig);
 }
 
 long TaskConfigCreateRequest::getGroupId()const
@@ -89,7 +89,7 @@ long TaskConfigCreateRequest::getGroupId()const
 void TaskConfigCreateRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string TaskConfigCreateRequest::getTaskName()const
@@ -100,7 +100,7 @@ std::string TaskConfigCreateRequest::getTaskName()const
 void TaskConfigCreateRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", std::to_string(taskName));
+	setCoreParameter("TaskName", taskName);
 }
 
 std::string TaskConfigCreateRequest::getGroupName()const
@@ -111,6 +111,6 @@ std::string TaskConfigCreateRequest::getGroupName()const
 void TaskConfigCreateRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 

@@ -33,7 +33,7 @@ std::string AttachKeyPairRequest::getSourceRegionId()const
 void AttachKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long AttachKeyPairRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AttachKeyPairRequest::getResourceOwnerId()const
 void AttachKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachKeyPairRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AttachKeyPairRequest::getResourceOwnerAccount()const
 void AttachKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachKeyPairRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AttachKeyPairRequest::getRegionId()const
 void AttachKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AttachKeyPairRequest::getInstanceIds()const
@@ -77,7 +77,7 @@ std::string AttachKeyPairRequest::getInstanceIds()const
 void AttachKeyPairRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string AttachKeyPairRequest::getKeyPairName()const
@@ -88,7 +88,7 @@ std::string AttachKeyPairRequest::getKeyPairName()const
 void AttachKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", std::to_string(keyPairName));
+	setCoreParameter("KeyPairName", keyPairName);
 }
 
 long AttachKeyPairRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long AttachKeyPairRequest::getOwnerId()const
 void AttachKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

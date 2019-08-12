@@ -33,7 +33,7 @@ int DescribeWebsiteScanResultRequest::getTotalCount()const
 void DescribeWebsiteScanResultRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", totalCount);
+	setCoreParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeWebsiteScanResultRequest::getSubServiceModule()const
@@ -44,7 +44,7 @@ std::string DescribeWebsiteScanResultRequest::getSubServiceModule()const
 void DescribeWebsiteScanResultRequest::setSubServiceModule(const std::string& subServiceModule)
 {
 	subServiceModule_ = subServiceModule;
-	setCoreParameter("SubServiceModule", std::to_string(subServiceModule));
+	setCoreParameter("SubServiceModule", subServiceModule);
 }
 
 std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
@@ -55,7 +55,7 @@ std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
 void DescribeWebsiteScanResultRequest::setSiteUrl(const std::string& siteUrl)
 {
 	siteUrl_ = siteUrl;
-	setCoreParameter("SiteUrl", std::to_string(siteUrl));
+	setCoreParameter("SiteUrl", siteUrl);
 }
 
 std::string DescribeWebsiteScanResultRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string DescribeWebsiteScanResultRequest::getSourceIp()const
 void DescribeWebsiteScanResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
@@ -77,7 +77,7 @@ std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
 void DescribeWebsiteScanResultRequest::setHandleStatus(const std::string& handleStatus)
 {
 	handleStatus_ = handleStatus;
-	setCoreParameter("HandleStatus", std::to_string(handleStatus));
+	setCoreParameter("HandleStatus", handleStatus);
 }
 
 std::string DescribeWebsiteScanResultRequest::getDomain()const
@@ -88,7 +88,7 @@ std::string DescribeWebsiteScanResultRequest::getDomain()const
 void DescribeWebsiteScanResultRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", std::to_string(domain));
+	setCoreParameter("Domain", domain);
 }
 
 int DescribeWebsiteScanResultRequest::getPageSize()const
@@ -99,7 +99,7 @@ int DescribeWebsiteScanResultRequest::getPageSize()const
 void DescribeWebsiteScanResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeWebsiteScanResultRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeWebsiteScanResultRequest::getCurrentPage()const
 void DescribeWebsiteScanResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWebsiteScanResultRequest::getLabel()const
@@ -121,7 +121,7 @@ std::string DescribeWebsiteScanResultRequest::getLabel()const
 void DescribeWebsiteScanResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", std::to_string(label));
+	setCoreParameter("Label", label);
 }
 
 std::string DescribeWebsiteScanResultRequest::getLang()const
@@ -132,6 +132,6 @@ std::string DescribeWebsiteScanResultRequest::getLang()const
 void DescribeWebsiteScanResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

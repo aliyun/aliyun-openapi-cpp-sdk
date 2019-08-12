@@ -33,7 +33,7 @@ long MoveKnowledgeCategoryRequest::getKnowledgeId()const
 void MoveKnowledgeCategoryRequest::setKnowledgeId(long knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", knowledgeId);
+	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
 }
 
 long MoveKnowledgeCategoryRequest::getCategoryId()const
@@ -44,6 +44,6 @@ long MoveKnowledgeCategoryRequest::getCategoryId()const
 void MoveKnowledgeCategoryRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
-	setCoreParameter("CategoryId", categoryId);
+	setCoreParameter("CategoryId", std::to_string(categoryId));
 }
 

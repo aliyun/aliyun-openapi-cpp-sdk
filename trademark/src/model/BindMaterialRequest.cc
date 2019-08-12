@@ -33,7 +33,7 @@ std::string BindMaterialRequest::getBizId()const
 void BindMaterialRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string BindMaterialRequest::getMaterialId()const
@@ -44,7 +44,7 @@ std::string BindMaterialRequest::getMaterialId()const
 void BindMaterialRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", std::to_string(materialId));
+	setCoreParameter("MaterialId", materialId);
 }
 
 std::string BindMaterialRequest::getLoaOssKey()const
@@ -55,6 +55,6 @@ std::string BindMaterialRequest::getLoaOssKey()const
 void BindMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", std::to_string(loaOssKey));
+	setCoreParameter("LoaOssKey", loaOssKey);
 }
 

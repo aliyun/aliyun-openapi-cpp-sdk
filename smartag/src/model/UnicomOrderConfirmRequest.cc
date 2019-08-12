@@ -33,7 +33,7 @@ std::string UnicomOrderConfirmRequest::getTmsCode()const
 void UnicomOrderConfirmRequest::setTmsCode(const std::string& tmsCode)
 {
 	tmsCode_ = tmsCode;
-	setCoreParameter("TmsCode", std::to_string(tmsCode));
+	setCoreParameter("TmsCode", tmsCode);
 }
 
 long UnicomOrderConfirmRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UnicomOrderConfirmRequest::getResourceOwnerId()const
 void UnicomOrderConfirmRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<UnicomOrderConfirmRequest::OrderItem> UnicomOrderConfirmRequest::getOrderItem()const
@@ -59,14 +59,14 @@ void UnicomOrderConfirmRequest::setOrderItem(const std::vector<OrderItem>& order
 	for(int i = 0; i!= orderItem.size(); i++)	{
 		auto obj = orderItem.at(i);
 		std::string str ="OrderItem."+ std::to_string(i);
-		setCoreParameter(str + ".ScItemName", std::to_string(obj.scItemName));
-		setCoreParameter(str + ".ItemAmount", std::to_string(obj.itemAmount));
-		for(int i = 0; i!= obj.snList.size(); i++)				setCoreParameter(str + ".SnList."+ std::to_string(i), std::to_string(obj.snList.at(i)));
-		setCoreParameter(str + ".OrderItemId", std::to_string(obj.orderItemId));
-		setCoreParameter(str + ".ScItemCode", std::to_string(obj.scItemCode));
-		setCoreParameter(str + ".ItemQuantity", obj.itemQuantity);
-		setCoreParameter(str + ".TradeId", std::to_string(obj.tradeId));
-		setCoreParameter(str + ".TradeItemId", std::to_string(obj.tradeItemId));
+		setCoreParameter(str + ".ScItemName", obj.scItemName);
+		setCoreParameter(str + ".ItemAmount", obj.itemAmount);
+		for(int i = 0; i!= obj.snList.size(); i++)				setCoreParameter(str + ".SnList."+ std::to_string(i), obj.snList.at(i));
+		setCoreParameter(str + ".OrderItemId", obj.orderItemId);
+		setCoreParameter(str + ".ScItemCode", obj.scItemCode);
+		setCoreParameter(str + ".ItemQuantity", std::to_string(obj.itemQuantity));
+		setCoreParameter(str + ".TradeId", obj.tradeId);
+		setCoreParameter(str + ".TradeItemId", obj.tradeItemId);
 	}
 }
 
@@ -78,7 +78,7 @@ std::string UnicomOrderConfirmRequest::getOwnerUserId()const
 void UnicomOrderConfirmRequest::setOwnerUserId(const std::string& ownerUserId)
 {
 	ownerUserId_ = ownerUserId;
-	setCoreParameter("OwnerUserId", std::to_string(ownerUserId));
+	setCoreParameter("OwnerUserId", ownerUserId);
 }
 
 std::string UnicomOrderConfirmRequest::getResourceOwnerAccount()const
@@ -89,7 +89,7 @@ std::string UnicomOrderConfirmRequest::getResourceOwnerAccount()const
 void UnicomOrderConfirmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnicomOrderConfirmRequest::getRegionId()const
@@ -100,7 +100,7 @@ std::string UnicomOrderConfirmRequest::getRegionId()const
 void UnicomOrderConfirmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnicomOrderConfirmRequest::getOwnerAccount()const
@@ -111,7 +111,7 @@ std::string UnicomOrderConfirmRequest::getOwnerAccount()const
 void UnicomOrderConfirmRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnicomOrderConfirmRequest::getOrderPostFee()const
@@ -122,7 +122,7 @@ long UnicomOrderConfirmRequest::getOrderPostFee()const
 void UnicomOrderConfirmRequest::setOrderPostFee(long orderPostFee)
 {
 	orderPostFee_ = orderPostFee;
-	setCoreParameter("OrderPostFee", orderPostFee);
+	setCoreParameter("OrderPostFee", std::to_string(orderPostFee));
 }
 
 long UnicomOrderConfirmRequest::getOwnerId()const
@@ -133,7 +133,7 @@ long UnicomOrderConfirmRequest::getOwnerId()const
 void UnicomOrderConfirmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnicomOrderConfirmRequest::getTmsOrderCode()const
@@ -144,7 +144,7 @@ std::string UnicomOrderConfirmRequest::getTmsOrderCode()const
 void UnicomOrderConfirmRequest::setTmsOrderCode(const std::string& tmsOrderCode)
 {
 	tmsOrderCode_ = tmsOrderCode;
-	setCoreParameter("TmsOrderCode", std::to_string(tmsOrderCode));
+	setCoreParameter("TmsOrderCode", tmsOrderCode);
 }
 
 std::string UnicomOrderConfirmRequest::getTradeId()const
@@ -155,6 +155,6 @@ std::string UnicomOrderConfirmRequest::getTradeId()const
 void UnicomOrderConfirmRequest::setTradeId(const std::string& tradeId)
 {
 	tradeId_ = tradeId;
-	setCoreParameter("TradeId", std::to_string(tradeId));
+	setCoreParameter("TradeId", tradeId);
 }
 

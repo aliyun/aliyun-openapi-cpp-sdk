@@ -33,7 +33,7 @@ std::string SmartCallOperateRequest::getCallId()const
 void SmartCallOperateRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", std::to_string(callId));
+	setCoreParameter("CallId", callId);
 }
 
 long SmartCallOperateRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SmartCallOperateRequest::getResourceOwnerId()const
 void SmartCallOperateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SmartCallOperateRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SmartCallOperateRequest::getResourceOwnerAccount()const
 void SmartCallOperateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SmartCallOperateRequest::getParam()const
@@ -66,7 +66,7 @@ std::string SmartCallOperateRequest::getParam()const
 void SmartCallOperateRequest::setParam(const std::string& param)
 {
 	param_ = param;
-	setCoreParameter("Param", std::to_string(param));
+	setCoreParameter("Param", param);
 }
 
 long SmartCallOperateRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long SmartCallOperateRequest::getOwnerId()const
 void SmartCallOperateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SmartCallOperateRequest::getCommand()const
@@ -88,7 +88,7 @@ std::string SmartCallOperateRequest::getCommand()const
 void SmartCallOperateRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", std::to_string(command));
+	setCoreParameter("Command", command);
 }
 
 std::string SmartCallOperateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SmartCallOperateRequest::getAccessKeyId()const
 void SmartCallOperateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

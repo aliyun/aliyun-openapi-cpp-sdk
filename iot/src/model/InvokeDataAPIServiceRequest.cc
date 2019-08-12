@@ -33,7 +33,7 @@ std::string InvokeDataAPIServiceRequest::getApiSrn()const
 void InvokeDataAPIServiceRequest::setApiSrn(const std::string& apiSrn)
 {
 	apiSrn_ = apiSrn;
-	setCoreParameter("ApiSrn", std::to_string(apiSrn));
+	setCoreParameter("ApiSrn", apiSrn);
 }
 
 std::vector<InvokeDataAPIServiceRequest::Param> InvokeDataAPIServiceRequest::getParam()const
@@ -48,10 +48,10 @@ void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
 	for(int i = 0; i!= param.size(); i++)	{
 		auto obj = param.at(i);
 		std::string str ="Param."+ std::to_string(i);
-		setCoreParameter(str + ".ListParamType", std::to_string(obj.listParamType));
-		for(int i = 0; i!= obj.listParamValue.size(); i++)				setCoreParameter(str + ".ListParamValue."+ std::to_string(i), std::to_string(obj.listParamValue.at(i)));
-		setCoreParameter(str + ".ParamValue", std::to_string(obj.paramValue));
-		setCoreParameter(str + ".ParamName", std::to_string(obj.paramName));
+		setCoreParameter(str + ".ListParamType", obj.listParamType);
+		for(int i = 0; i!= obj.listParamValue.size(); i++)				setCoreParameter(str + ".ListParamValue."+ std::to_string(i), obj.listParamValue.at(i));
+		setCoreParameter(str + ".ParamValue", obj.paramValue);
+		setCoreParameter(str + ".ParamName", obj.paramName);
 	}
 }
 
@@ -63,6 +63,6 @@ std::string InvokeDataAPIServiceRequest::getAccessKeyId()const
 void InvokeDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

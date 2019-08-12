@@ -33,7 +33,7 @@ long ModifyResourceQueueRequest::getResourceOwnerId()const
 void ModifyResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyResourceQueueRequest::getParentQueueId()const
@@ -44,7 +44,7 @@ long ModifyResourceQueueRequest::getParentQueueId()const
 void ModifyResourceQueueRequest::setParentQueueId(long parentQueueId)
 {
 	parentQueueId_ = parentQueueId;
-	setCoreParameter("ParentQueueId", parentQueueId);
+	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
 }
 
 std::string ModifyResourceQueueRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyResourceQueueRequest::getRegionId()const
 void ModifyResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyResourceQueueRequest::getName()const
@@ -66,7 +66,7 @@ std::string ModifyResourceQueueRequest::getName()const
 void ModifyResourceQueueRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyResourceQueueRequest::getQualifiedName()const
@@ -77,7 +77,7 @@ std::string ModifyResourceQueueRequest::getQualifiedName()const
 void ModifyResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
 {
 	qualifiedName_ = qualifiedName;
-	setCoreParameter("QualifiedName", std::to_string(qualifiedName));
+	setCoreParameter("QualifiedName", qualifiedName);
 }
 
 long ModifyResourceQueueRequest::getResourcePoolId()const
@@ -88,7 +88,7 @@ long ModifyResourceQueueRequest::getResourcePoolId()const
 void ModifyResourceQueueRequest::setResourcePoolId(long resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", resourcePoolId);
+	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
 }
 
 std::string ModifyResourceQueueRequest::getId()const
@@ -99,7 +99,7 @@ std::string ModifyResourceQueueRequest::getId()const
 void ModifyResourceQueueRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyResourceQueueRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string ModifyResourceQueueRequest::getClusterId()const
 void ModifyResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 bool ModifyResourceQueueRequest::getLeaf()const
@@ -136,11 +136,11 @@ void ModifyResourceQueueRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
-		setCoreParameter(str + ".Note", std::to_string(obj.note));
-		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Category", std::to_string(obj.category));
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".Note", obj.note);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
+		setCoreParameter(str + ".Category", obj.category);
 	}
 }
 
@@ -152,6 +152,6 @@ std::string ModifyResourceQueueRequest::getAccessKeyId()const
 void ModifyResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CreateOrderRequest::getData()const
 void CreateOrderRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 long CreateOrderRequest::getCsbId()const
@@ -44,7 +44,7 @@ long CreateOrderRequest::getCsbId()const
 void CreateOrderRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string CreateOrderRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string CreateOrderRequest::getRegionId()const
 void CreateOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

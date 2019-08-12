@@ -33,7 +33,7 @@ long DescribeKafkaBrokerRequest::getResourceOwnerId()const
 void DescribeKafkaBrokerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeKafkaBrokerRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeKafkaBrokerRequest::getRegionId()const
 void DescribeKafkaBrokerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeKafkaBrokerRequest::getHostId()const
@@ -55,7 +55,7 @@ std::string DescribeKafkaBrokerRequest::getHostId()const
 void DescribeKafkaBrokerRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", std::to_string(hostId));
+	setCoreParameter("HostId", hostId);
 }
 
 std::string DescribeKafkaBrokerRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeKafkaBrokerRequest::getClusterId()const
 void DescribeKafkaBrokerRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeKafkaBrokerRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeKafkaBrokerRequest::getAccessKeyId()const
 void DescribeKafkaBrokerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

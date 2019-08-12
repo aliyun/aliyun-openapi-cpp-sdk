@@ -44,7 +44,7 @@ std::string BuyOriginPicturesRequest::getApp_ip()const
 void BuyOriginPicturesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string BuyOriginPicturesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string BuyOriginPicturesRequest::getRegionId()const
 void BuyOriginPicturesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long BuyOriginPicturesRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long BuyOriginPicturesRequest::getCallerParentId()const
 void BuyOriginPicturesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string BuyOriginPicturesRequest::getRequestId()const
@@ -77,7 +77,7 @@ std::string BuyOriginPicturesRequest::getRequestId()const
 void BuyOriginPicturesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string BuyOriginPicturesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string BuyOriginPicturesRequest::getCallerType()const
 void BuyOriginPicturesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool BuyOriginPicturesRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ long BuyOriginPicturesRequest::getCallerUid()const
 void BuyOriginPicturesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::vector<long> BuyOriginPicturesRequest::getPictureId()const
@@ -122,6 +122,6 @@ void BuyOriginPicturesRequest::setPictureId(const std::vector<long>& pictureId)
 {
 	pictureId_ = pictureId;
 	for(int i = 0; i!= pictureId.size(); i++)
-		setCoreParameter("PictureId."+ std::to_string(i), pictureId.at(i));
+		setCoreParameter("PictureId."+ std::to_string(i), std::to_string(pictureId.at(i)));
 }
 

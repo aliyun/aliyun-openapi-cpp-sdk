@@ -33,7 +33,7 @@ long CreateCommandRequest::getResourceOwnerId()const
 void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateCommandRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateCommandRequest::getCallerParentId()const
 void CreateCommandRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string CreateCommandRequest::getWorkingDir()const
@@ -55,7 +55,7 @@ std::string CreateCommandRequest::getWorkingDir()const
 void CreateCommandRequest::setWorkingDir(const std::string& workingDir)
 {
 	workingDir_ = workingDir;
-	setCoreParameter("WorkingDir", std::to_string(workingDir));
+	setCoreParameter("WorkingDir", workingDir);
 }
 
 bool CreateCommandRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string CreateCommandRequest::getDescription()const
 void CreateCommandRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateCommandRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string CreateCommandRequest::getProxy_original_source_ip()const
 void CreateCommandRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateCommandRequest::getType()const
@@ -99,7 +99,7 @@ std::string CreateCommandRequest::getType()const
 void CreateCommandRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string CreateCommandRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string CreateCommandRequest::getOwnerIdLoginEmail()const
 void CreateCommandRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateCommandRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string CreateCommandRequest::getCallerType()const
 void CreateCommandRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateCommandRequest::getCommandContent()const
@@ -132,7 +132,7 @@ std::string CreateCommandRequest::getCommandContent()const
 void CreateCommandRequest::setCommandContent(const std::string& commandContent)
 {
 	commandContent_ = commandContent;
-	setCoreParameter("CommandContent", std::to_string(commandContent));
+	setCoreParameter("CommandContent", commandContent);
 }
 
 long CreateCommandRequest::getTimeout()const
@@ -143,7 +143,7 @@ long CreateCommandRequest::getTimeout()const
 void CreateCommandRequest::setTimeout(long timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", timeout);
+	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::string CreateCommandRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CreateCommandRequest::getAccessKeyId()const
 void CreateCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateCommandRequest::getSourceRegionId()const
@@ -165,7 +165,7 @@ std::string CreateCommandRequest::getSourceRegionId()const
 void CreateCommandRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string CreateCommandRequest::getSecurityToken()const
@@ -176,7 +176,7 @@ std::string CreateCommandRequest::getSecurityToken()const
 void CreateCommandRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateCommandRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string CreateCommandRequest::getRegionId()const
 void CreateCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool CreateCommandRequest::getEnable()const
@@ -209,7 +209,7 @@ std::string CreateCommandRequest::getRequestContent()const
 void CreateCommandRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateCommandRequest::getCallerBidEmail()const
@@ -220,7 +220,7 @@ std::string CreateCommandRequest::getCallerBidEmail()const
 void CreateCommandRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateCommandRequest::getCallerUidEmail()const
@@ -231,7 +231,7 @@ std::string CreateCommandRequest::getCallerUidEmail()const
 void CreateCommandRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateCommandRequest::getCallerUid()const
@@ -242,7 +242,7 @@ long CreateCommandRequest::getCallerUid()const
 void CreateCommandRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateCommandRequest::getApp_ip()const
@@ -253,7 +253,7 @@ std::string CreateCommandRequest::getApp_ip()const
 void CreateCommandRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateCommandRequest::getResourceOwnerAccount()const
@@ -264,7 +264,7 @@ std::string CreateCommandRequest::getResourceOwnerAccount()const
 void CreateCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCommandRequest::getOwnerAccount()const
@@ -275,7 +275,7 @@ std::string CreateCommandRequest::getOwnerAccount()const
 void CreateCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateCommandRequest::getCallerBid()const
@@ -286,7 +286,7 @@ std::string CreateCommandRequest::getCallerBid()const
 void CreateCommandRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateCommandRequest::getOwnerId()const
@@ -297,7 +297,7 @@ long CreateCommandRequest::getOwnerId()const
 void CreateCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool CreateCommandRequest::getProxy_trust_transport_info()const
@@ -341,7 +341,7 @@ std::string CreateCommandRequest::getRequestId()const
 void CreateCommandRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateCommandRequest::getAkProxy()const
@@ -352,7 +352,7 @@ std::string CreateCommandRequest::getAkProxy()const
 void CreateCommandRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string CreateCommandRequest::getName()const
@@ -363,7 +363,7 @@ std::string CreateCommandRequest::getName()const
 void CreateCommandRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 bool CreateCommandRequest::getEnableParameter()const

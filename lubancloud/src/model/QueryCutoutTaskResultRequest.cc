@@ -44,7 +44,7 @@ std::string QueryCutoutTaskResultRequest::getApp_ip()const
 void QueryCutoutTaskResultRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string QueryCutoutTaskResultRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string QueryCutoutTaskResultRequest::getRegionId()const
 void QueryCutoutTaskResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryCutoutTaskResultRequest::getRequestId()const
@@ -66,7 +66,7 @@ std::string QueryCutoutTaskResultRequest::getRequestId()const
 void QueryCutoutTaskResultRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long QueryCutoutTaskResultRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ long QueryCutoutTaskResultRequest::getCallerParentId()const
 void QueryCutoutTaskResultRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string QueryCutoutTaskResultRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string QueryCutoutTaskResultRequest::getCallerType()const
 void QueryCutoutTaskResultRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool QueryCutoutTaskResultRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ long QueryCutoutTaskResultRequest::getCallerUid()const
 void QueryCutoutTaskResultRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 long QueryCutoutTaskResultRequest::getTaskId()const
@@ -121,6 +121,6 @@ long QueryCutoutTaskResultRequest::getTaskId()const
 void QueryCutoutTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 

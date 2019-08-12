@@ -33,7 +33,7 @@ std::string GetBackupRuleInfoRequest::getApp_ip()const
 void GetBackupRuleInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long GetBackupRuleInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetBackupRuleInfoRequest::getResourceOwnerId()const
 void GetBackupRuleInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long GetBackupRuleInfoRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long GetBackupRuleInfoRequest::getCallerParentId()const
 void GetBackupRuleInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool GetBackupRuleInfoRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string GetBackupRuleInfoRequest::getCallerBid()const
 void GetBackupRuleInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string GetBackupRuleInfoRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string GetBackupRuleInfoRequest::getProxy_original_source_ip()const
 void GetBackupRuleInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool GetBackupRuleInfoRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string GetBackupRuleInfoRequest::getCallerType()const
 void GetBackupRuleInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string GetBackupRuleInfoRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string GetBackupRuleInfoRequest::getAccessKeyId()const
 void GetBackupRuleInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool GetBackupRuleInfoRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string GetBackupRuleInfoRequest::getSecurityToken()const
 void GetBackupRuleInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string GetBackupRuleInfoRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string GetBackupRuleInfoRequest::getRegionId()const
 void GetBackupRuleInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetBackupRuleInfoRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string GetBackupRuleInfoRequest::getRequestId()const
 void GetBackupRuleInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long GetBackupRuleInfoRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long GetBackupRuleInfoRequest::getCallerUid()const
 void GetBackupRuleInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetBackupRuleInfoRequest::getBackupRuleId()const
@@ -198,6 +198,6 @@ std::string GetBackupRuleInfoRequest::getBackupRuleId()const
 void GetBackupRuleInfoRequest::setBackupRuleId(const std::string& backupRuleId)
 {
 	backupRuleId_ = backupRuleId;
-	setCoreParameter("BackupRuleId", std::to_string(backupRuleId));
+	setCoreParameter("BackupRuleId", backupRuleId);
 }
 

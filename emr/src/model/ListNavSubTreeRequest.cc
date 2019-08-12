@@ -33,7 +33,7 @@ long ListNavSubTreeRequest::getResourceOwnerId()const
 void ListNavSubTreeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ListNavSubTreeRequest::getDepth()const
@@ -44,7 +44,7 @@ int ListNavSubTreeRequest::getDepth()const
 void ListNavSubTreeRequest::setDepth(int depth)
 {
 	depth_ = depth;
-	setCoreParameter("Depth", depth);
+	setCoreParameter("Depth", std::to_string(depth));
 }
 
 std::string ListNavSubTreeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListNavSubTreeRequest::getRegionId()const
 void ListNavSubTreeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListNavSubTreeRequest::getName()const
@@ -66,7 +66,7 @@ std::string ListNavSubTreeRequest::getName()const
 void ListNavSubTreeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int ListNavSubTreeRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListNavSubTreeRequest::getPageSize()const
 void ListNavSubTreeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListNavSubTreeRequest::getType()const
@@ -88,7 +88,7 @@ std::string ListNavSubTreeRequest::getType()const
 void ListNavSubTreeRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string ListNavSubTreeRequest::getProjectId()const
@@ -99,7 +99,7 @@ std::string ListNavSubTreeRequest::getProjectId()const
 void ListNavSubTreeRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string ListNavSubTreeRequest::getParentId()const
@@ -110,7 +110,7 @@ std::string ListNavSubTreeRequest::getParentId()const
 void ListNavSubTreeRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setCoreParameter("ParentId", parentId);
 }
 
 int ListNavSubTreeRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int ListNavSubTreeRequest::getPageNumber()const
 void ListNavSubTreeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListNavSubTreeRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListNavSubTreeRequest::getAccessKeyId()const
 void ListNavSubTreeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

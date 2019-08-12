@@ -33,7 +33,7 @@ std::string DescribeVServerGroupAttributeRequest::getAccess_key_id()const
 void DescribeVServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
 void DescribeVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", std::to_string(vServerGroupId));
+	setCoreParameter("VServerGroupId", vServerGroupId);
 }
 
 long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
 void DescribeVServerGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
 void DescribeVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeVServerGroupAttributeRequest::getRegionId()const
 void DescribeVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const
 void DescribeVServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVServerGroupAttributeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeVServerGroupAttributeRequest::getOwnerId()const
 void DescribeVServerGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVServerGroupAttributeRequest::getTags()const
@@ -110,6 +110,6 @@ std::string DescribeVServerGroupAttributeRequest::getTags()const
 void DescribeVServerGroupAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

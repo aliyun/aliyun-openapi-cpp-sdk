@@ -33,7 +33,7 @@ long OemFlowrateIntelligentRequest::getGsid()const
 void OemFlowrateIntelligentRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", gsid);
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 std::string OemFlowrateIntelligentRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string OemFlowrateIntelligentRequest::getAccessKeyId()const
 void OemFlowrateIntelligentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

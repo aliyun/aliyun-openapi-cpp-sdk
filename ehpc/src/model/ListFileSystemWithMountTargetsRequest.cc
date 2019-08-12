@@ -33,7 +33,7 @@ int ListFileSystemWithMountTargetsRequest::getPageSize()const
 void ListFileSystemWithMountTargetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListFileSystemWithMountTargetsRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int ListFileSystemWithMountTargetsRequest::getPageNumber()const
 void ListFileSystemWithMountTargetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFileSystemWithMountTargetsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListFileSystemWithMountTargetsRequest::getAccessKeyId()const
 void ListFileSystemWithMountTargetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

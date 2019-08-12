@@ -34,7 +34,7 @@ void ListFlowNodeInstanceRequest::setStatusList(const std::vector<std::string>& 
 {
 	statusList_ = statusList;
 	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), std::to_string(statusList.at(i)));
+		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
 }
 
 std::string ListFlowNodeInstanceRequest::getRegionId()const
@@ -45,7 +45,7 @@ std::string ListFlowNodeInstanceRequest::getRegionId()const
 void ListFlowNodeInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListFlowNodeInstanceRequest::getPageSize()const
@@ -56,7 +56,7 @@ int ListFlowNodeInstanceRequest::getPageSize()const
 void ListFlowNodeInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderBy()const
@@ -67,7 +67,7 @@ std::string ListFlowNodeInstanceRequest::getOrderBy()const
 void ListFlowNodeInstanceRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", std::to_string(orderBy));
+	setCoreParameter("OrderBy", orderBy);
 }
 
 long ListFlowNodeInstanceRequest::getStartTime()const
@@ -78,7 +78,7 @@ long ListFlowNodeInstanceRequest::getStartTime()const
 void ListFlowNodeInstanceRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string ListFlowNodeInstanceRequest::getProjectId()const
@@ -89,7 +89,7 @@ std::string ListFlowNodeInstanceRequest::getProjectId()const
 void ListFlowNodeInstanceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 int ListFlowNodeInstanceRequest::getPageNumber()const
@@ -100,7 +100,7 @@ int ListFlowNodeInstanceRequest::getPageNumber()const
 void ListFlowNodeInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderType()const
@@ -111,6 +111,6 @@ std::string ListFlowNodeInstanceRequest::getOrderType()const
 void ListFlowNodeInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

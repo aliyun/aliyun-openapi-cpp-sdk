@@ -33,7 +33,7 @@ std::string UninstallSoftwareRequest::getApplication()const
 void UninstallSoftwareRequest::setApplication(const std::string& application)
 {
 	application_ = application;
-	setCoreParameter("Application", std::to_string(application));
+	setCoreParameter("Application", application);
 }
 
 std::string UninstallSoftwareRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string UninstallSoftwareRequest::getClusterId()const
 void UninstallSoftwareRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string UninstallSoftwareRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string UninstallSoftwareRequest::getAccessKeyId()const
 void UninstallSoftwareRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

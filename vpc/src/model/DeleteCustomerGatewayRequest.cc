@@ -33,7 +33,7 @@ long DeleteCustomerGatewayRequest::getResourceOwnerId()const
 void DeleteCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCustomerGatewayRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteCustomerGatewayRequest::getResourceOwnerAccount()const
 void DeleteCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCustomerGatewayRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteCustomerGatewayRequest::getRegionId()const
 void DeleteCustomerGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteCustomerGatewayRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteCustomerGatewayRequest::getClientToken()const
 void DeleteCustomerGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteCustomerGatewayRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteCustomerGatewayRequest::getOwnerAccount()const
 void DeleteCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCustomerGatewayRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteCustomerGatewayRequest::getOwnerId()const
 void DeleteCustomerGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCustomerGatewayRequest::getCustomerGatewayId()const
@@ -99,6 +99,6 @@ std::string DeleteCustomerGatewayRequest::getCustomerGatewayId()const
 void DeleteCustomerGatewayRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", std::to_string(customerGatewayId));
+	setCoreParameter("CustomerGatewayId", customerGatewayId);
 }
 

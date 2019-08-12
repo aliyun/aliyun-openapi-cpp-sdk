@@ -33,7 +33,7 @@ std::string GetSpanNamesRequest::getRegionId()const
 void GetSpanNamesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long GetSpanNamesRequest::getEndTime()const
@@ -44,7 +44,7 @@ long GetSpanNamesRequest::getEndTime()const
 void GetSpanNamesRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetSpanNamesRequest::getServiceName()const
@@ -55,7 +55,7 @@ std::string GetSpanNamesRequest::getServiceName()const
 void GetSpanNamesRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 long GetSpanNamesRequest::getStartTime()const
@@ -66,6 +66,6 @@ long GetSpanNamesRequest::getStartTime()const
 void GetSpanNamesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 

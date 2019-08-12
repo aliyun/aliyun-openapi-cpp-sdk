@@ -33,7 +33,7 @@ long RevokeSagInstanceFromCcnRequest::getResourceOwnerId()const
 void RevokeSagInstanceFromCcnRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RevokeSagInstanceFromCcnRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RevokeSagInstanceFromCcnRequest::getResourceOwnerAccount()const
 void RevokeSagInstanceFromCcnRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RevokeSagInstanceFromCcnRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RevokeSagInstanceFromCcnRequest::getRegionId()const
 void RevokeSagInstanceFromCcnRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RevokeSagInstanceFromCcnRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RevokeSagInstanceFromCcnRequest::getOwnerAccount()const
 void RevokeSagInstanceFromCcnRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RevokeSagInstanceFromCcnRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string RevokeSagInstanceFromCcnRequest::getSmartAGId()const
 void RevokeSagInstanceFromCcnRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string RevokeSagInstanceFromCcnRequest::getCcnInstanceId()const
@@ -88,7 +88,7 @@ std::string RevokeSagInstanceFromCcnRequest::getCcnInstanceId()const
 void RevokeSagInstanceFromCcnRequest::setCcnInstanceId(const std::string& ccnInstanceId)
 {
 	ccnInstanceId_ = ccnInstanceId;
-	setCoreParameter("CcnInstanceId", std::to_string(ccnInstanceId));
+	setCoreParameter("CcnInstanceId", ccnInstanceId);
 }
 
 long RevokeSagInstanceFromCcnRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long RevokeSagInstanceFromCcnRequest::getOwnerId()const
 void RevokeSagInstanceFromCcnRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

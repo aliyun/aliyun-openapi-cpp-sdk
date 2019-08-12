@@ -33,7 +33,7 @@ std::string DescribeTaskAttributeRequest::getSourceRegionId()const
 void DescribeTaskAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeTaskAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeTaskAttributeRequest::getResourceOwnerId()const
 void DescribeTaskAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeTaskAttributeRequest::getResourceOwnerAccount()const
 void DescribeTaskAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTaskAttributeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeTaskAttributeRequest::getRegionId()const
 void DescribeTaskAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeTaskAttributeRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeTaskAttributeRequest::getOwnerId()const
 void DescribeTaskAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTaskAttributeRequest::getTaskId()const
@@ -88,6 +88,6 @@ std::string DescribeTaskAttributeRequest::getTaskId()const
 void DescribeTaskAttributeRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

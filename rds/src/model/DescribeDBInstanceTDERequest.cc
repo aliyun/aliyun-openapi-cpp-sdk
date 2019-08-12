@@ -33,7 +33,7 @@ long DescribeDBInstanceTDERequest::getResourceOwnerId()const
 void DescribeDBInstanceTDERequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceTDERequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstanceTDERequest::getResourceOwnerAccount()const
 void DescribeDBInstanceTDERequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceTDERequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceTDERequest::getOwnerAccount()const
 void DescribeDBInstanceTDERequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBInstanceTDERequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceTDERequest::getDBInstanceId()const
 void DescribeDBInstanceTDERequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceTDERequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeDBInstanceTDERequest::getOwnerId()const
 void DescribeDBInstanceTDERequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstanceTDERequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDBInstanceTDERequest::getAccessKeyId()const
 void DescribeDBInstanceTDERequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

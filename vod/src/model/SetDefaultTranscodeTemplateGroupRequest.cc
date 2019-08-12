@@ -33,7 +33,7 @@ long SetDefaultTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void SetDefaultTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetDefaultTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SetDefaultTranscodeTemplateGroupRequest::getResourceOwnerAccount()co
 void SetDefaultTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SetDefaultTranscodeTemplateGroupRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long SetDefaultTranscodeTemplateGroupRequest::getOwnerId()const
 void SetDefaultTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetDefaultTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string SetDefaultTranscodeTemplateGroupRequest::getAccessKeyId()const
 void SetDefaultTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDefaultTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -77,6 +77,6 @@ std::string SetDefaultTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId
 void SetDefaultTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", std::to_string(transcodeTemplateGroupId));
+	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
 }
 

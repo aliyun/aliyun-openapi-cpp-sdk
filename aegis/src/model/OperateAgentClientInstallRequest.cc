@@ -33,7 +33,7 @@ std::string OperateAgentClientInstallRequest::getSourceIp()const
 void OperateAgentClientInstallRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateAgentClientInstallRequest::getInstanceIds()const
@@ -44,7 +44,7 @@ std::string OperateAgentClientInstallRequest::getInstanceIds()const
 void OperateAgentClientInstallRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string OperateAgentClientInstallRequest::getLang()const
@@ -55,7 +55,7 @@ std::string OperateAgentClientInstallRequest::getLang()const
 void OperateAgentClientInstallRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string OperateAgentClientInstallRequest::getUuids()const
@@ -66,6 +66,6 @@ std::string OperateAgentClientInstallRequest::getUuids()const
 void OperateAgentClientInstallRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

@@ -33,7 +33,7 @@ std::string ListUnreachableContactsRequest::getInstanceId()const
 void ListUnreachableContactsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListUnreachableContactsRequest::getJobGroupId()const
@@ -44,7 +44,7 @@ std::string ListUnreachableContactsRequest::getJobGroupId()const
 void ListUnreachableContactsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 
 int ListUnreachableContactsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListUnreachableContactsRequest::getPageSize()const
 void ListUnreachableContactsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListUnreachableContactsRequest::getPageNumber()const
@@ -66,6 +66,6 @@ int ListUnreachableContactsRequest::getPageNumber()const
 void ListUnreachableContactsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

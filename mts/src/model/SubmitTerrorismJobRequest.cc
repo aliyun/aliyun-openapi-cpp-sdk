@@ -33,7 +33,7 @@ std::string SubmitTerrorismJobRequest::getInput()const
 void SubmitTerrorismJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitTerrorismJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitTerrorismJobRequest::getUserData()const
 void SubmitTerrorismJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitTerrorismJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitTerrorismJobRequest::getResourceOwnerId()const
 void SubmitTerrorismJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTerrorismJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitTerrorismJobRequest::getResourceOwnerAccount()const
 void SubmitTerrorismJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitTerrorismJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitTerrorismJobRequest::getOwnerAccount()const
 void SubmitTerrorismJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitTerrorismJobRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SubmitTerrorismJobRequest::getOwnerId()const
 void SubmitTerrorismJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTerrorismJobRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SubmitTerrorismJobRequest::getAccessKeyId()const
 void SubmitTerrorismJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTerrorismJobRequest::getPipelineId()const
@@ -110,7 +110,7 @@ std::string SubmitTerrorismJobRequest::getPipelineId()const
 void SubmitTerrorismJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitTerrorismJobRequest::getTerrorismConfig()const
@@ -121,6 +121,6 @@ std::string SubmitTerrorismJobRequest::getTerrorismConfig()const
 void SubmitTerrorismJobRequest::setTerrorismConfig(const std::string& terrorismConfig)
 {
 	terrorismConfig_ = terrorismConfig;
-	setCoreParameter("TerrorismConfig", std::to_string(terrorismConfig));
+	setCoreParameter("TerrorismConfig", terrorismConfig);
 }
 

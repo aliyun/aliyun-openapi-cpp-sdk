@@ -33,7 +33,7 @@ std::string DescribeLiveDomainBpsDataRequest::getRegionId()const
 void DescribeLiveDomainBpsDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainBpsDataRequest::getDomainName()const
 void DescribeLiveDomainBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainBpsDataRequest::getEndTime()const
 void DescribeLiveDomainBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getInterval()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainBpsDataRequest::getInterval()const
 void DescribeLiveDomainBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getLocationNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainBpsDataRequest::getLocationNameEn()const
 void DescribeLiveDomainBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeLiveDomainBpsDataRequest::getStartTime()const
 void DescribeLiveDomainBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainBpsDataRequest::getIspNameEn()const
@@ -99,7 +99,7 @@ std::string DescribeLiveDomainBpsDataRequest::getIspNameEn()const
 void DescribeLiveDomainBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 long DescribeLiveDomainBpsDataRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long DescribeLiveDomainBpsDataRequest::getOwnerId()const
 void DescribeLiveDomainBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

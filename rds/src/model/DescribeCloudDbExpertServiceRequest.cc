@@ -33,7 +33,7 @@ std::string DescribeCloudDbExpertServiceRequest::getServiceRequestParam()const
 void DescribeCloudDbExpertServiceRequest::setServiceRequestParam(const std::string& serviceRequestParam)
 {
 	serviceRequestParam_ = serviceRequestParam;
-	setCoreParameter("ServiceRequestParam", std::to_string(serviceRequestParam));
+	setCoreParameter("ServiceRequestParam", serviceRequestParam);
 }
 
 long DescribeCloudDbExpertServiceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeCloudDbExpertServiceRequest::getResourceOwnerId()const
 void DescribeCloudDbExpertServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeCloudDbExpertServiceRequest::getSecurityToken()const
 void DescribeCloudDbExpertServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCloudDbExpertServiceRequest::getResourceOwnerAccount()const
 void DescribeCloudDbExpertServiceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeCloudDbExpertServiceRequest::getRegionId()const
 void DescribeCloudDbExpertServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeCloudDbExpertServiceRequest::getOwnerAccount()const
 void DescribeCloudDbExpertServiceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeCloudDbExpertServiceRequest::getDBInstanceId()const
 void DescribeCloudDbExpertServiceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeCloudDbExpertServiceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeCloudDbExpertServiceRequest::getOwnerId()const
 void DescribeCloudDbExpertServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getServiceRequestType()const
@@ -121,7 +121,7 @@ std::string DescribeCloudDbExpertServiceRequest::getServiceRequestType()const
 void DescribeCloudDbExpertServiceRequest::setServiceRequestType(const std::string& serviceRequestType)
 {
 	serviceRequestType_ = serviceRequestType;
-	setCoreParameter("ServiceRequestType", std::to_string(serviceRequestType));
+	setCoreParameter("ServiceRequestType", serviceRequestType);
 }
 
 std::string DescribeCloudDbExpertServiceRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string DescribeCloudDbExpertServiceRequest::getAccessKeyId()const
 void DescribeCloudDbExpertServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

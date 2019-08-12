@@ -33,7 +33,7 @@ std::string DescribeAnalysisLogsRequest::getSourceIp()const
 void DescribeAnalysisLogsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAnalysisLogsRequest::getQuery()const
@@ -44,7 +44,7 @@ std::string DescribeAnalysisLogsRequest::getQuery()const
 void DescribeAnalysisLogsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", std::to_string(query));
+	setCoreParameter("Query", query);
 }
 
 int DescribeAnalysisLogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAnalysisLogsRequest::getPageSize()const
 void DescribeAnalysisLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeAnalysisLogsRequest::getFrom()const
@@ -66,7 +66,7 @@ int DescribeAnalysisLogsRequest::getFrom()const
 void DescribeAnalysisLogsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 int DescribeAnalysisLogsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAnalysisLogsRequest::getCurrentPage()const
 void DescribeAnalysisLogsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeAnalysisLogsRequest::getTo()const
@@ -88,7 +88,7 @@ int DescribeAnalysisLogsRequest::getTo()const
 void DescribeAnalysisLogsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", to);
+	setCoreParameter("To", std::to_string(to));
 }
 
 bool DescribeAnalysisLogsRequest::getReverse()const

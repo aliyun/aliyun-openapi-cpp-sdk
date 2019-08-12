@@ -33,7 +33,7 @@ std::string CancelCopyImageRequest::getSourceRegionId()const
 void CancelCopyImageRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long CancelCopyImageRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CancelCopyImageRequest::getResourceOwnerId()const
 void CancelCopyImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelCopyImageRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string CancelCopyImageRequest::getImageId()const
 void CancelCopyImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string CancelCopyImageRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CancelCopyImageRequest::getResourceOwnerAccount()const
 void CancelCopyImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelCopyImageRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CancelCopyImageRequest::getRegionId()const
 void CancelCopyImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelCopyImageRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CancelCopyImageRequest::getOwnerAccount()const
 void CancelCopyImageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CancelCopyImageRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long CancelCopyImageRequest::getOwnerId()const
 void CancelCopyImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

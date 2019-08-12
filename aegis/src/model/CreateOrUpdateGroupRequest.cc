@@ -33,7 +33,7 @@ std::string CreateOrUpdateGroupRequest::getRuleIds()const
 void CreateOrUpdateGroupRequest::setRuleIds(const std::string& ruleIds)
 {
 	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", std::to_string(ruleIds));
+	setCoreParameter("RuleIds", ruleIds);
 }
 
 std::string CreateOrUpdateGroupRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateOrUpdateGroupRequest::getSourceIp()const
 void CreateOrUpdateGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrUpdateGroupRequest::getMachineGroupIds()const
@@ -55,7 +55,7 @@ std::string CreateOrUpdateGroupRequest::getMachineGroupIds()const
 void CreateOrUpdateGroupRequest::setMachineGroupIds(const std::string& machineGroupIds)
 {
 	machineGroupIds_ = machineGroupIds;
-	setCoreParameter("MachineGroupIds", std::to_string(machineGroupIds));
+	setCoreParameter("MachineGroupIds", machineGroupIds);
 }
 
 std::string CreateOrUpdateGroupRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateOrUpdateGroupRequest::getDescription()const
 void CreateOrUpdateGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long CreateOrUpdateGroupRequest::getId()const
@@ -77,7 +77,7 @@ long CreateOrUpdateGroupRequest::getId()const
 void CreateOrUpdateGroupRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string CreateOrUpdateGroupRequest::getLang()const
@@ -88,7 +88,7 @@ std::string CreateOrUpdateGroupRequest::getLang()const
 void CreateOrUpdateGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateOrUpdateGroupRequest::getGroupName()const
@@ -99,6 +99,6 @@ std::string CreateOrUpdateGroupRequest::getGroupName()const
 void CreateOrUpdateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 

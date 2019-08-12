@@ -33,7 +33,7 @@ std::string ListRolesRequest::getInstanceId()const
 void ListRolesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRolesRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListRolesRequest::getAccessKeyId()const
 void ListRolesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

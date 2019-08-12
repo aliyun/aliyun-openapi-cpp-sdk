@@ -33,7 +33,7 @@ std::string PutOssFileRequest::getJsonData()const
 void PutOssFileRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string PutOssFileRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string PutOssFileRequest::getAccessKeyId()const
 void PutOssFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

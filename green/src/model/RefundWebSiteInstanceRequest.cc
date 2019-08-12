@@ -33,7 +33,7 @@ std::string RefundWebSiteInstanceRequest::getResourceOwnerId()const
 void RefundWebSiteInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefundWebSiteInstanceRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string RefundWebSiteInstanceRequest::getInstanceId()const
 void RefundWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 

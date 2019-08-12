@@ -33,7 +33,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getAddress()const
 void SaveSingleTaskForAssociatingEnsRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", std::to_string(address));
+	setCoreParameter("Address", address);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getUserClientIp()const
 void SaveSingleTaskForAssociatingEnsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getDomainName()const
 void SaveSingleTaskForAssociatingEnsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getLang()const
 void SaveSingleTaskForAssociatingEnsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

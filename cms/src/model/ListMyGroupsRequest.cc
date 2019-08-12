@@ -44,7 +44,7 @@ std::string ListMyGroupsRequest::getInstanceId()const
 void ListMyGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int ListMyGroupsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListMyGroupsRequest::getPageSize()const
 void ListMyGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMyGroupsRequest::getType()const
@@ -66,7 +66,7 @@ std::string ListMyGroupsRequest::getType()const
 void ListMyGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string ListMyGroupsRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string ListMyGroupsRequest::getKeyword()const
 void ListMyGroupsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 std::string ListMyGroupsRequest::getGroupName()const
@@ -88,7 +88,7 @@ std::string ListMyGroupsRequest::getGroupName()const
 void ListMyGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 int ListMyGroupsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int ListMyGroupsRequest::getPageNumber()const
 void ListMyGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListMyGroupsRequest::getBindUrls()const
@@ -110,6 +110,6 @@ std::string ListMyGroupsRequest::getBindUrls()const
 void ListMyGroupsRequest::setBindUrls(const std::string& bindUrls)
 {
 	bindUrls_ = bindUrls;
-	setCoreParameter("BindUrls", std::to_string(bindUrls));
+	setCoreParameter("BindUrls", bindUrls);
 }
 

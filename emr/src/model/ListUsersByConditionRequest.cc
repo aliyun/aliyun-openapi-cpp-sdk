@@ -33,7 +33,7 @@ std::string ListUsersByConditionRequest::getApp_ip()const
 void ListUsersByConditionRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long ListUsersByConditionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ListUsersByConditionRequest::getResourceOwnerId()const
 void ListUsersByConditionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListUsersByConditionRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ListUsersByConditionRequest::getCallerParentId()const
 void ListUsersByConditionRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ListUsersByConditionRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ListUsersByConditionRequest::getSearchKey()const
 void ListUsersByConditionRequest::setSearchKey(const std::string& searchKey)
 {
 	searchKey_ = searchKey;
-	setCoreParameter("SearchKey", std::to_string(searchKey));
+	setCoreParameter("SearchKey", searchKey);
 }
 
 std::string ListUsersByConditionRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string ListUsersByConditionRequest::getCallerBid()const
 void ListUsersByConditionRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string ListUsersByConditionRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string ListUsersByConditionRequest::getProxy_original_source_ip()const
 void ListUsersByConditionRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool ListUsersByConditionRequest::getAk_mfa_present()const
@@ -132,7 +132,7 @@ std::string ListUsersByConditionRequest::getCallerType()const
 void ListUsersByConditionRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ListUsersByConditionRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string ListUsersByConditionRequest::getAccessKeyId()const
 void ListUsersByConditionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool ListUsersByConditionRequest::getSecurity_transport()const
@@ -165,7 +165,7 @@ std::string ListUsersByConditionRequest::getSecurityToken()const
 void ListUsersByConditionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ListUsersByConditionRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ListUsersByConditionRequest::getRegionId()const
 void ListUsersByConditionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListUsersByConditionRequest::getRequestId()const
@@ -187,7 +187,7 @@ std::string ListUsersByConditionRequest::getRequestId()const
 void ListUsersByConditionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long ListUsersByConditionRequest::getCallerUid()const
@@ -198,6 +198,6 @@ long ListUsersByConditionRequest::getCallerUid()const
 void ListUsersByConditionRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

@@ -33,7 +33,7 @@ long ListLiveRecordVideoRequest::getResourceOwnerId()const
 void ListLiveRecordVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
 void ListLiveRecordVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListLiveRecordVideoRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ListLiveRecordVideoRequest::getDomainName()const
 void ListLiveRecordVideoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ListLiveRecordVideoRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string ListLiveRecordVideoRequest::getEndTime()const
 void ListLiveRecordVideoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string ListLiveRecordVideoRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string ListLiveRecordVideoRequest::getStartTime()const
 void ListLiveRecordVideoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long ListLiveRecordVideoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListLiveRecordVideoRequest::getOwnerId()const
 void ListLiveRecordVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListLiveRecordVideoRequest::getAppName()const
@@ -99,7 +99,7 @@ std::string ListLiveRecordVideoRequest::getAppName()const
 void ListLiveRecordVideoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 int ListLiveRecordVideoRequest::getPageNo()const
@@ -110,7 +110,7 @@ int ListLiveRecordVideoRequest::getPageNo()const
 void ListLiveRecordVideoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 int ListLiveRecordVideoRequest::getPageSize()const
@@ -121,7 +121,7 @@ int ListLiveRecordVideoRequest::getPageSize()const
 void ListLiveRecordVideoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListLiveRecordVideoRequest::getSortBy()const
@@ -132,7 +132,7 @@ std::string ListLiveRecordVideoRequest::getSortBy()const
 void ListLiveRecordVideoRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", std::to_string(sortBy));
+	setCoreParameter("SortBy", sortBy);
 }
 
 std::string ListLiveRecordVideoRequest::getStreamName()const
@@ -143,7 +143,7 @@ std::string ListLiveRecordVideoRequest::getStreamName()const
 void ListLiveRecordVideoRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string ListLiveRecordVideoRequest::getQueryType()const
@@ -154,6 +154,6 @@ std::string ListLiveRecordVideoRequest::getQueryType()const
 void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 

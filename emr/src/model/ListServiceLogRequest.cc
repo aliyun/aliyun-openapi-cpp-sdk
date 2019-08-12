@@ -33,7 +33,7 @@ long ListServiceLogRequest::getResourceOwnerId()const
 void ListServiceLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListServiceLogRequest::getHostName()const
@@ -44,7 +44,7 @@ std::string ListServiceLogRequest::getHostName()const
 void ListServiceLogRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 int ListServiceLogRequest::getMaxKeys()const
@@ -55,7 +55,7 @@ int ListServiceLogRequest::getMaxKeys()const
 void ListServiceLogRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", maxKeys);
+	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListServiceLogRequest::getLogstoreName()const
@@ -66,7 +66,7 @@ std::string ListServiceLogRequest::getLogstoreName()const
 void ListServiceLogRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", std::to_string(logstoreName));
+	setCoreParameter("LogstoreName", logstoreName);
 }
 
 std::string ListServiceLogRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ListServiceLogRequest::getRegionId()const
 void ListServiceLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListServiceLogRequest::getMarker()const
@@ -88,7 +88,7 @@ std::string ListServiceLogRequest::getMarker()const
 void ListServiceLogRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListServiceLogRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ListServiceLogRequest::getClusterId()const
 void ListServiceLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListServiceLogRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListServiceLogRequest::getAccessKeyId()const
 void ListServiceLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ModifyCenAttributeRequest::getProtectionLevel()const
 void ModifyCenAttributeRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", std::to_string(protectionLevel));
+	setCoreParameter("ProtectionLevel", protectionLevel);
 }
 
 long ModifyCenAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyCenAttributeRequest::getResourceOwnerId()const
 void ModifyCenAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCenAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyCenAttributeRequest::getResourceOwnerAccount()const
 void ModifyCenAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCenAttributeRequest::getCenId()const
@@ -66,7 +66,7 @@ std::string ModifyCenAttributeRequest::getCenId()const
 void ModifyCenAttributeRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string ModifyCenAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyCenAttributeRequest::getOwnerAccount()const
 void ModifyCenAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyCenAttributeRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyCenAttributeRequest::getName()const
 void ModifyCenAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyCenAttributeRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string ModifyCenAttributeRequest::getDescription()const
 void ModifyCenAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long ModifyCenAttributeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long ModifyCenAttributeRequest::getOwnerId()const
 void ModifyCenAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeWhiteListProcessRequest::getSourceIp()const
 void DescribeWhiteListProcessRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWhiteListProcessRequest::getProcessName()const
@@ -44,7 +44,7 @@ std::string DescribeWhiteListProcessRequest::getProcessName()const
 void DescribeWhiteListProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", std::to_string(processName));
+	setCoreParameter("ProcessName", processName);
 }
 
 int DescribeWhiteListProcessRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeWhiteListProcessRequest::getPageSize()const
 void DescribeWhiteListProcessRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeWhiteListProcessRequest::getProcessType()const
@@ -66,7 +66,7 @@ int DescribeWhiteListProcessRequest::getProcessType()const
 void DescribeWhiteListProcessRequest::setProcessType(int processType)
 {
 	processType_ = processType;
-	setCoreParameter("ProcessType", processType);
+	setCoreParameter("ProcessType", std::to_string(processType));
 }
 
 int DescribeWhiteListProcessRequest::getOrderBy()const
@@ -77,7 +77,7 @@ int DescribeWhiteListProcessRequest::getOrderBy()const
 void DescribeWhiteListProcessRequest::setOrderBy(int orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setCoreParameter("OrderBy", std::to_string(orderBy));
 }
 
 long DescribeWhiteListProcessRequest::getStrategyId()const
@@ -88,7 +88,7 @@ long DescribeWhiteListProcessRequest::getStrategyId()const
 void DescribeWhiteListProcessRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeWhiteListProcessRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribeWhiteListProcessRequest::getCurrentPage()const
 void DescribeWhiteListProcessRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWhiteListProcessRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeWhiteListProcessRequest::getLang()const
 void DescribeWhiteListProcessRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeWhiteListProcessRequest::getDesc()const
@@ -121,6 +121,6 @@ int DescribeWhiteListProcessRequest::getDesc()const
 void DescribeWhiteListProcessRequest::setDesc(int desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setCoreParameter("Desc", std::to_string(desc));
 }
 

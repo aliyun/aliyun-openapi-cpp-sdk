@@ -33,7 +33,7 @@ std::string CompleteBoardRequest::getApp_ip()const
 void CompleteBoardRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CompleteBoardRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string CompleteBoardRequest::getPopProduct()const
 void CompleteBoardRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long CompleteBoardRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long CompleteBoardRequest::getCallerParentId()const
 void CompleteBoardRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CompleteBoardRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string CompleteBoardRequest::getCallerBid()const
 void CompleteBoardRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CompleteBoardRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long CompleteBoardRequest::getOwnerId()const
 void CompleteBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CompleteBoardRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string CompleteBoardRequest::getProxy_original_source_ip()const
 void CompleteBoardRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CompleteBoardRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string CompleteBoardRequest::getVersion()const
 void CompleteBoardRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string CompleteBoardRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string CompleteBoardRequest::getOwnerIdLoginEmail()const
 void CompleteBoardRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CompleteBoardRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string CompleteBoardRequest::getCallerType()const
 void CompleteBoardRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool CompleteBoardRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ std::string CompleteBoardRequest::getAccessKeyId()const
 void CompleteBoardRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool CompleteBoardRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ std::string CompleteBoardRequest::getSecurityToken()const
 void CompleteBoardRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CompleteBoardRequest::getRegionId()const
@@ -198,7 +198,7 @@ std::string CompleteBoardRequest::getRegionId()const
 void CompleteBoardRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CompleteBoardRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string CompleteBoardRequest::getRequestId()const
 void CompleteBoardRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CompleteBoardRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string CompleteBoardRequest::getRequestContent()const
 void CompleteBoardRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CompleteBoardRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string CompleteBoardRequest::getAppId()const
 void CompleteBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string CompleteBoardRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string CompleteBoardRequest::getCallerBidEmail()const
 void CompleteBoardRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CompleteBoardRequest::getBoardId()const
@@ -253,7 +253,7 @@ std::string CompleteBoardRequest::getBoardId()const
 void CompleteBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", std::to_string(boardId));
+	setCoreParameter("BoardId", boardId);
 }
 
 std::string CompleteBoardRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string CompleteBoardRequest::getCallerUidEmail()const
 void CompleteBoardRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CompleteBoardRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long CompleteBoardRequest::getCallerUid()const
 void CompleteBoardRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

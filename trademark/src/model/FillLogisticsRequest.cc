@@ -33,7 +33,7 @@ std::string FillLogisticsRequest::getBizId()const
 void FillLogisticsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string FillLogisticsRequest::getLogistics()const
@@ -44,6 +44,6 @@ std::string FillLogisticsRequest::getLogistics()const
 void FillLogisticsRequest::setLogistics(const std::string& logistics)
 {
 	logistics_ = logistics;
-	setCoreParameter("Logistics", std::to_string(logistics));
+	setCoreParameter("Logistics", logistics);
 }
 

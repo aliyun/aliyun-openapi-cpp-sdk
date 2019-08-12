@@ -33,7 +33,7 @@ long OnsTrendGroupOutputTpsRequest::getPeriod()const
 void OnsTrendGroupOutputTpsRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsTrendGroupOutputTpsRequest::getInstanceId()const
 void OnsTrendGroupOutputTpsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsTrendGroupOutputTpsRequest::getGroupId()const
 void OnsTrendGroupOutputTpsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsTrendGroupOutputTpsRequest::getTopic()const
@@ -66,7 +66,7 @@ std::string OnsTrendGroupOutputTpsRequest::getTopic()const
 void OnsTrendGroupOutputTpsRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 
 long OnsTrendGroupOutputTpsRequest::getEndTime()const
@@ -77,7 +77,7 @@ long OnsTrendGroupOutputTpsRequest::getEndTime()const
 void OnsTrendGroupOutputTpsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsTrendGroupOutputTpsRequest::getBeginTime()const
@@ -88,7 +88,7 @@ long OnsTrendGroupOutputTpsRequest::getBeginTime()const
 void OnsTrendGroupOutputTpsRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", beginTime);
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsTrendGroupOutputTpsRequest::getType()const
@@ -99,6 +99,6 @@ int OnsTrendGroupOutputTpsRequest::getType()const
 void OnsTrendGroupOutputTpsRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

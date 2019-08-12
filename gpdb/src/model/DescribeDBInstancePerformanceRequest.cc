@@ -33,7 +33,7 @@ std::string DescribeDBInstancePerformanceRequest::getEndTime()const
 void DescribeDBInstancePerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
 void DescribeDBInstancePerformanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancePerformanceRequest::getStartTime()const
 void DescribeDBInstancePerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getKey()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstancePerformanceRequest::getKey()const
 void DescribeDBInstancePerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
 void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

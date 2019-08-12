@@ -33,7 +33,7 @@ long DescribeSpotPriceHistoryRequest::getResourceOwnerId()const
 void DescribeSpotPriceHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeSpotPriceHistoryRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeSpotPriceHistoryRequest::getCallerParentId()const
 void DescribeSpotPriceHistoryRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getIoOptimized()const
@@ -55,7 +55,7 @@ std::string DescribeSpotPriceHistoryRequest::getIoOptimized()const
 void DescribeSpotPriceHistoryRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", std::to_string(ioOptimized));
+	setCoreParameter("IoOptimized", ioOptimized);
 }
 
 bool DescribeSpotPriceHistoryRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeSpotPriceHistoryRequest::getNetworkType()const
 void DescribeSpotPriceHistoryRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeSpotPriceHistoryRequest::getStartTime()const
 void DescribeSpotPriceHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeSpotPriceHistoryRequest::getProxy_original_source_ip()const
 void DescribeSpotPriceHistoryRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string DescribeSpotPriceHistoryRequest::getOwnerIdLoginEmail()const
 void DescribeSpotPriceHistoryRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string DescribeSpotPriceHistoryRequest::getCallerType()const
 void DescribeSpotPriceHistoryRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeSpotPriceHistoryRequest::getAccessKeyId()const
 void DescribeSpotPriceHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeSpotPriceHistoryRequest::getSourceRegionId()const
 void DescribeSpotPriceHistoryRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DescribeSpotPriceHistoryRequest::getSecurityToken()const
 void DescribeSpotPriceHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeSpotPriceHistoryRequest::getRegionId()const
 void DescribeSpotPriceHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeSpotPriceHistoryRequest::getEnable()const
@@ -187,7 +187,7 @@ std::string DescribeSpotPriceHistoryRequest::getRequestContent()const
 void DescribeSpotPriceHistoryRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getCallerBidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeSpotPriceHistoryRequest::getCallerBidEmail()const
 void DescribeSpotPriceHistoryRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getInstanceType()const
@@ -209,7 +209,7 @@ std::string DescribeSpotPriceHistoryRequest::getInstanceType()const
 void DescribeSpotPriceHistoryRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string DescribeSpotPriceHistoryRequest::getCallerUidEmail()const
 void DescribeSpotPriceHistoryRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeSpotPriceHistoryRequest::getCallerUid()const
@@ -231,7 +231,7 @@ long DescribeSpotPriceHistoryRequest::getCallerUid()const
 void DescribeSpotPriceHistoryRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string DescribeSpotPriceHistoryRequest::getApp_ip()const
 void DescribeSpotPriceHistoryRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 int DescribeSpotPriceHistoryRequest::getOffset()const
@@ -253,7 +253,7 @@ int DescribeSpotPriceHistoryRequest::getOffset()const
 void DescribeSpotPriceHistoryRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", offset);
+	setCoreParameter("Offset", std::to_string(offset));
 }
 
 std::string DescribeSpotPriceHistoryRequest::getResourceOwnerAccount()const
@@ -264,7 +264,7 @@ std::string DescribeSpotPriceHistoryRequest::getResourceOwnerAccount()const
 void DescribeSpotPriceHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getOwnerAccount()const
@@ -275,7 +275,7 @@ std::string DescribeSpotPriceHistoryRequest::getOwnerAccount()const
 void DescribeSpotPriceHistoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getEndTime()const
@@ -286,7 +286,7 @@ std::string DescribeSpotPriceHistoryRequest::getEndTime()const
 void DescribeSpotPriceHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getCallerBid()const
@@ -297,7 +297,7 @@ std::string DescribeSpotPriceHistoryRequest::getCallerBid()const
 void DescribeSpotPriceHistoryRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getOSType()const
@@ -308,7 +308,7 @@ std::string DescribeSpotPriceHistoryRequest::getOSType()const
 void DescribeSpotPriceHistoryRequest::setOSType(const std::string& oSType)
 {
 	oSType_ = oSType;
-	setCoreParameter("OSType", std::to_string(oSType));
+	setCoreParameter("OSType", oSType);
 }
 
 long DescribeSpotPriceHistoryRequest::getOwnerId()const
@@ -319,7 +319,7 @@ long DescribeSpotPriceHistoryRequest::getOwnerId()const
 void DescribeSpotPriceHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeSpotPriceHistoryRequest::getProxy_trust_transport_info()const
@@ -363,7 +363,7 @@ std::string DescribeSpotPriceHistoryRequest::getRequestId()const
 void DescribeSpotPriceHistoryRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getAkProxy()const
@@ -374,7 +374,7 @@ std::string DescribeSpotPriceHistoryRequest::getAkProxy()const
 void DescribeSpotPriceHistoryRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string DescribeSpotPriceHistoryRequest::getZoneId()const
@@ -385,6 +385,6 @@ std::string DescribeSpotPriceHistoryRequest::getZoneId()const
 void DescribeSpotPriceHistoryRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 

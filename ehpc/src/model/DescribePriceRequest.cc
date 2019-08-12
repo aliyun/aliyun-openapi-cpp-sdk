@@ -33,7 +33,7 @@ std::string DescribePriceRequest::getPriceUnit()const
 void DescribePriceRequest::setPriceUnit(const std::string& priceUnit)
 {
 	priceUnit_ = priceUnit;
-	setCoreParameter("PriceUnit", std::to_string(priceUnit));
+	setCoreParameter("PriceUnit", priceUnit);
 }
 
 std::vector<DescribePriceRequest::Commodities> DescribePriceRequest::getCommodities()const
@@ -48,13 +48,13 @@ void DescribePriceRequest::setCommodities(const std::vector<Commodities>& commod
 	for(int i = 0; i!= commodities.size(); i++)	{
 		auto obj = commodities.at(i);
 		std::string str ="Commodities."+ std::to_string(i);
-		setCoreParameter(str + ".Amount", obj.amount);
-		setCoreParameter(str + ".Period", obj.period);
-		setCoreParameter(str + ".NodeType", std::to_string(obj.nodeType));
-		setCoreParameter(str + ".SystemDiskCategory", std::to_string(obj.systemDiskCategory));
-		setCoreParameter(str + ".SystemDiskSize", obj.systemDiskSize);
-		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
-		setCoreParameter(str + ".NetworkType", std::to_string(obj.networkType));
+		setCoreParameter(str + ".Amount", std::to_string(obj.amount));
+		setCoreParameter(str + ".Period", std::to_string(obj.period));
+		setCoreParameter(str + ".NodeType", obj.nodeType);
+		setCoreParameter(str + ".SystemDiskCategory", obj.systemDiskCategory);
+		setCoreParameter(str + ".SystemDiskSize", std::to_string(obj.systemDiskSize));
+		setCoreParameter(str + ".InstanceType", obj.instanceType);
+		setCoreParameter(str + ".NetworkType", obj.networkType);
 	}
 }
 
@@ -66,7 +66,7 @@ std::string DescribePriceRequest::getChargeType()const
 void DescribePriceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", std::to_string(chargeType));
+	setCoreParameter("ChargeType", chargeType);
 }
 
 std::string DescribePriceRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribePriceRequest::getAccessKeyId()const
 void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePriceRequest::getOrderType()const
@@ -88,6 +88,6 @@ std::string DescribePriceRequest::getOrderType()const
 void DescribePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

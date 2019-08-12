@@ -33,7 +33,7 @@ std::string ModifyUserRequest::getPrivateOutboundNumberId()const
 void ModifyUserRequest::setPrivateOutboundNumberId(const std::string& privateOutboundNumberId)
 {
 	privateOutboundNumberId_ = privateOutboundNumberId;
-	setCoreParameter("PrivateOutboundNumberId", std::to_string(privateOutboundNumberId));
+	setCoreParameter("PrivateOutboundNumberId", privateOutboundNumberId);
 }
 
 std::vector<int> ModifyUserRequest::getSkillLevel()const
@@ -45,7 +45,7 @@ void ModifyUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
 	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), skillLevel.at(i));
+		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
 }
 
 std::string ModifyUserRequest::getInstanceId()const
@@ -56,7 +56,7 @@ std::string ModifyUserRequest::getInstanceId()const
 void ModifyUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyUserRequest::getPhone()const
@@ -67,7 +67,7 @@ std::string ModifyUserRequest::getPhone()const
 void ModifyUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", std::to_string(phone));
+	setCoreParameter("Phone", phone);
 }
 
 std::vector<std::string> ModifyUserRequest::getRoleId()const
@@ -79,7 +79,7 @@ void ModifyUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
 	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), std::to_string(roleId.at(i)));
+		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
 }
 
 std::string ModifyUserRequest::getDisplayName()const
@@ -90,7 +90,7 @@ std::string ModifyUserRequest::getDisplayName()const
 void ModifyUserRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", std::to_string(displayName));
+	setCoreParameter("DisplayName", displayName);
 }
 
 std::vector<std::string> ModifyUserRequest::getSkillGroupId()const
@@ -102,7 +102,7 @@ void ModifyUserRequest::setSkillGroupId(const std::vector<std::string>& skillGro
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 std::string ModifyUserRequest::getUserId()const
@@ -113,7 +113,7 @@ std::string ModifyUserRequest::getUserId()const
 void ModifyUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string ModifyUserRequest::getEmail()const
@@ -124,7 +124,7 @@ std::string ModifyUserRequest::getEmail()const
 void ModifyUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", std::to_string(email));
+	setCoreParameter("Email", email);
 }
 
 std::string ModifyUserRequest::getAccessKeyId()const
@@ -135,6 +135,6 @@ std::string ModifyUserRequest::getAccessKeyId()const
 void ModifyUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

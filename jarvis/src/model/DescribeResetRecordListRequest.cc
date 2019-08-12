@@ -33,7 +33,7 @@ std::string DescribeResetRecordListRequest::getSrcIP()const
 void DescribeResetRecordListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", std::to_string(srcIP));
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string DescribeResetRecordListRequest::getPeriod()const
@@ -44,7 +44,7 @@ std::string DescribeResetRecordListRequest::getPeriod()const
 void DescribeResetRecordListRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setCoreParameter("Period", period);
 }
 
 std::string DescribeResetRecordListRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeResetRecordListRequest::getSourceIp()const
 void DescribeResetRecordListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeResetRecordListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeResetRecordListRequest::getPageSize()const
 void DescribeResetRecordListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeResetRecordListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeResetRecordListRequest::getCurrentPage()const
 void DescribeResetRecordListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeResetRecordListRequest::getDstIP()const
@@ -88,7 +88,7 @@ std::string DescribeResetRecordListRequest::getDstIP()const
 void DescribeResetRecordListRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", std::to_string(dstIP));
+	setCoreParameter("DstIP", dstIP);
 }
 
 std::string DescribeResetRecordListRequest::getRegion()const
@@ -99,7 +99,7 @@ std::string DescribeResetRecordListRequest::getRegion()const
 void DescribeResetRecordListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string DescribeResetRecordListRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeResetRecordListRequest::getLang()const
 void DescribeResetRecordListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeResetRecordListRequest::getSourceCode()const
@@ -121,6 +121,6 @@ std::string DescribeResetRecordListRequest::getSourceCode()const
 void DescribeResetRecordListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

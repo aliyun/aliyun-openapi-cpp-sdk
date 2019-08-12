@@ -33,7 +33,7 @@ std::string RemoveBackupRuleRequest::getApp_ip()const
 void RemoveBackupRuleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long RemoveBackupRuleRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RemoveBackupRuleRequest::getResourceOwnerId()const
 void RemoveBackupRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long RemoveBackupRuleRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long RemoveBackupRuleRequest::getCallerParentId()const
 void RemoveBackupRuleRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool RemoveBackupRuleRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string RemoveBackupRuleRequest::getCallerBid()const
 void RemoveBackupRuleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string RemoveBackupRuleRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string RemoveBackupRuleRequest::getProxy_original_source_ip()const
 void RemoveBackupRuleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool RemoveBackupRuleRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string RemoveBackupRuleRequest::getCallerType()const
 void RemoveBackupRuleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string RemoveBackupRuleRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string RemoveBackupRuleRequest::getAccessKeyId()const
 void RemoveBackupRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool RemoveBackupRuleRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string RemoveBackupRuleRequest::getSecurityToken()const
 void RemoveBackupRuleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveBackupRuleRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string RemoveBackupRuleRequest::getRegionId()const
 void RemoveBackupRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RemoveBackupRuleRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string RemoveBackupRuleRequest::getRequestId()const
 void RemoveBackupRuleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long RemoveBackupRuleRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long RemoveBackupRuleRequest::getCallerUid()const
 void RemoveBackupRuleRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string RemoveBackupRuleRequest::getBackupRuleId()const
@@ -198,6 +198,6 @@ std::string RemoveBackupRuleRequest::getBackupRuleId()const
 void RemoveBackupRuleRequest::setBackupRuleId(const std::string& backupRuleId)
 {
 	backupRuleId_ = backupRuleId;
-	setCoreParameter("BackupRuleId", std::to_string(backupRuleId));
+	setCoreParameter("BackupRuleId", backupRuleId);
 }
 

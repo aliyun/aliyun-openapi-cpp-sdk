@@ -33,7 +33,7 @@ int CheckProcessingServerLockApplyRequest::getFeePeriod()const
 void CheckProcessingServerLockApplyRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", feePeriod);
+	setCoreParameter("FeePeriod", std::to_string(feePeriod));
 }
 
 std::string CheckProcessingServerLockApplyRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string CheckProcessingServerLockApplyRequest::getDomainName()const
 void CheckProcessingServerLockApplyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckProcessingServerLockApplyRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string CheckProcessingServerLockApplyRequest::getUserClientIp()const
 void CheckProcessingServerLockApplyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckProcessingServerLockApplyRequest::getLang()const
@@ -66,6 +66,6 @@ std::string CheckProcessingServerLockApplyRequest::getLang()const
 void CheckProcessingServerLockApplyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

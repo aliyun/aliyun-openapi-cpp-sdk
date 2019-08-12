@@ -33,7 +33,7 @@ std::string ReportTagJobResultRequest::getResult()const
 void ReportTagJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", std::to_string(result));
+	setCoreParameter("Result", result);
 }
 
 std::string ReportTagJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportTagJobResultRequest::getJobId()const
 void ReportTagJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long ReportTagJobResultRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ReportTagJobResultRequest::getResourceOwnerId()const
 void ReportTagJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
 void ReportTagJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportTagJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportTagJobResultRequest::getOwnerAccount()const
 void ReportTagJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportTagJobResultRequest::getTag()const
@@ -88,7 +88,7 @@ std::string ReportTagJobResultRequest::getTag()const
 void ReportTagJobResultRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 long ReportTagJobResultRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReportTagJobResultRequest::getOwnerId()const
 void ReportTagJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportTagJobResultRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ReportTagJobResultRequest::getAccessKeyId()const
 void ReportTagJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

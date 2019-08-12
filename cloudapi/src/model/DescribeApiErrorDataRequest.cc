@@ -33,7 +33,7 @@ std::string DescribeApiErrorDataRequest::getSecurityToken()const
 void DescribeApiErrorDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiErrorDataRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiErrorDataRequest::getGroupId()const
 void DescribeApiErrorDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeApiErrorDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeApiErrorDataRequest::getEndTime()const
 void DescribeApiErrorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeApiErrorDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeApiErrorDataRequest::getStartTime()const
 void DescribeApiErrorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeApiErrorDataRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string DescribeApiErrorDataRequest::getApiId()const
 void DescribeApiErrorDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", std::to_string(apiId));
+	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeApiErrorDataRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeApiErrorDataRequest::getAccessKeyId()const
 void DescribeApiErrorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

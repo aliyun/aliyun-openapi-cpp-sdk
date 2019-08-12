@@ -33,7 +33,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateName()co
 void ModifyLaunchTemplateDefaultVersionRequest::setLaunchTemplateName(const std::string& launchTemplateName)
 {
 	launchTemplateName_ = launchTemplateName;
-	setCoreParameter("LaunchTemplateName", std::to_string(launchTemplateName));
+	setCoreParameter("LaunchTemplateName", launchTemplateName);
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getCallerParentId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getProxy_original_source_
 void ModifyLaunchTemplateDefaultVersionRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerIdLoginEmail()con
 void ModifyLaunchTemplateDefaultVersionRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerType()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getAccessKeyId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getSourceRegionId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getSecurityToken()const
 void ModifyLaunchTemplateDefaultVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getRegionId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getRequestContent()const
 void ModifyLaunchTemplateDefaultVersionRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerBidEmail()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerUidEmail()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getCallerUid()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getApp_ip()const
 void ModifyLaunchTemplateDefaultVersionRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateId()const
@@ -220,7 +220,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getLaunchTemplateId()cons
 void ModifyLaunchTemplateDefaultVersionRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", std::to_string(launchTemplateId));
+	setCoreParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getResourceOwnerAccount()
 void ModifyLaunchTemplateDefaultVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getOwnerAccount()const
 void ModifyLaunchTemplateDefaultVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getCallerBid()const
 void ModifyLaunchTemplateDefaultVersionRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getOwnerId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyLaunchTemplateDefaultVersionRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ long ModifyLaunchTemplateDefaultVersionRequest::getDefaultVersionNumber()const
 void ModifyLaunchTemplateDefaultVersionRequest::setDefaultVersionNumber(long defaultVersionNumber)
 {
 	defaultVersionNumber_ = defaultVersionNumber;
-	setCoreParameter("DefaultVersionNumber", defaultVersionNumber);
+	setCoreParameter("DefaultVersionNumber", std::to_string(defaultVersionNumber));
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getRequestId()const
 void ModifyLaunchTemplateDefaultVersionRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyLaunchTemplateDefaultVersionRequest::getAkProxy()const
@@ -330,6 +330,6 @@ std::string ModifyLaunchTemplateDefaultVersionRequest::getAkProxy()const
 void ModifyLaunchTemplateDefaultVersionRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

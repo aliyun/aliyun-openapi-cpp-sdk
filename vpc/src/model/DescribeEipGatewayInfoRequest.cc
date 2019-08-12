@@ -33,7 +33,7 @@ std::string DescribeEipGatewayInfoRequest::getApp_ip()const
 void DescribeEipGatewayInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long DescribeEipGatewayInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeEipGatewayInfoRequest::getResourceOwnerId()const
 void DescribeEipGatewayInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeEipGatewayInfoRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long DescribeEipGatewayInfoRequest::getCallerParentId()const
 void DescribeEipGatewayInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeEipGatewayInfoRequest::getOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DescribeEipGatewayInfoRequest::getProxy_original_security_transport()const
@@ -99,7 +99,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerBid()const
 void DescribeEipGatewayInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeEipGatewayInfoRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeEipGatewayInfoRequest::getOwnerId()const
 void DescribeEipGatewayInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string DescribeEipGatewayInfoRequest::getProxy_original_source_ip()const
 void DescribeEipGatewayInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeEipGatewayInfoRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string DescribeEipGatewayInfoRequest::getOwnerIdLoginEmail()const
 void DescribeEipGatewayInfoRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerType()const
 void DescribeEipGatewayInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeEipGatewayInfoRequest::getProxy_trust_transport_info()const
@@ -176,7 +176,7 @@ std::string DescribeEipGatewayInfoRequest::getAccessKeyId()const
 void DescribeEipGatewayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeEipGatewayInfoRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ std::string DescribeEipGatewayInfoRequest::getInstanceId()const
 void DescribeEipGatewayInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeEipGatewayInfoRequest::getRegionId()const
@@ -209,7 +209,7 @@ std::string DescribeEipGatewayInfoRequest::getRegionId()const
 void DescribeEipGatewayInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeEipGatewayInfoRequest::getSecurityToken()const
@@ -220,7 +220,7 @@ std::string DescribeEipGatewayInfoRequest::getSecurityToken()const
 void DescribeEipGatewayInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeEipGatewayInfoRequest::getRequestId()const
@@ -231,7 +231,7 @@ std::string DescribeEipGatewayInfoRequest::getRequestId()const
 void DescribeEipGatewayInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 bool DescribeEipGatewayInfoRequest::getEnable()const
@@ -253,7 +253,7 @@ std::string DescribeEipGatewayInfoRequest::getRequestContent()const
 void DescribeEipGatewayInfoRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerBidEmail()const
@@ -264,7 +264,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerBidEmail()const
 void DescribeEipGatewayInfoRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeEipGatewayInfoRequest::getCallerUidEmail()const
@@ -275,7 +275,7 @@ std::string DescribeEipGatewayInfoRequest::getCallerUidEmail()const
 void DescribeEipGatewayInfoRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeEipGatewayInfoRequest::getCallerUid()const
@@ -286,6 +286,6 @@ long DescribeEipGatewayInfoRequest::getCallerUid()const
 void DescribeEipGatewayInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

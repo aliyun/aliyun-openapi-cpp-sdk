@@ -33,7 +33,7 @@ std::string DescribeRulesRequest::getSourceIp()const
 void DescribeRulesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeRulesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeRulesRequest::getPageSize()const
 void DescribeRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRulesRequest::getName()const
@@ -55,7 +55,7 @@ std::string DescribeRulesRequest::getName()const
 void DescribeRulesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeRulesRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeRulesRequest::getCurrentPage()const
 void DescribeRulesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeRulesRequest::getRiskLevelId()const
@@ -77,7 +77,7 @@ long DescribeRulesRequest::getRiskLevelId()const
 void DescribeRulesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", riskLevelId);
+	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeRulesRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeRulesRequest::getLang()const
 void DescribeRulesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeRulesRequest::getCustomType()const
@@ -99,7 +99,7 @@ int DescribeRulesRequest::getCustomType()const
 void DescribeRulesRequest::setCustomType(int customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", customType);
+	setCoreParameter("CustomType", std::to_string(customType));
 }
 
 int DescribeRulesRequest::getCategory()const
@@ -110,6 +110,6 @@ int DescribeRulesRequest::getCategory()const
 void DescribeRulesRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 

@@ -33,6 +33,6 @@ std::string PutCustomMetricRequest::getMetricList()const
 void PutCustomMetricRequest::setMetricList(const std::string& metricList)
 {
 	metricList_ = metricList;
-	setCoreParameter("MetricList", std::to_string(metricList));
+	setCoreParameter("MetricList", metricList);
 }
 

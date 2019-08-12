@@ -33,7 +33,7 @@ std::string CreateProductTopicRequest::getIotInstanceId()const
 void CreateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateProductTopicRequest::getProductKey()const
@@ -44,7 +44,7 @@ std::string CreateProductTopicRequest::getProductKey()const
 void CreateProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string CreateProductTopicRequest::getTopicShortName()const
@@ -55,7 +55,7 @@ std::string CreateProductTopicRequest::getTopicShortName()const
 void CreateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setCoreParameter("TopicShortName", std::to_string(topicShortName));
+	setCoreParameter("TopicShortName", topicShortName);
 }
 
 std::string CreateProductTopicRequest::getOperation()const
@@ -66,7 +66,7 @@ std::string CreateProductTopicRequest::getOperation()const
 void CreateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 
 std::string CreateProductTopicRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string CreateProductTopicRequest::getAccessKeyId()const
 void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateProductTopicRequest::getDesc()const
@@ -88,6 +88,6 @@ std::string CreateProductTopicRequest::getDesc()const
 void CreateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", std::to_string(desc));
+	setCoreParameter("Desc", desc);
 }
 

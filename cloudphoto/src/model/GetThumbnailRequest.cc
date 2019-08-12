@@ -33,7 +33,7 @@ std::string GetThumbnailRequest::getLibraryId()const
 void GetThumbnailRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long GetThumbnailRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long GetThumbnailRequest::getPhotoId()const
 void GetThumbnailRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", photoId);
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string GetThumbnailRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string GetThumbnailRequest::getStoreName()const
 void GetThumbnailRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string GetThumbnailRequest::getZoomType()const
@@ -66,6 +66,6 @@ std::string GetThumbnailRequest::getZoomType()const
 void GetThumbnailRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", std::to_string(zoomType));
+	setCoreParameter("ZoomType", zoomType);
 }
 

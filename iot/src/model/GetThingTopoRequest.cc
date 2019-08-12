@@ -33,7 +33,7 @@ std::string GetThingTopoRequest::getIotId()const
 void GetThingTopoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", std::to_string(iotId));
+	setCoreParameter("IotId", iotId);
 }
 
 int GetThingTopoRequest::getPageNo()const
@@ -44,7 +44,7 @@ int GetThingTopoRequest::getPageNo()const
 void GetThingTopoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string GetThingTopoRequest::getIotInstanceId()const
@@ -55,7 +55,7 @@ std::string GetThingTopoRequest::getIotInstanceId()const
 void GetThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int GetThingTopoRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetThingTopoRequest::getPageSize()const
 void GetThingTopoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetThingTopoRequest::getDeviceName()const
@@ -77,7 +77,7 @@ std::string GetThingTopoRequest::getDeviceName()const
 void GetThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string GetThingTopoRequest::getProductKey()const
@@ -88,7 +88,7 @@ std::string GetThingTopoRequest::getProductKey()const
 void GetThingTopoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string GetThingTopoRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetThingTopoRequest::getAccessKeyId()const
 void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string GetCollectionRequest::getRegionId()const
 void GetCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetCollectionRequest::getPageSize()const
@@ -44,7 +44,7 @@ int GetCollectionRequest::getPageSize()const
 void GetCollectionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetCollectionRequest::getPage()const
@@ -55,6 +55,6 @@ int GetCollectionRequest::getPage()const
 void GetCollectionRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 

@@ -33,7 +33,7 @@ long PushMessageToAndroidRequest::getAppKey()const
 void PushMessageToAndroidRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToAndroidRequest::getTargetValue()const
@@ -44,7 +44,7 @@ std::string PushMessageToAndroidRequest::getTargetValue()const
 void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", std::to_string(targetValue));
+	setCoreParameter("TargetValue", targetValue);
 }
 
 std::string PushMessageToAndroidRequest::getTitle()const
@@ -55,7 +55,7 @@ std::string PushMessageToAndroidRequest::getTitle()const
 void PushMessageToAndroidRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string PushMessageToAndroidRequest::getBody()const
@@ -66,7 +66,7 @@ std::string PushMessageToAndroidRequest::getBody()const
 void PushMessageToAndroidRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", std::to_string(body));
+	setCoreParameter("Body", body);
 }
 
 std::string PushMessageToAndroidRequest::getJobKey()const
@@ -77,7 +77,7 @@ std::string PushMessageToAndroidRequest::getJobKey()const
 void PushMessageToAndroidRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", std::to_string(jobKey));
+	setCoreParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToAndroidRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string PushMessageToAndroidRequest::getAccessKeyId()const
 void PushMessageToAndroidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToAndroidRequest::getTarget()const
@@ -99,6 +99,6 @@ std::string PushMessageToAndroidRequest::getTarget()const
 void PushMessageToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", std::to_string(target));
+	setCoreParameter("Target", target);
 }
 

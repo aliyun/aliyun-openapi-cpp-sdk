@@ -33,7 +33,7 @@ long DeleteDnatEntryRequest::getResourceOwnerId()const
 void DeleteDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
 void DeleteDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDnatEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteDnatEntryRequest::getRegionId()const
 void DeleteDnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDnatEntryRequest::getSagId()const
@@ -66,7 +66,7 @@ std::string DeleteDnatEntryRequest::getSagId()const
 void DeleteDnatEntryRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", std::to_string(sagId));
+	setCoreParameter("SagId", sagId);
 }
 
 std::string DeleteDnatEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteDnatEntryRequest::getOwnerAccount()const
 void DeleteDnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDnatEntryRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteDnatEntryRequest::getOwnerId()const
 void DeleteDnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDnatEntryRequest::getDnatEntryId()const
@@ -99,6 +99,6 @@ std::string DeleteDnatEntryRequest::getDnatEntryId()const
 void DeleteDnatEntryRequest::setDnatEntryId(const std::string& dnatEntryId)
 {
 	dnatEntryId_ = dnatEntryId;
-	setCoreParameter("DnatEntryId", std::to_string(dnatEntryId));
+	setCoreParameter("DnatEntryId", dnatEntryId);
 }
 

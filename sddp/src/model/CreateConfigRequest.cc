@@ -33,7 +33,7 @@ std::string CreateConfigRequest::getCode()const
 void CreateConfigRequest::setCode(const std::string& code)
 {
 	code_ = code;
-	setCoreParameter("Code", std::to_string(code));
+	setCoreParameter("Code", code);
 }
 
 std::string CreateConfigRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateConfigRequest::getSourceIp()const
 void CreateConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateConfigRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int CreateConfigRequest::getFeatureType()const
 void CreateConfigRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string CreateConfigRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateConfigRequest::getDescription()const
 void CreateConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateConfigRequest::getConfigList()const
@@ -77,7 +77,7 @@ std::string CreateConfigRequest::getConfigList()const
 void CreateConfigRequest::setConfigList(const std::string& configList)
 {
 	configList_ = configList;
-	setCoreParameter("ConfigList", std::to_string(configList));
+	setCoreParameter("ConfigList", configList);
 }
 
 std::string CreateConfigRequest::getLang()const
@@ -88,7 +88,7 @@ std::string CreateConfigRequest::getLang()const
 void CreateConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateConfigRequest::getValue()const
@@ -99,6 +99,6 @@ std::string CreateConfigRequest::getValue()const
 void CreateConfigRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setCoreParameter("Value", std::to_string(value));
+	setCoreParameter("Value", value);
 }
 

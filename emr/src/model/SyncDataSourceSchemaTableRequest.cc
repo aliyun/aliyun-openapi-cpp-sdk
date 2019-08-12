@@ -33,7 +33,7 @@ long SyncDataSourceSchemaTableRequest::getResourceOwnerId()const
 void SyncDataSourceSchemaTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SyncDataSourceSchemaTableRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string SyncDataSourceSchemaTableRequest::getDbName()const
 void SyncDataSourceSchemaTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string SyncDataSourceSchemaTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SyncDataSourceSchemaTableRequest::getRegionId()const
 void SyncDataSourceSchemaTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SyncDataSourceSchemaTableRequest::getEtlJobId()const
@@ -66,7 +66,7 @@ std::string SyncDataSourceSchemaTableRequest::getEtlJobId()const
 void SyncDataSourceSchemaTableRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", std::to_string(etlJobId));
+	setCoreParameter("EtlJobId", etlJobId);
 }
 
 std::string SyncDataSourceSchemaTableRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string SyncDataSourceSchemaTableRequest::getDataSourceId()const
 void SyncDataSourceSchemaTableRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string SyncDataSourceSchemaTableRequest::getTableName()const
@@ -88,7 +88,7 @@ std::string SyncDataSourceSchemaTableRequest::getTableName()const
 void SyncDataSourceSchemaTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", std::to_string(tableName));
+	setCoreParameter("TableName", tableName);
 }
 
 std::string SyncDataSourceSchemaTableRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SyncDataSourceSchemaTableRequest::getAccessKeyId()const
 void SyncDataSourceSchemaTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long TransformToPrePaidRequest::getResourceOwnerId()const
 void TransformToPrePaidRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long TransformToPrePaidRequest::getPeriod()const
@@ -44,7 +44,7 @@ long TransformToPrePaidRequest::getPeriod()const
 void TransformToPrePaidRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 bool TransformToPrePaidRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string TransformToPrePaidRequest::getFromApp()const
 void TransformToPrePaidRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string TransformToPrePaidRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string TransformToPrePaidRequest::getResourceOwnerAccount()const
 void TransformToPrePaidRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string TransformToPrePaidRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string TransformToPrePaidRequest::getOwnerAccount()const
 void TransformToPrePaidRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string TransformToPrePaidRequest::getCouponNo()const
@@ -99,7 +99,7 @@ std::string TransformToPrePaidRequest::getCouponNo()const
 void TransformToPrePaidRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 long TransformToPrePaidRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long TransformToPrePaidRequest::getOwnerId()const
 void TransformToPrePaidRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string TransformToPrePaidRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string TransformToPrePaidRequest::getAccessKeyId()const
 void TransformToPrePaidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string TransformToPrePaidRequest::getInstanceId()const
@@ -132,7 +132,7 @@ std::string TransformToPrePaidRequest::getInstanceId()const
 void TransformToPrePaidRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string TransformToPrePaidRequest::getAutoRenew()const
@@ -143,7 +143,7 @@ std::string TransformToPrePaidRequest::getAutoRenew()const
 void TransformToPrePaidRequest::setAutoRenew(const std::string& autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", std::to_string(autoRenew));
+	setCoreParameter("AutoRenew", autoRenew);
 }
 
 std::string TransformToPrePaidRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string TransformToPrePaidRequest::getSecurityToken()const
 void TransformToPrePaidRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string TransformToPrePaidRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string TransformToPrePaidRequest::getRegionId()const
 void TransformToPrePaidRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string TransformToPrePaidRequest::getBusinessInfo()const
@@ -176,6 +176,6 @@ std::string TransformToPrePaidRequest::getBusinessInfo()const
 void TransformToPrePaidRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 

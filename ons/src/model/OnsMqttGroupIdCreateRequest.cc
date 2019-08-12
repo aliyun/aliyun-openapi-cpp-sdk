@@ -33,7 +33,7 @@ std::string OnsMqttGroupIdCreateRequest::getInstanceId()const
 void OnsMqttGroupIdCreateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string OnsMqttGroupIdCreateRequest::getRegionId()const
 void OnsMqttGroupIdCreateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string OnsMqttGroupIdCreateRequest::getGroupId()const
 void OnsMqttGroupIdCreateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsMqttGroupIdCreateRequest::getTopic()const
@@ -66,6 +66,6 @@ std::string OnsMqttGroupIdCreateRequest::getTopic()const
 void OnsMqttGroupIdCreateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 

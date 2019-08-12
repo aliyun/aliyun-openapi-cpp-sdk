@@ -33,7 +33,7 @@ std::string OnsMessagePageQueryByTopicRequest::getInstanceId()const
 void OnsMessagePageQueryByTopicRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsMessagePageQueryByTopicRequest::getPageSize()const
@@ -44,7 +44,7 @@ int OnsMessagePageQueryByTopicRequest::getPageSize()const
 void OnsMessagePageQueryByTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string OnsMessagePageQueryByTopicRequest::getTopic()const
 void OnsMessagePageQueryByTopicRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 
 long OnsMessagePageQueryByTopicRequest::getEndTime()const
@@ -66,7 +66,7 @@ long OnsMessagePageQueryByTopicRequest::getEndTime()const
 void OnsMessagePageQueryByTopicRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsMessagePageQueryByTopicRequest::getBeginTime()const
@@ -77,7 +77,7 @@ long OnsMessagePageQueryByTopicRequest::getBeginTime()const
 void OnsMessagePageQueryByTopicRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", beginTime);
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int OnsMessagePageQueryByTopicRequest::getCurrentPage()const
 void OnsMessagePageQueryByTopicRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
@@ -99,6 +99,6 @@ std::string OnsMessagePageQueryByTopicRequest::getTaskId()const
 void OnsMessagePageQueryByTopicRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

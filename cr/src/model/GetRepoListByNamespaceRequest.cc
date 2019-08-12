@@ -33,7 +33,7 @@ std::string GetRepoListByNamespaceRequest::getRepoNamespace()const
 void GetRepoListByNamespaceRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoListByNamespaceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetRepoListByNamespaceRequest::getRegionId()const
 void GetRepoListByNamespaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetRepoListByNamespaceRequest::getPageSize()const
@@ -55,7 +55,7 @@ int GetRepoListByNamespaceRequest::getPageSize()const
 void GetRepoListByNamespaceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoListByNamespaceRequest::getPage()const
@@ -66,7 +66,7 @@ int GetRepoListByNamespaceRequest::getPage()const
 void GetRepoListByNamespaceRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string GetRepoListByNamespaceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetRepoListByNamespaceRequest::getStatus()const
 void GetRepoListByNamespaceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

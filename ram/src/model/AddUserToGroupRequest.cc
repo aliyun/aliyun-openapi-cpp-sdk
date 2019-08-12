@@ -33,7 +33,7 @@ std::string AddUserToGroupRequest::getGroupName()const
 void AddUserToGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string AddUserToGroupRequest::getUserName()const
@@ -44,6 +44,6 @@ std::string AddUserToGroupRequest::getUserName()const
 void AddUserToGroupRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

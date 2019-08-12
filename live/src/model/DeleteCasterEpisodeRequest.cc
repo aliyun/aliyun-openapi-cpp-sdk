@@ -33,7 +33,7 @@ std::string DeleteCasterEpisodeRequest::getCasterId()const
 void DeleteCasterEpisodeRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 long DeleteCasterEpisodeRequest::getOwnerId()const
@@ -44,7 +44,7 @@ long DeleteCasterEpisodeRequest::getOwnerId()const
 void DeleteCasterEpisodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCasterEpisodeRequest::getEpisodeId()const
@@ -55,6 +55,6 @@ std::string DeleteCasterEpisodeRequest::getEpisodeId()const
 void DeleteCasterEpisodeRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
-	setCoreParameter("EpisodeId", std::to_string(episodeId));
+	setCoreParameter("EpisodeId", episodeId);
 }
 

@@ -33,7 +33,7 @@ std::string DeviceCreateRequest::getDeviceNum()const
 void DeviceCreateRequest::setDeviceNum(const std::string& deviceNum)
 {
 	deviceNum_ = deviceNum;
-	setCoreParameter("DeviceNum", std::to_string(deviceNum));
+	setCoreParameter("DeviceNum", deviceNum);
 }
 
 std::string DeviceCreateRequest::getDevicePosition()const
@@ -44,7 +44,7 @@ std::string DeviceCreateRequest::getDevicePosition()const
 void DeviceCreateRequest::setDevicePosition(const std::string& devicePosition)
 {
 	devicePosition_ = devicePosition;
-	setCoreParameter("DevicePosition", std::to_string(devicePosition));
+	setCoreParameter("DevicePosition", devicePosition);
 }
 
 std::string DeviceCreateRequest::getDeviceName()const
@@ -55,7 +55,7 @@ std::string DeviceCreateRequest::getDeviceName()const
 void DeviceCreateRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 int DeviceCreateRequest::getDeviceType()const
@@ -66,7 +66,7 @@ int DeviceCreateRequest::getDeviceType()const
 void DeviceCreateRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", deviceType);
+	setCoreParameter("DeviceType", std::to_string(deviceType));
 }
 
 std::string DeviceCreateRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DeviceCreateRequest::getAccessKeyId()const
 void DeviceCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long DeviceCreateRequest::getSid()const
@@ -88,6 +88,6 @@ long DeviceCreateRequest::getSid()const
 void DeviceCreateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

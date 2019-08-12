@@ -33,7 +33,7 @@ long ScrollDomainListRequest::getEndExpirationDate()const
 void ScrollDomainListRequest::setEndExpirationDate(long endExpirationDate)
 {
 	endExpirationDate_ = endExpirationDate;
-	setCoreParameter("EndExpirationDate", endExpirationDate);
+	setCoreParameter("EndExpirationDate", std::to_string(endExpirationDate));
 }
 
 std::string ScrollDomainListRequest::getProductDomainType()const
@@ -44,7 +44,7 @@ std::string ScrollDomainListRequest::getProductDomainType()const
 void ScrollDomainListRequest::setProductDomainType(const std::string& productDomainType)
 {
 	productDomainType_ = productDomainType;
-	setCoreParameter("ProductDomainType", std::to_string(productDomainType));
+	setCoreParameter("ProductDomainType", productDomainType);
 }
 
 std::string ScrollDomainListRequest::getSuffixs()const
@@ -55,7 +55,7 @@ std::string ScrollDomainListRequest::getSuffixs()const
 void ScrollDomainListRequest::setSuffixs(const std::string& suffixs)
 {
 	suffixs_ = suffixs;
-	setCoreParameter("Suffixs", std::to_string(suffixs));
+	setCoreParameter("Suffixs", suffixs);
 }
 
 long ScrollDomainListRequest::getStartExpirationDate()const
@@ -66,7 +66,7 @@ long ScrollDomainListRequest::getStartExpirationDate()const
 void ScrollDomainListRequest::setStartExpirationDate(long startExpirationDate)
 {
 	startExpirationDate_ = startExpirationDate;
-	setCoreParameter("StartExpirationDate", startExpirationDate);
+	setCoreParameter("StartExpirationDate", std::to_string(startExpirationDate));
 }
 
 int ScrollDomainListRequest::getDomainStatus()const
@@ -77,7 +77,7 @@ int ScrollDomainListRequest::getDomainStatus()const
 void ScrollDomainListRequest::setDomainStatus(int domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", domainStatus);
+	setCoreParameter("DomainStatus", std::to_string(domainStatus));
 }
 
 long ScrollDomainListRequest::getDomainGroupId()const
@@ -88,7 +88,7 @@ long ScrollDomainListRequest::getDomainGroupId()const
 void ScrollDomainListRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", domainGroupId);
+	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 
 bool ScrollDomainListRequest::getKeyWordSuffix()const
@@ -110,7 +110,7 @@ std::string ScrollDomainListRequest::getScrollId()const
 void ScrollDomainListRequest::setScrollId(const std::string& scrollId)
 {
 	scrollId_ = scrollId;
-	setCoreParameter("ScrollId", std::to_string(scrollId));
+	setCoreParameter("ScrollId", scrollId);
 }
 
 std::string ScrollDomainListRequest::getExcluded()const
@@ -121,7 +121,7 @@ std::string ScrollDomainListRequest::getExcluded()const
 void ScrollDomainListRequest::setExcluded(const std::string& excluded)
 {
 	excluded_ = excluded;
-	setCoreParameter("Excluded", std::to_string(excluded));
+	setCoreParameter("Excluded", excluded);
 }
 
 bool ScrollDomainListRequest::getKeyWordPrefix()const
@@ -143,7 +143,7 @@ int ScrollDomainListRequest::getStartLength()const
 void ScrollDomainListRequest::setStartLength(int startLength)
 {
 	startLength_ = startLength;
-	setCoreParameter("StartLength", startLength);
+	setCoreParameter("StartLength", std::to_string(startLength));
 }
 
 int ScrollDomainListRequest::getTradeType()const
@@ -154,7 +154,7 @@ int ScrollDomainListRequest::getTradeType()const
 void ScrollDomainListRequest::setTradeType(int tradeType)
 {
 	tradeType_ = tradeType;
-	setCoreParameter("TradeType", tradeType);
+	setCoreParameter("TradeType", std::to_string(tradeType));
 }
 
 bool ScrollDomainListRequest::getExcludedSuffix()const
@@ -176,7 +176,7 @@ long ScrollDomainListRequest::getEndRegistrationDate()const
 void ScrollDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
 {
 	endRegistrationDate_ = endRegistrationDate;
-	setCoreParameter("EndRegistrationDate", endRegistrationDate);
+	setCoreParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
 }
 
 int ScrollDomainListRequest::getForm()const
@@ -187,7 +187,7 @@ int ScrollDomainListRequest::getForm()const
 void ScrollDomainListRequest::setForm(int form)
 {
 	form_ = form;
-	setCoreParameter("Form", form);
+	setCoreParameter("Form", std::to_string(form));
 }
 
 std::string ScrollDomainListRequest::getUserClientIp()const
@@ -198,7 +198,7 @@ std::string ScrollDomainListRequest::getUserClientIp()const
 void ScrollDomainListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int ScrollDomainListRequest::getPageSize()const
@@ -209,7 +209,7 @@ int ScrollDomainListRequest::getPageSize()const
 void ScrollDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ScrollDomainListRequest::getLang()const
@@ -220,7 +220,7 @@ std::string ScrollDomainListRequest::getLang()const
 void ScrollDomainListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool ScrollDomainListRequest::getExcludedPrefix()const
@@ -242,7 +242,7 @@ std::string ScrollDomainListRequest::getKeyWord()const
 void ScrollDomainListRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", std::to_string(keyWord));
+	setCoreParameter("KeyWord", keyWord);
 }
 
 long ScrollDomainListRequest::getStartRegistrationDate()const
@@ -253,7 +253,7 @@ long ScrollDomainListRequest::getStartRegistrationDate()const
 void ScrollDomainListRequest::setStartRegistrationDate(long startRegistrationDate)
 {
 	startRegistrationDate_ = startRegistrationDate;
-	setCoreParameter("StartRegistrationDate", startRegistrationDate);
+	setCoreParameter("StartRegistrationDate", std::to_string(startRegistrationDate));
 }
 
 int ScrollDomainListRequest::getEndLength()const
@@ -264,6 +264,6 @@ int ScrollDomainListRequest::getEndLength()const
 void ScrollDomainListRequest::setEndLength(int endLength)
 {
 	endLength_ = endLength;
-	setCoreParameter("EndLength", endLength);
+	setCoreParameter("EndLength", std::to_string(endLength));
 }
 

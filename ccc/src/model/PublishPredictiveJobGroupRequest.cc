@@ -33,7 +33,7 @@ std::string PublishPredictiveJobGroupRequest::getInstanceId()const
 void PublishPredictiveJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PublishPredictiveJobGroupRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string PublishPredictiveJobGroupRequest::getSkillGroupId()const
 void PublishPredictiveJobGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string PublishPredictiveJobGroupRequest::getJobGroupId()const
@@ -55,6 +55,6 @@ std::string PublishPredictiveJobGroupRequest::getJobGroupId()const
 void PublishPredictiveJobGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 

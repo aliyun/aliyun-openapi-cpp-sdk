@@ -33,7 +33,7 @@ std::string SetTrafficControlApisRequest::getTrafficControlId()const
 void SetTrafficControlApisRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
+	setCoreParameter("TrafficControlId", trafficControlId);
 }
 
 std::string SetTrafficControlApisRequest::getStageName()const
@@ -44,7 +44,7 @@ std::string SetTrafficControlApisRequest::getStageName()const
 void SetTrafficControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string SetTrafficControlApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetTrafficControlApisRequest::getSecurityToken()const
 void SetTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetTrafficControlApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string SetTrafficControlApisRequest::getGroupId()const
 void SetTrafficControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string SetTrafficControlApisRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string SetTrafficControlApisRequest::getAccessKeyId()const
 void SetTrafficControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetTrafficControlApisRequest::getApiIds()const
@@ -88,6 +88,6 @@ std::string SetTrafficControlApisRequest::getApiIds()const
 void SetTrafficControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", std::to_string(apiIds));
+	setCoreParameter("ApiIds", apiIds);
 }
 

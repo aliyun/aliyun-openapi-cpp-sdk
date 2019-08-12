@@ -33,7 +33,7 @@ std::string RemoveApisAuthoritiesRequest::getStageName()const
 void RemoveApisAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string RemoveApisAuthoritiesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string RemoveApisAuthoritiesRequest::getSecurityToken()const
 void RemoveApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveApisAuthoritiesRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string RemoveApisAuthoritiesRequest::getGroupId()const
 void RemoveApisAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 long RemoveApisAuthoritiesRequest::getAppId()const
@@ -66,7 +66,7 @@ long RemoveApisAuthoritiesRequest::getAppId()const
 void RemoveApisAuthoritiesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string RemoveApisAuthoritiesRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string RemoveApisAuthoritiesRequest::getDescription()const
 void RemoveApisAuthoritiesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string RemoveApisAuthoritiesRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string RemoveApisAuthoritiesRequest::getAccessKeyId()const
 void RemoveApisAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveApisAuthoritiesRequest::getApiIds()const
@@ -99,6 +99,6 @@ std::string RemoveApisAuthoritiesRequest::getApiIds()const
 void RemoveApisAuthoritiesRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", std::to_string(apiIds));
+	setCoreParameter("ApiIds", apiIds);
 }
 

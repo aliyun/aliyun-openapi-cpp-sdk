@@ -33,7 +33,7 @@ long DescribeStreamPredictResultRequest::getResourceOwnerId()const
 void DescribeStreamPredictResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeStreamPredictResultRequest::getNextPageToken()const
@@ -44,7 +44,7 @@ std::string DescribeStreamPredictResultRequest::getNextPageToken()const
 void DescribeStreamPredictResultRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
+	setCoreParameter("NextPageToken", nextPageToken);
 }
 
 long DescribeStreamPredictResultRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeStreamPredictResultRequest::getCallerParentId()const
 void DescribeStreamPredictResultRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeStreamPredictResultRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeStreamPredictResultRequest::getStartTime()const
 void DescribeStreamPredictResultRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeStreamPredictResultRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeStreamPredictResultRequest::getProxy_original_source_ip()con
 void DescribeStreamPredictResultRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeStreamPredictResultRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeStreamPredictResultRequest::getOwnerIdLoginEmail()const
 void DescribeStreamPredictResultRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeStreamPredictResultRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeStreamPredictResultRequest::getCallerType()const
 void DescribeStreamPredictResultRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeStreamPredictResultRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeStreamPredictResultRequest::getAccessKeyId()const
 void DescribeStreamPredictResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeStreamPredictResultRequest::getPredictId()const
@@ -132,7 +132,7 @@ std::string DescribeStreamPredictResultRequest::getPredictId()const
 void DescribeStreamPredictResultRequest::setPredictId(const std::string& predictId)
 {
 	predictId_ = predictId;
-	setCoreParameter("PredictId", std::to_string(predictId));
+	setCoreParameter("PredictId", predictId);
 }
 
 std::string DescribeStreamPredictResultRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeStreamPredictResultRequest::getSecurityToken()const
 void DescribeStreamPredictResultRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeStreamPredictResultRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeStreamPredictResultRequest::getRegionId()const
 void DescribeStreamPredictResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeStreamPredictResultRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeStreamPredictResultRequest::getRequestContent()const
 void DescribeStreamPredictResultRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeStreamPredictResultRequest::getPageSize()const
@@ -176,7 +176,7 @@ long DescribeStreamPredictResultRequest::getPageSize()const
 void DescribeStreamPredictResultRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeStreamPredictResultRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeStreamPredictResultRequest::getCallerBidEmail()const
 void DescribeStreamPredictResultRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeStreamPredictResultRequest::getProbabilityThreshold()const
@@ -198,7 +198,7 @@ std::string DescribeStreamPredictResultRequest::getProbabilityThreshold()const
 void DescribeStreamPredictResultRequest::setProbabilityThreshold(const std::string& probabilityThreshold)
 {
 	probabilityThreshold_ = probabilityThreshold;
-	setCoreParameter("ProbabilityThreshold", std::to_string(probabilityThreshold));
+	setCoreParameter("ProbabilityThreshold", probabilityThreshold);
 }
 
 std::string DescribeStreamPredictResultRequest::getCallerUidEmail()const
@@ -209,7 +209,7 @@ std::string DescribeStreamPredictResultRequest::getCallerUidEmail()const
 void DescribeStreamPredictResultRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeStreamPredictResultRequest::getCallerUid()const
@@ -220,7 +220,7 @@ long DescribeStreamPredictResultRequest::getCallerUid()const
 void DescribeStreamPredictResultRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeStreamPredictResultRequest::getShowLog()const
@@ -231,7 +231,7 @@ std::string DescribeStreamPredictResultRequest::getShowLog()const
 void DescribeStreamPredictResultRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeStreamPredictResultRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string DescribeStreamPredictResultRequest::getApp_ip()const
 void DescribeStreamPredictResultRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeStreamPredictResultRequest::getPopProduct()const
@@ -253,7 +253,7 @@ std::string DescribeStreamPredictResultRequest::getPopProduct()const
 void DescribeStreamPredictResultRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeStreamPredictResultRequest::getModelId()const
@@ -264,7 +264,7 @@ std::string DescribeStreamPredictResultRequest::getModelId()const
 void DescribeStreamPredictResultRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setCoreParameter("ModelId", modelId);
 }
 
 std::string DescribeStreamPredictResultRequest::getEndTime()const
@@ -275,7 +275,7 @@ std::string DescribeStreamPredictResultRequest::getEndTime()const
 void DescribeStreamPredictResultRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long DescribeStreamPredictResultRequest::getCurrentPage()const
@@ -286,7 +286,7 @@ long DescribeStreamPredictResultRequest::getCurrentPage()const
 void DescribeStreamPredictResultRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeStreamPredictResultRequest::getCallerBid()const
@@ -297,7 +297,7 @@ std::string DescribeStreamPredictResultRequest::getCallerBid()const
 void DescribeStreamPredictResultRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeStreamPredictResultRequest::getOwnerId()const
@@ -308,7 +308,7 @@ long DescribeStreamPredictResultRequest::getOwnerId()const
 void DescribeStreamPredictResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeStreamPredictResultRequest::getVersion()const
@@ -319,7 +319,7 @@ std::string DescribeStreamPredictResultRequest::getVersion()const
 void DescribeStreamPredictResultRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeStreamPredictResultRequest::getProxy_trust_transport_info()const
@@ -363,7 +363,7 @@ std::string DescribeStreamPredictResultRequest::getServiceCode()const
 void DescribeStreamPredictResultRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeStreamPredictResultRequest::getRequestId()const
@@ -374,6 +374,6 @@ std::string DescribeStreamPredictResultRequest::getRequestId()const
 void DescribeStreamPredictResultRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

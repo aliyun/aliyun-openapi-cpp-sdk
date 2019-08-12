@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getAppName()const
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getSecurityToken(
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getDomainName()co
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getEndTime()const
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStartTime()con
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveStreamsFrameRateAndBitRateDataRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeLiveStreamsFrameRateAndBitRateDataRequest::getOwnerId()const
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStreamName()const
@@ -99,6 +99,6 @@ std::string DescribeLiveStreamsFrameRateAndBitRateDataRequest::getStreamName()co
 void DescribeLiveStreamsFrameRateAndBitRateDataRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 

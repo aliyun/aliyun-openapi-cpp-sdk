@@ -33,7 +33,7 @@ std::string DeleteStrategyRequest::getSourceIp()const
 void DeleteStrategyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteStrategyRequest::getId()const
@@ -44,6 +44,6 @@ std::string DeleteStrategyRequest::getId()const
 void DeleteStrategyRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

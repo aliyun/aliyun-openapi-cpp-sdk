@@ -33,7 +33,7 @@ std::string OnsTopicUpdateRequest::getInstanceId()const
 void OnsTopicUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int OnsTopicUpdateRequest::getPerm()const
@@ -44,7 +44,7 @@ int OnsTopicUpdateRequest::getPerm()const
 void OnsTopicUpdateRequest::setPerm(int perm)
 {
 	perm_ = perm;
-	setCoreParameter("Perm", perm);
+	setCoreParameter("Perm", std::to_string(perm));
 }
 
 std::string OnsTopicUpdateRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsTopicUpdateRequest::getTopic()const
 void OnsTopicUpdateRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 

@@ -33,7 +33,7 @@ std::string SubmitMediaFpDeleteJobRequest::getUserData()const
 void SubmitMediaFpDeleteJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitMediaFpDeleteJobRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SubmitMediaFpDeleteJobRequest::getResourceOwnerId()const
 void SubmitMediaFpDeleteJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getFpDBId()const
@@ -55,7 +55,7 @@ std::string SubmitMediaFpDeleteJobRequest::getFpDBId()const
 void SubmitMediaFpDeleteJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
-	setCoreParameter("FpDBId", std::to_string(fpDBId));
+	setCoreParameter("FpDBId", fpDBId);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitMediaFpDeleteJobRequest::getResourceOwnerAccount()const
 void SubmitMediaFpDeleteJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitMediaFpDeleteJobRequest::getOwnerAccount()const
 void SubmitMediaFpDeleteJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitMediaFpDeleteJobRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SubmitMediaFpDeleteJobRequest::getOwnerId()const
 void SubmitMediaFpDeleteJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SubmitMediaFpDeleteJobRequest::getAccessKeyId()const
 void SubmitMediaFpDeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getPipelineId()const
@@ -110,7 +110,7 @@ std::string SubmitMediaFpDeleteJobRequest::getPipelineId()const
 void SubmitMediaFpDeleteJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitMediaFpDeleteJobRequest::getPrimaryKey()const
@@ -121,6 +121,6 @@ std::string SubmitMediaFpDeleteJobRequest::getPrimaryKey()const
 void SubmitMediaFpDeleteJobRequest::setPrimaryKey(const std::string& primaryKey)
 {
 	primaryKey_ = primaryKey;
-	setCoreParameter("PrimaryKey", std::to_string(primaryKey));
+	setCoreParameter("PrimaryKey", primaryKey);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeFilterFieldsRequest::getSourceIp()const
 void DescribeFilterFieldsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeFilterFieldsRequest::getQuery()const
@@ -44,6 +44,6 @@ std::string DescribeFilterFieldsRequest::getQuery()const
 void DescribeFilterFieldsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", std::to_string(query));
+	setCoreParameter("Query", query);
 }
 

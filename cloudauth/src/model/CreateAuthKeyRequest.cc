@@ -33,7 +33,7 @@ std::string CreateAuthKeyRequest::getBizType()const
 void CreateAuthKeyRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", std::to_string(bizType));
+	setCoreParameter("BizType", bizType);
 }
 
 std::string CreateAuthKeyRequest::getUserDeviceId()const
@@ -44,7 +44,7 @@ std::string CreateAuthKeyRequest::getUserDeviceId()const
 void CreateAuthKeyRequest::setUserDeviceId(const std::string& userDeviceId)
 {
 	userDeviceId_ = userDeviceId;
-	setCoreParameter("UserDeviceId", std::to_string(userDeviceId));
+	setCoreParameter("UserDeviceId", userDeviceId);
 }
 
 std::string CreateAuthKeyRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string CreateAuthKeyRequest::getSourceIp()const
 void CreateAuthKeyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 bool CreateAuthKeyRequest::getTest()const
@@ -77,7 +77,7 @@ int CreateAuthKeyRequest::getAuthYears()const
 void CreateAuthKeyRequest::setAuthYears(int authYears)
 {
 	authYears_ = authYears;
-	setCoreParameter("AuthYears", authYears);
+	setCoreParameter("AuthYears", std::to_string(authYears));
 }
 
 std::string CreateAuthKeyRequest::getLang()const
@@ -88,6 +88,6 @@ std::string CreateAuthKeyRequest::getLang()const
 void CreateAuthKeyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

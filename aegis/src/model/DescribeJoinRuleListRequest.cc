@@ -33,7 +33,7 @@ std::string DescribeJoinRuleListRequest::getWarnLevel()const
 void DescribeJoinRuleListRequest::setWarnLevel(const std::string& warnLevel)
 {
 	warnLevel_ = warnLevel;
-	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+	setCoreParameter("WarnLevel", warnLevel);
 }
 
 std::string DescribeJoinRuleListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeJoinRuleListRequest::getSourceIp()const
 void DescribeJoinRuleListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeJoinRuleListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeJoinRuleListRequest::getPageSize()const
 void DescribeJoinRuleListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeJoinRuleListRequest::getRemark()const
@@ -66,7 +66,7 @@ long DescribeJoinRuleListRequest::getRemark()const
 void DescribeJoinRuleListRequest::setRemark(long remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setCoreParameter("Remark", std::to_string(remark));
 }
 
 int DescribeJoinRuleListRequest::getCurrentPage()const
@@ -77,6 +77,6 @@ int DescribeJoinRuleListRequest::getCurrentPage()const
 void DescribeJoinRuleListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

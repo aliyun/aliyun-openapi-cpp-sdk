@@ -33,7 +33,7 @@ std::string DescribeDomainRecordInfoRequest::getRecordId()const
 void DescribeDomainRecordInfoRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string DescribeDomainRecordInfoRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeDomainRecordInfoRequest::getUserClientIp()const
 void DescribeDomainRecordInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDomainRecordInfoRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeDomainRecordInfoRequest::getLang()const
 void DescribeDomainRecordInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainRecordInfoRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDomainRecordInfoRequest::getAccessKeyId()const
 void DescribeDomainRecordInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

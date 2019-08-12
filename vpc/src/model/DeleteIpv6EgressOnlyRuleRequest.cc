@@ -33,7 +33,7 @@ long DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerId()const
 void DeleteIpv6EgressOnlyRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getClientToken()const
 void DeleteIpv6EgressOnlyRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long DeleteIpv6EgressOnlyRuleRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteIpv6EgressOnlyRuleRequest::getCallerParentId()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteIpv6EgressOnlyRuleRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getProxy_original_source_ip()const
 void DeleteIpv6EgressOnlyRuleRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerIdLoginEmail()const
 void DeleteIpv6EgressOnlyRuleRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getCallerType()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getAccessKeyId()const
 void DeleteIpv6EgressOnlyRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getIpv6EgressOnlyRuleId()const
@@ -121,7 +121,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getIpv6EgressOnlyRuleId()const
 void DeleteIpv6EgressOnlyRuleRequest::setIpv6EgressOnlyRuleId(const std::string& ipv6EgressOnlyRuleId)
 {
 	ipv6EgressOnlyRuleId_ = ipv6EgressOnlyRuleId;
-	setCoreParameter("Ipv6EgressOnlyRuleId", std::to_string(ipv6EgressOnlyRuleId));
+	setCoreParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getResourceGroupId()const
 void DeleteIpv6EgressOnlyRuleRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getRegionId()const
 void DeleteIpv6EgressOnlyRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getSecurityToken()const
 void DeleteIpv6EgressOnlyRuleRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DeleteIpv6EgressOnlyRuleRequest::getEnable()const
@@ -176,7 +176,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getRequestContent()const
 void DeleteIpv6EgressOnlyRuleRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getCallerBidEmail()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getCallerUidEmail()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteIpv6EgressOnlyRuleRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DeleteIpv6EgressOnlyRuleRequest::getCallerUid()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getApp_ip()const
 void DeleteIpv6EgressOnlyRuleRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
 void DeleteIpv6EgressOnlyRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerAccount()const
 void DeleteIpv6EgressOnlyRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getCallerBid()const
 void DeleteIpv6EgressOnlyRuleRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteIpv6EgressOnlyRuleRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DeleteIpv6EgressOnlyRuleRequest::getOwnerId()const
 void DeleteIpv6EgressOnlyRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteIpv6EgressOnlyRuleRequest::getProxy_trust_transport_info()const
@@ -308,6 +308,6 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getRequestId()const
 void DeleteIpv6EgressOnlyRuleRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

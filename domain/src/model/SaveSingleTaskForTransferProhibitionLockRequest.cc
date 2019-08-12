@@ -33,7 +33,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getUserClientIp()co
 void SaveSingleTaskForTransferProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getDomainName()cons
 void SaveSingleTaskForTransferProhibitionLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const

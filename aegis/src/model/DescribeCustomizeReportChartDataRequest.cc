@@ -33,7 +33,7 @@ std::string DescribeCustomizeReportChartDataRequest::getSourceIp()const
 void DescribeCustomizeReportChartDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeCustomizeReportChartDataRequest::getReportId()const
@@ -44,7 +44,7 @@ long DescribeCustomizeReportChartDataRequest::getReportId()const
 void DescribeCustomizeReportChartDataRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", reportId);
+	setCoreParameter("ReportId", std::to_string(reportId));
 }
 
 std::string DescribeCustomizeReportChartDataRequest::getChartIds()const
@@ -55,7 +55,7 @@ std::string DescribeCustomizeReportChartDataRequest::getChartIds()const
 void DescribeCustomizeReportChartDataRequest::setChartIds(const std::string& chartIds)
 {
 	chartIds_ = chartIds;
-	setCoreParameter("ChartIds", std::to_string(chartIds));
+	setCoreParameter("ChartIds", chartIds);
 }
 
 std::string DescribeCustomizeReportChartDataRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeCustomizeReportChartDataRequest::getLang()const
 void DescribeCustomizeReportChartDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

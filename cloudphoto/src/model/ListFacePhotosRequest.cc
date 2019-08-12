@@ -33,7 +33,7 @@ std::string ListFacePhotosRequest::getCursor()const
 void ListFacePhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListFacePhotosRequest::getSize()const
@@ -44,7 +44,7 @@ int ListFacePhotosRequest::getSize()const
 void ListFacePhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListFacePhotosRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string ListFacePhotosRequest::getLibraryId()const
 void ListFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListFacePhotosRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string ListFacePhotosRequest::getStoreName()const
 void ListFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 long ListFacePhotosRequest::getFaceId()const
@@ -77,7 +77,7 @@ long ListFacePhotosRequest::getFaceId()const
 void ListFacePhotosRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", faceId);
+	setCoreParameter("FaceId", std::to_string(faceId));
 }
 
 std::string ListFacePhotosRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListFacePhotosRequest::getState()const
 void ListFacePhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListFacePhotosRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListFacePhotosRequest::getDirection()const
 void ListFacePhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

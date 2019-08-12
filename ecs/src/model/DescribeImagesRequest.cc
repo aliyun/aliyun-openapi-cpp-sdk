@@ -33,7 +33,7 @@ std::string DescribeImagesRequest::getActionType()const
 void DescribeImagesRequest::setActionType(const std::string& actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", std::to_string(actionType));
+	setCoreParameter("ActionType", actionType);
 }
 
 long DescribeImagesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeImagesRequest::getResourceOwnerId()const
 void DescribeImagesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeImagesRequest::getImageId()const
@@ -55,7 +55,7 @@ std::string DescribeImagesRequest::getImageId()const
 void DescribeImagesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string DescribeImagesRequest::getSnapshotId()const
@@ -66,7 +66,7 @@ std::string DescribeImagesRequest::getSnapshotId()const
 void DescribeImagesRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", std::to_string(snapshotId));
+	setCoreParameter("SnapshotId", snapshotId);
 }
 
 std::string DescribeImagesRequest::getUsage()const
@@ -77,7 +77,7 @@ std::string DescribeImagesRequest::getUsage()const
 void DescribeImagesRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", std::to_string(usage));
+	setCoreParameter("Usage", usage);
 }
 
 int DescribeImagesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeImagesRequest::getPageNumber()const
 void DescribeImagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeImagesRequest::getImageOwnerAlias()const
@@ -99,7 +99,7 @@ std::string DescribeImagesRequest::getImageOwnerAlias()const
 void DescribeImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
 {
 	imageOwnerAlias_ = imageOwnerAlias;
-	setCoreParameter("ImageOwnerAlias", std::to_string(imageOwnerAlias));
+	setCoreParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
 std::string DescribeImagesRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeImagesRequest::getSourceRegionId()const
 void DescribeImagesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeImagesRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string DescribeImagesRequest::getResourceGroupId()const
 void DescribeImagesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 bool DescribeImagesRequest::getIsSupportIoOptimized()const
@@ -143,7 +143,7 @@ std::string DescribeImagesRequest::getRegionId()const
 void DescribeImagesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeImagesRequest::getImageName()const
@@ -154,7 +154,7 @@ std::string DescribeImagesRequest::getImageName()const
 void DescribeImagesRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", std::to_string(imageName));
+	setCoreParameter("ImageName", imageName);
 }
 
 bool DescribeImagesRequest::getIsSupportCloudinit()const
@@ -176,7 +176,7 @@ int DescribeImagesRequest::getPageSize()const
 void DescribeImagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeImagesRequest::getInstanceType()const
@@ -187,7 +187,7 @@ std::string DescribeImagesRequest::getInstanceType()const
 void DescribeImagesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::vector<DescribeImagesRequest::Tag> DescribeImagesRequest::getTag()const
@@ -202,8 +202,8 @@ void DescribeImagesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -215,7 +215,7 @@ std::string DescribeImagesRequest::getArchitecture()const
 void DescribeImagesRequest::setArchitecture(const std::string& architecture)
 {
 	architecture_ = architecture;
-	setCoreParameter("Architecture", std::to_string(architecture));
+	setCoreParameter("Architecture", architecture);
 }
 
 bool DescribeImagesRequest::getDryRun()const
@@ -237,7 +237,7 @@ std::string DescribeImagesRequest::getResourceOwnerAccount()const
 void DescribeImagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeImagesRequest::getOwnerAccount()const
@@ -248,7 +248,7 @@ std::string DescribeImagesRequest::getOwnerAccount()const
 void DescribeImagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DescribeImagesRequest::getShowExpired()const
@@ -270,7 +270,7 @@ std::string DescribeImagesRequest::getOSType()const
 void DescribeImagesRequest::setOSType(const std::string& oSType)
 {
 	oSType_ = oSType;
-	setCoreParameter("OSType", std::to_string(oSType));
+	setCoreParameter("OSType", oSType);
 }
 
 long DescribeImagesRequest::getOwnerId()const
@@ -281,7 +281,7 @@ long DescribeImagesRequest::getOwnerId()const
 void DescribeImagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribeImagesRequest::Filter> DescribeImagesRequest::getFilter()const
@@ -296,8 +296,8 @@ void DescribeImagesRequest::setFilter(const std::vector<Filter>& filter)
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -309,6 +309,6 @@ std::string DescribeImagesRequest::getStatus()const
 void DescribeImagesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

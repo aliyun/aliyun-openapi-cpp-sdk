@@ -33,7 +33,7 @@ long SetZoneRecordStatusRequest::getRecordId()const
 void SetZoneRecordStatusRequest::setRecordId(long recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setCoreParameter("RecordId", std::to_string(recordId));
 }
 
 std::string SetZoneRecordStatusRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SetZoneRecordStatusRequest::getUserClientIp()const
 void SetZoneRecordStatusRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SetZoneRecordStatusRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SetZoneRecordStatusRequest::getLang()const
 void SetZoneRecordStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string SetZoneRecordStatusRequest::getStatus()const
@@ -66,6 +66,6 @@ std::string SetZoneRecordStatusRequest::getStatus()const
 void SetZoneRecordStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

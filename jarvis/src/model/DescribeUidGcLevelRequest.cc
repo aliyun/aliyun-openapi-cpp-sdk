@@ -33,7 +33,7 @@ std::string DescribeUidGcLevelRequest::getSourceIp()const
 void DescribeUidGcLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUidGcLevelRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeUidGcLevelRequest::getLang()const
 void DescribeUidGcLevelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeUidGcLevelRequest::getSourceCode()const
@@ -55,6 +55,6 @@ std::string DescribeUidGcLevelRequest::getSourceCode()const
 void DescribeUidGcLevelRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

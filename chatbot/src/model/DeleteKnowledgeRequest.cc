@@ -33,6 +33,6 @@ long DeleteKnowledgeRequest::getKnowledgeId()const
 void DeleteKnowledgeRequest::setKnowledgeId(long knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", knowledgeId);
+	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
 }
 

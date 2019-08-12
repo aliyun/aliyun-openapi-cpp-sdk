@@ -33,6 +33,6 @@ std::string CreateVirtualMFADeviceRequest::getVirtualMFADeviceName()const
 void CreateVirtualMFADeviceRequest::setVirtualMFADeviceName(const std::string& virtualMFADeviceName)
 {
 	virtualMFADeviceName_ = virtualMFADeviceName;
-	setCoreParameter("VirtualMFADeviceName", std::to_string(virtualMFADeviceName));
+	setCoreParameter("VirtualMFADeviceName", virtualMFADeviceName);
 }
 

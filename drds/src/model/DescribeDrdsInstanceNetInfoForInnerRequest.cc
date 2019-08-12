@@ -33,7 +33,7 @@ std::string DescribeDrdsInstanceNetInfoForInnerRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceNetInfoForInnerRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceNetInfoForInnerRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeDrdsInstanceNetInfoForInnerRequest::getAccessKeyId()const
 void DescribeDrdsInstanceNetInfoForInnerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

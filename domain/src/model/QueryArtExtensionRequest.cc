@@ -33,7 +33,7 @@ std::string QueryArtExtensionRequest::getDomainName()const
 void QueryArtExtensionRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryArtExtensionRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryArtExtensionRequest::getUserClientIp()const
 void QueryArtExtensionRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryArtExtensionRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryArtExtensionRequest::getLang()const
 void QueryArtExtensionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

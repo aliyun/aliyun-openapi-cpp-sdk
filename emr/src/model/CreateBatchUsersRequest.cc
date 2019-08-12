@@ -33,7 +33,7 @@ std::string CreateBatchUsersRequest::getApp_ip()const
 void CreateBatchUsersRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long CreateBatchUsersRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateBatchUsersRequest::getResourceOwnerId()const
 void CreateBatchUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<CreateBatchUsersRequest::UserBaseParamList> CreateBatchUsersRequest::getUserBaseParamList()const
@@ -59,10 +59,10 @@ void CreateBatchUsersRequest::setUserBaseParamList(const std::vector<UserBasePar
 	for(int i = 0; i!= userBaseParamList.size(); i++)	{
 		auto obj = userBaseParamList.at(i);
 		std::string str ="UserBaseParamList."+ std::to_string(i);
-		setCoreParameter(str + ".AliyunUserId", std::to_string(obj.aliyunUserId));
-		setCoreParameter(str + ".UserName", std::to_string(obj.userName));
-		setCoreParameter(str + ".UserType", std::to_string(obj.userType));
-		setCoreParameter(str + ".IsSuperAdmin", std::to_string(obj.isSuperAdmin));
+		setCoreParameter(str + ".AliyunUserId", obj.aliyunUserId);
+		setCoreParameter(str + ".UserName", obj.userName);
+		setCoreParameter(str + ".UserType", obj.userType);
+		setCoreParameter(str + ".IsSuperAdmin", obj.isSuperAdmin);
 	}
 }
 
@@ -74,7 +74,7 @@ long CreateBatchUsersRequest::getCallerParentId()const
 void CreateBatchUsersRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::vector<long> CreateBatchUsersRequest::getRoleId()const
@@ -86,7 +86,7 @@ void CreateBatchUsersRequest::setRoleId(const std::vector<long>& roleId)
 {
 	roleId_ = roleId;
 	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+		setCoreParameter("RoleId."+ std::to_string(i), std::to_string(roleId.at(i)));
 }
 
 std::vector<long> CreateBatchUsersRequest::getGroupId()const
@@ -98,7 +98,7 @@ void CreateBatchUsersRequest::setGroupId(const std::vector<long>& groupId)
 {
 	groupId_ = groupId;
 	for(int i = 0; i!= groupId.size(); i++)
-		setCoreParameter("GroupId."+ std::to_string(i), groupId.at(i));
+		setCoreParameter("GroupId."+ std::to_string(i), std::to_string(groupId.at(i)));
 }
 
 bool CreateBatchUsersRequest::getProxy_original_security_transport()const
@@ -120,7 +120,7 @@ std::string CreateBatchUsersRequest::getDescription()const
 void CreateBatchUsersRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateBatchUsersRequest::getCallerBid()const
@@ -131,7 +131,7 @@ std::string CreateBatchUsersRequest::getCallerBid()const
 void CreateBatchUsersRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string CreateBatchUsersRequest::getProxy_original_source_ip()const
@@ -142,7 +142,7 @@ std::string CreateBatchUsersRequest::getProxy_original_source_ip()const
 void CreateBatchUsersRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool CreateBatchUsersRequest::getAk_mfa_present()const
@@ -175,7 +175,7 @@ std::string CreateBatchUsersRequest::getCallerType()const
 void CreateBatchUsersRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateBatchUsersRequest::getAccessKeyId()const
@@ -186,7 +186,7 @@ std::string CreateBatchUsersRequest::getAccessKeyId()const
 void CreateBatchUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool CreateBatchUsersRequest::getSecurity_transport()const
@@ -208,7 +208,7 @@ std::string CreateBatchUsersRequest::getSecurityToken()const
 void CreateBatchUsersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateBatchUsersRequest::getRegionId()const
@@ -219,7 +219,7 @@ std::string CreateBatchUsersRequest::getRegionId()const
 void CreateBatchUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateBatchUsersRequest::getRequestId()const
@@ -230,7 +230,7 @@ std::string CreateBatchUsersRequest::getRequestId()const
 void CreateBatchUsersRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long CreateBatchUsersRequest::getCallerUid()const
@@ -241,6 +241,6 @@ long CreateBatchUsersRequest::getCallerUid()const
 void CreateBatchUsersRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

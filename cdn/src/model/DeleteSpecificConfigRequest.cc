@@ -33,7 +33,7 @@ std::string DeleteSpecificConfigRequest::getSecurityToken()const
 void DeleteSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteSpecificConfigRequest::getFunctionName()const
@@ -44,7 +44,7 @@ std::string DeleteSpecificConfigRequest::getFunctionName()const
 void DeleteSpecificConfigRequest::setFunctionName(const std::string& functionName)
 {
 	functionName_ = functionName;
-	setCoreParameter("FunctionName", std::to_string(functionName));
+	setCoreParameter("FunctionName", functionName);
 }
 
 std::string DeleteSpecificConfigRequest::getConfigId()const
@@ -55,7 +55,7 @@ std::string DeleteSpecificConfigRequest::getConfigId()const
 void DeleteSpecificConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setCoreParameter("ConfigId", configId);
 }
 
 std::string DeleteSpecificConfigRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DeleteSpecificConfigRequest::getDomainName()const
 void DeleteSpecificConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteSpecificConfigRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DeleteSpecificConfigRequest::getOwnerId()const
 void DeleteSpecificConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

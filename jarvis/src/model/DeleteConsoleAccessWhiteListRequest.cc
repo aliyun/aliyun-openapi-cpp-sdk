@@ -33,7 +33,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getSourceIp()const
 void DeleteConsoleAccessWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getLang()const
 void DeleteConsoleAccessWhiteListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getDisableWhitelist()const
@@ -55,7 +55,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getDisableWhitelist()const
 void DeleteConsoleAccessWhiteListRequest::setDisableWhitelist(const std::string& disableWhitelist)
 {
 	disableWhitelist_ = disableWhitelist;
-	setCoreParameter("DisableWhitelist", std::to_string(disableWhitelist));
+	setCoreParameter("DisableWhitelist", disableWhitelist);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string DeleteConsoleAccessWhiteListRequest::getSourceCode()const
 void DeleteConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

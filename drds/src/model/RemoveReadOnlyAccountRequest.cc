@@ -33,7 +33,7 @@ std::string RemoveReadOnlyAccountRequest::getDbName()const
 void RemoveReadOnlyAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccountName()const
@@ -44,7 +44,7 @@ std::string RemoveReadOnlyAccountRequest::getAccountName()const
 void RemoveReadOnlyAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", std::to_string(accountName));
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string RemoveReadOnlyAccountRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string RemoveReadOnlyAccountRequest::getDrdsInstanceId()const
 void RemoveReadOnlyAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
 void RemoveReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

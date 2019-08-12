@@ -33,7 +33,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getSourceIp()const
 void DescribeWhiteListEffectiveAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeWhiteListEffectiveAssetsRequest::getPageSize()const
 void DescribeWhiteListEffectiveAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWhiteListEffectiveAssetsRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getRemark()const
 void DescribeWhiteListEffectiveAssetsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 long DescribeWhiteListEffectiveAssetsRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long DescribeWhiteListEffectiveAssetsRequest::getStrategyId()const
 void DescribeWhiteListEffectiveAssetsRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeWhiteListEffectiveAssetsRequest::getCurrentPage()const
 void DescribeWhiteListEffectiveAssetsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWhiteListEffectiveAssetsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeWhiteListEffectiveAssetsRequest::getLang()const
 void DescribeWhiteListEffectiveAssetsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeWhiteListEffectiveAssetsRequest::getNeedStatistics()const
@@ -99,6 +99,6 @@ int DescribeWhiteListEffectiveAssetsRequest::getNeedStatistics()const
 void DescribeWhiteListEffectiveAssetsRequest::setNeedStatistics(int needStatistics)
 {
 	needStatistics_ = needStatistics;
-	setCoreParameter("NeedStatistics", needStatistics);
+	setCoreParameter("NeedStatistics", std::to_string(needStatistics));
 }
 

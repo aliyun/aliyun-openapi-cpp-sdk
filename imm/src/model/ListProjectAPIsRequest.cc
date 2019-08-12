@@ -33,7 +33,7 @@ std::string ListProjectAPIsRequest::getRegionId()const
 void ListProjectAPIsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListProjectAPIsRequest::getProject()const
@@ -44,7 +44,7 @@ std::string ListProjectAPIsRequest::getProject()const
 void ListProjectAPIsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string ListProjectAPIsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListProjectAPIsRequest::getAccessKeyId()const
 void ListProjectAPIsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

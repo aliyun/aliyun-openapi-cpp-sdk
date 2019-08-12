@@ -33,7 +33,7 @@ std::string DescribeEventTypesRequest::getSourceIp()const
 void DescribeEventTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeEventTypesRequest::getParentTypeId()const
@@ -44,7 +44,7 @@ long DescribeEventTypesRequest::getParentTypeId()const
 void DescribeEventTypesRequest::setParentTypeId(long parentTypeId)
 {
 	parentTypeId_ = parentTypeId;
-	setCoreParameter("ParentTypeId", parentTypeId);
+	setCoreParameter("ParentTypeId", std::to_string(parentTypeId));
 }
 
 std::string DescribeEventTypesRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeEventTypesRequest::getLang()const
 void DescribeEventTypesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

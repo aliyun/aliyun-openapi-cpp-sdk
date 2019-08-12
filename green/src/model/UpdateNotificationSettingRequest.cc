@@ -33,7 +33,7 @@ std::string UpdateNotificationSettingRequest::getRealtimeMessageList()const
 void UpdateNotificationSettingRequest::setRealtimeMessageList(const std::string& realtimeMessageList)
 {
 	realtimeMessageList_ = realtimeMessageList;
-	setCoreParameter("RealtimeMessageList", std::to_string(realtimeMessageList));
+	setCoreParameter("RealtimeMessageList", realtimeMessageList);
 }
 
 std::string UpdateNotificationSettingRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string UpdateNotificationSettingRequest::getSourceIp()const
 void UpdateNotificationSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateNotificationSettingRequest::getReminderModeList()const
@@ -55,7 +55,7 @@ std::string UpdateNotificationSettingRequest::getReminderModeList()const
 void UpdateNotificationSettingRequest::setReminderModeList(const std::string& reminderModeList)
 {
 	reminderModeList_ = reminderModeList;
-	setCoreParameter("ReminderModeList", std::to_string(reminderModeList));
+	setCoreParameter("ReminderModeList", reminderModeList);
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTime()const
@@ -66,7 +66,7 @@ int UpdateNotificationSettingRequest::getScheduleMessageTime()const
 void UpdateNotificationSettingRequest::setScheduleMessageTime(int scheduleMessageTime)
 {
 	scheduleMessageTime_ = scheduleMessageTime;
-	setCoreParameter("ScheduleMessageTime", scheduleMessageTime);
+	setCoreParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
 }
 
 std::string UpdateNotificationSettingRequest::getLang()const
@@ -77,7 +77,7 @@ std::string UpdateNotificationSettingRequest::getLang()const
 void UpdateNotificationSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const
@@ -88,6 +88,6 @@ int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const
 void UpdateNotificationSettingRequest::setScheduleMessageTimeZone(int scheduleMessageTimeZone)
 {
 	scheduleMessageTimeZone_ = scheduleMessageTimeZone;
-	setCoreParameter("ScheduleMessageTimeZone", scheduleMessageTimeZone);
+	setCoreParameter("ScheduleMessageTimeZone", std::to_string(scheduleMessageTimeZone));
 }
 

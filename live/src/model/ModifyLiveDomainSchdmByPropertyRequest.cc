@@ -33,7 +33,7 @@ long ModifyLiveDomainSchdmByPropertyRequest::getCallerParentId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyLiveDomainSchdmByPropertyRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getProxy_original_source_ip(
 void ModifyLiveDomainSchdmByPropertyRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
 void ModifyLiveDomainSchdmByPropertyRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerType()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeRpcId()const
@@ -88,7 +88,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeRpcId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getAccessKeyId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeTraceId()const
@@ -110,7 +110,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeTraceId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getSecurityToken()const
 void ModifyLiveDomainSchdmByPropertyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getRegionId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getRequestContent()const
 void ModifyLiveDomainSchdmByPropertyRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getProperty()const
@@ -154,7 +154,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getProperty()const
 void ModifyLiveDomainSchdmByPropertyRequest::setProperty(const std::string& property)
 {
 	property_ = property;
-	setCoreParameter("Property", std::to_string(property));
+	setCoreParameter("Property", property);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerBidEmail()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerUidEmail()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyLiveDomainSchdmByPropertyRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long ModifyLiveDomainSchdmByPropertyRequest::getCallerUid()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getApp_ip()const
 void ModifyLiveDomainSchdmByPropertyRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getPopProduct()const
 void ModifyLiveDomainSchdmByPropertyRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getDomainName()const
 void ModifyLiveDomainSchdmByPropertyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getCallerBid()const
 void ModifyLiveDomainSchdmByPropertyRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyLiveDomainSchdmByPropertyRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long ModifyLiveDomainSchdmByPropertyRequest::getOwnerId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getVersion()const
 void ModifyLiveDomainSchdmByPropertyRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool ModifyLiveDomainSchdmByPropertyRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getServiceCode()const
 void ModifyLiveDomainSchdmByPropertyRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getRequestId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeUserData()const
@@ -319,6 +319,6 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getEagleEyeUserData()const
 void ModifyLiveDomainSchdmByPropertyRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 

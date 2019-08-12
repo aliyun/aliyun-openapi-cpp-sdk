@@ -33,7 +33,7 @@ std::string DescribeSasAssetStatisticsRequest::getSourceIp()const
 void DescribeSasAssetStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSasAssetStatisticsRequest::getStatisticsColumn()const
@@ -44,7 +44,7 @@ std::string DescribeSasAssetStatisticsRequest::getStatisticsColumn()const
 void DescribeSasAssetStatisticsRequest::setStatisticsColumn(const std::string& statisticsColumn)
 {
 	statisticsColumn_ = statisticsColumn;
-	setCoreParameter("StatisticsColumn", std::to_string(statisticsColumn));
+	setCoreParameter("StatisticsColumn", statisticsColumn);
 }
 
 int DescribeSasAssetStatisticsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeSasAssetStatisticsRequest::getPageSize()const
 void DescribeSasAssetStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSasAssetStatisticsRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string DescribeSasAssetStatisticsRequest::getFrom()const
 void DescribeSasAssetStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeSasAssetStatisticsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeSasAssetStatisticsRequest::getCurrentPage()const
 void DescribeSasAssetStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeSasAssetStatisticsRequest::getUuids()const
@@ -88,6 +88,6 @@ std::string DescribeSasAssetStatisticsRequest::getUuids()const
 void DescribeSasAssetStatisticsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

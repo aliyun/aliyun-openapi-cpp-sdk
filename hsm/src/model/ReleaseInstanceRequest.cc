@@ -33,7 +33,7 @@ std::string ReleaseInstanceRequest::getResourceOwnerId()const
 void ReleaseInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseInstanceRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string ReleaseInstanceRequest::getInstanceId()const
 void ReleaseInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 

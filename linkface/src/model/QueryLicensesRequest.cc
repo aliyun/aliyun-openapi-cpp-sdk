@@ -33,7 +33,7 @@ int QueryLicensesRequest::getLicenseType()const
 void QueryLicensesRequest::setLicenseType(int licenseType)
 {
 	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", licenseType);
+	setCoreParameter("LicenseType", std::to_string(licenseType));
 }
 
 int QueryLicensesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryLicensesRequest::getPageSize()const
 void QueryLicensesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryLicensesRequest::getCurrentPage()const
@@ -55,6 +55,6 @@ int QueryLicensesRequest::getCurrentPage()const
 void QueryLicensesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

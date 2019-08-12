@@ -33,7 +33,7 @@ std::string JoinResourceGroupRequest::getSourceRegionId()const
 void JoinResourceGroupRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string JoinResourceGroupRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string JoinResourceGroupRequest::getResourceGroupId()const
 void JoinResourceGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long JoinResourceGroupRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long JoinResourceGroupRequest::getResourceOwnerId()const
 void JoinResourceGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string JoinResourceGroupRequest::getResourceId()const
@@ -66,7 +66,7 @@ std::string JoinResourceGroupRequest::getResourceId()const
 void JoinResourceGroupRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", std::to_string(resourceId));
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string JoinResourceGroupRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string JoinResourceGroupRequest::getResourceOwnerAccount()const
 void JoinResourceGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string JoinResourceGroupRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string JoinResourceGroupRequest::getRegionId()const
 void JoinResourceGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string JoinResourceGroupRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string JoinResourceGroupRequest::getOwnerAccount()const
 void JoinResourceGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long JoinResourceGroupRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long JoinResourceGroupRequest::getOwnerId()const
 void JoinResourceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string JoinResourceGroupRequest::getResourceType()const
@@ -121,6 +121,6 @@ std::string JoinResourceGroupRequest::getResourceType()const
 void JoinResourceGroupRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

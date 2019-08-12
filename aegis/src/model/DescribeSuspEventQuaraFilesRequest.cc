@@ -33,7 +33,7 @@ std::string DescribeSuspEventQuaraFilesRequest::getSourceIp()const
 void DescribeSuspEventQuaraFilesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSuspEventQuaraFilesRequest::getPageSize()const
@@ -44,7 +44,7 @@ std::string DescribeSuspEventQuaraFilesRequest::getPageSize()const
 void DescribeSuspEventQuaraFilesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSuspEventQuaraFilesRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ std::string DescribeSuspEventQuaraFilesRequest::getCurrentPage()const
 void DescribeSuspEventQuaraFilesRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSuspEventQuaraFilesRequest::getFrom()const
@@ -66,7 +66,7 @@ std::string DescribeSuspEventQuaraFilesRequest::getFrom()const
 void DescribeSuspEventQuaraFilesRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeSuspEventQuaraFilesRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string DescribeSuspEventQuaraFilesRequest::getStatus()const
 void DescribeSuspEventQuaraFilesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

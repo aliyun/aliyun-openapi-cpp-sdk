@@ -33,7 +33,7 @@ std::string GetNamespaceListRequest::getRegionId()const
 void GetNamespaceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetNamespaceListRequest::getAuthorize()const
@@ -44,7 +44,7 @@ std::string GetNamespaceListRequest::getAuthorize()const
 void GetNamespaceListRequest::setAuthorize(const std::string& authorize)
 {
 	authorize_ = authorize;
-	setCoreParameter("Authorize", std::to_string(authorize));
+	setCoreParameter("Authorize", authorize);
 }
 
 std::string GetNamespaceListRequest::getStatus()const
@@ -55,6 +55,6 @@ std::string GetNamespaceListRequest::getStatus()const
 void GetNamespaceListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

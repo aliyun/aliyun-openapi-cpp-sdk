@@ -33,7 +33,7 @@ std::string CreateOrUpdateDataSourceRequest::getProjectName()const
 void CreateOrUpdateDataSourceRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", std::to_string(projectName));
+	setCoreParameter("ProjectName", projectName);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getConfigType()const
@@ -44,7 +44,7 @@ std::string CreateOrUpdateDataSourceRequest::getConfigType()const
 void CreateOrUpdateDataSourceRequest::setConfigType(const std::string& configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", std::to_string(configType));
+	setCoreParameter("ConfigType", configType);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string CreateOrUpdateDataSourceRequest::getSourceIp()const
 void CreateOrUpdateDataSourceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getLogStoreName()const
@@ -66,7 +66,7 @@ std::string CreateOrUpdateDataSourceRequest::getLogStoreName()const
 void CreateOrUpdateDataSourceRequest::setLogStoreName(const std::string& logStoreName)
 {
 	logStoreName_ = logStoreName;
-	setCoreParameter("LogStoreName", std::to_string(logStoreName));
+	setCoreParameter("LogStoreName", logStoreName);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getDatasourceDescription()const
@@ -77,7 +77,7 @@ std::string CreateOrUpdateDataSourceRequest::getDatasourceDescription()const
 void CreateOrUpdateDataSourceRequest::setDatasourceDescription(const std::string& datasourceDescription)
 {
 	datasourceDescription_ = datasourceDescription;
-	setCoreParameter("DatasourceDescription", std::to_string(datasourceDescription));
+	setCoreParameter("DatasourceDescription", datasourceDescription);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getFields()const
@@ -88,7 +88,7 @@ std::string CreateOrUpdateDataSourceRequest::getFields()const
 void CreateOrUpdateDataSourceRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 
 std::string CreateOrUpdateDataSourceRequest::getRegionNo()const
@@ -99,6 +99,6 @@ std::string CreateOrUpdateDataSourceRequest::getRegionNo()const
 void CreateOrUpdateDataSourceRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", std::to_string(regionNo));
+	setCoreParameter("RegionNo", regionNo);
 }
 

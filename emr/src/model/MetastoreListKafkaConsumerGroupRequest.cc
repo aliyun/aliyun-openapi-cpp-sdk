@@ -33,7 +33,7 @@ long MetastoreListKafkaConsumerGroupRequest::getResourceOwnerId()const
 void MetastoreListKafkaConsumerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getTopicId()const
@@ -44,7 +44,7 @@ std::string MetastoreListKafkaConsumerGroupRequest::getTopicId()const
 void MetastoreListKafkaConsumerGroupRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListKafkaConsumerGroupRequest::getRegionId()const
 void MetastoreListKafkaConsumerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int MetastoreListKafkaConsumerGroupRequest::getPageSize()const
@@ -66,7 +66,7 @@ int MetastoreListKafkaConsumerGroupRequest::getPageSize()const
 void MetastoreListKafkaConsumerGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int MetastoreListKafkaConsumerGroupRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int MetastoreListKafkaConsumerGroupRequest::getPageNumber()const
 void MetastoreListKafkaConsumerGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListKafkaConsumerGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string MetastoreListKafkaConsumerGroupRequest::getAccessKeyId()const
 void MetastoreListKafkaConsumerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

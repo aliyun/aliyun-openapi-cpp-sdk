@@ -33,7 +33,7 @@ std::string PublishUnionCasServiceRequest::getCasCsbName()const
 void PublishUnionCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 {
 	casCsbName_ = casCsbName;
-	setCoreParameter("CasCsbName", std::to_string(casCsbName));
+	setCoreParameter("CasCsbName", casCsbName);
 }
 
 std::string PublishUnionCasServiceRequest::getData()const
@@ -44,7 +44,7 @@ std::string PublishUnionCasServiceRequest::getData()const
 void PublishUnionCasServiceRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string PublishUnionCasServiceRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string PublishUnionCasServiceRequest::getRegionId()const
 void PublishUnionCasServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

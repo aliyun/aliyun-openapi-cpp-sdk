@@ -33,7 +33,7 @@ long DeleteExpressConnectRequest::getResourceOwnerId()const
 void DeleteExpressConnectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteExpressConnectRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteExpressConnectRequest::getRegionId()const
 void DeleteExpressConnectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteExpressConnectRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteExpressConnectRequest::getResourceOwnerAccount()const
 void DeleteExpressConnectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteExpressConnectRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteExpressConnectRequest::getClientToken()const
 void DeleteExpressConnectRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteExpressConnectRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteExpressConnectRequest::getOwnerAccount()const
 void DeleteExpressConnectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DeleteExpressConnectRequest::getForce()const
@@ -99,7 +99,7 @@ std::string DeleteExpressConnectRequest::getRouterInterfaceId()const
 void DeleteExpressConnectRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", std::to_string(routerInterfaceId));
+	setCoreParameter("RouterInterfaceId", routerInterfaceId);
 }
 
 long DeleteExpressConnectRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long DeleteExpressConnectRequest::getOwnerId()const
 void DeleteExpressConnectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

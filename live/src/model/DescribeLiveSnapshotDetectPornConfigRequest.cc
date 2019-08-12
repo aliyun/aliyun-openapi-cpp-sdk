@@ -33,7 +33,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getAppName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveSnapshotDetectPornConfigRequest::getPageNum()const
@@ -88,7 +88,7 @@ int DescribeLiveSnapshotDetectPornConfigRequest::getPageNum()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
@@ -99,6 +99,6 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", std::to_string(order));
+	setCoreParameter("Order", order);
 }
 

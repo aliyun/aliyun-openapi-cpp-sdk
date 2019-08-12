@@ -33,7 +33,7 @@ long GetOpsCommandResultOnceRequest::getResourceOwnerId()const
 void GetOpsCommandResultOnceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetOpsCommandResultOnceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetOpsCommandResultOnceRequest::getRegionId()const
 void GetOpsCommandResultOnceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetOpsCommandResultOnceRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string GetOpsCommandResultOnceRequest::getClusterId()const
 void GetOpsCommandResultOnceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 long GetOpsCommandResultOnceRequest::getTaskId()const
@@ -66,7 +66,7 @@ long GetOpsCommandResultOnceRequest::getTaskId()const
 void GetOpsCommandResultOnceRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string GetOpsCommandResultOnceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetOpsCommandResultOnceRequest::getAccessKeyId()const
 void GetOpsCommandResultOnceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

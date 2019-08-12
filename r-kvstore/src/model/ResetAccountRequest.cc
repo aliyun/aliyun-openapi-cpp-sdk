@@ -33,7 +33,7 @@ long ResetAccountRequest::getResourceOwnerId()const
 void ResetAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResetAccountRequest::getAccountPassword()const
@@ -44,7 +44,7 @@ std::string ResetAccountRequest::getAccountPassword()const
 void ResetAccountRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", std::to_string(accountPassword));
+	setCoreParameter("AccountPassword", accountPassword);
 }
 
 std::string ResetAccountRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string ResetAccountRequest::getInstanceId()const
 void ResetAccountRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ResetAccountRequest::getAccountName()const
@@ -66,7 +66,7 @@ std::string ResetAccountRequest::getAccountName()const
 void ResetAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", std::to_string(accountName));
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string ResetAccountRequest::getSecurityToken()const
@@ -77,7 +77,7 @@ std::string ResetAccountRequest::getSecurityToken()const
 void ResetAccountRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ResetAccountRequest::getResourceOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ResetAccountRequest::getResourceOwnerAccount()const
 void ResetAccountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResetAccountRequest::getRegionId()const
@@ -99,7 +99,7 @@ std::string ResetAccountRequest::getRegionId()const
 void ResetAccountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ResetAccountRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string ResetAccountRequest::getOwnerAccount()const
 void ResetAccountRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ResetAccountRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ResetAccountRequest::getOwnerId()const
 void ResetAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ResetAccountRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ResetAccountRequest::getAccessKeyId()const
 void ResetAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ int QueryTaskDetailHistoryRequest::getTaskStatus()const
 void QueryTaskDetailHistoryRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", taskStatus);
+	setCoreParameter("TaskStatus", std::to_string(taskStatus));
 }
 
 std::string QueryTaskDetailHistoryRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryTaskDetailHistoryRequest::getUserClientIp()const
 void QueryTaskDetailHistoryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTaskDetailHistoryRequest::getTaskNo()const
@@ -55,7 +55,7 @@ std::string QueryTaskDetailHistoryRequest::getTaskNo()const
 void QueryTaskDetailHistoryRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", std::to_string(taskNo));
+	setCoreParameter("TaskNo", taskNo);
 }
 
 std::string QueryTaskDetailHistoryRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string QueryTaskDetailHistoryRequest::getDomainName()const
 void QueryTaskDetailHistoryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 int QueryTaskDetailHistoryRequest::getPageSize()const
@@ -77,7 +77,7 @@ int QueryTaskDetailHistoryRequest::getPageSize()const
 void QueryTaskDetailHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskDetailHistoryRequest::getTaskDetailNoCursor()const
@@ -88,7 +88,7 @@ std::string QueryTaskDetailHistoryRequest::getTaskDetailNoCursor()const
 void QueryTaskDetailHistoryRequest::setTaskDetailNoCursor(const std::string& taskDetailNoCursor)
 {
 	taskDetailNoCursor_ = taskDetailNoCursor;
-	setCoreParameter("TaskDetailNoCursor", std::to_string(taskDetailNoCursor));
+	setCoreParameter("TaskDetailNoCursor", taskDetailNoCursor);
 }
 
 std::string QueryTaskDetailHistoryRequest::getLang()const
@@ -99,7 +99,7 @@ std::string QueryTaskDetailHistoryRequest::getLang()const
 void QueryTaskDetailHistoryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string QueryTaskDetailHistoryRequest::getDomainNameCursor()const
@@ -110,6 +110,6 @@ std::string QueryTaskDetailHistoryRequest::getDomainNameCursor()const
 void QueryTaskDetailHistoryRequest::setDomainNameCursor(const std::string& domainNameCursor)
 {
 	domainNameCursor_ = domainNameCursor;
-	setCoreParameter("DomainNameCursor", std::to_string(domainNameCursor));
+	setCoreParameter("DomainNameCursor", domainNameCursor);
 }
 

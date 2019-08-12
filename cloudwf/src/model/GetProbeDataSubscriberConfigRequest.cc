@@ -33,7 +33,7 @@ long GetProbeDataSubscriberConfigRequest::getId()const
 void GetProbeDataSubscriberConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetProbeDataSubscriberConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetProbeDataSubscriberConfigRequest::getAccessKeyId()const
 void GetProbeDataSubscriberConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

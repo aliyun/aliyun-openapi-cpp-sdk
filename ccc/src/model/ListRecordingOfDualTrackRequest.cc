@@ -33,7 +33,7 @@ std::string ListRecordingOfDualTrackRequest::getCallingNumber()const
 void ListRecordingOfDualTrackRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", std::to_string(callingNumber));
+	setCoreParameter("CallingNumber", callingNumber);
 }
 
 std::string ListRecordingOfDualTrackRequest::getAgentId()const
@@ -44,7 +44,7 @@ std::string ListRecordingOfDualTrackRequest::getAgentId()const
 void ListRecordingOfDualTrackRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
+	setCoreParameter("AgentId", agentId);
 }
 
 std::string ListRecordingOfDualTrackRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string ListRecordingOfDualTrackRequest::getInstanceId()const
 void ListRecordingOfDualTrackRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
@@ -66,7 +66,7 @@ std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
 void ListRecordingOfDualTrackRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", std::to_string(calledNumber));
+	setCoreParameter("CalledNumber", calledNumber);
 }
 
 int ListRecordingOfDualTrackRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListRecordingOfDualTrackRequest::getPageSize()const
 void ListRecordingOfDualTrackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListRecordingOfDualTrackRequest::getStartTime()const
@@ -88,7 +88,7 @@ long ListRecordingOfDualTrackRequest::getStartTime()const
 void ListRecordingOfDualTrackRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListRecordingOfDualTrackRequest::getStopTime()const
@@ -99,7 +99,7 @@ long ListRecordingOfDualTrackRequest::getStopTime()const
 void ListRecordingOfDualTrackRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", stopTime);
+	setCoreParameter("StopTime", std::to_string(stopTime));
 }
 
 std::string ListRecordingOfDualTrackRequest::getConnectId()const
@@ -110,7 +110,7 @@ std::string ListRecordingOfDualTrackRequest::getConnectId()const
 void ListRecordingOfDualTrackRequest::setConnectId(const std::string& connectId)
 {
 	connectId_ = connectId;
-	setCoreParameter("ConnectId", std::to_string(connectId));
+	setCoreParameter("ConnectId", connectId);
 }
 
 int ListRecordingOfDualTrackRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int ListRecordingOfDualTrackRequest::getPageNumber()const
 void ListRecordingOfDualTrackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const
 void ListRecordingOfDualTrackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

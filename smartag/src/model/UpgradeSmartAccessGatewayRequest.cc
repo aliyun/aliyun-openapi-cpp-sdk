@@ -33,7 +33,7 @@ long UpgradeSmartAccessGatewayRequest::getResourceOwnerId()const
 void UpgradeSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool UpgradeSmartAccessGatewayRequest::getAutoPay()const
@@ -55,7 +55,7 @@ long UpgradeSmartAccessGatewayRequest::getBandWidthSpec()const
 void UpgradeSmartAccessGatewayRequest::setBandWidthSpec(long bandWidthSpec)
 {
 	bandWidthSpec_ = bandWidthSpec;
-	setCoreParameter("BandWidthSpec", bandWidthSpec);
+	setCoreParameter("BandWidthSpec", std::to_string(bandWidthSpec));
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpgradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void UpgradeSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string UpgradeSmartAccessGatewayRequest::getRegionId()const
 void UpgradeSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string UpgradeSmartAccessGatewayRequest::getOwnerAccount()const
 void UpgradeSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int UpgradeSmartAccessGatewayRequest::getUserCount()const
@@ -99,7 +99,7 @@ int UpgradeSmartAccessGatewayRequest::getUserCount()const
 void UpgradeSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", userCount);
+	setCoreParameter("UserCount", std::to_string(userCount));
 }
 
 std::string UpgradeSmartAccessGatewayRequest::getSmartAGId()const
@@ -110,7 +110,7 @@ std::string UpgradeSmartAccessGatewayRequest::getSmartAGId()const
 void UpgradeSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long UpgradeSmartAccessGatewayRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long UpgradeSmartAccessGatewayRequest::getOwnerId()const
 void UpgradeSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long UpgradeSmartAccessGatewayRequest::getDataPlan()const
@@ -132,6 +132,6 @@ long UpgradeSmartAccessGatewayRequest::getDataPlan()const
 void UpgradeSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", dataPlan);
+	setCoreParameter("DataPlan", std::to_string(dataPlan));
 }
 

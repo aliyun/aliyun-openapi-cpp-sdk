@@ -33,7 +33,7 @@ long DescribeNetworkAclAttributesRequest::getResourceOwnerId()const
 void DescribeNetworkAclAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNetworkAclAttributesRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DescribeNetworkAclAttributesRequest::getClientToken()const
 void DescribeNetworkAclAttributesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long DescribeNetworkAclAttributesRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeNetworkAclAttributesRequest::getCallerParentId()const
 void DescribeNetworkAclAttributesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeNetworkAclAttributesRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeNetworkAclAttributesRequest::getProxy_original_source_ip()co
 void DescribeNetworkAclAttributesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeNetworkAclAttributesRequest::getCallerType()const
 void DescribeNetworkAclAttributesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeNetworkAclAttributesRequest::getOwnerIdLoginEmail()const
 void DescribeNetworkAclAttributesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeNetworkAclAttributesRequest::getAccessKeyId()const
 void DescribeNetworkAclAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeNetworkAclAttributesRequest::getRegionId()const
 void DescribeNetworkAclAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeNetworkAclAttributesRequest::getSecurityToken()const
 void DescribeNetworkAclAttributesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DescribeNetworkAclAttributesRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string DescribeNetworkAclAttributesRequest::getRequestContent()const
 void DescribeNetworkAclAttributesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeNetworkAclAttributesRequest::getCallerBidEmail()const
 void DescribeNetworkAclAttributesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getNetworkAclId()const
@@ -176,7 +176,7 @@ std::string DescribeNetworkAclAttributesRequest::getNetworkAclId()const
 void DescribeNetworkAclAttributesRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", std::to_string(networkAclId));
+	setCoreParameter("NetworkAclId", networkAclId);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeNetworkAclAttributesRequest::getCallerUidEmail()const
 void DescribeNetworkAclAttributesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeNetworkAclAttributesRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DescribeNetworkAclAttributesRequest::getCallerUid()const
 void DescribeNetworkAclAttributesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeNetworkAclAttributesRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeNetworkAclAttributesRequest::getApp_ip()const
 void DescribeNetworkAclAttributesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DescribeNetworkAclAttributesRequest::getResourceOwnerAccount()const
 void DescribeNetworkAclAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeNetworkAclAttributesRequest::getCallerBid()const
 void DescribeNetworkAclAttributesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeNetworkAclAttributesRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeNetworkAclAttributesRequest::getOwnerId()const
 void DescribeNetworkAclAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeNetworkAclAttributesRequest::getProxy_trust_transport_info()const
@@ -286,6 +286,6 @@ std::string DescribeNetworkAclAttributesRequest::getRequestId()const
 void DescribeNetworkAclAttributesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

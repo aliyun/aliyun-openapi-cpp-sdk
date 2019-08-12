@@ -33,7 +33,7 @@ std::string RemoveEntityMemberRequest::getRemoveType()const
 void RemoveEntityMemberRequest::setRemoveType(const std::string& removeType)
 {
 	removeType_ = removeType;
-	setCoreParameter("RemoveType", std::to_string(removeType));
+	setCoreParameter("RemoveType", removeType);
 }
 
 std::string RemoveEntityMemberRequest::getMember()const
@@ -44,7 +44,7 @@ std::string RemoveEntityMemberRequest::getMember()const
 void RemoveEntityMemberRequest::setMember(const std::string& member)
 {
 	member_ = member;
-	setCoreParameter("Member", std::to_string(member));
+	setCoreParameter("Member", member);
 }
 
 long RemoveEntityMemberRequest::getEntityId()const
@@ -55,6 +55,6 @@ long RemoveEntityMemberRequest::getEntityId()const
 void RemoveEntityMemberRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", entityId);
+	setCoreParameter("EntityId", std::to_string(entityId));
 }
 

@@ -33,7 +33,7 @@ long ModifyIpWhiteBaselineRequest::getResourceOwnerId()const
 void ModifyIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSrcIp()const
@@ -44,7 +44,7 @@ std::string ModifyIpWhiteBaselineRequest::getSrcIp()const
 void ModifyIpWhiteBaselineRequest::setSrcIp(const std::string& srcIp)
 {
 	srcIp_ = srcIp;
-	setCoreParameter("SrcIp", std::to_string(srcIp));
+	setCoreParameter("SrcIp", srcIp);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string ModifyIpWhiteBaselineRequest::getSourceIp()const
 void ModifyIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getRemark()const
@@ -66,7 +66,7 @@ std::string ModifyIpWhiteBaselineRequest::getRemark()const
 void ModifyIpWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 int ModifyIpWhiteBaselineRequest::getId()const
@@ -77,7 +77,7 @@ int ModifyIpWhiteBaselineRequest::getId()const
 void ModifyIpWhiteBaselineRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyIpWhiteBaselineRequest::getLang()const
@@ -88,7 +88,7 @@ std::string ModifyIpWhiteBaselineRequest::getLang()const
 void ModifyIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string ModifyIpWhiteBaselineRequest::getSourceCode()const
 void ModifyIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

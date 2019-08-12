@@ -44,7 +44,7 @@ std::string RegistFaceRequest::getRegionId()const
 void RegistFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool RegistFaceRequest::getIsQualityLimit()const
@@ -66,7 +66,7 @@ std::string RegistFaceRequest::getProject()const
 void RegistFaceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string RegistFaceRequest::getSrcUri()const
@@ -77,7 +77,7 @@ std::string RegistFaceRequest::getSrcUri()const
 void RegistFaceRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", std::to_string(srcUri));
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string RegistFaceRequest::getRegisterCheckLevel()const
@@ -88,7 +88,7 @@ std::string RegistFaceRequest::getRegisterCheckLevel()const
 void RegistFaceRequest::setRegisterCheckLevel(const std::string& registerCheckLevel)
 {
 	registerCheckLevel_ = registerCheckLevel;
-	setCoreParameter("RegisterCheckLevel", std::to_string(registerCheckLevel));
+	setCoreParameter("RegisterCheckLevel", registerCheckLevel);
 }
 
 std::string RegistFaceRequest::getGroupName()const
@@ -99,7 +99,7 @@ std::string RegistFaceRequest::getGroupName()const
 void RegistFaceRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string RegistFaceRequest::getUser()const
@@ -110,7 +110,7 @@ std::string RegistFaceRequest::getUser()const
 void RegistFaceRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", std::to_string(user));
+	setCoreParameter("User", user);
 }
 
 std::string RegistFaceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RegistFaceRequest::getAccessKeyId()const
 void RegistFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string SetRefererConfigRequest::getReferList()const
 void SetRefererConfigRequest::setReferList(const std::string& referList)
 {
 	referList_ = referList;
-	setCoreParameter("ReferList", std::to_string(referList));
+	setCoreParameter("ReferList", referList);
 }
 
 std::string SetRefererConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetRefererConfigRequest::getSecurityToken()const
 void SetRefererConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetRefererConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetRefererConfigRequest::getDomainName()const
 void SetRefererConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetRefererConfigRequest::getReferType()const
@@ -66,7 +66,7 @@ std::string SetRefererConfigRequest::getReferType()const
 void SetRefererConfigRequest::setReferType(const std::string& referType)
 {
 	referType_ = referType;
-	setCoreParameter("ReferType", std::to_string(referType));
+	setCoreParameter("ReferType", referType);
 }
 
 std::string SetRefererConfigRequest::getDisableAst()const
@@ -77,7 +77,7 @@ std::string SetRefererConfigRequest::getDisableAst()const
 void SetRefererConfigRequest::setDisableAst(const std::string& disableAst)
 {
 	disableAst_ = disableAst;
-	setCoreParameter("DisableAst", std::to_string(disableAst));
+	setCoreParameter("DisableAst", disableAst);
 }
 
 long SetRefererConfigRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SetRefererConfigRequest::getOwnerId()const
 void SetRefererConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetRefererConfigRequest::getAllowEmpty()const
@@ -99,6 +99,6 @@ std::string SetRefererConfigRequest::getAllowEmpty()const
 void SetRefererConfigRequest::setAllowEmpty(const std::string& allowEmpty)
 {
 	allowEmpty_ = allowEmpty;
-	setCoreParameter("AllowEmpty", std::to_string(allowEmpty));
+	setCoreParameter("AllowEmpty", allowEmpty);
 }
 

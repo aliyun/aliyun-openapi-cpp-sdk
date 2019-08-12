@@ -33,7 +33,7 @@ std::string CreatScreenSettingRequest::getSourceIp()const
 void CreatScreenSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreatScreenSettingRequest::getScreenTitle()const
@@ -44,7 +44,7 @@ std::string CreatScreenSettingRequest::getScreenTitle()const
 void CreatScreenSettingRequest::setScreenTitle(const std::string& screenTitle)
 {
 	screenTitle_ = screenTitle;
-	setCoreParameter("ScreenTitle", std::to_string(screenTitle));
+	setCoreParameter("ScreenTitle", screenTitle);
 }
 
 std::string CreatScreenSettingRequest::getScreenIdSetting()const
@@ -55,6 +55,6 @@ std::string CreatScreenSettingRequest::getScreenIdSetting()const
 void CreatScreenSettingRequest::setScreenIdSetting(const std::string& screenIdSetting)
 {
 	screenIdSetting_ = screenIdSetting;
-	setCoreParameter("ScreenIdSetting", std::to_string(screenIdSetting));
+	setCoreParameter("ScreenIdSetting", screenIdSetting);
 }
 

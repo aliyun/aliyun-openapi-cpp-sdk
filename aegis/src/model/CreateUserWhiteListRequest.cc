@@ -33,7 +33,7 @@ std::string CreateUserWhiteListRequest::getRiskIdList()const
 void CreateUserWhiteListRequest::setRiskIdList(const std::string& riskIdList)
 {
 	riskIdList_ = riskIdList;
-	setCoreParameter("RiskIdList", std::to_string(riskIdList));
+	setCoreParameter("RiskIdList", riskIdList);
 }
 
 std::string CreateUserWhiteListRequest::getReason()const
@@ -44,7 +44,7 @@ std::string CreateUserWhiteListRequest::getReason()const
 void CreateUserWhiteListRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", std::to_string(reason));
+	setCoreParameter("Reason", reason);
 }
 
 std::string CreateUserWhiteListRequest::getSourceIp()const
@@ -55,6 +55,6 @@ std::string CreateUserWhiteListRequest::getSourceIp()const
 void CreateUserWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

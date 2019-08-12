@@ -33,7 +33,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getAccess_key_id()const
 void ModifyLoadBalancerInternetSpecRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long ModifyLoadBalancerInternetSpecRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyLoadBalancerInternetSpecRequest::getResourceOwnerId()const
 void ModifyLoadBalancerInternetSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyLoadBalancerInternetSpecRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getResourceOwnerAccount()cons
 void ModifyLoadBalancerInternetSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ModifyLoadBalancerInternetSpecRequest::getBandwidth()const
@@ -77,7 +77,7 @@ int ModifyLoadBalancerInternetSpecRequest::getBandwidth()const
 void ModifyLoadBalancerInternetSpecRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getOwnerAccount()const
 void ModifyLoadBalancerInternetSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyLoadBalancerInternetSpecRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyLoadBalancerInternetSpecRequest::getOwnerId()const
 void ModifyLoadBalancerInternetSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getTags()const
@@ -110,7 +110,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getTags()const
 void ModifyLoadBalancerInternetSpecRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getLoadBalancerId()const
@@ -121,7 +121,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getLoadBalancerId()const
 void ModifyLoadBalancerInternetSpecRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getRegionId()const
 void ModifyLoadBalancerInternetSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyLoadBalancerInternetSpecRequest::getInternetChargeType()const
@@ -143,7 +143,7 @@ std::string ModifyLoadBalancerInternetSpecRequest::getInternetChargeType()const
 void ModifyLoadBalancerInternetSpecRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", std::to_string(internetChargeType));
+	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
 int ModifyLoadBalancerInternetSpecRequest::getRatio()const
@@ -154,6 +154,6 @@ int ModifyLoadBalancerInternetSpecRequest::getRatio()const
 void ModifyLoadBalancerInternetSpecRequest::setRatio(int ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", ratio);
+	setCoreParameter("Ratio", std::to_string(ratio));
 }
 

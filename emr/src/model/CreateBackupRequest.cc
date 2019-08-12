@@ -33,7 +33,7 @@ std::string CreateBackupRequest::getApp_ip()const
 void CreateBackupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long CreateBackupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateBackupRequest::getResourceOwnerId()const
 void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateBackupRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long CreateBackupRequest::getCallerParentId()const
 void CreateBackupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateBackupRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string CreateBackupRequest::getBackupPlanId()const
 void CreateBackupRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
+	setCoreParameter("BackupPlanId", backupPlanId);
 }
 
 std::string CreateBackupRequest::getCallerBid()const
@@ -88,7 +88,7 @@ std::string CreateBackupRequest::getCallerBid()const
 void CreateBackupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string CreateBackupRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string CreateBackupRequest::getProxy_original_source_ip()const
 void CreateBackupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateBackupRequest::getMetadataType()const
@@ -110,7 +110,7 @@ std::string CreateBackupRequest::getMetadataType()const
 void CreateBackupRequest::setMetadataType(const std::string& metadataType)
 {
 	metadataType_ = metadataType;
-	setCoreParameter("MetadataType", std::to_string(metadataType));
+	setCoreParameter("MetadataType", metadataType);
 }
 
 bool CreateBackupRequest::getAk_mfa_present()const
@@ -143,7 +143,7 @@ std::string CreateBackupRequest::getCallerType()const
 void CreateBackupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateBackupRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CreateBackupRequest::getAccessKeyId()const
 void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool CreateBackupRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ std::string CreateBackupRequest::getSecurityToken()const
 void CreateBackupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateBackupRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string CreateBackupRequest::getRegionId()const
 void CreateBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateBackupRequest::getRequestId()const
@@ -198,7 +198,7 @@ std::string CreateBackupRequest::getRequestId()const
 void CreateBackupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long CreateBackupRequest::getCallerUid()const
@@ -209,6 +209,6 @@ long CreateBackupRequest::getCallerUid()const
 void CreateBackupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

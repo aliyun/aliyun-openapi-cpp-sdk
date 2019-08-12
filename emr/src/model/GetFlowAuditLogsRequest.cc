@@ -33,7 +33,7 @@ long GetFlowAuditLogsRequest::getResourceOwnerId()const
 void GetFlowAuditLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int GetFlowAuditLogsRequest::getPageCount()const
@@ -44,7 +44,7 @@ int GetFlowAuditLogsRequest::getPageCount()const
 void GetFlowAuditLogsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", pageCount);
+	setCoreParameter("PageCount", std::to_string(pageCount));
 }
 
 std::string GetFlowAuditLogsRequest::getOrderMode()const
@@ -55,7 +55,7 @@ std::string GetFlowAuditLogsRequest::getOrderMode()const
 void GetFlowAuditLogsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setCoreParameter("OrderMode", std::to_string(orderMode));
+	setCoreParameter("OrderMode", orderMode);
 }
 
 long GetFlowAuditLogsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long GetFlowAuditLogsRequest::getCallerParentId()const
 void GetFlowAuditLogsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool GetFlowAuditLogsRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ std::string GetFlowAuditLogsRequest::getEntityId()const
 void GetFlowAuditLogsRequest::setEntityId(const std::string& entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setCoreParameter("EntityId", entityId);
 }
 
 std::string GetFlowAuditLogsRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string GetFlowAuditLogsRequest::getProxy_original_source_ip()const
 void GetFlowAuditLogsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string GetFlowAuditLogsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string GetFlowAuditLogsRequest::getCallerType()const
 void GetFlowAuditLogsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 int GetFlowAuditLogsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int GetFlowAuditLogsRequest::getPageNumber()const
 void GetFlowAuditLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetFlowAuditLogsRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string GetFlowAuditLogsRequest::getAccessKeyId()const
 void GetFlowAuditLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetFlowAuditLogsRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string GetFlowAuditLogsRequest::getSecurityToken()const
 void GetFlowAuditLogsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string GetFlowAuditLogsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string GetFlowAuditLogsRequest::getRegionId()const
 void GetFlowAuditLogsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetFlowAuditLogsRequest::getLimit()const
@@ -165,7 +165,7 @@ int GetFlowAuditLogsRequest::getLimit()const
 void GetFlowAuditLogsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 int GetFlowAuditLogsRequest::getPageSize()const
@@ -176,7 +176,7 @@ int GetFlowAuditLogsRequest::getPageSize()const
 void GetFlowAuditLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetFlowAuditLogsRequest::getCurrentSize()const
@@ -187,7 +187,7 @@ int GetFlowAuditLogsRequest::getCurrentSize()const
 void GetFlowAuditLogsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", currentSize);
+	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
 long GetFlowAuditLogsRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long GetFlowAuditLogsRequest::getCallerUid()const
 void GetFlowAuditLogsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetFlowAuditLogsRequest::getOrderField()const
@@ -209,7 +209,7 @@ std::string GetFlowAuditLogsRequest::getOrderField()const
 void GetFlowAuditLogsRequest::setOrderField(const std::string& orderField)
 {
 	orderField_ = orderField;
-	setCoreParameter("OrderField", std::to_string(orderField));
+	setCoreParameter("OrderField", orderField);
 }
 
 std::string GetFlowAuditLogsRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string GetFlowAuditLogsRequest::getApp_ip()const
 void GetFlowAuditLogsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string GetFlowAuditLogsRequest::getEntityGroupId()const
@@ -231,7 +231,7 @@ std::string GetFlowAuditLogsRequest::getEntityGroupId()const
 void GetFlowAuditLogsRequest::setEntityGroupId(const std::string& entityGroupId)
 {
 	entityGroupId_ = entityGroupId;
-	setCoreParameter("EntityGroupId", std::to_string(entityGroupId));
+	setCoreParameter("EntityGroupId", entityGroupId);
 }
 
 std::string GetFlowAuditLogsRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string GetFlowAuditLogsRequest::getCallerBid()const
 void GetFlowAuditLogsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 bool GetFlowAuditLogsRequest::getAk_mfa_present()const
@@ -286,7 +286,7 @@ std::string GetFlowAuditLogsRequest::getEntityType()const
 void GetFlowAuditLogsRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", std::to_string(entityType));
+	setCoreParameter("EntityType", entityType);
 }
 
 std::string GetFlowAuditLogsRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string GetFlowAuditLogsRequest::getRequestId()const
 void GetFlowAuditLogsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string GetFlowAuditLogsRequest::getOperatorId()const
@@ -308,7 +308,7 @@ std::string GetFlowAuditLogsRequest::getOperatorId()const
 void GetFlowAuditLogsRequest::setOperatorId(const std::string& operatorId)
 {
 	operatorId_ = operatorId;
-	setCoreParameter("OperatorId", std::to_string(operatorId));
+	setCoreParameter("OperatorId", operatorId);
 }
 
 std::string GetFlowAuditLogsRequest::getOperation()const
@@ -319,7 +319,7 @@ std::string GetFlowAuditLogsRequest::getOperation()const
 void GetFlowAuditLogsRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 
 std::string GetFlowAuditLogsRequest::getStatus()const
@@ -330,6 +330,6 @@ std::string GetFlowAuditLogsRequest::getStatus()const
 void GetFlowAuditLogsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

@@ -33,7 +33,7 @@ int ListUpgradeImgRequest::getLength()const
 void ListUpgradeImgRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListUpgradeImgRequest::getPageIndex()const
@@ -44,7 +44,7 @@ int ListUpgradeImgRequest::getPageIndex()const
 void ListUpgradeImgRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListUpgradeImgRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListUpgradeImgRequest::getAccessKeyId()const
 void ListUpgradeImgRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

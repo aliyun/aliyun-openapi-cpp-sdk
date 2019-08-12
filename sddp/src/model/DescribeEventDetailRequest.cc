@@ -33,7 +33,7 @@ std::string DescribeEventDetailRequest::getSourceIp()const
 void DescribeEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeEventDetailRequest::getFeatureType()const
@@ -44,7 +44,7 @@ long DescribeEventDetailRequest::getFeatureType()const
 void DescribeEventDetailRequest::setFeatureType(long featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 long DescribeEventDetailRequest::getId()const
@@ -55,7 +55,7 @@ long DescribeEventDetailRequest::getId()const
 void DescribeEventDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeEventDetailRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeEventDetailRequest::getLang()const
 void DescribeEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

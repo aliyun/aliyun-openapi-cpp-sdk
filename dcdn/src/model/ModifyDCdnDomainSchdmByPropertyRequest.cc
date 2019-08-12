@@ -33,7 +33,7 @@ long ModifyDCdnDomainSchdmByPropertyRequest::getResourceOwnerId()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyDCdnDomainSchdmByPropertyRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyDCdnDomainSchdmByPropertyRequest::getCallerParentId()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyDCdnDomainSchdmByPropertyRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getProxy_original_source_ip(
 void ModifyDCdnDomainSchdmByPropertyRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getOwnerIdLoginEmail()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerType()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getAccessKeyId()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getSecurityToken()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getRequestContent()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getProperty()const
@@ -132,7 +132,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getProperty()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setProperty(const std::string& property)
 {
 	property_ = property;
-	setCoreParameter("Property", std::to_string(property));
+	setCoreParameter("Property", property);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerBidEmail()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerUidEmail()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyDCdnDomainSchdmByPropertyRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long ModifyDCdnDomainSchdmByPropertyRequest::getCallerUid()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getApp_ip()const
@@ -176,7 +176,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getApp_ip()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getPopProduct()const
@@ -187,7 +187,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getPopProduct()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getDomainName()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getCallerBid()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyDCdnDomainSchdmByPropertyRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long ModifyDCdnDomainSchdmByPropertyRequest::getOwnerId()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getVersion()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool ModifyDCdnDomainSchdmByPropertyRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getServiceCode()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string ModifyDCdnDomainSchdmByPropertyRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string ModifyDCdnDomainSchdmByPropertyRequest::getRequestId()const
 void ModifyDCdnDomainSchdmByPropertyRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

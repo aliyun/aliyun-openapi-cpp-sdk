@@ -33,7 +33,7 @@ std::string DescribeCertificateStatusCountRequest::getResourceGroupId()const
 void DescribeCertificateStatusCountRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCertificateStatusCountRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCertificateStatusCountRequest::getSourceIp()const
 void DescribeCertificateStatusCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCertificateStatusCountRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCertificateStatusCountRequest::getRegionId()const
 void DescribeCertificateStatusCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<DescribeCertificateStatusCountRequest::Tag> DescribeCertificateStatusCountRequest::getTag()const
@@ -70,8 +70,8 @@ void DescribeCertificateStatusCountRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -83,6 +83,6 @@ std::string DescribeCertificateStatusCountRequest::getLang()const
 void DescribeCertificateStatusCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

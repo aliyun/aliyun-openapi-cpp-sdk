@@ -33,7 +33,7 @@ std::string DescribeCheckWarningCountRequest::getSourceIp()const
 void DescribeCheckWarningCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCheckWarningCountRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeCheckWarningCountRequest::getLang()const
 void DescribeCheckWarningCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeCheckWarningCountRequest::getRiskId()const
@@ -55,7 +55,7 @@ long DescribeCheckWarningCountRequest::getRiskId()const
 void DescribeCheckWarningCountRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", riskId);
+	setCoreParameter("RiskId", std::to_string(riskId));
 }
 
 long DescribeCheckWarningCountRequest::getCheckId()const
@@ -66,7 +66,7 @@ long DescribeCheckWarningCountRequest::getCheckId()const
 void DescribeCheckWarningCountRequest::setCheckId(long checkId)
 {
 	checkId_ = checkId;
-	setCoreParameter("CheckId", checkId);
+	setCoreParameter("CheckId", std::to_string(checkId));
 }
 
 int DescribeCheckWarningCountRequest::getStatus()const
@@ -77,6 +77,6 @@ int DescribeCheckWarningCountRequest::getStatus()const
 void DescribeCheckWarningCountRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeCaptchaIpCityRequest::getSourceIp()const
 void DescribeCaptchaIpCityRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaIpCityRequest::getConfigName()const
@@ -44,7 +44,7 @@ std::string DescribeCaptchaIpCityRequest::getConfigName()const
 void DescribeCaptchaIpCityRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", std::to_string(configName));
+	setCoreParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaIpCityRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string DescribeCaptchaIpCityRequest::getRefExtId()const
 void DescribeCaptchaIpCityRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", std::to_string(refExtId));
+	setCoreParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaIpCityRequest::getTime()const
@@ -66,7 +66,7 @@ std::string DescribeCaptchaIpCityRequest::getTime()const
 void DescribeCaptchaIpCityRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", std::to_string(time));
+	setCoreParameter("Time", time);
 }
 
 std::string DescribeCaptchaIpCityRequest::getType()const
@@ -77,6 +77,6 @@ std::string DescribeCaptchaIpCityRequest::getType()const
 void DescribeCaptchaIpCityRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

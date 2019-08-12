@@ -33,7 +33,7 @@ std::string MoPenSendMqttMessageRequest::getPayload()const
 void MoPenSendMqttMessageRequest::setPayload(const std::string& payload)
 {
 	payload_ = payload;
-	setCoreParameter("Payload", std::to_string(payload));
+	setCoreParameter("Payload", payload);
 }
 
 std::string MoPenSendMqttMessageRequest::getDeviceName()const
@@ -44,6 +44,6 @@ std::string MoPenSendMqttMessageRequest::getDeviceName()const
 void MoPenSendMqttMessageRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 

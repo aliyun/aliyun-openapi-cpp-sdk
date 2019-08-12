@@ -33,7 +33,7 @@ long DescribeFaceGroupsRequest::getResourceOwnerId()const
 void DescribeFaceGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeFaceGroupsRequest::getNextPageToken()const
@@ -44,7 +44,7 @@ std::string DescribeFaceGroupsRequest::getNextPageToken()const
 void DescribeFaceGroupsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
+	setCoreParameter("NextPageToken", nextPageToken);
 }
 
 long DescribeFaceGroupsRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeFaceGroupsRequest::getCallerParentId()const
 void DescribeFaceGroupsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeFaceGroupsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeFaceGroupsRequest::getProxy_original_source_ip()const
 void DescribeFaceGroupsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeFaceGroupsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeFaceGroupsRequest::getOwnerIdLoginEmail()const
 void DescribeFaceGroupsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeFaceGroupsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeFaceGroupsRequest::getCallerType()const
 void DescribeFaceGroupsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeFaceGroupsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeFaceGroupsRequest::getAccessKeyId()const
 void DescribeFaceGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeFaceGroupsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeFaceGroupsRequest::getSecurityToken()const
 void DescribeFaceGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeFaceGroupsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeFaceGroupsRequest::getRegionId()const
 void DescribeFaceGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFaceGroupsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeFaceGroupsRequest::getRequestContent()const
 void DescribeFaceGroupsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeFaceGroupsRequest::getPageSize()const
@@ -154,7 +154,7 @@ long DescribeFaceGroupsRequest::getPageSize()const
 void DescribeFaceGroupsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeFaceGroupsRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeFaceGroupsRequest::getCallerBidEmail()const
 void DescribeFaceGroupsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeFaceGroupsRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeFaceGroupsRequest::getCallerUidEmail()const
 void DescribeFaceGroupsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeFaceGroupsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeFaceGroupsRequest::getCallerUid()const
 void DescribeFaceGroupsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeFaceGroupsRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string DescribeFaceGroupsRequest::getShowLog()const
 void DescribeFaceGroupsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeFaceGroupsRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeFaceGroupsRequest::getApp_ip()const
 void DescribeFaceGroupsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeFaceGroupsRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeFaceGroupsRequest::getPopProduct()const
 void DescribeFaceGroupsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DescribeFaceGroupsRequest::getCurrentPage()const
@@ -231,7 +231,7 @@ long DescribeFaceGroupsRequest::getCurrentPage()const
 void DescribeFaceGroupsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeFaceGroupsRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeFaceGroupsRequest::getCallerBid()const
 void DescribeFaceGroupsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeFaceGroupsRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeFaceGroupsRequest::getOwnerId()const
 void DescribeFaceGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeFaceGroupsRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeFaceGroupsRequest::getVersion()const
 void DescribeFaceGroupsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeFaceGroupsRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeFaceGroupsRequest::getServiceCode()const
 void DescribeFaceGroupsRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeFaceGroupsRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string DescribeFaceGroupsRequest::getRequestId()const
 void DescribeFaceGroupsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

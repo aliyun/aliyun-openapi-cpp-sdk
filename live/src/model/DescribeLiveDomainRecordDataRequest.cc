@@ -33,7 +33,7 @@ std::string DescribeLiveDomainRecordDataRequest::getRegionId()const
 void DescribeLiveDomainRecordDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
 void DescribeLiveDomainRecordDataRequest::setRecordType(const std::string& recordType)
 {
 	recordType_ = recordType;
-	setCoreParameter("RecordType", std::to_string(recordType));
+	setCoreParameter("RecordType", recordType);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
 void DescribeLiveDomainRecordDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
 void DescribeLiveDomainRecordDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainRecordDataRequest::getStartTime()const
 void DescribeLiveDomainRecordDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeLiveDomainRecordDataRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeLiveDomainRecordDataRequest::getOwnerId()const
 void DescribeLiveDomainRecordDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

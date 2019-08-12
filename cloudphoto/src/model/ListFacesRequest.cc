@@ -33,7 +33,7 @@ std::string ListFacesRequest::getCursor()const
 void ListFacesRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 std::string ListFacesRequest::getHasFaceName()const
@@ -44,7 +44,7 @@ std::string ListFacesRequest::getHasFaceName()const
 void ListFacesRequest::setHasFaceName(const std::string& hasFaceName)
 {
 	hasFaceName_ = hasFaceName;
-	setCoreParameter("HasFaceName", std::to_string(hasFaceName));
+	setCoreParameter("HasFaceName", hasFaceName);
 }
 
 int ListFacesRequest::getSize()const
@@ -55,7 +55,7 @@ int ListFacesRequest::getSize()const
 void ListFacesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListFacesRequest::getLibraryId()const
@@ -66,7 +66,7 @@ std::string ListFacesRequest::getLibraryId()const
 void ListFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListFacesRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string ListFacesRequest::getStoreName()const
 void ListFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListFacesRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListFacesRequest::getState()const
 void ListFacesRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListFacesRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListFacesRequest::getDirection()const
 void ListFacesRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

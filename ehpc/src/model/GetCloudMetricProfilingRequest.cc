@@ -33,7 +33,7 @@ std::string GetCloudMetricProfilingRequest::getRegionId()const
 void GetCloudMetricProfilingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetCloudMetricProfilingRequest::getProfilingId()const
@@ -44,7 +44,7 @@ std::string GetCloudMetricProfilingRequest::getProfilingId()const
 void GetCloudMetricProfilingRequest::setProfilingId(const std::string& profilingId)
 {
 	profilingId_ = profilingId;
-	setCoreParameter("ProfilingId", std::to_string(profilingId));
+	setCoreParameter("ProfilingId", profilingId);
 }
 
 std::string GetCloudMetricProfilingRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string GetCloudMetricProfilingRequest::getClusterId()const
 void GetCloudMetricProfilingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetCloudMetricProfilingRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetCloudMetricProfilingRequest::getAccessKeyId()const
 void GetCloudMetricProfilingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

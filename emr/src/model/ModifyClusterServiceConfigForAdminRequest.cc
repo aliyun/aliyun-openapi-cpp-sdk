@@ -44,7 +44,7 @@ long ModifyClusterServiceConfigForAdminRequest::getResourceOwnerId()const
 void ModifyClusterServiceConfigForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getConfigType()const
@@ -55,7 +55,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getConfigType()const
 void ModifyClusterServiceConfigForAdminRequest::setConfigType(const std::string& configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", std::to_string(configType));
+	setCoreParameter("ConfigType", configType);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getHostInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getHostInstanceId()const
 void ModifyClusterServiceConfigForAdminRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setCoreParameter("HostInstanceId", std::to_string(hostInstanceId));
+	setCoreParameter("HostInstanceId", hostInstanceId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getAuthor()const
@@ -77,7 +77,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getAuthor()const
 void ModifyClusterServiceConfigForAdminRequest::setAuthor(const std::string& author)
 {
 	author_ = author;
-	setCoreParameter("Author", std::to_string(author));
+	setCoreParameter("Author", author);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getGroupId()const
@@ -88,7 +88,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getGroupId()const
 void ModifyClusterServiceConfigForAdminRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getClusterId()const
 void ModifyClusterServiceConfigForAdminRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getUserId()const
@@ -110,7 +110,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getUserId()const
 void ModifyClusterServiceConfigForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getAccessKeyId()const
 void ModifyClusterServiceConfigForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getCustomConfigParams()const
@@ -132,7 +132,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getCustomConfigParams()co
 void ModifyClusterServiceConfigForAdminRequest::setCustomConfigParams(const std::string& customConfigParams)
 {
 	customConfigParams_ = customConfigParams;
-	setCoreParameter("CustomConfigParams", std::to_string(customConfigParams));
+	setCoreParameter("CustomConfigParams", customConfigParams);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getRegionId()const
 void ModifyClusterServiceConfigForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getServiceName()const
@@ -154,7 +154,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getServiceName()const
 void ModifyClusterServiceConfigForAdminRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getComment()const
@@ -165,7 +165,7 @@ std::string ModifyClusterServiceConfigForAdminRequest::getComment()const
 void ModifyClusterServiceConfigForAdminRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", std::to_string(comment));
+	setCoreParameter("Comment", comment);
 }
 
 std::vector<std::string> ModifyClusterServiceConfigForAdminRequest::getGatewayClusterIdList()const
@@ -177,7 +177,7 @@ void ModifyClusterServiceConfigForAdminRequest::setGatewayClusterIdList(const st
 {
 	gatewayClusterIdList_ = gatewayClusterIdList;
 	for(int i = 0; i!= gatewayClusterIdList.size(); i++)
-		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), std::to_string(gatewayClusterIdList.at(i)));
+		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), gatewayClusterIdList.at(i));
 }
 
 std::string ModifyClusterServiceConfigForAdminRequest::getConfigParams()const
@@ -188,6 +188,6 @@ std::string ModifyClusterServiceConfigForAdminRequest::getConfigParams()const
 void ModifyClusterServiceConfigForAdminRequest::setConfigParams(const std::string& configParams)
 {
 	configParams_ = configParams;
-	setCoreParameter("ConfigParams", std::to_string(configParams));
+	setCoreParameter("ConfigParams", configParams);
 }
 

@@ -37,10 +37,10 @@ void BatchUpdateDeviceNicknameRequest::setDeviceNicknameInfo(const std::vector<D
 	for(int i = 0; i!= deviceNicknameInfo.size(); i++)	{
 		auto obj = deviceNicknameInfo.at(i);
 		std::string str ="DeviceNicknameInfo."+ std::to_string(i);
-		setCoreParameter(str + ".IotId", std::to_string(obj.iotId));
-		setCoreParameter(str + ".Nickname", std::to_string(obj.nickname));
-		setCoreParameter(str + ".DeviceName", std::to_string(obj.deviceName));
-		setCoreParameter(str + ".ProductKey", std::to_string(obj.productKey));
+		setCoreParameter(str + ".IotId", obj.iotId);
+		setCoreParameter(str + ".Nickname", obj.nickname);
+		setCoreParameter(str + ".DeviceName", obj.deviceName);
+		setCoreParameter(str + ".ProductKey", obj.productKey);
 	}
 }
 
@@ -52,7 +52,7 @@ std::string BatchUpdateDeviceNicknameRequest::getIotInstanceId()const
 void BatchUpdateDeviceNicknameRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string BatchUpdateDeviceNicknameRequest::getAccessKeyId()const
@@ -63,6 +63,6 @@ std::string BatchUpdateDeviceNicknameRequest::getAccessKeyId()const
 void BatchUpdateDeviceNicknameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

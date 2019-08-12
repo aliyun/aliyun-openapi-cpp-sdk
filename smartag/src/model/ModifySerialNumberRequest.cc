@@ -33,7 +33,7 @@ long ModifySerialNumberRequest::getResourceOwnerId()const
 void ModifySerialNumberRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySerialNumberRequest::getSerialNumber()const
@@ -44,7 +44,7 @@ std::string ModifySerialNumberRequest::getSerialNumber()const
 void ModifySerialNumberRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", std::to_string(serialNumber));
+	setCoreParameter("SerialNumber", serialNumber);
 }
 
 std::string ModifySerialNumberRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifySerialNumberRequest::getResourceOwnerAccount()const
 void ModifySerialNumberRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySerialNumberRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifySerialNumberRequest::getRegionId()const
 void ModifySerialNumberRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifySerialNumberRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifySerialNumberRequest::getOwnerAccount()const
 void ModifySerialNumberRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySerialNumberRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string ModifySerialNumberRequest::getSmartAGId()const
 void ModifySerialNumberRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long ModifySerialNumberRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long ModifySerialNumberRequest::getOwnerId()const
 void ModifySerialNumberRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

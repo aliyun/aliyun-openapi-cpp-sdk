@@ -33,6 +33,6 @@ std::string BatchGetJobMetricInfoRequest::getJobInfos()const
 void BatchGetJobMetricInfoRequest::setJobInfos(const std::string& jobInfos)
 {
 	jobInfos_ = jobInfos;
-	setCoreParameter("JobInfos", std::to_string(jobInfos));
+	setCoreParameter("JobInfos", jobInfos);
 }
 

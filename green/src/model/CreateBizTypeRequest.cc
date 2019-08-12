@@ -33,7 +33,7 @@ std::string CreateBizTypeRequest::getSourceIp()const
 void CreateBizTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateBizTypeRequest::getIndustryInfo()const
@@ -44,7 +44,7 @@ std::string CreateBizTypeRequest::getIndustryInfo()const
 void CreateBizTypeRequest::setIndustryInfo(const std::string& industryInfo)
 {
 	industryInfo_ = industryInfo;
-	setCoreParameter("IndustryInfo", std::to_string(industryInfo));
+	setCoreParameter("IndustryInfo", industryInfo);
 }
 
 std::string CreateBizTypeRequest::getBizTypeName()const
@@ -55,7 +55,7 @@ std::string CreateBizTypeRequest::getBizTypeName()const
 void CreateBizTypeRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", std::to_string(bizTypeName));
+	setCoreParameter("BizTypeName", bizTypeName);
 }
 
 std::string CreateBizTypeRequest::getBizTypeImport()const
@@ -66,6 +66,6 @@ std::string CreateBizTypeRequest::getBizTypeImport()const
 void CreateBizTypeRequest::setBizTypeImport(const std::string& bizTypeImport)
 {
 	bizTypeImport_ = bizTypeImport;
-	setCoreParameter("BizTypeImport", std::to_string(bizTypeImport));
+	setCoreParameter("BizTypeImport", bizTypeImport);
 }
 

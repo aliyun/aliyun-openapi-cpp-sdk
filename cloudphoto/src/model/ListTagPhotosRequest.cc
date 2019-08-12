@@ -33,7 +33,7 @@ std::string ListTagPhotosRequest::getCursor()const
 void ListTagPhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListTagPhotosRequest::getSize()const
@@ -44,7 +44,7 @@ int ListTagPhotosRequest::getSize()const
 void ListTagPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 long ListTagPhotosRequest::getTagId()const
@@ -55,7 +55,7 @@ long ListTagPhotosRequest::getTagId()const
 void ListTagPhotosRequest::setTagId(long tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", tagId);
+	setCoreParameter("TagId", std::to_string(tagId));
 }
 
 std::string ListTagPhotosRequest::getLibraryId()const
@@ -66,7 +66,7 @@ std::string ListTagPhotosRequest::getLibraryId()const
 void ListTagPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListTagPhotosRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string ListTagPhotosRequest::getStoreName()const
 void ListTagPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListTagPhotosRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListTagPhotosRequest::getState()const
 void ListTagPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListTagPhotosRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListTagPhotosRequest::getDirection()const
 void ListTagPhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

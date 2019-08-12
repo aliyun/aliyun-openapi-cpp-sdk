@@ -33,7 +33,7 @@ long DescribeVpcAttributeRequest::getResourceOwnerId()const
 void DescribeVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeVpcAttributeRequest::getDryRun()const
@@ -55,7 +55,7 @@ std::string DescribeVpcAttributeRequest::getResourceOwnerAccount()const
 void DescribeVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpcAttributeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpcAttributeRequest::getRegionId()const
 void DescribeVpcAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpcAttributeRequest::getVpcId()const
@@ -77,7 +77,7 @@ std::string DescribeVpcAttributeRequest::getVpcId()const
 void DescribeVpcAttributeRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeVpcAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVpcAttributeRequest::getOwnerAccount()const
 void DescribeVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DescribeVpcAttributeRequest::getIsDefault()const
@@ -110,6 +110,6 @@ long DescribeVpcAttributeRequest::getOwnerId()const
 void DescribeVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

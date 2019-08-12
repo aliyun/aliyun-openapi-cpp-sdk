@@ -33,7 +33,7 @@ std::string CreatePhysicalConnectionRequest::getAccessPointId()const
 void CreatePhysicalConnectionRequest::setAccessPointId(const std::string& accessPointId)
 {
 	accessPointId_ = accessPointId;
-	setCoreParameter("AccessPointId", std::to_string(accessPointId));
+	setCoreParameter("AccessPointId", accessPointId);
 }
 
 std::string CreatePhysicalConnectionRequest::getRedundantPhysicalConnectionId()const
@@ -44,7 +44,7 @@ std::string CreatePhysicalConnectionRequest::getRedundantPhysicalConnectionId()c
 void CreatePhysicalConnectionRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
 {
 	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
-	setCoreParameter("RedundantPhysicalConnectionId", std::to_string(redundantPhysicalConnectionId));
+	setCoreParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
 }
 
 std::string CreatePhysicalConnectionRequest::getPeerLocation()const
@@ -55,7 +55,7 @@ std::string CreatePhysicalConnectionRequest::getPeerLocation()const
 void CreatePhysicalConnectionRequest::setPeerLocation(const std::string& peerLocation)
 {
 	peerLocation_ = peerLocation;
-	setCoreParameter("PeerLocation", std::to_string(peerLocation));
+	setCoreParameter("PeerLocation", peerLocation);
 }
 
 long CreatePhysicalConnectionRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long CreatePhysicalConnectionRequest::getResourceOwnerId()const
 void CreatePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreatePhysicalConnectionRequest::getPortType()const
@@ -77,7 +77,7 @@ std::string CreatePhysicalConnectionRequest::getPortType()const
 void CreatePhysicalConnectionRequest::setPortType(const std::string& portType)
 {
 	portType_ = portType;
-	setCoreParameter("PortType", std::to_string(portType));
+	setCoreParameter("PortType", portType);
 }
 
 std::string CreatePhysicalConnectionRequest::getCircuitCode()const
@@ -88,7 +88,7 @@ std::string CreatePhysicalConnectionRequest::getCircuitCode()const
 void CreatePhysicalConnectionRequest::setCircuitCode(const std::string& circuitCode)
 {
 	circuitCode_ = circuitCode;
-	setCoreParameter("CircuitCode", std::to_string(circuitCode));
+	setCoreParameter("CircuitCode", circuitCode);
 }
 
 int CreatePhysicalConnectionRequest::getBandwidth()const
@@ -99,7 +99,7 @@ int CreatePhysicalConnectionRequest::getBandwidth()const
 void CreatePhysicalConnectionRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string CreatePhysicalConnectionRequest::getClientToken()const
@@ -110,7 +110,7 @@ std::string CreatePhysicalConnectionRequest::getClientToken()const
 void CreatePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreatePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -121,7 +121,7 @@ std::string CreatePhysicalConnectionRequest::getResourceOwnerAccount()const
 void CreatePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreatePhysicalConnectionRequest::getOwnerAccount()const
@@ -132,7 +132,7 @@ std::string CreatePhysicalConnectionRequest::getOwnerAccount()const
 void CreatePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreatePhysicalConnectionRequest::getDescription()const
@@ -143,7 +143,7 @@ std::string CreatePhysicalConnectionRequest::getDescription()const
 void CreatePhysicalConnectionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreatePhysicalConnectionRequest::getType()const
@@ -154,7 +154,7 @@ std::string CreatePhysicalConnectionRequest::getType()const
 void CreatePhysicalConnectionRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 long CreatePhysicalConnectionRequest::getOwnerId()const
@@ -165,7 +165,7 @@ long CreatePhysicalConnectionRequest::getOwnerId()const
 void CreatePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreatePhysicalConnectionRequest::getLineOperator()const
@@ -176,7 +176,7 @@ std::string CreatePhysicalConnectionRequest::getLineOperator()const
 void CreatePhysicalConnectionRequest::setLineOperator(const std::string& lineOperator)
 {
 	lineOperator_ = lineOperator;
-	setCoreParameter("LineOperator", std::to_string(lineOperator));
+	setCoreParameter("LineOperator", lineOperator);
 }
 
 std::string CreatePhysicalConnectionRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string CreatePhysicalConnectionRequest::getRegionId()const
 void CreatePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreatePhysicalConnectionRequest::getName()const
@@ -198,6 +198,6 @@ std::string CreatePhysicalConnectionRequest::getName()const
 void CreatePhysicalConnectionRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

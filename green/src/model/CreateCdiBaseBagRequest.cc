@@ -33,7 +33,7 @@ int CreateCdiBaseBagRequest::getDuration()const
 void CreateCdiBaseBagRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateCdiBaseBagRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string CreateCdiBaseBagRequest::getClientToken()const
 void CreateCdiBaseBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateCdiBaseBagRequest::getCommodityCode()const
@@ -55,7 +55,7 @@ std::string CreateCdiBaseBagRequest::getCommodityCode()const
 void CreateCdiBaseBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", std::to_string(commodityCode));
+	setCoreParameter("CommodityCode", commodityCode);
 }
 
 long CreateCdiBaseBagRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long CreateCdiBaseBagRequest::getOwnerId()const
 void CreateCdiBaseBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateCdiBaseBagRequest::getFlowOutSpec()const
@@ -77,7 +77,7 @@ int CreateCdiBaseBagRequest::getFlowOutSpec()const
 void CreateCdiBaseBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", flowOutSpec);
+	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
 }
 
 std::string CreateCdiBaseBagRequest::getOrderType()const
@@ -88,6 +88,6 @@ std::string CreateCdiBaseBagRequest::getOrderType()const
 void CreateCdiBaseBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

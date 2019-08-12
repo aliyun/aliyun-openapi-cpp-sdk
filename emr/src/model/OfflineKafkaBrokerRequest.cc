@@ -33,7 +33,7 @@ long OfflineKafkaBrokerRequest::getThrottle()const
 void OfflineKafkaBrokerRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", throttle);
+	setCoreParameter("Throttle", std::to_string(throttle));
 }
 
 long OfflineKafkaBrokerRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long OfflineKafkaBrokerRequest::getResourceOwnerId()const
 void OfflineKafkaBrokerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string OfflineKafkaBrokerRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string OfflineKafkaBrokerRequest::getRegionId()const
 void OfflineKafkaBrokerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string OfflineKafkaBrokerRequest::getHostId()const
@@ -66,7 +66,7 @@ std::string OfflineKafkaBrokerRequest::getHostId()const
 void OfflineKafkaBrokerRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", std::to_string(hostId));
+	setCoreParameter("HostId", hostId);
 }
 
 std::string OfflineKafkaBrokerRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string OfflineKafkaBrokerRequest::getClusterId()const
 void OfflineKafkaBrokerRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string OfflineKafkaBrokerRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string OfflineKafkaBrokerRequest::getAccessKeyId()const
 void OfflineKafkaBrokerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

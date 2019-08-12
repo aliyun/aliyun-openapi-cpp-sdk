@@ -33,7 +33,7 @@ long DeleteVpnRouteEntryRequest::getResourceOwnerId()const
 void DeleteVpnRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVpnRouteEntryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteVpnRouteEntryRequest::getResourceOwnerAccount()const
 void DeleteVpnRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpnRouteEntryRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteVpnRouteEntryRequest::getRegionId()const
 void DeleteVpnRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteVpnRouteEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteVpnRouteEntryRequest::getClientToken()const
 void DeleteVpnRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteVpnRouteEntryRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteVpnRouteEntryRequest::getOwnerAccount()const
 void DeleteVpnRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DeleteVpnRouteEntryRequest::getWeight()const
@@ -88,7 +88,7 @@ int DeleteVpnRouteEntryRequest::getWeight()const
 void DeleteVpnRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", weight);
+	setCoreParameter("Weight", std::to_string(weight));
 }
 
 std::string DeleteVpnRouteEntryRequest::getVpnGatewayId()const
@@ -99,7 +99,7 @@ std::string DeleteVpnRouteEntryRequest::getVpnGatewayId()const
 void DeleteVpnRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", std::to_string(vpnGatewayId));
+	setCoreParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long DeleteVpnRouteEntryRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DeleteVpnRouteEntryRequest::getOwnerId()const
 void DeleteVpnRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVpnRouteEntryRequest::getRouteDest()const
@@ -121,7 +121,7 @@ std::string DeleteVpnRouteEntryRequest::getRouteDest()const
 void DeleteVpnRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", std::to_string(routeDest));
+	setCoreParameter("RouteDest", routeDest);
 }
 
 std::string DeleteVpnRouteEntryRequest::getNextHop()const
@@ -132,7 +132,7 @@ std::string DeleteVpnRouteEntryRequest::getNextHop()const
 void DeleteVpnRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", std::to_string(nextHop));
+	setCoreParameter("NextHop", nextHop);
 }
 
 std::string DeleteVpnRouteEntryRequest::getOverlayMode()const
@@ -143,6 +143,6 @@ std::string DeleteVpnRouteEntryRequest::getOverlayMode()const
 void DeleteVpnRouteEntryRequest::setOverlayMode(const std::string& overlayMode)
 {
 	overlayMode_ = overlayMode;
-	setCoreParameter("OverlayMode", std::to_string(overlayMode));
+	setCoreParameter("OverlayMode", overlayMode);
 }
 

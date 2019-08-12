@@ -33,7 +33,7 @@ long GetEntityListRequest::getGroupId()const
 void GetEntityListRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int GetEntityListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int GetEntityListRequest::getPageSize()const
 void GetEntityListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetEntityListRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string GetEntityListRequest::getRemark()const
 void GetEntityListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string GetEntityListRequest::getEventType()const
@@ -66,7 +66,7 @@ std::string GetEntityListRequest::getEventType()const
 void GetEntityListRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", std::to_string(eventType));
+	setCoreParameter("EventType", eventType);
 }
 
 int GetEntityListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int GetEntityListRequest::getCurrentPage()const
 void GetEntityListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string GetEntityListRequest::getRegionNo()const
@@ -88,6 +88,6 @@ std::string GetEntityListRequest::getRegionNo()const
 void GetEntityListRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", std::to_string(regionNo));
+	setCoreParameter("RegionNo", regionNo);
 }
 

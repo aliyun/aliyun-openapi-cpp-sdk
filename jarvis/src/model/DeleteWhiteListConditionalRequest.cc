@@ -33,7 +33,7 @@ std::string DeleteWhiteListConditionalRequest::getSrcIP()const
 void DeleteWhiteListConditionalRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", std::to_string(srcIP));
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string DeleteWhiteListConditionalRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DeleteWhiteListConditionalRequest::getSourceIp()const
 void DeleteWhiteListConditionalRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteWhiteListConditionalRequest::getQueryProduct()const
@@ -55,7 +55,7 @@ std::string DeleteWhiteListConditionalRequest::getQueryProduct()const
 void DeleteWhiteListConditionalRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", std::to_string(queryProduct));
+	setCoreParameter("QueryProduct", queryProduct);
 }
 
 std::string DeleteWhiteListConditionalRequest::getDstIP()const
@@ -66,7 +66,7 @@ std::string DeleteWhiteListConditionalRequest::getDstIP()const
 void DeleteWhiteListConditionalRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", std::to_string(dstIP));
+	setCoreParameter("DstIP", dstIP);
 }
 
 std::string DeleteWhiteListConditionalRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DeleteWhiteListConditionalRequest::getLang()const
 void DeleteWhiteListConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteWhiteListConditionalRequest::getSourceCode()const
@@ -88,6 +88,6 @@ std::string DeleteWhiteListConditionalRequest::getSourceCode()const
 void DeleteWhiteListConditionalRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

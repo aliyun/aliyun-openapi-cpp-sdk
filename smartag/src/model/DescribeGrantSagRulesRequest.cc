@@ -33,7 +33,7 @@ long DescribeGrantSagRulesRequest::getResourceOwnerId()const
 void DescribeGrantSagRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGrantSagRulesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeGrantSagRulesRequest::getResourceOwnerAccount()const
 void DescribeGrantSagRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantSagRulesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeGrantSagRulesRequest::getRegionId()const
 void DescribeGrantSagRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeGrantSagRulesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeGrantSagRulesRequest::getOwnerAccount()const
 void DescribeGrantSagRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeGrantSagRulesRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeGrantSagRulesRequest::getPageSize()const
 void DescribeGrantSagRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGrantSagRulesRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string DescribeGrantSagRulesRequest::getSmartAGId()const
 void DescribeGrantSagRulesRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long DescribeGrantSagRulesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeGrantSagRulesRequest::getOwnerId()const
 void DescribeGrantSagRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeGrantSagRulesRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int DescribeGrantSagRulesRequest::getPageNumber()const
 void DescribeGrantSagRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

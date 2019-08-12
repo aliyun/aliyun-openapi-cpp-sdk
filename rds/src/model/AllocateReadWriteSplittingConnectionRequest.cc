@@ -33,7 +33,7 @@ long AllocateReadWriteSplittingConnectionRequest::getResourceOwnerId()const
 void AllocateReadWriteSplittingConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getConnectionStringPrefix()const
@@ -44,7 +44,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getConnectionStringPref
 void AllocateReadWriteSplittingConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
+	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getResourceOwnerAccount
 void AllocateReadWriteSplittingConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getOwnerAccount()const
 void AllocateReadWriteSplittingConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getWeight()const
@@ -77,7 +77,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getWeight()const
 void AllocateReadWriteSplittingConnectionRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 long AllocateReadWriteSplittingConnectionRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AllocateReadWriteSplittingConnectionRequest::getOwnerId()const
 void AllocateReadWriteSplittingConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getAccessKeyId()const
 void AllocateReadWriteSplittingConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getPort()const
@@ -110,7 +110,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getPort()const
 void AllocateReadWriteSplittingConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getDistributionType()const
@@ -121,7 +121,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getDistributionType()co
 void AllocateReadWriteSplittingConnectionRequest::setDistributionType(const std::string& distributionType)
 {
 	distributionType_ = distributionType;
-	setCoreParameter("DistributionType", std::to_string(distributionType));
+	setCoreParameter("DistributionType", distributionType);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getNetType()const
@@ -132,7 +132,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getNetType()const
 void AllocateReadWriteSplittingConnectionRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", std::to_string(netType));
+	setCoreParameter("NetType", netType);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string AllocateReadWriteSplittingConnectionRequest::getDBInstanceId()const
 void AllocateReadWriteSplittingConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string AllocateReadWriteSplittingConnectionRequest::getMaxDelayTime()const
@@ -154,6 +154,6 @@ std::string AllocateReadWriteSplittingConnectionRequest::getMaxDelayTime()const
 void AllocateReadWriteSplittingConnectionRequest::setMaxDelayTime(const std::string& maxDelayTime)
 {
 	maxDelayTime_ = maxDelayTime;
-	setCoreParameter("MaxDelayTime", std::to_string(maxDelayTime));
+	setCoreParameter("MaxDelayTime", maxDelayTime);
 }
 

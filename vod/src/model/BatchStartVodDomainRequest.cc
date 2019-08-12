@@ -33,7 +33,7 @@ std::string BatchStartVodDomainRequest::getSecurityToken()const
 void BatchStartVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string BatchStartVodDomainRequest::getDomainNames()const
@@ -44,7 +44,7 @@ std::string BatchStartVodDomainRequest::getDomainNames()const
 void BatchStartVodDomainRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", std::to_string(domainNames));
+	setCoreParameter("DomainNames", domainNames);
 }
 
 long BatchStartVodDomainRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long BatchStartVodDomainRequest::getOwnerId()const
 void BatchStartVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

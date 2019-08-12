@@ -33,7 +33,7 @@ std::string UpdateETLJobStageRequest::getStageName()const
 void UpdateETLJobStageRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string UpdateETLJobStageRequest::getStageConf()const
@@ -44,7 +44,7 @@ std::string UpdateETLJobStageRequest::getStageConf()const
 void UpdateETLJobStageRequest::setStageConf(const std::string& stageConf)
 {
 	stageConf_ = stageConf;
-	setCoreParameter("StageConf", std::to_string(stageConf));
+	setCoreParameter("StageConf", stageConf);
 }
 
 long UpdateETLJobStageRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long UpdateETLJobStageRequest::getResourceOwnerId()const
 void UpdateETLJobStageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateETLJobStageRequest::getStageType()const
@@ -66,7 +66,7 @@ std::string UpdateETLJobStageRequest::getStageType()const
 void UpdateETLJobStageRequest::setStageType(const std::string& stageType)
 {
 	stageType_ = stageType;
-	setCoreParameter("StageType", std::to_string(stageType));
+	setCoreParameter("StageType", stageType);
 }
 
 std::string UpdateETLJobStageRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string UpdateETLJobStageRequest::getRegionId()const
 void UpdateETLJobStageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateETLJobStageRequest::getEtlJobId()const
@@ -88,7 +88,7 @@ std::string UpdateETLJobStageRequest::getEtlJobId()const
 void UpdateETLJobStageRequest::setEtlJobId(const std::string& etlJobId)
 {
 	etlJobId_ = etlJobId;
-	setCoreParameter("EtlJobId", std::to_string(etlJobId));
+	setCoreParameter("EtlJobId", etlJobId);
 }
 
 std::string UpdateETLJobStageRequest::getStagePlugin()const
@@ -99,7 +99,7 @@ std::string UpdateETLJobStageRequest::getStagePlugin()const
 void UpdateETLJobStageRequest::setStagePlugin(const std::string& stagePlugin)
 {
 	stagePlugin_ = stagePlugin;
-	setCoreParameter("StagePlugin", std::to_string(stagePlugin));
+	setCoreParameter("StagePlugin", stagePlugin);
 }
 
 std::string UpdateETLJobStageRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string UpdateETLJobStageRequest::getAccessKeyId()const
 void UpdateETLJobStageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

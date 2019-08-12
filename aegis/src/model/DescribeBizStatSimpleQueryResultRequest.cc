@@ -33,7 +33,7 @@ std::string DescribeBizStatSimpleQueryResultRequest::getSourceIp()const
 void DescribeBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeBizStatSimpleQueryResultRequest::getEndTime()const
@@ -44,7 +44,7 @@ std::string DescribeBizStatSimpleQueryResultRequest::getEndTime()const
 void DescribeBizStatSimpleQueryResultRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeBizStatSimpleQueryResultRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeBizStatSimpleQueryResultRequest::getStartTime()const
 void DescribeBizStatSimpleQueryResultRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int DescribeBizStatSimpleQueryResultRequest::getCustomTimeRange()const
@@ -66,7 +66,7 @@ int DescribeBizStatSimpleQueryResultRequest::getCustomTimeRange()const
 void DescribeBizStatSimpleQueryResultRequest::setCustomTimeRange(int customTimeRange)
 {
 	customTimeRange_ = customTimeRange;
-	setCoreParameter("CustomTimeRange", customTimeRange);
+	setCoreParameter("CustomTimeRange", std::to_string(customTimeRange));
 }
 
 std::string DescribeBizStatSimpleQueryResultRequest::getCustomQuery()const
@@ -77,6 +77,6 @@ std::string DescribeBizStatSimpleQueryResultRequest::getCustomQuery()const
 void DescribeBizStatSimpleQueryResultRequest::setCustomQuery(const std::string& customQuery)
 {
 	customQuery_ = customQuery;
-	setCoreParameter("CustomQuery", std::to_string(customQuery));
+	setCoreParameter("CustomQuery", customQuery);
 }
 

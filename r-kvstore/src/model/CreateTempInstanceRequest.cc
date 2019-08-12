@@ -33,7 +33,7 @@ long CreateTempInstanceRequest::getResourceOwnerId()const
 void CreateTempInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateTempInstanceRequest::getSnapshotId()const
@@ -44,7 +44,7 @@ std::string CreateTempInstanceRequest::getSnapshotId()const
 void CreateTempInstanceRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", std::to_string(snapshotId));
+	setCoreParameter("SnapshotId", snapshotId);
 }
 
 std::string CreateTempInstanceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string CreateTempInstanceRequest::getInstanceId()const
 void CreateTempInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateTempInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateTempInstanceRequest::getResourceOwnerAccount()const
 void CreateTempInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateTempInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateTempInstanceRequest::getRegionId()const
 void CreateTempInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTempInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateTempInstanceRequest::getOwnerAccount()const
 void CreateTempInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateTempInstanceRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateTempInstanceRequest::getOwnerId()const
 void CreateTempInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateTempInstanceRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateTempInstanceRequest::getAccessKeyId()const
 void CreateTempInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getRegionId()const
 void DescribeUpPeakPublishStreamDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
 void DescribeUpPeakPublishStreamDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getStartTime()const
 void DescribeUpPeakPublishStreamDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
 void DescribeUpPeakPublishStreamDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const
@@ -88,6 +88,6 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", std::to_string(domainSwitch));
+	setCoreParameter("DomainSwitch", domainSwitch);
 }
 

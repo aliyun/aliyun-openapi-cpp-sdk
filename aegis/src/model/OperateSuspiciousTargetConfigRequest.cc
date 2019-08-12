@@ -33,7 +33,7 @@ std::string OperateSuspiciousTargetConfigRequest::getTargetOperations()const
 void OperateSuspiciousTargetConfigRequest::setTargetOperations(const std::string& targetOperations)
 {
 	targetOperations_ = targetOperations;
-	setCoreParameter("TargetOperations", std::to_string(targetOperations));
+	setCoreParameter("TargetOperations", targetOperations);
 }
 
 std::string OperateSuspiciousTargetConfigRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string OperateSuspiciousTargetConfigRequest::getSourceIp()const
 void OperateSuspiciousTargetConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateSuspiciousTargetConfigRequest::getTargetType()const
@@ -55,7 +55,7 @@ std::string OperateSuspiciousTargetConfigRequest::getTargetType()const
 void OperateSuspiciousTargetConfigRequest::setTargetType(const std::string& targetType)
 {
 	targetType_ = targetType;
-	setCoreParameter("TargetType", std::to_string(targetType));
+	setCoreParameter("TargetType", targetType);
 }
 
 std::string OperateSuspiciousTargetConfigRequest::getLang()const
@@ -66,7 +66,7 @@ std::string OperateSuspiciousTargetConfigRequest::getLang()const
 void OperateSuspiciousTargetConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string OperateSuspiciousTargetConfigRequest::getType()const
@@ -77,6 +77,6 @@ std::string OperateSuspiciousTargetConfigRequest::getType()const
 void OperateSuspiciousTargetConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

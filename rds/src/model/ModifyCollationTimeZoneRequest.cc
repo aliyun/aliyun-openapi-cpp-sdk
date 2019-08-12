@@ -33,7 +33,7 @@ long ModifyCollationTimeZoneRequest::getResourceOwnerId()const
 void ModifyCollationTimeZoneRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCollationTimeZoneRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyCollationTimeZoneRequest::getResourceOwnerAccount()const
 void ModifyCollationTimeZoneRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCollationTimeZoneRequest::getTimezone()const
@@ -55,7 +55,7 @@ std::string ModifyCollationTimeZoneRequest::getTimezone()const
 void ModifyCollationTimeZoneRequest::setTimezone(const std::string& timezone)
 {
 	timezone_ = timezone;
-	setCoreParameter("Timezone", std::to_string(timezone));
+	setCoreParameter("Timezone", timezone);
 }
 
 std::string ModifyCollationTimeZoneRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifyCollationTimeZoneRequest::getDBInstanceId()const
 void ModifyCollationTimeZoneRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyCollationTimeZoneRequest::getCollation()const
@@ -77,7 +77,7 @@ std::string ModifyCollationTimeZoneRequest::getCollation()const
 void ModifyCollationTimeZoneRequest::setCollation(const std::string& collation)
 {
 	collation_ = collation;
-	setCoreParameter("Collation", std::to_string(collation));
+	setCoreParameter("Collation", collation);
 }
 
 long ModifyCollationTimeZoneRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ModifyCollationTimeZoneRequest::getOwnerId()const
 void ModifyCollationTimeZoneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCollationTimeZoneRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ModifyCollationTimeZoneRequest::getAccessKeyId()const
 void ModifyCollationTimeZoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

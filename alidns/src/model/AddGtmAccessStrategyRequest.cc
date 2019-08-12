@@ -33,7 +33,7 @@ std::string AddGtmAccessStrategyRequest::getStrategyName()const
 void AddGtmAccessStrategyRequest::setStrategyName(const std::string& strategyName)
 {
 	strategyName_ = strategyName;
-	setCoreParameter("StrategyName", std::to_string(strategyName));
+	setCoreParameter("StrategyName", strategyName);
 }
 
 std::string AddGtmAccessStrategyRequest::getDefaultAddrPoolId()const
@@ -44,7 +44,7 @@ std::string AddGtmAccessStrategyRequest::getDefaultAddrPoolId()const
 void AddGtmAccessStrategyRequest::setDefaultAddrPoolId(const std::string& defaultAddrPoolId)
 {
 	defaultAddrPoolId_ = defaultAddrPoolId;
-	setCoreParameter("DefaultAddrPoolId", std::to_string(defaultAddrPoolId));
+	setCoreParameter("DefaultAddrPoolId", defaultAddrPoolId);
 }
 
 std::string AddGtmAccessStrategyRequest::getAccessLines()const
@@ -55,7 +55,7 @@ std::string AddGtmAccessStrategyRequest::getAccessLines()const
 void AddGtmAccessStrategyRequest::setAccessLines(const std::string& accessLines)
 {
 	accessLines_ = accessLines;
-	setCoreParameter("AccessLines", std::to_string(accessLines));
+	setCoreParameter("AccessLines", accessLines);
 }
 
 std::string AddGtmAccessStrategyRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string AddGtmAccessStrategyRequest::getInstanceId()const
 void AddGtmAccessStrategyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string AddGtmAccessStrategyRequest::getFailoverAddrPoolId()const
@@ -77,7 +77,7 @@ std::string AddGtmAccessStrategyRequest::getFailoverAddrPoolId()const
 void AddGtmAccessStrategyRequest::setFailoverAddrPoolId(const std::string& failoverAddrPoolId)
 {
 	failoverAddrPoolId_ = failoverAddrPoolId;
-	setCoreParameter("FailoverAddrPoolId", std::to_string(failoverAddrPoolId));
+	setCoreParameter("FailoverAddrPoolId", failoverAddrPoolId);
 }
 
 std::string AddGtmAccessStrategyRequest::getUserClientIp()const
@@ -88,7 +88,7 @@ std::string AddGtmAccessStrategyRequest::getUserClientIp()const
 void AddGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string AddGtmAccessStrategyRequest::getLang()const
@@ -99,6 +99,6 @@ std::string AddGtmAccessStrategyRequest::getLang()const
 void AddGtmAccessStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

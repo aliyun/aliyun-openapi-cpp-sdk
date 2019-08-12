@@ -33,7 +33,7 @@ std::string DescribeDcdnUserDomainsRequest::getFuncFilter()const
 void DescribeDcdnUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", std::to_string(funcFilter));
+	setCoreParameter("FuncFilter", funcFilter);
 }
 
 bool DescribeDcdnUserDomainsRequest::getCheckDomainShow()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnUserDomainsRequest::getResourceGroupId()const
 void DescribeDcdnUserDomainsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDcdnUserDomainsRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnUserDomainsRequest::getSecurityToken()const
 void DescribeDcdnUserDomainsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeDcdnUserDomainsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeDcdnUserDomainsRequest::getPageSize()const
 void DescribeDcdnUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDcdnUserDomainsRequest::getDomainName()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnUserDomainsRequest::getDomainName()const
 void DescribeDcdnUserDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeDcdnUserDomainsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeDcdnUserDomainsRequest::getOwnerId()const
 void DescribeDcdnUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnUserDomainsRequest::getFuncId()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnUserDomainsRequest::getFuncId()const
 void DescribeDcdnUserDomainsRequest::setFuncId(const std::string& funcId)
 {
 	funcId_ = funcId;
-	setCoreParameter("FuncId", std::to_string(funcId));
+	setCoreParameter("FuncId", funcId);
 }
 
 int DescribeDcdnUserDomainsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeDcdnUserDomainsRequest::getPageNumber()const
 void DescribeDcdnUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDcdnUserDomainsRequest::getDomainStatus()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnUserDomainsRequest::getDomainStatus()const
 void DescribeDcdnUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", std::to_string(domainStatus));
+	setCoreParameter("DomainStatus", domainStatus);
 }
 
 std::string DescribeDcdnUserDomainsRequest::getDomainSearchType()const
@@ -143,6 +143,6 @@ std::string DescribeDcdnUserDomainsRequest::getDomainSearchType()const
 void DescribeDcdnUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
 {
 	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", std::to_string(domainSearchType));
+	setCoreParameter("DomainSearchType", domainSearchType);
 }
 

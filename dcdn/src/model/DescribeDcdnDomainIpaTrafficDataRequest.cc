@@ -33,7 +33,7 @@ long DescribeDcdnDomainIpaTrafficDataRequest::getResourceOwnerId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeDcdnDomainIpaTrafficDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDcdnDomainIpaTrafficDataRequest::getCallerParentId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDcdnDomainIpaTrafficDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getStartTime()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getIspNameEn()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getIspNameEn()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getProxy_original_source_ip
 void DescribeDcdnDomainIpaTrafficDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getOwnerIdLoginEmail()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerType()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getAccessKeyId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getSecurityToken()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getRequestContent()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerBidEmail()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerUidEmail()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDcdnDomainIpaTrafficDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeDcdnDomainIpaTrafficDataRequest::getCallerUid()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getApp_ip()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getPopProduct()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getFixTimeGap()const
@@ -220,7 +220,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getFixTimeGap()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", std::to_string(fixTimeGap));
+	setCoreParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getTimeMerge()const
@@ -231,7 +231,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getTimeMerge()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", std::to_string(timeMerge));
+	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getDomainName()const
@@ -242,7 +242,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getDomainName()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getEndTime()const
@@ -253,7 +253,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getEndTime()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getCallerBid()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDcdnDomainIpaTrafficDataRequest::getOwnerId()const
@@ -275,7 +275,7 @@ long DescribeDcdnDomainIpaTrafficDataRequest::getOwnerId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getVersion()const
@@ -286,7 +286,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getVersion()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDcdnDomainIpaTrafficDataRequest::getProxy_trust_transport_info()const
@@ -330,7 +330,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getRequestId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getInterval()const
@@ -341,7 +341,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getInterval()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getFields()const
@@ -352,6 +352,6 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getFields()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

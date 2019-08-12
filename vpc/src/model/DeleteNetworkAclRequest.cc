@@ -33,7 +33,7 @@ long DeleteNetworkAclRequest::getResourceOwnerId()const
 void DeleteNetworkAclRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkAclRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DeleteNetworkAclRequest::getClientToken()const
 void DeleteNetworkAclRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long DeleteNetworkAclRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteNetworkAclRequest::getCallerParentId()const
 void DeleteNetworkAclRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteNetworkAclRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DeleteNetworkAclRequest::getProxy_original_source_ip()const
 void DeleteNetworkAclRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteNetworkAclRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DeleteNetworkAclRequest::getCallerType()const
 void DeleteNetworkAclRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteNetworkAclRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DeleteNetworkAclRequest::getOwnerIdLoginEmail()const
 void DeleteNetworkAclRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteNetworkAclRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteNetworkAclRequest::getAccessKeyId()const
 void DeleteNetworkAclRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteNetworkAclRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteNetworkAclRequest::getRegionId()const
 void DeleteNetworkAclRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkAclRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DeleteNetworkAclRequest::getSecurityToken()const
 void DeleteNetworkAclRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DeleteNetworkAclRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string DeleteNetworkAclRequest::getRequestContent()const
 void DeleteNetworkAclRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteNetworkAclRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DeleteNetworkAclRequest::getCallerBidEmail()const
 void DeleteNetworkAclRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteNetworkAclRequest::getNetworkAclId()const
@@ -176,7 +176,7 @@ std::string DeleteNetworkAclRequest::getNetworkAclId()const
 void DeleteNetworkAclRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", std::to_string(networkAclId));
+	setCoreParameter("NetworkAclId", networkAclId);
 }
 
 std::string DeleteNetworkAclRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteNetworkAclRequest::getCallerUidEmail()const
 void DeleteNetworkAclRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteNetworkAclRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DeleteNetworkAclRequest::getCallerUid()const
 void DeleteNetworkAclRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteNetworkAclRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteNetworkAclRequest::getApp_ip()const
 void DeleteNetworkAclRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteNetworkAclRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DeleteNetworkAclRequest::getResourceOwnerAccount()const
 void DeleteNetworkAclRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNetworkAclRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DeleteNetworkAclRequest::getCallerBid()const
 void DeleteNetworkAclRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteNetworkAclRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DeleteNetworkAclRequest::getOwnerId()const
 void DeleteNetworkAclRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteNetworkAclRequest::getProxy_trust_transport_info()const
@@ -286,6 +286,6 @@ std::string DeleteNetworkAclRequest::getRequestId()const
 void DeleteNetworkAclRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
 void DeleteScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingGroupRequest::getScalingGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteScalingGroupRequest::getScalingGroupId()const
 void DeleteScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool DeleteScalingGroupRequest::getForceDelete()const
@@ -66,7 +66,7 @@ std::string DeleteScalingGroupRequest::getOwnerAccount()const
 void DeleteScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScalingGroupRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteScalingGroupRequest::getOwnerId()const
 void DeleteScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScalingGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteScalingGroupRequest::getAccessKeyId()const
 void DeleteScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

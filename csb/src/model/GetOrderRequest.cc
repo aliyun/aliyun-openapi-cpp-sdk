@@ -33,7 +33,7 @@ std::string GetOrderRequest::getRegionId()const
 void GetOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long GetOrderRequest::getOrderId()const
@@ -44,7 +44,7 @@ long GetOrderRequest::getOrderId()const
 void GetOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string GetOrderRequest::getServiceName()const
@@ -55,6 +55,6 @@ std::string GetOrderRequest::getServiceName()const
 void GetOrderRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 

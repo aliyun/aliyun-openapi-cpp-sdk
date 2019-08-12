@@ -33,7 +33,7 @@ int SaveSingleTaskForModifyingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForModifyingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", keyTag);
+	setCoreParameter("KeyTag", std::to_string(keyTag));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForModifyingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getDigestType()const
@@ -66,7 +66,7 @@ int SaveSingleTaskForModifyingDSRecordRequest::getDigestType()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDigestType(int digestType)
 {
 	digestType_ = digestType;
-	setCoreParameter("DigestType", digestType);
+	setCoreParameter("DigestType", std::to_string(digestType));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getDigest()const
@@ -77,7 +77,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDigest()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", std::to_string(digest));
+	setCoreParameter("Digest", digest);
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
@@ -88,7 +88,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
 void SaveSingleTaskForModifyingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getAlgorithm()const
@@ -99,6 +99,6 @@ int SaveSingleTaskForModifyingDSRecordRequest::getAlgorithm()const
 void SaveSingleTaskForModifyingDSRecordRequest::setAlgorithm(int algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", algorithm);
+	setCoreParameter("Algorithm", std::to_string(algorithm));
 }
 

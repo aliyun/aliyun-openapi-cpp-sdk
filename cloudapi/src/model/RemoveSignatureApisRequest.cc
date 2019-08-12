@@ -33,7 +33,7 @@ std::string RemoveSignatureApisRequest::getStageName()const
 void RemoveSignatureApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string RemoveSignatureApisRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string RemoveSignatureApisRequest::getSecurityToken()const
 void RemoveSignatureApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveSignatureApisRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string RemoveSignatureApisRequest::getGroupId()const
 void RemoveSignatureApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string RemoveSignatureApisRequest::getSignatureId()const
@@ -66,7 +66,7 @@ std::string RemoveSignatureApisRequest::getSignatureId()const
 void RemoveSignatureApisRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", std::to_string(signatureId));
+	setCoreParameter("SignatureId", signatureId);
 }
 
 std::string RemoveSignatureApisRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string RemoveSignatureApisRequest::getAccessKeyId()const
 void RemoveSignatureApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveSignatureApisRequest::getApiIds()const
@@ -88,6 +88,6 @@ std::string RemoveSignatureApisRequest::getApiIds()const
 void RemoveSignatureApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", std::to_string(apiIds));
+	setCoreParameter("ApiIds", apiIds);
 }
 

@@ -33,7 +33,7 @@ long ListJobExecutionInstancesRequest::getResourceOwnerId()const
 void ListJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
@@ -44,7 +44,7 @@ std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
 void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
 {
 	executionPlanInstanceId_ = executionPlanInstanceId;
-	setCoreParameter("ExecutionPlanInstanceId", std::to_string(executionPlanInstanceId));
+	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
 }
 
 std::string ListJobExecutionInstancesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListJobExecutionInstancesRequest::getRegionId()const
 void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListJobExecutionInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListJobExecutionInstancesRequest::getPageSize()const
 void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 bool ListJobExecutionInstancesRequest::getIsDesc()const
@@ -88,7 +88,7 @@ int ListJobExecutionInstancesRequest::getPageNumber()const
 void ListJobExecutionInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
 void ListJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

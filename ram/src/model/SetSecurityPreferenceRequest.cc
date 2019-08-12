@@ -77,7 +77,7 @@ std::string SetSecurityPreferenceRequest::getLoginNetworkMasks()const
 void SetSecurityPreferenceRequest::setLoginNetworkMasks(const std::string& loginNetworkMasks)
 {
 	loginNetworkMasks_ = loginNetworkMasks;
-	setCoreParameter("LoginNetworkMasks", std::to_string(loginNetworkMasks));
+	setCoreParameter("LoginNetworkMasks", loginNetworkMasks);
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToChangePassword()const
@@ -99,6 +99,6 @@ int SetSecurityPreferenceRequest::getLoginSessionDuration()const
 void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDuration)
 {
 	loginSessionDuration_ = loginSessionDuration;
-	setCoreParameter("LoginSessionDuration", loginSessionDuration);
+	setCoreParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
 }
 

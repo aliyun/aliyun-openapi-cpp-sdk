@@ -33,7 +33,7 @@ std::string GetJobInputStatisticInfoRequest::getFromDatetime()const
 void GetJobInputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", std::to_string(fromDatetime));
+	setCoreParameter("FromDatetime", fromDatetime);
 }
 
 long GetJobInputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetJobInputStatisticInfoRequest::getResourceOwnerId()const
 void GetJobInputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetJobInputStatisticInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetJobInputStatisticInfoRequest::getRegionId()const
 void GetJobInputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetJobInputStatisticInfoRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetJobInputStatisticInfoRequest::getPageSize()const
 void GetJobInputStatisticInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetJobInputStatisticInfoRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string GetJobInputStatisticInfoRequest::getClusterId()const
 void GetJobInputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetJobInputStatisticInfoRequest::getToDatetime()const
@@ -88,7 +88,7 @@ std::string GetJobInputStatisticInfoRequest::getToDatetime()const
 void GetJobInputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", std::to_string(toDatetime));
+	setCoreParameter("ToDatetime", toDatetime);
 }
 
 int GetJobInputStatisticInfoRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int GetJobInputStatisticInfoRequest::getPageNumber()const
 void GetJobInputStatisticInfoRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetJobInputStatisticInfoRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string GetJobInputStatisticInfoRequest::getAccessKeyId()const
 void GetJobInputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

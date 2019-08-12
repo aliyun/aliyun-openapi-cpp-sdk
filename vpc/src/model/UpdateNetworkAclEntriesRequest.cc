@@ -33,7 +33,7 @@ long UpdateNetworkAclEntriesRequest::getResourceOwnerId()const
 void UpdateNetworkAclEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<UpdateNetworkAclEntriesRequest::EgressAclEntries> UpdateNetworkAclEntriesRequest::getEgressAclEntries()const
@@ -48,14 +48,14 @@ void UpdateNetworkAclEntriesRequest::setEgressAclEntries(const std::vector<Egres
 	for(int i = 0; i!= egressAclEntries.size(); i++)	{
 		auto obj = egressAclEntries.at(i);
 		std::string str ="EgressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", std::to_string(obj.networkAclEntryName));
-		setCoreParameter(str + ".NetworkAclEntryId", std::to_string(obj.networkAclEntryId));
-		setCoreParameter(str + ".Policy", std::to_string(obj.policy));
-		setCoreParameter(str + ".Protocol", std::to_string(obj.protocol));
-		setCoreParameter(str + ".DestinationCidrIp", std::to_string(obj.destinationCidrIp));
-		setCoreParameter(str + ".Port", std::to_string(obj.port));
-		setCoreParameter(str + ".EntryType", std::to_string(obj.entryType));
-		setCoreParameter(str + ".Description", std::to_string(obj.description));
+		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
+		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
+		setCoreParameter(str + ".Policy", obj.policy);
+		setCoreParameter(str + ".Protocol", obj.protocol);
+		setCoreParameter(str + ".DestinationCidrIp", obj.destinationCidrIp);
+		setCoreParameter(str + ".Port", obj.port);
+		setCoreParameter(str + ".EntryType", obj.entryType);
+		setCoreParameter(str + ".Description", obj.description);
 	}
 }
 
@@ -67,7 +67,7 @@ std::string UpdateNetworkAclEntriesRequest::getClientToken()const
 void UpdateNetworkAclEntriesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long UpdateNetworkAclEntriesRequest::getCallerParentId()const
@@ -78,7 +78,7 @@ long UpdateNetworkAclEntriesRequest::getCallerParentId()const
 void UpdateNetworkAclEntriesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UpdateNetworkAclEntriesRequest::getProxy_original_security_transport()const
@@ -100,7 +100,7 @@ std::string UpdateNetworkAclEntriesRequest::getProxy_original_source_ip()const
 void UpdateNetworkAclEntriesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getCallerType()const
@@ -111,7 +111,7 @@ std::string UpdateNetworkAclEntriesRequest::getCallerType()const
 void UpdateNetworkAclEntriesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getOwnerIdLoginEmail()const
@@ -122,7 +122,7 @@ std::string UpdateNetworkAclEntriesRequest::getOwnerIdLoginEmail()const
 void UpdateNetworkAclEntriesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getAccessKeyId()const
@@ -133,7 +133,7 @@ std::string UpdateNetworkAclEntriesRequest::getAccessKeyId()const
 void UpdateNetworkAclEntriesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getRegionId()const
@@ -144,7 +144,7 @@ std::string UpdateNetworkAclEntriesRequest::getRegionId()const
 void UpdateNetworkAclEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getSecurityToken()const
@@ -155,7 +155,7 @@ std::string UpdateNetworkAclEntriesRequest::getSecurityToken()const
 void UpdateNetworkAclEntriesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool UpdateNetworkAclEntriesRequest::getEnable()const
@@ -177,7 +177,7 @@ std::string UpdateNetworkAclEntriesRequest::getRequestContent()const
 void UpdateNetworkAclEntriesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getCallerBidEmail()const
@@ -188,7 +188,7 @@ std::string UpdateNetworkAclEntriesRequest::getCallerBidEmail()const
 void UpdateNetworkAclEntriesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getNetworkAclId()const
@@ -199,7 +199,7 @@ std::string UpdateNetworkAclEntriesRequest::getNetworkAclId()const
 void UpdateNetworkAclEntriesRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", std::to_string(networkAclId));
+	setCoreParameter("NetworkAclId", networkAclId);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getCallerUidEmail()const
@@ -210,7 +210,7 @@ std::string UpdateNetworkAclEntriesRequest::getCallerUidEmail()const
 void UpdateNetworkAclEntriesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 bool UpdateNetworkAclEntriesRequest::getUpdateIngressAclEntries()const
@@ -232,7 +232,7 @@ long UpdateNetworkAclEntriesRequest::getCallerUid()const
 void UpdateNetworkAclEntriesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UpdateNetworkAclEntriesRequest::getApp_ip()const
@@ -243,7 +243,7 @@ std::string UpdateNetworkAclEntriesRequest::getApp_ip()const
 void UpdateNetworkAclEntriesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount()const
@@ -254,7 +254,7 @@ std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount()const
 void UpdateNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool UpdateNetworkAclEntriesRequest::getUpdateEgressAclEntries()const
@@ -276,7 +276,7 @@ std::string UpdateNetworkAclEntriesRequest::getCallerBid()const
 void UpdateNetworkAclEntriesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UpdateNetworkAclEntriesRequest::getOwnerId()const
@@ -287,7 +287,7 @@ long UpdateNetworkAclEntriesRequest::getOwnerId()const
 void UpdateNetworkAclEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool UpdateNetworkAclEntriesRequest::getProxy_trust_transport_info()const
@@ -331,7 +331,7 @@ std::string UpdateNetworkAclEntriesRequest::getRequestId()const
 void UpdateNetworkAclEntriesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::vector<UpdateNetworkAclEntriesRequest::IngressAclEntries> UpdateNetworkAclEntriesRequest::getIngressAclEntries()const
@@ -346,14 +346,14 @@ void UpdateNetworkAclEntriesRequest::setIngressAclEntries(const std::vector<Ingr
 	for(int i = 0; i!= ingressAclEntries.size(); i++)	{
 		auto obj = ingressAclEntries.at(i);
 		std::string str ="IngressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", std::to_string(obj.networkAclEntryName));
-		setCoreParameter(str + ".NetworkAclEntryId", std::to_string(obj.networkAclEntryId));
-		setCoreParameter(str + ".Policy", std::to_string(obj.policy));
-		setCoreParameter(str + ".Protocol", std::to_string(obj.protocol));
-		setCoreParameter(str + ".SourceCidrIp", std::to_string(obj.sourceCidrIp));
-		setCoreParameter(str + ".Port", std::to_string(obj.port));
-		setCoreParameter(str + ".EntryType", std::to_string(obj.entryType));
-		setCoreParameter(str + ".Description", std::to_string(obj.description));
+		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
+		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
+		setCoreParameter(str + ".Policy", obj.policy);
+		setCoreParameter(str + ".Protocol", obj.protocol);
+		setCoreParameter(str + ".SourceCidrIp", obj.sourceCidrIp);
+		setCoreParameter(str + ".Port", obj.port);
+		setCoreParameter(str + ".EntryType", obj.entryType);
+		setCoreParameter(str + ".Description", obj.description);
 	}
 }
 

@@ -33,7 +33,7 @@ std::string DeleteProjectRequest::getRegionId()const
 void DeleteProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteProjectRequest::getCsbId()const
@@ -44,7 +44,7 @@ long DeleteProjectRequest::getCsbId()const
 void DeleteProjectRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 long DeleteProjectRequest::getProjectId()const
@@ -55,6 +55,6 @@ long DeleteProjectRequest::getProjectId()const
 void DeleteProjectRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 

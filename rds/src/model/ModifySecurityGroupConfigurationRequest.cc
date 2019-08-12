@@ -33,7 +33,7 @@ long ModifySecurityGroupConfigurationRequest::getResourceOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifySecurityGroupConfigurationRequest::getResourceOwnerAccount()co
 void ModifySecurityGroupConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId()const
@@ -55,7 +55,7 @@ std::string ModifySecurityGroupConfigurationRequest::getSecurityGroupId()const
 void ModifySecurityGroupConfigurationRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId()const
@@ -66,7 +66,7 @@ std::string ModifySecurityGroupConfigurationRequest::getDBInstanceId()const
 void ModifySecurityGroupConfigurationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifySecurityGroupConfigurationRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ModifySecurityGroupConfigurationRequest::getOwnerId()const
 void ModifySecurityGroupConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifySecurityGroupConfigurationRequest::getAccessKeyId()const
 void ModifySecurityGroupConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

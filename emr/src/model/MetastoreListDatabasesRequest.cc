@@ -33,7 +33,7 @@ long MetastoreListDatabasesRequest::getResourceOwnerId()const
 void MetastoreListDatabasesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreListDatabasesRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string MetastoreListDatabasesRequest::getDbName()const
 void MetastoreListDatabasesRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string MetastoreListDatabasesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreListDatabasesRequest::getRegionId()const
 void MetastoreListDatabasesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int MetastoreListDatabasesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int MetastoreListDatabasesRequest::getPageSize()const
 void MetastoreListDatabasesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string MetastoreListDatabasesRequest::getFuzzyDatabaseName()const
@@ -77,7 +77,7 @@ std::string MetastoreListDatabasesRequest::getFuzzyDatabaseName()const
 void MetastoreListDatabasesRequest::setFuzzyDatabaseName(const std::string& fuzzyDatabaseName)
 {
 	fuzzyDatabaseName_ = fuzzyDatabaseName;
-	setCoreParameter("FuzzyDatabaseName", std::to_string(fuzzyDatabaseName));
+	setCoreParameter("FuzzyDatabaseName", fuzzyDatabaseName);
 }
 
 int MetastoreListDatabasesRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int MetastoreListDatabasesRequest::getPageNumber()const
 void MetastoreListDatabasesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListDatabasesRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string MetastoreListDatabasesRequest::getAccessKeyId()const
 void MetastoreListDatabasesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

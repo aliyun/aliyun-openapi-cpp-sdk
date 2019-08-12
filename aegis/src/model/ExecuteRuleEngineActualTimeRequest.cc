@@ -33,7 +33,7 @@ std::string ExecuteRuleEngineActualTimeRequest::getSourceIp()const
 void ExecuteRuleEngineActualTimeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long ExecuteRuleEngineActualTimeRequest::getRuleId()const
@@ -44,7 +44,7 @@ long ExecuteRuleEngineActualTimeRequest::getRuleId()const
 void ExecuteRuleEngineActualTimeRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 
 std::string ExecuteRuleEngineActualTimeRequest::getMessage()const
@@ -55,6 +55,6 @@ std::string ExecuteRuleEngineActualTimeRequest::getMessage()const
 void ExecuteRuleEngineActualTimeRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", std::to_string(message));
+	setCoreParameter("Message", message);
 }
 

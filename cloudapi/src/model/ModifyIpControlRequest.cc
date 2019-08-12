@@ -33,7 +33,7 @@ std::string ModifyIpControlRequest::getIpControlId()const
 void ModifyIpControlRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string ModifyIpControlRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyIpControlRequest::getSecurityToken()const
 void ModifyIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyIpControlRequest::getIpControlName()const
@@ -55,7 +55,7 @@ std::string ModifyIpControlRequest::getIpControlName()const
 void ModifyIpControlRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", std::to_string(ipControlName));
+	setCoreParameter("IpControlName", ipControlName);
 }
 
 std::string ModifyIpControlRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyIpControlRequest::getDescription()const
 void ModifyIpControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyIpControlRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyIpControlRequest::getAccessKeyId()const
 void ModifyIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

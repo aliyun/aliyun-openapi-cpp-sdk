@@ -33,7 +33,7 @@ long KillExecutionPlanInstanceRequest::getResourceOwnerId()const
 void KillExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string KillExecutionPlanInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string KillExecutionPlanInstanceRequest::getRegionId()const
 void KillExecutionPlanInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string KillExecutionPlanInstanceRequest::getId()const
@@ -55,7 +55,7 @@ std::string KillExecutionPlanInstanceRequest::getId()const
 void KillExecutionPlanInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string KillExecutionPlanInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string KillExecutionPlanInstanceRequest::getAccessKeyId()const
 void KillExecutionPlanInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

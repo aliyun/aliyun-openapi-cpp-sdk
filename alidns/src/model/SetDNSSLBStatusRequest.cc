@@ -33,7 +33,7 @@ std::string SetDNSSLBStatusRequest::getUserClientIp()const
 void SetDNSSLBStatusRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SetDNSSLBStatusRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetDNSSLBStatusRequest::getDomainName()const
 void SetDNSSLBStatusRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetDNSSLBStatusRequest::getSubDomain()const
@@ -55,7 +55,7 @@ std::string SetDNSSLBStatusRequest::getSubDomain()const
 void SetDNSSLBStatusRequest::setSubDomain(const std::string& subDomain)
 {
 	subDomain_ = subDomain;
-	setCoreParameter("SubDomain", std::to_string(subDomain));
+	setCoreParameter("SubDomain", subDomain);
 }
 
 std::string SetDNSSLBStatusRequest::getLang()const
@@ -66,7 +66,7 @@ std::string SetDNSSLBStatusRequest::getLang()const
 void SetDNSSLBStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool SetDNSSLBStatusRequest::getOpen()const
@@ -88,6 +88,6 @@ std::string SetDNSSLBStatusRequest::getAccessKeyId()const
 void SetDNSSLBStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

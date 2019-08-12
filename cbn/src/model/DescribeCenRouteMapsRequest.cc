@@ -33,7 +33,7 @@ long DescribeCenRouteMapsRequest::getResourceOwnerId()const
 void DescribeCenRouteMapsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenRouteMapsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeCenRouteMapsRequest::getResourceOwnerAccount()const
 void DescribeCenRouteMapsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenRouteMapsRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenRouteMapsRequest::getCenId()const
 void DescribeCenRouteMapsRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string DescribeCenRouteMapsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenRouteMapsRequest::getOwnerAccount()const
 void DescribeCenRouteMapsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeCenRouteMapsRequest::getCenRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeCenRouteMapsRequest::getCenRegionId()const
 void DescribeCenRouteMapsRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", std::to_string(cenRegionId));
+	setCoreParameter("CenRegionId", cenRegionId);
 }
 
 int DescribeCenRouteMapsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeCenRouteMapsRequest::getPageSize()const
 void DescribeCenRouteMapsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenRouteMapsRequest::getRouteMapId()const
@@ -99,7 +99,7 @@ std::string DescribeCenRouteMapsRequest::getRouteMapId()const
 void DescribeCenRouteMapsRequest::setRouteMapId(const std::string& routeMapId)
 {
 	routeMapId_ = routeMapId;
-	setCoreParameter("RouteMapId", std::to_string(routeMapId));
+	setCoreParameter("RouteMapId", routeMapId);
 }
 
 long DescribeCenRouteMapsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeCenRouteMapsRequest::getOwnerId()const
 void DescribeCenRouteMapsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeCenRouteMapsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeCenRouteMapsRequest::getPageNumber()const
 void DescribeCenRouteMapsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCenRouteMapsRequest::getTransmitDirection()const
@@ -132,6 +132,6 @@ std::string DescribeCenRouteMapsRequest::getTransmitDirection()const
 void DescribeCenRouteMapsRequest::setTransmitDirection(const std::string& transmitDirection)
 {
 	transmitDirection_ = transmitDirection;
-	setCoreParameter("TransmitDirection", std::to_string(transmitDirection));
+	setCoreParameter("TransmitDirection", transmitDirection);
 }
 

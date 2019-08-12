@@ -33,7 +33,7 @@ long DescribeChartDataRequest::getTimeEnd()const
 void DescribeChartDataRequest::setTimeEnd(long timeEnd)
 {
 	timeEnd_ = timeEnd;
-	setCoreParameter("TimeEnd", timeEnd);
+	setCoreParameter("TimeEnd", std::to_string(timeEnd));
 }
 
 std::string DescribeChartDataRequest::getRangeUnit()const
@@ -44,7 +44,7 @@ std::string DescribeChartDataRequest::getRangeUnit()const
 void DescribeChartDataRequest::setRangeUnit(const std::string& rangeUnit)
 {
 	rangeUnit_ = rangeUnit;
-	setCoreParameter("RangeUnit", std::to_string(rangeUnit));
+	setCoreParameter("RangeUnit", rangeUnit);
 }
 
 std::string DescribeChartDataRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeChartDataRequest::getSourceIp()const
 void DescribeChartDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeChartDataRequest::getCharId()const
@@ -66,7 +66,7 @@ std::string DescribeChartDataRequest::getCharId()const
 void DescribeChartDataRequest::setCharId(const std::string& charId)
 {
 	charId_ = charId;
-	setCoreParameter("CharId", std::to_string(charId));
+	setCoreParameter("CharId", charId);
 }
 
 std::string DescribeChartDataRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeChartDataRequest::getLang()const
 void DescribeChartDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeChartDataRequest::getTimeStart()const
@@ -88,6 +88,6 @@ long DescribeChartDataRequest::getTimeStart()const
 void DescribeChartDataRequest::setTimeStart(long timeStart)
 {
 	timeStart_ = timeStart;
-	setCoreParameter("TimeStart", timeStart);
+	setCoreParameter("TimeStart", std::to_string(timeStart));
 }
 

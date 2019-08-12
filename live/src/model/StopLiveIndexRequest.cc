@@ -33,7 +33,7 @@ std::string StopLiveIndexRequest::getAppName()const
 void StopLiveIndexRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string StopLiveIndexRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string StopLiveIndexRequest::getRegionId()const
 void StopLiveIndexRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string StopLiveIndexRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string StopLiveIndexRequest::getDomainName()const
 void StopLiveIndexRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long StopLiveIndexRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long StopLiveIndexRequest::getOwnerId()const
 void StopLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StopLiveIndexRequest::getStreamName()const
@@ -77,7 +77,7 @@ std::string StopLiveIndexRequest::getStreamName()const
 void StopLiveIndexRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string StopLiveIndexRequest::getTaskId()const
@@ -88,6 +88,6 @@ std::string StopLiveIndexRequest::getTaskId()const
 void StopLiveIndexRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

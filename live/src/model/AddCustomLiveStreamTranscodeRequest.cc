@@ -33,7 +33,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getApp()const
 void AddCustomLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", std::to_string(app));
+	setCoreParameter("App", app);
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::get_Template()const
@@ -44,7 +44,7 @@ std::string AddCustomLiveStreamTranscodeRequest::get_Template()const
 void AddCustomLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", std::to_string(_template));
+	setCoreParameter("_Template", _template);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getAudioChannelNum()const
@@ -55,7 +55,7 @@ int AddCustomLiveStreamTranscodeRequest::getAudioChannelNum()const
 void AddCustomLiveStreamTranscodeRequest::setAudioChannelNum(int audioChannelNum)
 {
 	audioChannelNum_ = audioChannelNum;
-	setCoreParameter("AudioChannelNum", audioChannelNum);
+	setCoreParameter("AudioChannelNum", std::to_string(audioChannelNum));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getProfile()const
@@ -66,7 +66,7 @@ int AddCustomLiveStreamTranscodeRequest::getProfile()const
 void AddCustomLiveStreamTranscodeRequest::setProfile(int profile)
 {
 	profile_ = profile;
-	setCoreParameter("Profile", profile);
+	setCoreParameter("Profile", std::to_string(profile));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getFPS()const
@@ -77,7 +77,7 @@ int AddCustomLiveStreamTranscodeRequest::getFPS()const
 void AddCustomLiveStreamTranscodeRequest::setFPS(int fPS)
 {
 	fPS_ = fPS;
-	setCoreParameter("FPS", fPS);
+	setCoreParameter("FPS", std::to_string(fPS));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getGop()const
@@ -88,7 +88,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getGop()const
 void AddCustomLiveStreamTranscodeRequest::setGop(const std::string& gop)
 {
 	gop_ = gop;
-	setCoreParameter("Gop", std::to_string(gop));
+	setCoreParameter("Gop", gop);
 }
 
 long AddCustomLiveStreamTranscodeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AddCustomLiveStreamTranscodeRequest::getOwnerId()const
 void AddCustomLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getAudioCodec()const
@@ -110,7 +110,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getAudioCodec()const
 void AddCustomLiveStreamTranscodeRequest::setAudioCodec(const std::string& audioCodec)
 {
 	audioCodec_ = audioCodec;
-	setCoreParameter("AudioCodec", std::to_string(audioCodec));
+	setCoreParameter("AudioCodec", audioCodec);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getAudioRate()const
@@ -121,7 +121,7 @@ int AddCustomLiveStreamTranscodeRequest::getAudioRate()const
 void AddCustomLiveStreamTranscodeRequest::setAudioRate(int audioRate)
 {
 	audioRate_ = audioRate;
-	setCoreParameter("AudioRate", audioRate);
+	setCoreParameter("AudioRate", std::to_string(audioRate));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getRegionId()const
 void AddCustomLiveStreamTranscodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
@@ -143,7 +143,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getTemplateType()const
 void AddCustomLiveStreamTranscodeRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", std::to_string(templateType));
+	setCoreParameter("TemplateType", templateType);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getAudioBitrate()const
@@ -154,7 +154,7 @@ int AddCustomLiveStreamTranscodeRequest::getAudioBitrate()const
 void AddCustomLiveStreamTranscodeRequest::setAudioBitrate(int audioBitrate)
 {
 	audioBitrate_ = audioBitrate;
-	setCoreParameter("AudioBitrate", audioBitrate);
+	setCoreParameter("AudioBitrate", std::to_string(audioBitrate));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getDomain()const
@@ -165,7 +165,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getDomain()const
 void AddCustomLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", std::to_string(domain));
+	setCoreParameter("Domain", domain);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getWidth()const
@@ -176,7 +176,7 @@ int AddCustomLiveStreamTranscodeRequest::getWidth()const
 void AddCustomLiveStreamTranscodeRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", width);
+	setCoreParameter("Width", std::to_string(width));
 }
 
 int AddCustomLiveStreamTranscodeRequest::getVideoBitrate()const
@@ -187,7 +187,7 @@ int AddCustomLiveStreamTranscodeRequest::getVideoBitrate()const
 void AddCustomLiveStreamTranscodeRequest::setVideoBitrate(int videoBitrate)
 {
 	videoBitrate_ = videoBitrate;
-	setCoreParameter("VideoBitrate", videoBitrate);
+	setCoreParameter("VideoBitrate", std::to_string(videoBitrate));
 }
 
 std::string AddCustomLiveStreamTranscodeRequest::getAudioProfile()const
@@ -198,7 +198,7 @@ std::string AddCustomLiveStreamTranscodeRequest::getAudioProfile()const
 void AddCustomLiveStreamTranscodeRequest::setAudioProfile(const std::string& audioProfile)
 {
 	audioProfile_ = audioProfile;
-	setCoreParameter("AudioProfile", std::to_string(audioProfile));
+	setCoreParameter("AudioProfile", audioProfile);
 }
 
 int AddCustomLiveStreamTranscodeRequest::getHeight()const
@@ -209,6 +209,6 @@ int AddCustomLiveStreamTranscodeRequest::getHeight()const
 void AddCustomLiveStreamTranscodeRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", height);
+	setCoreParameter("Height", std::to_string(height));
 }
 

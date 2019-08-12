@@ -33,7 +33,7 @@ std::string ModifyReplicaDescriptionRequest::getReplicaDescription()const
 void ModifyReplicaDescriptionRequest::setReplicaDescription(const std::string& replicaDescription)
 {
 	replicaDescription_ = replicaDescription;
-	setCoreParameter("ReplicaDescription", std::to_string(replicaDescription));
+	setCoreParameter("ReplicaDescription", replicaDescription);
 }
 
 long ModifyReplicaDescriptionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyReplicaDescriptionRequest::getResourceOwnerId()const
 void ModifyReplicaDescriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyReplicaDescriptionRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyReplicaDescriptionRequest::getSecurityToken()const
 void ModifyReplicaDescriptionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyReplicaDescriptionRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyReplicaDescriptionRequest::getResourceOwnerAccount()const
 void ModifyReplicaDescriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReplicaDescriptionRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyReplicaDescriptionRequest::getRegionId()const
 void ModifyReplicaDescriptionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyReplicaDescriptionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyReplicaDescriptionRequest::getOwnerAccount()const
 void ModifyReplicaDescriptionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyReplicaDescriptionRequest::getReplicaId()const
@@ -99,7 +99,7 @@ std::string ModifyReplicaDescriptionRequest::getReplicaId()const
 void ModifyReplicaDescriptionRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", std::to_string(replicaId));
+	setCoreParameter("ReplicaId", replicaId);
 }
 
 long ModifyReplicaDescriptionRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyReplicaDescriptionRequest::getOwnerId()const
 void ModifyReplicaDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyReplicaDescriptionRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyReplicaDescriptionRequest::getAccessKeyId()const
 void ModifyReplicaDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeAutoProvisioningGroupHistoryRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getCallerParentId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeAutoProvisioningGroupHistoryRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getStartTime()const
 void DescribeAutoProvisioningGroupHistoryRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getProxy_original_sourc
 void DescribeAutoProvisioningGroupHistoryRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerIdLoginEmail()c
 void DescribeAutoProvisioningGroupHistoryRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerType()const
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 int DescribeAutoProvisioningGroupHistoryRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeAutoProvisioningGroupHistoryRequest::getPageNumber()const
 void DescribeAutoProvisioningGroupHistoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getAccessKeyId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getSecurityToken()const
 void DescribeAutoProvisioningGroupHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getRegionId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeAutoProvisioningGroupHistoryRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getRequestContent()cons
 void DescribeAutoProvisioningGroupHistoryRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeAutoProvisioningGroupHistoryRequest::getPageSize()const
@@ -176,7 +176,7 @@ int DescribeAutoProvisioningGroupHistoryRequest::getPageSize()const
 void DescribeAutoProvisioningGroupHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerBidEmail()cons
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerUidEmail()cons
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeAutoProvisioningGroupHistoryRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getCallerUid()const
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getApp_ip()const
 void DescribeAutoProvisioningGroupHistoryRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getResourceOwnerAccount
 void DescribeAutoProvisioningGroupHistoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getOwnerAccount()const
 void DescribeAutoProvisioningGroupHistoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getEndTime()const
@@ -253,7 +253,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getEndTime()const
 void DescribeAutoProvisioningGroupHistoryRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getCallerBid()const
 void DescribeAutoProvisioningGroupHistoryRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeAutoProvisioningGroupHistoryRequest::getOwnerId()const
@@ -275,7 +275,7 @@ long DescribeAutoProvisioningGroupHistoryRequest::getOwnerId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeAutoProvisioningGroupHistoryRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getAutoProvisioningGrou
 void DescribeAutoProvisioningGroupHistoryRequest::setAutoProvisioningGroupId(const std::string& autoProvisioningGroupId)
 {
 	autoProvisioningGroupId_ = autoProvisioningGroupId;
-	setCoreParameter("AutoProvisioningGroupId", std::to_string(autoProvisioningGroupId));
+	setCoreParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
 }
 
 bool DescribeAutoProvisioningGroupHistoryRequest::getSecurity_transport()const
@@ -330,7 +330,7 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getRequestId()const
 void DescribeAutoProvisioningGroupHistoryRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeAutoProvisioningGroupHistoryRequest::getAkProxy()const
@@ -341,6 +341,6 @@ std::string DescribeAutoProvisioningGroupHistoryRequest::getAkProxy()const
 void DescribeAutoProvisioningGroupHistoryRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

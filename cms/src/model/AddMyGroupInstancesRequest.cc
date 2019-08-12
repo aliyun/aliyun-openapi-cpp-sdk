@@ -33,7 +33,7 @@ std::string AddMyGroupInstancesRequest::getInstances()const
 void AddMyGroupInstancesRequest::setInstances(const std::string& instances)
 {
 	instances_ = instances;
-	setCoreParameter("Instances", std::to_string(instances));
+	setCoreParameter("Instances", instances);
 }
 
 long AddMyGroupInstancesRequest::getGroupId()const
@@ -44,6 +44,6 @@ long AddMyGroupInstancesRequest::getGroupId()const
 void AddMyGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

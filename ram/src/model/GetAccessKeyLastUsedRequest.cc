@@ -33,7 +33,7 @@ std::string GetAccessKeyLastUsedRequest::getUserAccessKeyId()const
 void GetAccessKeyLastUsedRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setCoreParameter("UserAccessKeyId", std::to_string(userAccessKeyId));
+	setCoreParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string GetAccessKeyLastUsedRequest::getUserName()const
@@ -44,6 +44,6 @@ std::string GetAccessKeyLastUsedRequest::getUserName()const
 void GetAccessKeyLastUsedRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

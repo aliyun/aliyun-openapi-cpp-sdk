@@ -33,7 +33,7 @@ long GetMediaAuditResultDetailRequest::getResourceOwnerId()const
 void GetMediaAuditResultDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMediaAuditResultDetailRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetMediaAuditResultDetailRequest::getResourceOwnerAccount()const
 void GetMediaAuditResultDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int GetMediaAuditResultDetailRequest::getPageNo()const
@@ -55,7 +55,7 @@ int GetMediaAuditResultDetailRequest::getPageNo()const
 void GetMediaAuditResultDetailRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string GetMediaAuditResultDetailRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string GetMediaAuditResultDetailRequest::getOwnerId()const
 void GetMediaAuditResultDetailRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaAuditResultDetailRequest::getMediaId()const
@@ -77,7 +77,7 @@ std::string GetMediaAuditResultDetailRequest::getMediaId()const
 void GetMediaAuditResultDetailRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string GetMediaAuditResultDetailRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetMediaAuditResultDetailRequest::getAccessKeyId()const
 void GetMediaAuditResultDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

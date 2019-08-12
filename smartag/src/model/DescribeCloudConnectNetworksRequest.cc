@@ -33,7 +33,7 @@ long DescribeCloudConnectNetworksRequest::getResourceOwnerId()const
 void DescribeCloudConnectNetworksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeCloudConnectNetworksRequest::getResourceOwnerAccount()const
 void DescribeCloudConnectNetworksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeCloudConnectNetworksRequest::getRegionId()const
 void DescribeCloudConnectNetworksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCloudConnectNetworksRequest::getOwnerAccount()const
 void DescribeCloudConnectNetworksRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getName()const
@@ -77,7 +77,7 @@ std::string DescribeCloudConnectNetworksRequest::getName()const
 void DescribeCloudConnectNetworksRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeCloudConnectNetworksRequest::getCcnId()const
 void DescribeCloudConnectNetworksRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", std::to_string(ccnId));
+	setCoreParameter("CcnId", ccnId);
 }
 
 std::string DescribeCloudConnectNetworksRequest::getPageSize()const
@@ -99,7 +99,7 @@ std::string DescribeCloudConnectNetworksRequest::getPageSize()const
 void DescribeCloudConnectNetworksRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::vector<DescribeCloudConnectNetworksRequest::Tag> DescribeCloudConnectNetworksRequest::getTag()const
@@ -114,8 +114,8 @@ void DescribeCloudConnectNetworksRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -127,7 +127,7 @@ long DescribeCloudConnectNetworksRequest::getOwnerId()const
 void DescribeCloudConnectNetworksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCloudConnectNetworksRequest::getPageNumber()const
@@ -138,6 +138,6 @@ std::string DescribeCloudConnectNetworksRequest::getPageNumber()const
 void DescribeCloudConnectNetworksRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

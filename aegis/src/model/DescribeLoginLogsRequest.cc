@@ -33,7 +33,7 @@ std::string DescribeLoginLogsRequest::getTypes()const
 void DescribeLoginLogsRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", std::to_string(types));
+	setCoreParameter("Types", types);
 }
 
 std::string DescribeLoginLogsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeLoginLogsRequest::getSourceIp()const
 void DescribeLoginLogsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeLoginLogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeLoginLogsRequest::getPageSize()const
 void DescribeLoginLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLoginLogsRequest::getStatuses()const
@@ -66,7 +66,7 @@ std::string DescribeLoginLogsRequest::getStatuses()const
 void DescribeLoginLogsRequest::setStatuses(const std::string& statuses)
 {
 	statuses_ = statuses;
-	setCoreParameter("Statuses", std::to_string(statuses));
+	setCoreParameter("Statuses", statuses);
 }
 
 int DescribeLoginLogsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeLoginLogsRequest::getCurrentPage()const
 void DescribeLoginLogsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeLoginLogsRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeLoginLogsRequest::getRemark()const
 void DescribeLoginLogsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeLoginLogsRequest::getTag()const
@@ -99,6 +99,6 @@ std::string DescribeLoginLogsRequest::getTag()const
 void DescribeLoginLogsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 

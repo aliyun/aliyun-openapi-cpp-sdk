@@ -33,7 +33,7 @@ long VoipGetTokenRequest::getResourceOwnerId()const
 void VoipGetTokenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VoipGetTokenRequest::getVoipId()const
@@ -44,7 +44,7 @@ std::string VoipGetTokenRequest::getVoipId()const
 void VoipGetTokenRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", std::to_string(voipId));
+	setCoreParameter("VoipId", voipId);
 }
 
 std::string VoipGetTokenRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string VoipGetTokenRequest::getResourceOwnerAccount()const
 void VoipGetTokenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VoipGetTokenRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long VoipGetTokenRequest::getOwnerId()const
 void VoipGetTokenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VoipGetTokenRequest::getDeviceId()const
@@ -77,7 +77,7 @@ std::string VoipGetTokenRequest::getDeviceId()const
 void VoipGetTokenRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", std::to_string(deviceId));
+	setCoreParameter("DeviceId", deviceId);
 }
 
 bool VoipGetTokenRequest::getIsCustomAccount()const
@@ -99,6 +99,6 @@ std::string VoipGetTokenRequest::getAccessKeyId()const
 void VoipGetTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

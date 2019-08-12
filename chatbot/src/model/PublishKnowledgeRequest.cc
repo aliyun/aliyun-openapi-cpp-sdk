@@ -33,6 +33,6 @@ long PublishKnowledgeRequest::getKnowledgeId()const
 void PublishKnowledgeRequest::setKnowledgeId(long knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", knowledgeId);
+	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
 }
 

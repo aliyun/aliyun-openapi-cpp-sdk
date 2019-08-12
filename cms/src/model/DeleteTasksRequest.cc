@@ -33,7 +33,7 @@ int DeleteTasksRequest::getIsDeleteAlarms()const
 void DeleteTasksRequest::setIsDeleteAlarms(int isDeleteAlarms)
 {
 	isDeleteAlarms_ = isDeleteAlarms;
-	setCoreParameter("IsDeleteAlarms", isDeleteAlarms);
+	setCoreParameter("IsDeleteAlarms", std::to_string(isDeleteAlarms));
 }
 
 std::string DeleteTasksRequest::getTaskIds()const
@@ -44,6 +44,6 @@ std::string DeleteTasksRequest::getTaskIds()const
 void DeleteTasksRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setCoreParameter("TaskIds", std::to_string(taskIds));
+	setCoreParameter("TaskIds", taskIds);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeSuspiciousExportInfoRequest::getSourceIp()const
 void DescribeSuspiciousExportInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeSuspiciousExportInfoRequest::getExportId()const
@@ -44,6 +44,6 @@ int DescribeSuspiciousExportInfoRequest::getExportId()const
 void DescribeSuspiciousExportInfoRequest::setExportId(int exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", exportId);
+	setCoreParameter("ExportId", std::to_string(exportId));
 }
 

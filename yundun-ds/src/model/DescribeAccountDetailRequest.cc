@@ -33,7 +33,7 @@ std::string DescribeAccountDetailRequest::getSourceIp()const
 void DescribeAccountDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccountDetailRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAccountDetailRequest::getLang()const
 void DescribeAccountDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeAccountDetailRequest::getUserId()const
@@ -55,7 +55,7 @@ long DescribeAccountDetailRequest::getUserId()const
 void DescribeAccountDetailRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 long DescribeAccountDetailRequest::getAccountTypeId()const
@@ -66,6 +66,6 @@ long DescribeAccountDetailRequest::getAccountTypeId()const
 void DescribeAccountDetailRequest::setAccountTypeId(long accountTypeId)
 {
 	accountTypeId_ = accountTypeId;
-	setCoreParameter("AccountTypeId", accountTypeId);
+	setCoreParameter("AccountTypeId", std::to_string(accountTypeId));
 }
 

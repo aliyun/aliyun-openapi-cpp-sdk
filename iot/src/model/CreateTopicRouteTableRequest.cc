@@ -34,7 +34,7 @@ void CreateTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& d
 {
 	dstTopic_ = dstTopic;
 	for(int i = 0; i!= dstTopic.size(); i++)
-		setCoreParameter("DstTopic."+ std::to_string(i), std::to_string(dstTopic.at(i)));
+		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
 }
 
 std::string CreateTopicRouteTableRequest::getRegionId()const
@@ -45,7 +45,7 @@ std::string CreateTopicRouteTableRequest::getRegionId()const
 void CreateTopicRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateTopicRouteTableRequest::getIotInstanceId()const
@@ -56,7 +56,7 @@ std::string CreateTopicRouteTableRequest::getIotInstanceId()const
 void CreateTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateTopicRouteTableRequest::getAccessKeyId()const
@@ -67,7 +67,7 @@ std::string CreateTopicRouteTableRequest::getAccessKeyId()const
 void CreateTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateTopicRouteTableRequest::getSrcTopic()const
@@ -78,6 +78,6 @@ std::string CreateTopicRouteTableRequest::getSrcTopic()const
 void CreateTopicRouteTableRequest::setSrcTopic(const std::string& srcTopic)
 {
 	srcTopic_ = srcTopic;
-	setCoreParameter("SrcTopic", std::to_string(srcTopic));
+	setCoreParameter("SrcTopic", srcTopic);
 }
 

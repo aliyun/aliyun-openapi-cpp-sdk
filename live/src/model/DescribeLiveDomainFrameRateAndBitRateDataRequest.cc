@@ -33,7 +33,7 @@ long DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerParentId()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCatalog()const
@@ -44,7 +44,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCatalog()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCatalog(const std::string& catalog)
 {
 	catalog_ = catalog;
-	setCoreParameter("Catalog", std::to_string(catalog));
+	setCoreParameter("Catalog", catalog);
 }
 
 bool DescribeLiveDomainFrameRateAndBitRateDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getProxy_original_
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerIdLoginEma
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerType()con
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeRpcId()const
@@ -99,7 +99,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeRpcId()
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getQueryTime()const
@@ -110,7 +110,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getQueryTime()cons
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setQueryTime(const std::string& queryTime)
 {
 	queryTime_ = queryTime;
-	setCoreParameter("QueryTime", std::to_string(queryTime));
+	setCoreParameter("QueryTime", queryTime);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getAccessKeyId()co
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeTraceId()const
@@ -132,7 +132,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeTraceId
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getSecurityToken()
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRegionId()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRequestContent(
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getHost()const
@@ -176,7 +176,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getHost()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", std::to_string(host));
+	setCoreParameter("Host", host);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerBidEmail(
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerUidEmail(
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerUid()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getApp_ip()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getPopProduct()const
@@ -231,7 +231,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getPopProduct()con
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getDomainName()const
@@ -242,7 +242,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getDomainName()con
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getCallerBid()cons
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerId()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getVersion()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeLiveDomainFrameRateAndBitRateDataRequest::getProxy_trust_transport_info()const
@@ -319,7 +319,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getServiceCode()co
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRequestId()const
@@ -330,7 +330,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getRequestId()cons
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeUserData()const
@@ -341,7 +341,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getEagleEyeUserDat
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getFields()const
@@ -352,6 +352,6 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getFields()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

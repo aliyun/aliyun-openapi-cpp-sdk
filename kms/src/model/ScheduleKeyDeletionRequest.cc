@@ -33,7 +33,7 @@ int ScheduleKeyDeletionRequest::getPendingWindowInDays()const
 void ScheduleKeyDeletionRequest::setPendingWindowInDays(int pendingWindowInDays)
 {
 	pendingWindowInDays_ = pendingWindowInDays;
-	setCoreParameter("PendingWindowInDays", pendingWindowInDays);
+	setCoreParameter("PendingWindowInDays", std::to_string(pendingWindowInDays));
 }
 
 std::string ScheduleKeyDeletionRequest::getKeyId()const
@@ -44,6 +44,6 @@ std::string ScheduleKeyDeletionRequest::getKeyId()const
 void ScheduleKeyDeletionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", std::to_string(keyId));
+	setCoreParameter("KeyId", keyId);
 }
 

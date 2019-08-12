@@ -33,7 +33,7 @@ int DescribeGWSClustersRequest::getPageSize()const
 void DescribeGWSClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGWSClustersRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DescribeGWSClustersRequest::getClusterId()const
 void DescribeGWSClustersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int DescribeGWSClustersRequest::getPageNumber()const
@@ -55,7 +55,7 @@ int DescribeGWSClustersRequest::getPageNumber()const
 void DescribeGWSClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGWSClustersRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeGWSClustersRequest::getAccessKeyId()const
 void DescribeGWSClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DeleteNetworkOptimizationRequest::getResourceOwnerId()const
 void DeleteNetworkOptimizationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkOptimizationRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteNetworkOptimizationRequest::getResourceOwnerAccount()const
 void DeleteNetworkOptimizationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNetworkOptimizationRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteNetworkOptimizationRequest::getRegionId()const
 void DeleteNetworkOptimizationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkOptimizationRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string DeleteNetworkOptimizationRequest::getNetworkOptId()const
 void DeleteNetworkOptimizationRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
+	setCoreParameter("NetworkOptId", networkOptId);
 }
 
 std::string DeleteNetworkOptimizationRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteNetworkOptimizationRequest::getOwnerAccount()const
 void DeleteNetworkOptimizationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteNetworkOptimizationRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DeleteNetworkOptimizationRequest::getOwnerId()const
 void DeleteNetworkOptimizationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

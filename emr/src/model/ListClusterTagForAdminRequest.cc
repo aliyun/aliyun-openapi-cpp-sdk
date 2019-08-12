@@ -33,7 +33,7 @@ long ListClusterTagForAdminRequest::getResourceOwnerId()const
 void ListClusterTagForAdminRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ListClusterTagForAdminRequest::getClusterIdList()const
@@ -45,7 +45,7 @@ void ListClusterTagForAdminRequest::setClusterIdList(const std::vector<std::stri
 {
 	clusterIdList_ = clusterIdList;
 	for(int i = 0; i!= clusterIdList.size(); i++)
-		setCoreParameter("ClusterIdList."+ std::to_string(i), std::to_string(clusterIdList.at(i)));
+		setCoreParameter("ClusterIdList."+ std::to_string(i), clusterIdList.at(i));
 }
 
 std::string ListClusterTagForAdminRequest::getRegionId()const
@@ -56,7 +56,7 @@ std::string ListClusterTagForAdminRequest::getRegionId()const
 void ListClusterTagForAdminRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListClusterTagForAdminRequest::getUserId()const
@@ -67,7 +67,7 @@ std::string ListClusterTagForAdminRequest::getUserId()const
 void ListClusterTagForAdminRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string ListClusterTagForAdminRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string ListClusterTagForAdminRequest::getAccessKeyId()const
 void ListClusterTagForAdminRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

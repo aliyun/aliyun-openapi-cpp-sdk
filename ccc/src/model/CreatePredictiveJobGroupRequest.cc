@@ -33,7 +33,7 @@ std::string CreatePredictiveJobGroupRequest::getInstanceId()const
 void CreatePredictiveJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool CreatePredictiveJobGroupRequest::getIsDraft()const
@@ -55,7 +55,7 @@ std::string CreatePredictiveJobGroupRequest::getSkillGroupId()const
 void CreatePredictiveJobGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string CreatePredictiveJobGroupRequest::getStrategyJson()const
@@ -66,7 +66,7 @@ std::string CreatePredictiveJobGroupRequest::getStrategyJson()const
 void CreatePredictiveJobGroupRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", std::to_string(strategyJson));
+	setCoreParameter("StrategyJson", strategyJson);
 }
 
 std::string CreatePredictiveJobGroupRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreatePredictiveJobGroupRequest::getName()const
 void CreatePredictiveJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreatePredictiveJobGroupRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreatePredictiveJobGroupRequest::getDescription()const
 void CreatePredictiveJobGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 bool CreatePredictiveJobGroupRequest::getTimingSchedule()const
@@ -111,7 +111,7 @@ void CreatePredictiveJobGroupRequest::setJobsJson(const std::vector<std::string>
 {
 	jobsJson_ = jobsJson;
 	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), std::to_string(jobsJson.at(i)));
+		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
 }
 
 std::string CreatePredictiveJobGroupRequest::getJobFilePath()const
@@ -122,6 +122,6 @@ std::string CreatePredictiveJobGroupRequest::getJobFilePath()const
 void CreatePredictiveJobGroupRequest::setJobFilePath(const std::string& jobFilePath)
 {
 	jobFilePath_ = jobFilePath;
-	setCoreParameter("JobFilePath", std::to_string(jobFilePath));
+	setCoreParameter("JobFilePath", jobFilePath);
 }
 

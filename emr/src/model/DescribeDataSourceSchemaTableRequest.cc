@@ -33,7 +33,7 @@ long DescribeDataSourceSchemaTableRequest::getResourceOwnerId()const
 void DescribeDataSourceSchemaTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string DescribeDataSourceSchemaTableRequest::getDbName()const
 void DescribeDataSourceSchemaTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeDataSourceSchemaTableRequest::getRegionId()const
 void DescribeDataSourceSchemaTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getDataSourceId()const
@@ -66,7 +66,7 @@ std::string DescribeDataSourceSchemaTableRequest::getDataSourceId()const
 void DescribeDataSourceSchemaTableRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getTableName()const
@@ -77,7 +77,7 @@ std::string DescribeDataSourceSchemaTableRequest::getTableName()const
 void DescribeDataSourceSchemaTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", std::to_string(tableName));
+	setCoreParameter("TableName", tableName);
 }
 
 std::string DescribeDataSourceSchemaTableRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDataSourceSchemaTableRequest::getAccessKeyId()const
 void DescribeDataSourceSchemaTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

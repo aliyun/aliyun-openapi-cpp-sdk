@@ -33,7 +33,7 @@ long QueryRobotTaskCallListRequest::getResourceOwnerId()const
 void QueryRobotTaskCallListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryRobotTaskCallListRequest::getCalled()const
@@ -44,7 +44,7 @@ std::string QueryRobotTaskCallListRequest::getCalled()const
 void QueryRobotTaskCallListRequest::setCalled(const std::string& called)
 {
 	called_ = called;
-	setCoreParameter("Called", std::to_string(called));
+	setCoreParameter("Called", called);
 }
 
 std::string QueryRobotTaskCallListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryRobotTaskCallListRequest::getResourceOwnerAccount()const
 void QueryRobotTaskCallListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryRobotTaskCallListRequest::getDialogCountFrom()const
@@ -66,7 +66,7 @@ std::string QueryRobotTaskCallListRequest::getDialogCountFrom()const
 void QueryRobotTaskCallListRequest::setDialogCountFrom(const std::string& dialogCountFrom)
 {
 	dialogCountFrom_ = dialogCountFrom;
-	setCoreParameter("DialogCountFrom", std::to_string(dialogCountFrom));
+	setCoreParameter("DialogCountFrom", dialogCountFrom);
 }
 
 std::string QueryRobotTaskCallListRequest::getDurationTo()const
@@ -77,7 +77,7 @@ std::string QueryRobotTaskCallListRequest::getDurationTo()const
 void QueryRobotTaskCallListRequest::setDurationTo(const std::string& durationTo)
 {
 	durationTo_ = durationTo;
-	setCoreParameter("DurationTo", std::to_string(durationTo));
+	setCoreParameter("DurationTo", durationTo);
 }
 
 std::string QueryRobotTaskCallListRequest::getHangupDirection()const
@@ -88,7 +88,7 @@ std::string QueryRobotTaskCallListRequest::getHangupDirection()const
 void QueryRobotTaskCallListRequest::setHangupDirection(const std::string& hangupDirection)
 {
 	hangupDirection_ = hangupDirection;
-	setCoreParameter("HangupDirection", std::to_string(hangupDirection));
+	setCoreParameter("HangupDirection", hangupDirection);
 }
 
 std::string QueryRobotTaskCallListRequest::getDialogCountTo()const
@@ -99,7 +99,7 @@ std::string QueryRobotTaskCallListRequest::getDialogCountTo()const
 void QueryRobotTaskCallListRequest::setDialogCountTo(const std::string& dialogCountTo)
 {
 	dialogCountTo_ = dialogCountTo;
-	setCoreParameter("DialogCountTo", std::to_string(dialogCountTo));
+	setCoreParameter("DialogCountTo", dialogCountTo);
 }
 
 long QueryRobotTaskCallListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long QueryRobotTaskCallListRequest::getOwnerId()const
 void QueryRobotTaskCallListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryRobotTaskCallListRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string QueryRobotTaskCallListRequest::getAccessKeyId()const
 void QueryRobotTaskCallListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryRobotTaskCallListRequest::getDurationFrom()const
@@ -132,7 +132,7 @@ std::string QueryRobotTaskCallListRequest::getDurationFrom()const
 void QueryRobotTaskCallListRequest::setDurationFrom(const std::string& durationFrom)
 {
 	durationFrom_ = durationFrom;
-	setCoreParameter("DurationFrom", std::to_string(durationFrom));
+	setCoreParameter("DurationFrom", durationFrom);
 }
 
 int QueryRobotTaskCallListRequest::getPageNo()const
@@ -143,7 +143,7 @@ int QueryRobotTaskCallListRequest::getPageNo()const
 void QueryRobotTaskCallListRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 int QueryRobotTaskCallListRequest::getPageSize()const
@@ -154,7 +154,7 @@ int QueryRobotTaskCallListRequest::getPageSize()const
 void QueryRobotTaskCallListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryRobotTaskCallListRequest::getCallResult()const
@@ -165,7 +165,7 @@ std::string QueryRobotTaskCallListRequest::getCallResult()const
 void QueryRobotTaskCallListRequest::setCallResult(const std::string& callResult)
 {
 	callResult_ = callResult;
-	setCoreParameter("CallResult", std::to_string(callResult));
+	setCoreParameter("CallResult", callResult);
 }
 
 std::string QueryRobotTaskCallListRequest::getTaskId()const
@@ -176,6 +176,6 @@ std::string QueryRobotTaskCallListRequest::getTaskId()const
 void QueryRobotTaskCallListRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

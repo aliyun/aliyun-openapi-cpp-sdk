@@ -33,7 +33,7 @@ std::string DescribeBizTypesRequest::getSourceIp()const
 void DescribeBizTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 bool DescribeBizTypesRequest::getImportFlag()const

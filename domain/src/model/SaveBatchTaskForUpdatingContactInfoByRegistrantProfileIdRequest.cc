@@ -33,7 +33,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", std::to_string(contactType));
+	setCoreParameter("ContactType", contactType);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getRegistrantProfileId()const
@@ -55,7 +55,7 @@ long SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getRegistr
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", registrantProfileId);
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::vector<std::string> SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getDomainName()const
@@ -67,7 +67,7 @@ void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setDomainN
 {
 	domainName_ = domainName;
 	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), std::to_string(domainName.at(i)));
+		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
 }
 
 bool SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::getTransferOutProhibited()const
@@ -89,6 +89,6 @@ std::string SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::get
 void SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeHistoryApisRequest::getStageName()const
 void DescribeHistoryApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string DescribeHistoryApisRequest::getApiName()const
@@ -44,7 +44,7 @@ std::string DescribeHistoryApisRequest::getApiName()const
 void DescribeHistoryApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", std::to_string(apiName));
+	setCoreParameter("ApiName", apiName);
 }
 
 std::string DescribeHistoryApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeHistoryApisRequest::getSecurityToken()const
 void DescribeHistoryApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeHistoryApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeHistoryApisRequest::getGroupId()const
 void DescribeHistoryApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeHistoryApisRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeHistoryApisRequest::getPageSize()const
 void DescribeHistoryApisRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeHistoryApisRequest::getApiId()const
@@ -88,7 +88,7 @@ std::string DescribeHistoryApisRequest::getApiId()const
 void DescribeHistoryApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", std::to_string(apiId));
+	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeHistoryApisRequest::getPageNumber()const
@@ -99,7 +99,7 @@ std::string DescribeHistoryApisRequest::getPageNumber()const
 void DescribeHistoryApisRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeHistoryApisRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeHistoryApisRequest::getAccessKeyId()const
 void DescribeHistoryApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

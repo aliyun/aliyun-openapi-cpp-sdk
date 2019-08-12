@@ -33,7 +33,7 @@ std::string UpdateBoardCallbackRequest::getAuthKey()const
 void UpdateBoardCallbackRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setCoreParameter("AuthKey", std::to_string(authKey));
+	setCoreParameter("AuthKey", authKey);
 }
 
 long UpdateBoardCallbackRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long UpdateBoardCallbackRequest::getCallerParentId()const
 void UpdateBoardCallbackRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UpdateBoardCallbackRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string UpdateBoardCallbackRequest::getProxy_original_source_ip()const
 void UpdateBoardCallbackRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UpdateBoardCallbackRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UpdateBoardCallbackRequest::getOwnerIdLoginEmail()const
 void UpdateBoardCallbackRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UpdateBoardCallbackRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UpdateBoardCallbackRequest::getCallerType()const
 void UpdateBoardCallbackRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UpdateBoardCallbackRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UpdateBoardCallbackRequest::getAccessKeyId()const
 void UpdateBoardCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int UpdateBoardCallbackRequest::getCallbackEnable()const
@@ -110,7 +110,7 @@ int UpdateBoardCallbackRequest::getCallbackEnable()const
 void UpdateBoardCallbackRequest::setCallbackEnable(int callbackEnable)
 {
 	callbackEnable_ = callbackEnable;
-	setCoreParameter("CallbackEnable", callbackEnable);
+	setCoreParameter("CallbackEnable", std::to_string(callbackEnable));
 }
 
 std::string UpdateBoardCallbackRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string UpdateBoardCallbackRequest::getSecurityToken()const
 void UpdateBoardCallbackRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateBoardCallbackRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string UpdateBoardCallbackRequest::getRegionId()const
 void UpdateBoardCallbackRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateBoardCallbackRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string UpdateBoardCallbackRequest::getRequestContent()const
 void UpdateBoardCallbackRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UpdateBoardCallbackRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string UpdateBoardCallbackRequest::getCallerBidEmail()const
 void UpdateBoardCallbackRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UpdateBoardCallbackRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string UpdateBoardCallbackRequest::getCallerUidEmail()const
 void UpdateBoardCallbackRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UpdateBoardCallbackRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long UpdateBoardCallbackRequest::getCallerUid()const
 void UpdateBoardCallbackRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UpdateBoardCallbackRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string UpdateBoardCallbackRequest::getApp_ip()const
 void UpdateBoardCallbackRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UpdateBoardCallbackRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string UpdateBoardCallbackRequest::getPopProduct()const
 void UpdateBoardCallbackRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string UpdateBoardCallbackRequest::getCallbackEvents()const
@@ -209,7 +209,7 @@ std::string UpdateBoardCallbackRequest::getCallbackEvents()const
 void UpdateBoardCallbackRequest::setCallbackEvents(const std::string& callbackEvents)
 {
 	callbackEvents_ = callbackEvents;
-	setCoreParameter("CallbackEvents", std::to_string(callbackEvents));
+	setCoreParameter("CallbackEvents", callbackEvents);
 }
 
 std::string UpdateBoardCallbackRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string UpdateBoardCallbackRequest::getCallerBid()const
 void UpdateBoardCallbackRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UpdateBoardCallbackRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long UpdateBoardCallbackRequest::getOwnerId()const
 void UpdateBoardCallbackRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateBoardCallbackRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string UpdateBoardCallbackRequest::getVersion()const
 void UpdateBoardCallbackRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool UpdateBoardCallbackRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string UpdateBoardCallbackRequest::getRequestId()const
 void UpdateBoardCallbackRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UpdateBoardCallbackRequest::getCallbackUri()const
@@ -297,7 +297,7 @@ std::string UpdateBoardCallbackRequest::getCallbackUri()const
 void UpdateBoardCallbackRequest::setCallbackUri(const std::string& callbackUri)
 {
 	callbackUri_ = callbackUri;
-	setCoreParameter("CallbackUri", std::to_string(callbackUri));
+	setCoreParameter("CallbackUri", callbackUri);
 }
 
 std::string UpdateBoardCallbackRequest::getAppId()const
@@ -308,7 +308,7 @@ std::string UpdateBoardCallbackRequest::getAppId()const
 void UpdateBoardCallbackRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string UpdateBoardCallbackRequest::getAuthSwitch()const
@@ -319,6 +319,6 @@ std::string UpdateBoardCallbackRequest::getAuthSwitch()const
 void UpdateBoardCallbackRequest::setAuthSwitch(const std::string& authSwitch)
 {
 	authSwitch_ = authSwitch;
-	setCoreParameter("AuthSwitch", std::to_string(authSwitch));
+	setCoreParameter("AuthSwitch", authSwitch);
 }
 

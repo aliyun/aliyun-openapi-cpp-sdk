@@ -45,6 +45,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/UpdateBizTypeSettingResult.h
 	include/alibabacloud/green/model/FileAsyncScanRequest.h
 	include/alibabacloud/green/model/FileAsyncScanResult.h
+	include/alibabacloud/green/model/DetectFaceRequest.h
+	include/alibabacloud/green/model/DetectFaceResult.h
 	include/alibabacloud/green/model/DescribeOssResultItemsRequest.h
 	include/alibabacloud/green/model/DescribeOssResultItemsResult.h
 	include/alibabacloud/green/model/DescribeBizTypesRequest.h
@@ -314,6 +316,8 @@ set(green_src
 	src/model/UpdateBizTypeSettingResult.cc
 	src/model/FileAsyncScanRequest.cc
 	src/model/FileAsyncScanResult.cc
+	src/model/DetectFaceRequest.cc
+	src/model/DetectFaceResult.cc
 	src/model/DescribeOssResultItemsRequest.cc
 	src/model/DescribeOssResultItemsResult.cc
 	src/model/DescribeBizTypesRequest.cc

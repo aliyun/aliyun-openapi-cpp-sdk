@@ -33,7 +33,7 @@ std::string DescribeWarningMachinesRequest::getSourceIp()const
 void DescribeWarningMachinesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWarningMachinesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeWarningMachinesRequest::getPageSize()const
 void DescribeWarningMachinesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWarningMachinesRequest::getMachineName()const
@@ -55,7 +55,7 @@ std::string DescribeWarningMachinesRequest::getMachineName()const
 void DescribeWarningMachinesRequest::setMachineName(const std::string& machineName)
 {
 	machineName_ = machineName;
-	setCoreParameter("MachineName", std::to_string(machineName));
+	setCoreParameter("MachineName", machineName);
 }
 
 long DescribeWarningMachinesRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long DescribeWarningMachinesRequest::getStrategyId()const
 void DescribeWarningMachinesRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeWarningMachinesRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeWarningMachinesRequest::getCurrentPage()const
 void DescribeWarningMachinesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWarningMachinesRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeWarningMachinesRequest::getLang()const
 void DescribeWarningMachinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeWarningMachinesRequest::getRiskId()const
@@ -99,7 +99,7 @@ long DescribeWarningMachinesRequest::getRiskId()const
 void DescribeWarningMachinesRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", riskId);
+	setCoreParameter("RiskId", std::to_string(riskId));
 }
 
 std::string DescribeWarningMachinesRequest::getUuids()const
@@ -110,6 +110,6 @@ std::string DescribeWarningMachinesRequest::getUuids()const
 void DescribeWarningMachinesRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

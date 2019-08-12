@@ -33,7 +33,7 @@ long DescribeCrossRegionBackupsRequest::getResourceOwnerId()const
 void DescribeCrossRegionBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCrossRegionBackupsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeCrossRegionBackupsRequest::getResourceOwnerAccount()const
 void DescribeCrossRegionBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeCrossRegionBackupsRequest::getEndTime()const
 void DescribeCrossRegionBackupsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeCrossRegionBackupsRequest::getStartTime()const
 void DescribeCrossRegionBackupsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeCrossRegionBackupsRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeCrossRegionBackupsRequest::getOwnerId()const
 void DescribeCrossRegionBackupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCrossRegionBackupsRequest::getCrossBackupRegion()const
@@ -88,7 +88,7 @@ std::string DescribeCrossRegionBackupsRequest::getCrossBackupRegion()const
 void DescribeCrossRegionBackupsRequest::setCrossBackupRegion(const std::string& crossBackupRegion)
 {
 	crossBackupRegion_ = crossBackupRegion;
-	setCoreParameter("CrossBackupRegion", std::to_string(crossBackupRegion));
+	setCoreParameter("CrossBackupRegion", crossBackupRegion);
 }
 
 int DescribeCrossRegionBackupsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeCrossRegionBackupsRequest::getPageNumber()const
 void DescribeCrossRegionBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCrossRegionBackupsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeCrossRegionBackupsRequest::getAccessKeyId()const
 void DescribeCrossRegionBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeCrossRegionBackupsRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeCrossRegionBackupsRequest::getRegionId()const
 void DescribeCrossRegionBackupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeCrossRegionBackupsRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeCrossRegionBackupsRequest::getPageSize()const
 void DescribeCrossRegionBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCrossRegionBackupsRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string DescribeCrossRegionBackupsRequest::getDBInstanceId()const
 void DescribeCrossRegionBackupsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 int DescribeCrossRegionBackupsRequest::getCrossBackupId()const
@@ -154,6 +154,6 @@ int DescribeCrossRegionBackupsRequest::getCrossBackupId()const
 void DescribeCrossRegionBackupsRequest::setCrossBackupId(int crossBackupId)
 {
 	crossBackupId_ = crossBackupId;
-	setCoreParameter("CrossBackupId", crossBackupId);
+	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
 }
 

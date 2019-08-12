@@ -33,7 +33,7 @@ std::string SearchEditingProjectRequest::getResourceOwnerId()const
 void SearchEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchEditingProjectRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SearchEditingProjectRequest::getResourceOwnerAccount()const
 void SearchEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchEditingProjectRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SearchEditingProjectRequest::getOwnerAccount()const
 void SearchEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SearchEditingProjectRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string SearchEditingProjectRequest::getEndTime()const
 void SearchEditingProjectRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string SearchEditingProjectRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string SearchEditingProjectRequest::getStartTime()const
 void SearchEditingProjectRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string SearchEditingProjectRequest::getOwnerId()const
@@ -88,7 +88,7 @@ std::string SearchEditingProjectRequest::getOwnerId()const
 void SearchEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SearchEditingProjectRequest::getTitle()const
@@ -99,7 +99,7 @@ std::string SearchEditingProjectRequest::getTitle()const
 void SearchEditingProjectRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string SearchEditingProjectRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SearchEditingProjectRequest::getAccessKeyId()const
 void SearchEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int SearchEditingProjectRequest::getPageNo()const
@@ -121,7 +121,7 @@ int SearchEditingProjectRequest::getPageNo()const
 void SearchEditingProjectRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 int SearchEditingProjectRequest::getPageSize()const
@@ -132,7 +132,7 @@ int SearchEditingProjectRequest::getPageSize()const
 void SearchEditingProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchEditingProjectRequest::getSortBy()const
@@ -143,7 +143,7 @@ std::string SearchEditingProjectRequest::getSortBy()const
 void SearchEditingProjectRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", std::to_string(sortBy));
+	setCoreParameter("SortBy", sortBy);
 }
 
 std::string SearchEditingProjectRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string SearchEditingProjectRequest::getStatus()const
 void SearchEditingProjectRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

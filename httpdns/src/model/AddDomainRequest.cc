@@ -33,7 +33,7 @@ std::string AddDomainRequest::getAccountId()const
 void AddDomainRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setCoreParameter("AccountId", accountId);
 }
 
 std::string AddDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string AddDomainRequest::getDomainName()const
 void AddDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddDomainRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string AddDomainRequest::getAccessKeyId()const
 void AddDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

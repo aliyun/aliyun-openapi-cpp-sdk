@@ -33,7 +33,7 @@ int DescribeKeywordRequest::getTotalCount()const
 void DescribeKeywordRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", totalCount);
+	setCoreParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeKeywordRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeKeywordRequest::getSourceIp()const
 void DescribeKeywordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeKeywordRequest::getKeywordLibId()const
@@ -55,7 +55,7 @@ int DescribeKeywordRequest::getKeywordLibId()const
 void DescribeKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", keywordLibId);
+	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
 }
 
 int DescribeKeywordRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeKeywordRequest::getPageSize()const
 void DescribeKeywordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeKeywordRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeKeywordRequest::getCurrentPage()const
 void DescribeKeywordRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeKeywordRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeKeywordRequest::getLang()const
 void DescribeKeywordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeKeywordRequest::getKeyword()const
@@ -99,6 +99,6 @@ std::string DescribeKeywordRequest::getKeyword()const
 void DescribeKeywordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteSuspEventNodeRequest::getSourceIp()const
 void DeleteSuspEventNodeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DeleteSuspEventNodeRequest::getNoteId()const
@@ -44,6 +44,6 @@ int DeleteSuspEventNodeRequest::getNoteId()const
 void DeleteSuspEventNodeRequest::setNoteId(int noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setCoreParameter("NoteId", std::to_string(noteId));
 }
 

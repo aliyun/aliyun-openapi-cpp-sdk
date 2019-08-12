@@ -33,7 +33,7 @@ std::string DescribeLogShipperStatusRequest::getSourceIp()const
 void DescribeLogShipperStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeLogShipperStatusRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string DescribeLogShipperStatusRequest::getFrom()const
 void DescribeLogShipperStatusRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeLogShipperStatusRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeLogShipperStatusRequest::getLang()const
 void DescribeLogShipperStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

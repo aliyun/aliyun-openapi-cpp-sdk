@@ -33,7 +33,7 @@ std::string ListRecordingsRequest::getAgentId()const
 void ListRecordingsRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
+	setCoreParameter("AgentId", agentId);
 }
 
 std::string ListRecordingsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListRecordingsRequest::getInstanceId()const
 void ListRecordingsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRecordingsRequest::getCriteria()const
@@ -55,7 +55,7 @@ std::string ListRecordingsRequest::getCriteria()const
 void ListRecordingsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", std::to_string(criteria));
+	setCoreParameter("Criteria", criteria);
 }
 
 std::string ListRecordingsRequest::getPhoneNumber()const
@@ -66,7 +66,7 @@ std::string ListRecordingsRequest::getPhoneNumber()const
 void ListRecordingsRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
+	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
 int ListRecordingsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListRecordingsRequest::getPageSize()const
 void ListRecordingsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListRecordingsRequest::getStopTime()const
@@ -88,7 +88,7 @@ long ListRecordingsRequest::getStopTime()const
 void ListRecordingsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", stopTime);
+	setCoreParameter("StopTime", std::to_string(stopTime));
 }
 
 long ListRecordingsRequest::getStartTime()const
@@ -99,7 +99,7 @@ long ListRecordingsRequest::getStartTime()const
 void ListRecordingsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListRecordingsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListRecordingsRequest::getPageNumber()const
 void ListRecordingsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListRecordingsRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ListRecordingsRequest::getAccessKeyId()const
 void ListRecordingsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

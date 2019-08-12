@@ -33,7 +33,7 @@ long TaskConfigListRequest::getGroupId()const
 void TaskConfigListRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int TaskConfigListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int TaskConfigListRequest::getPageSize()const
 void TaskConfigListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string TaskConfigListRequest::getTaskName()const
@@ -55,7 +55,7 @@ std::string TaskConfigListRequest::getTaskName()const
 void TaskConfigListRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", std::to_string(taskName));
+	setCoreParameter("TaskName", taskName);
 }
 
 long TaskConfigListRequest::getId()const
@@ -66,7 +66,7 @@ long TaskConfigListRequest::getId()const
 void TaskConfigListRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 int TaskConfigListRequest::getPageNumber()const
@@ -77,6 +77,6 @@ int TaskConfigListRequest::getPageNumber()const
 void TaskConfigListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

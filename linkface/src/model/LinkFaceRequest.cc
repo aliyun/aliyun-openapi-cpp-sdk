@@ -33,7 +33,7 @@ std::string LinkFaceRequest::getGroupId()const
 void LinkFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string LinkFaceRequest::getUserId()const
@@ -44,6 +44,6 @@ std::string LinkFaceRequest::getUserId()const
 void LinkFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 

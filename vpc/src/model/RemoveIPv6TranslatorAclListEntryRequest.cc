@@ -33,7 +33,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getAclId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", std::to_string(aclId));
+	setCoreParameter("AclId", aclId);
 }
 
 long RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getResourceOwnerAccount()co
 void RemoveIPv6TranslatorAclListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getClientToken()const
 void RemoveIPv6TranslatorAclListEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getRegionId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getOwnerAccount()const
 void RemoveIPv6TranslatorAclListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveIPv6TranslatorAclListEntryRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long RemoveIPv6TranslatorAclListEntryRequest::getOwnerId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveIPv6TranslatorAclListEntryRequest::getAclEntryId()const
@@ -110,6 +110,6 @@ std::string RemoveIPv6TranslatorAclListEntryRequest::getAclEntryId()const
 void RemoveIPv6TranslatorAclListEntryRequest::setAclEntryId(const std::string& aclEntryId)
 {
 	aclEntryId_ = aclEntryId;
-	setCoreParameter("AclEntryId", std::to_string(aclEntryId));
+	setCoreParameter("AclEntryId", aclEntryId);
 }
 

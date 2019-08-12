@@ -33,7 +33,7 @@ int QueryTaskDetailListRequest::getTaskStatus()const
 void QueryTaskDetailListRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", taskStatus);
+	setCoreParameter("TaskStatus", std::to_string(taskStatus));
 }
 
 std::string QueryTaskDetailListRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string QueryTaskDetailListRequest::getInstanceId()const
 void QueryTaskDetailListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryTaskDetailListRequest::getTaskNo()const
@@ -55,7 +55,7 @@ std::string QueryTaskDetailListRequest::getTaskNo()const
 void QueryTaskDetailListRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", std::to_string(taskNo));
+	setCoreParameter("TaskNo", taskNo);
 }
 
 std::string QueryTaskDetailListRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string QueryTaskDetailListRequest::getDomainName()const
 void QueryTaskDetailListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryTaskDetailListRequest::getUserClientIp()const
@@ -77,7 +77,7 @@ std::string QueryTaskDetailListRequest::getUserClientIp()const
 void QueryTaskDetailListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskDetailListRequest::getPageSize()const
@@ -88,7 +88,7 @@ int QueryTaskDetailListRequest::getPageSize()const
 void QueryTaskDetailListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskDetailListRequest::getLang()const
@@ -99,7 +99,7 @@ std::string QueryTaskDetailListRequest::getLang()const
 void QueryTaskDetailListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int QueryTaskDetailListRequest::getPageNum()const
@@ -110,6 +110,6 @@ int QueryTaskDetailListRequest::getPageNum()const
 void QueryTaskDetailListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

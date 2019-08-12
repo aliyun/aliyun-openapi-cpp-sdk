@@ -33,7 +33,7 @@ std::string GetMediaMetaRequest::getRegionId()const
 void GetMediaMetaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetMediaMetaRequest::getMediaUri()const
@@ -44,7 +44,7 @@ std::string GetMediaMetaRequest::getMediaUri()const
 void GetMediaMetaRequest::setMediaUri(const std::string& mediaUri)
 {
 	mediaUri_ = mediaUri;
-	setCoreParameter("MediaUri", std::to_string(mediaUri));
+	setCoreParameter("MediaUri", mediaUri);
 }
 
 std::string GetMediaMetaRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetMediaMetaRequest::getProject()const
 void GetMediaMetaRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string GetMediaMetaRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string GetMediaMetaRequest::getAccessKeyId()const
 void GetMediaMetaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

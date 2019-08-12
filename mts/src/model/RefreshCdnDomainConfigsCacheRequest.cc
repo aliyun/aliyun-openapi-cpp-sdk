@@ -33,7 +33,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerId()const
 void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount()const
 void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount()const
 void RefreshCdnDomainConfigsCacheRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getDomains()const
@@ -66,7 +66,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getDomains()const
 void RefreshCdnDomainConfigsCacheRequest::setDomains(const std::string& domains)
 {
 	domains_ = domains;
-	setCoreParameter("Domains", std::to_string(domains));
+	setCoreParameter("Domains", domains);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId()const
 void RefreshCdnDomainConfigsCacheRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId()const
 void RefreshCdnDomainConfigsCacheRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeRdsVpcsRequest::getResourceOwnerId()const
 void DescribeRdsVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRdsVpcsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeRdsVpcsRequest::getSecurityToken()const
 void DescribeRdsVpcsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRdsVpcsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRdsVpcsRequest::getResourceOwnerAccount()const
 void DescribeRdsVpcsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRdsVpcsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeRdsVpcsRequest::getRegionId()const
 void DescribeRdsVpcsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRdsVpcsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeRdsVpcsRequest::getOwnerAccount()const
 void DescribeRdsVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRdsVpcsRequest::getZoneId()const
@@ -88,7 +88,7 @@ std::string DescribeRdsVpcsRequest::getZoneId()const
 void DescribeRdsVpcsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 long DescribeRdsVpcsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeRdsVpcsRequest::getOwnerId()const
 void DescribeRdsVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRdsVpcsRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeRdsVpcsRequest::getAccessKeyId()const
 void DescribeRdsVpcsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDepartCountsRequest::getTypeCode()const
 void DescribeDepartCountsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", std::to_string(typeCode));
+	setCoreParameter("TypeCode", typeCode);
 }
 
 std::string DescribeDepartCountsRequest::getDepartName()const
@@ -44,7 +44,7 @@ std::string DescribeDepartCountsRequest::getDepartName()const
 void DescribeDepartCountsRequest::setDepartName(const std::string& departName)
 {
 	departName_ = departName;
-	setCoreParameter("DepartName", std::to_string(departName));
+	setCoreParameter("DepartName", departName);
 }
 
 std::string DescribeDepartCountsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeDepartCountsRequest::getSourceIp()const
 void DescribeDepartCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDepartCountsRequest::getFeatureType()const
@@ -66,7 +66,7 @@ int DescribeDepartCountsRequest::getFeatureType()const
 void DescribeDepartCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDepartCountsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeDepartCountsRequest::getPageSize()const
 void DescribeDepartCountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeDepartCountsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDepartCountsRequest::getCurrentPage()const
 void DescribeDepartCountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDepartCountsRequest::getLang()const
@@ -99,6 +99,6 @@ std::string DescribeDepartCountsRequest::getLang()const
 void DescribeDepartCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

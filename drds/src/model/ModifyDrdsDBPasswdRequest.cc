@@ -33,7 +33,7 @@ std::string ModifyDrdsDBPasswdRequest::getNewPasswd()const
 void ModifyDrdsDBPasswdRequest::setNewPasswd(const std::string& newPasswd)
 {
 	newPasswd_ = newPasswd;
-	setCoreParameter("NewPasswd", std::to_string(newPasswd));
+	setCoreParameter("NewPasswd", newPasswd);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string ModifyDrdsDBPasswdRequest::getDbName()const
 void ModifyDrdsDBPasswdRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string ModifyDrdsDBPasswdRequest::getDrdsInstanceId()const
 void ModifyDrdsDBPasswdRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ModifyDrdsDBPasswdRequest::getAccessKeyId()const
 void ModifyDrdsDBPasswdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

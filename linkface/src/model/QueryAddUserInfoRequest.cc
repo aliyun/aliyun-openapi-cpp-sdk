@@ -33,7 +33,7 @@ std::string QueryAddUserInfoRequest::getIotId()const
 void QueryAddUserInfoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", std::to_string(iotId));
+	setCoreParameter("IotId", iotId);
 }
 
 std::string QueryAddUserInfoRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string QueryAddUserInfoRequest::getGroupId()const
 void QueryAddUserInfoRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string QueryAddUserInfoRequest::getDeviceName()const
@@ -55,7 +55,7 @@ std::string QueryAddUserInfoRequest::getDeviceName()const
 void QueryAddUserInfoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string QueryAddUserInfoRequest::getProductKey()const
@@ -66,6 +66,6 @@ std::string QueryAddUserInfoRequest::getProductKey()const
 void QueryAddUserInfoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 

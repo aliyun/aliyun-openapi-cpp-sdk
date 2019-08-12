@@ -33,7 +33,7 @@ std::string DescribeWhiteListAssetRequest::getSourceIp()const
 void DescribeWhiteListAssetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeWhiteListAssetRequest::getLastMaxId()const
@@ -44,7 +44,7 @@ long DescribeWhiteListAssetRequest::getLastMaxId()const
 void DescribeWhiteListAssetRequest::setLastMaxId(long lastMaxId)
 {
 	lastMaxId_ = lastMaxId;
-	setCoreParameter("LastMaxId", lastMaxId);
+	setCoreParameter("LastMaxId", std::to_string(lastMaxId));
 }
 
 int DescribeWhiteListAssetRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeWhiteListAssetRequest::getPageSize()const
 void DescribeWhiteListAssetRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeWhiteListAssetRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long DescribeWhiteListAssetRequest::getStrategyId()const
 void DescribeWhiteListAssetRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeWhiteListAssetRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeWhiteListAssetRequest::getLang()const
 void DescribeWhiteListAssetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeWhiteListAssetRequest::getType()const
@@ -88,6 +88,6 @@ int DescribeWhiteListAssetRequest::getType()const
 void DescribeWhiteListAssetRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

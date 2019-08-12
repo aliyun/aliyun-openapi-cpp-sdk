@@ -33,7 +33,7 @@ std::string UpdateVodDomainRequest::getTopLevelDomain()const
 void UpdateVodDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateVodDomainRequest::getSources()const
@@ -44,7 +44,7 @@ std::string UpdateVodDomainRequest::getSources()const
 void UpdateVodDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", std::to_string(sources));
+	setCoreParameter("Sources", sources);
 }
 
 std::string UpdateVodDomainRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string UpdateVodDomainRequest::getSecurityToken()const
 void UpdateVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateVodDomainRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string UpdateVodDomainRequest::getDomainName()const
 void UpdateVodDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long UpdateVodDomainRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long UpdateVodDomainRequest::getOwnerId()const
 void UpdateVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

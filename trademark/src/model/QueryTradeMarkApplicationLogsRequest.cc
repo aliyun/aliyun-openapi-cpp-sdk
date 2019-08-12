@@ -33,6 +33,6 @@ std::string QueryTradeMarkApplicationLogsRequest::getBizId()const
 void QueryTradeMarkApplicationLogsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 

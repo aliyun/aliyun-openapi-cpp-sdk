@@ -33,7 +33,7 @@ long DescribeInstancesByExpireTimeRequest::getResourceOwnerId()const
 void DescribeInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeInstancesByExpireTimeRequest::getResourceOwnerAccount()const
 void DescribeInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeInstancesByExpireTimeRequest::getOwnerAccount()const
 void DescribeInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstancesByExpireTimeRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeInstancesByExpireTimeRequest::getOwnerId()const
 void DescribeInstancesByExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeInstancesByExpireTimeRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeInstancesByExpireTimeRequest::getPageNumber()const
 void DescribeInstancesByExpireTimeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeInstancesByExpireTimeRequest::getAccessKeyId()const
 void DescribeInstancesByExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string DescribeInstancesByExpireTimeRequest::getSecurityToken()const
 void DescribeInstancesByExpireTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeInstancesByExpireTimeRequest::getRegionId()const
 void DescribeInstancesByExpireTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeInstancesByExpireTimeRequest::getHasExpiredRes()const
@@ -132,7 +132,7 @@ int DescribeInstancesByExpireTimeRequest::getPageSize()const
 void DescribeInstancesByExpireTimeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInstancesByExpireTimeRequest::getInstanceType()const
@@ -143,7 +143,7 @@ std::string DescribeInstancesByExpireTimeRequest::getInstanceType()const
 void DescribeInstancesByExpireTimeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 
 int DescribeInstancesByExpireTimeRequest::getExpirePeriod()const
@@ -154,6 +154,6 @@ int DescribeInstancesByExpireTimeRequest::getExpirePeriod()const
 void DescribeInstancesByExpireTimeRequest::setExpirePeriod(int expirePeriod)
 {
 	expirePeriod_ = expirePeriod;
-	setCoreParameter("ExpirePeriod", expirePeriod);
+	setCoreParameter("ExpirePeriod", std::to_string(expirePeriod));
 }
 

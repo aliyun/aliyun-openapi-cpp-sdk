@@ -33,7 +33,7 @@ long VerifyUserRequest::getResourceOwnerId()const
 void VerifyUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VerifyUserRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string VerifyUserRequest::getResourceOwnerAccount()const
 void VerifyUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VerifyUserRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long VerifyUserRequest::getOwnerId()const
 void VerifyUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VerifyUserRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string VerifyUserRequest::getAccessKeyId()const
 void VerifyUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

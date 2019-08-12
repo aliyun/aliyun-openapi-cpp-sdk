@@ -33,7 +33,7 @@ std::string ReactivatePhotosRequest::getLibraryId()const
 void ReactivatePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::vector<long> ReactivatePhotosRequest::getPhotoId()const
@@ -45,7 +45,7 @@ void ReactivatePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string ReactivatePhotosRequest::getStoreName()const
@@ -56,6 +56,6 @@ std::string ReactivatePhotosRequest::getStoreName()const
 void ReactivatePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 

@@ -33,7 +33,7 @@ long UpdateAttachedMediaInfosRequest::getResourceOwnerId()const
 void UpdateAttachedMediaInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateAttachedMediaInfosRequest::getUpdateContent()const
@@ -44,7 +44,7 @@ std::string UpdateAttachedMediaInfosRequest::getUpdateContent()const
 void UpdateAttachedMediaInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
-	setCoreParameter("UpdateContent", std::to_string(updateContent));
+	setCoreParameter("UpdateContent", updateContent);
 }
 
 std::string UpdateAttachedMediaInfosRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateAttachedMediaInfosRequest::getResourceOwnerAccount()const
 void UpdateAttachedMediaInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UpdateAttachedMediaInfosRequest::getResourceRealOwnerId()const
@@ -66,7 +66,7 @@ long UpdateAttachedMediaInfosRequest::getResourceRealOwnerId()const
 void UpdateAttachedMediaInfosRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long UpdateAttachedMediaInfosRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateAttachedMediaInfosRequest::getOwnerId()const
 void UpdateAttachedMediaInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateAttachedMediaInfosRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UpdateAttachedMediaInfosRequest::getAccessKeyId()const
 void UpdateAttachedMediaInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

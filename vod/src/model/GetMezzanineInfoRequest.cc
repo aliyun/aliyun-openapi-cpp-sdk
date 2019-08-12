@@ -33,7 +33,7 @@ long GetMezzanineInfoRequest::getResourceOwnerId()const
 void GetMezzanineInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
 void GetMezzanineInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMezzanineInfoRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string GetMezzanineInfoRequest::getVideoId()const
 void GetMezzanineInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", std::to_string(videoId));
+	setCoreParameter("VideoId", videoId);
 }
 
 bool GetMezzanineInfoRequest::getPreviewSegment()const
@@ -77,7 +77,7 @@ std::string GetMezzanineInfoRequest::getOutputType()const
 void GetMezzanineInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", std::to_string(outputType));
+	setCoreParameter("OutputType", outputType);
 }
 
 std::string GetMezzanineInfoRequest::getAdditionType()const
@@ -88,7 +88,7 @@ std::string GetMezzanineInfoRequest::getAdditionType()const
 void GetMezzanineInfoRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
-	setCoreParameter("AdditionType", std::to_string(additionType));
+	setCoreParameter("AdditionType", additionType);
 }
 
 long GetMezzanineInfoRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long GetMezzanineInfoRequest::getOwnerId()const
 void GetMezzanineInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long GetMezzanineInfoRequest::getAuthTimeout()const
@@ -110,6 +110,6 @@ long GetMezzanineInfoRequest::getAuthTimeout()const
 void GetMezzanineInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", authTimeout);
+	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
 }
 

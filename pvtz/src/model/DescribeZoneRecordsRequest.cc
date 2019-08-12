@@ -33,7 +33,7 @@ int DescribeZoneRecordsRequest::getPageSize()const
 void DescribeZoneRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeZoneRecordsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeZoneRecordsRequest::getUserClientIp()const
 void DescribeZoneRecordsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeZoneRecordsRequest::getZoneId()const
@@ -55,7 +55,7 @@ std::string DescribeZoneRecordsRequest::getZoneId()const
 void DescribeZoneRecordsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeZoneRecordsRequest::getSearchMode()const
@@ -66,7 +66,7 @@ std::string DescribeZoneRecordsRequest::getSearchMode()const
 void DescribeZoneRecordsRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", std::to_string(searchMode));
+	setCoreParameter("SearchMode", searchMode);
 }
 
 std::string DescribeZoneRecordsRequest::getTag()const
@@ -77,7 +77,7 @@ std::string DescribeZoneRecordsRequest::getTag()const
 void DescribeZoneRecordsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 std::string DescribeZoneRecordsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeZoneRecordsRequest::getLang()const
 void DescribeZoneRecordsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeZoneRecordsRequest::getKeyword()const
@@ -99,7 +99,7 @@ std::string DescribeZoneRecordsRequest::getKeyword()const
 void DescribeZoneRecordsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 int DescribeZoneRecordsRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int DescribeZoneRecordsRequest::getPageNumber()const
 void DescribeZoneRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

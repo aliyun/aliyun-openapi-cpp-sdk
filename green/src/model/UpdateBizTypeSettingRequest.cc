@@ -33,7 +33,7 @@ std::string UpdateBizTypeSettingRequest::getSourceIp()const
 void UpdateBizTypeSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateBizTypeSettingRequest::getTerrorism()const
@@ -44,7 +44,7 @@ std::string UpdateBizTypeSettingRequest::getTerrorism()const
 void UpdateBizTypeSettingRequest::setTerrorism(const std::string& terrorism)
 {
 	terrorism_ = terrorism;
-	setCoreParameter("Terrorism", std::to_string(terrorism));
+	setCoreParameter("Terrorism", terrorism);
 }
 
 std::string UpdateBizTypeSettingRequest::getBizTypeName()const
@@ -55,7 +55,7 @@ std::string UpdateBizTypeSettingRequest::getBizTypeName()const
 void UpdateBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", std::to_string(bizTypeName));
+	setCoreParameter("BizTypeName", bizTypeName);
 }
 
 std::string UpdateBizTypeSettingRequest::getResourceType()const
@@ -66,7 +66,7 @@ std::string UpdateBizTypeSettingRequest::getResourceType()const
 void UpdateBizTypeSettingRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string UpdateBizTypeSettingRequest::getPorn()const
@@ -77,6 +77,6 @@ std::string UpdateBizTypeSettingRequest::getPorn()const
 void UpdateBizTypeSettingRequest::setPorn(const std::string& porn)
 {
 	porn_ = porn;
-	setCoreParameter("Porn", std::to_string(porn));
+	setCoreParameter("Porn", porn);
 }
 

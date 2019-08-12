@@ -33,7 +33,7 @@ long ListTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ListTranscodeTemplateGroupRequest::getPageNo()const
@@ -55,7 +55,7 @@ int ListTranscodeTemplateGroupRequest::getPageNo()const
 void ListTranscodeTemplateGroupRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string ListTranscodeTemplateGroupRequest::getAppId()const
 void ListTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 int ListTranscodeTemplateGroupRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListTranscodeTemplateGroupRequest::getPageSize()const
 void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListTranscodeTemplateGroupRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListTranscodeTemplateGroupRequest::getOwnerId()const
 void ListTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
 void ListTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

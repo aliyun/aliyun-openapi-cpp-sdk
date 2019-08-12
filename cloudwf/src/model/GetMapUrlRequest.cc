@@ -33,7 +33,7 @@ long GetMapUrlRequest::getMapId()const
 void GetMapUrlRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", mapId);
+	setCoreParameter("MapId", std::to_string(mapId));
 }
 
 std::string GetMapUrlRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetMapUrlRequest::getAccessKeyId()const
 void GetMapUrlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

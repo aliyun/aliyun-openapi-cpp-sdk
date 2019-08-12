@@ -33,7 +33,7 @@ int ListApRadioStatusRequest::getSearchDisabled()const
 void ListApRadioStatusRequest::setSearchDisabled(int searchDisabled)
 {
 	searchDisabled_ = searchDisabled;
-	setCoreParameter("SearchDisabled", searchDisabled);
+	setCoreParameter("SearchDisabled", std::to_string(searchDisabled));
 }
 
 std::string ListApRadioStatusRequest::getOrderCol()const
@@ -44,7 +44,7 @@ std::string ListApRadioStatusRequest::getOrderCol()const
 void ListApRadioStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", std::to_string(orderCol));
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApRadioStatusRequest::getSearchName()const
@@ -55,7 +55,7 @@ std::string ListApRadioStatusRequest::getSearchName()const
 void ListApRadioStatusRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", std::to_string(searchName));
+	setCoreParameter("SearchName", searchName);
 }
 
 int ListApRadioStatusRequest::getSearchChannelEquals()const
@@ -66,7 +66,7 @@ int ListApRadioStatusRequest::getSearchChannelEquals()const
 void ListApRadioStatusRequest::setSearchChannelEquals(int searchChannelEquals)
 {
 	searchChannelEquals_ = searchChannelEquals;
-	setCoreParameter("SearchChannelEquals", searchChannelEquals);
+	setCoreParameter("SearchChannelEquals", std::to_string(searchChannelEquals));
 }
 
 int ListApRadioStatusRequest::getLength()const
@@ -77,7 +77,7 @@ int ListApRadioStatusRequest::getLength()const
 void ListApRadioStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListApRadioStatusRequest::getSearchMac()const
@@ -88,7 +88,7 @@ std::string ListApRadioStatusRequest::getSearchMac()const
 void ListApRadioStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", std::to_string(searchMac));
+	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListApRadioStatusRequest::getSearchApgroupName()const
@@ -99,7 +99,7 @@ std::string ListApRadioStatusRequest::getSearchApgroupName()const
 void ListApRadioStatusRequest::setSearchApgroupName(const std::string& searchApgroupName)
 {
 	searchApgroupName_ = searchApgroupName;
-	setCoreParameter("SearchApgroupName", std::to_string(searchApgroupName));
+	setCoreParameter("SearchApgroupName", searchApgroupName);
 }
 
 int ListApRadioStatusRequest::getPageIndex()const
@@ -110,7 +110,7 @@ int ListApRadioStatusRequest::getPageIndex()const
 void ListApRadioStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApRadioStatusRequest::getOrderDir()const
@@ -121,7 +121,7 @@ std::string ListApRadioStatusRequest::getOrderDir()const
 void ListApRadioStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", std::to_string(orderDir));
+	setCoreParameter("OrderDir", orderDir);
 }
 
 int ListApRadioStatusRequest::getSearchApStatus()const
@@ -132,7 +132,7 @@ int ListApRadioStatusRequest::getSearchApStatus()const
 void ListApRadioStatusRequest::setSearchApStatus(int searchApStatus)
 {
 	searchApStatus_ = searchApStatus;
-	setCoreParameter("SearchApStatus", searchApStatus);
+	setCoreParameter("SearchApStatus", std::to_string(searchApStatus));
 }
 
 std::string ListApRadioStatusRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string ListApRadioStatusRequest::getAccessKeyId()const
 void ListApRadioStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

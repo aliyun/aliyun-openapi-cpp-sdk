@@ -33,7 +33,7 @@ long DeleteCenRouteMapRequest::getResourceOwnerId()const
 void DeleteCenRouteMapRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCenRouteMapRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteCenRouteMapRequest::getResourceOwnerAccount()const
 void DeleteCenRouteMapRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCenRouteMapRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DeleteCenRouteMapRequest::getCenId()const
 void DeleteCenRouteMapRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string DeleteCenRouteMapRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteCenRouteMapRequest::getOwnerAccount()const
 void DeleteCenRouteMapRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteCenRouteMapRequest::getCenRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteCenRouteMapRequest::getCenRegionId()const
 void DeleteCenRouteMapRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", std::to_string(cenRegionId));
+	setCoreParameter("CenRegionId", cenRegionId);
 }
 
 std::string DeleteCenRouteMapRequest::getRouteMapId()const
@@ -88,7 +88,7 @@ std::string DeleteCenRouteMapRequest::getRouteMapId()const
 void DeleteCenRouteMapRequest::setRouteMapId(const std::string& routeMapId)
 {
 	routeMapId_ = routeMapId;
-	setCoreParameter("RouteMapId", std::to_string(routeMapId));
+	setCoreParameter("RouteMapId", routeMapId);
 }
 
 long DeleteCenRouteMapRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DeleteCenRouteMapRequest::getOwnerId()const
 void DeleteCenRouteMapRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

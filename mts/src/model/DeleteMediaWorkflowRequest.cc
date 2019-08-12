@@ -33,7 +33,7 @@ long DeleteMediaWorkflowRequest::getResourceOwnerId()const
 void DeleteMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteMediaWorkflowRequest::getResourceOwnerAccount()const
 void DeleteMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMediaWorkflowRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMediaWorkflowRequest::getOwnerAccount()const
 void DeleteMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteMediaWorkflowRequest::getMediaWorkflowId()const
@@ -66,7 +66,7 @@ std::string DeleteMediaWorkflowRequest::getMediaWorkflowId()const
 void DeleteMediaWorkflowRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", std::to_string(mediaWorkflowId));
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 long DeleteMediaWorkflowRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteMediaWorkflowRequest::getOwnerId()const
 void DeleteMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMediaWorkflowRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteMediaWorkflowRequest::getAccessKeyId()const
 void DeleteMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

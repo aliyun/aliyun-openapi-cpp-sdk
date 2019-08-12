@@ -33,7 +33,7 @@ std::string ListPhotosRequest::getCursor()const
 void ListPhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListPhotosRequest::getSize()const
@@ -44,7 +44,7 @@ int ListPhotosRequest::getSize()const
 void ListPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListPhotosRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string ListPhotosRequest::getLibraryId()const
 void ListPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListPhotosRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string ListPhotosRequest::getStoreName()const
 void ListPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListPhotosRequest::getState()const
@@ -77,7 +77,7 @@ std::string ListPhotosRequest::getState()const
 void ListPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListPhotosRequest::getDirection()const
@@ -88,6 +88,6 @@ std::string ListPhotosRequest::getDirection()const
 void ListPhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

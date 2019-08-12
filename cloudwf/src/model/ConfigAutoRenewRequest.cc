@@ -33,7 +33,7 @@ int ConfigAutoRenewRequest::getOffsetDays()const
 void ConfigAutoRenewRequest::setOffsetDays(int offsetDays)
 {
 	offsetDays_ = offsetDays;
-	setCoreParameter("OffsetDays", offsetDays);
+	setCoreParameter("OffsetDays", std::to_string(offsetDays));
 }
 
 int ConfigAutoRenewRequest::getMonths()const
@@ -44,7 +44,7 @@ int ConfigAutoRenewRequest::getMonths()const
 void ConfigAutoRenewRequest::setMonths(int months)
 {
 	months_ = months;
-	setCoreParameter("Months", months);
+	setCoreParameter("Months", std::to_string(months));
 }
 
 bool ConfigAutoRenewRequest::getAutoRenew()const
@@ -67,7 +67,7 @@ void ConfigAutoRenewRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
 	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), std::to_string(apList.at(i)));
+		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
 }
 
 std::string ConfigAutoRenewRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string ConfigAutoRenewRequest::getAccessKeyId()const
 void ConfigAutoRenewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

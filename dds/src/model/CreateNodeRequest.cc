@@ -33,7 +33,7 @@ long CreateNodeRequest::getResourceOwnerId()const
 void CreateNodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNodeRequest::getNodeType()const
@@ -44,7 +44,7 @@ std::string CreateNodeRequest::getNodeType()const
 void CreateNodeRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", std::to_string(nodeType));
+	setCoreParameter("NodeType", nodeType);
 }
 
 bool CreateNodeRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string CreateNodeRequest::getFromApp()const
 void CreateNodeRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string CreateNodeRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateNodeRequest::getResourceOwnerAccount()const
 void CreateNodeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNodeRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string CreateNodeRequest::getClientToken()const
 void CreateNodeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int CreateNodeRequest::getNodeStorage()const
@@ -99,7 +99,7 @@ int CreateNodeRequest::getNodeStorage()const
 void CreateNodeRequest::setNodeStorage(int nodeStorage)
 {
 	nodeStorage_ = nodeStorage;
-	setCoreParameter("NodeStorage", nodeStorage);
+	setCoreParameter("NodeStorage", std::to_string(nodeStorage));
 }
 
 std::string CreateNodeRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string CreateNodeRequest::getOwnerAccount()const
 void CreateNodeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateNodeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long CreateNodeRequest::getOwnerId()const
 void CreateNodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNodeRequest::getNodeClass()const
@@ -132,7 +132,7 @@ std::string CreateNodeRequest::getNodeClass()const
 void CreateNodeRequest::setNodeClass(const std::string& nodeClass)
 {
 	nodeClass_ = nodeClass;
-	setCoreParameter("NodeClass", std::to_string(nodeClass));
+	setCoreParameter("NodeClass", nodeClass);
 }
 
 std::string CreateNodeRequest::getAccessKeyId()const
@@ -143,7 +143,7 @@ std::string CreateNodeRequest::getAccessKeyId()const
 void CreateNodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateNodeRequest::getSecurityToken()const
@@ -154,7 +154,7 @@ std::string CreateNodeRequest::getSecurityToken()const
 void CreateNodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateNodeRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string CreateNodeRequest::getRegionId()const
 void CreateNodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateNodeRequest::getDBInstanceId()const
@@ -176,6 +176,6 @@ std::string CreateNodeRequest::getDBInstanceId()const
 void CreateNodeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 

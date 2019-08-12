@@ -33,7 +33,7 @@ std::string CreateLoRaNodesTaskRequest::getIotInstanceId()const
 void CreateLoRaNodesTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateLoRaNodesTaskRequest::getProductKey()const
@@ -44,7 +44,7 @@ std::string CreateLoRaNodesTaskRequest::getProductKey()const
 void CreateLoRaNodesTaskRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::vector<CreateLoRaNodesTaskRequest::DeviceInfo> CreateLoRaNodesTaskRequest::getDeviceInfo()const
@@ -59,8 +59,8 @@ void CreateLoRaNodesTaskRequest::setDeviceInfo(const std::vector<DeviceInfo>& de
 	for(int i = 0; i!= deviceInfo.size(); i++)	{
 		auto obj = deviceInfo.at(i);
 		std::string str ="DeviceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PinCode", std::to_string(obj.pinCode));
-		setCoreParameter(str + ".DevEui", std::to_string(obj.devEui));
+		setCoreParameter(str + ".PinCode", obj.pinCode);
+		setCoreParameter(str + ".DevEui", obj.devEui);
 	}
 }
 
@@ -72,6 +72,6 @@ std::string CreateLoRaNodesTaskRequest::getAccessKeyId()const
 void CreateLoRaNodesTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string RollbackQuaraFileRequest::getSourceIp()const
 void RollbackQuaraFileRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string RollbackQuaraFileRequest::getEventType()const
@@ -44,7 +44,7 @@ std::string RollbackQuaraFileRequest::getEventType()const
 void RollbackQuaraFileRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", std::to_string(eventType));
+	setCoreParameter("EventType", eventType);
 }
 
 std::string RollbackQuaraFileRequest::getTag()const
@@ -55,7 +55,7 @@ std::string RollbackQuaraFileRequest::getTag()const
 void RollbackQuaraFileRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 std::string RollbackQuaraFileRequest::getUuid()const
@@ -66,7 +66,7 @@ std::string RollbackQuaraFileRequest::getUuid()const
 void RollbackQuaraFileRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 
 std::string RollbackQuaraFileRequest::getEventName()const
@@ -77,6 +77,6 @@ std::string RollbackQuaraFileRequest::getEventName()const
 void RollbackQuaraFileRequest::setEventName(const std::string& eventName)
 {
 	eventName_ = eventName;
-	setCoreParameter("EventName", std::to_string(eventName));
+	setCoreParameter("EventName", eventName);
 }
 

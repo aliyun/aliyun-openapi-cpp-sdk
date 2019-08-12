@@ -33,7 +33,7 @@ long DeleteMCTemplateRequest::getResourceOwnerId()const
 void DeleteMCTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMCTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteMCTemplateRequest::getResourceOwnerAccount()const
 void DeleteMCTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMCTemplateRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMCTemplateRequest::getOwnerAccount()const
 void DeleteMCTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMCTemplateRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteMCTemplateRequest::getOwnerId()const
 void DeleteMCTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMCTemplateRequest::getTemplateId()const
@@ -77,7 +77,7 @@ std::string DeleteMCTemplateRequest::getTemplateId()const
 void DeleteMCTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string DeleteMCTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteMCTemplateRequest::getAccessKeyId()const
 void DeleteMCTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

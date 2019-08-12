@@ -33,7 +33,7 @@ std::string ListRecentCallRecordsRequest::getInstanceId()const
 void ListRecentCallRecordsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListRecentCallRecordsRequest::getCriteria()const
@@ -44,7 +44,7 @@ std::string ListRecentCallRecordsRequest::getCriteria()const
 void ListRecentCallRecordsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", std::to_string(criteria));
+	setCoreParameter("Criteria", criteria);
 }
 
 int ListRecentCallRecordsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListRecentCallRecordsRequest::getPageSize()const
 void ListRecentCallRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListRecentCallRecordsRequest::getStartTime()const
@@ -66,7 +66,7 @@ long ListRecentCallRecordsRequest::getStartTime()const
 void ListRecentCallRecordsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListRecentCallRecordsRequest::getStopTime()const
@@ -77,7 +77,7 @@ long ListRecentCallRecordsRequest::getStopTime()const
 void ListRecentCallRecordsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", stopTime);
+	setCoreParameter("StopTime", std::to_string(stopTime));
 }
 
 int ListRecentCallRecordsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListRecentCallRecordsRequest::getPageNumber()const
 void ListRecentCallRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListRecentCallRecordsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListRecentCallRecordsRequest::getAccessKeyId()const
 void ListRecentCallRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

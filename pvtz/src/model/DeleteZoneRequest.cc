@@ -33,7 +33,7 @@ std::string DeleteZoneRequest::getUserClientIp()const
 void DeleteZoneRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteZoneRequest::getZoneId()const
@@ -44,7 +44,7 @@ std::string DeleteZoneRequest::getZoneId()const
 void DeleteZoneRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DeleteZoneRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DeleteZoneRequest::getLang()const
 void DeleteZoneRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

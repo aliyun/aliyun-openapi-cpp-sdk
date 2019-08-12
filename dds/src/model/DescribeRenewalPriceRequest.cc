@@ -33,7 +33,7 @@ long DescribeRenewalPriceRequest::getResourceOwnerId()const
 void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRenewalPriceRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeRenewalPriceRequest::getSecurityToken()const
 void DescribeRenewalPriceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
 void DescribeRenewalPriceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRenewalPriceRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeRenewalPriceRequest::getRegionId()const
 void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRenewalPriceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeRenewalPriceRequest::getOwnerAccount()const
 void DescribeRenewalPriceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRenewalPriceRequest::getCouponNo()const
@@ -88,7 +88,7 @@ std::string DescribeRenewalPriceRequest::getCouponNo()const
 void DescribeRenewalPriceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 std::string DescribeRenewalPriceRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeRenewalPriceRequest::getDBInstanceId()const
 void DescribeRenewalPriceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeRenewalPriceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeRenewalPriceRequest::getOwnerId()const
 void DescribeRenewalPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRenewalPriceRequest::getBusinessInfo()const
@@ -121,7 +121,7 @@ std::string DescribeRenewalPriceRequest::getBusinessInfo()const
 void DescribeRenewalPriceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 
 std::string DescribeRenewalPriceRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string DescribeRenewalPriceRequest::getAccessKeyId()const
 void DescribeRenewalPriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

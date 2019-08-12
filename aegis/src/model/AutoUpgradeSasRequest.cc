@@ -33,6 +33,6 @@ std::string AutoUpgradeSasRequest::getSourceIp()const
 void AutoUpgradeSasRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

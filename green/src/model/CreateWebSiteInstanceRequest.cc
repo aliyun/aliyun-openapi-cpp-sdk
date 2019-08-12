@@ -33,7 +33,7 @@ int CreateWebSiteInstanceRequest::getDuration()const
 void CreateWebSiteInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateWebSiteInstanceRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string CreateWebSiteInstanceRequest::getClientToken()const
 void CreateWebSiteInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int CreateWebSiteInstanceRequest::getOrderNum()const
@@ -55,7 +55,7 @@ int CreateWebSiteInstanceRequest::getOrderNum()const
 void CreateWebSiteInstanceRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", orderNum);
+	setCoreParameter("OrderNum", std::to_string(orderNum));
 }
 
 long CreateWebSiteInstanceRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long CreateWebSiteInstanceRequest::getOwnerId()const
 void CreateWebSiteInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateWebSiteInstanceRequest::getPricingCycle()const
@@ -77,7 +77,7 @@ std::string CreateWebSiteInstanceRequest::getPricingCycle()const
 void CreateWebSiteInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
+	setCoreParameter("PricingCycle", pricingCycle);
 }
 
 std::string CreateWebSiteInstanceRequest::getOrderType()const
@@ -88,6 +88,6 @@ std::string CreateWebSiteInstanceRequest::getOrderType()const
 void CreateWebSiteInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

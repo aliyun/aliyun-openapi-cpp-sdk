@@ -33,7 +33,7 @@ std::string DescribeTotalStatisticsRequest::getStatusList()const
 void DescribeTotalStatisticsRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", std::to_string(statusList));
+	setCoreParameter("StatusList", statusList);
 }
 
 std::string DescribeTotalStatisticsRequest::getSaleId()const
@@ -44,7 +44,7 @@ std::string DescribeTotalStatisticsRequest::getSaleId()const
 void DescribeTotalStatisticsRequest::setSaleId(const std::string& saleId)
 {
 	saleId_ = saleId;
-	setCoreParameter("SaleId", std::to_string(saleId));
+	setCoreParameter("SaleId", saleId);
 }
 
 int DescribeTotalStatisticsRequest::getRuleType()const
@@ -55,7 +55,7 @@ int DescribeTotalStatisticsRequest::getRuleType()const
 void DescribeTotalStatisticsRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", ruleType);
+	setCoreParameter("RuleType", std::to_string(ruleType));
 }
 
 long DescribeTotalStatisticsRequest::getGroupId()const
@@ -66,7 +66,7 @@ long DescribeTotalStatisticsRequest::getGroupId()const
 void DescribeTotalStatisticsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeTotalStatisticsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeTotalStatisticsRequest::getEndTime()const
 void DescribeTotalStatisticsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeTotalStatisticsRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeTotalStatisticsRequest::getRemark()const
 void DescribeTotalStatisticsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeTotalStatisticsRequest::getDealed()const
@@ -99,7 +99,7 @@ std::string DescribeTotalStatisticsRequest::getDealed()const
 void DescribeTotalStatisticsRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 int DescribeTotalStatisticsRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeTotalStatisticsRequest::getCurrentPage()const
 void DescribeTotalStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeTotalStatisticsRequest::getStartTime()const
@@ -121,7 +121,7 @@ std::string DescribeTotalStatisticsRequest::getStartTime()const
 void DescribeTotalStatisticsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeTotalStatisticsRequest::getType()const
@@ -132,7 +132,7 @@ std::string DescribeTotalStatisticsRequest::getType()const
 void DescribeTotalStatisticsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeTotalStatisticsRequest::getUuid()const
@@ -143,7 +143,7 @@ std::string DescribeTotalStatisticsRequest::getUuid()const
 void DescribeTotalStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 
 std::string DescribeTotalStatisticsRequest::getSecureToken()const
@@ -154,7 +154,7 @@ std::string DescribeTotalStatisticsRequest::getSecureToken()const
 void DescribeTotalStatisticsRequest::setSecureToken(const std::string& secureToken)
 {
 	secureToken_ = secureToken;
-	setCoreParameter("SecureToken", std::to_string(secureToken));
+	setCoreParameter("SecureToken", secureToken);
 }
 
 std::string DescribeTotalStatisticsRequest::getSourceIp()const
@@ -165,7 +165,7 @@ std::string DescribeTotalStatisticsRequest::getSourceIp()const
 void DescribeTotalStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeTotalStatisticsRequest::getWebGroupId()const
@@ -176,7 +176,7 @@ long DescribeTotalStatisticsRequest::getWebGroupId()const
 void DescribeTotalStatisticsRequest::setWebGroupId(long webGroupId)
 {
 	webGroupId_ = webGroupId;
-	setCoreParameter("WebGroupId", webGroupId);
+	setCoreParameter("WebGroupId", std::to_string(webGroupId));
 }
 
 int DescribeTotalStatisticsRequest::getPageSize()const
@@ -187,7 +187,7 @@ int DescribeTotalStatisticsRequest::getPageSize()const
 void DescribeTotalStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTotalStatisticsRequest::getFrom()const
@@ -198,7 +198,7 @@ std::string DescribeTotalStatisticsRequest::getFrom()const
 void DescribeTotalStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeTotalStatisticsRequest::getAction1()const
@@ -209,7 +209,7 @@ int DescribeTotalStatisticsRequest::getAction1()const
 void DescribeTotalStatisticsRequest::setAction1(int action1)
 {
 	action1_ = action1;
-	setCoreParameter("Action1", action1);
+	setCoreParameter("Action1", std::to_string(action1));
 }
 
 std::string DescribeTotalStatisticsRequest::getTag()const
@@ -220,7 +220,7 @@ std::string DescribeTotalStatisticsRequest::getTag()const
 void DescribeTotalStatisticsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 int DescribeTotalStatisticsRequest::getFlow()const
@@ -231,7 +231,7 @@ int DescribeTotalStatisticsRequest::getFlow()const
 void DescribeTotalStatisticsRequest::setFlow(int flow)
 {
 	flow_ = flow;
-	setCoreParameter("Flow", flow);
+	setCoreParameter("Flow", std::to_string(flow));
 }
 
 int DescribeTotalStatisticsRequest::getStatus()const
@@ -242,6 +242,6 @@ int DescribeTotalStatisticsRequest::getStatus()const
 void DescribeTotalStatisticsRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

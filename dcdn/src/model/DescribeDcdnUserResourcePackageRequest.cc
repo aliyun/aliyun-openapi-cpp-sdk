@@ -33,7 +33,7 @@ std::string DescribeDcdnUserResourcePackageRequest::getSecurityToken()const
 void DescribeDcdnUserResourcePackageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeDcdnUserResourcePackageRequest::getOwnerId()const
@@ -44,6 +44,6 @@ long DescribeDcdnUserResourcePackageRequest::getOwnerId()const
 void DescribeDcdnUserResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

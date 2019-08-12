@@ -33,7 +33,7 @@ long DeleteHostPoolRequest::getResourceOwnerId()const
 void DeleteHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteHostPoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteHostPoolRequest::getRegionId()const
 void DeleteHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteHostPoolRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string DeleteHostPoolRequest::getBizId()const
 void DeleteHostPoolRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string DeleteHostPoolRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteHostPoolRequest::getAccessKeyId()const
 void DeleteHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

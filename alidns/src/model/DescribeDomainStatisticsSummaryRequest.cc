@@ -33,7 +33,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getEndDate()const
 void DescribeDomainStatisticsSummaryRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getUserClientIp()const
 void DescribeDomainStatisticsSummaryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long DescribeDomainStatisticsSummaryRequest::getPageSize()const
@@ -55,7 +55,7 @@ long DescribeDomainStatisticsSummaryRequest::getPageSize()const
 void DescribeDomainStatisticsSummaryRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getOrderBy()const
@@ -66,7 +66,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getOrderBy()const
 void DescribeDomainStatisticsSummaryRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", std::to_string(orderBy));
+	setCoreParameter("OrderBy", orderBy);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getSearchMode()const
@@ -77,7 +77,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getSearchMode()const
 void DescribeDomainStatisticsSummaryRequest::setSearchMode(const std::string& searchMode)
 {
 	searchMode_ = searchMode;
-	setCoreParameter("SearchMode", std::to_string(searchMode));
+	setCoreParameter("SearchMode", searchMode);
 }
 
 long DescribeDomainStatisticsSummaryRequest::getThreshold()const
@@ -88,7 +88,7 @@ long DescribeDomainStatisticsSummaryRequest::getThreshold()const
 void DescribeDomainStatisticsSummaryRequest::setThreshold(long threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", threshold);
+	setCoreParameter("Threshold", std::to_string(threshold));
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getLang()const
 void DescribeDomainStatisticsSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getStartDate()const
@@ -110,7 +110,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getStartDate()const
 void DescribeDomainStatisticsSummaryRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getKeyword()const
@@ -121,7 +121,7 @@ std::string DescribeDomainStatisticsSummaryRequest::getKeyword()const
 void DescribeDomainStatisticsSummaryRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 long DescribeDomainStatisticsSummaryRequest::getPageNumber()const
@@ -132,7 +132,7 @@ long DescribeDomainStatisticsSummaryRequest::getPageNumber()const
 void DescribeDomainStatisticsSummaryRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainStatisticsSummaryRequest::getDirection()const
@@ -143,6 +143,6 @@ std::string DescribeDomainStatisticsSummaryRequest::getDirection()const
 void DescribeDomainStatisticsSummaryRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

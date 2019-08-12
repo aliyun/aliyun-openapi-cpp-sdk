@@ -33,7 +33,7 @@ std::string DescribeLiveStreamTranscodeInfoRequest::getRegionId()const
 void DescribeLiveStreamTranscodeInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
@@ -44,7 +44,7 @@ long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
 void DescribeLiveStreamTranscodeInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()const
@@ -55,6 +55,6 @@ std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()cons
 void DescribeLiveStreamTranscodeInfoRequest::setDomainTranscodeName(const std::string& domainTranscodeName)
 {
 	domainTranscodeName_ = domainTranscodeName;
-	setCoreParameter("DomainTranscodeName", std::to_string(domainTranscodeName));
+	setCoreParameter("DomainTranscodeName", domainTranscodeName);
 }
 

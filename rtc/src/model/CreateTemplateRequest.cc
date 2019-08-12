@@ -33,7 +33,7 @@ int CreateTemplateRequest::getServiceMode()const
 void CreateTemplateRequest::setServiceMode(int serviceMode)
 {
 	serviceMode_ = serviceMode;
-	setCoreParameter("ServiceMode", serviceMode);
+	setCoreParameter("ServiceMode", std::to_string(serviceMode));
 }
 
 std::vector<CreateTemplateRequest::LiveConfig> CreateTemplateRequest::getLiveConfig()const
@@ -48,8 +48,8 @@ void CreateTemplateRequest::setLiveConfig(const std::vector<LiveConfig>& liveCon
 	for(int i = 0; i!= liveConfig.size(); i++)	{
 		auto obj = liveConfig.at(i);
 		std::string str ="LiveConfig."+ std::to_string(i);
-		setCoreParameter(str + ".DomainName", std::to_string(obj.domainName));
-		setCoreParameter(str + ".AppName", std::to_string(obj.appName));
+		setCoreParameter(str + ".DomainName", obj.domainName);
+		setCoreParameter(str + ".AppName", obj.appName);
 	}
 }
 
@@ -61,7 +61,7 @@ long CreateTemplateRequest::getCallerParentId()const
 void CreateTemplateRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateTemplateRequest::getProxy_original_security_transport()const
@@ -83,7 +83,7 @@ int CreateTemplateRequest::getMediaConfig()const
 void CreateTemplateRequest::setMediaConfig(int mediaConfig)
 {
 	mediaConfig_ = mediaConfig;
-	setCoreParameter("MediaConfig", mediaConfig);
+	setCoreParameter("MediaConfig", std::to_string(mediaConfig));
 }
 
 int CreateTemplateRequest::getMaxMixStreamCount()const
@@ -94,7 +94,7 @@ int CreateTemplateRequest::getMaxMixStreamCount()const
 void CreateTemplateRequest::setMaxMixStreamCount(int maxMixStreamCount)
 {
 	maxMixStreamCount_ = maxMixStreamCount;
-	setCoreParameter("MaxMixStreamCount", maxMixStreamCount);
+	setCoreParameter("MaxMixStreamCount", std::to_string(maxMixStreamCount));
 }
 
 std::string CreateTemplateRequest::getProxy_original_source_ip()const
@@ -105,7 +105,7 @@ std::string CreateTemplateRequest::getProxy_original_source_ip()const
 void CreateTemplateRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateTemplateRequest::getOwnerIdLoginEmail()const
@@ -116,7 +116,7 @@ std::string CreateTemplateRequest::getOwnerIdLoginEmail()const
 void CreateTemplateRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateTemplateRequest::getCallerType()const
@@ -127,7 +127,7 @@ std::string CreateTemplateRequest::getCallerType()const
 void CreateTemplateRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::vector<CreateTemplateRequest::RecordConfig> CreateTemplateRequest::getRecordConfig()const
@@ -142,11 +142,11 @@ void CreateTemplateRequest::setRecordConfig(const std::vector<RecordConfig>& rec
 	for(int i = 0; i!= recordConfig.size(); i++)	{
 		auto obj = recordConfig.at(i);
 		std::string str ="RecordConfig."+ std::to_string(i);
-		setCoreParameter(str + ".StorageType", std::to_string(obj.storageType));
-		setCoreParameter(str + ".FileFormat", obj.fileFormat);
-		setCoreParameter(str + ".OssEndPoint", std::to_string(obj.ossEndPoint));
-		setCoreParameter(str + ".OssBucket", std::to_string(obj.ossBucket));
-		setCoreParameter(str + ".VodTransCodeGroupId", obj.vodTransCodeGroupId);
+		setCoreParameter(str + ".StorageType", obj.storageType);
+		setCoreParameter(str + ".FileFormat", std::to_string(obj.fileFormat));
+		setCoreParameter(str + ".OssEndPoint", obj.ossEndPoint);
+		setCoreParameter(str + ".OssBucket", obj.ossBucket);
+		setCoreParameter(str + ".VodTransCodeGroupId", std::to_string(obj.vodTransCodeGroupId));
 	}
 }
 
@@ -158,7 +158,7 @@ std::string CreateTemplateRequest::getAccessKeyId()const
 void CreateTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateTemplateRequest::getSecurityToken()const
@@ -169,7 +169,7 @@ std::string CreateTemplateRequest::getSecurityToken()const
 void CreateTemplateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateTemplateRequest::getRequestContent()const
@@ -180,7 +180,7 @@ std::string CreateTemplateRequest::getRequestContent()const
 void CreateTemplateRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateTemplateRequest::getCallerBidEmail()const
@@ -191,7 +191,7 @@ std::string CreateTemplateRequest::getCallerBidEmail()const
 void CreateTemplateRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateTemplateRequest::getCallerUidEmail()const
@@ -202,7 +202,7 @@ std::string CreateTemplateRequest::getCallerUidEmail()const
 void CreateTemplateRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateTemplateRequest::getCallerUid()const
@@ -213,7 +213,7 @@ long CreateTemplateRequest::getCallerUid()const
 void CreateTemplateRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateTemplateRequest::getApp_ip()const
@@ -224,7 +224,7 @@ std::string CreateTemplateRequest::getApp_ip()const
 void CreateTemplateRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateTemplateRequest::getPopProduct()const
@@ -235,7 +235,7 @@ std::string CreateTemplateRequest::getPopProduct()const
 void CreateTemplateRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateTemplateRequest::getCallerBid()const
@@ -246,7 +246,7 @@ std::string CreateTemplateRequest::getCallerBid()const
 void CreateTemplateRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateTemplateRequest::getOwnerId()const
@@ -257,7 +257,7 @@ long CreateTemplateRequest::getOwnerId()const
 void CreateTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateTemplateRequest::getVersion()const
@@ -268,7 +268,7 @@ std::string CreateTemplateRequest::getVersion()const
 void CreateTemplateRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool CreateTemplateRequest::getProxy_trust_transport_info()const
@@ -316,9 +316,9 @@ void CreateTemplateRequest::setLayOut(const std::vector<LayOut>& layOut)
 	for(int i = 0; i!= layOut.size(); i++)	{
 		auto obj = layOut.at(i);
 		std::string str ="LayOut."+ std::to_string(i);
-		setCoreParameter(str + ".Color", std::to_string(obj.color));
-		setCoreParameter(str + ".CutMode", obj.cutMode);
-		setCoreParameter(str + ".LayOutId", obj.layOutId);
+		setCoreParameter(str + ".Color", obj.color);
+		setCoreParameter(str + ".CutMode", std::to_string(obj.cutMode));
+		setCoreParameter(str + ".LayOutId", std::to_string(obj.layOutId));
 	}
 }
 
@@ -330,7 +330,7 @@ std::string CreateTemplateRequest::getRequestId()const
 void CreateTemplateRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateTemplateRequest::getAppId()const
@@ -341,7 +341,7 @@ std::string CreateTemplateRequest::getAppId()const
 void CreateTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string CreateTemplateRequest::getCallBack()const
@@ -352,7 +352,7 @@ std::string CreateTemplateRequest::getCallBack()const
 void CreateTemplateRequest::setCallBack(const std::string& callBack)
 {
 	callBack_ = callBack;
-	setCoreParameter("CallBack", std::to_string(callBack));
+	setCoreParameter("CallBack", callBack);
 }
 
 int CreateTemplateRequest::getMixMode()const
@@ -363,6 +363,6 @@ int CreateTemplateRequest::getMixMode()const
 void CreateTemplateRequest::setMixMode(int mixMode)
 {
 	mixMode_ = mixMode;
-	setCoreParameter("MixMode", mixMode);
+	setCoreParameter("MixMode", std::to_string(mixMode));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeAccessWhitelistEcsListRequest::getSourceIp()const
 void DescribeAccessWhitelistEcsListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccessWhitelistEcsListRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAccessWhitelistEcsListRequest::getLang()const
 void DescribeAccessWhitelistEcsListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAccessWhitelistEcsListRequest::getSourceCode()const
@@ -55,6 +55,6 @@ std::string DescribeAccessWhitelistEcsListRequest::getSourceCode()const
 void DescribeAccessWhitelistEcsListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

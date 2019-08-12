@@ -33,7 +33,7 @@ long ModifyRiskSingleResultStatusRequest::getResourceOwnerId()const
 void ModifyRiskSingleResultStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
 void ModifyRiskSingleResultStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
@@ -56,7 +56,7 @@ void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string>&
 {
 	ids_ = ids;
 	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
+		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getLang()const
@@ -67,7 +67,7 @@ std::string ModifyRiskSingleResultStatusRequest::getLang()const
 void ModifyRiskSingleResultStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long ModifyRiskSingleResultStatusRequest::getTaskId()const
@@ -78,7 +78,7 @@ long ModifyRiskSingleResultStatusRequest::getTaskId()const
 void ModifyRiskSingleResultStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getStatus()const
@@ -89,6 +89,6 @@ std::string ModifyRiskSingleResultStatusRequest::getStatus()const
 void ModifyRiskSingleResultStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

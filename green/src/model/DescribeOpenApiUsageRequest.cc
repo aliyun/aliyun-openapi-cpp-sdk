@@ -33,7 +33,7 @@ std::string DescribeOpenApiUsageRequest::getEndDate()const
 void DescribeOpenApiUsageRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeOpenApiUsageRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeOpenApiUsageRequest::getSourceIp()const
 void DescribeOpenApiUsageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOpenApiUsageRequest::getStartDate()const
@@ -55,7 +55,7 @@ std::string DescribeOpenApiUsageRequest::getStartDate()const
 void DescribeOpenApiUsageRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 
 std::string DescribeOpenApiUsageRequest::getResourceType()const
@@ -66,6 +66,6 @@ std::string DescribeOpenApiUsageRequest::getResourceType()const
 void DescribeOpenApiUsageRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

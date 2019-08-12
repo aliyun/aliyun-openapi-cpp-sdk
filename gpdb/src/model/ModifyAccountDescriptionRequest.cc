@@ -33,7 +33,7 @@ std::string ModifyAccountDescriptionRequest::getAccountName()const
 void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", std::to_string(accountName));
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
 void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccountDescription()const
@@ -55,7 +55,7 @@ std::string ModifyAccountDescriptionRequest::getAccountDescription()const
 void ModifyAccountDescriptionRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", std::to_string(accountDescription));
+	setCoreParameter("AccountDescription", accountDescription);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
 void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

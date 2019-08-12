@@ -33,7 +33,7 @@ std::string SubmitAIJobRequest::getUserData()const
 void SubmitAIJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitAIJobRequest::getInput()const
@@ -44,7 +44,7 @@ std::string SubmitAIJobRequest::getInput()const
 void SubmitAIJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitAIJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ std::string SubmitAIJobRequest::getResourceOwnerId()const
 void SubmitAIJobRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitAIJobRequest::getTypes()const
@@ -66,7 +66,7 @@ std::string SubmitAIJobRequest::getTypes()const
 void SubmitAIJobRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", std::to_string(types));
+	setCoreParameter("Types", types);
 }
 
 std::string SubmitAIJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitAIJobRequest::getResourceOwnerAccount()const
 void SubmitAIJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAIJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitAIJobRequest::getOwnerAccount()const
 void SubmitAIJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitAIJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string SubmitAIJobRequest::getOwnerId()const
 void SubmitAIJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SubmitAIJobRequest::getMediaId()const
@@ -110,7 +110,7 @@ std::string SubmitAIJobRequest::getMediaId()const
 void SubmitAIJobRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string SubmitAIJobRequest::getConfig()const
@@ -121,7 +121,7 @@ std::string SubmitAIJobRequest::getConfig()const
 void SubmitAIJobRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", std::to_string(config));
+	setCoreParameter("Config", config);
 }
 
 std::string SubmitAIJobRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string SubmitAIJobRequest::getAccessKeyId()const
 void SubmitAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

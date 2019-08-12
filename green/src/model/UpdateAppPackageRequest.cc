@@ -44,7 +44,7 @@ std::string UpdateAppPackageRequest::getSourceIp()const
 void UpdateAppPackageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateAppPackageRequest::getPackageUrl()const
@@ -55,7 +55,7 @@ std::string UpdateAppPackageRequest::getPackageUrl()const
 void UpdateAppPackageRequest::setPackageUrl(const std::string& packageUrl)
 {
 	packageUrl_ = packageUrl;
-	setCoreParameter("PackageUrl", std::to_string(packageUrl));
+	setCoreParameter("PackageUrl", packageUrl);
 }
 
 long UpdateAppPackageRequest::getId()const
@@ -66,7 +66,7 @@ long UpdateAppPackageRequest::getId()const
 void UpdateAppPackageRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateAppPackageRequest::getLang()const
@@ -77,7 +77,7 @@ std::string UpdateAppPackageRequest::getLang()const
 void UpdateAppPackageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateAppPackageRequest::getPlatform()const
@@ -88,6 +88,6 @@ std::string UpdateAppPackageRequest::getPlatform()const
 void UpdateAppPackageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", std::to_string(platform));
+	setCoreParameter("Platform", platform);
 }
 

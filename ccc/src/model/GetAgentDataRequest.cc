@@ -33,7 +33,7 @@ std::string GetAgentDataRequest::getInstanceId()const
 void GetAgentDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetAgentDataRequest::getStartDay()const
@@ -44,7 +44,7 @@ std::string GetAgentDataRequest::getStartDay()const
 void GetAgentDataRequest::setStartDay(const std::string& startDay)
 {
 	startDay_ = startDay;
-	setCoreParameter("StartDay", std::to_string(startDay));
+	setCoreParameter("StartDay", startDay);
 }
 
 std::string GetAgentDataRequest::getEndDay()const
@@ -55,7 +55,7 @@ std::string GetAgentDataRequest::getEndDay()const
 void GetAgentDataRequest::setEndDay(const std::string& endDay)
 {
 	endDay_ = endDay;
-	setCoreParameter("EndDay", std::to_string(endDay));
+	setCoreParameter("EndDay", endDay);
 }
 
 int GetAgentDataRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetAgentDataRequest::getPageSize()const
 void GetAgentDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetAgentDataRequest::getUserId()const
@@ -77,7 +77,7 @@ std::string GetAgentDataRequest::getUserId()const
 void GetAgentDataRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 int GetAgentDataRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int GetAgentDataRequest::getPageNumber()const
 void GetAgentDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetAgentDataRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetAgentDataRequest::getAccessKeyId()const
 void GetAgentDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

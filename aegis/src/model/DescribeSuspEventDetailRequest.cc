@@ -33,7 +33,7 @@ int DescribeSuspEventDetailRequest::getSuspiciousEventId()const
 void DescribeSuspEventDetailRequest::setSuspiciousEventId(int suspiciousEventId)
 {
 	suspiciousEventId_ = suspiciousEventId;
-	setCoreParameter("SuspiciousEventId", suspiciousEventId);
+	setCoreParameter("SuspiciousEventId", std::to_string(suspiciousEventId));
 }
 
 std::string DescribeSuspEventDetailRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeSuspEventDetailRequest::getSourceIp()const
 void DescribeSuspEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSuspEventDetailRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeSuspEventDetailRequest::getFrom()const
 void DescribeSuspEventDetailRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeSuspEventDetailRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeSuspEventDetailRequest::getLang()const
 void DescribeSuspEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

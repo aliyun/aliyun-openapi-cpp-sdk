@@ -33,7 +33,7 @@ std::string DescribeInstancePhysicalAttributeRequest::getSourceRegionId()const
 void DescribeInstancePhysicalAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeInstancePhysicalAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeInstancePhysicalAttributeRequest::getResourceOwnerId()const
 void DescribeInstancePhysicalAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstancePhysicalAttributeRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeInstancePhysicalAttributeRequest::getInstanceId()const
 void DescribeInstancePhysicalAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstancePhysicalAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstancePhysicalAttributeRequest::getResourceOwnerAccount()c
 void DescribeInstancePhysicalAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstancePhysicalAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeInstancePhysicalAttributeRequest::getOwnerAccount()const
 void DescribeInstancePhysicalAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstancePhysicalAttributeRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DescribeInstancePhysicalAttributeRequest::getOwnerId()const
 void DescribeInstancePhysicalAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

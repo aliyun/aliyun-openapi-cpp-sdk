@@ -33,7 +33,7 @@ long DeletePredictDatasRequest::getResourceOwnerId()const
 void DeletePredictDatasRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeletePredictDatasRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeletePredictDatasRequest::getCallerParentId()const
 void DeletePredictDatasRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeletePredictDatasRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeletePredictDatasRequest::getDataIds()const
 void DeletePredictDatasRequest::setDataIds(const std::string& dataIds)
 {
 	dataIds_ = dataIds;
-	setCoreParameter("DataIds", std::to_string(dataIds));
+	setCoreParameter("DataIds", dataIds);
 }
 
 std::string DeletePredictDatasRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DeletePredictDatasRequest::getProxy_original_source_ip()const
 void DeletePredictDatasRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeletePredictDatasRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeletePredictDatasRequest::getOwnerIdLoginEmail()const
 void DeletePredictDatasRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeletePredictDatasRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeletePredictDatasRequest::getCallerType()const
 void DeletePredictDatasRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeletePredictDatasRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeletePredictDatasRequest::getAccessKeyId()const
 void DeletePredictDatasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeletePredictDatasRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DeletePredictDatasRequest::getSecurityToken()const
 void DeletePredictDatasRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeletePredictDatasRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DeletePredictDatasRequest::getRegionId()const
 void DeletePredictDatasRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeletePredictDatasRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DeletePredictDatasRequest::getRequestContent()const
 void DeletePredictDatasRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeletePredictDatasRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DeletePredictDatasRequest::getCallerBidEmail()const
 void DeletePredictDatasRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeletePredictDatasRequest::getProjectId()const
@@ -165,7 +165,7 @@ std::string DeletePredictDatasRequest::getProjectId()const
 void DeletePredictDatasRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DeletePredictDatasRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DeletePredictDatasRequest::getCallerUidEmail()const
 void DeletePredictDatasRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeletePredictDatasRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DeletePredictDatasRequest::getCallerUid()const
 void DeletePredictDatasRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeletePredictDatasRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string DeletePredictDatasRequest::getShowLog()const
 void DeletePredictDatasRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DeletePredictDatasRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeletePredictDatasRequest::getApp_ip()const
 void DeletePredictDatasRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeletePredictDatasRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DeletePredictDatasRequest::getPopProduct()const
 void DeletePredictDatasRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeletePredictDatasRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DeletePredictDatasRequest::getCallerBid()const
 void DeletePredictDatasRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeletePredictDatasRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DeletePredictDatasRequest::getOwnerId()const
 void DeletePredictDatasRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeletePredictDatasRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DeletePredictDatasRequest::getVersion()const
 void DeletePredictDatasRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DeletePredictDatasRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DeletePredictDatasRequest::getRequestId()const
 void DeletePredictDatasRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeletePredictDatasRequest::getIterationId()const
@@ -308,6 +308,6 @@ std::string DeletePredictDatasRequest::getIterationId()const
 void DeletePredictDatasRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setCoreParameter("IterationId", std::to_string(iterationId));
+	setCoreParameter("IterationId", iterationId);
 }
 

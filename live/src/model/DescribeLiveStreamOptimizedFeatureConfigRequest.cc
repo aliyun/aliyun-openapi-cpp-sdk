@@ -33,7 +33,7 @@ long DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerParentId()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeLiveStreamOptimizedFeatureConfigRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getProxy_original_s
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerIdLoginEmai
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerType()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeRpcId()const
@@ -88,7 +88,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeRpcId()c
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getAccessKeyId()con
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeTraceId()const
@@ -110,7 +110,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeTraceId(
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getSecurityToken()c
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRegionId()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRequestContent()
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getConfigName()const
@@ -154,7 +154,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getConfigName()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", std::to_string(configName));
+	setCoreParameter("ConfigName", configName);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerBidEmail()
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerUidEmail()
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerUid()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getApp_ip()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getPopProduct()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getDomainName()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getCallerBid()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getVersion()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeLiveStreamOptimizedFeatureConfigRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getServiceCode()con
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getRequestId()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeUserData()const
@@ -319,6 +319,6 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getEagleEyeUserData
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 

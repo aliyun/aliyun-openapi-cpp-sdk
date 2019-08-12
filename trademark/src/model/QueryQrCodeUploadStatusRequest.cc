@@ -33,7 +33,7 @@ std::string QueryQrCodeUploadStatusRequest::getOssKey()const
 void QueryQrCodeUploadStatusRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", std::to_string(ossKey));
+	setCoreParameter("OssKey", ossKey);
 }
 
 std::string QueryQrCodeUploadStatusRequest::getFieldKey()const
@@ -44,7 +44,7 @@ std::string QueryQrCodeUploadStatusRequest::getFieldKey()const
 void QueryQrCodeUploadStatusRequest::setFieldKey(const std::string& fieldKey)
 {
 	fieldKey_ = fieldKey;
-	setCoreParameter("FieldKey", std::to_string(fieldKey));
+	setCoreParameter("FieldKey", fieldKey);
 }
 
 std::string QueryQrCodeUploadStatusRequest::getUuid()const
@@ -55,6 +55,6 @@ std::string QueryQrCodeUploadStatusRequest::getUuid()const
 void QueryQrCodeUploadStatusRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 

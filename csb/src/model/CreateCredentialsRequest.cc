@@ -33,7 +33,7 @@ std::string CreateCredentialsRequest::getData()const
 void CreateCredentialsRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 long CreateCredentialsRequest::getCsbId()const
@@ -44,7 +44,7 @@ long CreateCredentialsRequest::getCsbId()const
 void CreateCredentialsRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string CreateCredentialsRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string CreateCredentialsRequest::getRegionId()const
 void CreateCredentialsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

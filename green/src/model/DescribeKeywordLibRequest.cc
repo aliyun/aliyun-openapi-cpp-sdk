@@ -33,7 +33,7 @@ std::string DescribeKeywordLibRequest::getSourceIp()const
 void DescribeKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeKeywordLibRequest::getServiceModule()const
@@ -44,7 +44,7 @@ std::string DescribeKeywordLibRequest::getServiceModule()const
 void DescribeKeywordLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", std::to_string(serviceModule));
+	setCoreParameter("ServiceModule", serviceModule);
 }
 
 std::string DescribeKeywordLibRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeKeywordLibRequest::getLang()const
 void DescribeKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

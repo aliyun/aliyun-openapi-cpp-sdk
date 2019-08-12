@@ -33,7 +33,7 @@ long DescribeQosPoliciesRequest::getResourceOwnerId()const
 void DescribeQosPoliciesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeQosPoliciesRequest::getQosPolicyId()const
@@ -44,7 +44,7 @@ std::string DescribeQosPoliciesRequest::getQosPolicyId()const
 void DescribeQosPoliciesRequest::setQosPolicyId(const std::string& qosPolicyId)
 {
 	qosPolicyId_ = qosPolicyId;
-	setCoreParameter("QosPolicyId", std::to_string(qosPolicyId));
+	setCoreParameter("QosPolicyId", qosPolicyId);
 }
 
 std::string DescribeQosPoliciesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeQosPoliciesRequest::getResourceOwnerAccount()const
 void DescribeQosPoliciesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeQosPoliciesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeQosPoliciesRequest::getRegionId()const
 void DescribeQosPoliciesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeQosPoliciesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeQosPoliciesRequest::getOwnerAccount()const
 void DescribeQosPoliciesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeQosPoliciesRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeQosPoliciesRequest::getPageSize()const
 void DescribeQosPoliciesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeQosPoliciesRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string DescribeQosPoliciesRequest::getDescription()const
 void DescribeQosPoliciesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long DescribeQosPoliciesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeQosPoliciesRequest::getOwnerId()const
 void DescribeQosPoliciesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeQosPoliciesRequest::getQosId()const
@@ -121,7 +121,7 @@ std::string DescribeQosPoliciesRequest::getQosId()const
 void DescribeQosPoliciesRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", std::to_string(qosId));
+	setCoreParameter("QosId", qosId);
 }
 
 int DescribeQosPoliciesRequest::getPageNumber()const
@@ -132,7 +132,7 @@ int DescribeQosPoliciesRequest::getPageNumber()const
 void DescribeQosPoliciesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeQosPoliciesRequest::getOrder()const
@@ -143,6 +143,6 @@ std::string DescribeQosPoliciesRequest::getOrder()const
 void DescribeQosPoliciesRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", std::to_string(order));
+	setCoreParameter("Order", order);
 }
 

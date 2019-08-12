@@ -33,7 +33,7 @@ long DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerParentId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeLiveDomainRealTimeHttpCodeDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getLocationNameEn()co
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getStartTime()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getProxy_original_sou
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerIdLoginEmail(
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerType()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getAccessKeyId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getSecurityToken()con
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRegionId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRequestContent()co
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerBidEmail()co
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerUidEmail()co
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerUid()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getApp_ip()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getPopProduct()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getDomainName()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getEndTime()const
@@ -231,7 +231,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getEndTime()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getCallerBid()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getVersion()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeLiveDomainRealTimeHttpCodeDataRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getRequestId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getInterval()const
@@ -319,7 +319,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getInterval()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getFields()const
@@ -330,6 +330,6 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getFields()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

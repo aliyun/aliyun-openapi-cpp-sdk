@@ -33,7 +33,7 @@ long DescribePhysicalConnectionLOARequest::getResourceOwnerId()const
 void DescribePhysicalConnectionLOARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribePhysicalConnectionLOARequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribePhysicalConnectionLOARequest::getInstanceId()const
 void DescribePhysicalConnectionLOARequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribePhysicalConnectionLOARequest::getRegionId()const
 void DescribePhysicalConnectionLOARequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribePhysicalConnectionLOARequest::getResourceOwnerAccount()const
 void DescribePhysicalConnectionLOARequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string DescribePhysicalConnectionLOARequest::getClientToken()const
 void DescribePhysicalConnectionLOARequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribePhysicalConnectionLOARequest::getOwnerAccount()const
 void DescribePhysicalConnectionLOARequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribePhysicalConnectionLOARequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DescribePhysicalConnectionLOARequest::getOwnerId()const
 void DescribePhysicalConnectionLOARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

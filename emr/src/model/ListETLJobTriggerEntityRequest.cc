@@ -33,7 +33,7 @@ long ListETLJobTriggerEntityRequest::getResourceOwnerId()const
 void ListETLJobTriggerEntityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListETLJobTriggerEntityRequest::getEntityType()const
@@ -44,7 +44,7 @@ std::string ListETLJobTriggerEntityRequest::getEntityType()const
 void ListETLJobTriggerEntityRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", std::to_string(entityType));
+	setCoreParameter("EntityType", entityType);
 }
 
 std::string ListETLJobTriggerEntityRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListETLJobTriggerEntityRequest::getRegionId()const
 void ListETLJobTriggerEntityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListETLJobTriggerEntityRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListETLJobTriggerEntityRequest::getAccessKeyId()const
 void ListETLJobTriggerEntityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

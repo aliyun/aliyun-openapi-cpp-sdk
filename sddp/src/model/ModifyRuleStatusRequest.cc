@@ -33,7 +33,7 @@ std::string ModifyRuleStatusRequest::getSourceIp()const
 void ModifyRuleStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyRuleStatusRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int ModifyRuleStatusRequest::getFeatureType()const
 void ModifyRuleStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 long ModifyRuleStatusRequest::getId()const
@@ -55,7 +55,7 @@ long ModifyRuleStatusRequest::getId()const
 void ModifyRuleStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyRuleStatusRequest::getLang()const
@@ -66,7 +66,7 @@ std::string ModifyRuleStatusRequest::getLang()const
 void ModifyRuleStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int ModifyRuleStatusRequest::getStatus()const
@@ -77,6 +77,6 @@ int ModifyRuleStatusRequest::getStatus()const
 void ModifyRuleStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

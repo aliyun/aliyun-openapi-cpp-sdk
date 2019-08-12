@@ -33,7 +33,7 @@ std::string DescribeAttackAnalysisDataRequest::getSourceIp()const
 void DescribeAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAttackAnalysisDataRequest::getData()const
@@ -44,7 +44,7 @@ std::string DescribeAttackAnalysisDataRequest::getData()const
 void DescribeAttackAnalysisDataRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string DescribeAttackAnalysisDataRequest::getBase64()const
@@ -55,7 +55,7 @@ std::string DescribeAttackAnalysisDataRequest::getBase64()const
 void DescribeAttackAnalysisDataRequest::setBase64(const std::string& base64)
 {
 	base64_ = base64;
-	setCoreParameter("Base64", std::to_string(base64));
+	setCoreParameter("Base64", base64);
 }
 
 int DescribeAttackAnalysisDataRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeAttackAnalysisDataRequest::getPageSize()const
 void DescribeAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeAttackAnalysisDataRequest::getEndTime()const
@@ -77,7 +77,7 @@ long DescribeAttackAnalysisDataRequest::getEndTime()const
 void DescribeAttackAnalysisDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeAttackAnalysisDataRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeAttackAnalysisDataRequest::getCurrentPage()const
 void DescribeAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeAttackAnalysisDataRequest::getStartTime()const
@@ -99,7 +99,7 @@ long DescribeAttackAnalysisDataRequest::getStartTime()const
 void DescribeAttackAnalysisDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeAttackAnalysisDataRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeAttackAnalysisDataRequest::getLang()const
 void DescribeAttackAnalysisDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAttackAnalysisDataRequest::getType()const
@@ -121,6 +121,6 @@ std::string DescribeAttackAnalysisDataRequest::getType()const
 void DescribeAttackAnalysisDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

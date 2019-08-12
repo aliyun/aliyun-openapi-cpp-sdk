@@ -33,7 +33,7 @@ long CheckInstanceExistRequest::getResourceOwnerId()const
 void CheckInstanceExistRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckInstanceExistRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CheckInstanceExistRequest::getResourceOwnerAccount()const
 void CheckInstanceExistRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CheckInstanceExistRequest::getDBInstanceId()const
@@ -55,7 +55,7 @@ std::string CheckInstanceExistRequest::getDBInstanceId()const
 void CheckInstanceExistRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long CheckInstanceExistRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long CheckInstanceExistRequest::getOwnerId()const
 void CheckInstanceExistRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CheckInstanceExistRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CheckInstanceExistRequest::getAccessKeyId()const
 void CheckInstanceExistRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

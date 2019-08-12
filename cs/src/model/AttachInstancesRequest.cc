@@ -33,6 +33,6 @@ std::string AttachInstancesRequest::getClusterId()const
 void AttachInstancesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 

@@ -33,7 +33,7 @@ std::string ReleasePublicIpAddressRequest::getSourceRegionId()const
 void ReleasePublicIpAddressRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long ReleasePublicIpAddressRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ReleasePublicIpAddressRequest::getResourceOwnerId()const
 void ReleasePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleasePublicIpAddressRequest::getPublicIpAddress()const
@@ -55,7 +55,7 @@ std::string ReleasePublicIpAddressRequest::getPublicIpAddress()const
 void ReleasePublicIpAddressRequest::setPublicIpAddress(const std::string& publicIpAddress)
 {
 	publicIpAddress_ = publicIpAddress;
-	setCoreParameter("PublicIpAddress", std::to_string(publicIpAddress));
+	setCoreParameter("PublicIpAddress", publicIpAddress);
 }
 
 std::string ReleasePublicIpAddressRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string ReleasePublicIpAddressRequest::getInstanceId()const
 void ReleasePublicIpAddressRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ReleasePublicIpAddressRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReleasePublicIpAddressRequest::getResourceOwnerAccount()const
 void ReleasePublicIpAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleasePublicIpAddressRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ReleasePublicIpAddressRequest::getOwnerAccount()const
 void ReleasePublicIpAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ReleasePublicIpAddressRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long ReleasePublicIpAddressRequest::getOwnerId()const
 void ReleasePublicIpAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

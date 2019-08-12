@@ -33,7 +33,7 @@ std::string BandPrecheckRequest::getIpAddress()const
 void BandPrecheckRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", std::to_string(ipAddress));
+	setCoreParameter("IpAddress", ipAddress);
 }
 
 long BandPrecheckRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long BandPrecheckRequest::getResourceOwnerId()const
 void BandPrecheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandPrecheckRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string BandPrecheckRequest::getResourceOwnerAccount()const
 void BandPrecheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int BandPrecheckRequest::getPort()const
@@ -66,7 +66,7 @@ int BandPrecheckRequest::getPort()const
 void BandPrecheckRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 long BandPrecheckRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long BandPrecheckRequest::getOwnerId()const
 void BandPrecheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandPrecheckRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string BandPrecheckRequest::getAccessKeyId()const
 void BandPrecheckRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

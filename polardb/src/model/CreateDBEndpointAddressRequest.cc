@@ -33,7 +33,7 @@ long CreateDBEndpointAddressRequest::getResourceOwnerId()const
 void CreateDBEndpointAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDBEndpointAddressRequest::getConnectionStringPrefix()const
@@ -44,7 +44,7 @@ std::string CreateDBEndpointAddressRequest::getConnectionStringPrefix()const
 void CreateDBEndpointAddressRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
+	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string CreateDBEndpointAddressRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateDBEndpointAddressRequest::getResourceOwnerAccount()const
 void CreateDBEndpointAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDBEndpointAddressRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string CreateDBEndpointAddressRequest::getDBClusterId()const
 void CreateDBEndpointAddressRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string CreateDBEndpointAddressRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateDBEndpointAddressRequest::getOwnerAccount()const
 void CreateDBEndpointAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDBEndpointAddressRequest::getNetType()const
@@ -88,7 +88,7 @@ std::string CreateDBEndpointAddressRequest::getNetType()const
 void CreateDBEndpointAddressRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", std::to_string(netType));
+	setCoreParameter("NetType", netType);
 }
 
 std::string CreateDBEndpointAddressRequest::getDBEndpointId()const
@@ -99,7 +99,7 @@ std::string CreateDBEndpointAddressRequest::getDBEndpointId()const
 void CreateDBEndpointAddressRequest::setDBEndpointId(const std::string& dBEndpointId)
 {
 	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", std::to_string(dBEndpointId));
+	setCoreParameter("DBEndpointId", dBEndpointId);
 }
 
 long CreateDBEndpointAddressRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long CreateDBEndpointAddressRequest::getOwnerId()const
 void CreateDBEndpointAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDBEndpointAddressRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string CreateDBEndpointAddressRequest::getAccessKeyId()const
 void CreateDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

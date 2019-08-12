@@ -33,7 +33,7 @@ std::string GetQuotaHistoryInfoRequest::getCluster()const
 void GetQuotaHistoryInfoRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", std::to_string(cluster));
+	setCoreParameter("Cluster", cluster);
 }
 
 int GetQuotaHistoryInfoRequest::getEndTime()const
@@ -44,7 +44,7 @@ int GetQuotaHistoryInfoRequest::getEndTime()const
 void GetQuotaHistoryInfoRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int GetQuotaHistoryInfoRequest::getStartTime()const
@@ -55,7 +55,7 @@ int GetQuotaHistoryInfoRequest::getStartTime()const
 void GetQuotaHistoryInfoRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetQuotaHistoryInfoRequest::getRegion()const
@@ -66,7 +66,7 @@ std::string GetQuotaHistoryInfoRequest::getRegion()const
 void GetQuotaHistoryInfoRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string GetQuotaHistoryInfoRequest::getQuotaName()const
@@ -77,6 +77,6 @@ std::string GetQuotaHistoryInfoRequest::getQuotaName()const
 void GetQuotaHistoryInfoRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", std::to_string(quotaName));
+	setCoreParameter("QuotaName", quotaName);
 }
 

@@ -33,7 +33,7 @@ long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getResourceOwnerId()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerParentId()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDcdnDomainRealTimeHttpCodeDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getLocationNameEn()co
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getStartTime()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getProxy_original_sou
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getOwnerIdLoginEmail(
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerType()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getAccessKeyId()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getSecurityToken()con
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getRequestContent()co
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerBidEmail()co
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerUidEmail()co
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerUid()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getApp_ip()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getPopProduct()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getDomainName()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getEndTime()const
@@ -231,7 +231,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getEndTime()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getCallerBid()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeDcdnDomainRealTimeHttpCodeDataRequest::getOwnerId()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getVersion()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDcdnDomainRealTimeHttpCodeDataRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getRequestId()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getInterval()const
@@ -319,7 +319,7 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getInterval()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getFields()const
@@ -330,6 +330,6 @@ std::string DescribeDcdnDomainRealTimeHttpCodeDataRequest::getFields()const
 void DescribeDcdnDomainRealTimeHttpCodeDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

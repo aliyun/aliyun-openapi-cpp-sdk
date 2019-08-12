@@ -33,7 +33,7 @@ long DeleteResourcePoolRequest::getResourceOwnerId()const
 void DeleteResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteResourcePoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteResourcePoolRequest::getRegionId()const
 void DeleteResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteResourcePoolRequest::getResourcePoolId()const
@@ -55,7 +55,7 @@ std::string DeleteResourcePoolRequest::getResourcePoolId()const
 void DeleteResourcePoolRequest::setResourcePoolId(const std::string& resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
+	setCoreParameter("ResourcePoolId", resourcePoolId);
 }
 
 std::string DeleteResourcePoolRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DeleteResourcePoolRequest::getClusterId()const
 void DeleteResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteResourcePoolRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteResourcePoolRequest::getAccessKeyId()const
 void DeleteResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

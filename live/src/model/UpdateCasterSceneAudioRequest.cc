@@ -37,9 +37,9 @@ void UpdateCasterSceneAudioRequest::setAudioLayer(const std::vector<AudioLayer>&
 	for(int i = 0; i!= audioLayer.size(); i++)	{
 		auto obj = audioLayer.at(i);
 		std::string str ="AudioLayer."+ std::to_string(i);
-		setCoreParameter(str + ".FixedDelayDuration", obj.fixedDelayDuration);
-		setCoreParameter(str + ".VolumeRate", obj.volumeRate);
-		setCoreParameter(str + ".ValidChannel", std::to_string(obj.validChannel));
+		setCoreParameter(str + ".FixedDelayDuration", std::to_string(obj.fixedDelayDuration));
+		setCoreParameter(str + ".VolumeRate", std::to_string(obj.volumeRate));
+		setCoreParameter(str + ".ValidChannel", obj.validChannel);
 	}
 }
 
@@ -51,7 +51,7 @@ std::string UpdateCasterSceneAudioRequest::getRegionId()const
 void UpdateCasterSceneAudioRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateCasterSceneAudioRequest::getCasterId()const
@@ -62,7 +62,7 @@ std::string UpdateCasterSceneAudioRequest::getCasterId()const
 void UpdateCasterSceneAudioRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string UpdateCasterSceneAudioRequest::getSceneId()const
@@ -73,7 +73,7 @@ std::string UpdateCasterSceneAudioRequest::getSceneId()const
 void UpdateCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", std::to_string(sceneId));
+	setCoreParameter("SceneId", sceneId);
 }
 
 std::vector<std::string> UpdateCasterSceneAudioRequest::getMixList()const
@@ -85,7 +85,7 @@ void UpdateCasterSceneAudioRequest::setMixList(const std::vector<std::string>& m
 {
 	mixList_ = mixList;
 	for(int i = 0; i!= mixList.size(); i++)
-		setCoreParameter("MixList."+ std::to_string(i), std::to_string(mixList.at(i)));
+		setCoreParameter("MixList."+ std::to_string(i), mixList.at(i));
 }
 
 long UpdateCasterSceneAudioRequest::getOwnerId()const
@@ -96,7 +96,7 @@ long UpdateCasterSceneAudioRequest::getOwnerId()const
 void UpdateCasterSceneAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateCasterSceneAudioRequest::getFollowEnable()const
@@ -107,6 +107,6 @@ int UpdateCasterSceneAudioRequest::getFollowEnable()const
 void UpdateCasterSceneAudioRequest::setFollowEnable(int followEnable)
 {
 	followEnable_ = followEnable;
-	setCoreParameter("FollowEnable", followEnable);
+	setCoreParameter("FollowEnable", std::to_string(followEnable));
 }
 

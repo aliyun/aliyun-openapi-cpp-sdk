@@ -44,7 +44,7 @@ std::string ModifyDrdsIpWhiteListRequest::getDbName()const
 void ModifyDrdsIpWhiteListRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getGroupAttribute()const
@@ -55,7 +55,7 @@ std::string ModifyDrdsIpWhiteListRequest::getGroupAttribute()const
 void ModifyDrdsIpWhiteListRequest::setGroupAttribute(const std::string& groupAttribute)
 {
 	groupAttribute_ = groupAttribute;
-	setCoreParameter("GroupAttribute", std::to_string(groupAttribute));
+	setCoreParameter("GroupAttribute", groupAttribute);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getIpWhiteList()const
@@ -66,7 +66,7 @@ std::string ModifyDrdsIpWhiteListRequest::getIpWhiteList()const
 void ModifyDrdsIpWhiteListRequest::setIpWhiteList(const std::string& ipWhiteList)
 {
 	ipWhiteList_ = ipWhiteList;
-	setCoreParameter("IpWhiteList", std::to_string(ipWhiteList));
+	setCoreParameter("IpWhiteList", ipWhiteList);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getDrdsInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyDrdsIpWhiteListRequest::getDrdsInstanceId()const
 void ModifyDrdsIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
@@ -88,7 +88,7 @@ std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
 void ModifyDrdsIpWhiteListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
 void ModifyDrdsIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

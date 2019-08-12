@@ -33,7 +33,7 @@ std::string StartLiveIndexRequest::getOssBucket()const
 void StartLiveIndexRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", std::to_string(ossBucket));
+	setCoreParameter("OssBucket", ossBucket);
 }
 
 std::string StartLiveIndexRequest::getTokenId()const
@@ -44,7 +44,7 @@ std::string StartLiveIndexRequest::getTokenId()const
 void StartLiveIndexRequest::setTokenId(const std::string& tokenId)
 {
 	tokenId_ = tokenId;
-	setCoreParameter("TokenId", std::to_string(tokenId));
+	setCoreParameter("TokenId", tokenId);
 }
 
 std::string StartLiveIndexRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string StartLiveIndexRequest::getDomainName()const
 void StartLiveIndexRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string StartLiveIndexRequest::getOssEndpoint()const
@@ -66,7 +66,7 @@ std::string StartLiveIndexRequest::getOssEndpoint()const
 void StartLiveIndexRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", std::to_string(ossEndpoint));
+	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string StartLiveIndexRequest::getInputUrl()const
@@ -77,7 +77,7 @@ std::string StartLiveIndexRequest::getInputUrl()const
 void StartLiveIndexRequest::setInputUrl(const std::string& inputUrl)
 {
 	inputUrl_ = inputUrl;
-	setCoreParameter("InputUrl", std::to_string(inputUrl));
+	setCoreParameter("InputUrl", inputUrl);
 }
 
 long StartLiveIndexRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long StartLiveIndexRequest::getOwnerId()const
 void StartLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartLiveIndexRequest::getAppName()const
@@ -99,7 +99,7 @@ std::string StartLiveIndexRequest::getAppName()const
 void StartLiveIndexRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string StartLiveIndexRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string StartLiveIndexRequest::getRegionId()const
 void StartLiveIndexRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int StartLiveIndexRequest::getInterval()const
@@ -121,7 +121,7 @@ int StartLiveIndexRequest::getInterval()const
 void StartLiveIndexRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string StartLiveIndexRequest::getOssRamRole()const
@@ -132,7 +132,7 @@ std::string StartLiveIndexRequest::getOssRamRole()const
 void StartLiveIndexRequest::setOssRamRole(const std::string& ossRamRole)
 {
 	ossRamRole_ = ossRamRole;
-	setCoreParameter("OssRamRole", std::to_string(ossRamRole));
+	setCoreParameter("OssRamRole", ossRamRole);
 }
 
 std::string StartLiveIndexRequest::getStreamName()const
@@ -143,7 +143,7 @@ std::string StartLiveIndexRequest::getStreamName()const
 void StartLiveIndexRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string StartLiveIndexRequest::getOssUserId()const
@@ -154,6 +154,6 @@ std::string StartLiveIndexRequest::getOssUserId()const
 void StartLiveIndexRequest::setOssUserId(const std::string& ossUserId)
 {
 	ossUserId_ = ossUserId;
-	setCoreParameter("OssUserId", std::to_string(ossUserId));
+	setCoreParameter("OssUserId", ossUserId);
 }
 

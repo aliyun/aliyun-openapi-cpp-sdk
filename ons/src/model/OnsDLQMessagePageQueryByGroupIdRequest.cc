@@ -33,7 +33,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getInstanceId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getGroupId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int OnsDLQMessagePageQueryByGroupIdRequest::getPageSize()const
@@ -55,7 +55,7 @@ int OnsDLQMessagePageQueryByGroupIdRequest::getPageSize()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long OnsDLQMessagePageQueryByGroupIdRequest::getEndTime()const
@@ -66,7 +66,7 @@ long OnsDLQMessagePageQueryByGroupIdRequest::getEndTime()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long OnsDLQMessagePageQueryByGroupIdRequest::getBeginTime()const
@@ -77,7 +77,7 @@ long OnsDLQMessagePageQueryByGroupIdRequest::getBeginTime()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setBeginTime(long beginTime)
 {
 	beginTime_ = beginTime;
-	setCoreParameter("BeginTime", beginTime);
+	setCoreParameter("BeginTime", std::to_string(beginTime));
 }
 
 int OnsDLQMessagePageQueryByGroupIdRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int OnsDLQMessagePageQueryByGroupIdRequest::getCurrentPage()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getTaskId()const
@@ -99,6 +99,6 @@ std::string OnsDLQMessagePageQueryByGroupIdRequest::getTaskId()const
 void OnsDLQMessagePageQueryByGroupIdRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

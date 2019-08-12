@@ -33,7 +33,7 @@ std::string DescribeVulTargetStatisticsRequest::getSourceIp()const
 void DescribeVulTargetStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVulTargetStatisticsRequest::getType()const
@@ -44,6 +44,6 @@ std::string DescribeVulTargetStatisticsRequest::getType()const
 void DescribeVulTargetStatisticsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeOrderCountForConsoleIndexRequest::getResourceGroupId()const
 void DescribeOrderCountForConsoleIndexRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderCountForConsoleIndexRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeOrderCountForConsoleIndexRequest::getSourceIp()const
 void DescribeOrderCountForConsoleIndexRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderCountForConsoleIndexRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string DescribeOrderCountForConsoleIndexRequest::getRegionId()const
 void DescribeOrderCountForConsoleIndexRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

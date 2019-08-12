@@ -33,7 +33,7 @@ std::string DescribeIncrementBackupListRequest::getRegionId()const
 void DescribeIncrementBackupListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeIncrementBackupListRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DescribeIncrementBackupListRequest::getClientToken()const
 void DescribeIncrementBackupListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int DescribeIncrementBackupListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeIncrementBackupListRequest::getPageSize()const
 void DescribeIncrementBackupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
@@ -66,7 +66,7 @@ std::string DescribeIncrementBackupListRequest::getBackupPlanId()const
 void DescribeIncrementBackupListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
+	setCoreParameter("BackupPlanId", backupPlanId);
 }
 
 int DescribeIncrementBackupListRequest::getPageNum()const
@@ -77,7 +77,7 @@ int DescribeIncrementBackupListRequest::getPageNum()const
 void DescribeIncrementBackupListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeIncrementBackupListRequest::getOwnerId()const
@@ -88,6 +88,6 @@ std::string DescribeIncrementBackupListRequest::getOwnerId()const
 void DescribeIncrementBackupListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

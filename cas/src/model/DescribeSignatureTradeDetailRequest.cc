@@ -33,7 +33,7 @@ std::string DescribeSignatureTradeDetailRequest::getSourceIp()const
 void DescribeSignatureTradeDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSignatureTradeDetailRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeSignatureTradeDetailRequest::getLang()const
 void DescribeSignatureTradeDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSignatureTradeDetailRequest::getTransactionId()const
@@ -55,6 +55,6 @@ std::string DescribeSignatureTradeDetailRequest::getTransactionId()const
 void DescribeSignatureTradeDetailRequest::setTransactionId(const std::string& transactionId)
 {
 	transactionId_ = transactionId;
-	setCoreParameter("TransactionId", std::to_string(transactionId));
+	setCoreParameter("TransactionId", transactionId);
 }
 

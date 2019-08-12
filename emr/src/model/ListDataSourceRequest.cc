@@ -33,7 +33,7 @@ long ListDataSourceRequest::getResourceOwnerId()const
 void ListDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListDataSourceRequest::getCreateFrom()const
@@ -44,7 +44,7 @@ std::string ListDataSourceRequest::getCreateFrom()const
 void ListDataSourceRequest::setCreateFrom(const std::string& createFrom)
 {
 	createFrom_ = createFrom;
-	setCoreParameter("CreateFrom", std::to_string(createFrom));
+	setCoreParameter("CreateFrom", createFrom);
 }
 
 std::string ListDataSourceRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListDataSourceRequest::getRegionId()const
 void ListDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListDataSourceRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListDataSourceRequest::getPageSize()const
 void ListDataSourceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListDataSourceRequest::getName()const
@@ -77,7 +77,7 @@ std::string ListDataSourceRequest::getName()const
 void ListDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ListDataSourceRequest::getSourceType()const
@@ -88,7 +88,7 @@ std::string ListDataSourceRequest::getSourceType()const
 void ListDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", std::to_string(sourceType));
+	setCoreParameter("SourceType", sourceType);
 }
 
 std::string ListDataSourceRequest::getId()const
@@ -99,7 +99,7 @@ std::string ListDataSourceRequest::getId()const
 void ListDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ListDataSourceRequest::getProjectId()const
@@ -110,7 +110,7 @@ std::string ListDataSourceRequest::getProjectId()const
 void ListDataSourceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 int ListDataSourceRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int ListDataSourceRequest::getPageNumber()const
 void ListDataSourceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListDataSourceRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListDataSourceRequest::getAccessKeyId()const
 void ListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long CreateExecutionPlanRequest::getResourceOwnerId()const
 void CreateExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateExecutionPlanRequest::getTimeInterval()const
@@ -44,7 +44,7 @@ int CreateExecutionPlanRequest::getTimeInterval()const
 void CreateExecutionPlanRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setCoreParameter("TimeInterval", timeInterval);
+	setCoreParameter("TimeInterval", std::to_string(timeInterval));
 }
 
 std::string CreateExecutionPlanRequest::getLogPath()const
@@ -55,7 +55,7 @@ std::string CreateExecutionPlanRequest::getLogPath()const
 void CreateExecutionPlanRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setCoreParameter("LogPath", std::to_string(logPath));
+	setCoreParameter("LogPath", logPath);
 }
 
 std::string CreateExecutionPlanRequest::getClusterName()const
@@ -66,7 +66,7 @@ std::string CreateExecutionPlanRequest::getClusterName()const
 void CreateExecutionPlanRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", std::to_string(clusterName));
+	setCoreParameter("ClusterName", clusterName);
 }
 
 std::string CreateExecutionPlanRequest::getConfigurations()const
@@ -77,7 +77,7 @@ std::string CreateExecutionPlanRequest::getConfigurations()const
 void CreateExecutionPlanRequest::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setCoreParameter("Configurations", std::to_string(configurations));
+	setCoreParameter("Configurations", configurations);
 }
 
 bool CreateExecutionPlanRequest::getIoOptimized()const
@@ -99,7 +99,7 @@ std::string CreateExecutionPlanRequest::getSecurityGroupId()const
 void CreateExecutionPlanRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool CreateExecutionPlanRequest::getEasEnable()const
@@ -132,7 +132,7 @@ long CreateExecutionPlanRequest::getStartTime()const
 void CreateExecutionPlanRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::vector<std::string> CreateExecutionPlanRequest::getJobIdList()const
@@ -144,7 +144,7 @@ void CreateExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jo
 {
 	jobIdList_ = jobIdList;
 	for(int i = 0; i!= jobIdList.size(); i++)
-		setCoreParameter("JobIdList."+ std::to_string(i), std::to_string(jobIdList.at(i)));
+		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
 }
 
 std::string CreateExecutionPlanRequest::getAccessKeyId()const
@@ -155,7 +155,7 @@ std::string CreateExecutionPlanRequest::getAccessKeyId()const
 void CreateExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateExecutionPlanRequest::getDayOfMonth()const
@@ -166,7 +166,7 @@ std::string CreateExecutionPlanRequest::getDayOfMonth()const
 void CreateExecutionPlanRequest::setDayOfMonth(const std::string& dayOfMonth)
 {
 	dayOfMonth_ = dayOfMonth;
-	setCoreParameter("DayOfMonth", std::to_string(dayOfMonth));
+	setCoreParameter("DayOfMonth", dayOfMonth);
 }
 
 std::vector<CreateExecutionPlanRequest::BootstrapAction> CreateExecutionPlanRequest::getBootstrapAction()const
@@ -181,9 +181,9 @@ void CreateExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapA
 	for(int i = 0; i!= bootstrapAction.size(); i++)	{
 		auto obj = bootstrapAction.at(i);
 		std::string str ="BootstrapAction."+ std::to_string(i);
-		setCoreParameter(str + ".Path", std::to_string(obj.path));
-		setCoreParameter(str + ".Arg", std::to_string(obj.arg));
-		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Path", obj.path);
+		setCoreParameter(str + ".Arg", obj.arg);
+		setCoreParameter(str + ".Name", obj.name);
 	}
 }
 
@@ -195,7 +195,7 @@ std::string CreateExecutionPlanRequest::getRegionId()const
 void CreateExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool CreateExecutionPlanRequest::getUseLocalMetaDb()const
@@ -217,7 +217,7 @@ std::string CreateExecutionPlanRequest::getEmrVer()const
 void CreateExecutionPlanRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setCoreParameter("EmrVer", std::to_string(emrVer));
+	setCoreParameter("EmrVer", emrVer);
 }
 
 std::string CreateExecutionPlanRequest::getUserDefinedEmrEcsRole()const
@@ -228,7 +228,7 @@ std::string CreateExecutionPlanRequest::getUserDefinedEmrEcsRole()const
 void CreateExecutionPlanRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", std::to_string(userDefinedEmrEcsRole));
+	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 bool CreateExecutionPlanRequest::getIsOpenPublicIp()const
@@ -250,7 +250,7 @@ std::string CreateExecutionPlanRequest::getClusterId()const
 void CreateExecutionPlanRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateExecutionPlanRequest::getTimeUnit()const
@@ -261,7 +261,7 @@ std::string CreateExecutionPlanRequest::getTimeUnit()const
 void CreateExecutionPlanRequest::setTimeUnit(const std::string& timeUnit)
 {
 	timeUnit_ = timeUnit;
-	setCoreParameter("TimeUnit", std::to_string(timeUnit));
+	setCoreParameter("TimeUnit", timeUnit);
 }
 
 std::string CreateExecutionPlanRequest::getInstanceGeneration()const
@@ -272,7 +272,7 @@ std::string CreateExecutionPlanRequest::getInstanceGeneration()const
 void CreateExecutionPlanRequest::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setCoreParameter("InstanceGeneration", std::to_string(instanceGeneration));
+	setCoreParameter("InstanceGeneration", instanceGeneration);
 }
 
 std::string CreateExecutionPlanRequest::getClusterType()const
@@ -283,7 +283,7 @@ std::string CreateExecutionPlanRequest::getClusterType()const
 void CreateExecutionPlanRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", std::to_string(clusterType));
+	setCoreParameter("ClusterType", clusterType);
 }
 
 std::string CreateExecutionPlanRequest::getVSwitchId()const
@@ -294,7 +294,7 @@ std::string CreateExecutionPlanRequest::getVSwitchId()const
 void CreateExecutionPlanRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::vector<std::string> CreateExecutionPlanRequest::getOptionSoftWareList()const
@@ -306,7 +306,7 @@ void CreateExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::st
 {
 	optionSoftWareList_ = optionSoftWareList;
 	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setCoreParameter("OptionSoftWareList."+ std::to_string(i), std::to_string(optionSoftWareList.at(i)));
+		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
 }
 
 std::string CreateExecutionPlanRequest::getVpcId()const
@@ -317,7 +317,7 @@ std::string CreateExecutionPlanRequest::getVpcId()const
 void CreateExecutionPlanRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string CreateExecutionPlanRequest::getNetType()const
@@ -328,7 +328,7 @@ std::string CreateExecutionPlanRequest::getNetType()const
 void CreateExecutionPlanRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", std::to_string(netType));
+	setCoreParameter("NetType", netType);
 }
 
 std::vector<CreateExecutionPlanRequest::EcsOrder> CreateExecutionPlanRequest::getEcsOrder()const
@@ -343,13 +343,13 @@ void CreateExecutionPlanRequest::setEcsOrder(const std::vector<EcsOrder>& ecsOrd
 	for(int i = 0; i!= ecsOrder.size(); i++)	{
 		auto obj = ecsOrder.at(i);
 		std::string str ="EcsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".NodeType", std::to_string(obj.nodeType));
-		setCoreParameter(str + ".DiskCount", obj.diskCount);
-		setCoreParameter(str + ".NodeCount", obj.nodeCount);
-		setCoreParameter(str + ".DiskCapacity", obj.diskCapacity);
-		setCoreParameter(str + ".Index", obj.index);
-		setCoreParameter(str + ".InstanceType", std::to_string(obj.instanceType));
-		setCoreParameter(str + ".DiskType", std::to_string(obj.diskType));
+		setCoreParameter(str + ".NodeType", obj.nodeType);
+		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
+		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
+		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
+		setCoreParameter(str + ".Index", std::to_string(obj.index));
+		setCoreParameter(str + ".InstanceType", obj.instanceType);
+		setCoreParameter(str + ".DiskType", obj.diskType);
 	}
 }
 
@@ -361,7 +361,7 @@ std::string CreateExecutionPlanRequest::getWorkflowDefinition()const
 void CreateExecutionPlanRequest::setWorkflowDefinition(const std::string& workflowDefinition)
 {
 	workflowDefinition_ = workflowDefinition;
-	setCoreParameter("WorkflowDefinition", std::to_string(workflowDefinition));
+	setCoreParameter("WorkflowDefinition", workflowDefinition);
 }
 
 std::string CreateExecutionPlanRequest::getName()const
@@ -372,7 +372,7 @@ std::string CreateExecutionPlanRequest::getName()const
 void CreateExecutionPlanRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateExecutionPlanRequest::getDayOfWeek()const
@@ -383,7 +383,7 @@ std::string CreateExecutionPlanRequest::getDayOfWeek()const
 void CreateExecutionPlanRequest::setDayOfWeek(const std::string& dayOfWeek)
 {
 	dayOfWeek_ = dayOfWeek;
-	setCoreParameter("DayOfWeek", std::to_string(dayOfWeek));
+	setCoreParameter("DayOfWeek", dayOfWeek);
 }
 
 std::string CreateExecutionPlanRequest::getZoneId()const
@@ -394,7 +394,7 @@ std::string CreateExecutionPlanRequest::getZoneId()const
 void CreateExecutionPlanRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 bool CreateExecutionPlanRequest::getUseCustomHiveMetaDB()const
@@ -416,7 +416,7 @@ std::string CreateExecutionPlanRequest::getStrategy()const
 void CreateExecutionPlanRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", std::to_string(strategy));
+	setCoreParameter("Strategy", strategy);
 }
 
 std::vector<CreateExecutionPlanRequest::Config> CreateExecutionPlanRequest::getConfig()const
@@ -431,12 +431,12 @@ void CreateExecutionPlanRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
-		setCoreParameter(str + ".FileName", std::to_string(obj.fileName));
-		setCoreParameter(str + ".Encrypt", std::to_string(obj.encrypt));
-		setCoreParameter(str + ".Replace", std::to_string(obj.replace));
-		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
-		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".FileName", obj.fileName);
+		setCoreParameter(str + ".Encrypt", obj.encrypt);
+		setCoreParameter(str + ".Replace", obj.replace);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 

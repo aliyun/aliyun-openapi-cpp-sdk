@@ -33,7 +33,7 @@ std::string DescribeHealthStatusRequest::getAccess_key_id()const
 void DescribeHealthStatusRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DescribeHealthStatusRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeHealthStatusRequest::getResourceOwnerId()const
 void DescribeHealthStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeHealthStatusRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int DescribeHealthStatusRequest::getListenerPort()const
 void DescribeHealthStatusRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", listenerPort);
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeHealthStatusRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string DescribeHealthStatusRequest::getLoadBalancerId()const
 void DescribeHealthStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DescribeHealthStatusRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeHealthStatusRequest::getResourceOwnerAccount()const
 void DescribeHealthStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeHealthStatusRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeHealthStatusRequest::getRegionId()const
 void DescribeHealthStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeHealthStatusRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string DescribeHealthStatusRequest::getOwnerAccount()const
 void DescribeHealthStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeHealthStatusRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeHealthStatusRequest::getOwnerId()const
 void DescribeHealthStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHealthStatusRequest::getListenerProtocol()const
@@ -121,7 +121,7 @@ std::string DescribeHealthStatusRequest::getListenerProtocol()const
 void DescribeHealthStatusRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
+	setCoreParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string DescribeHealthStatusRequest::getTags()const
@@ -132,6 +132,6 @@ std::string DescribeHealthStatusRequest::getTags()const
 void DescribeHealthStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

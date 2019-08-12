@@ -33,6 +33,6 @@ std::string CreateCCCPostOrderRequest::getOwnerId()const
 void CreateCCCPostOrderRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

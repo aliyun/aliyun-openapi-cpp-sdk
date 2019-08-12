@@ -33,7 +33,7 @@ long DeleteTagRequest::getResourceOwnerId()const
 void DeleteTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteTagRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteTagRequest::getCallerParentId()const
 void DeleteTagRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteTagRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeleteTagRequest::getProxy_original_source_ip()const
 void DeleteTagRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteTagRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DeleteTagRequest::getOwnerIdLoginEmail()const
 void DeleteTagRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteTagRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DeleteTagRequest::getCallerType()const
 void DeleteTagRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteTagRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DeleteTagRequest::getAccessKeyId()const
 void DeleteTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTagRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DeleteTagRequest::getSecurityToken()const
 void DeleteTagRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteTagRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteTagRequest::getRegionId()const
 void DeleteTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteTagRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DeleteTagRequest::getRequestContent()const
 void DeleteTagRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteTagRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string DeleteTagRequest::getCallerBidEmail()const
 void DeleteTagRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteTagRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string DeleteTagRequest::getProjectId()const
 void DeleteTagRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DeleteTagRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DeleteTagRequest::getCallerUidEmail()const
 void DeleteTagRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteTagRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DeleteTagRequest::getCallerUid()const
 void DeleteTagRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteTagRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string DeleteTagRequest::getShowLog()const
 void DeleteTagRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DeleteTagRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DeleteTagRequest::getApp_ip()const
 void DeleteTagRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteTagRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DeleteTagRequest::getPopProduct()const
 void DeleteTagRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteTagRequest::getTagId()const
@@ -220,7 +220,7 @@ std::string DeleteTagRequest::getTagId()const
 void DeleteTagRequest::setTagId(const std::string& tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", std::to_string(tagId));
+	setCoreParameter("TagId", tagId);
 }
 
 std::string DeleteTagRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DeleteTagRequest::getCallerBid()const
 void DeleteTagRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteTagRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DeleteTagRequest::getOwnerId()const
 void DeleteTagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteTagRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DeleteTagRequest::getVersion()const
 void DeleteTagRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DeleteTagRequest::getProxy_trust_transport_info()const
@@ -297,6 +297,6 @@ std::string DeleteTagRequest::getRequestId()const
 void DeleteTagRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

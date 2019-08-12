@@ -33,7 +33,7 @@ std::string ListUsersRequest::getMarker()const
 void ListUsersRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 int ListUsersRequest::getMaxItems()const
@@ -44,6 +44,6 @@ int ListUsersRequest::getMaxItems()const
 void ListUsersRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", maxItems);
+	setCoreParameter("MaxItems", std::to_string(maxItems));
 }
 

@@ -33,7 +33,7 @@ std::string CreateGroupFacesJobRequest::getNotifyTopicName()const
 void CreateGroupFacesJobRequest::setNotifyTopicName(const std::string& notifyTopicName)
 {
 	notifyTopicName_ = notifyTopicName;
-	setCoreParameter("NotifyTopicName", std::to_string(notifyTopicName));
+	setCoreParameter("NotifyTopicName", notifyTopicName);
 }
 
 std::string CreateGroupFacesJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateGroupFacesJobRequest::getRegionId()const
 void CreateGroupFacesJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateGroupFacesJobRequest::getNotifyEndpoint()const
@@ -55,7 +55,7 @@ std::string CreateGroupFacesJobRequest::getNotifyEndpoint()const
 void CreateGroupFacesJobRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
 {
 	notifyEndpoint_ = notifyEndpoint;
-	setCoreParameter("NotifyEndpoint", std::to_string(notifyEndpoint));
+	setCoreParameter("NotifyEndpoint", notifyEndpoint);
 }
 
 std::string CreateGroupFacesJobRequest::getProject()const
@@ -66,7 +66,7 @@ std::string CreateGroupFacesJobRequest::getProject()const
 void CreateGroupFacesJobRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string CreateGroupFacesJobRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string CreateGroupFacesJobRequest::getSetId()const
 void CreateGroupFacesJobRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string CreateGroupFacesJobRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CreateGroupFacesJobRequest::getAccessKeyId()const
 void CreateGroupFacesJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

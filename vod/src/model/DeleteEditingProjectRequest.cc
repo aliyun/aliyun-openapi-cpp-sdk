@@ -33,7 +33,7 @@ std::string DeleteEditingProjectRequest::getResourceOwnerId()const
 void DeleteEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteEditingProjectRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteEditingProjectRequest::getResourceOwnerAccount()const
 void DeleteEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteEditingProjectRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteEditingProjectRequest::getOwnerAccount()const
 void DeleteEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteEditingProjectRequest::getProjectIds()const
@@ -66,7 +66,7 @@ std::string DeleteEditingProjectRequest::getProjectIds()const
 void DeleteEditingProjectRequest::setProjectIds(const std::string& projectIds)
 {
 	projectIds_ = projectIds;
-	setCoreParameter("ProjectIds", std::to_string(projectIds));
+	setCoreParameter("ProjectIds", projectIds);
 }
 
 std::string DeleteEditingProjectRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DeleteEditingProjectRequest::getOwnerId()const
 void DeleteEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteEditingProjectRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteEditingProjectRequest::getAccessKeyId()const
 void DeleteEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeUserDcdnIpaStatusRequest::getSecurityToken()const
 void DescribeUserDcdnIpaStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeUserDcdnIpaStatusRequest::getOwnerId()const
@@ -44,6 +44,6 @@ long DescribeUserDcdnIpaStatusRequest::getOwnerId()const
 void DescribeUserDcdnIpaStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

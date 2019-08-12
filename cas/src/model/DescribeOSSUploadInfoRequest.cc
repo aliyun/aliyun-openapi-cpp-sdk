@@ -33,7 +33,7 @@ std::string DescribeOSSUploadInfoRequest::getSourceIp()const
 void DescribeOSSUploadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeOSSUploadInfoRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeOSSUploadInfoRequest::getOrderId()const
 void DescribeOSSUploadInfoRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 int DescribeOSSUploadInfoRequest::getDocumentType()const
@@ -55,7 +55,7 @@ int DescribeOSSUploadInfoRequest::getDocumentType()const
 void DescribeOSSUploadInfoRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
-	setCoreParameter("DocumentType", documentType);
+	setCoreParameter("DocumentType", std::to_string(documentType));
 }
 
 std::string DescribeOSSUploadInfoRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeOSSUploadInfoRequest::getLang()const
 void DescribeOSSUploadInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ long DescribeRenewalPriceRequest::getResourceOwnerId()const
 void DescribeRenewalPriceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeRenewalPriceRequest::getQuantity()const
@@ -44,7 +44,7 @@ int DescribeRenewalPriceRequest::getQuantity()const
 void DescribeRenewalPriceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", quantity);
+	setCoreParameter("Quantity", std::to_string(quantity));
 }
 
 std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeRenewalPriceRequest::getResourceOwnerAccount()const
 void DescribeRenewalPriceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRenewalPriceRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DescribeRenewalPriceRequest::getClientToken()const
 void DescribeRenewalPriceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeRenewalPriceRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeRenewalPriceRequest::getOwnerAccount()const
 void DescribeRenewalPriceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRenewalPriceRequest::getCommodityCode()const
@@ -88,7 +88,7 @@ std::string DescribeRenewalPriceRequest::getCommodityCode()const
 void DescribeRenewalPriceRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", std::to_string(commodityCode));
+	setCoreParameter("CommodityCode", commodityCode);
 }
 
 long DescribeRenewalPriceRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeRenewalPriceRequest::getOwnerId()const
 void DescribeRenewalPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRenewalPriceRequest::getUsedTime()const
@@ -110,7 +110,7 @@ std::string DescribeRenewalPriceRequest::getUsedTime()const
 void DescribeRenewalPriceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
-	setCoreParameter("UsedTime", std::to_string(usedTime));
+	setCoreParameter("UsedTime", usedTime);
 }
 
 std::string DescribeRenewalPriceRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeRenewalPriceRequest::getAccessKeyId()const
 void DescribeRenewalPriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRenewalPriceRequest::getDBInstanceClass()const
@@ -132,7 +132,7 @@ std::string DescribeRenewalPriceRequest::getDBInstanceClass()const
 void DescribeRenewalPriceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", std::to_string(dBInstanceClass));
+	setCoreParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string DescribeRenewalPriceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeRenewalPriceRequest::getRegionId()const
 void DescribeRenewalPriceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRenewalPriceRequest::getPromotionCode()const
@@ -154,7 +154,7 @@ std::string DescribeRenewalPriceRequest::getPromotionCode()const
 void DescribeRenewalPriceRequest::setPromotionCode(const std::string& promotionCode)
 {
 	promotionCode_ = promotionCode;
-	setCoreParameter("PromotionCode", std::to_string(promotionCode));
+	setCoreParameter("PromotionCode", promotionCode);
 }
 
 std::string DescribeRenewalPriceRequest::getDBInstanceId()const
@@ -165,7 +165,7 @@ std::string DescribeRenewalPriceRequest::getDBInstanceId()const
 void DescribeRenewalPriceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeRenewalPriceRequest::getTimeType()const
@@ -176,7 +176,7 @@ std::string DescribeRenewalPriceRequest::getTimeType()const
 void DescribeRenewalPriceRequest::setTimeType(const std::string& timeType)
 {
 	timeType_ = timeType;
-	setCoreParameter("TimeType", std::to_string(timeType));
+	setCoreParameter("TimeType", timeType);
 }
 
 std::string DescribeRenewalPriceRequest::getPayType()const
@@ -187,7 +187,7 @@ std::string DescribeRenewalPriceRequest::getPayType()const
 void DescribeRenewalPriceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", std::to_string(payType));
+	setCoreParameter("PayType", payType);
 }
 
 std::string DescribeRenewalPriceRequest::getBusinessInfo()const
@@ -198,7 +198,7 @@ std::string DescribeRenewalPriceRequest::getBusinessInfo()const
 void DescribeRenewalPriceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 
 std::string DescribeRenewalPriceRequest::getOrderType()const
@@ -209,6 +209,6 @@ std::string DescribeRenewalPriceRequest::getOrderType()const
 void DescribeRenewalPriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", std::to_string(orderType));
+	setCoreParameter("OrderType", orderType);
 }
 

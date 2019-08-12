@@ -33,7 +33,7 @@ std::string SetVideoSeekConfigRequest::getSecurityToken()const
 void SetVideoSeekConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetVideoSeekConfigRequest::getEnable()const
@@ -44,7 +44,7 @@ std::string SetVideoSeekConfigRequest::getEnable()const
 void SetVideoSeekConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", std::to_string(enable));
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetVideoSeekConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetVideoSeekConfigRequest::getDomainName()const
 void SetVideoSeekConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetVideoSeekConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long SetVideoSeekConfigRequest::getOwnerId()const
 void SetVideoSeekConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string AddFCTriggerRequest::getNotes()const
 void AddFCTriggerRequest::setNotes(const std::string& notes)
 {
 	notes_ = notes;
-	setCoreParameter("Notes", std::to_string(notes));
+	setCoreParameter("Notes", notes);
 }
 
 long AddFCTriggerRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long AddFCTriggerRequest::getCallerParentId()const
 void AddFCTriggerRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string AddFCTriggerRequest::getEventMetaVersion()const
@@ -55,7 +55,7 @@ std::string AddFCTriggerRequest::getEventMetaVersion()const
 void AddFCTriggerRequest::setEventMetaVersion(const std::string& eventMetaVersion)
 {
 	eventMetaVersion_ = eventMetaVersion;
-	setCoreParameter("EventMetaVersion", std::to_string(eventMetaVersion));
+	setCoreParameter("EventMetaVersion", eventMetaVersion);
 }
 
 bool AddFCTriggerRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string AddFCTriggerRequest::getProxy_original_source_ip()const
 void AddFCTriggerRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string AddFCTriggerRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string AddFCTriggerRequest::getOwnerIdLoginEmail()const
 void AddFCTriggerRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string AddFCTriggerRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string AddFCTriggerRequest::getCallerType()const
 void AddFCTriggerRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string AddFCTriggerRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string AddFCTriggerRequest::getAccessKeyId()const
 void AddFCTriggerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddFCTriggerRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string AddFCTriggerRequest::getSecurityToken()const
 void AddFCTriggerRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddFCTriggerRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string AddFCTriggerRequest::getRequestContent()const
 void AddFCTriggerRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string AddFCTriggerRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string AddFCTriggerRequest::getCallerBidEmail()const
 void AddFCTriggerRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string AddFCTriggerRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string AddFCTriggerRequest::getCallerUidEmail()const
 void AddFCTriggerRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long AddFCTriggerRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long AddFCTriggerRequest::getCallerUid()const
 void AddFCTriggerRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string AddFCTriggerRequest::getTriggerARN()const
@@ -176,7 +176,7 @@ std::string AddFCTriggerRequest::getTriggerARN()const
 void AddFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", std::to_string(triggerARN));
+	setCoreParameter("TriggerARN", triggerARN);
 }
 
 std::string AddFCTriggerRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string AddFCTriggerRequest::getApp_ip()const
 void AddFCTriggerRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string AddFCTriggerRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string AddFCTriggerRequest::getPopProduct()const
 void AddFCTriggerRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string AddFCTriggerRequest::getProduct()const
@@ -209,7 +209,7 @@ std::string AddFCTriggerRequest::getProduct()const
 void AddFCTriggerRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string AddFCTriggerRequest::getSourceARN()const
@@ -220,7 +220,7 @@ std::string AddFCTriggerRequest::getSourceARN()const
 void AddFCTriggerRequest::setSourceARN(const std::string& sourceARN)
 {
 	sourceARN_ = sourceARN;
-	setCoreParameter("SourceARN", std::to_string(sourceARN));
+	setCoreParameter("SourceARN", sourceARN);
 }
 
 std::string AddFCTriggerRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string AddFCTriggerRequest::getCallerBid()const
 void AddFCTriggerRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long AddFCTriggerRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long AddFCTriggerRequest::getOwnerId()const
 void AddFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddFCTriggerRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string AddFCTriggerRequest::getVersion()const
 void AddFCTriggerRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool AddFCTriggerRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string AddFCTriggerRequest::getRequestId()const
 void AddFCTriggerRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string AddFCTriggerRequest::getRoleARN()const
@@ -308,7 +308,7 @@ std::string AddFCTriggerRequest::getRoleARN()const
 void AddFCTriggerRequest::setRoleARN(const std::string& roleARN)
 {
 	roleARN_ = roleARN;
-	setCoreParameter("RoleARN", std::to_string(roleARN));
+	setCoreParameter("RoleARN", roleARN);
 }
 
 std::string AddFCTriggerRequest::getEventMetaName()const
@@ -319,7 +319,7 @@ std::string AddFCTriggerRequest::getEventMetaName()const
 void AddFCTriggerRequest::setEventMetaName(const std::string& eventMetaName)
 {
 	eventMetaName_ = eventMetaName;
-	setCoreParameter("EventMetaName", std::to_string(eventMetaName));
+	setCoreParameter("EventMetaName", eventMetaName);
 }
 
 std::string AddFCTriggerRequest::getFunctionARN()const
@@ -330,6 +330,6 @@ std::string AddFCTriggerRequest::getFunctionARN()const
 void AddFCTriggerRequest::setFunctionARN(const std::string& functionARN)
 {
 	functionARN_ = functionARN;
-	setCoreParameter("FunctionARN", std::to_string(functionARN));
+	setCoreParameter("FunctionARN", functionARN);
 }
 

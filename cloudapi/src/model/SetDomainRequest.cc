@@ -33,7 +33,7 @@ std::string SetDomainRequest::getSecurityToken()const
 void SetDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetDomainRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string SetDomainRequest::getGroupId()const
 void SetDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string SetDomainRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetDomainRequest::getDomainName()const
 void SetDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetDomainRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SetDomainRequest::getAccessKeyId()const
 void SetDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string AddListenerWhiteListItemRequest::getAccess_key_id()const
 void AddListenerWhiteListItemRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long AddListenerWhiteListItemRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AddListenerWhiteListItemRequest::getResourceOwnerId()const
 void AddListenerWhiteListItemRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int AddListenerWhiteListItemRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int AddListenerWhiteListItemRequest::getListenerPort()const
 void AddListenerWhiteListItemRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", listenerPort);
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
 void AddListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string AddListenerWhiteListItemRequest::getSourceItems()const
@@ -77,7 +77,7 @@ std::string AddListenerWhiteListItemRequest::getSourceItems()const
 void AddListenerWhiteListItemRequest::setSourceItems(const std::string& sourceItems)
 {
 	sourceItems_ = sourceItems;
-	setCoreParameter("SourceItems", std::to_string(sourceItems));
+	setCoreParameter("SourceItems", sourceItems);
 }
 
 std::string AddListenerWhiteListItemRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string AddListenerWhiteListItemRequest::getRegionId()const
 void AddListenerWhiteListItemRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
@@ -99,7 +99,7 @@ std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
 void AddListenerWhiteListItemRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
 void AddListenerWhiteListItemRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long AddListenerWhiteListItemRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long AddListenerWhiteListItemRequest::getOwnerId()const
 void AddListenerWhiteListItemRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddListenerWhiteListItemRequest::getListenerProtocol()const
@@ -132,7 +132,7 @@ std::string AddListenerWhiteListItemRequest::getListenerProtocol()const
 void AddListenerWhiteListItemRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
+	setCoreParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string AddListenerWhiteListItemRequest::getTags()const
@@ -143,6 +143,6 @@ std::string AddListenerWhiteListItemRequest::getTags()const
 void AddListenerWhiteListItemRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

@@ -33,7 +33,7 @@ std::string IvrCallRequest::getByeCode()const
 void IvrCallRequest::setByeCode(const std::string& byeCode)
 {
 	byeCode_ = byeCode;
-	setCoreParameter("ByeCode", std::to_string(byeCode));
+	setCoreParameter("ByeCode", byeCode);
 }
 
 std::vector<IvrCallRequest::MenuKeyMap> IvrCallRequest::getMenuKeyMap()const
@@ -48,9 +48,9 @@ void IvrCallRequest::setMenuKeyMap(const std::vector<MenuKeyMap>& menuKeyMap)
 	for(int i = 0; i!= menuKeyMap.size(); i++)	{
 		auto obj = menuKeyMap.at(i);
 		std::string str ="MenuKeyMap."+ std::to_string(i);
-		setCoreParameter(str + ".Code", std::to_string(obj.code));
-		setCoreParameter(str + ".TtsParams", std::to_string(obj.ttsParams));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Code", obj.code);
+		setCoreParameter(str + ".TtsParams", obj.ttsParams);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -62,7 +62,7 @@ long IvrCallRequest::getResourceOwnerId()const
 void IvrCallRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string IvrCallRequest::getResourceOwnerAccount()const
@@ -73,7 +73,7 @@ std::string IvrCallRequest::getResourceOwnerAccount()const
 void IvrCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string IvrCallRequest::getStartTtsParams()const
@@ -84,7 +84,7 @@ std::string IvrCallRequest::getStartTtsParams()const
 void IvrCallRequest::setStartTtsParams(const std::string& startTtsParams)
 {
 	startTtsParams_ = startTtsParams;
-	setCoreParameter("StartTtsParams", std::to_string(startTtsParams));
+	setCoreParameter("StartTtsParams", startTtsParams);
 }
 
 long IvrCallRequest::getPlayTimes()const
@@ -95,7 +95,7 @@ long IvrCallRequest::getPlayTimes()const
 void IvrCallRequest::setPlayTimes(long playTimes)
 {
 	playTimes_ = playTimes;
-	setCoreParameter("PlayTimes", playTimes);
+	setCoreParameter("PlayTimes", std::to_string(playTimes));
 }
 
 long IvrCallRequest::getOwnerId()const
@@ -106,7 +106,7 @@ long IvrCallRequest::getOwnerId()const
 void IvrCallRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int IvrCallRequest::getTimeout()const
@@ -117,7 +117,7 @@ int IvrCallRequest::getTimeout()const
 void IvrCallRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setCoreParameter("Timeout", timeout);
+	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::string IvrCallRequest::getAccessKeyId()const
@@ -128,7 +128,7 @@ std::string IvrCallRequest::getAccessKeyId()const
 void IvrCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string IvrCallRequest::getStartCode()const
@@ -139,7 +139,7 @@ std::string IvrCallRequest::getStartCode()const
 void IvrCallRequest::setStartCode(const std::string& startCode)
 {
 	startCode_ = startCode;
-	setCoreParameter("StartCode", std::to_string(startCode));
+	setCoreParameter("StartCode", startCode);
 }
 
 std::string IvrCallRequest::getCalledNumber()const
@@ -150,7 +150,7 @@ std::string IvrCallRequest::getCalledNumber()const
 void IvrCallRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", std::to_string(calledNumber));
+	setCoreParameter("CalledNumber", calledNumber);
 }
 
 std::string IvrCallRequest::getCalledShowNumber()const
@@ -161,7 +161,7 @@ std::string IvrCallRequest::getCalledShowNumber()const
 void IvrCallRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", std::to_string(calledShowNumber));
+	setCoreParameter("CalledShowNumber", calledShowNumber);
 }
 
 std::string IvrCallRequest::getOutId()const
@@ -172,7 +172,7 @@ std::string IvrCallRequest::getOutId()const
 void IvrCallRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", std::to_string(outId));
+	setCoreParameter("OutId", outId);
 }
 
 std::string IvrCallRequest::getByeTtsParams()const
@@ -183,6 +183,6 @@ std::string IvrCallRequest::getByeTtsParams()const
 void IvrCallRequest::setByeTtsParams(const std::string& byeTtsParams)
 {
 	byeTtsParams_ = byeTtsParams;
-	setCoreParameter("ByeTtsParams", std::to_string(byeTtsParams));
+	setCoreParameter("ByeTtsParams", byeTtsParams);
 }
 

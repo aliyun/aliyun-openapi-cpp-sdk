@@ -33,7 +33,7 @@ long RestoreInstanceRequest::getResourceOwnerId()const
 void RestoreInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RestoreInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string RestoreInstanceRequest::getInstanceId()const
 void RestoreInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RestoreInstanceRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string RestoreInstanceRequest::getSecurityToken()const
 void RestoreInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RestoreInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RestoreInstanceRequest::getResourceOwnerAccount()const
 void RestoreInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RestoreInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RestoreInstanceRequest::getRegionId()const
 void RestoreInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RestoreInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RestoreInstanceRequest::getOwnerAccount()const
 void RestoreInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RestoreInstanceRequest::getBackupId()const
@@ -99,7 +99,7 @@ std::string RestoreInstanceRequest::getBackupId()const
 void RestoreInstanceRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", std::to_string(backupId));
+	setCoreParameter("BackupId", backupId);
 }
 
 long RestoreInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long RestoreInstanceRequest::getOwnerId()const
 void RestoreInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RestoreInstanceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RestoreInstanceRequest::getAccessKeyId()const
 void RestoreInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

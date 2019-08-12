@@ -33,7 +33,7 @@ std::string DeleteVodDomainRequest::getSecurityToken()const
 void DeleteVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteVodDomainRequest::getOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteVodDomainRequest::getOwnerAccount()const
 void DeleteVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteVodDomainRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteVodDomainRequest::getDomainName()const
 void DeleteVodDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteVodDomainRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long DeleteVodDomainRequest::getOwnerId()const
 void DeleteVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

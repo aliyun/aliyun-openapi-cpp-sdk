@@ -33,7 +33,7 @@ long SwitchSAGHaStateRequest::getResourceOwnerId()const
 void SwitchSAGHaStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SwitchSAGHaStateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SwitchSAGHaStateRequest::getResourceOwnerAccount()const
 void SwitchSAGHaStateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SwitchSAGHaStateRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SwitchSAGHaStateRequest::getRegionId()const
 void SwitchSAGHaStateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SwitchSAGHaStateRequest::getHaType()const
@@ -66,7 +66,7 @@ std::string SwitchSAGHaStateRequest::getHaType()const
 void SwitchSAGHaStateRequest::setHaType(const std::string& haType)
 {
 	haType_ = haType;
-	setCoreParameter("HaType", std::to_string(haType));
+	setCoreParameter("HaType", haType);
 }
 
 std::string SwitchSAGHaStateRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SwitchSAGHaStateRequest::getOwnerAccount()const
 void SwitchSAGHaStateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SwitchSAGHaStateRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string SwitchSAGHaStateRequest::getSmartAGId()const
 void SwitchSAGHaStateRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long SwitchSAGHaStateRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long SwitchSAGHaStateRequest::getOwnerId()const
 void SwitchSAGHaStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ long QueryTerrorismJobListRequest::getResourceOwnerId()const
 void QueryTerrorismJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTerrorismJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryTerrorismJobListRequest::getResourceOwnerAccount()const
 void QueryTerrorismJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTerrorismJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryTerrorismJobListRequest::getJobIds()const
 void QueryTerrorismJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", std::to_string(jobIds));
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryTerrorismJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryTerrorismJobListRequest::getOwnerAccount()const
 void QueryTerrorismJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTerrorismJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryTerrorismJobListRequest::getOwnerId()const
 void QueryTerrorismJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTerrorismJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryTerrorismJobListRequest::getAccessKeyId()const
 void QueryTerrorismJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

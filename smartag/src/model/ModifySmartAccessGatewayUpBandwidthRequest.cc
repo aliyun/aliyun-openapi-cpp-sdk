@@ -33,7 +33,7 @@ long ModifySmartAccessGatewayUpBandwidthRequest::getResourceOwnerId()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySmartAccessGatewayUpBandwidthRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifySmartAccessGatewayUpBandwidthRequest::getResourceOwnerAccount(
 void ModifySmartAccessGatewayUpBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySmartAccessGatewayUpBandwidthRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifySmartAccessGatewayUpBandwidthRequest::getRegionId()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifySmartAccessGatewayUpBandwidthRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifySmartAccessGatewayUpBandwidthRequest::getOwnerAccount()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int ModifySmartAccessGatewayUpBandwidthRequest::getUpBandwidth4G()const
@@ -77,7 +77,7 @@ int ModifySmartAccessGatewayUpBandwidthRequest::getUpBandwidth4G()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setUpBandwidth4G(int upBandwidth4G)
 {
 	upBandwidth4G_ = upBandwidth4G;
-	setCoreParameter("UpBandwidth4G", upBandwidth4G);
+	setCoreParameter("UpBandwidth4G", std::to_string(upBandwidth4G));
 }
 
 std::string ModifySmartAccessGatewayUpBandwidthRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string ModifySmartAccessGatewayUpBandwidthRequest::getSmartAGId()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 int ModifySmartAccessGatewayUpBandwidthRequest::getUpBandwidthWan()const
@@ -99,7 +99,7 @@ int ModifySmartAccessGatewayUpBandwidthRequest::getUpBandwidthWan()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setUpBandwidthWan(int upBandwidthWan)
 {
 	upBandwidthWan_ = upBandwidthWan;
-	setCoreParameter("UpBandwidthWan", upBandwidthWan);
+	setCoreParameter("UpBandwidthWan", std::to_string(upBandwidthWan));
 }
 
 long ModifySmartAccessGatewayUpBandwidthRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long ModifySmartAccessGatewayUpBandwidthRequest::getOwnerId()const
 void ModifySmartAccessGatewayUpBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

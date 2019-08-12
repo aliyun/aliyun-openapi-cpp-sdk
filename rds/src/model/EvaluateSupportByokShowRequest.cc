@@ -33,7 +33,7 @@ long EvaluateSupportByokShowRequest::getResourceOwnerId()const
 void EvaluateSupportByokShowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EvaluateSupportByokShowRequest::getNodeType()const
@@ -44,7 +44,7 @@ std::string EvaluateSupportByokShowRequest::getNodeType()const
 void EvaluateSupportByokShowRequest::setNodeType(const std::string& nodeType)
 {
 	nodeType_ = nodeType;
-	setCoreParameter("NodeType", std::to_string(nodeType));
+	setCoreParameter("NodeType", nodeType);
 }
 
 std::string EvaluateSupportByokShowRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string EvaluateSupportByokShowRequest::getResourceOwnerAccount()const
 void EvaluateSupportByokShowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EvaluateSupportByokShowRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string EvaluateSupportByokShowRequest::getOwnerAccount()const
 void EvaluateSupportByokShowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string EvaluateSupportByokShowRequest::getEngineVersion()const
@@ -77,7 +77,7 @@ std::string EvaluateSupportByokShowRequest::getEngineVersion()const
 void EvaluateSupportByokShowRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", std::to_string(engineVersion));
+	setCoreParameter("EngineVersion", engineVersion);
 }
 
 long EvaluateSupportByokShowRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long EvaluateSupportByokShowRequest::getOwnerId()const
 void EvaluateSupportByokShowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EvaluateSupportByokShowRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string EvaluateSupportByokShowRequest::getAccessKeyId()const
 void EvaluateSupportByokShowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string EvaluateSupportByokShowRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string EvaluateSupportByokShowRequest::getSecurityToken()const
 void EvaluateSupportByokShowRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string EvaluateSupportByokShowRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string EvaluateSupportByokShowRequest::getRegionId()const
 void EvaluateSupportByokShowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string EvaluateSupportByokShowRequest::getEngine()const
@@ -132,7 +132,7 @@ std::string EvaluateSupportByokShowRequest::getEngine()const
 void EvaluateSupportByokShowRequest::setEngine(const std::string& engine)
 {
 	engine_ = engine;
-	setCoreParameter("Engine", std::to_string(engine));
+	setCoreParameter("Engine", engine);
 }
 
 std::string EvaluateSupportByokShowRequest::getTargetRegionId()const
@@ -143,7 +143,7 @@ std::string EvaluateSupportByokShowRequest::getTargetRegionId()const
 void EvaluateSupportByokShowRequest::setTargetRegionId(const std::string& targetRegionId)
 {
 	targetRegionId_ = targetRegionId;
-	setCoreParameter("TargetRegionId", std::to_string(targetRegionId));
+	setCoreParameter("TargetRegionId", targetRegionId);
 }
 
 std::string EvaluateSupportByokShowRequest::getDbInstanceStorageType()const
@@ -154,6 +154,6 @@ std::string EvaluateSupportByokShowRequest::getDbInstanceStorageType()const
 void EvaluateSupportByokShowRequest::setDbInstanceStorageType(const std::string& dbInstanceStorageType)
 {
 	dbInstanceStorageType_ = dbInstanceStorageType;
-	setCoreParameter("DbInstanceStorageType", std::to_string(dbInstanceStorageType));
+	setCoreParameter("DbInstanceStorageType", dbInstanceStorageType);
 }
 

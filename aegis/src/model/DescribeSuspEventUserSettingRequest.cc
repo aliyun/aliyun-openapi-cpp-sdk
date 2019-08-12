@@ -33,7 +33,7 @@ std::string DescribeSuspEventUserSettingRequest::getSourceIp()const
 void DescribeSuspEventUserSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSuspEventUserSettingRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string DescribeSuspEventUserSettingRequest::getFrom()const
 void DescribeSuspEventUserSettingRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeSuspEventUserSettingRequest::getId()const
@@ -55,6 +55,6 @@ int DescribeSuspEventUserSettingRequest::getId()const
 void DescribeSuspEventUserSettingRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

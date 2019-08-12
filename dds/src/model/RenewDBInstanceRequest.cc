@@ -33,7 +33,7 @@ long RenewDBInstanceRequest::getResourceOwnerId()const
 void RenewDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int RenewDBInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ int RenewDBInstanceRequest::getPeriod()const
 void RenewDBInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 bool RenewDBInstanceRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string RenewDBInstanceRequest::getResourceOwnerAccount()const
 void RenewDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RenewDBInstanceRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string RenewDBInstanceRequest::getClientToken()const
 void RenewDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string RenewDBInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RenewDBInstanceRequest::getOwnerAccount()const
 void RenewDBInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RenewDBInstanceRequest::getCouponNo()const
@@ -99,7 +99,7 @@ std::string RenewDBInstanceRequest::getCouponNo()const
 void RenewDBInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 long RenewDBInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long RenewDBInstanceRequest::getOwnerId()const
 void RenewDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewDBInstanceRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string RenewDBInstanceRequest::getAccessKeyId()const
 void RenewDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RenewDBInstanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string RenewDBInstanceRequest::getSecurityToken()const
 void RenewDBInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RenewDBInstanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string RenewDBInstanceRequest::getRegionId()const
 void RenewDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RenewDBInstanceRequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ std::string RenewDBInstanceRequest::getDBInstanceId()const
 void RenewDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string RenewDBInstanceRequest::getBusinessInfo()const
@@ -165,6 +165,6 @@ std::string RenewDBInstanceRequest::getBusinessInfo()const
 void RenewDBInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 

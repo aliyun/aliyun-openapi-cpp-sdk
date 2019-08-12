@@ -33,7 +33,7 @@ std::string DeleteUserGroupRequest::getApp_ip()const
 void DeleteUserGroupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long DeleteUserGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteUserGroupRequest::getResourceOwnerId()const
 void DeleteUserGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteUserGroupRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DeleteUserGroupRequest::getCallerParentId()const
 void DeleteUserGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteUserGroupRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DeleteUserGroupRequest::getCallerBid()const
 void DeleteUserGroupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DeleteUserGroupRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DeleteUserGroupRequest::getProxy_original_source_ip()const
 void DeleteUserGroupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool DeleteUserGroupRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string DeleteUserGroupRequest::getCallerType()const
 void DeleteUserGroupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteUserGroupRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DeleteUserGroupRequest::getAccessKeyId()const
 void DeleteUserGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteUserGroupRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string DeleteUserGroupRequest::getSecurityToken()const
 void DeleteUserGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteUserGroupRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DeleteUserGroupRequest::getRegionId()const
 void DeleteUserGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteUserGroupRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string DeleteUserGroupRequest::getRequestId()const
 void DeleteUserGroupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DeleteUserGroupRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DeleteUserGroupRequest::getCallerUid()const
 void DeleteUserGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 long DeleteUserGroupRequest::getGroupId()const
@@ -198,6 +198,6 @@ long DeleteUserGroupRequest::getGroupId()const
 void DeleteUserGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

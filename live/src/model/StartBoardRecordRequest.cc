@@ -33,7 +33,7 @@ long StartBoardRecordRequest::getCallerParentId()const
 void StartBoardRecordRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool StartBoardRecordRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string StartBoardRecordRequest::getStartTime()const
 void StartBoardRecordRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string StartBoardRecordRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string StartBoardRecordRequest::getProxy_original_source_ip()const
 void StartBoardRecordRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string StartBoardRecordRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string StartBoardRecordRequest::getOwnerIdLoginEmail()const
 void StartBoardRecordRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string StartBoardRecordRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string StartBoardRecordRequest::getCallerType()const
 void StartBoardRecordRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string StartBoardRecordRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string StartBoardRecordRequest::getAccessKeyId()const
 void StartBoardRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string StartBoardRecordRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string StartBoardRecordRequest::getSecurityToken()const
 void StartBoardRecordRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StartBoardRecordRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string StartBoardRecordRequest::getRegionId()const
 void StartBoardRecordRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string StartBoardRecordRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string StartBoardRecordRequest::getRequestContent()const
 void StartBoardRecordRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string StartBoardRecordRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string StartBoardRecordRequest::getCallerBidEmail()const
 void StartBoardRecordRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string StartBoardRecordRequest::getBoardId()const
@@ -154,7 +154,7 @@ std::string StartBoardRecordRequest::getBoardId()const
 void StartBoardRecordRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", std::to_string(boardId));
+	setCoreParameter("BoardId", boardId);
 }
 
 std::string StartBoardRecordRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string StartBoardRecordRequest::getCallerUidEmail()const
 void StartBoardRecordRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long StartBoardRecordRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long StartBoardRecordRequest::getCallerUid()const
 void StartBoardRecordRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string StartBoardRecordRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string StartBoardRecordRequest::getApp_ip()const
 void StartBoardRecordRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string StartBoardRecordRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string StartBoardRecordRequest::getPopProduct()const
 void StartBoardRecordRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string StartBoardRecordRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string StartBoardRecordRequest::getCallerBid()const
 void StartBoardRecordRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long StartBoardRecordRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long StartBoardRecordRequest::getOwnerId()const
 void StartBoardRecordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartBoardRecordRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string StartBoardRecordRequest::getVersion()const
 void StartBoardRecordRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool StartBoardRecordRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ std::string StartBoardRecordRequest::getRequestId()const
 void StartBoardRecordRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string StartBoardRecordRequest::getAppId()const
@@ -286,6 +286,6 @@ std::string StartBoardRecordRequest::getAppId()const
 void StartBoardRecordRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 

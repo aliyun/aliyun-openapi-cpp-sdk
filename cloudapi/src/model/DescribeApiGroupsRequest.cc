@@ -33,7 +33,7 @@ std::string DescribeApiGroupsRequest::getSecurityToken()const
 void DescribeApiGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiGroupsRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiGroupsRequest::getGroupId()const
 void DescribeApiGroupsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int DescribeApiGroupsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeApiGroupsRequest::getPageSize()const
 void DescribeApiGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag()const
@@ -70,8 +70,8 @@ void DescribeApiGroupsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -94,7 +94,7 @@ std::string DescribeApiGroupsRequest::getGroupName()const
 void DescribeApiGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 int DescribeApiGroupsRequest::getPageNumber()const
@@ -105,7 +105,7 @@ int DescribeApiGroupsRequest::getPageNumber()const
 void DescribeApiGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiGroupsRequest::getAccessKeyId()const
@@ -116,6 +116,6 @@ std::string DescribeApiGroupsRequest::getAccessKeyId()const
 void DescribeApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CancelAutoSnapshotPolicyRequest::getSourceRegionId()const
 void CancelAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long CancelAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CancelAutoSnapshotPolicyRequest::getResourceOwnerId()const
 void CancelAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void CancelAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CancelAutoSnapshotPolicyRequest::getRegionId()const
 void CancelAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelAutoSnapshotPolicyRequest::getDiskIds()const
@@ -77,7 +77,7 @@ std::string CancelAutoSnapshotPolicyRequest::getDiskIds()const
 void CancelAutoSnapshotPolicyRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setCoreParameter("DiskIds", std::to_string(diskIds));
+	setCoreParameter("DiskIds", diskIds);
 }
 
 long CancelAutoSnapshotPolicyRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long CancelAutoSnapshotPolicyRequest::getOwnerId()const
 void CancelAutoSnapshotPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ long DescribeRiskItemTypeRequest::getResourceOwnerId()const
 void DescribeRiskItemTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskItemTypeRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRiskItemTypeRequest::getSourceIp()const
 void DescribeRiskItemTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRiskItemTypeRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeRiskItemTypeRequest::getLang()const
 void DescribeRiskItemTypeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

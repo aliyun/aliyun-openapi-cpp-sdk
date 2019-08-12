@@ -33,7 +33,7 @@ std::string MoPenAddGroupMemberRequest::getGroupId()const
 void MoPenAddGroupMemberRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string MoPenAddGroupMemberRequest::getDeviceName()const
@@ -44,6 +44,6 @@ std::string MoPenAddGroupMemberRequest::getDeviceName()const
 void MoPenAddGroupMemberRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 

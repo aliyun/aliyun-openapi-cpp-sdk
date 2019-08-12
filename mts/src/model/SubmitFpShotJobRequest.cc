@@ -33,7 +33,7 @@ std::string SubmitFpShotJobRequest::getInput()const
 void SubmitFpShotJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitFpShotJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitFpShotJobRequest::getUserData()const
 void SubmitFpShotJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitFpShotJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitFpShotJobRequest::getResourceOwnerId()const
 void SubmitFpShotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitFpShotJobRequest::getFpShotConfig()const
@@ -66,7 +66,7 @@ std::string SubmitFpShotJobRequest::getFpShotConfig()const
 void SubmitFpShotJobRequest::setFpShotConfig(const std::string& fpShotConfig)
 {
 	fpShotConfig_ = fpShotConfig;
-	setCoreParameter("FpShotConfig", std::to_string(fpShotConfig));
+	setCoreParameter("FpShotConfig", fpShotConfig);
 }
 
 std::string SubmitFpShotJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitFpShotJobRequest::getResourceOwnerAccount()const
 void SubmitFpShotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitFpShotJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitFpShotJobRequest::getOwnerAccount()const
 void SubmitFpShotJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitFpShotJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitFpShotJobRequest::getOwnerId()const
 void SubmitFpShotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitFpShotJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitFpShotJobRequest::getAccessKeyId()const
 void SubmitFpShotJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitFpShotJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitFpShotJobRequest::getPipelineId()const
 void SubmitFpShotJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 

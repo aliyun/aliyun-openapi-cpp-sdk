@@ -33,7 +33,7 @@ long GetBids4Uid4RootRequest::getUid()const
 void GetBids4Uid4RootRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setCoreParameter("Uid", std::to_string(uid));
 }
 
 std::string GetBids4Uid4RootRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetBids4Uid4RootRequest::getAccessKeyId()const
 void GetBids4Uid4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

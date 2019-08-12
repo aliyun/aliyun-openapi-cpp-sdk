@@ -33,7 +33,7 @@ std::string LaunchAppraiseRequest::getAcid()const
 void LaunchAppraiseRequest::setAcid(const std::string& acid)
 {
 	acid_ = acid;
-	setCoreParameter("Acid", std::to_string(acid));
+	setCoreParameter("Acid", acid);
 }
 
 std::string LaunchAppraiseRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string LaunchAppraiseRequest::getInstanceId()const
 void LaunchAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string LaunchAppraiseRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string LaunchAppraiseRequest::getAccessKeyId()const
 void LaunchAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

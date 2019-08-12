@@ -33,7 +33,7 @@ std::string DescribeVulBatchRequest::getSourceIp()const
 void DescribeVulBatchRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVulBatchRequest::getResource()const
@@ -44,6 +44,6 @@ std::string DescribeVulBatchRequest::getResource()const
 void DescribeVulBatchRequest::setResource(const std::string& resource)
 {
 	resource_ = resource;
-	setCoreParameter("Resource", std::to_string(resource));
+	setCoreParameter("Resource", resource);
 }
 

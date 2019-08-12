@@ -33,6 +33,6 @@ std::string CancelKeyDeletionRequest::getKeyId()const
 void CancelKeyDeletionRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", std::to_string(keyId));
+	setCoreParameter("KeyId", keyId);
 }
 

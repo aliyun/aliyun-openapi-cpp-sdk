@@ -33,7 +33,7 @@ long CreateProjectRequest::getResourceOwnerId()const
 void CreateProjectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateProjectRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateProjectRequest::getCallerParentId()const
 void CreateProjectRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateProjectRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string CreateProjectRequest::getDescription()const
 void CreateProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateProjectRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string CreateProjectRequest::getProxy_original_source_ip()const
 void CreateProjectRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateProjectRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string CreateProjectRequest::getOwnerIdLoginEmail()const
 void CreateProjectRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateProjectRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string CreateProjectRequest::getCallerType()const
 void CreateProjectRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateProjectRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateProjectRequest::getAccessKeyId()const
 void CreateProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateProjectRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string CreateProjectRequest::getSecurityToken()const
 void CreateProjectRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateProjectRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string CreateProjectRequest::getRegionId()const
 void CreateProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateProjectRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string CreateProjectRequest::getRequestContent()const
 void CreateProjectRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateProjectRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string CreateProjectRequest::getCallerBidEmail()const
 void CreateProjectRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateProjectRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string CreateProjectRequest::getCallerUidEmail()const
 void CreateProjectRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateProjectRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long CreateProjectRequest::getCallerUid()const
 void CreateProjectRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateProjectRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string CreateProjectRequest::getShowLog()const
 void CreateProjectRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string CreateProjectRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string CreateProjectRequest::getApp_ip()const
 void CreateProjectRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateProjectRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string CreateProjectRequest::getPopProduct()const
 void CreateProjectRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateProjectRequest::getModelId()const
@@ -220,7 +220,7 @@ std::string CreateProjectRequest::getModelId()const
 void CreateProjectRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setCoreParameter("ModelId", modelId);
 }
 
 std::string CreateProjectRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string CreateProjectRequest::getCallerBid()const
 void CreateProjectRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateProjectRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long CreateProjectRequest::getOwnerId()const
 void CreateProjectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateProjectRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string CreateProjectRequest::getVersion()const
 void CreateProjectRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool CreateProjectRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string CreateProjectRequest::getProType()const
 void CreateProjectRequest::setProType(const std::string& proType)
 {
 	proType_ = proType;
-	setCoreParameter("ProType", std::to_string(proType));
+	setCoreParameter("ProType", proType);
 }
 
 std::string CreateProjectRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string CreateProjectRequest::getRequestId()const
 void CreateProjectRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateProjectRequest::getName()const
@@ -319,6 +319,6 @@ std::string CreateProjectRequest::getName()const
 void CreateProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

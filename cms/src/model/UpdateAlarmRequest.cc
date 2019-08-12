@@ -33,7 +33,7 @@ int UpdateAlarmRequest::getPeriod()const
 void UpdateAlarmRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string UpdateAlarmRequest::getWebhook()const
@@ -44,7 +44,7 @@ std::string UpdateAlarmRequest::getWebhook()const
 void UpdateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", std::to_string(webhook));
+	setCoreParameter("Webhook", webhook);
 }
 
 bool UpdateAlarmRequest::getDryRun()const
@@ -66,7 +66,7 @@ std::string UpdateAlarmRequest::getContactGroups()const
 void UpdateAlarmRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", std::to_string(contactGroups));
+	setCoreParameter("ContactGroups", contactGroups);
 }
 
 int UpdateAlarmRequest::getEndTime()const
@@ -77,7 +77,7 @@ int UpdateAlarmRequest::getEndTime()const
 void UpdateAlarmRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string UpdateAlarmRequest::getThreshold()const
@@ -88,7 +88,7 @@ std::string UpdateAlarmRequest::getThreshold()const
 void UpdateAlarmRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
+	setCoreParameter("Threshold", threshold);
 }
 
 int UpdateAlarmRequest::getStartTime()const
@@ -99,7 +99,7 @@ int UpdateAlarmRequest::getStartTime()const
 void UpdateAlarmRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string UpdateAlarmRequest::getName()const
@@ -110,7 +110,7 @@ std::string UpdateAlarmRequest::getName()const
 void UpdateAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int UpdateAlarmRequest::getEvaluationCount()const
@@ -121,7 +121,7 @@ int UpdateAlarmRequest::getEvaluationCount()const
 void UpdateAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", evaluationCount);
+	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 int UpdateAlarmRequest::getSilenceTime()const
@@ -132,7 +132,7 @@ int UpdateAlarmRequest::getSilenceTime()const
 void UpdateAlarmRequest::setSilenceTime(int silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", silenceTime);
+	setCoreParameter("SilenceTime", std::to_string(silenceTime));
 }
 
 std::string UpdateAlarmRequest::getId()const
@@ -143,7 +143,7 @@ std::string UpdateAlarmRequest::getId()const
 void UpdateAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int UpdateAlarmRequest::getNotifyType()const
@@ -154,7 +154,7 @@ int UpdateAlarmRequest::getNotifyType()const
 void UpdateAlarmRequest::setNotifyType(int notifyType)
 {
 	notifyType_ = notifyType;
-	setCoreParameter("NotifyType", notifyType);
+	setCoreParameter("NotifyType", std::to_string(notifyType));
 }
 
 std::string UpdateAlarmRequest::getComparisonOperator()const
@@ -165,7 +165,7 @@ std::string UpdateAlarmRequest::getComparisonOperator()const
 void UpdateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
 {
 	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", std::to_string(comparisonOperator));
+	setCoreParameter("ComparisonOperator", comparisonOperator);
 }
 
 std::string UpdateAlarmRequest::getStatistics()const
@@ -176,6 +176,6 @@ std::string UpdateAlarmRequest::getStatistics()const
 void UpdateAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", std::to_string(statistics));
+	setCoreParameter("Statistics", statistics);
 }
 

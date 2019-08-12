@@ -33,7 +33,7 @@ int CreatePhysicalConnectionOccupancyOrderRequest::getPeriod()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 long CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerId()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool CreatePhysicalConnectionOccupancyOrderRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getRegionId()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getResourceOwnerAccou
 void CreatePhysicalConnectionOccupancyOrderRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getClientToken()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getPhysicalConnectionId()const
@@ -99,7 +99,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getPhysicalConnection
 void CreatePhysicalConnectionOccupancyOrderRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getOwnerAccount()cons
 void CreatePhysicalConnectionOccupancyOrderRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreatePhysicalConnectionOccupancyOrderRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long CreatePhysicalConnectionOccupancyOrderRequest::getOwnerId()const
 void CreatePhysicalConnectionOccupancyOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getInstanceChargeType()const
@@ -132,7 +132,7 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getInstanceChargeType
 void CreatePhysicalConnectionOccupancyOrderRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", std::to_string(instanceChargeType));
+	setCoreParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string CreatePhysicalConnectionOccupancyOrderRequest::getPricingCycle()const
@@ -143,6 +143,6 @@ std::string CreatePhysicalConnectionOccupancyOrderRequest::getPricingCycle()cons
 void CreatePhysicalConnectionOccupancyOrderRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
+	setCoreParameter("PricingCycle", pricingCycle);
 }
 

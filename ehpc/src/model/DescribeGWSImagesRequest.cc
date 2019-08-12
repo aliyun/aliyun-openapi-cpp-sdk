@@ -33,7 +33,7 @@ int DescribeGWSImagesRequest::getPageSize()const
 void DescribeGWSImagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeGWSImagesRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int DescribeGWSImagesRequest::getPageNumber()const
 void DescribeGWSImagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGWSImagesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeGWSImagesRequest::getAccessKeyId()const
 void DescribeGWSImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ActionDiskRmaRequest::getDiskName()const
 void ActionDiskRmaRequest::setDiskName(const std::string& diskName)
 {
 	diskName_ = diskName;
-	setCoreParameter("DiskName", std::to_string(diskName));
+	setCoreParameter("DiskName", diskName);
 }
 
 std::string ActionDiskRmaRequest::getExecutionId()const
@@ -44,7 +44,7 @@ std::string ActionDiskRmaRequest::getExecutionId()const
 void ActionDiskRmaRequest::setExecutionId(const std::string& executionId)
 {
 	executionId_ = executionId;
-	setCoreParameter("ExecutionId", std::to_string(executionId));
+	setCoreParameter("ExecutionId", executionId);
 }
 
 std::string ActionDiskRmaRequest::getDiskSlot()const
@@ -55,7 +55,7 @@ std::string ActionDiskRmaRequest::getDiskSlot()const
 void ActionDiskRmaRequest::setDiskSlot(const std::string& diskSlot)
 {
 	diskSlot_ = diskSlot;
-	setCoreParameter("DiskSlot", std::to_string(diskSlot));
+	setCoreParameter("DiskSlot", diskSlot);
 }
 
 std::string ActionDiskRmaRequest::getHostname()const
@@ -66,7 +66,7 @@ std::string ActionDiskRmaRequest::getHostname()const
 void ActionDiskRmaRequest::setHostname(const std::string& hostname)
 {
 	hostname_ = hostname;
-	setCoreParameter("Hostname", std::to_string(hostname));
+	setCoreParameter("Hostname", hostname);
 }
 
 std::string ActionDiskRmaRequest::getDiskMount()const
@@ -77,7 +77,7 @@ std::string ActionDiskRmaRequest::getDiskMount()const
 void ActionDiskRmaRequest::setDiskMount(const std::string& diskMount)
 {
 	diskMount_ = diskMount;
-	setCoreParameter("DiskMount", std::to_string(diskMount));
+	setCoreParameter("DiskMount", diskMount);
 }
 
 std::string ActionDiskRmaRequest::getDiskReason()const
@@ -88,7 +88,7 @@ std::string ActionDiskRmaRequest::getDiskReason()const
 void ActionDiskRmaRequest::setDiskReason(const std::string& diskReason)
 {
 	diskReason_ = diskReason;
-	setCoreParameter("DiskReason", std::to_string(diskReason));
+	setCoreParameter("DiskReason", diskReason);
 }
 
 std::string ActionDiskRmaRequest::getDiskSn()const
@@ -99,6 +99,6 @@ std::string ActionDiskRmaRequest::getDiskSn()const
 void ActionDiskRmaRequest::setDiskSn(const std::string& diskSn)
 {
 	diskSn_ = diskSn;
-	setCoreParameter("DiskSn", std::to_string(diskSn));
+	setCoreParameter("DiskSn", diskSn);
 }
 

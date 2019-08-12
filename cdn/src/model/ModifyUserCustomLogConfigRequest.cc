@@ -33,7 +33,7 @@ std::string ModifyUserCustomLogConfigRequest::getApp_ip()const
 void ModifyUserCustomLogConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string ModifyUserCustomLogConfigRequest::getPopProduct()const
 void ModifyUserCustomLogConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getProduct()const
@@ -55,7 +55,7 @@ std::string ModifyUserCustomLogConfigRequest::getProduct()const
 void ModifyUserCustomLogConfigRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 long ModifyUserCustomLogConfigRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long ModifyUserCustomLogConfigRequest::getCallerParentId()const
 void ModifyUserCustomLogConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyUserCustomLogConfigRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ std::string ModifyUserCustomLogConfigRequest::getCallerBid()const
 void ModifyUserCustomLogConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyUserCustomLogConfigRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyUserCustomLogConfigRequest::getOwnerId()const
 void ModifyUserCustomLogConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyUserCustomLogConfigRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string ModifyUserCustomLogConfigRequest::getProxy_original_source_ip()const
 void ModifyUserCustomLogConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string ModifyUserCustomLogConfigRequest::getVersion()const
 void ModifyUserCustomLogConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string ModifyUserCustomLogConfigRequest::getOwnerIdLoginEmail()const
 void ModifyUserCustomLogConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string ModifyUserCustomLogConfigRequest::getCallerType()const
 void ModifyUserCustomLogConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool ModifyUserCustomLogConfigRequest::getProxy_trust_transport_info()const
@@ -176,7 +176,7 @@ std::string ModifyUserCustomLogConfigRequest::getAccessKeyId()const
 void ModifyUserCustomLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool ModifyUserCustomLogConfigRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ std::string ModifyUserCustomLogConfigRequest::getSecurityToken()const
 void ModifyUserCustomLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string ModifyUserCustomLogConfigRequest::getRequestId()const
 void ModifyUserCustomLogConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string ModifyUserCustomLogConfigRequest::getRequestContent()const
 void ModifyUserCustomLogConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getConfigId()const
@@ -231,7 +231,7 @@ std::string ModifyUserCustomLogConfigRequest::getConfigId()const
 void ModifyUserCustomLogConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setCoreParameter("ConfigId", configId);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string ModifyUserCustomLogConfigRequest::getCallerBidEmail()const
 void ModifyUserCustomLogConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getTag()const
@@ -253,7 +253,7 @@ std::string ModifyUserCustomLogConfigRequest::getTag()const
 void ModifyUserCustomLogConfigRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 std::string ModifyUserCustomLogConfigRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string ModifyUserCustomLogConfigRequest::getCallerUidEmail()const
 void ModifyUserCustomLogConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyUserCustomLogConfigRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long ModifyUserCustomLogConfigRequest::getCallerUid()const
 void ModifyUserCustomLogConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

@@ -33,7 +33,7 @@ std::string OnsConsumerTimeSpanRequest::getInstanceId()const
 void OnsConsumerTimeSpanRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsConsumerTimeSpanRequest::getGroupId()const
 void OnsConsumerTimeSpanRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsConsumerTimeSpanRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsConsumerTimeSpanRequest::getTopic()const
 void OnsConsumerTimeSpanRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 

@@ -33,7 +33,7 @@ long ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerId()const
 void ModifyDBInstanceNetExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getSecurityToken()const
 void ModifyDBInstanceNetExpireTimeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getResourceOwnerAccount()const
 void ModifyDBInstanceNetExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getRegionId()const
 void ModifyDBInstanceNetExpireTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getConnectionString()const
@@ -77,7 +77,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getConnectionString()const
 void ModifyDBInstanceNetExpireTimeRequest::setConnectionString(const std::string& connectionString)
 {
 	connectionString_ = connectionString;
-	setCoreParameter("ConnectionString", std::to_string(connectionString));
+	setCoreParameter("ConnectionString", connectionString);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getOwnerAccount()const
 void ModifyDBInstanceNetExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetExpireTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ModifyDBInstanceNetExpireTimeRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyDBInstanceNetExpireTimeRequest::getOwnerId()const
 void ModifyDBInstanceNetExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifyDBInstanceNetExpireTimeRequest::getClassicExpendExpiredDays()const
@@ -121,7 +121,7 @@ int ModifyDBInstanceNetExpireTimeRequest::getClassicExpendExpiredDays()const
 void ModifyDBInstanceNetExpireTimeRequest::setClassicExpendExpiredDays(int classicExpendExpiredDays)
 {
 	classicExpendExpiredDays_ = classicExpendExpiredDays;
-	setCoreParameter("ClassicExpendExpiredDays", classicExpendExpiredDays);
+	setCoreParameter("ClassicExpendExpiredDays", std::to_string(classicExpendExpiredDays));
 }
 
 std::string ModifyDBInstanceNetExpireTimeRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyDBInstanceNetExpireTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

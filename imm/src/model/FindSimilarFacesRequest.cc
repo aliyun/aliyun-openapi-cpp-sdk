@@ -33,7 +33,7 @@ std::string FindSimilarFacesRequest::getImageUri()const
 void FindSimilarFacesRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", std::to_string(imageUri));
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string FindSimilarFacesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string FindSimilarFacesRequest::getRegionId()const
 void FindSimilarFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 float FindSimilarFacesRequest::getMinSimilarity()const
@@ -55,7 +55,7 @@ float FindSimilarFacesRequest::getMinSimilarity()const
 void FindSimilarFacesRequest::setMinSimilarity(float minSimilarity)
 {
 	minSimilarity_ = minSimilarity;
-	setCoreParameter("MinSimilarity", minSimilarity);
+	setCoreParameter("MinSimilarity", std::to_string(minSimilarity));
 }
 
 std::string FindSimilarFacesRequest::getResponseFormat()const
@@ -66,7 +66,7 @@ std::string FindSimilarFacesRequest::getResponseFormat()const
 void FindSimilarFacesRequest::setResponseFormat(const std::string& responseFormat)
 {
 	responseFormat_ = responseFormat;
-	setCoreParameter("ResponseFormat", std::to_string(responseFormat));
+	setCoreParameter("ResponseFormat", responseFormat);
 }
 
 int FindSimilarFacesRequest::getLimit()const
@@ -77,7 +77,7 @@ int FindSimilarFacesRequest::getLimit()const
 void FindSimilarFacesRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string FindSimilarFacesRequest::getProject()const
@@ -88,7 +88,7 @@ std::string FindSimilarFacesRequest::getProject()const
 void FindSimilarFacesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string FindSimilarFacesRequest::getSetId()const
@@ -99,7 +99,7 @@ std::string FindSimilarFacesRequest::getSetId()const
 void FindSimilarFacesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string FindSimilarFacesRequest::getFaceId()const
@@ -110,7 +110,7 @@ std::string FindSimilarFacesRequest::getFaceId()const
 void FindSimilarFacesRequest::setFaceId(const std::string& faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setCoreParameter("FaceId", faceId);
 }
 
 std::string FindSimilarFacesRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string FindSimilarFacesRequest::getAccessKeyId()const
 void FindSimilarFacesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

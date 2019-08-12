@@ -33,7 +33,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", std::to_string(promotionNo));
+	setCoreParameter("PromotionNo", promotionNo);
 }
 
 long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()const
@@ -44,7 +44,7 @@ long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()cons
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", currentExpirationDate);
+	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getCouponNo()const
@@ -77,7 +77,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getCouponNo()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 bool SaveSingleTaskForCreatingOrderRedeemRequest::getUseCoupon()const
@@ -99,7 +99,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForCreatingOrderRedeemRequest::getUsePromotion()const

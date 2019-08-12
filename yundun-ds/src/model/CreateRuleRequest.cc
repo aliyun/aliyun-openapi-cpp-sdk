@@ -33,7 +33,7 @@ std::string CreateRuleRequest::getSourceIp()const
 void CreateRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateRuleRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int CreateRuleRequest::getFeatureType()const
 void CreateRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string CreateRuleRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateRuleRequest::getName()const
 void CreateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long CreateRuleRequest::getRiskLevelId()const
@@ -66,7 +66,7 @@ long CreateRuleRequest::getRiskLevelId()const
 void CreateRuleRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", riskLevelId);
+	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string CreateRuleRequest::getLang()const
@@ -77,7 +77,7 @@ std::string CreateRuleRequest::getLang()const
 void CreateRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long CreateRuleRequest::getCustomType()const
@@ -88,7 +88,7 @@ long CreateRuleRequest::getCustomType()const
 void CreateRuleRequest::setCustomType(long customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", customType);
+	setCoreParameter("CustomType", std::to_string(customType));
 }
 
 int CreateRuleRequest::getCategory()const
@@ -99,7 +99,7 @@ int CreateRuleRequest::getCategory()const
 void CreateRuleRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setCoreParameter("Category", std::to_string(category));
 }
 
 std::string CreateRuleRequest::getContent()const
@@ -110,6 +110,6 @@ std::string CreateRuleRequest::getContent()const
 void CreateRuleRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", std::to_string(content));
+	setCoreParameter("Content", content);
 }
 

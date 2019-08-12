@@ -33,7 +33,7 @@ std::string DescribeApisByTrafficControlRequest::getTrafficControlId()const
 void DescribeApisByTrafficControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
+	setCoreParameter("TrafficControlId", trafficControlId);
 }
 
 std::string DescribeApisByTrafficControlRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeApisByTrafficControlRequest::getSecurityToken()const
 void DescribeApisByTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeApisByTrafficControlRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeApisByTrafficControlRequest::getPageSize()const
 void DescribeApisByTrafficControlRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeApisByTrafficControlRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int DescribeApisByTrafficControlRequest::getPageNumber()const
 void DescribeApisByTrafficControlRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApisByTrafficControlRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeApisByTrafficControlRequest::getAccessKeyId()const
 void DescribeApisByTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

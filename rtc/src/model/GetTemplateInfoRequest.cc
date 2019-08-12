@@ -33,7 +33,7 @@ std::string GetTemplateInfoRequest::getApp_ip()const
 void GetTemplateInfoRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string GetTemplateInfoRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string GetTemplateInfoRequest::getPopProduct()const
 void GetTemplateInfoRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long GetTemplateInfoRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long GetTemplateInfoRequest::getCallerParentId()const
 void GetTemplateInfoRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool GetTemplateInfoRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string GetTemplateInfoRequest::getCallerBid()const
 void GetTemplateInfoRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long GetTemplateInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long GetTemplateInfoRequest::getOwnerId()const
 void GetTemplateInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetTemplateInfoRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string GetTemplateInfoRequest::getProxy_original_source_ip()const
 void GetTemplateInfoRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 long GetTemplateInfoRequest::getTemplateId()const
@@ -110,7 +110,7 @@ long GetTemplateInfoRequest::getTemplateId()const
 void GetTemplateInfoRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string GetTemplateInfoRequest::getVersion()const
@@ -121,7 +121,7 @@ std::string GetTemplateInfoRequest::getVersion()const
 void GetTemplateInfoRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string GetTemplateInfoRequest::getOwnerIdLoginEmail()const
@@ -132,7 +132,7 @@ std::string GetTemplateInfoRequest::getOwnerIdLoginEmail()const
 void GetTemplateInfoRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string GetTemplateInfoRequest::getCallerType()const
@@ -143,7 +143,7 @@ std::string GetTemplateInfoRequest::getCallerType()const
 void GetTemplateInfoRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool GetTemplateInfoRequest::getProxy_trust_transport_info()const
@@ -176,7 +176,7 @@ std::string GetTemplateInfoRequest::getAccessKeyId()const
 void GetTemplateInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool GetTemplateInfoRequest::getSecurity_transport()const
@@ -198,7 +198,7 @@ std::string GetTemplateInfoRequest::getSecurityToken()const
 void GetTemplateInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string GetTemplateInfoRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string GetTemplateInfoRequest::getRequestId()const
 void GetTemplateInfoRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string GetTemplateInfoRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string GetTemplateInfoRequest::getRequestContent()const
 void GetTemplateInfoRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string GetTemplateInfoRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string GetTemplateInfoRequest::getAppId()const
 void GetTemplateInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string GetTemplateInfoRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string GetTemplateInfoRequest::getCallerBidEmail()const
 void GetTemplateInfoRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string GetTemplateInfoRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string GetTemplateInfoRequest::getCallerUidEmail()const
 void GetTemplateInfoRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long GetTemplateInfoRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long GetTemplateInfoRequest::getCallerUid()const
 void GetTemplateInfoRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

@@ -33,7 +33,7 @@ long CreateFaceGroupRequest::getResourceOwnerId()const
 void CreateFaceGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateFaceGroupRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateFaceGroupRequest::getCallerParentId()const
 void CreateFaceGroupRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateFaceGroupRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string CreateFaceGroupRequest::getProxy_original_source_ip()const
 void CreateFaceGroupRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateFaceGroupRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string CreateFaceGroupRequest::getOwnerIdLoginEmail()const
 void CreateFaceGroupRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateFaceGroupRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string CreateFaceGroupRequest::getCallerType()const
 void CreateFaceGroupRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateFaceGroupRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateFaceGroupRequest::getAccessKeyId()const
 void CreateFaceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateFaceGroupRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string CreateFaceGroupRequest::getSecurityToken()const
 void CreateFaceGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateFaceGroupRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string CreateFaceGroupRequest::getRegionId()const
 void CreateFaceGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateFaceGroupRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string CreateFaceGroupRequest::getRequestContent()const
 void CreateFaceGroupRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateFaceGroupRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string CreateFaceGroupRequest::getCallerBidEmail()const
 void CreateFaceGroupRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateFaceGroupRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string CreateFaceGroupRequest::getCallerUidEmail()const
 void CreateFaceGroupRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateFaceGroupRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long CreateFaceGroupRequest::getCallerUid()const
 void CreateFaceGroupRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateFaceGroupRequest::getShowLog()const
@@ -176,7 +176,7 @@ std::string CreateFaceGroupRequest::getShowLog()const
 void CreateFaceGroupRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string CreateFaceGroupRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string CreateFaceGroupRequest::getApp_ip()const
 void CreateFaceGroupRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateFaceGroupRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string CreateFaceGroupRequest::getPopProduct()const
 void CreateFaceGroupRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateFaceGroupRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string CreateFaceGroupRequest::getCallerBid()const
 void CreateFaceGroupRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateFaceGroupRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long CreateFaceGroupRequest::getOwnerId()const
 void CreateFaceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateFaceGroupRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string CreateFaceGroupRequest::getVersion()const
 void CreateFaceGroupRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool CreateFaceGroupRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ std::string CreateFaceGroupRequest::getServiceCode()const
 void CreateFaceGroupRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string CreateFaceGroupRequest::getRequestId()const
@@ -286,7 +286,7 @@ std::string CreateFaceGroupRequest::getRequestId()const
 void CreateFaceGroupRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateFaceGroupRequest::getName()const
@@ -297,6 +297,6 @@ std::string CreateFaceGroupRequest::getName()const
 void CreateFaceGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

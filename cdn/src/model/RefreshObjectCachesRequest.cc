@@ -33,7 +33,7 @@ std::string RefreshObjectCachesRequest::getSecurityToken()const
 void RefreshObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RefreshObjectCachesRequest::getObjectPath()const
@@ -44,7 +44,7 @@ std::string RefreshObjectCachesRequest::getObjectPath()const
 void RefreshObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", std::to_string(objectPath));
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 long RefreshObjectCachesRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long RefreshObjectCachesRequest::getOwnerId()const
 void RefreshObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RefreshObjectCachesRequest::getObjectType()const
@@ -66,6 +66,6 @@ std::string RefreshObjectCachesRequest::getObjectType()const
 void RefreshObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", std::to_string(objectType));
+	setCoreParameter("ObjectType", objectType);
 }
 

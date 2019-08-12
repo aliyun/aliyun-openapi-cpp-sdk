@@ -33,7 +33,7 @@ long DescribeVodStorageDataRequest::getResourceOwnerId()const
 void DescribeVodStorageDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeVodStorageDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeVodStorageDataRequest::getCallerParentId()const
 void DescribeVodStorageDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeVodStorageDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeVodStorageDataRequest::getStartTime()const
 void DescribeVodStorageDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeVodStorageDataRequest::getStorage()const
@@ -77,7 +77,7 @@ std::string DescribeVodStorageDataRequest::getStorage()const
 void DescribeVodStorageDataRequest::setStorage(const std::string& storage)
 {
 	storage_ = storage;
-	setCoreParameter("Storage", std::to_string(storage));
+	setCoreParameter("Storage", storage);
 }
 
 std::string DescribeVodStorageDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeVodStorageDataRequest::getProxy_original_source_ip()const
 void DescribeVodStorageDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeVodStorageDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeVodStorageDataRequest::getOwnerIdLoginEmail()const
 void DescribeVodStorageDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeVodStorageDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeVodStorageDataRequest::getCallerType()const
 void DescribeVodStorageDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeVodStorageDataRequest::getStorageType()const
@@ -121,7 +121,7 @@ std::string DescribeVodStorageDataRequest::getStorageType()const
 void DescribeVodStorageDataRequest::setStorageType(const std::string& storageType)
 {
 	storageType_ = storageType;
-	setCoreParameter("StorageType", std::to_string(storageType));
+	setCoreParameter("StorageType", storageType);
 }
 
 std::string DescribeVodStorageDataRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeVodStorageDataRequest::getAccessKeyId()const
 void DescribeVodStorageDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVodStorageDataRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeVodStorageDataRequest::getSecurityToken()const
 void DescribeVodStorageDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodStorageDataRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeVodStorageDataRequest::getRegionId()const
 void DescribeVodStorageDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVodStorageDataRequest::getRequestContent()const
@@ -165,7 +165,7 @@ std::string DescribeVodStorageDataRequest::getRequestContent()const
 void DescribeVodStorageDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeVodStorageDataRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeVodStorageDataRequest::getCallerBidEmail()const
 void DescribeVodStorageDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeVodStorageDataRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DescribeVodStorageDataRequest::getCallerUidEmail()const
 void DescribeVodStorageDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeVodStorageDataRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DescribeVodStorageDataRequest::getCallerUid()const
 void DescribeVodStorageDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeVodStorageDataRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeVodStorageDataRequest::getApp_ip()const
 void DescribeVodStorageDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeVodStorageDataRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeVodStorageDataRequest::getPopProduct()const
 void DescribeVodStorageDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeVodStorageDataRequest::getEndTime()const
@@ -231,7 +231,7 @@ std::string DescribeVodStorageDataRequest::getEndTime()const
 void DescribeVodStorageDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeVodStorageDataRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeVodStorageDataRequest::getCallerBid()const
 void DescribeVodStorageDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeVodStorageDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeVodStorageDataRequest::getOwnerId()const
 void DescribeVodStorageDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodStorageDataRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeVodStorageDataRequest::getVersion()const
 void DescribeVodStorageDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeVodStorageDataRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeVodStorageDataRequest::getServiceCode()const
 void DescribeVodStorageDataRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodStorageDataRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string DescribeVodStorageDataRequest::getRequestId()const
 void DescribeVodStorageDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeVodStorageDataRequest::getRegion()const
@@ -330,6 +330,6 @@ std::string DescribeVodStorageDataRequest::getRegion()const
 void DescribeVodStorageDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 

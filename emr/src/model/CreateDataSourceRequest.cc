@@ -33,7 +33,7 @@ long CreateDataSourceRequest::getResourceOwnerId()const
 void CreateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateDataSourceRequest::getRegionId()const
 void CreateDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateDataSourceRequest::getNavParentId()const
@@ -55,7 +55,7 @@ std::string CreateDataSourceRequest::getNavParentId()const
 void CreateDataSourceRequest::setNavParentId(const std::string& navParentId)
 {
 	navParentId_ = navParentId;
-	setCoreParameter("NavParentId", std::to_string(navParentId));
+	setCoreParameter("NavParentId", navParentId);
 }
 
 std::string CreateDataSourceRequest::getName()const
@@ -66,7 +66,7 @@ std::string CreateDataSourceRequest::getName()const
 void CreateDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateDataSourceRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateDataSourceRequest::getDescription()const
 void CreateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateDataSourceRequest::getSourceType()const
@@ -88,7 +88,7 @@ std::string CreateDataSourceRequest::getSourceType()const
 void CreateDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", std::to_string(sourceType));
+	setCoreParameter("SourceType", sourceType);
 }
 
 std::string CreateDataSourceRequest::getConf()const
@@ -99,7 +99,7 @@ std::string CreateDataSourceRequest::getConf()const
 void CreateDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", std::to_string(conf));
+	setCoreParameter("Conf", conf);
 }
 
 std::string CreateDataSourceRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string CreateDataSourceRequest::getClusterId()const
 void CreateDataSourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateDataSourceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string CreateDataSourceRequest::getAccessKeyId()const
 void CreateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

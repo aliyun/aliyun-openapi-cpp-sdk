@@ -33,7 +33,7 @@ std::string GetInstancesStatusCountRequest::getCluster()const
 void GetInstancesStatusCountRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", std::to_string(cluster));
+	setCoreParameter("Cluster", cluster);
 }
 
 std::string GetInstancesStatusCountRequest::getQuotaId()const
@@ -44,7 +44,7 @@ std::string GetInstancesStatusCountRequest::getQuotaId()const
 void GetInstancesStatusCountRequest::setQuotaId(const std::string& quotaId)
 {
 	quotaId_ = quotaId;
-	setCoreParameter("QuotaId", std::to_string(quotaId));
+	setCoreParameter("QuotaId", quotaId);
 }
 
 std::string GetInstancesStatusCountRequest::getRegion()const
@@ -55,7 +55,7 @@ std::string GetInstancesStatusCountRequest::getRegion()const
 void GetInstancesStatusCountRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string GetInstancesStatusCountRequest::getQuotaName()const
@@ -66,6 +66,6 @@ std::string GetInstancesStatusCountRequest::getQuotaName()const
 void GetInstancesStatusCountRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", std::to_string(quotaName));
+	setCoreParameter("QuotaName", quotaName);
 }
 

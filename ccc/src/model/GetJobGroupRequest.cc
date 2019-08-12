@@ -33,7 +33,7 @@ std::string GetJobGroupRequest::getInstanceId()const
 void GetJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetJobGroupRequest::getJobGroupId()const
@@ -44,6 +44,6 @@ std::string GetJobGroupRequest::getJobGroupId()const
 void GetJobGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 

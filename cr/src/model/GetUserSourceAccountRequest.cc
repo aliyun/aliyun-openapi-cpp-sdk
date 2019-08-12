@@ -33,7 +33,7 @@ std::string GetUserSourceAccountRequest::getRegionId()const
 void GetUserSourceAccountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetUserSourceAccountRequest::getSourceOriginType()const
@@ -44,6 +44,6 @@ std::string GetUserSourceAccountRequest::getSourceOriginType()const
 void GetUserSourceAccountRequest::setSourceOriginType(const std::string& sourceOriginType)
 {
 	sourceOriginType_ = sourceOriginType;
-	setCoreParameter("SourceOriginType", std::to_string(sourceOriginType));
+	setCoreParameter("SourceOriginType", sourceOriginType);
 }
 

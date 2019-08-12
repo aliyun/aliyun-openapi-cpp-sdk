@@ -46,6 +46,8 @@
 #include "model/UpdateBizTypeSettingResult.h"
 #include "model/FileAsyncScanRequest.h"
 #include "model/FileAsyncScanResult.h"
+#include "model/DetectFaceRequest.h"
+#include "model/DetectFaceResult.h"
 #include "model/DescribeOssResultItemsRequest.h"
 #include "model/DescribeOssResultItemsResult.h"
 #include "model/DescribeBizTypesRequest.h"
@@ -333,6 +335,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FileAsyncScanResult> FileAsyncScanOutcome;
 			typedef std::future<FileAsyncScanOutcome> FileAsyncScanOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::FileAsyncScanRequest&, const FileAsyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FileAsyncScanAsyncHandler;
+			typedef Outcome<Error, Model::DetectFaceResult> DetectFaceOutcome;
+			typedef std::future<DetectFaceOutcome> DetectFaceOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DetectFaceRequest&, const DetectFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOssResultItemsResult> DescribeOssResultItemsOutcome;
 			typedef std::future<DescribeOssResultItemsOutcome> DescribeOssResultItemsOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeOssResultItemsRequest&, const DescribeOssResultItemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOssResultItemsAsyncHandler;
@@ -737,6 +742,9 @@ namespace AlibabaCloud
 			FileAsyncScanOutcome fileAsyncScan(const Model::FileAsyncScanRequest &request)const;
 			void fileAsyncScanAsync(const Model::FileAsyncScanRequest& request, const FileAsyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FileAsyncScanOutcomeCallable fileAsyncScanCallable(const Model::FileAsyncScanRequest& request) const;
+			DetectFaceOutcome detectFace(const Model::DetectFaceRequest &request)const;
+			void detectFaceAsync(const Model::DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectFaceOutcomeCallable detectFaceCallable(const Model::DetectFaceRequest& request) const;
 			DescribeOssResultItemsOutcome describeOssResultItems(const Model::DescribeOssResultItemsRequest &request)const;
 			void describeOssResultItemsAsync(const Model::DescribeOssResultItemsRequest& request, const DescribeOssResultItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOssResultItemsOutcomeCallable describeOssResultItemsCallable(const Model::DescribeOssResultItemsRequest& request) const;

@@ -33,7 +33,7 @@ int ModifyHpHostRequest::getCpuCore()const
 void ModifyHpHostRequest::setCpuCore(int cpuCore)
 {
 	cpuCore_ = cpuCore;
-	setCoreParameter("CpuCore", cpuCore);
+	setCoreParameter("CpuCore", std::to_string(cpuCore));
 }
 
 int ModifyHpHostRequest::getMemSize()const
@@ -44,7 +44,7 @@ int ModifyHpHostRequest::getMemSize()const
 void ModifyHpHostRequest::setMemSize(int memSize)
 {
 	memSize_ = memSize;
-	setCoreParameter("MemSize", memSize);
+	setCoreParameter("MemSize", std::to_string(memSize));
 }
 
 long ModifyHpHostRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ModifyHpHostRequest::getResourceOwnerId()const
 void ModifyHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyHpHostRequest::getRackInfo()const
@@ -66,7 +66,7 @@ std::string ModifyHpHostRequest::getRackInfo()const
 void ModifyHpHostRequest::setRackInfo(const std::string& rackInfo)
 {
 	rackInfo_ = rackInfo;
-	setCoreParameter("RackInfo", std::to_string(rackInfo));
+	setCoreParameter("RackInfo", rackInfo);
 }
 
 std::string ModifyHpHostRequest::getRole()const
@@ -77,7 +77,7 @@ std::string ModifyHpHostRequest::getRole()const
 void ModifyHpHostRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", std::to_string(role));
+	setCoreParameter("Role", role);
 }
 
 std::string ModifyHpHostRequest::getSerialNumber()const
@@ -88,7 +88,7 @@ std::string ModifyHpHostRequest::getSerialNumber()const
 void ModifyHpHostRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", std::to_string(serialNumber));
+	setCoreParameter("SerialNumber", serialNumber);
 }
 
 std::string ModifyHpHostRequest::getHostType()const
@@ -99,7 +99,7 @@ std::string ModifyHpHostRequest::getHostType()const
 void ModifyHpHostRequest::setHostType(const std::string& hostType)
 {
 	hostType_ = hostType;
-	setCoreParameter("HostType", std::to_string(hostType));
+	setCoreParameter("HostType", hostType);
 }
 
 std::string ModifyHpHostRequest::getSecurityGroupId()const
@@ -110,7 +110,7 @@ std::string ModifyHpHostRequest::getSecurityGroupId()const
 void ModifyHpHostRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 std::vector<ModifyHpHostRequest::HpHostDisk> ModifyHpHostRequest::getHpHostDisk()const
@@ -125,9 +125,9 @@ void ModifyHpHostRequest::setHpHostDisk(const std::vector<HpHostDisk>& hpHostDis
 	for(int i = 0; i!= hpHostDisk.size(); i++)	{
 		auto obj = hpHostDisk.at(i);
 		std::string str ="HpHostDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskSize", std::to_string(obj.diskSize));
-		setCoreParameter(str + ".MountPath", std::to_string(obj.mountPath));
-		setCoreParameter(str + ".DiskDevice", std::to_string(obj.diskDevice));
+		setCoreParameter(str + ".DiskSize", obj.diskSize);
+		setCoreParameter(str + ".MountPath", obj.mountPath);
+		setCoreParameter(str + ".DiskDevice", obj.diskDevice);
 	}
 }
 
@@ -139,7 +139,7 @@ std::string ModifyHpHostRequest::getAccessKeyId()const
 void ModifyHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyHpHostRequest::getVswitchId()const
@@ -150,7 +150,7 @@ std::string ModifyHpHostRequest::getVswitchId()const
 void ModifyHpHostRequest::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", std::to_string(vswitchId));
+	setCoreParameter("VswitchId", vswitchId);
 }
 
 std::string ModifyHpHostRequest::getHpHostBizId()const
@@ -161,7 +161,7 @@ std::string ModifyHpHostRequest::getHpHostBizId()const
 void ModifyHpHostRequest::setHpHostBizId(const std::string& hpHostBizId)
 {
 	hpHostBizId_ = hpHostBizId;
-	setCoreParameter("HpHostBizId", std::to_string(hpHostBizId));
+	setCoreParameter("HpHostBizId", hpHostBizId);
 }
 
 std::string ModifyHpHostRequest::getExternalKey()const
@@ -172,7 +172,7 @@ std::string ModifyHpHostRequest::getExternalKey()const
 void ModifyHpHostRequest::setExternalKey(const std::string& externalKey)
 {
 	externalKey_ = externalKey;
-	setCoreParameter("ExternalKey", std::to_string(externalKey));
+	setCoreParameter("ExternalKey", externalKey);
 }
 
 std::string ModifyHpHostRequest::getHostName()const
@@ -183,7 +183,7 @@ std::string ModifyHpHostRequest::getHostName()const
 void ModifyHpHostRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 std::string ModifyHpHostRequest::getRegionId()const
@@ -194,7 +194,7 @@ std::string ModifyHpHostRequest::getRegionId()const
 void ModifyHpHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyHpHostRequest::getVpcId()const
@@ -205,7 +205,7 @@ std::string ModifyHpHostRequest::getVpcId()const
 void ModifyHpHostRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string ModifyHpHostRequest::getInnerIp()const
@@ -216,7 +216,7 @@ std::string ModifyHpHostRequest::getInnerIp()const
 void ModifyHpHostRequest::setInnerIp(const std::string& innerIp)
 {
 	innerIp_ = innerIp;
-	setCoreParameter("InnerIp", std::to_string(innerIp));
+	setCoreParameter("InnerIp", innerIp);
 }
 
 std::string ModifyHpHostRequest::getExternalIp()const
@@ -227,6 +227,6 @@ std::string ModifyHpHostRequest::getExternalIp()const
 void ModifyHpHostRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", std::to_string(externalIp));
+	setCoreParameter("ExternalIp", externalIp);
 }
 

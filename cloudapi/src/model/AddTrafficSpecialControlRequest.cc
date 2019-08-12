@@ -33,7 +33,7 @@ std::string AddTrafficSpecialControlRequest::getTrafficControlId()const
 void AddTrafficSpecialControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", std::to_string(trafficControlId));
+	setCoreParameter("TrafficControlId", trafficControlId);
 }
 
 std::string AddTrafficSpecialControlRequest::getSpecialKey()const
@@ -44,7 +44,7 @@ std::string AddTrafficSpecialControlRequest::getSpecialKey()const
 void AddTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKey)
 {
 	specialKey_ = specialKey;
-	setCoreParameter("SpecialKey", std::to_string(specialKey));
+	setCoreParameter("SpecialKey", specialKey);
 }
 
 std::string AddTrafficSpecialControlRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string AddTrafficSpecialControlRequest::getSecurityToken()const
 void AddTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int AddTrafficSpecialControlRequest::getTrafficValue()const
@@ -66,7 +66,7 @@ int AddTrafficSpecialControlRequest::getTrafficValue()const
 void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue)
 {
 	trafficValue_ = trafficValue;
-	setCoreParameter("TrafficValue", trafficValue);
+	setCoreParameter("TrafficValue", std::to_string(trafficValue));
 }
 
 std::string AddTrafficSpecialControlRequest::getSpecialType()const
@@ -77,7 +77,7 @@ std::string AddTrafficSpecialControlRequest::getSpecialType()const
 void AddTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
 {
 	specialType_ = specialType;
-	setCoreParameter("SpecialType", std::to_string(specialType));
+	setCoreParameter("SpecialType", specialType);
 }
 
 std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
 void AddTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ModifyPathCacheExpiredConfigRequest::getSecurityToken()const
 void ModifyPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyPathCacheExpiredConfigRequest::getConfigID()const
@@ -44,7 +44,7 @@ std::string ModifyPathCacheExpiredConfigRequest::getConfigID()const
 void ModifyPathCacheExpiredConfigRequest::setConfigID(const std::string& configID)
 {
 	configID_ = configID;
-	setCoreParameter("ConfigID", std::to_string(configID));
+	setCoreParameter("ConfigID", configID);
 }
 
 std::string ModifyPathCacheExpiredConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ModifyPathCacheExpiredConfigRequest::getDomainName()const
 void ModifyPathCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ModifyPathCacheExpiredConfigRequest::getWeight()const
@@ -66,7 +66,7 @@ std::string ModifyPathCacheExpiredConfigRequest::getWeight()const
 void ModifyPathCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string ModifyPathCacheExpiredConfigRequest::getCacheContent()const
@@ -77,7 +77,7 @@ std::string ModifyPathCacheExpiredConfigRequest::getCacheContent()const
 void ModifyPathCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", std::to_string(cacheContent));
+	setCoreParameter("CacheContent", cacheContent);
 }
 
 long ModifyPathCacheExpiredConfigRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ModifyPathCacheExpiredConfigRequest::getOwnerId()const
 void ModifyPathCacheExpiredConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyPathCacheExpiredConfigRequest::getTTL()const
@@ -99,6 +99,6 @@ std::string ModifyPathCacheExpiredConfigRequest::getTTL()const
 void ModifyPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", std::to_string(tTL));
+	setCoreParameter("TTL", tTL);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeUserRequest::getApp_ip()const
 void DescribeUserRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long DescribeUserRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeUserRequest::getResourceOwnerId()const
 void DescribeUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeUserRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeUserRequest::getCallerParentId()const
 void DescribeUserRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeUserRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeUserRequest::getCallerBid()const
 void DescribeUserRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeUserRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeUserRequest::getProxy_original_source_ip()const
 void DescribeUserRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool DescribeUserRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string DescribeUserRequest::getCallerType()const
 void DescribeUserRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeUserRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeUserRequest::getAccessKeyId()const
 void DescribeUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeUserRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string DescribeUserRequest::getSecurityToken()const
 void DescribeUserRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeUserRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeUserRequest::getRegionId()const
 void DescribeUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeUserRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string DescribeUserRequest::getRequestId()const
 void DescribeUserRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DescribeUserRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeUserRequest::getCallerUid()const
 void DescribeUserRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeUserRequest::getAliyunUserId()const
@@ -198,6 +198,6 @@ std::string DescribeUserRequest::getAliyunUserId()const
 void DescribeUserRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
+	setCoreParameter("AliyunUserId", aliyunUserId);
 }
 

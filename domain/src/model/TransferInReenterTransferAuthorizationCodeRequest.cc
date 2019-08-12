@@ -33,7 +33,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getTransferAuthor
 void TransferInReenterTransferAuthorizationCodeRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
 {
 	transferAuthorizationCode_ = transferAuthorizationCode;
-	setCoreParameter("TransferAuthorizationCode", std::to_string(transferAuthorizationCode));
+	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getDomainName()co
 void TransferInReenterTransferAuthorizationCodeRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getUserClientIp()
 void TransferInReenterTransferAuthorizationCodeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getLang()const
@@ -66,6 +66,6 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getLang()const
 void TransferInReenterTransferAuthorizationCodeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

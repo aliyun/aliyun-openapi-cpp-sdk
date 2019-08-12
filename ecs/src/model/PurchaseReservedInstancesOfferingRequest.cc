@@ -33,7 +33,7 @@ long PurchaseReservedInstancesOfferingRequest::getResourceOwnerId()const
 void PurchaseReservedInstancesOfferingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getClientToken()const
 void PurchaseReservedInstancesOfferingRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long PurchaseReservedInstancesOfferingRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long PurchaseReservedInstancesOfferingRequest::getCallerParentId()const
 void PurchaseReservedInstancesOfferingRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getDescription()const
 void PurchaseReservedInstancesOfferingRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getProxy_original_source_i
 void PurchaseReservedInstancesOfferingRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getOwnerIdLoginEmail()cons
 void PurchaseReservedInstancesOfferingRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getCallerType()const
 void PurchaseReservedInstancesOfferingRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getAccessKeyId()const
 void PurchaseReservedInstancesOfferingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getResourceGroupId()const
 void PurchaseReservedInstancesOfferingRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getSecurityToken()const
 void PurchaseReservedInstancesOfferingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getRegionId()const
 void PurchaseReservedInstancesOfferingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getEnable()const
@@ -176,7 +176,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getRequestContent()const
 void PurchaseReservedInstancesOfferingRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getScope()const
@@ -187,7 +187,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getScope()const
 void PurchaseReservedInstancesOfferingRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", std::to_string(scope));
+	setCoreParameter("Scope", scope);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getCallerBidEmail()const
@@ -198,7 +198,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getCallerBidEmail()const
 void PurchaseReservedInstancesOfferingRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getInstanceType()const
@@ -209,7 +209,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getInstanceType()const
 void PurchaseReservedInstancesOfferingRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getCallerUidEmail()const
@@ -220,7 +220,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getCallerUidEmail()const
 void PurchaseReservedInstancesOfferingRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long PurchaseReservedInstancesOfferingRequest::getCallerUid()const
@@ -231,7 +231,7 @@ long PurchaseReservedInstancesOfferingRequest::getCallerUid()const
 void PurchaseReservedInstancesOfferingRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getApp_ip()const
@@ -242,7 +242,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getApp_ip()const
 void PurchaseReservedInstancesOfferingRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 int PurchaseReservedInstancesOfferingRequest::getPeriod()const
@@ -253,7 +253,7 @@ int PurchaseReservedInstancesOfferingRequest::getPeriod()const
 void PurchaseReservedInstancesOfferingRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount()const
@@ -264,7 +264,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getResourceOwnerAccount()c
 void PurchaseReservedInstancesOfferingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getOwnerAccount()const
@@ -275,7 +275,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getOwnerAccount()const
 void PurchaseReservedInstancesOfferingRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getCallerBid()const
@@ -286,7 +286,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getCallerBid()const
 void PurchaseReservedInstancesOfferingRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long PurchaseReservedInstancesOfferingRequest::getOwnerId()const
@@ -297,7 +297,7 @@ long PurchaseReservedInstancesOfferingRequest::getOwnerId()const
 void PurchaseReservedInstancesOfferingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool PurchaseReservedInstancesOfferingRequest::getProxy_trust_transport_info()const
@@ -341,7 +341,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getPeriodUnit()const
 void PurchaseReservedInstancesOfferingRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
+	setCoreParameter("PeriodUnit", periodUnit);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getOfferingType()const
@@ -352,7 +352,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getOfferingType()const
 void PurchaseReservedInstancesOfferingRequest::setOfferingType(const std::string& offeringType)
 {
 	offeringType_ = offeringType;
-	setCoreParameter("OfferingType", std::to_string(offeringType));
+	setCoreParameter("OfferingType", offeringType);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getRequestId()const
@@ -363,7 +363,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getRequestId()const
 void PurchaseReservedInstancesOfferingRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getAkProxy()const
@@ -374,7 +374,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getAkProxy()const
 void PurchaseReservedInstancesOfferingRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getZoneId()const
@@ -385,7 +385,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getZoneId()const
 void PurchaseReservedInstancesOfferingRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getReservedInstanceName()const
@@ -396,7 +396,7 @@ std::string PurchaseReservedInstancesOfferingRequest::getReservedInstanceName()c
 void PurchaseReservedInstancesOfferingRequest::setReservedInstanceName(const std::string& reservedInstanceName)
 {
 	reservedInstanceName_ = reservedInstanceName;
-	setCoreParameter("ReservedInstanceName", std::to_string(reservedInstanceName));
+	setCoreParameter("ReservedInstanceName", reservedInstanceName);
 }
 
 int PurchaseReservedInstancesOfferingRequest::getInstanceAmount()const
@@ -407,6 +407,6 @@ int PurchaseReservedInstancesOfferingRequest::getInstanceAmount()const
 void PurchaseReservedInstancesOfferingRequest::setInstanceAmount(int instanceAmount)
 {
 	instanceAmount_ = instanceAmount;
-	setCoreParameter("InstanceAmount", instanceAmount);
+	setCoreParameter("InstanceAmount", std::to_string(instanceAmount));
 }
 

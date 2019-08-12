@@ -33,7 +33,7 @@ long GetMediaAuditResultTimelineRequest::getResourceOwnerId()const
 void GetMediaAuditResultTimelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const
 void GetMediaAuditResultTimelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getOwnerId()const
@@ -55,7 +55,7 @@ std::string GetMediaAuditResultTimelineRequest::getOwnerId()const
 void GetMediaAuditResultTimelineRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getMediaId()const
@@ -66,7 +66,7 @@ std::string GetMediaAuditResultTimelineRequest::getMediaId()const
 void GetMediaAuditResultTimelineRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetMediaAuditResultTimelineRequest::getAccessKeyId()const
 void GetMediaAuditResultTimelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

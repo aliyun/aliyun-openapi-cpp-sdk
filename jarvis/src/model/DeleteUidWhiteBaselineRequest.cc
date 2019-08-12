@@ -33,7 +33,7 @@ long DeleteUidWhiteBaselineRequest::getResourceOwnerId()const
 void DeleteUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteUidWhiteBaselineRequest::getWblUidList()const
@@ -44,7 +44,7 @@ std::string DeleteUidWhiteBaselineRequest::getWblUidList()const
 void DeleteUidWhiteBaselineRequest::setWblUidList(const std::string& wblUidList)
 {
 	wblUidList_ = wblUidList;
-	setCoreParameter("WblUidList", std::to_string(wblUidList));
+	setCoreParameter("WblUidList", wblUidList);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DeleteUidWhiteBaselineRequest::getSourceIp()const
 void DeleteUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DeleteUidWhiteBaselineRequest::getLang()const
 void DeleteUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
@@ -77,6 +77,6 @@ std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
 void DeleteUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

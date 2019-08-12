@@ -33,7 +33,7 @@ std::string RollbackSuspEventQuaraFileRequest::getSourceIp()const
 void RollbackSuspEventQuaraFileRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string RollbackSuspEventQuaraFileRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string RollbackSuspEventQuaraFileRequest::getFrom()const
 void RollbackSuspEventQuaraFileRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int RollbackSuspEventQuaraFileRequest::getQuaraFileId()const
@@ -55,6 +55,6 @@ int RollbackSuspEventQuaraFileRequest::getQuaraFileId()const
 void RollbackSuspEventQuaraFileRequest::setQuaraFileId(int quaraFileId)
 {
 	quaraFileId_ = quaraFileId;
-	setCoreParameter("QuaraFileId", quaraFileId);
+	setCoreParameter("QuaraFileId", std::to_string(quaraFileId));
 }
 

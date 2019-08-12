@@ -33,7 +33,7 @@ std::string LogicalDeleteResourceRequest::getCountry()const
 void LogicalDeleteResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", std::to_string(country));
+	setCoreParameter("Country", country);
 }
 
 long LogicalDeleteResourceRequest::getHid()const
@@ -44,7 +44,7 @@ long LogicalDeleteResourceRequest::getHid()const
 void LogicalDeleteResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", hid);
+	setCoreParameter("Hid", std::to_string(hid));
 }
 
 bool LogicalDeleteResourceRequest::getSuccess()const
@@ -77,7 +77,7 @@ std::string LogicalDeleteResourceRequest::getGmtWakeup()const
 void LogicalDeleteResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setCoreParameter("GmtWakeup", std::to_string(gmtWakeup));
+	setCoreParameter("GmtWakeup", gmtWakeup);
 }
 
 std::string LogicalDeleteResourceRequest::getPk()const
@@ -88,7 +88,7 @@ std::string LogicalDeleteResourceRequest::getPk()const
 void LogicalDeleteResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setCoreParameter("Pk", std::to_string(pk));
+	setCoreParameter("Pk", pk);
 }
 
 std::string LogicalDeleteResourceRequest::getInvoker()const
@@ -99,7 +99,7 @@ std::string LogicalDeleteResourceRequest::getInvoker()const
 void LogicalDeleteResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setCoreParameter("Invoker", std::to_string(invoker));
+	setCoreParameter("Invoker", invoker);
 }
 
 std::string LogicalDeleteResourceRequest::getBid()const
@@ -110,7 +110,7 @@ std::string LogicalDeleteResourceRequest::getBid()const
 void LogicalDeleteResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setCoreParameter("Bid", bid);
 }
 
 std::string LogicalDeleteResourceRequest::getMessage()const
@@ -121,7 +121,7 @@ std::string LogicalDeleteResourceRequest::getMessage()const
 void LogicalDeleteResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", std::to_string(message));
+	setCoreParameter("Message", message);
 }
 
 std::string LogicalDeleteResourceRequest::getTaskExtraData()const
@@ -132,7 +132,7 @@ std::string LogicalDeleteResourceRequest::getTaskExtraData()const
 void LogicalDeleteResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setCoreParameter("TaskExtraData", std::to_string(taskExtraData));
+	setCoreParameter("TaskExtraData", taskExtraData);
 }
 
 std::string LogicalDeleteResourceRequest::getTaskIdentifier()const
@@ -143,6 +143,6 @@ std::string LogicalDeleteResourceRequest::getTaskIdentifier()const
 void LogicalDeleteResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setCoreParameter("TaskIdentifier", std::to_string(taskIdentifier));
+	setCoreParameter("TaskIdentifier", taskIdentifier);
 }
 

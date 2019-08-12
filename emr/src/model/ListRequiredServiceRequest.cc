@@ -33,7 +33,7 @@ long ListRequiredServiceRequest::getResourceOwnerId()const
 void ListRequiredServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListRequiredServiceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListRequiredServiceRequest::getRegionId()const
 void ListRequiredServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListRequiredServiceRequest::getEmrVersion()const
@@ -55,7 +55,7 @@ std::string ListRequiredServiceRequest::getEmrVersion()const
 void ListRequiredServiceRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", std::to_string(emrVersion));
+	setCoreParameter("EmrVersion", emrVersion);
 }
 
 std::string ListRequiredServiceRequest::getServiceNameList()const
@@ -66,7 +66,7 @@ std::string ListRequiredServiceRequest::getServiceNameList()const
 void ListRequiredServiceRequest::setServiceNameList(const std::string& serviceNameList)
 {
 	serviceNameList_ = serviceNameList;
-	setCoreParameter("ServiceNameList", std::to_string(serviceNameList));
+	setCoreParameter("ServiceNameList", serviceNameList);
 }
 
 std::string ListRequiredServiceRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListRequiredServiceRequest::getAccessKeyId()const
 void ListRequiredServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

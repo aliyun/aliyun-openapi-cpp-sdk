@@ -33,6 +33,6 @@ std::string CreateUserInfoRequest::getRegionId()const
 void CreateUserInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

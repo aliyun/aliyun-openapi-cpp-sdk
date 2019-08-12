@@ -33,7 +33,7 @@ std::string SetPathCacheExpiredConfigRequest::getSecurityToken()const
 void SetPathCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetPathCacheExpiredConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SetPathCacheExpiredConfigRequest::getDomainName()const
 void SetPathCacheExpiredConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetPathCacheExpiredConfigRequest::getWeight()const
@@ -55,7 +55,7 @@ std::string SetPathCacheExpiredConfigRequest::getWeight()const
 void SetPathCacheExpiredConfigRequest::setWeight(const std::string& weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setCoreParameter("Weight", weight);
 }
 
 std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
@@ -66,7 +66,7 @@ std::string SetPathCacheExpiredConfigRequest::getCacheContent()const
 void SetPathCacheExpiredConfigRequest::setCacheContent(const std::string& cacheContent)
 {
 	cacheContent_ = cacheContent;
-	setCoreParameter("CacheContent", std::to_string(cacheContent));
+	setCoreParameter("CacheContent", cacheContent);
 }
 
 long SetPathCacheExpiredConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long SetPathCacheExpiredConfigRequest::getOwnerId()const
 void SetPathCacheExpiredConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetPathCacheExpiredConfigRequest::getTTL()const
@@ -88,6 +88,6 @@ std::string SetPathCacheExpiredConfigRequest::getTTL()const
 void SetPathCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
-	setCoreParameter("TTL", std::to_string(tTL));
+	setCoreParameter("TTL", tTL);
 }
 

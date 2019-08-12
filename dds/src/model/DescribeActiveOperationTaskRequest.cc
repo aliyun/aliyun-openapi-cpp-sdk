@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeActiveOperationTaskRequest::getTaskType()const
@@ -44,7 +44,7 @@ std::string DescribeActiveOperationTaskRequest::getTaskType()const
 void DescribeActiveOperationTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", std::to_string(taskType));
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeActiveOperationTaskRequest::getResourceOwnerAccount()const
 void DescribeActiveOperationTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeActiveOperationTaskRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeActiveOperationTaskRequest::getOwnerAccount()const
 void DescribeActiveOperationTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeActiveOperationTaskRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeActiveOperationTaskRequest::getOwnerId()const
 void DescribeActiveOperationTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeActiveOperationTaskRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeActiveOperationTaskRequest::getPageNumber()const
 void DescribeActiveOperationTaskRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeActiveOperationTaskRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeActiveOperationTaskRequest::getAccessKeyId()const
 void DescribeActiveOperationTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeActiveOperationTaskRequest::getIsHistory()const
@@ -110,7 +110,7 @@ int DescribeActiveOperationTaskRequest::getIsHistory()const
 void DescribeActiveOperationTaskRequest::setIsHistory(int isHistory)
 {
 	isHistory_ = isHistory;
-	setCoreParameter("IsHistory", isHistory);
+	setCoreParameter("IsHistory", std::to_string(isHistory));
 }
 
 std::string DescribeActiveOperationTaskRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeActiveOperationTaskRequest::getSecurityToken()const
 void DescribeActiveOperationTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeActiveOperationTaskRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeActiveOperationTaskRequest::getRegionId()const
 void DescribeActiveOperationTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeActiveOperationTaskRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeActiveOperationTaskRequest::getPageSize()const
 void DescribeActiveOperationTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeActiveOperationTaskRequest::getRegion()const
@@ -154,6 +154,6 @@ std::string DescribeActiveOperationTaskRequest::getRegion()const
 void DescribeActiveOperationTaskRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 

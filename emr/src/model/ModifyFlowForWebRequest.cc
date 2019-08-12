@@ -33,7 +33,7 @@ std::string ModifyFlowForWebRequest::getCronExpr()const
 void ModifyFlowForWebRequest::setCronExpr(const std::string& cronExpr)
 {
 	cronExpr_ = cronExpr;
-	setCoreParameter("CronExpr", std::to_string(cronExpr));
+	setCoreParameter("CronExpr", cronExpr);
 }
 
 std::string ModifyFlowForWebRequest::getParentFlowList()const
@@ -44,7 +44,7 @@ std::string ModifyFlowForWebRequest::getParentFlowList()const
 void ModifyFlowForWebRequest::setParentFlowList(const std::string& parentFlowList)
 {
 	parentFlowList_ = parentFlowList;
-	setCoreParameter("ParentFlowList", std::to_string(parentFlowList));
+	setCoreParameter("ParentFlowList", parentFlowList);
 }
 
 std::string ModifyFlowForWebRequest::getAlertDingDingGroupBizId()const
@@ -55,7 +55,7 @@ std::string ModifyFlowForWebRequest::getAlertDingDingGroupBizId()const
 void ModifyFlowForWebRequest::setAlertDingDingGroupBizId(const std::string& alertDingDingGroupBizId)
 {
 	alertDingDingGroupBizId_ = alertDingDingGroupBizId;
-	setCoreParameter("AlertDingDingGroupBizId", std::to_string(alertDingDingGroupBizId));
+	setCoreParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
 }
 
 bool ModifyFlowForWebRequest::getPeriodic()const
@@ -77,7 +77,7 @@ long ModifyFlowForWebRequest::getStartSchedule()const
 void ModifyFlowForWebRequest::setStartSchedule(long startSchedule)
 {
 	startSchedule_ = startSchedule;
-	setCoreParameter("StartSchedule", startSchedule);
+	setCoreParameter("StartSchedule", std::to_string(startSchedule));
 }
 
 std::string ModifyFlowForWebRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string ModifyFlowForWebRequest::getDescription()const
 void ModifyFlowForWebRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyFlowForWebRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ModifyFlowForWebRequest::getClusterId()const
 void ModifyFlowForWebRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyFlowForWebRequest::getAlertUserGroupBizId()const
@@ -110,7 +110,7 @@ std::string ModifyFlowForWebRequest::getAlertUserGroupBizId()const
 void ModifyFlowForWebRequest::setAlertUserGroupBizId(const std::string& alertUserGroupBizId)
 {
 	alertUserGroupBizId_ = alertUserGroupBizId;
-	setCoreParameter("AlertUserGroupBizId", std::to_string(alertUserGroupBizId));
+	setCoreParameter("AlertUserGroupBizId", alertUserGroupBizId);
 }
 
 std::string ModifyFlowForWebRequest::getGraph()const
@@ -121,7 +121,7 @@ std::string ModifyFlowForWebRequest::getGraph()const
 void ModifyFlowForWebRequest::setGraph(const std::string& graph)
 {
 	graph_ = graph;
-	setCoreParameter("Graph", std::to_string(graph));
+	setCoreParameter("Graph", graph);
 }
 
 std::string ModifyFlowForWebRequest::getHostName()const
@@ -132,7 +132,7 @@ std::string ModifyFlowForWebRequest::getHostName()const
 void ModifyFlowForWebRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 std::string ModifyFlowForWebRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyFlowForWebRequest::getRegionId()const
 void ModifyFlowForWebRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyFlowForWebRequest::getCreateCluster()const
@@ -165,7 +165,7 @@ std::string ModifyFlowForWebRequest::getName()const
 void ModifyFlowForWebRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long ModifyFlowForWebRequest::getEndSchedule()const
@@ -176,7 +176,7 @@ long ModifyFlowForWebRequest::getEndSchedule()const
 void ModifyFlowForWebRequest::setEndSchedule(long endSchedule)
 {
 	endSchedule_ = endSchedule;
-	setCoreParameter("EndSchedule", endSchedule);
+	setCoreParameter("EndSchedule", std::to_string(endSchedule));
 }
 
 std::string ModifyFlowForWebRequest::getId()const
@@ -187,7 +187,7 @@ std::string ModifyFlowForWebRequest::getId()const
 void ModifyFlowForWebRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyFlowForWebRequest::getAlertConf()const
@@ -198,7 +198,7 @@ std::string ModifyFlowForWebRequest::getAlertConf()const
 void ModifyFlowForWebRequest::setAlertConf(const std::string& alertConf)
 {
 	alertConf_ = alertConf;
-	setCoreParameter("AlertConf", std::to_string(alertConf));
+	setCoreParameter("AlertConf", alertConf);
 }
 
 std::string ModifyFlowForWebRequest::getProjectId()const
@@ -209,7 +209,7 @@ std::string ModifyFlowForWebRequest::getProjectId()const
 void ModifyFlowForWebRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string ModifyFlowForWebRequest::getStatus()const
@@ -220,7 +220,7 @@ std::string ModifyFlowForWebRequest::getStatus()const
 void ModifyFlowForWebRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 
 std::string ModifyFlowForWebRequest::getParentCategory()const
@@ -231,6 +231,6 @@ std::string ModifyFlowForWebRequest::getParentCategory()const
 void ModifyFlowForWebRequest::setParentCategory(const std::string& parentCategory)
 {
 	parentCategory_ = parentCategory;
-	setCoreParameter("ParentCategory", std::to_string(parentCategory));
+	setCoreParameter("ParentCategory", parentCategory);
 }
 

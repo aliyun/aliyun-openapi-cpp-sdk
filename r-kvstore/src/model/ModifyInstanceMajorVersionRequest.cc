@@ -33,7 +33,7 @@ long ModifyInstanceMajorVersionRequest::getResourceOwnerId()const
 void ModifyInstanceMajorVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceMajorVersionRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyInstanceMajorVersionRequest::getInstanceId()const
 void ModifyInstanceMajorVersionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getMajorVersion()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceMajorVersionRequest::getMajorVersion()const
 void ModifyInstanceMajorVersionRequest::setMajorVersion(const std::string& majorVersion)
 {
 	majorVersion_ = majorVersion;
-	setCoreParameter("MajorVersion", std::to_string(majorVersion));
+	setCoreParameter("MajorVersion", majorVersion);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceMajorVersionRequest::getSecurityToken()const
 void ModifyInstanceMajorVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceMajorVersionRequest::getResourceOwnerAccount()const
 void ModifyInstanceMajorVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceMajorVersionRequest::getRegionId()const
 void ModifyInstanceMajorVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyInstanceMajorVersionRequest::getOwnerAccount()const
 void ModifyInstanceMajorVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceMajorVersionRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyInstanceMajorVersionRequest::getOwnerId()const
 void ModifyInstanceMajorVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceMajorVersionRequest::getEffectTime()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceMajorVersionRequest::getEffectTime()const
 void ModifyInstanceMajorVersionRequest::setEffectTime(const std::string& effectTime)
 {
 	effectTime_ = effectTime;
-	setCoreParameter("EffectTime", std::to_string(effectTime));
+	setCoreParameter("EffectTime", effectTime);
 }
 
 std::string ModifyInstanceMajorVersionRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyInstanceMajorVersionRequest::getAccessKeyId()const
 void ModifyInstanceMajorVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

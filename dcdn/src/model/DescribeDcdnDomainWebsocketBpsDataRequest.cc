@@ -33,7 +33,7 @@ long DescribeDcdnDomainWebsocketBpsDataRequest::getCallerParentId()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDcdnDomainWebsocketBpsDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getStartTime()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getIspNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getIspNameEn()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getProxy_original_source_
 void DescribeDcdnDomainWebsocketBpsDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerIdLoginEmail()con
 void DescribeDcdnDomainWebsocketBpsDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerType()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getAccessKeyId()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getSecurityToken()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getRequestContent()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerBidEmail()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerUidEmail()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDcdnDomainWebsocketBpsDataRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeDcdnDomainWebsocketBpsDataRequest::getCallerUid()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getApp_ip()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getPopProduct()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getFixTimeGap()const
@@ -209,7 +209,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getFixTimeGap()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", std::to_string(fixTimeGap));
+	setCoreParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getTimeMerge()const
@@ -220,7 +220,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getTimeMerge()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", std::to_string(timeMerge));
+	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getDomainName()const
@@ -231,7 +231,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getDomainName()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getEndTime()const
@@ -242,7 +242,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getEndTime()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getCallerBid()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerId()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getVersion()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDcdnDomainWebsocketBpsDataRequest::getProxy_trust_transport_info()const
@@ -319,7 +319,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getRequestId()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getInterval()const
@@ -330,7 +330,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getInterval()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getFields()const
@@ -341,6 +341,6 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getFields()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

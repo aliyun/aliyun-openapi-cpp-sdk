@@ -33,7 +33,7 @@ std::string CreateClusterScriptRequest::getArgs()const
 void CreateClusterScriptRequest::setArgs(const std::string& args)
 {
 	args_ = args;
-	setCoreParameter("Args", std::to_string(args));
+	setCoreParameter("Args", args);
 }
 
 std::string CreateClusterScriptRequest::getPath()const
@@ -44,7 +44,7 @@ std::string CreateClusterScriptRequest::getPath()const
 void CreateClusterScriptRequest::setPath(const std::string& path)
 {
 	path_ = path;
-	setCoreParameter("Path", std::to_string(path));
+	setCoreParameter("Path", path);
 }
 
 long CreateClusterScriptRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreateClusterScriptRequest::getResourceOwnerId()const
 void CreateClusterScriptRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterScriptRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateClusterScriptRequest::getRegionId()const
 void CreateClusterScriptRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateClusterScriptRequest::getName()const
@@ -77,7 +77,7 @@ std::string CreateClusterScriptRequest::getName()const
 void CreateClusterScriptRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateClusterScriptRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string CreateClusterScriptRequest::getClusterId()const
 void CreateClusterScriptRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateClusterScriptRequest::getNodeIdList()const
@@ -99,7 +99,7 @@ std::string CreateClusterScriptRequest::getNodeIdList()const
 void CreateClusterScriptRequest::setNodeIdList(const std::string& nodeIdList)
 {
 	nodeIdList_ = nodeIdList;
-	setCoreParameter("NodeIdList", std::to_string(nodeIdList));
+	setCoreParameter("NodeIdList", nodeIdList);
 }
 
 std::string CreateClusterScriptRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateClusterScriptRequest::getAccessKeyId()const
 void CreateClusterScriptRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

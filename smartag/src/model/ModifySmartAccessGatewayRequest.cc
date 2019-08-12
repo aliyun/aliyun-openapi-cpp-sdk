@@ -37,8 +37,8 @@ void ModifySmartAccessGatewayRequest::setSnatEntries(const std::vector<SnatEntri
 	for(int i = 0; i!= snatEntries.size(); i++)	{
 		auto obj = snatEntries.at(i);
 		std::string str ="SnatEntries."+ std::to_string(i);
-		setCoreParameter(str + ".CidrBlock", std::to_string(obj.cidrBlock));
-		setCoreParameter(str + ".SnatIp", std::to_string(obj.snatIp));
+		setCoreParameter(str + ".CidrBlock", obj.cidrBlock);
+		setCoreParameter(str + ".SnatIp", obj.snatIp);
 	}
 }
 
@@ -50,7 +50,7 @@ long ModifySmartAccessGatewayRequest::getResourceOwnerId()const
 void ModifySmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -61,7 +61,7 @@ std::string ModifySmartAccessGatewayRequest::getResourceOwnerAccount()const
 void ModifySmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifySmartAccessGatewayRequest::getCity()const
@@ -72,7 +72,7 @@ std::string ModifySmartAccessGatewayRequest::getCity()const
 void ModifySmartAccessGatewayRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", std::to_string(city));
+	setCoreParameter("City", city);
 }
 
 std::string ModifySmartAccessGatewayRequest::getOwnerAccount()const
@@ -83,7 +83,7 @@ std::string ModifySmartAccessGatewayRequest::getOwnerAccount()const
 void ModifySmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifySmartAccessGatewayRequest::getDescription()const
@@ -94,7 +94,7 @@ std::string ModifySmartAccessGatewayRequest::getDescription()const
 void ModifySmartAccessGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long ModifySmartAccessGatewayRequest::getOwnerId()const
@@ -105,7 +105,7 @@ long ModifySmartAccessGatewayRequest::getOwnerId()const
 void ModifySmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
@@ -116,7 +116,7 @@ int ModifySmartAccessGatewayRequest::getSecurityLockThreshold()const
 void ModifySmartAccessGatewayRequest::setSecurityLockThreshold(int securityLockThreshold)
 {
 	securityLockThreshold_ = securityLockThreshold;
-	setCoreParameter("SecurityLockThreshold", securityLockThreshold);
+	setCoreParameter("SecurityLockThreshold", std::to_string(securityLockThreshold));
 }
 
 std::string ModifySmartAccessGatewayRequest::getRoutingStrategy()const
@@ -127,7 +127,7 @@ std::string ModifySmartAccessGatewayRequest::getRoutingStrategy()const
 void ModifySmartAccessGatewayRequest::setRoutingStrategy(const std::string& routingStrategy)
 {
 	routingStrategy_ = routingStrategy;
-	setCoreParameter("RoutingStrategy", std::to_string(routingStrategy));
+	setCoreParameter("RoutingStrategy", routingStrategy);
 }
 
 std::string ModifySmartAccessGatewayRequest::getRegionId()const
@@ -138,7 +138,7 @@ std::string ModifySmartAccessGatewayRequest::getRegionId()const
 void ModifySmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifySmartAccessGatewayRequest::getName()const
@@ -149,7 +149,7 @@ std::string ModifySmartAccessGatewayRequest::getName()const
 void ModifySmartAccessGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySmartAccessGatewayRequest::getCidrBlock()const
@@ -160,7 +160,7 @@ std::string ModifySmartAccessGatewayRequest::getCidrBlock()const
 void ModifySmartAccessGatewayRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 
 std::string ModifySmartAccessGatewayRequest::getSmartAGId()const
@@ -171,6 +171,6 @@ std::string ModifySmartAccessGatewayRequest::getSmartAGId()const
 void ModifySmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 

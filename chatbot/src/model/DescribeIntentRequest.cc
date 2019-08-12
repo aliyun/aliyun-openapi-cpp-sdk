@@ -33,6 +33,6 @@ long DescribeIntentRequest::getIntentId()const
 void DescribeIntentRequest::setIntentId(long intentId)
 {
 	intentId_ = intentId;
-	setCoreParameter("IntentId", intentId);
+	setCoreParameter("IntentId", std::to_string(intentId));
 }
 

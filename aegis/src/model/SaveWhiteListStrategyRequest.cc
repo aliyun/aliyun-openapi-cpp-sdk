@@ -33,7 +33,7 @@ std::string SaveWhiteListStrategyRequest::getStrategyName()const
 void SaveWhiteListStrategyRequest::setStrategyName(const std::string& strategyName)
 {
 	strategyName_ = strategyName;
-	setCoreParameter("StrategyName", std::to_string(strategyName));
+	setCoreParameter("StrategyName", strategyName);
 }
 
 std::string SaveWhiteListStrategyRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string SaveWhiteListStrategyRequest::getSourceIp()const
 void SaveWhiteListStrategyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int SaveWhiteListStrategyRequest::getStudyTime()const
@@ -55,7 +55,7 @@ int SaveWhiteListStrategyRequest::getStudyTime()const
 void SaveWhiteListStrategyRequest::setStudyTime(int studyTime)
 {
 	studyTime_ = studyTime;
-	setCoreParameter("StudyTime", studyTime);
+	setCoreParameter("StudyTime", std::to_string(studyTime));
 }
 
 long SaveWhiteListStrategyRequest::getStrategyId()const
@@ -66,7 +66,7 @@ long SaveWhiteListStrategyRequest::getStrategyId()const
 void SaveWhiteListStrategyRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string SaveWhiteListStrategyRequest::getLang()const
@@ -77,6 +77,6 @@ std::string SaveWhiteListStrategyRequest::getLang()const
 void SaveWhiteListStrategyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ long DescribeAvailableCrossRegionRequest::getResourceOwnerId()const
 void DescribeAvailableCrossRegionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableCrossRegionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableCrossRegionRequest::getResourceOwnerAccount()const
 void DescribeAvailableCrossRegionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableCrossRegionRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableCrossRegionRequest::getRegionId()const
 void DescribeAvailableCrossRegionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeAvailableCrossRegionRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeAvailableCrossRegionRequest::getOwnerId()const
 void DescribeAvailableCrossRegionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableCrossRegionRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeAvailableCrossRegionRequest::getAccessKeyId()const
 void DescribeAvailableCrossRegionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

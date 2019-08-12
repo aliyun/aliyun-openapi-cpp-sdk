@@ -33,7 +33,7 @@ long UnassignIpv6AddressesRequest::getResourceOwnerId()const
 void UnassignIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UnassignIpv6AddressesRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long UnassignIpv6AddressesRequest::getCallerParentId()const
 void UnassignIpv6AddressesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UnassignIpv6AddressesRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string UnassignIpv6AddressesRequest::getProxy_original_source_ip()const
 void UnassignIpv6AddressesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UnassignIpv6AddressesRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UnassignIpv6AddressesRequest::getOwnerIdLoginEmail()const
 void UnassignIpv6AddressesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UnassignIpv6AddressesRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UnassignIpv6AddressesRequest::getCallerType()const
 void UnassignIpv6AddressesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UnassignIpv6AddressesRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UnassignIpv6AddressesRequest::getAccessKeyId()const
 void UnassignIpv6AddressesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnassignIpv6AddressesRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string UnassignIpv6AddressesRequest::getSourceRegionId()const
 void UnassignIpv6AddressesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string UnassignIpv6AddressesRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string UnassignIpv6AddressesRequest::getResourceGroupId()const
 void UnassignIpv6AddressesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UnassignIpv6AddressesRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string UnassignIpv6AddressesRequest::getSecurityToken()const
 void UnassignIpv6AddressesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UnassignIpv6AddressesRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string UnassignIpv6AddressesRequest::getRegionId()const
 void UnassignIpv6AddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool UnassignIpv6AddressesRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string UnassignIpv6AddressesRequest::getRequestContent()const
 void UnassignIpv6AddressesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UnassignIpv6AddressesRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string UnassignIpv6AddressesRequest::getCallerBidEmail()const
 void UnassignIpv6AddressesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UnassignIpv6AddressesRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string UnassignIpv6AddressesRequest::getCallerUidEmail()const
 void UnassignIpv6AddressesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UnassignIpv6AddressesRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long UnassignIpv6AddressesRequest::getCallerUid()const
 void UnassignIpv6AddressesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UnassignIpv6AddressesRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string UnassignIpv6AddressesRequest::getApp_ip()const
 void UnassignIpv6AddressesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UnassignIpv6AddressesRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string UnassignIpv6AddressesRequest::getResourceOwnerAccount()const
 void UnassignIpv6AddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassignIpv6AddressesRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string UnassignIpv6AddressesRequest::getOwnerAccount()const
 void UnassignIpv6AddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UnassignIpv6AddressesRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string UnassignIpv6AddressesRequest::getCallerBid()const
 void UnassignIpv6AddressesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UnassignIpv6AddressesRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long UnassignIpv6AddressesRequest::getOwnerId()const
 void UnassignIpv6AddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool UnassignIpv6AddressesRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string UnassignIpv6AddressesRequest::getRequestId()const
 void UnassignIpv6AddressesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UnassignIpv6AddressesRequest::getAkProxy()const
@@ -308,7 +308,7 @@ std::string UnassignIpv6AddressesRequest::getAkProxy()const
 void UnassignIpv6AddressesRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string UnassignIpv6AddressesRequest::getNetworkInterfaceId()const
@@ -319,7 +319,7 @@ std::string UnassignIpv6AddressesRequest::getNetworkInterfaceId()const
 void UnassignIpv6AddressesRequest::setNetworkInterfaceId(const std::string& networkInterfaceId)
 {
 	networkInterfaceId_ = networkInterfaceId;
-	setCoreParameter("NetworkInterfaceId", std::to_string(networkInterfaceId));
+	setCoreParameter("NetworkInterfaceId", networkInterfaceId);
 }
 
 std::vector<std::string> UnassignIpv6AddressesRequest::getIpv6Address()const
@@ -331,6 +331,6 @@ void UnassignIpv6AddressesRequest::setIpv6Address(const std::vector<std::string>
 {
 	ipv6Address_ = ipv6Address;
 	for(int i = 0; i!= ipv6Address.size(); i++)
-		setCoreParameter("Ipv6Address."+ std::to_string(i), std::to_string(ipv6Address.at(i)));
+		setCoreParameter("Ipv6Address."+ std::to_string(i), ipv6Address.at(i));
 }
 

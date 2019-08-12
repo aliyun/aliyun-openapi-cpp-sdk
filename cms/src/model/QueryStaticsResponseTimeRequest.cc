@@ -33,7 +33,7 @@ std::string QueryStaticsResponseTimeRequest::getTimeRange()const
 void QueryStaticsResponseTimeRequest::setTimeRange(const std::string& timeRange)
 {
 	timeRange_ = timeRange;
-	setCoreParameter("TimeRange", std::to_string(timeRange));
+	setCoreParameter("TimeRange", timeRange);
 }
 
 std::string QueryStaticsResponseTimeRequest::getTaskId()const
@@ -44,6 +44,6 @@ std::string QueryStaticsResponseTimeRequest::getTaskId()const
 void QueryStaticsResponseTimeRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

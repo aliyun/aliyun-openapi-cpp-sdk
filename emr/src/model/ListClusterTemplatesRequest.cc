@@ -33,7 +33,7 @@ long ListClusterTemplatesRequest::getResourceOwnerId()const
 void ListClusterTemplatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterTemplatesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListClusterTemplatesRequest::getRegionId()const
 void ListClusterTemplatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListClusterTemplatesRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string ListClusterTemplatesRequest::getBizId()const
 void ListClusterTemplatesRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 int ListClusterTemplatesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListClusterTemplatesRequest::getPageSize()const
 void ListClusterTemplatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListClusterTemplatesRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListClusterTemplatesRequest::getPageNumber()const
 void ListClusterTemplatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterTemplatesRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListClusterTemplatesRequest::getAccessKeyId()const
 void ListClusterTemplatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

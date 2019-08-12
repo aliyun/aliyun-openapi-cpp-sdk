@@ -33,7 +33,7 @@ std::string SavePortalConfigRequest::getJsonData()const
 void SavePortalConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string SavePortalConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string SavePortalConfigRequest::getAccessKeyId()const
 void SavePortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

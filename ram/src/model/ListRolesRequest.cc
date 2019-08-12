@@ -33,7 +33,7 @@ std::string ListRolesRequest::getMarker()const
 void ListRolesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 int ListRolesRequest::getMaxItems()const
@@ -44,6 +44,6 @@ int ListRolesRequest::getMaxItems()const
 void ListRolesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", maxItems);
+	setCoreParameter("MaxItems", std::to_string(maxItems));
 }
 

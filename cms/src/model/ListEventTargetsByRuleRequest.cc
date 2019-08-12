@@ -33,6 +33,6 @@ std::string ListEventTargetsByRuleRequest::getRuleName()const
 void ListEventTargetsByRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", std::to_string(ruleName));
+	setCoreParameter("RuleName", ruleName);
 }
 

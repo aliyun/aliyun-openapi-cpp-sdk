@@ -33,7 +33,7 @@ long ReleaseClusterHostGroupRequest::getResourceOwnerId()const
 void ReleaseClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseClusterHostGroupRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ReleaseClusterHostGroupRequest::getRegionId()const
 void ReleaseClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string ReleaseClusterHostGroupRequest::getHostGroupId()const
 void ReleaseClusterHostGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getInstanceIdList()const
@@ -66,7 +66,7 @@ std::string ReleaseClusterHostGroupRequest::getInstanceIdList()const
 void ReleaseClusterHostGroupRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", std::to_string(instanceIdList));
+	setCoreParameter("InstanceIdList", instanceIdList);
 }
 
 std::string ReleaseClusterHostGroupRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ReleaseClusterHostGroupRequest::getClusterId()const
 void ReleaseClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
 void ReleaseClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

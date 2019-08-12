@@ -33,7 +33,7 @@ std::string GetTraceRequest::getTraceID()const
 void GetTraceRequest::setTraceID(const std::string& traceID)
 {
 	traceID_ = traceID;
-	setCoreParameter("TraceID", std::to_string(traceID));
+	setCoreParameter("TraceID", traceID);
 }
 
 std::string GetTraceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetTraceRequest::getRegionId()const
 void GetTraceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetTraceRequest::getAppType()const
@@ -55,6 +55,6 @@ std::string GetTraceRequest::getAppType()const
 void GetTraceRequest::setAppType(const std::string& appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", std::to_string(appType));
+	setCoreParameter("AppType", appType);
 }
 

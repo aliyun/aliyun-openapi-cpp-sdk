@@ -33,7 +33,7 @@ int StartVisualServiceRequest::getPort()const
 void StartVisualServiceRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setCoreParameter("Port", std::to_string(port));
 }
 
 std::string StartVisualServiceRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string StartVisualServiceRequest::getClusterId()const
 void StartVisualServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string StartVisualServiceRequest::getCidrIp()const
@@ -55,7 +55,7 @@ std::string StartVisualServiceRequest::getCidrIp()const
 void StartVisualServiceRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", std::to_string(cidrIp));
+	setCoreParameter("CidrIp", cidrIp);
 }
 
 std::string StartVisualServiceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string StartVisualServiceRequest::getAccessKeyId()const
 void StartVisualServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

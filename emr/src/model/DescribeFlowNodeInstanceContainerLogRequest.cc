@@ -33,7 +33,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getOffset()const
 void DescribeFlowNodeInstanceContainerLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", offset);
+	setCoreParameter("Offset", std::to_string(offset));
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getRegionId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getLogName()const
@@ -55,7 +55,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getLogName()const
 void DescribeFlowNodeInstanceContainerLogRequest::setLogName(const std::string& logName)
 {
 	logName_ = logName;
-	setCoreParameter("LogName", std::to_string(logName));
+	setCoreParameter("LogName", logName);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getAppId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 int DescribeFlowNodeInstanceContainerLogRequest::getLength()const
@@ -77,7 +77,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getLength()const
 void DescribeFlowNodeInstanceContainerLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getContainerId()const
@@ -88,7 +88,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getContainerId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setContainerId(const std::string& containerId)
 {
 	containerId_ = containerId;
-	setCoreParameter("ContainerId", std::to_string(containerId));
+	setCoreParameter("ContainerId", containerId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getNodeInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getNodeInstanceId()cons
 void DescribeFlowNodeInstanceContainerLogRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", std::to_string(nodeInstanceId));
+	setCoreParameter("NodeInstanceId", nodeInstanceId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getProjectId()const
@@ -110,6 +110,6 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getProjectId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 

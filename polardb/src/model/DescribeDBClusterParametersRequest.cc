@@ -33,7 +33,7 @@ long DescribeDBClusterParametersRequest::getResourceOwnerId()const
 void DescribeDBClusterParametersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterParametersRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBClusterParametersRequest::getResourceOwnerAccount()const
 void DescribeDBClusterParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterParametersRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeDBClusterParametersRequest::getDBClusterId()const
 void DescribeDBClusterParametersRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterParametersRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBClusterParametersRequest::getOwnerAccount()const
 void DescribeDBClusterParametersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClusterParametersRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeDBClusterParametersRequest::getOwnerId()const
 void DescribeDBClusterParametersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBClusterParametersRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDBClusterParametersRequest::getAccessKeyId()const
 void DescribeDBClusterParametersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

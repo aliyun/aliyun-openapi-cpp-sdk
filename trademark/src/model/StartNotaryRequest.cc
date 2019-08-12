@@ -33,6 +33,6 @@ long StartNotaryRequest::getNotaryOrderId()const
 void StartNotaryRequest::setNotaryOrderId(long notaryOrderId)
 {
 	notaryOrderId_ = notaryOrderId;
-	setCoreParameter("NotaryOrderId", notaryOrderId);
+	setCoreParameter("NotaryOrderId", std::to_string(notaryOrderId));
 }
 

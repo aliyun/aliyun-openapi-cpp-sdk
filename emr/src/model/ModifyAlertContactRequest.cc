@@ -33,7 +33,7 @@ std::string ModifyAlertContactRequest::getEmailVerificationCode()const
 void ModifyAlertContactRequest::setEmailVerificationCode(const std::string& emailVerificationCode)
 {
 	emailVerificationCode_ = emailVerificationCode;
-	setCoreParameter("EmailVerificationCode", std::to_string(emailVerificationCode));
+	setCoreParameter("EmailVerificationCode", emailVerificationCode);
 }
 
 long ModifyAlertContactRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyAlertContactRequest::getResourceOwnerId()const
 void ModifyAlertContactRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAlertContactRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyAlertContactRequest::getRegionId()const
 void ModifyAlertContactRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyAlertContactRequest::getPhoneNumberVerificationCode()const
@@ -66,7 +66,7 @@ std::string ModifyAlertContactRequest::getPhoneNumberVerificationCode()const
 void ModifyAlertContactRequest::setPhoneNumberVerificationCode(const std::string& phoneNumberVerificationCode)
 {
 	phoneNumberVerificationCode_ = phoneNumberVerificationCode;
-	setCoreParameter("PhoneNumberVerificationCode", std::to_string(phoneNumberVerificationCode));
+	setCoreParameter("PhoneNumberVerificationCode", phoneNumberVerificationCode);
 }
 
 std::string ModifyAlertContactRequest::getBizId()const
@@ -77,7 +77,7 @@ std::string ModifyAlertContactRequest::getBizId()const
 void ModifyAlertContactRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string ModifyAlertContactRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyAlertContactRequest::getName()const
 void ModifyAlertContactRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyAlertContactRequest::getPhoneNumber()const
@@ -99,7 +99,7 @@ std::string ModifyAlertContactRequest::getPhoneNumber()const
 void ModifyAlertContactRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", std::to_string(phoneNumber));
+	setCoreParameter("PhoneNumber", phoneNumber);
 }
 
 std::string ModifyAlertContactRequest::getEmail()const
@@ -110,7 +110,7 @@ std::string ModifyAlertContactRequest::getEmail()const
 void ModifyAlertContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", std::to_string(email));
+	setCoreParameter("Email", email);
 }
 
 std::string ModifyAlertContactRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyAlertContactRequest::getAccessKeyId()const
 void ModifyAlertContactRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

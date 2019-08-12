@@ -33,7 +33,7 @@ std::string CreateKeyRequest::getProtectionLevel()const
 void CreateKeyRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", std::to_string(protectionLevel));
+	setCoreParameter("ProtectionLevel", protectionLevel);
 }
 
 std::string CreateKeyRequest::getKeyUsage()const
@@ -44,7 +44,7 @@ std::string CreateKeyRequest::getKeyUsage()const
 void CreateKeyRequest::setKeyUsage(const std::string& keyUsage)
 {
 	keyUsage_ = keyUsage;
-	setCoreParameter("KeyUsage", std::to_string(keyUsage));
+	setCoreParameter("KeyUsage", keyUsage);
 }
 
 std::string CreateKeyRequest::getOrigin()const
@@ -55,7 +55,7 @@ std::string CreateKeyRequest::getOrigin()const
 void CreateKeyRequest::setOrigin(const std::string& origin)
 {
 	origin_ = origin;
-	setCoreParameter("Origin", std::to_string(origin));
+	setCoreParameter("Origin", origin);
 }
 
 std::string CreateKeyRequest::getDescription()const
@@ -66,6 +66,6 @@ std::string CreateKeyRequest::getDescription()const
 void CreateKeyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 

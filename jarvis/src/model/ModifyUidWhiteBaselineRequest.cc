@@ -33,7 +33,7 @@ long ModifyUidWhiteBaselineRequest::getResourceOwnerId()const
 void ModifyUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyUidWhiteBaselineRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyUidWhiteBaselineRequest::getSourceIp()const
 void ModifyUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyUidWhiteBaselineRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string ModifyUidWhiteBaselineRequest::getRemark()const
 void ModifyUidWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 int ModifyUidWhiteBaselineRequest::getId()const
@@ -66,7 +66,7 @@ int ModifyUidWhiteBaselineRequest::getId()const
 void ModifyUidWhiteBaselineRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyUidWhiteBaselineRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ModifyUidWhiteBaselineRequest::getLang()const
 void ModifyUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long ModifyUidWhiteBaselineRequest::getSrcUid()const
@@ -88,7 +88,7 @@ long ModifyUidWhiteBaselineRequest::getSrcUid()const
 void ModifyUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string ModifyUidWhiteBaselineRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string ModifyUidWhiteBaselineRequest::getSourceCode()const
 void ModifyUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

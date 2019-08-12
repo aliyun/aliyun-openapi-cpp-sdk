@@ -33,7 +33,7 @@ int ListImageJobsRequest::getMaxKeys()const
 void ListImageJobsRequest::setMaxKeys(int maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", maxKeys);
+	setCoreParameter("MaxKeys", std::to_string(maxKeys));
 }
 
 std::string ListImageJobsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListImageJobsRequest::getRegionId()const
 void ListImageJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListImageJobsRequest::getMarker()const
@@ -55,7 +55,7 @@ std::string ListImageJobsRequest::getMarker()const
 void ListImageJobsRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListImageJobsRequest::getProject()const
@@ -66,7 +66,7 @@ std::string ListImageJobsRequest::getProject()const
 void ListImageJobsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string ListImageJobsRequest::getJobType()const
@@ -77,7 +77,7 @@ std::string ListImageJobsRequest::getJobType()const
 void ListImageJobsRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", std::to_string(jobType));
+	setCoreParameter("JobType", jobType);
 }
 
 std::string ListImageJobsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListImageJobsRequest::getAccessKeyId()const
 void ListImageJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

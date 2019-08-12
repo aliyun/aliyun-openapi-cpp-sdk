@@ -33,7 +33,7 @@ std::string DeleteSearchConditionRequest::getSourceIp()const
 void DeleteSearchConditionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteSearchConditionRequest::getName()const
@@ -44,6 +44,6 @@ std::string DeleteSearchConditionRequest::getName()const
 void DeleteSearchConditionRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

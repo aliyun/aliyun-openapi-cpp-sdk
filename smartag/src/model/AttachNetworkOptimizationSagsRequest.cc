@@ -33,7 +33,7 @@ long AttachNetworkOptimizationSagsRequest::getResourceOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
 void AttachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AttachNetworkOptimizationSagsRequest::getRegionId()const
 void AttachNetworkOptimizationSagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string AttachNetworkOptimizationSagsRequest::getNetworkOptId()const
 void AttachNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
+	setCoreParameter("NetworkOptId", networkOptId);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AttachNetworkOptimizationSagsRequest::getOwnerAccount()const
 void AttachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<std::string> AttachNetworkOptimizationSagsRequest::getSmartAGIds()const
@@ -89,7 +89,7 @@ void AttachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::
 {
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), std::to_string(smartAGIds.at(i)));
+		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
 }
 
 long AttachNetworkOptimizationSagsRequest::getOwnerId()const
@@ -100,6 +100,6 @@ long AttachNetworkOptimizationSagsRequest::getOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

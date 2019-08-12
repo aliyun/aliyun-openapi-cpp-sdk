@@ -33,7 +33,7 @@ std::string DeleteRepoBuildRuleRequest::getRepoNamespace()const
 void DeleteRepoBuildRuleRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", std::to_string(repoNamespace));
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoBuildRuleRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string DeleteRepoBuildRuleRequest::getRepoName()const
 void DeleteRepoBuildRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", std::to_string(repoName));
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string DeleteRepoBuildRuleRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteRepoBuildRuleRequest::getRegionId()const
 void DeleteRepoBuildRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteRepoBuildRuleRequest::getBuildRuleId()const
@@ -66,6 +66,6 @@ long DeleteRepoBuildRuleRequest::getBuildRuleId()const
 void DeleteRepoBuildRuleRequest::setBuildRuleId(long buildRuleId)
 {
 	buildRuleId_ = buildRuleId;
-	setCoreParameter("BuildRuleId", buildRuleId);
+	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
 }
 

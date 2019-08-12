@@ -33,7 +33,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getAccessPointId()const
 void CreatePhysicalConnectionSetupOrderRequest::setAccessPointId(const std::string& accessPointId)
 {
 	accessPointId_ = accessPointId;
-	setCoreParameter("AccessPointId", std::to_string(accessPointId));
+	setCoreParameter("AccessPointId", accessPointId);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getRedundantPhysicalConnectionId()const
@@ -44,7 +44,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getRedundantPhysicalConne
 void CreatePhysicalConnectionSetupOrderRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
 {
 	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
-	setCoreParameter("RedundantPhysicalConnectionId", std::to_string(redundantPhysicalConnectionId));
+	setCoreParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
 }
 
 long CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerId()const
 void CreatePhysicalConnectionSetupOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getPortType()const
@@ -66,7 +66,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getPortType()const
 void CreatePhysicalConnectionSetupOrderRequest::setPortType(const std::string& portType)
 {
 	portType_ = portType;
-	setCoreParameter("PortType", std::to_string(portType));
+	setCoreParameter("PortType", portType);
 }
 
 bool CreatePhysicalConnectionSetupOrderRequest::getAutoPay()const
@@ -88,7 +88,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getRegionId()const
 void CreatePhysicalConnectionSetupOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getClientToken()const
@@ -99,7 +99,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getClientToken()const
 void CreatePhysicalConnectionSetupOrderRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerAccount()const
@@ -110,7 +110,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getResourceOwnerAccount()
 void CreatePhysicalConnectionSetupOrderRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getOwnerAccount()const
 void CreatePhysicalConnectionSetupOrderRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreatePhysicalConnectionSetupOrderRequest::getOwnerId()const
@@ -132,7 +132,7 @@ long CreatePhysicalConnectionSetupOrderRequest::getOwnerId()const
 void CreatePhysicalConnectionSetupOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreatePhysicalConnectionSetupOrderRequest::getLineOperator()const
@@ -143,6 +143,6 @@ std::string CreatePhysicalConnectionSetupOrderRequest::getLineOperator()const
 void CreatePhysicalConnectionSetupOrderRequest::setLineOperator(const std::string& lineOperator)
 {
 	lineOperator_ = lineOperator;
-	setCoreParameter("LineOperator", std::to_string(lineOperator));
+	setCoreParameter("LineOperator", lineOperator);
 }
 

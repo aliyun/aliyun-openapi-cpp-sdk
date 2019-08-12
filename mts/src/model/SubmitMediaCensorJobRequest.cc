@@ -33,7 +33,7 @@ long SubmitMediaCensorJobRequest::getResourceOwnerId()const
 void SubmitMediaCensorJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMediaCensorJobRequest::getCoverImages()const
@@ -44,7 +44,7 @@ std::string SubmitMediaCensorJobRequest::getCoverImages()const
 void SubmitMediaCensorJobRequest::setCoverImages(const std::string& coverImages)
 {
 	coverImages_ = coverImages;
-	setCoreParameter("CoverImages", std::to_string(coverImages));
+	setCoreParameter("CoverImages", coverImages);
 }
 
 std::string SubmitMediaCensorJobRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SubmitMediaCensorJobRequest::getResourceOwnerAccount()const
 void SubmitMediaCensorJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMediaCensorJobRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitMediaCensorJobRequest::getOwnerAccount()const
 void SubmitMediaCensorJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitMediaCensorJobRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string SubmitMediaCensorJobRequest::getDescription()const
 void SubmitMediaCensorJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long SubmitMediaCensorJobRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SubmitMediaCensorJobRequest::getOwnerId()const
 void SubmitMediaCensorJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMediaCensorJobRequest::getTitle()const
@@ -99,7 +99,7 @@ std::string SubmitMediaCensorJobRequest::getTitle()const
 void SubmitMediaCensorJobRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string SubmitMediaCensorJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitMediaCensorJobRequest::getAccessKeyId()const
 void SubmitMediaCensorJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMediaCensorJobRequest::getPipelineId()const
@@ -121,7 +121,7 @@ std::string SubmitMediaCensorJobRequest::getPipelineId()const
 void SubmitMediaCensorJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitMediaCensorJobRequest::getVideoCensorConfig()const
@@ -132,7 +132,7 @@ std::string SubmitMediaCensorJobRequest::getVideoCensorConfig()const
 void SubmitMediaCensorJobRequest::setVideoCensorConfig(const std::string& videoCensorConfig)
 {
 	videoCensorConfig_ = videoCensorConfig;
-	setCoreParameter("VideoCensorConfig", std::to_string(videoCensorConfig));
+	setCoreParameter("VideoCensorConfig", videoCensorConfig);
 }
 
 std::string SubmitMediaCensorJobRequest::getInput()const
@@ -143,7 +143,7 @@ std::string SubmitMediaCensorJobRequest::getInput()const
 void SubmitMediaCensorJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitMediaCensorJobRequest::getUserData()const
@@ -154,7 +154,7 @@ std::string SubmitMediaCensorJobRequest::getUserData()const
 void SubmitMediaCensorJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 std::string SubmitMediaCensorJobRequest::getBarrages()const
@@ -165,6 +165,6 @@ std::string SubmitMediaCensorJobRequest::getBarrages()const
 void SubmitMediaCensorJobRequest::setBarrages(const std::string& barrages)
 {
 	barrages_ = barrages;
-	setCoreParameter("Barrages", std::to_string(barrages));
+	setCoreParameter("Barrages", barrages);
 }
 

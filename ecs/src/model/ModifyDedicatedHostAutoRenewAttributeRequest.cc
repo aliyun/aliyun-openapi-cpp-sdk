@@ -33,7 +33,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getSourceRegionId()con
 void ModifyDedicatedHostAutoRenewAttributeRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
@@ -44,7 +44,7 @@ int ModifyDedicatedHostAutoRenewAttributeRequest::getDuration()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getDedicatedHostIds()const
@@ -55,7 +55,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getDedicatedHostIds()c
 void ModifyDedicatedHostAutoRenewAttributeRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
 {
 	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", std::to_string(dedicatedHostIds));
+	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
 long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerId()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
@@ -77,7 +77,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getPeriodUnit()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", std::to_string(periodUnit));
+	setCoreParameter("PeriodUnit", periodUnit);
 }
 
 bool ModifyDedicatedHostAutoRenewAttributeRequest::getAutoRenew()const
@@ -99,7 +99,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getResourceOwnerAccoun
 void ModifyDedicatedHostAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRegionId()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerAccount()const
@@ -121,7 +121,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerAccount()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRenewalStatus()const
@@ -132,7 +132,7 @@ std::string ModifyDedicatedHostAutoRenewAttributeRequest::getRenewalStatus()cons
 void ModifyDedicatedHostAutoRenewAttributeRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", std::to_string(renewalStatus));
+	setCoreParameter("RenewalStatus", renewalStatus);
 }
 
 long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
@@ -143,6 +143,6 @@ long ModifyDedicatedHostAutoRenewAttributeRequest::getOwnerId()const
 void ModifyDedicatedHostAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ long QueryDevicesByAccountRequest::getAppKey()const
 void QueryDevicesByAccountRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDevicesByAccountRequest::getAccount()const
@@ -44,7 +44,7 @@ std::string QueryDevicesByAccountRequest::getAccount()const
 void QueryDevicesByAccountRequest::setAccount(const std::string& account)
 {
 	account_ = account;
-	setCoreParameter("Account", std::to_string(account));
+	setCoreParameter("Account", account);
 }
 
 std::string QueryDevicesByAccountRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string QueryDevicesByAccountRequest::getAccessKeyId()const
 void QueryDevicesByAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

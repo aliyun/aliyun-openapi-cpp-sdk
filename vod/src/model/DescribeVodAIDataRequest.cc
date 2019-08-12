@@ -33,7 +33,7 @@ long DescribeVodAIDataRequest::getResourceOwnerId()const
 void DescribeVodAIDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeVodAIDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeVodAIDataRequest::getCallerParentId()const
 void DescribeVodAIDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeVodAIDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeVodAIDataRequest::getStartTime()const
 void DescribeVodAIDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeVodAIDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeVodAIDataRequest::getProxy_original_source_ip()const
 void DescribeVodAIDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeVodAIDataRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeVodAIDataRequest::getOwnerIdLoginEmail()const
 void DescribeVodAIDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeVodAIDataRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeVodAIDataRequest::getCallerType()const
 void DescribeVodAIDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeVodAIDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeVodAIDataRequest::getAccessKeyId()const
 void DescribeVodAIDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVodAIDataRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeVodAIDataRequest::getSecurityToken()const
 void DescribeVodAIDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodAIDataRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeVodAIDataRequest::getRegionId()const
 void DescribeVodAIDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVodAIDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeVodAIDataRequest::getRequestContent()const
 void DescribeVodAIDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeVodAIDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeVodAIDataRequest::getCallerBidEmail()const
 void DescribeVodAIDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeVodAIDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeVodAIDataRequest::getCallerUidEmail()const
 void DescribeVodAIDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeVodAIDataRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeVodAIDataRequest::getCallerUid()const
 void DescribeVodAIDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeVodAIDataRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribeVodAIDataRequest::getApp_ip()const
 void DescribeVodAIDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeVodAIDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeVodAIDataRequest::getPopProduct()const
 void DescribeVodAIDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeVodAIDataRequest::getAIType()const
@@ -209,7 +209,7 @@ std::string DescribeVodAIDataRequest::getAIType()const
 void DescribeVodAIDataRequest::setAIType(const std::string& aIType)
 {
 	aIType_ = aIType;
-	setCoreParameter("AIType", std::to_string(aIType));
+	setCoreParameter("AIType", aIType);
 }
 
 std::string DescribeVodAIDataRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeVodAIDataRequest::getEndTime()const
 void DescribeVodAIDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeVodAIDataRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeVodAIDataRequest::getCallerBid()const
 void DescribeVodAIDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeVodAIDataRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeVodAIDataRequest::getOwnerId()const
 void DescribeVodAIDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodAIDataRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeVodAIDataRequest::getVersion()const
 void DescribeVodAIDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeVodAIDataRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DescribeVodAIDataRequest::getServiceCode()const
 void DescribeVodAIDataRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodAIDataRequest::getRequestId()const
@@ -308,7 +308,7 @@ std::string DescribeVodAIDataRequest::getRequestId()const
 void DescribeVodAIDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeVodAIDataRequest::getRegion()const
@@ -319,6 +319,6 @@ std::string DescribeVodAIDataRequest::getRegion()const
 void DescribeVodAIDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 

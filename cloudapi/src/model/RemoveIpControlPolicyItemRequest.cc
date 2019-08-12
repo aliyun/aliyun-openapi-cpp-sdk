@@ -33,7 +33,7 @@ std::string RemoveIpControlPolicyItemRequest::getIpControlId()const
 void RemoveIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string RemoveIpControlPolicyItemRequest::getSecurityToken()const
 void RemoveIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string RemoveIpControlPolicyItemRequest::getAccessKeyId()const
 void RemoveIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getPolicyItemIds()const
@@ -66,6 +66,6 @@ std::string RemoveIpControlPolicyItemRequest::getPolicyItemIds()const
 void RemoveIpControlPolicyItemRequest::setPolicyItemIds(const std::string& policyItemIds)
 {
 	policyItemIds_ = policyItemIds;
-	setCoreParameter("PolicyItemIds", std::to_string(policyItemIds));
+	setCoreParameter("PolicyItemIds", policyItemIds);
 }
 

@@ -33,7 +33,7 @@ std::string SaveApScanConfigRequest::getJsonData()const
 void SaveApScanConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 long SaveApScanConfigRequest::getApConfigId()const
@@ -44,7 +44,7 @@ long SaveApScanConfigRequest::getApConfigId()const
 void SaveApScanConfigRequest::setApConfigId(long apConfigId)
 {
 	apConfigId_ = apConfigId;
-	setCoreParameter("ApConfigId", apConfigId);
+	setCoreParameter("ApConfigId", std::to_string(apConfigId));
 }
 
 std::string SaveApScanConfigRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string SaveApScanConfigRequest::getAccessKeyId()const
 void SaveApScanConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

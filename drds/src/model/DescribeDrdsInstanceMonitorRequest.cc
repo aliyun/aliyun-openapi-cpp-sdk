@@ -33,7 +33,7 @@ long DescribeDrdsInstanceMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeDrdsInstanceMonitorRequest::getStartTime()const
@@ -44,7 +44,7 @@ long DescribeDrdsInstanceMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getKey()const
@@ -66,7 +66,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getKey()const
 void DescribeDrdsInstanceMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const
@@ -88,6 +88,6 @@ int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const
 void DescribeDrdsInstanceMonitorRequest::setPeriodMultiple(int periodMultiple)
 {
 	periodMultiple_ = periodMultiple;
-	setCoreParameter("PeriodMultiple", periodMultiple);
+	setCoreParameter("PeriodMultiple", std::to_string(periodMultiple));
 }
 

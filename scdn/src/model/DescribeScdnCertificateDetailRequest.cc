@@ -33,7 +33,7 @@ std::string DescribeScdnCertificateDetailRequest::getSecurityToken()const
 void DescribeScdnCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnCertificateDetailRequest::getCertName()const
@@ -44,7 +44,7 @@ std::string DescribeScdnCertificateDetailRequest::getCertName()const
 void DescribeScdnCertificateDetailRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", std::to_string(certName));
+	setCoreParameter("CertName", certName);
 }
 
 long DescribeScdnCertificateDetailRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeScdnCertificateDetailRequest::getOwnerId()const
 void DescribeScdnCertificateDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ long QueryMediaListRequest::getResourceOwnerId()const
 void QueryMediaListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool QueryMediaListRequest::getIncludeSummaryList()const
@@ -55,7 +55,7 @@ std::string QueryMediaListRequest::getResourceOwnerAccount()const
 void QueryMediaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool QueryMediaListRequest::getIncludeSnapshotList()const
@@ -77,7 +77,7 @@ std::string QueryMediaListRequest::getOwnerAccount()const
 void QueryMediaListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string QueryMediaListRequest::getMediaIds()const
@@ -88,7 +88,7 @@ std::string QueryMediaListRequest::getMediaIds()const
 void QueryMediaListRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", std::to_string(mediaIds));
+	setCoreParameter("MediaIds", mediaIds);
 }
 
 long QueryMediaListRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long QueryMediaListRequest::getOwnerId()const
 void QueryMediaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool QueryMediaListRequest::getIncludePlayList()const
@@ -121,7 +121,7 @@ std::string QueryMediaListRequest::getAccessKeyId()const
 void QueryMediaListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool QueryMediaListRequest::getIncludeMediaInfo()const

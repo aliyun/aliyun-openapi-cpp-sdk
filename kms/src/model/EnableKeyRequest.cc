@@ -33,6 +33,6 @@ std::string EnableKeyRequest::getKeyId()const
 void EnableKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", std::to_string(keyId));
+	setCoreParameter("KeyId", keyId);
 }
 

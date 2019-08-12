@@ -45,7 +45,7 @@ void CancelPredictiveJobsRequest::setJobId(const std::vector<std::string>& jobId
 {
 	jobId_ = jobId;
 	for(int i = 0; i!= jobId.size(); i++)
-		setCoreParameter("JobId."+ std::to_string(i), std::to_string(jobId.at(i)));
+		setCoreParameter("JobId."+ std::to_string(i), jobId.at(i));
 }
 
 std::string CancelPredictiveJobsRequest::getInstanceId()const
@@ -56,7 +56,7 @@ std::string CancelPredictiveJobsRequest::getInstanceId()const
 void CancelPredictiveJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CancelPredictiveJobsRequest::getJobGroupId()const
@@ -67,6 +67,6 @@ std::string CancelPredictiveJobsRequest::getJobGroupId()const
 void CancelPredictiveJobsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 

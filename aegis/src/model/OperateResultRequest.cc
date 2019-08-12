@@ -33,7 +33,7 @@ std::string OperateResultRequest::getSourceIp()const
 void OperateResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateResultRequest::getIds()const
@@ -44,7 +44,7 @@ std::string OperateResultRequest::getIds()const
 void OperateResultRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", std::to_string(ids));
+	setCoreParameter("Ids", ids);
 }
 
 long OperateResultRequest::getStatus()const
@@ -55,6 +55,6 @@ long OperateResultRequest::getStatus()const
 void OperateResultRequest::setStatus(long status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeAttackedIpRequest::getSourceIp()const
 void DescribeAttackedIpRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAttackedIpRequest::getServerIpList()const
@@ -44,7 +44,7 @@ std::string DescribeAttackedIpRequest::getServerIpList()const
 void DescribeAttackedIpRequest::setServerIpList(const std::string& serverIpList)
 {
 	serverIpList_ = serverIpList;
-	setCoreParameter("ServerIpList", std::to_string(serverIpList));
+	setCoreParameter("ServerIpList", serverIpList);
 }
 
 int DescribeAttackedIpRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAttackedIpRequest::getPageSize()const
 void DescribeAttackedIpRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeAttackedIpRequest::getEndTime()const
@@ -66,7 +66,7 @@ int DescribeAttackedIpRequest::getEndTime()const
 void DescribeAttackedIpRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeAttackedIpRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeAttackedIpRequest::getCurrentPage()const
 void DescribeAttackedIpRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeAttackedIpRequest::getStartTime()const
@@ -88,7 +88,7 @@ int DescribeAttackedIpRequest::getStartTime()const
 void DescribeAttackedIpRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeAttackedIpRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeAttackedIpRequest::getLang()const
 void DescribeAttackedIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAttackedIpRequest::getRegion()const
@@ -110,7 +110,7 @@ std::string DescribeAttackedIpRequest::getRegion()const
 void DescribeAttackedIpRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 std::string DescribeAttackedIpRequest::getProductType()const
@@ -121,6 +121,6 @@ std::string DescribeAttackedIpRequest::getProductType()const
 void DescribeAttackedIpRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 

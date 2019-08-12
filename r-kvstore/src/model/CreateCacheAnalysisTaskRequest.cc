@@ -33,7 +33,7 @@ long CreateCacheAnalysisTaskRequest::getResourceOwnerId()const
 void CreateCacheAnalysisTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string CreateCacheAnalysisTaskRequest::getInstanceId()const
 void CreateCacheAnalysisTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateCacheAnalysisTaskRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string CreateCacheAnalysisTaskRequest::getSecurityToken()const
 void CreateCacheAnalysisTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateCacheAnalysisTaskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateCacheAnalysisTaskRequest::getResourceOwnerAccount()const
 void CreateCacheAnalysisTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCacheAnalysisTaskRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateCacheAnalysisTaskRequest::getRegionId()const
 void CreateCacheAnalysisTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateCacheAnalysisTaskRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateCacheAnalysisTaskRequest::getOwnerAccount()const
 void CreateCacheAnalysisTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateCacheAnalysisTaskRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateCacheAnalysisTaskRequest::getOwnerId()const
 void CreateCacheAnalysisTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCacheAnalysisTaskRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateCacheAnalysisTaskRequest::getAccessKeyId()const
 void CreateCacheAnalysisTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

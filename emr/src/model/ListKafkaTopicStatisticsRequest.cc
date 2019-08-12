@@ -33,7 +33,7 @@ long ListKafkaTopicStatisticsRequest::getResourceOwnerId()const
 void ListKafkaTopicStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ListKafkaTopicStatisticsRequest::getActiveOnly()const
@@ -55,7 +55,7 @@ std::string ListKafkaTopicStatisticsRequest::getRegionId()const
 void ListKafkaTopicStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListKafkaTopicStatisticsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListKafkaTopicStatisticsRequest::getPageSize()const
 void ListKafkaTopicStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListKafkaTopicStatisticsRequest::getDataSourceId()const
@@ -77,7 +77,7 @@ std::string ListKafkaTopicStatisticsRequest::getDataSourceId()const
 void ListKafkaTopicStatisticsRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getTopicName()const
@@ -88,7 +88,7 @@ std::string ListKafkaTopicStatisticsRequest::getTopicName()const
 void ListKafkaTopicStatisticsRequest::setTopicName(const std::string& topicName)
 {
 	topicName_ = topicName;
-	setCoreParameter("TopicName", std::to_string(topicName));
+	setCoreParameter("TopicName", topicName);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string ListKafkaTopicStatisticsRequest::getClusterId()const
 void ListKafkaTopicStatisticsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListKafkaTopicStatisticsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListKafkaTopicStatisticsRequest::getPageNumber()const
 void ListKafkaTopicStatisticsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListKafkaTopicStatisticsRequest::getFuzzyTopicName()const
@@ -121,7 +121,7 @@ std::string ListKafkaTopicStatisticsRequest::getFuzzyTopicName()const
 void ListKafkaTopicStatisticsRequest::setFuzzyTopicName(const std::string& fuzzyTopicName)
 {
 	fuzzyTopicName_ = fuzzyTopicName;
-	setCoreParameter("FuzzyTopicName", std::to_string(fuzzyTopicName));
+	setCoreParameter("FuzzyTopicName", fuzzyTopicName);
 }
 
 std::string ListKafkaTopicStatisticsRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListKafkaTopicStatisticsRequest::getAccessKeyId()const
 void ListKafkaTopicStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

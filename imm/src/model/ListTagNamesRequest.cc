@@ -33,7 +33,7 @@ std::string ListTagNamesRequest::getRegionId()const
 void ListTagNamesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListTagNamesRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string ListTagNamesRequest::getMarker()const
 void ListTagNamesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListTagNamesRequest::getProject()const
@@ -55,7 +55,7 @@ std::string ListTagNamesRequest::getProject()const
 void ListTagNamesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string ListTagNamesRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string ListTagNamesRequest::getSetId()const
 void ListTagNamesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string ListTagNamesRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListTagNamesRequest::getAccessKeyId()const
 void ListTagNamesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

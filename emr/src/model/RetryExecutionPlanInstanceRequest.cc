@@ -33,7 +33,7 @@ long RetryExecutionPlanInstanceRequest::getResourceOwnerId()const
 void RetryExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RetryExecutionPlanInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RetryExecutionPlanInstanceRequest::getRegionId()const
 void RetryExecutionPlanInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getArguments()const
@@ -55,7 +55,7 @@ std::string RetryExecutionPlanInstanceRequest::getArguments()const
 void RetryExecutionPlanInstanceRequest::setArguments(const std::string& arguments)
 {
 	arguments_ = arguments;
-	setCoreParameter("Arguments", std::to_string(arguments));
+	setCoreParameter("Arguments", arguments);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getId()const
@@ -66,7 +66,7 @@ std::string RetryExecutionPlanInstanceRequest::getId()const
 void RetryExecutionPlanInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 bool RetryExecutionPlanInstanceRequest::getRerunFail()const
@@ -88,6 +88,6 @@ std::string RetryExecutionPlanInstanceRequest::getAccessKeyId()const
 void RetryExecutionPlanInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

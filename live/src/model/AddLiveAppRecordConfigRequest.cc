@@ -33,7 +33,7 @@ std::string AddLiveAppRecordConfigRequest::getOssBucket()const
 void AddLiveAppRecordConfigRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", std::to_string(ossBucket));
+	setCoreParameter("OssBucket", ossBucket);
 }
 
 std::string AddLiveAppRecordConfigRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string AddLiveAppRecordConfigRequest::getAppName()const
 void AddLiveAppRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
 void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::vector<AddLiveAppRecordConfigRequest::RecordFormat> AddLiveAppRecordConfigRequest::getRecordFormat()const
@@ -70,10 +70,10 @@ void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordForm
 	for(int i = 0; i!= recordFormat.size(); i++)	{
 		auto obj = recordFormat.at(i);
 		std::string str ="RecordFormat."+ std::to_string(i);
-		setCoreParameter(str + ".SliceOssObjectPrefix", std::to_string(obj.sliceOssObjectPrefix));
-		setCoreParameter(str + ".Format", std::to_string(obj.format));
-		setCoreParameter(str + ".OssObjectPrefix", std::to_string(obj.ossObjectPrefix));
-		setCoreParameter(str + ".CycleDuration", obj.cycleDuration);
+		setCoreParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
+		setCoreParameter(str + ".Format", obj.format);
+		setCoreParameter(str + ".OssObjectPrefix", obj.ossObjectPrefix);
+		setCoreParameter(str + ".CycleDuration", std::to_string(obj.cycleDuration));
 	}
 }
 
@@ -85,7 +85,7 @@ std::string AddLiveAppRecordConfigRequest::getDomainName()const
 void AddLiveAppRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddLiveAppRecordConfigRequest::getOssEndpoint()const
@@ -96,7 +96,7 @@ std::string AddLiveAppRecordConfigRequest::getOssEndpoint()const
 void AddLiveAppRecordConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", std::to_string(ossEndpoint));
+	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string AddLiveAppRecordConfigRequest::getEndTime()const
@@ -107,7 +107,7 @@ std::string AddLiveAppRecordConfigRequest::getEndTime()const
 void AddLiveAppRecordConfigRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string AddLiveAppRecordConfigRequest::getStartTime()const
@@ -118,7 +118,7 @@ std::string AddLiveAppRecordConfigRequest::getStartTime()const
 void AddLiveAppRecordConfigRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long AddLiveAppRecordConfigRequest::getOwnerId()const
@@ -129,7 +129,7 @@ long AddLiveAppRecordConfigRequest::getOwnerId()const
 void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddLiveAppRecordConfigRequest::getOnDemand()const
@@ -140,7 +140,7 @@ int AddLiveAppRecordConfigRequest::getOnDemand()const
 void AddLiveAppRecordConfigRequest::setOnDemand(int onDemand)
 {
 	onDemand_ = onDemand;
-	setCoreParameter("OnDemand", onDemand);
+	setCoreParameter("OnDemand", std::to_string(onDemand));
 }
 
 std::string AddLiveAppRecordConfigRequest::getStreamName()const
@@ -151,6 +151,6 @@ std::string AddLiveAppRecordConfigRequest::getStreamName()const
 void AddLiveAppRecordConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 

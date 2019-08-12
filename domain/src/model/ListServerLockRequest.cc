@@ -33,7 +33,7 @@ std::string ListServerLockRequest::getLockProductId()const
 void ListServerLockRequest::setLockProductId(const std::string& lockProductId)
 {
 	lockProductId_ = lockProductId;
-	setCoreParameter("LockProductId", std::to_string(lockProductId));
+	setCoreParameter("LockProductId", lockProductId);
 }
 
 long ListServerLockRequest::getEndStartDate()const
@@ -44,7 +44,7 @@ long ListServerLockRequest::getEndStartDate()const
 void ListServerLockRequest::setEndStartDate(long endStartDate)
 {
 	endStartDate_ = endStartDate;
-	setCoreParameter("EndStartDate", endStartDate);
+	setCoreParameter("EndStartDate", std::to_string(endStartDate));
 }
 
 int ListServerLockRequest::getServerLockStatus()const
@@ -55,7 +55,7 @@ int ListServerLockRequest::getServerLockStatus()const
 void ListServerLockRequest::setServerLockStatus(int serverLockStatus)
 {
 	serverLockStatus_ = serverLockStatus;
-	setCoreParameter("ServerLockStatus", serverLockStatus);
+	setCoreParameter("ServerLockStatus", std::to_string(serverLockStatus));
 }
 
 long ListServerLockRequest::getStartExpireDate()const
@@ -66,7 +66,7 @@ long ListServerLockRequest::getStartExpireDate()const
 void ListServerLockRequest::setStartExpireDate(long startExpireDate)
 {
 	startExpireDate_ = startExpireDate;
-	setCoreParameter("StartExpireDate", startExpireDate);
+	setCoreParameter("StartExpireDate", std::to_string(startExpireDate));
 }
 
 std::string ListServerLockRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string ListServerLockRequest::getDomainName()const
 void ListServerLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 int ListServerLockRequest::getPageSize()const
@@ -88,7 +88,7 @@ int ListServerLockRequest::getPageSize()const
 void ListServerLockRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListServerLockRequest::getUserClientIp()const
@@ -99,7 +99,7 @@ std::string ListServerLockRequest::getUserClientIp()const
 void ListServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long ListServerLockRequest::getEndExpireDate()const
@@ -110,7 +110,7 @@ long ListServerLockRequest::getEndExpireDate()const
 void ListServerLockRequest::setEndExpireDate(long endExpireDate)
 {
 	endExpireDate_ = endExpireDate;
-	setCoreParameter("EndExpireDate", endExpireDate);
+	setCoreParameter("EndExpireDate", std::to_string(endExpireDate));
 }
 
 int ListServerLockRequest::getPageNum()const
@@ -121,7 +121,7 @@ int ListServerLockRequest::getPageNum()const
 void ListServerLockRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string ListServerLockRequest::getLang()const
@@ -132,7 +132,7 @@ std::string ListServerLockRequest::getLang()const
 void ListServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long ListServerLockRequest::getBeginStartDate()const
@@ -143,6 +143,6 @@ long ListServerLockRequest::getBeginStartDate()const
 void ListServerLockRequest::setBeginStartDate(long beginStartDate)
 {
 	beginStartDate_ = beginStartDate;
-	setCoreParameter("BeginStartDate", beginStartDate);
+	setCoreParameter("BeginStartDate", std::to_string(beginStartDate));
 }
 

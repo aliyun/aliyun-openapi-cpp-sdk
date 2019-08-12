@@ -33,7 +33,7 @@ int DescribeDataAssetsRequest::getRangeId()const
 void DescribeDataAssetsRequest::setRangeId(int rangeId)
 {
 	rangeId_ = rangeId;
-	setCoreParameter("RangeId", rangeId);
+	setCoreParameter("RangeId", std::to_string(rangeId));
 }
 
 std::string DescribeDataAssetsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeDataAssetsRequest::getSourceIp()const
 void DescribeDataAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataAssetsRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int DescribeDataAssetsRequest::getFeatureType()const
 void DescribeDataAssetsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeDataAssetsRequest::getRiskLevels()const
@@ -66,7 +66,7 @@ std::string DescribeDataAssetsRequest::getRiskLevels()const
 void DescribeDataAssetsRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", std::to_string(riskLevels));
+	setCoreParameter("RiskLevels", riskLevels);
 }
 
 std::string DescribeDataAssetsRequest::getName()const
@@ -77,7 +77,7 @@ std::string DescribeDataAssetsRequest::getName()const
 void DescribeDataAssetsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeDataAssetsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeDataAssetsRequest::getPageSize()const
 void DescribeDataAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeDataAssetsRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ int DescribeDataAssetsRequest::getCurrentPage()const
 void DescribeDataAssetsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataAssetsRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeDataAssetsRequest::getLang()const
 void DescribeDataAssetsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDataAssetsRequest::getRuleId()const
@@ -121,6 +121,6 @@ long DescribeDataAssetsRequest::getRuleId()const
 void DescribeDataAssetsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 

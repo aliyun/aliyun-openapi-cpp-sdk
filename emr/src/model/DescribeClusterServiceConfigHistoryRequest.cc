@@ -33,7 +33,7 @@ long DescribeClusterServiceConfigHistoryRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterServiceConfigHistoryRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeClusterServiceConfigHistoryRequest::getRegionId()const
 void DescribeClusterServiceConfigHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterServiceConfigHistoryRequest::getServiceName()const
@@ -55,7 +55,7 @@ std::string DescribeClusterServiceConfigHistoryRequest::getServiceName()const
 void DescribeClusterServiceConfigHistoryRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string DescribeClusterServiceConfigHistoryRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string DescribeClusterServiceConfigHistoryRequest::getClusterId()const
 void DescribeClusterServiceConfigHistoryRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterServiceConfigHistoryRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribeClusterServiceConfigHistoryRequest::getAccessKeyId()const
 void DescribeClusterServiceConfigHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterServiceConfigHistoryRequest::getConfigVersion()const
@@ -88,6 +88,6 @@ std::string DescribeClusterServiceConfigHistoryRequest::getConfigVersion()const
 void DescribeClusterServiceConfigHistoryRequest::setConfigVersion(const std::string& configVersion)
 {
 	configVersion_ = configVersion;
-	setCoreParameter("ConfigVersion", std::to_string(configVersion));
+	setCoreParameter("ConfigVersion", configVersion);
 }
 

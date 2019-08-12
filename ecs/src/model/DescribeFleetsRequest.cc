@@ -33,7 +33,7 @@ long DescribeFleetsRequest::getResourceOwnerId()const
 void DescribeFleetsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeFleetsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeFleetsRequest::getCallerParentId()const
 void DescribeFleetsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeFleetsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeFleetsRequest::getProxy_original_source_ip()const
 void DescribeFleetsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeFleetsRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeFleetsRequest::getOwnerIdLoginEmail()const
 void DescribeFleetsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeFleetsRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeFleetsRequest::getCallerType()const
 void DescribeFleetsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 int DescribeFleetsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeFleetsRequest::getPageNumber()const
 void DescribeFleetsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeFleetsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeFleetsRequest::getAccessKeyId()const
 void DescribeFleetsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeFleetsRequest::getFleetName()const
@@ -121,7 +121,7 @@ std::string DescribeFleetsRequest::getFleetName()const
 void DescribeFleetsRequest::setFleetName(const std::string& fleetName)
 {
 	fleetName_ = fleetName;
-	setCoreParameter("FleetName", std::to_string(fleetName));
+	setCoreParameter("FleetName", fleetName);
 }
 
 std::vector<std::string> DescribeFleetsRequest::getFleetStatus()const
@@ -133,7 +133,7 @@ void DescribeFleetsRequest::setFleetStatus(const std::vector<std::string>& fleet
 {
 	fleetStatus_ = fleetStatus;
 	for(int i = 0; i!= fleetStatus.size(); i++)
-		setCoreParameter("FleetStatus."+ std::to_string(i), std::to_string(fleetStatus.at(i)));
+		setCoreParameter("FleetStatus."+ std::to_string(i), fleetStatus.at(i));
 }
 
 std::string DescribeFleetsRequest::getSecurityToken()const
@@ -144,7 +144,7 @@ std::string DescribeFleetsRequest::getSecurityToken()const
 void DescribeFleetsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeFleetsRequest::getRegionId()const
@@ -155,7 +155,7 @@ std::string DescribeFleetsRequest::getRegionId()const
 void DescribeFleetsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeFleetsRequest::getEnable()const
@@ -177,7 +177,7 @@ std::string DescribeFleetsRequest::getRequestContent()const
 void DescribeFleetsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeFleetsRequest::getPageSize()const
@@ -188,7 +188,7 @@ int DescribeFleetsRequest::getPageSize()const
 void DescribeFleetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeFleetsRequest::getCallerBidEmail()const
@@ -199,7 +199,7 @@ std::string DescribeFleetsRequest::getCallerBidEmail()const
 void DescribeFleetsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeFleetsRequest::getCallerUidEmail()const
@@ -210,7 +210,7 @@ std::string DescribeFleetsRequest::getCallerUidEmail()const
 void DescribeFleetsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeFleetsRequest::getCallerUid()const
@@ -221,7 +221,7 @@ long DescribeFleetsRequest::getCallerUid()const
 void DescribeFleetsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeFleetsRequest::getApp_ip()const
@@ -232,7 +232,7 @@ std::string DescribeFleetsRequest::getApp_ip()const
 void DescribeFleetsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeFleetsRequest::getResourceOwnerAccount()const
@@ -243,7 +243,7 @@ std::string DescribeFleetsRequest::getResourceOwnerAccount()const
 void DescribeFleetsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeFleetsRequest::getOwnerAccount()const
@@ -254,7 +254,7 @@ std::string DescribeFleetsRequest::getOwnerAccount()const
 void DescribeFleetsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeFleetsRequest::getCallerBid()const
@@ -265,7 +265,7 @@ std::string DescribeFleetsRequest::getCallerBid()const
 void DescribeFleetsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeFleetsRequest::getOwnerId()const
@@ -276,7 +276,7 @@ long DescribeFleetsRequest::getOwnerId()const
 void DescribeFleetsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DescribeFleetsRequest::getFleetId()const
@@ -288,7 +288,7 @@ void DescribeFleetsRequest::setFleetId(const std::vector<std::string>& fleetId)
 {
 	fleetId_ = fleetId;
 	for(int i = 0; i!= fleetId.size(); i++)
-		setCoreParameter("FleetId."+ std::to_string(i), std::to_string(fleetId.at(i)));
+		setCoreParameter("FleetId."+ std::to_string(i), fleetId.at(i));
 }
 
 bool DescribeFleetsRequest::getProxy_trust_transport_info()const
@@ -332,7 +332,7 @@ std::string DescribeFleetsRequest::getRequestId()const
 void DescribeFleetsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeFleetsRequest::getAkProxy()const
@@ -343,6 +343,6 @@ std::string DescribeFleetsRequest::getAkProxy()const
 void DescribeFleetsRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

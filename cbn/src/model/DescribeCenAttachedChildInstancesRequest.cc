@@ -33,7 +33,7 @@ long DescribeCenAttachedChildInstancesRequest::getResourceOwnerId()const
 void DescribeCenAttachedChildInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getResourceOwnerAccount()c
 void DescribeCenAttachedChildInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getCenId()const
 void DescribeCenAttachedChildInstancesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getOwnerAccount()const
 void DescribeCenAttachedChildInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeCenAttachedChildInstancesRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeCenAttachedChildInstancesRequest::getPageSize()const
 void DescribeCenAttachedChildInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCenAttachedChildInstancesRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCenAttachedChildInstancesRequest::getOwnerId()const
 void DescribeCenAttachedChildInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceType()const
@@ -99,7 +99,7 @@ std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceType()cons
 void DescribeCenAttachedChildInstancesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", std::to_string(childInstanceType));
+	setCoreParameter("ChildInstanceType", childInstanceType);
 }
 
 int DescribeCenAttachedChildInstancesRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeCenAttachedChildInstancesRequest::getPageNumber()const
 void DescribeCenAttachedChildInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceRegionId()const
@@ -121,6 +121,6 @@ std::string DescribeCenAttachedChildInstancesRequest::getChildInstanceRegionId()
 void DescribeCenAttachedChildInstancesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", std::to_string(childInstanceRegionId));
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 

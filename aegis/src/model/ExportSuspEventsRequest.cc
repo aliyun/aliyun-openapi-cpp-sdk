@@ -33,7 +33,7 @@ std::string ExportSuspEventsRequest::getTimeEnd()const
 void ExportSuspEventsRequest::setTimeEnd(const std::string& timeEnd)
 {
 	timeEnd_ = timeEnd;
-	setCoreParameter("TimeEnd", std::to_string(timeEnd));
+	setCoreParameter("TimeEnd", timeEnd);
 }
 
 std::string ExportSuspEventsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ExportSuspEventsRequest::getSourceIp()const
 void ExportSuspEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ExportSuspEventsRequest::getName()const
@@ -55,7 +55,7 @@ std::string ExportSuspEventsRequest::getName()const
 void ExportSuspEventsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ExportSuspEventsRequest::getDealed()const
@@ -66,7 +66,7 @@ std::string ExportSuspEventsRequest::getDealed()const
 void ExportSuspEventsRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 std::string ExportSuspEventsRequest::getRemark()const
@@ -77,7 +77,7 @@ std::string ExportSuspEventsRequest::getRemark()const
 void ExportSuspEventsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string ExportSuspEventsRequest::getFrom()const
@@ -88,7 +88,7 @@ std::string ExportSuspEventsRequest::getFrom()const
 void ExportSuspEventsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string ExportSuspEventsRequest::getTimeStart()const
@@ -99,7 +99,7 @@ std::string ExportSuspEventsRequest::getTimeStart()const
 void ExportSuspEventsRequest::setTimeStart(const std::string& timeStart)
 {
 	timeStart_ = timeStart;
-	setCoreParameter("TimeStart", std::to_string(timeStart));
+	setCoreParameter("TimeStart", timeStart);
 }
 
 std::string ExportSuspEventsRequest::getLang()const
@@ -110,7 +110,7 @@ std::string ExportSuspEventsRequest::getLang()const
 void ExportSuspEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ExportSuspEventsRequest::getLevels()const
@@ -121,7 +121,7 @@ std::string ExportSuspEventsRequest::getLevels()const
 void ExportSuspEventsRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
-	setCoreParameter("Levels", std::to_string(levels));
+	setCoreParameter("Levels", levels);
 }
 
 std::string ExportSuspEventsRequest::getParentEventTypes()const
@@ -132,7 +132,7 @@ std::string ExportSuspEventsRequest::getParentEventTypes()const
 void ExportSuspEventsRequest::setParentEventTypes(const std::string& parentEventTypes)
 {
 	parentEventTypes_ = parentEventTypes;
-	setCoreParameter("ParentEventTypes", std::to_string(parentEventTypes));
+	setCoreParameter("ParentEventTypes", parentEventTypes);
 }
 
 std::string ExportSuspEventsRequest::getStatus()const
@@ -143,6 +143,6 @@ std::string ExportSuspEventsRequest::getStatus()const
 void ExportSuspEventsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

@@ -33,7 +33,7 @@ long StartBaselineSecurityCheckRequest::getResourceOwnerId()const
 void StartBaselineSecurityCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
@@ -45,7 +45,7 @@ void StartBaselineSecurityCheckRequest::setAssets(const std::vector<std::string>
 {
 	assets_ = assets;
 	for(int i = 0; i!= assets.size(); i++)
-		setCoreParameter("Assets."+ std::to_string(i), std::to_string(assets.at(i)));
+		setCoreParameter("Assets."+ std::to_string(i), assets.at(i));
 }
 
 std::string StartBaselineSecurityCheckRequest::getSourceIp()const
@@ -56,7 +56,7 @@ std::string StartBaselineSecurityCheckRequest::getSourceIp()const
 void StartBaselineSecurityCheckRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
@@ -68,7 +68,7 @@ void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& item
 {
 	itemIds_ = itemIds;
 	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
+		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
 }
 
 std::string StartBaselineSecurityCheckRequest::getLang()const
@@ -79,7 +79,7 @@ std::string StartBaselineSecurityCheckRequest::getLang()const
 void StartBaselineSecurityCheckRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string StartBaselineSecurityCheckRequest::getType()const
@@ -90,6 +90,6 @@ std::string StartBaselineSecurityCheckRequest::getType()const
 void StartBaselineSecurityCheckRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

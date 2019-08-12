@@ -33,7 +33,7 @@ std::string ModifyCdnDomainRequest::getTopLevelDomain()const
 void ModifyCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 int ModifyCdnDomainRequest::getSourcePort()const
@@ -44,7 +44,7 @@ int ModifyCdnDomainRequest::getSourcePort()const
 void ModifyCdnDomainRequest::setSourcePort(int sourcePort)
 {
 	sourcePort_ = sourcePort;
-	setCoreParameter("SourcePort", sourcePort);
+	setCoreParameter("SourcePort", std::to_string(sourcePort));
 }
 
 std::string ModifyCdnDomainRequest::getResourceGroupId()const
@@ -55,7 +55,7 @@ std::string ModifyCdnDomainRequest::getResourceGroupId()const
 void ModifyCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ModifyCdnDomainRequest::getPriorities()const
@@ -66,7 +66,7 @@ std::string ModifyCdnDomainRequest::getPriorities()const
 void ModifyCdnDomainRequest::setPriorities(const std::string& priorities)
 {
 	priorities_ = priorities;
-	setCoreParameter("Priorities", std::to_string(priorities));
+	setCoreParameter("Priorities", priorities);
 }
 
 std::string ModifyCdnDomainRequest::getSources()const
@@ -77,7 +77,7 @@ std::string ModifyCdnDomainRequest::getSources()const
 void ModifyCdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", std::to_string(sources));
+	setCoreParameter("Sources", sources);
 }
 
 std::string ModifyCdnDomainRequest::getSecurityToken()const
@@ -88,7 +88,7 @@ std::string ModifyCdnDomainRequest::getSecurityToken()const
 void ModifyCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyCdnDomainRequest::getDomainName()const
@@ -99,7 +99,7 @@ std::string ModifyCdnDomainRequest::getDomainName()const
 void ModifyCdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ModifyCdnDomainRequest::getSourceType()const
@@ -110,7 +110,7 @@ std::string ModifyCdnDomainRequest::getSourceType()const
 void ModifyCdnDomainRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", std::to_string(sourceType));
+	setCoreParameter("SourceType", sourceType);
 }
 
 long ModifyCdnDomainRequest::getOwnerId()const
@@ -121,6 +121,6 @@ long ModifyCdnDomainRequest::getOwnerId()const
 void ModifyCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

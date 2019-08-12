@@ -33,7 +33,7 @@ long CreateMigrateTaskForSQLServerRequest::getResourceOwnerId()const
 void CreateMigrateTaskForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getTaskType()const
@@ -44,7 +44,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getTaskType()const
 void CreateMigrateTaskForSQLServerRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", std::to_string(taskType));
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getDBName()const
@@ -55,7 +55,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getDBName()const
 void CreateMigrateTaskForSQLServerRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", std::to_string(dBName));
+	setCoreParameter("DBName", dBName);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getResourceOwnerAccount()const
 void CreateMigrateTaskForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getIsOnlineDB()const
@@ -77,7 +77,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getIsOnlineDB()const
 void CreateMigrateTaskForSQLServerRequest::setIsOnlineDB(const std::string& isOnlineDB)
 {
 	isOnlineDB_ = isOnlineDB;
-	setCoreParameter("IsOnlineDB", std::to_string(isOnlineDB));
+	setCoreParameter("IsOnlineDB", isOnlineDB);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getDBInstanceId()const
 void CreateMigrateTaskForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long CreateMigrateTaskForSQLServerRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateMigrateTaskForSQLServerRequest::getOwnerId()const
 void CreateMigrateTaskForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string CreateMigrateTaskForSQLServerRequest::getAccessKeyId()const
 void CreateMigrateTaskForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMigrateTaskForSQLServerRequest::getOSSUrls()const
@@ -121,6 +121,6 @@ std::string CreateMigrateTaskForSQLServerRequest::getOSSUrls()const
 void CreateMigrateTaskForSQLServerRequest::setOSSUrls(const std::string& oSSUrls)
 {
 	oSSUrls_ = oSSUrls;
-	setCoreParameter("OSSUrls", std::to_string(oSSUrls));
+	setCoreParameter("OSSUrls", oSSUrls);
 }
 

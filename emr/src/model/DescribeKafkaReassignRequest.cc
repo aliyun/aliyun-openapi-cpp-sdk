@@ -33,7 +33,7 @@ long DescribeKafkaReassignRequest::getResourceOwnerId()const
 void DescribeKafkaReassignRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeKafkaReassignRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeKafkaReassignRequest::getRegionId()const
 void DescribeKafkaReassignRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeKafkaReassignRequest::getReassignId()const
@@ -55,7 +55,7 @@ std::string DescribeKafkaReassignRequest::getReassignId()const
 void DescribeKafkaReassignRequest::setReassignId(const std::string& reassignId)
 {
 	reassignId_ = reassignId;
-	setCoreParameter("ReassignId", std::to_string(reassignId));
+	setCoreParameter("ReassignId", reassignId);
 }
 
 std::string DescribeKafkaReassignRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeKafkaReassignRequest::getAccessKeyId()const
 void DescribeKafkaReassignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

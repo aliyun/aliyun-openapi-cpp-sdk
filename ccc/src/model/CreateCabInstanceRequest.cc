@@ -33,7 +33,7 @@ int CreateCabInstanceRequest::getMaxConcurrentConversation()const
 void CreateCabInstanceRequest::setMaxConcurrentConversation(int maxConcurrentConversation)
 {
 	maxConcurrentConversation_ = maxConcurrentConversation;
-	setCoreParameter("MaxConcurrentConversation", maxConcurrentConversation);
+	setCoreParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
 }
 
 std::string CreateCabInstanceRequest::getInstanceName()const
@@ -44,7 +44,7 @@ std::string CreateCabInstanceRequest::getInstanceName()const
 void CreateCabInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string CreateCabInstanceRequest::getCallCenterInstanceId()const
@@ -55,7 +55,7 @@ std::string CreateCabInstanceRequest::getCallCenterInstanceId()const
 void CreateCabInstanceRequest::setCallCenterInstanceId(const std::string& callCenterInstanceId)
 {
 	callCenterInstanceId_ = callCenterInstanceId;
-	setCoreParameter("CallCenterInstanceId", std::to_string(callCenterInstanceId));
+	setCoreParameter("CallCenterInstanceId", callCenterInstanceId);
 }
 
 std::string CreateCabInstanceRequest::getInstanceDescription()const
@@ -66,6 +66,6 @@ std::string CreateCabInstanceRequest::getInstanceDescription()const
 void CreateCabInstanceRequest::setInstanceDescription(const std::string& instanceDescription)
 {
 	instanceDescription_ = instanceDescription;
-	setCoreParameter("InstanceDescription", std::to_string(instanceDescription));
+	setCoreParameter("InstanceDescription", instanceDescription);
 }
 

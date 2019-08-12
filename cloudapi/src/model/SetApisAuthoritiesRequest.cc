@@ -33,7 +33,7 @@ std::string SetApisAuthoritiesRequest::getAuthVaildTime()const
 void SetApisAuthoritiesRequest::setAuthVaildTime(const std::string& authVaildTime)
 {
 	authVaildTime_ = authVaildTime;
-	setCoreParameter("AuthVaildTime", std::to_string(authVaildTime));
+	setCoreParameter("AuthVaildTime", authVaildTime);
 }
 
 std::string SetApisAuthoritiesRequest::getStageName()const
@@ -44,7 +44,7 @@ std::string SetApisAuthoritiesRequest::getStageName()const
 void SetApisAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string SetApisAuthoritiesRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetApisAuthoritiesRequest::getSecurityToken()const
 void SetApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetApisAuthoritiesRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string SetApisAuthoritiesRequest::getGroupId()const
 void SetApisAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 long SetApisAuthoritiesRequest::getAppId()const
@@ -77,7 +77,7 @@ long SetApisAuthoritiesRequest::getAppId()const
 void SetApisAuthoritiesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string SetApisAuthoritiesRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string SetApisAuthoritiesRequest::getDescription()const
 void SetApisAuthoritiesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string SetApisAuthoritiesRequest::getAuthValidTime()const
@@ -99,7 +99,7 @@ std::string SetApisAuthoritiesRequest::getAuthValidTime()const
 void SetApisAuthoritiesRequest::setAuthValidTime(const std::string& authValidTime)
 {
 	authValidTime_ = authValidTime;
-	setCoreParameter("AuthValidTime", std::to_string(authValidTime));
+	setCoreParameter("AuthValidTime", authValidTime);
 }
 
 std::string SetApisAuthoritiesRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SetApisAuthoritiesRequest::getAccessKeyId()const
 void SetApisAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetApisAuthoritiesRequest::getApiIds()const
@@ -121,6 +121,6 @@ std::string SetApisAuthoritiesRequest::getApiIds()const
 void SetApisAuthoritiesRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", std::to_string(apiIds));
+	setCoreParameter("ApiIds", apiIds);
 }
 

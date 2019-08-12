@@ -33,7 +33,7 @@ long ApplyMonitoringTemplateRequest::getEnableStartTime()const
 void ApplyMonitoringTemplateRequest::setEnableStartTime(long enableStartTime)
 {
 	enableStartTime_ = enableStartTime;
-	setCoreParameter("EnableStartTime", enableStartTime);
+	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
 }
 
 std::string ApplyMonitoringTemplateRequest::getApplyMode()const
@@ -44,7 +44,7 @@ std::string ApplyMonitoringTemplateRequest::getApplyMode()const
 void ApplyMonitoringTemplateRequest::setApplyMode(const std::string& applyMode)
 {
 	applyMode_ = applyMode;
-	setCoreParameter("ApplyMode", std::to_string(applyMode));
+	setCoreParameter("ApplyMode", applyMode);
 }
 
 std::string ApplyMonitoringTemplateRequest::getWebhook()const
@@ -55,7 +55,7 @@ std::string ApplyMonitoringTemplateRequest::getWebhook()const
 void ApplyMonitoringTemplateRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", std::to_string(webhook));
+	setCoreParameter("Webhook", webhook);
 }
 
 std::string ApplyMonitoringTemplateRequest::getTemplateIds()const
@@ -66,7 +66,7 @@ std::string ApplyMonitoringTemplateRequest::getTemplateIds()const
 void ApplyMonitoringTemplateRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", std::to_string(templateIds));
+	setCoreParameter("TemplateIds", templateIds);
 }
 
 long ApplyMonitoringTemplateRequest::getEnableEndTime()const
@@ -77,7 +77,7 @@ long ApplyMonitoringTemplateRequest::getEnableEndTime()const
 void ApplyMonitoringTemplateRequest::setEnableEndTime(long enableEndTime)
 {
 	enableEndTime_ = enableEndTime;
-	setCoreParameter("EnableEndTime", enableEndTime);
+	setCoreParameter("EnableEndTime", std::to_string(enableEndTime));
 }
 
 long ApplyMonitoringTemplateRequest::getGroupId()const
@@ -88,7 +88,7 @@ long ApplyMonitoringTemplateRequest::getGroupId()const
 void ApplyMonitoringTemplateRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 long ApplyMonitoringTemplateRequest::getNotifyLevel()const
@@ -99,7 +99,7 @@ long ApplyMonitoringTemplateRequest::getNotifyLevel()const
 void ApplyMonitoringTemplateRequest::setNotifyLevel(long notifyLevel)
 {
 	notifyLevel_ = notifyLevel;
-	setCoreParameter("NotifyLevel", notifyLevel);
+	setCoreParameter("NotifyLevel", std::to_string(notifyLevel));
 }
 
 long ApplyMonitoringTemplateRequest::getSilenceTime()const
@@ -110,6 +110,6 @@ long ApplyMonitoringTemplateRequest::getSilenceTime()const
 void ApplyMonitoringTemplateRequest::setSilenceTime(long silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", silenceTime);
+	setCoreParameter("SilenceTime", std::to_string(silenceTime));
 }
 

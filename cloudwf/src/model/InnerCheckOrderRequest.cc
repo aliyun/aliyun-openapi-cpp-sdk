@@ -33,7 +33,7 @@ std::string InnerCheckOrderRequest::getData()const
 void InnerCheckOrderRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string InnerCheckOrderRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string InnerCheckOrderRequest::getAccessKeyId()const
 void InnerCheckOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

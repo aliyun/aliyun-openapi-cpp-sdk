@@ -33,7 +33,7 @@ std::string CheckServiceExistRequest::getRegionId()const
 void CheckServiceExistRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long CheckServiceExistRequest::getCsbId()const
@@ -44,7 +44,7 @@ long CheckServiceExistRequest::getCsbId()const
 void CheckServiceExistRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string CheckServiceExistRequest::getServiceName()const
@@ -55,6 +55,6 @@ std::string CheckServiceExistRequest::getServiceName()const
 void CheckServiceExistRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 

@@ -33,7 +33,7 @@ long MetastoreListTablePartitionRequest::getResourceOwnerId()const
 void MetastoreListTablePartitionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreListTablePartitionRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string MetastoreListTablePartitionRequest::getRegionId()const
 void MetastoreListTablePartitionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int MetastoreListTablePartitionRequest::getPageSize()const
@@ -55,7 +55,7 @@ int MetastoreListTablePartitionRequest::getPageSize()const
 void MetastoreListTablePartitionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string MetastoreListTablePartitionRequest::getTableId()const
@@ -66,7 +66,7 @@ std::string MetastoreListTablePartitionRequest::getTableId()const
 void MetastoreListTablePartitionRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", std::to_string(tableId));
+	setCoreParameter("TableId", tableId);
 }
 
 std::string MetastoreListTablePartitionRequest::getDatabaseId()const
@@ -77,7 +77,7 @@ std::string MetastoreListTablePartitionRequest::getDatabaseId()const
 void MetastoreListTablePartitionRequest::setDatabaseId(const std::string& databaseId)
 {
 	databaseId_ = databaseId;
-	setCoreParameter("DatabaseId", std::to_string(databaseId));
+	setCoreParameter("DatabaseId", databaseId);
 }
 
 int MetastoreListTablePartitionRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int MetastoreListTablePartitionRequest::getPageNumber()const
 void MetastoreListTablePartitionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListTablePartitionRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string MetastoreListTablePartitionRequest::getAccessKeyId()const
 void MetastoreListTablePartitionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

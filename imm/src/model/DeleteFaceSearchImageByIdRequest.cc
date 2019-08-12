@@ -33,7 +33,7 @@ std::string DeleteFaceSearchImageByIdRequest::getImageId()const
 void DeleteFaceSearchImageByIdRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteFaceSearchImageByIdRequest::getRegionId()const
 void DeleteFaceSearchImageByIdRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteFaceSearchImageByIdRequest::getProject()const
 void DeleteFaceSearchImageByIdRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getSrcUri()const
@@ -66,7 +66,7 @@ std::string DeleteFaceSearchImageByIdRequest::getSrcUri()const
 void DeleteFaceSearchImageByIdRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", std::to_string(srcUri));
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string DeleteFaceSearchImageByIdRequest::getGroupName()const
 void DeleteFaceSearchImageByIdRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getUser()const
@@ -88,7 +88,7 @@ std::string DeleteFaceSearchImageByIdRequest::getUser()const
 void DeleteFaceSearchImageByIdRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", std::to_string(user));
+	setCoreParameter("User", user);
 }
 
 std::string DeleteFaceSearchImageByIdRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DeleteFaceSearchImageByIdRequest::getAccessKeyId()const
 void DeleteFaceSearchImageByIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

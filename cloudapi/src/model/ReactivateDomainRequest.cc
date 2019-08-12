@@ -33,7 +33,7 @@ std::string ReactivateDomainRequest::getSecurityToken()const
 void ReactivateDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ReactivateDomainRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string ReactivateDomainRequest::getGroupId()const
 void ReactivateDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ReactivateDomainRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string ReactivateDomainRequest::getDomainName()const
 void ReactivateDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string ReactivateDomainRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ReactivateDomainRequest::getAccessKeyId()const
 void ReactivateDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

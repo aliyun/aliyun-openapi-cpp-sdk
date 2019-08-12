@@ -33,7 +33,7 @@ std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getU
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
@@ -44,7 +44,7 @@ long QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getRegistra
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", registrantProfileID);
+	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
 }
 
 std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getL
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

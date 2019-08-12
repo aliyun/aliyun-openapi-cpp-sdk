@@ -33,7 +33,7 @@ long DescribeDataHubConnectorsRequest::getTopicId()const
 void DescribeDataHubConnectorsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::string DescribeDataHubConnectorsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeDataHubConnectorsRequest::getSourceIp()const
 void DescribeDataHubConnectorsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubConnectorsRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int DescribeDataHubConnectorsRequest::getFeatureType()const
 void DescribeDataHubConnectorsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubConnectorsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDataHubConnectorsRequest::getPageSize()const
 void DescribeDataHubConnectorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeDataHubConnectorsRequest::getDepartId()const
@@ -77,7 +77,7 @@ long DescribeDataHubConnectorsRequest::getDepartId()const
 void DescribeDataHubConnectorsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", departId);
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 int DescribeDataHubConnectorsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDataHubConnectorsRequest::getCurrentPage()const
 void DescribeDataHubConnectorsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubConnectorsRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeDataHubConnectorsRequest::getLang()const
 void DescribeDataHubConnectorsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDataHubConnectorsRequest::getProjectId()const
@@ -110,7 +110,7 @@ long DescribeDataHubConnectorsRequest::getProjectId()const
 void DescribeDataHubConnectorsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubConnectorsRequest::getKey()const
@@ -121,6 +121,6 @@ std::string DescribeDataHubConnectorsRequest::getKey()const
 void DescribeDataHubConnectorsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 

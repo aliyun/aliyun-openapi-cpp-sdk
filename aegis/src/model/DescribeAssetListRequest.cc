@@ -33,7 +33,7 @@ std::string DescribeAssetListRequest::getSourceIp()const
 void DescribeAssetListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeAssetListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeAssetListRequest::getPageSize()const
 void DescribeAssetListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAssetListRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeAssetListRequest::getFrom()const
 void DescribeAssetListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeAssetListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeAssetListRequest::getCurrentPage()const
 void DescribeAssetListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAssetListRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeAssetListRequest::getLang()const
 void DescribeAssetListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAssetListRequest::getFilterConditions()const
@@ -88,6 +88,6 @@ std::string DescribeAssetListRequest::getFilterConditions()const
 void DescribeAssetListRequest::setFilterConditions(const std::string& filterConditions)
 {
 	filterConditions_ = filterConditions;
-	setCoreParameter("FilterConditions", std::to_string(filterConditions));
+	setCoreParameter("FilterConditions", filterConditions);
 }
 

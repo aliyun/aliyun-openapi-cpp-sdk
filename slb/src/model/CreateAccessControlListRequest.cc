@@ -33,7 +33,7 @@ std::string CreateAccessControlListRequest::getAccess_key_id()const
 void CreateAccessControlListRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 std::string CreateAccessControlListRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string CreateAccessControlListRequest::getResourceGroupId()const
 void CreateAccessControlListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long CreateAccessControlListRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreateAccessControlListRequest::getResourceOwnerId()const
 void CreateAccessControlListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAccessControlListRequest::getAclName()const
@@ -66,7 +66,7 @@ std::string CreateAccessControlListRequest::getAclName()const
 void CreateAccessControlListRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setCoreParameter("AclName", std::to_string(aclName));
+	setCoreParameter("AclName", aclName);
 }
 
 std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
 void CreateAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateAccessControlListRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string CreateAccessControlListRequest::getRegionId()const
 void CreateAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateAccessControlListRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateAccessControlListRequest::getOwnerAccount()const
 void CreateAccessControlListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateAccessControlListRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long CreateAccessControlListRequest::getOwnerId()const
 void CreateAccessControlListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAccessControlListRequest::getAddressIPVersion()const
@@ -121,7 +121,7 @@ std::string CreateAccessControlListRequest::getAddressIPVersion()const
 void CreateAccessControlListRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
 	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", std::to_string(addressIPVersion));
+	setCoreParameter("AddressIPVersion", addressIPVersion);
 }
 
 std::string CreateAccessControlListRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string CreateAccessControlListRequest::getAccessKeyId()const
 void CreateAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAccessControlListRequest::getTags()const
@@ -143,6 +143,6 @@ std::string CreateAccessControlListRequest::getTags()const
 void CreateAccessControlListRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

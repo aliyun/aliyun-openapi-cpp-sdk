@@ -33,7 +33,7 @@ std::string DescribeSuspEventsRequest::getAlarmUniqueInfo()const
 void DescribeSuspEventsRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
 {
 	alarmUniqueInfo_ = alarmUniqueInfo;
-	setCoreParameter("AlarmUniqueInfo", std::to_string(alarmUniqueInfo));
+	setCoreParameter("AlarmUniqueInfo", alarmUniqueInfo);
 }
 
 std::string DescribeSuspEventsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeSuspEventsRequest::getSourceIp()const
 void DescribeSuspEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSuspEventsRequest::getName()const
@@ -55,7 +55,7 @@ std::string DescribeSuspEventsRequest::getName()const
 void DescribeSuspEventsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string DescribeSuspEventsRequest::getPageSize()const
@@ -66,7 +66,7 @@ std::string DescribeSuspEventsRequest::getPageSize()const
 void DescribeSuspEventsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSuspEventsRequest::getDealed()const
@@ -77,7 +77,7 @@ std::string DescribeSuspEventsRequest::getDealed()const
 void DescribeSuspEventsRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 std::string DescribeSuspEventsRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeSuspEventsRequest::getRemark()const
 void DescribeSuspEventsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeSuspEventsRequest::getCurrentPage()const
@@ -99,7 +99,7 @@ std::string DescribeSuspEventsRequest::getCurrentPage()const
 void DescribeSuspEventsRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", currentPage);
 }
 
 std::string DescribeSuspEventsRequest::getFrom()const
@@ -110,7 +110,7 @@ std::string DescribeSuspEventsRequest::getFrom()const
 void DescribeSuspEventsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeSuspEventsRequest::getLang()const
@@ -121,7 +121,7 @@ std::string DescribeSuspEventsRequest::getLang()const
 void DescribeSuspEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSuspEventsRequest::getLevels()const
@@ -132,7 +132,7 @@ std::string DescribeSuspEventsRequest::getLevels()const
 void DescribeSuspEventsRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
-	setCoreParameter("Levels", std::to_string(levels));
+	setCoreParameter("Levels", levels);
 }
 
 std::string DescribeSuspEventsRequest::getParentEventTypes()const
@@ -143,6 +143,6 @@ std::string DescribeSuspEventsRequest::getParentEventTypes()const
 void DescribeSuspEventsRequest::setParentEventTypes(const std::string& parentEventTypes)
 {
 	parentEventTypes_ = parentEventTypes;
-	setCoreParameter("ParentEventTypes", std::to_string(parentEventTypes));
+	setCoreParameter("ParentEventTypes", parentEventTypes);
 }
 

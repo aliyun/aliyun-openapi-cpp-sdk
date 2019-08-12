@@ -33,7 +33,7 @@ long CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageId()const
@@ -44,7 +44,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageI
 void CancelCommonBandwidthPackageIpBandwidthRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
+	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAcco
 void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()con
 void CancelCommonBandwidthPackageIpBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getEipId()const
@@ -88,7 +88,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getEipId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setEipId(const std::string& eipId)
 {
 	eipId_ = eipId;
-	setCoreParameter("EipId", std::to_string(eipId));
+	setCoreParameter("EipId", eipId);
 }
 
 long CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

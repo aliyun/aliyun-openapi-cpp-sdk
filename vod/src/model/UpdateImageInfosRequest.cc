@@ -33,7 +33,7 @@ long UpdateImageInfosRequest::getResourceOwnerId()const
 void UpdateImageInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateImageInfosRequest::getUpdateContent()const
@@ -44,7 +44,7 @@ std::string UpdateImageInfosRequest::getUpdateContent()const
 void UpdateImageInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
-	setCoreParameter("UpdateContent", std::to_string(updateContent));
+	setCoreParameter("UpdateContent", updateContent);
 }
 
 std::string UpdateImageInfosRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateImageInfosRequest::getResourceOwnerAccount()const
 void UpdateImageInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UpdateImageInfosRequest::getResourceRealOwnerId()const
@@ -66,7 +66,7 @@ long UpdateImageInfosRequest::getResourceRealOwnerId()const
 void UpdateImageInfosRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long UpdateImageInfosRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateImageInfosRequest::getOwnerId()const
 void UpdateImageInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateImageInfosRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UpdateImageInfosRequest::getAccessKeyId()const
 void UpdateImageInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

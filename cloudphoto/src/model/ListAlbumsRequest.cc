@@ -33,7 +33,7 @@ std::string ListAlbumsRequest::getCursor()const
 void ListAlbumsRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 int ListAlbumsRequest::getSize()const
@@ -44,7 +44,7 @@ int ListAlbumsRequest::getSize()const
 void ListAlbumsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListAlbumsRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string ListAlbumsRequest::getLibraryId()const
 void ListAlbumsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListAlbumsRequest::getStoreName()const
@@ -66,7 +66,7 @@ std::string ListAlbumsRequest::getStoreName()const
 void ListAlbumsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListAlbumsRequest::getState()const
@@ -77,7 +77,7 @@ std::string ListAlbumsRequest::getState()const
 void ListAlbumsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 std::string ListAlbumsRequest::getDirection()const
@@ -88,6 +88,6 @@ std::string ListAlbumsRequest::getDirection()const
 void ListAlbumsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", std::to_string(direction));
+	setCoreParameter("Direction", direction);
 }
 

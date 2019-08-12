@@ -33,7 +33,7 @@ std::string CreateVpcRequest::getVpcName()const
 void CreateVpcRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setCoreParameter("VpcName", std::to_string(vpcName));
+	setCoreParameter("VpcName", vpcName);
 }
 
 long CreateVpcRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateVpcRequest::getResourceOwnerId()const
 void CreateVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateVpcRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateVpcRequest::getResourceOwnerAccount()const
 void CreateVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVpcRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateVpcRequest::getRegionId()const
 void CreateVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVpcRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string CreateVpcRequest::getClientToken()const
 void CreateVpcRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateVpcRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CreateVpcRequest::getOwnerAccount()const
 void CreateVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateVpcRequest::getCidrBlock()const
@@ -99,7 +99,7 @@ std::string CreateVpcRequest::getCidrBlock()const
 void CreateVpcRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", std::to_string(cidrBlock));
+	setCoreParameter("CidrBlock", cidrBlock);
 }
 
 std::string CreateVpcRequest::getDescription()const
@@ -110,7 +110,7 @@ std::string CreateVpcRequest::getDescription()const
 void CreateVpcRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateVpcRequest::getUserCidr()const
@@ -121,7 +121,7 @@ std::string CreateVpcRequest::getUserCidr()const
 void CreateVpcRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", std::to_string(userCidr));
+	setCoreParameter("UserCidr", userCidr);
 }
 
 long CreateVpcRequest::getOwnerId()const
@@ -132,6 +132,6 @@ long CreateVpcRequest::getOwnerId()const
 void CreateVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

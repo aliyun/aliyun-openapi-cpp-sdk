@@ -33,7 +33,7 @@ std::string DescribeCasterVideoResourcesRequest::getRegionId()const
 void DescribeCasterVideoResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeCasterVideoResourcesRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DescribeCasterVideoResourcesRequest::getCasterId()const
 void DescribeCasterVideoResourcesRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 long DescribeCasterVideoResourcesRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeCasterVideoResourcesRequest::getOwnerId()const
 void DescribeCasterVideoResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

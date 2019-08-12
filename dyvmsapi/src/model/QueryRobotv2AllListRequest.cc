@@ -33,7 +33,7 @@ long QueryRobotv2AllListRequest::getResourceOwnerId()const
 void QueryRobotv2AllListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryRobotv2AllListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryRobotv2AllListRequest::getResourceOwnerAccount()const
 void QueryRobotv2AllListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QueryRobotv2AllListRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long QueryRobotv2AllListRequest::getOwnerId()const
 void QueryRobotv2AllListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryRobotv2AllListRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryRobotv2AllListRequest::getAccessKeyId()const
 void QueryRobotv2AllListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

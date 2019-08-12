@@ -44,7 +44,7 @@ std::string ProfileSetRequest::getEnableActiveAlert()const
 void ProfileSetRequest::setEnableActiveAlert(const std::string& enableActiveAlert)
 {
 	enableActiveAlert_ = enableActiveAlert;
-	setCoreParameter("EnableActiveAlert", std::to_string(enableActiveAlert));
+	setCoreParameter("EnableActiveAlert", enableActiveAlert);
 }
 
 bool ProfileSetRequest::getAutoInstall()const
@@ -66,6 +66,6 @@ long ProfileSetRequest::getUserId()const
 void ProfileSetRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 

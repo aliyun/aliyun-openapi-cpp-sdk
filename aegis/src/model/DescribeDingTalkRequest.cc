@@ -33,7 +33,7 @@ std::string DescribeDingTalkRequest::getRuleActionName()const
 void DescribeDingTalkRequest::setRuleActionName(const std::string& ruleActionName)
 {
 	ruleActionName_ = ruleActionName;
-	setCoreParameter("RuleActionName", std::to_string(ruleActionName));
+	setCoreParameter("RuleActionName", ruleActionName);
 }
 
 std::string DescribeDingTalkRequest::getSourceIp()const
@@ -44,6 +44,6 @@ std::string DescribeDingTalkRequest::getSourceIp()const
 void DescribeDingTalkRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

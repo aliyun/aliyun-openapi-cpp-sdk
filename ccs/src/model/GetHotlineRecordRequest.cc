@@ -33,7 +33,7 @@ std::string GetHotlineRecordRequest::getId()const
 void GetHotlineRecordRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string GetHotlineRecordRequest::getCcsInstanceId()const
@@ -44,6 +44,6 @@ std::string GetHotlineRecordRequest::getCcsInstanceId()const
 void GetHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", std::to_string(ccsInstanceId));
+	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 

@@ -33,7 +33,7 @@ long QueryTransferInListRequest::getSubmissionStartDate()const
 void QueryTransferInListRequest::setSubmissionStartDate(long submissionStartDate)
 {
 	submissionStartDate_ = submissionStartDate;
-	setCoreParameter("SubmissionStartDate", submissionStartDate);
+	setCoreParameter("SubmissionStartDate", std::to_string(submissionStartDate));
 }
 
 std::string QueryTransferInListRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryTransferInListRequest::getUserClientIp()const
 void QueryTransferInListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long QueryTransferInListRequest::getSubmissionEndDate()const
@@ -55,7 +55,7 @@ long QueryTransferInListRequest::getSubmissionEndDate()const
 void QueryTransferInListRequest::setSubmissionEndDate(long submissionEndDate)
 {
 	submissionEndDate_ = submissionEndDate;
-	setCoreParameter("SubmissionEndDate", submissionEndDate);
+	setCoreParameter("SubmissionEndDate", std::to_string(submissionEndDate));
 }
 
 std::string QueryTransferInListRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string QueryTransferInListRequest::getDomainName()const
 void QueryTransferInListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
@@ -77,7 +77,7 @@ std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
 void QueryTransferInListRequest::setSimpleTransferInStatus(const std::string& simpleTransferInStatus)
 {
 	simpleTransferInStatus_ = simpleTransferInStatus;
-	setCoreParameter("SimpleTransferInStatus", std::to_string(simpleTransferInStatus));
+	setCoreParameter("SimpleTransferInStatus", simpleTransferInStatus);
 }
 
 int QueryTransferInListRequest::getPageSize()const
@@ -88,7 +88,7 @@ int QueryTransferInListRequest::getPageSize()const
 void QueryTransferInListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTransferInListRequest::getLang()const
@@ -99,7 +99,7 @@ std::string QueryTransferInListRequest::getLang()const
 void QueryTransferInListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int QueryTransferInListRequest::getPageNum()const
@@ -110,6 +110,6 @@ int QueryTransferInListRequest::getPageNum()const
 void QueryTransferInListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

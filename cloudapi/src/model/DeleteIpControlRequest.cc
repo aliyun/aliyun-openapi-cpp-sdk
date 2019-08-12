@@ -33,7 +33,7 @@ std::string DeleteIpControlRequest::getIpControlId()const
 void DeleteIpControlRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string DeleteIpControlRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteIpControlRequest::getSecurityToken()const
 void DeleteIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteIpControlRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteIpControlRequest::getAccessKeyId()const
 void DeleteIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

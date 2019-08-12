@@ -33,7 +33,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getUrls()const
 void UpdateWebsiteInstanceKeyUrlRequest::setUrls(const std::string& urls)
 {
 	urls_ = urls;
-	setCoreParameter("Urls", std::to_string(urls));
+	setCoreParameter("Urls", urls);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getInstanceId()const
 void UpdateWebsiteInstanceKeyUrlRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getSourceIp()const
 void UpdateWebsiteInstanceKeyUrlRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getLang()const
@@ -66,6 +66,6 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getLang()const
 void UpdateWebsiteInstanceKeyUrlRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

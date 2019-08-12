@@ -33,7 +33,7 @@ std::string QueryIntentsRequest::getIntentName()const
 void QueryIntentsRequest::setIntentName(const std::string& intentName)
 {
 	intentName_ = intentName;
-	setCoreParameter("IntentName", std::to_string(intentName));
+	setCoreParameter("IntentName", intentName);
 }
 
 int QueryIntentsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryIntentsRequest::getPageSize()const
 void QueryIntentsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryIntentsRequest::getDialogId()const
@@ -55,7 +55,7 @@ long QueryIntentsRequest::getDialogId()const
 void QueryIntentsRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", dialogId);
+	setCoreParameter("DialogId", std::to_string(dialogId));
 }
 
 int QueryIntentsRequest::getPageNumber()const
@@ -66,6 +66,6 @@ int QueryIntentsRequest::getPageNumber()const
 void QueryIntentsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

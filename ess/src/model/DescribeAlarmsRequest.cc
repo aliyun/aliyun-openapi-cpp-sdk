@@ -44,7 +44,7 @@ std::string DescribeAlarmsRequest::getMetricType()const
 void DescribeAlarmsRequest::setMetricType(const std::string& metricType)
 {
 	metricType_ = metricType;
-	setCoreParameter("MetricType", std::to_string(metricType));
+	setCoreParameter("MetricType", metricType);
 }
 
 std::string DescribeAlarmsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAlarmsRequest::getResourceOwnerAccount()const
 void DescribeAlarmsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAlarmsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeAlarmsRequest::getRegionId()const
 void DescribeAlarmsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAlarmsRequest::getScalingGroupId()const
@@ -77,7 +77,7 @@ std::string DescribeAlarmsRequest::getScalingGroupId()const
 void DescribeAlarmsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 int DescribeAlarmsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeAlarmsRequest::getPageSize()const
 void DescribeAlarmsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAlarmsRequest::getState()const
@@ -99,7 +99,7 @@ std::string DescribeAlarmsRequest::getState()const
 void DescribeAlarmsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 long DescribeAlarmsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeAlarmsRequest::getOwnerId()const
 void DescribeAlarmsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAlarmsRequest::getAlarmTaskId()const
@@ -121,7 +121,7 @@ std::string DescribeAlarmsRequest::getAlarmTaskId()const
 void DescribeAlarmsRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", std::to_string(alarmTaskId));
+	setCoreParameter("AlarmTaskId", alarmTaskId);
 }
 
 int DescribeAlarmsRequest::getPageNumber()const
@@ -132,7 +132,7 @@ int DescribeAlarmsRequest::getPageNumber()const
 void DescribeAlarmsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAlarmsRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string DescribeAlarmsRequest::getAccessKeyId()const
 void DescribeAlarmsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

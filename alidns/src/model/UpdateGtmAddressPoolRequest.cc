@@ -33,7 +33,7 @@ std::string UpdateGtmAddressPoolRequest::getAddrPoolId()const
 void UpdateGtmAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setCoreParameter("AddrPoolId", std::to_string(addrPoolId));
+	setCoreParameter("AddrPoolId", addrPoolId);
 }
 
 std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string UpdateGtmAddressPoolRequest::getUserClientIp()const
 void UpdateGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateGtmAddressPoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateGtmAddressPoolRequest::getName()const
 void UpdateGtmAddressPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateGtmAddressPoolRequest::getLang()const
@@ -66,7 +66,7 @@ std::string UpdateGtmAddressPoolRequest::getLang()const
 void UpdateGtmAddressPoolRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string UpdateGtmAddressPoolRequest::getType()const
@@ -77,7 +77,7 @@ std::string UpdateGtmAddressPoolRequest::getType()const
 void UpdateGtmAddressPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::vector<UpdateGtmAddressPoolRequest::Addr> UpdateGtmAddressPoolRequest::getAddr()const
@@ -92,9 +92,9 @@ void UpdateGtmAddressPoolRequest::setAddr(const std::vector<Addr>& addr)
 	for(int i = 0; i!= addr.size(); i++)	{
 		auto obj = addr.at(i);
 		std::string str ="Addr."+ std::to_string(i);
-		setCoreParameter(str + ".Mode", std::to_string(obj.mode));
-		setCoreParameter(str + ".LbaWeight", obj.lbaWeight);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Mode", obj.mode);
+		setCoreParameter(str + ".LbaWeight", std::to_string(obj.lbaWeight));
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -106,6 +106,6 @@ int UpdateGtmAddressPoolRequest::getMinAvailableAddrNum()const
 void UpdateGtmAddressPoolRequest::setMinAvailableAddrNum(int minAvailableAddrNum)
 {
 	minAvailableAddrNum_ = minAvailableAddrNum;
-	setCoreParameter("MinAvailableAddrNum", minAvailableAddrNum);
+	setCoreParameter("MinAvailableAddrNum", std::to_string(minAvailableAddrNum));
 }
 

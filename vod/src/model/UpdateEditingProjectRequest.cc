@@ -33,7 +33,7 @@ std::string UpdateEditingProjectRequest::getCoverURL()const
 void UpdateEditingProjectRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", std::to_string(coverURL));
+	setCoreParameter("CoverURL", coverURL);
 }
 
 std::string UpdateEditingProjectRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ std::string UpdateEditingProjectRequest::getResourceOwnerId()const
 void UpdateEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateEditingProjectRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateEditingProjectRequest::getResourceOwnerAccount()const
 void UpdateEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateEditingProjectRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateEditingProjectRequest::getOwnerAccount()const
 void UpdateEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateEditingProjectRequest::getTimeline()const
@@ -77,7 +77,7 @@ std::string UpdateEditingProjectRequest::getTimeline()const
 void UpdateEditingProjectRequest::setTimeline(const std::string& timeline)
 {
 	timeline_ = timeline;
-	setCoreParameter("Timeline", std::to_string(timeline));
+	setCoreParameter("Timeline", timeline);
 }
 
 std::string UpdateEditingProjectRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string UpdateEditingProjectRequest::getDescription()const
 void UpdateEditingProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string UpdateEditingProjectRequest::getOwnerId()const
@@ -99,7 +99,7 @@ std::string UpdateEditingProjectRequest::getOwnerId()const
 void UpdateEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string UpdateEditingProjectRequest::getTitle()const
@@ -110,7 +110,7 @@ std::string UpdateEditingProjectRequest::getTitle()const
 void UpdateEditingProjectRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string UpdateEditingProjectRequest::getProjectId()const
@@ -121,7 +121,7 @@ std::string UpdateEditingProjectRequest::getProjectId()const
 void UpdateEditingProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string UpdateEditingProjectRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string UpdateEditingProjectRequest::getAccessKeyId()const
 void UpdateEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

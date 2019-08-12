@@ -33,7 +33,7 @@ long ListResourceQueueRequest::getResourceOwnerId()const
 void ListResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListResourceQueueRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListResourceQueueRequest::getRegionId()const
 void ListResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long ListResourceQueueRequest::getPoolId()const
@@ -55,7 +55,7 @@ long ListResourceQueueRequest::getPoolId()const
 void ListResourceQueueRequest::setPoolId(long poolId)
 {
 	poolId_ = poolId;
-	setCoreParameter("PoolId", poolId);
+	setCoreParameter("PoolId", std::to_string(poolId));
 }
 
 int ListResourceQueueRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListResourceQueueRequest::getPageSize()const
 void ListResourceQueueRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListResourceQueueRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListResourceQueueRequest::getClusterId()const
 void ListResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListResourceQueueRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListResourceQueueRequest::getPageNumber()const
 void ListResourceQueueRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListResourceQueueRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListResourceQueueRequest::getAccessKeyId()const
 void ListResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListResourceQueueRequest::getPoolType()const
@@ -110,6 +110,6 @@ std::string ListResourceQueueRequest::getPoolType()const
 void ListResourceQueueRequest::setPoolType(const std::string& poolType)
 {
 	poolType_ = poolType;
-	setCoreParameter("PoolType", std::to_string(poolType));
+	setCoreParameter("PoolType", poolType);
 }
 

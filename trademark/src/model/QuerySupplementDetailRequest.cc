@@ -33,6 +33,6 @@ long QuerySupplementDetailRequest::getId()const
 void QuerySupplementDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

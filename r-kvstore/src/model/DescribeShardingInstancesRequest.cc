@@ -33,7 +33,7 @@ long DescribeShardingInstancesRequest::getResourceOwnerId()const
 void DescribeShardingInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeShardingInstancesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeShardingInstancesRequest::getSecurityToken()const
 void DescribeShardingInstancesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeShardingInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeShardingInstancesRequest::getResourceOwnerAccount()const
 void DescribeShardingInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeShardingInstancesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeShardingInstancesRequest::getRegionId()const
 void DescribeShardingInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeShardingInstancesRequest::getInstanceIds()const
@@ -77,7 +77,7 @@ std::string DescribeShardingInstancesRequest::getInstanceIds()const
 void DescribeShardingInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string DescribeShardingInstancesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeShardingInstancesRequest::getOwnerAccount()const
 void DescribeShardingInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeShardingInstancesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeShardingInstancesRequest::getOwnerId()const
 void DescribeShardingInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeShardingInstancesRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeShardingInstancesRequest::getAccessKeyId()const
 void DescribeShardingInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DeleteAppInfoRequest::getResourceOwnerId()const
 void DeleteAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAppInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteAppInfoRequest::getResourceOwnerAccount()const
 void DeleteAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteAppInfoRequest::getAppId()const
@@ -55,7 +55,7 @@ std::string DeleteAppInfoRequest::getAppId()const
 void DeleteAppInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 long DeleteAppInfoRequest::getResourceRealOwnerId()const
@@ -66,7 +66,7 @@ long DeleteAppInfoRequest::getResourceRealOwnerId()const
 void DeleteAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long DeleteAppInfoRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteAppInfoRequest::getOwnerId()const
 void DeleteAppInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAppInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteAppInfoRequest::getAccessKeyId()const
 void DeleteAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

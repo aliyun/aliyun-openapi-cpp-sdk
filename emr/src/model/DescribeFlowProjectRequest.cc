@@ -33,7 +33,7 @@ std::string DescribeFlowProjectRequest::getRegionId()const
 void DescribeFlowProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowProjectRequest::getProjectId()const
@@ -44,6 +44,6 @@ std::string DescribeFlowProjectRequest::getProjectId()const
 void DescribeFlowProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 

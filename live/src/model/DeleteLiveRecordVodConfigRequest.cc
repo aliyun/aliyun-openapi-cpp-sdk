@@ -33,7 +33,7 @@ long DeleteLiveRecordVodConfigRequest::getCallerParentId()const
 void DeleteLiveRecordVodConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteLiveRecordVodConfigRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DeleteLiveRecordVodConfigRequest::getProxy_original_source_ip()const
 void DeleteLiveRecordVodConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getOwnerIdLoginEmail()const
@@ -66,7 +66,7 @@ std::string DeleteLiveRecordVodConfigRequest::getOwnerIdLoginEmail()const
 void DeleteLiveRecordVodConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string DeleteLiveRecordVodConfigRequest::getCallerType()const
 void DeleteLiveRecordVodConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getEagleEyeRpcId()const
@@ -88,7 +88,7 @@ std::string DeleteLiveRecordVodConfigRequest::getEagleEyeRpcId()const
 void DeleteLiveRecordVodConfigRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DeleteLiveRecordVodConfigRequest::getAccessKeyId()const
 void DeleteLiveRecordVodConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getEagleEyeTraceId()const
@@ -110,7 +110,7 @@ std::string DeleteLiveRecordVodConfigRequest::getEagleEyeTraceId()const
 void DeleteLiveRecordVodConfigRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getAppName()const
@@ -121,7 +121,7 @@ std::string DeleteLiveRecordVodConfigRequest::getAppName()const
 void DeleteLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DeleteLiveRecordVodConfigRequest::getSecurityToken()const
 void DeleteLiveRecordVodConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteLiveRecordVodConfigRequest::getRegionId()const
 void DeleteLiveRecordVodConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DeleteLiveRecordVodConfigRequest::getRequestContent()const
 void DeleteLiveRecordVodConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DeleteLiveRecordVodConfigRequest::getCallerBidEmail()const
 void DeleteLiveRecordVodConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteLiveRecordVodConfigRequest::getCallerUidEmail()const
 void DeleteLiveRecordVodConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
@@ -187,7 +187,7 @@ std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
 void DeleteLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 long DeleteLiveRecordVodConfigRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DeleteLiveRecordVodConfigRequest::getCallerUid()const
 void DeleteLiveRecordVodConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteLiveRecordVodConfigRequest::getApp_ip()const
 void DeleteLiveRecordVodConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DeleteLiveRecordVodConfigRequest::getPopProduct()const
 void DeleteLiveRecordVodConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
@@ -231,7 +231,7 @@ std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
 void DeleteLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DeleteLiveRecordVodConfigRequest::getCallerBid()const
 void DeleteLiveRecordVodConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteLiveRecordVodConfigRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DeleteLiveRecordVodConfigRequest::getOwnerId()const
 void DeleteLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DeleteLiveRecordVodConfigRequest::getVersion()const
 void DeleteLiveRecordVodConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DeleteLiveRecordVodConfigRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DeleteLiveRecordVodConfigRequest::getServiceCode()const
 void DeleteLiveRecordVodConfigRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string DeleteLiveRecordVodConfigRequest::getRequestId()const
 void DeleteLiveRecordVodConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getEagleEyeUserData()const
@@ -330,6 +330,6 @@ std::string DeleteLiveRecordVodConfigRequest::getEagleEyeUserData()const
 void DeleteLiveRecordVodConfigRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 

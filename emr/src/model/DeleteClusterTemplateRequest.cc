@@ -33,7 +33,7 @@ long DeleteClusterTemplateRequest::getResourceOwnerId()const
 void DeleteClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteClusterTemplateRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteClusterTemplateRequest::getRegionId()const
 void DeleteClusterTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteClusterTemplateRequest::getBizId()const
@@ -55,7 +55,7 @@ std::string DeleteClusterTemplateRequest::getBizId()const
 void DeleteClusterTemplateRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string DeleteClusterTemplateRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteClusterTemplateRequest::getAccessKeyId()const
 void DeleteClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

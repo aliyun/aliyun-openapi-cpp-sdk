@@ -33,7 +33,7 @@ std::string StartDcdnDomainRequest::getSecurityToken()const
 void StartDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StartDcdnDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string StartDcdnDomainRequest::getDomainName()const
 void StartDcdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long StartDcdnDomainRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long StartDcdnDomainRequest::getOwnerId()const
 void StartDcdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

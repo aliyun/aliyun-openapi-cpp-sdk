@@ -33,7 +33,7 @@ std::string IndexVideoRequest::getGrabType()const
 void IndexVideoRequest::setGrabType(const std::string& grabType)
 {
 	grabType_ = grabType;
-	setCoreParameter("GrabType", std::to_string(grabType));
+	setCoreParameter("GrabType", grabType);
 }
 
 std::string IndexVideoRequest::getRemarksB()const
@@ -44,7 +44,7 @@ std::string IndexVideoRequest::getRemarksB()const
 void IndexVideoRequest::setRemarksB(const std::string& remarksB)
 {
 	remarksB_ = remarksB;
-	setCoreParameter("RemarksB", std::to_string(remarksB));
+	setCoreParameter("RemarksB", remarksB);
 }
 
 std::string IndexVideoRequest::getProject()const
@@ -55,7 +55,7 @@ std::string IndexVideoRequest::getProject()const
 void IndexVideoRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string IndexVideoRequest::getRemarksA()const
@@ -66,7 +66,7 @@ std::string IndexVideoRequest::getRemarksA()const
 void IndexVideoRequest::setRemarksA(const std::string& remarksA)
 {
 	remarksA_ = remarksA;
-	setCoreParameter("RemarksA", std::to_string(remarksA));
+	setCoreParameter("RemarksA", remarksA);
 }
 
 std::string IndexVideoRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string IndexVideoRequest::getEndTime()const
 void IndexVideoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string IndexVideoRequest::getExternalId()const
@@ -88,7 +88,7 @@ std::string IndexVideoRequest::getExternalId()const
 void IndexVideoRequest::setExternalId(const std::string& externalId)
 {
 	externalId_ = externalId;
-	setCoreParameter("ExternalId", std::to_string(externalId));
+	setCoreParameter("ExternalId", externalId);
 }
 
 std::string IndexVideoRequest::getStartTime()const
@@ -99,7 +99,7 @@ std::string IndexVideoRequest::getStartTime()const
 void IndexVideoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string IndexVideoRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string IndexVideoRequest::getAccessKeyId()const
 void IndexVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string IndexVideoRequest::getVideoUri()const
@@ -121,7 +121,7 @@ std::string IndexVideoRequest::getVideoUri()const
 void IndexVideoRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", std::to_string(videoUri));
+	setCoreParameter("VideoUri", videoUri);
 }
 
 bool IndexVideoRequest::getSaveType()const
@@ -143,7 +143,7 @@ std::string IndexVideoRequest::getRegionId()const
 void IndexVideoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string IndexVideoRequest::getRemarksD()const
@@ -154,7 +154,7 @@ std::string IndexVideoRequest::getRemarksD()const
 void IndexVideoRequest::setRemarksD(const std::string& remarksD)
 {
 	remarksD_ = remarksD;
-	setCoreParameter("RemarksD", std::to_string(remarksD));
+	setCoreParameter("RemarksD", remarksD);
 }
 
 std::string IndexVideoRequest::getRemarksC()const
@@ -165,7 +165,7 @@ std::string IndexVideoRequest::getRemarksC()const
 void IndexVideoRequest::setRemarksC(const std::string& remarksC)
 {
 	remarksC_ = remarksC;
-	setCoreParameter("RemarksC", std::to_string(remarksC));
+	setCoreParameter("RemarksC", remarksC);
 }
 
 std::string IndexVideoRequest::getSetId()const
@@ -176,7 +176,7 @@ std::string IndexVideoRequest::getSetId()const
 void IndexVideoRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string IndexVideoRequest::getInterval()const
@@ -187,7 +187,7 @@ std::string IndexVideoRequest::getInterval()const
 void IndexVideoRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string IndexVideoRequest::getTgtUri()const
@@ -198,6 +198,6 @@ std::string IndexVideoRequest::getTgtUri()const
 void IndexVideoRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setCoreParameter("TgtUri", std::to_string(tgtUri));
+	setCoreParameter("TgtUri", tgtUri);
 }
 

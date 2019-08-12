@@ -33,7 +33,7 @@ std::string DescribeAssetDetailByUuidRequest::getSourceIp()const
 void DescribeAssetDetailByUuidRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAssetDetailByUuidRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeAssetDetailByUuidRequest::getLang()const
 void DescribeAssetDetailByUuidRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeAssetDetailByUuidRequest::getUuid()const
@@ -55,6 +55,6 @@ std::string DescribeAssetDetailByUuidRequest::getUuid()const
 void DescribeAssetDetailByUuidRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 

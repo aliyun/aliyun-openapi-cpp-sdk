@@ -44,7 +44,7 @@ std::string DescribeRegionListRequest::getRequestId()const
 void DescribeRegionListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DescribeRegionListRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeRegionListRequest::getCallerParentId()const
 void DescribeRegionListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long DescribeRegionListRequest::getCallerBid()const
@@ -66,7 +66,7 @@ long DescribeRegionListRequest::getCallerBid()const
 void DescribeRegionListRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string DescribeRegionListRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string DescribeRegionListRequest::getCallerType()const
 void DescribeRegionListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeRegionListRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ long DescribeRegionListRequest::getCallerUid()const
 void DescribeRegionListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRegionListRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeRegionListRequest::getAccessKeyId()const
 void DescribeRegionListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

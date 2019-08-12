@@ -33,7 +33,7 @@ long SetQuotaRequest::getTotalQuota()const
 void SetQuotaRequest::setTotalQuota(long totalQuota)
 {
 	totalQuota_ = totalQuota;
-	setCoreParameter("TotalQuota", totalQuota);
+	setCoreParameter("TotalQuota", std::to_string(totalQuota));
 }
 
 std::string SetQuotaRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string SetQuotaRequest::getLibraryId()const
 void SetQuotaRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string SetQuotaRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string SetQuotaRequest::getStoreName()const
 void SetQuotaRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 

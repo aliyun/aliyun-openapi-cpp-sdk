@@ -33,7 +33,7 @@ std::string DeleteRuleRequest::getSourceIp()const
 void DeleteRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DeleteRuleRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DeleteRuleRequest::getFeatureType()const
 void DeleteRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 long DeleteRuleRequest::getId()const
@@ -55,7 +55,7 @@ long DeleteRuleRequest::getId()const
 void DeleteRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteRuleRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DeleteRuleRequest::getLang()const
 void DeleteRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

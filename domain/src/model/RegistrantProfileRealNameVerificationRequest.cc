@@ -33,7 +33,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialT
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredentialType(const std::string& identityCredentialType)
 {
 	identityCredentialType_ = identityCredentialType;
-	setCoreParameter("IdentityCredentialType", std::to_string(identityCredentialType));
+	setCoreParameter("IdentityCredentialType", identityCredentialType);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
 void RegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
@@ -55,7 +55,7 @@ long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
 void RegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", registrantProfileID);
+	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredential()const
@@ -66,7 +66,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredential(
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredential(const std::string& identityCredential)
 {
 	identityCredential_ = identityCredential;
-	setCoreParameter("IdentityCredential", std::to_string(identityCredential));
+	setCoreParameter("IdentityCredential", identityCredential);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getLang()const
@@ -77,7 +77,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getLang()const
 void RegistrantProfileRealNameVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialNo()const
@@ -88,6 +88,6 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialN
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
 {
 	identityCredentialNo_ = identityCredentialNo;
-	setCoreParameter("IdentityCredentialNo", std::to_string(identityCredentialNo));
+	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
 }
 

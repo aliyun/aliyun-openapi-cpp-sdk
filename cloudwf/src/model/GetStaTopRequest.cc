@@ -33,7 +33,7 @@ long GetStaTopRequest::getApgroupId()const
 void GetStaTopRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", apgroupId);
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetStaTopRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetStaTopRequest::getAccessKeyId()const
 void GetStaTopRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

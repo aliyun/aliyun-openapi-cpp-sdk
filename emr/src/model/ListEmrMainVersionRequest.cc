@@ -33,7 +33,7 @@ long ListEmrMainVersionRequest::getResourceOwnerId()const
 void ListEmrMainVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListEmrMainVersionRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListEmrMainVersionRequest::getRegionId()const
 void ListEmrMainVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListEmrMainVersionRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListEmrMainVersionRequest::getPageSize()const
 void ListEmrMainVersionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListEmrMainVersionRequest::getEmrVersion()const
@@ -66,7 +66,7 @@ std::string ListEmrMainVersionRequest::getEmrVersion()const
 void ListEmrMainVersionRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", std::to_string(emrVersion));
+	setCoreParameter("EmrVersion", emrVersion);
 }
 
 std::string ListEmrMainVersionRequest::getStackName()const
@@ -77,7 +77,7 @@ std::string ListEmrMainVersionRequest::getStackName()const
 void ListEmrMainVersionRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", std::to_string(stackName));
+	setCoreParameter("StackName", stackName);
 }
 
 std::string ListEmrMainVersionRequest::getStackVersion()const
@@ -88,7 +88,7 @@ std::string ListEmrMainVersionRequest::getStackVersion()const
 void ListEmrMainVersionRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", std::to_string(stackVersion));
+	setCoreParameter("StackVersion", stackVersion);
 }
 
 int ListEmrMainVersionRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int ListEmrMainVersionRequest::getPageNumber()const
 void ListEmrMainVersionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListEmrMainVersionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListEmrMainVersionRequest::getAccessKeyId()const
 void ListEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

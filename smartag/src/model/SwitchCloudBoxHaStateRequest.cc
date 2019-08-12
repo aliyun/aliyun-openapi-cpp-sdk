@@ -33,7 +33,7 @@ long SwitchCloudBoxHaStateRequest::getResourceOwnerId()const
 void SwitchCloudBoxHaStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SwitchCloudBoxHaStateRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SwitchCloudBoxHaStateRequest::getResourceOwnerAccount()const
 void SwitchCloudBoxHaStateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SwitchCloudBoxHaStateRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SwitchCloudBoxHaStateRequest::getRegionId()const
 void SwitchCloudBoxHaStateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SwitchCloudBoxHaStateRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SwitchCloudBoxHaStateRequest::getOwnerAccount()const
 void SwitchCloudBoxHaStateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SwitchCloudBoxHaStateRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string SwitchCloudBoxHaStateRequest::getSmartAGId()const
 void SwitchCloudBoxHaStateRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long SwitchCloudBoxHaStateRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long SwitchCloudBoxHaStateRequest::getOwnerId()const
 void SwitchCloudBoxHaStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

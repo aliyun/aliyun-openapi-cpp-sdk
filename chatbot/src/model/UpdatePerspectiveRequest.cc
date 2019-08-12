@@ -33,7 +33,7 @@ std::string UpdatePerspectiveRequest::getPerspectiveId()const
 void UpdatePerspectiveRequest::setPerspectiveId(const std::string& perspectiveId)
 {
 	perspectiveId_ = perspectiveId;
-	setCoreParameter("PerspectiveId", std::to_string(perspectiveId));
+	setCoreParameter("PerspectiveId", perspectiveId);
 }
 
 std::string UpdatePerspectiveRequest::getName()const
@@ -44,6 +44,6 @@ std::string UpdatePerspectiveRequest::getName()const
 void UpdatePerspectiveRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

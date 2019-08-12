@@ -33,7 +33,7 @@ long MetastoreListTaskRequest::getResourceOwnerId()const
 void MetastoreListTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreListTaskRequest::getTaskStatus()const
@@ -44,7 +44,7 @@ std::string MetastoreListTaskRequest::getTaskStatus()const
 void MetastoreListTaskRequest::setTaskStatus(const std::string& taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", std::to_string(taskStatus));
+	setCoreParameter("TaskStatus", taskStatus);
 }
 
 std::string MetastoreListTaskRequest::getTaskSourceType()const
@@ -55,7 +55,7 @@ std::string MetastoreListTaskRequest::getTaskSourceType()const
 void MetastoreListTaskRequest::setTaskSourceType(const std::string& taskSourceType)
 {
 	taskSourceType_ = taskSourceType;
-	setCoreParameter("TaskSourceType", std::to_string(taskSourceType));
+	setCoreParameter("TaskSourceType", taskSourceType);
 }
 
 std::string MetastoreListTaskRequest::getTaskType()const
@@ -66,7 +66,7 @@ std::string MetastoreListTaskRequest::getTaskType()const
 void MetastoreListTaskRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", std::to_string(taskType));
+	setCoreParameter("TaskType", taskType);
 }
 
 std::string MetastoreListTaskRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string MetastoreListTaskRequest::getRegionId()const
 void MetastoreListTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int MetastoreListTaskRequest::getPageSize()const
@@ -88,7 +88,7 @@ int MetastoreListTaskRequest::getPageSize()const
 void MetastoreListTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string MetastoreListTaskRequest::getDataSourceId()const
@@ -99,7 +99,7 @@ std::string MetastoreListTaskRequest::getDataSourceId()const
 void MetastoreListTaskRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setCoreParameter("DataSourceId", std::to_string(dataSourceId));
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 int MetastoreListTaskRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int MetastoreListTaskRequest::getPageNumber()const
 void MetastoreListTaskRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListTaskRequest::getTaskId()const
@@ -121,7 +121,7 @@ std::string MetastoreListTaskRequest::getTaskId()const
 void MetastoreListTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string MetastoreListTaskRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string MetastoreListTaskRequest::getAccessKeyId()const
 void MetastoreListTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

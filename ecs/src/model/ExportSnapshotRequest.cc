@@ -33,7 +33,7 @@ long ExportSnapshotRequest::getResourceOwnerId()const
 void ExportSnapshotRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ExportSnapshotRequest::getSnapshotId()const
@@ -44,7 +44,7 @@ std::string ExportSnapshotRequest::getSnapshotId()const
 void ExportSnapshotRequest::setSnapshotId(const std::string& snapshotId)
 {
 	snapshotId_ = snapshotId;
-	setCoreParameter("SnapshotId", std::to_string(snapshotId));
+	setCoreParameter("SnapshotId", snapshotId);
 }
 
 long ExportSnapshotRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ExportSnapshotRequest::getCallerParentId()const
 void ExportSnapshotRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ExportSnapshotRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ExportSnapshotRequest::getProxy_original_source_ip()const
 void ExportSnapshotRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ExportSnapshotRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string ExportSnapshotRequest::getOwnerIdLoginEmail()const
 void ExportSnapshotRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ExportSnapshotRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string ExportSnapshotRequest::getCallerType()const
 void ExportSnapshotRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ExportSnapshotRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ExportSnapshotRequest::getAccessKeyId()const
 void ExportSnapshotRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ExportSnapshotRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ExportSnapshotRequest::getSecurityToken()const
 void ExportSnapshotRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ExportSnapshotRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ExportSnapshotRequest::getRegionId()const
 void ExportSnapshotRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ExportSnapshotRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string ExportSnapshotRequest::getRequestContent()const
 void ExportSnapshotRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ExportSnapshotRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string ExportSnapshotRequest::getCallerBidEmail()const
 void ExportSnapshotRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ExportSnapshotRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ExportSnapshotRequest::getCallerUidEmail()const
 void ExportSnapshotRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ExportSnapshotRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long ExportSnapshotRequest::getCallerUid()const
 void ExportSnapshotRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ExportSnapshotRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ExportSnapshotRequest::getApp_ip()const
 void ExportSnapshotRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ExportSnapshotRequest::getOssBucket()const
@@ -209,7 +209,7 @@ std::string ExportSnapshotRequest::getOssBucket()const
 void ExportSnapshotRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", std::to_string(ossBucket));
+	setCoreParameter("OssBucket", ossBucket);
 }
 
 std::string ExportSnapshotRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string ExportSnapshotRequest::getResourceOwnerAccount()const
 void ExportSnapshotRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExportSnapshotRequest::getRoleName()const
@@ -231,7 +231,7 @@ std::string ExportSnapshotRequest::getRoleName()const
 void ExportSnapshotRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", std::to_string(roleName));
+	setCoreParameter("RoleName", roleName);
 }
 
 std::string ExportSnapshotRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string ExportSnapshotRequest::getCallerBid()const
 void ExportSnapshotRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ExportSnapshotRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long ExportSnapshotRequest::getOwnerId()const
 void ExportSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ExportSnapshotRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string ExportSnapshotRequest::getRequestId()const
 void ExportSnapshotRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ExportSnapshotRequest::getAkProxy()const
@@ -308,6 +308,6 @@ std::string ExportSnapshotRequest::getAkProxy()const
 void ExportSnapshotRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

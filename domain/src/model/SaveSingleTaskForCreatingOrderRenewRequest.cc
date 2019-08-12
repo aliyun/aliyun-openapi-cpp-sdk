@@ -33,7 +33,7 @@ int SaveSingleTaskForCreatingOrderRenewRequest::getSubscriptionDuration()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setSubscriptionDuration(int subscriptionDuration)
 {
 	subscriptionDuration_ = subscriptionDuration;
-	setCoreParameter("SubscriptionDuration", subscriptionDuration);
+	setCoreParameter("SubscriptionDuration", std::to_string(subscriptionDuration));
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getPromotionNo()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getPromotionNo()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", std::to_string(promotionNo));
+	setCoreParameter("PromotionNo", promotionNo);
 }
 
 long SaveSingleTaskForCreatingOrderRenewRequest::getCurrentExpirationDate()const
@@ -55,7 +55,7 @@ long SaveSingleTaskForCreatingOrderRenewRequest::getCurrentExpirationDate()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", currentExpirationDate);
+	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getUserClientIp()const
@@ -66,7 +66,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getCouponNo()const
@@ -88,7 +88,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getCouponNo()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 bool SaveSingleTaskForCreatingOrderRenewRequest::getUseCoupon()const
@@ -110,7 +110,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getLang()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForCreatingOrderRenewRequest::getUsePromotion()const

@@ -33,7 +33,7 @@ long ModifyHostPoolRequest::getResourceOwnerId()const
 void ModifyHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyHostPoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ModifyHostPoolRequest::getRegionId()const
 void ModifyHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyHostPoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyHostPoolRequest::getName()const
 void ModifyHostPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyHostPoolRequest::getBizId()const
@@ -66,7 +66,7 @@ std::string ModifyHostPoolRequest::getBizId()const
 void ModifyHostPoolRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string ModifyHostPoolRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string ModifyHostPoolRequest::getDescription()const
 void ModifyHostPoolRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyHostPoolRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyHostPoolRequest::getAccessKeyId()const
 void ModifyHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,6 +33,6 @@ std::string CreateRepoRequest::getRegionId()const
 void CreateRepoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

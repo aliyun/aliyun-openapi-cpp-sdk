@@ -33,7 +33,7 @@ long DescribeProjectsRequest::getResourceOwnerId()const
 void DescribeProjectsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeProjectsRequest::getNextPageToken()const
@@ -44,7 +44,7 @@ std::string DescribeProjectsRequest::getNextPageToken()const
 void DescribeProjectsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
+	setCoreParameter("NextPageToken", nextPageToken);
 }
 
 long DescribeProjectsRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeProjectsRequest::getCallerParentId()const
 void DescribeProjectsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeProjectsRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeProjectsRequest::getProxy_original_source_ip()const
 void DescribeProjectsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeProjectsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeProjectsRequest::getOwnerIdLoginEmail()const
 void DescribeProjectsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeProjectsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeProjectsRequest::getCallerType()const
 void DescribeProjectsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeProjectsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeProjectsRequest::getAccessKeyId()const
 void DescribeProjectsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeProjectsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeProjectsRequest::getSecurityToken()const
 void DescribeProjectsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeProjectsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeProjectsRequest::getRegionId()const
 void DescribeProjectsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeProjectsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeProjectsRequest::getRequestContent()const
 void DescribeProjectsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribeProjectsRequest::getPageSize()const
@@ -154,7 +154,7 @@ long DescribeProjectsRequest::getPageSize()const
 void DescribeProjectsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeProjectsRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeProjectsRequest::getCallerBidEmail()const
 void DescribeProjectsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeProjectsRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeProjectsRequest::getCallerUidEmail()const
 void DescribeProjectsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeProjectsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeProjectsRequest::getCallerUid()const
 void DescribeProjectsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeProjectsRequest::getShowLog()const
@@ -198,7 +198,7 @@ std::string DescribeProjectsRequest::getShowLog()const
 void DescribeProjectsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DescribeProjectsRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeProjectsRequest::getApp_ip()const
 void DescribeProjectsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeProjectsRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeProjectsRequest::getPopProduct()const
 void DescribeProjectsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DescribeProjectsRequest::getCurrentPage()const
@@ -231,7 +231,7 @@ long DescribeProjectsRequest::getCurrentPage()const
 void DescribeProjectsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeProjectsRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeProjectsRequest::getCallerBid()const
 void DescribeProjectsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeProjectsRequest::getProjectIds()const
@@ -253,7 +253,7 @@ std::string DescribeProjectsRequest::getProjectIds()const
 void DescribeProjectsRequest::setProjectIds(const std::string& projectIds)
 {
 	projectIds_ = projectIds;
-	setCoreParameter("ProjectIds", std::to_string(projectIds));
+	setCoreParameter("ProjectIds", projectIds);
 }
 
 long DescribeProjectsRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeProjectsRequest::getOwnerId()const
 void DescribeProjectsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeProjectsRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeProjectsRequest::getVersion()const
 void DescribeProjectsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeProjectsRequest::getProxy_trust_transport_info()const
@@ -319,6 +319,6 @@ std::string DescribeProjectsRequest::getRequestId()const
 void DescribeProjectsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

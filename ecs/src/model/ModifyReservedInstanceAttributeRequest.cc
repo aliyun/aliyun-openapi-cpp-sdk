@@ -33,7 +33,7 @@ long ModifyReservedInstanceAttributeRequest::getResourceOwnerId()const
 void ModifyReservedInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyReservedInstanceAttributeRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyReservedInstanceAttributeRequest::getCallerParentId()const
 void ModifyReservedInstanceAttributeRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyReservedInstanceAttributeRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string ModifyReservedInstanceAttributeRequest::getDescription()const
 void ModifyReservedInstanceAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string ModifyReservedInstanceAttributeRequest::getProxy_original_source_ip(
 void ModifyReservedInstanceAttributeRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string ModifyReservedInstanceAttributeRequest::getOwnerIdLoginEmail()const
 void ModifyReservedInstanceAttributeRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string ModifyReservedInstanceAttributeRequest::getCallerType()const
 void ModifyReservedInstanceAttributeRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ModifyReservedInstanceAttributeRequest::getAccessKeyId()const
 void ModifyReservedInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyReservedInstanceAttributeRequest::getSecurityToken()const
 void ModifyReservedInstanceAttributeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyReservedInstanceAttributeRequest::getRegionId()const
 void ModifyReservedInstanceAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyReservedInstanceAttributeRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string ModifyReservedInstanceAttributeRequest::getRequestContent()const
 void ModifyReservedInstanceAttributeRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string ModifyReservedInstanceAttributeRequest::getCallerBidEmail()const
 void ModifyReservedInstanceAttributeRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyReservedInstanceAttributeRequest::getCallerUidEmail()const
 void ModifyReservedInstanceAttributeRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyReservedInstanceAttributeRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long ModifyReservedInstanceAttributeRequest::getCallerUid()const
 void ModifyReservedInstanceAttributeRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ModifyReservedInstanceAttributeRequest::getApp_ip()const
 void ModifyReservedInstanceAttributeRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string ModifyReservedInstanceAttributeRequest::getResourceOwnerAccount()con
 void ModifyReservedInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string ModifyReservedInstanceAttributeRequest::getOwnerAccount()const
 void ModifyReservedInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string ModifyReservedInstanceAttributeRequest::getCallerBid()const
 void ModifyReservedInstanceAttributeRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyReservedInstanceAttributeRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long ModifyReservedInstanceAttributeRequest::getOwnerId()const
 void ModifyReservedInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyReservedInstanceAttributeRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string ModifyReservedInstanceAttributeRequest::getReservedInstanceId()const
 void ModifyReservedInstanceAttributeRequest::setReservedInstanceId(const std::string& reservedInstanceId)
 {
 	reservedInstanceId_ = reservedInstanceId;
-	setCoreParameter("ReservedInstanceId", std::to_string(reservedInstanceId));
+	setCoreParameter("ReservedInstanceId", reservedInstanceId);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string ModifyReservedInstanceAttributeRequest::getRequestId()const
 void ModifyReservedInstanceAttributeRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getAkProxy()const
@@ -308,7 +308,7 @@ std::string ModifyReservedInstanceAttributeRequest::getAkProxy()const
 void ModifyReservedInstanceAttributeRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 
 std::string ModifyReservedInstanceAttributeRequest::getReservedInstanceName()const
@@ -319,6 +319,6 @@ std::string ModifyReservedInstanceAttributeRequest::getReservedInstanceName()con
 void ModifyReservedInstanceAttributeRequest::setReservedInstanceName(const std::string& reservedInstanceName)
 {
 	reservedInstanceName_ = reservedInstanceName;
-	setCoreParameter("ReservedInstanceName", std::to_string(reservedInstanceName));
+	setCoreParameter("ReservedInstanceName", reservedInstanceName);
 }
 

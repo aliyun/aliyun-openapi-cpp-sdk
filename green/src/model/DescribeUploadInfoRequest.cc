@@ -33,7 +33,7 @@ std::string DescribeUploadInfoRequest::getBiz()const
 void DescribeUploadInfoRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", std::to_string(biz));
+	setCoreParameter("Biz", biz);
 }
 
 std::string DescribeUploadInfoRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeUploadInfoRequest::getSourceIp()const
 void DescribeUploadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUploadInfoRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeUploadInfoRequest::getLang()const
 void DescribeUploadInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

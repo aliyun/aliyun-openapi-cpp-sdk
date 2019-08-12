@@ -33,7 +33,7 @@ std::string GetAIMediaAuditJobRequest::getJobId()const
 void GetAIMediaAuditJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long GetAIMediaAuditJobRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetAIMediaAuditJobRequest::getResourceOwnerId()const
 void GetAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const
 void GetAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetAIMediaAuditJobRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string GetAIMediaAuditJobRequest::getOwnerId()const
 void GetAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetAIMediaAuditJobRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetAIMediaAuditJobRequest::getAccessKeyId()const
 void GetAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

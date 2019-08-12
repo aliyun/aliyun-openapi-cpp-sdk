@@ -33,7 +33,7 @@ long UnassociateCenBandwidthPackageRequest::getResourceOwnerId()const
 void UnassociateCenBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnassociateCenBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UnassociateCenBandwidthPackageRequest::getResourceOwnerAccount()cons
 void UnassociateCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassociateCenBandwidthPackageRequest::getCenId()const
@@ -55,7 +55,7 @@ std::string UnassociateCenBandwidthPackageRequest::getCenId()const
 void UnassociateCenBandwidthPackageRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string UnassociateCenBandwidthPackageRequest::getCenBandwidthPackageId()const
@@ -66,7 +66,7 @@ std::string UnassociateCenBandwidthPackageRequest::getCenBandwidthPackageId()con
 void UnassociateCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
 {
 	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", std::to_string(cenBandwidthPackageId));
+	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
 }
 
 std::string UnassociateCenBandwidthPackageRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string UnassociateCenBandwidthPackageRequest::getOwnerAccount()const
 void UnassociateCenBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnassociateCenBandwidthPackageRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long UnassociateCenBandwidthPackageRequest::getOwnerId()const
 void UnassociateCenBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

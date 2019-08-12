@@ -33,7 +33,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getAgentId()const
 void ListPrivacyNumberCallDetailsRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
+	setCoreParameter("AgentId", agentId);
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getInstanceId()const
 void ListPrivacyNumberCallDetailsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getContactId()const
@@ -55,7 +55,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getContactId()const
 void ListPrivacyNumberCallDetailsRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", std::to_string(contactId));
+	setCoreParameter("ContactId", contactId);
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
@@ -66,7 +66,7 @@ std::string ListPrivacyNumberCallDetailsRequest::getAgentName()const
 void ListPrivacyNumberCallDetailsRequest::setAgentName(const std::string& agentName)
 {
 	agentName_ = agentName;
-	setCoreParameter("AgentName", std::to_string(agentName));
+	setCoreParameter("AgentName", agentName);
 }
 
 int ListPrivacyNumberCallDetailsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int ListPrivacyNumberCallDetailsRequest::getPageSize()const
 void ListPrivacyNumberCallDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListPrivacyNumberCallDetailsRequest::getEndTime()const
@@ -88,7 +88,7 @@ long ListPrivacyNumberCallDetailsRequest::getEndTime()const
 void ListPrivacyNumberCallDetailsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long ListPrivacyNumberCallDetailsRequest::getStartTime()const
@@ -99,7 +99,7 @@ long ListPrivacyNumberCallDetailsRequest::getStartTime()const
 void ListPrivacyNumberCallDetailsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListPrivacyNumberCallDetailsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int ListPrivacyNumberCallDetailsRequest::getPageNumber()const
 void ListPrivacyNumberCallDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListPrivacyNumberCallDetailsRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ListPrivacyNumberCallDetailsRequest::getAccessKeyId()const
 void ListPrivacyNumberCallDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

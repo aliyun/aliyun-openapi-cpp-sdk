@@ -33,7 +33,7 @@ long SubmitMaterialsRequest::getResourceOwnerId()const
 void SubmitMaterialsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMaterialsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string SubmitMaterialsRequest::getSourceIp()const
 void SubmitMaterialsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::vector<SubmitMaterialsRequest::Material> SubmitMaterialsRequest::getMaterial()const
@@ -59,8 +59,8 @@ void SubmitMaterialsRequest::setMaterial(const std::vector<Material>& material)
 	for(int i = 0; i!= material.size(); i++)	{
 		auto obj = material.at(i);
 		std::string str ="Material."+ std::to_string(i);
-		setCoreParameter(str + ".MaterialType", std::to_string(obj.materialType));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".MaterialType", obj.materialType);
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -72,6 +72,6 @@ std::string SubmitMaterialsRequest::getVerifyToken()const
 void SubmitMaterialsRequest::setVerifyToken(const std::string& verifyToken)
 {
 	verifyToken_ = verifyToken;
-	setCoreParameter("VerifyToken", std::to_string(verifyToken));
+	setCoreParameter("VerifyToken", verifyToken);
 }
 

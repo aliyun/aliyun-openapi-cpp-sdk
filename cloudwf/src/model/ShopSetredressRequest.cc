@@ -33,7 +33,7 @@ std::string ShopSetredressRequest::getWorkday()const
 void ShopSetredressRequest::setWorkday(const std::string& workday)
 {
 	workday_ = workday;
-	setCoreParameter("Workday", std::to_string(workday));
+	setCoreParameter("Workday", workday);
 }
 
 int ShopSetredressRequest::getFilterclose()const
@@ -44,7 +44,7 @@ int ShopSetredressRequest::getFilterclose()const
 void ShopSetredressRequest::setFilterclose(int filterclose)
 {
 	filterclose_ = filterclose;
-	setCoreParameter("Filterclose", filterclose);
+	setCoreParameter("Filterclose", std::to_string(filterclose));
 }
 
 int ShopSetredressRequest::getMinstoptime()const
@@ -55,7 +55,7 @@ int ShopSetredressRequest::getMinstoptime()const
 void ShopSetredressRequest::setMinstoptime(int minstoptime)
 {
 	minstoptime_ = minstoptime;
-	setCoreParameter("Minstoptime", minstoptime);
+	setCoreParameter("Minstoptime", std::to_string(minstoptime));
 }
 
 std::string ShopSetredressRequest::getHoliday()const
@@ -66,7 +66,7 @@ std::string ShopSetredressRequest::getHoliday()const
 void ShopSetredressRequest::setHoliday(const std::string& holiday)
 {
 	holiday_ = holiday;
-	setCoreParameter("Holiday", std::to_string(holiday));
+	setCoreParameter("Holiday", holiday);
 }
 
 std::string ShopSetredressRequest::getHnum()const
@@ -77,7 +77,7 @@ std::string ShopSetredressRequest::getHnum()const
 void ShopSetredressRequest::setHnum(const std::string& hnum)
 {
 	hnum_ = hnum;
-	setCoreParameter("Hnum", std::to_string(hnum));
+	setCoreParameter("Hnum", hnum);
 }
 
 std::string ShopSetredressRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ShopSetredressRequest::getAccessKeyId()const
 void ShopSetredressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopSetredressRequest::getSid()const
@@ -99,7 +99,7 @@ long ShopSetredressRequest::getSid()const
 void ShopSetredressRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 
 int ShopSetredressRequest::getClerk()const
@@ -110,7 +110,7 @@ int ShopSetredressRequest::getClerk()const
 void ShopSetredressRequest::setClerk(int clerk)
 {
 	clerk_ = clerk;
-	setCoreParameter("Clerk", clerk);
+	setCoreParameter("Clerk", std::to_string(clerk));
 }
 
 int ShopSetredressRequest::getFilterstate()const
@@ -121,7 +121,7 @@ int ShopSetredressRequest::getFilterstate()const
 void ShopSetredressRequest::setFilterstate(int filterstate)
 {
 	filterstate_ = filterstate;
-	setCoreParameter("Filterstate", filterstate);
+	setCoreParameter("Filterstate", std::to_string(filterstate));
 }
 
 std::string ShopSetredressRequest::getWnum()const
@@ -132,7 +132,7 @@ std::string ShopSetredressRequest::getWnum()const
 void ShopSetredressRequest::setWnum(const std::string& wnum)
 {
 	wnum_ = wnum;
-	setCoreParameter("Wnum", std::to_string(wnum));
+	setCoreParameter("Wnum", wnum);
 }
 
 int ShopSetredressRequest::getState()const
@@ -143,7 +143,7 @@ int ShopSetredressRequest::getState()const
 void ShopSetredressRequest::setState(int state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setCoreParameter("State", std::to_string(state));
 }
 
 int ShopSetredressRequest::getCrowdfixed()const
@@ -154,7 +154,7 @@ int ShopSetredressRequest::getCrowdfixed()const
 void ShopSetredressRequest::setCrowdfixed(int crowdfixed)
 {
 	crowdfixed_ = crowdfixed;
-	setCoreParameter("Crowdfixed", crowdfixed);
+	setCoreParameter("Crowdfixed", std::to_string(crowdfixed));
 }
 
 int ShopSetredressRequest::getMaxstoptime()const
@@ -165,6 +165,6 @@ int ShopSetredressRequest::getMaxstoptime()const
 void ShopSetredressRequest::setMaxstoptime(int maxstoptime)
 {
 	maxstoptime_ = maxstoptime;
-	setCoreParameter("Maxstoptime", maxstoptime);
+	setCoreParameter("Maxstoptime", std::to_string(maxstoptime));
 }
 

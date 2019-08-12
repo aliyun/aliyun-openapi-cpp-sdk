@@ -33,7 +33,7 @@ long ListSlsLogstoreInfoRequest::getResourceOwnerId()const
 void ListSlsLogstoreInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListSlsLogstoreInfoRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListSlsLogstoreInfoRequest::getRegionId()const
 void ListSlsLogstoreInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListSlsLogstoreInfoRequest::getComponentName()const
@@ -55,7 +55,7 @@ std::string ListSlsLogstoreInfoRequest::getComponentName()const
 void ListSlsLogstoreInfoRequest::setComponentName(const std::string& componentName)
 {
 	componentName_ = componentName;
-	setCoreParameter("ComponentName", std::to_string(componentName));
+	setCoreParameter("ComponentName", componentName);
 }
 
 std::string ListSlsLogstoreInfoRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string ListSlsLogstoreInfoRequest::getServiceName()const
 void ListSlsLogstoreInfoRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ListSlsLogstoreInfoRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListSlsLogstoreInfoRequest::getClusterId()const
 void ListSlsLogstoreInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListSlsLogstoreInfoRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListSlsLogstoreInfoRequest::getAccessKeyId()const
 void ListSlsLogstoreInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

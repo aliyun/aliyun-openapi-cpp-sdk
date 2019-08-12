@@ -33,7 +33,7 @@ long CreateClusterHostGroupRequest::getResourceOwnerId()const
 void CreateClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterHostGroupRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateClusterHostGroupRequest::getRegionId()const
 void CreateClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateClusterHostGroupRequest::getComment()const
@@ -55,7 +55,7 @@ std::string CreateClusterHostGroupRequest::getComment()const
 void CreateClusterHostGroupRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", std::to_string(comment));
+	setCoreParameter("Comment", comment);
 }
 
 std::string CreateClusterHostGroupRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateClusterHostGroupRequest::getClusterId()const
 void CreateClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CreateClusterHostGroupRequest::getHostGroupName()const
@@ -77,7 +77,7 @@ std::string CreateClusterHostGroupRequest::getHostGroupName()const
 void CreateClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
 {
 	hostGroupName_ = hostGroupName;
-	setCoreParameter("HostGroupName", std::to_string(hostGroupName));
+	setCoreParameter("HostGroupName", hostGroupName);
 }
 
 std::string CreateClusterHostGroupRequest::getHostGroupType()const
@@ -88,7 +88,7 @@ std::string CreateClusterHostGroupRequest::getHostGroupType()const
 void CreateClusterHostGroupRequest::setHostGroupType(const std::string& hostGroupType)
 {
 	hostGroupType_ = hostGroupType;
-	setCoreParameter("HostGroupType", std::to_string(hostGroupType));
+	setCoreParameter("HostGroupType", hostGroupType);
 }
 
 std::string CreateClusterHostGroupRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CreateClusterHostGroupRequest::getAccessKeyId()const
 void CreateClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

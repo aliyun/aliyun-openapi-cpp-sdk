@@ -33,7 +33,7 @@ long DescribeDomainsUsageByDayRequest::getCallerParentId()const
 void DescribeDomainsUsageByDayRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainsUsageByDayRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDomainsUsageByDayRequest::getStartTime()const
 void DescribeDomainsUsageByDayRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainsUsageByDayRequest::getProxy_original_source_ip()const
 void DescribeDomainsUsageByDayRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainsUsageByDayRequest::getOwnerIdLoginEmail()const
 void DescribeDomainsUsageByDayRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainsUsageByDayRequest::getCallerType()const
 void DescribeDomainsUsageByDayRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDomainsUsageByDayRequest::getAccessKeyId()const
 void DescribeDomainsUsageByDayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDomainsUsageByDayRequest::getSecurityToken()const
 void DescribeDomainsUsageByDayRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDomainsUsageByDayRequest::getRequestContent()const
 void DescribeDomainsUsageByDayRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeDomainsUsageByDayRequest::getCallerBidEmail()const
 void DescribeDomainsUsageByDayRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDomainsUsageByDayRequest::getCallerUidEmail()const
 void DescribeDomainsUsageByDayRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainsUsageByDayRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeDomainsUsageByDayRequest::getCallerUid()const
 void DescribeDomainsUsageByDayRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainsUsageByDayRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeDomainsUsageByDayRequest::getApp_ip()const
 void DescribeDomainsUsageByDayRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeDomainsUsageByDayRequest::getPopProduct()const
 void DescribeDomainsUsageByDayRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeDomainsUsageByDayRequest::getProduct()const
 void DescribeDomainsUsageByDayRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getOutString()const
@@ -198,7 +198,7 @@ std::string DescribeDomainsUsageByDayRequest::getOutString()const
 void DescribeDomainsUsageByDayRequest::setOutString(const std::string& outString)
 {
 	outString_ = outString;
-	setCoreParameter("OutString", std::to_string(outString));
+	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getDomainName()const
@@ -209,7 +209,7 @@ std::string DescribeDomainsUsageByDayRequest::getDomainName()const
 void DescribeDomainsUsageByDayRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeDomainsUsageByDayRequest::getEndTime()const
 void DescribeDomainsUsageByDayRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainsUsageByDayRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeDomainsUsageByDayRequest::getCallerBid()const
 void DescribeDomainsUsageByDayRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainsUsageByDayRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeDomainsUsageByDayRequest::getOwnerId()const
 void DescribeDomainsUsageByDayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainsUsageByDayRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeDomainsUsageByDayRequest::getVersion()const
 void DescribeDomainsUsageByDayRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainsUsageByDayRequest::getProxy_trust_transport_info()const
@@ -297,6 +297,6 @@ std::string DescribeDomainsUsageByDayRequest::getRequestId()const
 void DescribeDomainsUsageByDayRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

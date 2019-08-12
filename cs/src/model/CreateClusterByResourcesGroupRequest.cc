@@ -33,6 +33,6 @@ std::string CreateClusterByResourcesGroupRequest::getResourceGroupId()const
 void CreateClusterByResourcesGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 

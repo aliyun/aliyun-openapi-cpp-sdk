@@ -33,7 +33,7 @@ long AddGlobalAccelerationInstanceIpRequest::getResourceOwnerId()const
 void AddGlobalAccelerationInstanceIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()con
 void AddGlobalAccelerationInstanceIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getRegionId()const
 void AddGlobalAccelerationInstanceIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
 void AddGlobalAccelerationInstanceIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
@@ -77,7 +77,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
 void AddGlobalAccelerationInstanceIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", std::to_string(ipInstanceId));
+	setCoreParameter("IpInstanceId", ipInstanceId);
 }
 
 long AddGlobalAccelerationInstanceIpRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AddGlobalAccelerationInstanceIpRequest::getOwnerId()const
 void AddGlobalAccelerationInstanceIpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanceId()const
@@ -99,6 +99,6 @@ std::string AddGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanc
 void AddGlobalAccelerationInstanceIpRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", std::to_string(globalAccelerationInstanceId));
+	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeLimitationRequest::getLimitation()const
 void DescribeLimitationRequest::setLimitation(const std::string& limitation)
 {
 	limitation_ = limitation;
-	setCoreParameter("Limitation", std::to_string(limitation));
+	setCoreParameter("Limitation", limitation);
 }
 
 long DescribeLimitationRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeLimitationRequest::getResourceOwnerId()const
 void DescribeLimitationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLimitationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeLimitationRequest::getResourceOwnerAccount()const
 void DescribeLimitationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLimitationRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeLimitationRequest::getOwnerAccount()const
 void DescribeLimitationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLimitationRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DescribeLimitationRequest::getOwnerId()const
 void DescribeLimitationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

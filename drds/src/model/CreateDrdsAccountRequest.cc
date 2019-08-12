@@ -33,7 +33,7 @@ std::string CreateDrdsAccountRequest::getPassword()const
 void CreateDrdsAccountRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string CreateDrdsAccountRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string CreateDrdsAccountRequest::getDbName()const
 void CreateDrdsAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", std::to_string(dbName));
+	setCoreParameter("DbName", dbName);
 }
 
 std::string CreateDrdsAccountRequest::getDrdsInstanceId()const
@@ -55,7 +55,7 @@ std::string CreateDrdsAccountRequest::getDrdsInstanceId()const
 void CreateDrdsAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", std::to_string(drdsInstanceId));
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string CreateDrdsAccountRequest::getUserName()const
@@ -66,7 +66,7 @@ std::string CreateDrdsAccountRequest::getUserName()const
 void CreateDrdsAccountRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 
 std::string CreateDrdsAccountRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CreateDrdsAccountRequest::getAccessKeyId()const
 void CreateDrdsAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string ModifyDataLimitRequest::getPassword()const
 void ModifyDataLimitRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string ModifyDataLimitRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifyDataLimitRequest::getSourceIp()const
 void ModifyDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyDataLimitRequest::getConnector()const
@@ -55,7 +55,7 @@ std::string ModifyDataLimitRequest::getConnector()const
 void ModifyDataLimitRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", std::to_string(connector));
+	setCoreParameter("Connector", connector);
 }
 
 long ModifyDataLimitRequest::getId()const
@@ -66,7 +66,7 @@ long ModifyDataLimitRequest::getId()const
 void ModifyDataLimitRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyDataLimitRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ModifyDataLimitRequest::getLang()const
 void ModifyDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int ModifyDataLimitRequest::getResourceType()const
@@ -88,7 +88,7 @@ int ModifyDataLimitRequest::getResourceType()const
 void ModifyDataLimitRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ModifyDataLimitRequest::getServiceRegionId()const
@@ -99,7 +99,7 @@ std::string ModifyDataLimitRequest::getServiceRegionId()const
 void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", std::to_string(serviceRegionId));
+	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 
 std::string ModifyDataLimitRequest::getUserName()const
@@ -110,6 +110,6 @@ std::string ModifyDataLimitRequest::getUserName()const
 void ModifyDataLimitRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

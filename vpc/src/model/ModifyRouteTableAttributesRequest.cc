@@ -33,7 +33,7 @@ long ModifyRouteTableAttributesRequest::getResourceOwnerId()const
 void ModifyRouteTableAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyRouteTableAttributesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyRouteTableAttributesRequest::getResourceOwnerAccount()const
 void ModifyRouteTableAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyRouteTableAttributesRequest::getBandwidth()const
@@ -55,7 +55,7 @@ std::string ModifyRouteTableAttributesRequest::getBandwidth()const
 void ModifyRouteTableAttributesRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyRouteTableAttributesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyRouteTableAttributesRequest::getOwnerAccount()const
 void ModifyRouteTableAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyRouteTableAttributesRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string ModifyRouteTableAttributesRequest::getDescription()const
 void ModifyRouteTableAttributesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long ModifyRouteTableAttributesRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ModifyRouteTableAttributesRequest::getOwnerId()const
 void ModifyRouteTableAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyRouteTableAttributesRequest::getKbpsBandwidth()const
@@ -99,7 +99,7 @@ std::string ModifyRouteTableAttributesRequest::getKbpsBandwidth()const
 void ModifyRouteTableAttributesRequest::setKbpsBandwidth(const std::string& kbpsBandwidth)
 {
 	kbpsBandwidth_ = kbpsBandwidth;
-	setCoreParameter("KbpsBandwidth", std::to_string(kbpsBandwidth));
+	setCoreParameter("KbpsBandwidth", kbpsBandwidth);
 }
 
 std::string ModifyRouteTableAttributesRequest::getRouteTableName()const
@@ -110,7 +110,7 @@ std::string ModifyRouteTableAttributesRequest::getRouteTableName()const
 void ModifyRouteTableAttributesRequest::setRouteTableName(const std::string& routeTableName)
 {
 	routeTableName_ = routeTableName;
-	setCoreParameter("RouteTableName", std::to_string(routeTableName));
+	setCoreParameter("RouteTableName", routeTableName);
 }
 
 std::string ModifyRouteTableAttributesRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ModifyRouteTableAttributesRequest::getRegionId()const
 void ModifyRouteTableAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long ModifyRouteTableAttributesRequest::getResourceUid()const
@@ -132,7 +132,7 @@ long ModifyRouteTableAttributesRequest::getResourceUid()const
 void ModifyRouteTableAttributesRequest::setResourceUid(long resourceUid)
 {
 	resourceUid_ = resourceUid;
-	setCoreParameter("ResourceUid", resourceUid);
+	setCoreParameter("ResourceUid", std::to_string(resourceUid));
 }
 
 std::string ModifyRouteTableAttributesRequest::getResourceBid()const
@@ -143,7 +143,7 @@ std::string ModifyRouteTableAttributesRequest::getResourceBid()const
 void ModifyRouteTableAttributesRequest::setResourceBid(const std::string& resourceBid)
 {
 	resourceBid_ = resourceBid;
-	setCoreParameter("ResourceBid", std::to_string(resourceBid));
+	setCoreParameter("ResourceBid", resourceBid);
 }
 
 std::string ModifyRouteTableAttributesRequest::getRouteTableId()const
@@ -154,6 +154,6 @@ std::string ModifyRouteTableAttributesRequest::getRouteTableId()const
 void ModifyRouteTableAttributesRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", std::to_string(routeTableId));
+	setCoreParameter("RouteTableId", routeTableId);
 }
 

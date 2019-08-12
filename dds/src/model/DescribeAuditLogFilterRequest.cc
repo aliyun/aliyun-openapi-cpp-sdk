@@ -33,7 +33,7 @@ long DescribeAuditLogFilterRequest::getResourceOwnerId()const
 void DescribeAuditLogFilterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAuditLogFilterRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeAuditLogFilterRequest::getSecurityToken()const
 void DescribeAuditLogFilterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAuditLogFilterRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAuditLogFilterRequest::getResourceOwnerAccount()const
 void DescribeAuditLogFilterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAuditLogFilterRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeAuditLogFilterRequest::getRegionId()const
 void DescribeAuditLogFilterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAuditLogFilterRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeAuditLogFilterRequest::getOwnerAccount()const
 void DescribeAuditLogFilterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAuditLogFilterRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeAuditLogFilterRequest::getDBInstanceId()const
 void DescribeAuditLogFilterRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeAuditLogFilterRequest::getRoleType()const
@@ -99,7 +99,7 @@ std::string DescribeAuditLogFilterRequest::getRoleType()const
 void DescribeAuditLogFilterRequest::setRoleType(const std::string& roleType)
 {
 	roleType_ = roleType;
-	setCoreParameter("RoleType", std::to_string(roleType));
+	setCoreParameter("RoleType", roleType);
 }
 
 long DescribeAuditLogFilterRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeAuditLogFilterRequest::getOwnerId()const
 void DescribeAuditLogFilterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAuditLogFilterRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeAuditLogFilterRequest::getAccessKeyId()const
 void DescribeAuditLogFilterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

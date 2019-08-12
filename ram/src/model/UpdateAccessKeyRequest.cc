@@ -33,7 +33,7 @@ std::string UpdateAccessKeyRequest::getUserAccessKeyId()const
 void UpdateAccessKeyRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setCoreParameter("UserAccessKeyId", std::to_string(userAccessKeyId));
+	setCoreParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string UpdateAccessKeyRequest::getUserName()const
@@ -44,7 +44,7 @@ std::string UpdateAccessKeyRequest::getUserName()const
 void UpdateAccessKeyRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 
 std::string UpdateAccessKeyRequest::getStatus()const
@@ -55,6 +55,6 @@ std::string UpdateAccessKeyRequest::getStatus()const
 void UpdateAccessKeyRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

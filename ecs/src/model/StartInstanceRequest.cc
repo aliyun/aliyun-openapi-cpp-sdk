@@ -33,7 +33,7 @@ std::string StartInstanceRequest::getSourceRegionId()const
 void StartInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 bool StartInstanceRequest::getInitLocalDisk()const
@@ -55,7 +55,7 @@ long StartInstanceRequest::getResourceOwnerId()const
 void StartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StartInstanceRequest::getInstanceId()const
@@ -66,7 +66,7 @@ std::string StartInstanceRequest::getInstanceId()const
 void StartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool StartInstanceRequest::getDryRun()const
@@ -88,7 +88,7 @@ std::string StartInstanceRequest::getResourceOwnerAccount()const
 void StartInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string StartInstanceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string StartInstanceRequest::getOwnerAccount()const
 void StartInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long StartInstanceRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long StartInstanceRequest::getOwnerId()const
 void StartInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

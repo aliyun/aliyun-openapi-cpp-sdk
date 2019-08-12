@@ -33,7 +33,7 @@ std::string ModifyJobRequest::getRunParameter()const
 void ModifyJobRequest::setRunParameter(const std::string& runParameter)
 {
 	runParameter_ = runParameter;
-	setCoreParameter("RunParameter", std::to_string(runParameter));
+	setCoreParameter("RunParameter", runParameter);
 }
 
 int ModifyJobRequest::getRetryInterval()const
@@ -44,7 +44,7 @@ int ModifyJobRequest::getRetryInterval()const
 void ModifyJobRequest::setRetryInterval(int retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", retryInterval);
+	setCoreParameter("RetryInterval", std::to_string(retryInterval));
 }
 
 long ModifyJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ModifyJobRequest::getResourceOwnerId()const
 void ModifyJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyJobRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyJobRequest::getRegionId()const
 void ModifyJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyJobRequest::getName()const
@@ -77,7 +77,7 @@ std::string ModifyJobRequest::getName()const
 void ModifyJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyJobRequest::getId()const
@@ -88,7 +88,7 @@ std::string ModifyJobRequest::getId()const
 void ModifyJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyJobRequest::getType()const
@@ -99,7 +99,7 @@ std::string ModifyJobRequest::getType()const
 void ModifyJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 int ModifyJobRequest::getMaxRetry()const
@@ -110,7 +110,7 @@ int ModifyJobRequest::getMaxRetry()const
 void ModifyJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", maxRetry);
+	setCoreParameter("MaxRetry", std::to_string(maxRetry));
 }
 
 std::string ModifyJobRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyJobRequest::getAccessKeyId()const
 void ModifyJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyJobRequest::getFailAct()const
@@ -132,6 +132,6 @@ std::string ModifyJobRequest::getFailAct()const
 void ModifyJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", std::to_string(failAct));
+	setCoreParameter("FailAct", failAct);
 }
 

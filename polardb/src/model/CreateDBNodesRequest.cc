@@ -33,7 +33,7 @@ long CreateDBNodesRequest::getResourceOwnerId()const
 void CreateDBNodesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDBNodesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string CreateDBNodesRequest::getResourceOwnerAccount()const
 void CreateDBNodesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDBNodesRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateDBNodesRequest::getClientToken()const
 void CreateDBNodesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateDBNodesRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string CreateDBNodesRequest::getDBClusterId()const
 void CreateDBNodesRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string CreateDBNodesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateDBNodesRequest::getOwnerAccount()const
 void CreateDBNodesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateDBNodesRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long CreateDBNodesRequest::getOwnerId()const
 void CreateDBNodesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateDBNodesRequest::DBNode> CreateDBNodesRequest::getDBNode()const
@@ -103,8 +103,8 @@ void CreateDBNodesRequest::setDBNode(const std::vector<DBNode>& dBNode)
 	for(int i = 0; i!= dBNode.size(); i++)	{
 		auto obj = dBNode.at(i);
 		std::string str ="DBNode."+ std::to_string(i);
-		setCoreParameter(str + ".TargetClass", std::to_string(obj.targetClass));
-		setCoreParameter(str + ".ZoneId", std::to_string(obj.zoneId));
+		setCoreParameter(str + ".TargetClass", obj.targetClass);
+		setCoreParameter(str + ".ZoneId", obj.zoneId);
 	}
 }
 
@@ -116,6 +116,6 @@ std::string CreateDBNodesRequest::getAccessKeyId()const
 void CreateDBNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

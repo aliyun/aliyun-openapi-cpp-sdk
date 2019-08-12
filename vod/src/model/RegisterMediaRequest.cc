@@ -33,7 +33,7 @@ std::string RegisterMediaRequest::getUserData()const
 void RegisterMediaRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long RegisterMediaRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RegisterMediaRequest::getResourceOwnerId()const
 void RegisterMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RegisterMediaRequest::getTemplateGroupId()const
@@ -55,7 +55,7 @@ std::string RegisterMediaRequest::getTemplateGroupId()const
 void RegisterMediaRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", std::to_string(templateGroupId));
+	setCoreParameter("TemplateGroupId", templateGroupId);
 }
 
 std::string RegisterMediaRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RegisterMediaRequest::getResourceOwnerAccount()const
 void RegisterMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long RegisterMediaRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long RegisterMediaRequest::getOwnerId()const
 void RegisterMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RegisterMediaRequest::getRegisterMetadatas()const
@@ -88,7 +88,7 @@ std::string RegisterMediaRequest::getRegisterMetadatas()const
 void RegisterMediaRequest::setRegisterMetadatas(const std::string& registerMetadatas)
 {
 	registerMetadatas_ = registerMetadatas;
-	setCoreParameter("RegisterMetadatas", std::to_string(registerMetadatas));
+	setCoreParameter("RegisterMetadatas", registerMetadatas);
 }
 
 std::string RegisterMediaRequest::getWorkflowId()const
@@ -99,7 +99,7 @@ std::string RegisterMediaRequest::getWorkflowId()const
 void RegisterMediaRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", std::to_string(workflowId));
+	setCoreParameter("WorkflowId", workflowId);
 }
 
 std::string RegisterMediaRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string RegisterMediaRequest::getAccessKeyId()const
 void RegisterMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

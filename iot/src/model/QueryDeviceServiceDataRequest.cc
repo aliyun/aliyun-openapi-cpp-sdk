@@ -33,7 +33,7 @@ int QueryDeviceServiceDataRequest::getAsc()const
 void QueryDeviceServiceDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setCoreParameter("Asc", asc);
+	setCoreParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceServiceDataRequest::getIdentifier()const
@@ -44,7 +44,7 @@ std::string QueryDeviceServiceDataRequest::getIdentifier()const
 void QueryDeviceServiceDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", std::to_string(identifier));
+	setCoreParameter("Identifier", identifier);
 }
 
 std::string QueryDeviceServiceDataRequest::getIotId()const
@@ -55,7 +55,7 @@ std::string QueryDeviceServiceDataRequest::getIotId()const
 void QueryDeviceServiceDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", std::to_string(iotId));
+	setCoreParameter("IotId", iotId);
 }
 
 std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
@@ -66,7 +66,7 @@ std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
 void QueryDeviceServiceDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceServiceDataRequest::getPageSize()const
@@ -77,7 +77,7 @@ int QueryDeviceServiceDataRequest::getPageSize()const
 void QueryDeviceServiceDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryDeviceServiceDataRequest::getEndTime()const
@@ -88,7 +88,7 @@ long QueryDeviceServiceDataRequest::getEndTime()const
 void QueryDeviceServiceDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryDeviceServiceDataRequest::getDeviceName()const
@@ -99,7 +99,7 @@ std::string QueryDeviceServiceDataRequest::getDeviceName()const
 void QueryDeviceServiceDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 long QueryDeviceServiceDataRequest::getStartTime()const
@@ -110,7 +110,7 @@ long QueryDeviceServiceDataRequest::getStartTime()const
 void QueryDeviceServiceDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDeviceServiceDataRequest::getProductKey()const
@@ -121,7 +121,7 @@ std::string QueryDeviceServiceDataRequest::getProductKey()const
 void QueryDeviceServiceDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
 void QueryDeviceServiceDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

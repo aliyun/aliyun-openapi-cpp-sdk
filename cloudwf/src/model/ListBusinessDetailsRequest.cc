@@ -33,7 +33,7 @@ std::string ListBusinessDetailsRequest::getOrderCol()const
 void ListBusinessDetailsRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", std::to_string(orderCol));
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListBusinessDetailsRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListBusinessDetailsRequest::getSearchName()const
 void ListBusinessDetailsRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", std::to_string(searchName));
+	setCoreParameter("SearchName", searchName);
 }
 
 int ListBusinessDetailsRequest::getLength()const
@@ -55,7 +55,7 @@ int ListBusinessDetailsRequest::getLength()const
 void ListBusinessDetailsRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListBusinessDetailsRequest::getPageIndex()const
@@ -66,7 +66,7 @@ int ListBusinessDetailsRequest::getPageIndex()const
 void ListBusinessDetailsRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListBusinessDetailsRequest::getOrderDir()const
@@ -77,7 +77,7 @@ std::string ListBusinessDetailsRequest::getOrderDir()const
 void ListBusinessDetailsRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", std::to_string(orderDir));
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListBusinessDetailsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListBusinessDetailsRequest::getAccessKeyId()const
 void ListBusinessDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CreateOrderRevokeRequest::getReason()const
 void CreateOrderRevokeRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", std::to_string(reason));
+	setCoreParameter("Reason", reason);
 }
 
 std::string CreateOrderRevokeRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateOrderRevokeRequest::getSourceIp()const
 void CreateOrderRevokeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateOrderRevokeRequest::getOrderId()const
@@ -55,7 +55,7 @@ long CreateOrderRevokeRequest::getOrderId()const
 void CreateOrderRevokeRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderRevokeRequest::getLang()const
@@ -66,6 +66,6 @@ std::string CreateOrderRevokeRequest::getLang()const
 void CreateOrderRevokeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,6 +33,6 @@ long DeleteEntityRequest::getEntityId()const
 void DeleteEntityRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", entityId);
+	setCoreParameter("EntityId", std::to_string(entityId));
 }
 

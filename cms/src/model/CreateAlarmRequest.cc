@@ -33,7 +33,7 @@ int CreateAlarmRequest::getPeriod()const
 void CreateAlarmRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateAlarmRequest::getWebhook()const
@@ -44,7 +44,7 @@ std::string CreateAlarmRequest::getWebhook()const
 void CreateAlarmRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", std::to_string(webhook));
+	setCoreParameter("Webhook", webhook);
 }
 
 bool CreateAlarmRequest::getDryRun()const
@@ -66,7 +66,7 @@ std::string CreateAlarmRequest::getContactGroups()const
 void CreateAlarmRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", std::to_string(contactGroups));
+	setCoreParameter("ContactGroups", contactGroups);
 }
 
 int CreateAlarmRequest::getEndTime()const
@@ -77,7 +77,7 @@ int CreateAlarmRequest::getEndTime()const
 void CreateAlarmRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string CreateAlarmRequest::getThreshold()const
@@ -88,7 +88,7 @@ std::string CreateAlarmRequest::getThreshold()const
 void CreateAlarmRequest::setThreshold(const std::string& threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
+	setCoreParameter("Threshold", threshold);
 }
 
 int CreateAlarmRequest::getStartTime()const
@@ -99,7 +99,7 @@ int CreateAlarmRequest::getStartTime()const
 void CreateAlarmRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string CreateAlarmRequest::getName()const
@@ -110,7 +110,7 @@ std::string CreateAlarmRequest::getName()const
 void CreateAlarmRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateAlarmRequest::get_Namespace()const
@@ -121,7 +121,7 @@ std::string CreateAlarmRequest::get_Namespace()const
 void CreateAlarmRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", std::to_string(_namespace));
+	setCoreParameter("_Namespace", _namespace);
 }
 
 int CreateAlarmRequest::getEvaluationCount()const
@@ -132,7 +132,7 @@ int CreateAlarmRequest::getEvaluationCount()const
 void CreateAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", evaluationCount);
+	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 int CreateAlarmRequest::getSilenceTime()const
@@ -143,7 +143,7 @@ int CreateAlarmRequest::getSilenceTime()const
 void CreateAlarmRequest::setSilenceTime(int silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", silenceTime);
+	setCoreParameter("SilenceTime", std::to_string(silenceTime));
 }
 
 std::string CreateAlarmRequest::getMetricName()const
@@ -154,7 +154,7 @@ std::string CreateAlarmRequest::getMetricName()const
 void CreateAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", std::to_string(metricName));
+	setCoreParameter("MetricName", metricName);
 }
 
 int CreateAlarmRequest::getNotifyType()const
@@ -165,7 +165,7 @@ int CreateAlarmRequest::getNotifyType()const
 void CreateAlarmRequest::setNotifyType(int notifyType)
 {
 	notifyType_ = notifyType;
-	setCoreParameter("NotifyType", notifyType);
+	setCoreParameter("NotifyType", std::to_string(notifyType));
 }
 
 std::string CreateAlarmRequest::getComparisonOperator()const
@@ -176,7 +176,7 @@ std::string CreateAlarmRequest::getComparisonOperator()const
 void CreateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
 {
 	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", std::to_string(comparisonOperator));
+	setCoreParameter("ComparisonOperator", comparisonOperator);
 }
 
 std::string CreateAlarmRequest::getDimensions()const
@@ -187,7 +187,7 @@ std::string CreateAlarmRequest::getDimensions()const
 void CreateAlarmRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", std::to_string(dimensions));
+	setCoreParameter("Dimensions", dimensions);
 }
 
 std::string CreateAlarmRequest::getStatistics()const
@@ -198,6 +198,6 @@ std::string CreateAlarmRequest::getStatistics()const
 void CreateAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", std::to_string(statistics));
+	setCoreParameter("Statistics", statistics);
 }
 

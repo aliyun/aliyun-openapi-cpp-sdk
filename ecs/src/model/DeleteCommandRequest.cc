@@ -33,7 +33,7 @@ long DeleteCommandRequest::getResourceOwnerId()const
 void DeleteCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteCommandRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteCommandRequest::getCallerParentId()const
 void DeleteCommandRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteCommandRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeleteCommandRequest::getProxy_original_source_ip()const
 void DeleteCommandRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteCommandRequest::getCommandId()const
@@ -77,7 +77,7 @@ std::string DeleteCommandRequest::getCommandId()const
 void DeleteCommandRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", std::to_string(commandId));
+	setCoreParameter("CommandId", commandId);
 }
 
 std::string DeleteCommandRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteCommandRequest::getOwnerIdLoginEmail()const
 void DeleteCommandRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteCommandRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteCommandRequest::getCallerType()const
 void DeleteCommandRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteCommandRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteCommandRequest::getAccessKeyId()const
 void DeleteCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteCommandRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteCommandRequest::getSourceRegionId()const
 void DeleteCommandRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DeleteCommandRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DeleteCommandRequest::getSecurityToken()const
 void DeleteCommandRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteCommandRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DeleteCommandRequest::getRegionId()const
 void DeleteCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DeleteCommandRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string DeleteCommandRequest::getRequestContent()const
 void DeleteCommandRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteCommandRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteCommandRequest::getCallerBidEmail()const
 void DeleteCommandRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteCommandRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteCommandRequest::getCallerUidEmail()const
 void DeleteCommandRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteCommandRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DeleteCommandRequest::getCallerUid()const
 void DeleteCommandRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteCommandRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteCommandRequest::getApp_ip()const
 void DeleteCommandRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteCommandRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DeleteCommandRequest::getResourceOwnerAccount()const
 void DeleteCommandRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCommandRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteCommandRequest::getOwnerAccount()const
 void DeleteCommandRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteCommandRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DeleteCommandRequest::getCallerBid()const
 void DeleteCommandRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteCommandRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DeleteCommandRequest::getOwnerId()const
 void DeleteCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteCommandRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DeleteCommandRequest::getRequestId()const
 void DeleteCommandRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteCommandRequest::getAkProxy()const
@@ -308,6 +308,6 @@ std::string DeleteCommandRequest::getAkProxy()const
 void DeleteCommandRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

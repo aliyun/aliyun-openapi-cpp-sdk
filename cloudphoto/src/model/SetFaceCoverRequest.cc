@@ -33,7 +33,7 @@ std::string SetFaceCoverRequest::getLibraryId()const
 void SetFaceCoverRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long SetFaceCoverRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long SetFaceCoverRequest::getPhotoId()const
 void SetFaceCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", photoId);
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string SetFaceCoverRequest::getStoreName()const
@@ -55,7 +55,7 @@ std::string SetFaceCoverRequest::getStoreName()const
 void SetFaceCoverRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 long SetFaceCoverRequest::getFaceId()const
@@ -66,6 +66,6 @@ long SetFaceCoverRequest::getFaceId()const
 void SetFaceCoverRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", faceId);
+	setCoreParameter("FaceId", std::to_string(faceId));
 }
 

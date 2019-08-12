@@ -33,7 +33,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointRegion()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointRegion(const std::string& sourceEndpointRegion)
 {
 	sourceEndpointRegion_ = sourceEndpointRegion;
-	setCoreParameter("SourceEndpointRegion", std::to_string(sourceEndpointRegion));
+	setCoreParameter("SourceEndpointRegion", sourceEndpointRegion);
 }
 
 long ModifyBackupSourceEndpointRequest::getBackupGatewayId()const
@@ -44,7 +44,7 @@ long ModifyBackupSourceEndpointRequest::getBackupGatewayId()const
 void ModifyBackupSourceEndpointRequest::setBackupGatewayId(long backupGatewayId)
 {
 	backupGatewayId_ = backupGatewayId;
-	setCoreParameter("BackupGatewayId", backupGatewayId);
+	setCoreParameter("BackupGatewayId", std::to_string(backupGatewayId));
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceID()const
@@ -55,7 +55,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceID()cons
 void ModifyBackupSourceEndpointRequest::setSourceEndpointInstanceID(const std::string& sourceEndpointInstanceID)
 {
 	sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-	setCoreParameter("SourceEndpointInstanceID", std::to_string(sourceEndpointInstanceID));
+	setCoreParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointUserName()const
@@ -66,7 +66,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointUserName()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointUserName(const std::string& sourceEndpointUserName)
 {
 	sourceEndpointUserName_ = sourceEndpointUserName;
-	setCoreParameter("SourceEndpointUserName", std::to_string(sourceEndpointUserName));
+	setCoreParameter("SourceEndpointUserName", sourceEndpointUserName);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifyBackupSourceEndpointRequest::getClientToken()const
 void ModifyBackupSourceEndpointRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
@@ -88,7 +88,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
 {
 	sourceEndpointPassword_ = sourceEndpointPassword;
-	setCoreParameter("SourceEndpointPassword", std::to_string(sourceEndpointPassword));
+	setCoreParameter("SourceEndpointPassword", sourceEndpointPassword);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getBackupPlanId()const
@@ -99,7 +99,7 @@ std::string ModifyBackupSourceEndpointRequest::getBackupPlanId()const
 void ModifyBackupSourceEndpointRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
+	setCoreParameter("BackupPlanId", backupPlanId);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getBackupObjects()const
@@ -110,7 +110,7 @@ std::string ModifyBackupSourceEndpointRequest::getBackupObjects()const
 void ModifyBackupSourceEndpointRequest::setBackupObjects(const std::string& backupObjects)
 {
 	backupObjects_ = backupObjects;
-	setCoreParameter("BackupObjects", std::to_string(backupObjects));
+	setCoreParameter("BackupObjects", backupObjects);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getOwnerId()const
@@ -121,7 +121,7 @@ std::string ModifyBackupSourceEndpointRequest::getOwnerId()const
 void ModifyBackupSourceEndpointRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 int ModifyBackupSourceEndpointRequest::getSourceEndpointPort()const
@@ -132,7 +132,7 @@ int ModifyBackupSourceEndpointRequest::getSourceEndpointPort()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointPort(int sourceEndpointPort)
 {
 	sourceEndpointPort_ = sourceEndpointPort;
-	setCoreParameter("SourceEndpointPort", sourceEndpointPort);
+	setCoreParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()const
@@ -143,7 +143,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointDatabaseName()co
 void ModifyBackupSourceEndpointRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
 {
 	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setCoreParameter("SourceEndpointDatabaseName", std::to_string(sourceEndpointDatabaseName));
+	setCoreParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceType()const
@@ -154,7 +154,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointInstanceType()co
 void ModifyBackupSourceEndpointRequest::setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType)
 {
 	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-	setCoreParameter("SourceEndpointInstanceType", std::to_string(sourceEndpointInstanceType));
+	setCoreParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
@@ -165,7 +165,7 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointIP()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
 {
 	sourceEndpointIP_ = sourceEndpointIP;
-	setCoreParameter("SourceEndpointIP", std::to_string(sourceEndpointIP));
+	setCoreParameter("SourceEndpointIP", sourceEndpointIP);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string ModifyBackupSourceEndpointRequest::getRegionId()const
 void ModifyBackupSourceEndpointRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointOracleSID()const
@@ -187,6 +187,6 @@ std::string ModifyBackupSourceEndpointRequest::getSourceEndpointOracleSID()const
 void ModifyBackupSourceEndpointRequest::setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID)
 {
 	sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-	setCoreParameter("SourceEndpointOracleSID", std::to_string(sourceEndpointOracleSID));
+	setCoreParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
 }
 

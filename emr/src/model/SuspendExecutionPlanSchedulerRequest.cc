@@ -33,7 +33,7 @@ long SuspendExecutionPlanSchedulerRequest::getResourceOwnerId()const
 void SuspendExecutionPlanSchedulerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SuspendExecutionPlanSchedulerRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string SuspendExecutionPlanSchedulerRequest::getRegionId()const
 void SuspendExecutionPlanSchedulerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SuspendExecutionPlanSchedulerRequest::getId()const
@@ -55,7 +55,7 @@ std::string SuspendExecutionPlanSchedulerRequest::getId()const
 void SuspendExecutionPlanSchedulerRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string SuspendExecutionPlanSchedulerRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SuspendExecutionPlanSchedulerRequest::getAccessKeyId()const
 void SuspendExecutionPlanSchedulerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

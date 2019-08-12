@@ -33,7 +33,7 @@ long DescribeSecurityGroupsRequest::getResourceOwnerId()const
 void DescribeSecurityGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeSecurityGroupsRequest::getDryRun()const
@@ -66,7 +66,7 @@ std::string DescribeSecurityGroupsRequest::getResourceOwnerAccount()const
 void DescribeSecurityGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSecurityGroupsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSecurityGroupsRequest::getOwnerAccount()const
 void DescribeSecurityGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSecurityGroupsRequest::getSecurityGroupId()const
@@ -88,7 +88,7 @@ std::string DescribeSecurityGroupsRequest::getSecurityGroupId()const
 void DescribeSecurityGroupsRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", std::to_string(securityGroupId));
+	setCoreParameter("SecurityGroupId", securityGroupId);
 }
 
 bool DescribeSecurityGroupsRequest::getIsQueryEcsCount()const
@@ -110,7 +110,7 @@ std::string DescribeSecurityGroupsRequest::getNetworkType()const
 void DescribeSecurityGroupsRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 
 long DescribeSecurityGroupsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeSecurityGroupsRequest::getOwnerId()const
 void DescribeSecurityGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSecurityGroupsRequest::getSecurityGroupIds()const
@@ -132,7 +132,7 @@ std::string DescribeSecurityGroupsRequest::getSecurityGroupIds()const
 void DescribeSecurityGroupsRequest::setSecurityGroupIds(const std::string& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	setCoreParameter("SecurityGroupIds", std::to_string(securityGroupIds));
+	setCoreParameter("SecurityGroupIds", securityGroupIds);
 }
 
 std::string DescribeSecurityGroupsRequest::getSecurityGroupName()const
@@ -143,7 +143,7 @@ std::string DescribeSecurityGroupsRequest::getSecurityGroupName()const
 void DescribeSecurityGroupsRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", std::to_string(securityGroupName));
+	setCoreParameter("SecurityGroupName", securityGroupName);
 }
 
 int DescribeSecurityGroupsRequest::getPageNumber()const
@@ -154,7 +154,7 @@ int DescribeSecurityGroupsRequest::getPageNumber()const
 void DescribeSecurityGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSecurityGroupsRequest::getSourceRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeSecurityGroupsRequest::getSourceRegionId()const
 void DescribeSecurityGroupsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeSecurityGroupsRequest::getResourceGroupId()const
@@ -176,7 +176,7 @@ std::string DescribeSecurityGroupsRequest::getResourceGroupId()const
 void DescribeSecurityGroupsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSecurityGroupsRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string DescribeSecurityGroupsRequest::getRegionId()const
 void DescribeSecurityGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeSecurityGroupsRequest::getVpcId()const
@@ -198,7 +198,7 @@ std::string DescribeSecurityGroupsRequest::getVpcId()const
 void DescribeSecurityGroupsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 int DescribeSecurityGroupsRequest::getPageSize()const
@@ -209,7 +209,7 @@ int DescribeSecurityGroupsRequest::getPageSize()const
 void DescribeSecurityGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeSecurityGroupsRequest::Tag> DescribeSecurityGroupsRequest::getTag()const
@@ -224,8 +224,8 @@ void DescribeSecurityGroupsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 

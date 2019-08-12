@@ -33,7 +33,7 @@ std::string DeleteDomainCertificateRequest::getSecurityToken()const
 void DeleteDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteDomainCertificateRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteDomainCertificateRequest::getGroupId()const
 void DeleteDomainCertificateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DeleteDomainCertificateRequest::getCertificateId()const
@@ -55,7 +55,7 @@ std::string DeleteDomainCertificateRequest::getCertificateId()const
 void DeleteDomainCertificateRequest::setCertificateId(const std::string& certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setCoreParameter("CertificateId", certificateId);
 }
 
 std::string DeleteDomainCertificateRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DeleteDomainCertificateRequest::getDomainName()const
 void DeleteDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainCertificateRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteDomainCertificateRequest::getAccessKeyId()const
 void DeleteDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

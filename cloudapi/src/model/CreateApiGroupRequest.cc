@@ -33,7 +33,7 @@ std::string CreateApiGroupRequest::getInstanceId()const
 void CreateApiGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateApiGroupRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string CreateApiGroupRequest::getSecurityToken()const
 void CreateApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateApiGroupRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string CreateApiGroupRequest::getDescription()const
 void CreateApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateApiGroupRequest::getSource()const
@@ -66,7 +66,7 @@ std::string CreateApiGroupRequest::getSource()const
 void CreateApiGroupRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", std::to_string(source));
+	setCoreParameter("Source", source);
 }
 
 std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
@@ -81,8 +81,8 @@ void CreateApiGroupRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -94,7 +94,7 @@ std::string CreateApiGroupRequest::getGroupName()const
 void CreateApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string CreateApiGroupRequest::getAccessKeyId()const
@@ -105,6 +105,6 @@ std::string CreateApiGroupRequest::getAccessKeyId()const
 void CreateApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

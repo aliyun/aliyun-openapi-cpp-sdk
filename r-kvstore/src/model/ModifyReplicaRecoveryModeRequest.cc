@@ -33,7 +33,7 @@ long ModifyReplicaRecoveryModeRequest::getResourceOwnerId()const
 void ModifyReplicaRecoveryModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyReplicaRecoveryModeRequest::getSecurityToken()const
 void ModifyReplicaRecoveryModeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyReplicaRecoveryModeRequest::getResourceOwnerAccount()const
 void ModifyReplicaRecoveryModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyReplicaRecoveryModeRequest::getRegionId()const
 void ModifyReplicaRecoveryModeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getRecoveryMode()const
@@ -77,7 +77,7 @@ std::string ModifyReplicaRecoveryModeRequest::getRecoveryMode()const
 void ModifyReplicaRecoveryModeRequest::setRecoveryMode(const std::string& recoveryMode)
 {
 	recoveryMode_ = recoveryMode;
-	setCoreParameter("RecoveryMode", std::to_string(recoveryMode));
+	setCoreParameter("RecoveryMode", recoveryMode);
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyReplicaRecoveryModeRequest::getOwnerAccount()const
 void ModifyReplicaRecoveryModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getReplicaId()const
@@ -99,7 +99,7 @@ std::string ModifyReplicaRecoveryModeRequest::getReplicaId()const
 void ModifyReplicaRecoveryModeRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", std::to_string(replicaId));
+	setCoreParameter("ReplicaId", replicaId);
 }
 
 long ModifyReplicaRecoveryModeRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyReplicaRecoveryModeRequest::getOwnerId()const
 void ModifyReplicaRecoveryModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyReplicaRecoveryModeRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyReplicaRecoveryModeRequest::getAccessKeyId()const
 void ModifyReplicaRecoveryModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ListAlertDingDingGroupRequest::getResourceOwnerId()const
 void ListAlertDingDingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListAlertDingDingGroupRequest::getFromApp()const
@@ -44,7 +44,7 @@ std::string ListAlertDingDingGroupRequest::getFromApp()const
 void ListAlertDingDingGroupRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string ListAlertDingDingGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListAlertDingDingGroupRequest::getRegionId()const
 void ListAlertDingDingGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListAlertDingDingGroupRequest::getIds()const
@@ -66,7 +66,7 @@ std::string ListAlertDingDingGroupRequest::getIds()const
 void ListAlertDingDingGroupRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", std::to_string(ids));
+	setCoreParameter("Ids", ids);
 }
 
 std::string ListAlertDingDingGroupRequest::getUserId()const
@@ -77,7 +77,7 @@ std::string ListAlertDingDingGroupRequest::getUserId()const
 void ListAlertDingDingGroupRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 
 std::string ListAlertDingDingGroupRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListAlertDingDingGroupRequest::getAccessKeyId()const
 void ListAlertDingDingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

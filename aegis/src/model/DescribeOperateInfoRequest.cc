@@ -33,7 +33,7 @@ std::string DescribeOperateInfoRequest::getSourceIp()const
 void DescribeOperateInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOperateInfoRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeOperateInfoRequest::getLang()const
 void DescribeOperateInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

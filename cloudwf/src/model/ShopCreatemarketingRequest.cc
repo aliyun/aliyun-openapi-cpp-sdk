@@ -33,7 +33,7 @@ std::string ShopCreatemarketingRequest::getEtime()const
 void ShopCreatemarketingRequest::setEtime(const std::string& etime)
 {
 	etime_ = etime;
-	setCoreParameter("Etime", std::to_string(etime));
+	setCoreParameter("Etime", etime);
 }
 
 std::string ShopCreatemarketingRequest::getName()const
@@ -44,7 +44,7 @@ std::string ShopCreatemarketingRequest::getName()const
 void ShopCreatemarketingRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ShopCreatemarketingRequest::getStime()const
@@ -55,7 +55,7 @@ std::string ShopCreatemarketingRequest::getStime()const
 void ShopCreatemarketingRequest::setStime(const std::string& stime)
 {
 	stime_ = stime;
-	setCoreParameter("Stime", std::to_string(stime));
+	setCoreParameter("Stime", stime);
 }
 
 std::string ShopCreatemarketingRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string ShopCreatemarketingRequest::getAccessKeyId()const
 void ShopCreatemarketingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopCreatemarketingRequest::getSid()const
@@ -77,6 +77,6 @@ long ShopCreatemarketingRequest::getSid()const
 void ShopCreatemarketingRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

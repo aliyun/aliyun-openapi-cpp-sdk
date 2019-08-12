@@ -33,7 +33,7 @@ long DescribeAvaliableTimeRangeRequest::getResourceOwnerId()const
 void DescribeAvaliableTimeRangeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeAvaliableTimeRangeRequest::getInstanceId()const
 void DescribeAvaliableTimeRangeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeAvaliableTimeRangeRequest::getSecurityToken()const
 void DescribeAvaliableTimeRangeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeAvaliableTimeRangeRequest::getResourceOwnerAccount()const
 void DescribeAvaliableTimeRangeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeAvaliableTimeRangeRequest::getRegionId()const
 void DescribeAvaliableTimeRangeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeAvaliableTimeRangeRequest::getOwnerAccount()const
 void DescribeAvaliableTimeRangeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAvaliableTimeRangeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeAvaliableTimeRangeRequest::getOwnerId()const
 void DescribeAvaliableTimeRangeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getNodeId()const
@@ -110,7 +110,7 @@ std::string DescribeAvaliableTimeRangeRequest::getNodeId()const
 void DescribeAvaliableTimeRangeRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string DescribeAvaliableTimeRangeRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeAvaliableTimeRangeRequest::getAccessKeyId()const
 void DescribeAvaliableTimeRangeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

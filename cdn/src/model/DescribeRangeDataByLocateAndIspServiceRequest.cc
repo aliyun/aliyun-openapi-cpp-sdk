@@ -33,7 +33,7 @@ long DescribeRangeDataByLocateAndIspServiceRequest::getResourceOwnerId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeRangeDataByLocateAndIspServiceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeRangeDataByLocateAndIspServiceRequest::getCallerParentId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getDomainNames()const
@@ -55,7 +55,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getDomainNames()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", std::to_string(domainNames));
+	setCoreParameter("DomainNames", domainNames);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getLocationNames()const
@@ -66,7 +66,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getLocationNames()con
 void DescribeRangeDataByLocateAndIspServiceRequest::setLocationNames(const std::string& locationNames)
 {
 	locationNames_ = locationNames;
-	setCoreParameter("LocationNames", std::to_string(locationNames));
+	setCoreParameter("LocationNames", locationNames);
 }
 
 bool DescribeRangeDataByLocateAndIspServiceRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getStartTime()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getProxy_original_sou
 void DescribeRangeDataByLocateAndIspServiceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getOwnerIdLoginEmail()const
@@ -110,7 +110,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getOwnerIdLoginEmail(
 void DescribeRangeDataByLocateAndIspServiceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerType()const
@@ -121,7 +121,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerType()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getAccessKeyId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getSecurityToken()con
 void DescribeRangeDataByLocateAndIspServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getRequestContent()co
 void DescribeRangeDataByLocateAndIspServiceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerBidEmail()co
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerUidEmail()co
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeRangeDataByLocateAndIspServiceRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeRangeDataByLocateAndIspServiceRequest::getCallerUid()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getIspNames()const
@@ -198,7 +198,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getIspNames()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setIspNames(const std::string& ispNames)
 {
 	ispNames_ = ispNames;
-	setCoreParameter("IspNames", std::to_string(ispNames));
+	setCoreParameter("IspNames", ispNames);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getApp_ip()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getPopProduct()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getProduct()const
@@ -231,7 +231,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getProduct()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getEndTime()const
@@ -242,7 +242,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getEndTime()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getCallerBid()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getWithBug()const
@@ -264,7 +264,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getWithBug()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setWithBug(const std::string& withBug)
 {
 	withBug_ = withBug;
-	setCoreParameter("WithBug", std::to_string(withBug));
+	setCoreParameter("WithBug", withBug);
 }
 
 long DescribeRangeDataByLocateAndIspServiceRequest::getOwnerId()const
@@ -275,7 +275,7 @@ long DescribeRangeDataByLocateAndIspServiceRequest::getOwnerId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRangeDataByLocateAndIspServiceRequest::getVersion()const
@@ -286,7 +286,7 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getVersion()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeRangeDataByLocateAndIspServiceRequest::getProxy_trust_transport_info()const
@@ -330,6 +330,6 @@ std::string DescribeRangeDataByLocateAndIspServiceRequest::getRequestId()const
 void DescribeRangeDataByLocateAndIspServiceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

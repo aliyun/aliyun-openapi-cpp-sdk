@@ -33,7 +33,7 @@ std::string DescribeGtmAccessStrategiesRequest::getInstanceId()const
 void DescribeGtmAccessStrategiesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmAccessStrategiesRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeGtmAccessStrategiesRequest::getUserClientIp()const
 void DescribeGtmAccessStrategiesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmAccessStrategiesRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeGtmAccessStrategiesRequest::getPageSize()const
 void DescribeGtmAccessStrategiesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmAccessStrategiesRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeGtmAccessStrategiesRequest::getLang()const
 void DescribeGtmAccessStrategiesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeGtmAccessStrategiesRequest::getPageNumber()const
@@ -77,6 +77,6 @@ int DescribeGtmAccessStrategiesRequest::getPageNumber()const
 void DescribeGtmAccessStrategiesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

@@ -33,7 +33,7 @@ long DeleteDataSourceRequest::getResourceOwnerId()const
 void DeleteDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteDataSourceRequest::getRegionId()const
 void DeleteDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDataSourceRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteDataSourceRequest::getId()const
 void DeleteDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteDataSourceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteDataSourceRequest::getAccessKeyId()const
 void DeleteDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

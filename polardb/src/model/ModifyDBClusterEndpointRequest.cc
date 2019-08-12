@@ -33,7 +33,7 @@ std::string ModifyDBClusterEndpointRequest::getAutoAddNewNodes()const
 void ModifyDBClusterEndpointRequest::setAutoAddNewNodes(const std::string& autoAddNewNodes)
 {
 	autoAddNewNodes_ = autoAddNewNodes;
-	setCoreParameter("AutoAddNewNodes", std::to_string(autoAddNewNodes));
+	setCoreParameter("AutoAddNewNodes", autoAddNewNodes);
 }
 
 long ModifyDBClusterEndpointRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyDBClusterEndpointRequest::getResourceOwnerId()const
 void ModifyDBClusterEndpointRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBClusterEndpointRequest::getNodes()const
@@ -55,7 +55,7 @@ std::string ModifyDBClusterEndpointRequest::getNodes()const
 void ModifyDBClusterEndpointRequest::setNodes(const std::string& nodes)
 {
 	nodes_ = nodes;
-	setCoreParameter("Nodes", std::to_string(nodes));
+	setCoreParameter("Nodes", nodes);
 }
 
 std::string ModifyDBClusterEndpointRequest::getReadWriteMode()const
@@ -66,7 +66,7 @@ std::string ModifyDBClusterEndpointRequest::getReadWriteMode()const
 void ModifyDBClusterEndpointRequest::setReadWriteMode(const std::string& readWriteMode)
 {
 	readWriteMode_ = readWriteMode;
-	setCoreParameter("ReadWriteMode", std::to_string(readWriteMode));
+	setCoreParameter("ReadWriteMode", readWriteMode);
 }
 
 std::string ModifyDBClusterEndpointRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBClusterEndpointRequest::getResourceOwnerAccount()const
 void ModifyDBClusterEndpointRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBClusterEndpointRequest::getDBClusterId()const
@@ -88,7 +88,7 @@ std::string ModifyDBClusterEndpointRequest::getDBClusterId()const
 void ModifyDBClusterEndpointRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBClusterEndpointRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyDBClusterEndpointRequest::getOwnerAccount()const
 void ModifyDBClusterEndpointRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBClusterEndpointRequest::getDBEndpointId()const
@@ -110,7 +110,7 @@ std::string ModifyDBClusterEndpointRequest::getDBEndpointId()const
 void ModifyDBClusterEndpointRequest::setDBEndpointId(const std::string& dBEndpointId)
 {
 	dBEndpointId_ = dBEndpointId;
-	setCoreParameter("DBEndpointId", std::to_string(dBEndpointId));
+	setCoreParameter("DBEndpointId", dBEndpointId);
 }
 
 std::string ModifyDBClusterEndpointRequest::getEndpointConfig()const
@@ -121,7 +121,7 @@ std::string ModifyDBClusterEndpointRequest::getEndpointConfig()const
 void ModifyDBClusterEndpointRequest::setEndpointConfig(const std::string& endpointConfig)
 {
 	endpointConfig_ = endpointConfig;
-	setCoreParameter("EndpointConfig", std::to_string(endpointConfig));
+	setCoreParameter("EndpointConfig", endpointConfig);
 }
 
 long ModifyDBClusterEndpointRequest::getOwnerId()const
@@ -132,7 +132,7 @@ long ModifyDBClusterEndpointRequest::getOwnerId()const
 void ModifyDBClusterEndpointRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBClusterEndpointRequest::getAccessKeyId()const
@@ -143,6 +143,6 @@ std::string ModifyDBClusterEndpointRequest::getAccessKeyId()const
 void ModifyDBClusterEndpointRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

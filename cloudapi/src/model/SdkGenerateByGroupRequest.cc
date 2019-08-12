@@ -33,7 +33,7 @@ std::string SdkGenerateByGroupRequest::getSecurityToken()const
 void SdkGenerateByGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SdkGenerateByGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string SdkGenerateByGroupRequest::getGroupId()const
 void SdkGenerateByGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string SdkGenerateByGroupRequest::getLanguage()const
@@ -55,7 +55,7 @@ std::string SdkGenerateByGroupRequest::getLanguage()const
 void SdkGenerateByGroupRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", std::to_string(language));
+	setCoreParameter("Language", language);
 }
 
 std::string SdkGenerateByGroupRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SdkGenerateByGroupRequest::getAccessKeyId()const
 void SdkGenerateByGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

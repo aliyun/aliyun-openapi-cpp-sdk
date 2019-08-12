@@ -33,7 +33,7 @@ std::string DeleteWatermarkRequest::getWatermarkId()const
 void DeleteWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", std::to_string(watermarkId));
+	setCoreParameter("WatermarkId", watermarkId);
 }
 
 long DeleteWatermarkRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteWatermarkRequest::getResourceOwnerId()const
 void DeleteWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
 void DeleteWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteWatermarkRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteWatermarkRequest::getOwnerId()const
 void DeleteWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteWatermarkRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteWatermarkRequest::getAccessKeyId()const
 void DeleteWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

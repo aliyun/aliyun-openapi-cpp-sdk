@@ -33,7 +33,7 @@ long ListNotesRequest::getResourceOwnerId()const
 void ListNotesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListNotesRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListNotesRequest::getRegionId()const
 void ListNotesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListNotesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListNotesRequest::getAccessKeyId()const
 void ListNotesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

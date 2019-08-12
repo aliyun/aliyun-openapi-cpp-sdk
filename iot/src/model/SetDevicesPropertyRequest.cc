@@ -33,7 +33,7 @@ std::string SetDevicesPropertyRequest::getIotInstanceId()const
 void SetDevicesPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> SetDevicesPropertyRequest::getDeviceName()const
@@ -45,7 +45,7 @@ void SetDevicesPropertyRequest::setDeviceName(const std::vector<std::string>& de
 {
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), std::to_string(deviceName.at(i)));
+		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
 }
 
 std::string SetDevicesPropertyRequest::getProductKey()const
@@ -56,7 +56,7 @@ std::string SetDevicesPropertyRequest::getProductKey()const
 void SetDevicesPropertyRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string SetDevicesPropertyRequest::getItems()const
@@ -67,7 +67,7 @@ std::string SetDevicesPropertyRequest::getItems()const
 void SetDevicesPropertyRequest::setItems(const std::string& items)
 {
 	items_ = items;
-	setCoreParameter("Items", std::to_string(items));
+	setCoreParameter("Items", items);
 }
 
 std::string SetDevicesPropertyRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string SetDevicesPropertyRequest::getAccessKeyId()const
 void SetDevicesPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

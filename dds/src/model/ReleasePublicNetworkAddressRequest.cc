@@ -33,7 +33,7 @@ long ReleasePublicNetworkAddressRequest::getResourceOwnerId()const
 void ReleasePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleasePublicNetworkAddressRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ReleasePublicNetworkAddressRequest::getSecurityToken()const
 void ReleasePublicNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReleasePublicNetworkAddressRequest::getResourceOwnerAccount()const
 void ReleasePublicNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ReleasePublicNetworkAddressRequest::getRegionId()const
 void ReleasePublicNetworkAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReleasePublicNetworkAddressRequest::getOwnerAccount()const
 void ReleasePublicNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string ReleasePublicNetworkAddressRequest::getDBInstanceId()const
 void ReleasePublicNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long ReleasePublicNetworkAddressRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReleasePublicNetworkAddressRequest::getOwnerId()const
 void ReleasePublicNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReleasePublicNetworkAddressRequest::getNodeId()const
@@ -110,7 +110,7 @@ std::string ReleasePublicNetworkAddressRequest::getNodeId()const
 void ReleasePublicNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string ReleasePublicNetworkAddressRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ReleasePublicNetworkAddressRequest::getAccessKeyId()const
 void ReleasePublicNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

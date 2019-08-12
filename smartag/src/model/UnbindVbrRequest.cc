@@ -33,7 +33,7 @@ long UnbindVbrRequest::getResourceOwnerId()const
 void UnbindVbrRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindVbrRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UnbindVbrRequest::getResourceOwnerAccount()const
 void UnbindVbrRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindVbrRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string UnbindVbrRequest::getRegionId()const
 void UnbindVbrRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnbindVbrRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnbindVbrRequest::getOwnerAccount()const
 void UnbindVbrRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UnbindVbrRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string UnbindVbrRequest::getSmartAGId()const
 void UnbindVbrRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long UnbindVbrRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long UnbindVbrRequest::getOwnerId()const
 void UnbindVbrRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindVbrRequest::getVbrId()const
@@ -99,7 +99,7 @@ std::string UnbindVbrRequest::getVbrId()const
 void UnbindVbrRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", std::to_string(vbrId));
+	setCoreParameter("VbrId", vbrId);
 }
 
 std::string UnbindVbrRequest::getVbrRegionId()const
@@ -110,6 +110,6 @@ std::string UnbindVbrRequest::getVbrRegionId()const
 void UnbindVbrRequest::setVbrRegionId(const std::string& vbrRegionId)
 {
 	vbrRegionId_ = vbrRegionId;
-	setCoreParameter("VbrRegionId", std::to_string(vbrRegionId));
+	setCoreParameter("VbrRegionId", vbrRegionId);
 }
 

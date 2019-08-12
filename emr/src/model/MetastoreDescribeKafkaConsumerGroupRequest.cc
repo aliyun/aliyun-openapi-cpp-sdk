@@ -33,7 +33,7 @@ long MetastoreDescribeKafkaConsumerGroupRequest::getResourceOwnerId()const
 void MetastoreDescribeKafkaConsumerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDescribeKafkaConsumerGroupRequest::getTopicId()const
@@ -44,7 +44,7 @@ std::string MetastoreDescribeKafkaConsumerGroupRequest::getTopicId()const
 void MetastoreDescribeKafkaConsumerGroupRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string MetastoreDescribeKafkaConsumerGroupRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreDescribeKafkaConsumerGroupRequest::getRegionId()const
 void MetastoreDescribeKafkaConsumerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDescribeKafkaConsumerGroupRequest::getConsumerGroupId()const
@@ -66,7 +66,7 @@ std::string MetastoreDescribeKafkaConsumerGroupRequest::getConsumerGroupId()cons
 void MetastoreDescribeKafkaConsumerGroupRequest::setConsumerGroupId(const std::string& consumerGroupId)
 {
 	consumerGroupId_ = consumerGroupId;
-	setCoreParameter("ConsumerGroupId", std::to_string(consumerGroupId));
+	setCoreParameter("ConsumerGroupId", consumerGroupId);
 }
 
 std::string MetastoreDescribeKafkaConsumerGroupRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MetastoreDescribeKafkaConsumerGroupRequest::getAccessKeyId()const
 void MetastoreDescribeKafkaConsumerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

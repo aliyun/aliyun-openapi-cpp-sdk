@@ -33,7 +33,7 @@ std::string AttachVServerGroupsRequest::getResourceOwnerAccount()const
 void AttachVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachVServerGroupsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string AttachVServerGroupsRequest::getRegionId()const
 void AttachVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AttachVServerGroupsRequest::getScalingGroupId()const
@@ -55,7 +55,7 @@ std::string AttachVServerGroupsRequest::getScalingGroupId()const
 void AttachVServerGroupsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachVServerGroupsRequest::getForceAttach()const
@@ -77,7 +77,7 @@ long AttachVServerGroupsRequest::getOwnerId()const
 void AttachVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<AttachVServerGroupsRequest::VServerGroup> AttachVServerGroupsRequest::getVServerGroup()const
@@ -92,8 +92,8 @@ void AttachVServerGroupsRequest::setVServerGroup(const std::vector<VServerGroup>
 	for(int i = 0; i!= vServerGroup.size(); i++)	{
 		auto obj = vServerGroup.at(i);
 		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", std::to_string(obj.loadBalancerId));
-		setCoreParameter(str + ".VServerGroupAttribute", obj.vServerGroupAttribute);
+		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
+		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
 	}
 }
 
@@ -105,6 +105,6 @@ std::string AttachVServerGroupsRequest::getAccessKeyId()const
 void AttachVServerGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

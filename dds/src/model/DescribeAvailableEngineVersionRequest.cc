@@ -33,7 +33,7 @@ long DescribeAvailableEngineVersionRequest::getResourceOwnerId()const
 void DescribeAvailableEngineVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableEngineVersionRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableEngineVersionRequest::getSecurityToken()const
 void DescribeAvailableEngineVersionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableEngineVersionRequest::getResourceOwnerAccount()cons
 void DescribeAvailableEngineVersionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeAvailableEngineVersionRequest::getRegionId()const
 void DescribeAvailableEngineVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeAvailableEngineVersionRequest::getOwnerAccount()const
 void DescribeAvailableEngineVersionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAvailableEngineVersionRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeAvailableEngineVersionRequest::getDBInstanceId()const
 void DescribeAvailableEngineVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeAvailableEngineVersionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeAvailableEngineVersionRequest::getOwnerId()const
 void DescribeAvailableEngineVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableEngineVersionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeAvailableEngineVersionRequest::getAccessKeyId()const
 void DescribeAvailableEngineVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string UpdateLoginProfileRequest::getPassword()const
 void UpdateLoginProfileRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 bool UpdateLoginProfileRequest::getPasswordResetRequired()const
@@ -66,6 +66,6 @@ std::string UpdateLoginProfileRequest::getUserName()const
 void UpdateLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

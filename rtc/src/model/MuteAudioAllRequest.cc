@@ -33,7 +33,7 @@ std::string MuteAudioAllRequest::getApp_ip()const
 void MuteAudioAllRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string MuteAudioAllRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string MuteAudioAllRequest::getPopProduct()const
 void MuteAudioAllRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long MuteAudioAllRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long MuteAudioAllRequest::getCallerParentId()const
 void MuteAudioAllRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool MuteAudioAllRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string MuteAudioAllRequest::getCallerBid()const
 void MuteAudioAllRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long MuteAudioAllRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long MuteAudioAllRequest::getOwnerId()const
 void MuteAudioAllRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MuteAudioAllRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string MuteAudioAllRequest::getProxy_original_source_ip()const
 void MuteAudioAllRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string MuteAudioAllRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string MuteAudioAllRequest::getVersion()const
 void MuteAudioAllRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string MuteAudioAllRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string MuteAudioAllRequest::getOwnerIdLoginEmail()const
 void MuteAudioAllRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string MuteAudioAllRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string MuteAudioAllRequest::getCallerType()const
 void MuteAudioAllRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool MuteAudioAllRequest::getProxy_trust_transport_info()const
@@ -165,7 +165,7 @@ std::string MuteAudioAllRequest::getAccessKeyId()const
 void MuteAudioAllRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool MuteAudioAllRequest::getSecurity_transport()const
@@ -187,7 +187,7 @@ std::string MuteAudioAllRequest::getParticipantId()const
 void MuteAudioAllRequest::setParticipantId(const std::string& participantId)
 {
 	participantId_ = participantId;
-	setCoreParameter("ParticipantId", std::to_string(participantId));
+	setCoreParameter("ParticipantId", participantId);
 }
 
 std::string MuteAudioAllRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string MuteAudioAllRequest::getSecurityToken()const
 void MuteAudioAllRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string MuteAudioAllRequest::getConferenceId()const
@@ -209,7 +209,7 @@ std::string MuteAudioAllRequest::getConferenceId()const
 void MuteAudioAllRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
-	setCoreParameter("ConferenceId", std::to_string(conferenceId));
+	setCoreParameter("ConferenceId", conferenceId);
 }
 
 std::string MuteAudioAllRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string MuteAudioAllRequest::getRequestId()const
 void MuteAudioAllRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string MuteAudioAllRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string MuteAudioAllRequest::getRequestContent()const
 void MuteAudioAllRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string MuteAudioAllRequest::getAppId()const
@@ -242,7 +242,7 @@ std::string MuteAudioAllRequest::getAppId()const
 void MuteAudioAllRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string MuteAudioAllRequest::getCallerBidEmail()const
@@ -253,7 +253,7 @@ std::string MuteAudioAllRequest::getCallerBidEmail()const
 void MuteAudioAllRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string MuteAudioAllRequest::getCallerUidEmail()const
@@ -264,7 +264,7 @@ std::string MuteAudioAllRequest::getCallerUidEmail()const
 void MuteAudioAllRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long MuteAudioAllRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long MuteAudioAllRequest::getCallerUid()const
 void MuteAudioAllRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

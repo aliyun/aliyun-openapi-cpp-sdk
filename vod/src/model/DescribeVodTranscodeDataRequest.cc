@@ -33,7 +33,7 @@ long DescribeVodTranscodeDataRequest::getResourceOwnerId()const
 void DescribeVodTranscodeDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeVodTranscodeDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeVodTranscodeDataRequest::getCallerParentId()const
 void DescribeVodTranscodeDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeVodTranscodeDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeVodTranscodeDataRequest::getStartTime()const
 void DescribeVodTranscodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeVodTranscodeDataRequest::getStorage()const
@@ -77,7 +77,7 @@ std::string DescribeVodTranscodeDataRequest::getStorage()const
 void DescribeVodTranscodeDataRequest::setStorage(const std::string& storage)
 {
 	storage_ = storage;
-	setCoreParameter("Storage", std::to_string(storage));
+	setCoreParameter("Storage", storage);
 }
 
 std::string DescribeVodTranscodeDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeVodTranscodeDataRequest::getProxy_original_source_ip()const
 void DescribeVodTranscodeDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeVodTranscodeDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeVodTranscodeDataRequest::getOwnerIdLoginEmail()const
 void DescribeVodTranscodeDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeVodTranscodeDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeVodTranscodeDataRequest::getCallerType()const
 void DescribeVodTranscodeDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeVodTranscodeDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeVodTranscodeDataRequest::getAccessKeyId()const
 void DescribeVodTranscodeDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVodTranscodeDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeVodTranscodeDataRequest::getSecurityToken()const
 void DescribeVodTranscodeDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeVodTranscodeDataRequest::getRegionId()const
 void DescribeVodTranscodeDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeVodTranscodeDataRequest::getRequestContent()const
 void DescribeVodTranscodeDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeVodTranscodeDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeVodTranscodeDataRequest::getCallerBidEmail()const
 void DescribeVodTranscodeDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeVodTranscodeDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeVodTranscodeDataRequest::getCallerUidEmail()const
 void DescribeVodTranscodeDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeVodTranscodeDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeVodTranscodeDataRequest::getCallerUid()const
 void DescribeVodTranscodeDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeVodTranscodeDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeVodTranscodeDataRequest::getApp_ip()const
 void DescribeVodTranscodeDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeVodTranscodeDataRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeVodTranscodeDataRequest::getPopProduct()const
 void DescribeVodTranscodeDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeVodTranscodeDataRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeVodTranscodeDataRequest::getEndTime()const
 void DescribeVodTranscodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeVodTranscodeDataRequest::getSpecification()const
@@ -231,7 +231,7 @@ std::string DescribeVodTranscodeDataRequest::getSpecification()const
 void DescribeVodTranscodeDataRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", std::to_string(specification));
+	setCoreParameter("Specification", specification);
 }
 
 std::string DescribeVodTranscodeDataRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeVodTranscodeDataRequest::getCallerBid()const
 void DescribeVodTranscodeDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeVodTranscodeDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeVodTranscodeDataRequest::getOwnerId()const
 void DescribeVodTranscodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodTranscodeDataRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeVodTranscodeDataRequest::getVersion()const
 void DescribeVodTranscodeDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeVodTranscodeDataRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeVodTranscodeDataRequest::getServiceCode()const
 void DescribeVodTranscodeDataRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRequestId()const
@@ -319,7 +319,7 @@ std::string DescribeVodTranscodeDataRequest::getRequestId()const
 void DescribeVodTranscodeDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRegion()const
@@ -330,6 +330,6 @@ std::string DescribeVodTranscodeDataRequest::getRegion()const
 void DescribeVodTranscodeDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 

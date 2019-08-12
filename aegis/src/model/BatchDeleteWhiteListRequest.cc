@@ -33,7 +33,7 @@ std::string BatchDeleteWhiteListRequest::getRiskIdList()const
 void BatchDeleteWhiteListRequest::setRiskIdList(const std::string& riskIdList)
 {
 	riskIdList_ = riskIdList;
-	setCoreParameter("RiskIdList", std::to_string(riskIdList));
+	setCoreParameter("RiskIdList", riskIdList);
 }
 
 std::string BatchDeleteWhiteListRequest::getSourceIp()const
@@ -44,6 +44,6 @@ std::string BatchDeleteWhiteListRequest::getSourceIp()const
 void BatchDeleteWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 

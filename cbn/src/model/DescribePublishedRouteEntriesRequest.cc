@@ -33,7 +33,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceId()const
 void DescribePublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", std::to_string(childInstanceId));
+	setCoreParameter("ChildInstanceId", childInstanceId);
 }
 
 long DescribePublishedRouteEntriesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribePublishedRouteEntriesRequest::getResourceOwnerId()const
 void DescribePublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
 void DescribePublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getCenId()const
@@ -66,7 +66,7 @@ std::string DescribePublishedRouteEntriesRequest::getCenId()const
 void DescribePublishedRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", std::to_string(cenId));
+	setCoreParameter("CenId", cenId);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
@@ -77,7 +77,7 @@ std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
 void DescribePublishedRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", std::to_string(destinationCidrBlock));
+	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 int DescribePublishedRouteEntriesRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribePublishedRouteEntriesRequest::getPageSize()const
 void DescribePublishedRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceType()const
@@ -99,7 +99,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceType()const
 void DescribePublishedRouteEntriesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", std::to_string(childInstanceType));
+	setCoreParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceRouteTableId()const
@@ -110,7 +110,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceRouteTableId()
 void DescribePublishedRouteEntriesRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", std::to_string(childInstanceRouteTableId));
+	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 
 int DescribePublishedRouteEntriesRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribePublishedRouteEntriesRequest::getPageNumber()const
 void DescribePublishedRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()const
@@ -132,6 +132,6 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()cons
 void DescribePublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", std::to_string(childInstanceRegionId));
+	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 

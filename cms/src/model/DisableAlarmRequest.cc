@@ -33,6 +33,6 @@ std::string DisableAlarmRequest::getId()const
 void DisableAlarmRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

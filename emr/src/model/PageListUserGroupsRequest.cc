@@ -33,7 +33,7 @@ std::string PageListUserGroupsRequest::getApp_ip()const
 void PageListUserGroupsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long PageListUserGroupsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long PageListUserGroupsRequest::getResourceOwnerId()const
 void PageListUserGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PageListUserGroupsRequest::getFuzzyName()const
@@ -55,7 +55,7 @@ std::string PageListUserGroupsRequest::getFuzzyName()const
 void PageListUserGroupsRequest::setFuzzyName(const std::string& fuzzyName)
 {
 	fuzzyName_ = fuzzyName;
-	setCoreParameter("FuzzyName", std::to_string(fuzzyName));
+	setCoreParameter("FuzzyName", fuzzyName);
 }
 
 long PageListUserGroupsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long PageListUserGroupsRequest::getCallerParentId()const
 void PageListUserGroupsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool PageListUserGroupsRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ std::string PageListUserGroupsRequest::getCallerBid()const
 void PageListUserGroupsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string PageListUserGroupsRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string PageListUserGroupsRequest::getProxy_original_source_ip()const
 void PageListUserGroupsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool PageListUserGroupsRequest::getAk_mfa_present()const
@@ -132,7 +132,7 @@ std::string PageListUserGroupsRequest::getCallerType()const
 void PageListUserGroupsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 int PageListUserGroupsRequest::getPageNumber()const
@@ -143,7 +143,7 @@ int PageListUserGroupsRequest::getPageNumber()const
 void PageListUserGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string PageListUserGroupsRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string PageListUserGroupsRequest::getAccessKeyId()const
 void PageListUserGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool PageListUserGroupsRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ std::string PageListUserGroupsRequest::getSecurityToken()const
 void PageListUserGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string PageListUserGroupsRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string PageListUserGroupsRequest::getRegionId()const
 void PageListUserGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string PageListUserGroupsRequest::getRequestId()const
@@ -198,7 +198,7 @@ std::string PageListUserGroupsRequest::getRequestId()const
 void PageListUserGroupsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 int PageListUserGroupsRequest::getPageSize()const
@@ -209,7 +209,7 @@ int PageListUserGroupsRequest::getPageSize()const
 void PageListUserGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long PageListUserGroupsRequest::getCallerUid()const
@@ -220,6 +220,6 @@ long PageListUserGroupsRequest::getCallerUid()const
 void PageListUserGroupsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

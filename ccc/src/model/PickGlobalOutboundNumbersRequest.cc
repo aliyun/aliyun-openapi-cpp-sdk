@@ -44,7 +44,7 @@ std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
 void PickGlobalOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> PickGlobalOutboundNumbersRequest::getSkillGroupId()const
@@ -56,7 +56,7 @@ void PickGlobalOutboundNumbersRequest::setSkillGroupId(const std::vector<std::st
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 int PickGlobalOutboundNumbersRequest::getCount()const
@@ -67,7 +67,7 @@ int PickGlobalOutboundNumbersRequest::getCount()const
 void PickGlobalOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", count);
+	setCoreParameter("Count", std::to_string(count));
 }
 
 std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const
@@ -78,7 +78,7 @@ std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const
 void PickGlobalOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", std::to_string(calleeNumber));
+	setCoreParameter("CalleeNumber", calleeNumber);
 }
 
 std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
 void PickGlobalOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

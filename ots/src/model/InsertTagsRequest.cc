@@ -33,7 +33,7 @@ std::string InsertTagsRequest::getAccess_key_id()const
 void InsertTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long InsertTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long InsertTagsRequest::getResourceOwnerId()const
 void InsertTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string InsertTagsRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string InsertTagsRequest::getInstanceName()const
 void InsertTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::vector<InsertTagsRequest::TagInfo> InsertTagsRequest::getTagInfo()const
@@ -70,8 +70,8 @@ void InsertTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
-		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 

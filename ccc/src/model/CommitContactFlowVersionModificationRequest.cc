@@ -33,7 +33,7 @@ std::string CommitContactFlowVersionModificationRequest::getCanvas()const
 void CommitContactFlowVersionModificationRequest::setCanvas(const std::string& canvas)
 {
 	canvas_ = canvas;
-	setCoreParameter("Canvas", std::to_string(canvas));
+	setCoreParameter("Canvas", canvas);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string CommitContactFlowVersionModificationRequest::getInstanceId()const
 void CommitContactFlowVersionModificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getContactFlowVersionId()const
@@ -55,7 +55,7 @@ std::string CommitContactFlowVersionModificationRequest::getContactFlowVersionId
 void CommitContactFlowVersionModificationRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
 {
 	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", std::to_string(contactFlowVersionId));
+	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getContent()const
@@ -66,7 +66,7 @@ std::string CommitContactFlowVersionModificationRequest::getContent()const
 void CommitContactFlowVersionModificationRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", std::to_string(content));
+	setCoreParameter("Content", content);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CommitContactFlowVersionModificationRequest::getAccessKeyId()const
 void CommitContactFlowVersionModificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

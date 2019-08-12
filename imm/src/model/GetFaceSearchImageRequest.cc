@@ -33,7 +33,7 @@ std::string GetFaceSearchImageRequest::getImageId()const
 void GetFaceSearchImageRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string GetFaceSearchImageRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetFaceSearchImageRequest::getRegionId()const
 void GetFaceSearchImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetFaceSearchImageRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetFaceSearchImageRequest::getProject()const
 void GetFaceSearchImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string GetFaceSearchImageRequest::getSrcUri()const
@@ -66,7 +66,7 @@ std::string GetFaceSearchImageRequest::getSrcUri()const
 void GetFaceSearchImageRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", std::to_string(srcUri));
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string GetFaceSearchImageRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string GetFaceSearchImageRequest::getGroupName()const
 void GetFaceSearchImageRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string GetFaceSearchImageRequest::getUser()const
@@ -88,7 +88,7 @@ std::string GetFaceSearchImageRequest::getUser()const
 void GetFaceSearchImageRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", std::to_string(user));
+	setCoreParameter("User", user);
 }
 
 std::string GetFaceSearchImageRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetFaceSearchImageRequest::getAccessKeyId()const
 void GetFaceSearchImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

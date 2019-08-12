@@ -33,7 +33,7 @@ long ListAppInfoRequest::getResourceOwnerId()const
 void ListAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListAppInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListAppInfoRequest::getResourceOwnerAccount()const
 void ListAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ListAppInfoRequest::getPageNo()const
@@ -55,7 +55,7 @@ int ListAppInfoRequest::getPageNo()const
 void ListAppInfoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 
 int ListAppInfoRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListAppInfoRequest::getPageSize()const
 void ListAppInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListAppInfoRequest::getResourceRealOwnerId()const
@@ -77,7 +77,7 @@ long ListAppInfoRequest::getResourceRealOwnerId()const
 void ListAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long ListAppInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListAppInfoRequest::getOwnerId()const
 void ListAppInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListAppInfoRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListAppInfoRequest::getAccessKeyId()const
 void ListAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAppInfoRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string ListAppInfoRequest::getStatus()const
 void ListAppInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

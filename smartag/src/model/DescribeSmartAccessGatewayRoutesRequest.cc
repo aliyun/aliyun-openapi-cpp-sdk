@@ -33,7 +33,7 @@ long DescribeSmartAccessGatewayRoutesRequest::getResourceOwnerId()const
 void DescribeSmartAccessGatewayRoutesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getResourceOwnerAccount()co
 void DescribeSmartAccessGatewayRoutesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getRegionId()const
 void DescribeSmartAccessGatewayRoutesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getOwnerAccount()const
 void DescribeSmartAccessGatewayRoutesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getPageSize()const
 void DescribeSmartAccessGatewayRoutesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getSmartAGId()const
 void DescribeSmartAccessGatewayRoutesRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long DescribeSmartAccessGatewayRoutesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeSmartAccessGatewayRoutesRequest::getOwnerId()const
 void DescribeSmartAccessGatewayRoutesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSmartAccessGatewayRoutesRequest::getPageNubmer()const
@@ -110,6 +110,6 @@ std::string DescribeSmartAccessGatewayRoutesRequest::getPageNubmer()const
 void DescribeSmartAccessGatewayRoutesRequest::setPageNubmer(const std::string& pageNubmer)
 {
 	pageNubmer_ = pageNubmer;
-	setCoreParameter("PageNubmer", std::to_string(pageNubmer));
+	setCoreParameter("PageNubmer", pageNubmer);
 }
 

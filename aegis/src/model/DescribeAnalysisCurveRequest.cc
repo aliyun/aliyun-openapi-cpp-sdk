@@ -33,7 +33,7 @@ std::string DescribeAnalysisCurveRequest::getSourceIp()const
 void DescribeAnalysisCurveRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeAnalysisCurveRequest::getStartTimeStamp()const
@@ -44,7 +44,7 @@ long DescribeAnalysisCurveRequest::getStartTimeStamp()const
 void DescribeAnalysisCurveRequest::setStartTimeStamp(long startTimeStamp)
 {
 	startTimeStamp_ = startTimeStamp;
-	setCoreParameter("StartTimeStamp", startTimeStamp);
+	setCoreParameter("StartTimeStamp", std::to_string(startTimeStamp));
 }
 
 long DescribeAnalysisCurveRequest::getEndTimeStamp()const
@@ -55,6 +55,6 @@ long DescribeAnalysisCurveRequest::getEndTimeStamp()const
 void DescribeAnalysisCurveRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
-	setCoreParameter("EndTimeStamp", endTimeStamp);
+	setCoreParameter("EndTimeStamp", std::to_string(endTimeStamp));
 }
 

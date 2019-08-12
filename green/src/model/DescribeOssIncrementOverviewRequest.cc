@@ -33,7 +33,7 @@ std::string DescribeOssIncrementOverviewRequest::getSourceIp()const
 void DescribeOssIncrementOverviewRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOssIncrementOverviewRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeOssIncrementOverviewRequest::getLang()const
 void DescribeOssIncrementOverviewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

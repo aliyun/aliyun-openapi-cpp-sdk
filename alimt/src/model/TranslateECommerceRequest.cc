@@ -33,7 +33,7 @@ std::string TranslateECommerceRequest::getSourceLanguage()const
 void TranslateECommerceRequest::setSourceLanguage(const std::string& sourceLanguage)
 {
 	sourceLanguage_ = sourceLanguage;
-	setCoreParameter("SourceLanguage", std::to_string(sourceLanguage));
+	setCoreParameter("SourceLanguage", sourceLanguage);
 }
 
 std::string TranslateECommerceRequest::getSourceText()const
@@ -44,7 +44,7 @@ std::string TranslateECommerceRequest::getSourceText()const
 void TranslateECommerceRequest::setSourceText(const std::string& sourceText)
 {
 	sourceText_ = sourceText;
-	setCoreParameter("SourceText", std::to_string(sourceText));
+	setCoreParameter("SourceText", sourceText);
 }
 
 std::string TranslateECommerceRequest::getFormatType()const
@@ -55,7 +55,7 @@ std::string TranslateECommerceRequest::getFormatType()const
 void TranslateECommerceRequest::setFormatType(const std::string& formatType)
 {
 	formatType_ = formatType;
-	setCoreParameter("FormatType", std::to_string(formatType));
+	setCoreParameter("FormatType", formatType);
 }
 
 std::string TranslateECommerceRequest::getTargetLanguage()const
@@ -66,7 +66,7 @@ std::string TranslateECommerceRequest::getTargetLanguage()const
 void TranslateECommerceRequest::setTargetLanguage(const std::string& targetLanguage)
 {
 	targetLanguage_ = targetLanguage;
-	setCoreParameter("TargetLanguage", std::to_string(targetLanguage));
+	setCoreParameter("TargetLanguage", targetLanguage);
 }
 
 std::string TranslateECommerceRequest::getScene()const
@@ -77,6 +77,6 @@ std::string TranslateECommerceRequest::getScene()const
 void TranslateECommerceRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", std::to_string(scene));
+	setCoreParameter("Scene", scene);
 }
 

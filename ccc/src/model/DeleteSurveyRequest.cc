@@ -33,7 +33,7 @@ std::string DeleteSurveyRequest::getSurveyId()const
 void DeleteSurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setCoreParameter("SurveyId", std::to_string(surveyId));
+	setCoreParameter("SurveyId", surveyId);
 }
 
 std::string DeleteSurveyRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DeleteSurveyRequest::getInstanceId()const
 void DeleteSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSurveyRequest::getScenarioId()const
@@ -55,6 +55,6 @@ std::string DeleteSurveyRequest::getScenarioId()const
 void DeleteSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

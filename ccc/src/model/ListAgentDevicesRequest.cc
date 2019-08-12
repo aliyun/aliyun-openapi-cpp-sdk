@@ -33,7 +33,7 @@ std::string ListAgentDevicesRequest::getInstanceId()const
 void ListAgentDevicesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListAgentDevicesRequest::getRamIds()const
@@ -44,7 +44,7 @@ std::string ListAgentDevicesRequest::getRamIds()const
 void ListAgentDevicesRequest::setRamIds(const std::string& ramIds)
 {
 	ramIds_ = ramIds;
-	setCoreParameter("RamIds", std::to_string(ramIds));
+	setCoreParameter("RamIds", ramIds);
 }
 
 long ListAgentDevicesRequest::getStartTime()const
@@ -55,7 +55,7 @@ long ListAgentDevicesRequest::getStartTime()const
 void ListAgentDevicesRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 long ListAgentDevicesRequest::getStopTime()const
@@ -66,7 +66,7 @@ long ListAgentDevicesRequest::getStopTime()const
 void ListAgentDevicesRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", stopTime);
+	setCoreParameter("StopTime", std::to_string(stopTime));
 }
 
 std::string ListAgentDevicesRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListAgentDevicesRequest::getAccessKeyId()const
 void ListAgentDevicesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string AppendEntityMemberRequest::getMember()const
 void AppendEntityMemberRequest::setMember(const std::string& member)
 {
 	member_ = member;
-	setCoreParameter("Member", std::to_string(member));
+	setCoreParameter("Member", member);
 }
 
 long AppendEntityMemberRequest::getEntityId()const
@@ -44,7 +44,7 @@ long AppendEntityMemberRequest::getEntityId()const
 void AppendEntityMemberRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", entityId);
+	setCoreParameter("EntityId", std::to_string(entityId));
 }
 
 std::string AppendEntityMemberRequest::getApplyType()const
@@ -55,6 +55,6 @@ std::string AppendEntityMemberRequest::getApplyType()const
 void AppendEntityMemberRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
-	setCoreParameter("ApplyType", std::to_string(applyType));
+	setCoreParameter("ApplyType", applyType);
 }
 

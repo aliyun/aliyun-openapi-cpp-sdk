@@ -33,7 +33,7 @@ std::string ListJobGroupsRequest::getInstanceId()const
 void ListJobGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 int ListJobGroupsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int ListJobGroupsRequest::getPageSize()const
 void ListJobGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListJobGroupsRequest::getEndTime()const
@@ -55,7 +55,7 @@ long ListJobGroupsRequest::getEndTime()const
 void ListJobGroupsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long ListJobGroupsRequest::getStartTime()const
@@ -66,7 +66,7 @@ long ListJobGroupsRequest::getStartTime()const
 void ListJobGroupsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 int ListJobGroupsRequest::getPageNumber()const
@@ -77,6 +77,6 @@ int ListJobGroupsRequest::getPageNumber()const
 void ListJobGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

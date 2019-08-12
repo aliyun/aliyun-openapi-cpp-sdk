@@ -33,7 +33,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", std::to_string(promotionNo));
+	setCoreParameter("PromotionNo", promotionNo);
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRedeemRequest::OrderRedeemParam> SaveBatchTaskForCreatingOrderRedeemRequest::getOrderRedeemParam()const
@@ -48,8 +48,8 @@ void SaveBatchTaskForCreatingOrderRedeemRequest::setOrderRedeemParam(const std::
 	for(int i = 0; i!= orderRedeemParam.size(); i++)	{
 		auto obj = orderRedeemParam.at(i);
 		std::string str ="OrderRedeemParam."+ std::to_string(i);
-		setCoreParameter(str + ".CurrentExpirationDate", obj.currentExpirationDate);
-		setCoreParameter(str + ".DomainName", std::to_string(obj.domainName));
+		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
+		setCoreParameter(str + ".DomainName", obj.domainName);
 	}
 }
 
@@ -61,7 +61,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
@@ -72,7 +72,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
@@ -94,7 +94,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUsePromotion()const

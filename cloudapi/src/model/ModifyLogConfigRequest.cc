@@ -33,7 +33,7 @@ std::string ModifyLogConfigRequest::getSlsLogStore()const
 void ModifyLogConfigRequest::setSlsLogStore(const std::string& slsLogStore)
 {
 	slsLogStore_ = slsLogStore;
-	setCoreParameter("SlsLogStore", std::to_string(slsLogStore));
+	setCoreParameter("SlsLogStore", slsLogStore);
 }
 
 std::string ModifyLogConfigRequest::getLogType()const
@@ -44,7 +44,7 @@ std::string ModifyLogConfigRequest::getLogType()const
 void ModifyLogConfigRequest::setLogType(const std::string& logType)
 {
 	logType_ = logType;
-	setCoreParameter("LogType", std::to_string(logType));
+	setCoreParameter("LogType", logType);
 }
 
 std::string ModifyLogConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyLogConfigRequest::getSecurityToken()const
 void ModifyLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyLogConfigRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyLogConfigRequest::getRegionId()const
 void ModifyLogConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyLogConfigRequest::getSlsProject()const
@@ -77,7 +77,7 @@ std::string ModifyLogConfigRequest::getSlsProject()const
 void ModifyLogConfigRequest::setSlsProject(const std::string& slsProject)
 {
 	slsProject_ = slsProject;
-	setCoreParameter("SlsProject", std::to_string(slsProject));
+	setCoreParameter("SlsProject", slsProject);
 }
 
 std::string ModifyLogConfigRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyLogConfigRequest::getAccessKeyId()const
 void ModifyLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

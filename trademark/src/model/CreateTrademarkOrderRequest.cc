@@ -33,7 +33,7 @@ std::string CreateTrademarkOrderRequest::getTmName()const
 void CreateTrademarkOrderRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", std::to_string(tmName));
+	setCoreParameter("TmName", tmName);
 }
 
 std::string CreateTrademarkOrderRequest::getRealUserName()const
@@ -44,7 +44,7 @@ std::string CreateTrademarkOrderRequest::getRealUserName()const
 void CreateTrademarkOrderRequest::setRealUserName(const std::string& realUserName)
 {
 	realUserName_ = realUserName;
-	setCoreParameter("RealUserName", std::to_string(realUserName));
+	setCoreParameter("RealUserName", realUserName);
 }
 
 std::string CreateTrademarkOrderRequest::getOrderData()const
@@ -55,7 +55,7 @@ std::string CreateTrademarkOrderRequest::getOrderData()const
 void CreateTrademarkOrderRequest::setOrderData(const std::string& orderData)
 {
 	orderData_ = orderData;
-	setCoreParameter("OrderData", std::to_string(orderData));
+	setCoreParameter("OrderData", orderData);
 }
 
 std::string CreateTrademarkOrderRequest::getChannel()const
@@ -66,7 +66,7 @@ std::string CreateTrademarkOrderRequest::getChannel()const
 void CreateTrademarkOrderRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", std::to_string(channel));
+	setCoreParameter("Channel", channel);
 }
 
 std::string CreateTrademarkOrderRequest::getPartnerCode()const
@@ -77,7 +77,7 @@ std::string CreateTrademarkOrderRequest::getPartnerCode()const
 void CreateTrademarkOrderRequest::setPartnerCode(const std::string& partnerCode)
 {
 	partnerCode_ = partnerCode;
-	setCoreParameter("PartnerCode", std::to_string(partnerCode));
+	setCoreParameter("PartnerCode", partnerCode);
 }
 
 std::string CreateTrademarkOrderRequest::getPhoneNum()const
@@ -88,7 +88,7 @@ std::string CreateTrademarkOrderRequest::getPhoneNum()const
 void CreateTrademarkOrderRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", std::to_string(phoneNum));
+	setCoreParameter("PhoneNum", phoneNum);
 }
 
 int CreateTrademarkOrderRequest::getType()const
@@ -99,7 +99,7 @@ int CreateTrademarkOrderRequest::getType()const
 void CreateTrademarkOrderRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string CreateTrademarkOrderRequest::getMaterialId()const
@@ -110,7 +110,7 @@ std::string CreateTrademarkOrderRequest::getMaterialId()const
 void CreateTrademarkOrderRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", std::to_string(materialId));
+	setCoreParameter("MaterialId", materialId);
 }
 
 long CreateTrademarkOrderRequest::getUserId()const
@@ -121,7 +121,7 @@ long CreateTrademarkOrderRequest::getUserId()const
 void CreateTrademarkOrderRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string CreateTrademarkOrderRequest::getTmComment()const
@@ -132,7 +132,7 @@ std::string CreateTrademarkOrderRequest::getTmComment()const
 void CreateTrademarkOrderRequest::setTmComment(const std::string& tmComment)
 {
 	tmComment_ = tmComment;
-	setCoreParameter("TmComment", std::to_string(tmComment));
+	setCoreParameter("TmComment", tmComment);
 }
 
 std::string CreateTrademarkOrderRequest::getRegisterName()const
@@ -143,7 +143,7 @@ std::string CreateTrademarkOrderRequest::getRegisterName()const
 void CreateTrademarkOrderRequest::setRegisterName(const std::string& registerName)
 {
 	registerName_ = registerName;
-	setCoreParameter("RegisterName", std::to_string(registerName));
+	setCoreParameter("RegisterName", registerName);
 }
 
 std::string CreateTrademarkOrderRequest::getTmNameType()const
@@ -154,7 +154,7 @@ std::string CreateTrademarkOrderRequest::getTmNameType()const
 void CreateTrademarkOrderRequest::setTmNameType(const std::string& tmNameType)
 {
 	tmNameType_ = tmNameType;
-	setCoreParameter("TmNameType", std::to_string(tmNameType));
+	setCoreParameter("TmNameType", tmNameType);
 }
 
 std::string CreateTrademarkOrderRequest::getTmIcon()const
@@ -165,7 +165,7 @@ std::string CreateTrademarkOrderRequest::getTmIcon()const
 void CreateTrademarkOrderRequest::setTmIcon(const std::string& tmIcon)
 {
 	tmIcon_ = tmIcon;
-	setCoreParameter("TmIcon", std::to_string(tmIcon));
+	setCoreParameter("TmIcon", tmIcon);
 }
 
 std::string CreateTrademarkOrderRequest::getUid()const
@@ -176,7 +176,7 @@ std::string CreateTrademarkOrderRequest::getUid()const
 void CreateTrademarkOrderRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setCoreParameter("Uid", uid);
 }
 
 bool CreateTrademarkOrderRequest::getIsBlackIcon()const
@@ -198,7 +198,7 @@ std::string CreateTrademarkOrderRequest::getRenewInfoId()const
 void CreateTrademarkOrderRequest::setRenewInfoId(const std::string& renewInfoId)
 {
 	renewInfoId_ = renewInfoId;
-	setCoreParameter("RenewInfoId", std::to_string(renewInfoId));
+	setCoreParameter("RenewInfoId", renewInfoId);
 }
 
 std::string CreateTrademarkOrderRequest::getBizId()const
@@ -209,7 +209,7 @@ std::string CreateTrademarkOrderRequest::getBizId()const
 void CreateTrademarkOrderRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 std::string CreateTrademarkOrderRequest::getRootCode()const
@@ -220,7 +220,7 @@ std::string CreateTrademarkOrderRequest::getRootCode()const
 void CreateTrademarkOrderRequest::setRootCode(const std::string& rootCode)
 {
 	rootCode_ = rootCode;
-	setCoreParameter("RootCode", std::to_string(rootCode));
+	setCoreParameter("RootCode", rootCode);
 }
 
 std::string CreateTrademarkOrderRequest::getLoaOssKey()const
@@ -231,7 +231,7 @@ std::string CreateTrademarkOrderRequest::getLoaOssKey()const
 void CreateTrademarkOrderRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", std::to_string(loaOssKey));
+	setCoreParameter("LoaOssKey", loaOssKey);
 }
 
 std::string CreateTrademarkOrderRequest::getRegisterNumber()const
@@ -242,6 +242,6 @@ std::string CreateTrademarkOrderRequest::getRegisterNumber()const
 void CreateTrademarkOrderRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", std::to_string(registerNumber));
+	setCoreParameter("RegisterNumber", registerNumber);
 }
 

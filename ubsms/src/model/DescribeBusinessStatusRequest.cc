@@ -33,7 +33,7 @@ std::string DescribeBusinessStatusRequest::getPassword()const
 void DescribeBusinessStatusRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string DescribeBusinessStatusRequest::getCallerBid()const
@@ -44,6 +44,6 @@ std::string DescribeBusinessStatusRequest::getCallerBid()const
 void DescribeBusinessStatusRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 

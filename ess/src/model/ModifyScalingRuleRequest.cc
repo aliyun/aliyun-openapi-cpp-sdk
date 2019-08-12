@@ -33,7 +33,7 @@ long ModifyScalingRuleRequest::getResourceOwnerId()const
 void ModifyScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyScalingRuleRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyScalingRuleRequest::getResourceOwnerAccount()const
 void ModifyScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int ModifyScalingRuleRequest::getAdjustmentValue()const
@@ -55,7 +55,7 @@ int ModifyScalingRuleRequest::getAdjustmentValue()const
 void ModifyScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
 {
 	adjustmentValue_ = adjustmentValue;
-	setCoreParameter("AdjustmentValue", adjustmentValue);
+	setCoreParameter("AdjustmentValue", std::to_string(adjustmentValue));
 }
 
 std::vector<ModifyScalingRuleRequest::StepAdjustment> ModifyScalingRuleRequest::getStepAdjustment()const
@@ -70,9 +70,9 @@ void ModifyScalingRuleRequest::setStepAdjustment(const std::vector<StepAdjustmen
 	for(int i = 0; i!= stepAdjustment.size(); i++)	{
 		auto obj = stepAdjustment.at(i);
 		std::string str ="StepAdjustment."+ std::to_string(i);
-		setCoreParameter(str + ".MetricIntervalLowerBound", obj.metricIntervalLowerBound);
-		setCoreParameter(str + ".MetricIntervalUpperBound", obj.metricIntervalUpperBound);
-		setCoreParameter(str + ".ScalingAdjustment", obj.scalingAdjustment);
+		setCoreParameter(str + ".MetricIntervalLowerBound", std::to_string(obj.metricIntervalLowerBound));
+		setCoreParameter(str + ".MetricIntervalUpperBound", std::to_string(obj.metricIntervalUpperBound));
+		setCoreParameter(str + ".ScalingAdjustment", std::to_string(obj.scalingAdjustment));
 	}
 }
 
@@ -84,7 +84,7 @@ int ModifyScalingRuleRequest::getEstimatedInstanceWarmup()const
 void ModifyScalingRuleRequest::setEstimatedInstanceWarmup(int estimatedInstanceWarmup)
 {
 	estimatedInstanceWarmup_ = estimatedInstanceWarmup;
-	setCoreParameter("EstimatedInstanceWarmup", estimatedInstanceWarmup);
+	setCoreParameter("EstimatedInstanceWarmup", std::to_string(estimatedInstanceWarmup));
 }
 
 std::string ModifyScalingRuleRequest::getOwnerAccount()const
@@ -95,7 +95,7 @@ std::string ModifyScalingRuleRequest::getOwnerAccount()const
 void ModifyScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int ModifyScalingRuleRequest::getPredictiveTaskBufferTime()const
@@ -106,7 +106,7 @@ int ModifyScalingRuleRequest::getPredictiveTaskBufferTime()const
 void ModifyScalingRuleRequest::setPredictiveTaskBufferTime(int predictiveTaskBufferTime)
 {
 	predictiveTaskBufferTime_ = predictiveTaskBufferTime;
-	setCoreParameter("PredictiveTaskBufferTime", predictiveTaskBufferTime);
+	setCoreParameter("PredictiveTaskBufferTime", std::to_string(predictiveTaskBufferTime));
 }
 
 std::string ModifyScalingRuleRequest::getAdjustmentType()const
@@ -117,7 +117,7 @@ std::string ModifyScalingRuleRequest::getAdjustmentType()const
 void ModifyScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
 {
 	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", std::to_string(adjustmentType));
+	setCoreParameter("AdjustmentType", adjustmentType);
 }
 
 bool ModifyScalingRuleRequest::getDisableScaleIn()const
@@ -139,7 +139,7 @@ long ModifyScalingRuleRequest::getOwnerId()const
 void ModifyScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyScalingRuleRequest::getScalingRuleId()const
@@ -150,7 +150,7 @@ std::string ModifyScalingRuleRequest::getScalingRuleId()const
 void ModifyScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", std::to_string(scalingRuleId));
+	setCoreParameter("ScalingRuleId", scalingRuleId);
 }
 
 int ModifyScalingRuleRequest::getInitialMaxSize()const
@@ -161,7 +161,7 @@ int ModifyScalingRuleRequest::getInitialMaxSize()const
 void ModifyScalingRuleRequest::setInitialMaxSize(int initialMaxSize)
 {
 	initialMaxSize_ = initialMaxSize;
-	setCoreParameter("InitialMaxSize", initialMaxSize);
+	setCoreParameter("InitialMaxSize", std::to_string(initialMaxSize));
 }
 
 std::string ModifyScalingRuleRequest::getAccessKeyId()const
@@ -172,7 +172,7 @@ std::string ModifyScalingRuleRequest::getAccessKeyId()const
 void ModifyScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyScalingRuleRequest::getPredictiveValueBuffer()const
@@ -183,7 +183,7 @@ int ModifyScalingRuleRequest::getPredictiveValueBuffer()const
 void ModifyScalingRuleRequest::setPredictiveValueBuffer(int predictiveValueBuffer)
 {
 	predictiveValueBuffer_ = predictiveValueBuffer;
-	setCoreParameter("PredictiveValueBuffer", predictiveValueBuffer);
+	setCoreParameter("PredictiveValueBuffer", std::to_string(predictiveValueBuffer));
 }
 
 std::string ModifyScalingRuleRequest::getScalingRuleName()const
@@ -194,7 +194,7 @@ std::string ModifyScalingRuleRequest::getScalingRuleName()const
 void ModifyScalingRuleRequest::setScalingRuleName(const std::string& scalingRuleName)
 {
 	scalingRuleName_ = scalingRuleName;
-	setCoreParameter("ScalingRuleName", std::to_string(scalingRuleName));
+	setCoreParameter("ScalingRuleName", scalingRuleName);
 }
 
 int ModifyScalingRuleRequest::getCooldown()const
@@ -205,7 +205,7 @@ int ModifyScalingRuleRequest::getCooldown()const
 void ModifyScalingRuleRequest::setCooldown(int cooldown)
 {
 	cooldown_ = cooldown;
-	setCoreParameter("Cooldown", cooldown);
+	setCoreParameter("Cooldown", std::to_string(cooldown));
 }
 
 int ModifyScalingRuleRequest::getMinAdjustmentMagnitude()const
@@ -216,7 +216,7 @@ int ModifyScalingRuleRequest::getMinAdjustmentMagnitude()const
 void ModifyScalingRuleRequest::setMinAdjustmentMagnitude(int minAdjustmentMagnitude)
 {
 	minAdjustmentMagnitude_ = minAdjustmentMagnitude;
-	setCoreParameter("MinAdjustmentMagnitude", minAdjustmentMagnitude);
+	setCoreParameter("MinAdjustmentMagnitude", std::to_string(minAdjustmentMagnitude));
 }
 
 std::string ModifyScalingRuleRequest::getPredictiveValueBehavior()const
@@ -227,7 +227,7 @@ std::string ModifyScalingRuleRequest::getPredictiveValueBehavior()const
 void ModifyScalingRuleRequest::setPredictiveValueBehavior(const std::string& predictiveValueBehavior)
 {
 	predictiveValueBehavior_ = predictiveValueBehavior;
-	setCoreParameter("PredictiveValueBehavior", std::to_string(predictiveValueBehavior));
+	setCoreParameter("PredictiveValueBehavior", predictiveValueBehavior);
 }
 
 float ModifyScalingRuleRequest::getTargetValue()const
@@ -238,7 +238,7 @@ float ModifyScalingRuleRequest::getTargetValue()const
 void ModifyScalingRuleRequest::setTargetValue(float targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setCoreParameter("TargetValue", std::to_string(targetValue));
 }
 
 std::string ModifyScalingRuleRequest::getMetricName()const
@@ -249,7 +249,7 @@ std::string ModifyScalingRuleRequest::getMetricName()const
 void ModifyScalingRuleRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", std::to_string(metricName));
+	setCoreParameter("MetricName", metricName);
 }
 
 std::string ModifyScalingRuleRequest::getPredictiveScalingMode()const
@@ -260,6 +260,6 @@ std::string ModifyScalingRuleRequest::getPredictiveScalingMode()const
 void ModifyScalingRuleRequest::setPredictiveScalingMode(const std::string& predictiveScalingMode)
 {
 	predictiveScalingMode_ = predictiveScalingMode;
-	setCoreParameter("PredictiveScalingMode", std::to_string(predictiveScalingMode));
+	setCoreParameter("PredictiveScalingMode", predictiveScalingMode);
 }
 

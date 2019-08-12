@@ -33,7 +33,7 @@ long QueryTaskRequest::getResourceOwnerId()const
 void QueryTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTaskRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string QueryTaskRequest::getInstanceId()const
 void QueryTaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryTaskRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryTaskRequest::getResourceOwnerAccount()const
 void QueryTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTaskRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string QueryTaskRequest::getRegionId()const
 void QueryTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryTaskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string QueryTaskRequest::getOwnerAccount()const
 void QueryTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTaskRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long QueryTaskRequest::getOwnerId()const
 void QueryTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTaskRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryTaskRequest::getAccessKeyId()const
 void QueryTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DetachNetworkOptimizationSagsRequest::getResourceOwnerId()const
 void DetachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
 void DetachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DetachNetworkOptimizationSagsRequest::getRegionId()const
 void DetachNetworkOptimizationSagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getNetworkOptId()const
@@ -66,7 +66,7 @@ std::string DetachNetworkOptimizationSagsRequest::getNetworkOptId()const
 void DetachNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", std::to_string(networkOptId));
+	setCoreParameter("NetworkOptId", networkOptId);
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
 void DetachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<std::string> DetachNetworkOptimizationSagsRequest::getSmartAGIds()const
@@ -89,7 +89,7 @@ void DetachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::
 {
 	smartAGIds_ = smartAGIds;
 	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), std::to_string(smartAGIds.at(i)));
+		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
 }
 
 long DetachNetworkOptimizationSagsRequest::getOwnerId()const
@@ -100,6 +100,6 @@ long DetachNetworkOptimizationSagsRequest::getOwnerId()const
 void DetachNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDomainsResolutionRequest::getSecurityToken()const
 void DescribeDomainsResolutionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainsResolutionRequest::getDomainNames()const
@@ -44,7 +44,7 @@ std::string DescribeDomainsResolutionRequest::getDomainNames()const
 void DescribeDomainsResolutionRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", std::to_string(domainNames));
+	setCoreParameter("DomainNames", domainNames);
 }
 
 std::string DescribeDomainsResolutionRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeDomainsResolutionRequest::getGroupId()const
 void DescribeDomainsResolutionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainsResolutionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDomainsResolutionRequest::getAccessKeyId()const
 void DescribeDomainsResolutionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CompareImageFacesRequest::getRegionId()const
 void CompareImageFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CompareImageFacesRequest::getImageUriB()const
@@ -44,7 +44,7 @@ std::string CompareImageFacesRequest::getImageUriB()const
 void CompareImageFacesRequest::setImageUriB(const std::string& imageUriB)
 {
 	imageUriB_ = imageUriB;
-	setCoreParameter("ImageUriB", std::to_string(imageUriB));
+	setCoreParameter("ImageUriB", imageUriB);
 }
 
 std::string CompareImageFacesRequest::getImageUriA()const
@@ -55,7 +55,7 @@ std::string CompareImageFacesRequest::getImageUriA()const
 void CompareImageFacesRequest::setImageUriA(const std::string& imageUriA)
 {
 	imageUriA_ = imageUriA;
-	setCoreParameter("ImageUriA", std::to_string(imageUriA));
+	setCoreParameter("ImageUriA", imageUriA);
 }
 
 std::string CompareImageFacesRequest::getProject()const
@@ -66,7 +66,7 @@ std::string CompareImageFacesRequest::getProject()const
 void CompareImageFacesRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string CompareImageFacesRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string CompareImageFacesRequest::getSetId()const
 void CompareImageFacesRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string CompareImageFacesRequest::getFaceIdA()const
@@ -88,7 +88,7 @@ std::string CompareImageFacesRequest::getFaceIdA()const
 void CompareImageFacesRequest::setFaceIdA(const std::string& faceIdA)
 {
 	faceIdA_ = faceIdA;
-	setCoreParameter("FaceIdA", std::to_string(faceIdA));
+	setCoreParameter("FaceIdA", faceIdA);
 }
 
 std::string CompareImageFacesRequest::getFaceIdB()const
@@ -99,7 +99,7 @@ std::string CompareImageFacesRequest::getFaceIdB()const
 void CompareImageFacesRequest::setFaceIdB(const std::string& faceIdB)
 {
 	faceIdB_ = faceIdB;
-	setCoreParameter("FaceIdB", std::to_string(faceIdB));
+	setCoreParameter("FaceIdB", faceIdB);
 }
 
 std::string CompareImageFacesRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CompareImageFacesRequest::getAccessKeyId()const
 void CompareImageFacesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

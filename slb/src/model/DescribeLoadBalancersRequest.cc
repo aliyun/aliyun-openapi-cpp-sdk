@@ -33,7 +33,7 @@ std::string DescribeLoadBalancersRequest::getAccess_key_id()const
 void DescribeLoadBalancersRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DescribeLoadBalancersRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeLoadBalancersRequest::getResourceOwnerId()const
 void DescribeLoadBalancersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLoadBalancersRequest::getNetworkType()const
@@ -55,7 +55,7 @@ std::string DescribeLoadBalancersRequest::getNetworkType()const
 void DescribeLoadBalancersRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 
 std::string DescribeLoadBalancersRequest::getAddressIPVersion()const
@@ -66,7 +66,7 @@ std::string DescribeLoadBalancersRequest::getAddressIPVersion()const
 void DescribeLoadBalancersRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
 	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", std::to_string(addressIPVersion));
+	setCoreParameter("AddressIPVersion", addressIPVersion);
 }
 
 std::string DescribeLoadBalancersRequest::getMasterZoneId()const
@@ -77,7 +77,7 @@ std::string DescribeLoadBalancersRequest::getMasterZoneId()const
 void DescribeLoadBalancersRequest::setMasterZoneId(const std::string& masterZoneId)
 {
 	masterZoneId_ = masterZoneId;
-	setCoreParameter("MasterZoneId", std::to_string(masterZoneId));
+	setCoreParameter("MasterZoneId", masterZoneId);
 }
 
 int DescribeLoadBalancersRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeLoadBalancersRequest::getPageNumber()const
 void DescribeLoadBalancersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeLoadBalancersRequest::getResourceGroupId()const
@@ -99,7 +99,7 @@ std::string DescribeLoadBalancersRequest::getResourceGroupId()const
 void DescribeLoadBalancersRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeLoadBalancersRequest::getLoadBalancerName()const
@@ -110,7 +110,7 @@ std::string DescribeLoadBalancersRequest::getLoadBalancerName()const
 void DescribeLoadBalancersRequest::setLoadBalancerName(const std::string& loadBalancerName)
 {
 	loadBalancerName_ = loadBalancerName;
-	setCoreParameter("LoadBalancerName", std::to_string(loadBalancerName));
+	setCoreParameter("LoadBalancerName", loadBalancerName);
 }
 
 std::string DescribeLoadBalancersRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeLoadBalancersRequest::getRegionId()const
 void DescribeLoadBalancersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeLoadBalancersRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeLoadBalancersRequest::getPageSize()const
 void DescribeLoadBalancersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLoadBalancersRequest::getAddressType()const
@@ -143,7 +143,7 @@ std::string DescribeLoadBalancersRequest::getAddressType()const
 void DescribeLoadBalancersRequest::setAddressType(const std::string& addressType)
 {
 	addressType_ = addressType;
-	setCoreParameter("AddressType", std::to_string(addressType));
+	setCoreParameter("AddressType", addressType);
 }
 
 std::string DescribeLoadBalancersRequest::getSlaveZoneId()const
@@ -154,7 +154,7 @@ std::string DescribeLoadBalancersRequest::getSlaveZoneId()const
 void DescribeLoadBalancersRequest::setSlaveZoneId(const std::string& slaveZoneId)
 {
 	slaveZoneId_ = slaveZoneId;
-	setCoreParameter("SlaveZoneId", std::to_string(slaveZoneId));
+	setCoreParameter("SlaveZoneId", slaveZoneId);
 }
 
 std::vector<DescribeLoadBalancersRequest::Tag> DescribeLoadBalancersRequest::getTag()const
@@ -169,8 +169,8 @@ void DescribeLoadBalancersRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -182,7 +182,7 @@ std::string DescribeLoadBalancersRequest::getFuzzy()const
 void DescribeLoadBalancersRequest::setFuzzy(const std::string& fuzzy)
 {
 	fuzzy_ = fuzzy;
-	setCoreParameter("Fuzzy", std::to_string(fuzzy));
+	setCoreParameter("Fuzzy", fuzzy);
 }
 
 std::string DescribeLoadBalancersRequest::getAddress()const
@@ -193,7 +193,7 @@ std::string DescribeLoadBalancersRequest::getAddress()const
 void DescribeLoadBalancersRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", std::to_string(address));
+	setCoreParameter("Address", address);
 }
 
 std::string DescribeLoadBalancersRequest::getResourceOwnerAccount()const
@@ -204,7 +204,7 @@ std::string DescribeLoadBalancersRequest::getResourceOwnerAccount()const
 void DescribeLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLoadBalancersRequest::getOwnerAccount()const
@@ -215,7 +215,7 @@ std::string DescribeLoadBalancersRequest::getOwnerAccount()const
 void DescribeLoadBalancersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLoadBalancersRequest::getOwnerId()const
@@ -226,7 +226,7 @@ long DescribeLoadBalancersRequest::getOwnerId()const
 void DescribeLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLoadBalancersRequest::getServerId()const
@@ -237,7 +237,7 @@ std::string DescribeLoadBalancersRequest::getServerId()const
 void DescribeLoadBalancersRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setCoreParameter("ServerId", std::to_string(serverId));
+	setCoreParameter("ServerId", serverId);
 }
 
 std::string DescribeLoadBalancersRequest::getLoadBalancerStatus()const
@@ -248,7 +248,7 @@ std::string DescribeLoadBalancersRequest::getLoadBalancerStatus()const
 void DescribeLoadBalancersRequest::setLoadBalancerStatus(const std::string& loadBalancerStatus)
 {
 	loadBalancerStatus_ = loadBalancerStatus;
-	setCoreParameter("LoadBalancerStatus", std::to_string(loadBalancerStatus));
+	setCoreParameter("LoadBalancerStatus", loadBalancerStatus);
 }
 
 std::string DescribeLoadBalancersRequest::getTags()const
@@ -259,7 +259,7 @@ std::string DescribeLoadBalancersRequest::getTags()const
 void DescribeLoadBalancersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 std::string DescribeLoadBalancersRequest::getServerIntranetAddress()const
@@ -270,7 +270,7 @@ std::string DescribeLoadBalancersRequest::getServerIntranetAddress()const
 void DescribeLoadBalancersRequest::setServerIntranetAddress(const std::string& serverIntranetAddress)
 {
 	serverIntranetAddress_ = serverIntranetAddress;
-	setCoreParameter("ServerIntranetAddress", std::to_string(serverIntranetAddress));
+	setCoreParameter("ServerIntranetAddress", serverIntranetAddress);
 }
 
 std::string DescribeLoadBalancersRequest::getVSwitchId()const
@@ -281,7 +281,7 @@ std::string DescribeLoadBalancersRequest::getVSwitchId()const
 void DescribeLoadBalancersRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string DescribeLoadBalancersRequest::getLoadBalancerId()const
@@ -292,7 +292,7 @@ std::string DescribeLoadBalancersRequest::getLoadBalancerId()const
 void DescribeLoadBalancersRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DescribeLoadBalancersRequest::getInternetChargeType()const
@@ -303,7 +303,7 @@ std::string DescribeLoadBalancersRequest::getInternetChargeType()const
 void DescribeLoadBalancersRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", std::to_string(internetChargeType));
+	setCoreParameter("InternetChargeType", internetChargeType);
 }
 
 std::string DescribeLoadBalancersRequest::getVpcId()const
@@ -314,7 +314,7 @@ std::string DescribeLoadBalancersRequest::getVpcId()const
 void DescribeLoadBalancersRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeLoadBalancersRequest::getPayType()const
@@ -325,6 +325,6 @@ std::string DescribeLoadBalancersRequest::getPayType()const
 void DescribeLoadBalancersRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", std::to_string(payType));
+	setCoreParameter("PayType", payType);
 }
 

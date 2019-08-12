@@ -33,7 +33,7 @@ std::string ReportFpShotJobResultRequest::getResult()const
 void ReportFpShotJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", std::to_string(result));
+	setCoreParameter("Result", result);
 }
 
 std::string ReportFpShotJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportFpShotJobResultRequest::getJobId()const
 void ReportFpShotJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long ReportFpShotJobResultRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ReportFpShotJobResultRequest::getResourceOwnerId()const
 void ReportFpShotJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportFpShotJobResultRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReportFpShotJobResultRequest::getResourceOwnerAccount()const
 void ReportFpShotJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportFpShotJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportFpShotJobResultRequest::getOwnerAccount()const
 void ReportFpShotJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportFpShotJobResultRequest::getDetails()const
@@ -88,7 +88,7 @@ std::string ReportFpShotJobResultRequest::getDetails()const
 void ReportFpShotJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", std::to_string(details));
+	setCoreParameter("Details", details);
 }
 
 long ReportFpShotJobResultRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReportFpShotJobResultRequest::getOwnerId()const
 void ReportFpShotJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportFpShotJobResultRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ReportFpShotJobResultRequest::getAccessKeyId()const
 void ReportFpShotJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

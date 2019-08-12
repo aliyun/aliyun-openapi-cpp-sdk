@@ -33,7 +33,7 @@ long GetImageInfoRequest::getResourceOwnerId()const
 void GetImageInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetImageInfoRequest::getImageId()const
@@ -44,7 +44,7 @@ std::string GetImageInfoRequest::getImageId()const
 void GetImageInfoRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string GetImageInfoRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetImageInfoRequest::getResourceOwnerAccount()const
 void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetImageInfoRequest::getOutputType()const
@@ -66,7 +66,7 @@ std::string GetImageInfoRequest::getOutputType()const
 void GetImageInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", std::to_string(outputType));
+	setCoreParameter("OutputType", outputType);
 }
 
 long GetImageInfoRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long GetImageInfoRequest::getOwnerId()const
 void GetImageInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long GetImageInfoRequest::getAuthTimeout()const
@@ -88,7 +88,7 @@ long GetImageInfoRequest::getAuthTimeout()const
 void GetImageInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", authTimeout);
+	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string GetImageInfoRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetImageInfoRequest::getAccessKeyId()const
 void GetImageInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

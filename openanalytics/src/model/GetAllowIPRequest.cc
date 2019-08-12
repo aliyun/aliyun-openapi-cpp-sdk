@@ -44,7 +44,7 @@ std::string GetAllowIPRequest::getRegionID()const
 void GetAllowIPRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", std::to_string(regionID));
+	setCoreParameter("RegionID", regionID);
 }
 
 std::string GetAllowIPRequest::getRequestId()const
@@ -55,7 +55,7 @@ std::string GetAllowIPRequest::getRequestId()const
 void GetAllowIPRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long GetAllowIPRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long GetAllowIPRequest::getCallerParentId()const
 void GetAllowIPRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long GetAllowIPRequest::getCallerBid()const
@@ -77,7 +77,7 @@ long GetAllowIPRequest::getCallerBid()const
 void GetAllowIPRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string GetAllowIPRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string GetAllowIPRequest::getCallerType()const
 void GetAllowIPRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool GetAllowIPRequest::getAk_mfa_present()const
@@ -110,7 +110,7 @@ long GetAllowIPRequest::getCallerUid()const
 void GetAllowIPRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetAllowIPRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string GetAllowIPRequest::getAccessKeyId()const
 void GetAllowIPRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long GetAllowIPRequest::getUserID()const
@@ -132,7 +132,7 @@ long GetAllowIPRequest::getUserID()const
 void GetAllowIPRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setCoreParameter("UserID", userID);
+	setCoreParameter("UserID", std::to_string(userID));
 }
 
 std::string GetAllowIPRequest::getNetworkType()const
@@ -143,6 +143,6 @@ std::string GetAllowIPRequest::getNetworkType()const
 void GetAllowIPRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setCoreParameter("NetworkType", networkType);
 }
 

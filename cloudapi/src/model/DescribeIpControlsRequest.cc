@@ -33,7 +33,7 @@ std::string DescribeIpControlsRequest::getIpControlId()const
 void DescribeIpControlsRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string DescribeIpControlsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeIpControlsRequest::getSecurityToken()const
 void DescribeIpControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeIpControlsRequest::getIpControlName()const
@@ -55,7 +55,7 @@ std::string DescribeIpControlsRequest::getIpControlName()const
 void DescribeIpControlsRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", std::to_string(ipControlName));
+	setCoreParameter("IpControlName", ipControlName);
 }
 
 std::string DescribeIpControlsRequest::getIpControlType()const
@@ -66,7 +66,7 @@ std::string DescribeIpControlsRequest::getIpControlType()const
 void DescribeIpControlsRequest::setIpControlType(const std::string& ipControlType)
 {
 	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", std::to_string(ipControlType));
+	setCoreParameter("IpControlType", ipControlType);
 }
 
 int DescribeIpControlsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeIpControlsRequest::getPageSize()const
 void DescribeIpControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeIpControlsRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeIpControlsRequest::getPageNumber()const
 void DescribeIpControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpControlsRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DescribeIpControlsRequest::getAccessKeyId()const
 void DescribeIpControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

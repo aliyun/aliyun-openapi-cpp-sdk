@@ -34,7 +34,7 @@ void SetCasterSceneConfigRequest::setComponentId(const std::vector<std::string>&
 {
 	componentId_ = componentId;
 	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), std::to_string(componentId.at(i)));
+		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
 }
 
 std::string SetCasterSceneConfigRequest::getRegionId()const
@@ -45,7 +45,7 @@ std::string SetCasterSceneConfigRequest::getRegionId()const
 void SetCasterSceneConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetCasterSceneConfigRequest::getCasterId()const
@@ -56,7 +56,7 @@ std::string SetCasterSceneConfigRequest::getCasterId()const
 void SetCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string SetCasterSceneConfigRequest::getSceneId()const
@@ -67,7 +67,7 @@ std::string SetCasterSceneConfigRequest::getSceneId()const
 void SetCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", std::to_string(sceneId));
+	setCoreParameter("SceneId", sceneId);
 }
 
 long SetCasterSceneConfigRequest::getOwnerId()const
@@ -78,7 +78,7 @@ long SetCasterSceneConfigRequest::getOwnerId()const
 void SetCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetCasterSceneConfigRequest::getLayoutId()const
@@ -89,6 +89,6 @@ std::string SetCasterSceneConfigRequest::getLayoutId()const
 void SetCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", std::to_string(layoutId));
+	setCoreParameter("LayoutId", layoutId);
 }
 

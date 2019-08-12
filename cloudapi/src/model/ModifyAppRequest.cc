@@ -33,7 +33,7 @@ std::string ModifyAppRequest::getAppName()const
 void ModifyAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string ModifyAppRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ModifyAppRequest::getSecurityToken()const
 void ModifyAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long ModifyAppRequest::getAppId()const
@@ -55,7 +55,7 @@ long ModifyAppRequest::getAppId()const
 void ModifyAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string ModifyAppRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyAppRequest::getDescription()const
 void ModifyAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::vector<ModifyAppRequest::Tag> ModifyAppRequest::getTag()const
@@ -81,8 +81,8 @@ void ModifyAppRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -94,6 +94,6 @@ std::string ModifyAppRequest::getAccessKeyId()const
 void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

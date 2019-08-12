@@ -33,7 +33,7 @@ std::string DescribeVodUserDomainsRequest::getFuncFilter()const
 void DescribeVodUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", std::to_string(funcFilter));
+	setCoreParameter("FuncFilter", funcFilter);
 }
 
 bool DescribeVodUserDomainsRequest::getCheckDomainShow()const
@@ -55,7 +55,7 @@ std::string DescribeVodUserDomainsRequest::getSecurityToken()const
 void DescribeVodUserDomainsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodUserDomainsRequest::getCdnType()const
@@ -66,7 +66,7 @@ std::string DescribeVodUserDomainsRequest::getCdnType()const
 void DescribeVodUserDomainsRequest::setCdnType(const std::string& cdnType)
 {
 	cdnType_ = cdnType;
-	setCoreParameter("CdnType", std::to_string(cdnType));
+	setCoreParameter("CdnType", cdnType);
 }
 
 int DescribeVodUserDomainsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeVodUserDomainsRequest::getPageSize()const
 void DescribeVodUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainName()const
@@ -88,7 +88,7 @@ std::string DescribeVodUserDomainsRequest::getDomainName()const
 void DescribeVodUserDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeVodUserDomainsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeVodUserDomainsRequest::getOwnerId()const
 void DescribeVodUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodUserDomainsRequest::getFuncId()const
@@ -110,7 +110,7 @@ std::string DescribeVodUserDomainsRequest::getFuncId()const
 void DescribeVodUserDomainsRequest::setFuncId(const std::string& funcId)
 {
 	funcId_ = funcId;
-	setCoreParameter("FuncId", std::to_string(funcId));
+	setCoreParameter("FuncId", funcId);
 }
 
 int DescribeVodUserDomainsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeVodUserDomainsRequest::getPageNumber()const
 void DescribeVodUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainStatus()const
@@ -132,7 +132,7 @@ std::string DescribeVodUserDomainsRequest::getDomainStatus()const
 void DescribeVodUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", std::to_string(domainStatus));
+	setCoreParameter("DomainStatus", domainStatus);
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainSearchType()const
@@ -143,6 +143,6 @@ std::string DescribeVodUserDomainsRequest::getDomainSearchType()const
 void DescribeVodUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
 {
 	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", std::to_string(domainSearchType));
+	setCoreParameter("DomainSearchType", domainSearchType);
 }
 

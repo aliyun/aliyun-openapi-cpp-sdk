@@ -33,7 +33,7 @@ long ModifyDBDescriptionRequest::getResourceOwnerId()const
 void ModifyDBDescriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBDescriptionRequest::getDBName()const
@@ -44,7 +44,7 @@ std::string ModifyDBDescriptionRequest::getDBName()const
 void ModifyDBDescriptionRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", std::to_string(dBName));
+	setCoreParameter("DBName", dBName);
 }
 
 std::string ModifyDBDescriptionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyDBDescriptionRequest::getResourceOwnerAccount()const
 void ModifyDBDescriptionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBDescriptionRequest::getDBClusterId()const
@@ -66,7 +66,7 @@ std::string ModifyDBDescriptionRequest::getDBClusterId()const
 void ModifyDBDescriptionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBDescriptionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyDBDescriptionRequest::getOwnerAccount()const
 void ModifyDBDescriptionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDBDescriptionRequest::getDBDescription()const
@@ -88,7 +88,7 @@ std::string ModifyDBDescriptionRequest::getDBDescription()const
 void ModifyDBDescriptionRequest::setDBDescription(const std::string& dBDescription)
 {
 	dBDescription_ = dBDescription;
-	setCoreParameter("DBDescription", std::to_string(dBDescription));
+	setCoreParameter("DBDescription", dBDescription);
 }
 
 long ModifyDBDescriptionRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyDBDescriptionRequest::getOwnerId()const
 void ModifyDBDescriptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBDescriptionRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ModifyDBDescriptionRequest::getAccessKeyId()const
 void ModifyDBDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

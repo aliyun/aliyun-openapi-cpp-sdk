@@ -33,7 +33,7 @@ std::string DescribeRuleListRequest::getWarnLevel()const
 void DescribeRuleListRequest::setWarnLevel(const std::string& warnLevel)
 {
 	warnLevel_ = warnLevel;
-	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+	setCoreParameter("WarnLevel", warnLevel);
 }
 
 std::string DescribeRuleListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRuleListRequest::getSourceIp()const
 void DescribeRuleListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeRuleListRequest::getGroupId()const
@@ -55,7 +55,7 @@ long DescribeRuleListRequest::getGroupId()const
 void DescribeRuleListRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeRuleListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeRuleListRequest::getPageSize()const
 void DescribeRuleListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRuleListRequest::getRemark()const
@@ -77,7 +77,7 @@ std::string DescribeRuleListRequest::getRemark()const
 void DescribeRuleListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 int DescribeRuleListRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeRuleListRequest::getCurrentPage()const
 void DescribeRuleListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeRuleListRequest::getId()const
@@ -99,7 +99,7 @@ long DescribeRuleListRequest::getId()const
 void DescribeRuleListRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeRuleListRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeRuleListRequest::getLang()const
 void DescribeRuleListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeRuleListRequest::getExGroupId()const
@@ -121,6 +121,6 @@ std::string DescribeRuleListRequest::getExGroupId()const
 void DescribeRuleListRequest::setExGroupId(const std::string& exGroupId)
 {
 	exGroupId_ = exGroupId;
-	setCoreParameter("ExGroupId", std::to_string(exGroupId));
+	setCoreParameter("ExGroupId", exGroupId);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteLiveStreamTranscodeRequest::get_Template()const
 void DeleteLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", std::to_string(_template));
+	setCoreParameter("_Template", _template);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getApp()const
@@ -44,7 +44,7 @@ std::string DeleteLiveStreamTranscodeRequest::getApp()const
 void DeleteLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", std::to_string(app));
+	setCoreParameter("App", app);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
 void DeleteLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteLiveStreamTranscodeRequest::getOwnerAccount()const
 void DeleteLiveStreamTranscodeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getDomain()const
@@ -77,7 +77,7 @@ std::string DeleteLiveStreamTranscodeRequest::getDomain()const
 void DeleteLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", std::to_string(domain));
+	setCoreParameter("Domain", domain);
 }
 
 long DeleteLiveStreamTranscodeRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long DeleteLiveStreamTranscodeRequest::getOwnerId()const
 void DeleteLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

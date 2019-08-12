@@ -33,7 +33,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getSourceIp()const
 void ModifyUidWhiteListAutoShareRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyUidWhiteListAutoShareRequest::getAutoConfig()const
@@ -44,7 +44,7 @@ int ModifyUidWhiteListAutoShareRequest::getAutoConfig()const
 void ModifyUidWhiteListAutoShareRequest::setAutoConfig(int autoConfig)
 {
 	autoConfig_ = autoConfig;
-	setCoreParameter("AutoConfig", autoConfig);
+	setCoreParameter("AutoConfig", std::to_string(autoConfig));
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getProductName()const
@@ -55,7 +55,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getProductName()const
 void ModifyUidWhiteListAutoShareRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", std::to_string(productName));
+	setCoreParameter("ProductName", productName);
 }
 
 int ModifyUidWhiteListAutoShareRequest::getWhiteListType()const
@@ -66,7 +66,7 @@ int ModifyUidWhiteListAutoShareRequest::getWhiteListType()const
 void ModifyUidWhiteListAutoShareRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", whiteListType);
+	setCoreParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getLang()const
@@ -77,7 +77,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getLang()const
 void ModifyUidWhiteListAutoShareRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getSrcUid()const
@@ -88,7 +88,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getSrcUid()const
 void ModifyUidWhiteListAutoShareRequest::setSrcUid(const std::string& srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setCoreParameter("SrcUid", srcUid);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string ModifyUidWhiteListAutoShareRequest::getSourceCode()const
 void ModifyUidWhiteListAutoShareRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

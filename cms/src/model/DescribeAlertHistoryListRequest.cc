@@ -33,7 +33,7 @@ std::string DescribeAlertHistoryListRequest::getAlertName()const
 void DescribeAlertHistoryListRequest::setAlertName(const std::string& alertName)
 {
 	alertName_ = alertName;
-	setCoreParameter("AlertName", std::to_string(alertName));
+	setCoreParameter("AlertName", alertName);
 }
 
 std::string DescribeAlertHistoryListRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeAlertHistoryListRequest::getGroupId()const
 void DescribeAlertHistoryListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeAlertHistoryListRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeAlertHistoryListRequest::getEndTime()const
 void DescribeAlertHistoryListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeAlertHistoryListRequest::getRuleName()const
@@ -66,7 +66,7 @@ std::string DescribeAlertHistoryListRequest::getRuleName()const
 void DescribeAlertHistoryListRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", std::to_string(ruleName));
+	setCoreParameter("RuleName", ruleName);
 }
 
 std::string DescribeAlertHistoryListRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeAlertHistoryListRequest::getStartTime()const
 void DescribeAlertHistoryListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 bool DescribeAlertHistoryListRequest::getAscending()const
@@ -99,7 +99,7 @@ std::string DescribeAlertHistoryListRequest::getAccessKeyId()const
 void DescribeAlertHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeAlertHistoryListRequest::getOnlyCount()const
@@ -121,7 +121,7 @@ std::string DescribeAlertHistoryListRequest::get_Namespace()const
 void DescribeAlertHistoryListRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", std::to_string(_namespace));
+	setCoreParameter("_Namespace", _namespace);
 }
 
 int DescribeAlertHistoryListRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeAlertHistoryListRequest::getPageSize()const
 void DescribeAlertHistoryListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAlertHistoryListRequest::getState()const
@@ -143,7 +143,7 @@ std::string DescribeAlertHistoryListRequest::getState()const
 void DescribeAlertHistoryListRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 int DescribeAlertHistoryListRequest::getPage()const
@@ -154,7 +154,7 @@ int DescribeAlertHistoryListRequest::getPage()const
 void DescribeAlertHistoryListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string DescribeAlertHistoryListRequest::getMetricName()const
@@ -165,7 +165,7 @@ std::string DescribeAlertHistoryListRequest::getMetricName()const
 void DescribeAlertHistoryListRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", std::to_string(metricName));
+	setCoreParameter("MetricName", metricName);
 }
 
 std::string DescribeAlertHistoryListRequest::getStatus()const
@@ -176,6 +176,6 @@ std::string DescribeAlertHistoryListRequest::getStatus()const
 void DescribeAlertHistoryListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

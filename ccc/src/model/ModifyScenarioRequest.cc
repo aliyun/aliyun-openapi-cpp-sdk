@@ -33,7 +33,7 @@ std::string ModifyScenarioRequest::getVariables()const
 void ModifyScenarioRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", std::to_string(variables));
+	setCoreParameter("Variables", variables);
 }
 
 std::string ModifyScenarioRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyScenarioRequest::getInstanceId()const
 void ModifyScenarioRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyScenarioRequest::getName()const
@@ -55,7 +55,7 @@ std::string ModifyScenarioRequest::getName()const
 void ModifyScenarioRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyScenarioRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string ModifyScenarioRequest::getDescription()const
 void ModifyScenarioRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyScenarioRequest::getScenarioId()const
@@ -77,6 +77,6 @@ std::string ModifyScenarioRequest::getScenarioId()const
 void ModifyScenarioRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

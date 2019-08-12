@@ -33,7 +33,7 @@ std::string DescribeDedicatedHostsRequest::getDedicatedHostIds()const
 void DescribeDedicatedHostsRequest::setDedicatedHostIds(const std::string& dedicatedHostIds)
 {
 	dedicatedHostIds_ = dedicatedHostIds;
-	setCoreParameter("DedicatedHostIds", std::to_string(dedicatedHostIds));
+	setCoreParameter("DedicatedHostIds", dedicatedHostIds);
 }
 
 long DescribeDedicatedHostsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeDedicatedHostsRequest::getResourceOwnerId()const
 void DescribeDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDedicatedHostsRequest::getDedicatedHostName()const
@@ -55,7 +55,7 @@ std::string DescribeDedicatedHostsRequest::getDedicatedHostName()const
 void DescribeDedicatedHostsRequest::setDedicatedHostName(const std::string& dedicatedHostName)
 {
 	dedicatedHostName_ = dedicatedHostName;
-	setCoreParameter("DedicatedHostName", std::to_string(dedicatedHostName));
+	setCoreParameter("DedicatedHostName", dedicatedHostName);
 }
 
 std::string DescribeDedicatedHostsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDedicatedHostsRequest::getResourceOwnerAccount()const
 void DescribeDedicatedHostsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedHostsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDedicatedHostsRequest::getOwnerAccount()const
 void DescribeDedicatedHostsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDedicatedHostsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeDedicatedHostsRequest::getOwnerId()const
 void DescribeDedicatedHostsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDedicatedHostsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDedicatedHostsRequest::getPageNumber()const
 void DescribeDedicatedHostsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDedicatedHostsRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeDedicatedHostsRequest::getSourceRegionId()const
 void DescribeDedicatedHostsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeDedicatedHostsRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string DescribeDedicatedHostsRequest::getResourceGroupId()const
 void DescribeDedicatedHostsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDedicatedHostsRequest::getLockReason()const
@@ -132,7 +132,7 @@ std::string DescribeDedicatedHostsRequest::getLockReason()const
 void DescribeDedicatedHostsRequest::setLockReason(const std::string& lockReason)
 {
 	lockReason_ = lockReason;
-	setCoreParameter("LockReason", std::to_string(lockReason));
+	setCoreParameter("LockReason", lockReason);
 }
 
 std::string DescribeDedicatedHostsRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeDedicatedHostsRequest::getRegionId()const
 void DescribeDedicatedHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeDedicatedHostsRequest::getPageSize()const
@@ -154,7 +154,7 @@ int DescribeDedicatedHostsRequest::getPageSize()const
 void DescribeDedicatedHostsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDedicatedHostsRequest::getZoneId()const
@@ -165,7 +165,7 @@ std::string DescribeDedicatedHostsRequest::getZoneId()const
 void DescribeDedicatedHostsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeDedicatedHostsRequest::getDedicatedHostType()const
@@ -176,7 +176,7 @@ std::string DescribeDedicatedHostsRequest::getDedicatedHostType()const
 void DescribeDedicatedHostsRequest::setDedicatedHostType(const std::string& dedicatedHostType)
 {
 	dedicatedHostType_ = dedicatedHostType;
-	setCoreParameter("DedicatedHostType", std::to_string(dedicatedHostType));
+	setCoreParameter("DedicatedHostType", dedicatedHostType);
 }
 
 std::vector<DescribeDedicatedHostsRequest::Tag> DescribeDedicatedHostsRequest::getTag()const
@@ -191,8 +191,8 @@ void DescribeDedicatedHostsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -204,6 +204,6 @@ std::string DescribeDedicatedHostsRequest::getStatus()const
 void DescribeDedicatedHostsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

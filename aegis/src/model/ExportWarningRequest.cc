@@ -33,7 +33,7 @@ std::string ExportWarningRequest::getStatusList()const
 void ExportWarningRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", std::to_string(statusList));
+	setCoreParameter("StatusList", statusList);
 }
 
 std::string ExportWarningRequest::getRiskLevels()const
@@ -44,7 +44,7 @@ std::string ExportWarningRequest::getRiskLevels()const
 void ExportWarningRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", std::to_string(riskLevels));
+	setCoreParameter("RiskLevels", riskLevels);
 }
 
 std::string ExportWarningRequest::getExportType()const
@@ -55,7 +55,7 @@ std::string ExportWarningRequest::getExportType()const
 void ExportWarningRequest::setExportType(const std::string& exportType)
 {
 	exportType_ = exportType;
-	setCoreParameter("ExportType", std::to_string(exportType));
+	setCoreParameter("ExportType", exportType);
 }
 
 std::string ExportWarningRequest::getDealed()const
@@ -66,7 +66,7 @@ std::string ExportWarningRequest::getDealed()const
 void ExportWarningRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 std::string ExportWarningRequest::getTypeNames()const
@@ -77,7 +77,7 @@ std::string ExportWarningRequest::getTypeNames()const
 void ExportWarningRequest::setTypeNames(const std::string& typeNames)
 {
 	typeNames_ = typeNames;
-	setCoreParameter("TypeNames", std::to_string(typeNames));
+	setCoreParameter("TypeNames", typeNames);
 }
 
 int ExportWarningRequest::getIsSummaryExport()const
@@ -88,7 +88,7 @@ int ExportWarningRequest::getIsSummaryExport()const
 void ExportWarningRequest::setIsSummaryExport(int isSummaryExport)
 {
 	isSummaryExport_ = isSummaryExport;
-	setCoreParameter("IsSummaryExport", isSummaryExport);
+	setCoreParameter("IsSummaryExport", std::to_string(isSummaryExport));
 }
 
 std::string ExportWarningRequest::getRiskName()const
@@ -99,7 +99,7 @@ std::string ExportWarningRequest::getRiskName()const
 void ExportWarningRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", std::to_string(riskName));
+	setCoreParameter("RiskName", riskName);
 }
 
 std::string ExportWarningRequest::getRiskIds()const
@@ -110,7 +110,7 @@ std::string ExportWarningRequest::getRiskIds()const
 void ExportWarningRequest::setRiskIds(const std::string& riskIds)
 {
 	riskIds_ = riskIds;
-	setCoreParameter("RiskIds", std::to_string(riskIds));
+	setCoreParameter("RiskIds", riskIds);
 }
 
 std::string ExportWarningRequest::getSourceIp()const
@@ -121,7 +121,7 @@ std::string ExportWarningRequest::getSourceIp()const
 void ExportWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long ExportWarningRequest::getStrategyId()const
@@ -132,7 +132,7 @@ long ExportWarningRequest::getStrategyId()const
 void ExportWarningRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string ExportWarningRequest::getLang()const
@@ -143,7 +143,7 @@ std::string ExportWarningRequest::getLang()const
 void ExportWarningRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ExportWarningRequest::getTypeName()const
@@ -154,7 +154,7 @@ std::string ExportWarningRequest::getTypeName()const
 void ExportWarningRequest::setTypeName(const std::string& typeName)
 {
 	typeName_ = typeName;
-	setCoreParameter("TypeName", std::to_string(typeName));
+	setCoreParameter("TypeName", typeName);
 }
 
 std::string ExportWarningRequest::getSubTypeNames()const
@@ -165,7 +165,7 @@ std::string ExportWarningRequest::getSubTypeNames()const
 void ExportWarningRequest::setSubTypeNames(const std::string& subTypeNames)
 {
 	subTypeNames_ = subTypeNames;
-	setCoreParameter("SubTypeNames", std::to_string(subTypeNames));
+	setCoreParameter("SubTypeNames", subTypeNames);
 }
 
 std::string ExportWarningRequest::getUuids()const
@@ -176,6 +176,6 @@ std::string ExportWarningRequest::getUuids()const
 void ExportWarningRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

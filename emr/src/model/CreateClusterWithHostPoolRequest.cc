@@ -33,7 +33,7 @@ long CreateClusterWithHostPoolRequest::getResourceOwnerId()const
 void CreateClusterWithHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterWithHostPoolRequest::getClusterName()const
@@ -44,7 +44,7 @@ std::string CreateClusterWithHostPoolRequest::getClusterName()const
 void CreateClusterWithHostPoolRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", std::to_string(clusterName));
+	setCoreParameter("ClusterName", clusterName);
 }
 
 bool CreateClusterWithHostPoolRequest::getEasEnable()const
@@ -70,13 +70,13 @@ void CreateClusterWithHostPoolRequest::setHostInfo(const std::vector<HostInfo>& 
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
-		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
-		setCoreParameter(str + ".Role", std::to_string(obj.role));
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".PrivateIp", std::to_string(obj.privateIp));
-		setCoreParameter(str + ".ServiceComponentInfo", obj.serviceComponentInfo);
-		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
+		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
+		setCoreParameter(str + ".HostName", obj.hostName);
+		setCoreParameter(str + ".Role", obj.role);
+		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
+		setCoreParameter(str + ".PrivateIp", obj.privateIp);
+		setCoreParameter(str + ".ServiceComponentInfo", std::to_string(obj.serviceComponentInfo));
+		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
 	}
 }
 
@@ -88,7 +88,7 @@ std::string CreateClusterWithHostPoolRequest::getRelatedClusterId()const
 void CreateClusterWithHostPoolRequest::setRelatedClusterId(const std::string& relatedClusterId)
 {
 	relatedClusterId_ = relatedClusterId;
-	setCoreParameter("RelatedClusterId", std::to_string(relatedClusterId));
+	setCoreParameter("RelatedClusterId", relatedClusterId);
 }
 
 std::string CreateClusterWithHostPoolRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateClusterWithHostPoolRequest::getAccessKeyId()const
 void CreateClusterWithHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterWithHostPoolRequest::getClusterType()const
@@ -110,7 +110,7 @@ std::string CreateClusterWithHostPoolRequest::getClusterType()const
 void CreateClusterWithHostPoolRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", std::to_string(clusterType));
+	setCoreParameter("ClusterType", clusterType);
 }
 
 std::string CreateClusterWithHostPoolRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string CreateClusterWithHostPoolRequest::getRegionId()const
 void CreateClusterWithHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<CreateClusterWithHostPoolRequest::HostGroup> CreateClusterWithHostPoolRequest::getHostGroup()const
@@ -136,9 +136,9 @@ void CreateClusterWithHostPoolRequest::setHostGroup(const std::vector<HostGroup>
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
-		setCoreParameter(str + ".GroupId", obj.groupId);
-		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
+		setCoreParameter(str + ".GroupType", obj.groupType);
+		setCoreParameter(str + ".GroupId", std::to_string(obj.groupId));
+		setCoreParameter(str + ".GroupName", obj.groupName);
 	}
 }
 
@@ -150,7 +150,7 @@ std::string CreateClusterWithHostPoolRequest::getStackName()const
 void CreateClusterWithHostPoolRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", std::to_string(stackName));
+	setCoreParameter("StackName", stackName);
 }
 
 std::string CreateClusterWithHostPoolRequest::getStackVersion()const
@@ -161,7 +161,7 @@ std::string CreateClusterWithHostPoolRequest::getStackVersion()const
 void CreateClusterWithHostPoolRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", std::to_string(stackVersion));
+	setCoreParameter("StackVersion", stackVersion);
 }
 
 std::vector<CreateClusterWithHostPoolRequest::ServiceInfo> CreateClusterWithHostPoolRequest::getServiceInfo()const
@@ -176,9 +176,9 @@ void CreateClusterWithHostPoolRequest::setServiceInfo(const std::vector<ServiceI
 	for(int i = 0; i!= serviceInfo.size(); i++)	{
 		auto obj = serviceInfo.at(i);
 		std::string str ="ServiceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceEcmVersion", std::to_string(obj.serviceEcmVersion));
-		setCoreParameter(str + ".ServiceVersion", std::to_string(obj.serviceVersion));
-		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
+		setCoreParameter(str + ".ServiceEcmVersion", obj.serviceEcmVersion);
+		setCoreParameter(str + ".ServiceVersion", obj.serviceVersion);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -194,10 +194,10 @@ void CreateClusterWithHostPoolRequest::setConfig(const std::vector<Config>& conf
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", std::to_string(obj.configKey));
-		setCoreParameter(str + ".FileName", std::to_string(obj.fileName));
-		setCoreParameter(str + ".ConfigValue", std::to_string(obj.configValue));
-		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".FileName", obj.fileName);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 

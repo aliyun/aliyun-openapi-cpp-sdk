@@ -33,7 +33,7 @@ std::string ListAgentSummaryReportsRequest::getAgentIds()const
 void ListAgentSummaryReportsRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", std::to_string(agentIds));
+	setCoreParameter("AgentIds", agentIds);
 }
 
 std::string ListAgentSummaryReportsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListAgentSummaryReportsRequest::getInstanceId()const
 void ListAgentSummaryReportsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
 void ListAgentSummaryReportsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 int ListAgentSummaryReportsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListAgentSummaryReportsRequest::getPageSize()const
 void ListAgentSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAgentSummaryReportsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string ListAgentSummaryReportsRequest::getEndTime()const
 void ListAgentSummaryReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string ListAgentSummaryReportsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string ListAgentSummaryReportsRequest::getStartTime()const
 void ListAgentSummaryReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int ListAgentSummaryReportsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int ListAgentSummaryReportsRequest::getPageNumber()const
 void ListAgentSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAgentSummaryReportsRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListAgentSummaryReportsRequest::getAccessKeyId()const
 void ListAgentSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

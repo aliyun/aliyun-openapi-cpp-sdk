@@ -33,7 +33,7 @@ std::string ModifyConcernNecessityRequest::getSourceIp()const
 void ModifyConcernNecessityRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyConcernNecessityRequest::getLang()const
@@ -44,7 +44,7 @@ std::string ModifyConcernNecessityRequest::getLang()const
 void ModifyConcernNecessityRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyConcernNecessityRequest::getConcernNecessity()const
@@ -55,6 +55,6 @@ std::string ModifyConcernNecessityRequest::getConcernNecessity()const
 void ModifyConcernNecessityRequest::setConcernNecessity(const std::string& concernNecessity)
 {
 	concernNecessity_ = concernNecessity;
-	setCoreParameter("ConcernNecessity", std::to_string(concernNecessity));
+	setCoreParameter("ConcernNecessity", concernNecessity);
 }
 

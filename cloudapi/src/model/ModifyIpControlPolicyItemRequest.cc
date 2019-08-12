@@ -33,7 +33,7 @@ std::string ModifyIpControlPolicyItemRequest::getIpControlId()const
 void ModifyIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getPolicyItemId()const
@@ -44,7 +44,7 @@ std::string ModifyIpControlPolicyItemRequest::getPolicyItemId()const
 void ModifyIpControlPolicyItemRequest::setPolicyItemId(const std::string& policyItemId)
 {
 	policyItemId_ = policyItemId;
-	setCoreParameter("PolicyItemId", std::to_string(policyItemId));
+	setCoreParameter("PolicyItemId", policyItemId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyIpControlPolicyItemRequest::getSecurityToken()const
 void ModifyIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getAppId()const
@@ -66,7 +66,7 @@ std::string ModifyIpControlPolicyItemRequest::getAppId()const
 void ModifyIpControlPolicyItemRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getCidrIp()const
@@ -77,7 +77,7 @@ std::string ModifyIpControlPolicyItemRequest::getCidrIp()const
 void ModifyIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", std::to_string(cidrIp));
+	setCoreParameter("CidrIp", cidrIp);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyIpControlPolicyItemRequest::getAccessKeyId()const
 void ModifyIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

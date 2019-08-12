@@ -33,7 +33,7 @@ long CreateUserPasswordRequest::getResourceOwnerId()const
 void CreateUserPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUserPasswordRequest::getPassword()const
@@ -44,7 +44,7 @@ std::string CreateUserPasswordRequest::getPassword()const
 void CreateUserPasswordRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string CreateUserPasswordRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateUserPasswordRequest::getRegionId()const
 void CreateUserPasswordRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateUserPasswordRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string CreateUserPasswordRequest::getClusterId()const
 void CreateUserPasswordRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::vector<CreateUserPasswordRequest::UserInfo> CreateUserPasswordRequest::getUserInfo()const
@@ -81,10 +81,10 @@ void CreateUserPasswordRequest::setUserInfo(const std::vector<UserInfo>& userInf
 	for(int i = 0; i!= userInfo.size(); i++)	{
 		auto obj = userInfo.at(i);
 		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Type", std::to_string(obj.type));
-		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
-		setCoreParameter(str + ".UserId", std::to_string(obj.userId));
-		setCoreParameter(str + ".UserName", std::to_string(obj.userName));
+		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".GroupName", obj.groupName);
+		setCoreParameter(str + ".UserId", obj.userId);
+		setCoreParameter(str + ".UserName", obj.userName);
 	}
 }
 
@@ -96,6 +96,6 @@ std::string CreateUserPasswordRequest::getAccessKeyId()const
 void CreateUserPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

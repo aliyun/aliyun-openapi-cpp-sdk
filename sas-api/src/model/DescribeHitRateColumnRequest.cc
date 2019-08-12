@@ -33,7 +33,7 @@ std::string DescribeHitRateColumnRequest::getEndDate()const
 void DescribeHitRateColumnRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeHitRateColumnRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeHitRateColumnRequest::getSourceIp()const
 void DescribeHitRateColumnRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeHitRateColumnRequest::getHitDay()const
@@ -55,7 +55,7 @@ int DescribeHitRateColumnRequest::getHitDay()const
 void DescribeHitRateColumnRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
-	setCoreParameter("HitDay", hitDay);
+	setCoreParameter("HitDay", std::to_string(hitDay));
 }
 
 std::string DescribeHitRateColumnRequest::getStartDate()const
@@ -66,7 +66,7 @@ std::string DescribeHitRateColumnRequest::getStartDate()const
 void DescribeHitRateColumnRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 
 int DescribeHitRateColumnRequest::getApiType()const
@@ -77,6 +77,6 @@ int DescribeHitRateColumnRequest::getApiType()const
 void DescribeHitRateColumnRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

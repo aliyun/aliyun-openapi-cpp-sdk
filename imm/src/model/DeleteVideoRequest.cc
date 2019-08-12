@@ -33,7 +33,7 @@ std::string DeleteVideoRequest::getVideoUri()const
 void DeleteVideoRequest::setVideoUri(const std::string& videoUri)
 {
 	videoUri_ = videoUri;
-	setCoreParameter("VideoUri", std::to_string(videoUri));
+	setCoreParameter("VideoUri", videoUri);
 }
 
 std::string DeleteVideoRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteVideoRequest::getRegionId()const
 void DeleteVideoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteVideoRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteVideoRequest::getProject()const
 void DeleteVideoRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteVideoRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string DeleteVideoRequest::getSetId()const
 void DeleteVideoRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 bool DeleteVideoRequest::getResources()const
@@ -88,6 +88,6 @@ std::string DeleteVideoRequest::getAccessKeyId()const
 void DeleteVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

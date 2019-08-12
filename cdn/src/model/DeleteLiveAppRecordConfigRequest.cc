@@ -33,7 +33,7 @@ std::string DeleteLiveAppRecordConfigRequest::getAppName()const
 void DeleteLiveAppRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DeleteLiveAppRecordConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DeleteLiveAppRecordConfigRequest::getSecurityToken()const
 void DeleteLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveAppRecordConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteLiveAppRecordConfigRequest::getDomainName()const
 void DeleteLiveAppRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteLiveAppRecordConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long DeleteLiveAppRecordConfigRequest::getOwnerId()const
 void DeleteLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

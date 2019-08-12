@@ -33,7 +33,7 @@ std::string ModifyApiGroupRequest::getSecurityToken()const
 void ModifyApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyApiGroupRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string ModifyApiGroupRequest::getGroupId()const
 void ModifyApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ModifyApiGroupRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string ModifyApiGroupRequest::getDescription()const
 void ModifyApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::vector<ModifyApiGroupRequest::Tag> ModifyApiGroupRequest::getTag()const
@@ -70,8 +70,8 @@ void ModifyApiGroupRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -83,7 +83,7 @@ std::string ModifyApiGroupRequest::getGroupName()const
 void ModifyApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string ModifyApiGroupRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string ModifyApiGroupRequest::getAccessKeyId()const
 void ModifyApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

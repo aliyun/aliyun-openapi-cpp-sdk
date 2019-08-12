@@ -33,7 +33,7 @@ int FetchLibrariesRequest::getSize()const
 void FetchLibrariesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 bool FetchLibrariesRequest::getNeedQuota()const
@@ -55,7 +55,7 @@ std::string FetchLibrariesRequest::getStoreName()const
 void FetchLibrariesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 int FetchLibrariesRequest::getPage()const
@@ -66,6 +66,6 @@ int FetchLibrariesRequest::getPage()const
 void FetchLibrariesRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 

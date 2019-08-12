@@ -44,7 +44,7 @@ std::string ListMonitoringTemplatesRequest::getName()const
 void ListMonitoringTemplatesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long ListMonitoringTemplatesRequest::getPageSize()const
@@ -55,7 +55,7 @@ long ListMonitoringTemplatesRequest::getPageSize()const
 void ListMonitoringTemplatesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListMonitoringTemplatesRequest::getId()const
@@ -66,7 +66,7 @@ long ListMonitoringTemplatesRequest::getId()const
 void ListMonitoringTemplatesRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 bool ListMonitoringTemplatesRequest::getHistory()const
@@ -88,7 +88,7 @@ std::string ListMonitoringTemplatesRequest::getKeyword()const
 void ListMonitoringTemplatesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 long ListMonitoringTemplatesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ long ListMonitoringTemplatesRequest::getPageNumber()const
 void ListMonitoringTemplatesRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

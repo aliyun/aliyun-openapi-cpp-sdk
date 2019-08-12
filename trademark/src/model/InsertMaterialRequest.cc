@@ -33,7 +33,7 @@ std::string InsertMaterialRequest::getContactEmail()const
 void InsertMaterialRequest::setContactEmail(const std::string& contactEmail)
 {
 	contactEmail_ = contactEmail;
-	setCoreParameter("ContactEmail", std::to_string(contactEmail));
+	setCoreParameter("ContactEmail", contactEmail);
 }
 
 std::string InsertMaterialRequest::getContactAddress()const
@@ -44,7 +44,7 @@ std::string InsertMaterialRequest::getContactAddress()const
 void InsertMaterialRequest::setContactAddress(const std::string& contactAddress)
 {
 	contactAddress_ = contactAddress;
-	setCoreParameter("ContactAddress", std::to_string(contactAddress));
+	setCoreParameter("ContactAddress", contactAddress);
 }
 
 std::string InsertMaterialRequest::getEAddress()const
@@ -55,7 +55,7 @@ std::string InsertMaterialRequest::getEAddress()const
 void InsertMaterialRequest::setEAddress(const std::string& eAddress)
 {
 	eAddress_ = eAddress;
-	setCoreParameter("EAddress", std::to_string(eAddress));
+	setCoreParameter("EAddress", eAddress);
 }
 
 std::string InsertMaterialRequest::getCountry()const
@@ -66,7 +66,7 @@ std::string InsertMaterialRequest::getCountry()const
 void InsertMaterialRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", std::to_string(country));
+	setCoreParameter("Country", country);
 }
 
 std::string InsertMaterialRequest::getLegalNoticeOssKey()const
@@ -77,7 +77,7 @@ std::string InsertMaterialRequest::getLegalNoticeOssKey()const
 void InsertMaterialRequest::setLegalNoticeOssKey(const std::string& legalNoticeOssKey)
 {
 	legalNoticeOssKey_ = legalNoticeOssKey;
-	setCoreParameter("LegalNoticeOssKey", std::to_string(legalNoticeOssKey));
+	setCoreParameter("LegalNoticeOssKey", legalNoticeOssKey);
 }
 
 std::string InsertMaterialRequest::getAddress()const
@@ -88,7 +88,7 @@ std::string InsertMaterialRequest::getAddress()const
 void InsertMaterialRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", std::to_string(address));
+	setCoreParameter("Address", address);
 }
 
 std::string InsertMaterialRequest::getTown()const
@@ -99,7 +99,7 @@ std::string InsertMaterialRequest::getTown()const
 void InsertMaterialRequest::setTown(const std::string& town)
 {
 	town_ = town;
-	setCoreParameter("Town", std::to_string(town));
+	setCoreParameter("Town", town);
 }
 
 std::string InsertMaterialRequest::getContactNumber()const
@@ -110,7 +110,7 @@ std::string InsertMaterialRequest::getContactNumber()const
 void InsertMaterialRequest::setContactNumber(const std::string& contactNumber)
 {
 	contactNumber_ = contactNumber;
-	setCoreParameter("ContactNumber", std::to_string(contactNumber));
+	setCoreParameter("ContactNumber", contactNumber);
 }
 
 std::string InsertMaterialRequest::getCity()const
@@ -121,7 +121,7 @@ std::string InsertMaterialRequest::getCity()const
 void InsertMaterialRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", std::to_string(city));
+	setCoreParameter("City", city);
 }
 
 std::string InsertMaterialRequest::getIdCardOssKey()const
@@ -132,7 +132,7 @@ std::string InsertMaterialRequest::getIdCardOssKey()const
 void InsertMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
 {
 	idCardOssKey_ = idCardOssKey;
-	setCoreParameter("IdCardOssKey", std::to_string(idCardOssKey));
+	setCoreParameter("IdCardOssKey", idCardOssKey);
 }
 
 int InsertMaterialRequest::getType()const
@@ -143,7 +143,7 @@ int InsertMaterialRequest::getType()const
 void InsertMaterialRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string InsertMaterialRequest::getContactName()const
@@ -154,7 +154,7 @@ std::string InsertMaterialRequest::getContactName()const
 void InsertMaterialRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", std::to_string(contactName));
+	setCoreParameter("ContactName", contactName);
 }
 
 std::string InsertMaterialRequest::getPassportOssKey()const
@@ -165,7 +165,7 @@ std::string InsertMaterialRequest::getPassportOssKey()const
 void InsertMaterialRequest::setPassportOssKey(const std::string& passportOssKey)
 {
 	passportOssKey_ = passportOssKey;
-	setCoreParameter("PassportOssKey", std::to_string(passportOssKey));
+	setCoreParameter("PassportOssKey", passportOssKey);
 }
 
 std::string InsertMaterialRequest::getContactZipcode()const
@@ -176,7 +176,7 @@ std::string InsertMaterialRequest::getContactZipcode()const
 void InsertMaterialRequest::setContactZipcode(const std::string& contactZipcode)
 {
 	contactZipcode_ = contactZipcode;
-	setCoreParameter("ContactZipcode", std::to_string(contactZipcode));
+	setCoreParameter("ContactZipcode", contactZipcode);
 }
 
 std::string InsertMaterialRequest::getEName()const
@@ -187,7 +187,7 @@ std::string InsertMaterialRequest::getEName()const
 void InsertMaterialRequest::setEName(const std::string& eName)
 {
 	eName_ = eName;
-	setCoreParameter("EName", std::to_string(eName));
+	setCoreParameter("EName", eName);
 }
 
 std::string InsertMaterialRequest::getProvince()const
@@ -198,7 +198,7 @@ std::string InsertMaterialRequest::getProvince()const
 void InsertMaterialRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", std::to_string(province));
+	setCoreParameter("Province", province);
 }
 
 std::string InsertMaterialRequest::getBusinessLicenceOssKey()const
@@ -209,7 +209,7 @@ std::string InsertMaterialRequest::getBusinessLicenceOssKey()const
 void InsertMaterialRequest::setBusinessLicenceOssKey(const std::string& businessLicenceOssKey)
 {
 	businessLicenceOssKey_ = businessLicenceOssKey;
-	setCoreParameter("BusinessLicenceOssKey", std::to_string(businessLicenceOssKey));
+	setCoreParameter("BusinessLicenceOssKey", businessLicenceOssKey);
 }
 
 std::string InsertMaterialRequest::getName()const
@@ -220,7 +220,7 @@ std::string InsertMaterialRequest::getName()const
 void InsertMaterialRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string InsertMaterialRequest::getCardNumber()const
@@ -231,7 +231,7 @@ std::string InsertMaterialRequest::getCardNumber()const
 void InsertMaterialRequest::setCardNumber(const std::string& cardNumber)
 {
 	cardNumber_ = cardNumber;
-	setCoreParameter("CardNumber", std::to_string(cardNumber));
+	setCoreParameter("CardNumber", cardNumber);
 }
 
 int InsertMaterialRequest::getRegion()const
@@ -242,7 +242,7 @@ int InsertMaterialRequest::getRegion()const
 void InsertMaterialRequest::setRegion(int region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setCoreParameter("Region", std::to_string(region));
 }
 
 std::string InsertMaterialRequest::getLoaOssKey()const
@@ -253,6 +253,6 @@ std::string InsertMaterialRequest::getLoaOssKey()const
 void InsertMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", std::to_string(loaOssKey));
+	setCoreParameter("LoaOssKey", loaOssKey);
 }
 

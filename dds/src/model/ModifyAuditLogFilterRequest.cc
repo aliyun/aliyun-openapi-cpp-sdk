@@ -33,7 +33,7 @@ std::string ModifyAuditLogFilterRequest::getFilter()const
 void ModifyAuditLogFilterRequest::setFilter(const std::string& filter)
 {
 	filter_ = filter;
-	setCoreParameter("Filter", std::to_string(filter));
+	setCoreParameter("Filter", filter);
 }
 
 long ModifyAuditLogFilterRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyAuditLogFilterRequest::getResourceOwnerId()const
 void ModifyAuditLogFilterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAuditLogFilterRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyAuditLogFilterRequest::getSecurityToken()const
 void ModifyAuditLogFilterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyAuditLogFilterRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyAuditLogFilterRequest::getResourceOwnerAccount()const
 void ModifyAuditLogFilterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAuditLogFilterRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyAuditLogFilterRequest::getRegionId()const
 void ModifyAuditLogFilterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyAuditLogFilterRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyAuditLogFilterRequest::getOwnerAccount()const
 void ModifyAuditLogFilterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyAuditLogFilterRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string ModifyAuditLogFilterRequest::getDBInstanceId()const
 void ModifyAuditLogFilterRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyAuditLogFilterRequest::getRoleType()const
@@ -110,7 +110,7 @@ std::string ModifyAuditLogFilterRequest::getRoleType()const
 void ModifyAuditLogFilterRequest::setRoleType(const std::string& roleType)
 {
 	roleType_ = roleType;
-	setCoreParameter("RoleType", std::to_string(roleType));
+	setCoreParameter("RoleType", roleType);
 }
 
 long ModifyAuditLogFilterRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyAuditLogFilterRequest::getOwnerId()const
 void ModifyAuditLogFilterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyAuditLogFilterRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyAuditLogFilterRequest::getAccessKeyId()const
 void ModifyAuditLogFilterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

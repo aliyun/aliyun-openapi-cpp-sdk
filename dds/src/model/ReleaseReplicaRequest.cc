@@ -33,7 +33,7 @@ long ReleaseReplicaRequest::getResourceOwnerId()const
 void ReleaseReplicaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseReplicaRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string ReleaseReplicaRequest::getSecurityToken()const
 void ReleaseReplicaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReleaseReplicaRequest::getResourceOwnerAccount()const
 void ReleaseReplicaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseReplicaRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ReleaseReplicaRequest::getRegionId()const
 void ReleaseReplicaRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ReleaseReplicaRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReleaseReplicaRequest::getOwnerAccount()const
 void ReleaseReplicaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReleaseReplicaRequest::getReplicaId()const
@@ -88,7 +88,7 @@ std::string ReleaseReplicaRequest::getReplicaId()const
 void ReleaseReplicaRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", std::to_string(replicaId));
+	setCoreParameter("ReplicaId", replicaId);
 }
 
 long ReleaseReplicaRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReleaseReplicaRequest::getOwnerId()const
 void ReleaseReplicaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReleaseReplicaRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ReleaseReplicaRequest::getAccessKeyId()const
 void ReleaseReplicaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

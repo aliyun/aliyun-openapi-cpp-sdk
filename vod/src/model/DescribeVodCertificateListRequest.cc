@@ -33,7 +33,7 @@ std::string DescribeVodCertificateListRequest::getSecurityToken()const
 void DescribeVodCertificateListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodCertificateListRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeVodCertificateListRequest::getDomainName()const
 void DescribeVodCertificateListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeVodCertificateListRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeVodCertificateListRequest::getOwnerId()const
 void DescribeVodCertificateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

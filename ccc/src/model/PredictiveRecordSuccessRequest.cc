@@ -33,7 +33,7 @@ std::string PredictiveRecordSuccessRequest::getCallId()const
 void PredictiveRecordSuccessRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", std::to_string(callId));
+	setCoreParameter("CallId", callId);
 }
 
 std::string PredictiveRecordSuccessRequest::getCallingNumber()const
@@ -44,7 +44,7 @@ std::string PredictiveRecordSuccessRequest::getCallingNumber()const
 void PredictiveRecordSuccessRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", std::to_string(callingNumber));
+	setCoreParameter("CallingNumber", callingNumber);
 }
 
 std::string PredictiveRecordSuccessRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string PredictiveRecordSuccessRequest::getInstanceId()const
 void PredictiveRecordSuccessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PredictiveRecordSuccessRequest::getCalledNumber()const
@@ -66,7 +66,7 @@ std::string PredictiveRecordSuccessRequest::getCalledNumber()const
 void PredictiveRecordSuccessRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", std::to_string(calledNumber));
+	setCoreParameter("CalledNumber", calledNumber);
 }
 
 std::string PredictiveRecordSuccessRequest::getCallType()const
@@ -77,7 +77,7 @@ std::string PredictiveRecordSuccessRequest::getCallType()const
 void PredictiveRecordSuccessRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setCoreParameter("CallType", std::to_string(callType));
+	setCoreParameter("CallType", callType);
 }
 
 std::string PredictiveRecordSuccessRequest::getScenarioId()const
@@ -88,7 +88,7 @@ std::string PredictiveRecordSuccessRequest::getScenarioId()const
 void PredictiveRecordSuccessRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 
 std::string PredictiveRecordSuccessRequest::getTaskId()const
@@ -99,7 +99,7 @@ std::string PredictiveRecordSuccessRequest::getTaskId()const
 void PredictiveRecordSuccessRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string PredictiveRecordSuccessRequest::getCabInstanceId()const
@@ -110,7 +110,7 @@ std::string PredictiveRecordSuccessRequest::getCabInstanceId()const
 void PredictiveRecordSuccessRequest::setCabInstanceId(const std::string& cabInstanceId)
 {
 	cabInstanceId_ = cabInstanceId;
-	setCoreParameter("CabInstanceId", std::to_string(cabInstanceId));
+	setCoreParameter("CabInstanceId", cabInstanceId);
 }
 
 long PredictiveRecordSuccessRequest::getCabInstanceOwnerId()const
@@ -121,6 +121,6 @@ long PredictiveRecordSuccessRequest::getCabInstanceOwnerId()const
 void PredictiveRecordSuccessRequest::setCabInstanceOwnerId(long cabInstanceOwnerId)
 {
 	cabInstanceOwnerId_ = cabInstanceOwnerId;
-	setCoreParameter("CabInstanceOwnerId", cabInstanceOwnerId);
+	setCoreParameter("CabInstanceOwnerId", std::to_string(cabInstanceOwnerId));
 }
 

@@ -33,7 +33,7 @@ std::string ListTagsRequest::getAccess_key_id()const
 void ListTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long ListTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ListTagsRequest::getResourceOwnerId()const
 void ListTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListTagsRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string ListTagsRequest::getInstanceName()const
 void ListTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 long ListTagsRequest::getPageSize()const
@@ -66,7 +66,7 @@ long ListTagsRequest::getPageSize()const
 void ListTagsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListTagsRequest::getPageNum()const
@@ -77,7 +77,7 @@ long ListTagsRequest::getPageNum()const
 void ListTagsRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::vector<ListTagsRequest::TagInfo> ListTagsRequest::getTagInfo()const
@@ -92,8 +92,8 @@ void ListTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
-		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 

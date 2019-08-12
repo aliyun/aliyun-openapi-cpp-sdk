@@ -33,7 +33,7 @@ std::string DeleteOfficeConversionTaskRequest::getRegionId()const
 void DeleteOfficeConversionTaskRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteOfficeConversionTaskRequest::getProject()const
@@ -44,7 +44,7 @@ std::string DeleteOfficeConversionTaskRequest::getProject()const
 void DeleteOfficeConversionTaskRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteOfficeConversionTaskRequest::getTaskId()const
@@ -55,7 +55,7 @@ std::string DeleteOfficeConversionTaskRequest::getTaskId()const
 void DeleteOfficeConversionTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DeleteOfficeConversionTaskRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteOfficeConversionTaskRequest::getAccessKeyId()const
 void DeleteOfficeConversionTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

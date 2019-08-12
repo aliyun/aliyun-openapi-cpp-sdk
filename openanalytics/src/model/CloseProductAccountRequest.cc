@@ -33,7 +33,7 @@ long CloseProductAccountRequest::getCallerParentId()const
 void CloseProductAccountRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long CloseProductAccountRequest::getCallerBid()const
@@ -44,7 +44,7 @@ long CloseProductAccountRequest::getCallerBid()const
 void CloseProductAccountRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string CloseProductAccountRequest::getCallerType()const
@@ -55,7 +55,7 @@ std::string CloseProductAccountRequest::getCallerType()const
 void CloseProductAccountRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool CloseProductAccountRequest::getAk_mfa_present()const
@@ -77,7 +77,7 @@ std::string CloseProductAccountRequest::getAccessKeyId()const
 void CloseProductAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool CloseProductAccountRequest::getSecurity_transport()const
@@ -99,7 +99,7 @@ std::string CloseProductAccountRequest::getRegionID()const
 void CloseProductAccountRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", std::to_string(regionID));
+	setCoreParameter("RegionID", regionID);
 }
 
 std::string CloseProductAccountRequest::getRequestId()const
@@ -110,7 +110,7 @@ std::string CloseProductAccountRequest::getRequestId()const
 void CloseProductAccountRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long CloseProductAccountRequest::getCallerUid()const
@@ -121,7 +121,7 @@ long CloseProductAccountRequest::getCallerUid()const
 void CloseProductAccountRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CloseProductAccountRequest::getProductCode()const
@@ -132,7 +132,7 @@ std::string CloseProductAccountRequest::getProductCode()const
 void CloseProductAccountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string CloseProductAccountRequest::getProductAccessKey()const
@@ -143,7 +143,7 @@ std::string CloseProductAccountRequest::getProductAccessKey()const
 void CloseProductAccountRequest::setProductAccessKey(const std::string& productAccessKey)
 {
 	productAccessKey_ = productAccessKey;
-	setCoreParameter("ProductAccessKey", std::to_string(productAccessKey));
+	setCoreParameter("ProductAccessKey", productAccessKey);
 }
 
 std::string CloseProductAccountRequest::getTargetUid()const
@@ -154,7 +154,7 @@ std::string CloseProductAccountRequest::getTargetUid()const
 void CloseProductAccountRequest::setTargetUid(const std::string& targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", std::to_string(targetUid));
+	setCoreParameter("TargetUid", targetUid);
 }
 
 std::string CloseProductAccountRequest::getTargetArnRole()const
@@ -165,6 +165,6 @@ std::string CloseProductAccountRequest::getTargetArnRole()const
 void CloseProductAccountRequest::setTargetArnRole(const std::string& targetArnRole)
 {
 	targetArnRole_ = targetArnRole;
-	setCoreParameter("TargetArnRole", std::to_string(targetArnRole));
+	setCoreParameter("TargetArnRole", targetArnRole);
 }
 

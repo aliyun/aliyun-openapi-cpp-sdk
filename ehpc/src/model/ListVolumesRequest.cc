@@ -33,7 +33,7 @@ int ListVolumesRequest::getPageSize()const
 void ListVolumesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListVolumesRequest::getPageNumber()const
@@ -44,7 +44,7 @@ int ListVolumesRequest::getPageNumber()const
 void ListVolumesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListVolumesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListVolumesRequest::getAccessKeyId()const
 void ListVolumesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeQosesRequest::getResourceOwnerId()const
 void DescribeQosesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeQosesRequest::getQosName()const
@@ -44,7 +44,7 @@ std::string DescribeQosesRequest::getQosName()const
 void DescribeQosesRequest::setQosName(const std::string& qosName)
 {
 	qosName_ = qosName;
-	setCoreParameter("QosName", std::to_string(qosName));
+	setCoreParameter("QosName", qosName);
 }
 
 std::string DescribeQosesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeQosesRequest::getResourceOwnerAccount()const
 void DescribeQosesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeQosesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeQosesRequest::getRegionId()const
 void DescribeQosesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeQosesRequest::getQosIds()const
@@ -77,7 +77,7 @@ std::string DescribeQosesRequest::getQosIds()const
 void DescribeQosesRequest::setQosIds(const std::string& qosIds)
 {
 	qosIds_ = qosIds;
-	setCoreParameter("QosIds", std::to_string(qosIds));
+	setCoreParameter("QosIds", qosIds);
 }
 
 std::string DescribeQosesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeQosesRequest::getOwnerAccount()const
 void DescribeQosesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeQosesRequest::getPageSize()const
@@ -99,7 +99,7 @@ int DescribeQosesRequest::getPageSize()const
 void DescribeQosesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeQosesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeQosesRequest::getOwnerId()const
 void DescribeQosesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeQosesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeQosesRequest::getPageNumber()const
 void DescribeQosesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

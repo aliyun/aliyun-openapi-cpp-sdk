@@ -33,6 +33,6 @@ std::string QueryTaskListRequest::getBizType()const
 void QueryTaskListRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", std::to_string(bizType));
+	setCoreParameter("BizType", bizType);
 }
 

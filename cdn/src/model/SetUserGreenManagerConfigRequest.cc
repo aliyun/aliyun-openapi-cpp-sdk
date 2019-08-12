@@ -33,7 +33,7 @@ std::string SetUserGreenManagerConfigRequest::getSecurityToken()const
 void SetUserGreenManagerConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetUserGreenManagerConfigRequest::getQuota()const
@@ -44,7 +44,7 @@ std::string SetUserGreenManagerConfigRequest::getQuota()const
 void SetUserGreenManagerConfigRequest::setQuota(const std::string& quota)
 {
 	quota_ = quota;
-	setCoreParameter("Quota", std::to_string(quota));
+	setCoreParameter("Quota", quota);
 }
 
 long SetUserGreenManagerConfigRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long SetUserGreenManagerConfigRequest::getOwnerId()const
 void SetUserGreenManagerConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetUserGreenManagerConfigRequest::getRatio()const
@@ -66,6 +66,6 @@ std::string SetUserGreenManagerConfigRequest::getRatio()const
 void SetUserGreenManagerConfigRequest::setRatio(const std::string& ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", std::to_string(ratio));
+	setCoreParameter("Ratio", ratio);
 }
 

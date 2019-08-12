@@ -33,7 +33,7 @@ std::string GetHeatMapDataRequest::getEMapName()const
 void GetHeatMapDataRequest::setEMapName(const std::string& eMapName)
 {
 	eMapName_ = eMapName;
-	setCoreParameter("EMapName", std::to_string(eMapName));
+	setCoreParameter("EMapName", eMapName);
 }
 
 long GetHeatMapDataRequest::getStoreId()const
@@ -44,6 +44,6 @@ long GetHeatMapDataRequest::getStoreId()const
 void GetHeatMapDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 

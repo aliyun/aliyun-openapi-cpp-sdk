@@ -33,7 +33,7 @@ std::string GetDataAPIServiceDetailRequest::getApiSrn()const
 void GetDataAPIServiceDetailRequest::setApiSrn(const std::string& apiSrn)
 {
 	apiSrn_ = apiSrn;
-	setCoreParameter("ApiSrn", std::to_string(apiSrn));
+	setCoreParameter("ApiSrn", apiSrn);
 }
 
 std::string GetDataAPIServiceDetailRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetDataAPIServiceDetailRequest::getAccessKeyId()const
 void GetDataAPIServiceDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

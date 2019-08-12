@@ -33,7 +33,7 @@ long RedeployInstanceRequest::getResourceOwnerId()const
 void RedeployInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long RedeployInstanceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long RedeployInstanceRequest::getCallerParentId()const
 void RedeployInstanceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool RedeployInstanceRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string RedeployInstanceRequest::getProxy_original_source_ip()const
 void RedeployInstanceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string RedeployInstanceRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string RedeployInstanceRequest::getOwnerIdLoginEmail()const
 void RedeployInstanceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string RedeployInstanceRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string RedeployInstanceRequest::getCallerType()const
 void RedeployInstanceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string RedeployInstanceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string RedeployInstanceRequest::getAccessKeyId()const
 void RedeployInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool RedeployInstanceRequest::getForceStop()const
@@ -121,7 +121,7 @@ std::string RedeployInstanceRequest::getSourceRegionId()const
 void RedeployInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string RedeployInstanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string RedeployInstanceRequest::getSecurityToken()const
 void RedeployInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool RedeployInstanceRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string RedeployInstanceRequest::getRequestContent()const
 void RedeployInstanceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string RedeployInstanceRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string RedeployInstanceRequest::getCallerBidEmail()const
 void RedeployInstanceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string RedeployInstanceRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string RedeployInstanceRequest::getCallerUidEmail()const
 void RedeployInstanceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long RedeployInstanceRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long RedeployInstanceRequest::getCallerUid()const
 void RedeployInstanceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string RedeployInstanceRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string RedeployInstanceRequest::getApp_ip()const
 void RedeployInstanceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string RedeployInstanceRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string RedeployInstanceRequest::getResourceOwnerAccount()const
 void RedeployInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RedeployInstanceRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string RedeployInstanceRequest::getOwnerAccount()const
 void RedeployInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RedeployInstanceRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string RedeployInstanceRequest::getCallerBid()const
 void RedeployInstanceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long RedeployInstanceRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long RedeployInstanceRequest::getOwnerId()const
 void RedeployInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool RedeployInstanceRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string RedeployInstanceRequest::getInstanceId()const
 void RedeployInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RedeployInstanceRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string RedeployInstanceRequest::getRequestId()const
 void RedeployInstanceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string RedeployInstanceRequest::getAkProxy()const
@@ -308,6 +308,6 @@ std::string RedeployInstanceRequest::getAkProxy()const
 void RedeployInstanceRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

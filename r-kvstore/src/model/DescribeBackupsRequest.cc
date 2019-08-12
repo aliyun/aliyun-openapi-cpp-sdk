@@ -33,7 +33,7 @@ long DescribeBackupsRequest::getResourceOwnerId()const
 void DescribeBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBackupsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeBackupsRequest::getResourceOwnerAccount()const
 void DescribeBackupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBackupsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeBackupsRequest::getOwnerAccount()const
 void DescribeBackupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeBackupsRequest::getBackupId()const
@@ -66,7 +66,7 @@ int DescribeBackupsRequest::getBackupId()const
 void DescribeBackupsRequest::setBackupId(int backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setCoreParameter("BackupId", std::to_string(backupId));
 }
 
 std::string DescribeBackupsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeBackupsRequest::getEndTime()const
 void DescribeBackupsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeBackupsRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeBackupsRequest::getStartTime()const
 void DescribeBackupsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeBackupsRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeBackupsRequest::getOwnerId()const
 void DescribeBackupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeBackupsRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeBackupsRequest::getPageNumber()const
 void DescribeBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeBackupsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeBackupsRequest::getAccessKeyId()const
 void DescribeBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupsRequest::getInstanceId()const
@@ -132,7 +132,7 @@ std::string DescribeBackupsRequest::getInstanceId()const
 void DescribeBackupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeBackupsRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DescribeBackupsRequest::getSecurityToken()const
 void DescribeBackupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeBackupsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string DescribeBackupsRequest::getRegionId()const
 void DescribeBackupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeBackupsRequest::getPageSize()const
@@ -165,6 +165,6 @@ int DescribeBackupsRequest::getPageSize()const
 void DescribeBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

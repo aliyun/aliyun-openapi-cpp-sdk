@@ -33,7 +33,7 @@ std::string CreateCenRequest::getProtectionLevel()const
 void CreateCenRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", std::to_string(protectionLevel));
+	setCoreParameter("ProtectionLevel", protectionLevel);
 }
 
 long CreateCenRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateCenRequest::getResourceOwnerId()const
 void CreateCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCenRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateCenRequest::getResourceOwnerAccount()const
 void CreateCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCenRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CreateCenRequest::getClientToken()const
 void CreateCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateCenRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateCenRequest::getOwnerAccount()const
 void CreateCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateCenRequest::getName()const
@@ -88,7 +88,7 @@ std::string CreateCenRequest::getName()const
 void CreateCenRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateCenRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string CreateCenRequest::getDescription()const
 void CreateCenRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 long CreateCenRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long CreateCenRequest::getOwnerId()const
 void CreateCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

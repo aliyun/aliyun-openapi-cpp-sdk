@@ -33,7 +33,7 @@ std::string DialExRequest::getRoutPoint()const
 void DialExRequest::setRoutPoint(const std::string& routPoint)
 {
 	routPoint_ = routPoint;
-	setCoreParameter("RoutPoint", std::to_string(routPoint));
+	setCoreParameter("RoutPoint", routPoint);
 }
 
 std::string DialExRequest::getCaller()const
@@ -44,7 +44,7 @@ std::string DialExRequest::getCaller()const
 void DialExRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", std::to_string(caller));
+	setCoreParameter("Caller", caller);
 }
 
 std::string DialExRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string DialExRequest::getInstanceId()const
 void DialExRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DialExRequest::getProvider()const
@@ -66,7 +66,7 @@ std::string DialExRequest::getProvider()const
 void DialExRequest::setProvider(const std::string& provider)
 {
 	provider_ = provider;
-	setCoreParameter("Provider", std::to_string(provider));
+	setCoreParameter("Provider", provider);
 }
 
 std::string DialExRequest::getCallee()const
@@ -77,7 +77,7 @@ std::string DialExRequest::getCallee()const
 void DialExRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", std::to_string(callee));
+	setCoreParameter("Callee", callee);
 }
 
 int DialExRequest::getAnswerMode()const
@@ -88,7 +88,7 @@ int DialExRequest::getAnswerMode()const
 void DialExRequest::setAnswerMode(int answerMode)
 {
 	answerMode_ = answerMode;
-	setCoreParameter("AnswerMode", answerMode);
+	setCoreParameter("AnswerMode", std::to_string(answerMode));
 }
 
 std::string DialExRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DialExRequest::getAccessKeyId()const
 void DialExRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

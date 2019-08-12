@@ -33,7 +33,7 @@ long DescribeRiskCheckResultRequest::getResourceOwnerId()const
 void DescribeRiskCheckResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskCheckResultRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRiskCheckResultRequest::getSourceIp()const
 void DescribeRiskCheckResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeRiskCheckResultRequest::getGroupId()const
@@ -55,7 +55,7 @@ long DescribeRiskCheckResultRequest::getGroupId()const
 void DescribeRiskCheckResultRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
@@ -67,7 +67,7 @@ void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& 
 {
 	itemIds_ = itemIds;
 	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
+		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
 }
 
 std::string DescribeRiskCheckResultRequest::getName()const
@@ -78,7 +78,7 @@ std::string DescribeRiskCheckResultRequest::getName()const
 void DescribeRiskCheckResultRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeRiskCheckResultRequest::getPageSize()const
@@ -89,7 +89,7 @@ int DescribeRiskCheckResultRequest::getPageSize()const
 void DescribeRiskCheckResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeRiskCheckResultRequest::getCurrentPage()const
@@ -100,7 +100,7 @@ int DescribeRiskCheckResultRequest::getCurrentPage()const
 void DescribeRiskCheckResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeRiskCheckResultRequest::getLang()const
@@ -111,7 +111,7 @@ std::string DescribeRiskCheckResultRequest::getLang()const
 void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeRiskCheckResultRequest::getRiskLevel()const
@@ -122,7 +122,7 @@ std::string DescribeRiskCheckResultRequest::getRiskLevel()const
 void DescribeRiskCheckResultRequest::setRiskLevel(const std::string& riskLevel)
 {
 	riskLevel_ = riskLevel;
-	setCoreParameter("RiskLevel", std::to_string(riskLevel));
+	setCoreParameter("RiskLevel", riskLevel);
 }
 
 std::string DescribeRiskCheckResultRequest::getStatus()const
@@ -133,6 +133,6 @@ std::string DescribeRiskCheckResultRequest::getStatus()const
 void DescribeRiskCheckResultRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

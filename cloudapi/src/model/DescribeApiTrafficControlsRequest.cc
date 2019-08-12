@@ -33,7 +33,7 @@ std::string DescribeApiTrafficControlsRequest::getStageName()const
 void DescribeApiTrafficControlsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string DescribeApiTrafficControlsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeApiTrafficControlsRequest::getSecurityToken()const
 void DescribeApiTrafficControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiTrafficControlsRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeApiTrafficControlsRequest::getGroupId()const
 void DescribeApiTrafficControlsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int DescribeApiTrafficControlsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeApiTrafficControlsRequest::getPageSize()const
 void DescribeApiTrafficControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeApiTrafficControlsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeApiTrafficControlsRequest::getPageNumber()const
 void DescribeApiTrafficControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiTrafficControlsRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeApiTrafficControlsRequest::getAccessKeyId()const
 void DescribeApiTrafficControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiTrafficControlsRequest::getApiIds()const
@@ -99,6 +99,6 @@ std::string DescribeApiTrafficControlsRequest::getApiIds()const
 void DescribeApiTrafficControlsRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", std::to_string(apiIds));
+	setCoreParameter("ApiIds", apiIds);
 }
 

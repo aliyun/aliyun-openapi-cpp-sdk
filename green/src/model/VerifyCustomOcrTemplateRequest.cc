@@ -33,7 +33,7 @@ std::string VerifyCustomOcrTemplateRequest::getTestImgUrl()const
 void VerifyCustomOcrTemplateRequest::setTestImgUrl(const std::string& testImgUrl)
 {
 	testImgUrl_ = testImgUrl;
-	setCoreParameter("TestImgUrl", std::to_string(testImgUrl));
+	setCoreParameter("TestImgUrl", testImgUrl);
 }
 
 std::string VerifyCustomOcrTemplateRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string VerifyCustomOcrTemplateRequest::getSourceIp()const
 void VerifyCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long VerifyCustomOcrTemplateRequest::getId()const
@@ -55,6 +55,6 @@ long VerifyCustomOcrTemplateRequest::getId()const
 void VerifyCustomOcrTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

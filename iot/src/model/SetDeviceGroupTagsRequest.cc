@@ -33,7 +33,7 @@ std::string SetDeviceGroupTagsRequest::getTagString()const
 void SetDeviceGroupTagsRequest::setTagString(const std::string& tagString)
 {
 	tagString_ = tagString;
-	setCoreParameter("TagString", std::to_string(tagString));
+	setCoreParameter("TagString", tagString);
 }
 
 std::string SetDeviceGroupTagsRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string SetDeviceGroupTagsRequest::getIotInstanceId()const
 void SetDeviceGroupTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string SetDeviceGroupTagsRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string SetDeviceGroupTagsRequest::getGroupId()const
 void SetDeviceGroupTagsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string SetDeviceGroupTagsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string SetDeviceGroupTagsRequest::getAccessKeyId()const
 void SetDeviceGroupTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CancelJobRequest::getJobId()const
 void CancelJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long CancelJobRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CancelJobRequest::getResourceOwnerId()const
 void CancelJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelJobRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelJobRequest::getResourceOwnerAccount()const
 void CancelJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelJobRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CancelJobRequest::getOwnerAccount()const
 void CancelJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CancelJobRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long CancelJobRequest::getOwnerId()const
 void CancelJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CancelJobRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CancelJobRequest::getAccessKeyId()const
 void CancelJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

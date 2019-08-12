@@ -33,7 +33,7 @@ std::string QueryDeviceFileListRequest::getIotId()const
 void QueryDeviceFileListRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", std::to_string(iotId));
+	setCoreParameter("IotId", iotId);
 }
 
 std::string QueryDeviceFileListRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string QueryDeviceFileListRequest::getIotInstanceId()const
 void QueryDeviceFileListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceFileListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryDeviceFileListRequest::getPageSize()const
 void QueryDeviceFileListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryDeviceFileListRequest::getDeviceName()const
@@ -66,7 +66,7 @@ std::string QueryDeviceFileListRequest::getDeviceName()const
 void QueryDeviceFileListRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 int QueryDeviceFileListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int QueryDeviceFileListRequest::getCurrentPage()const
 void QueryDeviceFileListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceFileListRequest::getProductKey()const
@@ -88,7 +88,7 @@ std::string QueryDeviceFileListRequest::getProductKey()const
 void QueryDeviceFileListRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceFileListRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryDeviceFileListRequest::getAccessKeyId()const
 void QueryDeviceFileListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

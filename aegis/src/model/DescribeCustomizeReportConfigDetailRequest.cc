@@ -33,7 +33,7 @@ std::string DescribeCustomizeReportConfigDetailRequest::getSourceIp()const
 void DescribeCustomizeReportConfigDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeCustomizeReportConfigDetailRequest::getReportId()const
@@ -44,7 +44,7 @@ long DescribeCustomizeReportConfigDetailRequest::getReportId()const
 void DescribeCustomizeReportConfigDetailRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", reportId);
+	setCoreParameter("ReportId", std::to_string(reportId));
 }
 
 std::string DescribeCustomizeReportConfigDetailRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeCustomizeReportConfigDetailRequest::getLang()const
 void DescribeCustomizeReportConfigDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

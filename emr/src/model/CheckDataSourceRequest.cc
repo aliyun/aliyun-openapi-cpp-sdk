@@ -33,7 +33,7 @@ long CheckDataSourceRequest::getResourceOwnerId()const
 void CheckDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CheckDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CheckDataSourceRequest::getRegionId()const
 void CheckDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CheckDataSourceRequest::getConf()const
@@ -55,7 +55,7 @@ std::string CheckDataSourceRequest::getConf()const
 void CheckDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", std::to_string(conf));
+	setCoreParameter("Conf", conf);
 }
 
 std::string CheckDataSourceRequest::getId()const
@@ -66,7 +66,7 @@ std::string CheckDataSourceRequest::getId()const
 void CheckDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string CheckDataSourceRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string CheckDataSourceRequest::getClusterId()const
 void CheckDataSourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CheckDataSourceRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string CheckDataSourceRequest::getAccessKeyId()const
 void CheckDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

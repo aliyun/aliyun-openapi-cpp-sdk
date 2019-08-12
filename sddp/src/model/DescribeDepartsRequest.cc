@@ -33,7 +33,7 @@ std::string DescribeDepartsRequest::getSourceIp()const
 void DescribeDepartsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDepartsRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DescribeDepartsRequest::getFeatureType()const
 void DescribeDepartsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDepartsRequest::getAccountType()const
@@ -55,7 +55,7 @@ int DescribeDepartsRequest::getAccountType()const
 void DescribeDepartsRequest::setAccountType(int accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", accountType);
+	setCoreParameter("AccountType", std::to_string(accountType));
 }
 
 int DescribeDepartsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDepartsRequest::getPageSize()const
 void DescribeDepartsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeDepartsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeDepartsRequest::getCurrentPage()const
 void DescribeDepartsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDepartsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeDepartsRequest::getLang()const
 void DescribeDepartsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDepartsRequest::getKey()const
@@ -99,6 +99,6 @@ std::string DescribeDepartsRequest::getKey()const
 void DescribeDepartsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 

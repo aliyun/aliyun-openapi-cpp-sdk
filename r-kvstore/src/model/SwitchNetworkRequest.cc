@@ -33,7 +33,7 @@ long SwitchNetworkRequest::getResourceOwnerId()const
 void SwitchNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SwitchNetworkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string SwitchNetworkRequest::getResourceOwnerAccount()const
 void SwitchNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SwitchNetworkRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string SwitchNetworkRequest::getOwnerAccount()const
 void SwitchNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SwitchNetworkRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long SwitchNetworkRequest::getOwnerId()const
 void SwitchNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SwitchNetworkRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string SwitchNetworkRequest::getAccessKeyId()const
 void SwitchNetworkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SwitchNetworkRequest::getVSwitchId()const
@@ -88,7 +88,7 @@ std::string SwitchNetworkRequest::getVSwitchId()const
 void SwitchNetworkRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string SwitchNetworkRequest::getInstanceId()const
@@ -99,7 +99,7 @@ std::string SwitchNetworkRequest::getInstanceId()const
 void SwitchNetworkRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SwitchNetworkRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string SwitchNetworkRequest::getSecurityToken()const
 void SwitchNetworkRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SwitchNetworkRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string SwitchNetworkRequest::getRegionId()const
 void SwitchNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SwitchNetworkRequest::getTargetNetworkType()const
@@ -132,7 +132,7 @@ std::string SwitchNetworkRequest::getTargetNetworkType()const
 void SwitchNetworkRequest::setTargetNetworkType(const std::string& targetNetworkType)
 {
 	targetNetworkType_ = targetNetworkType;
-	setCoreParameter("TargetNetworkType", std::to_string(targetNetworkType));
+	setCoreParameter("TargetNetworkType", targetNetworkType);
 }
 
 std::string SwitchNetworkRequest::getRetainClassic()const
@@ -143,7 +143,7 @@ std::string SwitchNetworkRequest::getRetainClassic()const
 void SwitchNetworkRequest::setRetainClassic(const std::string& retainClassic)
 {
 	retainClassic_ = retainClassic;
-	setCoreParameter("RetainClassic", std::to_string(retainClassic));
+	setCoreParameter("RetainClassic", retainClassic);
 }
 
 std::string SwitchNetworkRequest::getClassicExpiredDays()const
@@ -154,7 +154,7 @@ std::string SwitchNetworkRequest::getClassicExpiredDays()const
 void SwitchNetworkRequest::setClassicExpiredDays(const std::string& classicExpiredDays)
 {
 	classicExpiredDays_ = classicExpiredDays;
-	setCoreParameter("ClassicExpiredDays", std::to_string(classicExpiredDays));
+	setCoreParameter("ClassicExpiredDays", classicExpiredDays);
 }
 
 std::string SwitchNetworkRequest::getVpcId()const
@@ -165,6 +165,6 @@ std::string SwitchNetworkRequest::getVpcId()const
 void SwitchNetworkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 

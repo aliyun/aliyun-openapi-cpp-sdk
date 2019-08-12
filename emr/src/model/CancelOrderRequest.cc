@@ -33,7 +33,7 @@ long CancelOrderRequest::getResourceOwnerId()const
 void CancelOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelOrderRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CancelOrderRequest::getRegionId()const
 void CancelOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelOrderRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string CancelOrderRequest::getClusterId()const
 void CancelOrderRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string CancelOrderRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string CancelOrderRequest::getAccessKeyId()const
 void CancelOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

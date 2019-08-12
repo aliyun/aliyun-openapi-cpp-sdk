@@ -33,6 +33,6 @@ long DeleteMyGroupsRequest::getGroupId()const
 void DeleteMyGroupsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 

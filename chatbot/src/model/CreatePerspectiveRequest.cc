@@ -33,6 +33,6 @@ std::string CreatePerspectiveRequest::getName()const
 void CreatePerspectiveRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

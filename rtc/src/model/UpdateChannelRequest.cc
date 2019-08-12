@@ -33,7 +33,7 @@ long UpdateChannelRequest::getResourceOwnerId()const
 void UpdateChannelRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UpdateChannelRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long UpdateChannelRequest::getCallerParentId()const
 void UpdateChannelRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UpdateChannelRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string UpdateChannelRequest::getProxy_original_source_ip()const
 void UpdateChannelRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UpdateChannelRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UpdateChannelRequest::getOwnerIdLoginEmail()const
 void UpdateChannelRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UpdateChannelRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UpdateChannelRequest::getCallerType()const
 void UpdateChannelRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UpdateChannelRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UpdateChannelRequest::getAccessKeyId()const
 void UpdateChannelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateChannelRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string UpdateChannelRequest::getSecurityToken()const
 void UpdateChannelRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateChannelRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string UpdateChannelRequest::getRequestContent()const
 void UpdateChannelRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UpdateChannelRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string UpdateChannelRequest::getCallerBidEmail()const
 void UpdateChannelRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UpdateChannelRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string UpdateChannelRequest::getCallerUidEmail()const
 void UpdateChannelRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UpdateChannelRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long UpdateChannelRequest::getCallerUid()const
 void UpdateChannelRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UpdateChannelRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string UpdateChannelRequest::getApp_ip()const
 void UpdateChannelRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UpdateChannelRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string UpdateChannelRequest::getPopProduct()const
 void UpdateChannelRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string UpdateChannelRequest::getCallerBid()const
@@ -187,7 +187,7 @@ std::string UpdateChannelRequest::getCallerBid()const
 void UpdateChannelRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UpdateChannelRequest::getOwnerId()const
@@ -198,7 +198,7 @@ long UpdateChannelRequest::getOwnerId()const
 void UpdateChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateChannelRequest::getVersion()const
@@ -209,7 +209,7 @@ std::string UpdateChannelRequest::getVersion()const
 void UpdateChannelRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string UpdateChannelRequest::getNonce()const
@@ -220,7 +220,7 @@ std::string UpdateChannelRequest::getNonce()const
 void UpdateChannelRequest::setNonce(const std::string& nonce)
 {
 	nonce_ = nonce;
-	setCoreParameter("Nonce", std::to_string(nonce));
+	setCoreParameter("Nonce", nonce);
 }
 
 bool UpdateChannelRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ std::string UpdateChannelRequest::getServiceCode()const
 void UpdateChannelRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string UpdateChannelRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string UpdateChannelRequest::getRequestId()const
 void UpdateChannelRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string UpdateChannelRequest::getAppId()const
@@ -286,7 +286,7 @@ std::string UpdateChannelRequest::getAppId()const
 void UpdateChannelRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string UpdateChannelRequest::getChannelId()const
@@ -297,6 +297,6 @@ std::string UpdateChannelRequest::getChannelId()const
 void UpdateChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", std::to_string(channelId));
+	setCoreParameter("ChannelId", channelId);
 }
 

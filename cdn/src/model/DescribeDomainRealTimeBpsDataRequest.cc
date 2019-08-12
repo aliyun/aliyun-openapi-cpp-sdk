@@ -33,7 +33,7 @@ long DescribeDomainRealTimeBpsDataRequest::getCallerParentId()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainRealTimeBpsDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getLocationNameEn()const
 void DescribeDomainRealTimeBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getIspNameEn()const
@@ -66,7 +66,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getIspNameEn()const
 void DescribeDomainRealTimeBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getStartTime()const
 void DescribeDomainRealTimeBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getProxy_original_source_ip()c
 void DescribeDomainRealTimeBpsDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getOwnerIdLoginEmail()const
 void DescribeDomainRealTimeBpsDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getCallerType()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getAccessKeyId()const
 void DescribeDomainRealTimeBpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getSecurityToken()const
 void DescribeDomainRealTimeBpsDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getRequestContent()const
 void DescribeDomainRealTimeBpsDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getCallerBidEmail()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getCallerUidEmail()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainRealTimeBpsDataRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeDomainRealTimeBpsDataRequest::getCallerUid()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getApp_ip()const
 void DescribeDomainRealTimeBpsDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getPopProduct()const
 void DescribeDomainRealTimeBpsDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getDomainName()const
@@ -209,7 +209,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getDomainName()const
 void DescribeDomainRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getEndTime()const
@@ -220,7 +220,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getEndTime()const
 void DescribeDomainRealTimeBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getCallerBid()const
 void DescribeDomainRealTimeBpsDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainRealTimeBpsDataRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DescribeDomainRealTimeBpsDataRequest::getOwnerId()const
 void DescribeDomainRealTimeBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getVersion()const
 void DescribeDomainRealTimeBpsDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainRealTimeBpsDataRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getRequestId()const
 void DescribeDomainRealTimeBpsDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getInterval()const
@@ -308,7 +308,7 @@ std::string DescribeDomainRealTimeBpsDataRequest::getInterval()const
 void DescribeDomainRealTimeBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDomainRealTimeBpsDataRequest::getFields()const
@@ -319,6 +319,6 @@ std::string DescribeDomainRealTimeBpsDataRequest::getFields()const
 void DescribeDomainRealTimeBpsDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

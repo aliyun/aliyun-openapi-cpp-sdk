@@ -33,7 +33,7 @@ std::string ExecuteRequestRequest::getServiceParameters()const
 void ExecuteRequestRequest::setServiceParameters(const std::string& serviceParameters)
 {
 	serviceParameters_ = serviceParameters;
-	setCoreParameter("ServiceParameters", std::to_string(serviceParameters));
+	setCoreParameter("ServiceParameters", serviceParameters);
 }
 
 std::string ExecuteRequestRequest::getService()const
@@ -44,6 +44,6 @@ std::string ExecuteRequestRequest::getService()const
 void ExecuteRequestRequest::setService(const std::string& service)
 {
 	service_ = service;
-	setCoreParameter("Service", std::to_string(service));
+	setCoreParameter("Service", service);
 }
 

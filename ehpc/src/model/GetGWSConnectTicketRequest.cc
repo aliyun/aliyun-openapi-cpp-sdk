@@ -33,7 +33,7 @@ std::string GetGWSConnectTicketRequest::getInstanceId()const
 void GetGWSConnectTicketRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetGWSConnectTicketRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string GetGWSConnectTicketRequest::getAppName()const
 void GetGWSConnectTicketRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string GetGWSConnectTicketRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetGWSConnectTicketRequest::getAccessKeyId()const
 void GetGWSConnectTicketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

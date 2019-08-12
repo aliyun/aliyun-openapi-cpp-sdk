@@ -33,7 +33,7 @@ std::string ModifyAutoDelConfigRequest::getSourceIp()const
 void ModifyAutoDelConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyAutoDelConfigRequest::getDays()const
@@ -44,6 +44,6 @@ int ModifyAutoDelConfigRequest::getDays()const
 void ModifyAutoDelConfigRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", days);
+	setCoreParameter("Days", std::to_string(days));
 }
 

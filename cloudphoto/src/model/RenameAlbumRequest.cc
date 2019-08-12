@@ -33,7 +33,7 @@ std::string RenameAlbumRequest::getAlbumName()const
 void RenameAlbumRequest::setAlbumName(const std::string& albumName)
 {
 	albumName_ = albumName;
-	setCoreParameter("AlbumName", std::to_string(albumName));
+	setCoreParameter("AlbumName", albumName);
 }
 
 std::string RenameAlbumRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string RenameAlbumRequest::getLibraryId()const
 void RenameAlbumRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long RenameAlbumRequest::getAlbumId()const
@@ -55,7 +55,7 @@ long RenameAlbumRequest::getAlbumId()const
 void RenameAlbumRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", albumId);
+	setCoreParameter("AlbumId", std::to_string(albumId));
 }
 
 std::string RenameAlbumRequest::getStoreName()const
@@ -66,6 +66,6 @@ std::string RenameAlbumRequest::getStoreName()const
 void RenameAlbumRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 

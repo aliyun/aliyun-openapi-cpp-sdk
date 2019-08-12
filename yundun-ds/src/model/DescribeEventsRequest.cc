@@ -33,7 +33,7 @@ int DescribeEventsRequest::getFeatureType()const
 void DescribeEventsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeEventsRequest::getEndTime()const
@@ -44,7 +44,7 @@ std::string DescribeEventsRequest::getEndTime()const
 void DescribeEventsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 int DescribeEventsRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeEventsRequest::getCurrentPage()const
 void DescribeEventsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeEventsRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeEventsRequest::getStartTime()const
 void DescribeEventsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeEventsRequest::getUserId()const
@@ -77,7 +77,7 @@ long DescribeEventsRequest::getUserId()const
 void DescribeEventsRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setCoreParameter("UserId", std::to_string(userId));
 }
 
 std::string DescribeEventsRequest::getTypeCode()const
@@ -88,7 +88,7 @@ std::string DescribeEventsRequest::getTypeCode()const
 void DescribeEventsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", std::to_string(typeCode));
+	setCoreParameter("TypeCode", typeCode);
 }
 
 std::string DescribeEventsRequest::getSubTypeCode()const
@@ -99,7 +99,7 @@ std::string DescribeEventsRequest::getSubTypeCode()const
 void DescribeEventsRequest::setSubTypeCode(const std::string& subTypeCode)
 {
 	subTypeCode_ = subTypeCode;
-	setCoreParameter("SubTypeCode", std::to_string(subTypeCode));
+	setCoreParameter("SubTypeCode", subTypeCode);
 }
 
 std::string DescribeEventsRequest::getSourceIp()const
@@ -110,7 +110,7 @@ std::string DescribeEventsRequest::getSourceIp()const
 void DescribeEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeEventsRequest::getPageSize()const
@@ -121,7 +121,7 @@ int DescribeEventsRequest::getPageSize()const
 void DescribeEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeEventsRequest::getDepartId()const
@@ -132,7 +132,7 @@ long DescribeEventsRequest::getDepartId()const
 void DescribeEventsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", departId);
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 std::string DescribeEventsRequest::getLang()const
@@ -143,7 +143,7 @@ std::string DescribeEventsRequest::getLang()const
 void DescribeEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeEventsRequest::getDealUserId()const
@@ -154,7 +154,7 @@ std::string DescribeEventsRequest::getDealUserId()const
 void DescribeEventsRequest::setDealUserId(const std::string& dealUserId)
 {
 	dealUserId_ = dealUserId;
-	setCoreParameter("DealUserId", std::to_string(dealUserId));
+	setCoreParameter("DealUserId", dealUserId);
 }
 
 std::string DescribeEventsRequest::getStatus()const
@@ -165,6 +165,6 @@ std::string DescribeEventsRequest::getStatus()const
 void DescribeEventsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

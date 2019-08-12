@@ -33,7 +33,7 @@ std::string DescribeRecordsRequest::getRecordState()const
 void DescribeRecordsRequest::setRecordState(const std::string& recordState)
 {
 	recordState_ = recordState;
-	setCoreParameter("RecordState", std::to_string(recordState));
+	setCoreParameter("RecordState", recordState);
 }
 
 long DescribeRecordsRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeRecordsRequest::getCallerParentId()const
 void DescribeRecordsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeRecordsRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeRecordsRequest::getProxy_original_source_ip()const
 void DescribeRecordsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 int DescribeRecordsRequest::getPageNum()const
@@ -77,7 +77,7 @@ int DescribeRecordsRequest::getPageNum()const
 void DescribeRecordsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeRecordsRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeRecordsRequest::getOwnerIdLoginEmail()const
 void DescribeRecordsRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRecordsRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeRecordsRequest::getCallerType()const
 void DescribeRecordsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeRecordsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeRecordsRequest::getAccessKeyId()const
 void DescribeRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRecordsRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeRecordsRequest::getSecurityToken()const
 void DescribeRecordsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRecordsRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeRecordsRequest::getRegionId()const
 void DescribeRecordsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeRecordsRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeRecordsRequest::getRequestContent()const
 void DescribeRecordsRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeRecordsRequest::getPageSize()const
@@ -154,7 +154,7 @@ int DescribeRecordsRequest::getPageSize()const
 void DescribeRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRecordsRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeRecordsRequest::getCallerBidEmail()const
 void DescribeRecordsRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRecordsRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeRecordsRequest::getCallerUidEmail()const
 void DescribeRecordsRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeRecordsRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeRecordsRequest::getCallerUid()const
 void DescribeRecordsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRecordsRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeRecordsRequest::getApp_ip()const
 void DescribeRecordsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRecordsRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeRecordsRequest::getPopProduct()const
 void DescribeRecordsRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRecordsRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeRecordsRequest::getCallerBid()const
 void DescribeRecordsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRecordsRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeRecordsRequest::getOwnerId()const
 void DescribeRecordsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRecordsRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeRecordsRequest::getVersion()const
 void DescribeRecordsRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeRecordsRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string DescribeRecordsRequest::getRequestId()const
 void DescribeRecordsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeRecordsRequest::getAppId()const
@@ -297,6 +297,6 @@ std::string DescribeRecordsRequest::getAppId()const
 void DescribeRecordsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 

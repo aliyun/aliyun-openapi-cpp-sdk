@@ -33,7 +33,7 @@ long DescribeInstanceConfigRequest::getResourceOwnerId()const
 void DescribeInstanceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceConfigRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeInstanceConfigRequest::getInstanceId()const
 void DescribeInstanceConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceConfigRequest::getSecurityToken()const
 void DescribeInstanceConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeInstanceConfigRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceConfigRequest::getResourceOwnerAccount()const
 void DescribeInstanceConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceConfigRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceConfigRequest::getRegionId()const
 void DescribeInstanceConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceConfigRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeInstanceConfigRequest::getOwnerAccount()const
 void DescribeInstanceConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstanceConfigRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeInstanceConfigRequest::getOwnerId()const
 void DescribeInstanceConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceConfigRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeInstanceConfigRequest::getAccessKeyId()const
 void DescribeInstanceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

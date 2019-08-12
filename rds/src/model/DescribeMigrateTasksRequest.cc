@@ -33,7 +33,7 @@ long DescribeMigrateTasksRequest::getResourceOwnerId()const
 void DescribeMigrateTasksRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeMigrateTasksRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeMigrateTasksRequest::getResourceOwnerAccount()const
 void DescribeMigrateTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int DescribeMigrateTasksRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeMigrateTasksRequest::getPageSize()const
 void DescribeMigrateTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMigrateTasksRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeMigrateTasksRequest::getEndTime()const
 void DescribeMigrateTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeMigrateTasksRequest::getDBInstanceId()const
@@ -77,7 +77,7 @@ std::string DescribeMigrateTasksRequest::getDBInstanceId()const
 void DescribeMigrateTasksRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeMigrateTasksRequest::getStartTime()const
@@ -88,7 +88,7 @@ std::string DescribeMigrateTasksRequest::getStartTime()const
 void DescribeMigrateTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeMigrateTasksRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeMigrateTasksRequest::getOwnerId()const
 void DescribeMigrateTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeMigrateTasksRequest::getPageNumber()const
@@ -110,7 +110,7 @@ int DescribeMigrateTasksRequest::getPageNumber()const
 void DescribeMigrateTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeMigrateTasksRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeMigrateTasksRequest::getAccessKeyId()const
 void DescribeMigrateTasksRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

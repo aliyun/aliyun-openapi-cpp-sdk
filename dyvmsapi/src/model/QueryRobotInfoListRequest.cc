@@ -33,7 +33,7 @@ long QueryRobotInfoListRequest::getResourceOwnerId()const
 void QueryRobotInfoListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryRobotInfoListRequest::getAuditStatus()const
@@ -44,7 +44,7 @@ std::string QueryRobotInfoListRequest::getAuditStatus()const
 void QueryRobotInfoListRequest::setAuditStatus(const std::string& auditStatus)
 {
 	auditStatus_ = auditStatus;
-	setCoreParameter("AuditStatus", std::to_string(auditStatus));
+	setCoreParameter("AuditStatus", auditStatus);
 }
 
 std::string QueryRobotInfoListRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryRobotInfoListRequest::getResourceOwnerAccount()const
 void QueryRobotInfoListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QueryRobotInfoListRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryRobotInfoListRequest::getOwnerId()const
 void QueryRobotInfoListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryRobotInfoListRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string QueryRobotInfoListRequest::getAccessKeyId()const
 void QueryRobotInfoListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

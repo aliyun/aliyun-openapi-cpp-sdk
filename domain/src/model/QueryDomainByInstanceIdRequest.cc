@@ -33,7 +33,7 @@ std::string QueryDomainByInstanceIdRequest::getInstanceId()const
 void QueryDomainByInstanceIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryDomainByInstanceIdRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryDomainByInstanceIdRequest::getUserClientIp()const
 void QueryDomainByInstanceIdRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainByInstanceIdRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryDomainByInstanceIdRequest::getLang()const
 void QueryDomainByInstanceIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

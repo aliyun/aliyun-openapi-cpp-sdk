@@ -33,7 +33,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getConnectionStringPrefix()
 void ModifyDBInstanceConnectionStringRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", std::to_string(connectionStringPrefix));
+	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getPort()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getPort()const
 void ModifyDBInstanceConnectionStringRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setCoreParameter("Port", port);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getDBInstanceId()const
 void ModifyDBInstanceConnectionStringRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString()const
@@ -66,7 +66,7 @@ std::string ModifyDBInstanceConnectionStringRequest::getCurrentConnectionString(
 void ModifyDBInstanceConnectionStringRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setCoreParameter("CurrentConnectionString", std::to_string(currentConnectionString));
+	setCoreParameter("CurrentConnectionString", currentConnectionString);
 }
 
 std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyDBInstanceConnectionStringRequest::getAccessKeyId()const
 void ModifyDBInstanceConnectionStringRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

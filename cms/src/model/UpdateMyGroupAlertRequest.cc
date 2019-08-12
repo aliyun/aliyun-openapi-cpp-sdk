@@ -33,6 +33,6 @@ std::string UpdateMyGroupAlertRequest::getGroupAlertJson()const
 void UpdateMyGroupAlertRequest::setGroupAlertJson(const std::string& groupAlertJson)
 {
 	groupAlertJson_ = groupAlertJson;
-	setCoreParameter("GroupAlertJson", std::to_string(groupAlertJson));
+	setCoreParameter("GroupAlertJson", groupAlertJson);
 }
 

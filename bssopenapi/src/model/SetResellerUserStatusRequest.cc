@@ -33,7 +33,7 @@ std::string SetResellerUserStatusRequest::getOwnerId()const
 void SetResellerUserStatusRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string SetResellerUserStatusRequest::getStatus()const
@@ -44,7 +44,7 @@ std::string SetResellerUserStatusRequest::getStatus()const
 void SetResellerUserStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 
 std::string SetResellerUserStatusRequest::getBusinessType()const
@@ -55,6 +55,6 @@ std::string SetResellerUserStatusRequest::getBusinessType()const
 void SetResellerUserStatusRequest::setBusinessType(const std::string& businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setCoreParameter("BusinessType", businessType);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeFlowTotalCountRequest::getProductCode()const
 void DescribeFlowTotalCountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string DescribeFlowTotalCountRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeFlowTotalCountRequest::getSourceIp()const
 void DescribeFlowTotalCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeFlowTotalCountRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int DescribeFlowTotalCountRequest::getFeatureType()const
 void DescribeFlowTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 long DescribeFlowTotalCountRequest::getDepartId()const
@@ -66,7 +66,7 @@ long DescribeFlowTotalCountRequest::getDepartId()const
 void DescribeFlowTotalCountRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", departId);
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 std::string DescribeFlowTotalCountRequest::getLang()const
@@ -77,6 +77,6 @@ std::string DescribeFlowTotalCountRequest::getLang()const
 void DescribeFlowTotalCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

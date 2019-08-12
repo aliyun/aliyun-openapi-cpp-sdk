@@ -37,11 +37,11 @@ void PutEventRuleRequest::setEventPattern(const std::vector<EventPattern>& event
 	for(int i = 0; i!= eventPattern.size(); i++)	{
 		auto obj = eventPattern.at(i);
 		std::string str ="EventPattern."+ std::to_string(i);
-		for(int i = 0; i!= obj.levelList.size(); i++)				setCoreParameter(str + ".LevelList."+ std::to_string(i), std::to_string(obj.levelList.at(i)));
-		setCoreParameter(str + ".Product", std::to_string(obj.product));
-		for(int i = 0; i!= obj.statusList.size(); i++)				setCoreParameter(str + ".StatusList."+ std::to_string(i), std::to_string(obj.statusList.at(i)));
-		for(int i = 0; i!= obj.nameList.size(); i++)				setCoreParameter(str + ".NameList."+ std::to_string(i), std::to_string(obj.nameList.at(i)));
-		for(int i = 0; i!= obj.eventTypeList.size(); i++)				setCoreParameter(str + ".EventTypeList."+ std::to_string(i), std::to_string(obj.eventTypeList.at(i)));
+		for(int i = 0; i!= obj.levelList.size(); i++)				setCoreParameter(str + ".LevelList."+ std::to_string(i), obj.levelList.at(i));
+		setCoreParameter(str + ".Product", obj.product);
+		for(int i = 0; i!= obj.statusList.size(); i++)				setCoreParameter(str + ".StatusList."+ std::to_string(i), obj.statusList.at(i));
+		for(int i = 0; i!= obj.nameList.size(); i++)				setCoreParameter(str + ".NameList."+ std::to_string(i), obj.nameList.at(i));
+		for(int i = 0; i!= obj.eventTypeList.size(); i++)				setCoreParameter(str + ".EventTypeList."+ std::to_string(i), obj.eventTypeList.at(i));
 	}
 }
 
@@ -53,7 +53,7 @@ std::string PutEventRuleRequest::getGroupId()const
 void PutEventRuleRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string PutEventRuleRequest::getName()const
@@ -64,7 +64,7 @@ std::string PutEventRuleRequest::getName()const
 void PutEventRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string PutEventRuleRequest::getDescription()const
@@ -75,7 +75,7 @@ std::string PutEventRuleRequest::getDescription()const
 void PutEventRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string PutEventRuleRequest::getEventType()const
@@ -86,7 +86,7 @@ std::string PutEventRuleRequest::getEventType()const
 void PutEventRuleRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", std::to_string(eventType));
+	setCoreParameter("EventType", eventType);
 }
 
 std::string PutEventRuleRequest::getState()const
@@ -97,6 +97,6 @@ std::string PutEventRuleRequest::getState()const
 void PutEventRuleRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 

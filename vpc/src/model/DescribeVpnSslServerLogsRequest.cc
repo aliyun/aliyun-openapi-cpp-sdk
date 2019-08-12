@@ -33,7 +33,7 @@ long DescribeVpnSslServerLogsRequest::getResourceOwnerId()const
 void DescribeVpnSslServerLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeVpnSslServerLogsRequest::getMinutePeriod()const
@@ -44,7 +44,7 @@ int DescribeVpnSslServerLogsRequest::getMinutePeriod()const
 void DescribeVpnSslServerLogsRequest::setMinutePeriod(int minutePeriod)
 {
 	minutePeriod_ = minutePeriod;
-	setCoreParameter("MinutePeriod", minutePeriod);
+	setCoreParameter("MinutePeriod", std::to_string(minutePeriod));
 }
 
 std::string DescribeVpnSslServerLogsRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeVpnSslServerLogsRequest::getResourceOwnerAccount()const
 void DescribeVpnSslServerLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpnSslServerLogsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeVpnSslServerLogsRequest::getRegionId()const
 void DescribeVpnSslServerLogsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpnSslServerLogsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVpnSslServerLogsRequest::getOwnerAccount()const
 void DescribeVpnSslServerLogsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeVpnSslServerLogsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeVpnSslServerLogsRequest::getPageSize()const
 void DescribeVpnSslServerLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVpnSslServerLogsRequest::getVpnSslServerId()const
@@ -99,7 +99,7 @@ std::string DescribeVpnSslServerLogsRequest::getVpnSslServerId()const
 void DescribeVpnSslServerLogsRequest::setVpnSslServerId(const std::string& vpnSslServerId)
 {
 	vpnSslServerId_ = vpnSslServerId;
-	setCoreParameter("VpnSslServerId", std::to_string(vpnSslServerId));
+	setCoreParameter("VpnSslServerId", vpnSslServerId);
 }
 
 int DescribeVpnSslServerLogsRequest::getFrom()const
@@ -110,7 +110,7 @@ int DescribeVpnSslServerLogsRequest::getFrom()const
 void DescribeVpnSslServerLogsRequest::setFrom(int from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setCoreParameter("From", std::to_string(from));
 }
 
 int DescribeVpnSslServerLogsRequest::getTo()const
@@ -121,7 +121,7 @@ int DescribeVpnSslServerLogsRequest::getTo()const
 void DescribeVpnSslServerLogsRequest::setTo(int to)
 {
 	to_ = to;
-	setCoreParameter("To", to);
+	setCoreParameter("To", std::to_string(to));
 }
 
 long DescribeVpnSslServerLogsRequest::getOwnerId()const
@@ -132,7 +132,7 @@ long DescribeVpnSslServerLogsRequest::getOwnerId()const
 void DescribeVpnSslServerLogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVpnSslServerLogsRequest::getPageNumber()const
@@ -143,6 +143,6 @@ int DescribeVpnSslServerLogsRequest::getPageNumber()const
 void DescribeVpnSslServerLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

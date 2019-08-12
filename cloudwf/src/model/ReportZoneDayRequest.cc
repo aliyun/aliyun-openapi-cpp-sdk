@@ -33,7 +33,7 @@ std::string ReportZoneDayRequest::getBeginDate()const
 void ReportZoneDayRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", std::to_string(beginDate));
+	setCoreParameter("BeginDate", beginDate);
 }
 
 std::string ReportZoneDayRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ReportZoneDayRequest::getEndDate()const
 void ReportZoneDayRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string ReportZoneDayRequest::getAccessKeyId()const
@@ -55,7 +55,7 @@ std::string ReportZoneDayRequest::getAccessKeyId()const
 void ReportZoneDayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportZoneDayRequest::getAgsid()const
@@ -66,6 +66,6 @@ long ReportZoneDayRequest::getAgsid()const
 void ReportZoneDayRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", agsid);
+	setCoreParameter("Agsid", std::to_string(agsid));
 }
 

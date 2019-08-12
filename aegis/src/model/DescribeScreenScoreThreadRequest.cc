@@ -33,7 +33,7 @@ std::string DescribeScreenScoreThreadRequest::getSourceIp()const
 void DescribeScreenScoreThreadRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeScreenScoreThreadRequest::getEndTime()const
@@ -44,7 +44,7 @@ long DescribeScreenScoreThreadRequest::getEndTime()const
 void DescribeScreenScoreThreadRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeScreenScoreThreadRequest::getStartTime()const
@@ -55,6 +55,6 @@ long DescribeScreenScoreThreadRequest::getStartTime()const
 void DescribeScreenScoreThreadRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 

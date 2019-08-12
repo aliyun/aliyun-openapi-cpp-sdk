@@ -33,7 +33,7 @@ std::string DescribeResultListRequest::getSourceIp()const
 void DescribeResultListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeResultListRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeResultListRequest::getPageSize()const
 void DescribeResultListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeResultListRequest::getEndTime()const
@@ -55,7 +55,7 @@ long DescribeResultListRequest::getEndTime()const
 void DescribeResultListRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string DescribeResultListRequest::getRuleName()const
@@ -66,7 +66,7 @@ std::string DescribeResultListRequest::getRuleName()const
 void DescribeResultListRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", std::to_string(ruleName));
+	setCoreParameter("RuleName", ruleName);
 }
 
 std::string DescribeResultListRequest::getRemark()const
@@ -77,7 +77,7 @@ std::string DescribeResultListRequest::getRemark()const
 void DescribeResultListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeResultListRequest::getUuidList()const
@@ -88,7 +88,7 @@ std::string DescribeResultListRequest::getUuidList()const
 void DescribeResultListRequest::setUuidList(const std::string& uuidList)
 {
 	uuidList_ = uuidList;
-	setCoreParameter("UuidList", std::to_string(uuidList));
+	setCoreParameter("UuidList", uuidList);
 }
 
 std::string DescribeResultListRequest::getDealed()const
@@ -99,7 +99,7 @@ std::string DescribeResultListRequest::getDealed()const
 void DescribeResultListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 int DescribeResultListRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeResultListRequest::getCurrentPage()const
 void DescribeResultListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeResultListRequest::getStartTime()const
@@ -121,6 +121,6 @@ long DescribeResultListRequest::getStartTime()const
 void DescribeResultListRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 

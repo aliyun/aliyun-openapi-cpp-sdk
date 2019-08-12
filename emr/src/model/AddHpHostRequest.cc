@@ -33,7 +33,7 @@ long AddHpHostRequest::getResourceOwnerId()const
 void AddHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<AddHpHostRequest::HpHost> AddHpHostRequest::getHpHost()const
@@ -48,20 +48,20 @@ void AddHpHostRequest::setHpHost(const std::vector<HpHost>& hpHost)
 	for(int i = 0; i!= hpHost.size(); i++)	{
 		auto obj = hpHost.at(i);
 		std::string str ="HpHost."+ std::to_string(i);
-		setCoreParameter(str + ".CpuCore", obj.cpuCore);
-		setCoreParameter(str + ".MemSize", obj.memSize);
-		setCoreParameter(str + ".RackInfo", std::to_string(obj.rackInfo));
-		setCoreParameter(str + ".Role", std::to_string(obj.role));
-		setCoreParameter(str + ".SerialNumber", std::to_string(obj.serialNumber));
-		setCoreParameter(str + ".HostType", std::to_string(obj.hostType));
-		setCoreParameter(str + ".SecurityGroupId", std::to_string(obj.securityGroupId));
-		setCoreParameter(str + ".HpHostDisk", obj.hpHostDisk);
-		setCoreParameter(str + ".VswitchId", std::to_string(obj.vswitchId));
-		setCoreParameter(str + ".ExternalKey", std::to_string(obj.externalKey));
-		setCoreParameter(str + ".HostName", std::to_string(obj.hostName));
-		setCoreParameter(str + ".VpcId", std::to_string(obj.vpcId));
-		setCoreParameter(str + ".InnerIp", std::to_string(obj.innerIp));
-		setCoreParameter(str + ".ExternalIp", std::to_string(obj.externalIp));
+		setCoreParameter(str + ".CpuCore", std::to_string(obj.cpuCore));
+		setCoreParameter(str + ".MemSize", std::to_string(obj.memSize));
+		setCoreParameter(str + ".RackInfo", obj.rackInfo);
+		setCoreParameter(str + ".Role", obj.role);
+		setCoreParameter(str + ".SerialNumber", obj.serialNumber);
+		setCoreParameter(str + ".HostType", obj.hostType);
+		setCoreParameter(str + ".SecurityGroupId", obj.securityGroupId);
+		setCoreParameter(str + ".HpHostDisk", std::to_string(obj.hpHostDisk));
+		setCoreParameter(str + ".VswitchId", obj.vswitchId);
+		setCoreParameter(str + ".ExternalKey", obj.externalKey);
+		setCoreParameter(str + ".HostName", obj.hostName);
+		setCoreParameter(str + ".VpcId", obj.vpcId);
+		setCoreParameter(str + ".InnerIp", obj.innerIp);
+		setCoreParameter(str + ".ExternalIp", obj.externalIp);
 	}
 }
 
@@ -73,7 +73,7 @@ std::string AddHpHostRequest::getRegionId()const
 void AddHpHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddHpHostRequest::getHpBizId()const
@@ -84,7 +84,7 @@ std::string AddHpHostRequest::getHpBizId()const
 void AddHpHostRequest::setHpBizId(const std::string& hpBizId)
 {
 	hpBizId_ = hpBizId;
-	setCoreParameter("HpBizId", std::to_string(hpBizId));
+	setCoreParameter("HpBizId", hpBizId);
 }
 
 std::string AddHpHostRequest::getAccessKeyId()const
@@ -95,6 +95,6 @@ std::string AddHpHostRequest::getAccessKeyId()const
 void AddHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

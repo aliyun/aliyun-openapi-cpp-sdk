@@ -33,7 +33,7 @@ long GetAnalyzeCommodityDataRequest::getStartUserCount()const
 void GetAnalyzeCommodityDataRequest::setStartUserCount(long startUserCount)
 {
 	startUserCount_ = startUserCount;
-	setCoreParameter("StartUserCount", startUserCount);
+	setCoreParameter("StartUserCount", std::to_string(startUserCount));
 }
 
 std::string GetAnalyzeCommodityDataRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string GetAnalyzeCommodityDataRequest::getEndDate()const
 void GetAnalyzeCommodityDataRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 long GetAnalyzeCommodityDataRequest::getEndUserCount()const
@@ -55,7 +55,7 @@ long GetAnalyzeCommodityDataRequest::getEndUserCount()const
 void GetAnalyzeCommodityDataRequest::setEndUserCount(long endUserCount)
 {
 	endUserCount_ = endUserCount;
-	setCoreParameter("EndUserCount", endUserCount);
+	setCoreParameter("EndUserCount", std::to_string(endUserCount));
 }
 
 int GetAnalyzeCommodityDataRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetAnalyzeCommodityDataRequest::getPageSize()const
 void GetAnalyzeCommodityDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
@@ -77,7 +77,7 @@ long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
 void GetAnalyzeCommodityDataRequest::setMinSupportCount(long minSupportCount)
 {
 	minSupportCount_ = minSupportCount;
-	setCoreParameter("MinSupportCount", minSupportCount);
+	setCoreParameter("MinSupportCount", std::to_string(minSupportCount));
 }
 
 int GetAnalyzeCommodityDataRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int GetAnalyzeCommodityDataRequest::getPageIndex()const
 void GetAnalyzeCommodityDataRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", pageIndex);
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 long GetAnalyzeCommodityDataRequest::getStoreId()const
@@ -99,7 +99,7 @@ long GetAnalyzeCommodityDataRequest::getStoreId()const
 void GetAnalyzeCommodityDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 
 std::string GetAnalyzeCommodityDataRequest::getStartDate()const
@@ -110,7 +110,7 @@ std::string GetAnalyzeCommodityDataRequest::getStartDate()const
 void GetAnalyzeCommodityDataRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 
 long GetAnalyzeCommodityDataRequest::getStayPeriod()const
@@ -121,6 +121,6 @@ long GetAnalyzeCommodityDataRequest::getStayPeriod()const
 void GetAnalyzeCommodityDataRequest::setStayPeriod(long stayPeriod)
 {
 	stayPeriod_ = stayPeriod;
-	setCoreParameter("StayPeriod", stayPeriod);
+	setCoreParameter("StayPeriod", std::to_string(stayPeriod));
 }
 

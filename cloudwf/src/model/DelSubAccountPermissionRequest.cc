@@ -33,7 +33,7 @@ long DelSubAccountPermissionRequest::getId()const
 void DelSubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DelSubAccountPermissionRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DelSubAccountPermissionRequest::getAccessKeyId()const
 void DelSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

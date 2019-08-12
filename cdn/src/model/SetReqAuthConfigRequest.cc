@@ -33,7 +33,7 @@ std::string SetReqAuthConfigRequest::getKey1()const
 void SetReqAuthConfigRequest::setKey1(const std::string& key1)
 {
 	key1_ = key1;
-	setCoreParameter("Key1", std::to_string(key1));
+	setCoreParameter("Key1", key1);
 }
 
 std::string SetReqAuthConfigRequest::getKey2()const
@@ -44,7 +44,7 @@ std::string SetReqAuthConfigRequest::getKey2()const
 void SetReqAuthConfigRequest::setKey2(const std::string& key2)
 {
 	key2_ = key2;
-	setCoreParameter("Key2", std::to_string(key2));
+	setCoreParameter("Key2", key2);
 }
 
 std::string SetReqAuthConfigRequest::getAuthRemoteDesc()const
@@ -55,7 +55,7 @@ std::string SetReqAuthConfigRequest::getAuthRemoteDesc()const
 void SetReqAuthConfigRequest::setAuthRemoteDesc(const std::string& authRemoteDesc)
 {
 	authRemoteDesc_ = authRemoteDesc;
-	setCoreParameter("AuthRemoteDesc", std::to_string(authRemoteDesc));
+	setCoreParameter("AuthRemoteDesc", authRemoteDesc);
 }
 
 std::string SetReqAuthConfigRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string SetReqAuthConfigRequest::getSecurityToken()const
 void SetReqAuthConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetReqAuthConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetReqAuthConfigRequest::getDomainName()const
 void SetReqAuthConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetReqAuthConfigRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SetReqAuthConfigRequest::getOwnerId()const
 void SetReqAuthConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetReqAuthConfigRequest::getTimeOut()const
@@ -99,7 +99,7 @@ std::string SetReqAuthConfigRequest::getTimeOut()const
 void SetReqAuthConfigRequest::setTimeOut(const std::string& timeOut)
 {
 	timeOut_ = timeOut;
-	setCoreParameter("TimeOut", std::to_string(timeOut));
+	setCoreParameter("TimeOut", timeOut);
 }
 
 std::string SetReqAuthConfigRequest::getAuthType()const
@@ -110,6 +110,6 @@ std::string SetReqAuthConfigRequest::getAuthType()const
 void SetReqAuthConfigRequest::setAuthType(const std::string& authType)
 {
 	authType_ = authType;
-	setCoreParameter("AuthType", std::to_string(authType));
+	setCoreParameter("AuthType", authType);
 }
 

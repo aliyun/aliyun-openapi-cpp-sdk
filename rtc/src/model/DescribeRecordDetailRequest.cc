@@ -33,7 +33,7 @@ long DescribeRecordDetailRequest::getCallerParentId()const
 void DescribeRecordDetailRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeRecordDetailRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeRecordDetailRequest::getStartTime()const
 void DescribeRecordDetailRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeRecordDetailRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeRecordDetailRequest::getProxy_original_source_ip()const
 void DescribeRecordDetailRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeRecordDetailRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeRecordDetailRequest::getOwnerIdLoginEmail()const
 void DescribeRecordDetailRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRecordDetailRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeRecordDetailRequest::getCallerType()const
 void DescribeRecordDetailRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeRecordDetailRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeRecordDetailRequest::getAccessKeyId()const
 void DescribeRecordDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRecordDetailRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeRecordDetailRequest::getSecurityToken()const
 void DescribeRecordDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRecordDetailRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeRecordDetailRequest::getRequestContent()const
 void DescribeRecordDetailRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeRecordDetailRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeRecordDetailRequest::getCallerBidEmail()const
 void DescribeRecordDetailRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRecordDetailRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeRecordDetailRequest::getCallerUidEmail()const
 void DescribeRecordDetailRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeRecordDetailRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeRecordDetailRequest::getCallerUid()const
 void DescribeRecordDetailRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRecordDetailRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeRecordDetailRequest::getApp_ip()const
 void DescribeRecordDetailRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRecordDetailRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeRecordDetailRequest::getPopProduct()const
 void DescribeRecordDetailRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRecordDetailRequest::getEndTime()const
@@ -187,7 +187,7 @@ std::string DescribeRecordDetailRequest::getEndTime()const
 void DescribeRecordDetailRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeRecordDetailRequest::getCallerBid()const
@@ -198,7 +198,7 @@ std::string DescribeRecordDetailRequest::getCallerBid()const
 void DescribeRecordDetailRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRecordDetailRequest::getOwnerId()const
@@ -209,7 +209,7 @@ long DescribeRecordDetailRequest::getOwnerId()const
 void DescribeRecordDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRecordDetailRequest::getVersion()const
@@ -220,7 +220,7 @@ std::string DescribeRecordDetailRequest::getVersion()const
 void DescribeRecordDetailRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeRecordDetailRequest::getProxy_trust_transport_info()const
@@ -264,7 +264,7 @@ std::string DescribeRecordDetailRequest::getRecordId()const
 void DescribeRecordDetailRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string DescribeRecordDetailRequest::getRequestId()const
@@ -275,7 +275,7 @@ std::string DescribeRecordDetailRequest::getRequestId()const
 void DescribeRecordDetailRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeRecordDetailRequest::getAppId()const
@@ -286,7 +286,7 @@ std::string DescribeRecordDetailRequest::getAppId()const
 void DescribeRecordDetailRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string DescribeRecordDetailRequest::getChannelId()const
@@ -297,6 +297,6 @@ std::string DescribeRecordDetailRequest::getChannelId()const
 void DescribeRecordDetailRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", std::to_string(channelId));
+	setCoreParameter("ChannelId", channelId);
 }
 

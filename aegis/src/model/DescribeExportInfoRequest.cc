@@ -33,7 +33,7 @@ std::string DescribeExportInfoRequest::getSourceIp()const
 void DescribeExportInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeExportInfoRequest::getExportId()const
@@ -44,6 +44,6 @@ long DescribeExportInfoRequest::getExportId()const
 void DescribeExportInfoRequest::setExportId(long exportId)
 {
 	exportId_ = exportId;
-	setCoreParameter("ExportId", exportId);
+	setCoreParameter("ExportId", std::to_string(exportId));
 }
 

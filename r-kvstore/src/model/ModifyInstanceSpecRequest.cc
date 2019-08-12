@@ -33,7 +33,7 @@ long ModifyInstanceSpecRequest::getResourceOwnerId()const
 void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyInstanceSpecRequest::getAutoPay()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceSpecRequest::getFromApp()const
 void ModifyInstanceSpecRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceSpecRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceSpecRequest::getOwnerAccount()const
 void ModifyInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyInstanceSpecRequest::getCouponNo()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceSpecRequest::getCouponNo()const
 void ModifyInstanceSpecRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 long ModifyInstanceSpecRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyInstanceSpecRequest::getOwnerId()const
 void ModifyInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceClass()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceSpecRequest::getInstanceClass()const
 void ModifyInstanceSpecRequest::setInstanceClass(const std::string& instanceClass)
 {
 	instanceClass_ = instanceClass;
-	setCoreParameter("InstanceClass", std::to_string(instanceClass));
+	setCoreParameter("InstanceClass", instanceClass);
 }
 
 std::string ModifyInstanceSpecRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyInstanceSpecRequest::getAccessKeyId()const
 void ModifyInstanceSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceId()const
@@ -132,7 +132,7 @@ std::string ModifyInstanceSpecRequest::getInstanceId()const
 void ModifyInstanceSpecRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceSpecRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string ModifyInstanceSpecRequest::getSecurityToken()const
 void ModifyInstanceSpecRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyInstanceSpecRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string ModifyInstanceSpecRequest::getRegionId()const
 void ModifyInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceSpecRequest::getEffectiveTime()const
@@ -165,7 +165,7 @@ std::string ModifyInstanceSpecRequest::getEffectiveTime()const
 void ModifyInstanceSpecRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", std::to_string(effectiveTime));
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 bool ModifyInstanceSpecRequest::getForceUpgrade()const
@@ -187,6 +187,6 @@ std::string ModifyInstanceSpecRequest::getBusinessInfo()const
 void ModifyInstanceSpecRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 

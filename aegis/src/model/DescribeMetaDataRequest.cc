@@ -33,7 +33,7 @@ std::string DescribeMetaDataRequest::getProjectName()const
 void DescribeMetaDataRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", std::to_string(projectName));
+	setCoreParameter("ProjectName", projectName);
 }
 
 std::string DescribeMetaDataRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeMetaDataRequest::getSourceIp()const
 void DescribeMetaDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeMetaDataRequest::getLogStoreName()const
@@ -55,7 +55,7 @@ std::string DescribeMetaDataRequest::getLogStoreName()const
 void DescribeMetaDataRequest::setLogStoreName(const std::string& logStoreName)
 {
 	logStoreName_ = logStoreName;
-	setCoreParameter("LogStoreName", std::to_string(logStoreName));
+	setCoreParameter("LogStoreName", logStoreName);
 }
 
 std::string DescribeMetaDataRequest::getRegionNo()const
@@ -66,6 +66,6 @@ std::string DescribeMetaDataRequest::getRegionNo()const
 void DescribeMetaDataRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", std::to_string(regionNo));
+	setCoreParameter("RegionNo", regionNo);
 }
 

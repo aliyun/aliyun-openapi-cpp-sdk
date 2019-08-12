@@ -33,7 +33,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getInstanceId()const
 void ListBasicStatisticsReportSubItemsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
@@ -44,7 +44,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
 void ListBasicStatisticsReportSubItemsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", std::to_string(jobGroupId));
+	setCoreParameter("JobGroupId", jobGroupId);
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
 void ListBasicStatisticsReportSubItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
@@ -66,7 +66,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
 void ListBasicStatisticsReportSubItemsRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
@@ -77,6 +77,6 @@ int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
 void ListBasicStatisticsReportSubItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

@@ -33,7 +33,7 @@ long DeleteETLJobRequest::getResourceOwnerId()const
 void DeleteETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteETLJobRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteETLJobRequest::getRegionId()const
 void DeleteETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteETLJobRequest::getId()const
@@ -55,7 +55,7 @@ std::string DeleteETLJobRequest::getId()const
 void DeleteETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string DeleteETLJobRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteETLJobRequest::getAccessKeyId()const
 void DeleteETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

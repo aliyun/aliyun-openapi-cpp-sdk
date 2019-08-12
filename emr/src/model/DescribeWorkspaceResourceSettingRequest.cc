@@ -33,7 +33,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getApp_ip()const
 void DescribeWorkspaceResourceSettingRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long DescribeWorkspaceResourceSettingRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeWorkspaceResourceSettingRequest::getResourceOwnerId()const
 void DescribeWorkspaceResourceSettingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeWorkspaceResourceSettingRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeWorkspaceResourceSettingRequest::getCallerParentId()const
 void DescribeWorkspaceResourceSettingRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeWorkspaceResourceSettingRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getCallerBid()const
 void DescribeWorkspaceResourceSettingRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DescribeWorkspaceResourceSettingRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getProxy_original_source_ip
 void DescribeWorkspaceResourceSettingRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool DescribeWorkspaceResourceSettingRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getCallerType()const
 void DescribeWorkspaceResourceSettingRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeWorkspaceResourceSettingRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getAccessKeyId()const
 void DescribeWorkspaceResourceSettingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeWorkspaceResourceSettingRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getSecurityToken()const
 void DescribeWorkspaceResourceSettingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeWorkspaceResourceSettingRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getRegionId()const
 void DescribeWorkspaceResourceSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeWorkspaceResourceSettingRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string DescribeWorkspaceResourceSettingRequest::getRequestId()const
 void DescribeWorkspaceResourceSettingRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DescribeWorkspaceResourceSettingRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeWorkspaceResourceSettingRequest::getCallerUid()const
 void DescribeWorkspaceResourceSettingRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeWorkspaceResourceSettingRequest::getWorkspaceId()const
@@ -198,6 +198,6 @@ std::string DescribeWorkspaceResourceSettingRequest::getWorkspaceId()const
 void DescribeWorkspaceResourceSettingRequest::setWorkspaceId(const std::string& workspaceId)
 {
 	workspaceId_ = workspaceId;
-	setCoreParameter("WorkspaceId", std::to_string(workspaceId));
+	setCoreParameter("WorkspaceId", workspaceId);
 }
 

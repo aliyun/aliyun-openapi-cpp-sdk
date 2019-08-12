@@ -33,7 +33,7 @@ long AddLiveRecordVodConfigRequest::getCallerParentId()const
 void AddLiveRecordVodConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string AddLiveRecordVodConfigRequest::getAutoCompose()const
@@ -44,7 +44,7 @@ std::string AddLiveRecordVodConfigRequest::getAutoCompose()const
 void AddLiveRecordVodConfigRequest::setAutoCompose(const std::string& autoCompose)
 {
 	autoCompose_ = autoCompose;
-	setCoreParameter("AutoCompose", std::to_string(autoCompose));
+	setCoreParameter("AutoCompose", autoCompose);
 }
 
 bool AddLiveRecordVodConfigRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string AddLiveRecordVodConfigRequest::getProxy_original_source_ip()const
 void AddLiveRecordVodConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
@@ -77,7 +77,7 @@ std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setComposeVodTranscodeGroupId(const std::string& composeVodTranscodeGroupId)
 {
 	composeVodTranscodeGroupId_ = composeVodTranscodeGroupId;
-	setCoreParameter("ComposeVodTranscodeGroupId", std::to_string(composeVodTranscodeGroupId));
+	setCoreParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string AddLiveRecordVodConfigRequest::getOwnerIdLoginEmail()const
 void AddLiveRecordVodConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string AddLiveRecordVodConfigRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string AddLiveRecordVodConfigRequest::getCallerType()const
 void AddLiveRecordVodConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string AddLiveRecordVodConfigRequest::getEagleEyeRpcId()const
@@ -110,7 +110,7 @@ std::string AddLiveRecordVodConfigRequest::getEagleEyeRpcId()const
 void AddLiveRecordVodConfigRequest::setEagleEyeRpcId(const std::string& eagleEyeRpcId)
 {
 	eagleEyeRpcId_ = eagleEyeRpcId;
-	setCoreParameter("EagleEyeRpcId", std::to_string(eagleEyeRpcId));
+	setCoreParameter("EagleEyeRpcId", eagleEyeRpcId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string AddLiveRecordVodConfigRequest::getAccessKeyId()const
 void AddLiveRecordVodConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getStorageLocation()const
@@ -132,7 +132,7 @@ std::string AddLiveRecordVodConfigRequest::getStorageLocation()const
 void AddLiveRecordVodConfigRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", std::to_string(storageLocation));
+	setCoreParameter("StorageLocation", storageLocation);
 }
 
 std::string AddLiveRecordVodConfigRequest::getEagleEyeTraceId()const
@@ -143,7 +143,7 @@ std::string AddLiveRecordVodConfigRequest::getEagleEyeTraceId()const
 void AddLiveRecordVodConfigRequest::setEagleEyeTraceId(const std::string& eagleEyeTraceId)
 {
 	eagleEyeTraceId_ = eagleEyeTraceId;
-	setCoreParameter("EagleEyeTraceId", std::to_string(eagleEyeTraceId));
+	setCoreParameter("EagleEyeTraceId", eagleEyeTraceId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getAppName()const
@@ -154,7 +154,7 @@ std::string AddLiveRecordVodConfigRequest::getAppName()const
 void AddLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getSecurityToken()const
@@ -165,7 +165,7 @@ std::string AddLiveRecordVodConfigRequest::getSecurityToken()const
 void AddLiveRecordVodConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveRecordVodConfigRequest::getRegionId()const
@@ -176,7 +176,7 @@ std::string AddLiveRecordVodConfigRequest::getRegionId()const
 void AddLiveRecordVodConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getRequestContent()const
@@ -187,7 +187,7 @@ std::string AddLiveRecordVodConfigRequest::getRequestContent()const
 void AddLiveRecordVodConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string AddLiveRecordVodConfigRequest::getCallerBidEmail()const
@@ -198,7 +198,7 @@ std::string AddLiveRecordVodConfigRequest::getCallerBidEmail()const
 void AddLiveRecordVodConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string AddLiveRecordVodConfigRequest::getCallerUidEmail()const
@@ -209,7 +209,7 @@ std::string AddLiveRecordVodConfigRequest::getCallerUidEmail()const
 void AddLiveRecordVodConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string AddLiveRecordVodConfigRequest::getStreamName()const
@@ -220,7 +220,7 @@ std::string AddLiveRecordVodConfigRequest::getStreamName()const
 void AddLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
@@ -231,7 +231,7 @@ std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setVodTranscodeGroupId(const std::string& vodTranscodeGroupId)
 {
 	vodTranscodeGroupId_ = vodTranscodeGroupId;
-	setCoreParameter("VodTranscodeGroupId", std::to_string(vodTranscodeGroupId));
+	setCoreParameter("VodTranscodeGroupId", vodTranscodeGroupId);
 }
 
 long AddLiveRecordVodConfigRequest::getCallerUid()const
@@ -242,7 +242,7 @@ long AddLiveRecordVodConfigRequest::getCallerUid()const
 void AddLiveRecordVodConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string AddLiveRecordVodConfigRequest::getApp_ip()const
@@ -253,7 +253,7 @@ std::string AddLiveRecordVodConfigRequest::getApp_ip()const
 void AddLiveRecordVodConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string AddLiveRecordVodConfigRequest::getPopProduct()const
@@ -264,7 +264,7 @@ std::string AddLiveRecordVodConfigRequest::getPopProduct()const
 void AddLiveRecordVodConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string AddLiveRecordVodConfigRequest::getDomainName()const
@@ -275,7 +275,7 @@ std::string AddLiveRecordVodConfigRequest::getDomainName()const
 void AddLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 int AddLiveRecordVodConfigRequest::getCycleDuration()const
@@ -286,7 +286,7 @@ int AddLiveRecordVodConfigRequest::getCycleDuration()const
 void AddLiveRecordVodConfigRequest::setCycleDuration(int cycleDuration)
 {
 	cycleDuration_ = cycleDuration;
-	setCoreParameter("CycleDuration", cycleDuration);
+	setCoreParameter("CycleDuration", std::to_string(cycleDuration));
 }
 
 std::string AddLiveRecordVodConfigRequest::getCallerBid()const
@@ -297,7 +297,7 @@ std::string AddLiveRecordVodConfigRequest::getCallerBid()const
 void AddLiveRecordVodConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long AddLiveRecordVodConfigRequest::getOwnerId()const
@@ -308,7 +308,7 @@ long AddLiveRecordVodConfigRequest::getOwnerId()const
 void AddLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveRecordVodConfigRequest::getVersion()const
@@ -319,7 +319,7 @@ std::string AddLiveRecordVodConfigRequest::getVersion()const
 void AddLiveRecordVodConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool AddLiveRecordVodConfigRequest::getProxy_trust_transport_info()const
@@ -363,7 +363,7 @@ std::string AddLiveRecordVodConfigRequest::getServiceCode()const
 void AddLiveRecordVodConfigRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string AddLiveRecordVodConfigRequest::getRequestId()const
@@ -374,7 +374,7 @@ std::string AddLiveRecordVodConfigRequest::getRequestId()const
 void AddLiveRecordVodConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getEagleEyeUserData()const
@@ -385,6 +385,6 @@ std::string AddLiveRecordVodConfigRequest::getEagleEyeUserData()const
 void AddLiveRecordVodConfigRequest::setEagleEyeUserData(const std::string& eagleEyeUserData)
 {
 	eagleEyeUserData_ = eagleEyeUserData;
-	setCoreParameter("EagleEyeUserData", std::to_string(eagleEyeUserData));
+	setCoreParameter("EagleEyeUserData", eagleEyeUserData);
 }
 

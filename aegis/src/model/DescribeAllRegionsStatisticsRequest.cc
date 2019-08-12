@@ -33,7 +33,7 @@ std::string DescribeAllRegionsStatisticsRequest::getStatusList()const
 void DescribeAllRegionsStatisticsRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", std::to_string(statusList));
+	setCoreParameter("StatusList", statusList);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getSaleId()const
@@ -44,7 +44,7 @@ std::string DescribeAllRegionsStatisticsRequest::getSaleId()const
 void DescribeAllRegionsStatisticsRequest::setSaleId(const std::string& saleId)
 {
 	saleId_ = saleId;
-	setCoreParameter("SaleId", std::to_string(saleId));
+	setCoreParameter("SaleId", saleId);
 }
 
 int DescribeAllRegionsStatisticsRequest::getRuleType()const
@@ -55,7 +55,7 @@ int DescribeAllRegionsStatisticsRequest::getRuleType()const
 void DescribeAllRegionsStatisticsRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", ruleType);
+	setCoreParameter("RuleType", std::to_string(ruleType));
 }
 
 long DescribeAllRegionsStatisticsRequest::getGroupId()const
@@ -66,7 +66,7 @@ long DescribeAllRegionsStatisticsRequest::getGroupId()const
 void DescribeAllRegionsStatisticsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getEndTime()const
@@ -77,7 +77,7 @@ std::string DescribeAllRegionsStatisticsRequest::getEndTime()const
 void DescribeAllRegionsStatisticsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeAllRegionsStatisticsRequest::getRemark()const
 void DescribeAllRegionsStatisticsRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getDealed()const
@@ -99,7 +99,7 @@ std::string DescribeAllRegionsStatisticsRequest::getDealed()const
 void DescribeAllRegionsStatisticsRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 int DescribeAllRegionsStatisticsRequest::getCurrentPage()const
@@ -110,7 +110,7 @@ int DescribeAllRegionsStatisticsRequest::getCurrentPage()const
 void DescribeAllRegionsStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getStartTime()const
@@ -121,7 +121,7 @@ std::string DescribeAllRegionsStatisticsRequest::getStartTime()const
 void DescribeAllRegionsStatisticsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getType()const
@@ -132,7 +132,7 @@ std::string DescribeAllRegionsStatisticsRequest::getType()const
 void DescribeAllRegionsStatisticsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getUuid()const
@@ -143,7 +143,7 @@ std::string DescribeAllRegionsStatisticsRequest::getUuid()const
 void DescribeAllRegionsStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getSecureToken()const
@@ -154,7 +154,7 @@ std::string DescribeAllRegionsStatisticsRequest::getSecureToken()const
 void DescribeAllRegionsStatisticsRequest::setSecureToken(const std::string& secureToken)
 {
 	secureToken_ = secureToken;
-	setCoreParameter("SecureToken", std::to_string(secureToken));
+	setCoreParameter("SecureToken", secureToken);
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getSourceIp()const
@@ -165,7 +165,7 @@ std::string DescribeAllRegionsStatisticsRequest::getSourceIp()const
 void DescribeAllRegionsStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeAllRegionsStatisticsRequest::getWebGroupId()const
@@ -176,7 +176,7 @@ long DescribeAllRegionsStatisticsRequest::getWebGroupId()const
 void DescribeAllRegionsStatisticsRequest::setWebGroupId(long webGroupId)
 {
 	webGroupId_ = webGroupId;
-	setCoreParameter("WebGroupId", webGroupId);
+	setCoreParameter("WebGroupId", std::to_string(webGroupId));
 }
 
 int DescribeAllRegionsStatisticsRequest::getPageSize()const
@@ -187,7 +187,7 @@ int DescribeAllRegionsStatisticsRequest::getPageSize()const
 void DescribeAllRegionsStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getFrom()const
@@ -198,7 +198,7 @@ std::string DescribeAllRegionsStatisticsRequest::getFrom()const
 void DescribeAllRegionsStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 int DescribeAllRegionsStatisticsRequest::getAction1()const
@@ -209,7 +209,7 @@ int DescribeAllRegionsStatisticsRequest::getAction1()const
 void DescribeAllRegionsStatisticsRequest::setAction1(int action1)
 {
 	action1_ = action1;
-	setCoreParameter("Action1", action1);
+	setCoreParameter("Action1", std::to_string(action1));
 }
 
 std::string DescribeAllRegionsStatisticsRequest::getTag()const
@@ -220,7 +220,7 @@ std::string DescribeAllRegionsStatisticsRequest::getTag()const
 void DescribeAllRegionsStatisticsRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 int DescribeAllRegionsStatisticsRequest::getFlow()const
@@ -231,7 +231,7 @@ int DescribeAllRegionsStatisticsRequest::getFlow()const
 void DescribeAllRegionsStatisticsRequest::setFlow(int flow)
 {
 	flow_ = flow;
-	setCoreParameter("Flow", flow);
+	setCoreParameter("Flow", std::to_string(flow));
 }
 
 int DescribeAllRegionsStatisticsRequest::getStatus()const
@@ -242,6 +242,6 @@ int DescribeAllRegionsStatisticsRequest::getStatus()const
 void DescribeAllRegionsStatisticsRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string OnsInstanceUpdateRequest::getInstanceName()const
 void OnsInstanceUpdateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string OnsInstanceUpdateRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string OnsInstanceUpdateRequest::getInstanceId()const
 void OnsInstanceUpdateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsInstanceUpdateRequest::getRemark()const
@@ -55,6 +55,6 @@ std::string OnsInstanceUpdateRequest::getRemark()const
 void OnsInstanceUpdateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 

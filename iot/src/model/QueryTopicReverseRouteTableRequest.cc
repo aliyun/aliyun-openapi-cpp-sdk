@@ -33,7 +33,7 @@ std::string QueryTopicReverseRouteTableRequest::getRegionId()const
 void QueryTopicReverseRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string QueryTopicReverseRouteTableRequest::getIotInstanceId()const
 void QueryTopicReverseRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getTopic()const
@@ -55,7 +55,7 @@ std::string QueryTopicReverseRouteTableRequest::getTopic()const
 void QueryTopicReverseRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string QueryTopicReverseRouteTableRequest::getAccessKeyId()const
 void QueryTopicReverseRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

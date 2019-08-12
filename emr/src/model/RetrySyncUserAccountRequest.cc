@@ -33,7 +33,7 @@ std::string RetrySyncUserAccountRequest::getApp_ip()const
 void RetrySyncUserAccountRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long RetrySyncUserAccountRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RetrySyncUserAccountRequest::getResourceOwnerId()const
 void RetrySyncUserAccountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RetrySyncUserAccountRequest::getResourceId()const
@@ -55,7 +55,7 @@ std::string RetrySyncUserAccountRequest::getResourceId()const
 void RetrySyncUserAccountRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", std::to_string(resourceId));
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::vector<std::string> RetrySyncUserAccountRequest::getAliyunUserIdList()const
@@ -67,7 +67,7 @@ void RetrySyncUserAccountRequest::setAliyunUserIdList(const std::vector<std::str
 {
 	aliyunUserIdList_ = aliyunUserIdList;
 	for(int i = 0; i!= aliyunUserIdList.size(); i++)
-		setCoreParameter("AliyunUserIdList."+ std::to_string(i), std::to_string(aliyunUserIdList.at(i)));
+		setCoreParameter("AliyunUserIdList."+ std::to_string(i), aliyunUserIdList.at(i));
 }
 
 long RetrySyncUserAccountRequest::getCallerParentId()const
@@ -78,7 +78,7 @@ long RetrySyncUserAccountRequest::getCallerParentId()const
 void RetrySyncUserAccountRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string RetrySyncUserAccountRequest::getAccountType()const
@@ -89,7 +89,7 @@ std::string RetrySyncUserAccountRequest::getAccountType()const
 void RetrySyncUserAccountRequest::setAccountType(const std::string& accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", std::to_string(accountType));
+	setCoreParameter("AccountType", accountType);
 }
 
 bool RetrySyncUserAccountRequest::getProxy_original_security_transport()const
@@ -111,7 +111,7 @@ std::string RetrySyncUserAccountRequest::getCallerBid()const
 void RetrySyncUserAccountRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string RetrySyncUserAccountRequest::getProxy_original_source_ip()const
@@ -122,7 +122,7 @@ std::string RetrySyncUserAccountRequest::getProxy_original_source_ip()const
 void RetrySyncUserAccountRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string RetrySyncUserAccountRequest::getResourceType()const
@@ -133,7 +133,7 @@ std::string RetrySyncUserAccountRequest::getResourceType()const
 void RetrySyncUserAccountRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 bool RetrySyncUserAccountRequest::getAk_mfa_present()const
@@ -166,7 +166,7 @@ std::string RetrySyncUserAccountRequest::getCallerType()const
 void RetrySyncUserAccountRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string RetrySyncUserAccountRequest::getAccessKeyId()const
@@ -177,7 +177,7 @@ std::string RetrySyncUserAccountRequest::getAccessKeyId()const
 void RetrySyncUserAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool RetrySyncUserAccountRequest::getSecurity_transport()const
@@ -199,7 +199,7 @@ std::string RetrySyncUserAccountRequest::getSecurityToken()const
 void RetrySyncUserAccountRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RetrySyncUserAccountRequest::getRegionId()const
@@ -210,7 +210,7 @@ std::string RetrySyncUserAccountRequest::getRegionId()const
 void RetrySyncUserAccountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RetrySyncUserAccountRequest::getRequestId()const
@@ -221,7 +221,7 @@ std::string RetrySyncUserAccountRequest::getRequestId()const
 void RetrySyncUserAccountRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long RetrySyncUserAccountRequest::getCallerUid()const
@@ -232,6 +232,6 @@ long RetrySyncUserAccountRequest::getCallerUid()const
 void RetrySyncUserAccountRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

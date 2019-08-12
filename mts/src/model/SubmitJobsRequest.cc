@@ -33,7 +33,7 @@ std::string SubmitJobsRequest::getOutputs()const
 void SubmitJobsRequest::setOutputs(const std::string& outputs)
 {
 	outputs_ = outputs;
-	setCoreParameter("Outputs", std::to_string(outputs));
+	setCoreParameter("Outputs", outputs);
 }
 
 std::string SubmitJobsRequest::getInput()const
@@ -44,7 +44,7 @@ std::string SubmitJobsRequest::getInput()const
 void SubmitJobsRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitJobsRequest::getOutputBucket()const
@@ -55,7 +55,7 @@ std::string SubmitJobsRequest::getOutputBucket()const
 void SubmitJobsRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", std::to_string(outputBucket));
+	setCoreParameter("OutputBucket", outputBucket);
 }
 
 long SubmitJobsRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long SubmitJobsRequest::getResourceOwnerId()const
 void SubmitJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitJobsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitJobsRequest::getResourceOwnerAccount()const
 void SubmitJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitJobsRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitJobsRequest::getOwnerAccount()const
 void SubmitJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitJobsRequest::getOutputLocation()const
@@ -99,7 +99,7 @@ std::string SubmitJobsRequest::getOutputLocation()const
 void SubmitJobsRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", std::to_string(outputLocation));
+	setCoreParameter("OutputLocation", outputLocation);
 }
 
 long SubmitJobsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SubmitJobsRequest::getOwnerId()const
 void SubmitJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitJobsRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SubmitJobsRequest::getAccessKeyId()const
 void SubmitJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitJobsRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string SubmitJobsRequest::getPipelineId()const
 void SubmitJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 

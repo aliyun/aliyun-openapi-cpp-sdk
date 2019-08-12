@@ -33,7 +33,7 @@ std::string UnbindTagRequest::getTagName()const
 void UnbindTagRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", std::to_string(tagName));
+	setCoreParameter("TagName", tagName);
 }
 
 std::string UnbindTagRequest::getClientKey()const
@@ -44,7 +44,7 @@ std::string UnbindTagRequest::getClientKey()const
 void UnbindTagRequest::setClientKey(const std::string& clientKey)
 {
 	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", std::to_string(clientKey));
+	setCoreParameter("ClientKey", clientKey);
 }
 
 long UnbindTagRequest::getAppKey()const
@@ -55,7 +55,7 @@ long UnbindTagRequest::getAppKey()const
 void UnbindTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string UnbindTagRequest::getKeyType()const
@@ -66,7 +66,7 @@ std::string UnbindTagRequest::getKeyType()const
 void UnbindTagRequest::setKeyType(const std::string& keyType)
 {
 	keyType_ = keyType;
-	setCoreParameter("KeyType", std::to_string(keyType));
+	setCoreParameter("KeyType", keyType);
 }
 
 std::string UnbindTagRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string UnbindTagRequest::getAccessKeyId()const
 void UnbindTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

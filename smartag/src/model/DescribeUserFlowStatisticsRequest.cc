@@ -33,7 +33,7 @@ long DescribeUserFlowStatisticsRequest::getResourceOwnerId()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeUserFlowStatisticsRequest::getRegionId()const
 void DescribeUserFlowStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
@@ -77,7 +77,7 @@ std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
 void DescribeUserFlowStatisticsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
@@ -88,7 +88,7 @@ std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
 void DescribeUserFlowStatisticsRequest::setStatisticsDate(const std::string& statisticsDate)
 {
 	statisticsDate_ = statisticsDate;
-	setCoreParameter("StatisticsDate", std::to_string(statisticsDate));
+	setCoreParameter("StatisticsDate", statisticsDate);
 }
 
 std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
@@ -100,7 +100,7 @@ void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::stri
 {
 	userNames_ = userNames;
 	for(int i = 0; i!= userNames.size(); i++)
-		setCoreParameter("UserNames."+ std::to_string(i), std::to_string(userNames.at(i)));
+		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
 }
 
 long DescribeUserFlowStatisticsRequest::getOwnerId()const
@@ -111,6 +111,6 @@ long DescribeUserFlowStatisticsRequest::getOwnerId()const
 void DescribeUserFlowStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

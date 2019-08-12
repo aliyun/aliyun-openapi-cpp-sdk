@@ -33,7 +33,7 @@ long DescribeForwardTableEntriesRequest::getResourceOwnerId()const
 void DescribeForwardTableEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeForwardTableEntriesRequest::getResourceOwnerAccount()const
 void DescribeForwardTableEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeForwardTableEntriesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeForwardTableEntriesRequest::getRegionId()const
 void DescribeForwardTableEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
@@ -66,7 +66,7 @@ std::string DescribeForwardTableEntriesRequest::getForwardEntryId()const
 void DescribeForwardTableEntriesRequest::setForwardEntryId(const std::string& forwardEntryId)
 {
 	forwardEntryId_ = forwardEntryId;
-	setCoreParameter("ForwardEntryId", std::to_string(forwardEntryId));
+	setCoreParameter("ForwardEntryId", forwardEntryId);
 }
 
 std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeForwardTableEntriesRequest::getOwnerAccount()const
 void DescribeForwardTableEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
@@ -88,7 +88,7 @@ std::string DescribeForwardTableEntriesRequest::getForwardTableId()const
 void DescribeForwardTableEntriesRequest::setForwardTableId(const std::string& forwardTableId)
 {
 	forwardTableId_ = forwardTableId;
-	setCoreParameter("ForwardTableId", std::to_string(forwardTableId));
+	setCoreParameter("ForwardTableId", forwardTableId);
 }
 
 int DescribeForwardTableEntriesRequest::getPageSize()const
@@ -99,7 +99,7 @@ int DescribeForwardTableEntriesRequest::getPageSize()const
 void DescribeForwardTableEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeForwardTableEntriesRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeForwardTableEntriesRequest::getOwnerId()const
 void DescribeForwardTableEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeForwardTableEntriesRequest::getPageNumber()const
@@ -121,6 +121,6 @@ int DescribeForwardTableEntriesRequest::getPageNumber()const
 void DescribeForwardTableEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

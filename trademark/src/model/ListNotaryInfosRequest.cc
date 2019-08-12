@@ -33,7 +33,7 @@ std::string ListNotaryInfosRequest::getBizOrderNo()const
 void ListNotaryInfosRequest::setBizOrderNo(const std::string& bizOrderNo)
 {
 	bizOrderNo_ = bizOrderNo;
-	setCoreParameter("BizOrderNo", std::to_string(bizOrderNo));
+	setCoreParameter("BizOrderNo", bizOrderNo);
 }
 
 int ListNotaryInfosRequest::getNotaryType()const
@@ -44,7 +44,7 @@ int ListNotaryInfosRequest::getNotaryType()const
 void ListNotaryInfosRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", notaryType);
+	setCoreParameter("NotaryType", std::to_string(notaryType));
 }
 
 int ListNotaryInfosRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListNotaryInfosRequest::getPageSize()const
 void ListNotaryInfosRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListNotaryInfosRequest::getPageNum()const
@@ -66,7 +66,7 @@ int ListNotaryInfosRequest::getPageNum()const
 void ListNotaryInfosRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string ListNotaryInfosRequest::getToken()const
@@ -77,6 +77,6 @@ std::string ListNotaryInfosRequest::getToken()const
 void ListNotaryInfosRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", std::to_string(token));
+	setCoreParameter("Token", token);
 }
 

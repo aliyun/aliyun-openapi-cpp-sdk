@@ -33,7 +33,7 @@ std::string SearchPersonByImgRequest::getImgUrl()const
 void SearchPersonByImgRequest::setImgUrl(const std::string& imgUrl)
 {
 	imgUrl_ = imgUrl;
-	setCoreParameter("ImgUrl", std::to_string(imgUrl));
+	setCoreParameter("ImgUrl", imgUrl);
 }
 
 long SearchPersonByImgRequest::getStoreId()const
@@ -44,6 +44,6 @@ long SearchPersonByImgRequest::getStoreId()const
 void SearchPersonByImgRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 

@@ -33,7 +33,7 @@ long QueryPornPipelineListRequest::getResourceOwnerId()const
 void QueryPornPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
 void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryPornPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryPornPipelineListRequest::getPipelineIds()const
 void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", std::to_string(pipelineIds));
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 
 std::string QueryPornPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryPornPipelineListRequest::getOwnerAccount()const
 void QueryPornPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryPornPipelineListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryPornPipelineListRequest::getOwnerId()const
 void QueryPornPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryPornPipelineListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryPornPipelineListRequest::getAccessKeyId()const
 void QueryPornPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

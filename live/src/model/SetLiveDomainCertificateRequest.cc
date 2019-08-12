@@ -33,7 +33,7 @@ std::string SetLiveDomainCertificateRequest::getForceSet()const
 void SetLiveDomainCertificateRequest::setForceSet(const std::string& forceSet)
 {
 	forceSet_ = forceSet;
-	setCoreParameter("ForceSet", std::to_string(forceSet));
+	setCoreParameter("ForceSet", forceSet);
 }
 
 std::string SetLiveDomainCertificateRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetLiveDomainCertificateRequest::getSecurityToken()const
 void SetLiveDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetLiveDomainCertificateRequest::getCertType()const
@@ -55,7 +55,7 @@ std::string SetLiveDomainCertificateRequest::getCertType()const
 void SetLiveDomainCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
-	setCoreParameter("CertType", std::to_string(certType));
+	setCoreParameter("CertType", certType);
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPub()const
@@ -66,7 +66,7 @@ std::string SetLiveDomainCertificateRequest::getSSLPub()const
 void SetLiveDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", std::to_string(sSLPub));
+	setCoreParameter("SSLPub", sSLPub);
 }
 
 std::string SetLiveDomainCertificateRequest::getCertName()const
@@ -77,7 +77,7 @@ std::string SetLiveDomainCertificateRequest::getCertName()const
 void SetLiveDomainCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", std::to_string(certName));
+	setCoreParameter("CertName", certName);
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLProtocol()const
@@ -88,7 +88,7 @@ std::string SetLiveDomainCertificateRequest::getSSLProtocol()const
 void SetLiveDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", std::to_string(sSLProtocol));
+	setCoreParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string SetLiveDomainCertificateRequest::getDomainName()const
@@ -99,7 +99,7 @@ std::string SetLiveDomainCertificateRequest::getDomainName()const
 void SetLiveDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetLiveDomainCertificateRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SetLiveDomainCertificateRequest::getOwnerId()const
 void SetLiveDomainCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPri()const
@@ -121,6 +121,6 @@ std::string SetLiveDomainCertificateRequest::getSSLPri()const
 void SetLiveDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", std::to_string(sSLPri));
+	setCoreParameter("SSLPri", sSLPri);
 }
 

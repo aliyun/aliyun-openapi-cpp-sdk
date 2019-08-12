@@ -33,7 +33,7 @@ long ResumeExecutionPlanInstanceRequest::getResourceOwnerId()const
 void ResumeExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ResumeExecutionPlanInstanceRequest::getRegionId()const
 void ResumeExecutionPlanInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getId()const
@@ -55,7 +55,7 @@ std::string ResumeExecutionPlanInstanceRequest::getId()const
 void ResumeExecutionPlanInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ResumeExecutionPlanInstanceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ResumeExecutionPlanInstanceRequest::getAccessKeyId()const
 void ResumeExecutionPlanInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string CreateScreenSettingRequest::getScreenDataMap()const
 void CreateScreenSettingRequest::setScreenDataMap(const std::string& screenDataMap)
 {
 	screenDataMap_ = screenDataMap;
-	setCoreParameter("ScreenDataMap", std::to_string(screenDataMap));
+	setCoreParameter("ScreenDataMap", screenDataMap);
 }
 
 int CreateScreenSettingRequest::getScreenDefault()const
@@ -44,7 +44,7 @@ int CreateScreenSettingRequest::getScreenDefault()const
 void CreateScreenSettingRequest::setScreenDefault(int screenDefault)
 {
 	screenDefault_ = screenDefault;
-	setCoreParameter("ScreenDefault", screenDefault);
+	setCoreParameter("ScreenDefault", std::to_string(screenDefault));
 }
 
 bool CreateScreenSettingRequest::getLogoPower()const
@@ -66,7 +66,7 @@ std::string CreateScreenSettingRequest::getMonitorUrl()const
 void CreateScreenSettingRequest::setMonitorUrl(const std::string& monitorUrl)
 {
 	monitorUrl_ = monitorUrl;
-	setCoreParameter("MonitorUrl", std::to_string(monitorUrl));
+	setCoreParameter("MonitorUrl", monitorUrl);
 }
 
 std::string CreateScreenSettingRequest::getSourceIp()const
@@ -77,7 +77,7 @@ std::string CreateScreenSettingRequest::getSourceIp()const
 void CreateScreenSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int CreateScreenSettingRequest::getId()const
@@ -88,7 +88,7 @@ int CreateScreenSettingRequest::getId()const
 void CreateScreenSettingRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string CreateScreenSettingRequest::getTitle()const
@@ -99,7 +99,7 @@ std::string CreateScreenSettingRequest::getTitle()const
 void CreateScreenSettingRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string CreateScreenSettingRequest::getLogoUrl()const
@@ -110,6 +110,6 @@ std::string CreateScreenSettingRequest::getLogoUrl()const
 void CreateScreenSettingRequest::setLogoUrl(const std::string& logoUrl)
 {
 	logoUrl_ = logoUrl;
-	setCoreParameter("LogoUrl", std::to_string(logoUrl));
+	setCoreParameter("LogoUrl", logoUrl);
 }
 

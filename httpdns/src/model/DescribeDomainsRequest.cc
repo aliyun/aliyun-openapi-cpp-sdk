@@ -33,7 +33,7 @@ std::string DescribeDomainsRequest::getAccountId()const
 void DescribeDomainsRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setCoreParameter("AccountId", accountId);
 }
 
 long DescribeDomainsRequest::getPageSize()const
@@ -44,7 +44,7 @@ long DescribeDomainsRequest::getPageSize()const
 void DescribeDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeDomainsRequest::getPageNumber()const
@@ -55,7 +55,7 @@ long DescribeDomainsRequest::getPageNumber()const
 void DescribeDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDomainsRequest::getAccessKeyId()const
 void DescribeDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

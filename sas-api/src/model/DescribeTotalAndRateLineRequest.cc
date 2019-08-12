@@ -33,7 +33,7 @@ std::string DescribeTotalAndRateLineRequest::getSourceIp()const
 void DescribeTotalAndRateLineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeTotalAndRateLineRequest::getApiType()const
@@ -44,6 +44,6 @@ int DescribeTotalAndRateLineRequest::getApiType()const
 void DescribeTotalAndRateLineRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

@@ -33,7 +33,7 @@ std::string SwitchDBInstanceVpcRequest::getVSwitchId()const
 void SwitchDBInstanceVpcRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 std::string SwitchDBInstanceVpcRequest::getPrivateIpAddress()const
@@ -44,7 +44,7 @@ std::string SwitchDBInstanceVpcRequest::getPrivateIpAddress()const
 void SwitchDBInstanceVpcRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", std::to_string(privateIpAddress));
+	setCoreParameter("PrivateIpAddress", privateIpAddress);
 }
 
 long SwitchDBInstanceVpcRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SwitchDBInstanceVpcRequest::getResourceOwnerId()const
 void SwitchDBInstanceVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SwitchDBInstanceVpcRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SwitchDBInstanceVpcRequest::getResourceOwnerAccount()const
 void SwitchDBInstanceVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SwitchDBInstanceVpcRequest::getVPCId()const
@@ -77,7 +77,7 @@ std::string SwitchDBInstanceVpcRequest::getVPCId()const
 void SwitchDBInstanceVpcRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", std::to_string(vPCId));
+	setCoreParameter("VPCId", vPCId);
 }
 
 std::string SwitchDBInstanceVpcRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SwitchDBInstanceVpcRequest::getOwnerAccount()const
 void SwitchDBInstanceVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SwitchDBInstanceVpcRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string SwitchDBInstanceVpcRequest::getDBInstanceId()const
 void SwitchDBInstanceVpcRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long SwitchDBInstanceVpcRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long SwitchDBInstanceVpcRequest::getOwnerId()const
 void SwitchDBInstanceVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SwitchDBInstanceVpcRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string SwitchDBInstanceVpcRequest::getAccessKeyId()const
 void SwitchDBInstanceVpcRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

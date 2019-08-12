@@ -44,7 +44,7 @@ int SetPasswordPolicyRequest::getPasswordReusePrevention()const
 void SetPasswordPolicyRequest::setPasswordReusePrevention(int passwordReusePrevention)
 {
 	passwordReusePrevention_ = passwordReusePrevention;
-	setCoreParameter("PasswordReusePrevention", passwordReusePrevention);
+	setCoreParameter("PasswordReusePrevention", std::to_string(passwordReusePrevention));
 }
 
 bool SetPasswordPolicyRequest::getRequireUppercaseCharacters()const
@@ -66,7 +66,7 @@ int SetPasswordPolicyRequest::getMaxPasswordAge()const
 void SetPasswordPolicyRequest::setMaxPasswordAge(int maxPasswordAge)
 {
 	maxPasswordAge_ = maxPasswordAge;
-	setCoreParameter("MaxPasswordAge", maxPasswordAge);
+	setCoreParameter("MaxPasswordAge", std::to_string(maxPasswordAge));
 }
 
 int SetPasswordPolicyRequest::getMaxLoginAttemps()const
@@ -77,7 +77,7 @@ int SetPasswordPolicyRequest::getMaxLoginAttemps()const
 void SetPasswordPolicyRequest::setMaxLoginAttemps(int maxLoginAttemps)
 {
 	maxLoginAttemps_ = maxLoginAttemps;
-	setCoreParameter("MaxLoginAttemps", maxLoginAttemps);
+	setCoreParameter("MaxLoginAttemps", std::to_string(maxLoginAttemps));
 }
 
 bool SetPasswordPolicyRequest::getHardExpiry()const
@@ -99,7 +99,7 @@ int SetPasswordPolicyRequest::getMinimumPasswordLength()const
 void SetPasswordPolicyRequest::setMinimumPasswordLength(int minimumPasswordLength)
 {
 	minimumPasswordLength_ = minimumPasswordLength;
-	setCoreParameter("MinimumPasswordLength", minimumPasswordLength);
+	setCoreParameter("MinimumPasswordLength", std::to_string(minimumPasswordLength));
 }
 
 bool SetPasswordPolicyRequest::getRequireLowercaseCharacters()const

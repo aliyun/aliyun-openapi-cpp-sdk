@@ -33,7 +33,7 @@ long CreatePhotoRequest::getTakenAt()const
 void CreatePhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", takenAt);
+	setCoreParameter("TakenAt", std::to_string(takenAt));
 }
 
 std::string CreatePhotoRequest::getPhotoTitle()const
@@ -44,7 +44,7 @@ std::string CreatePhotoRequest::getPhotoTitle()const
 void CreatePhotoRequest::setPhotoTitle(const std::string& photoTitle)
 {
 	photoTitle_ = photoTitle;
-	setCoreParameter("PhotoTitle", std::to_string(photoTitle));
+	setCoreParameter("PhotoTitle", photoTitle);
 }
 
 std::string CreatePhotoRequest::getLibraryId()const
@@ -55,7 +55,7 @@ std::string CreatePhotoRequest::getLibraryId()const
 void CreatePhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long CreatePhotoRequest::getShareExpireTime()const
@@ -66,7 +66,7 @@ long CreatePhotoRequest::getShareExpireTime()const
 void CreatePhotoRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", shareExpireTime);
+	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
 }
 
 std::string CreatePhotoRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string CreatePhotoRequest::getStoreName()const
 void CreatePhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string CreatePhotoRequest::getUploadType()const
@@ -88,7 +88,7 @@ std::string CreatePhotoRequest::getUploadType()const
 void CreatePhotoRequest::setUploadType(const std::string& uploadType)
 {
 	uploadType_ = uploadType;
-	setCoreParameter("UploadType", std::to_string(uploadType));
+	setCoreParameter("UploadType", uploadType);
 }
 
 std::string CreatePhotoRequest::getRemark()const
@@ -99,7 +99,7 @@ std::string CreatePhotoRequest::getRemark()const
 void CreatePhotoRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string CreatePhotoRequest::getSessionId()const
@@ -110,7 +110,7 @@ std::string CreatePhotoRequest::getSessionId()const
 void CreatePhotoRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", std::to_string(sessionId));
+	setCoreParameter("SessionId", sessionId);
 }
 
 std::string CreatePhotoRequest::getStaging()const
@@ -121,7 +121,7 @@ std::string CreatePhotoRequest::getStaging()const
 void CreatePhotoRequest::setStaging(const std::string& staging)
 {
 	staging_ = staging;
-	setCoreParameter("Staging", std::to_string(staging));
+	setCoreParameter("Staging", staging);
 }
 
 std::string CreatePhotoRequest::getFileId()const
@@ -132,6 +132,6 @@ std::string CreatePhotoRequest::getFileId()const
 void CreatePhotoRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
-	setCoreParameter("FileId", std::to_string(fileId));
+	setCoreParameter("FileId", fileId);
 }
 

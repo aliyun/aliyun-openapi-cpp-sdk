@@ -33,7 +33,7 @@ std::string CreateAutoSnapshotPolicyRequest::getSourceRegionId()const
 void CreateAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long CreateAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateAutoSnapshotPolicyRequest::getResourceOwnerId()const
 void CreateAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void CreateAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string CreateAutoSnapshotPolicyRequest::getRegionId()const
 void CreateAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getTimePoints()const
@@ -77,7 +77,7 @@ std::string CreateAutoSnapshotPolicyRequest::getTimePoints()const
 void CreateAutoSnapshotPolicyRequest::setTimePoints(const std::string& timePoints)
 {
 	timePoints_ = timePoints;
-	setCoreParameter("TimePoints", std::to_string(timePoints));
+	setCoreParameter("TimePoints", timePoints);
 }
 
 int CreateAutoSnapshotPolicyRequest::getRetentionDays()const
@@ -88,7 +88,7 @@ int CreateAutoSnapshotPolicyRequest::getRetentionDays()const
 void CreateAutoSnapshotPolicyRequest::setRetentionDays(int retentionDays)
 {
 	retentionDays_ = retentionDays;
-	setCoreParameter("RetentionDays", retentionDays);
+	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 
 long CreateAutoSnapshotPolicyRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long CreateAutoSnapshotPolicyRequest::getOwnerId()const
 void CreateAutoSnapshotPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getRepeatWeekdays()const
@@ -110,7 +110,7 @@ std::string CreateAutoSnapshotPolicyRequest::getRepeatWeekdays()const
 void CreateAutoSnapshotPolicyRequest::setRepeatWeekdays(const std::string& repeatWeekdays)
 {
 	repeatWeekdays_ = repeatWeekdays;
-	setCoreParameter("RepeatWeekdays", std::to_string(repeatWeekdays));
+	setCoreParameter("RepeatWeekdays", repeatWeekdays);
 }
 
 std::string CreateAutoSnapshotPolicyRequest::getAutoSnapshotPolicyName()const
@@ -121,6 +121,6 @@ std::string CreateAutoSnapshotPolicyRequest::getAutoSnapshotPolicyName()const
 void CreateAutoSnapshotPolicyRequest::setAutoSnapshotPolicyName(const std::string& autoSnapshotPolicyName)
 {
 	autoSnapshotPolicyName_ = autoSnapshotPolicyName;
-	setCoreParameter("AutoSnapshotPolicyName", std::to_string(autoSnapshotPolicyName));
+	setCoreParameter("AutoSnapshotPolicyName", autoSnapshotPolicyName);
 }
 

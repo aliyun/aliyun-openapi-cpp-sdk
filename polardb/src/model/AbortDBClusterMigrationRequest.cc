@@ -33,7 +33,7 @@ long AbortDBClusterMigrationRequest::getResourceOwnerId()const
 void AbortDBClusterMigrationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AbortDBClusterMigrationRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AbortDBClusterMigrationRequest::getSecurityToken()const
 void AbortDBClusterMigrationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AbortDBClusterMigrationRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AbortDBClusterMigrationRequest::getResourceOwnerAccount()const
 void AbortDBClusterMigrationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AbortDBClusterMigrationRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AbortDBClusterMigrationRequest::getRegionId()const
 void AbortDBClusterMigrationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AbortDBClusterMigrationRequest::getDBClusterId()const
@@ -77,7 +77,7 @@ std::string AbortDBClusterMigrationRequest::getDBClusterId()const
 void AbortDBClusterMigrationRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string AbortDBClusterMigrationRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string AbortDBClusterMigrationRequest::getOwnerAccount()const
 void AbortDBClusterMigrationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long AbortDBClusterMigrationRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AbortDBClusterMigrationRequest::getOwnerId()const
 void AbortDBClusterMigrationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AbortDBClusterMigrationRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string AbortDBClusterMigrationRequest::getAccessKeyId()const
 void AbortDBClusterMigrationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

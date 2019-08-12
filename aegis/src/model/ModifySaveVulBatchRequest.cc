@@ -33,7 +33,7 @@ std::string ModifySaveVulBatchRequest::getBatchName()const
 void ModifySaveVulBatchRequest::setBatchName(const std::string& batchName)
 {
 	batchName_ = batchName;
-	setCoreParameter("BatchName", std::to_string(batchName));
+	setCoreParameter("BatchName", batchName);
 }
 
 std::string ModifySaveVulBatchRequest::getAliasName()const
@@ -44,7 +44,7 @@ std::string ModifySaveVulBatchRequest::getAliasName()const
 void ModifySaveVulBatchRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", std::to_string(aliasName));
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string ModifySaveVulBatchRequest::getStatusList()const
@@ -55,7 +55,7 @@ std::string ModifySaveVulBatchRequest::getStatusList()const
 void ModifySaveVulBatchRequest::setStatusList(const std::string& statusList)
 {
 	statusList_ = statusList;
-	setCoreParameter("StatusList", std::to_string(statusList));
+	setCoreParameter("StatusList", statusList);
 }
 
 std::string ModifySaveVulBatchRequest::getSourceIp()const
@@ -66,7 +66,7 @@ std::string ModifySaveVulBatchRequest::getSourceIp()const
 void ModifySaveVulBatchRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifySaveVulBatchRequest::getLevel()const
@@ -77,7 +77,7 @@ std::string ModifySaveVulBatchRequest::getLevel()const
 void ModifySaveVulBatchRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", std::to_string(level));
+	setCoreParameter("Level", level);
 }
 
 std::string ModifySaveVulBatchRequest::getResource()const
@@ -88,7 +88,7 @@ std::string ModifySaveVulBatchRequest::getResource()const
 void ModifySaveVulBatchRequest::setResource(const std::string& resource)
 {
 	resource_ = resource;
-	setCoreParameter("Resource", std::to_string(resource));
+	setCoreParameter("Resource", resource);
 }
 
 std::string ModifySaveVulBatchRequest::getName()const
@@ -99,7 +99,7 @@ std::string ModifySaveVulBatchRequest::getName()const
 void ModifySaveVulBatchRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySaveVulBatchRequest::getDealed()const
@@ -110,7 +110,7 @@ std::string ModifySaveVulBatchRequest::getDealed()const
 void ModifySaveVulBatchRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 std::string ModifySaveVulBatchRequest::getRemark()const
@@ -121,7 +121,7 @@ std::string ModifySaveVulBatchRequest::getRemark()const
 void ModifySaveVulBatchRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string ModifySaveVulBatchRequest::getType()const
@@ -132,7 +132,7 @@ std::string ModifySaveVulBatchRequest::getType()const
 void ModifySaveVulBatchRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string ModifySaveVulBatchRequest::getNecessity()const
@@ -143,7 +143,7 @@ std::string ModifySaveVulBatchRequest::getNecessity()const
 void ModifySaveVulBatchRequest::setNecessity(const std::string& necessity)
 {
 	necessity_ = necessity;
-	setCoreParameter("Necessity", std::to_string(necessity));
+	setCoreParameter("Necessity", necessity);
 }
 
 std::string ModifySaveVulBatchRequest::getUuids()const
@@ -154,6 +154,6 @@ std::string ModifySaveVulBatchRequest::getUuids()const
 void ModifySaveVulBatchRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

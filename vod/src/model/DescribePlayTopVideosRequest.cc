@@ -33,7 +33,7 @@ long DescribePlayTopVideosRequest::getResourceOwnerId()const
 void DescribePlayTopVideosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribePlayTopVideosRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribePlayTopVideosRequest::getCallerParentId()const
 void DescribePlayTopVideosRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribePlayTopVideosRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribePlayTopVideosRequest::getProxy_original_source_ip()const
 void DescribePlayTopVideosRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribePlayTopVideosRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribePlayTopVideosRequest::getOwnerIdLoginEmail()const
 void DescribePlayTopVideosRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribePlayTopVideosRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribePlayTopVideosRequest::getCallerType()const
 void DescribePlayTopVideosRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribePlayTopVideosRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribePlayTopVideosRequest::getAccessKeyId()const
 void DescribePlayTopVideosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePlayTopVideosRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribePlayTopVideosRequest::getSecurityToken()const
 void DescribePlayTopVideosRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribePlayTopVideosRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribePlayTopVideosRequest::getRegionId()const
 void DescribePlayTopVideosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribePlayTopVideosRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribePlayTopVideosRequest::getRequestContent()const
 void DescribePlayTopVideosRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 long DescribePlayTopVideosRequest::getPageSize()const
@@ -143,7 +143,7 @@ long DescribePlayTopVideosRequest::getPageSize()const
 void DescribePlayTopVideosRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePlayTopVideosRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribePlayTopVideosRequest::getCallerBidEmail()const
 void DescribePlayTopVideosRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribePlayTopVideosRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribePlayTopVideosRequest::getCallerUidEmail()const
 void DescribePlayTopVideosRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribePlayTopVideosRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribePlayTopVideosRequest::getCallerUid()const
 void DescribePlayTopVideosRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribePlayTopVideosRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribePlayTopVideosRequest::getApp_ip()const
 void DescribePlayTopVideosRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribePlayTopVideosRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribePlayTopVideosRequest::getPopProduct()const
 void DescribePlayTopVideosRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribePlayTopVideosRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string DescribePlayTopVideosRequest::getCallerBid()const
 void DescribePlayTopVideosRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribePlayTopVideosRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long DescribePlayTopVideosRequest::getOwnerId()const
 void DescribePlayTopVideosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribePlayTopVideosRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string DescribePlayTopVideosRequest::getVersion()const
 void DescribePlayTopVideosRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribePlayTopVideosRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ std::string DescribePlayTopVideosRequest::getBizDate()const
 void DescribePlayTopVideosRequest::setBizDate(const std::string& bizDate)
 {
 	bizDate_ = bizDate;
-	setCoreParameter("BizDate", std::to_string(bizDate));
+	setCoreParameter("BizDate", bizDate);
 }
 
 std::string DescribePlayTopVideosRequest::getVideoType()const
@@ -286,7 +286,7 @@ std::string DescribePlayTopVideosRequest::getVideoType()const
 void DescribePlayTopVideosRequest::setVideoType(const std::string& videoType)
 {
 	videoType_ = videoType;
-	setCoreParameter("VideoType", std::to_string(videoType));
+	setCoreParameter("VideoType", videoType);
 }
 
 std::string DescribePlayTopVideosRequest::getRequestId()const
@@ -297,7 +297,7 @@ std::string DescribePlayTopVideosRequest::getRequestId()const
 void DescribePlayTopVideosRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DescribePlayTopVideosRequest::getPageNo()const
@@ -308,6 +308,6 @@ long DescribePlayTopVideosRequest::getPageNo()const
 void DescribePlayTopVideosRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", pageNo);
+	setCoreParameter("PageNo", std::to_string(pageNo));
 }
 

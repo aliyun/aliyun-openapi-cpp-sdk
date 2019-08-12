@@ -33,7 +33,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getOssBucket()const
 void AddLiveSnapshotDetectPornConfigRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", std::to_string(ossBucket));
+	setCoreParameter("OssBucket", ossBucket);
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getAppName()const
 void AddLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void AddLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void AddLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getOssEndpoint()const
@@ -77,7 +77,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getOssEndpoint()const
 void AddLiveSnapshotDetectPornConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", std::to_string(ossEndpoint));
+	setCoreParameter("OssEndpoint", ossEndpoint);
 }
 
 int AddLiveSnapshotDetectPornConfigRequest::getInterval()const
@@ -88,7 +88,7 @@ int AddLiveSnapshotDetectPornConfigRequest::getInterval()const
 void AddLiveSnapshotDetectPornConfigRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 long AddLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AddLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void AddLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveSnapshotDetectPornConfigRequest::getOssObject()const
@@ -110,7 +110,7 @@ std::string AddLiveSnapshotDetectPornConfigRequest::getOssObject()const
 void AddLiveSnapshotDetectPornConfigRequest::setOssObject(const std::string& ossObject)
 {
 	ossObject_ = ossObject;
-	setCoreParameter("OssObject", std::to_string(ossObject));
+	setCoreParameter("OssObject", ossObject);
 }
 
 std::vector<std::string> AddLiveSnapshotDetectPornConfigRequest::getScene()const
@@ -122,6 +122,6 @@ void AddLiveSnapshotDetectPornConfigRequest::setScene(const std::vector<std::str
 {
 	scene_ = scene;
 	for(int i = 0; i!= scene.size(); i++)
-		setCoreParameter("Scene."+ std::to_string(i), std::to_string(scene.at(i)));
+		setCoreParameter("Scene."+ std::to_string(i), scene.at(i));
 }
 

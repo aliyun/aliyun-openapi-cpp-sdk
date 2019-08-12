@@ -33,7 +33,7 @@ long RemoveInstancesRequest::getResourceOwnerId()const
 void RemoveInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> RemoveInstancesRequest::getInstanceId()const
@@ -45,7 +45,7 @@ void RemoveInstancesRequest::setInstanceId(const std::vector<std::string>& insta
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 std::string RemoveInstancesRequest::getRemovePolicy()const
@@ -56,7 +56,7 @@ std::string RemoveInstancesRequest::getRemovePolicy()const
 void RemoveInstancesRequest::setRemovePolicy(const std::string& removePolicy)
 {
 	removePolicy_ = removePolicy;
-	setCoreParameter("RemovePolicy", std::to_string(removePolicy));
+	setCoreParameter("RemovePolicy", removePolicy);
 }
 
 std::string RemoveInstancesRequest::getResourceOwnerAccount()const
@@ -67,7 +67,7 @@ std::string RemoveInstancesRequest::getResourceOwnerAccount()const
 void RemoveInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveInstancesRequest::getScalingGroupId()const
@@ -78,7 +78,7 @@ std::string RemoveInstancesRequest::getScalingGroupId()const
 void RemoveInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string RemoveInstancesRequest::getOwnerAccount()const
@@ -89,7 +89,7 @@ std::string RemoveInstancesRequest::getOwnerAccount()const
 void RemoveInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveInstancesRequest::getOwnerId()const
@@ -100,7 +100,7 @@ long RemoveInstancesRequest::getOwnerId()const
 void RemoveInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveInstancesRequest::getAccessKeyId()const
@@ -111,6 +111,6 @@ std::string RemoveInstancesRequest::getAccessKeyId()const
 void RemoveInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ListHpHostRequest::getResourceOwnerId()const
 void ListHpHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListHpHostRequest::getRole()const
@@ -44,7 +44,7 @@ std::string ListHpHostRequest::getRole()const
 void ListHpHostRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", std::to_string(role));
+	setCoreParameter("Role", role);
 }
 
 std::string ListHpHostRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListHpHostRequest::getRegionId()const
 void ListHpHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListHpHostRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListHpHostRequest::getPageSize()const
 void ListHpHostRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListHpHostRequest::getHpBizId()const
@@ -77,7 +77,7 @@ std::string ListHpHostRequest::getHpBizId()const
 void ListHpHostRequest::setHpBizId(const std::string& hpBizId)
 {
 	hpBizId_ = hpBizId;
-	setCoreParameter("HpBizId", std::to_string(hpBizId));
+	setCoreParameter("HpBizId", hpBizId);
 }
 
 int ListHpHostRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListHpHostRequest::getPageNumber()const
 void ListHpHostRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListHpHostRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListHpHostRequest::getAccessKeyId()const
 void ListHpHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListHpHostRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string ListHpHostRequest::getStatus()const
 void ListHpHostRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

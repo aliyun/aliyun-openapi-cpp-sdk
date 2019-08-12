@@ -33,7 +33,7 @@ std::string PublishContactFlowVersionRequest::getInstanceId()const
 void PublishContactFlowVersionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PublishContactFlowVersionRequest::getContactFlowVersionId()const
@@ -44,7 +44,7 @@ std::string PublishContactFlowVersionRequest::getContactFlowVersionId()const
 void PublishContactFlowVersionRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
 {
 	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", std::to_string(contactFlowVersionId));
+	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 
 bool PublishContactFlowVersionRequest::getUseTianGong()const
@@ -66,6 +66,6 @@ std::string PublishContactFlowVersionRequest::getAccessKeyId()const
 void PublishContactFlowVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

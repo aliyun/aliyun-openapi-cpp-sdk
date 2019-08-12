@@ -33,7 +33,7 @@ long StartRobotTaskRequest::getResourceOwnerId()const
 void StartRobotTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StartRobotTaskRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string StartRobotTaskRequest::getResourceOwnerAccount()const
 void StartRobotTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string StartRobotTaskRequest::getScheduleTime()const
@@ -55,7 +55,7 @@ std::string StartRobotTaskRequest::getScheduleTime()const
 void StartRobotTaskRequest::setScheduleTime(const std::string& scheduleTime)
 {
 	scheduleTime_ = scheduleTime;
-	setCoreParameter("ScheduleTime", std::to_string(scheduleTime));
+	setCoreParameter("ScheduleTime", scheduleTime);
 }
 
 long StartRobotTaskRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long StartRobotTaskRequest::getOwnerId()const
 void StartRobotTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long StartRobotTaskRequest::getTaskId()const
@@ -77,7 +77,7 @@ long StartRobotTaskRequest::getTaskId()const
 void StartRobotTaskRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string StartRobotTaskRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string StartRobotTaskRequest::getAccessKeyId()const
 void StartRobotTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

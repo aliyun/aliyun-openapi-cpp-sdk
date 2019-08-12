@@ -33,7 +33,7 @@ std::string DeleteMultipartUploadRequest::getResourceOwnerId()const
 void DeleteMultipartUploadRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteMultipartUploadRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteMultipartUploadRequest::getResourceOwnerAccount()const
 void DeleteMultipartUploadRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMultipartUploadRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMultipartUploadRequest::getOwnerAccount()const
 void DeleteMultipartUploadRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMultipartUploadRequest::getResourceRealOwnerId()const
@@ -66,7 +66,7 @@ long DeleteMultipartUploadRequest::getResourceRealOwnerId()const
 void DeleteMultipartUploadRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", resourceRealOwnerId);
+	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string DeleteMultipartUploadRequest::getOwnerId()const
@@ -77,7 +77,7 @@ std::string DeleteMultipartUploadRequest::getOwnerId()const
 void DeleteMultipartUploadRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMultipartUploadRequest::getMediaId()const
@@ -88,7 +88,7 @@ std::string DeleteMultipartUploadRequest::getMediaId()const
 void DeleteMultipartUploadRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string DeleteMultipartUploadRequest::getMediaType()const
@@ -99,7 +99,7 @@ std::string DeleteMultipartUploadRequest::getMediaType()const
 void DeleteMultipartUploadRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
-	setCoreParameter("MediaType", std::to_string(mediaType));
+	setCoreParameter("MediaType", mediaType);
 }
 
 std::string DeleteMultipartUploadRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DeleteMultipartUploadRequest::getAccessKeyId()const
 void DeleteMultipartUploadRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

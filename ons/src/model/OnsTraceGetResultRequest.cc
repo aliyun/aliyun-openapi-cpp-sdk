@@ -33,6 +33,6 @@ std::string OnsTraceGetResultRequest::getQueryId()const
 void OnsTraceGetResultRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", std::to_string(queryId));
+	setCoreParameter("QueryId", queryId);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteBatchResourceUsersRequest::getApp_ip()const
 void DeleteBatchResourceUsersRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long DeleteBatchResourceUsersRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteBatchResourceUsersRequest::getResourceOwnerId()const
 void DeleteBatchResourceUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBatchResourceUsersRequest::getResourceId()const
@@ -55,7 +55,7 @@ std::string DeleteBatchResourceUsersRequest::getResourceId()const
 void DeleteBatchResourceUsersRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", std::to_string(resourceId));
+	setCoreParameter("ResourceId", resourceId);
 }
 
 long DeleteBatchResourceUsersRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long DeleteBatchResourceUsersRequest::getCallerParentId()const
 void DeleteBatchResourceUsersRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::vector<std::string> DeleteBatchResourceUsersRequest::getUserIdList()const
@@ -78,7 +78,7 @@ void DeleteBatchResourceUsersRequest::setUserIdList(const std::vector<std::strin
 {
 	userIdList_ = userIdList;
 	for(int i = 0; i!= userIdList.size(); i++)
-		setCoreParameter("UserIdList."+ std::to_string(i), std::to_string(userIdList.at(i)));
+		setCoreParameter("UserIdList."+ std::to_string(i), userIdList.at(i));
 }
 
 bool DeleteBatchResourceUsersRequest::getProxy_original_security_transport()const
@@ -100,7 +100,7 @@ std::string DeleteBatchResourceUsersRequest::getCallerBid()const
 void DeleteBatchResourceUsersRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string DeleteBatchResourceUsersRequest::getProxy_original_source_ip()const
@@ -111,7 +111,7 @@ std::string DeleteBatchResourceUsersRequest::getProxy_original_source_ip()const
 void DeleteBatchResourceUsersRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteBatchResourceUsersRequest::getResourceType()const
@@ -122,7 +122,7 @@ std::string DeleteBatchResourceUsersRequest::getResourceType()const
 void DeleteBatchResourceUsersRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 bool DeleteBatchResourceUsersRequest::getAk_mfa_present()const
@@ -155,7 +155,7 @@ std::string DeleteBatchResourceUsersRequest::getCallerType()const
 void DeleteBatchResourceUsersRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteBatchResourceUsersRequest::getAccessKeyId()const
@@ -166,7 +166,7 @@ std::string DeleteBatchResourceUsersRequest::getAccessKeyId()const
 void DeleteBatchResourceUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteBatchResourceUsersRequest::getSecurity_transport()const
@@ -188,7 +188,7 @@ std::string DeleteBatchResourceUsersRequest::getSecurityToken()const
 void DeleteBatchResourceUsersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteBatchResourceUsersRequest::getRegionId()const
@@ -199,7 +199,7 @@ std::string DeleteBatchResourceUsersRequest::getRegionId()const
 void DeleteBatchResourceUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteBatchResourceUsersRequest::getRequestId()const
@@ -210,7 +210,7 @@ std::string DeleteBatchResourceUsersRequest::getRequestId()const
 void DeleteBatchResourceUsersRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long DeleteBatchResourceUsersRequest::getCallerUid()const
@@ -221,6 +221,6 @@ long DeleteBatchResourceUsersRequest::getCallerUid()const
 void DeleteBatchResourceUsersRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

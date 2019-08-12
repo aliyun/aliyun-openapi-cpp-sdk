@@ -33,7 +33,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getSourceIp()const
 void DescribeScreenAttackAnalysisDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getData()const
@@ -44,7 +44,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getData()const
 void DescribeScreenAttackAnalysisDataRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getBase64()const
@@ -55,7 +55,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getBase64()const
 void DescribeScreenAttackAnalysisDataRequest::setBase64(const std::string& base64)
 {
 	base64_ = base64;
-	setCoreParameter("Base64", std::to_string(base64));
+	setCoreParameter("Base64", base64);
 }
 
 int DescribeScreenAttackAnalysisDataRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeScreenAttackAnalysisDataRequest::getPageSize()const
 void DescribeScreenAttackAnalysisDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeScreenAttackAnalysisDataRequest::getEndTime()const
@@ -77,7 +77,7 @@ long DescribeScreenAttackAnalysisDataRequest::getEndTime()const
 void DescribeScreenAttackAnalysisDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeScreenAttackAnalysisDataRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeScreenAttackAnalysisDataRequest::getCurrentPage()const
 void DescribeScreenAttackAnalysisDataRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
@@ -99,7 +99,7 @@ long DescribeScreenAttackAnalysisDataRequest::getStartTime()const
 void DescribeScreenAttackAnalysisDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getLang()const
@@ -110,7 +110,7 @@ std::string DescribeScreenAttackAnalysisDataRequest::getLang()const
 void DescribeScreenAttackAnalysisDataRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeScreenAttackAnalysisDataRequest::getType()const
@@ -121,6 +121,6 @@ std::string DescribeScreenAttackAnalysisDataRequest::getType()const
 void DescribeScreenAttackAnalysisDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

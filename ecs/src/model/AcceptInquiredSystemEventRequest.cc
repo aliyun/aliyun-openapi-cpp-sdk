@@ -33,7 +33,7 @@ std::string AcceptInquiredSystemEventRequest::getEventId()const
 void AcceptInquiredSystemEventRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", eventId);
 }
 
 long AcceptInquiredSystemEventRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AcceptInquiredSystemEventRequest::getResourceOwnerId()const
 void AcceptInquiredSystemEventRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long AcceptInquiredSystemEventRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long AcceptInquiredSystemEventRequest::getCallerParentId()const
 void AcceptInquiredSystemEventRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool AcceptInquiredSystemEventRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string AcceptInquiredSystemEventRequest::getProxy_original_source_ip()const
 void AcceptInquiredSystemEventRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string AcceptInquiredSystemEventRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string AcceptInquiredSystemEventRequest::getOwnerIdLoginEmail()const
 void AcceptInquiredSystemEventRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string AcceptInquiredSystemEventRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string AcceptInquiredSystemEventRequest::getCallerType()const
 void AcceptInquiredSystemEventRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string AcceptInquiredSystemEventRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string AcceptInquiredSystemEventRequest::getAccessKeyId()const
 void AcceptInquiredSystemEventRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AcceptInquiredSystemEventRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string AcceptInquiredSystemEventRequest::getSourceRegionId()const
 void AcceptInquiredSystemEventRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string AcceptInquiredSystemEventRequest::getResourceGroupId()const
@@ -132,7 +132,7 @@ std::string AcceptInquiredSystemEventRequest::getResourceGroupId()const
 void AcceptInquiredSystemEventRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AcceptInquiredSystemEventRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string AcceptInquiredSystemEventRequest::getSecurityToken()const
 void AcceptInquiredSystemEventRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AcceptInquiredSystemEventRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string AcceptInquiredSystemEventRequest::getRegionId()const
 void AcceptInquiredSystemEventRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool AcceptInquiredSystemEventRequest::getEnable()const
@@ -176,7 +176,7 @@ std::string AcceptInquiredSystemEventRequest::getRequestContent()const
 void AcceptInquiredSystemEventRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string AcceptInquiredSystemEventRequest::getCallerBidEmail()const
@@ -187,7 +187,7 @@ std::string AcceptInquiredSystemEventRequest::getCallerBidEmail()const
 void AcceptInquiredSystemEventRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string AcceptInquiredSystemEventRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string AcceptInquiredSystemEventRequest::getCallerUidEmail()const
 void AcceptInquiredSystemEventRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long AcceptInquiredSystemEventRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long AcceptInquiredSystemEventRequest::getCallerUid()const
 void AcceptInquiredSystemEventRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string AcceptInquiredSystemEventRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string AcceptInquiredSystemEventRequest::getApp_ip()const
 void AcceptInquiredSystemEventRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string AcceptInquiredSystemEventRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string AcceptInquiredSystemEventRequest::getResourceOwnerAccount()const
 void AcceptInquiredSystemEventRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AcceptInquiredSystemEventRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string AcceptInquiredSystemEventRequest::getOwnerAccount()const
 void AcceptInquiredSystemEventRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AcceptInquiredSystemEventRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string AcceptInquiredSystemEventRequest::getCallerBid()const
 void AcceptInquiredSystemEventRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long AcceptInquiredSystemEventRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long AcceptInquiredSystemEventRequest::getOwnerId()const
 void AcceptInquiredSystemEventRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool AcceptInquiredSystemEventRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string AcceptInquiredSystemEventRequest::getRequestId()const
 void AcceptInquiredSystemEventRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string AcceptInquiredSystemEventRequest::getAkProxy()const
@@ -319,6 +319,6 @@ std::string AcceptInquiredSystemEventRequest::getAkProxy()const
 void AcceptInquiredSystemEventRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

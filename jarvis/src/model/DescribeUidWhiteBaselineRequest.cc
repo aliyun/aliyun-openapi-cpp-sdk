@@ -33,7 +33,7 @@ std::string DescribeUidWhiteBaselineRequest::getSourceIp()const
 void DescribeUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeUidWhiteBaselineRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeUidWhiteBaselineRequest::getPageSize()const
 void DescribeUidWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeUidWhiteBaselineRequest::getCurrentPage()const
@@ -55,7 +55,7 @@ int DescribeUidWhiteBaselineRequest::getCurrentPage()const
 void DescribeUidWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeUidWhiteBaselineRequest::getRemark()const
@@ -66,7 +66,7 @@ std::string DescribeUidWhiteBaselineRequest::getRemark()const
 void DescribeUidWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getLang()const
@@ -77,7 +77,7 @@ std::string DescribeUidWhiteBaselineRequest::getLang()const
 void DescribeUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeUidWhiteBaselineRequest::getSrcUid()const
@@ -88,7 +88,7 @@ long DescribeUidWhiteBaselineRequest::getSrcUid()const
 void DescribeUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setCoreParameter("SrcUid", std::to_string(srcUid));
 }
 
 std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
@@ -99,7 +99,7 @@ std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
 void DescribeUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getStatus()const
@@ -110,6 +110,6 @@ std::string DescribeUidWhiteBaselineRequest::getStatus()const
 void DescribeUidWhiteBaselineRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

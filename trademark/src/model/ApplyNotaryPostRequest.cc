@@ -33,7 +33,7 @@ std::string ApplyNotaryPostRequest::getReceiverName()const
 void ApplyNotaryPostRequest::setReceiverName(const std::string& receiverName)
 {
 	receiverName_ = receiverName;
-	setCoreParameter("ReceiverName", std::to_string(receiverName));
+	setCoreParameter("ReceiverName", receiverName);
 }
 
 std::string ApplyNotaryPostRequest::getReceiverPhone()const
@@ -44,7 +44,7 @@ std::string ApplyNotaryPostRequest::getReceiverPhone()const
 void ApplyNotaryPostRequest::setReceiverPhone(const std::string& receiverPhone)
 {
 	receiverPhone_ = receiverPhone;
-	setCoreParameter("ReceiverPhone", std::to_string(receiverPhone));
+	setCoreParameter("ReceiverPhone", receiverPhone);
 }
 
 long ApplyNotaryPostRequest::getNotaryOrderId()const
@@ -55,7 +55,7 @@ long ApplyNotaryPostRequest::getNotaryOrderId()const
 void ApplyNotaryPostRequest::setNotaryOrderId(long notaryOrderId)
 {
 	notaryOrderId_ = notaryOrderId;
-	setCoreParameter("NotaryOrderId", notaryOrderId);
+	setCoreParameter("NotaryOrderId", std::to_string(notaryOrderId));
 }
 
 std::string ApplyNotaryPostRequest::getReceiverAddress()const
@@ -66,6 +66,6 @@ std::string ApplyNotaryPostRequest::getReceiverAddress()const
 void ApplyNotaryPostRequest::setReceiverAddress(const std::string& receiverAddress)
 {
 	receiverAddress_ = receiverAddress;
-	setCoreParameter("ReceiverAddress", std::to_string(receiverAddress));
+	setCoreParameter("ReceiverAddress", receiverAddress);
 }
 

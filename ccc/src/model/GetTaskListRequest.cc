@@ -33,7 +33,7 @@ std::string GetTaskListRequest::getJobId()const
 void GetTaskListRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 std::string GetTaskListRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string GetTaskListRequest::getInstanceId()const
 void GetTaskListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 

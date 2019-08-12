@@ -33,7 +33,7 @@ std::string DescribeApiLatencyDataRequest::getSecurityToken()const
 void DescribeApiLatencyDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiLatencyDataRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeApiLatencyDataRequest::getGroupId()const
 void DescribeApiLatencyDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeApiLatencyDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeApiLatencyDataRequest::getEndTime()const
 void DescribeApiLatencyDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeApiLatencyDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeApiLatencyDataRequest::getStartTime()const
 void DescribeApiLatencyDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeApiLatencyDataRequest::getApiId()const
@@ -77,7 +77,7 @@ std::string DescribeApiLatencyDataRequest::getApiId()const
 void DescribeApiLatencyDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", std::to_string(apiId));
+	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
 void DescribeApiLatencyDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

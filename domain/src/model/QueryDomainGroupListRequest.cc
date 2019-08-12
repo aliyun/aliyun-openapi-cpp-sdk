@@ -33,7 +33,7 @@ std::string QueryDomainGroupListRequest::getUserClientIp()const
 void QueryDomainGroupListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainGroupListRequest::getDomainGroupName()const
@@ -44,7 +44,7 @@ std::string QueryDomainGroupListRequest::getDomainGroupName()const
 void QueryDomainGroupListRequest::setDomainGroupName(const std::string& domainGroupName)
 {
 	domainGroupName_ = domainGroupName;
-	setCoreParameter("DomainGroupName", std::to_string(domainGroupName));
+	setCoreParameter("DomainGroupName", domainGroupName);
 }
 
 std::string QueryDomainGroupListRequest::getLang()const
@@ -55,7 +55,7 @@ std::string QueryDomainGroupListRequest::getLang()const
 void QueryDomainGroupListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool QueryDomainGroupListRequest::getShowDeletingGroup()const

@@ -33,7 +33,7 @@ long DeleteIpv6InternetBandwidthRequest::getResourceOwnerId()const
 void DeleteIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteIpv6InternetBandwidthRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteIpv6InternetBandwidthRequest::getCallerParentId()const
 void DeleteIpv6InternetBandwidthRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteIpv6InternetBandwidthRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId()cons
 void DeleteIpv6InternetBandwidthRequest::setIpv6InternetBandwidthId(const std::string& ipv6InternetBandwidthId)
 {
 	ipv6InternetBandwidthId_ = ipv6InternetBandwidthId;
-	setCoreParameter("Ipv6InternetBandwidthId", std::to_string(ipv6InternetBandwidthId));
+	setCoreParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getProxy_original_source_ip()con
 void DeleteIpv6InternetBandwidthRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getOwnerIdLoginEmail()const
 void DeleteIpv6InternetBandwidthRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getCallerType()const
 void DeleteIpv6InternetBandwidthRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getAccessKeyId()const
 void DeleteIpv6InternetBandwidthRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getResourceGroupId()const
@@ -121,7 +121,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getResourceGroupId()const
 void DeleteIpv6InternetBandwidthRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getRegionId()const
 void DeleteIpv6InternetBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getSecurityToken()const
 void DeleteIpv6InternetBandwidthRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool DeleteIpv6InternetBandwidthRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getRequestContent()const
 void DeleteIpv6InternetBandwidthRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getCallerBidEmail()const
 void DeleteIpv6InternetBandwidthRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getCallerUidEmail()const
@@ -187,7 +187,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getCallerUidEmail()const
 void DeleteIpv6InternetBandwidthRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteIpv6InternetBandwidthRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long DeleteIpv6InternetBandwidthRequest::getCallerUid()const
 void DeleteIpv6InternetBandwidthRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getApp_ip()const
 void DeleteIpv6InternetBandwidthRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
 void DeleteIpv6InternetBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getOwnerAccount()const
 void DeleteIpv6InternetBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getCallerBid()const
 void DeleteIpv6InternetBandwidthRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteIpv6InternetBandwidthRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DeleteIpv6InternetBandwidthRequest::getOwnerId()const
 void DeleteIpv6InternetBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteIpv6InternetBandwidthRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getIpv6AddressId()const
 void DeleteIpv6InternetBandwidthRequest::setIpv6AddressId(const std::string& ipv6AddressId)
 {
 	ipv6AddressId_ = ipv6AddressId;
-	setCoreParameter("Ipv6AddressId", std::to_string(ipv6AddressId));
+	setCoreParameter("Ipv6AddressId", ipv6AddressId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string DeleteIpv6InternetBandwidthRequest::getRequestId()const
 void DeleteIpv6InternetBandwidthRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

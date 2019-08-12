@@ -33,7 +33,7 @@ long GetAuditLogsRequest::getResourceOwnerId()const
 void GetAuditLogsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int GetAuditLogsRequest::getPageCount()const
@@ -44,7 +44,7 @@ int GetAuditLogsRequest::getPageCount()const
 void GetAuditLogsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", pageCount);
+	setCoreParameter("PageCount", std::to_string(pageCount));
 }
 
 std::string GetAuditLogsRequest::getOrderMode()const
@@ -55,7 +55,7 @@ std::string GetAuditLogsRequest::getOrderMode()const
 void GetAuditLogsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setCoreParameter("OrderMode", std::to_string(orderMode));
+	setCoreParameter("OrderMode", orderMode);
 }
 
 long GetAuditLogsRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long GetAuditLogsRequest::getCallerParentId()const
 void GetAuditLogsRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool GetAuditLogsRequest::getProxy_original_security_transport()const
@@ -88,7 +88,7 @@ std::string GetAuditLogsRequest::getEntityId()const
 void GetAuditLogsRequest::setEntityId(const std::string& entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setCoreParameter("EntityId", entityId);
 }
 
 std::string GetAuditLogsRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string GetAuditLogsRequest::getProxy_original_source_ip()const
 void GetAuditLogsRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string GetAuditLogsRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string GetAuditLogsRequest::getCallerType()const
 void GetAuditLogsRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 int GetAuditLogsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int GetAuditLogsRequest::getPageNumber()const
 void GetAuditLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetAuditLogsRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string GetAuditLogsRequest::getAccessKeyId()const
 void GetAuditLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetAuditLogsRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string GetAuditLogsRequest::getSecurityToken()const
 void GetAuditLogsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string GetAuditLogsRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string GetAuditLogsRequest::getRegionId()const
 void GetAuditLogsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetAuditLogsRequest::getLimit()const
@@ -165,7 +165,7 @@ int GetAuditLogsRequest::getLimit()const
 void GetAuditLogsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 int GetAuditLogsRequest::getPageSize()const
@@ -176,7 +176,7 @@ int GetAuditLogsRequest::getPageSize()const
 void GetAuditLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetAuditLogsRequest::getCurrentSize()const
@@ -187,7 +187,7 @@ int GetAuditLogsRequest::getCurrentSize()const
 void GetAuditLogsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", currentSize);
+	setCoreParameter("CurrentSize", std::to_string(currentSize));
 }
 
 long GetAuditLogsRequest::getCallerUid()const
@@ -198,7 +198,7 @@ long GetAuditLogsRequest::getCallerUid()const
 void GetAuditLogsRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetAuditLogsRequest::getOrderField()const
@@ -209,7 +209,7 @@ std::string GetAuditLogsRequest::getOrderField()const
 void GetAuditLogsRequest::setOrderField(const std::string& orderField)
 {
 	orderField_ = orderField;
-	setCoreParameter("OrderField", std::to_string(orderField));
+	setCoreParameter("OrderField", orderField);
 }
 
 std::string GetAuditLogsRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string GetAuditLogsRequest::getApp_ip()const
 void GetAuditLogsRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string GetAuditLogsRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string GetAuditLogsRequest::getCallerBid()const
 void GetAuditLogsRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 bool GetAuditLogsRequest::getAk_mfa_present()const
@@ -275,7 +275,7 @@ std::string GetAuditLogsRequest::getRequestId()const
 void GetAuditLogsRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string GetAuditLogsRequest::getOperation()const
@@ -286,6 +286,6 @@ std::string GetAuditLogsRequest::getOperation()const
 void GetAuditLogsRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setCoreParameter("Operation", operation);
 }
 

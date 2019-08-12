@@ -33,7 +33,7 @@ long DescribeDomainSrcFlowDataRequest::getCallerParentId()const
 void DescribeDomainSrcFlowDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainSrcFlowDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDomainSrcFlowDataRequest::getStartTime()const
 void DescribeDomainSrcFlowDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainSrcFlowDataRequest::getProxy_original_source_ip()const
 void DescribeDomainSrcFlowDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainSrcFlowDataRequest::getOwnerIdLoginEmail()const
 void DescribeDomainSrcFlowDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainSrcFlowDataRequest::getCallerType()const
 void DescribeDomainSrcFlowDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDomainSrcFlowDataRequest::getAccessKeyId()const
 void DescribeDomainSrcFlowDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDomainSrcFlowDataRequest::getSecurityToken()const
 void DescribeDomainSrcFlowDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDomainSrcFlowDataRequest::getRequestContent()const
 void DescribeDomainSrcFlowDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeDomainSrcFlowDataRequest::getCallerBidEmail()const
 void DescribeDomainSrcFlowDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDomainSrcFlowDataRequest::getCallerUidEmail()const
 void DescribeDomainSrcFlowDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainSrcFlowDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeDomainSrcFlowDataRequest::getCallerUid()const
 void DescribeDomainSrcFlowDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeDomainSrcFlowDataRequest::getApp_ip()const
 void DescribeDomainSrcFlowDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeDomainSrcFlowDataRequest::getPopProduct()const
 void DescribeDomainSrcFlowDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeDomainSrcFlowDataRequest::getProduct()const
 void DescribeDomainSrcFlowDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getFixTimeGap()const
@@ -198,7 +198,7 @@ std::string DescribeDomainSrcFlowDataRequest::getFixTimeGap()const
 void DescribeDomainSrcFlowDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", std::to_string(fixTimeGap));
+	setCoreParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getTimeMerge()const
@@ -209,7 +209,7 @@ std::string DescribeDomainSrcFlowDataRequest::getTimeMerge()const
 void DescribeDomainSrcFlowDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", std::to_string(timeMerge));
+	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string DescribeDomainSrcFlowDataRequest::getDomainName()const
 void DescribeDomainSrcFlowDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getEndTime()const
@@ -231,7 +231,7 @@ std::string DescribeDomainSrcFlowDataRequest::getEndTime()const
 void DescribeDomainSrcFlowDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string DescribeDomainSrcFlowDataRequest::getCallerBid()const
 void DescribeDomainSrcFlowDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainSrcFlowDataRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long DescribeDomainSrcFlowDataRequest::getOwnerId()const
 void DescribeDomainSrcFlowDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getVersion()const
@@ -264,7 +264,7 @@ std::string DescribeDomainSrcFlowDataRequest::getVersion()const
 void DescribeDomainSrcFlowDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainSrcFlowDataRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeDomainSrcFlowDataRequest::getRequestId()const
 void DescribeDomainSrcFlowDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getInterval()const
@@ -319,7 +319,7 @@ std::string DescribeDomainSrcFlowDataRequest::getInterval()const
 void DescribeDomainSrcFlowDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDomainSrcFlowDataRequest::getFields()const
@@ -330,6 +330,6 @@ std::string DescribeDomainSrcFlowDataRequest::getFields()const
 void DescribeDomainSrcFlowDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

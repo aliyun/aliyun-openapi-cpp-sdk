@@ -33,7 +33,7 @@ std::string DescribeWebshellListRequest::getSourceIp()const
 void DescribeWebshellListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWebshellListRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string DescribeWebshellListRequest::getGroupId()const
 void DescribeWebshellListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int DescribeWebshellListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeWebshellListRequest::getPageSize()const
 void DescribeWebshellListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeWebshellListRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeWebshellListRequest::getCurrentPage()const
 void DescribeWebshellListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWebshellListRequest::getDealed()const
@@ -77,7 +77,7 @@ std::string DescribeWebshellListRequest::getDealed()const
 void DescribeWebshellListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", std::to_string(dealed));
+	setCoreParameter("Dealed", dealed);
 }
 
 std::string DescribeWebshellListRequest::getRemark()const
@@ -88,7 +88,7 @@ std::string DescribeWebshellListRequest::getRemark()const
 void DescribeWebshellListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string DescribeWebshellListRequest::getTag()const
@@ -99,7 +99,7 @@ std::string DescribeWebshellListRequest::getTag()const
 void DescribeWebshellListRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", std::to_string(tag));
+	setCoreParameter("Tag", tag);
 }
 
 int DescribeWebshellListRequest::getStatus()const
@@ -110,6 +110,6 @@ int DescribeWebshellListRequest::getStatus()const
 void DescribeWebshellListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string UpdateZoneRemarkRequest::getUserClientIp()const
 void UpdateZoneRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateZoneRemarkRequest::getZoneId()const
@@ -44,7 +44,7 @@ std::string UpdateZoneRemarkRequest::getZoneId()const
 void UpdateZoneRemarkRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string UpdateZoneRemarkRequest::getRemark()const
@@ -55,7 +55,7 @@ std::string UpdateZoneRemarkRequest::getRemark()const
 void UpdateZoneRemarkRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 
 std::string UpdateZoneRemarkRequest::getLang()const
@@ -66,6 +66,6 @@ std::string UpdateZoneRemarkRequest::getLang()const
 void UpdateZoneRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

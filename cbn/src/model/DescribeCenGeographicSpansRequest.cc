@@ -33,7 +33,7 @@ long DescribeCenGeographicSpansRequest::getResourceOwnerId()const
 void DescribeCenGeographicSpansRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenGeographicSpansRequest::getGeographicSpanId()const
@@ -44,7 +44,7 @@ std::string DescribeCenGeographicSpansRequest::getGeographicSpanId()const
 void DescribeCenGeographicSpansRequest::setGeographicSpanId(const std::string& geographicSpanId)
 {
 	geographicSpanId_ = geographicSpanId;
-	setCoreParameter("GeographicSpanId", std::to_string(geographicSpanId));
+	setCoreParameter("GeographicSpanId", geographicSpanId);
 }
 
 std::string DescribeCenGeographicSpansRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeCenGeographicSpansRequest::getResourceOwnerAccount()const
 void DescribeCenGeographicSpansRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenGeographicSpansRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCenGeographicSpansRequest::getOwnerAccount()const
 void DescribeCenGeographicSpansRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeCenGeographicSpansRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeCenGeographicSpansRequest::getPageSize()const
 void DescribeCenGeographicSpansRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCenGeographicSpansRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCenGeographicSpansRequest::getOwnerId()const
 void DescribeCenGeographicSpansRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeCenGeographicSpansRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int DescribeCenGeographicSpansRequest::getPageNumber()const
 void DescribeCenGeographicSpansRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

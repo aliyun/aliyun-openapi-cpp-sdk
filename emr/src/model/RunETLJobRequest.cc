@@ -33,7 +33,7 @@ long RunETLJobRequest::getResourceOwnerId()const
 void RunETLJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<RunETLJobRequest::InstanceRunParam> RunETLJobRequest::getInstanceRunParam()const
@@ -48,8 +48,8 @@ void RunETLJobRequest::setInstanceRunParam(const std::vector<InstanceRunParam>& 
 	for(int i = 0; i!= instanceRunParam.size(); i++)	{
 		auto obj = instanceRunParam.at(i);
 		std::string str ="InstanceRunParam."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -61,7 +61,7 @@ std::string RunETLJobRequest::getRegionId()const
 void RunETLJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool RunETLJobRequest::getIsDebug()const
@@ -83,7 +83,7 @@ std::string RunETLJobRequest::getId()const
 void RunETLJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string RunETLJobRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string RunETLJobRequest::getAccessKeyId()const
 void RunETLJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

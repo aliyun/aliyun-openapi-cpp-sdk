@@ -33,7 +33,7 @@ long SubmitVerificationRequest::getResourceOwnerId()const
 void SubmitVerificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVerificationRequest::getBiz()const
@@ -44,7 +44,7 @@ std::string SubmitVerificationRequest::getBiz()const
 void SubmitVerificationRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", std::to_string(biz));
+	setCoreParameter("Biz", biz);
 }
 
 std::string SubmitVerificationRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string SubmitVerificationRequest::getSourceIp()const
 void SubmitVerificationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::vector<SubmitVerificationRequest::Material> SubmitVerificationRequest::getMaterial()const
@@ -70,8 +70,8 @@ void SubmitVerificationRequest::setMaterial(const std::vector<Material>& materia
 	for(int i = 0; i!= material.size(); i++)	{
 		auto obj = material.at(i);
 		std::string str ="Material."+ std::to_string(i);
-		setCoreParameter(str + ".MaterialType", std::to_string(obj.materialType));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".MaterialType", obj.materialType);
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -83,6 +83,6 @@ std::string SubmitVerificationRequest::getTicketId()const
 void SubmitVerificationRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setCoreParameter("TicketId", std::to_string(ticketId));
+	setCoreParameter("TicketId", ticketId);
 }
 

@@ -33,7 +33,7 @@ long DescribeVodDomainUsageDataRequest::getResourceOwnerId()const
 void DescribeVodDomainUsageDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeVodDomainUsageDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeVodDomainUsageDataRequest::getCallerParentId()const
 void DescribeVodDomainUsageDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeVodDomainUsageDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeVodDomainUsageDataRequest::getStartTime()const
 void DescribeVodDomainUsageDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeVodDomainUsageDataRequest::getProxy_original_source_ip()cons
 void DescribeVodDomainUsageDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getType()const
@@ -88,7 +88,7 @@ std::string DescribeVodDomainUsageDataRequest::getType()const
 void DescribeVodDomainUsageDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeVodDomainUsageDataRequest::getOwnerIdLoginEmail()const
 void DescribeVodDomainUsageDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeVodDomainUsageDataRequest::getCallerType()const
 void DescribeVodDomainUsageDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeVodDomainUsageDataRequest::getAccessKeyId()const
 void DescribeVodDomainUsageDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeVodDomainUsageDataRequest::getSecurityToken()const
 void DescribeVodDomainUsageDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeVodDomainUsageDataRequest::getRegionId()const
 void DescribeVodDomainUsageDataRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getRequestContent()const
@@ -154,7 +154,7 @@ std::string DescribeVodDomainUsageDataRequest::getRequestContent()const
 void DescribeVodDomainUsageDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeVodDomainUsageDataRequest::getCallerBidEmail()const
 void DescribeVodDomainUsageDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeVodDomainUsageDataRequest::getCallerUidEmail()const
 void DescribeVodDomainUsageDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeVodDomainUsageDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeVodDomainUsageDataRequest::getCallerUid()const
 void DescribeVodDomainUsageDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeVodDomainUsageDataRequest::getArea()const
@@ -198,7 +198,7 @@ std::string DescribeVodDomainUsageDataRequest::getArea()const
 void DescribeVodDomainUsageDataRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setCoreParameter("Area", std::to_string(area));
+	setCoreParameter("Area", area);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getApp_ip()const
@@ -209,7 +209,7 @@ std::string DescribeVodDomainUsageDataRequest::getApp_ip()const
 void DescribeVodDomainUsageDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getPopProduct()const
@@ -220,7 +220,7 @@ std::string DescribeVodDomainUsageDataRequest::getPopProduct()const
 void DescribeVodDomainUsageDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getProduct()const
@@ -231,7 +231,7 @@ std::string DescribeVodDomainUsageDataRequest::getProduct()const
 void DescribeVodDomainUsageDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getDomainName()const
@@ -242,7 +242,7 @@ std::string DescribeVodDomainUsageDataRequest::getDomainName()const
 void DescribeVodDomainUsageDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getEndTime()const
@@ -253,7 +253,7 @@ std::string DescribeVodDomainUsageDataRequest::getEndTime()const
 void DescribeVodDomainUsageDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getCallerBid()const
@@ -264,7 +264,7 @@ std::string DescribeVodDomainUsageDataRequest::getCallerBid()const
 void DescribeVodDomainUsageDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeVodDomainUsageDataRequest::getOwnerId()const
@@ -275,7 +275,7 @@ long DescribeVodDomainUsageDataRequest::getOwnerId()const
 void DescribeVodDomainUsageDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodDomainUsageDataRequest::getVersion()const
@@ -286,7 +286,7 @@ std::string DescribeVodDomainUsageDataRequest::getVersion()const
 void DescribeVodDomainUsageDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeVodDomainUsageDataRequest::getProxy_trust_transport_info()const
@@ -330,7 +330,7 @@ std::string DescribeVodDomainUsageDataRequest::getServiceCode()const
 void DescribeVodDomainUsageDataRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getField()const
@@ -341,7 +341,7 @@ std::string DescribeVodDomainUsageDataRequest::getField()const
 void DescribeVodDomainUsageDataRequest::setField(const std::string& field)
 {
 	field_ = field;
-	setCoreParameter("Field", std::to_string(field));
+	setCoreParameter("Field", field);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getRequestId()const
@@ -352,6 +352,6 @@ std::string DescribeVodDomainUsageDataRequest::getRequestId()const
 void DescribeVodDomainUsageDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

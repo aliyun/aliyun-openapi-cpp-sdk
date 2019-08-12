@@ -33,7 +33,7 @@ std::string ModifyTargetConfigRequest::getSourceIp()const
 void ModifyTargetConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyTargetConfigRequest::getType()const
@@ -44,7 +44,7 @@ std::string ModifyTargetConfigRequest::getType()const
 void ModifyTargetConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string ModifyTargetConfigRequest::getUuid()const
@@ -55,7 +55,7 @@ std::string ModifyTargetConfigRequest::getUuid()const
 void ModifyTargetConfigRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 
 std::string ModifyTargetConfigRequest::getConfig()const
@@ -66,6 +66,6 @@ std::string ModifyTargetConfigRequest::getConfig()const
 void ModifyTargetConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", std::to_string(config));
+	setCoreParameter("Config", config);
 }
 

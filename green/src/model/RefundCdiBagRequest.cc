@@ -33,7 +33,7 @@ std::string RefundCdiBagRequest::getResourceOwnerId()const
 void RefundCdiBagRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefundCdiBagRequest::getInstanceId()const
@@ -44,6 +44,6 @@ std::string RefundCdiBagRequest::getInstanceId()const
 void RefundCdiBagRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 

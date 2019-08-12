@@ -33,7 +33,7 @@ std::string UpdateMyGroupsRequest::getContactGroups()const
 void UpdateMyGroupsRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", std::to_string(contactGroups));
+	setCoreParameter("ContactGroups", contactGroups);
 }
 
 std::string UpdateMyGroupsRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string UpdateMyGroupsRequest::getGroupId()const
 void UpdateMyGroupsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 long UpdateMyGroupsRequest::getServiceId()const
@@ -55,7 +55,7 @@ long UpdateMyGroupsRequest::getServiceId()const
 void UpdateMyGroupsRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", serviceId);
+	setCoreParameter("ServiceId", std::to_string(serviceId));
 }
 
 std::string UpdateMyGroupsRequest::getType()const
@@ -66,7 +66,7 @@ std::string UpdateMyGroupsRequest::getType()const
 void UpdateMyGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string UpdateMyGroupsRequest::getGroupName()const
@@ -77,7 +77,7 @@ std::string UpdateMyGroupsRequest::getGroupName()const
 void UpdateMyGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string UpdateMyGroupsRequest::getBindUrls()const
@@ -88,6 +88,6 @@ std::string UpdateMyGroupsRequest::getBindUrls()const
 void UpdateMyGroupsRequest::setBindUrls(const std::string& bindUrls)
 {
 	bindUrls_ = bindUrls;
-	setCoreParameter("BindUrls", std::to_string(bindUrls));
+	setCoreParameter("BindUrls", bindUrls);
 }
 

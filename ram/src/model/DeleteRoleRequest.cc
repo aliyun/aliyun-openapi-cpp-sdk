@@ -33,6 +33,6 @@ std::string DeleteRoleRequest::getRoleName()const
 void DeleteRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", std::to_string(roleName));
+	setCoreParameter("RoleName", roleName);
 }
 

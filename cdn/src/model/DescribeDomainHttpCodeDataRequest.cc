@@ -33,7 +33,7 @@ long DescribeDomainHttpCodeDataRequest::getCallerParentId()const
 void DescribeDomainHttpCodeDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainHttpCodeDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDomainHttpCodeDataRequest::getLocationNameEn()const
 void DescribeDomainHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", std::to_string(locationNameEn));
+	setCoreParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDomainHttpCodeDataRequest::getStartTime()const
 void DescribeDomainHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getIspNameEn()const
@@ -77,7 +77,7 @@ std::string DescribeDomainHttpCodeDataRequest::getIspNameEn()const
 void DescribeDomainHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", std::to_string(ispNameEn));
+	setCoreParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string DescribeDomainHttpCodeDataRequest::getProxy_original_source_ip()cons
 void DescribeDomainHttpCodeDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string DescribeDomainHttpCodeDataRequest::getOwnerIdLoginEmail()const
 void DescribeDomainHttpCodeDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getCallerType()const
@@ -110,7 +110,7 @@ std::string DescribeDomainHttpCodeDataRequest::getCallerType()const
 void DescribeDomainHttpCodeDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string DescribeDomainHttpCodeDataRequest::getAccessKeyId()const
 void DescribeDomainHttpCodeDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDomainHttpCodeDataRequest::getSecurityToken()const
 void DescribeDomainHttpCodeDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeDomainHttpCodeDataRequest::getRequestContent()const
 void DescribeDomainHttpCodeDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeDomainHttpCodeDataRequest::getCallerBidEmail()const
 void DescribeDomainHttpCodeDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDomainHttpCodeDataRequest::getCallerUidEmail()const
 void DescribeDomainHttpCodeDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainHttpCodeDataRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeDomainHttpCodeDataRequest::getCallerUid()const
 void DescribeDomainHttpCodeDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribeDomainHttpCodeDataRequest::getApp_ip()const
 void DescribeDomainHttpCodeDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeDomainHttpCodeDataRequest::getPopProduct()const
 void DescribeDomainHttpCodeDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getOutString()const
@@ -209,7 +209,7 @@ std::string DescribeDomainHttpCodeDataRequest::getOutString()const
 void DescribeDomainHttpCodeDataRequest::setOutString(const std::string& outString)
 {
 	outString_ = outString;
-	setCoreParameter("OutString", std::to_string(outString));
+	setCoreParameter("OutString", outString);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getTimeMerge()const
@@ -220,7 +220,7 @@ std::string DescribeDomainHttpCodeDataRequest::getTimeMerge()const
 void DescribeDomainHttpCodeDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", std::to_string(timeMerge));
+	setCoreParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getDomainName()const
@@ -231,7 +231,7 @@ std::string DescribeDomainHttpCodeDataRequest::getDomainName()const
 void DescribeDomainHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getEndTime()const
@@ -242,7 +242,7 @@ std::string DescribeDomainHttpCodeDataRequest::getEndTime()const
 void DescribeDomainHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeDomainHttpCodeDataRequest::getCallerBid()const
 void DescribeDomainHttpCodeDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainHttpCodeDataRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeDomainHttpCodeDataRequest::getOwnerId()const
 void DescribeDomainHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeDomainHttpCodeDataRequest::getVersion()const
 void DescribeDomainHttpCodeDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainHttpCodeDataRequest::getProxy_trust_transport_info()const
@@ -319,7 +319,7 @@ std::string DescribeDomainHttpCodeDataRequest::getRequestId()const
 void DescribeDomainHttpCodeDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getInterval()const
@@ -330,7 +330,7 @@ std::string DescribeDomainHttpCodeDataRequest::getInterval()const
 void DescribeDomainHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDomainHttpCodeDataRequest::getFields()const
@@ -341,6 +341,6 @@ std::string DescribeDomainHttpCodeDataRequest::getFields()const
 void DescribeDomainHttpCodeDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

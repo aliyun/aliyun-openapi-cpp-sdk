@@ -33,6 +33,6 @@ std::string ListPoliciesForGroupRequest::getGroupName()const
 void ListPoliciesForGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 

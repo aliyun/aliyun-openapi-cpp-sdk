@@ -33,7 +33,7 @@ std::string DescribeBackupPlanListRequest::getRegionId()const
 void DescribeBackupPlanListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeBackupPlanListRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string DescribeBackupPlanListRequest::getClientToken()const
 void DescribeBackupPlanListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int DescribeBackupPlanListRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeBackupPlanListRequest::getPageSize()const
 void DescribeBackupPlanListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBackupPlanListRequest::getBackupPlanId()const
@@ -66,7 +66,7 @@ std::string DescribeBackupPlanListRequest::getBackupPlanId()const
 void DescribeBackupPlanListRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", std::to_string(backupPlanId));
+	setCoreParameter("BackupPlanId", backupPlanId);
 }
 
 std::string DescribeBackupPlanListRequest::getRegion()const
@@ -77,7 +77,7 @@ std::string DescribeBackupPlanListRequest::getRegion()const
 void DescribeBackupPlanListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 int DescribeBackupPlanListRequest::getPageNum()const
@@ -88,7 +88,7 @@ int DescribeBackupPlanListRequest::getPageNum()const
 void DescribeBackupPlanListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeBackupPlanListRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeBackupPlanListRequest::getOwnerId()const
 void DescribeBackupPlanListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

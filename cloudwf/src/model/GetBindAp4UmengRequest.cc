@@ -33,6 +33,6 @@ std::string GetBindAp4UmengRequest::getAccessKeyId()const
 void GetBindAp4UmengRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ConvertBandwidthPackageRequest::getResourceOwnerId()const
 void ConvertBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ConvertBandwidthPackageRequest::getClientToken()const
@@ -44,7 +44,7 @@ std::string ConvertBandwidthPackageRequest::getClientToken()const
 void ConvertBandwidthPackageRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 long ConvertBandwidthPackageRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long ConvertBandwidthPackageRequest::getCallerParentId()const
 void ConvertBandwidthPackageRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ConvertBandwidthPackageRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string ConvertBandwidthPackageRequest::getProxy_original_source_ip()const
 void ConvertBandwidthPackageRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ConvertBandwidthPackageRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ConvertBandwidthPackageRequest::getCallerType()const
 void ConvertBandwidthPackageRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ConvertBandwidthPackageRequest::getOwnerIdLoginEmail()const
@@ -99,7 +99,7 @@ std::string ConvertBandwidthPackageRequest::getOwnerIdLoginEmail()const
 void ConvertBandwidthPackageRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ConvertBandwidthPackageRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ConvertBandwidthPackageRequest::getAccessKeyId()const
 void ConvertBandwidthPackageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ConvertBandwidthPackageRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string ConvertBandwidthPackageRequest::getRegionId()const
 void ConvertBandwidthPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ConvertBandwidthPackageRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string ConvertBandwidthPackageRequest::getSecurityToken()const
 void ConvertBandwidthPackageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool ConvertBandwidthPackageRequest::getEnable()const
@@ -154,7 +154,7 @@ std::string ConvertBandwidthPackageRequest::getRequestContent()const
 void ConvertBandwidthPackageRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ConvertBandwidthPackageRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string ConvertBandwidthPackageRequest::getCallerBidEmail()const
 void ConvertBandwidthPackageRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ConvertBandwidthPackageRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ConvertBandwidthPackageRequest::getCallerUidEmail()const
 void ConvertBandwidthPackageRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ConvertBandwidthPackageRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long ConvertBandwidthPackageRequest::getCallerUid()const
 void ConvertBandwidthPackageRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ConvertBandwidthPackageRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ConvertBandwidthPackageRequest::getApp_ip()const
 void ConvertBandwidthPackageRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ConvertBandwidthPackageRequest::getBandwidthPackageId()const
@@ -209,7 +209,7 @@ std::string ConvertBandwidthPackageRequest::getBandwidthPackageId()const
 void ConvertBandwidthPackageRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
+	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string ConvertBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string ConvertBandwidthPackageRequest::getResourceOwnerAccount()const
 void ConvertBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ConvertBandwidthPackageRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string ConvertBandwidthPackageRequest::getCallerBid()const
 void ConvertBandwidthPackageRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ConvertBandwidthPackageRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long ConvertBandwidthPackageRequest::getOwnerId()const
 void ConvertBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ConvertBandwidthPackageRequest::getProxy_trust_transport_info()const
@@ -286,6 +286,6 @@ std::string ConvertBandwidthPackageRequest::getRequestId()const
 void ConvertBandwidthPackageRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

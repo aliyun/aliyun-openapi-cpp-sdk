@@ -33,7 +33,7 @@ long GetOpsCommandResultRequest::getResourceOwnerId()const
 void GetOpsCommandResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetOpsCommandResultRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetOpsCommandResultRequest::getRegionId()const
 void GetOpsCommandResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long GetOpsCommandResultRequest::getEndCursor()const
@@ -55,7 +55,7 @@ long GetOpsCommandResultRequest::getEndCursor()const
 void GetOpsCommandResultRequest::setEndCursor(long endCursor)
 {
 	endCursor_ = endCursor;
-	setCoreParameter("EndCursor", endCursor);
+	setCoreParameter("EndCursor", std::to_string(endCursor));
 }
 
 long GetOpsCommandResultRequest::getStartCursor()const
@@ -66,7 +66,7 @@ long GetOpsCommandResultRequest::getStartCursor()const
 void GetOpsCommandResultRequest::setStartCursor(long startCursor)
 {
 	startCursor_ = startCursor;
-	setCoreParameter("StartCursor", startCursor);
+	setCoreParameter("StartCursor", std::to_string(startCursor));
 }
 
 std::string GetOpsCommandResultRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string GetOpsCommandResultRequest::getClusterId()const
 void GetOpsCommandResultRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 long GetOpsCommandResultRequest::getTaskId()const
@@ -88,7 +88,7 @@ long GetOpsCommandResultRequest::getTaskId()const
 void GetOpsCommandResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string GetOpsCommandResultRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetOpsCommandResultRequest::getAccessKeyId()const
 void GetOpsCommandResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

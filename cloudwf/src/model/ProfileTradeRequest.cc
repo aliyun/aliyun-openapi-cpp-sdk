@@ -33,7 +33,7 @@ std::string ProfileTradeRequest::getBeginDate()const
 void ProfileTradeRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", std::to_string(beginDate));
+	setCoreParameter("BeginDate", beginDate);
 }
 
 std::string ProfileTradeRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ProfileTradeRequest::getEndDate()const
 void ProfileTradeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 int ProfileTradeRequest::getDataType()const
@@ -55,7 +55,7 @@ int ProfileTradeRequest::getDataType()const
 void ProfileTradeRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
+	setCoreParameter("DataType", std::to_string(dataType));
 }
 
 long ProfileTradeRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileTradeRequest::getGsid()const
 void ProfileTradeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", gsid);
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 std::string ProfileTradeRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ProfileTradeRequest::getAccessKeyId()const
 void ProfileTradeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

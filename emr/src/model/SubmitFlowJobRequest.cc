@@ -33,7 +33,7 @@ std::string SubmitFlowJobRequest::getJobId()const
 void SubmitFlowJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 std::string SubmitFlowJobRequest::getHostName()const
@@ -44,7 +44,7 @@ std::string SubmitFlowJobRequest::getHostName()const
 void SubmitFlowJobRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 std::string SubmitFlowJobRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string SubmitFlowJobRequest::getRegionId()const
 void SubmitFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SubmitFlowJobRequest::getConf()const
@@ -66,7 +66,7 @@ std::string SubmitFlowJobRequest::getConf()const
 void SubmitFlowJobRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", std::to_string(conf));
+	setCoreParameter("Conf", conf);
 }
 
 std::string SubmitFlowJobRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string SubmitFlowJobRequest::getClusterId()const
 void SubmitFlowJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string SubmitFlowJobRequest::getProjectId()const
@@ -88,6 +88,6 @@ std::string SubmitFlowJobRequest::getProjectId()const
 void SubmitFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 

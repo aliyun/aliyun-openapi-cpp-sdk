@@ -33,7 +33,7 @@ long DeleteIPv6TranslatorEntryRequest::getResourceOwnerId()const
 void DeleteIPv6TranslatorEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
@@ -44,7 +44,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
 void DeleteIPv6TranslatorEntryRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
 {
 	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
-	setCoreParameter("Ipv6TranslatorEntryId", std::to_string(ipv6TranslatorEntryId));
+	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
 void DeleteIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getClientToken()const
 void DeleteIPv6TranslatorEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getRegionId()const
 void DeleteIPv6TranslatorEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getOwnerAccount()const
 void DeleteIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
@@ -99,7 +99,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
 void DeleteIPv6TranslatorEntryRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", std::to_string(ipv6TranslatorId));
+	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 
 long DeleteIPv6TranslatorEntryRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long DeleteIPv6TranslatorEntryRequest::getOwnerId()const
 void DeleteIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

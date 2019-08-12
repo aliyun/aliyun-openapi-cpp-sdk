@@ -33,7 +33,7 @@ std::string DescribeCaptchaOrderRequest::getSourceIp()const
 void DescribeCaptchaOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaOrderRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeCaptchaOrderRequest::getLang()const
 void DescribeCaptchaOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string StartBack2BackCallRequest::getCaller()const
 void StartBack2BackCallRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", std::to_string(caller));
+	setCoreParameter("Caller", caller);
 }
 
 std::string StartBack2BackCallRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string StartBack2BackCallRequest::getInstanceId()const
 void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string StartBack2BackCallRequest::getCallCenterNumber()const
@@ -55,7 +55,7 @@ std::string StartBack2BackCallRequest::getCallCenterNumber()const
 void StartBack2BackCallRequest::setCallCenterNumber(const std::string& callCenterNumber)
 {
 	callCenterNumber_ = callCenterNumber;
-	setCoreParameter("CallCenterNumber", std::to_string(callCenterNumber));
+	setCoreParameter("CallCenterNumber", callCenterNumber);
 }
 
 std::string StartBack2BackCallRequest::getCallee()const
@@ -66,7 +66,7 @@ std::string StartBack2BackCallRequest::getCallee()const
 void StartBack2BackCallRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", std::to_string(callee));
+	setCoreParameter("Callee", callee);
 }
 
 std::string StartBack2BackCallRequest::getWorkflowId()const
@@ -77,7 +77,7 @@ std::string StartBack2BackCallRequest::getWorkflowId()const
 void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", std::to_string(workflowId));
+	setCoreParameter("WorkflowId", workflowId);
 }
 
 std::string StartBack2BackCallRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string StartBack2BackCallRequest::getAccessKeyId()const
 void StartBack2BackCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string GetScenarioRequest::getInstanceId()const
 void GetScenarioRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetScenarioRequest::getScenarioId()const
@@ -44,6 +44,6 @@ std::string GetScenarioRequest::getScenarioId()const
 void GetScenarioRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

@@ -33,7 +33,7 @@ std::string QueryStaticsErrorRateRequest::getTimeRange()const
 void QueryStaticsErrorRateRequest::setTimeRange(const std::string& timeRange)
 {
 	timeRange_ = timeRange;
-	setCoreParameter("TimeRange", std::to_string(timeRange));
+	setCoreParameter("TimeRange", timeRange);
 }
 
 std::string QueryStaticsErrorRateRequest::getTaskId()const
@@ -44,6 +44,6 @@ std::string QueryStaticsErrorRateRequest::getTaskId()const
 void QueryStaticsErrorRateRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

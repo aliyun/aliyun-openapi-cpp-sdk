@@ -33,7 +33,7 @@ long QueryJobListRequest::getResourceOwnerId()const
 void QueryJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryJobListRequest::getResourceOwnerAccount()const
 void QueryJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryJobListRequest::getJobIds()const
 void QueryJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", std::to_string(jobIds));
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryJobListRequest::getOwnerAccount()const
 void QueryJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryJobListRequest::getOwnerId()const
 void QueryJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryJobListRequest::getAccessKeyId()const
 void QueryJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeGroupStructRequest::getSourceIp()const
 void DescribeGroupStructRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeGroupStructRequest::getTagIdList()const
@@ -44,7 +44,7 @@ std::string DescribeGroupStructRequest::getTagIdList()const
 void DescribeGroupStructRequest::setTagIdList(const std::string& tagIdList)
 {
 	tagIdList_ = tagIdList;
-	setCoreParameter("TagIdList", std::to_string(tagIdList));
+	setCoreParameter("TagIdList", tagIdList);
 }
 
 std::string DescribeGroupStructRequest::getRemark()const
@@ -55,6 +55,6 @@ std::string DescribeGroupStructRequest::getRemark()const
 void DescribeGroupStructRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 

@@ -33,7 +33,7 @@ std::string ValidateHcWarningsRequest::getRiskIds()const
 void ValidateHcWarningsRequest::setRiskIds(const std::string& riskIds)
 {
 	riskIds_ = riskIds;
-	setCoreParameter("RiskIds", std::to_string(riskIds));
+	setCoreParameter("RiskIds", riskIds);
 }
 
 std::string ValidateHcWarningsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ValidateHcWarningsRequest::getSourceIp()const
 void ValidateHcWarningsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ValidateHcWarningsRequest::getUuids()const
@@ -55,6 +55,6 @@ std::string ValidateHcWarningsRequest::getUuids()const
 void ValidateHcWarningsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

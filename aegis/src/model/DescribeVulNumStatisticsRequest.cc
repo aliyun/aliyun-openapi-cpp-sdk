@@ -33,7 +33,7 @@ std::string DescribeVulNumStatisticsRequest::getSourceIp()const
 void DescribeVulNumStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeVulNumStatisticsRequest::getEndTs()const
@@ -44,7 +44,7 @@ long DescribeVulNumStatisticsRequest::getEndTs()const
 void DescribeVulNumStatisticsRequest::setEndTs(long endTs)
 {
 	endTs_ = endTs;
-	setCoreParameter("EndTs", endTs);
+	setCoreParameter("EndTs", std::to_string(endTs));
 }
 
 std::string DescribeVulNumStatisticsRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeVulNumStatisticsRequest::getFrom()const
 void DescribeVulNumStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 long DescribeVulNumStatisticsRequest::getStartTs()const
@@ -66,7 +66,7 @@ long DescribeVulNumStatisticsRequest::getStartTs()const
 void DescribeVulNumStatisticsRequest::setStartTs(long startTs)
 {
 	startTs_ = startTs;
-	setCoreParameter("StartTs", startTs);
+	setCoreParameter("StartTs", std::to_string(startTs));
 }
 
 long DescribeVulNumStatisticsRequest::getCreateTsEnd()const
@@ -77,7 +77,7 @@ long DescribeVulNumStatisticsRequest::getCreateTsEnd()const
 void DescribeVulNumStatisticsRequest::setCreateTsEnd(long createTsEnd)
 {
 	createTsEnd_ = createTsEnd;
-	setCoreParameter("CreateTsEnd", createTsEnd);
+	setCoreParameter("CreateTsEnd", std::to_string(createTsEnd));
 }
 
 std::string DescribeVulNumStatisticsRequest::getIncludeApp()const
@@ -88,7 +88,7 @@ std::string DescribeVulNumStatisticsRequest::getIncludeApp()const
 void DescribeVulNumStatisticsRequest::setIncludeApp(const std::string& includeApp)
 {
 	includeApp_ = includeApp;
-	setCoreParameter("IncludeApp", std::to_string(includeApp));
+	setCoreParameter("IncludeApp", includeApp);
 }
 
 long DescribeVulNumStatisticsRequest::getCreateTsStart()const
@@ -99,7 +99,7 @@ long DescribeVulNumStatisticsRequest::getCreateTsStart()const
 void DescribeVulNumStatisticsRequest::setCreateTsStart(long createTsStart)
 {
 	createTsStart_ = createTsStart;
-	setCoreParameter("CreateTsStart", createTsStart);
+	setCoreParameter("CreateTsStart", std::to_string(createTsStart));
 }
 
 std::string DescribeVulNumStatisticsRequest::getUuids()const
@@ -110,6 +110,6 @@ std::string DescribeVulNumStatisticsRequest::getUuids()const
 void DescribeVulNumStatisticsRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

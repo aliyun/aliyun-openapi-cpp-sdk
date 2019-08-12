@@ -33,7 +33,7 @@ std::string CreateIpControlRequest::getSecurityToken()const
 void CreateIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateIpControlRequest::getIpControlName()const
@@ -44,7 +44,7 @@ std::string CreateIpControlRequest::getIpControlName()const
 void CreateIpControlRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", std::to_string(ipControlName));
+	setCoreParameter("IpControlName", ipControlName);
 }
 
 std::string CreateIpControlRequest::getIpControlType()const
@@ -55,7 +55,7 @@ std::string CreateIpControlRequest::getIpControlType()const
 void CreateIpControlRequest::setIpControlType(const std::string& ipControlType)
 {
 	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", std::to_string(ipControlType));
+	setCoreParameter("IpControlType", ipControlType);
 }
 
 std::vector<CreateIpControlRequest::IpControlPolicys> CreateIpControlRequest::getIpControlPolicys()const
@@ -70,8 +70,8 @@ void CreateIpControlRequest::setIpControlPolicys(const std::vector<IpControlPoli
 	for(int i = 0; i!= ipControlPolicys.size(); i++)	{
 		auto obj = ipControlPolicys.at(i);
 		std::string str ="IpControlPolicys."+ std::to_string(i);
-		setCoreParameter(str + ".AppId", std::to_string(obj.appId));
-		setCoreParameter(str + ".CidrIp", std::to_string(obj.cidrIp));
+		setCoreParameter(str + ".AppId", obj.appId);
+		setCoreParameter(str + ".CidrIp", obj.cidrIp);
 	}
 }
 
@@ -83,7 +83,7 @@ std::string CreateIpControlRequest::getDescription()const
 void CreateIpControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateIpControlRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string CreateIpControlRequest::getAccessKeyId()const
 void CreateIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,6 +33,6 @@ std::string DeleteMonitoringTemplateRequest::getId()const
 void DeleteMonitoringTemplateRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

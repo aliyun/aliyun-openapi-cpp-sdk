@@ -33,7 +33,7 @@ std::string ForbidLiveStreamRequest::getResumeTime()const
 void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
 {
 	resumeTime_ = resumeTime;
-	setCoreParameter("ResumeTime", std::to_string(resumeTime));
+	setCoreParameter("ResumeTime", resumeTime);
 }
 
 std::string ForbidLiveStreamRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string ForbidLiveStreamRequest::getAppName()const
 void ForbidLiveStreamRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string ForbidLiveStreamRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ForbidLiveStreamRequest::getRegionId()const
 void ForbidLiveStreamRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ForbidLiveStreamRequest::getLiveStreamType()const
@@ -66,7 +66,7 @@ std::string ForbidLiveStreamRequest::getLiveStreamType()const
 void ForbidLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
 {
 	liveStreamType_ = liveStreamType;
-	setCoreParameter("LiveStreamType", std::to_string(liveStreamType));
+	setCoreParameter("LiveStreamType", liveStreamType);
 }
 
 std::string ForbidLiveStreamRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string ForbidLiveStreamRequest::getDomainName()const
 void ForbidLiveStreamRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long ForbidLiveStreamRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ForbidLiveStreamRequest::getOwnerId()const
 void ForbidLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ForbidLiveStreamRequest::getOneshot()const
@@ -99,7 +99,7 @@ std::string ForbidLiveStreamRequest::getOneshot()const
 void ForbidLiveStreamRequest::setOneshot(const std::string& oneshot)
 {
 	oneshot_ = oneshot;
-	setCoreParameter("Oneshot", std::to_string(oneshot));
+	setCoreParameter("Oneshot", oneshot);
 }
 
 std::string ForbidLiveStreamRequest::getStreamName()const
@@ -110,7 +110,7 @@ std::string ForbidLiveStreamRequest::getStreamName()const
 void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 
 std::string ForbidLiveStreamRequest::getControlStreamAction()const
@@ -121,6 +121,6 @@ std::string ForbidLiveStreamRequest::getControlStreamAction()const
 void ForbidLiveStreamRequest::setControlStreamAction(const std::string& controlStreamAction)
 {
 	controlStreamAction_ = controlStreamAction;
-	setCoreParameter("ControlStreamAction", std::to_string(controlStreamAction));
+	setCoreParameter("ControlStreamAction", controlStreamAction);
 }
 

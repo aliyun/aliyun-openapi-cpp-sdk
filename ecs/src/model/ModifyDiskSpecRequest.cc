@@ -33,7 +33,7 @@ long ModifyDiskSpecRequest::getResourceOwnerId()const
 void ModifyDiskSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyDiskSpecRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long ModifyDiskSpecRequest::getCallerParentId()const
 void ModifyDiskSpecRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool ModifyDiskSpecRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string ModifyDiskSpecRequest::getProxy_original_source_ip()const
 void ModifyDiskSpecRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string ModifyDiskSpecRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string ModifyDiskSpecRequest::getOwnerIdLoginEmail()const
 void ModifyDiskSpecRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string ModifyDiskSpecRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string ModifyDiskSpecRequest::getCallerType()const
 void ModifyDiskSpecRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string ModifyDiskSpecRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ModifyDiskSpecRequest::getAccessKeyId()const
 void ModifyDiskSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDiskSpecRequest::getSourceRegionId()const
@@ -110,7 +110,7 @@ std::string ModifyDiskSpecRequest::getSourceRegionId()const
 void ModifyDiskSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ModifyDiskSpecRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string ModifyDiskSpecRequest::getSecurityToken()const
 void ModifyDiskSpecRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 bool ModifyDiskSpecRequest::getEnable()const
@@ -143,7 +143,7 @@ std::string ModifyDiskSpecRequest::getRequestContent()const
 void ModifyDiskSpecRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string ModifyDiskSpecRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string ModifyDiskSpecRequest::getCallerBidEmail()const
 void ModifyDiskSpecRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string ModifyDiskSpecRequest::getDiskId()const
@@ -165,7 +165,7 @@ std::string ModifyDiskSpecRequest::getDiskId()const
 void ModifyDiskSpecRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", std::to_string(diskId));
+	setCoreParameter("DiskId", diskId);
 }
 
 std::string ModifyDiskSpecRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string ModifyDiskSpecRequest::getCallerUidEmail()const
 void ModifyDiskSpecRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long ModifyDiskSpecRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long ModifyDiskSpecRequest::getCallerUid()const
 void ModifyDiskSpecRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string ModifyDiskSpecRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string ModifyDiskSpecRequest::getApp_ip()const
 void ModifyDiskSpecRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string ModifyDiskSpecRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string ModifyDiskSpecRequest::getResourceOwnerAccount()const
 void ModifyDiskSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDiskSpecRequest::getPerformanceLevel()const
@@ -220,7 +220,7 @@ std::string ModifyDiskSpecRequest::getPerformanceLevel()const
 void ModifyDiskSpecRequest::setPerformanceLevel(const std::string& performanceLevel)
 {
 	performanceLevel_ = performanceLevel;
-	setCoreParameter("PerformanceLevel", std::to_string(performanceLevel));
+	setCoreParameter("PerformanceLevel", performanceLevel);
 }
 
 std::string ModifyDiskSpecRequest::getOwnerAccount()const
@@ -231,7 +231,7 @@ std::string ModifyDiskSpecRequest::getOwnerAccount()const
 void ModifyDiskSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDiskSpecRequest::getCallerBid()const
@@ -242,7 +242,7 @@ std::string ModifyDiskSpecRequest::getCallerBid()const
 void ModifyDiskSpecRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long ModifyDiskSpecRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long ModifyDiskSpecRequest::getOwnerId()const
 void ModifyDiskSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyDiskSpecRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string ModifyDiskSpecRequest::getRequestId()const
 void ModifyDiskSpecRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string ModifyDiskSpecRequest::getAkProxy()const
@@ -308,6 +308,6 @@ std::string ModifyDiskSpecRequest::getAkProxy()const
 void ModifyDiskSpecRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

@@ -33,7 +33,7 @@ long DeleteIterationRequest::getResourceOwnerId()const
 void DeleteIterationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteIterationRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteIterationRequest::getCallerParentId()const
 void DeleteIterationRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteIterationRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeleteIterationRequest::getProxy_original_source_ip()const
 void DeleteIterationRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteIterationRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DeleteIterationRequest::getOwnerIdLoginEmail()const
 void DeleteIterationRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteIterationRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DeleteIterationRequest::getCallerType()const
 void DeleteIterationRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteIterationRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DeleteIterationRequest::getAccessKeyId()const
 void DeleteIterationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteIterationRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DeleteIterationRequest::getSecurityToken()const
 void DeleteIterationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteIterationRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteIterationRequest::getRegionId()const
 void DeleteIterationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteIterationRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DeleteIterationRequest::getRequestContent()const
 void DeleteIterationRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteIterationRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string DeleteIterationRequest::getCallerBidEmail()const
 void DeleteIterationRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteIterationRequest::getProjectId()const
@@ -154,7 +154,7 @@ std::string DeleteIterationRequest::getProjectId()const
 void DeleteIterationRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setCoreParameter("ProjectId", projectId);
 }
 
 std::string DeleteIterationRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DeleteIterationRequest::getCallerUidEmail()const
 void DeleteIterationRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteIterationRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DeleteIterationRequest::getCallerUid()const
 void DeleteIterationRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteIterationRequest::getShowLog()const
@@ -187,7 +187,7 @@ std::string DeleteIterationRequest::getShowLog()const
 void DeleteIterationRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string DeleteIterationRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DeleteIterationRequest::getApp_ip()const
 void DeleteIterationRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteIterationRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DeleteIterationRequest::getPopProduct()const
 void DeleteIterationRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteIterationRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DeleteIterationRequest::getCallerBid()const
 void DeleteIterationRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteIterationRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DeleteIterationRequest::getOwnerId()const
 void DeleteIterationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteIterationRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DeleteIterationRequest::getVersion()const
 void DeleteIterationRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DeleteIterationRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string DeleteIterationRequest::getRequestId()const
 void DeleteIterationRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteIterationRequest::getIterationId()const
@@ -297,6 +297,6 @@ std::string DeleteIterationRequest::getIterationId()const
 void DeleteIterationRequest::setIterationId(const std::string& iterationId)
 {
 	iterationId_ = iterationId;
-	setCoreParameter("IterationId", std::to_string(iterationId));
+	setCoreParameter("IterationId", iterationId);
 }
 

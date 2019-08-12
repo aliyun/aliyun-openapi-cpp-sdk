@@ -33,7 +33,7 @@ std::string AttachPolicyToRoleRequest::getPolicyType()const
 void AttachPolicyToRoleRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", std::to_string(policyType));
+	setCoreParameter("PolicyType", policyType);
 }
 
 std::string AttachPolicyToRoleRequest::getRoleName()const
@@ -44,7 +44,7 @@ std::string AttachPolicyToRoleRequest::getRoleName()const
 void AttachPolicyToRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", std::to_string(roleName));
+	setCoreParameter("RoleName", roleName);
 }
 
 std::string AttachPolicyToRoleRequest::getPolicyName()const
@@ -55,6 +55,6 @@ std::string AttachPolicyToRoleRequest::getPolicyName()const
 void AttachPolicyToRoleRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", std::to_string(policyName));
+	setCoreParameter("PolicyName", policyName);
 }
 

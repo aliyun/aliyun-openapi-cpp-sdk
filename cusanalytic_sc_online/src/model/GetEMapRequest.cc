@@ -33,7 +33,7 @@ long GetEMapRequest::getLocationId()const
 void GetEMapRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", locationId);
+	setCoreParameter("LocationId", std::to_string(locationId));
 }
 
 long GetEMapRequest::getStoreId()const
@@ -44,6 +44,6 @@ long GetEMapRequest::getStoreId()const
 void GetEMapRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setCoreParameter("StoreId", std::to_string(storeId));
 }
 

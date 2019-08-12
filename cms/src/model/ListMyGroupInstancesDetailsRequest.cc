@@ -44,7 +44,7 @@ std::string ListMyGroupInstancesDetailsRequest::getInstanceIds()const
 void ListMyGroupInstancesDetailsRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 long ListMyGroupInstancesDetailsRequest::getGroupId()const
@@ -55,7 +55,7 @@ long ListMyGroupInstancesDetailsRequest::getGroupId()const
 void ListMyGroupInstancesDetailsRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int ListMyGroupInstancesDetailsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListMyGroupInstancesDetailsRequest::getPageSize()const
 void ListMyGroupInstancesDetailsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMyGroupInstancesDetailsRequest::getCategory()const
@@ -77,7 +77,7 @@ std::string ListMyGroupInstancesDetailsRequest::getCategory()const
 void ListMyGroupInstancesDetailsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 
 std::string ListMyGroupInstancesDetailsRequest::getKeyword()const
@@ -88,7 +88,7 @@ std::string ListMyGroupInstancesDetailsRequest::getKeyword()const
 void ListMyGroupInstancesDetailsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 int ListMyGroupInstancesDetailsRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int ListMyGroupInstancesDetailsRequest::getPageNumber()const
 void ListMyGroupInstancesDetailsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

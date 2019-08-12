@@ -33,7 +33,7 @@ std::string DescribeWebsiteIndexPageBaselineRequest::getInstanceId()const
 void DescribeWebsiteIndexPageBaselineRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeWebsiteIndexPageBaselineRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeWebsiteIndexPageBaselineRequest::getSourceIp()const
 void DescribeWebsiteIndexPageBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWebsiteIndexPageBaselineRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeWebsiteIndexPageBaselineRequest::getLang()const
 void DescribeWebsiteIndexPageBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string IndexTagRequest::getSrcUris()const
 void IndexTagRequest::setSrcUris(const std::string& srcUris)
 {
 	srcUris_ = srcUris;
-	setCoreParameter("SrcUris", std::to_string(srcUris));
+	setCoreParameter("SrcUris", srcUris);
 }
 
 std::string IndexTagRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string IndexTagRequest::getRegionId()const
 void IndexTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string IndexTagRequest::getModelId()const
@@ -55,7 +55,7 @@ std::string IndexTagRequest::getModelId()const
 void IndexTagRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setCoreParameter("ModelId", modelId);
 }
 
 std::string IndexTagRequest::getProject()const
@@ -66,7 +66,7 @@ std::string IndexTagRequest::getProject()const
 void IndexTagRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string IndexTagRequest::getSetId()const
@@ -77,7 +77,7 @@ std::string IndexTagRequest::getSetId()const
 void IndexTagRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string IndexTagRequest::getForce()const
@@ -88,7 +88,7 @@ std::string IndexTagRequest::getForce()const
 void IndexTagRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setCoreParameter("Force", std::to_string(force));
+	setCoreParameter("Force", force);
 }
 
 std::string IndexTagRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string IndexTagRequest::getAccessKeyId()const
 void IndexTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

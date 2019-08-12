@@ -33,7 +33,7 @@ std::string DeleteScreenSettingRequest::getSourceIp()const
 void DeleteScreenSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteScreenSettingRequest::getId()const
@@ -44,6 +44,6 @@ std::string DeleteScreenSettingRequest::getId()const
 void DeleteScreenSettingRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 

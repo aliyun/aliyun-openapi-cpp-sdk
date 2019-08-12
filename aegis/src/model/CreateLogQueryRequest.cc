@@ -33,7 +33,7 @@ std::string CreateLogQueryRequest::getSourceIp()const
 void CreateLogQueryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateLogQueryRequest::getQueryName()const
@@ -44,7 +44,7 @@ std::string CreateLogQueryRequest::getQueryName()const
 void CreateLogQueryRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", std::to_string(queryName));
+	setCoreParameter("QueryName", queryName);
 }
 
 std::string CreateLogQueryRequest::getConditions()const
@@ -55,7 +55,7 @@ std::string CreateLogQueryRequest::getConditions()const
 void CreateLogQueryRequest::setConditions(const std::string& conditions)
 {
 	conditions_ = conditions;
-	setCoreParameter("Conditions", std::to_string(conditions));
+	setCoreParameter("Conditions", conditions);
 }
 
 std::string CreateLogQueryRequest::getQueryDetail()const
@@ -66,6 +66,6 @@ std::string CreateLogQueryRequest::getQueryDetail()const
 void CreateLogQueryRequest::setQueryDetail(const std::string& queryDetail)
 {
 	queryDetail_ = queryDetail;
-	setCoreParameter("QueryDetail", std::to_string(queryDetail));
+	setCoreParameter("QueryDetail", queryDetail);
 }
 

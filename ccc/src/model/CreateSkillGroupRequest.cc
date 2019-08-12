@@ -34,7 +34,7 @@ void CreateSkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
 	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), skillLevel.at(i));
+		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
 }
 
 std::string CreateSkillGroupRequest::getInstanceId()const
@@ -45,7 +45,7 @@ std::string CreateSkillGroupRequest::getInstanceId()const
 void CreateSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool CreateSkillGroupRequest::getAllowPrivateOutboundNumber()const
@@ -68,7 +68,7 @@ void CreateSkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::st
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
 	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), std::to_string(outboundPhoneNumberId.at(i)));
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
 }
 
 std::string CreateSkillGroupRequest::getName()const
@@ -79,7 +79,7 @@ std::string CreateSkillGroupRequest::getName()const
 void CreateSkillGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateSkillGroupRequest::getDescription()const
@@ -90,7 +90,7 @@ std::string CreateSkillGroupRequest::getDescription()const
 void CreateSkillGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateSkillGroupRequest::getRoutingStrategy()const
@@ -101,7 +101,7 @@ std::string CreateSkillGroupRequest::getRoutingStrategy()const
 void CreateSkillGroupRequest::setRoutingStrategy(const std::string& routingStrategy)
 {
 	routingStrategy_ = routingStrategy;
-	setCoreParameter("RoutingStrategy", std::to_string(routingStrategy));
+	setCoreParameter("RoutingStrategy", routingStrategy);
 }
 
 std::vector<std::string> CreateSkillGroupRequest::getUserId()const
@@ -113,7 +113,7 @@ void CreateSkillGroupRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
 	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), std::to_string(userId.at(i)));
+		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
 }
 
 std::string CreateSkillGroupRequest::getAccessKeyId()const
@@ -124,6 +124,6 @@ std::string CreateSkillGroupRequest::getAccessKeyId()const
 void CreateSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ModifyJobExecutionPlanParamRequest::getResourceOwnerId()const
 void ModifyJobExecutionPlanParamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyJobExecutionPlanParamRequest::getParamName()const
@@ -44,7 +44,7 @@ std::string ModifyJobExecutionPlanParamRequest::getParamName()const
 void ModifyJobExecutionPlanParamRequest::setParamName(const std::string& paramName)
 {
 	paramName_ = paramName;
-	setCoreParameter("ParamName", std::to_string(paramName));
+	setCoreParameter("ParamName", paramName);
 }
 
 std::string ModifyJobExecutionPlanParamRequest::getParamValue()const
@@ -55,7 +55,7 @@ std::string ModifyJobExecutionPlanParamRequest::getParamValue()const
 void ModifyJobExecutionPlanParamRequest::setParamValue(const std::string& paramValue)
 {
 	paramValue_ = paramValue;
-	setCoreParameter("ParamValue", std::to_string(paramValue));
+	setCoreParameter("ParamValue", paramValue);
 }
 
 long ModifyJobExecutionPlanParamRequest::getId()const
@@ -66,7 +66,7 @@ long ModifyJobExecutionPlanParamRequest::getId()const
 void ModifyJobExecutionPlanParamRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyJobExecutionPlanParamRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ModifyJobExecutionPlanParamRequest::getAccessKeyId()const
 void ModifyJobExecutionPlanParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

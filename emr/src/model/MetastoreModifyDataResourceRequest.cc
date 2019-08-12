@@ -33,7 +33,7 @@ long MetastoreModifyDataResourceRequest::getResourceOwnerId()const
 void MetastoreModifyDataResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool MetastoreModifyDataResourceRequest::getDefault()const
@@ -55,7 +55,7 @@ std::string MetastoreModifyDataResourceRequest::getRegionId()const
 void MetastoreModifyDataResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreModifyDataResourceRequest::getName()const
@@ -66,7 +66,7 @@ std::string MetastoreModifyDataResourceRequest::getName()const
 void MetastoreModifyDataResourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string MetastoreModifyDataResourceRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string MetastoreModifyDataResourceRequest::getDescription()const
 void MetastoreModifyDataResourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string MetastoreModifyDataResourceRequest::getId()const
@@ -88,7 +88,7 @@ std::string MetastoreModifyDataResourceRequest::getId()const
 void MetastoreModifyDataResourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string MetastoreModifyDataResourceRequest::getClusterId()const
@@ -99,7 +99,7 @@ std::string MetastoreModifyDataResourceRequest::getClusterId()const
 void MetastoreModifyDataResourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string MetastoreModifyDataResourceRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string MetastoreModifyDataResourceRequest::getAccessKeyId()const
 void MetastoreModifyDataResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeDomainStatisticsRequest::getEndDate()const
 void DescribeDomainStatisticsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeDomainStatisticsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeDomainStatisticsRequest::getUserClientIp()const
 void DescribeDomainStatisticsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDomainStatisticsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeDomainStatisticsRequest::getDomainName()const
 void DescribeDomainStatisticsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainStatisticsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeDomainStatisticsRequest::getLang()const
 void DescribeDomainStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainStatisticsRequest::getStartDate()const
@@ -77,6 +77,6 @@ std::string DescribeDomainStatisticsRequest::getStartDate()const
 void DescribeDomainStatisticsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 

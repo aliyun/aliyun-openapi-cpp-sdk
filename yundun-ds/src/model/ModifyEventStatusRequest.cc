@@ -33,7 +33,7 @@ std::string ModifyEventStatusRequest::getSourceIp()const
 void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 bool ModifyEventStatusRequest::getBacked()const
@@ -55,7 +55,7 @@ int ModifyEventStatusRequest::getFeatureType()const
 void ModifyEventStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string ModifyEventStatusRequest::getDealReason()const
@@ -66,7 +66,7 @@ std::string ModifyEventStatusRequest::getDealReason()const
 void ModifyEventStatusRequest::setDealReason(const std::string& dealReason)
 {
 	dealReason_ = dealReason;
-	setCoreParameter("DealReason", std::to_string(dealReason));
+	setCoreParameter("DealReason", dealReason);
 }
 
 long ModifyEventStatusRequest::getId()const
@@ -77,7 +77,7 @@ long ModifyEventStatusRequest::getId()const
 void ModifyEventStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyEventStatusRequest::getLang()const
@@ -88,7 +88,7 @@ std::string ModifyEventStatusRequest::getLang()const
 void ModifyEventStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int ModifyEventStatusRequest::getStatus()const
@@ -99,6 +99,6 @@ int ModifyEventStatusRequest::getStatus()const
 void ModifyEventStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -44,7 +44,7 @@ std::string DescribeSdkUrlRequest::getSourceIp()const
 void DescribeSdkUrlRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeSdkUrlRequest::getId()const
@@ -55,7 +55,7 @@ long DescribeSdkUrlRequest::getId()const
 void DescribeSdkUrlRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeSdkUrlRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeSdkUrlRequest::getLang()const
 void DescribeSdkUrlRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

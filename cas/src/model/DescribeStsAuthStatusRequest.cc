@@ -33,7 +33,7 @@ std::string DescribeStsAuthStatusRequest::getSourceIp()const
 void DescribeStsAuthStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeStsAuthStatusRequest::getCloudProduct()const
@@ -44,7 +44,7 @@ std::string DescribeStsAuthStatusRequest::getCloudProduct()const
 void DescribeStsAuthStatusRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", std::to_string(cloudProduct));
+	setCoreParameter("CloudProduct", cloudProduct);
 }
 
 std::string DescribeStsAuthStatusRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeStsAuthStatusRequest::getLang()const
 void DescribeStsAuthStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

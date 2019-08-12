@@ -33,7 +33,7 @@ std::string CreateAlertContactRequest::getContactName()const
 void CreateAlertContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", std::to_string(contactName));
+	setCoreParameter("ContactName", contactName);
 }
 
 std::string CreateAlertContactRequest::getPhoneNum()const
@@ -44,7 +44,7 @@ std::string CreateAlertContactRequest::getPhoneNum()const
 void CreateAlertContactRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", std::to_string(phoneNum));
+	setCoreParameter("PhoneNum", phoneNum);
 }
 
 std::string CreateAlertContactRequest::getDingRobotWebhookUrl()const
@@ -55,7 +55,7 @@ std::string CreateAlertContactRequest::getDingRobotWebhookUrl()const
 void CreateAlertContactRequest::setDingRobotWebhookUrl(const std::string& dingRobotWebhookUrl)
 {
 	dingRobotWebhookUrl_ = dingRobotWebhookUrl;
-	setCoreParameter("DingRobotWebhookUrl", std::to_string(dingRobotWebhookUrl));
+	setCoreParameter("DingRobotWebhookUrl", dingRobotWebhookUrl);
 }
 
 std::string CreateAlertContactRequest::getEmail()const
@@ -66,7 +66,7 @@ std::string CreateAlertContactRequest::getEmail()const
 void CreateAlertContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", std::to_string(email));
+	setCoreParameter("Email", email);
 }
 
 bool CreateAlertContactRequest::getSystemNoc()const

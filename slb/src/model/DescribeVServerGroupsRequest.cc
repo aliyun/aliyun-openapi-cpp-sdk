@@ -33,7 +33,7 @@ std::string DescribeVServerGroupsRequest::getAccess_key_id()const
 void DescribeVServerGroupsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 bool DescribeVServerGroupsRequest::getIncludeRule()const
@@ -55,7 +55,7 @@ long DescribeVServerGroupsRequest::getResourceOwnerId()const
 void DescribeVServerGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
 void DescribeVServerGroupsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
 void DescribeVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVServerGroupsRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string DescribeVServerGroupsRequest::getRegionId()const
 void DescribeVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeVServerGroupsRequest::getIncludeListener()const
@@ -110,7 +110,7 @@ std::string DescribeVServerGroupsRequest::getOwnerAccount()const
 void DescribeVServerGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVServerGroupsRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeVServerGroupsRequest::getOwnerId()const
 void DescribeVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVServerGroupsRequest::getTags()const
@@ -132,6 +132,6 @@ std::string DescribeVServerGroupsRequest::getTags()const
 void DescribeVServerGroupsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

@@ -33,7 +33,7 @@ long DeleteBgpNetworkRequest::getResourceOwnerId()const
 void DeleteBgpNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBgpNetworkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteBgpNetworkRequest::getResourceOwnerAccount()const
 void DeleteBgpNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteBgpNetworkRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteBgpNetworkRequest::getRegionId()const
 void DeleteBgpNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteBgpNetworkRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DeleteBgpNetworkRequest::getClientToken()const
 void DeleteBgpNetworkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DeleteBgpNetworkRequest::getRouterId()const
@@ -77,7 +77,7 @@ std::string DeleteBgpNetworkRequest::getRouterId()const
 void DeleteBgpNetworkRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", std::to_string(routerId));
+	setCoreParameter("RouterId", routerId);
 }
 
 std::string DeleteBgpNetworkRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteBgpNetworkRequest::getOwnerAccount()const
 void DeleteBgpNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteBgpNetworkRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DeleteBgpNetworkRequest::getOwnerId()const
 void DeleteBgpNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBgpNetworkRequest::getDstCidrBlock()const
@@ -110,6 +110,6 @@ std::string DeleteBgpNetworkRequest::getDstCidrBlock()const
 void DeleteBgpNetworkRequest::setDstCidrBlock(const std::string& dstCidrBlock)
 {
 	dstCidrBlock_ = dstCidrBlock;
-	setCoreParameter("DstCidrBlock", std::to_string(dstCidrBlock));
+	setCoreParameter("DstCidrBlock", dstCidrBlock);
 }
 

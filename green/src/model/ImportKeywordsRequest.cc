@@ -33,7 +33,7 @@ std::string ImportKeywordsRequest::getSourceIp()const
 void ImportKeywordsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ImportKeywordsRequest::getKeywordLibId()const
@@ -44,7 +44,7 @@ int ImportKeywordsRequest::getKeywordLibId()const
 void ImportKeywordsRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", keywordLibId);
+	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
 }
 
 std::string ImportKeywordsRequest::getKeywordsObject()const
@@ -55,6 +55,6 @@ std::string ImportKeywordsRequest::getKeywordsObject()const
 void ImportKeywordsRequest::setKeywordsObject(const std::string& keywordsObject)
 {
 	keywordsObject_ = keywordsObject;
-	setCoreParameter("KeywordsObject", std::to_string(keywordsObject));
+	setCoreParameter("KeywordsObject", keywordsObject);
 }
 

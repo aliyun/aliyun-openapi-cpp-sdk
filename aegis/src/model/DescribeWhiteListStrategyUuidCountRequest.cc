@@ -33,7 +33,7 @@ std::string DescribeWhiteListStrategyUuidCountRequest::getSourceIp()const
 void DescribeWhiteListStrategyUuidCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeWhiteListStrategyUuidCountRequest::getStrategyId()const
@@ -44,7 +44,7 @@ long DescribeWhiteListStrategyUuidCountRequest::getStrategyId()const
 void DescribeWhiteListStrategyUuidCountRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeWhiteListStrategyUuidCountRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeWhiteListStrategyUuidCountRequest::getLang()const
 void DescribeWhiteListStrategyUuidCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int DescribeWhiteListStrategyUuidCountRequest::getType()const
@@ -66,6 +66,6 @@ int DescribeWhiteListStrategyUuidCountRequest::getType()const
 void DescribeWhiteListStrategyUuidCountRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 

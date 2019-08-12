@@ -33,7 +33,7 @@ long CreateChannelRequest::getResourceOwnerId()const
 void CreateChannelRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateChannelRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long CreateChannelRequest::getCallerParentId()const
 void CreateChannelRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateChannelRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string CreateChannelRequest::getProxy_original_source_ip()const
 void CreateChannelRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string CreateChannelRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string CreateChannelRequest::getOwnerIdLoginEmail()const
 void CreateChannelRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string CreateChannelRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string CreateChannelRequest::getCallerType()const
 void CreateChannelRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateChannelRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateChannelRequest::getAccessKeyId()const
 void CreateChannelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateChannelRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string CreateChannelRequest::getSecurityToken()const
 void CreateChannelRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateChannelRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string CreateChannelRequest::getRequestContent()const
 void CreateChannelRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string CreateChannelRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string CreateChannelRequest::getCallerBidEmail()const
 void CreateChannelRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string CreateChannelRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string CreateChannelRequest::getCallerUidEmail()const
 void CreateChannelRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long CreateChannelRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long CreateChannelRequest::getCallerUid()const
 void CreateChannelRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateChannelRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string CreateChannelRequest::getApp_ip()const
 void CreateChannelRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string CreateChannelRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string CreateChannelRequest::getPopProduct()const
 void CreateChannelRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string CreateChannelRequest::getCallerBid()const
@@ -187,7 +187,7 @@ std::string CreateChannelRequest::getCallerBid()const
 void CreateChannelRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long CreateChannelRequest::getOwnerId()const
@@ -198,7 +198,7 @@ long CreateChannelRequest::getOwnerId()const
 void CreateChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateChannelRequest::getVersion()const
@@ -209,7 +209,7 @@ std::string CreateChannelRequest::getVersion()const
 void CreateChannelRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool CreateChannelRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ std::string CreateChannelRequest::getServiceCode()const
 void CreateChannelRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string CreateChannelRequest::getRequestId()const
@@ -264,7 +264,7 @@ std::string CreateChannelRequest::getRequestId()const
 void CreateChannelRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string CreateChannelRequest::getAppId()const
@@ -275,7 +275,7 @@ std::string CreateChannelRequest::getAppId()const
 void CreateChannelRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string CreateChannelRequest::getChannelId()const
@@ -286,6 +286,6 @@ std::string CreateChannelRequest::getChannelId()const
 void CreateChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", std::to_string(channelId));
+	setCoreParameter("ChannelId", channelId);
 }
 

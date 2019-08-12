@@ -33,7 +33,7 @@ std::string DescribeVodRefreshTasksRequest::getObjectPath()const
 void DescribeVodRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", std::to_string(objectPath));
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 std::string DescribeVodRefreshTasksRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeVodRefreshTasksRequest::getDomainName()const
 void DescribeVodRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeVodRefreshTasksRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeVodRefreshTasksRequest::getEndTime()const
 void DescribeVodRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeVodRefreshTasksRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeVodRefreshTasksRequest::getStartTime()const
 void DescribeVodRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeVodRefreshTasksRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeVodRefreshTasksRequest::getOwnerId()const
 void DescribeVodRefreshTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVodRefreshTasksRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeVodRefreshTasksRequest::getPageNumber()const
 void DescribeVodRefreshTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVodRefreshTasksRequest::getResourceGroupId()const
@@ -99,7 +99,7 @@ std::string DescribeVodRefreshTasksRequest::getResourceGroupId()const
 void DescribeVodRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeVodRefreshTasksRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeVodRefreshTasksRequest::getSecurityToken()const
 void DescribeVodRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeVodRefreshTasksRequest::getPageSize()const
@@ -121,7 +121,7 @@ int DescribeVodRefreshTasksRequest::getPageSize()const
 void DescribeVodRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVodRefreshTasksRequest::getObjectType()const
@@ -132,7 +132,7 @@ std::string DescribeVodRefreshTasksRequest::getObjectType()const
 void DescribeVodRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", std::to_string(objectType));
+	setCoreParameter("ObjectType", objectType);
 }
 
 std::string DescribeVodRefreshTasksRequest::getTaskId()const
@@ -143,7 +143,7 @@ std::string DescribeVodRefreshTasksRequest::getTaskId()const
 void DescribeVodRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DescribeVodRefreshTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeVodRefreshTasksRequest::getStatus()const
 void DescribeVodRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

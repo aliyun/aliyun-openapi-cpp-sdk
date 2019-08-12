@@ -33,7 +33,7 @@ int CreateTrafficControlRequest::getApiDefault()const
 void CreateTrafficControlRequest::setApiDefault(int apiDefault)
 {
 	apiDefault_ = apiDefault;
-	setCoreParameter("ApiDefault", apiDefault);
+	setCoreParameter("ApiDefault", std::to_string(apiDefault));
 }
 
 std::string CreateTrafficControlRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string CreateTrafficControlRequest::getSecurityToken()const
 void CreateTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateTrafficControlRequest::getTrafficControlName()const
@@ -55,7 +55,7 @@ std::string CreateTrafficControlRequest::getTrafficControlName()const
 void CreateTrafficControlRequest::setTrafficControlName(const std::string& trafficControlName)
 {
 	trafficControlName_ = trafficControlName;
-	setCoreParameter("TrafficControlName", std::to_string(trafficControlName));
+	setCoreParameter("TrafficControlName", trafficControlName);
 }
 
 std::string CreateTrafficControlRequest::getTrafficControlUnit()const
@@ -66,7 +66,7 @@ std::string CreateTrafficControlRequest::getTrafficControlUnit()const
 void CreateTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
 {
 	trafficControlUnit_ = trafficControlUnit;
-	setCoreParameter("TrafficControlUnit", std::to_string(trafficControlUnit));
+	setCoreParameter("TrafficControlUnit", trafficControlUnit);
 }
 
 std::string CreateTrafficControlRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string CreateTrafficControlRequest::getDescription()const
 void CreateTrafficControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 int CreateTrafficControlRequest::getUserDefault()const
@@ -88,7 +88,7 @@ int CreateTrafficControlRequest::getUserDefault()const
 void CreateTrafficControlRequest::setUserDefault(int userDefault)
 {
 	userDefault_ = userDefault;
-	setCoreParameter("UserDefault", userDefault);
+	setCoreParameter("UserDefault", std::to_string(userDefault));
 }
 
 int CreateTrafficControlRequest::getAppDefault()const
@@ -99,7 +99,7 @@ int CreateTrafficControlRequest::getAppDefault()const
 void CreateTrafficControlRequest::setAppDefault(int appDefault)
 {
 	appDefault_ = appDefault;
-	setCoreParameter("AppDefault", appDefault);
+	setCoreParameter("AppDefault", std::to_string(appDefault));
 }
 
 std::string CreateTrafficControlRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string CreateTrafficControlRequest::getAccessKeyId()const
 void CreateTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

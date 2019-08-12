@@ -33,7 +33,7 @@ int ListClusterLogsRequest::getPageSize()const
 void ListClusterLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListClusterLogsRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string ListClusterLogsRequest::getClusterId()const
 void ListClusterLogsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListClusterLogsRequest::getPageNumber()const
@@ -55,7 +55,7 @@ int ListClusterLogsRequest::getPageNumber()const
 void ListClusterLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterLogsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListClusterLogsRequest::getAccessKeyId()const
 void ListClusterLogsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

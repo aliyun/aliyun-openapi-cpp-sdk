@@ -33,7 +33,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getChannel()const
 void QueryTradeMarkApplicationsByIntentionRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", std::to_string(channel));
+	setCoreParameter("Channel", channel);
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()const
@@ -55,7 +55,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()con
 void QueryTradeMarkApplicationsByIntentionRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", std::to_string(intentionBizId));
+	setCoreParameter("IntentionBizId", intentionBizId);
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const
@@ -66,6 +66,6 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

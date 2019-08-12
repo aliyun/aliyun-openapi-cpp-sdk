@@ -33,7 +33,7 @@ std::string EnableAlarmRequest::getResourceOwnerAccount()const
 void EnableAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EnableAlarmRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string EnableAlarmRequest::getRegionId()const
 void EnableAlarmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long EnableAlarmRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long EnableAlarmRequest::getOwnerId()const
 void EnableAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EnableAlarmRequest::getAlarmTaskId()const
@@ -66,7 +66,7 @@ std::string EnableAlarmRequest::getAlarmTaskId()const
 void EnableAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", std::to_string(alarmTaskId));
+	setCoreParameter("AlarmTaskId", alarmTaskId);
 }
 
 std::string EnableAlarmRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string EnableAlarmRequest::getAccessKeyId()const
 void EnableAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

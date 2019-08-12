@@ -33,7 +33,7 @@ std::string DescribeEventCountCurveRequest::getTypes()const
 void DescribeEventCountCurveRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", std::to_string(types));
+	setCoreParameter("Types", types);
 }
 
 std::string DescribeEventCountCurveRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeEventCountCurveRequest::getSourceIp()const
 void DescribeEventCountCurveRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeEventCountCurveRequest::getVulEventLevels()const
@@ -55,7 +55,7 @@ std::string DescribeEventCountCurveRequest::getVulEventLevels()const
 void DescribeEventCountCurveRequest::setVulEventLevels(const std::string& vulEventLevels)
 {
 	vulEventLevels_ = vulEventLevels;
-	setCoreParameter("VulEventLevels", std::to_string(vulEventLevels));
+	setCoreParameter("VulEventLevels", vulEventLevels);
 }
 
 int DescribeEventCountCurveRequest::getLastDays()const
@@ -66,7 +66,7 @@ int DescribeEventCountCurveRequest::getLastDays()const
 void DescribeEventCountCurveRequest::setLastDays(int lastDays)
 {
 	lastDays_ = lastDays;
-	setCoreParameter("LastDays", lastDays);
+	setCoreParameter("LastDays", std::to_string(lastDays));
 }
 
 std::string DescribeEventCountCurveRequest::getHealthEventLevels()const
@@ -77,7 +77,7 @@ std::string DescribeEventCountCurveRequest::getHealthEventLevels()const
 void DescribeEventCountCurveRequest::setHealthEventLevels(const std::string& healthEventLevels)
 {
 	healthEventLevels_ = healthEventLevels;
-	setCoreParameter("HealthEventLevels", std::to_string(healthEventLevels));
+	setCoreParameter("HealthEventLevels", healthEventLevels);
 }
 
 std::string DescribeEventCountCurveRequest::getSuspiciousEventLevels()const
@@ -88,6 +88,6 @@ std::string DescribeEventCountCurveRequest::getSuspiciousEventLevels()const
 void DescribeEventCountCurveRequest::setSuspiciousEventLevels(const std::string& suspiciousEventLevels)
 {
 	suspiciousEventLevels_ = suspiciousEventLevels;
-	setCoreParameter("SuspiciousEventLevels", std::to_string(suspiciousEventLevels));
+	setCoreParameter("SuspiciousEventLevels", suspiciousEventLevels);
 }
 

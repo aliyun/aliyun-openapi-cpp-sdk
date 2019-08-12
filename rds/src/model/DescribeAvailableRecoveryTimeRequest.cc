@@ -33,7 +33,7 @@ long DescribeAvailableRecoveryTimeRequest::getResourceOwnerId()const
 void DescribeAvailableRecoveryTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableRecoveryTimeRequest::getResourceOwnerAccount()const
 void DescribeAvailableRecoveryTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableRecoveryTimeRequest::getRegionId()const
 void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
@@ -66,7 +66,7 @@ int DescribeAvailableRecoveryTimeRequest::getCrossBackupId()const
 void DescribeAvailableRecoveryTimeRequest::setCrossBackupId(int crossBackupId)
 {
 	crossBackupId_ = crossBackupId;
-	setCoreParameter("CrossBackupId", crossBackupId);
+	setCoreParameter("CrossBackupId", std::to_string(crossBackupId));
 }
 
 long DescribeAvailableRecoveryTimeRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeAvailableRecoveryTimeRequest::getOwnerId()const
 void DescribeAvailableRecoveryTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId()const
 void DescribeAvailableRecoveryTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

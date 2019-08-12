@@ -33,7 +33,7 @@ std::string DeleteHttpHeaderConfigRequest::getSecurityToken()const
 void DeleteHttpHeaderConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteHttpHeaderConfigRequest::getConfigID()const
@@ -44,7 +44,7 @@ std::string DeleteHttpHeaderConfigRequest::getConfigID()const
 void DeleteHttpHeaderConfigRequest::setConfigID(const std::string& configID)
 {
 	configID_ = configID;
-	setCoreParameter("ConfigID", std::to_string(configID));
+	setCoreParameter("ConfigID", configID);
 }
 
 std::string DeleteHttpHeaderConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DeleteHttpHeaderConfigRequest::getDomainName()const
 void DeleteHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DeleteHttpHeaderConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long DeleteHttpHeaderConfigRequest::getOwnerId()const
 void DeleteHttpHeaderConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

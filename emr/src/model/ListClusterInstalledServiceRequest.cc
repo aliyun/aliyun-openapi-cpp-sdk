@@ -33,7 +33,7 @@ long ListClusterInstalledServiceRequest::getResourceOwnerId()const
 void ListClusterInstalledServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterInstalledServiceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListClusterInstalledServiceRequest::getRegionId()const
 void ListClusterInstalledServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListClusterInstalledServiceRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListClusterInstalledServiceRequest::getPageSize()const
 void ListClusterInstalledServiceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListClusterInstalledServiceRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ListClusterInstalledServiceRequest::getClusterId()const
 void ListClusterInstalledServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListClusterInstalledServiceRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListClusterInstalledServiceRequest::getPageNumber()const
 void ListClusterInstalledServiceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterInstalledServiceRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListClusterInstalledServiceRequest::getAccessKeyId()const
 void ListClusterInstalledServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

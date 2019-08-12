@@ -33,7 +33,7 @@ std::string OnsConsumerStatusRequest::getInstanceId()const
 void OnsConsumerStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool OnsConsumerStatusRequest::getNeedJstack()const
@@ -55,7 +55,7 @@ std::string OnsConsumerStatusRequest::getGroupId()const
 void OnsConsumerStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 bool OnsConsumerStatusRequest::getDetail()const

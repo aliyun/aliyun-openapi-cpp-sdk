@@ -33,7 +33,7 @@ long DescribeBgpGroupsRequest::getResourceOwnerId()const
 void DescribeBgpGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBgpGroupsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeBgpGroupsRequest::getResourceOwnerAccount()const
 void DescribeBgpGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBgpGroupsRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeBgpGroupsRequest::getRegionId()const
 void DescribeBgpGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeBgpGroupsRequest::getRouterId()const
@@ -66,7 +66,7 @@ std::string DescribeBgpGroupsRequest::getRouterId()const
 void DescribeBgpGroupsRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", std::to_string(routerId));
+	setCoreParameter("RouterId", routerId);
 }
 
 std::string DescribeBgpGroupsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeBgpGroupsRequest::getOwnerAccount()const
 void DescribeBgpGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeBgpGroupsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeBgpGroupsRequest::getPageSize()const
 void DescribeBgpGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBgpGroupsRequest::getBgpGroupId()const
@@ -99,7 +99,7 @@ std::string DescribeBgpGroupsRequest::getBgpGroupId()const
 void DescribeBgpGroupsRequest::setBgpGroupId(const std::string& bgpGroupId)
 {
 	bgpGroupId_ = bgpGroupId;
-	setCoreParameter("BgpGroupId", std::to_string(bgpGroupId));
+	setCoreParameter("BgpGroupId", bgpGroupId);
 }
 
 bool DescribeBgpGroupsRequest::getIsDefault()const
@@ -121,7 +121,7 @@ long DescribeBgpGroupsRequest::getOwnerId()const
 void DescribeBgpGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeBgpGroupsRequest::getPageNumber()const
@@ -132,6 +132,6 @@ int DescribeBgpGroupsRequest::getPageNumber()const
 void DescribeBgpGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

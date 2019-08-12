@@ -33,7 +33,7 @@ long ModifyScalingTaskGroupRequest::getResourceOwnerId()const
 void ModifyScalingTaskGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyScalingTaskGroupRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ModifyScalingTaskGroupRequest::getRegionId()const
 void ModifyScalingTaskGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyScalingTaskGroupRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string ModifyScalingTaskGroupRequest::getHostGroupId()const
 void ModifyScalingTaskGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string ModifyScalingTaskGroupRequest::getActiveRuleCategory()const
@@ -66,7 +66,7 @@ std::string ModifyScalingTaskGroupRequest::getActiveRuleCategory()const
 void ModifyScalingTaskGroupRequest::setActiveRuleCategory(const std::string& activeRuleCategory)
 {
 	activeRuleCategory_ = activeRuleCategory;
-	setCoreParameter("ActiveRuleCategory", std::to_string(activeRuleCategory));
+	setCoreParameter("ActiveRuleCategory", activeRuleCategory);
 }
 
 std::string ModifyScalingTaskGroupRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ModifyScalingTaskGroupRequest::getClusterId()const
 void ModifyScalingTaskGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ModifyScalingTaskGroupRequest::getMinSize()const
@@ -88,7 +88,7 @@ int ModifyScalingTaskGroupRequest::getMinSize()const
 void ModifyScalingTaskGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", minSize);
+	setCoreParameter("MinSize", std::to_string(minSize));
 }
 
 int ModifyScalingTaskGroupRequest::getMaxSize()const
@@ -99,7 +99,7 @@ int ModifyScalingTaskGroupRequest::getMaxSize()const
 void ModifyScalingTaskGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", maxSize);
+	setCoreParameter("MaxSize", std::to_string(maxSize));
 }
 
 int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
@@ -110,7 +110,7 @@ int ModifyScalingTaskGroupRequest::getDefaultCooldown()const
 void ModifyScalingTaskGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", defaultCooldown);
+	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
 }
 
 std::string ModifyScalingTaskGroupRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyScalingTaskGroupRequest::getAccessKeyId()const
 void ModifyScalingTaskGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

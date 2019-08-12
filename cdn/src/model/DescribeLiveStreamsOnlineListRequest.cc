@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getStreamType()const
 void DescribeLiveStreamsOnlineListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", std::to_string(streamType));
+	setCoreParameter("StreamType", streamType);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getAppName()const
 void DescribeLiveStreamsOnlineListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getSecurityToken()const
 void DescribeLiveStreamsOnlineListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string DescribeLiveStreamsOnlineListRequest::getDomainName()const
 void DescribeLiveStreamsOnlineListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeLiveStreamsOnlineListRequest::getPageSize()const
 void DescribeLiveStreamsOnlineListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeLiveStreamsOnlineListRequest::getOwnerId()const
 void DescribeLiveStreamsOnlineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeLiveStreamsOnlineListRequest::getPageNum()const
@@ -99,6 +99,6 @@ int DescribeLiveStreamsOnlineListRequest::getPageNum()const
 void DescribeLiveStreamsOnlineListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

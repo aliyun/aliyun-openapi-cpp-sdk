@@ -33,7 +33,7 @@ long QueryAnalysisJobListRequest::getResourceOwnerId()const
 void QueryAnalysisJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAnalysisJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryAnalysisJobListRequest::getResourceOwnerAccount()const
 void QueryAnalysisJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAnalysisJobListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryAnalysisJobListRequest::getOwnerAccount()const
 void QueryAnalysisJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAnalysisJobListRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long QueryAnalysisJobListRequest::getOwnerId()const
 void QueryAnalysisJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAnalysisJobListRequest::getAnalysisJobIds()const
@@ -77,7 +77,7 @@ std::string QueryAnalysisJobListRequest::getAnalysisJobIds()const
 void QueryAnalysisJobListRequest::setAnalysisJobIds(const std::string& analysisJobIds)
 {
 	analysisJobIds_ = analysisJobIds;
-	setCoreParameter("AnalysisJobIds", std::to_string(analysisJobIds));
+	setCoreParameter("AnalysisJobIds", analysisJobIds);
 }
 
 std::string QueryAnalysisJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryAnalysisJobListRequest::getAccessKeyId()const
 void QueryAnalysisJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

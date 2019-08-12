@@ -33,7 +33,7 @@ std::string QueryBillRequest::getProductCode()const
 void QueryBillRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 bool QueryBillRequest::getIsHideZeroCharge()const
@@ -66,7 +66,7 @@ std::string QueryBillRequest::getSubscriptionType()const
 void QueryBillRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int QueryBillRequest::getPageSize()const
@@ -77,7 +77,7 @@ int QueryBillRequest::getPageSize()const
 void QueryBillRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryBillRequest::getBillingCycle()const
@@ -88,7 +88,7 @@ std::string QueryBillRequest::getBillingCycle()const
 void QueryBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", std::to_string(billingCycle));
+	setCoreParameter("BillingCycle", billingCycle);
 }
 
 std::string QueryBillRequest::getType()const
@@ -99,7 +99,7 @@ std::string QueryBillRequest::getType()const
 void QueryBillRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 long QueryBillRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long QueryBillRequest::getOwnerId()const
 void QueryBillRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int QueryBillRequest::getPageNum()const
@@ -121,7 +121,7 @@ int QueryBillRequest::getPageNum()const
 void QueryBillRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryBillRequest::getProductType()const
@@ -132,6 +132,6 @@ std::string QueryBillRequest::getProductType()const
 void QueryBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 

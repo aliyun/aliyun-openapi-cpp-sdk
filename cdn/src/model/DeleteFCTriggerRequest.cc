@@ -33,7 +33,7 @@ std::string DeleteFCTriggerRequest::getTriggerARN()const
 void DeleteFCTriggerRequest::setTriggerARN(const std::string& triggerARN)
 {
 	triggerARN_ = triggerARN;
-	setCoreParameter("TriggerARN", std::to_string(triggerARN));
+	setCoreParameter("TriggerARN", triggerARN);
 }
 
 std::string DeleteFCTriggerRequest::getApp_ip()const
@@ -44,7 +44,7 @@ std::string DeleteFCTriggerRequest::getApp_ip()const
 void DeleteFCTriggerRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteFCTriggerRequest::getPopProduct()const
@@ -55,7 +55,7 @@ std::string DeleteFCTriggerRequest::getPopProduct()const
 void DeleteFCTriggerRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DeleteFCTriggerRequest::getProduct()const
@@ -66,7 +66,7 @@ std::string DeleteFCTriggerRequest::getProduct()const
 void DeleteFCTriggerRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", std::to_string(product));
+	setCoreParameter("Product", product);
 }
 
 long DeleteFCTriggerRequest::getCallerParentId()const
@@ -77,7 +77,7 @@ long DeleteFCTriggerRequest::getCallerParentId()const
 void DeleteFCTriggerRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteFCTriggerRequest::getProxy_original_security_transport()const
@@ -99,7 +99,7 @@ std::string DeleteFCTriggerRequest::getCallerBid()const
 void DeleteFCTriggerRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteFCTriggerRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DeleteFCTriggerRequest::getOwnerId()const
 void DeleteFCTriggerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteFCTriggerRequest::getProxy_original_source_ip()const
@@ -121,7 +121,7 @@ std::string DeleteFCTriggerRequest::getProxy_original_source_ip()const
 void DeleteFCTriggerRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteFCTriggerRequest::getVersion()const
@@ -132,7 +132,7 @@ std::string DeleteFCTriggerRequest::getVersion()const
 void DeleteFCTriggerRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 std::string DeleteFCTriggerRequest::getOwnerIdLoginEmail()const
@@ -143,7 +143,7 @@ std::string DeleteFCTriggerRequest::getOwnerIdLoginEmail()const
 void DeleteFCTriggerRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteFCTriggerRequest::getCallerType()const
@@ -154,7 +154,7 @@ std::string DeleteFCTriggerRequest::getCallerType()const
 void DeleteFCTriggerRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DeleteFCTriggerRequest::getProxy_trust_transport_info()const
@@ -187,7 +187,7 @@ std::string DeleteFCTriggerRequest::getAccessKeyId()const
 void DeleteFCTriggerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteFCTriggerRequest::getSecurity_transport()const
@@ -209,7 +209,7 @@ std::string DeleteFCTriggerRequest::getSecurityToken()const
 void DeleteFCTriggerRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteFCTriggerRequest::getRequestId()const
@@ -220,7 +220,7 @@ std::string DeleteFCTriggerRequest::getRequestId()const
 void DeleteFCTriggerRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteFCTriggerRequest::getRequestContent()const
@@ -231,7 +231,7 @@ std::string DeleteFCTriggerRequest::getRequestContent()const
 void DeleteFCTriggerRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DeleteFCTriggerRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DeleteFCTriggerRequest::getCallerBidEmail()const
 void DeleteFCTriggerRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteFCTriggerRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string DeleteFCTriggerRequest::getCallerUidEmail()const
 void DeleteFCTriggerRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteFCTriggerRequest::getCallerUid()const
@@ -264,6 +264,6 @@ long DeleteFCTriggerRequest::getCallerUid()const
 void DeleteFCTriggerRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

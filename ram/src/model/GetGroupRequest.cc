@@ -33,6 +33,6 @@ std::string GetGroupRequest::getGroupName()const
 void GetGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 

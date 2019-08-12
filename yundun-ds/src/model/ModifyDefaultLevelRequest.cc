@@ -33,7 +33,7 @@ std::string ModifyDefaultLevelRequest::getSourceIp()const
 void ModifyDefaultLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyDefaultLevelRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int ModifyDefaultLevelRequest::getFeatureType()const
 void ModifyDefaultLevelRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 long ModifyDefaultLevelRequest::getDefaultId()const
@@ -55,7 +55,7 @@ long ModifyDefaultLevelRequest::getDefaultId()const
 void ModifyDefaultLevelRequest::setDefaultId(long defaultId)
 {
 	defaultId_ = defaultId;
-	setCoreParameter("DefaultId", defaultId);
+	setCoreParameter("DefaultId", std::to_string(defaultId));
 }
 
 std::string ModifyDefaultLevelRequest::getLang()const
@@ -66,7 +66,7 @@ std::string ModifyDefaultLevelRequest::getLang()const
 void ModifyDefaultLevelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyDefaultLevelRequest::getSensitiveIds()const
@@ -77,6 +77,6 @@ std::string ModifyDefaultLevelRequest::getSensitiveIds()const
 void ModifyDefaultLevelRequest::setSensitiveIds(const std::string& sensitiveIds)
 {
 	sensitiveIds_ = sensitiveIds;
-	setCoreParameter("SensitiveIds", std::to_string(sensitiveIds));
+	setCoreParameter("SensitiveIds", sensitiveIds);
 }
 

@@ -33,7 +33,7 @@ std::string GetMediaDNAResultRequest::getResourceOwnerId()const
 void GetMediaDNAResultRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetMediaDNAResultRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetMediaDNAResultRequest::getResourceOwnerAccount()const
 void GetMediaDNAResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMediaDNAResultRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetMediaDNAResultRequest::getOwnerAccount()const
 void GetMediaDNAResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetMediaDNAResultRequest::getOwnerId()const
@@ -66,7 +66,7 @@ std::string GetMediaDNAResultRequest::getOwnerId()const
 void GetMediaDNAResultRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaDNAResultRequest::getMediaId()const
@@ -77,7 +77,7 @@ std::string GetMediaDNAResultRequest::getMediaId()const
 void GetMediaDNAResultRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", std::to_string(mediaId));
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string GetMediaDNAResultRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string GetMediaDNAResultRequest::getAccessKeyId()const
 void GetMediaDNAResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

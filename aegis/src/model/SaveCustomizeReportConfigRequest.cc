@@ -33,7 +33,7 @@ int SaveCustomizeReportConfigRequest::getReportSendType()const
 void SaveCustomizeReportConfigRequest::setReportSendType(int reportSendType)
 {
 	reportSendType_ = reportSendType;
-	setCoreParameter("ReportSendType", reportSendType);
+	setCoreParameter("ReportSendType", std::to_string(reportSendType));
 }
 
 int SaveCustomizeReportConfigRequest::getReportType()const
@@ -44,7 +44,7 @@ int SaveCustomizeReportConfigRequest::getReportType()const
 void SaveCustomizeReportConfigRequest::setReportType(int reportType)
 {
 	reportType_ = reportType;
-	setCoreParameter("ReportType", reportType);
+	setCoreParameter("ReportType", std::to_string(reportType));
 }
 
 std::string SaveCustomizeReportConfigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string SaveCustomizeReportConfigRequest::getSourceIp()const
 void SaveCustomizeReportConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long SaveCustomizeReportConfigRequest::getReportId()const
@@ -66,7 +66,7 @@ long SaveCustomizeReportConfigRequest::getReportId()const
 void SaveCustomizeReportConfigRequest::setReportId(long reportId)
 {
 	reportId_ = reportId;
-	setCoreParameter("ReportId", reportId);
+	setCoreParameter("ReportId", std::to_string(reportId));
 }
 
 std::string SaveCustomizeReportConfigRequest::getReportEndDate()const
@@ -77,7 +77,7 @@ std::string SaveCustomizeReportConfigRequest::getReportEndDate()const
 void SaveCustomizeReportConfigRequest::setReportEndDate(const std::string& reportEndDate)
 {
 	reportEndDate_ = reportEndDate;
-	setCoreParameter("ReportEndDate", std::to_string(reportEndDate));
+	setCoreParameter("ReportEndDate", reportEndDate);
 }
 
 std::string SaveCustomizeReportConfigRequest::getReportStartDate()const
@@ -88,7 +88,7 @@ std::string SaveCustomizeReportConfigRequest::getReportStartDate()const
 void SaveCustomizeReportConfigRequest::setReportStartDate(const std::string& reportStartDate)
 {
 	reportStartDate_ = reportStartDate;
-	setCoreParameter("ReportStartDate", std::to_string(reportStartDate));
+	setCoreParameter("ReportStartDate", reportStartDate);
 }
 
 std::string SaveCustomizeReportConfigRequest::getRecipients()const
@@ -99,7 +99,7 @@ std::string SaveCustomizeReportConfigRequest::getRecipients()const
 void SaveCustomizeReportConfigRequest::setRecipients(const std::string& recipients)
 {
 	recipients_ = recipients;
-	setCoreParameter("Recipients", std::to_string(recipients));
+	setCoreParameter("Recipients", recipients);
 }
 
 std::string SaveCustomizeReportConfigRequest::getReportLang()const
@@ -110,7 +110,7 @@ std::string SaveCustomizeReportConfigRequest::getReportLang()const
 void SaveCustomizeReportConfigRequest::setReportLang(const std::string& reportLang)
 {
 	reportLang_ = reportLang;
-	setCoreParameter("ReportLang", std::to_string(reportLang));
+	setCoreParameter("ReportLang", reportLang);
 }
 
 std::string SaveCustomizeReportConfigRequest::getLang()const
@@ -121,7 +121,7 @@ std::string SaveCustomizeReportConfigRequest::getLang()const
 void SaveCustomizeReportConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string SaveCustomizeReportConfigRequest::getTitle()const
@@ -132,7 +132,7 @@ std::string SaveCustomizeReportConfigRequest::getTitle()const
 void SaveCustomizeReportConfigRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string SaveCustomizeReportConfigRequest::getSendTime()const
@@ -143,7 +143,7 @@ std::string SaveCustomizeReportConfigRequest::getSendTime()const
 void SaveCustomizeReportConfigRequest::setSendTime(const std::string& sendTime)
 {
 	sendTime_ = sendTime;
-	setCoreParameter("SendTime", std::to_string(sendTime));
+	setCoreParameter("SendTime", sendTime);
 }
 
 int SaveCustomizeReportConfigRequest::getReportStatus()const
@@ -154,6 +154,6 @@ int SaveCustomizeReportConfigRequest::getReportStatus()const
 void SaveCustomizeReportConfigRequest::setReportStatus(int reportStatus)
 {
 	reportStatus_ = reportStatus;
-	setCoreParameter("ReportStatus", reportStatus);
+	setCoreParameter("ReportStatus", std::to_string(reportStatus));
 }
 

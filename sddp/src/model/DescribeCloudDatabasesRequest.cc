@@ -33,7 +33,7 @@ std::string DescribeCloudDatabasesRequest::getInstanceId()const
 void DescribeCloudDatabasesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeCloudDatabasesRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCloudDatabasesRequest::getSourceIp()const
 void DescribeCloudDatabasesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCloudDatabasesRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeCloudDatabasesRequest::getLang()const
 void DescribeCloudDatabasesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeCloudDatabasesRequest::getResourceType()const
@@ -66,7 +66,7 @@ long DescribeCloudDatabasesRequest::getResourceType()const
 void DescribeCloudDatabasesRequest::setResourceType(long resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeCloudDatabasesRequest::getServiceRegionId()const
@@ -77,6 +77,6 @@ std::string DescribeCloudDatabasesRequest::getServiceRegionId()const
 void DescribeCloudDatabasesRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", std::to_string(serviceRegionId));
+	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 

@@ -33,7 +33,7 @@ long UnregisterFaceRequest::getResourceOwnerId()const
 void UnregisterFaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UnregisterFaceRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long UnregisterFaceRequest::getCallerParentId()const
 void UnregisterFaceRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UnregisterFaceRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string UnregisterFaceRequest::getProxy_original_source_ip()const
 void UnregisterFaceRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string UnregisterFaceRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string UnregisterFaceRequest::getOwnerIdLoginEmail()const
 void UnregisterFaceRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string UnregisterFaceRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string UnregisterFaceRequest::getCallerType()const
 void UnregisterFaceRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UnregisterFaceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UnregisterFaceRequest::getAccessKeyId()const
 void UnregisterFaceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnregisterFaceRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string UnregisterFaceRequest::getSecurityToken()const
 void UnregisterFaceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UnregisterFaceRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string UnregisterFaceRequest::getRegionId()const
 void UnregisterFaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UnregisterFaceRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string UnregisterFaceRequest::getRequestContent()const
 void UnregisterFaceRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string UnregisterFaceRequest::getCallerBidEmail()const
@@ -143,7 +143,7 @@ std::string UnregisterFaceRequest::getCallerBidEmail()const
 void UnregisterFaceRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string UnregisterFaceRequest::getCallerUidEmail()const
@@ -154,7 +154,7 @@ std::string UnregisterFaceRequest::getCallerUidEmail()const
 void UnregisterFaceRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long UnregisterFaceRequest::getCallerUid()const
@@ -165,7 +165,7 @@ long UnregisterFaceRequest::getCallerUid()const
 void UnregisterFaceRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UnregisterFaceRequest::getShowLog()const
@@ -176,7 +176,7 @@ std::string UnregisterFaceRequest::getShowLog()const
 void UnregisterFaceRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", std::to_string(showLog));
+	setCoreParameter("ShowLog", showLog);
 }
 
 std::string UnregisterFaceRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string UnregisterFaceRequest::getApp_ip()const
 void UnregisterFaceRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string UnregisterFaceRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string UnregisterFaceRequest::getPopProduct()const
 void UnregisterFaceRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string UnregisterFaceRequest::getGroupId()const
@@ -209,7 +209,7 @@ std::string UnregisterFaceRequest::getGroupId()const
 void UnregisterFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string UnregisterFaceRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string UnregisterFaceRequest::getCallerBid()const
 void UnregisterFaceRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long UnregisterFaceRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long UnregisterFaceRequest::getOwnerId()const
 void UnregisterFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnregisterFaceRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string UnregisterFaceRequest::getVersion()const
 void UnregisterFaceRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool UnregisterFaceRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string UnregisterFaceRequest::getFaceToken()const
 void UnregisterFaceRequest::setFaceToken(const std::string& faceToken)
 {
 	faceToken_ = faceToken;
-	setCoreParameter("FaceToken", std::to_string(faceToken));
+	setCoreParameter("FaceToken", faceToken);
 }
 
 std::string UnregisterFaceRequest::getServiceCode()const
@@ -297,7 +297,7 @@ std::string UnregisterFaceRequest::getServiceCode()const
 void UnregisterFaceRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", std::to_string(serviceCode));
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string UnregisterFaceRequest::getRequestId()const
@@ -308,6 +308,6 @@ std::string UnregisterFaceRequest::getRequestId()const
 void UnregisterFaceRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 

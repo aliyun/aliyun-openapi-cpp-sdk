@@ -33,7 +33,7 @@ long DescribeDBInstancesByExpireTimeRequest::getResourceOwnerId()const
 void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getResourceOwnerAccount()con
 void DescribeDBInstancesByExpireTimeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getOwnerAccount()const
 void DescribeDBInstancesByExpireTimeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeDBInstancesByExpireTimeRequest::getOwnerId()const
 void DescribeDBInstancesByExpireTimeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeDBInstancesByExpireTimeRequest::getPageNumber()const
 void DescribeDBInstancesByExpireTimeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getAccessKeyId()const
 void DescribeDBInstancesByExpireTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
@@ -99,7 +99,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getTags()const
 void DescribeDBInstancesByExpireTimeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 bool DescribeDBInstancesByExpireTimeRequest::getExpired()const
@@ -121,7 +121,7 @@ std::string DescribeDBInstancesByExpireTimeRequest::getRegionId()const
 void DescribeDBInstancesByExpireTimeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeDBInstancesByExpireTimeRequest::getPageSize()const
 void DescribeDBInstancesByExpireTimeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod()const
@@ -143,7 +143,7 @@ int DescribeDBInstancesByExpireTimeRequest::getExpirePeriod()const
 void DescribeDBInstancesByExpireTimeRequest::setExpirePeriod(int expirePeriod)
 {
 	expirePeriod_ = expirePeriod;
-	setCoreParameter("ExpirePeriod", expirePeriod);
+	setCoreParameter("ExpirePeriod", std::to_string(expirePeriod));
 }
 
 std::string DescribeDBInstancesByExpireTimeRequest::getProxyId()const
@@ -154,6 +154,6 @@ std::string DescribeDBInstancesByExpireTimeRequest::getProxyId()const
 void DescribeDBInstancesByExpireTimeRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", std::to_string(proxyId));
+	setCoreParameter("ProxyId", proxyId);
 }
 

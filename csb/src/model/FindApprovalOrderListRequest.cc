@@ -33,7 +33,7 @@ std::string FindApprovalOrderListRequest::getProjectName()const
 void FindApprovalOrderListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", std::to_string(projectName));
+	setCoreParameter("ProjectName", projectName);
 }
 
 std::string FindApprovalOrderListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string FindApprovalOrderListRequest::getRegionId()const
 void FindApprovalOrderListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long FindApprovalOrderListRequest::getCsbId()const
@@ -55,7 +55,7 @@ long FindApprovalOrderListRequest::getCsbId()const
 void FindApprovalOrderListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string FindApprovalOrderListRequest::getAlias()const
@@ -66,7 +66,7 @@ std::string FindApprovalOrderListRequest::getAlias()const
 void FindApprovalOrderListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", std::to_string(alias));
+	setCoreParameter("Alias", alias);
 }
 
 std::string FindApprovalOrderListRequest::getServiceName()const
@@ -77,7 +77,7 @@ std::string FindApprovalOrderListRequest::getServiceName()const
 void FindApprovalOrderListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 long FindApprovalOrderListRequest::getServiceId()const
@@ -88,7 +88,7 @@ long FindApprovalOrderListRequest::getServiceId()const
 void FindApprovalOrderListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", serviceId);
+	setCoreParameter("ServiceId", std::to_string(serviceId));
 }
 
 int FindApprovalOrderListRequest::getPageNum()const
@@ -99,7 +99,7 @@ int FindApprovalOrderListRequest::getPageNum()const
 void FindApprovalOrderListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 bool FindApprovalOrderListRequest::getOnlyPending()const

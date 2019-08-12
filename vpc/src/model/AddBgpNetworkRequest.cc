@@ -33,7 +33,7 @@ long AddBgpNetworkRequest::getResourceOwnerId()const
 void AddBgpNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddBgpNetworkRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddBgpNetworkRequest::getResourceOwnerAccount()const
 void AddBgpNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddBgpNetworkRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AddBgpNetworkRequest::getRegionId()const
 void AddBgpNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AddBgpNetworkRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string AddBgpNetworkRequest::getClientToken()const
 void AddBgpNetworkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string AddBgpNetworkRequest::getRouterId()const
@@ -77,7 +77,7 @@ std::string AddBgpNetworkRequest::getRouterId()const
 void AddBgpNetworkRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", std::to_string(routerId));
+	setCoreParameter("RouterId", routerId);
 }
 
 std::string AddBgpNetworkRequest::getVpcId()const
@@ -88,7 +88,7 @@ std::string AddBgpNetworkRequest::getVpcId()const
 void AddBgpNetworkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string AddBgpNetworkRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string AddBgpNetworkRequest::getOwnerAccount()const
 void AddBgpNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long AddBgpNetworkRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long AddBgpNetworkRequest::getOwnerId()const
 void AddBgpNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddBgpNetworkRequest::getDstCidrBlock()const
@@ -121,6 +121,6 @@ std::string AddBgpNetworkRequest::getDstCidrBlock()const
 void AddBgpNetworkRequest::setDstCidrBlock(const std::string& dstCidrBlock)
 {
 	dstCidrBlock_ = dstCidrBlock;
-	setCoreParameter("DstCidrBlock", std::to_string(dstCidrBlock));
+	setCoreParameter("DstCidrBlock", dstCidrBlock);
 }
 

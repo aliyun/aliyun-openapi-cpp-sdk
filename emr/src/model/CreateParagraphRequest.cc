@@ -33,7 +33,7 @@ long CreateParagraphRequest::getResourceOwnerId()const
 void CreateParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateParagraphRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateParagraphRequest::getRegionId()const
 void CreateParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateParagraphRequest::getNoteId()const
@@ -55,7 +55,7 @@ std::string CreateParagraphRequest::getNoteId()const
 void CreateParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", std::to_string(noteId));
+	setCoreParameter("NoteId", noteId);
 }
 
 std::string CreateParagraphRequest::getText()const
@@ -66,7 +66,7 @@ std::string CreateParagraphRequest::getText()const
 void CreateParagraphRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", std::to_string(text));
+	setCoreParameter("Text", text);
 }
 
 std::string CreateParagraphRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string CreateParagraphRequest::getAccessKeyId()const
 void CreateParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

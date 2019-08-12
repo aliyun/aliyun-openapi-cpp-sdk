@@ -33,7 +33,7 @@ long ModifyPrepayInstanceSpecRequest::getResourceOwnerId()const
 void ModifyPrepayInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyPrepayInstanceSpecRequest::getAutoPay()const
@@ -55,7 +55,7 @@ std::string ModifyPrepayInstanceSpecRequest::getResourceOwnerAccount()const
 void ModifyPrepayInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyPrepayInstanceSpecRequest::getClientToken()const
 void ModifyPrepayInstanceSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyPrepayInstanceSpecRequest::getOwnerAccount()const
 void ModifyPrepayInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getEndTime()const
@@ -88,7 +88,7 @@ std::string ModifyPrepayInstanceSpecRequest::getEndTime()const
 void ModifyPrepayInstanceSpecRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 long ModifyPrepayInstanceSpecRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyPrepayInstanceSpecRequest::getOwnerId()const
 void ModifyPrepayInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getOperatorType()const
@@ -110,7 +110,7 @@ std::string ModifyPrepayInstanceSpecRequest::getOperatorType()const
 void ModifyPrepayInstanceSpecRequest::setOperatorType(const std::string& operatorType)
 {
 	operatorType_ = operatorType;
-	setCoreParameter("OperatorType", std::to_string(operatorType));
+	setCoreParameter("OperatorType", operatorType);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getSystemDiskCategory()const
@@ -121,7 +121,7 @@ std::string ModifyPrepayInstanceSpecRequest::getSystemDiskCategory()const
 void ModifyPrepayInstanceSpecRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", std::to_string(systemDiskCategory));
+	setCoreParameter("SystemDiskCategory", systemDiskCategory);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getRebootTime()const
@@ -132,7 +132,7 @@ std::string ModifyPrepayInstanceSpecRequest::getRebootTime()const
 void ModifyPrepayInstanceSpecRequest::setRebootTime(const std::string& rebootTime)
 {
 	rebootTime_ = rebootTime;
-	setCoreParameter("RebootTime", std::to_string(rebootTime));
+	setCoreParameter("RebootTime", rebootTime);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getSourceRegionId()const
@@ -143,7 +143,7 @@ std::string ModifyPrepayInstanceSpecRequest::getSourceRegionId()const
 void ModifyPrepayInstanceSpecRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getInstanceId()const
@@ -154,7 +154,7 @@ std::string ModifyPrepayInstanceSpecRequest::getInstanceId()const
 void ModifyPrepayInstanceSpecRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string ModifyPrepayInstanceSpecRequest::getRegionId()const
 void ModifyPrepayInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ModifyPrepayInstanceSpecRequest::getMigrateAcrossZone()const
@@ -187,6 +187,6 @@ std::string ModifyPrepayInstanceSpecRequest::getInstanceType()const
 void ModifyPrepayInstanceSpecRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", std::to_string(instanceType));
+	setCoreParameter("InstanceType", instanceType);
 }
 

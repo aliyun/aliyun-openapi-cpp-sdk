@@ -33,7 +33,7 @@ std::string DescribeCdnDomainLogsRequest::getSecurityToken()const
 void DescribeCdnDomainLogsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCdnDomainLogsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeCdnDomainLogsRequest::getDomainName()const
 void DescribeCdnDomainLogsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeCdnDomainLogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ long DescribeCdnDomainLogsRequest::getPageSize()const
 void DescribeCdnDomainLogsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCdnDomainLogsRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeCdnDomainLogsRequest::getEndTime()const
 void DescribeCdnDomainLogsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeCdnDomainLogsRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeCdnDomainLogsRequest::getStartTime()const
 void DescribeCdnDomainLogsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeCdnDomainLogsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCdnDomainLogsRequest::getOwnerId()const
 void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long DescribeCdnDomainLogsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long DescribeCdnDomainLogsRequest::getPageNumber()const
 void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCdnDomainLogsRequest::getLogDay()const
@@ -110,6 +110,6 @@ std::string DescribeCdnDomainLogsRequest::getLogDay()const
 void DescribeCdnDomainLogsRequest::setLogDay(const std::string& logDay)
 {
 	logDay_ = logDay;
-	setCoreParameter("LogDay", std::to_string(logDay));
+	setCoreParameter("LogDay", logDay);
 }
 

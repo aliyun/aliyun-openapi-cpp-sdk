@@ -33,7 +33,7 @@ long DescribeMachineConfigRequest::getResourceOwnerId()const
 void DescribeMachineConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeMachineConfigRequest::getTypes()const
@@ -44,7 +44,7 @@ std::string DescribeMachineConfigRequest::getTypes()const
 void DescribeMachineConfigRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", std::to_string(types));
+	setCoreParameter("Types", types);
 }
 
 std::string DescribeMachineConfigRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeMachineConfigRequest::getSourceIp()const
 void DescribeMachineConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeMachineConfigRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeMachineConfigRequest::getPageSize()const
 void DescribeMachineConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeMachineConfigRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeMachineConfigRequest::getCurrentPage()const
 void DescribeMachineConfigRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeMachineConfigRequest::getType()const
@@ -88,7 +88,7 @@ std::string DescribeMachineConfigRequest::getType()const
 void DescribeMachineConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeMachineConfigRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeMachineConfigRequest::getLang()const
 void DescribeMachineConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeMachineConfigRequest::getConfig()const
@@ -110,7 +110,7 @@ std::string DescribeMachineConfigRequest::getConfig()const
 void DescribeMachineConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", std::to_string(config));
+	setCoreParameter("Config", config);
 }
 
 std::string DescribeMachineConfigRequest::getTarget()const
@@ -121,6 +121,6 @@ std::string DescribeMachineConfigRequest::getTarget()const
 void DescribeMachineConfigRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", std::to_string(target));
+	setCoreParameter("Target", target);
 }
 

@@ -44,7 +44,7 @@ std::string ListPhoneNumbersRequest::getInstanceId()const
 void ListPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListPhoneNumbersRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListPhoneNumbersRequest::getAccessKeyId()const
 void ListPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

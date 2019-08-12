@@ -33,7 +33,7 @@ std::string GetWatermarkRequest::getWatermarkId()const
 void GetWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", std::to_string(watermarkId));
+	setCoreParameter("WatermarkId", watermarkId);
 }
 
 long GetWatermarkRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetWatermarkRequest::getResourceOwnerId()const
 void GetWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetWatermarkRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string GetWatermarkRequest::getResourceOwnerAccount()const
 void GetWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetWatermarkRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long GetWatermarkRequest::getOwnerId()const
 void GetWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetWatermarkRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetWatermarkRequest::getAccessKeyId()const
 void GetWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

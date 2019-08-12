@@ -33,7 +33,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getSourceRegionId()const
 void ModifyAutoSnapshotPolicyExRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long ModifyAutoSnapshotPolicyExRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyAutoSnapshotPolicyExRequest::getResourceOwnerId()const
 void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
 void ModifyAutoSnapshotPolicyExRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getRegionId()const
 void ModifyAutoSnapshotPolicyExRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId()const
@@ -77,7 +77,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyId()const
 void ModifyAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
 {
 	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
-	setCoreParameter("AutoSnapshotPolicyId", std::to_string(autoSnapshotPolicyId));
+	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getTimePoints()const
@@ -88,7 +88,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getTimePoints()const
 void ModifyAutoSnapshotPolicyExRequest::setTimePoints(const std::string& timePoints)
 {
 	timePoints_ = timePoints;
-	setCoreParameter("TimePoints", std::to_string(timePoints));
+	setCoreParameter("TimePoints", timePoints);
 }
 
 int ModifyAutoSnapshotPolicyExRequest::getRetentionDays()const
@@ -99,7 +99,7 @@ int ModifyAutoSnapshotPolicyExRequest::getRetentionDays()const
 void ModifyAutoSnapshotPolicyExRequest::setRetentionDays(int retentionDays)
 {
 	retentionDays_ = retentionDays;
-	setCoreParameter("RetentionDays", retentionDays);
+	setCoreParameter("RetentionDays", std::to_string(retentionDays));
 }
 
 long ModifyAutoSnapshotPolicyExRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyAutoSnapshotPolicyExRequest::getOwnerId()const
 void ModifyAutoSnapshotPolicyExRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getRepeatWeekdays()const
@@ -121,7 +121,7 @@ std::string ModifyAutoSnapshotPolicyExRequest::getRepeatWeekdays()const
 void ModifyAutoSnapshotPolicyExRequest::setRepeatWeekdays(const std::string& repeatWeekdays)
 {
 	repeatWeekdays_ = repeatWeekdays;
-	setCoreParameter("RepeatWeekdays", std::to_string(repeatWeekdays));
+	setCoreParameter("RepeatWeekdays", repeatWeekdays);
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyName()const
@@ -132,6 +132,6 @@ std::string ModifyAutoSnapshotPolicyExRequest::getAutoSnapshotPolicyName()const
 void ModifyAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyName(const std::string& autoSnapshotPolicyName)
 {
 	autoSnapshotPolicyName_ = autoSnapshotPolicyName;
-	setCoreParameter("AutoSnapshotPolicyName", std::to_string(autoSnapshotPolicyName));
+	setCoreParameter("AutoSnapshotPolicyName", autoSnapshotPolicyName);
 }
 

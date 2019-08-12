@@ -37,8 +37,8 @@ void CreateProductTagsRequest::setProductTag(const std::vector<ProductTag>& prod
 	for(int i = 0; i!= productTag.size(); i++)	{
 		auto obj = productTag.at(i);
 		std::string str ="ProductTag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
-		setCoreParameter(str + ".TagKey", std::to_string(obj.tagKey));
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 
@@ -50,7 +50,7 @@ std::string CreateProductTagsRequest::getIotInstanceId()const
 void CreateProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateProductTagsRequest::getProductKey()const
@@ -61,7 +61,7 @@ std::string CreateProductTagsRequest::getProductKey()const
 void CreateProductTagsRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string CreateProductTagsRequest::getAccessKeyId()const
@@ -72,6 +72,6 @@ std::string CreateProductTagsRequest::getAccessKeyId()const
 void CreateProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

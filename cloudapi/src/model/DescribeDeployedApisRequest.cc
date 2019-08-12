@@ -33,7 +33,7 @@ std::string DescribeDeployedApisRequest::getStageName()const
 void DescribeDeployedApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string DescribeDeployedApisRequest::getApiName()const
@@ -44,7 +44,7 @@ std::string DescribeDeployedApisRequest::getApiName()const
 void DescribeDeployedApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", std::to_string(apiName));
+	setCoreParameter("ApiName", apiName);
 }
 
 std::string DescribeDeployedApisRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeDeployedApisRequest::getSecurityToken()const
 void DescribeDeployedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDeployedApisRequest::getGroupId()const
@@ -66,7 +66,7 @@ std::string DescribeDeployedApisRequest::getGroupId()const
 void DescribeDeployedApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 int DescribeDeployedApisRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeDeployedApisRequest::getPageSize()const
 void DescribeDeployedApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeDeployedApisRequest::Tag> DescribeDeployedApisRequest::getTag()const
@@ -92,8 +92,8 @@ void DescribeDeployedApisRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -116,7 +116,7 @@ std::string DescribeDeployedApisRequest::getApiId()const
 void DescribeDeployedApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", std::to_string(apiId));
+	setCoreParameter("ApiId", apiId);
 }
 
 int DescribeDeployedApisRequest::getPageNumber()const
@@ -127,7 +127,7 @@ int DescribeDeployedApisRequest::getPageNumber()const
 void DescribeDeployedApisRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDeployedApisRequest::getAccessKeyId()const
@@ -138,6 +138,6 @@ std::string DescribeDeployedApisRequest::getAccessKeyId()const
 void DescribeDeployedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

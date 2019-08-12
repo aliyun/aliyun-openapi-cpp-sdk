@@ -33,7 +33,7 @@ std::string DescribeRefreshTasksRequest::getObjectPath()const
 void DescribeRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", std::to_string(objectPath));
+	setCoreParameter("ObjectPath", objectPath);
 }
 
 std::string DescribeRefreshTasksRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeRefreshTasksRequest::getDomainName()const
 void DescribeRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeRefreshTasksRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeRefreshTasksRequest::getEndTime()const
 void DescribeRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeRefreshTasksRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeRefreshTasksRequest::getStartTime()const
 void DescribeRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeRefreshTasksRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeRefreshTasksRequest::getOwnerId()const
 void DescribeRefreshTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeRefreshTasksRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeRefreshTasksRequest::getPageNumber()const
 void DescribeRefreshTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRefreshTasksRequest::getResourceGroupId()const
@@ -99,7 +99,7 @@ std::string DescribeRefreshTasksRequest::getResourceGroupId()const
 void DescribeRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeRefreshTasksRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeRefreshTasksRequest::getSecurityToken()const
 void DescribeRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeRefreshTasksRequest::getPageSize()const
@@ -121,7 +121,7 @@ int DescribeRefreshTasksRequest::getPageSize()const
 void DescribeRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRefreshTasksRequest::getObjectType()const
@@ -132,7 +132,7 @@ std::string DescribeRefreshTasksRequest::getObjectType()const
 void DescribeRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", std::to_string(objectType));
+	setCoreParameter("ObjectType", objectType);
 }
 
 std::string DescribeRefreshTasksRequest::getTaskId()const
@@ -143,7 +143,7 @@ std::string DescribeRefreshTasksRequest::getTaskId()const
 void DescribeRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string DescribeRefreshTasksRequest::getStatus()const
@@ -154,6 +154,6 @@ std::string DescribeRefreshTasksRequest::getStatus()const
 void DescribeRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

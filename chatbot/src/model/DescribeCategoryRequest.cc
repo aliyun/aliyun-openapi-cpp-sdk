@@ -33,6 +33,6 @@ long DescribeCategoryRequest::getCategoryId()const
 void DescribeCategoryRequest::setCategoryId(long categoryId)
 {
 	categoryId_ = categoryId;
-	setCoreParameter("CategoryId", categoryId);
+	setCoreParameter("CategoryId", std::to_string(categoryId));
 }
 

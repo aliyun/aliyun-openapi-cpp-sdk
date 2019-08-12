@@ -33,7 +33,7 @@ std::string DeleteLogQueryRequest::getSourceIp()const
 void DeleteLogQueryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteLogQueryRequest::getQueryName()const
@@ -44,6 +44,6 @@ std::string DeleteLogQueryRequest::getQueryName()const
 void DeleteLogQueryRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", std::to_string(queryName));
+	setCoreParameter("QueryName", queryName);
 }
 

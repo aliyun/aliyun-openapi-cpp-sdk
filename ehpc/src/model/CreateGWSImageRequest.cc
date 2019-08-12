@@ -33,7 +33,7 @@ std::string CreateGWSImageRequest::getInstanceId()const
 void CreateGWSImageRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateGWSImageRequest::getName()const
@@ -44,7 +44,7 @@ std::string CreateGWSImageRequest::getName()const
 void CreateGWSImageRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateGWSImageRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CreateGWSImageRequest::getAccessKeyId()const
 void CreateGWSImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

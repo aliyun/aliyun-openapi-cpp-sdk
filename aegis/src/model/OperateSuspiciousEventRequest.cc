@@ -33,7 +33,7 @@ std::string OperateSuspiciousEventRequest::getSourceIp()const
 void OperateSuspiciousEventRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateSuspiciousEventRequest::getData()const
@@ -44,7 +44,7 @@ std::string OperateSuspiciousEventRequest::getData()const
 void OperateSuspiciousEventRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string OperateSuspiciousEventRequest::getOperateType()const
@@ -55,6 +55,6 @@ std::string OperateSuspiciousEventRequest::getOperateType()const
 void OperateSuspiciousEventRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", std::to_string(operateType));
+	setCoreParameter("OperateType", operateType);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeGroupListRequest::getWarnLevel()const
 void DescribeGroupListRequest::setWarnLevel(const std::string& warnLevel)
 {
 	warnLevel_ = warnLevel;
-	setCoreParameter("WarnLevel", std::to_string(warnLevel));
+	setCoreParameter("WarnLevel", warnLevel);
 }
 
 std::string DescribeGroupListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeGroupListRequest::getSourceIp()const
 void DescribeGroupListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeGroupListRequest::getRuleGroupId()const
@@ -55,7 +55,7 @@ long DescribeGroupListRequest::getRuleGroupId()const
 void DescribeGroupListRequest::setRuleGroupId(long ruleGroupId)
 {
 	ruleGroupId_ = ruleGroupId;
-	setCoreParameter("RuleGroupId", ruleGroupId);
+	setCoreParameter("RuleGroupId", std::to_string(ruleGroupId));
 }
 
 int DescribeGroupListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeGroupListRequest::getPageSize()const
 void DescribeGroupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeGroupListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeGroupListRequest::getCurrentPage()const
 void DescribeGroupListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeGroupListRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeGroupListRequest::getLang()const
 void DescribeGroupListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeGroupListRequest::getExGroupId()const
@@ -99,6 +99,6 @@ long DescribeGroupListRequest::getExGroupId()const
 void DescribeGroupListRequest::setExGroupId(long exGroupId)
 {
 	exGroupId_ = exGroupId;
-	setCoreParameter("ExGroupId", exGroupId);
+	setCoreParameter("ExGroupId", std::to_string(exGroupId));
 }
 

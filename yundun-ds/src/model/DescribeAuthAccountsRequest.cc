@@ -33,7 +33,7 @@ std::string DescribeAuthAccountsRequest::getSourceIp()const
 void DescribeAuthAccountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeAuthAccountsRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DescribeAuthAccountsRequest::getFeatureType()const
 void DescribeAuthAccountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeAuthAccountsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeAuthAccountsRequest::getPageSize()const
 void DescribeAuthAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeAuthAccountsRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeAuthAccountsRequest::getCurrentPage()const
 void DescribeAuthAccountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAuthAccountsRequest::getLang()const
@@ -77,6 +77,6 @@ std::string DescribeAuthAccountsRequest::getLang()const
 void DescribeAuthAccountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

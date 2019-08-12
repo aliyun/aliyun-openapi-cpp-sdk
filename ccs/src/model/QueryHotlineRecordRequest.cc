@@ -33,7 +33,7 @@ std::string QueryHotlineRecordRequest::getAgentId()const
 void QueryHotlineRecordRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", std::to_string(agentId));
+	setCoreParameter("AgentId", agentId);
 }
 
 long QueryHotlineRecordRequest::getMaxTalkDuration()const
@@ -44,7 +44,7 @@ long QueryHotlineRecordRequest::getMaxTalkDuration()const
 void QueryHotlineRecordRequest::setMaxTalkDuration(long maxTalkDuration)
 {
 	maxTalkDuration_ = maxTalkDuration;
-	setCoreParameter("MaxTalkDuration", maxTalkDuration);
+	setCoreParameter("MaxTalkDuration", std::to_string(maxTalkDuration));
 }
 
 std::string QueryHotlineRecordRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string QueryHotlineRecordRequest::getGroupId()const
 void QueryHotlineRecordRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string QueryHotlineRecordRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string QueryHotlineRecordRequest::getEndTime()const
 void QueryHotlineRecordRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string QueryHotlineRecordRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryHotlineRecordRequest::getStartTime()const
 void QueryHotlineRecordRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 int QueryHotlineRecordRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryHotlineRecordRequest::getPageNum()const
 void QueryHotlineRecordRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryHotlineRecordRequest::getSatisfaction()const
@@ -99,7 +99,7 @@ std::string QueryHotlineRecordRequest::getSatisfaction()const
 void QueryHotlineRecordRequest::setSatisfaction(const std::string& satisfaction)
 {
 	satisfaction_ = satisfaction;
-	setCoreParameter("Satisfaction", std::to_string(satisfaction));
+	setCoreParameter("Satisfaction", satisfaction);
 }
 
 long QueryHotlineRecordRequest::getMinTalkDuratoin()const
@@ -110,7 +110,7 @@ long QueryHotlineRecordRequest::getMinTalkDuratoin()const
 void QueryHotlineRecordRequest::setMinTalkDuratoin(long minTalkDuratoin)
 {
 	minTalkDuratoin_ = minTalkDuratoin;
-	setCoreParameter("MinTalkDuratoin", minTalkDuratoin);
+	setCoreParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
 }
 
 std::string QueryHotlineRecordRequest::getCategoryIds()const
@@ -121,7 +121,7 @@ std::string QueryHotlineRecordRequest::getCategoryIds()const
 void QueryHotlineRecordRequest::setCategoryIds(const std::string& categoryIds)
 {
 	categoryIds_ = categoryIds;
-	setCoreParameter("CategoryIds", std::to_string(categoryIds));
+	setCoreParameter("CategoryIds", categoryIds);
 }
 
 std::string QueryHotlineRecordRequest::getVisitorProvince()const
@@ -132,7 +132,7 @@ std::string QueryHotlineRecordRequest::getVisitorProvince()const
 void QueryHotlineRecordRequest::setVisitorProvince(const std::string& visitorProvince)
 {
 	visitorProvince_ = visitorProvince;
-	setCoreParameter("VisitorProvince", std::to_string(visitorProvince));
+	setCoreParameter("VisitorProvince", visitorProvince);
 }
 
 int QueryHotlineRecordRequest::getPageSize()const
@@ -143,7 +143,7 @@ int QueryHotlineRecordRequest::getPageSize()const
 void QueryHotlineRecordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryHotlineRecordRequest::getCallType()const
@@ -154,7 +154,7 @@ std::string QueryHotlineRecordRequest::getCallType()const
 void QueryHotlineRecordRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setCoreParameter("CallType", std::to_string(callType));
+	setCoreParameter("CallType", callType);
 }
 
 std::string QueryHotlineRecordRequest::getCcsInstanceId()const
@@ -165,7 +165,7 @@ std::string QueryHotlineRecordRequest::getCcsInstanceId()const
 void QueryHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", std::to_string(ccsInstanceId));
+	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 
 std::string QueryHotlineRecordRequest::getVisitorPhone()const
@@ -176,7 +176,7 @@ std::string QueryHotlineRecordRequest::getVisitorPhone()const
 void QueryHotlineRecordRequest::setVisitorPhone(const std::string& visitorPhone)
 {
 	visitorPhone_ = visitorPhone;
-	setCoreParameter("VisitorPhone", std::to_string(visitorPhone));
+	setCoreParameter("VisitorPhone", visitorPhone);
 }
 
 std::string QueryHotlineRecordRequest::getVisitorId()const
@@ -187,7 +187,7 @@ std::string QueryHotlineRecordRequest::getVisitorId()const
 void QueryHotlineRecordRequest::setVisitorId(const std::string& visitorId)
 {
 	visitorId_ = visitorId;
-	setCoreParameter("VisitorId", std::to_string(visitorId));
+	setCoreParameter("VisitorId", visitorId);
 }
 
 std::string QueryHotlineRecordRequest::getStatus()const
@@ -198,6 +198,6 @@ std::string QueryHotlineRecordRequest::getStatus()const
 void QueryHotlineRecordRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

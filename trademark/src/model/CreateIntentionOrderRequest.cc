@@ -33,7 +33,7 @@ std::string CreateIntentionOrderRequest::getChannel()const
 void CreateIntentionOrderRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", std::to_string(channel));
+	setCoreParameter("Channel", channel);
 }
 
 std::string CreateIntentionOrderRequest::getIntentionBizId()const
@@ -44,6 +44,6 @@ std::string CreateIntentionOrderRequest::getIntentionBizId()const
 void CreateIntentionOrderRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", std::to_string(intentionBizId));
+	setCoreParameter("IntentionBizId", intentionBizId);
 }
 

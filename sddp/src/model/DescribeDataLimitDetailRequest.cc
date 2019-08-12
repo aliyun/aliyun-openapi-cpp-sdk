@@ -33,7 +33,7 @@ std::string DescribeDataLimitDetailRequest::getSourceIp()const
 void DescribeDataLimitDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeDataLimitDetailRequest::getId()const
@@ -44,7 +44,7 @@ long DescribeDataLimitDetailRequest::getId()const
 void DescribeDataLimitDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 int DescribeDataLimitDetailRequest::getNetworkType()const
@@ -55,7 +55,7 @@ int DescribeDataLimitDetailRequest::getNetworkType()const
 void DescribeDataLimitDetailRequest::setNetworkType(int networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setCoreParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string DescribeDataLimitDetailRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeDataLimitDetailRequest::getLang()const
 void DescribeDataLimitDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

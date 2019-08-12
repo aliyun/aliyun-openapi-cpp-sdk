@@ -33,7 +33,7 @@ std::string OpenSasTrialRequest::getSourceIp()const
 void OpenSasTrialRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OpenSasTrialRequest::getBuyVersion()const
@@ -44,6 +44,6 @@ std::string OpenSasTrialRequest::getBuyVersion()const
 void OpenSasTrialRequest::setBuyVersion(const std::string& buyVersion)
 {
 	buyVersion_ = buyVersion;
-	setCoreParameter("BuyVersion", std::to_string(buyVersion));
+	setCoreParameter("BuyVersion", buyVersion);
 }
 

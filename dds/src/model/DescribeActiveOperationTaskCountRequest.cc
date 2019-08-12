@@ -33,7 +33,7 @@ long DescribeActiveOperationTaskCountRequest::getResourceOwnerId()const
 void DescribeActiveOperationTaskCountRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeActiveOperationTaskCountRequest::getSecurityToken()const
 void DescribeActiveOperationTaskCountRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeActiveOperationTaskCountRequest::getResourceOwnerAccount()co
 void DescribeActiveOperationTaskCountRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeActiveOperationTaskCountRequest::getRegionId()const
 void DescribeActiveOperationTaskCountRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeActiveOperationTaskCountRequest::getOwnerAccount()const
 void DescribeActiveOperationTaskCountRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeActiveOperationTaskCountRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeActiveOperationTaskCountRequest::getOwnerId()const
 void DescribeActiveOperationTaskCountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeActiveOperationTaskCountRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DescribeActiveOperationTaskCountRequest::getAccessKeyId()const
 void DescribeActiveOperationTaskCountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeAccessKeyLeakDetailRequest::getSourceIp()const
 void DescribeAccessKeyLeakDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeAccessKeyLeakDetailRequest::getId()const
@@ -44,6 +44,6 @@ long DescribeAccessKeyLeakDetailRequest::getId()const
 void DescribeAccessKeyLeakDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

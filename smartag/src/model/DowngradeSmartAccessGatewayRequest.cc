@@ -33,7 +33,7 @@ long DowngradeSmartAccessGatewayRequest::getResourceOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DowngradeSmartAccessGatewayRequest::getAutoPay()const
@@ -55,7 +55,7 @@ long DowngradeSmartAccessGatewayRequest::getBandWidthSpec()const
 void DowngradeSmartAccessGatewayRequest::setBandWidthSpec(long bandWidthSpec)
 {
 	bandWidthSpec_ = bandWidthSpec;
-	setCoreParameter("BandWidthSpec", bandWidthSpec);
+	setCoreParameter("BandWidthSpec", std::to_string(bandWidthSpec));
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DowngradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void DowngradeSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DowngradeSmartAccessGatewayRequest::getRegionId()const
 void DowngradeSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DowngradeSmartAccessGatewayRequest::getOwnerAccount()const
 void DowngradeSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DowngradeSmartAccessGatewayRequest::getUserCount()const
@@ -99,7 +99,7 @@ int DowngradeSmartAccessGatewayRequest::getUserCount()const
 void DowngradeSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", userCount);
+	setCoreParameter("UserCount", std::to_string(userCount));
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getSmartAGId()const
@@ -110,7 +110,7 @@ std::string DowngradeSmartAccessGatewayRequest::getSmartAGId()const
 void DowngradeSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long DowngradeSmartAccessGatewayRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DowngradeSmartAccessGatewayRequest::getOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long DowngradeSmartAccessGatewayRequest::getDataPlan()const
@@ -132,6 +132,6 @@ long DowngradeSmartAccessGatewayRequest::getDataPlan()const
 void DowngradeSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", dataPlan);
+	setCoreParameter("DataPlan", std::to_string(dataPlan));
 }
 

@@ -33,7 +33,7 @@ std::string CheckLoaFillRequest::getOssKey()const
 void CheckLoaFillRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", std::to_string(ossKey));
+	setCoreParameter("OssKey", ossKey);
 }
 
 std::string CheckLoaFillRequest::getType()const
@@ -44,6 +44,6 @@ std::string CheckLoaFillRequest::getType()const
 void CheckLoaFillRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

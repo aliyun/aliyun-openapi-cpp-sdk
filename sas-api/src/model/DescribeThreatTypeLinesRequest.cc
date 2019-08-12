@@ -33,7 +33,7 @@ std::string DescribeThreatTypeLinesRequest::getSourceIp()const
 void DescribeThreatTypeLinesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeThreatTypeLinesRequest::getApiType()const
@@ -44,6 +44,6 @@ int DescribeThreatTypeLinesRequest::getApiType()const
 void DescribeThreatTypeLinesRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setCoreParameter("ApiType", std::to_string(apiType));
 }
 

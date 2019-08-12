@@ -37,8 +37,8 @@ void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<Filter>& f
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), std::to_string(obj.value.at(i)));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -50,7 +50,7 @@ long DescribeCenBandwidthPackagesRequest::getResourceOwnerId()const
 void DescribeCenBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
@@ -61,7 +61,7 @@ std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
@@ -72,7 +72,7 @@ std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeCenBandwidthPackagesRequest::getPageSize()const
@@ -83,7 +83,7 @@ int DescribeCenBandwidthPackagesRequest::getPageSize()const
 void DescribeCenBandwidthPackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCenBandwidthPackagesRequest::getOwnerId()const
@@ -94,7 +94,7 @@ long DescribeCenBandwidthPackagesRequest::getOwnerId()const
 void DescribeCenBandwidthPackagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeCenBandwidthPackagesRequest::getPageNumber()const
@@ -105,7 +105,7 @@ int DescribeCenBandwidthPackagesRequest::getPageNumber()const
 void DescribeCenBandwidthPackagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeCenBandwidthPackagesRequest::getIsOrKey()const

@@ -33,7 +33,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getInstanceId()const
 void ModifySkillGroupOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhoneNumberId()const
@@ -45,7 +45,7 @@ void ModifySkillGroupOutboundNumbersRequest::setOutboundPhoneNumberId(const std:
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
 	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), std::to_string(outboundPhoneNumberId.at(i)));
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
@@ -56,7 +56,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
 void ModifySkillGroupOutboundNumbersRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
@@ -67,7 +67,7 @@ int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
 void ModifySkillGroupOutboundNumbersRequest::setOperationType(int operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", operationType);
+	setCoreParameter("OperationType", std::to_string(operationType));
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
 void ModifySkillGroupOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

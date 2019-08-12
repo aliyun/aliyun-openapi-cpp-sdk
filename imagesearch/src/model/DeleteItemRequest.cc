@@ -33,6 +33,6 @@ std::string DeleteItemRequest::getInstanceName()const
 void DeleteItemRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 

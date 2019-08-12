@@ -33,7 +33,7 @@ long DescribeUserBaselineAuthorizationRequest::getResourceOwnerId()const
 void DescribeUserBaselineAuthorizationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserBaselineAuthorizationRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeUserBaselineAuthorizationRequest::getSourceIp()const
 void DescribeUserBaselineAuthorizationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUserBaselineAuthorizationRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeUserBaselineAuthorizationRequest::getLang()const
 void DescribeUserBaselineAuthorizationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

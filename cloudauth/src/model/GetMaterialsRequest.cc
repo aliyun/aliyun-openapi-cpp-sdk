@@ -33,7 +33,7 @@ long GetMaterialsRequest::getResourceOwnerId()const
 void GetMaterialsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMaterialsRequest::getBiz()const
@@ -44,7 +44,7 @@ std::string GetMaterialsRequest::getBiz()const
 void GetMaterialsRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", std::to_string(biz));
+	setCoreParameter("Biz", biz);
 }
 
 std::string GetMaterialsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string GetMaterialsRequest::getSourceIp()const
 void GetMaterialsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string GetMaterialsRequest::getTicketId()const
@@ -66,6 +66,6 @@ std::string GetMaterialsRequest::getTicketId()const
 void GetMaterialsRequest::setTicketId(const std::string& ticketId)
 {
 	ticketId_ = ticketId;
-	setCoreParameter("TicketId", std::to_string(ticketId));
+	setCoreParameter("TicketId", ticketId);
 }
 

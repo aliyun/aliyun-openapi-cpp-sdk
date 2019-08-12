@@ -33,7 +33,7 @@ long ReleaseClusterRequest::getResourceOwnerId()const
 void ReleaseClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseClusterRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ReleaseClusterRequest::getRegionId()const
 void ReleaseClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ReleaseClusterRequest::getForceRelease()const
@@ -66,7 +66,7 @@ std::string ReleaseClusterRequest::getId()const
 void ReleaseClusterRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 std::string ReleaseClusterRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ReleaseClusterRequest::getAccessKeyId()const
 void ReleaseClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

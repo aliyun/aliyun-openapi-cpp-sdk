@@ -33,7 +33,7 @@ std::string RebootInstanceRequest::getSourceRegionId()const
 void RebootInstanceRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long RebootInstanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RebootInstanceRequest::getResourceOwnerId()const
 void RebootInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RebootInstanceRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string RebootInstanceRequest::getInstanceId()const
 void RebootInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 bool RebootInstanceRequest::getDryRun()const
@@ -77,7 +77,7 @@ std::string RebootInstanceRequest::getResourceOwnerAccount()const
 void RebootInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RebootInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RebootInstanceRequest::getOwnerAccount()const
 void RebootInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RebootInstanceRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long RebootInstanceRequest::getOwnerId()const
 void RebootInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool RebootInstanceRequest::getForceStop()const

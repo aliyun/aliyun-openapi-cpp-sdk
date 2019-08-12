@@ -33,7 +33,7 @@ long DescribeDBInstanceByTagsRequest::getResourceOwnerId()const
 void DescribeDBInstanceByTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstanceByTagsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeDBInstanceByTagsRequest::getResourceOwnerAccount()const
 void DescribeDBInstanceByTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstanceByTagsRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstanceByTagsRequest::getClientToken()const
 void DescribeDBInstanceByTagsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeDBInstanceByTagsRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstanceByTagsRequest::getRegionId()const
 void DescribeDBInstanceByTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDBInstanceByTagsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstanceByTagsRequest::getOwnerAccount()const
 void DescribeDBInstanceByTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeDBInstanceByTagsRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeDBInstanceByTagsRequest::getPageSize()const
 void DescribeDBInstanceByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDBInstanceByTagsRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeDBInstanceByTagsRequest::getDBInstanceId()const
 void DescribeDBInstanceByTagsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceByTagsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeDBInstanceByTagsRequest::getOwnerId()const
 void DescribeDBInstanceByTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDBInstanceByTagsRequest::getPageNumber()const
@@ -121,7 +121,7 @@ int DescribeDBInstanceByTagsRequest::getPageNumber()const
 void DescribeDBInstanceByTagsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBInstanceByTagsRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string DescribeDBInstanceByTagsRequest::getAccessKeyId()const
 void DescribeDBInstanceByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceByTagsRequest::getProxyId()const
@@ -143,6 +143,6 @@ std::string DescribeDBInstanceByTagsRequest::getProxyId()const
 void DescribeDBInstanceByTagsRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", std::to_string(proxyId));
+	setCoreParameter("ProxyId", proxyId);
 }
 

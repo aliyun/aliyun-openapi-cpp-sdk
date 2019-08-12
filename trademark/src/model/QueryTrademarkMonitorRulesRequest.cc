@@ -33,7 +33,7 @@ int QueryTrademarkMonitorRulesRequest::getNotifyUpdate()const
 void QueryTrademarkMonitorRulesRequest::setNotifyUpdate(int notifyUpdate)
 {
 	notifyUpdate_ = notifyUpdate;
-	setCoreParameter("NotifyUpdate", notifyUpdate);
+	setCoreParameter("NotifyUpdate", std::to_string(notifyUpdate));
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int QueryTrademarkMonitorRulesRequest::getPageSize()const
 void QueryTrademarkMonitorRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
@@ -55,7 +55,7 @@ std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
 void QueryTrademarkMonitorRulesRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", std::to_string(ruleName));
+	setCoreParameter("RuleName", ruleName);
 }
 
 std::string QueryTrademarkMonitorRulesRequest::getId()const
@@ -66,7 +66,7 @@ std::string QueryTrademarkMonitorRulesRequest::getId()const
 void QueryTrademarkMonitorRulesRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageNum()const
@@ -77,6 +77,6 @@ int QueryTrademarkMonitorRulesRequest::getPageNum()const
 void QueryTrademarkMonitorRulesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

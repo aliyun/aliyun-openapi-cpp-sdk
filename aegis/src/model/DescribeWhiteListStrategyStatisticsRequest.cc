@@ -33,7 +33,7 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getSourceIp()const
 void DescribeWhiteListStrategyStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWhiteListStrategyStatisticsRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeWhiteListStrategyStatisticsRequest::getPageSize()const
 void DescribeWhiteListStrategyStatisticsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWhiteListStrategyStatisticsRequest::getStrategyIds()const
@@ -55,7 +55,7 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getStrategyIds()const
 void DescribeWhiteListStrategyStatisticsRequest::setStrategyIds(const std::string& strategyIds)
 {
 	strategyIds_ = strategyIds;
-	setCoreParameter("StrategyIds", std::to_string(strategyIds));
+	setCoreParameter("StrategyIds", strategyIds);
 }
 
 int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeWhiteListStrategyStatisticsRequest::getCurrentPage()const
 void DescribeWhiteListStrategyStatisticsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWhiteListStrategyStatisticsRequest::getLang()const
@@ -77,6 +77,6 @@ std::string DescribeWhiteListStrategyStatisticsRequest::getLang()const
 void DescribeWhiteListStrategyStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

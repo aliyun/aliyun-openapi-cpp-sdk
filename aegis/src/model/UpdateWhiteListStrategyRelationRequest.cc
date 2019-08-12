@@ -33,7 +33,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getSourceIp()const
 void UpdateWhiteListStrategyRelationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int UpdateWhiteListStrategyRelationRequest::getProcessMethod()const
@@ -44,7 +44,7 @@ int UpdateWhiteListStrategyRelationRequest::getProcessMethod()const
 void UpdateWhiteListStrategyRelationRequest::setProcessMethod(int processMethod)
 {
 	processMethod_ = processMethod;
-	setCoreParameter("ProcessMethod", processMethod);
+	setCoreParameter("ProcessMethod", std::to_string(processMethod));
 }
 
 long UpdateWhiteListStrategyRelationRequest::getStrategyId()const
@@ -55,7 +55,7 @@ long UpdateWhiteListStrategyRelationRequest::getStrategyId()const
 void UpdateWhiteListStrategyRelationRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string UpdateWhiteListStrategyRelationRequest::getLang()const
@@ -66,7 +66,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getLang()const
 void UpdateWhiteListStrategyRelationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int UpdateWhiteListStrategyRelationRequest::getType()const
@@ -77,7 +77,7 @@ int UpdateWhiteListStrategyRelationRequest::getType()const
 void UpdateWhiteListStrategyRelationRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setCoreParameter("Type", std::to_string(type));
 }
 
 std::string UpdateWhiteListStrategyRelationRequest::getUuid()const
@@ -88,7 +88,7 @@ std::string UpdateWhiteListStrategyRelationRequest::getUuid()const
 void UpdateWhiteListStrategyRelationRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 
 int UpdateWhiteListStrategyRelationRequest::getStatus()const
@@ -99,6 +99,6 @@ int UpdateWhiteListStrategyRelationRequest::getStatus()const
 void UpdateWhiteListStrategyRelationRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeBackupGatewayListRequest::getIdentifier()const
 void DescribeBackupGatewayListRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", std::to_string(identifier));
+	setCoreParameter("Identifier", identifier);
 }
 
 std::string DescribeBackupGatewayListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeBackupGatewayListRequest::getRegionId()const
 void DescribeBackupGatewayListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeBackupGatewayListRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeBackupGatewayListRequest::getClientToken()const
 void DescribeBackupGatewayListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int DescribeBackupGatewayListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeBackupGatewayListRequest::getPageSize()const
 void DescribeBackupGatewayListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBackupGatewayListRequest::getRegion()const
@@ -77,7 +77,7 @@ std::string DescribeBackupGatewayListRequest::getRegion()const
 void DescribeBackupGatewayListRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setCoreParameter("Region", region);
 }
 
 int DescribeBackupGatewayListRequest::getPageNum()const
@@ -88,7 +88,7 @@ int DescribeBackupGatewayListRequest::getPageNum()const
 void DescribeBackupGatewayListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeBackupGatewayListRequest::getOwnerId()const
@@ -99,6 +99,6 @@ std::string DescribeBackupGatewayListRequest::getOwnerId()const
 void DescribeBackupGatewayListRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", ownerId);
 }
 

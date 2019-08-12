@@ -33,7 +33,7 @@ std::string UnlinkFaceRequest::getGroupId()const
 void UnlinkFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string UnlinkFaceRequest::getUserId()const
@@ -44,6 +44,6 @@ std::string UnlinkFaceRequest::getUserId()const
 void UnlinkFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setCoreParameter("UserId", userId);
 }
 

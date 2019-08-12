@@ -33,7 +33,7 @@ std::string DeleteCasterComponentRequest::getComponentId()const
 void DeleteCasterComponentRequest::setComponentId(const std::string& componentId)
 {
 	componentId_ = componentId;
-	setCoreParameter("ComponentId", std::to_string(componentId));
+	setCoreParameter("ComponentId", componentId);
 }
 
 std::string DeleteCasterComponentRequest::getCasterId()const
@@ -44,7 +44,7 @@ std::string DeleteCasterComponentRequest::getCasterId()const
 void DeleteCasterComponentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 long DeleteCasterComponentRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DeleteCasterComponentRequest::getOwnerId()const
 void DeleteCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

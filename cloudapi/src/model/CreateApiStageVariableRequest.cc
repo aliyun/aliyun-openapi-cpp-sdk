@@ -44,7 +44,7 @@ std::string CreateApiStageVariableRequest::getSecurityToken()const
 void CreateApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateApiStageVariableRequest::getVariableName()const
@@ -55,7 +55,7 @@ std::string CreateApiStageVariableRequest::getVariableName()const
 void CreateApiStageVariableRequest::setVariableName(const std::string& variableName)
 {
 	variableName_ = variableName;
-	setCoreParameter("VariableName", std::to_string(variableName));
+	setCoreParameter("VariableName", variableName);
 }
 
 std::string CreateApiStageVariableRequest::getVariableValue()const
@@ -66,7 +66,7 @@ std::string CreateApiStageVariableRequest::getVariableValue()const
 void CreateApiStageVariableRequest::setVariableValue(const std::string& variableValue)
 {
 	variableValue_ = variableValue;
-	setCoreParameter("VariableValue", std::to_string(variableValue));
+	setCoreParameter("VariableValue", variableValue);
 }
 
 std::string CreateApiStageVariableRequest::getGroupId()const
@@ -77,7 +77,7 @@ std::string CreateApiStageVariableRequest::getGroupId()const
 void CreateApiStageVariableRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string CreateApiStageVariableRequest::getStageRouteModel()const
@@ -88,7 +88,7 @@ std::string CreateApiStageVariableRequest::getStageRouteModel()const
 void CreateApiStageVariableRequest::setStageRouteModel(const std::string& stageRouteModel)
 {
 	stageRouteModel_ = stageRouteModel;
-	setCoreParameter("StageRouteModel", std::to_string(stageRouteModel));
+	setCoreParameter("StageRouteModel", stageRouteModel);
 }
 
 std::string CreateApiStageVariableRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateApiStageVariableRequest::getAccessKeyId()const
 void CreateApiStageVariableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateApiStageVariableRequest::getStageId()const
@@ -110,6 +110,6 @@ std::string CreateApiStageVariableRequest::getStageId()const
 void CreateApiStageVariableRequest::setStageId(const std::string& stageId)
 {
 	stageId_ = stageId;
-	setCoreParameter("StageId", std::to_string(stageId));
+	setCoreParameter("StageId", stageId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeLiveStreamsNotifyUrlConfigRequest::getRegionId()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

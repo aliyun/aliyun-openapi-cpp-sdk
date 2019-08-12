@@ -33,7 +33,7 @@ long ModifyBgpPeerAttributeRequest::getResourceOwnerId()const
 void ModifyBgpPeerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyBgpPeerAttributeRequest::getEnableBfd()const
@@ -55,7 +55,7 @@ std::string ModifyBgpPeerAttributeRequest::getRegionId()const
 void ModifyBgpPeerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyBgpPeerAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyBgpPeerAttributeRequest::getResourceOwnerAccount()const
 void ModifyBgpPeerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyBgpPeerAttributeRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifyBgpPeerAttributeRequest::getClientToken()const
 void ModifyBgpPeerAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyBgpPeerAttributeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyBgpPeerAttributeRequest::getOwnerAccount()const
 void ModifyBgpPeerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyBgpPeerAttributeRequest::getBgpGroupId()const
@@ -99,7 +99,7 @@ std::string ModifyBgpPeerAttributeRequest::getBgpGroupId()const
 void ModifyBgpPeerAttributeRequest::setBgpGroupId(const std::string& bgpGroupId)
 {
 	bgpGroupId_ = bgpGroupId;
-	setCoreParameter("BgpGroupId", std::to_string(bgpGroupId));
+	setCoreParameter("BgpGroupId", bgpGroupId);
 }
 
 std::string ModifyBgpPeerAttributeRequest::getBgpPeerId()const
@@ -110,7 +110,7 @@ std::string ModifyBgpPeerAttributeRequest::getBgpPeerId()const
 void ModifyBgpPeerAttributeRequest::setBgpPeerId(const std::string& bgpPeerId)
 {
 	bgpPeerId_ = bgpPeerId;
-	setCoreParameter("BgpPeerId", std::to_string(bgpPeerId));
+	setCoreParameter("BgpPeerId", bgpPeerId);
 }
 
 long ModifyBgpPeerAttributeRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyBgpPeerAttributeRequest::getOwnerId()const
 void ModifyBgpPeerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyBgpPeerAttributeRequest::getPeerIpAddress()const
@@ -132,6 +132,6 @@ std::string ModifyBgpPeerAttributeRequest::getPeerIpAddress()const
 void ModifyBgpPeerAttributeRequest::setPeerIpAddress(const std::string& peerIpAddress)
 {
 	peerIpAddress_ = peerIpAddress;
-	setCoreParameter("PeerIpAddress", std::to_string(peerIpAddress));
+	setCoreParameter("PeerIpAddress", peerIpAddress);
 }
 

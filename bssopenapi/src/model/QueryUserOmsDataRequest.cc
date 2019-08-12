@@ -33,7 +33,7 @@ std::string QueryUserOmsDataRequest::getDataType()const
 void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", dataType);
 }
 
 std::string QueryUserOmsDataRequest::getMarker()const
@@ -44,7 +44,7 @@ std::string QueryUserOmsDataRequest::getMarker()const
 void QueryUserOmsDataRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 int QueryUserOmsDataRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryUserOmsDataRequest::getPageSize()const
 void QueryUserOmsDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryUserOmsDataRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string QueryUserOmsDataRequest::getEndTime()const
 void QueryUserOmsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string QueryUserOmsDataRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string QueryUserOmsDataRequest::getStartTime()const
 void QueryUserOmsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long QueryUserOmsDataRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long QueryUserOmsDataRequest::getOwnerId()const
 void QueryUserOmsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryUserOmsDataRequest::getTable()const
@@ -99,6 +99,6 @@ std::string QueryUserOmsDataRequest::getTable()const
 void QueryUserOmsDataRequest::setTable(const std::string& table)
 {
 	table_ = table;
-	setCoreParameter("Table", std::to_string(table));
+	setCoreParameter("Table", table);
 }
 

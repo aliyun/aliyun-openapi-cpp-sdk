@@ -34,7 +34,7 @@ void AssignJobsRequest::setCallingNumber(const std::vector<std::string>& calling
 {
 	callingNumber_ = callingNumber;
 	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), std::to_string(callingNumber.at(i)));
+		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
 }
 
 std::string AssignJobsRequest::getInstanceId()const
@@ -45,7 +45,7 @@ std::string AssignJobsRequest::getInstanceId()const
 void AssignJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string AssignJobsRequest::getGroupId()const
@@ -56,7 +56,7 @@ std::string AssignJobsRequest::getGroupId()const
 void AssignJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string AssignJobsRequest::getStrategyJson()const
@@ -67,7 +67,7 @@ std::string AssignJobsRequest::getStrategyJson()const
 void AssignJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", std::to_string(strategyJson));
+	setCoreParameter("StrategyJson", strategyJson);
 }
 
 std::string AssignJobsRequest::getScenarioId()const
@@ -78,7 +78,7 @@ std::string AssignJobsRequest::getScenarioId()const
 void AssignJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 
 std::vector<std::string> AssignJobsRequest::getJobsJson()const
@@ -90,6 +90,6 @@ void AssignJobsRequest::setJobsJson(const std::vector<std::string>& jobsJson)
 {
 	jobsJson_ = jobsJson;
 	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), std::to_string(jobsJson.at(i)));
+		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
 }
 

@@ -33,7 +33,7 @@ std::string HostGetsRequest::getQuery()const
 void HostGetsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", std::to_string(query));
+	setCoreParameter("Query", query);
 }
 
 int HostGetsRequest::getEndTime()const
@@ -44,7 +44,7 @@ int HostGetsRequest::getEndTime()const
 void HostGetsRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int HostGetsRequest::getStartTime()const
@@ -55,7 +55,7 @@ int HostGetsRequest::getStartTime()const
 void HostGetsRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string HostGetsRequest::getQueryType()const
@@ -66,6 +66,6 @@ std::string HostGetsRequest::getQueryType()const
 void HostGetsRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setCoreParameter("QueryType", queryType);
 }
 

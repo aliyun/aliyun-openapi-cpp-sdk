@@ -33,7 +33,7 @@ std::string UpdateDcdnDomainRequest::getTopLevelDomain()const
 void UpdateDcdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateDcdnDomainRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string UpdateDcdnDomainRequest::getResourceGroupId()const
 void UpdateDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateDcdnDomainRequest::getSources()const
@@ -55,7 +55,7 @@ std::string UpdateDcdnDomainRequest::getSources()const
 void UpdateDcdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", std::to_string(sources));
+	setCoreParameter("Sources", sources);
 }
 
 std::string UpdateDcdnDomainRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string UpdateDcdnDomainRequest::getSecurityToken()const
 void UpdateDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateDcdnDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string UpdateDcdnDomainRequest::getDomainName()const
 void UpdateDcdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long UpdateDcdnDomainRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long UpdateDcdnDomainRequest::getOwnerId()const
 void UpdateDcdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

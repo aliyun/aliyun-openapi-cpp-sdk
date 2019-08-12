@@ -33,7 +33,7 @@ long DescribeCacheAnalysisReportListRequest::getResourceOwnerId()const
 void DescribeCacheAnalysisReportListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeCacheAnalysisReportListRequest::getResourceOwnerAccount()con
 void DescribeCacheAnalysisReportListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeCacheAnalysisReportListRequest::getOwnerAccount()const
 void DescribeCacheAnalysisReportListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCacheAnalysisReportListRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DescribeCacheAnalysisReportListRequest::getOwnerId()const
 void DescribeCacheAnalysisReportListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DescribeCacheAnalysisReportListRequest::getAccessKeyId()const
 void DescribeCacheAnalysisReportListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getInstanceId()const
@@ -88,7 +88,7 @@ std::string DescribeCacheAnalysisReportListRequest::getInstanceId()const
 void DescribeCacheAnalysisReportListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
@@ -99,7 +99,7 @@ std::string DescribeCacheAnalysisReportListRequest::getSecurityToken()const
 void DescribeCacheAnalysisReportListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getRegionId()const
@@ -110,7 +110,7 @@ std::string DescribeCacheAnalysisReportListRequest::getRegionId()const
 void DescribeCacheAnalysisReportListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeCacheAnalysisReportListRequest::getPageSize()const
@@ -121,7 +121,7 @@ int DescribeCacheAnalysisReportListRequest::getPageSize()const
 void DescribeCacheAnalysisReportListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
@@ -132,7 +132,7 @@ int DescribeCacheAnalysisReportListRequest::getPageNumbers()const
 void DescribeCacheAnalysisReportListRequest::setPageNumbers(int pageNumbers)
 {
 	pageNumbers_ = pageNumbers;
-	setCoreParameter("PageNumbers", pageNumbers);
+	setCoreParameter("PageNumbers", std::to_string(pageNumbers));
 }
 
 int DescribeCacheAnalysisReportListRequest::getDays()const
@@ -143,7 +143,7 @@ int DescribeCacheAnalysisReportListRequest::getDays()const
 void DescribeCacheAnalysisReportListRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", days);
+	setCoreParameter("Days", std::to_string(days));
 }
 
 std::string DescribeCacheAnalysisReportListRequest::getNodeId()const
@@ -154,6 +154,6 @@ std::string DescribeCacheAnalysisReportListRequest::getNodeId()const
 void DescribeCacheAnalysisReportListRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 

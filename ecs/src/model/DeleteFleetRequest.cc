@@ -33,7 +33,7 @@ long DeleteFleetRequest::getResourceOwnerId()const
 void DeleteFleetRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DeleteFleetRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DeleteFleetRequest::getCallerParentId()const
 void DeleteFleetRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DeleteFleetRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DeleteFleetRequest::getProxy_original_source_ip()const
 void DeleteFleetRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DeleteFleetRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DeleteFleetRequest::getOwnerIdLoginEmail()const
 void DeleteFleetRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DeleteFleetRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DeleteFleetRequest::getCallerType()const
 void DeleteFleetRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DeleteFleetRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DeleteFleetRequest::getAccessKeyId()const
 void DeleteFleetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteFleetRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DeleteFleetRequest::getSecurityToken()const
 void DeleteFleetRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteFleetRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DeleteFleetRequest::getRegionId()const
 void DeleteFleetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DeleteFleetRequest::getEnable()const
@@ -143,7 +143,7 @@ std::string DeleteFleetRequest::getRequestContent()const
 void DeleteFleetRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 bool DeleteFleetRequest::getTerminateInstances()const
@@ -165,7 +165,7 @@ std::string DeleteFleetRequest::getCallerBidEmail()const
 void DeleteFleetRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DeleteFleetRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DeleteFleetRequest::getCallerUidEmail()const
 void DeleteFleetRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DeleteFleetRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DeleteFleetRequest::getCallerUid()const
 void DeleteFleetRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DeleteFleetRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DeleteFleetRequest::getApp_ip()const
 void DeleteFleetRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DeleteFleetRequest::getResourceOwnerAccount()const
@@ -209,7 +209,7 @@ std::string DeleteFleetRequest::getResourceOwnerAccount()const
 void DeleteFleetRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteFleetRequest::getOwnerAccount()const
@@ -220,7 +220,7 @@ std::string DeleteFleetRequest::getOwnerAccount()const
 void DeleteFleetRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteFleetRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string DeleteFleetRequest::getCallerBid()const
 void DeleteFleetRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DeleteFleetRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long DeleteFleetRequest::getOwnerId()const
 void DeleteFleetRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteFleetRequest::getFleetId()const
@@ -253,7 +253,7 @@ std::string DeleteFleetRequest::getFleetId()const
 void DeleteFleetRequest::setFleetId(const std::string& fleetId)
 {
 	fleetId_ = fleetId;
-	setCoreParameter("FleetId", std::to_string(fleetId));
+	setCoreParameter("FleetId", fleetId);
 }
 
 bool DeleteFleetRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string DeleteFleetRequest::getRequestId()const
 void DeleteFleetRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DeleteFleetRequest::getAkProxy()const
@@ -308,6 +308,6 @@ std::string DeleteFleetRequest::getAkProxy()const
 void DeleteFleetRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

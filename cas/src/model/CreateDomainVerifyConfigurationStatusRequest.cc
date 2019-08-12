@@ -33,7 +33,7 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getSourceIp()const
 void CreateDomainVerifyConfigurationStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateDomainVerifyConfigurationStatusRequest::getOrderId()const
@@ -44,7 +44,7 @@ long CreateDomainVerifyConfigurationStatusRequest::getOrderId()const
 void CreateDomainVerifyConfigurationStatusRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
@@ -55,7 +55,7 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
 void CreateDomainVerifyConfigurationStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getType()const
@@ -66,6 +66,6 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getType()const
 void CreateDomainVerifyConfigurationStatusRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

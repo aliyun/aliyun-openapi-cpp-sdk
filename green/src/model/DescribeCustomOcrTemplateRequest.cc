@@ -33,7 +33,7 @@ std::string DescribeCustomOcrTemplateRequest::getSourceIp()const
 void DescribeCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCustomOcrTemplateRequest::getIds()const
@@ -44,6 +44,6 @@ std::string DescribeCustomOcrTemplateRequest::getIds()const
 void DescribeCustomOcrTemplateRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", std::to_string(ids));
+	setCoreParameter("Ids", ids);
 }
 

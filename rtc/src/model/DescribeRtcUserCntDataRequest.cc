@@ -33,7 +33,7 @@ long DescribeRtcUserCntDataRequest::getResourceOwnerId()const
 void DescribeRtcUserCntDataRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeRtcUserCntDataRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeRtcUserCntDataRequest::getCallerParentId()const
 void DescribeRtcUserCntDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeRtcUserCntDataRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeRtcUserCntDataRequest::getStartTime()const
 void DescribeRtcUserCntDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeRtcUserCntDataRequest::getProxy_original_source_ip()const
@@ -77,7 +77,7 @@ std::string DescribeRtcUserCntDataRequest::getProxy_original_source_ip()const
 void DescribeRtcUserCntDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeRtcUserCntDataRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeRtcUserCntDataRequest::getOwnerIdLoginEmail()const
 void DescribeRtcUserCntDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRtcUserCntDataRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeRtcUserCntDataRequest::getCallerType()const
 void DescribeRtcUserCntDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeRtcUserCntDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeRtcUserCntDataRequest::getAccessKeyId()const
 void DescribeRtcUserCntDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRtcUserCntDataRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeRtcUserCntDataRequest::getSecurityToken()const
 void DescribeRtcUserCntDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRtcUserCntDataRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribeRtcUserCntDataRequest::getRequestContent()const
 void DescribeRtcUserCntDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeRtcUserCntDataRequest::getServiceArea()const
@@ -143,7 +143,7 @@ std::string DescribeRtcUserCntDataRequest::getServiceArea()const
 void DescribeRtcUserCntDataRequest::setServiceArea(const std::string& serviceArea)
 {
 	serviceArea_ = serviceArea;
-	setCoreParameter("ServiceArea", std::to_string(serviceArea));
+	setCoreParameter("ServiceArea", serviceArea);
 }
 
 std::string DescribeRtcUserCntDataRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeRtcUserCntDataRequest::getCallerBidEmail()const
 void DescribeRtcUserCntDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRtcUserCntDataRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeRtcUserCntDataRequest::getCallerUidEmail()const
 void DescribeRtcUserCntDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeRtcUserCntDataRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeRtcUserCntDataRequest::getCallerUid()const
 void DescribeRtcUserCntDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRtcUserCntDataRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string DescribeRtcUserCntDataRequest::getApp_ip()const
 void DescribeRtcUserCntDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRtcUserCntDataRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string DescribeRtcUserCntDataRequest::getPopProduct()const
 void DescribeRtcUserCntDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeRtcUserCntDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeRtcUserCntDataRequest::getEndTime()const
 void DescribeRtcUserCntDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeRtcUserCntDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeRtcUserCntDataRequest::getCallerBid()const
 void DescribeRtcUserCntDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRtcUserCntDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeRtcUserCntDataRequest::getOwnerId()const
 void DescribeRtcUserCntDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRtcUserCntDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeRtcUserCntDataRequest::getVersion()const
 void DescribeRtcUserCntDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeRtcUserCntDataRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string DescribeRtcUserCntDataRequest::getRequestId()const
 void DescribeRtcUserCntDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeRtcUserCntDataRequest::getAppId()const
@@ -297,7 +297,7 @@ std::string DescribeRtcUserCntDataRequest::getAppId()const
 void DescribeRtcUserCntDataRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string DescribeRtcUserCntDataRequest::getInterval()const
@@ -308,6 +308,6 @@ std::string DescribeRtcUserCntDataRequest::getInterval()const
 void DescribeRtcUserCntDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 

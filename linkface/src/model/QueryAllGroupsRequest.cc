@@ -33,7 +33,7 @@ int QueryAllGroupsRequest::getPageSize()const
 void QueryAllGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryAllGroupsRequest::getCurrentPage()const
@@ -44,6 +44,6 @@ int QueryAllGroupsRequest::getCurrentPage()const
 void QueryAllGroupsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

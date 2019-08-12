@@ -33,7 +33,7 @@ std::string GetJobTemplateDownloadParamsRequest::getInstanceId()const
 void GetJobTemplateDownloadParamsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetJobTemplateDownloadParamsRequest::getScenarioId()const
@@ -44,6 +44,6 @@ std::string GetJobTemplateDownloadParamsRequest::getScenarioId()const
 void GetJobTemplateDownloadParamsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", std::to_string(scenarioId));
+	setCoreParameter("ScenarioId", scenarioId);
 }
 

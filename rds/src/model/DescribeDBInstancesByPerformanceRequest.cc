@@ -33,7 +33,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag4value()const
 void DescribeDBInstancesByPerformanceRequest::setTag4value(const std::string& tag4value)
 {
 	tag4value_ = tag4value;
-	setCoreParameter("Tag4value", std::to_string(tag4value));
+	setCoreParameter("Tag4value", tag4value);
 }
 
 long DescribeDBInstancesByPerformanceRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeDBInstancesByPerformanceRequest::getResourceOwnerId()const
 void DescribeDBInstancesByPerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag2key()const
@@ -55,7 +55,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag2key()const
 void DescribeDBInstancesByPerformanceRequest::setTag2key(const std::string& tag2key)
 {
 	tag2key_ = tag2key;
-	setCoreParameter("Tag2key", std::to_string(tag2key));
+	setCoreParameter("Tag2key", tag2key);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getClientToken()const
 void DescribeDBInstancesByPerformanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag3key()const
@@ -77,7 +77,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag3key()const
 void DescribeDBInstancesByPerformanceRequest::setTag3key(const std::string& tag3key)
 {
 	tag3key_ = tag3key;
-	setCoreParameter("Tag3key", std::to_string(tag3key));
+	setCoreParameter("Tag3key", tag3key);
 }
 
 int DescribeDBInstancesByPerformanceRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeDBInstancesByPerformanceRequest::getPageNumber()const
 void DescribeDBInstancesByPerformanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getAccessKeyId()const
 void DescribeDBInstancesByPerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag1value()const
@@ -110,7 +110,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag1value()const
 void DescribeDBInstancesByPerformanceRequest::setTag1value(const std::string& tag1value)
 {
 	tag1value_ = tag1value;
-	setCoreParameter("Tag1value", std::to_string(tag1value));
+	setCoreParameter("Tag1value", tag1value);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getSortKey()const
@@ -121,7 +121,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getSortKey()const
 void DescribeDBInstancesByPerformanceRequest::setSortKey(const std::string& sortKey)
 {
 	sortKey_ = sortKey;
-	setCoreParameter("SortKey", std::to_string(sortKey));
+	setCoreParameter("SortKey", sortKey);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getRegionId()const
 void DescribeDBInstancesByPerformanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int DescribeDBInstancesByPerformanceRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeDBInstancesByPerformanceRequest::getPageSize()const
 void DescribeDBInstancesByPerformanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getDBInstanceId()const
@@ -154,7 +154,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getDBInstanceId()const
 void DescribeDBInstancesByPerformanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag3value()const
@@ -165,7 +165,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag3value()const
 void DescribeDBInstancesByPerformanceRequest::setTag3value(const std::string& tag3value)
 {
 	tag3value_ = tag3value;
-	setCoreParameter("Tag3value", std::to_string(tag3value));
+	setCoreParameter("Tag3value", tag3value);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getProxyId()const
@@ -176,7 +176,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getProxyId()const
 void DescribeDBInstancesByPerformanceRequest::setProxyId(const std::string& proxyId)
 {
 	proxyId_ = proxyId;
-	setCoreParameter("ProxyId", std::to_string(proxyId));
+	setCoreParameter("ProxyId", proxyId);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag5key()const
@@ -187,7 +187,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag5key()const
 void DescribeDBInstancesByPerformanceRequest::setTag5key(const std::string& tag5key)
 {
 	tag5key_ = tag5key;
-	setCoreParameter("Tag5key", std::to_string(tag5key));
+	setCoreParameter("Tag5key", tag5key);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getResourceOwnerAccount()const
@@ -198,7 +198,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getResourceOwnerAccount()co
 void DescribeDBInstancesByPerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getOwnerAccount()const
@@ -209,7 +209,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getOwnerAccount()const
 void DescribeDBInstancesByPerformanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBInstancesByPerformanceRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long DescribeDBInstancesByPerformanceRequest::getOwnerId()const
 void DescribeDBInstancesByPerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag5value()const
@@ -231,7 +231,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag5value()const
 void DescribeDBInstancesByPerformanceRequest::setTag5value(const std::string& tag5value)
 {
 	tag5value_ = tag5value;
-	setCoreParameter("Tag5value", std::to_string(tag5value));
+	setCoreParameter("Tag5value", tag5value);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTags()const
@@ -242,7 +242,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTags()const
 void DescribeDBInstancesByPerformanceRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag1key()const
@@ -253,7 +253,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag1key()const
 void DescribeDBInstancesByPerformanceRequest::setTag1key(const std::string& tag1key)
 {
 	tag1key_ = tag1key;
-	setCoreParameter("Tag1key", std::to_string(tag1key));
+	setCoreParameter("Tag1key", tag1key);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getSortMethod()const
@@ -264,7 +264,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getSortMethod()const
 void DescribeDBInstancesByPerformanceRequest::setSortMethod(const std::string& sortMethod)
 {
 	sortMethod_ = sortMethod;
-	setCoreParameter("SortMethod", std::to_string(sortMethod));
+	setCoreParameter("SortMethod", sortMethod);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag2value()const
@@ -275,7 +275,7 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag2value()const
 void DescribeDBInstancesByPerformanceRequest::setTag2value(const std::string& tag2value)
 {
 	tag2value_ = tag2value;
-	setCoreParameter("Tag2value", std::to_string(tag2value));
+	setCoreParameter("Tag2value", tag2value);
 }
 
 std::string DescribeDBInstancesByPerformanceRequest::getTag4key()const
@@ -286,6 +286,6 @@ std::string DescribeDBInstancesByPerformanceRequest::getTag4key()const
 void DescribeDBInstancesByPerformanceRequest::setTag4key(const std::string& tag4key)
 {
 	tag4key_ = tag4key;
-	setCoreParameter("Tag4key", std::to_string(tag4key));
+	setCoreParameter("Tag4key", tag4key);
 }
 

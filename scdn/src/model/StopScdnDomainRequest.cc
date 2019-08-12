@@ -33,7 +33,7 @@ std::string StopScdnDomainRequest::getSecurityToken()const
 void StopScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StopScdnDomainRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string StopScdnDomainRequest::getDomainName()const
 void StopScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long StopScdnDomainRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long StopScdnDomainRequest::getOwnerId()const
 void StopScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

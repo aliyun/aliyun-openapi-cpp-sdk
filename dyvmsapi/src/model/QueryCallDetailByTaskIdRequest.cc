@@ -33,7 +33,7 @@ long QueryCallDetailByTaskIdRequest::getResourceOwnerId()const
 void QueryCallDetailByTaskIdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long QueryCallDetailByTaskIdRequest::getQueryDate()const
@@ -44,7 +44,7 @@ long QueryCallDetailByTaskIdRequest::getQueryDate()const
 void QueryCallDetailByTaskIdRequest::setQueryDate(long queryDate)
 {
 	queryDate_ = queryDate;
-	setCoreParameter("QueryDate", queryDate);
+	setCoreParameter("QueryDate", std::to_string(queryDate));
 }
 
 std::string QueryCallDetailByTaskIdRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryCallDetailByTaskIdRequest::getResourceOwnerAccount()const
 void QueryCallDetailByTaskIdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCallDetailByTaskIdRequest::getCallee()const
@@ -66,7 +66,7 @@ std::string QueryCallDetailByTaskIdRequest::getCallee()const
 void QueryCallDetailByTaskIdRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", std::to_string(callee));
+	setCoreParameter("Callee", callee);
 }
 
 long QueryCallDetailByTaskIdRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryCallDetailByTaskIdRequest::getOwnerId()const
 void QueryCallDetailByTaskIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCallDetailByTaskIdRequest::getTaskId()const
@@ -88,7 +88,7 @@ std::string QueryCallDetailByTaskIdRequest::getTaskId()const
 void QueryCallDetailByTaskIdRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 
 std::string QueryCallDetailByTaskIdRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryCallDetailByTaskIdRequest::getAccessKeyId()const
 void QueryCallDetailByTaskIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

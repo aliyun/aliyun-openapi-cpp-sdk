@@ -33,7 +33,7 @@ std::string DescribeAppRequest::getSecurityToken()const
 void DescribeAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeAppRequest::getAppId()const
@@ -44,7 +44,7 @@ long DescribeAppRequest::getAppId()const
 void DescribeAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 std::string DescribeAppRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeAppRequest::getAccessKeyId()const
 void DescribeAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

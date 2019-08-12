@@ -33,7 +33,7 @@ std::string VerifyWebsiteInstanceRequest::getInstanceId()const
 void VerifyWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string VerifyWebsiteInstanceRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string VerifyWebsiteInstanceRequest::getSourceIp()const
 void VerifyWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string VerifyWebsiteInstanceRequest::getVerifyMethod()const
@@ -55,7 +55,7 @@ std::string VerifyWebsiteInstanceRequest::getVerifyMethod()const
 void VerifyWebsiteInstanceRequest::setVerifyMethod(const std::string& verifyMethod)
 {
 	verifyMethod_ = verifyMethod;
-	setCoreParameter("VerifyMethod", std::to_string(verifyMethod));
+	setCoreParameter("VerifyMethod", verifyMethod);
 }
 
 std::string VerifyWebsiteInstanceRequest::getLang()const
@@ -66,6 +66,6 @@ std::string VerifyWebsiteInstanceRequest::getLang()const
 void VerifyWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ std::string BatchQueryDeviceDetailRequest::getIotInstanceId()const
 void BatchQueryDeviceDetailRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> BatchQueryDeviceDetailRequest::getDeviceName()const
@@ -45,7 +45,7 @@ void BatchQueryDeviceDetailRequest::setDeviceName(const std::vector<std::string>
 {
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), std::to_string(deviceName.at(i)));
+		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
 }
 
 std::string BatchQueryDeviceDetailRequest::getProductKey()const
@@ -56,6 +56,6 @@ std::string BatchQueryDeviceDetailRequest::getProductKey()const
 void BatchQueryDeviceDetailRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 

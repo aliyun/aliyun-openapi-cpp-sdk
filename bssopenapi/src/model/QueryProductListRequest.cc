@@ -44,7 +44,7 @@ int QueryProductListRequest::getPageSize()const
 void QueryProductListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryProductListRequest::getPageNum()const
@@ -55,6 +55,6 @@ int QueryProductListRequest::getPageNum()const
 void QueryProductListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 

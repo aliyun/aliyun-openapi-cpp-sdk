@@ -33,7 +33,7 @@ std::string UpdateAliasRequest::getAliasName()const
 void UpdateAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", std::to_string(aliasName));
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string UpdateAliasRequest::getKeyId()const
@@ -44,6 +44,6 @@ std::string UpdateAliasRequest::getKeyId()const
 void UpdateAliasRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", std::to_string(keyId));
+	setCoreParameter("KeyId", keyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeInstanceVpcMigrateInfoRequest::getResourceOwnerId()const
 void DescribeInstanceVpcMigrateInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getResourceOwnerAccount()cons
 void DescribeInstanceVpcMigrateInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getClientToken()const
 void DescribeInstanceVpcMigrateInfoRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getRegionId()const
 void DescribeInstanceVpcMigrateInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getOwnerAccount()const
 void DescribeInstanceVpcMigrateInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getVpcId()const
@@ -88,7 +88,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getVpcId()const
 void DescribeInstanceVpcMigrateInfoRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", std::to_string(vpcId));
+	setCoreParameter("VpcId", vpcId);
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getDBInstanceId()const
 void DescribeInstanceVpcMigrateInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeInstanceVpcMigrateInfoRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long DescribeInstanceVpcMigrateInfoRequest::getOwnerId()const
 void DescribeInstanceVpcMigrateInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceVpcMigrateInfoRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string DescribeInstanceVpcMigrateInfoRequest::getAccessKeyId()const
 void DescribeInstanceVpcMigrateInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeImageSupportInstanceTypesRequest::getSourceRegionId()const
 void DescribeImageSupportInstanceTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeImageSupportInstanceTypesRequest::getActionType()const
@@ -44,7 +44,7 @@ std::string DescribeImageSupportInstanceTypesRequest::getActionType()const
 void DescribeImageSupportInstanceTypesRequest::setActionType(const std::string& actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", std::to_string(actionType));
+	setCoreParameter("ActionType", actionType);
 }
 
 std::vector<DescribeImageSupportInstanceTypesRequest::Filter> DescribeImageSupportInstanceTypesRequest::getFilter()const
@@ -59,8 +59,8 @@ void DescribeImageSupportInstanceTypesRequest::setFilter(const std::vector<Filte
 	for(int i = 0; i!= filter.size(); i++)	{
 		auto obj = filter.at(i);
 		std::string str ="Filter."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -72,7 +72,7 @@ long DescribeImageSupportInstanceTypesRequest::getResourceOwnerId()const
 void DescribeImageSupportInstanceTypesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeImageSupportInstanceTypesRequest::getImageId()const
@@ -83,7 +83,7 @@ std::string DescribeImageSupportInstanceTypesRequest::getImageId()const
 void DescribeImageSupportInstanceTypesRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", std::to_string(imageId));
+	setCoreParameter("ImageId", imageId);
 }
 
 std::string DescribeImageSupportInstanceTypesRequest::getResourceOwnerAccount()const
@@ -94,7 +94,7 @@ std::string DescribeImageSupportInstanceTypesRequest::getResourceOwnerAccount()c
 void DescribeImageSupportInstanceTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeImageSupportInstanceTypesRequest::getRegionId()const
@@ -105,7 +105,7 @@ std::string DescribeImageSupportInstanceTypesRequest::getRegionId()const
 void DescribeImageSupportInstanceTypesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DescribeImageSupportInstanceTypesRequest::getOwnerId()const
@@ -116,6 +116,6 @@ long DescribeImageSupportInstanceTypesRequest::getOwnerId()const
 void DescribeImageSupportInstanceTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

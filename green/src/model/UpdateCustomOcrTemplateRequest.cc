@@ -33,7 +33,7 @@ std::string UpdateCustomOcrTemplateRequest::getSourceIp()const
 void UpdateCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getReferArea()const
@@ -44,7 +44,7 @@ std::string UpdateCustomOcrTemplateRequest::getReferArea()const
 void UpdateCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
-	setCoreParameter("ReferArea", std::to_string(referArea));
+	setCoreParameter("ReferArea", referArea);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getRecognizeArea()const
@@ -55,7 +55,7 @@ std::string UpdateCustomOcrTemplateRequest::getRecognizeArea()const
 void UpdateCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
 {
 	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", std::to_string(recognizeArea));
+	setCoreParameter("RecognizeArea", recognizeArea);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateCustomOcrTemplateRequest::getName()const
 void UpdateCustomOcrTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long UpdateCustomOcrTemplateRequest::getId()const
@@ -77,6 +77,6 @@ long UpdateCustomOcrTemplateRequest::getId()const
 void UpdateCustomOcrTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 

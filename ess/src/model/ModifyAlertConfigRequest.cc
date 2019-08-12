@@ -33,7 +33,7 @@ int ModifyAlertConfigRequest::getSuccessConfig()const
 void ModifyAlertConfigRequest::setSuccessConfig(int successConfig)
 {
 	successConfig_ = successConfig;
-	setCoreParameter("SuccessConfig", successConfig);
+	setCoreParameter("SuccessConfig", std::to_string(successConfig));
 }
 
 int ModifyAlertConfigRequest::getRejectConfig()const
@@ -44,7 +44,7 @@ int ModifyAlertConfigRequest::getRejectConfig()const
 void ModifyAlertConfigRequest::setRejectConfig(int rejectConfig)
 {
 	rejectConfig_ = rejectConfig;
-	setCoreParameter("RejectConfig", rejectConfig);
+	setCoreParameter("RejectConfig", std::to_string(rejectConfig));
 }
 
 std::string ModifyAlertConfigRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ModifyAlertConfigRequest::getResourceOwnerAccount()const
 void ModifyAlertConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyAlertConfigRequest::getScalingGroupId()const
@@ -66,7 +66,7 @@ std::string ModifyAlertConfigRequest::getScalingGroupId()const
 void ModifyAlertConfigRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 long ModifyAlertConfigRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long ModifyAlertConfigRequest::getOwnerId()const
 void ModifyAlertConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifyAlertConfigRequest::getFailConfig()const
@@ -88,7 +88,7 @@ int ModifyAlertConfigRequest::getFailConfig()const
 void ModifyAlertConfigRequest::setFailConfig(int failConfig)
 {
 	failConfig_ = failConfig;
-	setCoreParameter("FailConfig", failConfig);
+	setCoreParameter("FailConfig", std::to_string(failConfig));
 }
 
 std::string ModifyAlertConfigRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ModifyAlertConfigRequest::getAccessKeyId()const
 void ModifyAlertConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

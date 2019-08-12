@@ -33,7 +33,7 @@ std::string PlanComponentTopoRequest::getClusterType()const
 void PlanComponentTopoRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", std::to_string(clusterType));
+	setCoreParameter("ClusterType", clusterType);
 }
 
 long PlanComponentTopoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long PlanComponentTopoRequest::getResourceOwnerId()const
 void PlanComponentTopoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PlanComponentTopoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string PlanComponentTopoRequest::getRegionId()const
 void PlanComponentTopoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<PlanComponentTopoRequest::HostGroup> PlanComponentTopoRequest::getHostGroup()const
@@ -70,9 +70,9 @@ void PlanComponentTopoRequest::setHostGroup(const std::vector<HostGroup>& hostGr
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
-		setCoreParameter(str + ".NodeCount", obj.nodeCount);
-		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
+		setCoreParameter(str + ".GroupType", obj.groupType);
+		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
+		setCoreParameter(str + ".GroupName", obj.groupName);
 	}
 }
 
@@ -88,8 +88,8 @@ void PlanComponentTopoRequest::setHostInfo(const std::vector<HostInfo>& hostInfo
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
-		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
+		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
+		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
 	}
 }
 
@@ -101,7 +101,7 @@ std::string PlanComponentTopoRequest::getStackName()const
 void PlanComponentTopoRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", std::to_string(stackName));
+	setCoreParameter("StackName", stackName);
 }
 
 std::string PlanComponentTopoRequest::getClusterId()const
@@ -112,7 +112,7 @@ std::string PlanComponentTopoRequest::getClusterId()const
 void PlanComponentTopoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string PlanComponentTopoRequest::getStackVersion()const
@@ -123,7 +123,7 @@ std::string PlanComponentTopoRequest::getStackVersion()const
 void PlanComponentTopoRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", std::to_string(stackVersion));
+	setCoreParameter("StackVersion", stackVersion);
 }
 
 std::vector<PlanComponentTopoRequest::ServiceInfo> PlanComponentTopoRequest::getServiceInfo()const
@@ -138,9 +138,9 @@ void PlanComponentTopoRequest::setServiceInfo(const std::vector<ServiceInfo>& se
 	for(int i = 0; i!= serviceInfo.size(); i++)	{
 		auto obj = serviceInfo.at(i);
 		std::string str ="ServiceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceEcmVersion", std::to_string(obj.serviceEcmVersion));
-		setCoreParameter(str + ".ServiceVersion", std::to_string(obj.serviceVersion));
-		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
+		setCoreParameter(str + ".ServiceEcmVersion", obj.serviceEcmVersion);
+		setCoreParameter(str + ".ServiceVersion", obj.serviceVersion);
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -152,6 +152,6 @@ std::string PlanComponentTopoRequest::getAccessKeyId()const
 void PlanComponentTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

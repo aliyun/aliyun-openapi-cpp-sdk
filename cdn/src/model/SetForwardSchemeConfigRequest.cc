@@ -33,7 +33,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOrigin()const
 void SetForwardSchemeConfigRequest::setSchemeOrigin(const std::string& schemeOrigin)
 {
 	schemeOrigin_ = schemeOrigin;
-	setCoreParameter("SchemeOrigin", std::to_string(schemeOrigin));
+	setCoreParameter("SchemeOrigin", schemeOrigin);
 }
 
 std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
@@ -44,7 +44,7 @@ std::string SetForwardSchemeConfigRequest::getSchemeOriginPort()const
 void SetForwardSchemeConfigRequest::setSchemeOriginPort(const std::string& schemeOriginPort)
 {
 	schemeOriginPort_ = schemeOriginPort;
-	setCoreParameter("SchemeOriginPort", std::to_string(schemeOriginPort));
+	setCoreParameter("SchemeOriginPort", schemeOriginPort);
 }
 
 std::string SetForwardSchemeConfigRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string SetForwardSchemeConfigRequest::getSecurityToken()const
 void SetForwardSchemeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetForwardSchemeConfigRequest::getEnable()const
@@ -66,7 +66,7 @@ std::string SetForwardSchemeConfigRequest::getEnable()const
 void SetForwardSchemeConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", std::to_string(enable));
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetForwardSchemeConfigRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string SetForwardSchemeConfigRequest::getDomainName()const
 void SetForwardSchemeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetForwardSchemeConfigRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long SetForwardSchemeConfigRequest::getOwnerId()const
 void SetForwardSchemeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

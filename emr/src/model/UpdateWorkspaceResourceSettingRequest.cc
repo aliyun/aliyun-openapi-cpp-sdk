@@ -33,7 +33,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getApp_ip()const
 void UpdateWorkspaceResourceSettingRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long UpdateWorkspaceResourceSettingRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateWorkspaceResourceSettingRequest::getResourceOwnerId()const
 void UpdateWorkspaceResourceSettingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long UpdateWorkspaceResourceSettingRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long UpdateWorkspaceResourceSettingRequest::getCallerParentId()const
 void UpdateWorkspaceResourceSettingRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool UpdateWorkspaceResourceSettingRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getCallerBid()const
 void UpdateWorkspaceResourceSettingRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getProxy_original_source_ip()const
@@ -88,7 +88,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getProxy_original_source_ip()
 void UpdateWorkspaceResourceSettingRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool UpdateWorkspaceResourceSettingRequest::getAk_mfa_present()const
@@ -121,7 +121,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getCallerType()const
 void UpdateWorkspaceResourceSettingRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getAccessKeyId()const
 void UpdateWorkspaceResourceSettingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool UpdateWorkspaceResourceSettingRequest::getSecurity_transport()const
@@ -154,7 +154,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getSecurityToken()const
 void UpdateWorkspaceResourceSettingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getRegionId()const
@@ -165,7 +165,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getRegionId()const
 void UpdateWorkspaceResourceSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getRequestId()const
@@ -176,7 +176,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getRequestId()const
 void UpdateWorkspaceResourceSettingRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 long UpdateWorkspaceResourceSettingRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long UpdateWorkspaceResourceSettingRequest::getCallerUid()const
 void UpdateWorkspaceResourceSettingRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getWorkspaceId()const
@@ -198,7 +198,7 @@ std::string UpdateWorkspaceResourceSettingRequest::getWorkspaceId()const
 void UpdateWorkspaceResourceSettingRequest::setWorkspaceId(const std::string& workspaceId)
 {
 	workspaceId_ = workspaceId;
-	setCoreParameter("WorkspaceId", std::to_string(workspaceId));
+	setCoreParameter("WorkspaceId", workspaceId);
 }
 
 std::string UpdateWorkspaceResourceSettingRequest::getOssSetting()const
@@ -209,6 +209,6 @@ std::string UpdateWorkspaceResourceSettingRequest::getOssSetting()const
 void UpdateWorkspaceResourceSettingRequest::setOssSetting(const std::string& ossSetting)
 {
 	ossSetting_ = ossSetting;
-	setCoreParameter("OssSetting", std::to_string(ossSetting));
+	setCoreParameter("OssSetting", ossSetting);
 }
 

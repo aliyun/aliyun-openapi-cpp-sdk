@@ -33,7 +33,7 @@ long RenewMultiInstanceRequest::getResourceOwnerId()const
 void RenewMultiInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long RenewMultiInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ long RenewMultiInstanceRequest::getPeriod()const
 void RenewMultiInstanceRequest::setPeriod(long period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 bool RenewMultiInstanceRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string RenewMultiInstanceRequest::getFromApp()const
 void RenewMultiInstanceRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string RenewMultiInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RenewMultiInstanceRequest::getResourceOwnerAccount()const
 void RenewMultiInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RenewMultiInstanceRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RenewMultiInstanceRequest::getOwnerAccount()const
 void RenewMultiInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RenewMultiInstanceRequest::getCouponNo()const
@@ -99,7 +99,7 @@ std::string RenewMultiInstanceRequest::getCouponNo()const
 void RenewMultiInstanceRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", std::to_string(couponNo));
+	setCoreParameter("CouponNo", couponNo);
 }
 
 long RenewMultiInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long RenewMultiInstanceRequest::getOwnerId()const
 void RenewMultiInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewMultiInstanceRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string RenewMultiInstanceRequest::getAccessKeyId()const
 void RenewMultiInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RenewMultiInstanceRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string RenewMultiInstanceRequest::getSecurityToken()const
 void RenewMultiInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RenewMultiInstanceRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string RenewMultiInstanceRequest::getRegionId()const
 void RenewMultiInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RenewMultiInstanceRequest::getInstanceIds()const
@@ -154,7 +154,7 @@ std::string RenewMultiInstanceRequest::getInstanceIds()const
 void RenewMultiInstanceRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 std::string RenewMultiInstanceRequest::getBusinessInfo()const
@@ -165,6 +165,6 @@ std::string RenewMultiInstanceRequest::getBusinessInfo()const
 void RenewMultiInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 {
 	businessInfo_ = businessInfo;
-	setCoreParameter("BusinessInfo", std::to_string(businessInfo));
+	setCoreParameter("BusinessInfo", businessInfo);
 }
 

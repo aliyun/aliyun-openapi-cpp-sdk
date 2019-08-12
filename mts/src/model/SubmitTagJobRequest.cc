@@ -33,7 +33,7 @@ std::string SubmitTagJobRequest::getInput()const
 void SubmitTagJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitTagJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitTagJobRequest::getUserData()const
 void SubmitTagJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitTagJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitTagJobRequest::getResourceOwnerId()const
 void SubmitTagJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTagJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitTagJobRequest::getResourceOwnerAccount()const
 void SubmitTagJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitTagJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitTagJobRequest::getOwnerAccount()const
 void SubmitTagJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitTagJobRequest::getTagConfig()const
@@ -88,7 +88,7 @@ std::string SubmitTagJobRequest::getTagConfig()const
 void SubmitTagJobRequest::setTagConfig(const std::string& tagConfig)
 {
 	tagConfig_ = tagConfig;
-	setCoreParameter("TagConfig", std::to_string(tagConfig));
+	setCoreParameter("TagConfig", tagConfig);
 }
 
 long SubmitTagJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitTagJobRequest::getOwnerId()const
 void SubmitTagJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTagJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitTagJobRequest::getAccessKeyId()const
 void SubmitTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTagJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitTagJobRequest::getPipelineId()const
 void SubmitTagJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 

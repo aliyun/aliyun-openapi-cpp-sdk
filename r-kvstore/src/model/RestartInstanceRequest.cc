@@ -33,7 +33,7 @@ long RestartInstanceRequest::getResourceOwnerId()const
 void RestartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RestartInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string RestartInstanceRequest::getInstanceId()const
 void RestartInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RestartInstanceRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string RestartInstanceRequest::getSecurityToken()const
 void RestartInstanceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string RestartInstanceRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RestartInstanceRequest::getResourceOwnerAccount()const
 void RestartInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RestartInstanceRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RestartInstanceRequest::getRegionId()const
 void RestartInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RestartInstanceRequest::getEffectiveTime()const
@@ -88,7 +88,7 @@ std::string RestartInstanceRequest::getEffectiveTime()const
 void RestartInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", std::to_string(effectiveTime));
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 std::string RestartInstanceRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string RestartInstanceRequest::getOwnerAccount()const
 void RestartInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RestartInstanceRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long RestartInstanceRequest::getOwnerId()const
 void RestartInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RestartInstanceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string RestartInstanceRequest::getAccessKeyId()const
 void RestartInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getCallerParentId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainRealTimeReqHitRateDataRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getStartTime()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getProxy_original_sourc
 void DescribeDomainRealTimeReqHitRateDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getOwnerIdLoginEmail()c
 void DescribeDomainRealTimeReqHitRateDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerType()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getAccessKeyId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getSecurityToken()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getRequestContent()cons
 void DescribeDomainRealTimeReqHitRateDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerBidEmail()cons
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerUidEmail()cons
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainRealTimeReqHitRateDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getCallerUid()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getApp_ip()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getPopProduct()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getDomainName()const
@@ -187,7 +187,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getDomainName()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getEndTime()const
@@ -198,7 +198,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getEndTime()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerBid()const
@@ -209,7 +209,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getCallerBid()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainRealTimeReqHitRateDataRequest::getOwnerId()const
@@ -220,7 +220,7 @@ long DescribeDomainRealTimeReqHitRateDataRequest::getOwnerId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getVersion()const
@@ -231,7 +231,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getVersion()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainRealTimeReqHitRateDataRequest::getProxy_trust_transport_info()const
@@ -275,7 +275,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getRequestId()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getInterval()const
@@ -286,7 +286,7 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getInterval()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", interval);
 }
 
 std::string DescribeDomainRealTimeReqHitRateDataRequest::getFields()const
@@ -297,6 +297,6 @@ std::string DescribeDomainRealTimeReqHitRateDataRequest::getFields()const
 void DescribeDomainRealTimeReqHitRateDataRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", std::to_string(fields));
+	setCoreParameter("Fields", fields);
 }
 

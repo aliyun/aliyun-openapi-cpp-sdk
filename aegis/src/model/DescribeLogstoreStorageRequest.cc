@@ -33,7 +33,7 @@ std::string DescribeLogstoreStorageRequest::getSourceIp()const
 void DescribeLogstoreStorageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeLogstoreStorageRequest::getFrom()const
@@ -44,7 +44,7 @@ std::string DescribeLogstoreStorageRequest::getFrom()const
 void DescribeLogstoreStorageRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeLogstoreStorageRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeLogstoreStorageRequest::getLang()const
 void DescribeLogstoreStorageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

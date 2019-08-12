@@ -33,7 +33,7 @@ std::string DescribeDomainsBySourceRequest::getSources()const
 void DescribeDomainsBySourceRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", std::to_string(sources));
+	setCoreParameter("Sources", sources);
 }
 
 std::string DescribeDomainsBySourceRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeDomainsBySourceRequest::getSecurityToken()const
 void DescribeDomainsBySourceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeDomainsBySourceRequest::getOwnerId()const
@@ -55,6 +55,6 @@ long DescribeDomainsBySourceRequest::getOwnerId()const
 void DescribeDomainsBySourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

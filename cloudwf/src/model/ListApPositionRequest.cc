@@ -33,7 +33,7 @@ long ListApPositionRequest::getMapId()const
 void ListApPositionRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", mapId);
+	setCoreParameter("MapId", std::to_string(mapId));
 }
 
 std::string ListApPositionRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ListApPositionRequest::getAccessKeyId()const
 void ListApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

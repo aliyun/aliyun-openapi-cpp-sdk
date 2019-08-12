@@ -33,7 +33,7 @@ std::string ReportVideoSplitJobResultRequest::getResult()const
 void ReportVideoSplitJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", std::to_string(result));
+	setCoreParameter("Result", result);
 }
 
 std::string ReportVideoSplitJobResultRequest::getJobId()const
@@ -44,7 +44,7 @@ std::string ReportVideoSplitJobResultRequest::getJobId()const
 void ReportVideoSplitJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long ReportVideoSplitJobResultRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long ReportVideoSplitJobResultRequest::getResourceOwnerId()const
 void ReportVideoSplitJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportVideoSplitJobResultRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReportVideoSplitJobResultRequest::getResourceOwnerAccount()const
 void ReportVideoSplitJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportVideoSplitJobResultRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ReportVideoSplitJobResultRequest::getOwnerAccount()const
 void ReportVideoSplitJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportVideoSplitJobResultRequest::getDetails()const
@@ -88,7 +88,7 @@ std::string ReportVideoSplitJobResultRequest::getDetails()const
 void ReportVideoSplitJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", std::to_string(details));
+	setCoreParameter("Details", details);
 }
 
 long ReportVideoSplitJobResultRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReportVideoSplitJobResultRequest::getOwnerId()const
 void ReportVideoSplitJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportVideoSplitJobResultRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ReportVideoSplitJobResultRequest::getAccessKeyId()const
 void ReportVideoSplitJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

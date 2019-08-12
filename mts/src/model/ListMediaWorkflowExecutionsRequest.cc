@@ -33,7 +33,7 @@ long ListMediaWorkflowExecutionsRequest::getResourceOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
 void ListMediaWorkflowExecutionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
@@ -55,7 +55,7 @@ std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
 void ListMediaWorkflowExecutionsRequest::setInputFileURL(const std::string& inputFileURL)
 {
 	inputFileURL_ = inputFileURL;
-	setCoreParameter("InputFileURL", std::to_string(inputFileURL));
+	setCoreParameter("InputFileURL", inputFileURL);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getNextPageToken()const
@@ -66,7 +66,7 @@ std::string ListMediaWorkflowExecutionsRequest::getNextPageToken()const
 void ListMediaWorkflowExecutionsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", std::to_string(nextPageToken));
+	setCoreParameter("NextPageToken", nextPageToken);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ListMediaWorkflowExecutionsRequest::getOwnerAccount()const
 void ListMediaWorkflowExecutionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ListMediaWorkflowExecutionsRequest::getMaximumPageSize()const
@@ -88,7 +88,7 @@ long ListMediaWorkflowExecutionsRequest::getMaximumPageSize()const
 void ListMediaWorkflowExecutionsRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", maximumPageSize);
+	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
@@ -99,7 +99,7 @@ std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
 void ListMediaWorkflowExecutionsRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", std::to_string(mediaWorkflowId));
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 long ListMediaWorkflowExecutionsRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ListMediaWorkflowExecutionsRequest::getOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowName()const
@@ -121,7 +121,7 @@ std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowName()const
 void ListMediaWorkflowExecutionsRequest::setMediaWorkflowName(const std::string& mediaWorkflowName)
 {
 	mediaWorkflowName_ = mediaWorkflowName;
-	setCoreParameter("MediaWorkflowName", std::to_string(mediaWorkflowName));
+	setCoreParameter("MediaWorkflowName", mediaWorkflowName);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
 void ListMediaWorkflowExecutionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

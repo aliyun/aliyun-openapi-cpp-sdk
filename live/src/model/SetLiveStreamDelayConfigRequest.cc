@@ -33,7 +33,7 @@ std::string SetLiveStreamDelayConfigRequest::getFlvLevel()const
 void SetLiveStreamDelayConfigRequest::setFlvLevel(const std::string& flvLevel)
 {
 	flvLevel_ = flvLevel;
-	setCoreParameter("FlvLevel", std::to_string(flvLevel));
+	setCoreParameter("FlvLevel", flvLevel);
 }
 
 long SetLiveStreamDelayConfigRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long SetLiveStreamDelayConfigRequest::getCallerParentId()const
 void SetLiveStreamDelayConfigRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool SetLiveStreamDelayConfigRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string SetLiveStreamDelayConfigRequest::getProxy_original_source_ip()const
 void SetLiveStreamDelayConfigRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string SetLiveStreamDelayConfigRequest::getOwnerIdLoginEmail()const
 void SetLiveStreamDelayConfigRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string SetLiveStreamDelayConfigRequest::getCallerType()const
 void SetLiveStreamDelayConfigRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SetLiveStreamDelayConfigRequest::getAccessKeyId()const
 void SetLiveStreamDelayConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getHlsLevel()const
@@ -110,7 +110,7 @@ std::string SetLiveStreamDelayConfigRequest::getHlsLevel()const
 void SetLiveStreamDelayConfigRequest::setHlsLevel(const std::string& hlsLevel)
 {
 	hlsLevel_ = hlsLevel;
-	setCoreParameter("HlsLevel", std::to_string(hlsLevel));
+	setCoreParameter("HlsLevel", hlsLevel);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string SetLiveStreamDelayConfigRequest::getSecurityToken()const
 void SetLiveStreamDelayConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string SetLiveStreamDelayConfigRequest::getRegionId()const
 void SetLiveStreamDelayConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string SetLiveStreamDelayConfigRequest::getRequestContent()const
 void SetLiveStreamDelayConfigRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string SetLiveStreamDelayConfigRequest::getCallerBidEmail()const
 void SetLiveStreamDelayConfigRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string SetLiveStreamDelayConfigRequest::getCallerUidEmail()const
 void SetLiveStreamDelayConfigRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long SetLiveStreamDelayConfigRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long SetLiveStreamDelayConfigRequest::getCallerUid()const
 void SetLiveStreamDelayConfigRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getApp_ip()const
@@ -187,7 +187,7 @@ std::string SetLiveStreamDelayConfigRequest::getApp_ip()const
 void SetLiveStreamDelayConfigRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getPopProduct()const
@@ -198,7 +198,7 @@ std::string SetLiveStreamDelayConfigRequest::getPopProduct()const
 void SetLiveStreamDelayConfigRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
@@ -209,7 +209,7 @@ int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
 void SetLiveStreamDelayConfigRequest::setRtmpDelay(int rtmpDelay)
 {
 	rtmpDelay_ = rtmpDelay;
-	setCoreParameter("RtmpDelay", rtmpDelay);
+	setCoreParameter("RtmpDelay", std::to_string(rtmpDelay));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getDomainName()const
@@ -220,7 +220,7 @@ std::string SetLiveStreamDelayConfigRequest::getDomainName()const
 void SetLiveStreamDelayConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getCallerBid()const
@@ -231,7 +231,7 @@ std::string SetLiveStreamDelayConfigRequest::getCallerBid()const
 void SetLiveStreamDelayConfigRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long SetLiveStreamDelayConfigRequest::getOwnerId()const
@@ -242,7 +242,7 @@ long SetLiveStreamDelayConfigRequest::getOwnerId()const
 void SetLiveStreamDelayConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getVersion()const
@@ -253,7 +253,7 @@ std::string SetLiveStreamDelayConfigRequest::getVersion()const
 void SetLiveStreamDelayConfigRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool SetLiveStreamDelayConfigRequest::getProxy_trust_transport_info()const
@@ -297,7 +297,7 @@ std::string SetLiveStreamDelayConfigRequest::getRequestId()const
 void SetLiveStreamDelayConfigRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 int SetLiveStreamDelayConfigRequest::getFlvDelay()const
@@ -308,7 +308,7 @@ int SetLiveStreamDelayConfigRequest::getFlvDelay()const
 void SetLiveStreamDelayConfigRequest::setFlvDelay(int flvDelay)
 {
 	flvDelay_ = flvDelay;
-	setCoreParameter("FlvDelay", flvDelay);
+	setCoreParameter("FlvDelay", std::to_string(flvDelay));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
@@ -319,7 +319,7 @@ std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
 void SetLiveStreamDelayConfigRequest::setRtmpLevel(const std::string& rtmpLevel)
 {
 	rtmpLevel_ = rtmpLevel;
-	setCoreParameter("RtmpLevel", std::to_string(rtmpLevel));
+	setCoreParameter("RtmpLevel", rtmpLevel);
 }
 
 int SetLiveStreamDelayConfigRequest::getHlsDelay()const
@@ -330,6 +330,6 @@ int SetLiveStreamDelayConfigRequest::getHlsDelay()const
 void SetLiveStreamDelayConfigRequest::setHlsDelay(int hlsDelay)
 {
 	hlsDelay_ = hlsDelay;
-	setCoreParameter("HlsDelay", hlsDelay);
+	setCoreParameter("HlsDelay", std::to_string(hlsDelay));
 }
 

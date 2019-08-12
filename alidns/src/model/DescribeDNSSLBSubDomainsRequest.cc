@@ -33,7 +33,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getUserClientIp()const
 void DescribeDNSSLBSubDomainsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getDomainName()const
 void DescribeDNSSLBSubDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeDNSSLBSubDomainsRequest::getPageSize()const
@@ -55,7 +55,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageSize()const
 void DescribeDNSSLBSubDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeDNSSLBSubDomainsRequest::getLang()const
 void DescribeDNSSLBSubDomainsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ long DescribeDNSSLBSubDomainsRequest::getPageNumber()const
 void DescribeDNSSLBSubDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDNSSLBSubDomainsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeDNSSLBSubDomainsRequest::getAccessKeyId()const
 void DescribeDNSSLBSubDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

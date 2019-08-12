@@ -34,7 +34,7 @@ void UpgradeAPRequest::setIds(const std::vector<long>& ids)
 {
 	ids_ = ids;
 	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
+		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
 }
 
 std::string UpgradeAPRequest::getAccessKeyId()const
@@ -45,6 +45,6 @@ std::string UpgradeAPRequest::getAccessKeyId()const
 void UpgradeAPRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

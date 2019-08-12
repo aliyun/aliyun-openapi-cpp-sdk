@@ -33,7 +33,7 @@ std::string QueryAlarmHistoryRequest::getCursor()const
 void QueryAlarmHistoryRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setCoreParameter("Cursor", cursor);
 }
 
 long QueryAlarmHistoryRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long QueryAlarmHistoryRequest::getResourceOwnerId()const
 void QueryAlarmHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int QueryAlarmHistoryRequest::getSize()const
@@ -55,7 +55,7 @@ int QueryAlarmHistoryRequest::getSize()const
 void QueryAlarmHistoryRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", size);
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string QueryAlarmHistoryRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string QueryAlarmHistoryRequest::getRegionId()const
 void QueryAlarmHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string QueryAlarmHistoryRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string QueryAlarmHistoryRequest::getClusterId()const
 void QueryAlarmHistoryRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 long QueryAlarmHistoryRequest::getStartTimeStamp()const
@@ -88,7 +88,7 @@ long QueryAlarmHistoryRequest::getStartTimeStamp()const
 void QueryAlarmHistoryRequest::setStartTimeStamp(long startTimeStamp)
 {
 	startTimeStamp_ = startTimeStamp;
-	setCoreParameter("StartTimeStamp", startTimeStamp);
+	setCoreParameter("StartTimeStamp", std::to_string(startTimeStamp));
 }
 
 std::string QueryAlarmHistoryRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string QueryAlarmHistoryRequest::getAccessKeyId()const
 void QueryAlarmHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryAlarmHistoryRequest::getEndTimeStamp()const
@@ -110,6 +110,6 @@ long QueryAlarmHistoryRequest::getEndTimeStamp()const
 void QueryAlarmHistoryRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
-	setCoreParameter("EndTimeStamp", endTimeStamp);
+	setCoreParameter("EndTimeStamp", std::to_string(endTimeStamp));
 }
 

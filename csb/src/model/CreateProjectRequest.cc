@@ -33,7 +33,7 @@ std::string CreateProjectRequest::getData()const
 void CreateProjectRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 long CreateProjectRequest::getCsbId()const
@@ -44,7 +44,7 @@ long CreateProjectRequest::getCsbId()const
 void CreateProjectRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string CreateProjectRequest::getRegionId()const
@@ -55,6 +55,6 @@ std::string CreateProjectRequest::getRegionId()const
 void CreateProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 

@@ -33,7 +33,7 @@ long AllocatePublicNetworkAddressRequest::getResourceOwnerId()const
 void AllocatePublicNetworkAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocatePublicNetworkAddressRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AllocatePublicNetworkAddressRequest::getSecurityToken()const
 void AllocatePublicNetworkAddressRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AllocatePublicNetworkAddressRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AllocatePublicNetworkAddressRequest::getResourceOwnerAccount()const
 void AllocatePublicNetworkAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocatePublicNetworkAddressRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string AllocatePublicNetworkAddressRequest::getRegionId()const
 void AllocatePublicNetworkAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string AllocatePublicNetworkAddressRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AllocatePublicNetworkAddressRequest::getOwnerAccount()const
 void AllocatePublicNetworkAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AllocatePublicNetworkAddressRequest::getDBInstanceId()const
@@ -88,7 +88,7 @@ std::string AllocatePublicNetworkAddressRequest::getDBInstanceId()const
 void AllocatePublicNetworkAddressRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long AllocatePublicNetworkAddressRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AllocatePublicNetworkAddressRequest::getOwnerId()const
 void AllocatePublicNetworkAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllocatePublicNetworkAddressRequest::getNodeId()const
@@ -110,7 +110,7 @@ std::string AllocatePublicNetworkAddressRequest::getNodeId()const
 void AllocatePublicNetworkAddressRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string AllocatePublicNetworkAddressRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string AllocatePublicNetworkAddressRequest::getAccessKeyId()const
 void AllocatePublicNetworkAddressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

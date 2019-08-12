@@ -33,7 +33,7 @@ std::string DescribeCaptchaRiskRequest::getSourceIp()const
 void DescribeCaptchaRiskRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaRiskRequest::getConfigName()const
@@ -44,7 +44,7 @@ std::string DescribeCaptchaRiskRequest::getConfigName()const
 void DescribeCaptchaRiskRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", std::to_string(configName));
+	setCoreParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaRiskRequest::getRefExtId()const
@@ -55,7 +55,7 @@ std::string DescribeCaptchaRiskRequest::getRefExtId()const
 void DescribeCaptchaRiskRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", std::to_string(refExtId));
+	setCoreParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaRiskRequest::getTime()const
@@ -66,6 +66,6 @@ std::string DescribeCaptchaRiskRequest::getTime()const
 void DescribeCaptchaRiskRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", std::to_string(time));
+	setCoreParameter("Time", time);
 }
 

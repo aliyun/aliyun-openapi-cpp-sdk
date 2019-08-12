@@ -33,7 +33,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getResourceGroupId()const
 void DescribeCommonBandwidthPackagesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long DescribeCommonBandwidthPackagesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeCommonBandwidthPackagesRequest::getResourceOwnerId()const
 void DescribeCommonBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getBandwidthPackageId()const
@@ -55,7 +55,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getBandwidthPackageId()const
 void DescribeCommonBandwidthPackagesRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
+	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getResourceOwnerAccount()con
 void DescribeCommonBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getRegionId()const
 void DescribeCommonBandwidthPackagesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getOwnerAccount()const
 void DescribeCommonBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeCommonBandwidthPackagesRequest::getName()const
@@ -99,7 +99,7 @@ std::string DescribeCommonBandwidthPackagesRequest::getName()const
 void DescribeCommonBandwidthPackagesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeCommonBandwidthPackagesRequest::getPageSize()const
@@ -110,7 +110,7 @@ int DescribeCommonBandwidthPackagesRequest::getPageSize()const
 void DescribeCommonBandwidthPackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCommonBandwidthPackagesRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeCommonBandwidthPackagesRequest::getOwnerId()const
 void DescribeCommonBandwidthPackagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeCommonBandwidthPackagesRequest::getIncludeReservationData()const
@@ -143,6 +143,6 @@ int DescribeCommonBandwidthPackagesRequest::getPageNumber()const
 void DescribeCommonBandwidthPackagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

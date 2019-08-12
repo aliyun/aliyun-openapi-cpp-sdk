@@ -33,7 +33,7 @@ std::string SetRangeConfigRequest::getSecurityToken()const
 void SetRangeConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetRangeConfigRequest::getEnable()const
@@ -44,7 +44,7 @@ std::string SetRangeConfigRequest::getEnable()const
 void SetRangeConfigRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", std::to_string(enable));
+	setCoreParameter("Enable", enable);
 }
 
 std::string SetRangeConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetRangeConfigRequest::getDomainName()const
 void SetRangeConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long SetRangeConfigRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long SetRangeConfigRequest::getOwnerId()const
 void SetRangeConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

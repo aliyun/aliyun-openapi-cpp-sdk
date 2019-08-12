@@ -44,6 +44,6 @@ long QueryCategoriesRequest::getParentCategoryId()const
 void QueryCategoriesRequest::setParentCategoryId(long parentCategoryId)
 {
 	parentCategoryId_ = parentCategoryId;
-	setCoreParameter("ParentCategoryId", parentCategoryId);
+	setCoreParameter("ParentCategoryId", std::to_string(parentCategoryId));
 }
 

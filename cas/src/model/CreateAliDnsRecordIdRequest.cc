@@ -33,7 +33,7 @@ std::string CreateAliDnsRecordIdRequest::getRecordId()const
 void CreateAliDnsRecordIdRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", std::to_string(recordId));
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string CreateAliDnsRecordIdRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateAliDnsRecordIdRequest::getSourceIp()const
 void CreateAliDnsRecordIdRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long CreateAliDnsRecordIdRequest::getOrderId()const
@@ -55,7 +55,7 @@ long CreateAliDnsRecordIdRequest::getOrderId()const
 void CreateAliDnsRecordIdRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateAliDnsRecordIdRequest::getLang()const
@@ -66,6 +66,6 @@ std::string CreateAliDnsRecordIdRequest::getLang()const
 void CreateAliDnsRecordIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

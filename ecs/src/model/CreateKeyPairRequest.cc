@@ -33,7 +33,7 @@ std::string CreateKeyPairRequest::getSourceRegionId()const
 void CreateKeyPairRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string CreateKeyPairRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string CreateKeyPairRequest::getResourceGroupId()const
 void CreateKeyPairRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 long CreateKeyPairRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long CreateKeyPairRequest::getResourceOwnerId()const
 void CreateKeyPairRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateKeyPairRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string CreateKeyPairRequest::getResourceOwnerAccount()const
 void CreateKeyPairRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateKeyPairRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string CreateKeyPairRequest::getRegionId()const
 void CreateKeyPairRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateKeyPairRequest::getKeyPairName()const
@@ -88,7 +88,7 @@ std::string CreateKeyPairRequest::getKeyPairName()const
 void CreateKeyPairRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", std::to_string(keyPairName));
+	setCoreParameter("KeyPairName", keyPairName);
 }
 
 std::vector<CreateKeyPairRequest::Tag> CreateKeyPairRequest::getTag()const
@@ -103,8 +103,8 @@ void CreateKeyPairRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -116,6 +116,6 @@ long CreateKeyPairRequest::getOwnerId()const
 void CreateKeyPairRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

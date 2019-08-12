@@ -33,7 +33,7 @@ long ModifyCertificationRequest::getResourceOwnerId()const
 void ModifyCertificationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCertificationRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyCertificationRequest::getInstanceId()const
 void ModifyCertificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyCertificationRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyCertificationRequest::getSecurityToken()const
 void ModifyCertificationRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyCertificationRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyCertificationRequest::getResourceOwnerAccount()const
 void ModifyCertificationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCertificationRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyCertificationRequest::getRegionId()const
 void ModifyCertificationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyCertificationRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyCertificationRequest::getOwnerAccount()const
 void ModifyCertificationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCertificationRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyCertificationRequest::getOwnerId()const
 void ModifyCertificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool ModifyCertificationRequest::getNoCertification()const
@@ -121,6 +121,6 @@ std::string ModifyCertificationRequest::getAccessKeyId()const
 void ModifyCertificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

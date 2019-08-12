@@ -33,7 +33,7 @@ std::string ModifyDeviceInfoRequest::getUserDeviceId()const
 void ModifyDeviceInfoRequest::setUserDeviceId(const std::string& userDeviceId)
 {
 	userDeviceId_ = userDeviceId;
-	setCoreParameter("UserDeviceId", std::to_string(userDeviceId));
+	setCoreParameter("UserDeviceId", userDeviceId);
 }
 
 std::string ModifyDeviceInfoRequest::getBizType()const
@@ -44,7 +44,7 @@ std::string ModifyDeviceInfoRequest::getBizType()const
 void ModifyDeviceInfoRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", std::to_string(bizType));
+	setCoreParameter("BizType", bizType);
 }
 
 std::string ModifyDeviceInfoRequest::getDuration()const
@@ -55,7 +55,7 @@ std::string ModifyDeviceInfoRequest::getDuration()const
 void ModifyDeviceInfoRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setCoreParameter("Duration", duration);
 }
 
 std::string ModifyDeviceInfoRequest::getExpiredDay()const
@@ -66,7 +66,7 @@ std::string ModifyDeviceInfoRequest::getExpiredDay()const
 void ModifyDeviceInfoRequest::setExpiredDay(const std::string& expiredDay)
 {
 	expiredDay_ = expiredDay;
-	setCoreParameter("ExpiredDay", std::to_string(expiredDay));
+	setCoreParameter("ExpiredDay", expiredDay);
 }
 
 std::string ModifyDeviceInfoRequest::getSourceIp()const
@@ -77,7 +77,7 @@ std::string ModifyDeviceInfoRequest::getSourceIp()const
 void ModifyDeviceInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyDeviceInfoRequest::getLang()const
@@ -88,7 +88,7 @@ std::string ModifyDeviceInfoRequest::getLang()const
 void ModifyDeviceInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyDeviceInfoRequest::getDeviceId()const
@@ -99,6 +99,6 @@ std::string ModifyDeviceInfoRequest::getDeviceId()const
 void ModifyDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", std::to_string(deviceId));
+	setCoreParameter("DeviceId", deviceId);
 }
 

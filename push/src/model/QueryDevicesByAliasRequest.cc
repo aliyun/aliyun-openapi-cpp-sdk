@@ -33,7 +33,7 @@ std::string QueryDevicesByAliasRequest::getAlias()const
 void QueryDevicesByAliasRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", std::to_string(alias));
+	setCoreParameter("Alias", alias);
 }
 
 long QueryDevicesByAliasRequest::getAppKey()const
@@ -44,7 +44,7 @@ long QueryDevicesByAliasRequest::getAppKey()const
 void QueryDevicesByAliasRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDevicesByAliasRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string QueryDevicesByAliasRequest::getAccessKeyId()const
 void QueryDevicesByAliasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

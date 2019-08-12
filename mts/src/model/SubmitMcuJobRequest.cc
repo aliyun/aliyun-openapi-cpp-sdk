@@ -33,7 +33,7 @@ std::string SubmitMcuJobRequest::get_Template()const
 void SubmitMcuJobRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", std::to_string(_template));
+	setCoreParameter("_Template", _template);
 }
 
 std::string SubmitMcuJobRequest::getInput()const
@@ -44,7 +44,7 @@ std::string SubmitMcuJobRequest::getInput()const
 void SubmitMcuJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", std::to_string(input));
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitMcuJobRequest::getUserData()const
@@ -55,7 +55,7 @@ std::string SubmitMcuJobRequest::getUserData()const
 void SubmitMcuJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", std::to_string(userData));
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitMcuJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long SubmitMcuJobRequest::getResourceOwnerId()const
 void SubmitMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMcuJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitMcuJobRequest::getResourceOwnerAccount()const
 void SubmitMcuJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMcuJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitMcuJobRequest::getOwnerAccount()const
 void SubmitMcuJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitMcuJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitMcuJobRequest::getOwnerId()const
 void SubmitMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMcuJobRequest::getTemplateId()const
@@ -110,7 +110,7 @@ std::string SubmitMcuJobRequest::getTemplateId()const
 void SubmitMcuJobRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setCoreParameter("TemplateId", templateId);
 }
 
 std::string SubmitMcuJobRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SubmitMcuJobRequest::getAccessKeyId()const
 void SubmitMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMcuJobRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string SubmitMcuJobRequest::getPipelineId()const
 void SubmitMcuJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", std::to_string(pipelineId));
+	setCoreParameter("PipelineId", pipelineId);
 }
 

@@ -33,6 +33,6 @@ std::string ScaleOutClusterRequest::getClusterId()const
 void ScaleOutClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 

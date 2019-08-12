@@ -33,7 +33,7 @@ long UpdateKafkaReassignParamRequest::getThrottle()const
 void UpdateKafkaReassignParamRequest::setThrottle(long throttle)
 {
 	throttle_ = throttle;
-	setCoreParameter("Throttle", throttle);
+	setCoreParameter("Throttle", std::to_string(throttle));
 }
 
 long UpdateKafkaReassignParamRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateKafkaReassignParamRequest::getResourceOwnerId()const
 void UpdateKafkaReassignParamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateKafkaReassignParamRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string UpdateKafkaReassignParamRequest::getRegionId()const
 void UpdateKafkaReassignParamRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateKafkaReassignParamRequest::getReassignId()const
@@ -66,7 +66,7 @@ std::string UpdateKafkaReassignParamRequest::getReassignId()const
 void UpdateKafkaReassignParamRequest::setReassignId(const std::string& reassignId)
 {
 	reassignId_ = reassignId;
-	setCoreParameter("ReassignId", std::to_string(reassignId));
+	setCoreParameter("ReassignId", reassignId);
 }
 
 std::string UpdateKafkaReassignParamRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string UpdateKafkaReassignParamRequest::getAccessKeyId()const
 void UpdateKafkaReassignParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

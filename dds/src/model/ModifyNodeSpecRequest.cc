@@ -33,7 +33,7 @@ long ModifyNodeSpecRequest::getResourceOwnerId()const
 void ModifyNodeSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyNodeSpecRequest::getAutoPay()const
@@ -55,7 +55,7 @@ std::string ModifyNodeSpecRequest::getFromApp()const
 void ModifyNodeSpecRequest::setFromApp(const std::string& fromApp)
 {
 	fromApp_ = fromApp;
-	setCoreParameter("FromApp", std::to_string(fromApp));
+	setCoreParameter("FromApp", fromApp);
 }
 
 std::string ModifyNodeSpecRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyNodeSpecRequest::getResourceOwnerAccount()const
 void ModifyNodeSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyNodeSpecRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string ModifyNodeSpecRequest::getClientToken()const
 void ModifyNodeSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 int ModifyNodeSpecRequest::getNodeStorage()const
@@ -88,7 +88,7 @@ int ModifyNodeSpecRequest::getNodeStorage()const
 void ModifyNodeSpecRequest::setNodeStorage(int nodeStorage)
 {
 	nodeStorage_ = nodeStorage;
-	setCoreParameter("NodeStorage", nodeStorage);
+	setCoreParameter("NodeStorage", std::to_string(nodeStorage));
 }
 
 std::string ModifyNodeSpecRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyNodeSpecRequest::getOwnerAccount()const
 void ModifyNodeSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyNodeSpecRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long ModifyNodeSpecRequest::getOwnerId()const
 void ModifyNodeSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyNodeSpecRequest::getNodeClass()const
@@ -121,7 +121,7 @@ std::string ModifyNodeSpecRequest::getNodeClass()const
 void ModifyNodeSpecRequest::setNodeClass(const std::string& nodeClass)
 {
 	nodeClass_ = nodeClass;
-	setCoreParameter("NodeClass", std::to_string(nodeClass));
+	setCoreParameter("NodeClass", nodeClass);
 }
 
 std::string ModifyNodeSpecRequest::getAccessKeyId()const
@@ -132,7 +132,7 @@ std::string ModifyNodeSpecRequest::getAccessKeyId()const
 void ModifyNodeSpecRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyNodeSpecRequest::getSecurityToken()const
@@ -143,7 +143,7 @@ std::string ModifyNodeSpecRequest::getSecurityToken()const
 void ModifyNodeSpecRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyNodeSpecRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string ModifyNodeSpecRequest::getRegionId()const
 void ModifyNodeSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyNodeSpecRequest::getEffectiveTime()const
@@ -165,7 +165,7 @@ std::string ModifyNodeSpecRequest::getEffectiveTime()const
 void ModifyNodeSpecRequest::setEffectiveTime(const std::string& effectiveTime)
 {
 	effectiveTime_ = effectiveTime;
-	setCoreParameter("EffectiveTime", std::to_string(effectiveTime));
+	setCoreParameter("EffectiveTime", effectiveTime);
 }
 
 std::string ModifyNodeSpecRequest::getDBInstanceId()const
@@ -176,7 +176,7 @@ std::string ModifyNodeSpecRequest::getDBInstanceId()const
 void ModifyNodeSpecRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyNodeSpecRequest::getNodeId()const
@@ -187,6 +187,6 @@ std::string ModifyNodeSpecRequest::getNodeId()const
 void ModifyNodeSpecRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 

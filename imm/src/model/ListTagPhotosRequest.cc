@@ -33,7 +33,7 @@ std::string ListTagPhotosRequest::getTagName()const
 void ListTagPhotosRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", std::to_string(tagName));
+	setCoreParameter("TagName", tagName);
 }
 
 std::string ListTagPhotosRequest::getMaxKeys()const
@@ -44,7 +44,7 @@ std::string ListTagPhotosRequest::getMaxKeys()const
 void ListTagPhotosRequest::setMaxKeys(const std::string& maxKeys)
 {
 	maxKeys_ = maxKeys;
-	setCoreParameter("MaxKeys", std::to_string(maxKeys));
+	setCoreParameter("MaxKeys", maxKeys);
 }
 
 std::string ListTagPhotosRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListTagPhotosRequest::getRegionId()const
 void ListTagPhotosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListTagPhotosRequest::getMarker()const
@@ -66,7 +66,7 @@ std::string ListTagPhotosRequest::getMarker()const
 void ListTagPhotosRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", std::to_string(marker));
+	setCoreParameter("Marker", marker);
 }
 
 std::string ListTagPhotosRequest::getProject()const
@@ -77,7 +77,7 @@ std::string ListTagPhotosRequest::getProject()const
 void ListTagPhotosRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string ListTagPhotosRequest::getSetId()const
@@ -88,7 +88,7 @@ std::string ListTagPhotosRequest::getSetId()const
 void ListTagPhotosRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string ListTagPhotosRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListTagPhotosRequest::getAccessKeyId()const
 void ListTagPhotosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

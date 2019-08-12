@@ -33,7 +33,7 @@ std::string DescribeDataHubTopicsRequest::getSourceIp()const
 void DescribeDataHubTopicsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubTopicsRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DescribeDataHubTopicsRequest::getFeatureType()const
 void DescribeDataHubTopicsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubTopicsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeDataHubTopicsRequest::getPageSize()const
 void DescribeDataHubTopicsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeDataHubTopicsRequest::getDepartId()const
@@ -66,7 +66,7 @@ long DescribeDataHubTopicsRequest::getDepartId()const
 void DescribeDataHubTopicsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", departId);
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 int DescribeDataHubTopicsRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeDataHubTopicsRequest::getCurrentPage()const
 void DescribeDataHubTopicsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubTopicsRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeDataHubTopicsRequest::getLang()const
 void DescribeDataHubTopicsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDataHubTopicsRequest::getProjectId()const
@@ -99,7 +99,7 @@ long DescribeDataHubTopicsRequest::getProjectId()const
 void DescribeDataHubTopicsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubTopicsRequest::getKey()const
@@ -110,6 +110,6 @@ std::string DescribeDataHubTopicsRequest::getKey()const
 void DescribeDataHubTopicsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 

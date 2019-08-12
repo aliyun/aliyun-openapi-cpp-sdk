@@ -33,7 +33,7 @@ std::string DeleteUsersRequest::getClusterId()const
 void DeleteUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::vector<DeleteUsersRequest::User> DeleteUsersRequest::getUser()const
@@ -48,7 +48,7 @@ void DeleteUsersRequest::setUser(const std::vector<User>& user)
 	for(int i = 0; i!= user.size(); i++)	{
 		auto obj = user.at(i);
 		std::string str ="User."+ std::to_string(i);
-		setCoreParameter(str + ".Name", std::to_string(obj.name));
+		setCoreParameter(str + ".Name", obj.name);
 	}
 }
 
@@ -60,6 +60,6 @@ std::string DeleteUsersRequest::getAccessKeyId()const
 void DeleteUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string UpdateWebsiteInstanceRequest::getSiteProtocol()const
 void UpdateWebsiteInstanceRequest::setSiteProtocol(const std::string& siteProtocol)
 {
 	siteProtocol_ = siteProtocol;
-	setCoreParameter("SiteProtocol", std::to_string(siteProtocol));
+	setCoreParameter("SiteProtocol", siteProtocol);
 }
 
 std::string UpdateWebsiteInstanceRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string UpdateWebsiteInstanceRequest::getInstanceId()const
 void UpdateWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWebsiteInstanceRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string UpdateWebsiteInstanceRequest::getSourceIp()const
 void UpdateWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
@@ -66,7 +66,7 @@ int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
 void UpdateWebsiteInstanceRequest::setWebsiteScanInterval(int websiteScanInterval)
 {
 	websiteScanInterval_ = websiteScanInterval;
-	setCoreParameter("WebsiteScanInterval", websiteScanInterval);
+	setCoreParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
 }
 
 std::string UpdateWebsiteInstanceRequest::getDomain()const
@@ -77,7 +77,7 @@ std::string UpdateWebsiteInstanceRequest::getDomain()const
 void UpdateWebsiteInstanceRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", std::to_string(domain));
+	setCoreParameter("Domain", domain);
 }
 
 std::string UpdateWebsiteInstanceRequest::getIndexPage()const
@@ -88,7 +88,7 @@ std::string UpdateWebsiteInstanceRequest::getIndexPage()const
 void UpdateWebsiteInstanceRequest::setIndexPage(const std::string& indexPage)
 {
 	indexPage_ = indexPage;
-	setCoreParameter("IndexPage", std::to_string(indexPage));
+	setCoreParameter("IndexPage", indexPage);
 }
 
 std::string UpdateWebsiteInstanceRequest::getLang()const
@@ -99,7 +99,7 @@ std::string UpdateWebsiteInstanceRequest::getLang()const
 void UpdateWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const
@@ -110,6 +110,6 @@ int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const
 void UpdateWebsiteInstanceRequest::setIndexPageScanInterval(int indexPageScanInterval)
 {
 	indexPageScanInterval_ = indexPageScanInterval;
-	setCoreParameter("IndexPageScanInterval", indexPageScanInterval);
+	setCoreParameter("IndexPageScanInterval", std::to_string(indexPageScanInterval));
 }
 

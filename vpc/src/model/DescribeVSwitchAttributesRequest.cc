@@ -33,7 +33,7 @@ std::string DescribeVSwitchAttributesRequest::getVSwitchId()const
 void DescribeVSwitchAttributesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", std::to_string(vSwitchId));
+	setCoreParameter("VSwitchId", vSwitchId);
 }
 
 long DescribeVSwitchAttributesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeVSwitchAttributesRequest::getResourceOwnerId()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeVSwitchAttributesRequest::getDryRun()const
@@ -66,7 +66,7 @@ std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVSwitchAttributesRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeVSwitchAttributesRequest::getRegionId()const
 void DescribeVSwitchAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVSwitchAttributesRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DescribeVSwitchAttributesRequest::getOwnerId()const
 void DescribeVSwitchAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

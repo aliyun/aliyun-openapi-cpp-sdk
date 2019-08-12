@@ -33,7 +33,7 @@ std::string DescribeTasksRequest::getTaskType()const
 void DescribeTasksRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", std::to_string(taskType));
+	setCoreParameter("TaskType", taskType);
 }
 
 int DescribeTasksRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeTasksRequest::getPageSize()const
 void DescribeTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeTasksRequest::getPage()const
@@ -55,7 +55,7 @@ int DescribeTasksRequest::getPage()const
 void DescribeTasksRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setCoreParameter("Page", std::to_string(page));
 }
 
 std::string DescribeTasksRequest::getKeyword()const
@@ -66,7 +66,7 @@ std::string DescribeTasksRequest::getKeyword()const
 void DescribeTasksRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 std::string DescribeTasksRequest::getTaskId()const
@@ -77,6 +77,6 @@ std::string DescribeTasksRequest::getTaskId()const
 void DescribeTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setCoreParameter("TaskId", taskId);
 }
 

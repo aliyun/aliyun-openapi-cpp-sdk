@@ -33,7 +33,7 @@ long PushMessageToiOSRequest::getAppKey()const
 void PushMessageToiOSRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToiOSRequest::getTargetValue()const
@@ -44,7 +44,7 @@ std::string PushMessageToiOSRequest::getTargetValue()const
 void PushMessageToiOSRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", std::to_string(targetValue));
+	setCoreParameter("TargetValue", targetValue);
 }
 
 std::string PushMessageToiOSRequest::getTitle()const
@@ -55,7 +55,7 @@ std::string PushMessageToiOSRequest::getTitle()const
 void PushMessageToiOSRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", std::to_string(title));
+	setCoreParameter("Title", title);
 }
 
 std::string PushMessageToiOSRequest::getBody()const
@@ -66,7 +66,7 @@ std::string PushMessageToiOSRequest::getBody()const
 void PushMessageToiOSRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", std::to_string(body));
+	setCoreParameter("Body", body);
 }
 
 std::string PushMessageToiOSRequest::getJobKey()const
@@ -77,7 +77,7 @@ std::string PushMessageToiOSRequest::getJobKey()const
 void PushMessageToiOSRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", std::to_string(jobKey));
+	setCoreParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToiOSRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string PushMessageToiOSRequest::getAccessKeyId()const
 void PushMessageToiOSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToiOSRequest::getTarget()const
@@ -99,6 +99,6 @@ std::string PushMessageToiOSRequest::getTarget()const
 void PushMessageToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", std::to_string(target));
+	setCoreParameter("Target", target);
 }
 

@@ -33,7 +33,7 @@ std::string PutMetricRuleTargetsRequest::getRuleName()const
 void PutMetricRuleTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", std::to_string(ruleName));
+	setCoreParameter("RuleName", ruleName);
 }
 
 std::string PutMetricRuleTargetsRequest::getActions()const
@@ -44,7 +44,7 @@ std::string PutMetricRuleTargetsRequest::getActions()const
 void PutMetricRuleTargetsRequest::setActions(const std::string& actions)
 {
 	actions_ = actions;
-	setCoreParameter("Actions", std::to_string(actions));
+	setCoreParameter("Actions", actions);
 }
 
 std::vector<PutMetricRuleTargetsRequest::Targets> PutMetricRuleTargetsRequest::getTargets()const
@@ -59,9 +59,9 @@ void PutMetricRuleTargetsRequest::setTargets(const std::vector<Targets>& targets
 	for(int i = 0; i!= targets.size(); i++)	{
 		auto obj = targets.at(i);
 		std::string str ="Targets."+ std::to_string(i);
-		setCoreParameter(str + ".Level", std::to_string(obj.level));
-		setCoreParameter(str + ".Id", std::to_string(obj.id));
-		setCoreParameter(str + ".Arn", std::to_string(obj.arn));
+		setCoreParameter(str + ".Level", obj.level);
+		setCoreParameter(str + ".Id", obj.id);
+		setCoreParameter(str + ".Arn", obj.arn);
 	}
 }
 

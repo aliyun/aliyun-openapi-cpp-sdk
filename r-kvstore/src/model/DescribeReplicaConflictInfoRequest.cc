@@ -33,7 +33,7 @@ long DescribeReplicaConflictInfoRequest::getResourceOwnerId()const
 void DescribeReplicaConflictInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeReplicaConflictInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeReplicaConflictInfoRequest::getResourceOwnerAccount()const
 void DescribeReplicaConflictInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeReplicaConflictInfoRequest::getOwnerAccount()const
 void DescribeReplicaConflictInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeReplicaConflictInfoRequest::getEndTime()const
 void DescribeReplicaConflictInfoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeReplicaConflictInfoRequest::getStartTime()const
 void DescribeReplicaConflictInfoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeReplicaConflictInfoRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeReplicaConflictInfoRequest::getOwnerId()const
 void DescribeReplicaConflictInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeReplicaConflictInfoRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeReplicaConflictInfoRequest::getPageNumber()const
 void DescribeReplicaConflictInfoRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeReplicaConflictInfoRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeReplicaConflictInfoRequest::getAccessKeyId()const
 void DescribeReplicaConflictInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeReplicaConflictInfoRequest::getSecurityToken()const
 void DescribeReplicaConflictInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeReplicaConflictInfoRequest::getRegionId()const
 void DescribeReplicaConflictInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeReplicaConflictInfoRequest::getReplicaId()const
@@ -143,7 +143,7 @@ std::string DescribeReplicaConflictInfoRequest::getReplicaId()const
 void DescribeReplicaConflictInfoRequest::setReplicaId(const std::string& replicaId)
 {
 	replicaId_ = replicaId;
-	setCoreParameter("ReplicaId", std::to_string(replicaId));
+	setCoreParameter("ReplicaId", replicaId);
 }
 
 int DescribeReplicaConflictInfoRequest::getPageSize()const
@@ -154,6 +154,6 @@ int DescribeReplicaConflictInfoRequest::getPageSize()const
 void DescribeReplicaConflictInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -33,7 +33,7 @@ std::string AddIpControlPolicyItemRequest::getIpControlId()const
 void AddIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string AddIpControlPolicyItemRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string AddIpControlPolicyItemRequest::getSecurityToken()const
 void AddIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddIpControlPolicyItemRequest::getAppId()const
@@ -55,7 +55,7 @@ std::string AddIpControlPolicyItemRequest::getAppId()const
 void AddIpControlPolicyItemRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 
 std::string AddIpControlPolicyItemRequest::getCidrIp()const
@@ -66,7 +66,7 @@ std::string AddIpControlPolicyItemRequest::getCidrIp()const
 void AddIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", std::to_string(cidrIp));
+	setCoreParameter("CidrIp", cidrIp);
 }
 
 std::string AddIpControlPolicyItemRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string AddIpControlPolicyItemRequest::getAccessKeyId()const
 void AddIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

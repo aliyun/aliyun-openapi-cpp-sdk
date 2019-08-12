@@ -33,7 +33,7 @@ std::string DescribeCdnIpListRequest::getSrcIP()const
 void DescribeCdnIpListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", std::to_string(srcIP));
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string DescribeCdnIpListRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCdnIpListRequest::getSourceIp()const
 void DescribeCdnIpListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeCdnIpListRequest::getWlState()const
@@ -55,7 +55,7 @@ int DescribeCdnIpListRequest::getWlState()const
 void DescribeCdnIpListRequest::setWlState(int wlState)
 {
 	wlState_ = wlState;
-	setCoreParameter("WlState", wlState);
+	setCoreParameter("WlState", std::to_string(wlState));
 }
 
 int DescribeCdnIpListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeCdnIpListRequest::getPageSize()const
 void DescribeCdnIpListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeCdnIpListRequest::getCurrentPage()const
@@ -77,7 +77,7 @@ int DescribeCdnIpListRequest::getCurrentPage()const
 void DescribeCdnIpListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCdnIpListRequest::getLang()const
@@ -88,7 +88,7 @@ std::string DescribeCdnIpListRequest::getLang()const
 void DescribeCdnIpListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeCdnIpListRequest::getSourceCode()const
@@ -99,6 +99,6 @@ std::string DescribeCdnIpListRequest::getSourceCode()const
 void DescribeCdnIpListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", std::to_string(sourceCode));
+	setCoreParameter("SourceCode", sourceCode);
 }
 

@@ -33,7 +33,7 @@ std::string ModifyWebLockDeleteConfigRequest::getSourceIp()const
 void ModifyWebLockDeleteConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int ModifyWebLockDeleteConfigRequest::getId()const
@@ -44,7 +44,7 @@ int ModifyWebLockDeleteConfigRequest::getId()const
 void ModifyWebLockDeleteConfigRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string ModifyWebLockDeleteConfigRequest::getLang()const
@@ -55,7 +55,7 @@ std::string ModifyWebLockDeleteConfigRequest::getLang()const
 void ModifyWebLockDeleteConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string ModifyWebLockDeleteConfigRequest::getUuid()const
@@ -66,6 +66,6 @@ std::string ModifyWebLockDeleteConfigRequest::getUuid()const
 void ModifyWebLockDeleteConfigRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 

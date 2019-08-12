@@ -33,7 +33,7 @@ long ModifyInstanceSpecPreCheckRequest::getResourceOwnerId()const
 void ModifyInstanceSpecPreCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getInstanceId()const
 void ModifyInstanceSpecPreCheckRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getSecurityToken()const
 void ModifyInstanceSpecPreCheckRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getResourceOwnerAccount()const
 void ModifyInstanceSpecPreCheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getRegionId()const
 void ModifyInstanceSpecPreCheckRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getOwnerAccount()const
 void ModifyInstanceSpecPreCheckRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyInstanceSpecPreCheckRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyInstanceSpecPreCheckRequest::getOwnerId()const
 void ModifyInstanceSpecPreCheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getTargetInstanceClass()const
@@ -110,7 +110,7 @@ std::string ModifyInstanceSpecPreCheckRequest::getTargetInstanceClass()const
 void ModifyInstanceSpecPreCheckRequest::setTargetInstanceClass(const std::string& targetInstanceClass)
 {
 	targetInstanceClass_ = targetInstanceClass;
-	setCoreParameter("TargetInstanceClass", std::to_string(targetInstanceClass));
+	setCoreParameter("TargetInstanceClass", targetInstanceClass);
 }
 
 std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ModifyInstanceSpecPreCheckRequest::getAccessKeyId()const
 void ModifyInstanceSpecPreCheckRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

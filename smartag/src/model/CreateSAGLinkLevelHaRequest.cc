@@ -33,7 +33,7 @@ long CreateSAGLinkLevelHaRequest::getResourceOwnerId()const
 void CreateSAGLinkLevelHaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSAGLinkLevelHaRequest::getBackupLinkId()const
@@ -44,7 +44,7 @@ std::string CreateSAGLinkLevelHaRequest::getBackupLinkId()const
 void CreateSAGLinkLevelHaRequest::setBackupLinkId(const std::string& backupLinkId)
 {
 	backupLinkId_ = backupLinkId;
-	setCoreParameter("BackupLinkId", std::to_string(backupLinkId));
+	setCoreParameter("BackupLinkId", backupLinkId);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CreateSAGLinkLevelHaRequest::getResourceOwnerAccount()const
 void CreateSAGLinkLevelHaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getHaType()const
@@ -66,7 +66,7 @@ std::string CreateSAGLinkLevelHaRequest::getHaType()const
 void CreateSAGLinkLevelHaRequest::setHaType(const std::string& haType)
 {
 	haType_ = haType;
-	setCoreParameter("HaType", std::to_string(haType));
+	setCoreParameter("HaType", haType);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateSAGLinkLevelHaRequest::getOwnerAccount()const
 void CreateSAGLinkLevelHaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getMainLinkRegionId()const
@@ -88,7 +88,7 @@ std::string CreateSAGLinkLevelHaRequest::getMainLinkRegionId()const
 void CreateSAGLinkLevelHaRequest::setMainLinkRegionId(const std::string& mainLinkRegionId)
 {
 	mainLinkRegionId_ = mainLinkRegionId;
-	setCoreParameter("MainLinkRegionId", std::to_string(mainLinkRegionId));
+	setCoreParameter("MainLinkRegionId", mainLinkRegionId);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getSmartAGId()const
@@ -99,7 +99,7 @@ std::string CreateSAGLinkLevelHaRequest::getSmartAGId()const
 void CreateSAGLinkLevelHaRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long CreateSAGLinkLevelHaRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long CreateSAGLinkLevelHaRequest::getOwnerId()const
 void CreateSAGLinkLevelHaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSAGLinkLevelHaRequest::getMainLinkId()const
@@ -121,7 +121,7 @@ std::string CreateSAGLinkLevelHaRequest::getMainLinkId()const
 void CreateSAGLinkLevelHaRequest::setMainLinkId(const std::string& mainLinkId)
 {
 	mainLinkId_ = mainLinkId;
-	setCoreParameter("MainLinkId", std::to_string(mainLinkId));
+	setCoreParameter("MainLinkId", mainLinkId);
 }
 
 std::string CreateSAGLinkLevelHaRequest::getBackupLinkRegionId()const
@@ -132,6 +132,6 @@ std::string CreateSAGLinkLevelHaRequest::getBackupLinkRegionId()const
 void CreateSAGLinkLevelHaRequest::setBackupLinkRegionId(const std::string& backupLinkRegionId)
 {
 	backupLinkRegionId_ = backupLinkRegionId;
-	setCoreParameter("BackupLinkRegionId", std::to_string(backupLinkRegionId));
+	setCoreParameter("BackupLinkRegionId", backupLinkRegionId);
 }
 

@@ -33,7 +33,7 @@ long ModifyExecutionPlanScheduleInfoRequest::getResourceOwnerId()const
 void ModifyExecutionPlanScheduleInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ModifyExecutionPlanScheduleInfoRequest::getTimeInterval()const
@@ -44,7 +44,7 @@ int ModifyExecutionPlanScheduleInfoRequest::getTimeInterval()const
 void ModifyExecutionPlanScheduleInfoRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setCoreParameter("TimeInterval", timeInterval);
+	setCoreParameter("TimeInterval", std::to_string(timeInterval));
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getRegionId()const
 void ModifyExecutionPlanScheduleInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getDayOfWeek()const
@@ -66,7 +66,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getDayOfWeek()const
 void ModifyExecutionPlanScheduleInfoRequest::setDayOfWeek(const std::string& dayOfWeek)
 {
 	dayOfWeek_ = dayOfWeek;
-	setCoreParameter("DayOfWeek", std::to_string(dayOfWeek));
+	setCoreParameter("DayOfWeek", dayOfWeek);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getId()const
@@ -77,7 +77,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getId()const
 void ModifyExecutionPlanScheduleInfoRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setCoreParameter("Id", id);
 }
 
 long ModifyExecutionPlanScheduleInfoRequest::getStartTime()const
@@ -88,7 +88,7 @@ long ModifyExecutionPlanScheduleInfoRequest::getStartTime()const
 void ModifyExecutionPlanScheduleInfoRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getStrategy()const
@@ -99,7 +99,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getStrategy()const
 void ModifyExecutionPlanScheduleInfoRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", std::to_string(strategy));
+	setCoreParameter("Strategy", strategy);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getTimeUnit()const
@@ -110,7 +110,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getTimeUnit()const
 void ModifyExecutionPlanScheduleInfoRequest::setTimeUnit(const std::string& timeUnit)
 {
 	timeUnit_ = timeUnit;
-	setCoreParameter("TimeUnit", std::to_string(timeUnit));
+	setCoreParameter("TimeUnit", timeUnit);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getAccessKeyId()const
 void ModifyExecutionPlanScheduleInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyExecutionPlanScheduleInfoRequest::getDayOfMonth()const
@@ -132,6 +132,6 @@ std::string ModifyExecutionPlanScheduleInfoRequest::getDayOfMonth()const
 void ModifyExecutionPlanScheduleInfoRequest::setDayOfMonth(const std::string& dayOfMonth)
 {
 	dayOfMonth_ = dayOfMonth;
-	setCoreParameter("DayOfMonth", std::to_string(dayOfMonth));
+	setCoreParameter("DayOfMonth", dayOfMonth);
 }
 

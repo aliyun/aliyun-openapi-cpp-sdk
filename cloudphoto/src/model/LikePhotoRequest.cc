@@ -33,7 +33,7 @@ std::string LikePhotoRequest::getLibraryId()const
 void LikePhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long LikePhotoRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long LikePhotoRequest::getPhotoId()const
 void LikePhotoRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", photoId);
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string LikePhotoRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string LikePhotoRequest::getStoreName()const
 void LikePhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 

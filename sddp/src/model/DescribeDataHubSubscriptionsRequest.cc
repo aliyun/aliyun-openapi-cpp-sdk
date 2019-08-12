@@ -33,7 +33,7 @@ long DescribeDataHubSubscriptionsRequest::getTopicId()const
 void DescribeDataHubSubscriptionsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setCoreParameter("TopicId", std::to_string(topicId));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeDataHubSubscriptionsRequest::getSourceIp()const
 void DescribeDataHubSubscriptionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubSubscriptionsRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int DescribeDataHubSubscriptionsRequest::getFeatureType()const
 void DescribeDataHubSubscriptionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubSubscriptionsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeDataHubSubscriptionsRequest::getPageSize()const
 void DescribeDataHubSubscriptionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeDataHubSubscriptionsRequest::getDepartId()const
@@ -77,7 +77,7 @@ long DescribeDataHubSubscriptionsRequest::getDepartId()const
 void DescribeDataHubSubscriptionsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", departId);
+	setCoreParameter("DepartId", std::to_string(departId));
 }
 
 int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
 void DescribeDataHubSubscriptionsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeDataHubSubscriptionsRequest::getLang()const
 void DescribeDataHubSubscriptionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeDataHubSubscriptionsRequest::getProjectId()const
@@ -110,7 +110,7 @@ long DescribeDataHubSubscriptionsRequest::getProjectId()const
 void DescribeDataHubSubscriptionsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getKey()const
@@ -121,6 +121,6 @@ std::string DescribeDataHubSubscriptionsRequest::getKey()const
 void DescribeDataHubSubscriptionsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", std::to_string(key));
+	setCoreParameter("Key", key);
 }
 

@@ -33,7 +33,7 @@ std::string CreateMediaRequest::getInstanceId()const
 void CreateMediaRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string CreateMediaRequest::getFileName()const
@@ -44,7 +44,7 @@ std::string CreateMediaRequest::getFileName()const
 void CreateMediaRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", std::to_string(fileName));
+	setCoreParameter("FileName", fileName);
 }
 
 std::string CreateMediaRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateMediaRequest::getName()const
 void CreateMediaRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateMediaRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateMediaRequest::getDescription()const
 void CreateMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateMediaRequest::getOssFilePath()const
@@ -77,7 +77,7 @@ std::string CreateMediaRequest::getOssFilePath()const
 void CreateMediaRequest::setOssFilePath(const std::string& ossFilePath)
 {
 	ossFilePath_ = ossFilePath;
-	setCoreParameter("OssFilePath", std::to_string(ossFilePath));
+	setCoreParameter("OssFilePath", ossFilePath);
 }
 
 std::string CreateMediaRequest::getUploadResult()const
@@ -88,7 +88,7 @@ std::string CreateMediaRequest::getUploadResult()const
 void CreateMediaRequest::setUploadResult(const std::string& uploadResult)
 {
 	uploadResult_ = uploadResult;
-	setCoreParameter("UploadResult", std::to_string(uploadResult));
+	setCoreParameter("UploadResult", uploadResult);
 }
 
 std::string CreateMediaRequest::getType()const
@@ -99,7 +99,7 @@ std::string CreateMediaRequest::getType()const
 void CreateMediaRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string CreateMediaRequest::getContent()const
@@ -110,7 +110,7 @@ std::string CreateMediaRequest::getContent()const
 void CreateMediaRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", std::to_string(content));
+	setCoreParameter("Content", content);
 }
 
 std::string CreateMediaRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string CreateMediaRequest::getAccessKeyId()const
 void CreateMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateMediaRequest::getOssFileName()const
@@ -132,6 +132,6 @@ std::string CreateMediaRequest::getOssFileName()const
 void CreateMediaRequest::setOssFileName(const std::string& ossFileName)
 {
 	ossFileName_ = ossFileName;
-	setCoreParameter("OssFileName", std::to_string(ossFileName));
+	setCoreParameter("OssFileName", ossFileName);
 }
 

@@ -33,7 +33,7 @@ long DescribeForbidPushStreamRoomListRequest::getCallerParentId()const
 void DescribeForbidPushStreamRoomListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeForbidPushStreamRoomListRequest::getProxy_original_security_transport()const
@@ -55,7 +55,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getProxy_original_source_ip
 void DescribeForbidPushStreamRoomListRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 int DescribeForbidPushStreamRoomListRequest::getPageNum()const
@@ -66,7 +66,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageNum()const
 void DescribeForbidPushStreamRoomListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getOwnerIdLoginEmail()const
 void DescribeForbidPushStreamRoomListRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getCallerType()const
 void DescribeForbidPushStreamRoomListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getAccessKeyId()const
 void DescribeForbidPushStreamRoomListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getSecurityToken()const
 void DescribeForbidPushStreamRoomListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getRegionId()const
 void DescribeForbidPushStreamRoomListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getRequestContent()const
@@ -132,7 +132,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getRequestContent()const
 void DescribeForbidPushStreamRoomListRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeForbidPushStreamRoomListRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageSize()const
 void DescribeForbidPushStreamRoomListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getCallerBidEmail()const
@@ -154,7 +154,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getCallerBidEmail()const
 void DescribeForbidPushStreamRoomListRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getCallerUidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getCallerUidEmail()const
 void DescribeForbidPushStreamRoomListRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeForbidPushStreamRoomListRequest::getCallerUid()const
@@ -176,7 +176,7 @@ long DescribeForbidPushStreamRoomListRequest::getCallerUid()const
 void DescribeForbidPushStreamRoomListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getOrder()const
@@ -187,7 +187,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getOrder()const
 void DescribeForbidPushStreamRoomListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", std::to_string(order));
+	setCoreParameter("Order", order);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getApp_ip()const
 void DescribeForbidPushStreamRoomListRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getPopProduct()const
 void DescribeForbidPushStreamRoomListRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setCoreParameter("PopProduct", std::to_string(popProduct));
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getCallerBid()const
 void DescribeForbidPushStreamRoomListRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeForbidPushStreamRoomListRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeForbidPushStreamRoomListRequest::getOwnerId()const
 void DescribeForbidPushStreamRoomListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getVersion()const
 void DescribeForbidPushStreamRoomListRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setCoreParameter("Version", std::to_string(version));
+	setCoreParameter("Version", version);
 }
 
 bool DescribeForbidPushStreamRoomListRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getRequestId()const
 void DescribeForbidPushStreamRoomListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getAppId()const
@@ -297,6 +297,6 @@ std::string DescribeForbidPushStreamRoomListRequest::getAppId()const
 void DescribeForbidPushStreamRoomListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setCoreParameter("AppId", appId);
 }
 

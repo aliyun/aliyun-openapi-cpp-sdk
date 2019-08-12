@@ -33,7 +33,7 @@ std::string AttachDiskRequest::getSourceRegionId()const
 void AttachDiskRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long AttachDiskRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long AttachDiskRequest::getResourceOwnerId()const
 void AttachDiskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachDiskRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string AttachDiskRequest::getInstanceId()const
 void AttachDiskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string AttachDiskRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string AttachDiskRequest::getResourceOwnerAccount()const
 void AttachDiskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachDiskRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string AttachDiskRequest::getOwnerAccount()const
 void AttachDiskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AttachDiskRequest::getDiskId()const
@@ -88,7 +88,7 @@ std::string AttachDiskRequest::getDiskId()const
 void AttachDiskRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
-	setCoreParameter("DiskId", std::to_string(diskId));
+	setCoreParameter("DiskId", diskId);
 }
 
 long AttachDiskRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long AttachDiskRequest::getOwnerId()const
 void AttachDiskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AttachDiskRequest::getDevice()const
@@ -110,7 +110,7 @@ std::string AttachDiskRequest::getDevice()const
 void AttachDiskRequest::setDevice(const std::string& device)
 {
 	device_ = device;
-	setCoreParameter("Device", std::to_string(device));
+	setCoreParameter("Device", device);
 }
 
 bool AttachDiskRequest::getDeleteWithInstance()const

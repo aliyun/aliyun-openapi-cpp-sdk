@@ -33,7 +33,7 @@ std::string QueryRegistrantProfilesRequest::getRegistrantOrganization()const
 void QueryRegistrantProfilesRequest::setRegistrantOrganization(const std::string& registrantOrganization)
 {
 	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", std::to_string(registrantOrganization));
+	setCoreParameter("RegistrantOrganization", registrantOrganization);
 }
 
 std::string QueryRegistrantProfilesRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryRegistrantProfilesRequest::getUserClientIp()const
 void QueryRegistrantProfilesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 long QueryRegistrantProfilesRequest::getRegistrantProfileId()const
@@ -55,7 +55,7 @@ long QueryRegistrantProfilesRequest::getRegistrantProfileId()const
 void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", registrantProfileId);
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 int QueryRegistrantProfilesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QueryRegistrantProfilesRequest::getPageSize()const
 void QueryRegistrantProfilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryRegistrantProfilesRequest::getRegistrantType()const
@@ -77,7 +77,7 @@ std::string QueryRegistrantProfilesRequest::getRegistrantType()const
 void QueryRegistrantProfilesRequest::setRegistrantType(const std::string& registrantType)
 {
 	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", std::to_string(registrantType));
+	setCoreParameter("RegistrantType", registrantType);
 }
 
 std::string QueryRegistrantProfilesRequest::getRegistrantProfileType()const
@@ -88,7 +88,7 @@ std::string QueryRegistrantProfilesRequest::getRegistrantProfileType()const
 void QueryRegistrantProfilesRequest::setRegistrantProfileType(const std::string& registrantProfileType)
 {
 	registrantProfileType_ = registrantProfileType;
-	setCoreParameter("RegistrantProfileType", std::to_string(registrantProfileType));
+	setCoreParameter("RegistrantProfileType", registrantProfileType);
 }
 
 std::string QueryRegistrantProfilesRequest::getRealNameStatus()const
@@ -99,7 +99,7 @@ std::string QueryRegistrantProfilesRequest::getRealNameStatus()const
 void QueryRegistrantProfilesRequest::setRealNameStatus(const std::string& realNameStatus)
 {
 	realNameStatus_ = realNameStatus;
-	setCoreParameter("RealNameStatus", std::to_string(realNameStatus));
+	setCoreParameter("RealNameStatus", realNameStatus);
 }
 
 std::string QueryRegistrantProfilesRequest::getLang()const
@@ -110,7 +110,7 @@ std::string QueryRegistrantProfilesRequest::getLang()const
 void QueryRegistrantProfilesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int QueryRegistrantProfilesRequest::getPageNum()const
@@ -121,7 +121,7 @@ int QueryRegistrantProfilesRequest::getPageNum()const
 void QueryRegistrantProfilesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
@@ -143,7 +143,7 @@ std::string QueryRegistrantProfilesRequest::getEmail()const
 void QueryRegistrantProfilesRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", std::to_string(email));
+	setCoreParameter("Email", email);
 }
 
 std::string QueryRegistrantProfilesRequest::getZhRegistrantOrganization()const
@@ -154,6 +154,6 @@ std::string QueryRegistrantProfilesRequest::getZhRegistrantOrganization()const
 void QueryRegistrantProfilesRequest::setZhRegistrantOrganization(const std::string& zhRegistrantOrganization)
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
-	setCoreParameter("ZhRegistrantOrganization", std::to_string(zhRegistrantOrganization));
+	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
 }
 

@@ -33,7 +33,7 @@ long DescribeInstanceSSLRequest::getResourceOwnerId()const
 void DescribeInstanceSSLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceSSLRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeInstanceSSLRequest::getInstanceId()const
 void DescribeInstanceSSLRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceSSLRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceSSLRequest::getSecurityToken()const
 void DescribeInstanceSSLRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeInstanceSSLRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceSSLRequest::getResourceOwnerAccount()const
 void DescribeInstanceSSLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceSSLRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceSSLRequest::getRegionId()const
 void DescribeInstanceSSLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceSSLRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DescribeInstanceSSLRequest::getOwnerAccount()const
 void DescribeInstanceSSLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInstanceSSLRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeInstanceSSLRequest::getOwnerId()const
 void DescribeInstanceSSLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceSSLRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeInstanceSSLRequest::getAccessKeyId()const
 void DescribeInstanceSSLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

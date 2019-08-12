@@ -33,7 +33,7 @@ long DescribeSlowLogRecordsRequest::getResourceOwnerId()const
 void DescribeSlowLogRecordsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const
 void DescribeSlowLogRecordsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSlowLogRecordsRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeSlowLogRecordsRequest::getOwnerAccount()const
 void DescribeSlowLogRecordsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSlowLogRecordsRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeSlowLogRecordsRequest::getEndTime()const
 void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeSlowLogRecordsRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeSlowLogRecordsRequest::getStartTime()const
 void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeSlowLogRecordsRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeSlowLogRecordsRequest::getOwnerId()const
 void DescribeSlowLogRecordsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeSlowLogRecordsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeSlowLogRecordsRequest::getPageNumber()const
 void DescribeSlowLogRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
 void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBName()const
@@ -121,7 +121,7 @@ std::string DescribeSlowLogRecordsRequest::getDBName()const
 void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", std::to_string(dBName));
+	setCoreParameter("DBName", dBName);
 }
 
 int DescribeSlowLogRecordsRequest::getPageSize()const
@@ -132,7 +132,7 @@ int DescribeSlowLogRecordsRequest::getPageSize()const
 void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
@@ -143,7 +143,7 @@ std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
 void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSlowLogRecordsRequest::getSQLHASH()const
@@ -154,6 +154,6 @@ std::string DescribeSlowLogRecordsRequest::getSQLHASH()const
 void DescribeSlowLogRecordsRequest::setSQLHASH(const std::string& sQLHASH)
 {
 	sQLHASH_ = sQLHASH;
-	setCoreParameter("SQLHASH", std::to_string(sQLHASH));
+	setCoreParameter("SQLHASH", sQLHASH);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeSignaturesRequest::getSecurityToken()const
 void DescribeSignaturesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSignaturesRequest::getSignatureName()const
@@ -44,7 +44,7 @@ std::string DescribeSignaturesRequest::getSignatureName()const
 void DescribeSignaturesRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", std::to_string(signatureName));
+	setCoreParameter("SignatureName", signatureName);
 }
 
 int DescribeSignaturesRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeSignaturesRequest::getPageSize()const
 void DescribeSignaturesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSignaturesRequest::getSignatureId()const
@@ -66,7 +66,7 @@ std::string DescribeSignaturesRequest::getSignatureId()const
 void DescribeSignaturesRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", std::to_string(signatureId));
+	setCoreParameter("SignatureId", signatureId);
 }
 
 int DescribeSignaturesRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeSignaturesRequest::getPageNumber()const
 void DescribeSignaturesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSignaturesRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeSignaturesRequest::getAccessKeyId()const
 void DescribeSignaturesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

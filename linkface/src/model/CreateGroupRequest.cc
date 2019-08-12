@@ -33,6 +33,6 @@ std::string CreateGroupRequest::getGroupId()const
 void CreateGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 

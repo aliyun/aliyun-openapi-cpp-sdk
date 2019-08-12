@@ -33,7 +33,7 @@ std::string ModifyPushAllTaskRequest::getSourceIp()const
 void ModifyPushAllTaskRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyPushAllTaskRequest::getTasks()const
@@ -44,7 +44,7 @@ std::string ModifyPushAllTaskRequest::getTasks()const
 void ModifyPushAllTaskRequest::setTasks(const std::string& tasks)
 {
 	tasks_ = tasks;
-	setCoreParameter("Tasks", std::to_string(tasks));
+	setCoreParameter("Tasks", tasks);
 }
 
 std::string ModifyPushAllTaskRequest::getUuids()const
@@ -55,6 +55,6 @@ std::string ModifyPushAllTaskRequest::getUuids()const
 void ModifyPushAllTaskRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

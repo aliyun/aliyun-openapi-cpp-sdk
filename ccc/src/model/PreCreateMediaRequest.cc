@@ -33,7 +33,7 @@ std::string PreCreateMediaRequest::getInstanceId()const
 void PreCreateMediaRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string PreCreateMediaRequest::getFileName()const
@@ -44,7 +44,7 @@ std::string PreCreateMediaRequest::getFileName()const
 void PreCreateMediaRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", std::to_string(fileName));
+	setCoreParameter("FileName", fileName);
 }
 
 std::string PreCreateMediaRequest::getName()const
@@ -55,7 +55,7 @@ std::string PreCreateMediaRequest::getName()const
 void PreCreateMediaRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string PreCreateMediaRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string PreCreateMediaRequest::getDescription()const
 void PreCreateMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string PreCreateMediaRequest::getType()const
@@ -77,7 +77,7 @@ std::string PreCreateMediaRequest::getType()const
 void PreCreateMediaRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string PreCreateMediaRequest::getContent()const
@@ -88,7 +88,7 @@ std::string PreCreateMediaRequest::getContent()const
 void PreCreateMediaRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", std::to_string(content));
+	setCoreParameter("Content", content);
 }
 
 std::string PreCreateMediaRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string PreCreateMediaRequest::getAccessKeyId()const
 void PreCreateMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

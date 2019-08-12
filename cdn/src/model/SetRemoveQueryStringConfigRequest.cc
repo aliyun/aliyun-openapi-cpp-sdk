@@ -33,7 +33,7 @@ std::string SetRemoveQueryStringConfigRequest::getKeepOssArgs()const
 void SetRemoveQueryStringConfigRequest::setKeepOssArgs(const std::string& keepOssArgs)
 {
 	keepOssArgs_ = keepOssArgs;
-	setCoreParameter("KeepOssArgs", std::to_string(keepOssArgs));
+	setCoreParameter("KeepOssArgs", keepOssArgs);
 }
 
 std::string SetRemoveQueryStringConfigRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string SetRemoveQueryStringConfigRequest::getSecurityToken()const
 void SetRemoveQueryStringConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string SetRemoveQueryStringConfigRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string SetRemoveQueryStringConfigRequest::getDomainName()const
 void SetRemoveQueryStringConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SetRemoveQueryStringConfigRequest::getAliRemoveArgs()const
@@ -66,7 +66,7 @@ std::string SetRemoveQueryStringConfigRequest::getAliRemoveArgs()const
 void SetRemoveQueryStringConfigRequest::setAliRemoveArgs(const std::string& aliRemoveArgs)
 {
 	aliRemoveArgs_ = aliRemoveArgs;
-	setCoreParameter("AliRemoveArgs", std::to_string(aliRemoveArgs));
+	setCoreParameter("AliRemoveArgs", aliRemoveArgs);
 }
 
 long SetRemoveQueryStringConfigRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long SetRemoveQueryStringConfigRequest::getOwnerId()const
 void SetRemoveQueryStringConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ long GrantInstanceToCbnRequest::getResourceOwnerId()const
 void GrantInstanceToCbnRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GrantInstanceToCbnRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GrantInstanceToCbnRequest::getResourceOwnerAccount()const
 void GrantInstanceToCbnRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GrantInstanceToCbnRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GrantInstanceToCbnRequest::getRegionId()const
 void GrantInstanceToCbnRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GrantInstanceToCbnRequest::getCenUid()const
@@ -66,7 +66,7 @@ std::string GrantInstanceToCbnRequest::getCenUid()const
 void GrantInstanceToCbnRequest::setCenUid(const std::string& cenUid)
 {
 	cenUid_ = cenUid;
-	setCoreParameter("CenUid", std::to_string(cenUid));
+	setCoreParameter("CenUid", cenUid);
 }
 
 std::string GrantInstanceToCbnRequest::getCenInstanceId()const
@@ -77,7 +77,7 @@ std::string GrantInstanceToCbnRequest::getCenInstanceId()const
 void GrantInstanceToCbnRequest::setCenInstanceId(const std::string& cenInstanceId)
 {
 	cenInstanceId_ = cenInstanceId;
-	setCoreParameter("CenInstanceId", std::to_string(cenInstanceId));
+	setCoreParameter("CenInstanceId", cenInstanceId);
 }
 
 std::string GrantInstanceToCbnRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string GrantInstanceToCbnRequest::getOwnerAccount()const
 void GrantInstanceToCbnRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GrantInstanceToCbnRequest::getCcnInstanceId()const
@@ -99,7 +99,7 @@ std::string GrantInstanceToCbnRequest::getCcnInstanceId()const
 void GrantInstanceToCbnRequest::setCcnInstanceId(const std::string& ccnInstanceId)
 {
 	ccnInstanceId_ = ccnInstanceId;
-	setCoreParameter("CcnInstanceId", std::to_string(ccnInstanceId));
+	setCoreParameter("CcnInstanceId", ccnInstanceId);
 }
 
 long GrantInstanceToCbnRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long GrantInstanceToCbnRequest::getOwnerId()const
 void GrantInstanceToCbnRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

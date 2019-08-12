@@ -33,7 +33,7 @@ std::string DescribeSearchConditionRequest::getSourceIp()const
 void DescribeSearchConditionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSearchConditionRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeSearchConditionRequest::getLang()const
 void DescribeSearchConditionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

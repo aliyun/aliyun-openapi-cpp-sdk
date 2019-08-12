@@ -33,7 +33,7 @@ long QueryRobotTaskCallDetailRequest::getResourceOwnerId()const
 void QueryRobotTaskCallDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long QueryRobotTaskCallDetailRequest::getQueryDate()const
@@ -44,7 +44,7 @@ long QueryRobotTaskCallDetailRequest::getQueryDate()const
 void QueryRobotTaskCallDetailRequest::setQueryDate(long queryDate)
 {
 	queryDate_ = queryDate;
-	setCoreParameter("QueryDate", queryDate);
+	setCoreParameter("QueryDate", std::to_string(queryDate));
 }
 
 std::string QueryRobotTaskCallDetailRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string QueryRobotTaskCallDetailRequest::getResourceOwnerAccount()const
 void QueryRobotTaskCallDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryRobotTaskCallDetailRequest::getCallee()const
@@ -66,7 +66,7 @@ std::string QueryRobotTaskCallDetailRequest::getCallee()const
 void QueryRobotTaskCallDetailRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", std::to_string(callee));
+	setCoreParameter("Callee", callee);
 }
 
 long QueryRobotTaskCallDetailRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryRobotTaskCallDetailRequest::getOwnerId()const
 void QueryRobotTaskCallDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long QueryRobotTaskCallDetailRequest::getTaskId()const
@@ -88,7 +88,7 @@ long QueryRobotTaskCallDetailRequest::getTaskId()const
 void QueryRobotTaskCallDetailRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setCoreParameter("TaskId", std::to_string(taskId));
 }
 
 std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string QueryRobotTaskCallDetailRequest::getAccessKeyId()const
 void QueryRobotTaskCallDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

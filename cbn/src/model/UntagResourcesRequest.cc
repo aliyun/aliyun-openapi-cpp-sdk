@@ -33,7 +33,7 @@ long UntagResourcesRequest::getResourceOwnerId()const
 void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
@@ -45,7 +45,7 @@ void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resour
 {
 	resourceId_ = resourceId;
 	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), std::to_string(resourceId.at(i)));
+		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
 }
 
 std::string UntagResourcesRequest::getResourceOwnerAccount()const
@@ -56,7 +56,7 @@ std::string UntagResourcesRequest::getResourceOwnerAccount()const
 void UntagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UntagResourcesRequest::getOwnerAccount()const
@@ -67,7 +67,7 @@ std::string UntagResourcesRequest::getOwnerAccount()const
 void UntagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UntagResourcesRequest::getTagOwnerUid()const
@@ -78,7 +78,7 @@ long UntagResourcesRequest::getTagOwnerUid()const
 void UntagResourcesRequest::setTagOwnerUid(long tagOwnerUid)
 {
 	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", tagOwnerUid);
+	setCoreParameter("TagOwnerUid", std::to_string(tagOwnerUid));
 }
 
 std::string UntagResourcesRequest::getTagOwnerBid()const
@@ -89,7 +89,7 @@ std::string UntagResourcesRequest::getTagOwnerBid()const
 void UntagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
 {
 	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", std::to_string(tagOwnerBid));
+	setCoreParameter("TagOwnerBid", tagOwnerBid);
 }
 
 long UntagResourcesRequest::getOwnerId()const
@@ -100,7 +100,7 @@ long UntagResourcesRequest::getOwnerId()const
 void UntagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
@@ -112,7 +112,7 @@ void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
 	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), std::to_string(tagKey.at(i)));
+		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
 }
 
 std::string UntagResourcesRequest::getResourceType()const
@@ -123,6 +123,6 @@ std::string UntagResourcesRequest::getResourceType()const
 void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

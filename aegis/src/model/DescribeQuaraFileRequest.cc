@@ -33,7 +33,7 @@ std::string DescribeQuaraFileRequest::getSourceIp()const
 void DescribeQuaraFileRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeQuaraFileRequest::getPageSize()const
@@ -44,7 +44,7 @@ int DescribeQuaraFileRequest::getPageSize()const
 void DescribeQuaraFileRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeQuaraFileRequest::getCurrentPage()const
@@ -55,6 +55,6 @@ int DescribeQuaraFileRequest::getCurrentPage()const
 void DescribeQuaraFileRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 

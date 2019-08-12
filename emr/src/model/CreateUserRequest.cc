@@ -33,7 +33,7 @@ std::string CreateUserRequest::getApp_ip()const
 void CreateUserRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 long CreateUserRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateUserRequest::getResourceOwnerId()const
 void CreateUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long CreateUserRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long CreateUserRequest::getCallerParentId()const
 void CreateUserRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool CreateUserRequest::getProxy_original_security_transport()const
@@ -77,7 +77,7 @@ std::string CreateUserRequest::getUserType()const
 void CreateUserRequest::setUserType(const std::string& userType)
 {
 	userType_ = userType;
-	setCoreParameter("UserType", std::to_string(userType));
+	setCoreParameter("UserType", userType);
 }
 
 std::string CreateUserRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string CreateUserRequest::getDescription()const
 void CreateUserRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateUserRequest::getCallerBid()const
@@ -99,7 +99,7 @@ std::string CreateUserRequest::getCallerBid()const
 void CreateUserRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 std::string CreateUserRequest::getProxy_original_source_ip()const
@@ -110,7 +110,7 @@ std::string CreateUserRequest::getProxy_original_source_ip()const
 void CreateUserRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 bool CreateUserRequest::getAk_mfa_present()const
@@ -143,7 +143,7 @@ std::string CreateUserRequest::getCallerType()const
 void CreateUserRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string CreateUserRequest::getAccessKeyId()const
@@ -154,7 +154,7 @@ std::string CreateUserRequest::getAccessKeyId()const
 void CreateUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<CreateUserRequest::UserAccountParamList> CreateUserRequest::getUserAccountParamList()const
@@ -169,9 +169,9 @@ void CreateUserRequest::setUserAccountParamList(const std::vector<UserAccountPar
 	for(int i = 0; i!= userAccountParamList.size(); i++)	{
 		auto obj = userAccountParamList.at(i);
 		std::string str ="UserAccountParamList."+ std::to_string(i);
-		setCoreParameter(str + ".AccountType", std::to_string(obj.accountType));
-		setCoreParameter(str + ".AuthType", std::to_string(obj.authType));
-		setCoreParameter(str + ".AccountPassword", std::to_string(obj.accountPassword));
+		setCoreParameter(str + ".AccountType", obj.accountType);
+		setCoreParameter(str + ".AuthType", obj.authType);
+		setCoreParameter(str + ".AccountPassword", obj.accountPassword);
 	}
 }
 
@@ -195,7 +195,7 @@ void CreateUserRequest::setGroupIdList(const std::vector<long>& groupIdList)
 {
 	groupIdList_ = groupIdList;
 	for(int i = 0; i!= groupIdList.size(); i++)
-		setCoreParameter("GroupIdList."+ std::to_string(i), groupIdList.at(i));
+		setCoreParameter("GroupIdList."+ std::to_string(i), std::to_string(groupIdList.at(i)));
 }
 
 std::string CreateUserRequest::getSecurityToken()const
@@ -206,7 +206,7 @@ std::string CreateUserRequest::getSecurityToken()const
 void CreateUserRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string CreateUserRequest::getRegionId()const
@@ -217,7 +217,7 @@ std::string CreateUserRequest::getRegionId()const
 void CreateUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateUserRequest::getRequestId()const
@@ -228,7 +228,7 @@ std::string CreateUserRequest::getRequestId()const
 void CreateUserRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::vector<long> CreateUserRequest::getRoleIdList()const
@@ -240,7 +240,7 @@ void CreateUserRequest::setRoleIdList(const std::vector<long>& roleIdList)
 {
 	roleIdList_ = roleIdList;
 	for(int i = 0; i!= roleIdList.size(); i++)
-		setCoreParameter("RoleIdList."+ std::to_string(i), roleIdList.at(i));
+		setCoreParameter("RoleIdList."+ std::to_string(i), std::to_string(roleIdList.at(i)));
 }
 
 long CreateUserRequest::getCallerUid()const
@@ -251,7 +251,7 @@ long CreateUserRequest::getCallerUid()const
 void CreateUserRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string CreateUserRequest::getAliyunUserId()const
@@ -262,7 +262,7 @@ std::string CreateUserRequest::getAliyunUserId()const
 void CreateUserRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", std::to_string(aliyunUserId));
+	setCoreParameter("AliyunUserId", aliyunUserId);
 }
 
 std::string CreateUserRequest::getUserName()const
@@ -273,7 +273,7 @@ std::string CreateUserRequest::getUserName()const
 void CreateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 
 std::string CreateUserRequest::getStatus()const
@@ -284,6 +284,6 @@ std::string CreateUserRequest::getStatus()const
 void CreateUserRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 

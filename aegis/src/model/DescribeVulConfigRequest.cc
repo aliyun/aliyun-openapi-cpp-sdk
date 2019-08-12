@@ -33,7 +33,7 @@ std::string DescribeVulConfigRequest::getSourceIp()const
 void DescribeVulConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVulConfigRequest::getType()const
@@ -44,6 +44,6 @@ std::string DescribeVulConfigRequest::getType()const
 void DescribeVulConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 

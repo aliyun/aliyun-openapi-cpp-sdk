@@ -33,7 +33,7 @@ long VerifyPasswordRequest::getResourceOwnerId()const
 void VerifyPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VerifyPasswordRequest::getPassword()const
@@ -44,7 +44,7 @@ std::string VerifyPasswordRequest::getPassword()const
 void VerifyPasswordRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string VerifyPasswordRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string VerifyPasswordRequest::getInstanceId()const
 void VerifyPasswordRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string VerifyPasswordRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string VerifyPasswordRequest::getSecurityToken()const
 void VerifyPasswordRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string VerifyPasswordRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string VerifyPasswordRequest::getResourceOwnerAccount()const
 void VerifyPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string VerifyPasswordRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string VerifyPasswordRequest::getRegionId()const
 void VerifyPasswordRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string VerifyPasswordRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string VerifyPasswordRequest::getOwnerAccount()const
 void VerifyPasswordRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long VerifyPasswordRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long VerifyPasswordRequest::getOwnerId()const
 void VerifyPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VerifyPasswordRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string VerifyPasswordRequest::getAccessKeyId()const
 void VerifyPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

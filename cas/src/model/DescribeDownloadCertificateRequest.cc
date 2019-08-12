@@ -33,7 +33,7 @@ std::string DescribeDownloadCertificateRequest::getSourceIp()const
 void DescribeDownloadCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDownloadCertificateRequest::getServerType()const
@@ -44,7 +44,7 @@ std::string DescribeDownloadCertificateRequest::getServerType()const
 void DescribeDownloadCertificateRequest::setServerType(const std::string& serverType)
 {
 	serverType_ = serverType;
-	setCoreParameter("ServerType", std::to_string(serverType));
+	setCoreParameter("ServerType", serverType);
 }
 
 long DescribeDownloadCertificateRequest::getCertificateId()const
@@ -55,7 +55,7 @@ long DescribeDownloadCertificateRequest::getCertificateId()const
 void DescribeDownloadCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", certificateId);
+	setCoreParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DescribeDownloadCertificateRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeDownloadCertificateRequest::getLang()const
 void DescribeDownloadCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

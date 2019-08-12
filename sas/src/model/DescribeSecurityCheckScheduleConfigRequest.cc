@@ -33,7 +33,7 @@ long DescribeSecurityCheckScheduleConfigRequest::getResourceOwnerId()const
 void DescribeSecurityCheckScheduleConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityCheckScheduleConfigRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeSecurityCheckScheduleConfigRequest::getSourceIp()const
 void DescribeSecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSecurityCheckScheduleConfigRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeSecurityCheckScheduleConfigRequest::getLang()const
 void DescribeSecurityCheckScheduleConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

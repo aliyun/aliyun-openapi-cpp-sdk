@@ -33,7 +33,7 @@ long ModifyIPv6TranslatorAttributeRequest::getResourceOwnerId()const
 void ModifyIPv6TranslatorAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getResourceOwnerAccount()const
 void ModifyIPv6TranslatorAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getRegionId()const
 void ModifyIPv6TranslatorAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getClientToken()const
 void ModifyIPv6TranslatorAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getOwnerAccount()const
 void ModifyIPv6TranslatorAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getName()const
@@ -88,7 +88,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getName()const
 void ModifyIPv6TranslatorAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getDescription()const
@@ -99,7 +99,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getDescription()const
 void ModifyIPv6TranslatorAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyIPv6TranslatorAttributeRequest::getIpv6TranslatorId()const
@@ -110,7 +110,7 @@ std::string ModifyIPv6TranslatorAttributeRequest::getIpv6TranslatorId()const
 void ModifyIPv6TranslatorAttributeRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", std::to_string(ipv6TranslatorId));
+	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 
 long ModifyIPv6TranslatorAttributeRequest::getOwnerId()const
@@ -121,6 +121,6 @@ long ModifyIPv6TranslatorAttributeRequest::getOwnerId()const
 void ModifyIPv6TranslatorAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

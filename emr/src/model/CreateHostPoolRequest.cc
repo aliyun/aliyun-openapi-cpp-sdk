@@ -33,7 +33,7 @@ long CreateHostPoolRequest::getResourceOwnerId()const
 void CreateHostPoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateHostPoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CreateHostPoolRequest::getRegionId()const
 void CreateHostPoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateHostPoolRequest::getName()const
@@ -55,7 +55,7 @@ std::string CreateHostPoolRequest::getName()const
 void CreateHostPoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateHostPoolRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateHostPoolRequest::getDescription()const
 void CreateHostPoolRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::vector<CreateHostPoolRequest::KubeClusterInfo> CreateHostPoolRequest::getKubeClusterInfo()const
@@ -81,10 +81,10 @@ void CreateHostPoolRequest::setKubeClusterInfo(const std::vector<KubeClusterInfo
 	for(int i = 0; i!= kubeClusterInfo.size(); i++)	{
 		auto obj = kubeClusterInfo.at(i);
 		std::string str ="KubeClusterInfo."+ std::to_string(i);
-		setCoreParameter(str + ".ExternalKey", std::to_string(obj.externalKey));
-		setCoreParameter(str + ".InternalConfig", std::to_string(obj.internalConfig));
-		setCoreParameter(str + ".PublicConfig", std::to_string(obj.publicConfig));
-		setCoreParameter(str + ".SshConfig", std::to_string(obj.sshConfig));
+		setCoreParameter(str + ".ExternalKey", obj.externalKey);
+		setCoreParameter(str + ".InternalConfig", obj.internalConfig);
+		setCoreParameter(str + ".PublicConfig", obj.publicConfig);
+		setCoreParameter(str + ".SshConfig", obj.sshConfig);
 	}
 }
 
@@ -96,7 +96,7 @@ std::string CreateHostPoolRequest::getType()const
 void CreateHostPoolRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string CreateHostPoolRequest::getAccessKeyId()const
@@ -107,6 +107,6 @@ std::string CreateHostPoolRequest::getAccessKeyId()const
 void CreateHostPoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

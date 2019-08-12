@@ -33,7 +33,7 @@ int AddTrancodeSEIRequest::getDelay()const
 void AddTrancodeSEIRequest::setDelay(int delay)
 {
 	delay_ = delay;
-	setCoreParameter("Delay", delay);
+	setCoreParameter("Delay", std::to_string(delay));
 }
 
 std::string AddTrancodeSEIRequest::getAppName()const
@@ -44,7 +44,7 @@ std::string AddTrancodeSEIRequest::getAppName()const
 void AddTrancodeSEIRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string AddTrancodeSEIRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string AddTrancodeSEIRequest::getRegionId()const
 void AddTrancodeSEIRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int AddTrancodeSEIRequest::getRepeat()const
@@ -66,7 +66,7 @@ int AddTrancodeSEIRequest::getRepeat()const
 void AddTrancodeSEIRequest::setRepeat(int repeat)
 {
 	repeat_ = repeat;
-	setCoreParameter("Repeat", repeat);
+	setCoreParameter("Repeat", std::to_string(repeat));
 }
 
 std::string AddTrancodeSEIRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string AddTrancodeSEIRequest::getDomainName()const
 void AddTrancodeSEIRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string AddTrancodeSEIRequest::getPattern()const
@@ -88,7 +88,7 @@ std::string AddTrancodeSEIRequest::getPattern()const
 void AddTrancodeSEIRequest::setPattern(const std::string& pattern)
 {
 	pattern_ = pattern;
-	setCoreParameter("Pattern", std::to_string(pattern));
+	setCoreParameter("Pattern", pattern);
 }
 
 std::string AddTrancodeSEIRequest::getText()const
@@ -99,7 +99,7 @@ std::string AddTrancodeSEIRequest::getText()const
 void AddTrancodeSEIRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", std::to_string(text));
+	setCoreParameter("Text", text);
 }
 
 long AddTrancodeSEIRequest::getOwnerId()const
@@ -110,7 +110,7 @@ long AddTrancodeSEIRequest::getOwnerId()const
 void AddTrancodeSEIRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddTrancodeSEIRequest::getStreamName()const
@@ -121,6 +121,6 @@ std::string AddTrancodeSEIRequest::getStreamName()const
 void AddTrancodeSEIRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", std::to_string(streamName));
+	setCoreParameter("StreamName", streamName);
 }
 

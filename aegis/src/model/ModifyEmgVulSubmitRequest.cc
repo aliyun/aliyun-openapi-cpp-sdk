@@ -33,7 +33,7 @@ std::string ModifyEmgVulSubmitRequest::getSourceIp()const
 void ModifyEmgVulSubmitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyEmgVulSubmitRequest::getName()const
@@ -44,7 +44,7 @@ std::string ModifyEmgVulSubmitRequest::getName()const
 void ModifyEmgVulSubmitRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyEmgVulSubmitRequest::getUserAgreement()const
@@ -55,7 +55,7 @@ std::string ModifyEmgVulSubmitRequest::getUserAgreement()const
 void ModifyEmgVulSubmitRequest::setUserAgreement(const std::string& userAgreement)
 {
 	userAgreement_ = userAgreement;
-	setCoreParameter("UserAgreement", std::to_string(userAgreement));
+	setCoreParameter("UserAgreement", userAgreement);
 }
 
 std::string ModifyEmgVulSubmitRequest::getLang()const
@@ -66,6 +66,6 @@ std::string ModifyEmgVulSubmitRequest::getLang()const
 void ModifyEmgVulSubmitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

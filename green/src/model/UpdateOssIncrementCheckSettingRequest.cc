@@ -33,7 +33,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getImageAutoFreeze()const
 void UpdateOssIncrementCheckSettingRequest::setImageAutoFreeze(const std::string& imageAutoFreeze)
 {
 	imageAutoFreeze_ = imageAutoFreeze;
-	setCoreParameter("ImageAutoFreeze", std::to_string(imageAutoFreeze));
+	setCoreParameter("ImageAutoFreeze", imageAutoFreeze);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getVideoSceneList()const
@@ -44,7 +44,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getVideoSceneList()const
 void UpdateOssIncrementCheckSettingRequest::setVideoSceneList(const std::string& videoSceneList)
 {
 	videoSceneList_ = videoSceneList;
-	setCoreParameter("VideoSceneList", std::to_string(videoSceneList));
+	setCoreParameter("VideoSceneList", videoSceneList);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getAutoFreezeType()const
@@ -55,7 +55,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getAutoFreezeType()const
 void UpdateOssIncrementCheckSettingRequest::setAutoFreezeType(const std::string& autoFreezeType)
 {
 	autoFreezeType_ = autoFreezeType;
-	setCoreParameter("AutoFreezeType", std::to_string(autoFreezeType));
+	setCoreParameter("AutoFreezeType", autoFreezeType);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getImageSceneList()const
@@ -66,7 +66,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getImageSceneList()const
 void UpdateOssIncrementCheckSettingRequest::setImageSceneList(const std::string& imageSceneList)
 {
 	imageSceneList_ = imageSceneList;
-	setCoreParameter("ImageSceneList", std::to_string(imageSceneList));
+	setCoreParameter("ImageSceneList", imageSceneList);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getBucketConfigList()const
@@ -77,7 +77,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getBucketConfigList()const
 void UpdateOssIncrementCheckSettingRequest::setBucketConfigList(const std::string& bucketConfigList)
 {
 	bucketConfigList_ = bucketConfigList;
-	setCoreParameter("BucketConfigList", std::to_string(bucketConfigList));
+	setCoreParameter("BucketConfigList", bucketConfigList);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getSourceIp()const
@@ -88,7 +88,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getSourceIp()const
 void UpdateOssIncrementCheckSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getImageScanLimit()const
@@ -99,7 +99,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getImageScanLimit()const
 void UpdateOssIncrementCheckSettingRequest::setImageScanLimit(const std::string& imageScanLimit)
 {
 	imageScanLimit_ = imageScanLimit;
-	setCoreParameter("ImageScanLimit", std::to_string(imageScanLimit));
+	setCoreParameter("ImageScanLimit", imageScanLimit);
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getVideoAutoFreezeSceneList()const
@@ -110,7 +110,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getVideoAutoFreezeSceneList()
 void UpdateOssIncrementCheckSettingRequest::setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList)
 {
 	videoAutoFreezeSceneList_ = videoAutoFreezeSceneList;
-	setCoreParameter("VideoAutoFreezeSceneList", std::to_string(videoAutoFreezeSceneList));
+	setCoreParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
 }
 
 int UpdateOssIncrementCheckSettingRequest::getVideoFrameInterval()const
@@ -121,7 +121,7 @@ int UpdateOssIncrementCheckSettingRequest::getVideoFrameInterval()const
 void UpdateOssIncrementCheckSettingRequest::setVideoFrameInterval(int videoFrameInterval)
 {
 	videoFrameInterval_ = videoFrameInterval;
-	setCoreParameter("VideoFrameInterval", videoFrameInterval);
+	setCoreParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
 }
 
 int UpdateOssIncrementCheckSettingRequest::getVideoMaxSize()const
@@ -132,7 +132,7 @@ int UpdateOssIncrementCheckSettingRequest::getVideoMaxSize()const
 void UpdateOssIncrementCheckSettingRequest::setVideoMaxSize(int videoMaxSize)
 {
 	videoMaxSize_ = videoMaxSize;
-	setCoreParameter("VideoMaxSize", videoMaxSize);
+	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
 }
 
 std::string UpdateOssIncrementCheckSettingRequest::getLang()const
@@ -143,7 +143,7 @@ std::string UpdateOssIncrementCheckSettingRequest::getLang()const
 void UpdateOssIncrementCheckSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int UpdateOssIncrementCheckSettingRequest::getVideoMaxFrames()const
@@ -154,6 +154,6 @@ int UpdateOssIncrementCheckSettingRequest::getVideoMaxFrames()const
 void UpdateOssIncrementCheckSettingRequest::setVideoMaxFrames(int videoMaxFrames)
 {
 	videoMaxFrames_ = videoMaxFrames;
-	setCoreParameter("VideoMaxFrames", videoMaxFrames);
+	setCoreParameter("VideoMaxFrames", std::to_string(videoMaxFrames));
 }
 

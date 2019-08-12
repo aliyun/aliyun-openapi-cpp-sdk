@@ -33,7 +33,7 @@ std::string GenerateQrCodeRequest::getOssKey()const
 void GenerateQrCodeRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", std::to_string(ossKey));
+	setCoreParameter("OssKey", ossKey);
 }
 
 std::string GenerateQrCodeRequest::getFieldKey()const
@@ -44,7 +44,7 @@ std::string GenerateQrCodeRequest::getFieldKey()const
 void GenerateQrCodeRequest::setFieldKey(const std::string& fieldKey)
 {
 	fieldKey_ = fieldKey;
-	setCoreParameter("FieldKey", std::to_string(fieldKey));
+	setCoreParameter("FieldKey", fieldKey);
 }
 
 std::string GenerateQrCodeRequest::getUuid()const
@@ -55,6 +55,6 @@ std::string GenerateQrCodeRequest::getUuid()const
 void GenerateQrCodeRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", std::to_string(uuid));
+	setCoreParameter("Uuid", uuid);
 }
 

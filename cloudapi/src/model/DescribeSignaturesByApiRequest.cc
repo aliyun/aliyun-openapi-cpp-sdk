@@ -33,7 +33,7 @@ std::string DescribeSignaturesByApiRequest::getStageName()const
 void DescribeSignaturesByApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", std::to_string(stageName));
+	setCoreParameter("StageName", stageName);
 }
 
 std::string DescribeSignaturesByApiRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeSignaturesByApiRequest::getSecurityToken()const
 void DescribeSignaturesByApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSignaturesByApiRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string DescribeSignaturesByApiRequest::getGroupId()const
 void DescribeSignaturesByApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string DescribeSignaturesByApiRequest::getApiId()const
@@ -66,7 +66,7 @@ std::string DescribeSignaturesByApiRequest::getApiId()const
 void DescribeSignaturesByApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", std::to_string(apiId));
+	setCoreParameter("ApiId", apiId);
 }
 
 std::string DescribeSignaturesByApiRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DescribeSignaturesByApiRequest::getAccessKeyId()const
 void DescribeSignaturesByApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

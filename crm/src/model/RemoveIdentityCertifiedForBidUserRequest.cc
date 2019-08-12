@@ -33,7 +33,7 @@ std::string RemoveIdentityCertifiedForBidUserRequest::getBidType()const
 void RemoveIdentityCertifiedForBidUserRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", std::to_string(bidType));
+	setCoreParameter("BidType", bidType);
 }
 
 std::string RemoveIdentityCertifiedForBidUserRequest::getPK()const
@@ -44,6 +44,6 @@ std::string RemoveIdentityCertifiedForBidUserRequest::getPK()const
 void RemoveIdentityCertifiedForBidUserRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", std::to_string(pK));
+	setCoreParameter("PK", pK);
 }
 

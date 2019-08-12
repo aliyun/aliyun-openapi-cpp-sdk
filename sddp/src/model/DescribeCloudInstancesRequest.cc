@@ -33,7 +33,7 @@ std::string DescribeCloudInstancesRequest::getSourceIp()const
 void DescribeCloudInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCloudInstancesRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DescribeCloudInstancesRequest::getLang()const
 void DescribeCloudInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeCloudInstancesRequest::getResourceType()const
@@ -55,7 +55,7 @@ long DescribeCloudInstancesRequest::getResourceType()const
 void DescribeCloudInstancesRequest::setResourceType(long resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeCloudInstancesRequest::getServiceRegionId()const
@@ -66,6 +66,6 @@ std::string DescribeCloudInstancesRequest::getServiceRegionId()const
 void DescribeCloudInstancesRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", std::to_string(serviceRegionId));
+	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 

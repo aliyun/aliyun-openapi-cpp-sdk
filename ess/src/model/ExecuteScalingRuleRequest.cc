@@ -33,7 +33,7 @@ long ExecuteScalingRuleRequest::getResourceOwnerId()const
 void ExecuteScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
@@ -44,7 +44,7 @@ std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
 void ExecuteScalingRuleRequest::setScalingRuleAri(const std::string& scalingRuleAri)
 {
 	scalingRuleAri_ = scalingRuleAri;
-	setCoreParameter("ScalingRuleAri", std::to_string(scalingRuleAri));
+	setCoreParameter("ScalingRuleAri", scalingRuleAri);
 }
 
 std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
 void ExecuteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExecuteScalingRuleRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string ExecuteScalingRuleRequest::getClientToken()const
 void ExecuteScalingRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 float ExecuteScalingRuleRequest::getBreachThreshold()const
@@ -77,7 +77,7 @@ float ExecuteScalingRuleRequest::getBreachThreshold()const
 void ExecuteScalingRuleRequest::setBreachThreshold(float breachThreshold)
 {
 	breachThreshold_ = breachThreshold;
-	setCoreParameter("BreachThreshold", breachThreshold);
+	setCoreParameter("BreachThreshold", std::to_string(breachThreshold));
 }
 
 std::string ExecuteScalingRuleRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ExecuteScalingRuleRequest::getOwnerAccount()const
 void ExecuteScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ExecuteScalingRuleRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ExecuteScalingRuleRequest::getOwnerId()const
 void ExecuteScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 float ExecuteScalingRuleRequest::getMetricValue()const
@@ -110,7 +110,7 @@ float ExecuteScalingRuleRequest::getMetricValue()const
 void ExecuteScalingRuleRequest::setMetricValue(float metricValue)
 {
 	metricValue_ = metricValue;
-	setCoreParameter("MetricValue", metricValue);
+	setCoreParameter("MetricValue", std::to_string(metricValue));
 }
 
 std::string ExecuteScalingRuleRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ExecuteScalingRuleRequest::getAccessKeyId()const
 void ExecuteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

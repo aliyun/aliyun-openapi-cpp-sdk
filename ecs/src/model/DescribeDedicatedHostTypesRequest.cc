@@ -33,7 +33,7 @@ long DescribeDedicatedHostTypesRequest::getResourceOwnerId()const
 void DescribeDedicatedHostTypesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeDedicatedHostTypesRequest::getCallerParentId()const
@@ -44,7 +44,7 @@ long DescribeDedicatedHostTypesRequest::getCallerParentId()const
 void DescribeDedicatedHostTypesRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setCoreParameter("CallerParentId", callerParentId);
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDedicatedHostTypesRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ std::string DescribeDedicatedHostTypesRequest::getProxy_original_source_ip()cons
 void DescribeDedicatedHostTypesRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setCoreParameter("Proxy_original_source_ip", std::to_string(proxy_original_source_ip));
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getSupportedInstanceTypeFamily()const
@@ -77,7 +77,7 @@ std::string DescribeDedicatedHostTypesRequest::getSupportedInstanceTypeFamily()c
 void DescribeDedicatedHostTypesRequest::setSupportedInstanceTypeFamily(const std::string& supportedInstanceTypeFamily)
 {
 	supportedInstanceTypeFamily_ = supportedInstanceTypeFamily;
-	setCoreParameter("SupportedInstanceTypeFamily", std::to_string(supportedInstanceTypeFamily));
+	setCoreParameter("SupportedInstanceTypeFamily", supportedInstanceTypeFamily);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getOwnerIdLoginEmail()const
@@ -88,7 +88,7 @@ std::string DescribeDedicatedHostTypesRequest::getOwnerIdLoginEmail()const
 void DescribeDedicatedHostTypesRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setCoreParameter("OwnerIdLoginEmail", std::to_string(ownerIdLoginEmail));
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getCallerType()const
@@ -99,7 +99,7 @@ std::string DescribeDedicatedHostTypesRequest::getCallerType()const
 void DescribeDedicatedHostTypesRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setCoreParameter("CallerType", std::to_string(callerType));
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeDedicatedHostTypesRequest::getAccessKeyId()const
 void DescribeDedicatedHostTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getSourceRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDedicatedHostTypesRequest::getSourceRegionId()const
 void DescribeDedicatedHostTypesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDedicatedHostTypesRequest::getSecurityToken()const
 void DescribeDedicatedHostTypesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getRegionId()const
@@ -143,7 +143,7 @@ std::string DescribeDedicatedHostTypesRequest::getRegionId()const
 void DescribeDedicatedHostTypesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool DescribeDedicatedHostTypesRequest::getEnable()const
@@ -165,7 +165,7 @@ std::string DescribeDedicatedHostTypesRequest::getRequestContent()const
 void DescribeDedicatedHostTypesRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setCoreParameter("RequestContent", std::to_string(requestContent));
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getCallerBidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeDedicatedHostTypesRequest::getCallerBidEmail()const
 void DescribeDedicatedHostTypesRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setCoreParameter("CallerBidEmail", std::to_string(callerBidEmail));
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getDedicatedHostType()const
@@ -187,7 +187,7 @@ std::string DescribeDedicatedHostTypesRequest::getDedicatedHostType()const
 void DescribeDedicatedHostTypesRequest::setDedicatedHostType(const std::string& dedicatedHostType)
 {
 	dedicatedHostType_ = dedicatedHostType;
-	setCoreParameter("DedicatedHostType", std::to_string(dedicatedHostType));
+	setCoreParameter("DedicatedHostType", dedicatedHostType);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getCallerUidEmail()const
@@ -198,7 +198,7 @@ std::string DescribeDedicatedHostTypesRequest::getCallerUidEmail()const
 void DescribeDedicatedHostTypesRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setCoreParameter("CallerUidEmail", std::to_string(callerUidEmail));
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDedicatedHostTypesRequest::getCallerUid()const
@@ -209,7 +209,7 @@ long DescribeDedicatedHostTypesRequest::getCallerUid()const
 void DescribeDedicatedHostTypesRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", callerUid);
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDedicatedHostTypesRequest::getApp_ip()const
@@ -220,7 +220,7 @@ std::string DescribeDedicatedHostTypesRequest::getApp_ip()const
 void DescribeDedicatedHostTypesRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setCoreParameter("App_ip", std::to_string(app_ip));
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getResourceOwnerAccount()const
@@ -231,7 +231,7 @@ std::string DescribeDedicatedHostTypesRequest::getResourceOwnerAccount()const
 void DescribeDedicatedHostTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string DescribeDedicatedHostTypesRequest::getOwnerAccount()const
 void DescribeDedicatedHostTypesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeDedicatedHostTypesRequest::getCallerBid()const
 void DescribeDedicatedHostTypesRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDedicatedHostTypesRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeDedicatedHostTypesRequest::getOwnerId()const
 void DescribeDedicatedHostTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeDedicatedHostTypesRequest::getProxy_trust_transport_info()const
@@ -308,7 +308,7 @@ std::string DescribeDedicatedHostTypesRequest::getRequestId()const
 void DescribeDedicatedHostTypesRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setCoreParameter("RequestId", std::to_string(requestId));
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeDedicatedHostTypesRequest::getAkProxy()const
@@ -319,6 +319,6 @@ std::string DescribeDedicatedHostTypesRequest::getAkProxy()const
 void DescribeDedicatedHostTypesRequest::setAkProxy(const std::string& akProxy)
 {
 	akProxy_ = akProxy;
-	setCoreParameter("AkProxy", std::to_string(akProxy));
+	setCoreParameter("AkProxy", akProxy);
 }
 

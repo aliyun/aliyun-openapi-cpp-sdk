@@ -33,7 +33,7 @@ std::string GetCallMeasureSummaryReportRequest::getIntervalType()const
 void GetCallMeasureSummaryReportRequest::setIntervalType(const std::string& intervalType)
 {
 	intervalType_ = intervalType;
-	setCoreParameter("IntervalType", std::to_string(intervalType));
+	setCoreParameter("IntervalType", intervalType);
 }
 
 int GetCallMeasureSummaryReportRequest::getMonth()const
@@ -44,7 +44,7 @@ int GetCallMeasureSummaryReportRequest::getMonth()const
 void GetCallMeasureSummaryReportRequest::setMonth(int month)
 {
 	month_ = month;
-	setCoreParameter("Month", month);
+	setCoreParameter("Month", std::to_string(month));
 }
 
 int GetCallMeasureSummaryReportRequest::getYear()const
@@ -55,7 +55,7 @@ int GetCallMeasureSummaryReportRequest::getYear()const
 void GetCallMeasureSummaryReportRequest::setYear(int year)
 {
 	year_ = year;
-	setCoreParameter("Year", year);
+	setCoreParameter("Year", std::to_string(year));
 }
 
 int GetCallMeasureSummaryReportRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetCallMeasureSummaryReportRequest::getPageSize()const
 void GetCallMeasureSummaryReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetCallMeasureSummaryReportRequest::getDay()const
@@ -77,7 +77,7 @@ int GetCallMeasureSummaryReportRequest::getDay()const
 void GetCallMeasureSummaryReportRequest::setDay(int day)
 {
 	day_ = day;
-	setCoreParameter("Day", day);
+	setCoreParameter("Day", std::to_string(day));
 }
 
 int GetCallMeasureSummaryReportRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int GetCallMeasureSummaryReportRequest::getPageNumber()const
 void GetCallMeasureSummaryReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetCallMeasureSummaryReportRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string GetCallMeasureSummaryReportRequest::getAccessKeyId()const
 void GetCallMeasureSummaryReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long ListScalingActivityRequest::getResourceOwnerId()const
 void ListScalingActivityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListScalingActivityRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListScalingActivityRequest::getRegionId()const
 void ListScalingActivityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListScalingActivityRequest::getHostGroupId()const
@@ -55,7 +55,7 @@ std::string ListScalingActivityRequest::getHostGroupId()const
 void ListScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", std::to_string(hostGroupId));
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 int ListScalingActivityRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListScalingActivityRequest::getPageSize()const
 void ListScalingActivityRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListScalingActivityRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListScalingActivityRequest::getClusterId()const
 void ListScalingActivityRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListScalingActivityRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListScalingActivityRequest::getPageNumber()const
 void ListScalingActivityRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListScalingActivityRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string ListScalingActivityRequest::getAccessKeyId()const
 void ListScalingActivityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

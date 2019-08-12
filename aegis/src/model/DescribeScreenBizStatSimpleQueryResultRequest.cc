@@ -33,7 +33,7 @@ std::string DescribeScreenBizStatSimpleQueryResultRequest::getRangeUnit()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setRangeUnit(const std::string& rangeUnit)
 {
 	rangeUnit_ = rangeUnit;
-	setCoreParameter("RangeUnit", std::to_string(rangeUnit));
+	setCoreParameter("RangeUnit", rangeUnit);
 }
 
 std::string DescribeScreenBizStatSimpleQueryResultRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeScreenBizStatSimpleQueryResultRequest::getSourceIp()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeScreenBizStatSimpleQueryResultRequest::getEndTime()const
@@ -55,7 +55,7 @@ long DescribeScreenBizStatSimpleQueryResultRequest::getEndTime()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeScreenBizStatSimpleQueryResultRequest::getStartTime()const
@@ -66,7 +66,7 @@ long DescribeScreenBizStatSimpleQueryResultRequest::getStartTime()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeScreenBizStatSimpleQueryResultRequest::getCustomQuery()const
@@ -77,7 +77,7 @@ std::string DescribeScreenBizStatSimpleQueryResultRequest::getCustomQuery()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setCustomQuery(const std::string& customQuery)
 {
 	customQuery_ = customQuery;
-	setCoreParameter("CustomQuery", std::to_string(customQuery));
+	setCoreParameter("CustomQuery", customQuery);
 }
 
 int DescribeScreenBizStatSimpleQueryResultRequest::getRangeValue()const
@@ -88,6 +88,6 @@ int DescribeScreenBizStatSimpleQueryResultRequest::getRangeValue()const
 void DescribeScreenBizStatSimpleQueryResultRequest::setRangeValue(int rangeValue)
 {
 	rangeValue_ = rangeValue;
-	setCoreParameter("RangeValue", rangeValue);
+	setCoreParameter("RangeValue", std::to_string(rangeValue));
 }
 

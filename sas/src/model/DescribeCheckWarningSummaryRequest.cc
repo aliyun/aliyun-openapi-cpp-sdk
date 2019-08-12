@@ -33,7 +33,7 @@ std::string DescribeCheckWarningSummaryRequest::getRiskName()const
 void DescribeCheckWarningSummaryRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", std::to_string(riskName));
+	setCoreParameter("RiskName", riskName);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
 void DescribeCheckWarningSummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeCheckWarningSummaryRequest::getRiskStatus()const
@@ -55,7 +55,7 @@ int DescribeCheckWarningSummaryRequest::getRiskStatus()const
 void DescribeCheckWarningSummaryRequest::setRiskStatus(int riskStatus)
 {
 	riskStatus_ = riskStatus;
-	setCoreParameter("RiskStatus", riskStatus);
+	setCoreParameter("RiskStatus", std::to_string(riskStatus));
 }
 
 int DescribeCheckWarningSummaryRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeCheckWarningSummaryRequest::getPageSize()const
 void DescribeCheckWarningSummaryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeCheckWarningSummaryRequest::getStrategyId()const
@@ -77,7 +77,7 @@ long DescribeCheckWarningSummaryRequest::getStrategyId()const
 void DescribeCheckWarningSummaryRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", strategyId);
+	setCoreParameter("StrategyId", std::to_string(strategyId));
 }
 
 int DescribeCheckWarningSummaryRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeCheckWarningSummaryRequest::getCurrentPage()const
 void DescribeCheckWarningSummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getLang()const
@@ -99,7 +99,7 @@ std::string DescribeCheckWarningSummaryRequest::getLang()const
 void DescribeCheckWarningSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getTypeName()const
@@ -110,7 +110,7 @@ std::string DescribeCheckWarningSummaryRequest::getTypeName()const
 void DescribeCheckWarningSummaryRequest::setTypeName(const std::string& typeName)
 {
 	typeName_ = typeName;
-	setCoreParameter("TypeName", std::to_string(typeName));
+	setCoreParameter("TypeName", typeName);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getStatus()const
@@ -121,7 +121,7 @@ std::string DescribeCheckWarningSummaryRequest::getStatus()const
 void DescribeCheckWarningSummaryRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setCoreParameter("Status", status);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getUuids()const
@@ -132,6 +132,6 @@ std::string DescribeCheckWarningSummaryRequest::getUuids()const
 void DescribeCheckWarningSummaryRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", std::to_string(uuids));
+	setCoreParameter("Uuids", uuids);
 }
 

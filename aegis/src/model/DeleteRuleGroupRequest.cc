@@ -33,7 +33,7 @@ std::string DeleteRuleGroupRequest::getSourceIp()const
 void DeleteRuleGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DeleteRuleGroupRequest::getId()const
@@ -44,7 +44,7 @@ long DeleteRuleGroupRequest::getId()const
 void DeleteRuleGroupRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DeleteRuleGroupRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DeleteRuleGroupRequest::getLang()const
 void DeleteRuleGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

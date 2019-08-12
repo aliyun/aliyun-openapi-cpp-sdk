@@ -33,7 +33,7 @@ std::string ARMSQueryDataSetRequest::getDateStr()const
 void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setCoreParameter("DateStr", std::to_string(dateStr));
+	setCoreParameter("DateStr", dateStr);
 }
 
 long ARMSQueryDataSetRequest::getMinTime()const
@@ -44,7 +44,7 @@ long ARMSQueryDataSetRequest::getMinTime()const
 void ARMSQueryDataSetRequest::setMinTime(long minTime)
 {
 	minTime_ = minTime;
-	setCoreParameter("MinTime", minTime);
+	setCoreParameter("MinTime", std::to_string(minTime));
 }
 
 bool ARMSQueryDataSetRequest::getReduceTail()const
@@ -66,7 +66,7 @@ long ARMSQueryDataSetRequest::getMaxTime()const
 void ARMSQueryDataSetRequest::setMaxTime(long maxTime)
 {
 	maxTime_ = maxTime;
-	setCoreParameter("MaxTime", maxTime);
+	setCoreParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::string ARMSQueryDataSetRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string ARMSQueryDataSetRequest::getAccessKeyId()const
 void ARMSQueryDataSetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<ARMSQueryDataSetRequest::OptionalDims> ARMSQueryDataSetRequest::getOptionalDims()const
@@ -92,9 +92,9 @@ void ARMSQueryDataSetRequest::setOptionalDims(const std::vector<OptionalDims>& o
 	for(int i = 0; i!= optionalDims.size(); i++)	{
 		auto obj = optionalDims.at(i);
 		std::string str ="OptionalDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", std::to_string(obj.type));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -107,7 +107,7 @@ void ARMSQueryDataSetRequest::setMeasures(const std::vector<std::string>& measur
 {
 	measures_ = measures;
 	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), std::to_string(measures.at(i)));
+		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
 }
 
 int ARMSQueryDataSetRequest::getIntervalInSec()const
@@ -118,7 +118,7 @@ int ARMSQueryDataSetRequest::getIntervalInSec()const
 void ARMSQueryDataSetRequest::setIntervalInSec(int intervalInSec)
 {
 	intervalInSec_ = intervalInSec;
-	setCoreParameter("IntervalInSec", intervalInSec);
+	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
 bool ARMSQueryDataSetRequest::getIsDrillDown()const
@@ -151,7 +151,7 @@ std::string ARMSQueryDataSetRequest::getSecurityToken()const
 void ARMSQueryDataSetRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ARMSQueryDataSetRequest::getRegionId()const
@@ -162,7 +162,7 @@ std::string ARMSQueryDataSetRequest::getRegionId()const
 void ARMSQueryDataSetRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ARMSQueryDataSetRequest::getOrderByKey()const
@@ -173,7 +173,7 @@ std::string ARMSQueryDataSetRequest::getOrderByKey()const
 void ARMSQueryDataSetRequest::setOrderByKey(const std::string& orderByKey)
 {
 	orderByKey_ = orderByKey;
-	setCoreParameter("OrderByKey", std::to_string(orderByKey));
+	setCoreParameter("OrderByKey", orderByKey);
 }
 
 int ARMSQueryDataSetRequest::getLimit()const
@@ -184,7 +184,7 @@ int ARMSQueryDataSetRequest::getLimit()const
 void ARMSQueryDataSetRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::vector<ARMSQueryDataSetRequest::RequiredDims> ARMSQueryDataSetRequest::getRequiredDims()const
@@ -199,9 +199,9 @@ void ARMSQueryDataSetRequest::setRequiredDims(const std::vector<RequiredDims>& r
 	for(int i = 0; i!= requiredDims.size(); i++)	{
 		auto obj = requiredDims.at(i);
 		std::string str ="RequiredDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", std::to_string(obj.type));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -213,7 +213,7 @@ long ARMSQueryDataSetRequest::getDatasetId()const
 void ARMSQueryDataSetRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
-	setCoreParameter("DatasetId", datasetId);
+	setCoreParameter("DatasetId", std::to_string(datasetId));
 }
 
 std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDimensions()const
@@ -228,9 +228,9 @@ void ARMSQueryDataSetRequest::setDimensions(const std::vector<Dimensions>& dimen
 	for(int i = 0; i!= dimensions.size(); i++)	{
 		auto obj = dimensions.at(i);
 		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Type", std::to_string(obj.type));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Type", obj.type);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 

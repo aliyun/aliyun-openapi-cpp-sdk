@@ -33,7 +33,7 @@ std::string DescribeSecurityGroupReferencesRequest::getSourceRegionId()const
 void DescribeSecurityGroupReferencesRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeSecurityGroupReferencesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeSecurityGroupReferencesRequest::getResourceOwnerId()const
 void DescribeSecurityGroupReferencesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityGroupReferencesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeSecurityGroupReferencesRequest::getRegionId()const
 void DescribeSecurityGroupReferencesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeSecurityGroupReferencesRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeSecurityGroupReferencesRequest::getResourceOwnerAccount()con
 void DescribeSecurityGroupReferencesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSecurityGroupReferencesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeSecurityGroupReferencesRequest::getOwnerAccount()const
 void DescribeSecurityGroupReferencesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<std::string> DescribeSecurityGroupReferencesRequest::getSecurityGroupId()const
@@ -89,7 +89,7 @@ void DescribeSecurityGroupReferencesRequest::setSecurityGroupId(const std::vecto
 {
 	securityGroupId_ = securityGroupId;
 	for(int i = 0; i!= securityGroupId.size(); i++)
-		setCoreParameter("SecurityGroupId."+ std::to_string(i), std::to_string(securityGroupId.at(i)));
+		setCoreParameter("SecurityGroupId."+ std::to_string(i), securityGroupId.at(i));
 }
 
 long DescribeSecurityGroupReferencesRequest::getOwnerId()const
@@ -100,6 +100,6 @@ long DescribeSecurityGroupReferencesRequest::getOwnerId()const
 void DescribeSecurityGroupReferencesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

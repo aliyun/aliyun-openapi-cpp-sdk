@@ -33,7 +33,7 @@ std::string OnsWarnDeleteRequest::getInstanceId()const
 void OnsWarnDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsWarnDeleteRequest::getGroupId()const
@@ -44,7 +44,7 @@ std::string OnsWarnDeleteRequest::getGroupId()const
 void OnsWarnDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string OnsWarnDeleteRequest::getTopic()const
@@ -55,6 +55,6 @@ std::string OnsWarnDeleteRequest::getTopic()const
 void OnsWarnDeleteRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", std::to_string(topic));
+	setCoreParameter("Topic", topic);
 }
 

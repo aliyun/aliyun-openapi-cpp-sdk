@@ -33,7 +33,7 @@ std::string CreateConfigurationRequest::getSourceIp()const
 void CreateConfigurationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateConfigurationRequest::getConfigurationName()const
@@ -44,7 +44,7 @@ std::string CreateConfigurationRequest::getConfigurationName()const
 void CreateConfigurationRequest::setConfigurationName(const std::string& configurationName)
 {
 	configurationName_ = configurationName;
-	setCoreParameter("ConfigurationName", std::to_string(configurationName));
+	setCoreParameter("ConfigurationName", configurationName);
 }
 
 std::string CreateConfigurationRequest::getMaxPV()const
@@ -55,7 +55,7 @@ std::string CreateConfigurationRequest::getMaxPV()const
 void CreateConfigurationRequest::setMaxPV(const std::string& maxPV)
 {
 	maxPV_ = maxPV;
-	setCoreParameter("MaxPV", std::to_string(maxPV));
+	setCoreParameter("MaxPV", maxPV);
 }
 
 std::string CreateConfigurationRequest::getConfigurationMethod()const
@@ -66,7 +66,7 @@ std::string CreateConfigurationRequest::getConfigurationMethod()const
 void CreateConfigurationRequest::setConfigurationMethod(const std::string& configurationMethod)
 {
 	configurationMethod_ = configurationMethod;
-	setCoreParameter("ConfigurationMethod", std::to_string(configurationMethod));
+	setCoreParameter("ConfigurationMethod", configurationMethod);
 }
 
 std::string CreateConfigurationRequest::getApplyType()const
@@ -77,7 +77,7 @@ std::string CreateConfigurationRequest::getApplyType()const
 void CreateConfigurationRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
-	setCoreParameter("ApplyType", std::to_string(applyType));
+	setCoreParameter("ApplyType", applyType);
 }
 
 std::string CreateConfigurationRequest::getScene()const
@@ -88,6 +88,6 @@ std::string CreateConfigurationRequest::getScene()const
 void CreateConfigurationRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", std::to_string(scene));
+	setCoreParameter("Scene", scene);
 }
 

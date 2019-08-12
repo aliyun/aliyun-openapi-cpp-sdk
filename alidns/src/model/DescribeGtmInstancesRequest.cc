@@ -33,7 +33,7 @@ std::string DescribeGtmInstancesRequest::getResourceGroupId()const
 void DescribeGtmInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeGtmInstancesRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeGtmInstancesRequest::getUserClientIp()const
 void DescribeGtmInstancesRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmInstancesRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeGtmInstancesRequest::getPageSize()const
 void DescribeGtmInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmInstancesRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeGtmInstancesRequest::getLang()const
 void DescribeGtmInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeGtmInstancesRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string DescribeGtmInstancesRequest::getKeyword()const
 void DescribeGtmInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 int DescribeGtmInstancesRequest::getPageNumber()const
@@ -88,6 +88,6 @@ int DescribeGtmInstancesRequest::getPageNumber()const
 void DescribeGtmInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

@@ -33,7 +33,7 @@ std::string RemoveNumberFromSkillGroupRequest::getNumber()const
 void RemoveNumberFromSkillGroupRequest::setNumber(const std::string& number)
 {
 	number_ = number;
-	setCoreParameter("Number", std::to_string(number));
+	setCoreParameter("Number", number);
 }
 
 std::string RemoveNumberFromSkillGroupRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string RemoveNumberFromSkillGroupRequest::getInstanceId()const
 void RemoveNumberFromSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string RemoveNumberFromSkillGroupRequest::getSkillGroupId()const
@@ -55,7 +55,7 @@ std::string RemoveNumberFromSkillGroupRequest::getSkillGroupId()const
 void RemoveNumberFromSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string RemoveNumberFromSkillGroupRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string RemoveNumberFromSkillGroupRequest::getAccessKeyId()const
 void RemoveNumberFromSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

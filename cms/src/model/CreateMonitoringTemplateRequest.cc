@@ -33,7 +33,7 @@ std::string CreateMonitoringTemplateRequest::getEventRuleTemplatesJson()const
 void CreateMonitoringTemplateRequest::setEventRuleTemplatesJson(const std::string& eventRuleTemplatesJson)
 {
 	eventRuleTemplatesJson_ = eventRuleTemplatesJson;
-	setCoreParameter("EventRuleTemplatesJson", std::to_string(eventRuleTemplatesJson));
+	setCoreParameter("EventRuleTemplatesJson", eventRuleTemplatesJson);
 }
 
 std::string CreateMonitoringTemplateRequest::getName()const
@@ -44,7 +44,7 @@ std::string CreateMonitoringTemplateRequest::getName()const
 void CreateMonitoringTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string CreateMonitoringTemplateRequest::get_Namespace()const
@@ -55,7 +55,7 @@ std::string CreateMonitoringTemplateRequest::get_Namespace()const
 void CreateMonitoringTemplateRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", std::to_string(_namespace));
+	setCoreParameter("_Namespace", _namespace);
 }
 
 std::string CreateMonitoringTemplateRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string CreateMonitoringTemplateRequest::getDescription()const
 void CreateMonitoringTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string CreateMonitoringTemplateRequest::getAlertTemplatesJson()const
@@ -77,6 +77,6 @@ std::string CreateMonitoringTemplateRequest::getAlertTemplatesJson()const
 void CreateMonitoringTemplateRequest::setAlertTemplatesJson(const std::string& alertTemplatesJson)
 {
 	alertTemplatesJson_ = alertTemplatesJson;
-	setCoreParameter("AlertTemplatesJson", std::to_string(alertTemplatesJson));
+	setCoreParameter("AlertTemplatesJson", alertTemplatesJson);
 }
 

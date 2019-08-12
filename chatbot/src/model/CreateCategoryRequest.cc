@@ -33,7 +33,7 @@ long CreateCategoryRequest::getParentCategoryId()const
 void CreateCategoryRequest::setParentCategoryId(long parentCategoryId)
 {
 	parentCategoryId_ = parentCategoryId;
-	setCoreParameter("ParentCategoryId", parentCategoryId);
+	setCoreParameter("ParentCategoryId", std::to_string(parentCategoryId));
 }
 
 std::string CreateCategoryRequest::getName()const
@@ -44,6 +44,6 @@ std::string CreateCategoryRequest::getName()const
 void CreateCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 

@@ -33,7 +33,7 @@ std::string ListContainerImagesRequest::getContainerType()const
 void ListContainerImagesRequest::setContainerType(const std::string& containerType)
 {
 	containerType_ = containerType;
-	setCoreParameter("ContainerType", std::to_string(containerType));
+	setCoreParameter("ContainerType", containerType);
 }
 
 int ListContainerImagesRequest::getPageSize()const
@@ -44,7 +44,7 @@ int ListContainerImagesRequest::getPageSize()const
 void ListContainerImagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListContainerImagesRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ListContainerImagesRequest::getClusterId()const
 void ListContainerImagesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListContainerImagesRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int ListContainerImagesRequest::getPageNumber()const
 void ListContainerImagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListContainerImagesRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListContainerImagesRequest::getAccessKeyId()const
 void ListContainerImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

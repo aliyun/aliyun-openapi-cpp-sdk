@@ -33,7 +33,7 @@ std::string DescribeDomainCCDataRequest::getSecurityToken()const
 void DescribeDomainCCDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainCCDataRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDomainCCDataRequest::getDomainName()const
 void DescribeDomainCCDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainCCDataRequest::getEndTime()const
@@ -55,7 +55,7 @@ std::string DescribeDomainCCDataRequest::getEndTime()const
 void DescribeDomainCCDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainCCDataRequest::getStartTime()const
@@ -66,7 +66,7 @@ std::string DescribeDomainCCDataRequest::getStartTime()const
 void DescribeDomainCCDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeDomainCCDataRequest::getOwnerId()const
@@ -77,6 +77,6 @@ long DescribeDomainCCDataRequest::getOwnerId()const
 void DescribeDomainCCDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeOssObjectsRequest::getInstanceId()const
 void DescribeOssObjectsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeOssObjectsRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeOssObjectsRequest::getSourceIp()const
 void DescribeOssObjectsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeOssObjectsRequest::getFeatureType()const
@@ -55,7 +55,7 @@ int DescribeOssObjectsRequest::getFeatureType()const
 void DescribeOssObjectsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeOssObjectsRequest::getName()const
@@ -66,7 +66,7 @@ std::string DescribeOssObjectsRequest::getName()const
 void DescribeOssObjectsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeOssObjectsRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeOssObjectsRequest::getPageSize()const
 void DescribeOssObjectsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeOssObjectsRequest::getCurrentPage()const
@@ -88,7 +88,7 @@ int DescribeOssObjectsRequest::getCurrentPage()const
 void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeOssObjectsRequest::getQueryName()const
@@ -99,7 +99,7 @@ std::string DescribeOssObjectsRequest::getQueryName()const
 void DescribeOssObjectsRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", std::to_string(queryName));
+	setCoreParameter("QueryName", queryName);
 }
 
 int DescribeOssObjectsRequest::getRiskLevelId()const
@@ -110,7 +110,7 @@ int DescribeOssObjectsRequest::getRiskLevelId()const
 void DescribeOssObjectsRequest::setRiskLevelId(int riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", riskLevelId);
+	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeOssObjectsRequest::getLang()const
@@ -121,7 +121,7 @@ std::string DescribeOssObjectsRequest::getLang()const
 void DescribeOssObjectsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeOssObjectsRequest::getRuleId()const
@@ -132,6 +132,6 @@ long DescribeOssObjectsRequest::getRuleId()const
 void DescribeOssObjectsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 

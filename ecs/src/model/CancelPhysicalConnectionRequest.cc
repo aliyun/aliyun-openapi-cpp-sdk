@@ -33,7 +33,7 @@ long CancelPhysicalConnectionRequest::getResourceOwnerId()const
 void CancelPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelPhysicalConnectionRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string CancelPhysicalConnectionRequest::getRegionId()const
 void CancelPhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CancelPhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string CancelPhysicalConnectionRequest::getResourceOwnerAccount()const
 void CancelPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelPhysicalConnectionRequest::getClientToken()const
@@ -66,7 +66,7 @@ std::string CancelPhysicalConnectionRequest::getClientToken()const
 void CancelPhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CancelPhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -77,7 +77,7 @@ std::string CancelPhysicalConnectionRequest::getPhysicalConnectionId()const
 void CancelPhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", std::to_string(physicalConnectionId));
+	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
 }
 
 std::string CancelPhysicalConnectionRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string CancelPhysicalConnectionRequest::getOwnerAccount()const
 void CancelPhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CancelPhysicalConnectionRequest::getUserCidr()const
@@ -99,7 +99,7 @@ std::string CancelPhysicalConnectionRequest::getUserCidr()const
 void CancelPhysicalConnectionRequest::setUserCidr(const std::string& userCidr)
 {
 	userCidr_ = userCidr;
-	setCoreParameter("UserCidr", std::to_string(userCidr));
+	setCoreParameter("UserCidr", userCidr);
 }
 
 long CancelPhysicalConnectionRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long CancelPhysicalConnectionRequest::getOwnerId()const
 void CancelPhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

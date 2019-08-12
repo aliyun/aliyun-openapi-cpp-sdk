@@ -33,7 +33,7 @@ std::string UpdateQueueConfigRequest::getQueueName()const
 void UpdateQueueConfigRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", std::to_string(queueName));
+	setCoreParameter("QueueName", queueName);
 }
 
 std::string UpdateQueueConfigRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string UpdateQueueConfigRequest::getResourceGroupId()const
 void UpdateQueueConfigRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateQueueConfigRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string UpdateQueueConfigRequest::getClusterId()const
 void UpdateQueueConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string UpdateQueueConfigRequest::getComputeInstanceType()const
@@ -66,7 +66,7 @@ std::string UpdateQueueConfigRequest::getComputeInstanceType()const
 void UpdateQueueConfigRequest::setComputeInstanceType(const std::string& computeInstanceType)
 {
 	computeInstanceType_ = computeInstanceType;
-	setCoreParameter("ComputeInstanceType", std::to_string(computeInstanceType));
+	setCoreParameter("ComputeInstanceType", computeInstanceType);
 }
 
 std::string UpdateQueueConfigRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string UpdateQueueConfigRequest::getAccessKeyId()const
 void UpdateQueueConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

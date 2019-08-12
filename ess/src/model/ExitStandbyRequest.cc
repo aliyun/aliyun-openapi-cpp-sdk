@@ -34,7 +34,7 @@ void ExitStandbyRequest::setInstanceId(const std::vector<std::string>& instanceI
 {
 	instanceId_ = instanceId;
 	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), std::to_string(instanceId.at(i)));
+		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
 }
 
 std::string ExitStandbyRequest::getResourceOwnerAccount()const
@@ -45,7 +45,7 @@ std::string ExitStandbyRequest::getResourceOwnerAccount()const
 void ExitStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExitStandbyRequest::getScalingGroupId()const
@@ -56,7 +56,7 @@ std::string ExitStandbyRequest::getScalingGroupId()const
 void ExitStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", std::to_string(scalingGroupId));
+	setCoreParameter("ScalingGroupId", scalingGroupId);
 }
 
 long ExitStandbyRequest::getOwnerId()const
@@ -67,7 +67,7 @@ long ExitStandbyRequest::getOwnerId()const
 void ExitStandbyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ExitStandbyRequest::getAccessKeyId()const
@@ -78,6 +78,6 @@ std::string ExitStandbyRequest::getAccessKeyId()const
 void ExitStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

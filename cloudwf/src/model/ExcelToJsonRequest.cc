@@ -33,7 +33,7 @@ std::string ExcelToJsonRequest::getUploadData()const
 void ExcelToJsonRequest::setUploadData(const std::string& uploadData)
 {
 	uploadData_ = uploadData;
-	setCoreParameter("UploadData", std::to_string(uploadData));
+	setCoreParameter("UploadData", uploadData);
 }
 
 std::string ExcelToJsonRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string ExcelToJsonRequest::getAccessKeyId()const
 void ExcelToJsonRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

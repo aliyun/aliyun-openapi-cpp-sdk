@@ -33,7 +33,7 @@ long ListKafkaReassignTopicRequest::getResourceOwnerId()const
 void ListKafkaReassignTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListKafkaReassignTopicRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListKafkaReassignTopicRequest::getRegionId()const
 void ListKafkaReassignTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListKafkaReassignTopicRequest::getReassignId()const
@@ -55,7 +55,7 @@ std::string ListKafkaReassignTopicRequest::getReassignId()const
 void ListKafkaReassignTopicRequest::setReassignId(const std::string& reassignId)
 {
 	reassignId_ = reassignId;
-	setCoreParameter("ReassignId", std::to_string(reassignId));
+	setCoreParameter("ReassignId", reassignId);
 }
 
 int ListKafkaReassignTopicRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListKafkaReassignTopicRequest::getPageSize()const
 void ListKafkaReassignTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListKafkaReassignTopicRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListKafkaReassignTopicRequest::getPageNumber()const
 void ListKafkaReassignTopicRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListKafkaReassignTopicRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListKafkaReassignTopicRequest::getAccessKeyId()const
 void ListKafkaReassignTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

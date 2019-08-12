@@ -33,7 +33,7 @@ long QueryVideoSplitJobListRequest::getResourceOwnerId()const
 void QueryVideoSplitJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
 void QueryVideoSplitJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVideoSplitJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryVideoSplitJobListRequest::getJobIds()const
 void QueryVideoSplitJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", std::to_string(jobIds));
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
 void QueryVideoSplitJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryVideoSplitJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryVideoSplitJobListRequest::getOwnerId()const
 void QueryVideoSplitJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
 void QueryVideoSplitJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

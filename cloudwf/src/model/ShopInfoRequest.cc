@@ -33,7 +33,7 @@ std::string ShopInfoRequest::getAccessKeyId()const
 void ShopInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopInfoRequest::getSid()const
@@ -44,6 +44,6 @@ long ShopInfoRequest::getSid()const
 void ShopInfoRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

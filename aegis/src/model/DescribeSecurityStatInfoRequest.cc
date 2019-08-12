@@ -33,7 +33,7 @@ std::string DescribeSecurityStatInfoRequest::getSourceIp()const
 void DescribeSecurityStatInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSecurityStatInfoRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeSecurityStatInfoRequest::getLang()const
 void DescribeSecurityStatInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

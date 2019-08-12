@@ -33,7 +33,7 @@ std::string DescribeInstanceStatusRequest::getSourceRegionId()const
 void DescribeInstanceStatusRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long DescribeInstanceStatusRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeInstanceStatusRequest::getResourceOwnerId()const
 void DescribeInstanceStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeInstanceStatusRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeInstanceStatusRequest::getResourceOwnerAccount()const
 void DescribeInstanceStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInstanceStatusRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeInstanceStatusRequest::getRegionId()const
 void DescribeInstanceStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeInstanceStatusRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeInstanceStatusRequest::getOwnerAccount()const
 void DescribeInstanceStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeInstanceStatusRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeInstanceStatusRequest::getPageSize()const
 void DescribeInstanceStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInstanceStatusRequest::getZoneId()const
@@ -99,7 +99,7 @@ std::string DescribeInstanceStatusRequest::getZoneId()const
 void DescribeInstanceStatusRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", std::to_string(zoneId));
+	setCoreParameter("ZoneId", zoneId);
 }
 
 std::string DescribeInstanceStatusRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string DescribeInstanceStatusRequest::getClusterId()const
 void DescribeInstanceStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 long DescribeInstanceStatusRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long DescribeInstanceStatusRequest::getOwnerId()const
 void DescribeInstanceStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeInstanceStatusRequest::getPageNumber()const
@@ -132,6 +132,6 @@ int DescribeInstanceStatusRequest::getPageNumber()const
 void DescribeInstanceStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

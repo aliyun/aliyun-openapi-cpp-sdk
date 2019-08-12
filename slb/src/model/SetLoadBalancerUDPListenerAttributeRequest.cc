@@ -33,7 +33,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getAccess_key_id()const
 void SetLoadBalancerUDPListenerAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckConnectTimeout()const
@@ -44,7 +44,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckConnectTimeout()co
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthCheckConnectTimeout(int healthCheckConnectTimeout)
 {
 	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
-	setCoreParameter("HealthCheckConnectTimeout", healthCheckConnectTimeout);
+	setCoreParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
 }
 
 long SetLoadBalancerUDPListenerAttributeRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SetLoadBalancerUDPListenerAttributeRequest::getResourceOwnerId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getDescription()const
 void SetLoadBalancerUDPListenerAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getUnhealthyThreshold()const
@@ -77,7 +77,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getUnhealthyThreshold()const
 void SetLoadBalancerUDPListenerAttributeRequest::setUnhealthyThreshold(int unhealthyThreshold)
 {
 	unhealthyThreshold_ = unhealthyThreshold;
-	setCoreParameter("UnhealthyThreshold", unhealthyThreshold);
+	setCoreParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getHealthyThreshold()const
@@ -88,7 +88,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getHealthyThreshold()const
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthyThreshold(int healthyThreshold)
 {
 	healthyThreshold_ = healthyThreshold;
-	setCoreParameter("HealthyThreshold", healthyThreshold);
+	setCoreParameter("HealthyThreshold", std::to_string(healthyThreshold));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getAclStatus()const
@@ -99,7 +99,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getAclStatus()const
 void SetLoadBalancerUDPListenerAttributeRequest::setAclStatus(const std::string& aclStatus)
 {
 	aclStatus_ = aclStatus;
-	setCoreParameter("AclStatus", std::to_string(aclStatus));
+	setCoreParameter("AclStatus", aclStatus);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getScheduler()const
@@ -110,7 +110,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getScheduler()const
 void SetLoadBalancerUDPListenerAttributeRequest::setScheduler(const std::string& scheduler)
 {
 	scheduler_ = scheduler;
-	setCoreParameter("Scheduler", std::to_string(scheduler));
+	setCoreParameter("Scheduler", scheduler);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getAclType()const
@@ -121,7 +121,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getAclType()const
 void SetLoadBalancerUDPListenerAttributeRequest::setAclType(const std::string& aclType)
 {
 	aclType_ = aclType;
-	setCoreParameter("AclType", std::to_string(aclType));
+	setCoreParameter("AclType", aclType);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getMasterSlaveServerGroup()const
@@ -132,7 +132,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getMasterSlaveServerGrou
 void SetLoadBalancerUDPListenerAttributeRequest::setMasterSlaveServerGroup(const std::string& masterSlaveServerGroup)
 {
 	masterSlaveServerGroup_ = masterSlaveServerGroup;
-	setCoreParameter("MasterSlaveServerGroup", std::to_string(masterSlaveServerGroup));
+	setCoreParameter("MasterSlaveServerGroup", masterSlaveServerGroup);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getMaxConnection()const
@@ -143,7 +143,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getMaxConnection()const
 void SetLoadBalancerUDPListenerAttributeRequest::setMaxConnection(int maxConnection)
 {
 	maxConnection_ = maxConnection;
-	setCoreParameter("MaxConnection", maxConnection);
+	setCoreParameter("MaxConnection", std::to_string(maxConnection));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getRegionId()const
@@ -154,7 +154,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getRegionId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getPersistenceTimeout()const
@@ -165,7 +165,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getPersistenceTimeout()const
 void SetLoadBalancerUDPListenerAttributeRequest::setPersistenceTimeout(int persistenceTimeout)
 {
 	persistenceTimeout_ = persistenceTimeout;
-	setCoreParameter("PersistenceTimeout", persistenceTimeout);
+	setCoreParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getVpcIds()const
@@ -176,7 +176,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getVpcIds()const
 void SetLoadBalancerUDPListenerAttributeRequest::setVpcIds(const std::string& vpcIds)
 {
 	vpcIds_ = vpcIds;
-	setCoreParameter("VpcIds", std::to_string(vpcIds));
+	setCoreParameter("VpcIds", vpcIds);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getVServerGroupId()const
@@ -187,7 +187,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getVServerGroupId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", std::to_string(vServerGroupId));
+	setCoreParameter("VServerGroupId", vServerGroupId);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getAclId()const
@@ -198,7 +198,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getAclId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", std::to_string(aclId));
+	setCoreParameter("AclId", aclId);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getListenerPort()const
@@ -209,7 +209,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getListenerPort()const
 void SetLoadBalancerUDPListenerAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", listenerPort);
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getResourceOwnerAccount()const
@@ -220,7 +220,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getResourceOwnerAccount(
 void SetLoadBalancerUDPListenerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getBandwidth()const
@@ -231,7 +231,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getBandwidth()const
 void SetLoadBalancerUDPListenerAttributeRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setCoreParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getOwnerAccount()const
@@ -242,7 +242,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getOwnerAccount()const
 void SetLoadBalancerUDPListenerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SetLoadBalancerUDPListenerAttributeRequest::getOwnerId()const
@@ -253,7 +253,7 @@ long SetLoadBalancerUDPListenerAttributeRequest::getOwnerId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getTags()const
@@ -264,7 +264,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getTags()const
 void SetLoadBalancerUDPListenerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getLoadBalancerId()const
@@ -275,7 +275,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getLoadBalancerId()const
 void SetLoadBalancerUDPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getMasterSlaveServerGroupId()const
@@ -286,7 +286,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getMasterSlaveServerGrou
 void SetLoadBalancerUDPListenerAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
 {
 	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", std::to_string(masterSlaveServerGroupId));
+	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckReq()const
@@ -297,7 +297,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckReq()const
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthCheckReq(const std::string& healthCheckReq)
 {
 	healthCheckReq_ = healthCheckReq;
-	setCoreParameter("HealthCheckReq", std::to_string(healthCheckReq));
+	setCoreParameter("HealthCheckReq", healthCheckReq);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckInterval()const
@@ -308,7 +308,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckInterval()const
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthCheckInterval(int healthCheckInterval)
 {
 	healthCheckInterval_ = healthCheckInterval;
-	setCoreParameter("HealthCheckInterval", healthCheckInterval);
+	setCoreParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckExp()const
@@ -319,7 +319,7 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckExp()const
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthCheckExp(const std::string& healthCheckExp)
 {
 	healthCheckExp_ = healthCheckExp;
-	setCoreParameter("HealthCheckExp", std::to_string(healthCheckExp));
+	setCoreParameter("HealthCheckExp", healthCheckExp);
 }
 
 int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckConnectPort()const
@@ -330,7 +330,7 @@ int SetLoadBalancerUDPListenerAttributeRequest::getHealthCheckConnectPort()const
 void SetLoadBalancerUDPListenerAttributeRequest::setHealthCheckConnectPort(int healthCheckConnectPort)
 {
 	healthCheckConnectPort_ = healthCheckConnectPort;
-	setCoreParameter("HealthCheckConnectPort", healthCheckConnectPort);
+	setCoreParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
 }
 
 std::string SetLoadBalancerUDPListenerAttributeRequest::getVServerGroup()const
@@ -341,6 +341,6 @@ std::string SetLoadBalancerUDPListenerAttributeRequest::getVServerGroup()const
 void SetLoadBalancerUDPListenerAttributeRequest::setVServerGroup(const std::string& vServerGroup)
 {
 	vServerGroup_ = vServerGroup;
-	setCoreParameter("VServerGroup", std::to_string(vServerGroup));
+	setCoreParameter("VServerGroup", vServerGroup);
 }
 

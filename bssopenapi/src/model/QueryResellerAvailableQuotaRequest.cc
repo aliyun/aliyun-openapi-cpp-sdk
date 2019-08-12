@@ -33,7 +33,7 @@ std::string QueryResellerAvailableQuotaRequest::getItemCodes()const
 void QueryResellerAvailableQuotaRequest::setItemCodes(const std::string& itemCodes)
 {
 	itemCodes_ = itemCodes;
-	setCoreParameter("ItemCodes", std::to_string(itemCodes));
+	setCoreParameter("ItemCodes", itemCodes);
 }
 
 long QueryResellerAvailableQuotaRequest::getOwnerId()const
@@ -44,6 +44,6 @@ long QueryResellerAvailableQuotaRequest::getOwnerId()const
 void QueryResellerAvailableQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,7 +33,7 @@ std::string DescribeWebsiteScanResultDetailRequest::getSourceIp()const
 void DescribeWebsiteScanResultDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebsiteScanResultDetailRequest::getId()const
@@ -44,7 +44,7 @@ int DescribeWebsiteScanResultDetailRequest::getId()const
 void DescribeWebsiteScanResultDetailRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string DescribeWebsiteScanResultDetailRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeWebsiteScanResultDetailRequest::getLang()const
 void DescribeWebsiteScanResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeWebsiteScanResultDetailRequest::getResourceType()const
@@ -66,6 +66,6 @@ std::string DescribeWebsiteScanResultDetailRequest::getResourceType()const
 void DescribeWebsiteScanResultDetailRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 

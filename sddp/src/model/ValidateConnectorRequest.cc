@@ -33,7 +33,7 @@ std::string ValidateConnectorRequest::getPassword()const
 void ValidateConnectorRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 std::string ValidateConnectorRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ValidateConnectorRequest::getSourceIp()const
 void ValidateConnectorRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ValidateConnectorRequest::getConnector()const
@@ -55,7 +55,7 @@ std::string ValidateConnectorRequest::getConnector()const
 void ValidateConnectorRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", std::to_string(connector));
+	setCoreParameter("Connector", connector);
 }
 
 std::string ValidateConnectorRequest::getLang()const
@@ -66,7 +66,7 @@ std::string ValidateConnectorRequest::getLang()const
 void ValidateConnectorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int ValidateConnectorRequest::getResourceType()const
@@ -77,7 +77,7 @@ int ValidateConnectorRequest::getResourceType()const
 void ValidateConnectorRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setCoreParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ValidateConnectorRequest::getServiceRegionId()const
@@ -88,7 +88,7 @@ std::string ValidateConnectorRequest::getServiceRegionId()const
 void ValidateConnectorRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", std::to_string(serviceRegionId));
+	setCoreParameter("ServiceRegionId", serviceRegionId);
 }
 
 std::string ValidateConnectorRequest::getParentId()const
@@ -99,7 +99,7 @@ std::string ValidateConnectorRequest::getParentId()const
 void ValidateConnectorRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setCoreParameter("ParentId", parentId);
 }
 
 std::string ValidateConnectorRequest::getUserName()const
@@ -110,6 +110,6 @@ std::string ValidateConnectorRequest::getUserName()const
 void ValidateConnectorRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

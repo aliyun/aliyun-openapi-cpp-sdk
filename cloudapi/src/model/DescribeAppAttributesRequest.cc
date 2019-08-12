@@ -33,7 +33,7 @@ std::string DescribeAppAttributesRequest::getAppName()const
 void DescribeAppAttributesRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", std::to_string(appName));
+	setCoreParameter("AppName", appName);
 }
 
 std::string DescribeAppAttributesRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeAppAttributesRequest::getSecurityToken()const
 void DescribeAppAttributesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 long DescribeAppAttributesRequest::getAppId()const
@@ -55,7 +55,7 @@ long DescribeAppAttributesRequest::getAppId()const
 void DescribeAppAttributesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setCoreParameter("AppId", std::to_string(appId));
 }
 
 int DescribeAppAttributesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeAppAttributesRequest::getPageSize()const
 void DescribeAppAttributesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeAppAttributesRequest::Tag> DescribeAppAttributesRequest::getTag()const
@@ -81,8 +81,8 @@ void DescribeAppAttributesRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -105,7 +105,7 @@ int DescribeAppAttributesRequest::getPageNumber()const
 void DescribeAppAttributesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAppAttributesRequest::getAccessKeyId()const
@@ -116,6 +116,6 @@ std::string DescribeAppAttributesRequest::getAccessKeyId()const
 void DescribeAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

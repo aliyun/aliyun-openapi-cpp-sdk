@@ -33,7 +33,7 @@ long DescribeGrantRulesRequest::getResourceOwnerId()const
 void DescribeGrantRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const
 void DescribeGrantRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantRulesRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeGrantRulesRequest::getRegionId()const
 void DescribeGrantRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeGrantRulesRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeGrantRulesRequest::getOwnerAccount()const
 void DescribeGrantRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeGrantRulesRequest::getPageSize()const
@@ -77,7 +77,7 @@ std::string DescribeGrantRulesRequest::getPageSize()const
 void DescribeGrantRulesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", pageSize);
 }
 
 std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
@@ -88,7 +88,7 @@ std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
 void DescribeGrantRulesRequest::setAssociatedCcnId(const std::string& associatedCcnId)
 {
 	associatedCcnId_ = associatedCcnId;
-	setCoreParameter("AssociatedCcnId", std::to_string(associatedCcnId));
+	setCoreParameter("AssociatedCcnId", associatedCcnId);
 }
 
 long DescribeGrantRulesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeGrantRulesRequest::getOwnerId()const
 void DescribeGrantRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeGrantRulesRequest::getPageNumber()const
@@ -110,6 +110,6 @@ std::string DescribeGrantRulesRequest::getPageNumber()const
 void DescribeGrantRulesRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", pageNumber);
 }
 

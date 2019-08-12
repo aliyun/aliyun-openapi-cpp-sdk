@@ -33,7 +33,7 @@ std::string DeleteScalingConfigurationRequest::getScalingConfigurationId()const
 void DeleteScalingConfigurationRequest::setScalingConfigurationId(const std::string& scalingConfigurationId)
 {
 	scalingConfigurationId_ = scalingConfigurationId;
-	setCoreParameter("ScalingConfigurationId", std::to_string(scalingConfigurationId));
+	setCoreParameter("ScalingConfigurationId", scalingConfigurationId);
 }
 
 std::string DeleteScalingConfigurationRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteScalingConfigurationRequest::getResourceOwnerAccount()const
 void DeleteScalingConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingConfigurationRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteScalingConfigurationRequest::getOwnerAccount()const
 void DeleteScalingConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScalingConfigurationRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeleteScalingConfigurationRequest::getOwnerId()const
 void DeleteScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScalingConfigurationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteScalingConfigurationRequest::getAccessKeyId()const
 void DeleteScalingConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

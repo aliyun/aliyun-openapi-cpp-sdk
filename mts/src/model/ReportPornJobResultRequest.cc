@@ -33,7 +33,7 @@ std::string ReportPornJobResultRequest::getJobId()const
 void ReportPornJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", std::to_string(jobId));
+	setCoreParameter("JobId", jobId);
 }
 
 long ReportPornJobResultRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ReportPornJobResultRequest::getResourceOwnerId()const
 void ReportPornJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
 void ReportPornJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportPornJobResultRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ReportPornJobResultRequest::getOwnerAccount()const
 void ReportPornJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportPornJobResultRequest::getLabel()const
@@ -77,7 +77,7 @@ std::string ReportPornJobResultRequest::getLabel()const
 void ReportPornJobResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", std::to_string(label));
+	setCoreParameter("Label", label);
 }
 
 std::string ReportPornJobResultRequest::getDetail()const
@@ -88,7 +88,7 @@ std::string ReportPornJobResultRequest::getDetail()const
 void ReportPornJobResultRequest::setDetail(const std::string& detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", std::to_string(detail));
+	setCoreParameter("Detail", detail);
 }
 
 long ReportPornJobResultRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ReportPornJobResultRequest::getOwnerId()const
 void ReportPornJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportPornJobResultRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ReportPornJobResultRequest::getAccessKeyId()const
 void ReportPornJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

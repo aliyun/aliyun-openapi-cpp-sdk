@@ -33,7 +33,7 @@ long DescribeDBClustersRequest::getResourceOwnerId()const
 void DescribeDBClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClustersRequest::getDBClusterDescription()const
@@ -44,7 +44,7 @@ std::string DescribeDBClustersRequest::getDBClusterDescription()const
 void DescribeDBClustersRequest::setDBClusterDescription(const std::string& dBClusterDescription)
 {
 	dBClusterDescription_ = dBClusterDescription;
-	setCoreParameter("DBClusterDescription", std::to_string(dBClusterDescription));
+	setCoreParameter("DBClusterDescription", dBClusterDescription);
 }
 
 std::string DescribeDBClustersRequest::getDBClusterStatus()const
@@ -55,7 +55,7 @@ std::string DescribeDBClustersRequest::getDBClusterStatus()const
 void DescribeDBClustersRequest::setDBClusterStatus(const std::string& dBClusterStatus)
 {
 	dBClusterStatus_ = dBClusterStatus;
-	setCoreParameter("DBClusterStatus", std::to_string(dBClusterStatus));
+	setCoreParameter("DBClusterStatus", dBClusterStatus);
 }
 
 std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeDBClustersRequest::getResourceOwnerAccount()const
 void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClustersRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeDBClustersRequest::getOwnerAccount()const
 void DescribeDBClustersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClustersRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeDBClustersRequest::getOwnerId()const
 void DescribeDBClustersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeDBClustersRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDBClustersRequest::getPageNumber()const
 void DescribeDBClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBClustersRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeDBClustersRequest::getAccessKeyId()const
 void DescribeDBClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClustersRequest::getRegionId()const
@@ -121,7 +121,7 @@ std::string DescribeDBClustersRequest::getRegionId()const
 void DescribeDBClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDBClustersRequest::getDBType()const
@@ -132,7 +132,7 @@ std::string DescribeDBClustersRequest::getDBType()const
 void DescribeDBClustersRequest::setDBType(const std::string& dBType)
 {
 	dBType_ = dBType;
-	setCoreParameter("DBType", std::to_string(dBType));
+	setCoreParameter("DBType", dBType);
 }
 
 int DescribeDBClustersRequest::getPageSize()const
@@ -143,7 +143,7 @@ int DescribeDBClustersRequest::getPageSize()const
 void DescribeDBClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeDBClustersRequest::Tag> DescribeDBClustersRequest::getTag()const
@@ -158,8 +158,8 @@ void DescribeDBClustersRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -171,6 +171,6 @@ std::string DescribeDBClustersRequest::getDBClusterIds()const
 void DescribeDBClustersRequest::setDBClusterIds(const std::string& dBClusterIds)
 {
 	dBClusterIds_ = dBClusterIds;
-	setCoreParameter("DBClusterIds", std::to_string(dBClusterIds));
+	setCoreParameter("DBClusterIds", dBClusterIds);
 }
 

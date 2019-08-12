@@ -33,7 +33,7 @@ std::string CreateRulesRequest::getAccess_key_id()const
 void CreateRulesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long CreateRulesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateRulesRequest::getResourceOwnerId()const
 void CreateRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateRulesRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int CreateRulesRequest::getListenerPort()const
 void CreateRulesRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", listenerPort);
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string CreateRulesRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string CreateRulesRequest::getLoadBalancerId()const
 void CreateRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string CreateRulesRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateRulesRequest::getResourceOwnerAccount()const
 void CreateRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRulesRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string CreateRulesRequest::getRegionId()const
 void CreateRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateRulesRequest::getRuleList()const
@@ -99,7 +99,7 @@ std::string CreateRulesRequest::getRuleList()const
 void CreateRulesRequest::setRuleList(const std::string& ruleList)
 {
 	ruleList_ = ruleList;
-	setCoreParameter("RuleList", std::to_string(ruleList));
+	setCoreParameter("RuleList", ruleList);
 }
 
 std::string CreateRulesRequest::getOwnerAccount()const
@@ -110,7 +110,7 @@ std::string CreateRulesRequest::getOwnerAccount()const
 void CreateRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateRulesRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long CreateRulesRequest::getOwnerId()const
 void CreateRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateRulesRequest::getListenerProtocol()const
@@ -132,7 +132,7 @@ std::string CreateRulesRequest::getListenerProtocol()const
 void CreateRulesRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", std::to_string(listenerProtocol));
+	setCoreParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string CreateRulesRequest::getTags()const
@@ -143,6 +143,6 @@ std::string CreateRulesRequest::getTags()const
 void CreateRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

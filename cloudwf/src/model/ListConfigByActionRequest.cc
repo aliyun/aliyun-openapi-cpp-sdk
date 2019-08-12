@@ -33,7 +33,7 @@ std::string ListConfigByActionRequest::getSearchName()const
 void ListConfigByActionRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", std::to_string(searchName));
+	setCoreParameter("SearchName", searchName);
 }
 
 int ListConfigByActionRequest::getLimit()const
@@ -44,7 +44,7 @@ int ListConfigByActionRequest::getLimit()const
 void ListConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string ListConfigByActionRequest::getActionName()const
@@ -55,7 +55,7 @@ std::string ListConfigByActionRequest::getActionName()const
 void ListConfigByActionRequest::setActionName(const std::string& actionName)
 {
 	actionName_ = actionName;
-	setCoreParameter("ActionName", std::to_string(actionName));
+	setCoreParameter("ActionName", actionName);
 }
 
 std::string ListConfigByActionRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ListConfigByActionRequest::getAccessKeyId()const
 void ListConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

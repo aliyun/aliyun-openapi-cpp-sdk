@@ -33,7 +33,7 @@ std::string DescribeSystemParametersRequest::getSecurityToken()const
 void DescribeSystemParametersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSystemParametersRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string DescribeSystemParametersRequest::getAccessKeyId()const
 void DescribeSystemParametersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

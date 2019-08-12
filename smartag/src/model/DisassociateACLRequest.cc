@@ -33,7 +33,7 @@ std::string DisassociateACLRequest::getAclId()const
 void DisassociateACLRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", std::to_string(aclId));
+	setCoreParameter("AclId", aclId);
 }
 
 long DisassociateACLRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DisassociateACLRequest::getResourceOwnerId()const
 void DisassociateACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DisassociateACLRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DisassociateACLRequest::getResourceOwnerAccount()const
 void DisassociateACLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DisassociateACLRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DisassociateACLRequest::getRegionId()const
 void DisassociateACLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DisassociateACLRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DisassociateACLRequest::getOwnerAccount()const
 void DisassociateACLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DisassociateACLRequest::getSmartAGId()const
@@ -88,7 +88,7 @@ std::string DisassociateACLRequest::getSmartAGId()const
 void DisassociateACLRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", std::to_string(smartAGId));
+	setCoreParameter("SmartAGId", smartAGId);
 }
 
 long DisassociateACLRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DisassociateACLRequest::getOwnerId()const
 void DisassociateACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -33,6 +33,6 @@ std::string ActivatePerspectiveRequest::getPerspectiveId()const
 void ActivatePerspectiveRequest::setPerspectiveId(const std::string& perspectiveId)
 {
 	perspectiveId_ = perspectiveId;
-	setCoreParameter("PerspectiveId", std::to_string(perspectiveId));
+	setCoreParameter("PerspectiveId", perspectiveId);
 }
 

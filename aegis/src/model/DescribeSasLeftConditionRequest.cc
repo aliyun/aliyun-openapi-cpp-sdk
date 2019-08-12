@@ -33,7 +33,7 @@ std::string DescribeSasLeftConditionRequest::getSourceIp()const
 void DescribeSasLeftConditionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSasLeftConditionRequest::getConditionType()const
@@ -44,7 +44,7 @@ std::string DescribeSasLeftConditionRequest::getConditionType()const
 void DescribeSasLeftConditionRequest::setConditionType(const std::string& conditionType)
 {
 	conditionType_ = conditionType;
-	setCoreParameter("ConditionType", std::to_string(conditionType));
+	setCoreParameter("ConditionType", conditionType);
 }
 
 std::string DescribeSasLeftConditionRequest::getFrom()const
@@ -55,7 +55,7 @@ std::string DescribeSasLeftConditionRequest::getFrom()const
 void DescribeSasLeftConditionRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", std::to_string(from));
+	setCoreParameter("From", from);
 }
 
 std::string DescribeSasLeftConditionRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeSasLeftConditionRequest::getLang()const
 void DescribeSasLeftConditionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeSasLeftConditionRequest::getFilterConditions()const
@@ -77,6 +77,6 @@ std::string DescribeSasLeftConditionRequest::getFilterConditions()const
 void DescribeSasLeftConditionRequest::setFilterConditions(const std::string& filterConditions)
 {
 	filterConditions_ = filterConditions;
-	setCoreParameter("FilterConditions", std::to_string(filterConditions));
+	setCoreParameter("FilterConditions", filterConditions);
 }
 

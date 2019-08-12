@@ -33,7 +33,7 @@ std::string GetImageRequest::getImageUri()const
 void GetImageRequest::setImageUri(const std::string& imageUri)
 {
 	imageUri_ = imageUri;
-	setCoreParameter("ImageUri", std::to_string(imageUri));
+	setCoreParameter("ImageUri", imageUri);
 }
 
 std::string GetImageRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetImageRequest::getRegionId()const
 void GetImageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetImageRequest::getProject()const
@@ -55,7 +55,7 @@ std::string GetImageRequest::getProject()const
 void GetImageRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string GetImageRequest::getSetId()const
@@ -66,7 +66,7 @@ std::string GetImageRequest::getSetId()const
 void GetImageRequest::setSetId(const std::string& setId)
 {
 	setId_ = setId;
-	setCoreParameter("SetId", std::to_string(setId));
+	setCoreParameter("SetId", setId);
 }
 
 std::string GetImageRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string GetImageRequest::getAccessKeyId()const
 void GetImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

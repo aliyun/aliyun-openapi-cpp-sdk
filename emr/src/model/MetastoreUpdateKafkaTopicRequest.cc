@@ -33,7 +33,7 @@ long MetastoreUpdateKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreUpdateKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreUpdateKafkaTopicRequest::getTopicId()const
@@ -44,7 +44,7 @@ std::string MetastoreUpdateKafkaTopicRequest::getTopicId()const
 void MetastoreUpdateKafkaTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setCoreParameter("TopicId", topicId);
 }
 
 std::string MetastoreUpdateKafkaTopicRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string MetastoreUpdateKafkaTopicRequest::getRegionId()const
 void MetastoreUpdateKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<MetastoreUpdateKafkaTopicRequest::AdvancedConfig> MetastoreUpdateKafkaTopicRequest::getAdvancedConfig()const
@@ -70,8 +70,8 @@ void MetastoreUpdateKafkaTopicRequest::setAdvancedConfig(const std::vector<Advan
 	for(int i = 0; i!= advancedConfig.size(); i++)	{
 		auto obj = advancedConfig.at(i);
 		std::string str ="AdvancedConfig."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -83,7 +83,7 @@ int MetastoreUpdateKafkaTopicRequest::getNumPartitions()const
 void MetastoreUpdateKafkaTopicRequest::setNumPartitions(int numPartitions)
 {
 	numPartitions_ = numPartitions;
-	setCoreParameter("NumPartitions", numPartitions);
+	setCoreParameter("NumPartitions", std::to_string(numPartitions));
 }
 
 std::string MetastoreUpdateKafkaTopicRequest::getAccessKeyId()const
@@ -94,6 +94,6 @@ std::string MetastoreUpdateKafkaTopicRequest::getAccessKeyId()const
 void MetastoreUpdateKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

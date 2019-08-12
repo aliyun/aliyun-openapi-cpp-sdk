@@ -33,7 +33,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getProductCode()const
 void QueryMonthlyInstanceConsumptionRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 std::string QueryMonthlyInstanceConsumptionRequest::getSubscriptionType()const
@@ -44,7 +44,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getSubscriptionType()const
 void QueryMonthlyInstanceConsumptionRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int QueryMonthlyInstanceConsumptionRequest::getPageSize()const
@@ -55,7 +55,7 @@ int QueryMonthlyInstanceConsumptionRequest::getPageSize()const
 void QueryMonthlyInstanceConsumptionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryMonthlyInstanceConsumptionRequest::getBillingCycle()const
@@ -66,7 +66,7 @@ std::string QueryMonthlyInstanceConsumptionRequest::getBillingCycle()const
 void QueryMonthlyInstanceConsumptionRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", std::to_string(billingCycle));
+	setCoreParameter("BillingCycle", billingCycle);
 }
 
 long QueryMonthlyInstanceConsumptionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryMonthlyInstanceConsumptionRequest::getOwnerId()const
 void QueryMonthlyInstanceConsumptionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int QueryMonthlyInstanceConsumptionRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryMonthlyInstanceConsumptionRequest::getPageNum()const
 void QueryMonthlyInstanceConsumptionRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryMonthlyInstanceConsumptionRequest::getProductType()const
@@ -99,6 +99,6 @@ std::string QueryMonthlyInstanceConsumptionRequest::getProductType()const
 void QueryMonthlyInstanceConsumptionRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 

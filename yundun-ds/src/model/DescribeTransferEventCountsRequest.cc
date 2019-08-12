@@ -33,7 +33,7 @@ std::string DescribeTransferEventCountsRequest::getSourceIp()const
 void DescribeTransferEventCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeTransferEventCountsRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DescribeTransferEventCountsRequest::getFeatureType()const
 void DescribeTransferEventCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeTransferEventCountsRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeTransferEventCountsRequest::getLang()const
 void DescribeTransferEventCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

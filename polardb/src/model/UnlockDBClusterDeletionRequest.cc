@@ -33,7 +33,7 @@ long UnlockDBClusterDeletionRequest::getResourceOwnerId()const
 void UnlockDBClusterDeletionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnlockDBClusterDeletionRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string UnlockDBClusterDeletionRequest::getResourceOwnerAccount()const
 void UnlockDBClusterDeletionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnlockDBClusterDeletionRequest::getDBClusterId()const
@@ -55,7 +55,7 @@ std::string UnlockDBClusterDeletionRequest::getDBClusterId()const
 void UnlockDBClusterDeletionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", std::to_string(dBClusterId));
+	setCoreParameter("DBClusterId", dBClusterId);
 }
 
 std::string UnlockDBClusterDeletionRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UnlockDBClusterDeletionRequest::getOwnerAccount()const
 void UnlockDBClusterDeletionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UnlockDBClusterDeletionRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UnlockDBClusterDeletionRequest::getOwnerId()const
 void UnlockDBClusterDeletionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnlockDBClusterDeletionRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string UnlockDBClusterDeletionRequest::getAccessKeyId()const
 void UnlockDBClusterDeletionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

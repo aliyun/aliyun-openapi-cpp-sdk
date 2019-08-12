@@ -33,7 +33,7 @@ std::string DescribeIpControlPolicyItemsRequest::getIpControlId()const
 void DescribeIpControlPolicyItemsRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", std::to_string(ipControlId));
+	setCoreParameter("IpControlId", ipControlId);
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
@@ -44,7 +44,7 @@ std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
 void DescribeIpControlPolicyItemsRequest::setPolicyItemId(const std::string& policyItemId)
 {
 	policyItemId_ = policyItemId;
-	setCoreParameter("PolicyItemId", std::to_string(policyItemId));
+	setCoreParameter("PolicyItemId", policyItemId);
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
 void DescribeIpControlPolicyItemsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 int DescribeIpControlPolicyItemsRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeIpControlPolicyItemsRequest::getPageSize()const
 void DescribeIpControlPolicyItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeIpControlPolicyItemsRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int DescribeIpControlPolicyItemsRequest::getPageNumber()const
 void DescribeIpControlPolicyItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
 void DescribeIpControlPolicyItemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

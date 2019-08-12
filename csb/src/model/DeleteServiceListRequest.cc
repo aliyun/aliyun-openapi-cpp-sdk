@@ -33,7 +33,7 @@ std::string DeleteServiceListRequest::getData()const
 void DeleteServiceListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string DeleteServiceListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteServiceListRequest::getRegionId()const
 void DeleteServiceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long DeleteServiceListRequest::getCsbId()const
@@ -55,6 +55,6 @@ long DeleteServiceListRequest::getCsbId()const
 void DeleteServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", csbId);
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 

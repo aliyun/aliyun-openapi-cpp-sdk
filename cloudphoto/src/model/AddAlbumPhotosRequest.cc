@@ -33,7 +33,7 @@ std::string AddAlbumPhotosRequest::getLibraryId()const
 void AddAlbumPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", std::to_string(libraryId));
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long AddAlbumPhotosRequest::getAlbumId()const
@@ -44,7 +44,7 @@ long AddAlbumPhotosRequest::getAlbumId()const
 void AddAlbumPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", albumId);
+	setCoreParameter("AlbumId", std::to_string(albumId));
 }
 
 std::vector<long> AddAlbumPhotosRequest::getPhotoId()const
@@ -56,7 +56,7 @@ void AddAlbumPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), photoId.at(i));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string AddAlbumPhotosRequest::getStoreName()const
@@ -67,6 +67,6 @@ std::string AddAlbumPhotosRequest::getStoreName()const
 void AddAlbumPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", std::to_string(storeName));
+	setCoreParameter("StoreName", storeName);
 }
 

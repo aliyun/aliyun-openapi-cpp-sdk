@@ -33,7 +33,7 @@ std::string DeleteEmailVerificationRequest::getUserClientIp()const
 void DeleteEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteEmailVerificationRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DeleteEmailVerificationRequest::getLang()const
 void DeleteEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteEmailVerificationRequest::getEmail()const
@@ -55,6 +55,6 @@ std::string DeleteEmailVerificationRequest::getEmail()const
 void DeleteEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", std::to_string(email));
+	setCoreParameter("Email", email);
 }
 

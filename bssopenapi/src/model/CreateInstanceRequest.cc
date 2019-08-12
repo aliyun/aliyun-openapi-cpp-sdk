@@ -33,7 +33,7 @@ std::string CreateInstanceRequest::getProductCode()const
 void CreateInstanceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 int CreateInstanceRequest::getPeriod()const
@@ -44,7 +44,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setCoreParameter("Period", std::to_string(period));
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", std::to_string(clientToken));
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string CreateInstanceRequest::getSubscriptionType()const
@@ -66,7 +66,7 @@ std::string CreateInstanceRequest::getSubscriptionType()const
 void CreateInstanceRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", std::to_string(subscriptionType));
+	setCoreParameter("SubscriptionType", subscriptionType);
 }
 
 int CreateInstanceRequest::getRenewPeriod()const
@@ -77,7 +77,7 @@ int CreateInstanceRequest::getRenewPeriod()const
 void CreateInstanceRequest::setRenewPeriod(int renewPeriod)
 {
 	renewPeriod_ = renewPeriod;
-	setCoreParameter("RenewPeriod", renewPeriod);
+	setCoreParameter("RenewPeriod", std::to_string(renewPeriod));
 }
 
 std::vector<CreateInstanceRequest::Parameter> CreateInstanceRequest::getParameter()const
@@ -92,8 +92,8 @@ void CreateInstanceRequest::setParameter(const std::vector<Parameter>& parameter
 	for(int i = 0; i!= parameter.size(); i++)	{
 		auto obj = parameter.at(i);
 		std::string str ="Parameter."+ std::to_string(i);
-		setCoreParameter(str + ".Code", std::to_string(obj.code));
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
+		setCoreParameter(str + ".Code", obj.code);
+		setCoreParameter(str + ".Value", obj.value);
 	}
 }
 
@@ -105,7 +105,7 @@ std::string CreateInstanceRequest::getRenewalStatus()const
 void CreateInstanceRequest::setRenewalStatus(const std::string& renewalStatus)
 {
 	renewalStatus_ = renewalStatus;
-	setCoreParameter("RenewalStatus", std::to_string(renewalStatus));
+	setCoreParameter("RenewalStatus", renewalStatus);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -116,7 +116,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateInstanceRequest::getProductType()const
@@ -127,6 +127,6 @@ std::string CreateInstanceRequest::getProductType()const
 void CreateInstanceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", std::to_string(productType));
+	setCoreParameter("ProductType", productType);
 }
 

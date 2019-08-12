@@ -33,7 +33,7 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getWhiteListGroupName()const
@@ -44,7 +44,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getWhiteListGroupName()
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setWhiteListGroupName(const std::string& whiteListGroupName)
 {
 	whiteListGroupName_ = whiteListGroupName;
-	setCoreParameter("WhiteListGroupName", std::to_string(whiteListGroupName));
+	setCoreParameter("WhiteListGroupName", whiteListGroupName);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityToken()const
@@ -55,7 +55,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityToken()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getResourceOwnerAccount
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getRegionId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerAccount()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getDBInstanceId()const
@@ -99,7 +99,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getDBInstanceId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", std::to_string(dBInstanceId));
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityIpHosts()const
@@ -110,7 +110,7 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getSecurityIpHosts()con
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setSecurityIpHosts(const std::string& securityIpHosts)
 {
 	securityIpHosts_ = securityIpHosts;
-	setCoreParameter("SecurityIpHosts", std::to_string(securityIpHosts));
+	setCoreParameter("SecurityIpHosts", securityIpHosts);
 }
 
 long ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long ModifyDTCSecurityIpHostsForSQLServerRequest::getOwnerId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
@@ -132,6 +132,6 @@ std::string ModifyDTCSecurityIpHostsForSQLServerRequest::getAccessKeyId()const
 void ModifyDTCSecurityIpHostsForSQLServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

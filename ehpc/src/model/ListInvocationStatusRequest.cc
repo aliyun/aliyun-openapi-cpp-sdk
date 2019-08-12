@@ -33,7 +33,7 @@ std::string ListInvocationStatusRequest::getClusterId()const
 void ListInvocationStatusRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ListInvocationStatusRequest::getCommandId()const
@@ -44,7 +44,7 @@ std::string ListInvocationStatusRequest::getCommandId()const
 void ListInvocationStatusRequest::setCommandId(const std::string& commandId)
 {
 	commandId_ = commandId;
-	setCoreParameter("CommandId", std::to_string(commandId));
+	setCoreParameter("CommandId", commandId);
 }
 
 std::string ListInvocationStatusRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListInvocationStatusRequest::getAccessKeyId()const
 void ListInvocationStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

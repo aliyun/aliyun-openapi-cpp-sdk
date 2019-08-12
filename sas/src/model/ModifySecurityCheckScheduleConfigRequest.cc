@@ -33,7 +33,7 @@ long ModifySecurityCheckScheduleConfigRequest::getResourceOwnerId()const
 void ModifySecurityCheckScheduleConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifySecurityCheckScheduleConfigRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string ModifySecurityCheckScheduleConfigRequest::getSourceIp()const
 void ModifySecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
@@ -55,7 +55,7 @@ std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
 void ModifySecurityCheckScheduleConfigRequest::setDaysOfWeek(const std::string& daysOfWeek)
 {
 	daysOfWeek_ = daysOfWeek;
-	setCoreParameter("DaysOfWeek", std::to_string(daysOfWeek));
+	setCoreParameter("DaysOfWeek", daysOfWeek);
 }
 
 int ModifySecurityCheckScheduleConfigRequest::getEndTime()const
@@ -66,7 +66,7 @@ int ModifySecurityCheckScheduleConfigRequest::getEndTime()const
 void ModifySecurityCheckScheduleConfigRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 int ModifySecurityCheckScheduleConfigRequest::getStartTime()const
@@ -77,7 +77,7 @@ int ModifySecurityCheckScheduleConfigRequest::getStartTime()const
 void ModifySecurityCheckScheduleConfigRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string ModifySecurityCheckScheduleConfigRequest::getLang()const
@@ -88,6 +88,6 @@ std::string ModifySecurityCheckScheduleConfigRequest::getLang()const
 void ModifySecurityCheckScheduleConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

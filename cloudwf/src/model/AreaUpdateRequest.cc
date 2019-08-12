@@ -33,7 +33,7 @@ std::string AreaUpdateRequest::getName()const
 void AreaUpdateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string AreaUpdateRequest::getDids()const
@@ -44,7 +44,7 @@ std::string AreaUpdateRequest::getDids()const
 void AreaUpdateRequest::setDids(const std::string& dids)
 {
 	dids_ = dids;
-	setCoreParameter("Dids", std::to_string(dids));
+	setCoreParameter("Dids", dids);
 }
 
 long AreaUpdateRequest::getAid()const
@@ -55,7 +55,7 @@ long AreaUpdateRequest::getAid()const
 void AreaUpdateRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", aid);
+	setCoreParameter("Aid", std::to_string(aid));
 }
 
 std::string AreaUpdateRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string AreaUpdateRequest::getAccessKeyId()const
 void AreaUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaUpdateRequest::getSid()const
@@ -77,6 +77,6 @@ long AreaUpdateRequest::getSid()const
 void AreaUpdateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", sid);
+	setCoreParameter("Sid", std::to_string(sid));
 }
 

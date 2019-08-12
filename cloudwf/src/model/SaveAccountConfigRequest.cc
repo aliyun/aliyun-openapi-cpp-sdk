@@ -33,7 +33,7 @@ std::string SaveAccountConfigRequest::getJsonData()const
 void SaveAccountConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", std::to_string(jsonData));
+	setCoreParameter("JsonData", jsonData);
 }
 
 std::string SaveAccountConfigRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string SaveAccountConfigRequest::getAccessKeyId()const
 void SaveAccountConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

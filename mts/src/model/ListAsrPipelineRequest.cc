@@ -33,7 +33,7 @@ long ListAsrPipelineRequest::getResourceOwnerId()const
 void ListAsrPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListAsrPipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string ListAsrPipelineRequest::getResourceOwnerAccount()const
 void ListAsrPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAsrPipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ListAsrPipelineRequest::getOwnerAccount()const
 void ListAsrPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ListAsrPipelineRequest::getPageSize()const
@@ -66,7 +66,7 @@ long ListAsrPipelineRequest::getPageSize()const
 void ListAsrPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAsrPipelineRequest::getState()const
@@ -77,7 +77,7 @@ std::string ListAsrPipelineRequest::getState()const
 void ListAsrPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setCoreParameter("State", state);
 }
 
 long ListAsrPipelineRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long ListAsrPipelineRequest::getOwnerId()const
 void ListAsrPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ListAsrPipelineRequest::getPageNumber()const
@@ -99,7 +99,7 @@ long ListAsrPipelineRequest::getPageNumber()const
 void ListAsrPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAsrPipelineRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string ListAsrPipelineRequest::getAccessKeyId()const
 void ListAsrPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ long PlanHostNameRequest::getResourceOwnerId()const
 void PlanHostNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PlanHostNameRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string PlanHostNameRequest::getRegionId()const
 void PlanHostNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<PlanHostNameRequest::HostGroup> PlanHostNameRequest::getHostGroup()const
@@ -59,8 +59,8 @@ void PlanHostNameRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
 	for(int i = 0; i!= hostGroup.size(); i++)	{
 		auto obj = hostGroup.at(i);
 		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".GroupType", std::to_string(obj.groupType));
-		setCoreParameter(str + ".GroupName", std::to_string(obj.groupName));
+		setCoreParameter(str + ".GroupType", obj.groupType);
+		setCoreParameter(str + ".GroupName", obj.groupName);
 	}
 }
 
@@ -76,8 +76,8 @@ void PlanHostNameRequest::setHostInfo(const std::vector<HostInfo>& hostInfo)
 	for(int i = 0; i!= hostInfo.size(); i++)	{
 		auto obj = hostInfo.at(i);
 		std::string str ="HostInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HpHostBizId", std::to_string(obj.hpHostBizId));
-		setCoreParameter(str + ".HostGroupName", std::to_string(obj.hostGroupName));
+		setCoreParameter(str + ".HpHostBizId", obj.hpHostBizId);
+		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
 	}
 }
 
@@ -89,7 +89,7 @@ std::string PlanHostNameRequest::getClusterId()const
 void PlanHostNameRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string PlanHostNameRequest::getAccessKeyId()const
@@ -100,6 +100,6 @@ std::string PlanHostNameRequest::getAccessKeyId()const
 void PlanHostNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

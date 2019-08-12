@@ -33,7 +33,7 @@ std::string DescribeSlsProjectRequest::getSourceIp()const
 void DescribeSlsProjectRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSlsProjectRequest::getRegionNo()const
@@ -44,6 +44,6 @@ std::string DescribeSlsProjectRequest::getRegionNo()const
 void DescribeSlsProjectRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", std::to_string(regionNo));
+	setCoreParameter("RegionNo", regionNo);
 }
 

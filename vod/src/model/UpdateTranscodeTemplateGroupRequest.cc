@@ -33,7 +33,7 @@ std::string UpdateTranscodeTemplateGroupRequest::getTranscodeTemplateList()const
 void UpdateTranscodeTemplateGroupRequest::setTranscodeTemplateList(const std::string& transcodeTemplateList)
 {
 	transcodeTemplateList_ = transcodeTemplateList;
-	setCoreParameter("TranscodeTemplateList", std::to_string(transcodeTemplateList));
+	setCoreParameter("TranscodeTemplateList", transcodeTemplateList);
 }
 
 long UpdateTranscodeTemplateGroupRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void UpdateTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void UpdateTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getName()const
@@ -66,7 +66,7 @@ std::string UpdateTranscodeTemplateGroupRequest::getName()const
 void UpdateTranscodeTemplateGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 long UpdateTranscodeTemplateGroupRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateTranscodeTemplateGroupRequest::getOwnerId()const
 void UpdateTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getLocked()const
@@ -88,7 +88,7 @@ std::string UpdateTranscodeTemplateGroupRequest::getLocked()const
 void UpdateTranscodeTemplateGroupRequest::setLocked(const std::string& locked)
 {
 	locked_ = locked;
-	setCoreParameter("Locked", std::to_string(locked));
+	setCoreParameter("Locked", locked);
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string UpdateTranscodeTemplateGroupRequest::getAccessKeyId()const
 void UpdateTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -110,6 +110,6 @@ std::string UpdateTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()co
 void UpdateTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", std::to_string(transcodeTemplateGroupId));
+	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
 }
 

@@ -33,7 +33,7 @@ int SaveSingleTaskForAddingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForAddingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", keyTag);
+	setCoreParameter("KeyTag", std::to_string(keyTag));
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForAddingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForAddingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForAddingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForAddingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", std::to_string(userClientIp));
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int SaveSingleTaskForAddingDSRecordRequest::getDigestType()const
@@ -66,7 +66,7 @@ int SaveSingleTaskForAddingDSRecordRequest::getDigestType()const
 void SaveSingleTaskForAddingDSRecordRequest::setDigestType(int digestType)
 {
 	digestType_ = digestType;
-	setCoreParameter("DigestType", digestType);
+	setCoreParameter("DigestType", std::to_string(digestType));
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getDigest()const
@@ -77,7 +77,7 @@ std::string SaveSingleTaskForAddingDSRecordRequest::getDigest()const
 void SaveSingleTaskForAddingDSRecordRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", std::to_string(digest));
+	setCoreParameter("Digest", digest);
 }
 
 std::string SaveSingleTaskForAddingDSRecordRequest::getLang()const
@@ -88,7 +88,7 @@ std::string SaveSingleTaskForAddingDSRecordRequest::getLang()const
 void SaveSingleTaskForAddingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 int SaveSingleTaskForAddingDSRecordRequest::getAlgorithm()const
@@ -99,6 +99,6 @@ int SaveSingleTaskForAddingDSRecordRequest::getAlgorithm()const
 void SaveSingleTaskForAddingDSRecordRequest::setAlgorithm(int algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", algorithm);
+	setCoreParameter("Algorithm", std::to_string(algorithm));
 }
 

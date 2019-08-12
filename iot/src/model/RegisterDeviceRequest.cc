@@ -33,7 +33,7 @@ std::string RegisterDeviceRequest::getPinCode()const
 void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
 {
 	pinCode_ = pinCode;
-	setCoreParameter("PinCode", std::to_string(pinCode));
+	setCoreParameter("PinCode", pinCode);
 }
 
 std::string RegisterDeviceRequest::getIotInstanceId()const
@@ -44,7 +44,7 @@ std::string RegisterDeviceRequest::getIotInstanceId()const
 void RegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string RegisterDeviceRequest::getNickname()const
@@ -55,7 +55,7 @@ std::string RegisterDeviceRequest::getNickname()const
 void RegisterDeviceRequest::setNickname(const std::string& nickname)
 {
 	nickname_ = nickname;
-	setCoreParameter("Nickname", std::to_string(nickname));
+	setCoreParameter("Nickname", nickname);
 }
 
 std::string RegisterDeviceRequest::getDeviceName()const
@@ -66,7 +66,7 @@ std::string RegisterDeviceRequest::getDeviceName()const
 void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", std::to_string(deviceName));
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string RegisterDeviceRequest::getProductKey()const
@@ -77,7 +77,7 @@ std::string RegisterDeviceRequest::getProductKey()const
 void RegisterDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", std::to_string(productKey));
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string RegisterDeviceRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string RegisterDeviceRequest::getAccessKeyId()const
 void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RegisterDeviceRequest::getDevEui()const
@@ -99,6 +99,6 @@ std::string RegisterDeviceRequest::getDevEui()const
 void RegisterDeviceRequest::setDevEui(const std::string& devEui)
 {
 	devEui_ = devEui;
-	setCoreParameter("DevEui", std::to_string(devEui));
+	setCoreParameter("DevEui", devEui);
 }
 

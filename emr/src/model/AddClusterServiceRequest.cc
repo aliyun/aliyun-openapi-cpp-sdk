@@ -33,7 +33,7 @@ long AddClusterServiceRequest::getResourceOwnerId()const
 void AddClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddClusterServiceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string AddClusterServiceRequest::getRegionId()const
 void AddClusterServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<AddClusterServiceRequest::Service> AddClusterServiceRequest::getService()const
@@ -59,7 +59,7 @@ void AddClusterServiceRequest::setService(const std::vector<Service>& service)
 	for(int i = 0; i!= service.size(); i++)	{
 		auto obj = service.at(i);
 		std::string str ="Service."+ std::to_string(i);
-		setCoreParameter(str + ".ServiceName", std::to_string(obj.serviceName));
+		setCoreParameter(str + ".ServiceName", obj.serviceName);
 	}
 }
 
@@ -71,7 +71,7 @@ std::string AddClusterServiceRequest::getComment()const
 void AddClusterServiceRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", std::to_string(comment));
+	setCoreParameter("Comment", comment);
 }
 
 std::string AddClusterServiceRequest::getClusterId()const
@@ -82,7 +82,7 @@ std::string AddClusterServiceRequest::getClusterId()const
 void AddClusterServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string AddClusterServiceRequest::getAccessKeyId()const
@@ -93,6 +93,6 @@ std::string AddClusterServiceRequest::getAccessKeyId()const
 void AddClusterServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

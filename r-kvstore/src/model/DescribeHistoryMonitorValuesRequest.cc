@@ -33,7 +33,7 @@ long DescribeHistoryMonitorValuesRequest::getResourceOwnerId()const
 void DescribeHistoryMonitorValuesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeHistoryMonitorValuesRequest::getResourceOwnerAccount()const
 void DescribeHistoryMonitorValuesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeHistoryMonitorValuesRequest::getOwnerAccount()const
 void DescribeHistoryMonitorValuesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeHistoryMonitorValuesRequest::getEndTime()const
 void DescribeHistoryMonitorValuesRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeHistoryMonitorValuesRequest::getStartTime()const
 void DescribeHistoryMonitorValuesRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeHistoryMonitorValuesRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeHistoryMonitorValuesRequest::getOwnerId()const
 void DescribeHistoryMonitorValuesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeHistoryMonitorValuesRequest::getAccessKeyId()const
 void DescribeHistoryMonitorValuesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getInstanceId()const
@@ -110,7 +110,7 @@ std::string DescribeHistoryMonitorValuesRequest::getInstanceId()const
 void DescribeHistoryMonitorValuesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string DescribeHistoryMonitorValuesRequest::getSecurityToken()const
 void DescribeHistoryMonitorValuesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string DescribeHistoryMonitorValuesRequest::getRegionId()const
 void DescribeHistoryMonitorValuesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getIntervalForHistory()const
@@ -143,7 +143,7 @@ std::string DescribeHistoryMonitorValuesRequest::getIntervalForHistory()const
 void DescribeHistoryMonitorValuesRequest::setIntervalForHistory(const std::string& intervalForHistory)
 {
 	intervalForHistory_ = intervalForHistory;
-	setCoreParameter("IntervalForHistory", std::to_string(intervalForHistory));
+	setCoreParameter("IntervalForHistory", intervalForHistory);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getNodeId()const
@@ -154,7 +154,7 @@ std::string DescribeHistoryMonitorValuesRequest::getNodeId()const
 void DescribeHistoryMonitorValuesRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setCoreParameter("NodeId", std::to_string(nodeId));
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string DescribeHistoryMonitorValuesRequest::getMonitorKeys()const
@@ -165,6 +165,6 @@ std::string DescribeHistoryMonitorValuesRequest::getMonitorKeys()const
 void DescribeHistoryMonitorValuesRequest::setMonitorKeys(const std::string& monitorKeys)
 {
 	monitorKeys_ = monitorKeys;
-	setCoreParameter("MonitorKeys", std::to_string(monitorKeys));
+	setCoreParameter("MonitorKeys", monitorKeys);
 }
 

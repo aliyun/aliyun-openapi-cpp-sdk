@@ -33,7 +33,7 @@ std::string ApplyAutoSnapshotPolicyRequest::getSourceRegionId()const
 void ApplyAutoSnapshotPolicyRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long ApplyAutoSnapshotPolicyRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ApplyAutoSnapshotPolicyRequest::getResourceOwnerId()const
 void ApplyAutoSnapshotPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ApplyAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string ApplyAutoSnapshotPolicyRequest::getResourceOwnerAccount()const
 void ApplyAutoSnapshotPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ApplyAutoSnapshotPolicyRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string ApplyAutoSnapshotPolicyRequest::getRegionId()const
 void ApplyAutoSnapshotPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ApplyAutoSnapshotPolicyRequest::getAutoSnapshotPolicyId()const
@@ -77,7 +77,7 @@ std::string ApplyAutoSnapshotPolicyRequest::getAutoSnapshotPolicyId()const
 void ApplyAutoSnapshotPolicyRequest::setAutoSnapshotPolicyId(const std::string& autoSnapshotPolicyId)
 {
 	autoSnapshotPolicyId_ = autoSnapshotPolicyId;
-	setCoreParameter("AutoSnapshotPolicyId", std::to_string(autoSnapshotPolicyId));
+	setCoreParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
 std::string ApplyAutoSnapshotPolicyRequest::getDiskIds()const
@@ -88,7 +88,7 @@ std::string ApplyAutoSnapshotPolicyRequest::getDiskIds()const
 void ApplyAutoSnapshotPolicyRequest::setDiskIds(const std::string& diskIds)
 {
 	diskIds_ = diskIds;
-	setCoreParameter("DiskIds", std::to_string(diskIds));
+	setCoreParameter("DiskIds", diskIds);
 }
 
 long ApplyAutoSnapshotPolicyRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long ApplyAutoSnapshotPolicyRequest::getOwnerId()const
 void ApplyAutoSnapshotPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

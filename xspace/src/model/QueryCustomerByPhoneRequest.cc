@@ -33,6 +33,6 @@ std::string QueryCustomerByPhoneRequest::getPhone()const
 void QueryCustomerByPhoneRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", std::to_string(phone));
+	setCoreParameter("Phone", phone);
 }
 

@@ -33,7 +33,7 @@ long ModifyCommonBandwidthPackagePayTypeRequest::getResourceOwnerId()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidthPackageId()const
@@ -44,7 +44,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidthPackageId()c
 void ModifyCommonBandwidthPackagePayTypeRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", std::to_string(bandwidthPackageId));
+	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 bool ModifyCommonBandwidthPackagePayTypeRequest::getAutoPay()const
@@ -66,7 +66,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceOwnerAccount(
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidth()const
@@ -77,7 +77,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getBandwidth()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setCoreParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getOwnerAccount()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCommonBandwidthPackagePayTypeRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long ModifyCommonBandwidthPackagePayTypeRequest::getOwnerId()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ModifyCommonBandwidthPackagePayTypeRequest::getDuration()const
@@ -110,7 +110,7 @@ int ModifyCommonBandwidthPackagePayTypeRequest::getDuration()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getKbpsBandwidth()const
@@ -121,7 +121,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getKbpsBandwidth()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setKbpsBandwidth(const std::string& kbpsBandwidth)
 {
 	kbpsBandwidth_ = kbpsBandwidth;
-	setCoreParameter("KbpsBandwidth", std::to_string(kbpsBandwidth));
+	setCoreParameter("KbpsBandwidth", kbpsBandwidth);
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getRegionId()const
@@ -132,7 +132,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getRegionId()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 long ModifyCommonBandwidthPackagePayTypeRequest::getResourceUid()const
@@ -143,7 +143,7 @@ long ModifyCommonBandwidthPackagePayTypeRequest::getResourceUid()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceUid(long resourceUid)
 {
 	resourceUid_ = resourceUid;
-	setCoreParameter("ResourceUid", resourceUid);
+	setCoreParameter("ResourceUid", std::to_string(resourceUid));
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceBid()const
@@ -154,7 +154,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getResourceBid()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setResourceBid(const std::string& resourceBid)
 {
 	resourceBid_ = resourceBid;
-	setCoreParameter("ResourceBid", std::to_string(resourceBid));
+	setCoreParameter("ResourceBid", resourceBid);
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getPayType()const
@@ -165,7 +165,7 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getPayType()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", std::to_string(payType));
+	setCoreParameter("PayType", payType);
 }
 
 std::string ModifyCommonBandwidthPackagePayTypeRequest::getPricingCycle()const
@@ -176,6 +176,6 @@ std::string ModifyCommonBandwidthPackagePayTypeRequest::getPricingCycle()const
 void ModifyCommonBandwidthPackagePayTypeRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", std::to_string(pricingCycle));
+	setCoreParameter("PricingCycle", pricingCycle);
 }
 

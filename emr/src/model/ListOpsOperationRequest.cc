@@ -33,7 +33,7 @@ long ListOpsOperationRequest::getResourceOwnerId()const
 void ListOpsOperationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListOpsOperationRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListOpsOperationRequest::getRegionId()const
 void ListOpsOperationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListOpsOperationRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string ListOpsOperationRequest::getClusterId()const
 void ListOpsOperationRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 long ListOpsOperationRequest::getPageNumber()const
@@ -66,7 +66,7 @@ long ListOpsOperationRequest::getPageNumber()const
 void ListOpsOperationRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListOpsOperationRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListOpsOperationRequest::getAccessKeyId()const
 void ListOpsOperationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

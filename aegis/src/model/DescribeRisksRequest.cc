@@ -33,7 +33,7 @@ std::string DescribeRisksRequest::getRiskName()const
 void DescribeRisksRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", std::to_string(riskName));
+	setCoreParameter("RiskName", riskName);
 }
 
 std::string DescribeRisksRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string DescribeRisksRequest::getSourceIp()const
 void DescribeRisksRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeRisksRequest::getLimit()const
@@ -55,7 +55,7 @@ int DescribeRisksRequest::getLimit()const
 void DescribeRisksRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", limit);
+	setCoreParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeRisksRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeRisksRequest::getLang()const
 void DescribeRisksRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeRisksRequest::getRiskId()const
@@ -77,6 +77,6 @@ long DescribeRisksRequest::getRiskId()const
 void DescribeRisksRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", riskId);
+	setCoreParameter("RiskId", std::to_string(riskId));
 }
 

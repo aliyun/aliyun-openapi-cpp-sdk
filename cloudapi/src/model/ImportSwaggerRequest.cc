@@ -33,7 +33,7 @@ std::string ImportSwaggerRequest::getDataFormat()const
 void ImportSwaggerRequest::setDataFormat(const std::string& dataFormat)
 {
 	dataFormat_ = dataFormat;
-	setCoreParameter("DataFormat", std::to_string(dataFormat));
+	setCoreParameter("DataFormat", dataFormat);
 }
 
 std::string ImportSwaggerRequest::getData()const
@@ -44,7 +44,7 @@ std::string ImportSwaggerRequest::getData()const
 void ImportSwaggerRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", std::to_string(data));
+	setCoreParameter("Data", data);
 }
 
 std::string ImportSwaggerRequest::getGroupId()const
@@ -55,7 +55,7 @@ std::string ImportSwaggerRequest::getGroupId()const
 void ImportSwaggerRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 
 bool ImportSwaggerRequest::getOverwrite()const

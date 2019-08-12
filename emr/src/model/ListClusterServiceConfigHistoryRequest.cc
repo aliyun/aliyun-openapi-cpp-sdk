@@ -33,7 +33,7 @@ long ListClusterServiceConfigHistoryRequest::getResourceOwnerId()const
 void ListClusterServiceConfigHistoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterServiceConfigHistoryRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListClusterServiceConfigHistoryRequest::getRegionId()const
 void ListClusterServiceConfigHistoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListClusterServiceConfigHistoryRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListClusterServiceConfigHistoryRequest::getPageSize()const
 void ListClusterServiceConfigHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListClusterServiceConfigHistoryRequest::getServiceName()const
@@ -66,7 +66,7 @@ std::string ListClusterServiceConfigHistoryRequest::getServiceName()const
 void ListClusterServiceConfigHistoryRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", std::to_string(serviceName));
+	setCoreParameter("ServiceName", serviceName);
 }
 
 std::string ListClusterServiceConfigHistoryRequest::getClusterId()const
@@ -77,7 +77,7 @@ std::string ListClusterServiceConfigHistoryRequest::getClusterId()const
 void ListClusterServiceConfigHistoryRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListClusterServiceConfigHistoryRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int ListClusterServiceConfigHistoryRequest::getPageNumber()const
 void ListClusterServiceConfigHistoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterServiceConfigHistoryRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string ListClusterServiceConfigHistoryRequest::getAccessKeyId()const
 void ListClusterServiceConfigHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterServiceConfigHistoryRequest::getConfigVersion()const
@@ -110,6 +110,6 @@ std::string ListClusterServiceConfigHistoryRequest::getConfigVersion()const
 void ListClusterServiceConfigHistoryRequest::setConfigVersion(const std::string& configVersion)
 {
 	configVersion_ = configVersion;
-	setCoreParameter("ConfigVersion", std::to_string(configVersion));
+	setCoreParameter("ConfigVersion", configVersion);
 }
 

@@ -33,7 +33,7 @@ std::string DeleteDocIndexRequest::getSet()const
 void DeleteDocIndexRequest::setSet(const std::string& set)
 {
 	set_ = set;
-	setCoreParameter("Set", std::to_string(set));
+	setCoreParameter("Set", set);
 }
 
 std::string DeleteDocIndexRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteDocIndexRequest::getRegionId()const
 void DeleteDocIndexRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDocIndexRequest::getProject()const
@@ -55,7 +55,7 @@ std::string DeleteDocIndexRequest::getProject()const
 void DeleteDocIndexRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 std::string DeleteDocIndexRequest::getUniqueId()const
@@ -66,7 +66,7 @@ std::string DeleteDocIndexRequest::getUniqueId()const
 void DeleteDocIndexRequest::setUniqueId(const std::string& uniqueId)
 {
 	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", std::to_string(uniqueId));
+	setCoreParameter("UniqueId", uniqueId);
 }
 
 std::string DeleteDocIndexRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string DeleteDocIndexRequest::getAccessKeyId()const
 void DeleteDocIndexRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

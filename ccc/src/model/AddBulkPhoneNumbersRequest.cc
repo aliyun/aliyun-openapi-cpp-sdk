@@ -33,7 +33,7 @@ std::string AddBulkPhoneNumbersRequest::getContactFlowId()const
 void AddBulkPhoneNumbersRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", std::to_string(contactFlowId));
+	setCoreParameter("ContactFlowId", contactFlowId);
 }
 
 std::string AddBulkPhoneNumbersRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string AddBulkPhoneNumbersRequest::getInstanceId()const
 void AddBulkPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string AddBulkPhoneNumbersRequest::getUsage()const
@@ -55,7 +55,7 @@ std::string AddBulkPhoneNumbersRequest::getUsage()const
 void AddBulkPhoneNumbersRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", std::to_string(usage));
+	setCoreParameter("Usage", usage);
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
@@ -67,7 +67,7 @@ void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>&
 {
 	skillGroupId_ = skillGroupId;
 	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), std::to_string(skillGroupId.at(i)));
+		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
@@ -79,7 +79,7 @@ void AddBulkPhoneNumbersRequest::setPhoneNumber(const std::vector<std::string>& 
 {
 	phoneNumber_ = phoneNumber;
 	for(int i = 0; i!= phoneNumber.size(); i++)
-		setCoreParameter("PhoneNumber."+ std::to_string(i), std::to_string(phoneNumber.at(i)));
+		setCoreParameter("PhoneNumber."+ std::to_string(i), phoneNumber.at(i));
 }
 
 std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
@@ -90,6 +90,6 @@ std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
 void AddBulkPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

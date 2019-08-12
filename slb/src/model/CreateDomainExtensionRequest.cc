@@ -33,7 +33,7 @@ std::string CreateDomainExtensionRequest::getAccess_key_id()const
 void CreateDomainExtensionRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", std::to_string(access_key_id));
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long CreateDomainExtensionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateDomainExtensionRequest::getResourceOwnerId()const
 void CreateDomainExtensionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateDomainExtensionRequest::getListenerPort()const
@@ -55,7 +55,7 @@ int CreateDomainExtensionRequest::getListenerPort()const
 void CreateDomainExtensionRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", listenerPort);
+	setCoreParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string CreateDomainExtensionRequest::getLoadBalancerId()const
@@ -66,7 +66,7 @@ std::string CreateDomainExtensionRequest::getLoadBalancerId()const
 void CreateDomainExtensionRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", std::to_string(loadBalancerId));
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string CreateDomainExtensionRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string CreateDomainExtensionRequest::getResourceOwnerAccount()const
 void CreateDomainExtensionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDomainExtensionRequest::getRegionId()const
@@ -88,7 +88,7 @@ std::string CreateDomainExtensionRequest::getRegionId()const
 void CreateDomainExtensionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateDomainExtensionRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string CreateDomainExtensionRequest::getOwnerAccount()const
 void CreateDomainExtensionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateDomainExtensionRequest::getDomain()const
@@ -110,7 +110,7 @@ std::string CreateDomainExtensionRequest::getDomain()const
 void CreateDomainExtensionRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", std::to_string(domain));
+	setCoreParameter("Domain", domain);
 }
 
 long CreateDomainExtensionRequest::getOwnerId()const
@@ -121,7 +121,7 @@ long CreateDomainExtensionRequest::getOwnerId()const
 void CreateDomainExtensionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDomainExtensionRequest::getServerCertificateId()const
@@ -132,7 +132,7 @@ std::string CreateDomainExtensionRequest::getServerCertificateId()const
 void CreateDomainExtensionRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", std::to_string(serverCertificateId));
+	setCoreParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string CreateDomainExtensionRequest::getTags()const
@@ -143,6 +143,6 @@ std::string CreateDomainExtensionRequest::getTags()const
 void CreateDomainExtensionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", std::to_string(tags));
+	setCoreParameter("Tags", tags);
 }
 

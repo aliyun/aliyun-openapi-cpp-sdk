@@ -33,7 +33,7 @@ long MetastoreListDataSourceRequest::getResourceOwnerId()const
 void MetastoreListDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreListDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string MetastoreListDataSourceRequest::getRegionId()const
 void MetastoreListDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool MetastoreListDataSourceRequest::getClusterReleased()const
@@ -66,7 +66,7 @@ int MetastoreListDataSourceRequest::getPageSize()const
 void MetastoreListDataSourceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string MetastoreListDataSourceRequest::getSourceType()const
@@ -77,7 +77,7 @@ std::string MetastoreListDataSourceRequest::getSourceType()const
 void MetastoreListDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", std::to_string(sourceType));
+	setCoreParameter("SourceType", sourceType);
 }
 
 std::string MetastoreListDataSourceRequest::getDataSourceName()const
@@ -88,7 +88,7 @@ std::string MetastoreListDataSourceRequest::getDataSourceName()const
 void MetastoreListDataSourceRequest::setDataSourceName(const std::string& dataSourceName)
 {
 	dataSourceName_ = dataSourceName;
-	setCoreParameter("DataSourceName", std::to_string(dataSourceName));
+	setCoreParameter("DataSourceName", dataSourceName);
 }
 
 int MetastoreListDataSourceRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int MetastoreListDataSourceRequest::getPageNumber()const
 void MetastoreListDataSourceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListDataSourceRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string MetastoreListDataSourceRequest::getAccessKeyId()const
 void MetastoreListDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

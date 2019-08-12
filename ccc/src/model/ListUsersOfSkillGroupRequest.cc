@@ -33,7 +33,7 @@ std::string ListUsersOfSkillGroupRequest::getInstanceId()const
 void ListUsersOfSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListUsersOfSkillGroupRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string ListUsersOfSkillGroupRequest::getSkillGroupId()const
 void ListUsersOfSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", std::to_string(skillGroupId));
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 int ListUsersOfSkillGroupRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListUsersOfSkillGroupRequest::getPageSize()const
 void ListUsersOfSkillGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListUsersOfSkillGroupRequest::getPageNumber()const
@@ -66,7 +66,7 @@ int ListUsersOfSkillGroupRequest::getPageNumber()const
 void ListUsersOfSkillGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListUsersOfSkillGroupRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ListUsersOfSkillGroupRequest::getAccessKeyId()const
 void ListUsersOfSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

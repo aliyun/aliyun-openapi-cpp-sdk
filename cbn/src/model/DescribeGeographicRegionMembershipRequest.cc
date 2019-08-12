@@ -33,7 +33,7 @@ long DescribeGeographicRegionMembershipRequest::getResourceOwnerId()const
 void DescribeGeographicRegionMembershipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeGeographicRegionMembershipRequest::getResourceOwnerAccount()
 void DescribeGeographicRegionMembershipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeGeographicRegionMembershipRequest::getOwnerAccount()const
 void DescribeGeographicRegionMembershipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeGeographicRegionMembershipRequest::getPageSize()const
@@ -66,7 +66,7 @@ int DescribeGeographicRegionMembershipRequest::getPageSize()const
 void DescribeGeographicRegionMembershipRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeGeographicRegionMembershipRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DescribeGeographicRegionMembershipRequest::getOwnerId()const
 void DescribeGeographicRegionMembershipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeGeographicRegionMembershipRequest::getPageNumber()const
@@ -88,7 +88,7 @@ int DescribeGeographicRegionMembershipRequest::getPageNumber()const
 void DescribeGeographicRegionMembershipRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getGeographicRegionId()const
@@ -99,6 +99,6 @@ std::string DescribeGeographicRegionMembershipRequest::getGeographicRegionId()co
 void DescribeGeographicRegionMembershipRequest::setGeographicRegionId(const std::string& geographicRegionId)
 {
 	geographicRegionId_ = geographicRegionId;
-	setCoreParameter("GeographicRegionId", std::to_string(geographicRegionId));
+	setCoreParameter("GeographicRegionId", geographicRegionId);
 }
 

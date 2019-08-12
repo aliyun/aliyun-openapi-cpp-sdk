@@ -483,6 +483,42 @@ GreenClient::FileAsyncScanOutcomeCallable GreenClient::fileAsyncScanCallable(con
 	return task->get_future();
 }
 
+GreenClient::DetectFaceOutcome GreenClient::detectFace(const DetectFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectFaceOutcome(DetectFaceResult(outcome.result()));
+	else
+		return DetectFaceOutcome(outcome.error());
+}
+
+void GreenClient::detectFaceAsync(const DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GreenClient::DetectFaceOutcomeCallable GreenClient::detectFaceCallable(const DetectFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->detectFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GreenClient::DescribeOssResultItemsOutcome GreenClient::describeOssResultItems(const DescribeOssResultItemsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

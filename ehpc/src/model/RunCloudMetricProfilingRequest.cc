@@ -33,7 +33,7 @@ int RunCloudMetricProfilingRequest::getDuration()const
 void RunCloudMetricProfilingRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setCoreParameter("Duration", std::to_string(duration));
 }
 
 std::string RunCloudMetricProfilingRequest::getHostName()const
@@ -44,7 +44,7 @@ std::string RunCloudMetricProfilingRequest::getHostName()const
 void RunCloudMetricProfilingRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", std::to_string(hostName));
+	setCoreParameter("HostName", hostName);
 }
 
 std::string RunCloudMetricProfilingRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string RunCloudMetricProfilingRequest::getRegionId()const
 void RunCloudMetricProfilingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 int RunCloudMetricProfilingRequest::getProcessId()const
@@ -66,7 +66,7 @@ int RunCloudMetricProfilingRequest::getProcessId()const
 void RunCloudMetricProfilingRequest::setProcessId(int processId)
 {
 	processId_ = processId;
-	setCoreParameter("ProcessId", processId);
+	setCoreParameter("ProcessId", std::to_string(processId));
 }
 
 int RunCloudMetricProfilingRequest::getFreq()const
@@ -77,7 +77,7 @@ int RunCloudMetricProfilingRequest::getFreq()const
 void RunCloudMetricProfilingRequest::setFreq(int freq)
 {
 	freq_ = freq;
-	setCoreParameter("Freq", freq);
+	setCoreParameter("Freq", std::to_string(freq));
 }
 
 std::string RunCloudMetricProfilingRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string RunCloudMetricProfilingRequest::getClusterId()const
 void RunCloudMetricProfilingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string RunCloudMetricProfilingRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string RunCloudMetricProfilingRequest::getAccessKeyId()const
 void RunCloudMetricProfilingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

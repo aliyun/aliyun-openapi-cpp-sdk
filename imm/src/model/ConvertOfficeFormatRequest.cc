@@ -33,7 +33,7 @@ std::string ConvertOfficeFormatRequest::getSrcType()const
 void ConvertOfficeFormatRequest::setSrcType(const std::string& srcType)
 {
 	srcType_ = srcType;
-	setCoreParameter("SrcType", std::to_string(srcType));
+	setCoreParameter("SrcType", srcType);
 }
 
 std::string ConvertOfficeFormatRequest::getModelId()const
@@ -44,7 +44,7 @@ std::string ConvertOfficeFormatRequest::getModelId()const
 void ConvertOfficeFormatRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", std::to_string(modelId));
+	setCoreParameter("ModelId", modelId);
 }
 
 std::string ConvertOfficeFormatRequest::getProject()const
@@ -55,7 +55,7 @@ std::string ConvertOfficeFormatRequest::getProject()const
 void ConvertOfficeFormatRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", std::to_string(project));
+	setCoreParameter("Project", project);
 }
 
 long ConvertOfficeFormatRequest::getMaxSheetRow()const
@@ -66,7 +66,7 @@ long ConvertOfficeFormatRequest::getMaxSheetRow()const
 void ConvertOfficeFormatRequest::setMaxSheetRow(long maxSheetRow)
 {
 	maxSheetRow_ = maxSheetRow;
-	setCoreParameter("MaxSheetRow", maxSheetRow);
+	setCoreParameter("MaxSheetRow", std::to_string(maxSheetRow));
 }
 
 long ConvertOfficeFormatRequest::getMaxSheetCount()const
@@ -77,7 +77,7 @@ long ConvertOfficeFormatRequest::getMaxSheetCount()const
 void ConvertOfficeFormatRequest::setMaxSheetCount(long maxSheetCount)
 {
 	maxSheetCount_ = maxSheetCount;
-	setCoreParameter("MaxSheetCount", maxSheetCount);
+	setCoreParameter("MaxSheetCount", std::to_string(maxSheetCount));
 }
 
 long ConvertOfficeFormatRequest::getEndPage()const
@@ -88,7 +88,7 @@ long ConvertOfficeFormatRequest::getEndPage()const
 void ConvertOfficeFormatRequest::setEndPage(long endPage)
 {
 	endPage_ = endPage;
-	setCoreParameter("EndPage", endPage);
+	setCoreParameter("EndPage", std::to_string(endPage));
 }
 
 std::string ConvertOfficeFormatRequest::getTgtFileSuffix()const
@@ -99,7 +99,7 @@ std::string ConvertOfficeFormatRequest::getTgtFileSuffix()const
 void ConvertOfficeFormatRequest::setTgtFileSuffix(const std::string& tgtFileSuffix)
 {
 	tgtFileSuffix_ = tgtFileSuffix;
-	setCoreParameter("TgtFileSuffix", std::to_string(tgtFileSuffix));
+	setCoreParameter("TgtFileSuffix", tgtFileSuffix);
 }
 
 bool ConvertOfficeFormatRequest::getPdfVector()const
@@ -121,7 +121,7 @@ std::string ConvertOfficeFormatRequest::getAccessKeyId()const
 void ConvertOfficeFormatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool ConvertOfficeFormatRequest::getSheetOnePage()const
@@ -143,7 +143,7 @@ std::string ConvertOfficeFormatRequest::getPassword()const
 void ConvertOfficeFormatRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", std::to_string(password));
+	setCoreParameter("Password", password);
 }
 
 long ConvertOfficeFormatRequest::getStartPage()const
@@ -154,7 +154,7 @@ long ConvertOfficeFormatRequest::getStartPage()const
 void ConvertOfficeFormatRequest::setStartPage(long startPage)
 {
 	startPage_ = startPage;
-	setCoreParameter("StartPage", startPage);
+	setCoreParameter("StartPage", std::to_string(startPage));
 }
 
 long ConvertOfficeFormatRequest::getMaxSheetCol()const
@@ -165,7 +165,7 @@ long ConvertOfficeFormatRequest::getMaxSheetCol()const
 void ConvertOfficeFormatRequest::setMaxSheetCol(long maxSheetCol)
 {
 	maxSheetCol_ = maxSheetCol;
-	setCoreParameter("MaxSheetCol", maxSheetCol);
+	setCoreParameter("MaxSheetCol", std::to_string(maxSheetCol));
 }
 
 std::string ConvertOfficeFormatRequest::getTgtType()const
@@ -176,7 +176,7 @@ std::string ConvertOfficeFormatRequest::getTgtType()const
 void ConvertOfficeFormatRequest::setTgtType(const std::string& tgtType)
 {
 	tgtType_ = tgtType;
-	setCoreParameter("TgtType", std::to_string(tgtType));
+	setCoreParameter("TgtType", tgtType);
 }
 
 std::string ConvertOfficeFormatRequest::getRegionId()const
@@ -187,7 +187,7 @@ std::string ConvertOfficeFormatRequest::getRegionId()const
 void ConvertOfficeFormatRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 bool ConvertOfficeFormatRequest::getFitToPagesWide()const
@@ -220,7 +220,7 @@ std::string ConvertOfficeFormatRequest::getTgtFilePrefix()const
 void ConvertOfficeFormatRequest::setTgtFilePrefix(const std::string& tgtFilePrefix)
 {
 	tgtFilePrefix_ = tgtFilePrefix;
-	setCoreParameter("TgtFilePrefix", std::to_string(tgtFilePrefix));
+	setCoreParameter("TgtFilePrefix", tgtFilePrefix);
 }
 
 bool ConvertOfficeFormatRequest::getFitToPagesTall()const
@@ -242,7 +242,7 @@ std::string ConvertOfficeFormatRequest::getSrcUri()const
 void ConvertOfficeFormatRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
-	setCoreParameter("SrcUri", std::to_string(srcUri));
+	setCoreParameter("SrcUri", srcUri);
 }
 
 std::string ConvertOfficeFormatRequest::getTgtFilePages()const
@@ -253,7 +253,7 @@ std::string ConvertOfficeFormatRequest::getTgtFilePages()const
 void ConvertOfficeFormatRequest::setTgtFilePages(const std::string& tgtFilePages)
 {
 	tgtFilePages_ = tgtFilePages;
-	setCoreParameter("TgtFilePages", std::to_string(tgtFilePages));
+	setCoreParameter("TgtFilePages", tgtFilePages);
 }
 
 std::string ConvertOfficeFormatRequest::getTgtUri()const
@@ -264,6 +264,6 @@ std::string ConvertOfficeFormatRequest::getTgtUri()const
 void ConvertOfficeFormatRequest::setTgtUri(const std::string& tgtUri)
 {
 	tgtUri_ = tgtUri;
-	setCoreParameter("TgtUri", std::to_string(tgtUri));
+	setCoreParameter("TgtUri", tgtUri);
 }
 

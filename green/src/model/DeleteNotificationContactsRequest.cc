@@ -33,7 +33,7 @@ std::string DeleteNotificationContactsRequest::getSourceIp()const
 void DeleteNotificationContactsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteNotificationContactsRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DeleteNotificationContactsRequest::getLang()const
 void DeleteNotificationContactsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string DeleteNotificationContactsRequest::getContactTypes()const
@@ -55,6 +55,6 @@ std::string DeleteNotificationContactsRequest::getContactTypes()const
 void DeleteNotificationContactsRequest::setContactTypes(const std::string& contactTypes)
 {
 	contactTypes_ = contactTypes;
-	setCoreParameter("ContactTypes", std::to_string(contactTypes));
+	setCoreParameter("ContactTypes", contactTypes);
 }
 

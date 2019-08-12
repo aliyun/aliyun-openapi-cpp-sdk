@@ -33,7 +33,7 @@ std::string UpdateDcdnIpaDomainRequest::getTopLevelDomain()const
 void UpdateDcdnIpaDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", std::to_string(topLevelDomain));
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getResourceGroupId()const
@@ -44,7 +44,7 @@ std::string UpdateDcdnIpaDomainRequest::getResourceGroupId()const
 void UpdateDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", std::to_string(resourceGroupId));
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getSources()const
@@ -55,7 +55,7 @@ std::string UpdateDcdnIpaDomainRequest::getSources()const
 void UpdateDcdnIpaDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", std::to_string(sources));
+	setCoreParameter("Sources", sources);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getSecurityToken()const
@@ -66,7 +66,7 @@ std::string UpdateDcdnIpaDomainRequest::getSecurityToken()const
 void UpdateDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", std::to_string(securityToken));
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getDomainName()const
@@ -77,7 +77,7 @@ std::string UpdateDcdnIpaDomainRequest::getDomainName()const
 void UpdateDcdnIpaDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", std::to_string(domainName));
+	setCoreParameter("DomainName", domainName);
 }
 
 long UpdateDcdnIpaDomainRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long UpdateDcdnIpaDomainRequest::getOwnerId()const
 void UpdateDcdnIpaDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

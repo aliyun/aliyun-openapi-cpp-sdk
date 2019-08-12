@@ -33,7 +33,7 @@ long GetVideoInfoRequest::getResourceOwnerId()const
 void GetVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetVideoInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string GetVideoInfoRequest::getResourceOwnerAccount()const
 void GetVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetVideoInfoRequest::getVideoId()const
@@ -55,7 +55,7 @@ std::string GetVideoInfoRequest::getVideoId()const
 void GetVideoInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", std::to_string(videoId));
+	setCoreParameter("VideoId", videoId);
 }
 
 std::string GetVideoInfoRequest::getAdditionType()const
@@ -66,7 +66,7 @@ std::string GetVideoInfoRequest::getAdditionType()const
 void GetVideoInfoRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
-	setCoreParameter("AdditionType", std::to_string(additionType));
+	setCoreParameter("AdditionType", additionType);
 }
 
 std::string GetVideoInfoRequest::getResultTypes()const
@@ -77,7 +77,7 @@ std::string GetVideoInfoRequest::getResultTypes()const
 void GetVideoInfoRequest::setResultTypes(const std::string& resultTypes)
 {
 	resultTypes_ = resultTypes;
-	setCoreParameter("ResultTypes", std::to_string(resultTypes));
+	setCoreParameter("ResultTypes", resultTypes);
 }
 
 long GetVideoInfoRequest::getOwnerId()const
@@ -88,6 +88,6 @@ long GetVideoInfoRequest::getOwnerId()const
 void GetVideoInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

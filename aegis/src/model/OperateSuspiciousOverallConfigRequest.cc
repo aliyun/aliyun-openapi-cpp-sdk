@@ -33,7 +33,7 @@ std::string OperateSuspiciousOverallConfigRequest::getSourceIp()const
 void OperateSuspiciousOverallConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string OperateSuspiciousOverallConfigRequest::getLang()const
@@ -44,7 +44,7 @@ std::string OperateSuspiciousOverallConfigRequest::getLang()const
 void OperateSuspiciousOverallConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 std::string OperateSuspiciousOverallConfigRequest::getType()const
@@ -55,7 +55,7 @@ std::string OperateSuspiciousOverallConfigRequest::getType()const
 void OperateSuspiciousOverallConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setCoreParameter("Type", type);
 }
 
 std::string OperateSuspiciousOverallConfigRequest::getConfig()const
@@ -66,6 +66,6 @@ std::string OperateSuspiciousOverallConfigRequest::getConfig()const
 void OperateSuspiciousOverallConfigRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", std::to_string(config));
+	setCoreParameter("Config", config);
 }
 

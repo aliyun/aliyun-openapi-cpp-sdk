@@ -33,7 +33,7 @@ int DescribeOssResultItemsRequest::getTotalCount()const
 void DescribeOssResultItemsRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", totalCount);
+	setCoreParameter("TotalCount", std::to_string(totalCount));
 }
 
 float DescribeOssResultItemsRequest::getMinScore()const
@@ -44,7 +44,7 @@ float DescribeOssResultItemsRequest::getMinScore()const
 void DescribeOssResultItemsRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
-	setCoreParameter("MinScore", minScore);
+	setCoreParameter("MinScore", std::to_string(minScore));
 }
 
 std::string DescribeOssResultItemsRequest::getSuggestion()const
@@ -55,7 +55,7 @@ std::string DescribeOssResultItemsRequest::getSuggestion()const
 void DescribeOssResultItemsRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", std::to_string(suggestion));
+	setCoreParameter("Suggestion", suggestion);
 }
 
 int DescribeOssResultItemsRequest::getCurrentPage()const
@@ -66,7 +66,7 @@ int DescribeOssResultItemsRequest::getCurrentPage()const
 void DescribeOssResultItemsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 float DescribeOssResultItemsRequest::getMaxScore()const
@@ -77,7 +77,7 @@ float DescribeOssResultItemsRequest::getMaxScore()const
 void DescribeOssResultItemsRequest::setMaxScore(float maxScore)
 {
 	maxScore_ = maxScore;
-	setCoreParameter("MaxScore", maxScore);
+	setCoreParameter("MaxScore", std::to_string(maxScore));
 }
 
 std::string DescribeOssResultItemsRequest::getStartDate()const
@@ -88,7 +88,7 @@ std::string DescribeOssResultItemsRequest::getStartDate()const
 void DescribeOssResultItemsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", startDate);
 }
 
 std::string DescribeOssResultItemsRequest::getResourceType()const
@@ -99,7 +99,7 @@ std::string DescribeOssResultItemsRequest::getResourceType()const
 void DescribeOssResultItemsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
 std::string DescribeOssResultItemsRequest::getScene()const
@@ -110,7 +110,7 @@ std::string DescribeOssResultItemsRequest::getScene()const
 void DescribeOssResultItemsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", std::to_string(scene));
+	setCoreParameter("Scene", scene);
 }
 
 std::string DescribeOssResultItemsRequest::getQueryId()const
@@ -121,7 +121,7 @@ std::string DescribeOssResultItemsRequest::getQueryId()const
 void DescribeOssResultItemsRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", std::to_string(queryId));
+	setCoreParameter("QueryId", queryId);
 }
 
 std::string DescribeOssResultItemsRequest::getBucket()const
@@ -132,7 +132,7 @@ std::string DescribeOssResultItemsRequest::getBucket()const
 void DescribeOssResultItemsRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", std::to_string(bucket));
+	setCoreParameter("Bucket", bucket);
 }
 
 std::string DescribeOssResultItemsRequest::getEndDate()const
@@ -143,7 +143,7 @@ std::string DescribeOssResultItemsRequest::getEndDate()const
 void DescribeOssResultItemsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", endDate);
 }
 
 std::string DescribeOssResultItemsRequest::getSourceIp()const
@@ -154,7 +154,7 @@ std::string DescribeOssResultItemsRequest::getSourceIp()const
 void DescribeOssResultItemsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeOssResultItemsRequest::getPageSize()const
@@ -165,7 +165,7 @@ int DescribeOssResultItemsRequest::getPageSize()const
 void DescribeOssResultItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeOssResultItemsRequest::getLang()const
@@ -176,7 +176,7 @@ std::string DescribeOssResultItemsRequest::getLang()const
 void DescribeOssResultItemsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 bool DescribeOssResultItemsRequest::getStock()const
@@ -198,6 +198,6 @@ std::string DescribeOssResultItemsRequest::getObject()const
 void DescribeOssResultItemsRequest::setObject(const std::string& object)
 {
 	object_ = object;
-	setCoreParameter("Object", std::to_string(object));
+	setCoreParameter("Object", object);
 }
 

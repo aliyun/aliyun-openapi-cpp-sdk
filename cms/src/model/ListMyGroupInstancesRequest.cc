@@ -44,7 +44,7 @@ std::string ListMyGroupInstancesRequest::getInstanceIds()const
 void ListMyGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", std::to_string(instanceIds));
+	setCoreParameter("InstanceIds", instanceIds);
 }
 
 long ListMyGroupInstancesRequest::getGroupId()const
@@ -55,7 +55,7 @@ long ListMyGroupInstancesRequest::getGroupId()const
 void ListMyGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 int ListMyGroupInstancesRequest::getPageSize()const
@@ -66,7 +66,7 @@ int ListMyGroupInstancesRequest::getPageSize()const
 void ListMyGroupInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMyGroupInstancesRequest::getCategory()const
@@ -77,7 +77,7 @@ std::string ListMyGroupInstancesRequest::getCategory()const
 void ListMyGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setCoreParameter("Category", category);
 }
 
 std::string ListMyGroupInstancesRequest::getKeyword()const
@@ -88,7 +88,7 @@ std::string ListMyGroupInstancesRequest::getKeyword()const
 void ListMyGroupInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", std::to_string(keyword));
+	setCoreParameter("Keyword", keyword);
 }
 
 int ListMyGroupInstancesRequest::getPageNumber()const
@@ -99,6 +99,6 @@ int ListMyGroupInstancesRequest::getPageNumber()const
 void ListMyGroupInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

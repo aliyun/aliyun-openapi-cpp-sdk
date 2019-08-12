@@ -33,7 +33,7 @@ long MetastoreCreateDataResourceRequest::getResourceOwnerId()const
 void MetastoreCreateDataResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool MetastoreCreateDataResourceRequest::getDefault()const
@@ -55,7 +55,7 @@ std::string MetastoreCreateDataResourceRequest::getAccessType()const
 void MetastoreCreateDataResourceRequest::setAccessType(const std::string& accessType)
 {
 	accessType_ = accessType;
-	setCoreParameter("AccessType", std::to_string(accessType));
+	setCoreParameter("AccessType", accessType);
 }
 
 std::string MetastoreCreateDataResourceRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string MetastoreCreateDataResourceRequest::getRegionId()const
 void MetastoreCreateDataResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreCreateDataResourceRequest::getName()const
@@ -77,7 +77,7 @@ std::string MetastoreCreateDataResourceRequest::getName()const
 void MetastoreCreateDataResourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 std::string MetastoreCreateDataResourceRequest::getDescription()const
@@ -88,7 +88,7 @@ std::string MetastoreCreateDataResourceRequest::getDescription()const
 void MetastoreCreateDataResourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", std::to_string(description));
+	setCoreParameter("Description", description);
 }
 
 std::string MetastoreCreateDataResourceRequest::getMetaType()const
@@ -99,7 +99,7 @@ std::string MetastoreCreateDataResourceRequest::getMetaType()const
 void MetastoreCreateDataResourceRequest::setMetaType(const std::string& metaType)
 {
 	metaType_ = metaType;
-	setCoreParameter("MetaType", std::to_string(metaType));
+	setCoreParameter("MetaType", metaType);
 }
 
 std::string MetastoreCreateDataResourceRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string MetastoreCreateDataResourceRequest::getClusterId()const
 void MetastoreCreateDataResourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", std::to_string(clusterId));
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string MetastoreCreateDataResourceRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string MetastoreCreateDataResourceRequest::getAccessKeyId()const
 void MetastoreCreateDataResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

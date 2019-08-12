@@ -33,7 +33,7 @@ std::string OnsInstanceCreateRequest::getInstanceName()const
 void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", std::to_string(instanceName));
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string OnsInstanceCreateRequest::getRemark()const
@@ -44,6 +44,6 @@ std::string OnsInstanceCreateRequest::getRemark()const
 void OnsInstanceCreateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", std::to_string(remark));
+	setCoreParameter("Remark", remark);
 }
 

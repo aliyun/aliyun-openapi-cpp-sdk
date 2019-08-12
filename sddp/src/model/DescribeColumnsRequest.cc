@@ -33,7 +33,7 @@ std::string DescribeColumnsRequest::getProductCode()const
 void DescribeColumnsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", std::to_string(productCode));
+	setCoreParameter("ProductCode", productCode);
 }
 
 long DescribeColumnsRequest::getInstanceId()const
@@ -44,7 +44,7 @@ long DescribeColumnsRequest::getInstanceId()const
 void DescribeColumnsRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeColumnsRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string DescribeColumnsRequest::getSourceIp()const
 void DescribeColumnsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeColumnsRequest::getFeatureType()const
@@ -66,7 +66,7 @@ int DescribeColumnsRequest::getFeatureType()const
 void DescribeColumnsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeColumnsRequest::getRiskLevels()const
@@ -77,7 +77,7 @@ std::string DescribeColumnsRequest::getRiskLevels()const
 void DescribeColumnsRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", std::to_string(riskLevels));
+	setCoreParameter("RiskLevels", riskLevels);
 }
 
 std::string DescribeColumnsRequest::getName()const
@@ -88,7 +88,7 @@ std::string DescribeColumnsRequest::getName()const
 void DescribeColumnsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", std::to_string(name));
+	setCoreParameter("Name", name);
 }
 
 int DescribeColumnsRequest::getPageSize()const
@@ -99,7 +99,7 @@ int DescribeColumnsRequest::getPageSize()const
 void DescribeColumnsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeColumnsRequest::getTableId()const
@@ -110,7 +110,7 @@ long DescribeColumnsRequest::getTableId()const
 void DescribeColumnsRequest::setTableId(long tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setCoreParameter("TableId", std::to_string(tableId));
 }
 
 int DescribeColumnsRequest::getCurrentPage()const
@@ -121,7 +121,7 @@ int DescribeColumnsRequest::getCurrentPage()const
 void DescribeColumnsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeColumnsRequest::getQueryName()const
@@ -132,7 +132,7 @@ std::string DescribeColumnsRequest::getQueryName()const
 void DescribeColumnsRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", std::to_string(queryName));
+	setCoreParameter("QueryName", queryName);
 }
 
 std::string DescribeColumnsRequest::getLang()const
@@ -143,7 +143,7 @@ std::string DescribeColumnsRequest::getLang()const
 void DescribeColumnsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 
 long DescribeColumnsRequest::getRuleId()const
@@ -154,6 +154,6 @@ long DescribeColumnsRequest::getRuleId()const
 void DescribeColumnsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setCoreParameter("RuleId", std::to_string(ruleId));
 }
 

@@ -33,7 +33,7 @@ long DescribeAutoRenewAttributeRequest::getResourceOwnerId()const
 void DescribeAutoRenewAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DescribeAutoRenewAttributeRequest::getResourceOwnerAccount()const
 void DescribeAutoRenewAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DescribeAutoRenewAttributeRequest::getRegionId()const
 void DescribeAutoRenewAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DescribeAutoRenewAttributeRequest::getOwnerAccount()const
 void DescribeAutoRenewAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", std::to_string(ownerAccount));
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeAutoRenewAttributeRequest::getPageSize()const
@@ -77,7 +77,7 @@ int DescribeAutoRenewAttributeRequest::getPageSize()const
 void DescribeAutoRenewAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeAutoRenewAttributeRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeAutoRenewAttributeRequest::getOwnerId()const
 void DescribeAutoRenewAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeAutoRenewAttributeRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeAutoRenewAttributeRequest::getPageNumber()const
 void DescribeAutoRenewAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAutoRenewAttributeRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeAutoRenewAttributeRequest::getAccessKeyId()const
 void DescribeAutoRenewAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAutoRenewAttributeRequest::getDBClusterIds()const
@@ -121,6 +121,6 @@ std::string DescribeAutoRenewAttributeRequest::getDBClusterIds()const
 void DescribeAutoRenewAttributeRequest::setDBClusterIds(const std::string& dBClusterIds)
 {
 	dBClusterIds_ = dBClusterIds;
-	setCoreParameter("DBClusterIds", std::to_string(dBClusterIds));
+	setCoreParameter("DBClusterIds", dBClusterIds);
 }
 

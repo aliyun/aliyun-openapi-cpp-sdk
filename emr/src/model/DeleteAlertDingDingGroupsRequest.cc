@@ -33,7 +33,7 @@ long DeleteAlertDingDingGroupsRequest::getResourceOwnerId()const
 void DeleteAlertDingDingGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAlertDingDingGroupsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteAlertDingDingGroupsRequest::getRegionId()const
 void DeleteAlertDingDingGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteAlertDingDingGroupsRequest::getIds()const
@@ -55,7 +55,7 @@ std::string DeleteAlertDingDingGroupsRequest::getIds()const
 void DeleteAlertDingDingGroupsRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", std::to_string(ids));
+	setCoreParameter("Ids", ids);
 }
 
 std::string DeleteAlertDingDingGroupsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteAlertDingDingGroupsRequest::getAccessKeyId()const
 void DeleteAlertDingDingGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

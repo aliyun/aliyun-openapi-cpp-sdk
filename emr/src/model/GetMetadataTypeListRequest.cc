@@ -33,7 +33,7 @@ long GetMetadataTypeListRequest::getResourceOwnerId()const
 void GetMetadataTypeListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMetadataTypeListRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string GetMetadataTypeListRequest::getRegionId()const
 void GetMetadataTypeListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetMetadataTypeListRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetMetadataTypeListRequest::getAccessKeyId()const
 void GetMetadataTypeListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", std::to_string(accessKeyId));
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

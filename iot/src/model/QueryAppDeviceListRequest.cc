@@ -34,7 +34,7 @@ void QueryAppDeviceListRequest::setProductKeyList(const std::vector<std::string>
 {
 	productKeyList_ = productKeyList;
 	for(int i = 0; i!= productKeyList.size(); i++)
-		setCoreParameter("ProductKeyList."+ std::to_string(i), std::to_string(productKeyList.at(i)));
+		setCoreParameter("ProductKeyList."+ std::to_string(i), productKeyList.at(i));
 }
 
 std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
@@ -46,7 +46,7 @@ void QueryAppDeviceListRequest::setCategoryKeyList(const std::vector<std::string
 {
 	categoryKeyList_ = categoryKeyList;
 	for(int i = 0; i!= categoryKeyList.size(); i++)
-		setCoreParameter("CategoryKeyList."+ std::to_string(i), std::to_string(categoryKeyList.at(i)));
+		setCoreParameter("CategoryKeyList."+ std::to_string(i), categoryKeyList.at(i));
 }
 
 std::string QueryAppDeviceListRequest::getIotInstanceId()const
@@ -57,7 +57,7 @@ std::string QueryAppDeviceListRequest::getIotInstanceId()const
 void QueryAppDeviceListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", std::to_string(iotInstanceId));
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryAppDeviceListRequest::getPageSize()const
@@ -68,7 +68,7 @@ int QueryAppDeviceListRequest::getPageSize()const
 void QueryAppDeviceListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryAppDeviceListRequest::getCurrentPage()const
@@ -79,7 +79,7 @@ int QueryAppDeviceListRequest::getCurrentPage()const
 void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryAppDeviceListRequest::getAppKey()const
@@ -90,7 +90,7 @@ std::string QueryAppDeviceListRequest::getAppKey()const
 void QueryAppDeviceListRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", appKey);
 }
 
 std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const
@@ -105,8 +105,8 @@ void QueryAppDeviceListRequest::setTagList(const std::vector<TagList>& tagList)
 	for(int i = 0; i!= tagList.size(); i++)	{
 		auto obj = tagList.at(i);
 		std::string str ="TagList."+ std::to_string(i);
-		setCoreParameter(str + ".TagName", std::to_string(obj.tagName));
-		setCoreParameter(str + ".TagValue", std::to_string(obj.tagValue));
+		setCoreParameter(str + ".TagName", obj.tagName);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
 	}
 }
 

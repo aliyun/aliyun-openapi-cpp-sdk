@@ -33,7 +33,7 @@ std::string RemoveUserFromGroupRequest::getGroupName()const
 void RemoveUserFromGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", std::to_string(groupName));
+	setCoreParameter("GroupName", groupName);
 }
 
 std::string RemoveUserFromGroupRequest::getUserName()const
@@ -44,6 +44,6 @@ std::string RemoveUserFromGroupRequest::getUserName()const
 void RemoveUserFromGroupRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", std::to_string(userName));
+	setCoreParameter("UserName", userName);
 }
 

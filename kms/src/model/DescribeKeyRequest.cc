@@ -33,6 +33,6 @@ std::string DescribeKeyRequest::getKeyId()const
 void DescribeKeyRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setCoreParameter("KeyId", std::to_string(keyId));
+	setCoreParameter("KeyId", keyId);
 }
 

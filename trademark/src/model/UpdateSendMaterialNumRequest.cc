@@ -33,7 +33,7 @@ std::string UpdateSendMaterialNumRequest::getNum()const
 void UpdateSendMaterialNumRequest::setNum(const std::string& num)
 {
 	num_ = num;
-	setCoreParameter("Num", std::to_string(num));
+	setCoreParameter("Num", num);
 }
 
 std::string UpdateSendMaterialNumRequest::getBizId()const
@@ -44,7 +44,7 @@ std::string UpdateSendMaterialNumRequest::getBizId()const
 void UpdateSendMaterialNumRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", std::to_string(bizId));
+	setCoreParameter("BizId", bizId);
 }
 
 int UpdateSendMaterialNumRequest::getOperateType()const
@@ -55,6 +55,6 @@ int UpdateSendMaterialNumRequest::getOperateType()const
 void UpdateSendMaterialNumRequest::setOperateType(int operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setCoreParameter("OperateType", std::to_string(operateType));
 }
 

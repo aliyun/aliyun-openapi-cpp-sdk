@@ -33,7 +33,7 @@ std::string DescribeDepartTotalCountRequest::getSourceIp()const
 void DescribeDepartTotalCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", std::to_string(sourceIp));
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 int DescribeDepartTotalCountRequest::getFeatureType()const
@@ -44,7 +44,7 @@ int DescribeDepartTotalCountRequest::getFeatureType()const
 void DescribeDepartTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", featureType);
+	setCoreParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeDepartTotalCountRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeDepartTotalCountRequest::getLang()const
 void DescribeDepartTotalCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", std::to_string(lang));
+	setCoreParameter("Lang", lang);
 }
 

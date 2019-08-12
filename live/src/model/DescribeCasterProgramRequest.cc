@@ -33,7 +33,7 @@ std::string DescribeCasterProgramRequest::getCasterId()const
 void DescribeCasterProgramRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", std::to_string(casterId));
+	setCoreParameter("CasterId", casterId);
 }
 
 std::string DescribeCasterProgramRequest::getEpisodeType()const
@@ -44,7 +44,7 @@ std::string DescribeCasterProgramRequest::getEpisodeType()const
 void DescribeCasterProgramRequest::setEpisodeType(const std::string& episodeType)
 {
 	episodeType_ = episodeType;
-	setCoreParameter("EpisodeType", std::to_string(episodeType));
+	setCoreParameter("EpisodeType", episodeType);
 }
 
 int DescribeCasterProgramRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeCasterProgramRequest::getPageSize()const
 void DescribeCasterProgramRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCasterProgramRequest::getEndTime()const
@@ -66,7 +66,7 @@ std::string DescribeCasterProgramRequest::getEndTime()const
 void DescribeCasterProgramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeCasterProgramRequest::getStartTime()const
@@ -77,7 +77,7 @@ std::string DescribeCasterProgramRequest::getStartTime()const
 void DescribeCasterProgramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", startTime);
 }
 
 long DescribeCasterProgramRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeCasterProgramRequest::getOwnerId()const
 void DescribeCasterProgramRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCasterProgramRequest::getEpisodeId()const
@@ -99,7 +99,7 @@ std::string DescribeCasterProgramRequest::getEpisodeId()const
 void DescribeCasterProgramRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
-	setCoreParameter("EpisodeId", std::to_string(episodeId));
+	setCoreParameter("EpisodeId", episodeId);
 }
 
 int DescribeCasterProgramRequest::getPageNum()const
@@ -110,7 +110,7 @@ int DescribeCasterProgramRequest::getPageNum()const
 void DescribeCasterProgramRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", pageNum);
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeCasterProgramRequest::getStatus()const
@@ -121,6 +121,6 @@ int DescribeCasterProgramRequest::getStatus()const
 void DescribeCasterProgramRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setCoreParameter("Status", std::to_string(status));
 }
 

@@ -33,7 +33,7 @@ std::string OnsGroupDeleteRequest::getInstanceId()const
 void OnsGroupDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string OnsGroupDeleteRequest::getGroupId()const
@@ -44,6 +44,6 @@ std::string OnsGroupDeleteRequest::getGroupId()const
 void OnsGroupDeleteRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", groupId);
 }
 

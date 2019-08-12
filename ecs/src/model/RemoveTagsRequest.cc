@@ -33,7 +33,7 @@ std::string RemoveTagsRequest::getSourceRegionId()const
 void RemoveTagsRequest::setSourceRegionId(const std::string& sourceRegionId)
 {
 	sourceRegionId_ = sourceRegionId;
-	setCoreParameter("SourceRegionId", std::to_string(sourceRegionId));
+	setCoreParameter("SourceRegionId", sourceRegionId);
 }
 
 long RemoveTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RemoveTagsRequest::getResourceOwnerId()const
 void RemoveTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveTagsRequest::getResourceId()const
@@ -55,7 +55,7 @@ std::string RemoveTagsRequest::getResourceId()const
 void RemoveTagsRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", std::to_string(resourceId));
+	setCoreParameter("ResourceId", resourceId);
 }
 
 std::string RemoveTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string RemoveTagsRequest::getResourceOwnerAccount()const
 void RemoveTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", std::to_string(resourceOwnerAccount));
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveTagsRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string RemoveTagsRequest::getRegionId()const
 void RemoveTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", std::to_string(regionId));
+	setCoreParameter("RegionId", regionId);
 }
 
 std::vector<RemoveTagsRequest::Tag> RemoveTagsRequest::getTag()const
@@ -92,8 +92,8 @@ void RemoveTagsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", std::to_string(obj.value));
-		setCoreParameter(str + ".Key", std::to_string(obj.key));
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -105,7 +105,7 @@ long RemoveTagsRequest::getOwnerId()const
 void RemoveTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveTagsRequest::getResourceType()const
@@ -116,6 +116,6 @@ std::string RemoveTagsRequest::getResourceType()const
 void RemoveTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setCoreParameter("ResourceType", resourceType);
 }
 
