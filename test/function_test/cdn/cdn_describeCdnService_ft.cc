@@ -21,9 +21,8 @@ TEST(cdn, describeCdnService)
   CdnClient client(key, secret, configuration);
   Model::DescribeCdnServiceRequest request;
   CdnClient::DescribeCdnServiceOutcome outcome = client.describeCdnService(request);
-  printf("\n-----\n%s\n-----\n", outcome.error().errorMessage());
 
-  EXPECT_NO_THROW();
+  // EXPECT_NO_THROW();
   ShutdownSdk();
 }
 } // namespace

@@ -22,7 +22,7 @@ namespace {
     // EXPECT_TRUE(outcome.isSuccess());
     // EXPECT_TRUE(outcome.error().errorCode().empty());
     // EXPECT_TRUE(outcome.result().getTotalCount() >= 0);
-    EXPECT_NO_THROW();
+    // EXPECT_NO_THROW();
     ShutdownSdk();
   }
 }
