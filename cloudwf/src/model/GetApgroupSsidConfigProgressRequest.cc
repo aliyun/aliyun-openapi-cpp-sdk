@@ -33,7 +33,7 @@ long GetApgroupSsidConfigProgressRequest::getId()const
 void GetApgroupSsidConfigProgressRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string GetApgroupSsidConfigProgressRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetApgroupSsidConfigProgressRequest::getAccessKeyId()const
 void GetApgroupSsidConfigProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

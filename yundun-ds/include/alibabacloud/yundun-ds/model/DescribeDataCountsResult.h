@@ -50,7 +50,7 @@ namespace AlibabaCloud
 						long sensitiveCount;
 						long lastCount;
 					};
-					struct PackageInDescribeDataCounts
+					struct Package
 					{
 						long totalCount;
 						long count;
@@ -79,7 +79,7 @@ namespace AlibabaCloud
 					Column column;
 					std::string productCode;
 					long productId;
-					PackageInDescribeDataCounts packageInDescribeDataCounts;
+					Package package;
 					Oss oss;
 				};
 

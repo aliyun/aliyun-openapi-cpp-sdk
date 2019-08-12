@@ -39,10 +39,14 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				long getEndTs()const;
 				void setEndTs(long endTs);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 				long getStartTs()const;
 				void setStartTs(long startTs);
 				long getCreateTsEnd()const;
 				void setCreateTsEnd(long createTsEnd);
+				std::string getIncludeApp()const;
+				void setIncludeApp(const std::string& includeApp);
 				long getCreateTsStart()const;
 				void setCreateTsStart(long createTsStart);
 				std::string getUuids()const;
@@ -51,8 +55,10 @@ namespace AlibabaCloud
             private:
 				std::string sourceIp_;
 				long endTs_;
+				std::string from_;
 				long startTs_;
 				long createTsEnd_;
+				std::string includeApp_;
 				long createTsStart_;
 				std::string uuids_;
 

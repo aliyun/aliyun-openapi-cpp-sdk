@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				OnsMqttGroupIdListRequest();
 				~OnsMqttGroupIdListRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 
 			};

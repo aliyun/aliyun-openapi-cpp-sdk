@@ -35,10 +35,13 @@ DescribeVSwitchesResult::~DescribeVSwitchesResult()
 
 void DescribeVSwitchesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allVSwitches = value["VSwitches"]["VSwitch"];
 	for (auto value : allVSwitches)
@@ -68,6 +71,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.isDefault = value["IsDefault"].asString() == "true";
 		if(!value["ResourceGroupId"].isNull())
 			vSwitchesObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["NetworkAclId"].isNull())
+			vSwitchesObject.networkAclId = value["NetworkAclId"].asString();
 		auto allTags = value["Tags"]["Tag"];
 		for (auto value : allTags)
 		{

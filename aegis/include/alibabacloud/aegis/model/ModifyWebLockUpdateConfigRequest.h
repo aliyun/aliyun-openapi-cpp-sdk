@@ -37,6 +37,12 @@ namespace AlibabaCloud
 
 				std::string getLocalBackupDir()const;
 				void setLocalBackupDir(const std::string& localBackupDir);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
+				std::string getInclusiveFileType()const;
+				void setInclusiveFileType(const std::string& inclusiveFileType);
+				std::string getExclusiveFile()const;
+				void setExclusiveFile(const std::string& exclusiveFile);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getExclusiveFileType()const;
@@ -54,6 +60,9 @@ namespace AlibabaCloud
 
             private:
 				std::string localBackupDir_;
+				std::string mode_;
+				std::string inclusiveFileType_;
+				std::string exclusiveFile_;
 				std::string sourceIp_;
 				std::string exclusiveFileType_;
 				int id_;

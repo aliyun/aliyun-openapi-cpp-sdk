@@ -33,7 +33,7 @@ std::string ProfileConsumeRequest::getBeginDate()const
 void ProfileConsumeRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setParameter("BeginDate", beginDate);
+	setCoreParameter("BeginDate", beginDate);
 }
 
 std::string ProfileConsumeRequest::getEndDate()const
@@ -44,7 +44,7 @@ std::string ProfileConsumeRequest::getEndDate()const
 void ProfileConsumeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+	setCoreParameter("EndDate", endDate);
 }
 
 int ProfileConsumeRequest::getDataType()const
@@ -55,7 +55,7 @@ int ProfileConsumeRequest::getDataType()const
 void ProfileConsumeRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setParameter("DataType", std::to_string(dataType));
+	setCoreParameter("DataType", std::to_string(dataType));
 }
 
 long ProfileConsumeRequest::getGsid()const
@@ -66,7 +66,7 @@ long ProfileConsumeRequest::getGsid()const
 void ProfileConsumeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setParameter("Gsid", std::to_string(gsid));
+	setCoreParameter("Gsid", std::to_string(gsid));
 }
 
 std::string ProfileConsumeRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string ProfileConsumeRequest::getAccessKeyId()const
 void ProfileConsumeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

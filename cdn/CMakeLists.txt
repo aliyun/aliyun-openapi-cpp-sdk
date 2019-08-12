@@ -23,10 +23,10 @@ set(cdn_public_header
 set(cdn_public_header_model 
 	include/alibabacloud/cdn/model/DescribeCdnCertificateListRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnCertificateListResult.h
-	include/alibabacloud/cdn/model/DescribeCdnServiceRequest.h
-	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
 	include/alibabacloud/cdn/model/SetPathCacheExpiredConfigRequest.h
 	include/alibabacloud/cdn/model/SetPathCacheExpiredConfigResult.h
+	include/alibabacloud/cdn/model/DescribeCdnServiceRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
 	include/alibabacloud/cdn/model/AddFCTriggerRequest.h
 	include/alibabacloud/cdn/model/AddFCTriggerResult.h
 	include/alibabacloud/cdn/model/CreateLiveStreamRecordIndexFilesRequest.h
@@ -35,10 +35,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaResult.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyUserCustomLogConfigResult.h
-	include/alibabacloud/cdn/model/SetWafConfigRequest.h
-	include/alibabacloud/cdn/model/SetWafConfigResult.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainConfigsResult.h
+	include/alibabacloud/cdn/model/SetWafConfigRequest.h
+	include/alibabacloud/cdn/model/SetWafConfigResult.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainDetailRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnDomainDetailResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsOnlineListRequest.h
@@ -63,18 +63,18 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainReqHitRateDataResult.h
 	include/alibabacloud/cdn/model/StopMixStreamsServiceRequest.h
 	include/alibabacloud/cdn/model/StopMixStreamsServiceResult.h
-	include/alibabacloud/cdn/model/DescribeCdnDomainByCertificateRequest.h
-	include/alibabacloud/cdn/model/DescribeCdnDomainByCertificateResult.h
 	include/alibabacloud/cdn/model/DescribeDomainUvDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainUvDataResult.h
-	include/alibabacloud/cdn/model/DescribeCdnHttpsDomainListRequest.h
-	include/alibabacloud/cdn/model/DescribeCdnHttpsDomainListResult.h
+	include/alibabacloud/cdn/model/DescribeCdnDomainByCertificateRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnDomainByCertificateResult.h
 	include/alibabacloud/cdn/model/DeleteSpecificConfigRequest.h
 	include/alibabacloud/cdn/model/DeleteSpecificConfigResult.h
-	include/alibabacloud/cdn/model/SetRemoveQueryStringConfigRequest.h
-	include/alibabacloud/cdn/model/SetRemoveQueryStringConfigResult.h
+	include/alibabacloud/cdn/model/DescribeCdnHttpsDomainListRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnHttpsDomainListResult.h
 	include/alibabacloud/cdn/model/DeleteCdnDomainRequest.h
 	include/alibabacloud/cdn/model/DeleteCdnDomainResult.h
+	include/alibabacloud/cdn/model/SetRemoveQueryStringConfigRequest.h
+	include/alibabacloud/cdn/model/SetRemoveQueryStringConfigResult.h
 	include/alibabacloud/cdn/model/DeleteLiveStreamTranscodeRequest.h
 	include/alibabacloud/cdn/model/DeleteLiveStreamTranscodeResult.h
 	include/alibabacloud/cdn/model/StopCdnDomainRequest.h
@@ -111,10 +111,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/PushObjectCacheResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeHttpCodeDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeHttpCodeDataResult.h
-	include/alibabacloud/cdn/model/DescribeLiveRecordConfigRequest.h
-	include/alibabacloud/cdn/model/DescribeLiveRecordConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainTrafficDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainTrafficDataResult.h
+	include/alibabacloud/cdn/model/DescribeLiveRecordConfigRequest.h
+	include/alibabacloud/cdn/model/DescribeLiveRecordConfigResult.h
 	include/alibabacloud/cdn/model/SetForceRedirectConfigRequest.h
 	include/alibabacloud/cdn/model/SetForceRedirectConfigResult.h
 	include/alibabacloud/cdn/model/ListFCTriggerRequest.h
@@ -123,10 +123,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetErrorPageConfigResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamOnlineUserNumRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamOnlineUserNumResult.h
-	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskRequest.h
-	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskResult.h
 	include/alibabacloud/cdn/model/SetRefererConfigRequest.h
 	include/alibabacloud/cdn/model/SetRefererConfigResult.h
+	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskRequest.h
+	include/alibabacloud/cdn/model/DeleteUsageDetailDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcFlowDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainSrcFlowDataResult.h
 	include/alibabacloud/cdn/model/DeleteLiveAppSnapshotConfigRequest.h
@@ -139,10 +139,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetReqAuthConfigResult.h
 	include/alibabacloud/cdn/model/SetDynamicConfigRequest.h
 	include/alibabacloud/cdn/model/SetDynamicConfigResult.h
-	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigRequest.h
-	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetHttpErrorPageConfigRequest.h
 	include/alibabacloud/cdn/model/SetHttpErrorPageConfigResult.h
+	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigRequest.h
+	include/alibabacloud/cdn/model/SetDomainGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/StartMixStreamsServiceRequest.h
 	include/alibabacloud/cdn/model/StartMixStreamsServiceResult.h
 	include/alibabacloud/cdn/model/DescribeUserCdnStatusRequest.h
@@ -163,26 +163,26 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainFlowDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsBlockListRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsBlockListResult.h
-	include/alibabacloud/cdn/model/SetIgnoreQueryStringConfigRequest.h
-	include/alibabacloud/cdn/model/SetIgnoreQueryStringConfigResult.h
 	include/alibabacloud/cdn/model/AddLiveStreamTranscodeRequest.h
 	include/alibabacloud/cdn/model/AddLiveStreamTranscodeResult.h
+	include/alibabacloud/cdn/model/SetIgnoreQueryStringConfigRequest.h
+	include/alibabacloud/cdn/model/SetIgnoreQueryStringConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCustomLogConfigRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCustomLogConfigResult.h
-	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsRequest.h
-	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageResult.h
+	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsRequest.h
+	include/alibabacloud/cdn/model/DescribeUserCustomerLabelsResult.h
 	include/alibabacloud/cdn/model/BatchUpdateCdnDomainRequest.h
 	include/alibabacloud/cdn/model/BatchUpdateCdnDomainResult.h
 	include/alibabacloud/cdn/model/DescribeDomainTopReferVisitRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainTopReferVisitResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsControlHistoryRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsControlHistoryResult.h
-	include/alibabacloud/cdn/model/SetReqHeaderConfigRequest.h
-	include/alibabacloud/cdn/model/SetReqHeaderConfigResult.h
 	include/alibabacloud/cdn/model/OpenCdnServiceRequest.h
 	include/alibabacloud/cdn/model/OpenCdnServiceResult.h
+	include/alibabacloud/cdn/model/SetReqHeaderConfigRequest.h
+	include/alibabacloud/cdn/model/SetReqHeaderConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeReqHitRateDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeReqHitRateDataResult.h
 	include/alibabacloud/cdn/model/SetIpBlackListConfigRequest.h
@@ -197,18 +197,18 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetIpAllowListConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeQpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeQpsDataResult.h
-	include/alibabacloud/cdn/model/DescribeDomainBpsDataRequest.h
-	include/alibabacloud/cdn/model/DescribeDomainBpsDataResult.h
 	include/alibabacloud/cdn/model/RefreshObjectCachesRequest.h
 	include/alibabacloud/cdn/model/RefreshObjectCachesResult.h
+	include/alibabacloud/cdn/model/DescribeDomainBpsDataRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainBpsDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordContentRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordContentResult.h
-	include/alibabacloud/cdn/model/SetRangeConfigRequest.h
-	include/alibabacloud/cdn/model/SetRangeConfigResult.h
 	include/alibabacloud/cdn/model/AddCdnDomainRequest.h
 	include/alibabacloud/cdn/model/AddCdnDomainResult.h
+	include/alibabacloud/cdn/model/SetRangeConfigRequest.h
+	include/alibabacloud/cdn/model/SetRangeConfigResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCnameRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCnameResult.h
 	include/alibabacloud/cdn/model/SetCcConfigRequest.h
@@ -219,10 +219,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCustomLogConfigResult.h
 	include/alibabacloud/cdn/model/DescribeUserDomainsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserDomainsResult.h
-	include/alibabacloud/cdn/model/DescribeLiveSnapshotConfigRequest.h
-	include/alibabacloud/cdn/model/DescribeLiveSnapshotConfigResult.h
 	include/alibabacloud/cdn/model/CreateUserUsageDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/CreateUserUsageDataExportTaskResult.h
+	include/alibabacloud/cdn/model/DescribeLiveSnapshotConfigRequest.h
+	include/alibabacloud/cdn/model/DescribeLiveSnapshotConfigResult.h
 	include/alibabacloud/cdn/model/DescribeRefreshTasksRequest.h
 	include/alibabacloud/cdn/model/DescribeRefreshTasksResult.h
 	include/alibabacloud/cdn/model/DeleteFCTriggerRequest.h
@@ -245,10 +245,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/ModifyPathCacheExpiredConfigResult.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeUserConfigsResult.h
-	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoRequest.h
-	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoResult.h
 	include/alibabacloud/cdn/model/DescribeRealtimeDeliveryAccRequest.h
 	include/alibabacloud/cdn/model/DescribeRealtimeDeliveryAccResult.h
+	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoResult.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/cdn/model/DescribeLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/cdn/model/ModifyCdnDomainRequest.h
@@ -265,10 +265,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeL2VipsByDomainResult.h
 	include/alibabacloud/cdn/model/ModifyHttpHeaderConfigRequest.h
 	include/alibabacloud/cdn/model/ModifyHttpHeaderConfigResult.h
-	include/alibabacloud/cdn/model/SetDomainServerCertificateRequest.h
-	include/alibabacloud/cdn/model/SetDomainServerCertificateResult.h
 	include/alibabacloud/cdn/model/BatchSetCdnDomainServerCertificateRequest.h
 	include/alibabacloud/cdn/model/BatchSetCdnDomainServerCertificateResult.h
+	include/alibabacloud/cdn/model/SetDomainServerCertificateRequest.h
+	include/alibabacloud/cdn/model/SetDomainServerCertificateResult.h
 	include/alibabacloud/cdn/model/DescribeIpInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeIpInfoResult.h
 	include/alibabacloud/cdn/model/DescribeDomainsBySourceRequest.h
@@ -293,30 +293,30 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/AddLiveDomainMappingResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcBpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcBpsDataResult.h
-	include/alibabacloud/cdn/model/ResumeLiveStreamRequest.h
-	include/alibabacloud/cdn/model/ResumeLiveStreamResult.h
 	include/alibabacloud/cdn/model/DescribeUserUsageDataExportTaskRequest.h
 	include/alibabacloud/cdn/model/DescribeUserUsageDataExportTaskResult.h
+	include/alibabacloud/cdn/model/ResumeLiveStreamRequest.h
+	include/alibabacloud/cdn/model/ResumeLiveStreamResult.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerRequest.h
 	include/alibabacloud/cdn/model/DescribeFCTriggerResult.h
 	include/alibabacloud/cdn/model/UpdateFCTriggerRequest.h
 	include/alibabacloud/cdn/model/UpdateFCTriggerResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeBpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeBpsDataResult.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamsPublishListRequest.h
-	include/alibabacloud/cdn/model/DescribeLiveStreamsPublishListResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCCAttackInfoResult.h
+	include/alibabacloud/cdn/model/DescribeLiveStreamsPublishListRequest.h
+	include/alibabacloud/cdn/model/DescribeLiveStreamsPublishListResult.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcTrafficDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainRealTimeSrcTrafficDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainUsageDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainUsageDataResult.h
-	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
-	include/alibabacloud/cdn/model/SetWaitingRoomConfigResult.h
 	include/alibabacloud/cdn/model/SetHttpsOptionConfigRequest.h
 	include/alibabacloud/cdn/model/SetHttpsOptionConfigResult.h
+	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
+	include/alibabacloud/cdn/model/SetWaitingRoomConfigResult.h
 	include/alibabacloud/cdn/model/ListDomainsByLogConfigIdRequest.h
 	include/alibabacloud/cdn/model/ListDomainsByLogConfigIdResult.h
 	include/alibabacloud/cdn/model/DescribeRangeDataByLocateAndIspServiceRequest.h
@@ -342,10 +342,10 @@ set(cdn_src
 	src/CdnClient.cc
 	src/model/DescribeCdnCertificateListRequest.cc
 	src/model/DescribeCdnCertificateListResult.cc
-	src/model/DescribeCdnServiceRequest.cc
-	src/model/DescribeCdnServiceResult.cc
 	src/model/SetPathCacheExpiredConfigRequest.cc
 	src/model/SetPathCacheExpiredConfigResult.cc
+	src/model/DescribeCdnServiceRequest.cc
+	src/model/DescribeCdnServiceResult.cc
 	src/model/AddFCTriggerRequest.cc
 	src/model/AddFCTriggerResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
@@ -354,10 +354,10 @@ set(cdn_src
 	src/model/DescribeCdnUserQuotaResult.cc
 	src/model/ModifyUserCustomLogConfigRequest.cc
 	src/model/ModifyUserCustomLogConfigResult.cc
-	src/model/SetWafConfigRequest.cc
-	src/model/SetWafConfigResult.cc
 	src/model/DescribeCdnDomainConfigsRequest.cc
 	src/model/DescribeCdnDomainConfigsResult.cc
+	src/model/SetWafConfigRequest.cc
+	src/model/SetWafConfigResult.cc
 	src/model/DescribeCdnDomainDetailRequest.cc
 	src/model/DescribeCdnDomainDetailResult.cc
 	src/model/DescribeLiveStreamsOnlineListRequest.cc
@@ -382,18 +382,18 @@ set(cdn_src
 	src/model/DescribeDomainReqHitRateDataResult.cc
 	src/model/StopMixStreamsServiceRequest.cc
 	src/model/StopMixStreamsServiceResult.cc
-	src/model/DescribeCdnDomainByCertificateRequest.cc
-	src/model/DescribeCdnDomainByCertificateResult.cc
 	src/model/DescribeDomainUvDataRequest.cc
 	src/model/DescribeDomainUvDataResult.cc
-	src/model/DescribeCdnHttpsDomainListRequest.cc
-	src/model/DescribeCdnHttpsDomainListResult.cc
+	src/model/DescribeCdnDomainByCertificateRequest.cc
+	src/model/DescribeCdnDomainByCertificateResult.cc
 	src/model/DeleteSpecificConfigRequest.cc
 	src/model/DeleteSpecificConfigResult.cc
-	src/model/SetRemoveQueryStringConfigRequest.cc
-	src/model/SetRemoveQueryStringConfigResult.cc
+	src/model/DescribeCdnHttpsDomainListRequest.cc
+	src/model/DescribeCdnHttpsDomainListResult.cc
 	src/model/DeleteCdnDomainRequest.cc
 	src/model/DeleteCdnDomainResult.cc
+	src/model/SetRemoveQueryStringConfigRequest.cc
+	src/model/SetRemoveQueryStringConfigResult.cc
 	src/model/DeleteLiveStreamTranscodeRequest.cc
 	src/model/DeleteLiveStreamTranscodeResult.cc
 	src/model/StopCdnDomainRequest.cc
@@ -430,10 +430,10 @@ set(cdn_src
 	src/model/PushObjectCacheResult.cc
 	src/model/DescribeDomainRealTimeHttpCodeDataRequest.cc
 	src/model/DescribeDomainRealTimeHttpCodeDataResult.cc
-	src/model/DescribeLiveRecordConfigRequest.cc
-	src/model/DescribeLiveRecordConfigResult.cc
 	src/model/DescribeDomainTrafficDataRequest.cc
 	src/model/DescribeDomainTrafficDataResult.cc
+	src/model/DescribeLiveRecordConfigRequest.cc
+	src/model/DescribeLiveRecordConfigResult.cc
 	src/model/SetForceRedirectConfigRequest.cc
 	src/model/SetForceRedirectConfigResult.cc
 	src/model/ListFCTriggerRequest.cc
@@ -442,10 +442,10 @@ set(cdn_src
 	src/model/SetErrorPageConfigResult.cc
 	src/model/DescribeLiveStreamOnlineUserNumRequest.cc
 	src/model/DescribeLiveStreamOnlineUserNumResult.cc
-	src/model/DeleteUsageDetailDataExportTaskRequest.cc
-	src/model/DeleteUsageDetailDataExportTaskResult.cc
 	src/model/SetRefererConfigRequest.cc
 	src/model/SetRefererConfigResult.cc
+	src/model/DeleteUsageDetailDataExportTaskRequest.cc
+	src/model/DeleteUsageDetailDataExportTaskResult.cc
 	src/model/DescribeDomainSrcFlowDataRequest.cc
 	src/model/DescribeDomainSrcFlowDataResult.cc
 	src/model/DeleteLiveAppSnapshotConfigRequest.cc
@@ -458,10 +458,10 @@ set(cdn_src
 	src/model/SetReqAuthConfigResult.cc
 	src/model/SetDynamicConfigRequest.cc
 	src/model/SetDynamicConfigResult.cc
-	src/model/SetDomainGreenManagerConfigRequest.cc
-	src/model/SetDomainGreenManagerConfigResult.cc
 	src/model/SetHttpErrorPageConfigRequest.cc
 	src/model/SetHttpErrorPageConfigResult.cc
+	src/model/SetDomainGreenManagerConfigRequest.cc
+	src/model/SetDomainGreenManagerConfigResult.cc
 	src/model/StartMixStreamsServiceRequest.cc
 	src/model/StartMixStreamsServiceResult.cc
 	src/model/DescribeUserCdnStatusRequest.cc
@@ -482,26 +482,26 @@ set(cdn_src
 	src/model/DescribeDomainFlowDataResult.cc
 	src/model/DescribeLiveStreamsBlockListRequest.cc
 	src/model/DescribeLiveStreamsBlockListResult.cc
-	src/model/SetIgnoreQueryStringConfigRequest.cc
-	src/model/SetIgnoreQueryStringConfigResult.cc
 	src/model/AddLiveStreamTranscodeRequest.cc
 	src/model/AddLiveStreamTranscodeResult.cc
+	src/model/SetIgnoreQueryStringConfigRequest.cc
+	src/model/SetIgnoreQueryStringConfigResult.cc
 	src/model/DescribeDomainCustomLogConfigRequest.cc
 	src/model/DescribeDomainCustomLogConfigResult.cc
-	src/model/DescribeUserCustomerLabelsRequest.cc
-	src/model/DescribeUserCustomerLabelsResult.cc
 	src/model/DescribeCdnUserResourcePackageRequest.cc
 	src/model/DescribeCdnUserResourcePackageResult.cc
+	src/model/DescribeUserCustomerLabelsRequest.cc
+	src/model/DescribeUserCustomerLabelsResult.cc
 	src/model/BatchUpdateCdnDomainRequest.cc
 	src/model/BatchUpdateCdnDomainResult.cc
 	src/model/DescribeDomainTopReferVisitRequest.cc
 	src/model/DescribeDomainTopReferVisitResult.cc
 	src/model/DescribeLiveStreamsControlHistoryRequest.cc
 	src/model/DescribeLiveStreamsControlHistoryResult.cc
-	src/model/SetReqHeaderConfigRequest.cc
-	src/model/SetReqHeaderConfigResult.cc
 	src/model/OpenCdnServiceRequest.cc
 	src/model/OpenCdnServiceResult.cc
+	src/model/SetReqHeaderConfigRequest.cc
+	src/model/SetReqHeaderConfigResult.cc
 	src/model/DescribeDomainRealTimeReqHitRateDataRequest.cc
 	src/model/DescribeDomainRealTimeReqHitRateDataResult.cc
 	src/model/SetIpBlackListConfigRequest.cc
@@ -516,18 +516,18 @@ set(cdn_src
 	src/model/SetIpAllowListConfigResult.cc
 	src/model/DescribeDomainRealTimeQpsDataRequest.cc
 	src/model/DescribeDomainRealTimeQpsDataResult.cc
-	src/model/DescribeDomainBpsDataRequest.cc
-	src/model/DescribeDomainBpsDataResult.cc
 	src/model/RefreshObjectCachesRequest.cc
 	src/model/RefreshObjectCachesResult.cc
+	src/model/DescribeDomainBpsDataRequest.cc
+	src/model/DescribeDomainBpsDataResult.cc
 	src/model/DescribeLiveStreamsFrameRateAndBitRateDataRequest.cc
 	src/model/DescribeLiveStreamsFrameRateAndBitRateDataResult.cc
 	src/model/DescribeLiveStreamRecordContentRequest.cc
 	src/model/DescribeLiveStreamRecordContentResult.cc
-	src/model/SetRangeConfigRequest.cc
-	src/model/SetRangeConfigResult.cc
 	src/model/AddCdnDomainRequest.cc
 	src/model/AddCdnDomainResult.cc
+	src/model/SetRangeConfigRequest.cc
+	src/model/SetRangeConfigResult.cc
 	src/model/DescribeDomainCnameRequest.cc
 	src/model/DescribeDomainCnameResult.cc
 	src/model/SetCcConfigRequest.cc
@@ -538,10 +538,10 @@ set(cdn_src
 	src/model/DescribeCustomLogConfigResult.cc
 	src/model/DescribeUserDomainsRequest.cc
 	src/model/DescribeUserDomainsResult.cc
-	src/model/DescribeLiveSnapshotConfigRequest.cc
-	src/model/DescribeLiveSnapshotConfigResult.cc
 	src/model/CreateUserUsageDataExportTaskRequest.cc
 	src/model/CreateUserUsageDataExportTaskResult.cc
+	src/model/DescribeLiveSnapshotConfigRequest.cc
+	src/model/DescribeLiveSnapshotConfigResult.cc
 	src/model/DescribeRefreshTasksRequest.cc
 	src/model/DescribeRefreshTasksResult.cc
 	src/model/DeleteFCTriggerRequest.cc
@@ -564,10 +564,10 @@ set(cdn_src
 	src/model/ModifyPathCacheExpiredConfigResult.cc
 	src/model/DescribeUserConfigsRequest.cc
 	src/model/DescribeUserConfigsResult.cc
-	src/model/DescribeDomainCertificateInfoRequest.cc
-	src/model/DescribeDomainCertificateInfoResult.cc
 	src/model/DescribeRealtimeDeliveryAccRequest.cc
 	src/model/DescribeRealtimeDeliveryAccResult.cc
+	src/model/DescribeDomainCertificateInfoRequest.cc
+	src/model/DescribeDomainCertificateInfoResult.cc
 	src/model/DescribeLiveStreamRecordIndexFilesRequest.cc
 	src/model/DescribeLiveStreamRecordIndexFilesResult.cc
 	src/model/ModifyCdnDomainRequest.cc
@@ -584,10 +584,10 @@ set(cdn_src
 	src/model/DescribeL2VipsByDomainResult.cc
 	src/model/ModifyHttpHeaderConfigRequest.cc
 	src/model/ModifyHttpHeaderConfigResult.cc
-	src/model/SetDomainServerCertificateRequest.cc
-	src/model/SetDomainServerCertificateResult.cc
 	src/model/BatchSetCdnDomainServerCertificateRequest.cc
 	src/model/BatchSetCdnDomainServerCertificateResult.cc
+	src/model/SetDomainServerCertificateRequest.cc
+	src/model/SetDomainServerCertificateResult.cc
 	src/model/DescribeIpInfoRequest.cc
 	src/model/DescribeIpInfoResult.cc
 	src/model/DescribeDomainsBySourceRequest.cc
@@ -612,30 +612,30 @@ set(cdn_src
 	src/model/AddLiveDomainMappingResult.cc
 	src/model/DescribeDomainRealTimeSrcBpsDataRequest.cc
 	src/model/DescribeDomainRealTimeSrcBpsDataResult.cc
-	src/model/ResumeLiveStreamRequest.cc
-	src/model/ResumeLiveStreamResult.cc
 	src/model/DescribeUserUsageDataExportTaskRequest.cc
 	src/model/DescribeUserUsageDataExportTaskResult.cc
+	src/model/ResumeLiveStreamRequest.cc
+	src/model/ResumeLiveStreamResult.cc
 	src/model/DescribeFCTriggerRequest.cc
 	src/model/DescribeFCTriggerResult.cc
 	src/model/UpdateFCTriggerRequest.cc
 	src/model/UpdateFCTriggerResult.cc
 	src/model/DescribeDomainRealTimeBpsDataRequest.cc
 	src/model/DescribeDomainRealTimeBpsDataResult.cc
-	src/model/DescribeLiveStreamsPublishListRequest.cc
-	src/model/DescribeLiveStreamsPublishListResult.cc
 	src/model/DescribeDomainCCAttackInfoRequest.cc
 	src/model/DescribeDomainCCAttackInfoResult.cc
+	src/model/DescribeLiveStreamsPublishListRequest.cc
+	src/model/DescribeLiveStreamsPublishListResult.cc
 	src/model/DescribeDomainRealTimeSrcTrafficDataRequest.cc
 	src/model/DescribeDomainRealTimeSrcTrafficDataResult.cc
 	src/model/DescribeDomainMax95BpsDataRequest.cc
 	src/model/DescribeDomainMax95BpsDataResult.cc
 	src/model/DescribeDomainUsageDataRequest.cc
 	src/model/DescribeDomainUsageDataResult.cc
-	src/model/SetWaitingRoomConfigRequest.cc
-	src/model/SetWaitingRoomConfigResult.cc
 	src/model/SetHttpsOptionConfigRequest.cc
 	src/model/SetHttpsOptionConfigResult.cc
+	src/model/SetWaitingRoomConfigRequest.cc
+	src/model/SetWaitingRoomConfigResult.cc
 	src/model/ListDomainsByLogConfigIdRequest.cc
 	src/model/ListDomainsByLogConfigIdResult.cc
 	src/model/DescribeRangeDataByLocateAndIspServiceRequest.cc

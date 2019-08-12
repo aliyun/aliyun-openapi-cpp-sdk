@@ -37,12 +37,16 @@ namespace AlibabaCloud
 
 				std::string getValueKeyWord()const;
 				void setValueKeyWord(const std::string& valueKeyWord);
+				std::string getLine()const;
+				void setLine(const std::string& line);
 				long getGroupId()const;
 				void setGroupId(long groupId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
+				std::string getType()const;
+				void setType(const std::string& type);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
 				std::string getUserClientIp()const;
@@ -61,12 +65,16 @@ namespace AlibabaCloud
 				void setRRKeyWord(const std::string& rRKeyWord);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				std::string valueKeyWord_;
+				std::string line_;
 				long groupId_;
 				std::string domainName_;
 				std::string orderBy_;
+				std::string type_;
 				long pageNumber_;
 				std::string userClientIp_;
 				long pageSize_;
@@ -76,6 +84,7 @@ namespace AlibabaCloud
 				std::string typeKeyWord_;
 				std::string rRKeyWord_;
 				std::string direction_;
+				std::string status_;
 
 			};
 		}

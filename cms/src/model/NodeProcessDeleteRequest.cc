@@ -33,7 +33,7 @@ std::string NodeProcessDeleteRequest::getInstanceId()const
 void NodeProcessDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string NodeProcessDeleteRequest::getName()const
@@ -44,7 +44,7 @@ std::string NodeProcessDeleteRequest::getName()const
 void NodeProcessDeleteRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string NodeProcessDeleteRequest::getId()const
@@ -55,6 +55,6 @@ std::string NodeProcessDeleteRequest::getId()const
 void NodeProcessDeleteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 

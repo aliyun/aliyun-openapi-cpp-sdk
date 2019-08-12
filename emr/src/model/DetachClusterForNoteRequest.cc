@@ -33,7 +33,7 @@ long DetachClusterForNoteRequest::getResourceOwnerId()const
 void DetachClusterForNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachClusterForNoteRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DetachClusterForNoteRequest::getRegionId()const
 void DetachClusterForNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DetachClusterForNoteRequest::getId()const
@@ -55,7 +55,7 @@ std::string DetachClusterForNoteRequest::getId()const
 void DetachClusterForNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string DetachClusterForNoteRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DetachClusterForNoteRequest::getAccessKeyId()const
 void DetachClusterForNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,10 +35,13 @@ QueryDeviceResult::~QueryDeviceResult()
 
 void QueryDeviceResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allData = value["Data"]["DeviceInfo"];
 	for (auto value : allData)
@@ -60,6 +63,14 @@ void QueryDeviceResult::parse(const std::string &payload)
 			dataObject.gmtCreate = value["GmtCreate"].asString();
 		if(!value["GmtModified"].isNull())
 			dataObject.gmtModified = value["GmtModified"].asString();
+		if(!value["UtcCreate"].isNull())
+			dataObject.utcCreate = value["UtcCreate"].asString();
+		if(!value["UtcModified"].isNull())
+			dataObject.utcModified = value["UtcModified"].asString();
+		if(!value["IotId"].isNull())
+			dataObject.iotId = value["IotId"].asString();
+		if(!value["Nickname"].isNull())
+			dataObject.nickname = value["Nickname"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

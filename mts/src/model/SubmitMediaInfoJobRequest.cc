@@ -33,7 +33,7 @@ std::string SubmitMediaInfoJobRequest::getInput()const
 void SubmitMediaInfoJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitMediaInfoJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitMediaInfoJobRequest::getUserData()const
 void SubmitMediaInfoJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 bool SubmitMediaInfoJobRequest::getAsync()const
@@ -55,7 +55,7 @@ bool SubmitMediaInfoJobRequest::getAsync()const
 void SubmitMediaInfoJobRequest::setAsync(bool async)
 {
 	async_ = async;
-	setParameter("Async", async ? "true" : "false");
+	setCoreParameter("Async", async ? "true" : "false");
 }
 
 long SubmitMediaInfoJobRequest::getResourceOwnerId()const
@@ -66,7 +66,7 @@ long SubmitMediaInfoJobRequest::getResourceOwnerId()const
 void SubmitMediaInfoJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMediaInfoJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitMediaInfoJobRequest::getResourceOwnerAccount()const
 void SubmitMediaInfoJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMediaInfoJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitMediaInfoJobRequest::getOwnerAccount()const
 void SubmitMediaInfoJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitMediaInfoJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitMediaInfoJobRequest::getOwnerId()const
 void SubmitMediaInfoJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMediaInfoJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitMediaInfoJobRequest::getAccessKeyId()const
 void SubmitMediaInfoJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMediaInfoJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitMediaInfoJobRequest::getPipelineId()const
 void SubmitMediaInfoJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

@@ -79,7 +79,9 @@ namespace AlibabaCloud
 					int loadBalancerWeight;
 					std::string ioOptimized;
 					std::string scalingGroupId;
+					std::string hpcClusterId;
 					std::string securityGroupId;
+					std::vector<std::string> securityGroupIds;
 					std::string internetChargeType;
 					std::string systemDiskCategory;
 					std::string instanceName;
@@ -89,6 +91,7 @@ namespace AlibabaCloud
 					int internetMaxBandwidthIn;
 					std::string creationTime;
 					std::string instanceGeneration;
+					std::string instanceDescription;
 					std::string scalingConfigurationId;
 					std::string securityEnhancementStrategy;
 				};

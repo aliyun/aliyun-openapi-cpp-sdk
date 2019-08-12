@@ -33,7 +33,7 @@ std::string UpdateMediaCoverRequest::getCoverURL()const
 void UpdateMediaCoverRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", coverURL);
 }
 
 long UpdateMediaCoverRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long UpdateMediaCoverRequest::getResourceOwnerId()const
 void UpdateMediaCoverRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaCoverRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string UpdateMediaCoverRequest::getResourceOwnerAccount()const
 void UpdateMediaCoverRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaCoverRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string UpdateMediaCoverRequest::getOwnerAccount()const
 void UpdateMediaCoverRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaCoverRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long UpdateMediaCoverRequest::getOwnerId()const
 void UpdateMediaCoverRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaCoverRequest::getMediaId()const
@@ -88,7 +88,7 @@ std::string UpdateMediaCoverRequest::getMediaId()const
 void UpdateMediaCoverRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string UpdateMediaCoverRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateMediaCoverRequest::getAccessKeyId()const
 void UpdateMediaCoverRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

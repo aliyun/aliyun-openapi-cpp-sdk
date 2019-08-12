@@ -33,7 +33,7 @@ std::string QueryEnsAssociationRequest::getDomainName()const
 void QueryEnsAssociationRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string QueryEnsAssociationRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryEnsAssociationRequest::getUserClientIp()const
 void QueryEnsAssociationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryEnsAssociationRequest::getLang()const
@@ -55,6 +55,6 @@ std::string QueryEnsAssociationRequest::getLang()const
 void QueryEnsAssociationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

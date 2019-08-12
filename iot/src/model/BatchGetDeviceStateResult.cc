@@ -35,10 +35,13 @@ BatchGetDeviceStateResult::~BatchGetDeviceStateResult()
 
 void BatchGetDeviceStateResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allDeviceStatusList = value["DeviceStatusList"]["DeviceStatus"];
 	for (auto value : allDeviceStatusList)
@@ -54,6 +57,8 @@ void BatchGetDeviceStateResult::parse(const std::string &payload)
 			deviceStatusListObject.asAddress = value["AsAddress"].asString();
 		if(!value["LastOnlineTime"].isNull())
 			deviceStatusListObject.lastOnlineTime = value["LastOnlineTime"].asString();
+		if(!value["IotId"].isNull())
+			deviceStatusListObject.iotId = value["IotId"].asString();
 		deviceStatusList_.push_back(deviceStatusListObject);
 	}
 	if(!value["Success"].isNull())

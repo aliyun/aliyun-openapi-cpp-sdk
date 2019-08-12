@@ -33,7 +33,7 @@ long GetUserSourceRepoRefListRequest::getSourceAccountId()const
 void GetUserSourceRepoRefListRequest::setSourceAccountId(long sourceAccountId)
 {
 	sourceAccountId_ = sourceAccountId;
-	setParameter("SourceAccountId", std::to_string(sourceAccountId));
+	setCoreParameter("SourceAccountId", std::to_string(sourceAccountId));
 }
 
 std::string GetUserSourceRepoRefListRequest::getSourceRepoName()const
@@ -44,7 +44,7 @@ std::string GetUserSourceRepoRefListRequest::getSourceRepoName()const
 void GetUserSourceRepoRefListRequest::setSourceRepoName(const std::string& sourceRepoName)
 {
 	sourceRepoName_ = sourceRepoName;
-	setParameter("SourceRepoName", sourceRepoName);
+	setCoreParameter("SourceRepoName", sourceRepoName);
 }
 
 std::string GetUserSourceRepoRefListRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetUserSourceRepoRefListRequest::getRegionId()const
 void GetUserSourceRepoRefListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetUserSourceRepoRefListRequest::getSourceRepoNamespace()const
@@ -66,6 +66,6 @@ std::string GetUserSourceRepoRefListRequest::getSourceRepoNamespace()const
 void GetUserSourceRepoRefListRequest::setSourceRepoNamespace(const std::string& sourceRepoNamespace)
 {
 	sourceRepoNamespace_ = sourceRepoNamespace;
-	setParameter("SourceRepoNamespace", sourceRepoNamespace);
+	setCoreParameter("SourceRepoNamespace", sourceRepoNamespace);
 }
 

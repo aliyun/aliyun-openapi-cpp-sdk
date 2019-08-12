@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsMqttQueryClientByTopicRequest();
 				~OnsMqttQueryClientByTopicRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getParentTopic()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setSubTopic(const std::string& subTopic);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string parentTopic_;
 				std::string subTopic_;

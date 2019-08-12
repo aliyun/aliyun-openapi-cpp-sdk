@@ -33,7 +33,7 @@ long QueryChangeLogListRequest::getEndDate()const
 void QueryChangeLogListRequest::setEndDate(long endDate)
 {
 	endDate_ = endDate;
-	setParameter("EndDate", std::to_string(endDate));
+	setCoreParameter("EndDate", std::to_string(endDate));
 }
 
 std::string QueryChangeLogListRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryChangeLogListRequest::getUserClientIp()const
 void QueryChangeLogListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryChangeLogListRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string QueryChangeLogListRequest::getDomainName()const
 void QueryChangeLogListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 int QueryChangeLogListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int QueryChangeLogListRequest::getPageSize()const
 void QueryChangeLogListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryChangeLogListRequest::getLang()const
@@ -77,7 +77,7 @@ std::string QueryChangeLogListRequest::getLang()const
 void QueryChangeLogListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 int QueryChangeLogListRequest::getPageNum()const
@@ -88,7 +88,7 @@ int QueryChangeLogListRequest::getPageNum()const
 void QueryChangeLogListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 long QueryChangeLogListRequest::getStartDate()const
@@ -99,6 +99,6 @@ long QueryChangeLogListRequest::getStartDate()const
 void QueryChangeLogListRequest::setStartDate(long startDate)
 {
 	startDate_ = startDate;
-	setParameter("StartDate", std::to_string(startDate));
+	setCoreParameter("StartDate", std::to_string(startDate));
 }
 

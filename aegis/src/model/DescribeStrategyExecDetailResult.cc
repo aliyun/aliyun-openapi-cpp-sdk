@@ -35,10 +35,13 @@ DescribeStrategyExecDetailResult::~DescribeStrategyExecDetailResult()
 
 void DescribeStrategyExecDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allFailedEcsList = value["FailedEcsList"]["FailedEcs"];
 	for (auto value : allFailedEcsList)
@@ -50,6 +53,8 @@ void DescribeStrategyExecDetailResult::parse(const std::string &payload)
 			failedEcsListObject.instanceName = value["InstanceName"].asString();
 		if(!value["IP"].isNull())
 			failedEcsListObject.iP = value["IP"].asString();
+		if(!value["InternetIp"].isNull())
+			failedEcsListObject.internetIp = value["InternetIp"].asString();
 		if(!value["IntranetIp"].isNull())
 			failedEcsListObject.intranetIp = value["IntranetIp"].asString();
 		failedEcsList_.push_back(failedEcsListObject);

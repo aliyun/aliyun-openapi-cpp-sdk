@@ -35,11 +35,16 @@ DescribeRuleAttributeResult::~DescribeRuleAttributeResult()
 
 void DescribeRuleAttributeResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
+	if(!value["RuleId"].isNull())
+		ruleId_ = value["RuleId"].asString();
 	if(!value["RuleName"].isNull())
 		ruleName_ = value["RuleName"].asString();
 	if(!value["LoadBalancerId"].isNull())
@@ -123,6 +128,11 @@ std::string DescribeRuleAttributeResult::getScheduler()const
 std::string DescribeRuleAttributeResult::getHealthCheckURI()const
 {
 	return healthCheckURI_;
+}
+
+std::string DescribeRuleAttributeResult::getRuleId()const
+{
+	return ruleId_;
 }
 
 std::string DescribeRuleAttributeResult::getHealthCheck()const

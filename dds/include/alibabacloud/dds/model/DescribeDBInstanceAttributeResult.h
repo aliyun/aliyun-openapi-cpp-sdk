@@ -52,8 +52,21 @@ namespace AlibabaCloud
 						std::string nodeClass;
 						std::string nodeDescription;
 						int maxConnections;
+						int port;
 						std::string nodeId;
 						int nodeStorage;
+						std::string connectString;
+						int maxIOPS;
+					};
+					struct ConfigserverAttribute
+					{
+						std::string nodeClass;
+						std::string nodeDescription;
+						int maxConnections;
+						int port;
+						std::string nodeId;
+						int nodeStorage;
+						std::string connectString;
 						int maxIOPS;
 					};
 					struct ReplicaSet
@@ -92,6 +105,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string dBInstanceStatus;
 					std::string replicationFactor;
+					std::string readonlyReplicas;
 					int maxConnections;
 					std::string dBInstanceClass;
 					std::string vPCId;
@@ -101,7 +115,9 @@ namespace AlibabaCloud
 					int maxIOPS;
 					std::string chargeType;
 					std::string currentKernelVersion;
+					std::string vpcAuthMode;
 					std::string creationTime;
+					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string regionId;
 					std::string expireTime;
 				};

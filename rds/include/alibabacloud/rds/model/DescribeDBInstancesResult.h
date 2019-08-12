@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string instanceNetworkType;
 					std::string replicateId;
 					std::string dBInstanceId;
+					std::string autoUpgradeMinorVersion;
 					std::vector<DBInstance::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string lockReason;
 					std::string dBInstanceDescription;

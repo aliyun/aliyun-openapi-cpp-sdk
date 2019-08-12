@@ -33,7 +33,7 @@ std::string ImportKeyMaterialRequest::getImportToken()const
 void ImportKeyMaterialRequest::setImportToken(const std::string& importToken)
 {
 	importToken_ = importToken;
-	setParameter("ImportToken", importToken);
+	setCoreParameter("ImportToken", importToken);
 }
 
 std::string ImportKeyMaterialRequest::getEncryptedKeyMaterial()const
@@ -44,7 +44,7 @@ std::string ImportKeyMaterialRequest::getEncryptedKeyMaterial()const
 void ImportKeyMaterialRequest::setEncryptedKeyMaterial(const std::string& encryptedKeyMaterial)
 {
 	encryptedKeyMaterial_ = encryptedKeyMaterial;
-	setParameter("EncryptedKeyMaterial", encryptedKeyMaterial);
+	setCoreParameter("EncryptedKeyMaterial", encryptedKeyMaterial);
 }
 
 long ImportKeyMaterialRequest::getKeyMaterialExpireUnix()const
@@ -55,7 +55,7 @@ long ImportKeyMaterialRequest::getKeyMaterialExpireUnix()const
 void ImportKeyMaterialRequest::setKeyMaterialExpireUnix(long keyMaterialExpireUnix)
 {
 	keyMaterialExpireUnix_ = keyMaterialExpireUnix;
-	setParameter("KeyMaterialExpireUnix", std::to_string(keyMaterialExpireUnix));
+	setCoreParameter("KeyMaterialExpireUnix", std::to_string(keyMaterialExpireUnix));
 }
 
 std::string ImportKeyMaterialRequest::getKeyId()const
@@ -66,17 +66,6 @@ std::string ImportKeyMaterialRequest::getKeyId()const
 void ImportKeyMaterialRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string ImportKeyMaterialRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void ImportKeyMaterialRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

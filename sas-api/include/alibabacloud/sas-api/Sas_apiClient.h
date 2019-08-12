@@ -24,10 +24,10 @@
 #include "Sas_apiExport.h"
 #include "model/DescribeAccountProfileByKeyWordRequest.h"
 #include "model/DescribeAccountProfileByKeyWordResult.h"
-#include "model/DescribeThreatTypeLinesRequest.h"
-#include "model/DescribeThreatTypeLinesResult.h"
 #include "model/DescribeThreatDistributeRequest.h"
 #include "model/DescribeThreatDistributeResult.h"
+#include "model/DescribeThreatTypeLinesRequest.h"
+#include "model/DescribeThreatTypeLinesResult.h"
 #include "model/GetPhoneProfileRequest.h"
 #include "model/GetPhoneProfileResult.h"
 #include "model/DescribeAccountProfileByKeyRequest.h"
@@ -58,12 +58,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccountProfileByKeyWordResult> DescribeAccountProfileByKeyWordOutcome;
 			typedef std::future<DescribeAccountProfileByKeyWordOutcome> DescribeAccountProfileByKeyWordOutcomeCallable;
 			typedef std::function<void(const Sas_apiClient*, const Model::DescribeAccountProfileByKeyWordRequest&, const DescribeAccountProfileByKeyWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountProfileByKeyWordAsyncHandler;
-			typedef Outcome<Error, Model::DescribeThreatTypeLinesResult> DescribeThreatTypeLinesOutcome;
-			typedef std::future<DescribeThreatTypeLinesOutcome> DescribeThreatTypeLinesOutcomeCallable;
-			typedef std::function<void(const Sas_apiClient*, const Model::DescribeThreatTypeLinesRequest&, const DescribeThreatTypeLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatTypeLinesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeThreatDistributeResult> DescribeThreatDistributeOutcome;
 			typedef std::future<DescribeThreatDistributeOutcome> DescribeThreatDistributeOutcomeCallable;
 			typedef std::function<void(const Sas_apiClient*, const Model::DescribeThreatDistributeRequest&, const DescribeThreatDistributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatDistributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeThreatTypeLinesResult> DescribeThreatTypeLinesOutcome;
+			typedef std::future<DescribeThreatTypeLinesOutcome> DescribeThreatTypeLinesOutcomeCallable;
+			typedef std::function<void(const Sas_apiClient*, const Model::DescribeThreatTypeLinesRequest&, const DescribeThreatTypeLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThreatTypeLinesAsyncHandler;
 			typedef Outcome<Error, Model::GetPhoneProfileResult> GetPhoneProfileOutcome;
 			typedef std::future<GetPhoneProfileOutcome> GetPhoneProfileOutcomeCallable;
 			typedef std::function<void(const Sas_apiClient*, const Model::GetPhoneProfileRequest&, const GetPhoneProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneProfileAsyncHandler;
@@ -99,12 +99,12 @@ namespace AlibabaCloud
 			DescribeAccountProfileByKeyWordOutcome describeAccountProfileByKeyWord(const Model::DescribeAccountProfileByKeyWordRequest &request)const;
 			void describeAccountProfileByKeyWordAsync(const Model::DescribeAccountProfileByKeyWordRequest& request, const DescribeAccountProfileByKeyWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountProfileByKeyWordOutcomeCallable describeAccountProfileByKeyWordCallable(const Model::DescribeAccountProfileByKeyWordRequest& request) const;
-			DescribeThreatTypeLinesOutcome describeThreatTypeLines(const Model::DescribeThreatTypeLinesRequest &request)const;
-			void describeThreatTypeLinesAsync(const Model::DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeThreatTypeLinesOutcomeCallable describeThreatTypeLinesCallable(const Model::DescribeThreatTypeLinesRequest& request) const;
 			DescribeThreatDistributeOutcome describeThreatDistribute(const Model::DescribeThreatDistributeRequest &request)const;
 			void describeThreatDistributeAsync(const Model::DescribeThreatDistributeRequest& request, const DescribeThreatDistributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeThreatDistributeOutcomeCallable describeThreatDistributeCallable(const Model::DescribeThreatDistributeRequest& request) const;
+			DescribeThreatTypeLinesOutcome describeThreatTypeLines(const Model::DescribeThreatTypeLinesRequest &request)const;
+			void describeThreatTypeLinesAsync(const Model::DescribeThreatTypeLinesRequest& request, const DescribeThreatTypeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeThreatTypeLinesOutcomeCallable describeThreatTypeLinesCallable(const Model::DescribeThreatTypeLinesRequest& request) const;
 			GetPhoneProfileOutcome getPhoneProfile(const Model::GetPhoneProfileRequest &request)const;
 			void getPhoneProfileAsync(const Model::GetPhoneProfileRequest& request, const GetPhoneProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPhoneProfileOutcomeCallable getPhoneProfileCallable(const Model::GetPhoneProfileRequest& request) const;

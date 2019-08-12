@@ -33,7 +33,7 @@ std::string CheckDomainRecordRequest::getRR()const
 void CheckDomainRecordRequest::setRR(const std::string& rR)
 {
 	rR_ = rR;
-	setParameter("RR", rR);
+	setCoreParameter("RR", rR);
 }
 
 std::string CheckDomainRecordRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CheckDomainRecordRequest::getUserClientIp()const
 void CheckDomainRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckDomainRecordRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string CheckDomainRecordRequest::getDomainName()const
 void CheckDomainRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckDomainRecordRequest::getLang()const
@@ -66,7 +66,7 @@ std::string CheckDomainRecordRequest::getLang()const
 void CheckDomainRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CheckDomainRecordRequest::getType()const
@@ -77,7 +77,7 @@ std::string CheckDomainRecordRequest::getType()const
 void CheckDomainRecordRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string CheckDomainRecordRequest::getValue()const
@@ -88,7 +88,7 @@ std::string CheckDomainRecordRequest::getValue()const
 void CheckDomainRecordRequest::setValue(const std::string& value)
 {
 	value_ = value;
-	setParameter("Value", value);
+	setCoreParameter("Value", value);
 }
 
 std::string CheckDomainRecordRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string CheckDomainRecordRequest::getAccessKeyId()const
 void CheckDomainRecordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

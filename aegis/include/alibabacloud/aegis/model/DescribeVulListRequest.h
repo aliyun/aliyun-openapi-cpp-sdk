@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setLevel(const std::string& level);
 				std::string getResource()const;
 				void setResource(const std::string& resource);
+				std::string getCveId()const;
+				void setCveId(const std::string& cveId);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				std::string getDealed()const;
@@ -61,6 +65,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				long getCreateTsEnd()const;
@@ -74,6 +80,8 @@ namespace AlibabaCloud
 				std::string statusList_;
 				std::string level_;
 				std::string resource_;
+				std::string cveId_;
+				std::string groupId_;
 				std::string remark_;
 				std::string dealed_;
 				int currentPage_;
@@ -84,6 +92,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				std::string name_;
 				int pageSize_;
+				std::string ids_;
 				std::string lang_;
 				long createTsEnd_;
 				std::string necessity_;

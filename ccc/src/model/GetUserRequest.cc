@@ -33,7 +33,7 @@ std::string GetUserRequest::getInstanceId()const
 void GetUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string GetUserRequest::getUserId()const
@@ -44,7 +44,7 @@ std::string GetUserRequest::getUserId()const
 void GetUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 std::string GetUserRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string GetUserRequest::getAccessKeyId()const
 void GetUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

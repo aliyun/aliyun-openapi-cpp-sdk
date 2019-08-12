@@ -33,6 +33,6 @@ std::string DescribeClusterEndpointsRequest::getClusterId()const
 void DescribeClusterEndpointsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 

@@ -33,6 +33,6 @@ std::string DescribeEarlyWarningRequest::getSourceIp()const
 void DescribeEarlyWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 

@@ -69,17 +69,6 @@ void DescribeNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& 
 	setCoreParameter("NetworkOptId", networkOptId);
 }
 
-int DescribeNetworkOptimizationSagsRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void DescribeNetworkOptimizationSagsRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
-}
-
 std::string DescribeNetworkOptimizationSagsRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
@@ -111,5 +100,16 @@ void DescribeNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+int DescribeNetworkOptimizationSagsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeNetworkOptimizationSagsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

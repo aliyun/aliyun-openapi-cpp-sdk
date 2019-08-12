@@ -33,7 +33,7 @@ std::string ListPortalTemplateRequest::getOrderCol()const
 void ListPortalTemplateRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 int ListPortalTemplateRequest::getLength()const
@@ -44,7 +44,7 @@ int ListPortalTemplateRequest::getLength()const
 void ListPortalTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListPortalTemplateRequest::getPageIndex()const
@@ -55,7 +55,7 @@ int ListPortalTemplateRequest::getPageIndex()const
 void ListPortalTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListPortalTemplateRequest::getOrderDir()const
@@ -66,7 +66,7 @@ std::string ListPortalTemplateRequest::getOrderDir()const
 void ListPortalTemplateRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListPortalTemplateRequest::getSearchTempName()const
@@ -77,7 +77,7 @@ std::string ListPortalTemplateRequest::getSearchTempName()const
 void ListPortalTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setParameter("SearchTempName", searchTempName);
+	setCoreParameter("SearchTempName", searchTempName);
 }
 
 std::string ListPortalTemplateRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListPortalTemplateRequest::getAccessKeyId()const
 void ListPortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

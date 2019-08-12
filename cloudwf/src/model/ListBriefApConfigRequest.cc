@@ -33,7 +33,7 @@ int ListBriefApConfigRequest::getSearchScan()const
 void ListBriefApConfigRequest::setSearchScan(int searchScan)
 {
 	searchScan_ = searchScan;
-	setParameter("SearchScan", std::to_string(searchScan));
+	setCoreParameter("SearchScan", std::to_string(searchScan));
 }
 
 std::string ListBriefApConfigRequest::getOrderCol()const
@@ -44,7 +44,7 @@ std::string ListBriefApConfigRequest::getOrderCol()const
 void ListBriefApConfigRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListBriefApConfigRequest::getSearchName()const
@@ -55,7 +55,7 @@ std::string ListBriefApConfigRequest::getSearchName()const
 void ListBriefApConfigRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 int ListBriefApConfigRequest::getLength()const
@@ -66,7 +66,7 @@ int ListBriefApConfigRequest::getLength()const
 void ListBriefApConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListBriefApConfigRequest::getSearchMac()const
@@ -77,7 +77,7 @@ std::string ListBriefApConfigRequest::getSearchMac()const
 void ListBriefApConfigRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", searchMac);
 }
 
 int ListBriefApConfigRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListBriefApConfigRequest::getPageIndex()const
 void ListBriefApConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListBriefApConfigRequest::getOrderDir()const
@@ -99,7 +99,7 @@ std::string ListBriefApConfigRequest::getOrderDir()const
 void ListBriefApConfigRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListBriefApConfigRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ListBriefApConfigRequest::getAccessKeyId()const
 void ListBriefApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListBriefApConfigRequest::getSearchModel()const
@@ -121,6 +121,6 @@ std::string ListBriefApConfigRequest::getSearchModel()const
 void ListBriefApConfigRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setParameter("SearchModel", searchModel);
+	setCoreParameter("SearchModel", searchModel);
 }
 

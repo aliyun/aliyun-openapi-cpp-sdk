@@ -33,7 +33,7 @@ std::string GetRepoBuildListRequest::getRepoNamespace()const
 void GetRepoBuildListRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoBuildListRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string GetRepoBuildListRequest::getRepoName()const
 void GetRepoBuildListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string GetRepoBuildListRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetRepoBuildListRequest::getRegionId()const
 void GetRepoBuildListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetRepoBuildListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetRepoBuildListRequest::getPageSize()const
 void GetRepoBuildListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoBuildListRequest::getPage()const
@@ -77,6 +77,6 @@ int GetRepoBuildListRequest::getPage()const
 void GetRepoBuildListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 

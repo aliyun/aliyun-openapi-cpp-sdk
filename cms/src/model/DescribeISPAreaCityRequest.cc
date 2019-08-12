@@ -33,7 +33,7 @@ std::string DescribeISPAreaCityRequest::getCity()const
 void DescribeISPAreaCityRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setParameter("City", city);
+	setCoreParameter("City", city);
 }
 
 std::string DescribeISPAreaCityRequest::getIsp()const
@@ -44,6 +44,6 @@ std::string DescribeISPAreaCityRequest::getIsp()const
 void DescribeISPAreaCityRequest::setIsp(const std::string& isp)
 {
 	isp_ = isp;
-	setParameter("Isp", isp);
+	setCoreParameter("Isp", isp);
 }
 

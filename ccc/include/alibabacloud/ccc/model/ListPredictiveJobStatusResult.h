@@ -47,60 +47,15 @@ namespace AlibabaCloud
 							std::string contactName;
 							std::string jobId;
 						};
-						struct KeyValuePair
-						{
-							std::string value;
-							std::string key;
-						};
-						struct Task
-						{
-							struct Contact1
-							{
-								std::string role;
-								std::string honorific;
-								std::string referenceId;
-								std::string state;
-								std::string phoneNumber;
-								std::string contactId;
-								std::string contactName;
-								std::string jobId;
-							};
-							std::string status;
-							std::string chatbotId;
-							long planedTime;
-							std::string calledNumber;
-							std::string taskId;
-							std::string scenarioId;
-							long actualTime;
-							std::string callId;
-							int duration;
-							std::string brief;
-							std::string callingNumber;
-							Contact1 contact1;
-							std::string jobId;
-						};
-						struct SummaryItem
-						{
-							std::string taskId;
-							std::string category;
-							std::string conversationDetailId;
-							std::string content;
-							std::string summaryId;
-							std::string summaryName;
-							std::string jobId;
-							std::string groupId;
-						};
 						std::string status;
-						std::vector<Job::Task> tasks;
+						std::string jobGroupId;
 						std::string scenarioId;
-						int priority;
-						std::string strategyId;
-						std::vector<Job::KeyValuePair> extras;
-						std::string groupId;
 						std::vector<Job::Contact> contacts;
 						std::string referenceId;
+						int priority;
+						int systemPriority;
 						std::string failureReason;
-						std::vector<Job::SummaryItem> summary;
+						std::string strategyId;
 						std::string jobId;
 						std::vector<std::string> callingNumbers;
 					};

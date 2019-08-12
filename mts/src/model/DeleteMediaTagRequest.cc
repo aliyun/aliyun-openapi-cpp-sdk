@@ -33,7 +33,7 @@ long DeleteMediaTagRequest::getResourceOwnerId()const
 void DeleteMediaTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMediaTagRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteMediaTagRequest::getResourceOwnerAccount()const
 void DeleteMediaTagRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMediaTagRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMediaTagRequest::getOwnerAccount()const
 void DeleteMediaTagRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteMediaTagRequest::getTag()const
@@ -66,7 +66,7 @@ std::string DeleteMediaTagRequest::getTag()const
 void DeleteMediaTagRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setParameter("Tag", tag);
+	setCoreParameter("Tag", tag);
 }
 
 long DeleteMediaTagRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteMediaTagRequest::getOwnerId()const
 void DeleteMediaTagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMediaTagRequest::getMediaId()const
@@ -88,7 +88,7 @@ std::string DeleteMediaTagRequest::getMediaId()const
 void DeleteMediaTagRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setParameter("MediaId", mediaId);
+	setCoreParameter("MediaId", mediaId);
 }
 
 std::string DeleteMediaTagRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string DeleteMediaTagRequest::getAccessKeyId()const
 void DeleteMediaTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

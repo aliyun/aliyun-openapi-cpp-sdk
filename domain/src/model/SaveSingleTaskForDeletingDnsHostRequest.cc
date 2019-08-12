@@ -33,7 +33,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getInstanceId()const
 void SaveSingleTaskForDeletingDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getDnsName()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getDnsName()const
 void SaveSingleTaskForDeletingDnsHostRequest::setDnsName(const std::string& dnsName)
 {
 	dnsName_ = dnsName;
-	setParameter("DnsName", dnsName);
+	setCoreParameter("DnsName", dnsName);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getUserClientIp()const
 void SaveSingleTaskForDeletingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getLang()const
@@ -66,6 +66,6 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getLang()const
 void SaveSingleTaskForDeletingDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

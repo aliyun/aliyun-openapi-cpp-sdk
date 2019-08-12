@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getGroupDesc()const;
 				void setGroupDesc(const std::string& groupDesc);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getSuperGroupId()const;
 				void setSuperGroupId(const std::string& superGroupId);
 				std::string getGroupName()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::string groupDesc_;
+				std::string iotInstanceId_;
 				std::string superGroupId_;
 				std::string groupName_;
 				std::string accessKeyId_;

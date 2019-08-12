@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				{
 					std::string listenerForward;
 					int listenerPort;
+					std::string description;
 					int forwardPort;
 					std::string listenerProtocol;
 				};
@@ -48,8 +49,8 @@ namespace AlibabaCloud
 				{
 					std::string type;
 					std::string serverId;
+					std::string description;
 					std::string vpcId;
-					std::string eniHost;
 					std::string serverIp;
 					int weight;
 				};
@@ -67,6 +68,8 @@ namespace AlibabaCloud
 				std::vector<ListenerPortAndProtocol> getListenerPortsAndProtocol()const;
 				std::string getLoadBalancerId()const;
 				std::vector<BackendServer> getBackendServers()const;
+				std::string getHasReservedInfo()const;
+				std::string getReservedInfoBandwidth()const;
 				std::string getLoadBalancerSpec()const;
 				std::string getNetworkType()const;
 				int getBandwidth()const;
@@ -78,13 +81,17 @@ namespace AlibabaCloud
 				std::string getRenewalStatus()const;
 				std::string getRenewalCycUnit()const;
 				std::string getPayType()const;
+				std::string getReservedInfoActiveTime()const;
 				std::string getSlaveZoneId()const;
 				std::string getInternetChargeType()const;
 				std::string getRegionIdAlias()const;
+				std::string getReservedInfoInternetChargeType()const;
 				std::string getLoadBalancerName()const;
 				std::string getVpcId()const;
+				std::string getDeleteProtection()const;
 				long getEndTimeStamp()const;
 				std::string getRegionId()const;
+				std::string getReservedInfoOrderType()const;
 				std::string getAddressType()const;
 				std::string getLoadBalancerStatus()const;
 				long getCreateTimeStamp()const;
@@ -102,6 +109,8 @@ namespace AlibabaCloud
 				std::vector<ListenerPortAndProtocol> listenerPortsAndProtocol_;
 				std::string loadBalancerId_;
 				std::vector<BackendServer> backendServers_;
+				std::string hasReservedInfo_;
+				std::string reservedInfoBandwidth_;
 				std::string loadBalancerSpec_;
 				std::string networkType_;
 				int bandwidth_;
@@ -113,13 +122,17 @@ namespace AlibabaCloud
 				std::string renewalStatus_;
 				std::string renewalCycUnit_;
 				std::string payType_;
+				std::string reservedInfoActiveTime_;
 				std::string slaveZoneId_;
 				std::string internetChargeType_;
 				std::string regionIdAlias_;
+				std::string reservedInfoInternetChargeType_;
 				std::string loadBalancerName_;
 				std::string vpcId_;
+				std::string deleteProtection_;
 				long endTimeStamp_;
 				std::string regionId_;
+				std::string reservedInfoOrderType_;
 				std::string addressType_;
 				std::string loadBalancerStatus_;
 				long createTimeStamp_;

@@ -45,9 +45,12 @@ namespace AlibabaCloud
 						std::string loadBalancerId;
 						std::vector<VServerGroup::VServerGroupAttribute> vServerGroupAttributes;
 					};
+					bool spotInstanceRemedy;
 					std::string activeScalingConfigurationId;
+					int onDemandPercentageAboveBaseCapacity;
 					std::string lifecycleState;
 					std::string modificationTime;
+					int onDemandBaseCapacity;
 					std::vector<std::string> removalPolicies;
 					int pendingWaitCapacity;
 					int totalCapacity;
@@ -61,6 +64,7 @@ namespace AlibabaCloud
 					std::string scalingGroupId;
 					std::string vSwitchId;
 					std::vector<std::string> loadBalancerIds;
+					int spotInstancePools;
 					std::string launchTemplateId;
 					int maxSize;
 					std::string scalingGroupName;

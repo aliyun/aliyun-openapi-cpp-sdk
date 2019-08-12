@@ -17,15 +17,15 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_
 
-#include <string>
 #include "CoreExport.h"
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT Credentials {
- public:
+public:
   Credentials(const std::string &accessKeyId,
-    const std::string &accessKeySecret,
-    const std::string &sessionToken = "");
+              const std::string &accessKeySecret,
+              const std::string &sessionToken = "");
   ~Credentials();
 
   std::string accessKeyId() const;
@@ -35,11 +35,11 @@ class ALIBABACLOUD_CORE_EXPORT Credentials {
   void setSessionToken(const std::string &sessionToken);
   std::string sessionToken() const;
 
- private:
+private:
   std::string accessKeyId_;
   std::string accessKeySecret_;
   std::string sessionToken_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALS_H_

@@ -35,10 +35,13 @@ ListCallDetailRecordsResult::~ListCallDetailRecordsResult()
 
 void ListCallDetailRecordsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto callDetailRecordsNode = value["CallDetailRecords"];
 	if(!callDetailRecordsNode["TotalCount"].isNull())
@@ -59,6 +62,10 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.duration = std::stoi(value["Duration"].asString());
 		if(!value["Satisfaction"].isNull())
 			callDetailRecordObject.satisfaction = std::stoi(value["Satisfaction"].asString());
+		if(!value["SatisfactionDesc"].isNull())
+			callDetailRecordObject.satisfactionDesc = value["SatisfactionDesc"].asString();
+		if(!value["Feedback"].isNull())
+			callDetailRecordObject.feedback = value["Feedback"].asString();
 		if(!value["ContactType"].isNull())
 			callDetailRecordObject.contactType = value["ContactType"].asString();
 		if(!value["ContactDisposition"].isNull())
@@ -73,32 +80,16 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.skillGroupNames = value["SkillGroupNames"].asString();
 		if(!value["InstanceId"].isNull())
 			callDetailRecordObject.instanceId = value["InstanceId"].asString();
-		if(!value["ExtraAttr"].isNull())
-			callDetailRecordObject.extraAttr = value["ExtraAttr"].asString();
 		auto allAgents = value["Agents"]["CallDetailAgent"];
 		for (auto value : allAgents)
 		{
 			CallDetailRecords::CallDetailRecord::CallDetailAgent agentsObject;
-			if(!value["ContactId"].isNull())
-				agentsObject.contactId = value["ContactId"].asString();
 			if(!value["AgentId"].isNull())
 				agentsObject.agentId = value["AgentId"].asString();
-			if(!value["AgentName"].isNull())
-				agentsObject.agentName = value["AgentName"].asString();
-			if(!value["SkillGroupName"].isNull())
-				agentsObject.skillGroupName = value["SkillGroupName"].asString();
-			if(!value["QueueTime"].isNull())
-				agentsObject.queueTime = std::stoi(value["QueueTime"].asString());
-			if(!value["RingTime"].isNull())
-				agentsObject.ringTime = std::stoi(value["RingTime"].asString());
-			if(!value["StartTime"].isNull())
-				agentsObject.startTime = std::stol(value["StartTime"].asString());
-			if(!value["TalkTime"].isNull())
-				agentsObject.talkTime = std::stoi(value["TalkTime"].asString());
-			if(!value["HoldTime"].isNull())
-				agentsObject.holdTime = std::stoi(value["HoldTime"].asString());
-			if(!value["WorkTime"].isNull())
-				agentsObject.workTime = std::stoi(value["WorkTime"].asString());
+			if(!value["Satisfaction"].isNull())
+				agentsObject.satisfaction = value["Satisfaction"].asString();
+			if(!value["Feedback"].isNull())
+				agentsObject.feedback = value["Feedback"].asString();
 			callDetailRecordObject.agents.push_back(agentsObject);
 		}
 		auto allRecordings = value["Recordings"]["Recording"];
@@ -107,30 +98,22 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			CallDetailRecords::CallDetailRecord::Recording recordingsObject;
 			if(!value["ContactId"].isNull())
 				recordingsObject.contactId = value["ContactId"].asString();
-			if(!value["ContactType"].isNull())
-				recordingsObject.contactType = value["ContactType"].asString();
 			if(!value["AgentId"].isNull())
 				recordingsObject.agentId = value["AgentId"].asString();
 			if(!value["AgentName"].isNull())
 				recordingsObject.agentName = value["AgentName"].asString();
-			if(!value["CallingNumber"].isNull())
-				recordingsObject.callingNumber = value["CallingNumber"].asString();
-			if(!value["CalledNumber"].isNull())
-				recordingsObject.calledNumber = value["CalledNumber"].asString();
 			if(!value["StartTime"].isNull())
 				recordingsObject.startTime = std::stol(value["StartTime"].asString());
 			if(!value["Duration"].isNull())
 				recordingsObject.duration = std::stoi(value["Duration"].asString());
 			if(!value["FileName"].isNull())
 				recordingsObject.fileName = value["FileName"].asString();
-			if(!value["FilePath"].isNull())
-				recordingsObject.filePath = value["FilePath"].asString();
 			if(!value["FileDescription"].isNull())
 				recordingsObject.fileDescription = value["FileDescription"].asString();
-			if(!value["Channel"].isNull())
-				recordingsObject.channel = value["Channel"].asString();
-			if(!value["InstanceId"].isNull())
-				recordingsObject.instanceId = value["InstanceId"].asString();
+			if(!value["QualityCheckTid"].isNull())
+				recordingsObject.qualityCheckTid = value["QualityCheckTid"].asString();
+			if(!value["QualityCheckTaskId"].isNull())
+				recordingsObject.qualityCheckTaskId = value["QualityCheckTaskId"].asString();
 			callDetailRecordObject.recordings.push_back(recordingsObject);
 		}
 		callDetailRecords_.list.push_back(callDetailRecordObject);

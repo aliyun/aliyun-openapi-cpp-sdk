@@ -33,7 +33,7 @@ std::string ListApStatusRequest::getOrderCol()const
 void ListApStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApStatusRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApStatusRequest::getSearchName()const
 void ListApStatusRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 std::string ListApStatusRequest::getSearchGroupName()const
@@ -55,7 +55,7 @@ std::string ListApStatusRequest::getSearchGroupName()const
 void ListApStatusRequest::setSearchGroupName(const std::string& searchGroupName)
 {
 	searchGroupName_ = searchGroupName;
-	setParameter("SearchGroupName", searchGroupName);
+	setCoreParameter("SearchGroupName", searchGroupName);
 }
 
 int ListApStatusRequest::getSearchStatus()const
@@ -66,7 +66,7 @@ int ListApStatusRequest::getSearchStatus()const
 void ListApStatusRequest::setSearchStatus(int searchStatus)
 {
 	searchStatus_ = searchStatus;
-	setParameter("SearchStatus", std::to_string(searchStatus));
+	setCoreParameter("SearchStatus", std::to_string(searchStatus));
 }
 
 std::string ListApStatusRequest::getSearchWanIp()const
@@ -77,7 +77,7 @@ std::string ListApStatusRequest::getSearchWanIp()const
 void ListApStatusRequest::setSearchWanIp(const std::string& searchWanIp)
 {
 	searchWanIp_ = searchWanIp;
-	setParameter("SearchWanIp", searchWanIp);
+	setCoreParameter("SearchWanIp", searchWanIp);
 }
 
 std::string ListApStatusRequest::getSearchApModelName()const
@@ -88,7 +88,7 @@ std::string ListApStatusRequest::getSearchApModelName()const
 void ListApStatusRequest::setSearchApModelName(const std::string& searchApModelName)
 {
 	searchApModelName_ = searchApModelName;
-	setParameter("SearchApModelName", searchApModelName);
+	setCoreParameter("SearchApModelName", searchApModelName);
 }
 
 int ListApStatusRequest::getLength()const
@@ -99,7 +99,7 @@ int ListApStatusRequest::getLength()const
 void ListApStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 std::string ListApStatusRequest::getOrderDir()const
@@ -110,7 +110,7 @@ std::string ListApStatusRequest::getOrderDir()const
 void ListApStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListApStatusRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string ListApStatusRequest::getAccessKeyId()const
 void ListApStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 int ListApStatusRequest::getSearchBssEquals()const
@@ -132,7 +132,7 @@ int ListApStatusRequest::getSearchBssEquals()const
 void ListApStatusRequest::setSearchBssEquals(int searchBssEquals)
 {
 	searchBssEquals_ = searchBssEquals;
-	setParameter("SearchBssEquals", std::to_string(searchBssEquals));
+	setCoreParameter("SearchBssEquals", std::to_string(searchBssEquals));
 }
 
 long ListApStatusRequest::getSearchSwVersion()const
@@ -143,7 +143,7 @@ long ListApStatusRequest::getSearchSwVersion()const
 void ListApStatusRequest::setSearchSwVersion(long searchSwVersion)
 {
 	searchSwVersion_ = searchSwVersion;
-	setParameter("SearchSwVersion", std::to_string(searchSwVersion));
+	setCoreParameter("SearchSwVersion", std::to_string(searchSwVersion));
 }
 
 std::string ListApStatusRequest::getSearchCompanyName()const
@@ -154,7 +154,7 @@ std::string ListApStatusRequest::getSearchCompanyName()const
 void ListApStatusRequest::setSearchCompanyName(const std::string& searchCompanyName)
 {
 	searchCompanyName_ = searchCompanyName;
-	setParameter("SearchCompanyName", searchCompanyName);
+	setCoreParameter("SearchCompanyName", searchCompanyName);
 }
 
 std::string ListApStatusRequest::getSearchMac()const
@@ -165,7 +165,7 @@ std::string ListApStatusRequest::getSearchMac()const
 void ListApStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", searchMac);
 }
 
 int ListApStatusRequest::getPageIndex()const
@@ -176,6 +176,6 @@ int ListApStatusRequest::getPageIndex()const
 void ListApStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 

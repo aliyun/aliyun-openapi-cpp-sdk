@@ -33,7 +33,7 @@ std::string DescribeLocationListRequest::getSourceIp()const
 void DescribeLocationListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeLocationListRequest::getLang()const
@@ -44,6 +44,6 @@ std::string DescribeLocationListRequest::getLang()const
 void DescribeLocationListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

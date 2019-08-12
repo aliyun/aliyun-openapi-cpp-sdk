@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string description;
 					long endTime;
 					std::string alarmEventName;
+					std::string securityEventIds;
 					long startTime;
 					long gmtModified;
 					std::string saleVersion;

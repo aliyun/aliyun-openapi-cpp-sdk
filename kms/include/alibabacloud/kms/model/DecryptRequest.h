@@ -37,14 +37,11 @@ namespace AlibabaCloud
 
 				std::string getEncryptionContext()const;
 				void setEncryptionContext(const std::string& encryptionContext);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 				std::string getCiphertextBlob()const;
 				void setCiphertextBlob(const std::string& ciphertextBlob);
 
             private:
 				std::string encryptionContext_;
-				std::string sTSToken_;
 				std::string ciphertextBlob_;
 
 			};

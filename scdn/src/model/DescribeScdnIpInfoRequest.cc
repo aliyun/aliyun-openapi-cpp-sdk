@@ -33,7 +33,7 @@ std::string DescribeScdnIpInfoRequest::getSecurityToken()const
 void DescribeScdnIpInfoRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnIpInfoRequest::getIP()const
@@ -44,7 +44,7 @@ std::string DescribeScdnIpInfoRequest::getIP()const
 void DescribeScdnIpInfoRequest::setIP(const std::string& iP)
 {
 	iP_ = iP;
-	setParameter("IP", iP);
+	setCoreParameter("IP", iP);
 }
 
 long DescribeScdnIpInfoRequest::getOwnerId()const
@@ -55,17 +55,6 @@ long DescribeScdnIpInfoRequest::getOwnerId()const
 void DescribeScdnIpInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeScdnIpInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeScdnIpInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

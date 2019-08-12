@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
+				bool getIncludeReservedData()const;
+				void setIncludeReservedData(bool includeReservedData);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getLoadBalancerId()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 
             private:
 				std::string access_key_id_;
+				bool includeReservedData_;
 				long resourceOwnerId_;
 				std::string loadBalancerId_;
 				std::string regionId_;

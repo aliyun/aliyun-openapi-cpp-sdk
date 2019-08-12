@@ -33,7 +33,7 @@ std::string GetSimilarPhotosRequest::getLibraryId()const
 void GetSimilarPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long GetSimilarPhotosRequest::getPhotoId()const
@@ -44,7 +44,7 @@ long GetSimilarPhotosRequest::getPhotoId()const
 void GetSimilarPhotosRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setParameter("PhotoId", std::to_string(photoId));
+	setCoreParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string GetSimilarPhotosRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string GetSimilarPhotosRequest::getStoreName()const
 void GetSimilarPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

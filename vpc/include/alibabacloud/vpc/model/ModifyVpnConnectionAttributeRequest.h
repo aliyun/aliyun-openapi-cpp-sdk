@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setRemoteSubnet(const std::string& remoteSubnet);
 				bool getEffectImmediately()const;
 				void setEffectImmediately(bool effectImmediately);
+				bool getAutoConfigRoute()const;
+				void setAutoConfigRoute(bool autoConfigRoute);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getClientToken()const;
@@ -53,6 +55,8 @@ namespace AlibabaCloud
 				void setIpsecConfig(const std::string& ipsecConfig);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getHealthCheckConfig()const;
+				void setHealthCheckConfig(const std::string& healthCheckConfig);
 				std::string getLocalSubnet()const;
 				void setLocalSubnet(const std::string& localSubnet);
 				std::string getRegionId()const;
@@ -67,11 +71,13 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string remoteSubnet_;
 				bool effectImmediately_;
+				bool autoConfigRoute_;
 				std::string resourceOwnerAccount_;
 				std::string clientToken_;
 				std::string ownerAccount_;
 				std::string ipsecConfig_;
 				long ownerId_;
+				std::string healthCheckConfig_;
 				std::string localSubnet_;
 				std::string regionId_;
 				std::string vpnConnectionId_;

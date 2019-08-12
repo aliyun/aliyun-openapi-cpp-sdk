@@ -33,7 +33,7 @@ std::string AddGtmMonitorRequest::getMonitorExtendInfo()const
 void AddGtmMonitorRequest::setMonitorExtendInfo(const std::string& monitorExtendInfo)
 {
 	monitorExtendInfo_ = monitorExtendInfo;
-	setParameter("MonitorExtendInfo", monitorExtendInfo);
+	setCoreParameter("MonitorExtendInfo", monitorExtendInfo);
 }
 
 std::string AddGtmMonitorRequest::getAddrPoolId()const
@@ -44,7 +44,7 @@ std::string AddGtmMonitorRequest::getAddrPoolId()const
 void AddGtmMonitorRequest::setAddrPoolId(const std::string& addrPoolId)
 {
 	addrPoolId_ = addrPoolId;
-	setParameter("AddrPoolId", addrPoolId);
+	setCoreParameter("AddrPoolId", addrPoolId);
 }
 
 std::string AddGtmMonitorRequest::getUserClientIp()const
@@ -55,7 +55,7 @@ std::string AddGtmMonitorRequest::getUserClientIp()const
 void AddGtmMonitorRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string AddGtmMonitorRequest::getName()const
@@ -66,7 +66,7 @@ std::string AddGtmMonitorRequest::getName()const
 void AddGtmMonitorRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 int AddGtmMonitorRequest::getEvaluationCount()const
@@ -77,7 +77,7 @@ int AddGtmMonitorRequest::getEvaluationCount()const
 void AddGtmMonitorRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setParameter("EvaluationCount", std::to_string(evaluationCount));
+	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 std::string AddGtmMonitorRequest::getProtocolType()const
@@ -88,7 +88,7 @@ std::string AddGtmMonitorRequest::getProtocolType()const
 void AddGtmMonitorRequest::setProtocolType(const std::string& protocolType)
 {
 	protocolType_ = protocolType;
-	setParameter("ProtocolType", protocolType);
+	setCoreParameter("ProtocolType", protocolType);
 }
 
 int AddGtmMonitorRequest::getInterval()const
@@ -99,7 +99,7 @@ int AddGtmMonitorRequest::getInterval()const
 void AddGtmMonitorRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setParameter("Interval", std::to_string(interval));
+	setCoreParameter("Interval", std::to_string(interval));
 }
 
 std::string AddGtmMonitorRequest::getLang()const
@@ -110,7 +110,7 @@ std::string AddGtmMonitorRequest::getLang()const
 void AddGtmMonitorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 int AddGtmMonitorRequest::getTimeout()const
@@ -121,7 +121,7 @@ int AddGtmMonitorRequest::getTimeout()const
 void AddGtmMonitorRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::vector<AddGtmMonitorRequest::IspCityNode> AddGtmMonitorRequest::getIspCityNode()const
@@ -136,8 +136,8 @@ void AddGtmMonitorRequest::setIspCityNode(const std::vector<IspCityNode>& ispCit
 	for(int i = 0; i!= ispCityNode.size(); i++)	{
 		auto obj = ispCityNode.at(i);
 		std::string str ="IspCityNode."+ std::to_string(i);
-		setParameter(str + ".CityCode", obj.cityCode);
-		setParameter(str + ".IspCode", obj.ispCode);
+		setCoreParameter(str + ".CityCode", obj.cityCode);
+		setCoreParameter(str + ".IspCode", obj.ispCode);
 	}
 }
 

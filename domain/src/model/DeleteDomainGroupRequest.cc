@@ -33,7 +33,7 @@ std::string DeleteDomainGroupRequest::getUserClientIp()const
 void DeleteDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteDomainGroupRequest::getLang()const
@@ -44,7 +44,7 @@ std::string DeleteDomainGroupRequest::getLang()const
 void DeleteDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long DeleteDomainGroupRequest::getDomainGroupId()const
@@ -55,6 +55,6 @@ long DeleteDomainGroupRequest::getDomainGroupId()const
 void DeleteDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setParameter("DomainGroupId", std::to_string(domainGroupId));
+	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 

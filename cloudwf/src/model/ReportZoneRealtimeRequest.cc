@@ -33,7 +33,7 @@ std::string ReportZoneRealtimeRequest::getAccessKeyId()const
 void ReportZoneRealtimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportZoneRealtimeRequest::getAgsid()const
@@ -44,6 +44,6 @@ long ReportZoneRealtimeRequest::getAgsid()const
 void ReportZoneRealtimeRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setParameter("Agsid", std::to_string(agsid));
+	setCoreParameter("Agsid", std::to_string(agsid));
 }
 

@@ -35,10 +35,13 @@ ListClusterHostGroupResult::~ListClusterHostGroupResult()
 
 void ListClusterHostGroupResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allHostGroupList = value["HostGroupList"]["HostGroup"];
 	for (auto value : allHostGroupList)
@@ -78,6 +81,8 @@ void ListClusterHostGroupResult::parse(const std::string &payload)
 			hostGroupListObject.lockReason = value["LockReason"].asString();
 		if(!value["PayType"].isNull())
 			hostGroupListObject.payType = value["PayType"].asString();
+		if(!value["ChargeType"].isNull())
+			hostGroupListObject.chargeType = value["ChargeType"].asString();
 		if(!value["NodeCount"].isNull())
 			hostGroupListObject.nodeCount = std::stoi(value["NodeCount"].asString());
 		if(!value["VswitchId"].isNull())
@@ -90,6 +95,10 @@ void ListClusterHostGroupResult::parse(const std::string &payload)
 			hostGroupListObject.gmtCreate = value["gmtCreate"].asString();
 		if(!value["gmtModified"].isNull())
 			hostGroupListObject.gmtModified = value["gmtModified"].asString();
+		if(!value["HostGroupChangeType"].isNull())
+			hostGroupListObject.hostGroupChangeType = value["HostGroupChangeType"].asString();
+		if(!value["HostGroupChangeStatus"].isNull())
+			hostGroupListObject.hostGroupChangeStatus = value["HostGroupChangeStatus"].asString();
 		hostGroupList_.push_back(hostGroupListObject);
 	}
 	if(!value["PageNumber"].isNull())

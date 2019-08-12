@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					int port;
 					std::string serverIp;
 					std::string serverHealthStatus;
+					std::string protocol;
 				};
 
 

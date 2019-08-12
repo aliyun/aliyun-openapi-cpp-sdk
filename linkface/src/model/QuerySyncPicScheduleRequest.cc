@@ -33,7 +33,18 @@ std::string QuerySyncPicScheduleRequest::getIotId()const
 void QuerySyncPicScheduleRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QuerySyncPicScheduleRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QuerySyncPicScheduleRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string QuerySyncPicScheduleRequest::getDeviceName()const
@@ -44,7 +55,7 @@ std::string QuerySyncPicScheduleRequest::getDeviceName()const
 void QuerySyncPicScheduleRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string QuerySyncPicScheduleRequest::getProductKey()const
@@ -55,6 +66,6 @@ std::string QuerySyncPicScheduleRequest::getProductKey()const
 void QuerySyncPicScheduleRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 

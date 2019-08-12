@@ -60,8 +60,12 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getCustomFilters()const;
+				void setCustomFilters(const std::string& customFilters);
 				int getLimit()const;
 				void setLimit(int limit);
+				std::string getWhere()const;
+				void setWhere(const std::string& where);
 				std::vector<std::string> getDimensions()const;
 				void setDimensions(const std::vector<std::string>& dimensions);
 				std::string getOrder()const;
@@ -78,7 +82,9 @@ namespace AlibabaCloud
 				std::string metric_;
 				std::string securityToken_;
 				std::string regionId_;
+				std::string customFilters_;
 				int limit_;
+				std::string where_;
 				std::vector<std::string> dimensions_;
 				std::string order_;
 

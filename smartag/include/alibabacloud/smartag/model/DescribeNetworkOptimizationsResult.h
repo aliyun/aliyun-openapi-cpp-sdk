@@ -49,7 +49,7 @@ namespace AlibabaCloud
 				std::vector<NetworkOptimization> getNetworkOptimizations()const;
 				int getTotalCount()const;
 				int getPageSize()const;
-				int getPageNo()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -57,7 +57,7 @@ namespace AlibabaCloud
 				std::vector<NetworkOptimization> networkOptimizations_;
 				int totalCount_;
 				int pageSize_;
-				int pageNo_;
+				int pageNumber_;
 
 			};
 		}

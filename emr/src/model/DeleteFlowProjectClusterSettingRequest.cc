@@ -33,7 +33,7 @@ std::string DeleteFlowProjectClusterSettingRequest::getRegionId()const
 void DeleteFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteFlowProjectClusterSettingRequest::getClusterId()const
@@ -44,7 +44,7 @@ std::string DeleteFlowProjectClusterSettingRequest::getClusterId()const
 void DeleteFlowProjectClusterSettingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DeleteFlowProjectClusterSettingRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string DeleteFlowProjectClusterSettingRequest::getProjectId()const
 void DeleteFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 

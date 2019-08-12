@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct ServerCertificate
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string fingerprint;
 					std::string resourceGroupId;
 					long expireTimeStamp;
@@ -47,6 +52,7 @@ namespace AlibabaCloud
 					std::string serverCertificateName;
 					std::string regionId;
 					std::string expireTime;
+					std::vector<ServerCertificate::Tag> tags;
 					long createTimeStamp;
 					std::string commonName;
 				};

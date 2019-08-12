@@ -33,7 +33,7 @@ std::string ReleaseInstanceRequest::getTraceId()const
 void ReleaseInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setParameter("TraceId", traceId);
+	setCoreParameter("TraceId", traceId);
 }
 
 std::string ReleaseInstanceRequest::getSpMsg()const
@@ -44,7 +44,7 @@ std::string ReleaseInstanceRequest::getSpMsg()const
 void ReleaseInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setParameter("SpMsg", spMsg);
+	setCoreParameter("SpMsg", spMsg);
 }
 
 std::string ReleaseInstanceRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ReleaseInstanceRequest::getAccessKeyId()const
 void ReleaseInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

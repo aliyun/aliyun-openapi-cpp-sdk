@@ -33,7 +33,7 @@ int GetProjectInstanceRequest::getPageSize()const
 void GetProjectInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetProjectInstanceRequest::getProject()const
@@ -44,7 +44,7 @@ std::string GetProjectInstanceRequest::getProject()const
 void GetProjectInstanceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setParameter("Project", project);
+	setCoreParameter("Project", project);
 }
 
 int GetProjectInstanceRequest::getPageNum()const
@@ -55,7 +55,7 @@ int GetProjectInstanceRequest::getPageNum()const
 void GetProjectInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+	setCoreParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetProjectInstanceRequest::getRegion()const
@@ -66,7 +66,7 @@ std::string GetProjectInstanceRequest::getRegion()const
 void GetProjectInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 
 std::string GetProjectInstanceRequest::getStatus()const
@@ -77,6 +77,6 @@ std::string GetProjectInstanceRequest::getStatus()const
 void GetProjectInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

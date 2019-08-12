@@ -33,7 +33,7 @@ long DescribeAvailableInstanceTypeRequest::getResourceOwnerId()const
 void DescribeAvailableInstanceTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAvailableInstanceTypeRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DescribeAvailableInstanceTypeRequest::getRegionId()const
 void DescribeAvailableInstanceTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeAvailableInstanceTypeRequest::getClusterId()const
@@ -55,7 +55,7 @@ std::string DescribeAvailableInstanceTypeRequest::getClusterId()const
 void DescribeAvailableInstanceTypeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string DescribeAvailableInstanceTypeRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeAvailableInstanceTypeRequest::getAccessKeyId()const
 void DescribeAvailableInstanceTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setAlarmEventName(const std::string& alarmEventName);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
 				std::string getAlarmEventType()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
             private:
 				std::string alarmEventName_;
 				std::string sourceIp_;
+				std::string groupId_;
 				std::string pageSize_;
 				std::string alarmEventType_;
 				std::string dealed_;

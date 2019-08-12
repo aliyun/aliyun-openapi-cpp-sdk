@@ -33,7 +33,7 @@ std::string FindApproveServiceListRequest::getProjectName()const
 void FindApproveServiceListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setParameter("ProjectName", projectName);
+	setCoreParameter("ProjectName", projectName);
 }
 
 std::string FindApproveServiceListRequest::getApproveLevel()const
@@ -44,7 +44,7 @@ std::string FindApproveServiceListRequest::getApproveLevel()const
 void FindApproveServiceListRequest::setApproveLevel(const std::string& approveLevel)
 {
 	approveLevel_ = approveLevel;
-	setParameter("ApproveLevel", approveLevel);
+	setCoreParameter("ApproveLevel", approveLevel);
 }
 
 bool FindApproveServiceListRequest::getShowDelService()const
@@ -55,7 +55,7 @@ bool FindApproveServiceListRequest::getShowDelService()const
 void FindApproveServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setParameter("ShowDelService", std::to_string(showDelService));
+	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
 long FindApproveServiceListRequest::getCsbId()const
@@ -66,7 +66,7 @@ long FindApproveServiceListRequest::getCsbId()const
 void FindApproveServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setParameter("CsbId", std::to_string(csbId));
+	setCoreParameter("CsbId", std::to_string(csbId));
 }
 
 std::string FindApproveServiceListRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string FindApproveServiceListRequest::getRegionId()const
 void FindApproveServiceListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string FindApproveServiceListRequest::getAlias()const
@@ -88,7 +88,7 @@ std::string FindApproveServiceListRequest::getAlias()const
 void FindApproveServiceListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setParameter("Alias", alias);
+	setCoreParameter("Alias", alias);
 }
 
 std::string FindApproveServiceListRequest::getServiceName()const
@@ -99,6 +99,6 @@ std::string FindApproveServiceListRequest::getServiceName()const
 void FindApproveServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	setCoreParameter("ServiceName", serviceName);
 }
 

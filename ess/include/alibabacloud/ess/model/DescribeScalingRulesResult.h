@@ -36,8 +36,19 @@ namespace AlibabaCloud
 				{
 					struct Alarm
 					{
+						struct Dimension
+						{
+							std::string dimensionValue;
+							std::string dimensionKey;
+						};
+						std::string metricName;
+						std::string comparisonOperator;
+						std::vector<Alarm::Dimension> dimensions;
+						int evaluationCount;
 						std::string alarmTaskName;
 						std::string alarmTaskId;
+						std::string statistics;
+						float threshold;
 					};
 					struct StepAdjustment
 					{
@@ -49,6 +60,7 @@ namespace AlibabaCloud
 					std::vector<ScalingRule::StepAdjustment> stepAdjustments;
 					std::string scalingGroupId;
 					int cooldown;
+					std::string predictiveValueBehavior;
 					std::vector<ScalingRule::Alarm> alarms;
 					std::string scalingRuleId;
 					int minAdjustmentMagnitude;
@@ -60,8 +72,12 @@ namespace AlibabaCloud
 					std::string metricName;
 					std::string scalingRuleName;
 					int adjustmentValue;
+					int initialMaxSize;
 					std::string scalingRuleType;
 					int estimatedInstanceWarmup;
+					std::string predictiveScalingMode;
+					int predictiveValueBuffer;
+					int predictiveTaskBufferTime;
 				};
 
 

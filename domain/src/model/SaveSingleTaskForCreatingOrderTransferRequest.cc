@@ -33,7 +33,18 @@ bool SaveSingleTaskForCreatingOrderTransferRequest::getPermitPremiumTransfer()co
 void SaveSingleTaskForCreatingOrderTransferRequest::setPermitPremiumTransfer(bool permitPremiumTransfer)
 {
 	permitPremiumTransfer_ = permitPremiumTransfer;
-	setParameter("PermitPremiumTransfer", std::to_string(permitPremiumTransfer));
+	setCoreParameter("PermitPremiumTransfer", permitPremiumTransfer ? "true" : "false");
+}
+
+std::string SaveSingleTaskForCreatingOrderTransferRequest::getPromotionNo()const
+{
+	return promotionNo_;
+}
+
+void SaveSingleTaskForCreatingOrderTransferRequest::setPromotionNo(const std::string& promotionNo)
+{
+	promotionNo_ = promotionNo;
+	setCoreParameter("PromotionNo", promotionNo);
 }
 
 std::string SaveSingleTaskForCreatingOrderTransferRequest::getAuthorizationCode()const
@@ -44,7 +55,7 @@ std::string SaveSingleTaskForCreatingOrderTransferRequest::getAuthorizationCode(
 void SaveSingleTaskForCreatingOrderTransferRequest::setAuthorizationCode(const std::string& authorizationCode)
 {
 	authorizationCode_ = authorizationCode;
-	setParameter("AuthorizationCode", authorizationCode);
+	setCoreParameter("AuthorizationCode", authorizationCode);
 }
 
 std::string SaveSingleTaskForCreatingOrderTransferRequest::getUserClientIp()const
@@ -55,7 +66,7 @@ std::string SaveSingleTaskForCreatingOrderTransferRequest::getUserClientIp()cons
 void SaveSingleTaskForCreatingOrderTransferRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderTransferRequest::getDomainName()const
@@ -66,7 +77,7 @@ std::string SaveSingleTaskForCreatingOrderTransferRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderTransferRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long SaveSingleTaskForCreatingOrderTransferRequest::getRegistrantProfileId()const
@@ -77,7 +88,29 @@ long SaveSingleTaskForCreatingOrderTransferRequest::getRegistrantProfileId()cons
 void SaveSingleTaskForCreatingOrderTransferRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+}
+
+std::string SaveSingleTaskForCreatingOrderTransferRequest::getCouponNo()const
+{
+	return couponNo_;
+}
+
+void SaveSingleTaskForCreatingOrderTransferRequest::setCouponNo(const std::string& couponNo)
+{
+	couponNo_ = couponNo;
+	setCoreParameter("CouponNo", couponNo);
+}
+
+bool SaveSingleTaskForCreatingOrderTransferRequest::getUseCoupon()const
+{
+	return useCoupon_;
+}
+
+void SaveSingleTaskForCreatingOrderTransferRequest::setUseCoupon(bool useCoupon)
+{
+	useCoupon_ = useCoupon;
+	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveSingleTaskForCreatingOrderTransferRequest::getLang()const
@@ -88,6 +121,17 @@ std::string SaveSingleTaskForCreatingOrderTransferRequest::getLang()const
 void SaveSingleTaskForCreatingOrderTransferRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
+}
+
+bool SaveSingleTaskForCreatingOrderTransferRequest::getUsePromotion()const
+{
+	return usePromotion_;
+}
+
+void SaveSingleTaskForCreatingOrderTransferRequest::setUsePromotion(bool usePromotion)
+{
+	usePromotion_ = usePromotion;
+	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

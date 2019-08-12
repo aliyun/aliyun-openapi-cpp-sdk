@@ -33,7 +33,7 @@ std::string ListApPositionMapRequest::getOrderCol()const
 void ListApPositionMapRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApPositionMapRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApPositionMapRequest::getSearchName()const
 void ListApPositionMapRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 int ListApPositionMapRequest::getTotalItem()const
@@ -55,7 +55,7 @@ int ListApPositionMapRequest::getTotalItem()const
 void ListApPositionMapRequest::setTotalItem(int totalItem)
 {
 	totalItem_ = totalItem;
-	setParameter("TotalItem", std::to_string(totalItem));
+	setCoreParameter("TotalItem", std::to_string(totalItem));
 }
 
 int ListApPositionMapRequest::getLength()const
@@ -66,7 +66,7 @@ int ListApPositionMapRequest::getLength()const
 void ListApPositionMapRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListApPositionMapRequest::getMapType()const
@@ -77,7 +77,7 @@ int ListApPositionMapRequest::getMapType()const
 void ListApPositionMapRequest::setMapType(int mapType)
 {
 	mapType_ = mapType;
-	setParameter("MapType", std::to_string(mapType));
+	setCoreParameter("MapType", std::to_string(mapType));
 }
 
 int ListApPositionMapRequest::getPageIndex()const
@@ -88,7 +88,7 @@ int ListApPositionMapRequest::getPageIndex()const
 void ListApPositionMapRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApPositionMapRequest::getSearchApgroupName()const
@@ -99,7 +99,7 @@ std::string ListApPositionMapRequest::getSearchApgroupName()const
 void ListApPositionMapRequest::setSearchApgroupName(const std::string& searchApgroupName)
 {
 	searchApgroupName_ = searchApgroupName;
-	setParameter("SearchApgroupName", searchApgroupName);
+	setCoreParameter("SearchApgroupName", searchApgroupName);
 }
 
 std::string ListApPositionMapRequest::getOrderDir()const
@@ -110,7 +110,7 @@ std::string ListApPositionMapRequest::getOrderDir()const
 void ListApPositionMapRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListApPositionMapRequest::getAccessKeyId()const
@@ -121,6 +121,6 @@ std::string ListApPositionMapRequest::getAccessKeyId()const
 void ListApPositionMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

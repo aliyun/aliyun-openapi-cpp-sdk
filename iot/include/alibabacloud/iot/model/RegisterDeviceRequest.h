@@ -35,17 +35,29 @@ namespace AlibabaCloud
 				RegisterDeviceRequest();
 				~RegisterDeviceRequest();
 
+				std::string getPinCode()const;
+				void setPinCode(const std::string& pinCode);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getNickname()const;
+				void setNickname(const std::string& nickname);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDevEui()const;
+				void setDevEui(const std::string& devEui);
 
             private:
+				std::string pinCode_;
+				std::string iotInstanceId_;
+				std::string nickname_;
 				std::string deviceName_;
 				std::string productKey_;
 				std::string accessKeyId_;
+				std::string devEui_;
 
 			};
 		}

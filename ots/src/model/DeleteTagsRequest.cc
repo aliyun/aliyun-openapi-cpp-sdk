@@ -33,7 +33,7 @@ std::string DeleteTagsRequest::getAccess_key_id()const
 void DeleteTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DeleteTagsRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteTagsRequest::getResourceOwnerId()const
 void DeleteTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteTagsRequest::getInstanceName()const
@@ -55,7 +55,7 @@ std::string DeleteTagsRequest::getInstanceName()const
 void DeleteTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::vector<DeleteTagsRequest::TagInfo> DeleteTagsRequest::getTagInfo()const
@@ -70,8 +70,8 @@ void DeleteTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setParameter(str + ".TagValue", obj.tagValue);
-		setParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 

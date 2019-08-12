@@ -24,10 +24,10 @@
 #include "AlidnsExport.h"
 #include "model/DescribeDNSSLBSubDomainsRequest.h"
 #include "model/DescribeDNSSLBSubDomainsResult.h"
-#include "model/SetGtmAccessModeRequest.h"
-#include "model/SetGtmAccessModeResult.h"
 #include "model/ModifyHichinaDomainDNSRequest.h"
 #include "model/ModifyHichinaDomainDNSResult.h"
+#include "model/SetGtmAccessModeRequest.h"
+#include "model/SetGtmAccessModeResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
 #include "model/DescribeSubDomainRecordsRequest.h"
@@ -46,12 +46,12 @@
 #include "model/UpdateGtmInstanceGlobalConfigResult.h"
 #include "model/UpdateDomainRecordRequest.h"
 #include "model/UpdateDomainRecordResult.h"
+#include "model/DeleteDomainRecordRequest.h"
+#include "model/DeleteDomainRecordResult.h"
 #include "model/DescribeDomainGroupsRequest.h"
 #include "model/DescribeDomainGroupsResult.h"
 #include "model/UpdateGtmAccessStrategyRequest.h"
 #include "model/UpdateGtmAccessStrategyResult.h"
-#include "model/DeleteDomainRecordRequest.h"
-#include "model/DeleteDomainRecordResult.h"
 #include "model/DescribeDomainRecordsRequest.h"
 #include "model/DescribeDomainRecordsResult.h"
 #include "model/DescribeDomainRecordInfoRequest.h"
@@ -70,10 +70,10 @@
 #include "model/UpdateDomainGroupResult.h"
 #include "model/DescribeDnsProductInstancesRequest.h"
 #include "model/DescribeDnsProductInstancesResult.h"
-#include "model/SetGtmMonitorStatusRequest.h"
-#include "model/SetGtmMonitorStatusResult.h"
 #include "model/DescribeDnsProductInstanceRequest.h"
 #include "model/DescribeDnsProductInstanceResult.h"
+#include "model/SetGtmMonitorStatusRequest.h"
+#include "model/SetGtmMonitorStatusResult.h"
 #include "model/DescribeGtmLogsRequest.h"
 #include "model/DescribeGtmLogsResult.h"
 #include "model/OperateBatchDomainRequest.h"
@@ -92,10 +92,20 @@
 #include "model/DescribeGtmInstanceResult.h"
 #include "model/DescribeDomainInfoRequest.h"
 #include "model/DescribeDomainInfoResult.h"
+#include "model/DescribeRecordStatisticsSummaryRequest.h"
+#include "model/DescribeRecordStatisticsSummaryResult.h"
 #include "model/DescribeGtmInstanceAddressPoolsRequest.h"
 #include "model/DescribeGtmInstanceAddressPoolsResult.h"
+#include "model/DescribeRecordStatisticsRequest.h"
+#include "model/DescribeRecordStatisticsResult.h"
+#include "model/DescribeDomainStatisticsSummaryRequest.h"
+#include "model/DescribeDomainStatisticsSummaryResult.h"
 #include "model/DescribeSupportLinesRequest.h"
 #include "model/DescribeSupportLinesResult.h"
+#include "model/DescribeDomainStatisticsRequest.h"
+#include "model/DescribeDomainStatisticsResult.h"
+#include "model/DescribeGtmInstanceSystemCnameRequest.h"
+#include "model/DescribeGtmInstanceSystemCnameResult.h"
 #include "model/AddDomainRecordRequest.h"
 #include "model/AddDomainRecordResult.h"
 #include "model/DescribeGtmMonitorAvailableConfigRequest.h"
@@ -128,10 +138,10 @@
 #include "model/AddGtmAddressPoolResult.h"
 #include "model/DeleteSubDomainRecordsRequest.h"
 #include "model/DeleteSubDomainRecordsResult.h"
-#include "model/UpdateGtmMonitorRequest.h"
-#include "model/UpdateGtmMonitorResult.h"
 #include "model/DescribeDomainNsRequest.h"
 #include "model/DescribeDomainNsResult.h"
+#include "model/UpdateGtmMonitorRequest.h"
+#include "model/UpdateGtmMonitorResult.h"
 #include "model/SetDNSSLBStatusRequest.h"
 #include "model/SetDNSSLBStatusResult.h"
 #include "model/DescribeGtmAccessStrategyAvailableConfigRequest.h"
@@ -150,12 +160,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDNSSLBSubDomainsResult> DescribeDNSSLBSubDomainsOutcome;
 			typedef std::future<DescribeDNSSLBSubDomainsOutcome> DescribeDNSSLBSubDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDNSSLBSubDomainsRequest&, const DescribeDNSSLBSubDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDNSSLBSubDomainsAsyncHandler;
-			typedef Outcome<Error, Model::SetGtmAccessModeResult> SetGtmAccessModeOutcome;
-			typedef std::future<SetGtmAccessModeOutcome> SetGtmAccessModeOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::SetGtmAccessModeRequest&, const SetGtmAccessModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmAccessModeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHichinaDomainDNSResult> ModifyHichinaDomainDNSOutcome;
 			typedef std::future<ModifyHichinaDomainDNSOutcome> ModifyHichinaDomainDNSOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ModifyHichinaDomainDNSRequest&, const ModifyHichinaDomainDNSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHichinaDomainDNSAsyncHandler;
+			typedef Outcome<Error, Model::SetGtmAccessModeResult> SetGtmAccessModeOutcome;
+			typedef std::future<SetGtmAccessModeOutcome> SetGtmAccessModeOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::SetGtmAccessModeRequest&, const SetGtmAccessModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmAccessModeAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -183,15 +193,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDomainRecordResult> UpdateDomainRecordOutcome;
 			typedef std::future<UpdateDomainRecordOutcome> UpdateDomainRecordOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateDomainRecordRequest&, const UpdateDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDomainRecordAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDomainRecordResult> DeleteDomainRecordOutcome;
+			typedef std::future<DeleteDomainRecordOutcome> DeleteDomainRecordOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DeleteDomainRecordRequest&, const DeleteDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainRecordAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainGroupsResult> DescribeDomainGroupsOutcome;
 			typedef std::future<DescribeDomainGroupsOutcome> DescribeDomainGroupsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainGroupsRequest&, const DescribeDomainGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainGroupsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateGtmAccessStrategyResult> UpdateGtmAccessStrategyOutcome;
 			typedef std::future<UpdateGtmAccessStrategyOutcome> UpdateGtmAccessStrategyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmAccessStrategyRequest&, const UpdateGtmAccessStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmAccessStrategyAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDomainRecordResult> DeleteDomainRecordOutcome;
-			typedef std::future<DeleteDomainRecordOutcome> DeleteDomainRecordOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::DeleteDomainRecordRequest&, const DeleteDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainRecordAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainRecordsResult> DescribeDomainRecordsOutcome;
 			typedef std::future<DescribeDomainRecordsOutcome> DescribeDomainRecordsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainRecordsRequest&, const DescribeDomainRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainRecordsAsyncHandler;
@@ -219,12 +229,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDnsProductInstancesResult> DescribeDnsProductInstancesOutcome;
 			typedef std::future<DescribeDnsProductInstancesOutcome> DescribeDnsProductInstancesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsProductInstancesRequest&, const DescribeDnsProductInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsProductInstancesAsyncHandler;
-			typedef Outcome<Error, Model::SetGtmMonitorStatusResult> SetGtmMonitorStatusOutcome;
-			typedef std::future<SetGtmMonitorStatusOutcome> SetGtmMonitorStatusOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::SetGtmMonitorStatusRequest&, const SetGtmMonitorStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmMonitorStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDnsProductInstanceResult> DescribeDnsProductInstanceOutcome;
 			typedef std::future<DescribeDnsProductInstanceOutcome> DescribeDnsProductInstanceOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDnsProductInstanceRequest&, const DescribeDnsProductInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsProductInstanceAsyncHandler;
+			typedef Outcome<Error, Model::SetGtmMonitorStatusResult> SetGtmMonitorStatusOutcome;
+			typedef std::future<SetGtmMonitorStatusOutcome> SetGtmMonitorStatusOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::SetGtmMonitorStatusRequest&, const SetGtmMonitorStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmMonitorStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGtmLogsResult> DescribeGtmLogsOutcome;
 			typedef std::future<DescribeGtmLogsOutcome> DescribeGtmLogsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeGtmLogsRequest&, const DescribeGtmLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGtmLogsAsyncHandler;
@@ -252,12 +262,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainInfoResult> DescribeDomainInfoOutcome;
 			typedef std::future<DescribeDomainInfoOutcome> DescribeDomainInfoOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainInfoRequest&, const DescribeDomainInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecordStatisticsSummaryResult> DescribeRecordStatisticsSummaryOutcome;
+			typedef std::future<DescribeRecordStatisticsSummaryOutcome> DescribeRecordStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordStatisticsSummaryRequest&, const DescribeRecordStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticsSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGtmInstanceAddressPoolsResult> DescribeGtmInstanceAddressPoolsOutcome;
 			typedef std::future<DescribeGtmInstanceAddressPoolsOutcome> DescribeGtmInstanceAddressPoolsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeGtmInstanceAddressPoolsRequest&, const DescribeGtmInstanceAddressPoolsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGtmInstanceAddressPoolsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecordStatisticsResult> DescribeRecordStatisticsOutcome;
+			typedef std::future<DescribeRecordStatisticsOutcome> DescribeRecordStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordStatisticsRequest&, const DescribeRecordStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainStatisticsSummaryResult> DescribeDomainStatisticsSummaryOutcome;
+			typedef std::future<DescribeDomainStatisticsSummaryOutcome> DescribeDomainStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainStatisticsSummaryRequest&, const DescribeDomainStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainStatisticsSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSupportLinesResult> DescribeSupportLinesOutcome;
 			typedef std::future<DescribeSupportLinesOutcome> DescribeSupportLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeSupportLinesRequest&, const DescribeSupportLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportLinesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainStatisticsResult> DescribeDomainStatisticsOutcome;
+			typedef std::future<DescribeDomainStatisticsOutcome> DescribeDomainStatisticsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainStatisticsRequest&, const DescribeDomainStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGtmInstanceSystemCnameResult> DescribeGtmInstanceSystemCnameOutcome;
+			typedef std::future<DescribeGtmInstanceSystemCnameOutcome> DescribeGtmInstanceSystemCnameOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeGtmInstanceSystemCnameRequest&, const DescribeGtmInstanceSystemCnameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGtmInstanceSystemCnameAsyncHandler;
 			typedef Outcome<Error, Model::AddDomainRecordResult> AddDomainRecordOutcome;
 			typedef std::future<AddDomainRecordOutcome> AddDomainRecordOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::AddDomainRecordRequest&, const AddDomainRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainRecordAsyncHandler;
@@ -306,12 +331,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSubDomainRecordsResult> DeleteSubDomainRecordsOutcome;
 			typedef std::future<DeleteSubDomainRecordsOutcome> DeleteSubDomainRecordsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteSubDomainRecordsRequest&, const DeleteSubDomainRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubDomainRecordsAsyncHandler;
-			typedef Outcome<Error, Model::UpdateGtmMonitorResult> UpdateGtmMonitorOutcome;
-			typedef std::future<UpdateGtmMonitorOutcome> UpdateGtmMonitorOutcomeCallable;
-			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmMonitorRequest&, const UpdateGtmMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmMonitorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainNsResult> DescribeDomainNsOutcome;
 			typedef std::future<DescribeDomainNsOutcome> DescribeDomainNsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainNsRequest&, const DescribeDomainNsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainNsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGtmMonitorResult> UpdateGtmMonitorOutcome;
+			typedef std::future<UpdateGtmMonitorOutcome> UpdateGtmMonitorOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmMonitorRequest&, const UpdateGtmMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmMonitorAsyncHandler;
 			typedef Outcome<Error, Model::SetDNSSLBStatusResult> SetDNSSLBStatusOutcome;
 			typedef std::future<SetDNSSLBStatusOutcome> SetDNSSLBStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetDNSSLBStatusRequest&, const SetDNSSLBStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDNSSLBStatusAsyncHandler;
@@ -329,12 +354,12 @@ namespace AlibabaCloud
 			DescribeDNSSLBSubDomainsOutcome describeDNSSLBSubDomains(const Model::DescribeDNSSLBSubDomainsRequest &request)const;
 			void describeDNSSLBSubDomainsAsync(const Model::DescribeDNSSLBSubDomainsRequest& request, const DescribeDNSSLBSubDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDNSSLBSubDomainsOutcomeCallable describeDNSSLBSubDomainsCallable(const Model::DescribeDNSSLBSubDomainsRequest& request) const;
-			SetGtmAccessModeOutcome setGtmAccessMode(const Model::SetGtmAccessModeRequest &request)const;
-			void setGtmAccessModeAsync(const Model::SetGtmAccessModeRequest& request, const SetGtmAccessModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetGtmAccessModeOutcomeCallable setGtmAccessModeCallable(const Model::SetGtmAccessModeRequest& request) const;
 			ModifyHichinaDomainDNSOutcome modifyHichinaDomainDNS(const Model::ModifyHichinaDomainDNSRequest &request)const;
 			void modifyHichinaDomainDNSAsync(const Model::ModifyHichinaDomainDNSRequest& request, const ModifyHichinaDomainDNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHichinaDomainDNSOutcomeCallable modifyHichinaDomainDNSCallable(const Model::ModifyHichinaDomainDNSRequest& request) const;
+			SetGtmAccessModeOutcome setGtmAccessMode(const Model::SetGtmAccessModeRequest &request)const;
+			void setGtmAccessModeAsync(const Model::SetGtmAccessModeRequest& request, const SetGtmAccessModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetGtmAccessModeOutcomeCallable setGtmAccessModeCallable(const Model::SetGtmAccessModeRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
@@ -362,15 +387,15 @@ namespace AlibabaCloud
 			UpdateDomainRecordOutcome updateDomainRecord(const Model::UpdateDomainRecordRequest &request)const;
 			void updateDomainRecordAsync(const Model::UpdateDomainRecordRequest& request, const UpdateDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDomainRecordOutcomeCallable updateDomainRecordCallable(const Model::UpdateDomainRecordRequest& request) const;
+			DeleteDomainRecordOutcome deleteDomainRecord(const Model::DeleteDomainRecordRequest &request)const;
+			void deleteDomainRecordAsync(const Model::DeleteDomainRecordRequest& request, const DeleteDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDomainRecordOutcomeCallable deleteDomainRecordCallable(const Model::DeleteDomainRecordRequest& request) const;
 			DescribeDomainGroupsOutcome describeDomainGroups(const Model::DescribeDomainGroupsRequest &request)const;
 			void describeDomainGroupsAsync(const Model::DescribeDomainGroupsRequest& request, const DescribeDomainGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainGroupsOutcomeCallable describeDomainGroupsCallable(const Model::DescribeDomainGroupsRequest& request) const;
 			UpdateGtmAccessStrategyOutcome updateGtmAccessStrategy(const Model::UpdateGtmAccessStrategyRequest &request)const;
 			void updateGtmAccessStrategyAsync(const Model::UpdateGtmAccessStrategyRequest& request, const UpdateGtmAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGtmAccessStrategyOutcomeCallable updateGtmAccessStrategyCallable(const Model::UpdateGtmAccessStrategyRequest& request) const;
-			DeleteDomainRecordOutcome deleteDomainRecord(const Model::DeleteDomainRecordRequest &request)const;
-			void deleteDomainRecordAsync(const Model::DeleteDomainRecordRequest& request, const DeleteDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDomainRecordOutcomeCallable deleteDomainRecordCallable(const Model::DeleteDomainRecordRequest& request) const;
 			DescribeDomainRecordsOutcome describeDomainRecords(const Model::DescribeDomainRecordsRequest &request)const;
 			void describeDomainRecordsAsync(const Model::DescribeDomainRecordsRequest& request, const DescribeDomainRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainRecordsOutcomeCallable describeDomainRecordsCallable(const Model::DescribeDomainRecordsRequest& request) const;
@@ -398,12 +423,12 @@ namespace AlibabaCloud
 			DescribeDnsProductInstancesOutcome describeDnsProductInstances(const Model::DescribeDnsProductInstancesRequest &request)const;
 			void describeDnsProductInstancesAsync(const Model::DescribeDnsProductInstancesRequest& request, const DescribeDnsProductInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDnsProductInstancesOutcomeCallable describeDnsProductInstancesCallable(const Model::DescribeDnsProductInstancesRequest& request) const;
-			SetGtmMonitorStatusOutcome setGtmMonitorStatus(const Model::SetGtmMonitorStatusRequest &request)const;
-			void setGtmMonitorStatusAsync(const Model::SetGtmMonitorStatusRequest& request, const SetGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetGtmMonitorStatusOutcomeCallable setGtmMonitorStatusCallable(const Model::SetGtmMonitorStatusRequest& request) const;
 			DescribeDnsProductInstanceOutcome describeDnsProductInstance(const Model::DescribeDnsProductInstanceRequest &request)const;
 			void describeDnsProductInstanceAsync(const Model::DescribeDnsProductInstanceRequest& request, const DescribeDnsProductInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDnsProductInstanceOutcomeCallable describeDnsProductInstanceCallable(const Model::DescribeDnsProductInstanceRequest& request) const;
+			SetGtmMonitorStatusOutcome setGtmMonitorStatus(const Model::SetGtmMonitorStatusRequest &request)const;
+			void setGtmMonitorStatusAsync(const Model::SetGtmMonitorStatusRequest& request, const SetGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetGtmMonitorStatusOutcomeCallable setGtmMonitorStatusCallable(const Model::SetGtmMonitorStatusRequest& request) const;
 			DescribeGtmLogsOutcome describeGtmLogs(const Model::DescribeGtmLogsRequest &request)const;
 			void describeGtmLogsAsync(const Model::DescribeGtmLogsRequest& request, const DescribeGtmLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGtmLogsOutcomeCallable describeGtmLogsCallable(const Model::DescribeGtmLogsRequest& request) const;
@@ -431,12 +456,27 @@ namespace AlibabaCloud
 			DescribeDomainInfoOutcome describeDomainInfo(const Model::DescribeDomainInfoRequest &request)const;
 			void describeDomainInfoAsync(const Model::DescribeDomainInfoRequest& request, const DescribeDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainInfoOutcomeCallable describeDomainInfoCallable(const Model::DescribeDomainInfoRequest& request) const;
+			DescribeRecordStatisticsSummaryOutcome describeRecordStatisticsSummary(const Model::DescribeRecordStatisticsSummaryRequest &request)const;
+			void describeRecordStatisticsSummaryAsync(const Model::DescribeRecordStatisticsSummaryRequest& request, const DescribeRecordStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecordStatisticsSummaryOutcomeCallable describeRecordStatisticsSummaryCallable(const Model::DescribeRecordStatisticsSummaryRequest& request) const;
 			DescribeGtmInstanceAddressPoolsOutcome describeGtmInstanceAddressPools(const Model::DescribeGtmInstanceAddressPoolsRequest &request)const;
 			void describeGtmInstanceAddressPoolsAsync(const Model::DescribeGtmInstanceAddressPoolsRequest& request, const DescribeGtmInstanceAddressPoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGtmInstanceAddressPoolsOutcomeCallable describeGtmInstanceAddressPoolsCallable(const Model::DescribeGtmInstanceAddressPoolsRequest& request) const;
+			DescribeRecordStatisticsOutcome describeRecordStatistics(const Model::DescribeRecordStatisticsRequest &request)const;
+			void describeRecordStatisticsAsync(const Model::DescribeRecordStatisticsRequest& request, const DescribeRecordStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecordStatisticsOutcomeCallable describeRecordStatisticsCallable(const Model::DescribeRecordStatisticsRequest& request) const;
+			DescribeDomainStatisticsSummaryOutcome describeDomainStatisticsSummary(const Model::DescribeDomainStatisticsSummaryRequest &request)const;
+			void describeDomainStatisticsSummaryAsync(const Model::DescribeDomainStatisticsSummaryRequest& request, const DescribeDomainStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainStatisticsSummaryOutcomeCallable describeDomainStatisticsSummaryCallable(const Model::DescribeDomainStatisticsSummaryRequest& request) const;
 			DescribeSupportLinesOutcome describeSupportLines(const Model::DescribeSupportLinesRequest &request)const;
 			void describeSupportLinesAsync(const Model::DescribeSupportLinesRequest& request, const DescribeSupportLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSupportLinesOutcomeCallable describeSupportLinesCallable(const Model::DescribeSupportLinesRequest& request) const;
+			DescribeDomainStatisticsOutcome describeDomainStatistics(const Model::DescribeDomainStatisticsRequest &request)const;
+			void describeDomainStatisticsAsync(const Model::DescribeDomainStatisticsRequest& request, const DescribeDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainStatisticsOutcomeCallable describeDomainStatisticsCallable(const Model::DescribeDomainStatisticsRequest& request) const;
+			DescribeGtmInstanceSystemCnameOutcome describeGtmInstanceSystemCname(const Model::DescribeGtmInstanceSystemCnameRequest &request)const;
+			void describeGtmInstanceSystemCnameAsync(const Model::DescribeGtmInstanceSystemCnameRequest& request, const DescribeGtmInstanceSystemCnameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGtmInstanceSystemCnameOutcomeCallable describeGtmInstanceSystemCnameCallable(const Model::DescribeGtmInstanceSystemCnameRequest& request) const;
 			AddDomainRecordOutcome addDomainRecord(const Model::AddDomainRecordRequest &request)const;
 			void addDomainRecordAsync(const Model::AddDomainRecordRequest& request, const AddDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDomainRecordOutcomeCallable addDomainRecordCallable(const Model::AddDomainRecordRequest& request) const;
@@ -485,12 +525,12 @@ namespace AlibabaCloud
 			DeleteSubDomainRecordsOutcome deleteSubDomainRecords(const Model::DeleteSubDomainRecordsRequest &request)const;
 			void deleteSubDomainRecordsAsync(const Model::DeleteSubDomainRecordsRequest& request, const DeleteSubDomainRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSubDomainRecordsOutcomeCallable deleteSubDomainRecordsCallable(const Model::DeleteSubDomainRecordsRequest& request) const;
-			UpdateGtmMonitorOutcome updateGtmMonitor(const Model::UpdateGtmMonitorRequest &request)const;
-			void updateGtmMonitorAsync(const Model::UpdateGtmMonitorRequest& request, const UpdateGtmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateGtmMonitorOutcomeCallable updateGtmMonitorCallable(const Model::UpdateGtmMonitorRequest& request) const;
 			DescribeDomainNsOutcome describeDomainNs(const Model::DescribeDomainNsRequest &request)const;
 			void describeDomainNsAsync(const Model::DescribeDomainNsRequest& request, const DescribeDomainNsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainNsOutcomeCallable describeDomainNsCallable(const Model::DescribeDomainNsRequest& request) const;
+			UpdateGtmMonitorOutcome updateGtmMonitor(const Model::UpdateGtmMonitorRequest &request)const;
+			void updateGtmMonitorAsync(const Model::UpdateGtmMonitorRequest& request, const UpdateGtmMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGtmMonitorOutcomeCallable updateGtmMonitorCallable(const Model::UpdateGtmMonitorRequest& request) const;
 			SetDNSSLBStatusOutcome setDNSSLBStatus(const Model::SetDNSSLBStatusRequest &request)const;
 			void setDNSSLBStatusAsync(const Model::SetDNSSLBStatusRequest& request, const SetDNSSLBStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDNSSLBStatusOutcomeCallable setDNSSLBStatusCallable(const Model::SetDNSSLBStatusRequest& request) const;

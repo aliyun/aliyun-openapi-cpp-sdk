@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string owner;
 					std::string instanceId;
+					long createTime;
 					long updateTime;
 					bool independentNaming;
 					std::string groupId;

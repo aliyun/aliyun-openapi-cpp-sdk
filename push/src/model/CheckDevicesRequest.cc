@@ -33,7 +33,7 @@ std::string CheckDevicesRequest::getDeviceIds()const
 void CheckDevicesRequest::setDeviceIds(const std::string& deviceIds)
 {
 	deviceIds_ = deviceIds;
-	setParameter("DeviceIds", deviceIds);
+	setCoreParameter("DeviceIds", deviceIds);
 }
 
 long CheckDevicesRequest::getAppKey()const
@@ -44,7 +44,7 @@ long CheckDevicesRequest::getAppKey()const
 void CheckDevicesRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string CheckDevicesRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string CheckDevicesRequest::getAccessKeyId()const
 void CheckDevicesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

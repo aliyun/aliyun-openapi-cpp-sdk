@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::vector<std::string> invalidDeviceNameList;
 					long applyId;
 				};
 

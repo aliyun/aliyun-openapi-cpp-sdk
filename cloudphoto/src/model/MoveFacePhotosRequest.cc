@@ -33,7 +33,7 @@ std::string MoveFacePhotosRequest::getLibraryId()const
 void MoveFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long MoveFacePhotosRequest::getTargetFaceId()const
@@ -44,7 +44,7 @@ long MoveFacePhotosRequest::getTargetFaceId()const
 void MoveFacePhotosRequest::setTargetFaceId(long targetFaceId)
 {
 	targetFaceId_ = targetFaceId;
-	setParameter("TargetFaceId", std::to_string(targetFaceId));
+	setCoreParameter("TargetFaceId", std::to_string(targetFaceId));
 }
 
 std::vector<long> MoveFacePhotosRequest::getPhotoId()const
@@ -56,7 +56,7 @@ void MoveFacePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string MoveFacePhotosRequest::getStoreName()const
@@ -67,7 +67,7 @@ std::string MoveFacePhotosRequest::getStoreName()const
 void MoveFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 long MoveFacePhotosRequest::getSourceFaceId()const
@@ -78,6 +78,6 @@ long MoveFacePhotosRequest::getSourceFaceId()const
 void MoveFacePhotosRequest::setSourceFaceId(long sourceFaceId)
 {
 	sourceFaceId_ = sourceFaceId;
-	setParameter("SourceFaceId", std::to_string(sourceFaceId));
+	setCoreParameter("SourceFaceId", std::to_string(sourceFaceId));
 }
 

@@ -33,6 +33,6 @@ std::string ListSummaryAppsRequest::getAccessKeyId()const
 void ListSummaryAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

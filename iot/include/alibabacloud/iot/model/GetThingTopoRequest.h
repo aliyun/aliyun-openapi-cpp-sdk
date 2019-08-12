@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setIotId(const std::string& iotId);
 				int getPageNo()const;
 				void setPageNo(int pageNo);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDeviceName()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string iotId_;
 				int pageNo_;
+				std::string iotInstanceId_;
 				int pageSize_;
 				std::string deviceName_;
 				std::string productKey_;

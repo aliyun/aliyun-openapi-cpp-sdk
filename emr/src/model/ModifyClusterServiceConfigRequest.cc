@@ -25,6 +25,17 @@ ModifyClusterServiceConfigRequest::ModifyClusterServiceConfigRequest() :
 ModifyClusterServiceConfigRequest::~ModifyClusterServiceConfigRequest()
 {}
 
+bool ModifyClusterServiceConfigRequest::getRefreshHostConfig()const
+{
+	return refreshHostConfig_;
+}
+
+void ModifyClusterServiceConfigRequest::setRefreshHostConfig(bool refreshHostConfig)
+{
+	refreshHostConfig_ = refreshHostConfig;
+	setCoreParameter("RefreshHostConfig", refreshHostConfig ? "true" : "false");
+}
+
 long ModifyClusterServiceConfigRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;
@@ -33,18 +44,7 @@ long ModifyClusterServiceConfigRequest::getResourceOwnerId()const
 void ModifyClusterServiceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifyClusterServiceConfigRequest::getCustomConfigParams()const
-{
-	return customConfigParams_;
-}
-
-void ModifyClusterServiceConfigRequest::setCustomConfigParams(const std::string& customConfigParams)
-{
-	customConfigParams_ = customConfigParams;
-	setParameter("CustomConfigParams", customConfigParams);
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigType()const
@@ -55,7 +55,7 @@ std::string ModifyClusterServiceConfigRequest::getConfigType()const
 void ModifyClusterServiceConfigRequest::setConfigType(const std::string& configType)
 {
 	configType_ = configType;
-	setParameter("ConfigType", configType);
+	setCoreParameter("ConfigType", configType);
 }
 
 std::string ModifyClusterServiceConfigRequest::getHostInstanceId()const
@@ -66,18 +66,7 @@ std::string ModifyClusterServiceConfigRequest::getHostInstanceId()const
 void ModifyClusterServiceConfigRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setParameter("HostInstanceId", hostInstanceId);
-}
-
-std::string ModifyClusterServiceConfigRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void ModifyClusterServiceConfigRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("HostInstanceId", hostInstanceId);
 }
 
 std::string ModifyClusterServiceConfigRequest::getGroupId()const
@@ -88,29 +77,7 @@ std::string ModifyClusterServiceConfigRequest::getGroupId()const
 void ModifyClusterServiceConfigRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
-std::string ModifyClusterServiceConfigRequest::getServiceName()const
-{
-	return serviceName_;
-}
-
-void ModifyClusterServiceConfigRequest::setServiceName(const std::string& serviceName)
-{
-	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
-}
-
-std::string ModifyClusterServiceConfigRequest::getComment()const
-{
-	return comment_;
-}
-
-void ModifyClusterServiceConfigRequest::setComment(const std::string& comment)
-{
-	comment_ = comment;
-	setParameter("Comment", comment);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string ModifyClusterServiceConfigRequest::getClusterId()const
@@ -121,7 +88,7 @@ std::string ModifyClusterServiceConfigRequest::getClusterId()const
 void ModifyClusterServiceConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterServiceConfigRequest::getAccessKeyId()const
@@ -132,7 +99,63 @@ std::string ModifyClusterServiceConfigRequest::getAccessKeyId()const
 void ModifyClusterServiceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyClusterServiceConfigRequest::getCustomConfigParams()const
+{
+	return customConfigParams_;
+}
+
+void ModifyClusterServiceConfigRequest::setCustomConfigParams(const std::string& customConfigParams)
+{
+	customConfigParams_ = customConfigParams;
+	setCoreParameter("CustomConfigParams", customConfigParams);
+}
+
+std::string ModifyClusterServiceConfigRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyClusterServiceConfigRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string ModifyClusterServiceConfigRequest::getServiceName()const
+{
+	return serviceName_;
+}
+
+void ModifyClusterServiceConfigRequest::setServiceName(const std::string& serviceName)
+{
+	serviceName_ = serviceName;
+	setCoreParameter("ServiceName", serviceName);
+}
+
+std::string ModifyClusterServiceConfigRequest::getComment()const
+{
+	return comment_;
+}
+
+void ModifyClusterServiceConfigRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setCoreParameter("Comment", comment);
+}
+
+std::vector<std::string> ModifyClusterServiceConfigRequest::getGatewayClusterIdList()const
+{
+	return gatewayClusterIdList_;
+}
+
+void ModifyClusterServiceConfigRequest::setGatewayClusterIdList(const std::vector<std::string>& gatewayClusterIdList)
+{
+	gatewayClusterIdList_ = gatewayClusterIdList;
+	for(int i = 0; i!= gatewayClusterIdList.size(); i++)
+		setCoreParameter("GatewayClusterIdList."+ std::to_string(i), gatewayClusterIdList.at(i));
 }
 
 std::string ModifyClusterServiceConfigRequest::getConfigParams()const
@@ -143,6 +166,6 @@ std::string ModifyClusterServiceConfigRequest::getConfigParams()const
 void ModifyClusterServiceConfigRequest::setConfigParams(const std::string& configParams)
 {
 	configParams_ = configParams;
-	setParameter("ConfigParams", configParams);
+	setCoreParameter("ConfigParams", configParams);
 }
 

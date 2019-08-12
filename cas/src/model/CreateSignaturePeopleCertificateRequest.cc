@@ -33,7 +33,7 @@ std::string CreateSignaturePeopleCertificateRequest::getPeopleName()const
 void CreateSignaturePeopleCertificateRequest::setPeopleName(const std::string& peopleName)
 {
 	peopleName_ = peopleName;
-	setParameter("PeopleName", peopleName);
+	setCoreParameter("PeopleName", peopleName);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
@@ -44,7 +44,7 @@ std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
 void CreateSignaturePeopleCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getMobile()const
@@ -55,7 +55,7 @@ std::string CreateSignaturePeopleCertificateRequest::getMobile()const
 void CreateSignaturePeopleCertificateRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setParameter("Mobile", mobile);
+	setCoreParameter("Mobile", mobile);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
@@ -66,7 +66,7 @@ std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
 void CreateSignaturePeopleCertificateRequest::setIdentityNumber(const std::string& identityNumber)
 {
 	identityNumber_ = identityNumber;
-	setParameter("IdentityNumber", identityNumber);
+	setCoreParameter("IdentityNumber", identityNumber);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getLang()const
@@ -77,7 +77,7 @@ std::string CreateSignaturePeopleCertificateRequest::getLang()const
 void CreateSignaturePeopleCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getEmail()const
@@ -88,6 +88,6 @@ std::string CreateSignaturePeopleCertificateRequest::getEmail()const
 void CreateSignaturePeopleCertificateRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setParameter("Email", email);
+	setCoreParameter("Email", email);
 }
 

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				float getMinSimilarity()const;
 				void setMinSimilarity(float minSimilarity);
+				std::string getResponseFormat()const;
+				void setResponseFormat(const std::string& responseFormat);
 				int getLimit()const;
 				void setLimit(int limit);
 				std::string getProject()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string imageUri_;
 				std::string regionId_;
 				float minSimilarity_;
+				std::string responseFormat_;
 				int limit_;
 				std::string project_;
 				std::string setId_;

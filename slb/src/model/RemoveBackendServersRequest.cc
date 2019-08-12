@@ -33,7 +33,7 @@ std::string RemoveBackendServersRequest::getAccess_key_id()const
 void RemoveBackendServersRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long RemoveBackendServersRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long RemoveBackendServersRequest::getResourceOwnerId()const
 void RemoveBackendServersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveBackendServersRequest::getLoadBalancerId()const
@@ -55,7 +55,7 @@ std::string RemoveBackendServersRequest::getLoadBalancerId()const
 void RemoveBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string RemoveBackendServersRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string RemoveBackendServersRequest::getRegionId()const
 void RemoveBackendServersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RemoveBackendServersRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string RemoveBackendServersRequest::getResourceOwnerAccount()const
 void RemoveBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveBackendServersRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string RemoveBackendServersRequest::getOwnerAccount()const
 void RemoveBackendServersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveBackendServersRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long RemoveBackendServersRequest::getOwnerId()const
 void RemoveBackendServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveBackendServersRequest::getBackendServers()const
@@ -110,7 +110,7 @@ std::string RemoveBackendServersRequest::getBackendServers()const
 void RemoveBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
 	backendServers_ = backendServers;
-	setParameter("BackendServers", backendServers);
+	setCoreParameter("BackendServers", backendServers);
 }
 
 std::string RemoveBackendServersRequest::getTags()const
@@ -121,6 +121,6 @@ std::string RemoveBackendServersRequest::getTags()const
 void RemoveBackendServersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

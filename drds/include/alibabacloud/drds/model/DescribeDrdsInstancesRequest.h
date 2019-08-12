@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getTags()const;
+				void setTags(const std::string& tags);
 
             private:
 				std::string regionId_;
 				std::string type_;
 				std::string accessKeyId_;
+				std::string tags_;
 
 			};
 		}

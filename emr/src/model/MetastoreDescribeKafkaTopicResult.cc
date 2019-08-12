@@ -35,10 +35,13 @@ MetastoreDescribeKafkaTopicResult::~MetastoreDescribeKafkaTopicResult()
 
 void MetastoreDescribeKafkaTopicResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAdvancedConfigList = value["AdvancedConfigList"]["AdvancedConfig"];
 	for (auto value : allAdvancedConfigList)
@@ -115,7 +118,16 @@ void MetastoreDescribeKafkaTopicResult::parse(const std::string &payload)
 		underReplicatedPercentage_ = value["UnderReplicatedPercentage"].asString();
 	if(!value["PreferredReplicasPercentage"].isNull())
 		preferredReplicasPercentage_ = value["PreferredReplicasPercentage"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["ReassignId"].isNull())
+		reassignId_ = value["ReassignId"].asString();
 
+}
+
+std::string MetastoreDescribeKafkaTopicResult::getStatus()const
+{
+	return status_;
 }
 
 std::vector<MetastoreDescribeKafkaTopicResult::AdvancedConfig> MetastoreDescribeKafkaTopicResult::getAdvancedConfigList()const
@@ -126,6 +138,11 @@ std::vector<MetastoreDescribeKafkaTopicResult::AdvancedConfig> MetastoreDescribe
 int MetastoreDescribeKafkaTopicResult::getReplicationFactor()const
 {
 	return replicationFactor_;
+}
+
+std::string MetastoreDescribeKafkaTopicResult::getReassignId()const
+{
+	return reassignId_;
 }
 
 std::vector<MetastoreDescribeKafkaTopicResult::Summary> MetastoreDescribeKafkaTopicResult::getSummaryList()const

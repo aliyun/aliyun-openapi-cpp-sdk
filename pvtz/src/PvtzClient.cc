@@ -339,42 +339,6 @@ PvtzClient::BindZoneVpcOutcomeCallable PvtzClient::bindZoneVpcCallable(const Bin
 	return task->get_future();
 }
 
-PvtzClient::DescribeStatisticSummaryOutcome PvtzClient::describeStatisticSummary(const DescribeStatisticSummaryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStatisticSummaryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStatisticSummaryOutcome(DescribeStatisticSummaryResult(outcome.result()));
-	else
-		return DescribeStatisticSummaryOutcome(outcome.error());
-}
-
-void PvtzClient::describeStatisticSummaryAsync(const DescribeStatisticSummaryRequest& request, const DescribeStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStatisticSummary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PvtzClient::DescribeStatisticSummaryOutcomeCallable PvtzClient::describeStatisticSummaryCallable(const DescribeStatisticSummaryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStatisticSummaryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStatisticSummary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PvtzClient::DescribeRequestGraphOutcome PvtzClient::describeRequestGraph(const DescribeRequestGraphRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +369,42 @@ PvtzClient::DescribeRequestGraphOutcomeCallable PvtzClient::describeRequestGraph
 			[this, request]()
 			{
 			return this->describeRequestGraph(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PvtzClient::DescribeStatisticSummaryOutcome PvtzClient::describeStatisticSummary(const DescribeStatisticSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStatisticSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStatisticSummaryOutcome(DescribeStatisticSummaryResult(outcome.result()));
+	else
+		return DescribeStatisticSummaryOutcome(outcome.error());
+}
+
+void PvtzClient::describeStatisticSummaryAsync(const DescribeStatisticSummaryRequest& request, const DescribeStatisticSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStatisticSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PvtzClient::DescribeStatisticSummaryOutcomeCallable PvtzClient::describeStatisticSummaryCallable(const DescribeStatisticSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStatisticSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStatisticSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -33,7 +33,7 @@ long RunOpsCommandRequest::getResourceOwnerId()const
 void RunOpsCommandRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RunOpsCommandRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RunOpsCommandRequest::getRegionId()const
 void RunOpsCommandRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RunOpsCommandRequest::getOpsCommandName()const
@@ -55,7 +55,7 @@ std::string RunOpsCommandRequest::getOpsCommandName()const
 void RunOpsCommandRequest::setOpsCommandName(const std::string& opsCommandName)
 {
 	opsCommandName_ = opsCommandName;
-	setParameter("OpsCommandName", opsCommandName);
+	setCoreParameter("OpsCommandName", opsCommandName);
 }
 
 std::string RunOpsCommandRequest::getComment()const
@@ -66,7 +66,7 @@ std::string RunOpsCommandRequest::getComment()const
 void RunOpsCommandRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setParameter("Comment", comment);
+	setCoreParameter("Comment", comment);
 }
 
 std::string RunOpsCommandRequest::getCustomParams()const
@@ -77,7 +77,7 @@ std::string RunOpsCommandRequest::getCustomParams()const
 void RunOpsCommandRequest::setCustomParams(const std::string& customParams)
 {
 	customParams_ = customParams;
-	setParameter("CustomParams", customParams);
+	setCoreParameter("CustomParams", customParams);
 }
 
 std::string RunOpsCommandRequest::getClusterId()const
@@ -88,7 +88,7 @@ std::string RunOpsCommandRequest::getClusterId()const
 void RunOpsCommandRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::vector<std::string> RunOpsCommandRequest::getHostIdList()const
@@ -100,7 +100,7 @@ void RunOpsCommandRequest::setHostIdList(const std::vector<std::string>& hostIdL
 {
 	hostIdList_ = hostIdList;
 	for(int i = 0; i!= hostIdList.size(); i++)
-		setParameter("HostIdList."+ std::to_string(i), hostIdList.at(i));
+		setCoreParameter("HostIdList."+ std::to_string(i), hostIdList.at(i));
 }
 
 std::string RunOpsCommandRequest::getDimension()const
@@ -111,7 +111,7 @@ std::string RunOpsCommandRequest::getDimension()const
 void RunOpsCommandRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setParameter("Dimension", dimension);
+	setCoreParameter("Dimension", dimension);
 }
 
 std::string RunOpsCommandRequest::getAccessKeyId()const
@@ -122,6 +122,6 @@ std::string RunOpsCommandRequest::getAccessKeyId()const
 void RunOpsCommandRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

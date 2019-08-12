@@ -35,27 +35,32 @@ QueryTradeIntentionUserListResult::~QueryTradeIntentionUserListResult()
 
 void QueryTradeIntentionUserListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allData = value["Data"]["Trademark"];
 	for (auto value : allData)
 	{
 		Trademark dataObject;
-		if(!value["UserId"].isNull())
-			dataObject.userId = value["UserId"].asString();
 		if(!value["RegisterNumber"].isNull())
 			dataObject.registerNumber = value["RegisterNumber"].asString();
 		if(!value["Classification"].isNull())
 			dataObject.classification = value["Classification"].asString();
 		if(!value["Mobile"].isNull())
 			dataObject.mobile = std::stoi(value["Mobile"].asString());
-		if(!value["Id"].isNull())
-			dataObject.id = std::stol(value["Id"].asString());
 		if(!value["UserName"].isNull())
 			dataObject.userName = value["UserName"].asString();
+		if(!value["BizId"].isNull())
+			dataObject.bizId = value["BizId"].asString();
+		if(!value["Description"].isNull())
+			dataObject.description = value["Description"].asString();
+		if(!value["Status"].isNull())
+			dataObject.status = std::stoi(value["Status"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

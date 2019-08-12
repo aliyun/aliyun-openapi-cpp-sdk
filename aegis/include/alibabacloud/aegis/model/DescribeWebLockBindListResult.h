@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string serviceCode;
 					std::string internetIp;
 					std::string os;
+					int percent;
 					std::string serviceStatus;
 					std::string dirCount;
 					std::string serviceDetail;

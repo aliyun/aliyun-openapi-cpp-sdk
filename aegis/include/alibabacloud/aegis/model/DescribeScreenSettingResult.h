@@ -32,22 +32,31 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_AEGIS_EXPORT DescribeScreenSettingResult : public ServiceResult
 			{
 			public:
-				struct SasScreenSetting
-				{
-					std::string screenSettingIdMap;
-					std::string screenSettingTitle;
-				};
 
 
 				DescribeScreenSettingResult();
 				explicit DescribeScreenSettingResult(const std::string &payload);
 				~DescribeScreenSettingResult();
-				SasScreenSetting getSasScreenSetting()const;
+				bool getLogoPower()const;
+				std::string getMonitorUrl()const;
+				int getScreenId()const;
+				std::string getLogoUrl()const;
+				std::string getScreenDataMap()const;
+				std::string getTitle()const;
+				int getScreenDefault()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				SasScreenSetting sasScreenSetting_;
+				bool logoPower_;
+				std::string monitorUrl_;
+				int screenId_;
+				std::string logoUrl_;
+				std::string screenDataMap_;
+				std::string title_;
+				int screenDefault_;
+				bool success_;
 
 			};
 		}

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setNetworkType(const std::string& networkType);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
+				std::string getAutoUseCoupon()const;
+				void setAutoUseCoupon(const std::string& autoUseCoupon);
 				std::string getInstanceClass()const;
 				void setInstanceClass(const std::string& instanceClass);
 				std::string getAccessKeyId()const;
@@ -61,6 +63,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
+				std::string getAutoRenewPeriod()const;
+				void setAutoRenewPeriod(const std::string& autoRenewPeriod);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
 				std::string getResourceOwnerAccount()const;
@@ -81,6 +85,8 @@ namespace AlibabaCloud
 				void setPrivateIpAddress(const std::string& privateIpAddress);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
+				std::string getAutoRenew()const;
+				void setAutoRenew(const std::string& autoRenew);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getZoneId()const;
@@ -96,6 +102,7 @@ namespace AlibabaCloud
 				std::string couponNo_;
 				std::string networkType_;
 				std::string engineVersion_;
+				std::string autoUseCoupon_;
 				std::string instanceClass_;
 				std::string accessKeyId_;
 				long capacity_;
@@ -104,6 +111,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string instanceType_;
 				std::string businessInfo_;
+				std::string autoRenewPeriod_;
 				std::string period_;
 				std::string resourceOwnerAccount_;
 				std::string srcDBInstanceId_;
@@ -114,6 +122,7 @@ namespace AlibabaCloud
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
 				std::string instanceName_;
+				std::string autoRenew_;
 				std::string vpcId_;
 				std::string zoneId_;
 				std::string chargeType_;

@@ -35,28 +35,31 @@ namespace AlibabaCloud
 				struct HostGroup
 				{
 					std::string hostGroupType;
-					std::string status;
 					std::string hostGroupSubType;
-					int systemDiskCount;
-					std::string comment;
-					int nodeCount;
+					std::string hostGroupChangeType;
+					std::string hostGroupChangeStatus;
 					int systemDiskSize;
 					int memory;
-					std::string securityGroupId;
 					std::string gmtModified;
 					int cpu;
 					int dataDiskCount;
+					std::string lockType;
+					std::string systemDiskType;
+					std::string instanceType;
+					std::string lockReason;
+					std::string status;
+					int systemDiskCount;
+					std::string comment;
+					int nodeCount;
+					std::string securityGroupId;
 					std::string payType;
 					std::string hostGroupName;
-					std::string lockType;
 					std::string vswitchId;
-					std::string systemDiskType;
 					std::string gmtCreate;
 					std::string hostGroupId;
 					std::string dataDiskType;
+					std::string chargeType;
 					int dataDiskSize;
-					std::string instanceType;
-					std::string lockReason;
 				};
 
 

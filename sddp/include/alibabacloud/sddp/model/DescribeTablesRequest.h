@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeTablesRequest();
 				~DescribeTablesRequest();
 
+				std::string getProductCode()const;
+				void setProductCode(const std::string& productCode);
 				long getProductId()const;
 				void setProductId(long productId);
 				int getFeatureType()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				void setQueryType(int queryType);
 
             private:
+				std::string productCode_;
 				long productId_;
 				int featureType_;
 				long packageId_;

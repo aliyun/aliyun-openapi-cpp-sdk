@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
+				std::string getConfigType()const;
+				void setConfigType(const std::string& configType);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLogStoreName()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				std::string projectName_;
+				std::string configType_;
 				std::string sourceIp_;
 				std::string logStoreName_;
 				std::string datasourceDescription_;

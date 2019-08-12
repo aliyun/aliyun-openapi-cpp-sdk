@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					int instanceStatus;
 					bool independentNaming;
 					int instanceType;
+					std::string remark;
 				};
 
 

@@ -33,7 +33,7 @@ std::string AddLabelForBidRequest::getLabelSeries()const
 void AddLabelForBidRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setParameter("LabelSeries", labelSeries);
+	setCoreParameter("LabelSeries", labelSeries);
 }
 
 std::string AddLabelForBidRequest::getEndTime()const
@@ -44,7 +44,7 @@ std::string AddLabelForBidRequest::getEndTime()const
 void AddLabelForBidRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string AddLabelForBidRequest::getPK()const
@@ -55,7 +55,7 @@ std::string AddLabelForBidRequest::getPK()const
 void AddLabelForBidRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setParameter("PK", pK);
+	setCoreParameter("PK", pK);
 }
 
 std::string AddLabelForBidRequest::getLabel()const
@@ -66,6 +66,6 @@ std::string AddLabelForBidRequest::getLabel()const
 void AddLabelForBidRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setParameter("Label", label);
+	setCoreParameter("Label", label);
 }
 

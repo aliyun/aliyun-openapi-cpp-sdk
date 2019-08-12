@@ -33,7 +33,7 @@ long QueryMediaDetailJobListRequest::getResourceOwnerId()const
 void QueryMediaDetailJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMediaDetailJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryMediaDetailJobListRequest::getResourceOwnerAccount()const
 void QueryMediaDetailJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMediaDetailJobListRequest::getJobIds()const
@@ -55,7 +55,7 @@ std::string QueryMediaDetailJobListRequest::getJobIds()const
 void QueryMediaDetailJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 std::string QueryMediaDetailJobListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryMediaDetailJobListRequest::getOwnerAccount()const
 void QueryMediaDetailJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaDetailJobListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryMediaDetailJobListRequest::getOwnerId()const
 void QueryMediaDetailJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMediaDetailJobListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryMediaDetailJobListRequest::getAccessKeyId()const
 void QueryMediaDetailJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

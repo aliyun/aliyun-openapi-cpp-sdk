@@ -33,7 +33,7 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setParameter("DBInstanceDescription", dBInstanceDescription);
+	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
 void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

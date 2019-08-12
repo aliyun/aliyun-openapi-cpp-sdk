@@ -33,7 +33,7 @@ std::string LookupTmchNoticeRequest::getClaimKey()const
 void LookupTmchNoticeRequest::setClaimKey(const std::string& claimKey)
 {
 	claimKey_ = claimKey;
-	setParameter("ClaimKey", claimKey);
+	setCoreParameter("ClaimKey", claimKey);
 }
 
 std::string LookupTmchNoticeRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string LookupTmchNoticeRequest::getUserClientIp()const
 void LookupTmchNoticeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string LookupTmchNoticeRequest::getLang()const
@@ -55,6 +55,6 @@ std::string LookupTmchNoticeRequest::getLang()const
 void LookupTmchNoticeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

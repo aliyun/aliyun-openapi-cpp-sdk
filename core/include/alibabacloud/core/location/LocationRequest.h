@@ -23,13 +23,13 @@
 namespace AlibabaCloud {
 namespace Location {
 class ALIBABACLOUD_CORE_EXPORT LocationRequest : public RpcServiceRequest {
- public:
-  explicit LocationRequest(const std::string & action);
+public:
+  explicit LocationRequest(const std::string &action);
   virtual ~LocationRequest();
 
- private:
+private:
 };
-}  // namespace Location
-}  // namespace AlibabaCloud
+} // namespace Location
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_LOCATIONREQUEST_H_

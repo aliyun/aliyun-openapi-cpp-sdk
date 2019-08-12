@@ -33,7 +33,7 @@ std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
 void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()const
@@ -44,7 +44,7 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setParameter("CurrentConnectionString", currentConnectionString);
+	setCoreParameter("CurrentConnectionString", currentConnectionString);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

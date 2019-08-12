@@ -87,6 +87,8 @@ namespace AlibabaCloud
 				void setAk_mfa_present(bool ak_mfa_present);
 				bool getSecurity_transport()const;
 				void setSecurity_transport(bool security_transport);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				bool proxy_trust_transport_info_;
 				bool ak_mfa_present_;
 				bool security_transport_;
+				std::string serviceCode_;
 				std::string requestId_;
 
 			};

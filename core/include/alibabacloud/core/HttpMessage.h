@@ -17,18 +17,18 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPMESSAGE_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPMESSAGE_H_
 
+#include "CoreExport.h"
 #include <map>
 #include <string>
-#include "CoreExport.h"
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT HttpMessage {
- private:
+private:
   struct ALIBABACLOUD_CORE_EXPORT nocaseLess {
-    bool operator() (const std::string & s1, const std::string & s2) const;
+    bool operator()(const std::string &s1, const std::string &s2) const;
   };
 
- public:
+public:
   enum KnownHeader {
     Accept,
     AcceptCharset,
@@ -52,31 +52,31 @@ class ALIBABACLOUD_CORE_EXPORT HttpMessage {
 
   HttpMessage(const HttpMessage &other);
   HttpMessage(HttpMessage &&other);
-  HttpMessage& operator=(const HttpMessage &other);
-  HttpMessage& operator=(HttpMessage &&other);
+  HttpMessage &operator=(const HttpMessage &other);
+  HttpMessage &operator=(HttpMessage &&other);
   virtual ~HttpMessage();
 
   void addHeader(const HeaderNameType &name, const HeaderValueType &value);
   void addHeader(KnownHeader header, const HeaderValueType &value);
-  const char* body()const;
-  size_t bodySize()const;
-  bool hasBody()const;
+  const char *body() const;
+  size_t bodySize() const;
+  bool hasBody() const;
   HeaderValueType header(const HeaderNameType &name) const;
   HeaderValueType header(KnownHeader header) const;
-  HeaderCollection headers()const;
+  HeaderCollection headers() const;
   void removeHeader(const HeaderNameType &name);
   void removeHeader(KnownHeader header);
   void setBody(const char *data, size_t size);
   void setHeader(const HeaderNameType &name, const HeaderValueType &value);
   void setHeader(KnownHeader header, const std::string &value);
 
- protected:
+protected:
   HttpMessage();
 
- private:
+private:
   char *body_;
   size_t bodySize_;
   HeaderCollection headers_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPMESSAGE_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPMESSAGE_H_

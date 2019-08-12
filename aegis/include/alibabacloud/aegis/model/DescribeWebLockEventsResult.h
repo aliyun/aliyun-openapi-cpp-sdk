@@ -34,17 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct EventInfo
 				{
-					std::string instanceName;
 					std::string status;
 					std::string path;
-					std::string uuid;
-					std::string internetIp;
 					std::string eventType;
 					std::string ip;
-					std::string level;
 					std::string eventName;
-					long gmtEvent;
 					std::string intranetIp;
+					std::string instanceName;
+					std::string uuid;
+					std::string internetIp;
+					std::string level;
+					long id;
+					long gmtEvent;
 					std::string solution;
 				};
 

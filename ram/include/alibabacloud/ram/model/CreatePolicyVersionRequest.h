@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setPolicyName(const std::string& policyName);
 				std::string getPolicyDocument()const;
 				void setPolicyDocument(const std::string& policyDocument);
+				std::string getRotateStrategy()const;
+				void setRotateStrategy(const std::string& rotateStrategy);
 
             private:
 				bool setAsDefault_;
 				std::string policyName_;
 				std::string policyDocument_;
+				std::string rotateStrategy_;
 
 			};
 		}

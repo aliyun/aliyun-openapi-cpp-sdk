@@ -35,10 +35,13 @@ DescribeGtmInstanceAddressPoolsResult::~DescribeGtmInstanceAddressPoolsResult()
 
 void DescribeGtmInstanceAddressPoolsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAddrPools = value["AddrPools"]["AddrPool"];
 	for (auto value : allAddrPools)

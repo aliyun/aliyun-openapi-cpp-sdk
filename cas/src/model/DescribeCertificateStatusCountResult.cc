@@ -35,10 +35,13 @@ DescribeCertificateStatusCountResult::~DescribeCertificateStatusCountResult()
 
 void DescribeCertificateStatusCountResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["Payed"].isNull())
 		payed_ = std::stoi(value["Payed"].asString());
@@ -56,6 +59,8 @@ void DescribeCertificateStatusCountResult::parse(const std::string &payload)
 		willExpired_ = std::stoi(value["WillExpired"].asString());
 	if(!value["Expired"].isNull())
 		expired_ = std::stoi(value["Expired"].asString());
+	if(!value["RevokeChecking"].isNull())
+		revokeChecking_ = std::stoi(value["RevokeChecking"].asString());
 
 }
 
@@ -97,5 +102,10 @@ int DescribeCertificateStatusCountResult::getCheckedFail()const
 int DescribeCertificateStatusCountResult::getChecking()const
 {
 	return checking_;
+}
+
+int DescribeCertificateStatusCountResult::getRevokeChecking()const
+{
+	return revokeChecking_;
 }
 

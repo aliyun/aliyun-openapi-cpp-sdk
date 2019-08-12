@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				ListFlowJobHistoryRequest();
 				~ListFlowJobHistoryRequest();
 
+				std::string getTimeRange()const;
+				void setTimeRange(const std::string& timeRange);
+				std::vector<std::string> getStatusList()const;
+				void setStatusList(const std::vector<std::string>& statusList);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -43,14 +49,20 @@ namespace AlibabaCloud
 				void setId(const std::string& id);
 				std::string getProjectId()const;
 				void setProjectId(const std::string& projectId);
+				std::string getJobType()const;
+				void setJobType(const std::string& jobType);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
+				std::string timeRange_;
+				std::vector<std::string> statusList_;
+				std::string instanceId_;
 				std::string regionId_;
 				int pageSize_;
 				std::string id_;
 				std::string projectId_;
+				std::string jobType_;
 				int pageNumber_;
 
 			};

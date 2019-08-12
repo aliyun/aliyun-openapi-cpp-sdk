@@ -33,7 +33,7 @@ std::string DescribeOrderDocumentRequest::getSourceIp()const
 void DescribeOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeOrderDocumentRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeOrderDocumentRequest::getOrderId()const
 void DescribeOrderDocumentRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeOrderDocumentRequest::getType()const
@@ -55,7 +55,7 @@ std::string DescribeOrderDocumentRequest::getType()const
 void DescribeOrderDocumentRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeOrderDocumentRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeOrderDocumentRequest::getLang()const
 void DescribeOrderDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,18 +33,7 @@ std::string GetParametersForImportRequest::getKeyId()const
 void GetParametersForImportRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string GetParametersForImportRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void GetParametersForImportRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 
 std::string GetParametersForImportRequest::getWrappingAlgorithm()const
@@ -55,7 +44,7 @@ std::string GetParametersForImportRequest::getWrappingAlgorithm()const
 void GetParametersForImportRequest::setWrappingAlgorithm(const std::string& wrappingAlgorithm)
 {
 	wrappingAlgorithm_ = wrappingAlgorithm;
-	setParameter("WrappingAlgorithm", wrappingAlgorithm);
+	setCoreParameter("WrappingAlgorithm", wrappingAlgorithm);
 }
 
 std::string GetParametersForImportRequest::getWrappingKeySpec()const
@@ -66,6 +55,6 @@ std::string GetParametersForImportRequest::getWrappingKeySpec()const
 void GetParametersForImportRequest::setWrappingKeySpec(const std::string& wrappingKeySpec)
 {
 	wrappingKeySpec_ = wrappingKeySpec;
-	setParameter("WrappingKeySpec", wrappingKeySpec);
+	setCoreParameter("WrappingKeySpec", wrappingKeySpec);
 }
 

@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				DescribeColumnsRequest();
 				~DescribeColumnsRequest();
 
+				std::string getProductCode()const;
+				void setProductCode(const std::string& productCode);
+				long getInstanceId()const;
+				void setInstanceId(long instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getFeatureType()const;
@@ -57,6 +61,8 @@ namespace AlibabaCloud
 				void setRuleId(long ruleId);
 
             private:
+				std::string productCode_;
+				long instanceId_;
 				std::string sourceIp_;
 				int featureType_;
 				std::string riskLevels_;

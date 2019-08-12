@@ -33,7 +33,7 @@ std::string AddBuDBInstanceRelationRequest::getBusinessUnit()const
 void AddBuDBInstanceRelationRequest::setBusinessUnit(const std::string& businessUnit)
 {
 	businessUnit_ = businessUnit;
-	setParameter("BusinessUnit", businessUnit);
+	setCoreParameter("BusinessUnit", businessUnit);
 }
 
 std::string AddBuDBInstanceRelationRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string AddBuDBInstanceRelationRequest::getDBInstanceId()const
 void AddBuDBInstanceRelationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 long AddBuDBInstanceRelationRequest::getOwnerId()const
@@ -55,7 +55,7 @@ long AddBuDBInstanceRelationRequest::getOwnerId()const
 void AddBuDBInstanceRelationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddBuDBInstanceRelationRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string AddBuDBInstanceRelationRequest::getAccessKeyId()const
 void AddBuDBInstanceRelationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

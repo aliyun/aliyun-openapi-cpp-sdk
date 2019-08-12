@@ -33,7 +33,7 @@ long DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerParentId()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_original_securit
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getStartTime()cons
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_original_
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getOwnerIdLoginEma
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerType()con
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getAccessKeyId()co
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getSecurityToken()const
@@ -110,7 +110,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getSecurityToken()
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getRequestContent()const
@@ -121,7 +121,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getRequestContent(
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerBidEmail()const
@@ -132,7 +132,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerBidEmail(
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerUidEmail()const
@@ -143,7 +143,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerUidEmail(
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerUid()const
@@ -154,7 +154,7 @@ long DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerUid()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getApp_ip()const
@@ -165,7 +165,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getApp_ip()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getPopProduct()const
@@ -176,7 +176,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getPopProduct()con
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getProduct()const
@@ -187,7 +187,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getProduct()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getDomainName()const
@@ -198,7 +198,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getDomainName()con
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getEndTime()const
@@ -209,7 +209,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getEndTime()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerBid()const
@@ -220,7 +220,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getCallerBid()cons
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeScdnDomainRealTimeByteHitRateDataRequest::getOwnerId()const
@@ -231,7 +231,7 @@ long DescribeScdnDomainRealTimeByteHitRateDataRequest::getOwnerId()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getVersion()const
@@ -242,7 +242,7 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getVersion()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_trust_transport_info()const
@@ -253,7 +253,7 @@ bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getProxy_trust_transport_
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getAk_mfa_present()const
@@ -264,7 +264,7 @@ bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getAk_mfa_present()const
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getSecurity_transport()const
@@ -275,7 +275,7 @@ bool DescribeScdnDomainRealTimeByteHitRateDataRequest::getSecurity_transport()co
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getRequestId()const
@@ -286,6 +286,6 @@ std::string DescribeScdnDomainRealTimeByteHitRateDataRequest::getRequestId()cons
 void DescribeScdnDomainRealTimeByteHitRateDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

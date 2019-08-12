@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsTraceQueryByMsgKeyRequest();
 				~OnsTraceQueryByMsgKeyRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
@@ -49,7 +47,6 @@ namespace AlibabaCloud
 				void setMsgKey(const std::string& msgKey);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string topic_;
 				long endTime_;

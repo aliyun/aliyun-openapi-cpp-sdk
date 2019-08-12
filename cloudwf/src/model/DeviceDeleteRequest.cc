@@ -33,7 +33,7 @@ long DeviceDeleteRequest::getDid()const
 void DeviceDeleteRequest::setDid(long did)
 {
 	did_ = did;
-	setParameter("Did", std::to_string(did));
+	setCoreParameter("Did", std::to_string(did));
 }
 
 std::string DeviceDeleteRequest::getMac()const
@@ -44,7 +44,7 @@ std::string DeviceDeleteRequest::getMac()const
 void DeviceDeleteRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setParameter("Mac", mac);
+	setCoreParameter("Mac", mac);
 }
 
 std::string DeviceDeleteRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeviceDeleteRequest::getAccessKeyId()const
 void DeviceDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

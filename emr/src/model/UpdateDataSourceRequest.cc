@@ -33,7 +33,7 @@ long UpdateDataSourceRequest::getResourceOwnerId()const
 void UpdateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string UpdateDataSourceRequest::getRegionId()const
 void UpdateDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string UpdateDataSourceRequest::getName()const
@@ -55,7 +55,7 @@ std::string UpdateDataSourceRequest::getName()const
 void UpdateDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string UpdateDataSourceRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string UpdateDataSourceRequest::getDescription()const
 void UpdateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string UpdateDataSourceRequest::getConf()const
@@ -77,7 +77,7 @@ std::string UpdateDataSourceRequest::getConf()const
 void UpdateDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setParameter("Conf", conf);
+	setCoreParameter("Conf", conf);
 }
 
 std::string UpdateDataSourceRequest::getId()const
@@ -88,7 +88,7 @@ std::string UpdateDataSourceRequest::getId()const
 void UpdateDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string UpdateDataSourceRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string UpdateDataSourceRequest::getAccessKeyId()const
 void UpdateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

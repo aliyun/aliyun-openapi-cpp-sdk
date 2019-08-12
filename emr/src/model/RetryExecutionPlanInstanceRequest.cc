@@ -33,7 +33,7 @@ long RetryExecutionPlanInstanceRequest::getResourceOwnerId()const
 void RetryExecutionPlanInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RetryExecutionPlanInstanceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string RetryExecutionPlanInstanceRequest::getRegionId()const
 void RetryExecutionPlanInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getArguments()const
@@ -55,7 +55,7 @@ std::string RetryExecutionPlanInstanceRequest::getArguments()const
 void RetryExecutionPlanInstanceRequest::setArguments(const std::string& arguments)
 {
 	arguments_ = arguments;
-	setParameter("Arguments", arguments);
+	setCoreParameter("Arguments", arguments);
 }
 
 std::string RetryExecutionPlanInstanceRequest::getId()const
@@ -66,7 +66,7 @@ std::string RetryExecutionPlanInstanceRequest::getId()const
 void RetryExecutionPlanInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 bool RetryExecutionPlanInstanceRequest::getRerunFail()const
@@ -77,7 +77,7 @@ bool RetryExecutionPlanInstanceRequest::getRerunFail()const
 void RetryExecutionPlanInstanceRequest::setRerunFail(bool rerunFail)
 {
 	rerunFail_ = rerunFail;
-	setParameter("RerunFail", std::to_string(rerunFail));
+	setCoreParameter("RerunFail", rerunFail ? "true" : "false");
 }
 
 std::string RetryExecutionPlanInstanceRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string RetryExecutionPlanInstanceRequest::getAccessKeyId()const
 void RetryExecutionPlanInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setRuleDesc(const std::string& ruleDesc);
 				std::string getDataType()const;
 				void setDataType(const std::string& dataType);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getWhere()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string select_;
 				std::string ruleDesc_;
 				std::string dataType_;
+				std::string iotInstanceId_;
 				std::string name_;
 				std::string where_;
 				std::string productKey_;

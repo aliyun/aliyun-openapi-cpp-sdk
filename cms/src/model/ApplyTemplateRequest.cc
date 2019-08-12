@@ -33,7 +33,7 @@ long ApplyTemplateRequest::getEnableStartTime()const
 void ApplyTemplateRequest::setEnableStartTime(long enableStartTime)
 {
 	enableStartTime_ = enableStartTime;
-	setParameter("EnableStartTime", std::to_string(enableStartTime));
+	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
 }
 
 std::string ApplyTemplateRequest::getApplyMode()const
@@ -44,7 +44,7 @@ std::string ApplyTemplateRequest::getApplyMode()const
 void ApplyTemplateRequest::setApplyMode(const std::string& applyMode)
 {
 	applyMode_ = applyMode;
-	setParameter("ApplyMode", applyMode);
+	setCoreParameter("ApplyMode", applyMode);
 }
 
 std::string ApplyTemplateRequest::getTemplateIds()const
@@ -55,7 +55,7 @@ std::string ApplyTemplateRequest::getTemplateIds()const
 void ApplyTemplateRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setParameter("TemplateIds", templateIds);
+	setCoreParameter("TemplateIds", templateIds);
 }
 
 long ApplyTemplateRequest::getEnableEndTime()const
@@ -66,7 +66,7 @@ long ApplyTemplateRequest::getEnableEndTime()const
 void ApplyTemplateRequest::setEnableEndTime(long enableEndTime)
 {
 	enableEndTime_ = enableEndTime;
-	setParameter("EnableEndTime", std::to_string(enableEndTime));
+	setCoreParameter("EnableEndTime", std::to_string(enableEndTime));
 }
 
 long ApplyTemplateRequest::getGroupId()const
@@ -77,7 +77,7 @@ long ApplyTemplateRequest::getGroupId()const
 void ApplyTemplateRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+	setCoreParameter("GroupId", std::to_string(groupId));
 }
 
 long ApplyTemplateRequest::getNotifyLevel()const
@@ -88,7 +88,7 @@ long ApplyTemplateRequest::getNotifyLevel()const
 void ApplyTemplateRequest::setNotifyLevel(long notifyLevel)
 {
 	notifyLevel_ = notifyLevel;
-	setParameter("NotifyLevel", std::to_string(notifyLevel));
+	setCoreParameter("NotifyLevel", std::to_string(notifyLevel));
 }
 
 long ApplyTemplateRequest::getSilenceTime()const
@@ -99,6 +99,6 @@ long ApplyTemplateRequest::getSilenceTime()const
 void ApplyTemplateRequest::setSilenceTime(long silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setParameter("SilenceTime", std::to_string(silenceTime));
+	setCoreParameter("SilenceTime", std::to_string(silenceTime));
 }
 

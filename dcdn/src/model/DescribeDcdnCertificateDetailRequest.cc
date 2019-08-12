@@ -33,7 +33,7 @@ std::string DescribeDcdnCertificateDetailRequest::getSecurityToken()const
 void DescribeDcdnCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnCertificateDetailRequest::getCertName()const
@@ -44,7 +44,7 @@ std::string DescribeDcdnCertificateDetailRequest::getCertName()const
 void DescribeDcdnCertificateDetailRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setParameter("CertName", certName);
+	setCoreParameter("CertName", certName);
 }
 
 long DescribeDcdnCertificateDetailRequest::getOwnerId()const
@@ -55,17 +55,6 @@ long DescribeDcdnCertificateDetailRequest::getOwnerId()const
 void DescribeDcdnCertificateDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDcdnCertificateDetailRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeDcdnCertificateDetailRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

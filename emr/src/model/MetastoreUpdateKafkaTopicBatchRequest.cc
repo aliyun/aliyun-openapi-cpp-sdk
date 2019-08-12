@@ -33,7 +33,7 @@ long MetastoreUpdateKafkaTopicBatchRequest::getResourceOwnerId()const
 void MetastoreUpdateKafkaTopicBatchRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<MetastoreUpdateKafkaTopicBatchRequest::TopicParam> MetastoreUpdateKafkaTopicBatchRequest::getTopicParam()const
@@ -48,8 +48,8 @@ void MetastoreUpdateKafkaTopicBatchRequest::setTopicParam(const std::vector<Topi
 	for(int i = 0; i!= topicParam.size(); i++)	{
 		auto obj = topicParam.at(i);
 		std::string str ="TopicParam."+ std::to_string(i);
-		setParameter(str + ".TopicId", obj.topicId);
-		setParameter(str + ".NumPartitions", std::to_string(obj.numPartitions));
+		setCoreParameter(str + ".TopicId", obj.topicId);
+		setCoreParameter(str + ".NumPartitions", std::to_string(obj.numPartitions));
 	}
 }
 
@@ -61,7 +61,7 @@ std::string MetastoreUpdateKafkaTopicBatchRequest::getRegionId()const
 void MetastoreUpdateKafkaTopicBatchRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreUpdateKafkaTopicBatchRequest::getAccessKeyId()const
@@ -72,6 +72,6 @@ std::string MetastoreUpdateKafkaTopicBatchRequest::getAccessKeyId()const
 void MetastoreUpdateKafkaTopicBatchRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

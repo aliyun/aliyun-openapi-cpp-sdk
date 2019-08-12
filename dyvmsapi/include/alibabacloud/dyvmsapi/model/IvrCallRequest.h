@@ -32,9 +32,9 @@ namespace AlibabaCloud
 			{
 				struct MenuKeyMap
 				{
-					std::string key;
 					std::string code;
 					std::string ttsParams;
+					std::string key;
 				};
 
 			public:

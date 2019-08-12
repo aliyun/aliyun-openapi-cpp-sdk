@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getProjectId()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string navParentId_;
 				std::string name_;
 				std::string description_;
+				std::string clusterId_;
 				std::string type_;
 				std::string projectId_;
 				std::string accessKeyId_;

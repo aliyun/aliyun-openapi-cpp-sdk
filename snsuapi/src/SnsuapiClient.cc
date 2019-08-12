@@ -195,42 +195,6 @@ SnsuapiClient::MobileStatusQueryOutcomeCallable SnsuapiClient::mobileStatusQuery
 	return task->get_future();
 }
 
-SnsuapiClient::BandOfferOrderOutcome SnsuapiClient::bandOfferOrder(const BandOfferOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BandOfferOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BandOfferOrderOutcome(BandOfferOrderResult(outcome.result()));
-	else
-		return BandOfferOrderOutcome(outcome.error());
-}
-
-void SnsuapiClient::bandOfferOrderAsync(const BandOfferOrderRequest& request, const BandOfferOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bandOfferOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SnsuapiClient::BandOfferOrderOutcomeCallable SnsuapiClient::bandOfferOrderCallable(const BandOfferOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BandOfferOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->bandOfferOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SnsuapiClient::MobileStopSpeedUpOutcome SnsuapiClient::mobileStopSpeedUp(const MobileStopSpeedUpRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +225,42 @@ SnsuapiClient::MobileStopSpeedUpOutcomeCallable SnsuapiClient::mobileStopSpeedUp
 			[this, request]()
 			{
 			return this->mobileStopSpeedUp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SnsuapiClient::BandOfferOrderOutcome SnsuapiClient::bandOfferOrder(const BandOfferOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BandOfferOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BandOfferOrderOutcome(BandOfferOrderResult(outcome.result()));
+	else
+		return BandOfferOrderOutcome(outcome.error());
+}
+
+void SnsuapiClient::bandOfferOrderAsync(const BandOfferOrderRequest& request, const BandOfferOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bandOfferOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SnsuapiClient::BandOfferOrderOutcomeCallable SnsuapiClient::bandOfferOrderCallable(const BandOfferOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BandOfferOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->bandOfferOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

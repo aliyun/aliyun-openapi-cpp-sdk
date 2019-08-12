@@ -33,7 +33,7 @@ std::string ListUsersForGroupRequest::getMarker()const
 void ListUsersForGroupRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setParameter("Marker", marker);
+	setCoreParameter("Marker", marker);
 }
 
 int ListUsersForGroupRequest::getMaxItems()const
@@ -44,7 +44,7 @@ int ListUsersForGroupRequest::getMaxItems()const
 void ListUsersForGroupRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setParameter("MaxItems", std::to_string(maxItems));
+	setCoreParameter("MaxItems", std::to_string(maxItems));
 }
 
 std::string ListUsersForGroupRequest::getGroupName()const
@@ -55,6 +55,6 @@ std::string ListUsersForGroupRequest::getGroupName()const
 void ListUsersForGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+	setCoreParameter("GroupName", groupName);
 }
 

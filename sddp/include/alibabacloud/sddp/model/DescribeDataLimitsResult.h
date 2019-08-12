@@ -39,6 +39,8 @@ namespace AlibabaCloud
 					long gmtCreate;
 					std::string userName;
 					int checkStatus;
+					std::string resourceTypeCode;
+					long resourceType;
 					std::string regionId;
 					long id;
 					std::string checkStatusName;

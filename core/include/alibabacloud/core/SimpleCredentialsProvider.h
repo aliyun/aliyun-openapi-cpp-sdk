@@ -23,16 +23,16 @@
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT SimpleCredentialsProvider
     : public CredentialsProvider {
- public:
+public:
   explicit SimpleCredentialsProvider(const Credentials &credentials);
   SimpleCredentialsProvider(const std::string &accessKeyId,
-    const std::string &accessKeySecret);
+                            const std::string &accessKeySecret);
   ~SimpleCredentialsProvider();
 
   Credentials getCredentials() override;
 
- private:
+private:
   Credentials credentials_;
 };
-}  // namespace AlibabaCloud
-#endif   // CORE_INCLUDE_ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_SIMPLECREDENTIALSPROVIDER_H_

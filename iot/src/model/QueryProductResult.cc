@@ -35,10 +35,13 @@ QueryProductResult::~QueryProductResult()
 
 void QueryProductResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["GmtCreate"].isNull())
@@ -71,6 +74,8 @@ void QueryProductResult::parse(const std::string &payload)
 		data_.productStatus = dataNode["ProductStatus"].asString();
 	if(!dataNode["Owner"].isNull())
 		data_.owner = dataNode["Owner"].asString() == "true";
+	if(!dataNode["NetType"].isNull())
+		data_.netType = std::stoi(dataNode["NetType"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

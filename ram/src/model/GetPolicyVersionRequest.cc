@@ -33,7 +33,7 @@ std::string GetPolicyVersionRequest::getVersionId()const
 void GetPolicyVersionRequest::setVersionId(const std::string& versionId)
 {
 	versionId_ = versionId;
-	setParameter("VersionId", versionId);
+	setCoreParameter("VersionId", versionId);
 }
 
 std::string GetPolicyVersionRequest::getPolicyType()const
@@ -44,7 +44,7 @@ std::string GetPolicyVersionRequest::getPolicyType()const
 void GetPolicyVersionRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setParameter("PolicyType", policyType);
+	setCoreParameter("PolicyType", policyType);
 }
 
 std::string GetPolicyVersionRequest::getPolicyName()const
@@ -55,6 +55,6 @@ std::string GetPolicyVersionRequest::getPolicyName()const
 void GetPolicyVersionRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+	setCoreParameter("PolicyName", policyName);
 }
 

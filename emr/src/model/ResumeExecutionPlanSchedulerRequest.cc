@@ -33,7 +33,7 @@ long ResumeExecutionPlanSchedulerRequest::getResourceOwnerId()const
 void ResumeExecutionPlanSchedulerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ResumeExecutionPlanSchedulerRequest::getRegionId()const
 void ResumeExecutionPlanSchedulerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getId()const
@@ -55,7 +55,7 @@ std::string ResumeExecutionPlanSchedulerRequest::getId()const
 void ResumeExecutionPlanSchedulerRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ResumeExecutionPlanSchedulerRequest::getAccessKeyId()const
 void ResumeExecutionPlanSchedulerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string PhysicalDeleteResourceRequest::getCountry()const
 void PhysicalDeleteResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setParameter("Country", country);
+	setCoreParameter("Country", country);
 }
 
 long PhysicalDeleteResourceRequest::getHid()const
@@ -44,7 +44,7 @@ long PhysicalDeleteResourceRequest::getHid()const
 void PhysicalDeleteResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setParameter("Hid", std::to_string(hid));
+	setCoreParameter("Hid", std::to_string(hid));
 }
 
 bool PhysicalDeleteResourceRequest::getSuccess()const
@@ -55,7 +55,7 @@ bool PhysicalDeleteResourceRequest::getSuccess()const
 void PhysicalDeleteResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setParameter("Success", success ? "true" : "false");
+	setCoreParameter("Success", success ? "true" : "false");
 }
 
 bool PhysicalDeleteResourceRequest::getInterrupt()const
@@ -66,7 +66,7 @@ bool PhysicalDeleteResourceRequest::getInterrupt()const
 void PhysicalDeleteResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setParameter("Interrupt", interrupt ? "true" : "false");
+	setCoreParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string PhysicalDeleteResourceRequest::getGmtWakeup()const
@@ -77,7 +77,7 @@ std::string PhysicalDeleteResourceRequest::getGmtWakeup()const
 void PhysicalDeleteResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setParameter("GmtWakeup", gmtWakeup);
+	setCoreParameter("GmtWakeup", gmtWakeup);
 }
 
 std::string PhysicalDeleteResourceRequest::getPk()const
@@ -88,7 +88,7 @@ std::string PhysicalDeleteResourceRequest::getPk()const
 void PhysicalDeleteResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setParameter("Pk", pk);
+	setCoreParameter("Pk", pk);
 }
 
 std::string PhysicalDeleteResourceRequest::getInvoker()const
@@ -99,7 +99,7 @@ std::string PhysicalDeleteResourceRequest::getInvoker()const
 void PhysicalDeleteResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setParameter("Invoker", invoker);
+	setCoreParameter("Invoker", invoker);
 }
 
 std::string PhysicalDeleteResourceRequest::getBid()const
@@ -110,7 +110,7 @@ std::string PhysicalDeleteResourceRequest::getBid()const
 void PhysicalDeleteResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setParameter("Bid", bid);
+	setCoreParameter("Bid", bid);
 }
 
 std::string PhysicalDeleteResourceRequest::getMessage()const
@@ -121,7 +121,7 @@ std::string PhysicalDeleteResourceRequest::getMessage()const
 void PhysicalDeleteResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setParameter("Message", message);
+	setCoreParameter("Message", message);
 }
 
 std::string PhysicalDeleteResourceRequest::getTaskExtraData()const
@@ -132,7 +132,7 @@ std::string PhysicalDeleteResourceRequest::getTaskExtraData()const
 void PhysicalDeleteResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setParameter("TaskExtraData", taskExtraData);
+	setCoreParameter("TaskExtraData", taskExtraData);
 }
 
 std::string PhysicalDeleteResourceRequest::getTaskIdentifier()const
@@ -143,6 +143,6 @@ std::string PhysicalDeleteResourceRequest::getTaskIdentifier()const
 void PhysicalDeleteResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setParameter("TaskIdentifier", taskIdentifier);
+	setCoreParameter("TaskIdentifier", taskIdentifier);
 }
 

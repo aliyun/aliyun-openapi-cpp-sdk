@@ -30,18 +30,32 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CAS_EXPORT DescribeCertificateStatusCountRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeCertificateStatusCountRequest();
 				~DescribeCertificateStatusCountRequest();
 
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
+				std::string resourceGroupId_;
 				std::string sourceIp_;
+				std::string regionId_;
+				std::vector<Tag> tag_;
 				std::string lang_;
 
 			};

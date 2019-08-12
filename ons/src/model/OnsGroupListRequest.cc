@@ -25,17 +25,6 @@ OnsGroupListRequest::OnsGroupListRequest() :
 OnsGroupListRequest::~OnsGroupListRequest()
 {}
 
-long OnsGroupListRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsGroupListRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsGroupListRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getProxyPattern()const;
 				void setProxyPattern(const std::string& proxyPattern);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getUserClientIp()const;
 				void setUserClientIp(const std::string& userClientIp);
 				std::string getLang()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::string proxyPattern_;
+				std::string resourceGroupId_;
 				std::string userClientIp_;
 				std::string lang_;
 				std::string zoneName_;

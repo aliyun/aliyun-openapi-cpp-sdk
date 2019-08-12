@@ -33,7 +33,7 @@ long ListDataSourceSchemaTableRequest::getResourceOwnerId()const
 void ListDataSourceSchemaTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListDataSourceSchemaTableRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string ListDataSourceSchemaTableRequest::getDbName()const
 void ListDataSourceSchemaTableRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string ListDataSourceSchemaTableRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ListDataSourceSchemaTableRequest::getRegionId()const
 void ListDataSourceSchemaTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListDataSourceSchemaTableRequest::getDataSourceId()const
@@ -66,7 +66,7 @@ std::string ListDataSourceSchemaTableRequest::getDataSourceId()const
 void ListDataSourceSchemaTableRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string ListDataSourceSchemaTableRequest::getTableName()const
@@ -77,7 +77,7 @@ std::string ListDataSourceSchemaTableRequest::getTableName()const
 void ListDataSourceSchemaTableRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setParameter("TableName", tableName);
+	setCoreParameter("TableName", tableName);
 }
 
 std::string ListDataSourceSchemaTableRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ListDataSourceSchemaTableRequest::getAccessKeyId()const
 void ListDataSourceSchemaTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

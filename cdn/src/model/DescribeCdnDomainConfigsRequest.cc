@@ -33,7 +33,7 @@ std::string DescribeCdnDomainConfigsRequest::getFunctionNames()const
 void DescribeCdnDomainConfigsRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setParameter("FunctionNames", functionNames);
+	setCoreParameter("FunctionNames", functionNames);
 }
 
 std::string DescribeCdnDomainConfigsRequest::getSecurityToken()const
@@ -44,7 +44,7 @@ std::string DescribeCdnDomainConfigsRequest::getSecurityToken()const
 void DescribeCdnDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeCdnDomainConfigsRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string DescribeCdnDomainConfigsRequest::getDomainName()const
 void DescribeCdnDomainConfigsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long DescribeCdnDomainConfigsRequest::getOwnerId()const
@@ -66,6 +66,6 @@ long DescribeCdnDomainConfigsRequest::getOwnerId()const
 void DescribeCdnDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

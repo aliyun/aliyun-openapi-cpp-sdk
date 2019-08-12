@@ -33,6 +33,6 @@ std::string DeleteUserRequest::getUserName()const
 void DeleteUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setParameter("UserName", userName);
+	setCoreParameter("UserName", userName);
 }
 

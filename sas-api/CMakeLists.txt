@@ -23,10 +23,10 @@ set(sas-api_public_header
 set(sas-api_public_header_model 
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordRequest.h
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyWordResult.h
-	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesRequest.h
-	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesResult.h
 	include/alibabacloud/sas-api/model/DescribeThreatDistributeRequest.h
 	include/alibabacloud/sas-api/model/DescribeThreatDistributeResult.h
+	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesRequest.h
+	include/alibabacloud/sas-api/model/DescribeThreatTypeLinesResult.h
 	include/alibabacloud/sas-api/model/GetPhoneProfileRequest.h
 	include/alibabacloud/sas-api/model/GetPhoneProfileResult.h
 	include/alibabacloud/sas-api/model/DescribeAccountProfileByKeyRequest.h
@@ -50,10 +50,10 @@ set(sas-api_src
 	src/Sas-apiClient.cc
 	src/model/DescribeAccountProfileByKeyWordRequest.cc
 	src/model/DescribeAccountProfileByKeyWordResult.cc
-	src/model/DescribeThreatTypeLinesRequest.cc
-	src/model/DescribeThreatTypeLinesResult.cc
 	src/model/DescribeThreatDistributeRequest.cc
 	src/model/DescribeThreatDistributeResult.cc
+	src/model/DescribeThreatTypeLinesRequest.cc
+	src/model/DescribeThreatTypeLinesResult.cc
 	src/model/GetPhoneProfileRequest.cc
 	src/model/GetPhoneProfileResult.cc
 	src/model/DescribeAccountProfileByKeyRequest.cc

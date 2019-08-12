@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					int pageSize;
 					int currentPage;
 				};
-				struct ActionListItem
+				struct ActionListArr
 				{
 					std::string actionName;
 					long gmtCreate;
@@ -54,13 +54,13 @@ namespace AlibabaCloud
 				explicit DescribeDingTalkResult(const std::string &payload);
 				~DescribeDingTalkResult();
 				PageInfo getPageInfo()const;
-				std::vector<ActionListItem> getActionList()const;
+				std::vector<ActionListArr> getActionList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<ActionListItem> actionList_;
+				std::vector<ActionListArr> actionList_;
 
 			};
 		}

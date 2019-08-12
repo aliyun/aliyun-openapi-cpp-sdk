@@ -80,6 +80,17 @@ void DescribeTraceInfoNodeRequest::setType(const std::string& type)
 	setCoreParameter("Type", type);
 }
 
+long DescribeTraceInfoNodeRequest::getIncidentTime()const
+{
+	return incidentTime_;
+}
+
+void DescribeTraceInfoNodeRequest::setIncidentTime(long incidentTime)
+{
+	incidentTime_ = incidentTime;
+	setCoreParameter("IncidentTime", std::to_string(incidentTime));
+}
+
 std::string DescribeTraceInfoNodeRequest::getUuid()const
 {
 	return uuid_;

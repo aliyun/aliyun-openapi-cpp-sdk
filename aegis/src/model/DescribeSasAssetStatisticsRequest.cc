@@ -58,6 +58,17 @@ void DescribeSasAssetStatisticsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeSasAssetStatisticsRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeSasAssetStatisticsRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
 int DescribeSasAssetStatisticsRequest::getCurrentPage()const
 {
 	return currentPage_;

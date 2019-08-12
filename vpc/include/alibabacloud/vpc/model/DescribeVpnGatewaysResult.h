@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string internetIp;
 					std::string vpnGatewayId;
 					std::string chargeType;
+					std::string tag;
 					std::string spec;
 					long sslMaxConnections;
 				};

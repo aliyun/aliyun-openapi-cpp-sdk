@@ -33,7 +33,7 @@ std::string ResumeFlowRequest::getFlowInstanceId()const
 void ResumeFlowRequest::setFlowInstanceId(const std::string& flowInstanceId)
 {
 	flowInstanceId_ = flowInstanceId;
-	setParameter("FlowInstanceId", flowInstanceId);
+	setCoreParameter("FlowInstanceId", flowInstanceId);
 }
 
 std::string ResumeFlowRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ResumeFlowRequest::getRegionId()const
 void ResumeFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ResumeFlowRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string ResumeFlowRequest::getProjectId()const
 void ResumeFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 

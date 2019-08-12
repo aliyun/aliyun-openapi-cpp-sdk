@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsGroupConsumerUpdateRequest();
 				~OnsGroupConsumerUpdateRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				bool getReadEnable()const;
 				void setReadEnable(bool readEnable);
 				std::string getInstanceId()const;
@@ -45,7 +43,6 @@ namespace AlibabaCloud
 				void setGroupId(const std::string& groupId);
 
             private:
-				long preventCache_;
 				bool readEnable_;
 				std::string instanceId_;
 				std::string groupId_;

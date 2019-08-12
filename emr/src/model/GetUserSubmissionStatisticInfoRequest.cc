@@ -33,7 +33,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getFromDatetime()const
 void GetUserSubmissionStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setParameter("FromDatetime", fromDatetime);
+	setCoreParameter("FromDatetime", fromDatetime);
 }
 
 long GetUserSubmissionStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long GetUserSubmissionStatisticInfoRequest::getResourceOwnerId()const
 void GetUserSubmissionStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getRegionId()const
 void GetUserSubmissionStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getClusterId()const
 void GetUserSubmissionStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getToDatetime()const
@@ -77,7 +77,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getToDatetime()const
 void GetUserSubmissionStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setParameter("ToDatetime", toDatetime);
+	setCoreParameter("ToDatetime", toDatetime);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getApplicationType()const
@@ -88,7 +88,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getApplicationType()const
 void GetUserSubmissionStatisticInfoRequest::setApplicationType(const std::string& applicationType)
 {
 	applicationType_ = applicationType;
-	setParameter("ApplicationType", applicationType);
+	setCoreParameter("ApplicationType", applicationType);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string GetUserSubmissionStatisticInfoRequest::getAccessKeyId()const
 void GetUserSubmissionStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetUserSubmissionStatisticInfoRequest::getFinalStatus()const
@@ -110,6 +110,6 @@ std::string GetUserSubmissionStatisticInfoRequest::getFinalStatus()const
 void GetUserSubmissionStatisticInfoRequest::setFinalStatus(const std::string& finalStatus)
 {
 	finalStatus_ = finalStatus;
-	setParameter("FinalStatus", finalStatus);
+	setCoreParameter("FinalStatus", finalStatus);
 }
 

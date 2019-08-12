@@ -33,7 +33,7 @@ std::string QueryErrorDistributionRequest::getTimeRange()const
 void QueryErrorDistributionRequest::setTimeRange(const std::string& timeRange)
 {
 	timeRange_ = timeRange;
-	setParameter("TimeRange", timeRange);
+	setCoreParameter("TimeRange", timeRange);
 }
 
 std::string QueryErrorDistributionRequest::getTaskId()const
@@ -44,6 +44,6 @@ std::string QueryErrorDistributionRequest::getTaskId()const
 void QueryErrorDistributionRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	setCoreParameter("TaskId", taskId);
 }
 

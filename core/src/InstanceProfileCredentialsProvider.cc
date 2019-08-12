@@ -14,58 +14,59 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/InstanceProfileCredentialsProvider.h>
-#include <json/json.h>
 #include "EcsMetadataFetcher.h"
+#include <alibabacloud/core/Utils.h>
+#include <alibabacloud/core/InstanceProfileCredentialsProvider.h>
 #include <chrono>
 #include <iomanip>
+#include <json/json.h>
 #include <mutex>
 #include <sstream>
 
-
-namespace AlibabaCloud {
+namespace AlibabaCloud
+{
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(
-  const std::string & roleName, int durationSeconds):
-  CredentialsProvider(),
-  EcsMetadataFetcher(),
-  durationSeconds_(durationSeconds),
-  cachedMutex_(),
-  cachedCredentials_("", ""),
-  expiry_() {
+    const std::string &roleName, int durationSeconds)
+    : CredentialsProvider(), EcsMetadataFetcher(),
+      durationSeconds_(durationSeconds), cachedMutex_(),
+      cachedCredentials_("", ""), expiry_()
+{
   setRoleName(roleName);
 }
 
-InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider() {
-}
+InstanceProfileCredentialsProvider::~InstanceProfileCredentialsProvider() {}
 
-Credentials InstanceProfileCredentialsProvider::getCredentials() {
+Credentials InstanceProfileCredentialsProvider::getCredentials()
+{
   loadCredentials();
   std::lock_guard<std::mutex> locker(cachedMutex_);
   return cachedCredentials_;
 }
 
-bool InstanceProfileCredentialsProvider::checkExpiry()const {
+bool InstanceProfileCredentialsProvider::checkExpiry() const
+{
   auto now = std::chrono::system_clock::now();
   auto diff =
-  std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
+      std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
 
   return (diff > 0 - 60);
 }
 
-void InstanceProfileCredentialsProvider::loadCredentials() {
-  if (checkExpiry()) {
+void InstanceProfileCredentialsProvider::loadCredentials()
+{
+  if (checkExpiry())
+  {
     std::lock_guard<std::mutex> locker(cachedMutex_);
-    if (checkExpiry()) {
+    if (checkExpiry())
+    {
       auto outcome = getMetadata();
       Json::Value value;
       Json::Reader reader;
-      if (reader.parse(outcome, value)) {
-        if (value["Code"].empty()
-          &&value["AccessKeyId"].empty()
-          &&value["AccessKeySecret"].empty()
-          &&value["SecurityToken"].empty()
-          &&value["Expiration"].empty()) {
+      if (reader.parse(outcome, value))
+      {
+        if (value["Code"].empty() && value["AccessKeyId"].empty() && value["AccessKeySecret"].empty() && value["SecurityToken"].empty() && value["Expiration"].empty())
+        {
           cachedCredentials_ = Credentials("", "");
           return;
         }
@@ -77,8 +78,8 @@ void InstanceProfileCredentialsProvider::loadCredentials() {
         auto expiration = value["Expiration"].asString();
 
         cachedCredentials_ = Credentials(accessKeyId,
-          accessKeySecret,
-          securityToken);
+                                         accessKeySecret,
+                                         securityToken);
 
         std::tm tm = {};
 #if defined(__GNUG__) && __GNUC__ < 5
@@ -93,4 +94,4 @@ void InstanceProfileCredentialsProvider::loadCredentials() {
   }
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

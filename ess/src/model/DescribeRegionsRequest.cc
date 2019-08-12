@@ -47,6 +47,17 @@ void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resource
 	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeRegionsRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setCoreParameter("AcceptLanguage", acceptLanguage);
+}
+
 long DescribeRegionsRequest::getOwnerId()const
 {
 	return ownerId_;

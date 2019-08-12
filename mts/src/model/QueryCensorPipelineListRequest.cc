@@ -33,7 +33,7 @@ long QueryCensorPipelineListRequest::getResourceOwnerId()const
 void QueryCensorPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCensorPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string QueryCensorPipelineListRequest::getResourceOwnerAccount()const
 void QueryCensorPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCensorPipelineListRequest::getPipelineIds()const
@@ -55,7 +55,7 @@ std::string QueryCensorPipelineListRequest::getPipelineIds()const
 void QueryCensorPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setParameter("PipelineIds", pipelineIds);
+	setCoreParameter("PipelineIds", pipelineIds);
 }
 
 std::string QueryCensorPipelineListRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string QueryCensorPipelineListRequest::getOwnerAccount()const
 void QueryCensorPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryCensorPipelineListRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long QueryCensorPipelineListRequest::getOwnerId()const
 void QueryCensorPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCensorPipelineListRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryCensorPipelineListRequest::getAccessKeyId()const
 void QueryCensorPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

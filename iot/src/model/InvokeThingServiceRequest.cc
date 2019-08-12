@@ -33,7 +33,7 @@ std::string InvokeThingServiceRequest::getArgs()const
 void InvokeThingServiceRequest::setArgs(const std::string& args)
 {
 	args_ = args;
-	setParameter("Args", args);
+	setCoreParameter("Args", args);
 }
 
 std::string InvokeThingServiceRequest::getIdentifier()const
@@ -44,7 +44,7 @@ std::string InvokeThingServiceRequest::getIdentifier()const
 void InvokeThingServiceRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setParameter("Identifier", identifier);
+	setCoreParameter("Identifier", identifier);
 }
 
 std::string InvokeThingServiceRequest::getIotId()const
@@ -55,7 +55,18 @@ std::string InvokeThingServiceRequest::getIotId()const
 void InvokeThingServiceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
+}
+
+std::string InvokeThingServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void InvokeThingServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string InvokeThingServiceRequest::getDeviceName()const
@@ -66,7 +77,7 @@ std::string InvokeThingServiceRequest::getDeviceName()const
 void InvokeThingServiceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string InvokeThingServiceRequest::getProductKey()const
@@ -77,7 +88,7 @@ std::string InvokeThingServiceRequest::getProductKey()const
 void InvokeThingServiceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string InvokeThingServiceRequest::getAccessKeyId()const
@@ -88,6 +99,6 @@ std::string InvokeThingServiceRequest::getAccessKeyId()const
 void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

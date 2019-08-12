@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListRuleRequest();
 				~ListRuleRequest();
 
+				std::string getSearchName()const;
+				void setSearchName(const std::string& searchName);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
@@ -43,6 +47,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string searchName_;
+				std::string iotInstanceId_;
 				int pageSize_;
 				int currentPage_;
 				std::string accessKeyId_;

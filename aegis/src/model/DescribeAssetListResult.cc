@@ -35,10 +35,13 @@ DescribeAssetListResult::~DescribeAssetListResult()
 
 void DescribeAssetListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allAssetList = value["AssetList"]["Asset"];
 	for (auto value : allAssetList)
@@ -64,6 +67,8 @@ void DescribeAssetListResult::parse(const std::string &payload)
 			assetListObject.region = value["Region"].asString();
 		if(!value["RegionName"].isNull())
 			assetListObject.regionName = value["RegionName"].asString();
+		if(!value["Status"].isNull())
+			assetListObject.status = value["Status"].asString();
 		assetList_.push_back(assetListObject);
 	}
 	if(!value["PageSize"].isNull())

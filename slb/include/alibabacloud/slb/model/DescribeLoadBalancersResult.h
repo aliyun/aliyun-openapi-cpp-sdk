@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct LoadBalancer
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string address;
 					std::string resourceGroupId;
 					std::string vSwitchId;
@@ -50,6 +55,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string addressType;
 					std::string loadBalancerStatus;
+					std::vector<LoadBalancer::Tag> tags;
 					std::string masterZoneId;
 					long createTimeStamp;
 				};

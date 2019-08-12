@@ -7,31 +7,36 @@
 using namespace std;
 using namespace AlibabaCloud;
 
-namespace AlibabaCloud {
-  class TestCoreClient : public CoreClient {
-    public:
-      TestCoreClient(const std::string & servicename, const ClientConfiguration &configuration):
-        CoreClient(servicename, configuration)
-      {}
+namespace AlibabaCloud
+{
+class TestCoreClient : public CoreClient
+{
+public:
+  TestCoreClient(const string &servicename, const ClientConfiguration &configuration) : CoreClient(servicename, configuration)
+  {
+  }
 
-      using CoreClient::buildCoreError;
-      using CoreClient::hasResponseError;
-      HttpRequest buildHttpRequest(const std::string & endpoint, const ServiceRequest &msg, HttpRequest::Method method)const {
-        Url url;
-        url.setScheme("abc");
-        url.setUserName("username");
-        HttpRequest req(url, HttpRequest::Method::Post);
-        return req;
-      }
-  };
-}
+  using CoreClient::buildCoreError;
+  using CoreClient::hasResponseError;
+  HttpRequest buildHttpRequest(const std::string &endpoint, const ServiceRequest &msg, HttpRequest::Method method) const
+  {
+    Url url;
+    url.setScheme("abc");
+    url.setUserName("username");
+    HttpRequest req(url, HttpRequest::Method::Post);
+    return req;
+  }
+};
+} // namespace AlibabaCloud
 
-
-TEST(CoreClient, basic) {
+TEST(CoreClient, basic)
+{
   ClientConfiguration configuration;
-  TestCoreClient client("test-service", configuration);
+  const string name = "test-service";
+  TestCoreClient client(name, configuration);
 
   HttpResponse res;
+
   Error e1 = client.buildCoreError(res);
   EXPECT_TRUE(e1.errorCode() == ("InvalidResponse"));
   EXPECT_TRUE(e1.errorMessage() == ("body is empty"));

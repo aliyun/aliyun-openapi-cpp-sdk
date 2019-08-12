@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getImageOwnerAlias()const;
 				void setImageOwnerAlias(const std::string& imageOwnerAlias);
+				std::string getSystemDiskType()const;
+				void setSystemDiskType(const std::string& systemDiskType);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::string jobQueue_;
 				std::string accessKeyId_;
 				std::string imageOwnerAlias_;
+				std::string systemDiskType_;
 				std::string vSwitchId_;
 				std::string periodUnit_;
 				std::string autoRenew_;

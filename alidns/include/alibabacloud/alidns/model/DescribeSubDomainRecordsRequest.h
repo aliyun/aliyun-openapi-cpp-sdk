@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setUserClientIp(const std::string& userClientIp);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				std::string getSubDomain()const;
 				void setSubDomain(const std::string& subDomain);
 				std::string getLang()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string line_;
 				std::string userClientIp_;
 				long pageSize_;
+				std::string domainName_;
 				std::string subDomain_;
 				std::string lang_;
 				std::string type_;

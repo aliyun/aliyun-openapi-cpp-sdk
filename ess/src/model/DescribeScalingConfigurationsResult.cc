@@ -35,10 +35,13 @@ DescribeScalingConfigurationsResult::~DescribeScalingConfigurationsResult()
 
 void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allScalingConfigurations = value["ScalingConfigurations"]["ScalingConfiguration"];
 	for (auto value : allScalingConfigurations)
@@ -106,6 +109,10 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 			scalingConfigurationsObject.passwordInherit = value["PasswordInherit"].asString() == "true";
 		if(!value["ResourceGroupId"].isNull())
 			scalingConfigurationsObject.resourceGroupId = value["ResourceGroupId"].asString();
+		if(!value["HpcClusterId"].isNull())
+			scalingConfigurationsObject.hpcClusterId = value["HpcClusterId"].asString();
+		if(!value["InstanceDescription"].isNull())
+			scalingConfigurationsObject.instanceDescription = value["InstanceDescription"].asString();
 		auto allDataDisks = value["DataDisks"]["DataDisk"];
 		for (auto value : allDataDisks)
 		{
@@ -153,6 +160,9 @@ void DescribeScalingConfigurationsResult::parse(const std::string &payload)
 		auto allInstanceTypes = value["InstanceTypes"]["InstanceType"];
 		for (auto value : allInstanceTypes)
 			scalingConfigurationsObject.instanceTypes.push_back(value.asString());
+		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
+		for (auto value : allSecurityGroupIds)
+			scalingConfigurationsObject.securityGroupIds.push_back(value.asString());
 		scalingConfigurations_.push_back(scalingConfigurationsObject);
 	}
 	if(!value["TotalCount"].isNull())

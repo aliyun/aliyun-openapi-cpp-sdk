@@ -33,7 +33,7 @@ std::string NotifyUserBusinessCommandRequest::getUid()const
 void NotifyUserBusinessCommandRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setParameter("Uid", uid);
+	setCoreParameter("Uid", uid);
 }
 
 std::string NotifyUserBusinessCommandRequest::getPassword()const
@@ -44,7 +44,7 @@ std::string NotifyUserBusinessCommandRequest::getPassword()const
 void NotifyUserBusinessCommandRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setParameter("Password", password);
+	setCoreParameter("Password", password);
 }
 
 std::string NotifyUserBusinessCommandRequest::getInstanceId()const
@@ -55,7 +55,7 @@ std::string NotifyUserBusinessCommandRequest::getInstanceId()const
 void NotifyUserBusinessCommandRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string NotifyUserBusinessCommandRequest::getServiceCode()const
@@ -66,7 +66,7 @@ std::string NotifyUserBusinessCommandRequest::getServiceCode()const
 void NotifyUserBusinessCommandRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setParameter("ServiceCode", serviceCode);
+	setCoreParameter("ServiceCode", serviceCode);
 }
 
 std::string NotifyUserBusinessCommandRequest::getClientToken()const
@@ -77,7 +77,7 @@ std::string NotifyUserBusinessCommandRequest::getClientToken()const
 void NotifyUserBusinessCommandRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string NotifyUserBusinessCommandRequest::getCmd()const
@@ -88,7 +88,7 @@ std::string NotifyUserBusinessCommandRequest::getCmd()const
 void NotifyUserBusinessCommandRequest::setCmd(const std::string& cmd)
 {
 	cmd_ = cmd;
-	setParameter("Cmd", cmd);
+	setCoreParameter("Cmd", cmd);
 }
 
 std::string NotifyUserBusinessCommandRequest::getRegion()const
@@ -99,6 +99,6 @@ std::string NotifyUserBusinessCommandRequest::getRegion()const
 void NotifyUserBusinessCommandRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 

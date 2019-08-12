@@ -33,7 +33,7 @@ std::string ModifyFlowVariableCollectionRequest::getData()const
 void ModifyFlowVariableCollectionRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setParameter("Data", data);
+	setCoreParameter("Data", data);
 }
 
 std::string ModifyFlowVariableCollectionRequest::getRegionId()const
@@ -44,6 +44,6 @@ std::string ModifyFlowVariableCollectionRequest::getRegionId()const
 void ModifyFlowVariableCollectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 

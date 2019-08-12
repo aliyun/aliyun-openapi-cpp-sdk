@@ -33,7 +33,7 @@ std::string DownloadClusterNodeCertsRequest::getNodeId()const
 void DownloadClusterNodeCertsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
-	setParameter("NodeId", nodeId);
+	setCoreParameter("NodeId", nodeId);
 }
 
 std::string DownloadClusterNodeCertsRequest::getToken()const
@@ -44,6 +44,6 @@ std::string DownloadClusterNodeCertsRequest::getToken()const
 void DownloadClusterNodeCertsRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 

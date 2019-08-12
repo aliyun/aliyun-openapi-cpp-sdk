@@ -33,7 +33,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const
 void SaveSingleTaskForCreatingDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> SaveSingleTaskForCreatingDnsHostRequest::getIp()const
@@ -45,7 +45,7 @@ void SaveSingleTaskForCreatingDnsHostRequest::setIp(const std::vector<std::strin
 {
 	ip_ = ip;
 	for(int i = 0; i!= ip.size(); i++)
-		setParameter("Ip."+ std::to_string(i), ip.at(i));
+		setCoreParameter("Ip."+ std::to_string(i), ip.at(i));
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getDnsName()const
@@ -56,7 +56,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getDnsName()const
 void SaveSingleTaskForCreatingDnsHostRequest::setDnsName(const std::string& dnsName)
 {
 	dnsName_ = dnsName;
-	setParameter("DnsName", dnsName);
+	setCoreParameter("DnsName", dnsName);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getUserClientIp()const
@@ -67,7 +67,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getLang()const
@@ -78,6 +78,6 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getLang()const
 void SaveSingleTaskForCreatingDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

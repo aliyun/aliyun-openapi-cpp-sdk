@@ -33,7 +33,7 @@ std::string SaveSingleTaskForCancelingTransferInRequest::getDomainName()const
 void SaveSingleTaskForCancelingTransferInRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForCancelingTransferInRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string SaveSingleTaskForCancelingTransferInRequest::getUserClientIp()const
 void SaveSingleTaskForCancelingTransferInRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCancelingTransferInRequest::getLang()const
@@ -55,6 +55,6 @@ std::string SaveSingleTaskForCancelingTransferInRequest::getLang()const
 void SaveSingleTaskForCancelingTransferInRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

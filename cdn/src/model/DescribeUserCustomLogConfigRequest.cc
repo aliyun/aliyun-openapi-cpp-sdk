@@ -33,6 +33,6 @@ long DescribeUserCustomLogConfigRequest::getOwnerId()const
 void DescribeUserCustomLogConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

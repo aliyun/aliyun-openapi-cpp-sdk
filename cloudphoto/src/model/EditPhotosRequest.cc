@@ -33,7 +33,7 @@ long EditPhotosRequest::getTakenAt()const
 void EditPhotosRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setParameter("TakenAt", std::to_string(takenAt));
+	setCoreParameter("TakenAt", std::to_string(takenAt));
 }
 
 std::string EditPhotosRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string EditPhotosRequest::getLibraryId()const
 void EditPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 long EditPhotosRequest::getShareExpireTime()const
@@ -55,7 +55,7 @@ long EditPhotosRequest::getShareExpireTime()const
 void EditPhotosRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setParameter("ShareExpireTime", std::to_string(shareExpireTime));
+	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
 }
 
 std::vector<long> EditPhotosRequest::getPhotoId()const
@@ -67,7 +67,7 @@ void EditPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string EditPhotosRequest::getStoreName()const
@@ -78,7 +78,7 @@ std::string EditPhotosRequest::getStoreName()const
 void EditPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string EditPhotosRequest::getRemark()const
@@ -89,7 +89,7 @@ std::string EditPhotosRequest::getRemark()const
 void EditPhotosRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setParameter("Remark", remark);
+	setCoreParameter("Remark", remark);
 }
 
 std::string EditPhotosRequest::getTitle()const
@@ -100,6 +100,6 @@ std::string EditPhotosRequest::getTitle()const
 void EditPhotosRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 

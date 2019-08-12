@@ -33,7 +33,7 @@ long PushMessageToiOSRequest::getAppKey()const
 void PushMessageToiOSRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToiOSRequest::getTargetValue()const
@@ -44,7 +44,7 @@ std::string PushMessageToiOSRequest::getTargetValue()const
 void PushMessageToiOSRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setParameter("TargetValue", targetValue);
+	setCoreParameter("TargetValue", targetValue);
 }
 
 std::string PushMessageToiOSRequest::getTitle()const
@@ -55,7 +55,7 @@ std::string PushMessageToiOSRequest::getTitle()const
 void PushMessageToiOSRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 std::string PushMessageToiOSRequest::getBody()const
@@ -66,7 +66,7 @@ std::string PushMessageToiOSRequest::getBody()const
 void PushMessageToiOSRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setParameter("Body", body);
+	setCoreParameter("Body", body);
 }
 
 std::string PushMessageToiOSRequest::getJobKey()const
@@ -77,7 +77,7 @@ std::string PushMessageToiOSRequest::getJobKey()const
 void PushMessageToiOSRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setParameter("JobKey", jobKey);
+	setCoreParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToiOSRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string PushMessageToiOSRequest::getAccessKeyId()const
 void PushMessageToiOSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToiOSRequest::getTarget()const
@@ -99,6 +99,6 @@ std::string PushMessageToiOSRequest::getTarget()const
 void PushMessageToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setParameter("Target", target);
+	setCoreParameter("Target", target);
 }
 

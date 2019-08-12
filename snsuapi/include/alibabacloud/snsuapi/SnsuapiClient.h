@@ -30,10 +30,10 @@
 #include "model/BandStatusQueryResult.h"
 #include "model/MobileStatusQueryRequest.h"
 #include "model/MobileStatusQueryResult.h"
-#include "model/BandOfferOrderRequest.h"
-#include "model/BandOfferOrderResult.h"
 #include "model/MobileStopSpeedUpRequest.h"
 #include "model/MobileStopSpeedUpResult.h"
+#include "model/BandOfferOrderRequest.h"
+#include "model/BandOfferOrderResult.h"
 #include "model/BandPrecheckRequest.h"
 #include "model/BandPrecheckResult.h"
 #include "model/BandStartSpeedUpRequest.h"
@@ -59,12 +59,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MobileStatusQueryResult> MobileStatusQueryOutcome;
 			typedef std::future<MobileStatusQueryOutcome> MobileStatusQueryOutcomeCallable;
 			typedef std::function<void(const SnsuapiClient*, const Model::MobileStatusQueryRequest&, const MobileStatusQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MobileStatusQueryAsyncHandler;
-			typedef Outcome<Error, Model::BandOfferOrderResult> BandOfferOrderOutcome;
-			typedef std::future<BandOfferOrderOutcome> BandOfferOrderOutcomeCallable;
-			typedef std::function<void(const SnsuapiClient*, const Model::BandOfferOrderRequest&, const BandOfferOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BandOfferOrderAsyncHandler;
 			typedef Outcome<Error, Model::MobileStopSpeedUpResult> MobileStopSpeedUpOutcome;
 			typedef std::future<MobileStopSpeedUpOutcome> MobileStopSpeedUpOutcomeCallable;
 			typedef std::function<void(const SnsuapiClient*, const Model::MobileStopSpeedUpRequest&, const MobileStopSpeedUpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MobileStopSpeedUpAsyncHandler;
+			typedef Outcome<Error, Model::BandOfferOrderResult> BandOfferOrderOutcome;
+			typedef std::future<BandOfferOrderOutcome> BandOfferOrderOutcomeCallable;
+			typedef std::function<void(const SnsuapiClient*, const Model::BandOfferOrderRequest&, const BandOfferOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BandOfferOrderAsyncHandler;
 			typedef Outcome<Error, Model::BandPrecheckResult> BandPrecheckOutcome;
 			typedef std::future<BandPrecheckOutcome> BandPrecheckOutcomeCallable;
 			typedef std::function<void(const SnsuapiClient*, const Model::BandPrecheckRequest&, const BandPrecheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BandPrecheckAsyncHandler;
@@ -88,12 +88,12 @@ namespace AlibabaCloud
 			MobileStatusQueryOutcome mobileStatusQuery(const Model::MobileStatusQueryRequest &request)const;
 			void mobileStatusQueryAsync(const Model::MobileStatusQueryRequest& request, const MobileStatusQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MobileStatusQueryOutcomeCallable mobileStatusQueryCallable(const Model::MobileStatusQueryRequest& request) const;
-			BandOfferOrderOutcome bandOfferOrder(const Model::BandOfferOrderRequest &request)const;
-			void bandOfferOrderAsync(const Model::BandOfferOrderRequest& request, const BandOfferOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BandOfferOrderOutcomeCallable bandOfferOrderCallable(const Model::BandOfferOrderRequest& request) const;
 			MobileStopSpeedUpOutcome mobileStopSpeedUp(const Model::MobileStopSpeedUpRequest &request)const;
 			void mobileStopSpeedUpAsync(const Model::MobileStopSpeedUpRequest& request, const MobileStopSpeedUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MobileStopSpeedUpOutcomeCallable mobileStopSpeedUpCallable(const Model::MobileStopSpeedUpRequest& request) const;
+			BandOfferOrderOutcome bandOfferOrder(const Model::BandOfferOrderRequest &request)const;
+			void bandOfferOrderAsync(const Model::BandOfferOrderRequest& request, const BandOfferOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BandOfferOrderOutcomeCallable bandOfferOrderCallable(const Model::BandOfferOrderRequest& request) const;
 			BandPrecheckOutcome bandPrecheck(const Model::BandPrecheckRequest &request)const;
 			void bandPrecheckAsync(const Model::BandPrecheckRequest& request, const BandPrecheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BandPrecheckOutcomeCallable bandPrecheckCallable(const Model::BandPrecheckRequest& request) const;

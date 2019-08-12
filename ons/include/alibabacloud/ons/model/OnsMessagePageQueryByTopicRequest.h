@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsMessagePageQueryByTopicRequest();
 				~OnsMessagePageQueryByTopicRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getPageSize()const;
@@ -53,7 +51,6 @@ namespace AlibabaCloud
 				void setTaskId(const std::string& taskId);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				int pageSize_;
 				std::string topic_;

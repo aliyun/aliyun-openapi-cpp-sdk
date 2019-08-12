@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct LoginInfo
 				{
+					struct Role
+					{
+						std::string roleName;
+						std::string instanceId;
+						std::string roleDescription;
+						std::string roleId;
+					};
 					std::string agentServerUrl;
 					std::string extension;
 					std::string tenantId;
@@ -43,6 +50,7 @@ namespace AlibabaCloud
 					std::string displayName;
 					std::string phoneNumber;
 					std::string region;
+					std::vector<Role> roles;
 					std::string webRtcUrl;
 				};
 

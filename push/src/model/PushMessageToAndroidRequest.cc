@@ -33,7 +33,7 @@ long PushMessageToAndroidRequest::getAppKey()const
 void PushMessageToAndroidRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToAndroidRequest::getTargetValue()const
@@ -44,7 +44,7 @@ std::string PushMessageToAndroidRequest::getTargetValue()const
 void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setParameter("TargetValue", targetValue);
+	setCoreParameter("TargetValue", targetValue);
 }
 
 std::string PushMessageToAndroidRequest::getTitle()const
@@ -55,7 +55,7 @@ std::string PushMessageToAndroidRequest::getTitle()const
 void PushMessageToAndroidRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 std::string PushMessageToAndroidRequest::getBody()const
@@ -66,7 +66,7 @@ std::string PushMessageToAndroidRequest::getBody()const
 void PushMessageToAndroidRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setParameter("Body", body);
+	setCoreParameter("Body", body);
 }
 
 std::string PushMessageToAndroidRequest::getJobKey()const
@@ -77,7 +77,7 @@ std::string PushMessageToAndroidRequest::getJobKey()const
 void PushMessageToAndroidRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setParameter("JobKey", jobKey);
+	setCoreParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToAndroidRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string PushMessageToAndroidRequest::getAccessKeyId()const
 void PushMessageToAndroidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToAndroidRequest::getTarget()const
@@ -99,6 +99,6 @@ std::string PushMessageToAndroidRequest::getTarget()const
 void PushMessageToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setParameter("Target", target);
+	setCoreParameter("Target", target);
 }
 

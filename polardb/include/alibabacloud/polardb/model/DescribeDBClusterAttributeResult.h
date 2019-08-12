@@ -67,7 +67,7 @@ namespace AlibabaCloud
 				long getStorageUsed()const;
 				bool getIsLatestVersion()const;
 				std::string getDBVersion()const;
-				int getStorageMax()const;
+				long getStorageMax()const;
 				std::vector<DBNode> getDBNodes()const;
 				std::string getCreationTime()const;
 				std::string getRegionId()const;
@@ -95,7 +95,7 @@ namespace AlibabaCloud
 				long storageUsed_;
 				bool isLatestVersion_;
 				std::string dBVersion_;
-				int storageMax_;
+				long storageMax_;
 				std::vector<DBNode> dBNodes_;
 				std::string creationTime_;
 				std::string regionId_;

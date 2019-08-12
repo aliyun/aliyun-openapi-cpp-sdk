@@ -33,7 +33,7 @@ long DeletePipelineRequest::getResourceOwnerId()const
 void DeletePipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeletePipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeletePipelineRequest::getResourceOwnerAccount()const
 void DeletePipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeletePipelineRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeletePipelineRequest::getOwnerAccount()const
 void DeletePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeletePipelineRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long DeletePipelineRequest::getOwnerId()const
 void DeletePipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeletePipelineRequest::getAccessKeyId()const
@@ -77,7 +77,7 @@ std::string DeletePipelineRequest::getAccessKeyId()const
 void DeletePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeletePipelineRequest::getPipelineId()const
@@ -88,6 +88,6 @@ std::string DeletePipelineRequest::getPipelineId()const
 void DeletePipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

@@ -39,7 +39,7 @@ namespace AlibabaCloud
 					int currentPage;
 					int count;
 				};
-				struct JoinRuleListItem
+				struct JoinRuleListArr
 				{
 					bool needGroup;
 					std::string description;
@@ -62,13 +62,13 @@ namespace AlibabaCloud
 				explicit DescribeJoinRuleListResult(const std::string &payload);
 				~DescribeJoinRuleListResult();
 				PageInfo getPageInfo()const;
-				std::vector<JoinRuleListItem> getJoinRuleList()const;
+				std::vector<JoinRuleListArr> getJoinRuleList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<JoinRuleListItem> joinRuleList_;
+				std::vector<JoinRuleListArr> joinRuleList_;
 
 			};
 		}

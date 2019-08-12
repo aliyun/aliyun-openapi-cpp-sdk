@@ -29,10 +29,10 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/CancelKeyDeletionResult.h
 	include/alibabacloud/kms/model/DisableKeyRequest.h
 	include/alibabacloud/kms/model/DisableKeyResult.h
-	include/alibabacloud/kms/model/DeleteAliasRequest.h
-	include/alibabacloud/kms/model/DeleteAliasResult.h
 	include/alibabacloud/kms/model/DecryptRequest.h
 	include/alibabacloud/kms/model/DecryptResult.h
+	include/alibabacloud/kms/model/DeleteAliasRequest.h
+	include/alibabacloud/kms/model/DeleteAliasResult.h
 	include/alibabacloud/kms/model/TagResourceRequest.h
 	include/alibabacloud/kms/model/TagResourceResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
@@ -47,20 +47,22 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ImportKeyMaterialResult.h
 	include/alibabacloud/kms/model/EncryptRequest.h
 	include/alibabacloud/kms/model/EncryptResult.h
-	include/alibabacloud/kms/model/UntagResourceRequest.h
-	include/alibabacloud/kms/model/UntagResourceResult.h
 	include/alibabacloud/kms/model/UpdateAliasRequest.h
 	include/alibabacloud/kms/model/UpdateAliasResult.h
+	include/alibabacloud/kms/model/UntagResourceRequest.h
+	include/alibabacloud/kms/model/UntagResourceResult.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdRequest.h
 	include/alibabacloud/kms/model/ListAliasesByKeyIdResult.h
 	include/alibabacloud/kms/model/EnableKeyRequest.h
 	include/alibabacloud/kms/model/EnableKeyResult.h
-	include/alibabacloud/kms/model/ScheduleKeyDeletionRequest.h
-	include/alibabacloud/kms/model/ScheduleKeyDeletionResult.h
 	include/alibabacloud/kms/model/DescribeRegionsRequest.h
 	include/alibabacloud/kms/model/DescribeRegionsResult.h
+	include/alibabacloud/kms/model/ScheduleKeyDeletionRequest.h
+	include/alibabacloud/kms/model/ScheduleKeyDeletionResult.h
 	include/alibabacloud/kms/model/ListKeysRequest.h
 	include/alibabacloud/kms/model/ListKeysResult.h
+	include/alibabacloud/kms/model/DescribeServiceRequest.h
+	include/alibabacloud/kms/model/DescribeServiceResult.h
 	include/alibabacloud/kms/model/GetParametersForImportRequest.h
 	include/alibabacloud/kms/model/GetParametersForImportResult.h
 	include/alibabacloud/kms/model/CreateKeyRequest.h
@@ -76,10 +78,10 @@ set(kms_src
 	src/model/CancelKeyDeletionResult.cc
 	src/model/DisableKeyRequest.cc
 	src/model/DisableKeyResult.cc
-	src/model/DeleteAliasRequest.cc
-	src/model/DeleteAliasResult.cc
 	src/model/DecryptRequest.cc
 	src/model/DecryptResult.cc
+	src/model/DeleteAliasRequest.cc
+	src/model/DeleteAliasResult.cc
 	src/model/TagResourceRequest.cc
 	src/model/TagResourceResult.cc
 	src/model/DescribeKeyRequest.cc
@@ -94,20 +96,22 @@ set(kms_src
 	src/model/ImportKeyMaterialResult.cc
 	src/model/EncryptRequest.cc
 	src/model/EncryptResult.cc
-	src/model/UntagResourceRequest.cc
-	src/model/UntagResourceResult.cc
 	src/model/UpdateAliasRequest.cc
 	src/model/UpdateAliasResult.cc
+	src/model/UntagResourceRequest.cc
+	src/model/UntagResourceResult.cc
 	src/model/ListAliasesByKeyIdRequest.cc
 	src/model/ListAliasesByKeyIdResult.cc
 	src/model/EnableKeyRequest.cc
 	src/model/EnableKeyResult.cc
-	src/model/ScheduleKeyDeletionRequest.cc
-	src/model/ScheduleKeyDeletionResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/ScheduleKeyDeletionRequest.cc
+	src/model/ScheduleKeyDeletionResult.cc
 	src/model/ListKeysRequest.cc
 	src/model/ListKeysResult.cc
+	src/model/DescribeServiceRequest.cc
+	src/model/DescribeServiceResult.cc
 	src/model/GetParametersForImportRequest.cc
 	src/model/GetParametersForImportResult.cc
 	src/model/CreateKeyRequest.cc

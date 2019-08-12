@@ -25,17 +25,6 @@ OnsInstanceUpdateRequest::OnsInstanceUpdateRequest() :
 OnsInstanceUpdateRequest::~OnsInstanceUpdateRequest()
 {}
 
-long OnsInstanceUpdateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsInstanceUpdateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsInstanceUpdateRequest::getInstanceName()const
 {
 	return instanceName_;

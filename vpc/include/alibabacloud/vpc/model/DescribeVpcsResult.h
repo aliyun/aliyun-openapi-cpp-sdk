@@ -41,12 +41,14 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					bool isDefault;
+					std::string cenStatus;
 					std::string description;
 					std::string resourceGroupId;
 					std::vector<std::string> vSwitchIds;
 					std::string cidrBlock;
 					std::vector<std::string> routerTableIds;
 					std::vector<std::string> userCidrs;
+					std::string networkAclNum;
 					std::string vRouterId;
 					std::vector<std::string> natGatewayIds;
 					std::string vpcId;

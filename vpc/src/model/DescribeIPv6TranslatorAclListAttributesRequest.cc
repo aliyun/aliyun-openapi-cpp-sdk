@@ -33,7 +33,7 @@ std::string DescribeIPv6TranslatorAclListAttributesRequest::getAclId()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setParameter("AclId", aclId);
+	setCoreParameter("AclId", aclId);
 }
 
 long DescribeIPv6TranslatorAclListAttributesRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DescribeIPv6TranslatorAclListAttributesRequest::getResourceOwnerId()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeIPv6TranslatorAclListAttributesRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DescribeIPv6TranslatorAclListAttributesRequest::getResourceOwnerAcco
 void DescribeIPv6TranslatorAclListAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIPv6TranslatorAclListAttributesRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DescribeIPv6TranslatorAclListAttributesRequest::getRegionId()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeIPv6TranslatorAclListAttributesRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DescribeIPv6TranslatorAclListAttributesRequest::getOwnerAccount()con
 void DescribeIPv6TranslatorAclListAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 int DescribeIPv6TranslatorAclListAttributesRequest::getPageSize()const
@@ -88,7 +88,7 @@ int DescribeIPv6TranslatorAclListAttributesRequest::getPageSize()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeIPv6TranslatorAclListAttributesRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DescribeIPv6TranslatorAclListAttributesRequest::getOwnerId()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeIPv6TranslatorAclListAttributesRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int DescribeIPv6TranslatorAclListAttributesRequest::getPageNumber()const
 void DescribeIPv6TranslatorAclListAttributesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

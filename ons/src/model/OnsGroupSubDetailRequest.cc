@@ -25,17 +25,6 @@ OnsGroupSubDetailRequest::OnsGroupSubDetailRequest() :
 OnsGroupSubDetailRequest::~OnsGroupSubDetailRequest()
 {}
 
-long OnsGroupSubDetailRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsGroupSubDetailRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsGroupSubDetailRequest::getInstanceId()const
 {
 	return instanceId_;

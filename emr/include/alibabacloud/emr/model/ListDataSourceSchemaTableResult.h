@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					struct Field
 					{
 						std::string type;
+						std::string length;
+						bool partitionKey;
 						int index;
 						std::string rawType;
 						std::string assignType;

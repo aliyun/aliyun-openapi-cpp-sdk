@@ -33,7 +33,7 @@ std::string TransferInResendMailTokenRequest::getDomainName()const
 void TransferInResendMailTokenRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string TransferInResendMailTokenRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string TransferInResendMailTokenRequest::getUserClientIp()const
 void TransferInResendMailTokenRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInResendMailTokenRequest::getLang()const
@@ -55,6 +55,6 @@ std::string TransferInResendMailTokenRequest::getLang()const
 void TransferInResendMailTokenRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

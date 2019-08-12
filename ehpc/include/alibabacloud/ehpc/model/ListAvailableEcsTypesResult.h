@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct TypesInfo
 					{
+						std::string status;
 						int memorySize;
 						int instancePpsTx;
 						int cpuCoreCount;

@@ -33,7 +33,7 @@ std::string UpdateFaceRequest::getImage()const
 void UpdateFaceRequest::setImage(const std::string& image)
 {
 	image_ = image;
-	setParameter("Image", image);
+	setCoreParameter("Image", image);
 }
 
 std::string UpdateFaceRequest::getUserId()const
@@ -44,7 +44,7 @@ std::string UpdateFaceRequest::getUserId()const
 void UpdateFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 
 std::string UpdateFaceRequest::getUserInfo()const
@@ -55,6 +55,6 @@ std::string UpdateFaceRequest::getUserInfo()const
 void UpdateFaceRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setParameter("UserInfo", userInfo);
+	setCoreParameter("UserInfo", userInfo);
 }
 

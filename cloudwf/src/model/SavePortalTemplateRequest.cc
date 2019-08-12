@@ -33,7 +33,7 @@ std::string SavePortalTemplateRequest::getTextContent()const
 void SavePortalTemplateRequest::setTextContent(const std::string& textContent)
 {
 	textContent_ = textContent;
-	setParameter("TextContent", textContent);
+	setCoreParameter("TextContent", textContent);
 }
 
 std::string SavePortalTemplateRequest::getTempName()const
@@ -44,7 +44,7 @@ std::string SavePortalTemplateRequest::getTempName()const
 void SavePortalTemplateRequest::setTempName(const std::string& tempName)
 {
 	tempName_ = tempName;
-	setParameter("TempName", tempName);
+	setCoreParameter("TempName", tempName);
 }
 
 std::string SavePortalTemplateRequest::getTextAlign()const
@@ -55,7 +55,7 @@ std::string SavePortalTemplateRequest::getTextAlign()const
 void SavePortalTemplateRequest::setTextAlign(const std::string& textAlign)
 {
 	textAlign_ = textAlign;
-	setParameter("TextAlign", textAlign);
+	setCoreParameter("TextAlign", textAlign);
 }
 
 std::string SavePortalTemplateRequest::getTextColor()const
@@ -66,7 +66,7 @@ std::string SavePortalTemplateRequest::getTextColor()const
 void SavePortalTemplateRequest::setTextColor(const std::string& textColor)
 {
 	textColor_ = textColor;
-	setParameter("TextColor", textColor);
+	setCoreParameter("TextColor", textColor);
 }
 
 long SavePortalTemplateRequest::getId()const
@@ -77,7 +77,7 @@ long SavePortalTemplateRequest::getId()const
 void SavePortalTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 long SavePortalTemplateRequest::getOssFileId()const
@@ -88,7 +88,7 @@ long SavePortalTemplateRequest::getOssFileId()const
 void SavePortalTemplateRequest::setOssFileId(long ossFileId)
 {
 	ossFileId_ = ossFileId;
-	setParameter("OssFileId", std::to_string(ossFileId));
+	setCoreParameter("OssFileId", std::to_string(ossFileId));
 }
 
 std::string SavePortalTemplateRequest::getAccessKeyId()const
@@ -99,6 +99,6 @@ std::string SavePortalTemplateRequest::getAccessKeyId()const
 void SavePortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ std::string KillFlowRequest::getFlowInstanceId()const
 void KillFlowRequest::setFlowInstanceId(const std::string& flowInstanceId)
 {
 	flowInstanceId_ = flowInstanceId;
-	setParameter("FlowInstanceId", flowInstanceId);
+	setCoreParameter("FlowInstanceId", flowInstanceId);
 }
 
 std::string KillFlowRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string KillFlowRequest::getRegionId()const
 void KillFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string KillFlowRequest::getProjectId()const
@@ -55,6 +55,6 @@ std::string KillFlowRequest::getProjectId()const
 void KillFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 

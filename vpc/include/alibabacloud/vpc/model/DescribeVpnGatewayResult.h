@@ -50,6 +50,7 @@ namespace AlibabaCloud
 				std::string getInternetIp()const;
 				std::string getVpnGatewayId()const;
 				std::string getChargeType()const;
+				std::string getTag()const;
 				std::string getSpec()const;
 				long getSslMaxConnections()const;
 
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 				std::string internetIp_;
 				std::string vpnGatewayId_;
 				std::string chargeType_;
+				std::string tag_;
 				std::string spec_;
 				long sslMaxConnections_;
 

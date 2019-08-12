@@ -33,7 +33,7 @@ std::string SubmitSubtitleJobRequest::getUserData()const
 void SubmitSubtitleJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitSubtitleJobRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long SubmitSubtitleJobRequest::getResourceOwnerId()const
 void SubmitSubtitleJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSubtitleJobRequest::getOutputConfig()const
@@ -55,7 +55,7 @@ std::string SubmitSubtitleJobRequest::getOutputConfig()const
 void SubmitSubtitleJobRequest::setOutputConfig(const std::string& outputConfig)
 {
 	outputConfig_ = outputConfig;
-	setParameter("OutputConfig", outputConfig);
+	setCoreParameter("OutputConfig", outputConfig);
 }
 
 std::string SubmitSubtitleJobRequest::getInputConfig()const
@@ -66,7 +66,7 @@ std::string SubmitSubtitleJobRequest::getInputConfig()const
 void SubmitSubtitleJobRequest::setInputConfig(const std::string& inputConfig)
 {
 	inputConfig_ = inputConfig;
-	setParameter("InputConfig", inputConfig);
+	setCoreParameter("InputConfig", inputConfig);
 }
 
 std::string SubmitSubtitleJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitSubtitleJobRequest::getResourceOwnerAccount()const
 void SubmitSubtitleJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitSubtitleJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitSubtitleJobRequest::getOwnerAccount()const
 void SubmitSubtitleJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitSubtitleJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitSubtitleJobRequest::getOwnerId()const
 void SubmitSubtitleJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSubtitleJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitSubtitleJobRequest::getAccessKeyId()const
 void SubmitSubtitleJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSubtitleJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitSubtitleJobRequest::getPipelineId()const
 void SubmitSubtitleJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

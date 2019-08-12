@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ApplyDeviceInfo
 				{
+					std::string iotId;
 					std::string deviceId;
 					std::string deviceSecret;
 					std::string deviceName;

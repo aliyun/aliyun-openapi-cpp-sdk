@@ -25,17 +25,6 @@ OnsTopicSubDetailRequest::OnsTopicSubDetailRequest() :
 OnsTopicSubDetailRequest::~OnsTopicSubDetailRequest()
 {}
 
-long OnsTopicSubDetailRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTopicSubDetailRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTopicSubDetailRequest::getInstanceId()const
 {
 	return instanceId_;

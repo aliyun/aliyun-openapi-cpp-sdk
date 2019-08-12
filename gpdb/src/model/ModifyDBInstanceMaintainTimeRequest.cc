@@ -33,7 +33,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getEndTime()const
 void ModifyDBInstanceMaintainTimeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceMaintainTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getStartTime()const
 void ModifyDBInstanceMaintainTimeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -33,7 +33,7 @@ bool ListPhoneNumbersRequest::getOutboundOnly()const
 void ListPhoneNumbersRequest::setOutboundOnly(bool outboundOnly)
 {
 	outboundOnly_ = outboundOnly;
-	setParameter("OutboundOnly", std::to_string(outboundOnly));
+	setCoreParameter("OutboundOnly", outboundOnly ? "true" : "false");
 }
 
 std::string ListPhoneNumbersRequest::getInstanceId()const
@@ -44,7 +44,7 @@ std::string ListPhoneNumbersRequest::getInstanceId()const
 void ListPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string ListPhoneNumbersRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ListPhoneNumbersRequest::getAccessKeyId()const
 void ListPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

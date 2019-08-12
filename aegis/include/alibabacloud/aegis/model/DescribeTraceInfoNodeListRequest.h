@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setType(const std::string& type);
 				std::string getUuid()const;
 				void setUuid(const std::string& uuid);
+				long getIncidentTime()const;
+				void setIncidentTime(long incidentTime);
 
             private:
 				std::string sourceIp_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string lang_;
 				std::string type_;
 				std::string uuid_;
+				long incidentTime_;
 
 			};
 		}

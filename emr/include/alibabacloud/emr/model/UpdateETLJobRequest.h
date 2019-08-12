@@ -30,18 +30,18 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT UpdateETLJobRequest : public RpcServiceRequest
 			{
-				struct StageConnection
-				{
-					std::string port;
-					std::string from;
-					std::string to;
-				};
 				struct TriggerRule
 				{
 					std::string cronExpr;
 					long endTime;
 					long startTime;
 					bool enabled;
+				};
+				struct StageConnection
+				{
+					std::string port;
+					std::string from;
+					std::string to;
 				};
 				struct Stage
 				{
@@ -57,42 +57,42 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::vector<StageConnection> getStageConnection()const;
-				void setStageConnection(const std::vector<StageConnection>& stageConnection);
 				std::string getClusterConfig()const;
 				void setClusterConfig(const std::string& clusterConfig);
 				std::vector<TriggerRule> getTriggerRule()const;
 				void setTriggerRule(const std::vector<TriggerRule>& triggerRule);
-				std::vector<Stage> getStage()const;
-				void setStage(const std::vector<Stage>& stage);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::string getAlertConfig()const;
 				void setAlertConfig(const std::string& alertConfig);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getId()const;
-				void setId(const std::string& id);
 				bool getCheck()const;
 				void setCheck(bool check);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::vector<StageConnection> getStageConnection()const;
+				void setStageConnection(const std::vector<StageConnection>& stageConnection);
+				std::vector<Stage> getStage()const;
+				void setStage(const std::vector<Stage>& stage);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getId()const;
+				void setId(const std::string& id);
 
             private:
 				long resourceOwnerId_;
-				std::vector<StageConnection> stageConnection_;
 				std::string clusterConfig_;
 				std::vector<TriggerRule> triggerRule_;
-				std::vector<Stage> stage_;
-				std::string regionId_;
 				std::string alertConfig_;
-				std::string name_;
 				std::string description_;
-				std::string id_;
 				bool check_;
 				std::string accessKeyId_;
+				std::vector<StageConnection> stageConnection_;
+				std::vector<Stage> stage_;
+				std::string regionId_;
+				std::string name_;
+				std::string id_;
 
 			};
 		}

@@ -51,42 +51,6 @@ TrademarkClient::TrademarkClient(const std::string & accessKeyId, const std::str
 TrademarkClient::~TrademarkClient()
 {}
 
-TrademarkClient::GenerateQrCodeOutcome TrademarkClient::generateQrCode(const GenerateQrCodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateQrCodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateQrCodeOutcome(GenerateQrCodeResult(outcome.result()));
-	else
-		return GenerateQrCodeOutcome(outcome.error());
-}
-
-void TrademarkClient::generateQrCodeAsync(const GenerateQrCodeRequest& request, const GenerateQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateQrCode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::GenerateQrCodeOutcomeCallable TrademarkClient::generateQrCodeCallable(const GenerateQrCodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateQrCodeOutcome()>>(
-			[this, request]()
-			{
-			return this->generateQrCode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::QueryTradeProduceListOutcome TrademarkClient::queryTradeProduceList(const QueryTradeProduceListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,1014 @@ TrademarkClient::QueryTradeProduceListOutcomeCallable TrademarkClient::queryTrad
 			[this, request]()
 			{
 			return this->queryTradeProduceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTrademarkMonitorResultsOutcome TrademarkClient::queryTrademarkMonitorResults(const QueryTrademarkMonitorResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTrademarkMonitorResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTrademarkMonitorResultsOutcome(QueryTrademarkMonitorResultsResult(outcome.result()));
+	else
+		return QueryTrademarkMonitorResultsOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTrademarkMonitorResultsAsync(const QueryTrademarkMonitorResultsRequest& request, const QueryTrademarkMonitorResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTrademarkMonitorResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTrademarkMonitorResultsOutcomeCallable TrademarkClient::queryTrademarkMonitorResultsCallable(const QueryTrademarkMonitorResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTrademarkMonitorResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTrademarkMonitorResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTradeMarkApplicationsOutcome TrademarkClient::queryTradeMarkApplications(const QueryTradeMarkApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTradeMarkApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTradeMarkApplicationsOutcome(QueryTradeMarkApplicationsResult(outcome.result()));
+	else
+		return QueryTradeMarkApplicationsOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTradeMarkApplicationsAsync(const QueryTradeMarkApplicationsRequest& request, const QueryTradeMarkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTradeMarkApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTradeMarkApplicationsOutcomeCallable TrademarkClient::queryTradeMarkApplicationsCallable(const QueryTradeMarkApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTradeMarkApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTradeMarkApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::CancelTradeOrderOutcome TrademarkClient::cancelTradeOrder(const CancelTradeOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelTradeOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelTradeOrderOutcome(CancelTradeOrderResult(outcome.result()));
+	else
+		return CancelTradeOrderOutcome(outcome.error());
+}
+
+void TrademarkClient::cancelTradeOrderAsync(const CancelTradeOrderRequest& request, const CancelTradeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelTradeOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::CancelTradeOrderOutcomeCallable TrademarkClient::cancelTradeOrderCallable(const CancelTradeOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelTradeOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelTradeOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::DeleteTmMonitorRuleOutcome TrademarkClient::deleteTmMonitorRule(const DeleteTmMonitorRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTmMonitorRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTmMonitorRuleOutcome(DeleteTmMonitorRuleResult(outcome.result()));
+	else
+		return DeleteTmMonitorRuleOutcome(outcome.error());
+}
+
+void TrademarkClient::deleteTmMonitorRuleAsync(const DeleteTmMonitorRuleRequest& request, const DeleteTmMonitorRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTmMonitorRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::DeleteTmMonitorRuleOutcomeCallable TrademarkClient::deleteTmMonitorRuleCallable(const DeleteTmMonitorRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTmMonitorRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTmMonitorRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::WriteIntentionCommunicationLogOutcome TrademarkClient::writeIntentionCommunicationLog(const WriteIntentionCommunicationLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WriteIntentionCommunicationLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WriteIntentionCommunicationLogOutcome(WriteIntentionCommunicationLogResult(outcome.result()));
+	else
+		return WriteIntentionCommunicationLogOutcome(outcome.error());
+}
+
+void TrademarkClient::writeIntentionCommunicationLogAsync(const WriteIntentionCommunicationLogRequest& request, const WriteIntentionCommunicationLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, writeIntentionCommunicationLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::WriteIntentionCommunicationLogOutcomeCallable TrademarkClient::writeIntentionCommunicationLogCallable(const WriteIntentionCommunicationLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WriteIntentionCommunicationLogOutcome()>>(
+			[this, request]()
+			{
+			return this->writeIntentionCommunicationLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::SaveTaskOutcome TrademarkClient::saveTask(const SaveTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveTaskOutcome(SaveTaskResult(outcome.result()));
+	else
+		return SaveTaskOutcome(outcome.error());
+}
+
+void TrademarkClient::saveTaskAsync(const SaveTaskRequest& request, const SaveTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::SaveTaskOutcomeCallable TrademarkClient::saveTaskCallable(const SaveTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->saveTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::UploadNotaryDataOutcome TrademarkClient::uploadNotaryData(const UploadNotaryDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadNotaryDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadNotaryDataOutcome(UploadNotaryDataResult(outcome.result()));
+	else
+		return UploadNotaryDataOutcome(outcome.error());
+}
+
+void TrademarkClient::uploadNotaryDataAsync(const UploadNotaryDataRequest& request, const UploadNotaryDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadNotaryData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::UploadNotaryDataOutcomeCallable TrademarkClient::uploadNotaryDataCallable(const UploadNotaryDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadNotaryDataOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadNotaryData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryIntentionDetailOutcome TrademarkClient::queryIntentionDetail(const QueryIntentionDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryIntentionDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryIntentionDetailOutcome(QueryIntentionDetailResult(outcome.result()));
+	else
+		return QueryIntentionDetailOutcome(outcome.error());
+}
+
+void TrademarkClient::queryIntentionDetailAsync(const QueryIntentionDetailRequest& request, const QueryIntentionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryIntentionDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryIntentionDetailOutcomeCallable TrademarkClient::queryIntentionDetailCallable(const QueryIntentionDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryIntentionDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryIntentionDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::GetNotaryOrderOutcome TrademarkClient::getNotaryOrder(const GetNotaryOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNotaryOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNotaryOrderOutcome(GetNotaryOrderResult(outcome.result()));
+	else
+		return GetNotaryOrderOutcome(outcome.error());
+}
+
+void TrademarkClient::getNotaryOrderAsync(const GetNotaryOrderRequest& request, const GetNotaryOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNotaryOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::GetNotaryOrderOutcomeCallable TrademarkClient::getNotaryOrderCallable(const GetNotaryOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNotaryOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->getNotaryOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QuerySupplementDetailOutcome TrademarkClient::querySupplementDetail(const QuerySupplementDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySupplementDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySupplementDetailOutcome(QuerySupplementDetailResult(outcome.result()));
+	else
+		return QuerySupplementDetailOutcome(outcome.error());
+}
+
+void TrademarkClient::querySupplementDetailAsync(const QuerySupplementDetailRequest& request, const QuerySupplementDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySupplementDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QuerySupplementDetailOutcomeCallable TrademarkClient::querySupplementDetailCallable(const QuerySupplementDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySupplementDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->querySupplementDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::InsertRenewInfoOutcome TrademarkClient::insertRenewInfo(const InsertRenewInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertRenewInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertRenewInfoOutcome(InsertRenewInfoResult(outcome.result()));
+	else
+		return InsertRenewInfoOutcome(outcome.error());
+}
+
+void TrademarkClient::insertRenewInfoAsync(const InsertRenewInfoRequest& request, const InsertRenewInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertRenewInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::InsertRenewInfoOutcomeCallable TrademarkClient::insertRenewInfoCallable(const InsertRenewInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertRenewInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->insertRenewInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryCredentialsInfoOutcome TrademarkClient::queryCredentialsInfo(const QueryCredentialsInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCredentialsInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCredentialsInfoOutcome(QueryCredentialsInfoResult(outcome.result()));
+	else
+		return QueryCredentialsInfoOutcome(outcome.error());
+}
+
+void TrademarkClient::queryCredentialsInfoAsync(const QueryCredentialsInfoRequest& request, const QueryCredentialsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCredentialsInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryCredentialsInfoOutcomeCallable TrademarkClient::queryCredentialsInfoCallable(const QueryCredentialsInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCredentialsInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCredentialsInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTradeMarkApplicationsByIntentionOutcome TrademarkClient::queryTradeMarkApplicationsByIntention(const QueryTradeMarkApplicationsByIntentionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTradeMarkApplicationsByIntentionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTradeMarkApplicationsByIntentionOutcome(QueryTradeMarkApplicationsByIntentionResult(outcome.result()));
+	else
+		return QueryTradeMarkApplicationsByIntentionOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTradeMarkApplicationsByIntentionAsync(const QueryTradeMarkApplicationsByIntentionRequest& request, const QueryTradeMarkApplicationsByIntentionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTradeMarkApplicationsByIntention(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTradeMarkApplicationsByIntentionOutcomeCallable TrademarkClient::queryTradeMarkApplicationsByIntentionCallable(const QueryTradeMarkApplicationsByIntentionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTradeMarkApplicationsByIntentionOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTradeMarkApplicationsByIntention(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::ApplyNotaryPostOutcome TrademarkClient::applyNotaryPost(const ApplyNotaryPostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyNotaryPostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyNotaryPostOutcome(ApplyNotaryPostResult(outcome.result()));
+	else
+		return ApplyNotaryPostOutcome(outcome.error());
+}
+
+void TrademarkClient::applyNotaryPostAsync(const ApplyNotaryPostRequest& request, const ApplyNotaryPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyNotaryPost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::ApplyNotaryPostOutcomeCallable TrademarkClient::applyNotaryPostCallable(const ApplyNotaryPostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyNotaryPostOutcome()>>(
+			[this, request]()
+			{
+			return this->applyNotaryPost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::GenerateUploadFilePolicyOutcome TrademarkClient::generateUploadFilePolicy(const GenerateUploadFilePolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateUploadFilePolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateUploadFilePolicyOutcome(GenerateUploadFilePolicyResult(outcome.result()));
+	else
+		return GenerateUploadFilePolicyOutcome(outcome.error());
+}
+
+void TrademarkClient::generateUploadFilePolicyAsync(const GenerateUploadFilePolicyRequest& request, const GenerateUploadFilePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateUploadFilePolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::GenerateUploadFilePolicyOutcomeCallable TrademarkClient::generateUploadFilePolicyCallable(const GenerateUploadFilePolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateUploadFilePolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateUploadFilePolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::DeleteMaterialOutcome TrademarkClient::deleteMaterial(const DeleteMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMaterialOutcome(DeleteMaterialResult(outcome.result()));
+	else
+		return DeleteMaterialOutcome(outcome.error());
+}
+
+void TrademarkClient::deleteMaterialAsync(const DeleteMaterialRequest& request, const DeleteMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::DeleteMaterialOutcomeCallable TrademarkClient::deleteMaterialCallable(const DeleteMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::WriteCommunicationLogOutcome TrademarkClient::writeCommunicationLog(const WriteCommunicationLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WriteCommunicationLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WriteCommunicationLogOutcome(WriteCommunicationLogResult(outcome.result()));
+	else
+		return WriteCommunicationLogOutcome(outcome.error());
+}
+
+void TrademarkClient::writeCommunicationLogAsync(const WriteCommunicationLogRequest& request, const WriteCommunicationLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, writeCommunicationLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::WriteCommunicationLogOutcomeCallable TrademarkClient::writeCommunicationLogCallable(const WriteCommunicationLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WriteCommunicationLogOutcome()>>(
+			[this, request]()
+			{
+			return this->writeCommunicationLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::InsertTradeIntentionUserOutcome TrademarkClient::insertTradeIntentionUser(const InsertTradeIntentionUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertTradeIntentionUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertTradeIntentionUserOutcome(InsertTradeIntentionUserResult(outcome.result()));
+	else
+		return InsertTradeIntentionUserOutcome(outcome.error());
+}
+
+void TrademarkClient::insertTradeIntentionUserAsync(const InsertTradeIntentionUserRequest& request, const InsertTradeIntentionUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertTradeIntentionUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::InsertTradeIntentionUserOutcomeCallable TrademarkClient::insertTradeIntentionUserCallable(const InsertTradeIntentionUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertTradeIntentionUserOutcome()>>(
+			[this, request]()
+			{
+			return this->insertTradeIntentionUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTradeProduceDetailOutcome TrademarkClient::queryTradeProduceDetail(const QueryTradeProduceDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTradeProduceDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTradeProduceDetailOutcome(QueryTradeProduceDetailResult(outcome.result()));
+	else
+		return QueryTradeProduceDetailOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTradeProduceDetailAsync(const QueryTradeProduceDetailRequest& request, const QueryTradeProduceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTradeProduceDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTradeProduceDetailOutcomeCallable TrademarkClient::queryTradeProduceDetailCallable(const QueryTradeProduceDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTradeProduceDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTradeProduceDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::SubmitSupplementOutcome TrademarkClient::submitSupplement(const SubmitSupplementRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitSupplementOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitSupplementOutcome(SubmitSupplementResult(outcome.result()));
+	else
+		return SubmitSupplementOutcome(outcome.error());
+}
+
+void TrademarkClient::submitSupplementAsync(const SubmitSupplementRequest& request, const SubmitSupplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitSupplement(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::SubmitSupplementOutcomeCallable TrademarkClient::submitSupplementCallable(const SubmitSupplementRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitSupplementOutcome()>>(
+			[this, request]()
+			{
+			return this->submitSupplement(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryQrCodeUploadStatusOutcome TrademarkClient::queryQrCodeUploadStatus(const QueryQrCodeUploadStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryQrCodeUploadStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryQrCodeUploadStatusOutcome(QueryQrCodeUploadStatusResult(outcome.result()));
+	else
+		return QueryQrCodeUploadStatusOutcome(outcome.error());
+}
+
+void TrademarkClient::queryQrCodeUploadStatusAsync(const QueryQrCodeUploadStatusRequest& request, const QueryQrCodeUploadStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryQrCodeUploadStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryQrCodeUploadStatusOutcomeCallable TrademarkClient::queryQrCodeUploadStatusCallable(const QueryQrCodeUploadStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryQrCodeUploadStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryQrCodeUploadStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::BindMaterialOutcome TrademarkClient::bindMaterial(const BindMaterialRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindMaterialOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindMaterialOutcome(BindMaterialResult(outcome.result()));
+	else
+		return BindMaterialOutcome(outcome.error());
+}
+
+void TrademarkClient::bindMaterialAsync(const BindMaterialRequest& request, const BindMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindMaterial(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::BindMaterialOutcomeCallable TrademarkClient::bindMaterialCallable(const BindMaterialRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindMaterialOutcome()>>(
+			[this, request]()
+			{
+			return this->bindMaterial(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::StoreMaterialTemporarilyOutcome TrademarkClient::storeMaterialTemporarily(const StoreMaterialTemporarilyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StoreMaterialTemporarilyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StoreMaterialTemporarilyOutcome(StoreMaterialTemporarilyResult(outcome.result()));
+	else
+		return StoreMaterialTemporarilyOutcome(outcome.error());
+}
+
+void TrademarkClient::storeMaterialTemporarilyAsync(const StoreMaterialTemporarilyRequest& request, const StoreMaterialTemporarilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, storeMaterialTemporarily(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::StoreMaterialTemporarilyOutcomeCallable TrademarkClient::storeMaterialTemporarilyCallable(const StoreMaterialTemporarilyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StoreMaterialTemporarilyOutcome()>>(
+			[this, request]()
+			{
+			return this->storeMaterialTemporarily(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTradeIntentionUserListOutcome TrademarkClient::queryTradeIntentionUserList(const QueryTradeIntentionUserListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTradeIntentionUserListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTradeIntentionUserListOutcome(QueryTradeIntentionUserListResult(outcome.result()));
+	else
+		return QueryTradeIntentionUserListOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTradeIntentionUserListAsync(const QueryTradeIntentionUserListRequest& request, const QueryTradeIntentionUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTradeIntentionUserList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTradeIntentionUserListOutcomeCallable TrademarkClient::queryTradeIntentionUserListCallable(const QueryTradeIntentionUserListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTradeIntentionUserListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTradeIntentionUserList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::ListNotaryInfosOutcome TrademarkClient::listNotaryInfos(const ListNotaryInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNotaryInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNotaryInfosOutcome(ListNotaryInfosResult(outcome.result()));
+	else
+		return ListNotaryInfosOutcome(outcome.error());
+}
+
+void TrademarkClient::listNotaryInfosAsync(const ListNotaryInfosRequest& request, const ListNotaryInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNotaryInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::ListNotaryInfosOutcomeCallable TrademarkClient::listNotaryInfosCallable(const ListNotaryInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNotaryInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->listNotaryInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryCommunicationLogsOutcome TrademarkClient::queryCommunicationLogs(const QueryCommunicationLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCommunicationLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCommunicationLogsOutcome(QueryCommunicationLogsResult(outcome.result()));
+	else
+		return QueryCommunicationLogsOutcome(outcome.error());
+}
+
+void TrademarkClient::queryCommunicationLogsAsync(const QueryCommunicationLogsRequest& request, const QueryCommunicationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCommunicationLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryCommunicationLogsOutcomeCallable TrademarkClient::queryCommunicationLogsCallable(const QueryCommunicationLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCommunicationLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCommunicationLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::QueryTradeMarkApplicationDetailOutcome TrademarkClient::queryTradeMarkApplicationDetail(const QueryTradeMarkApplicationDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTradeMarkApplicationDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTradeMarkApplicationDetailOutcome(QueryTradeMarkApplicationDetailResult(outcome.result()));
+	else
+		return QueryTradeMarkApplicationDetailOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTradeMarkApplicationDetailAsync(const QueryTradeMarkApplicationDetailRequest& request, const QueryTradeMarkApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTradeMarkApplicationDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTradeMarkApplicationDetailOutcomeCallable TrademarkClient::queryTradeMarkApplicationDetailCallable(const QueryTradeMarkApplicationDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTradeMarkApplicationDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTradeMarkApplicationDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TrademarkClient::GenerateQrCodeOutcome TrademarkClient::generateQrCode(const GenerateQrCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateQrCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateQrCodeOutcome(GenerateQrCodeResult(outcome.result()));
+	else
+		return GenerateQrCodeOutcome(outcome.error());
+}
+
+void TrademarkClient::generateQrCodeAsync(const GenerateQrCodeRequest& request, const GenerateQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateQrCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::GenerateQrCodeOutcomeCallable TrademarkClient::generateQrCodeCallable(const GenerateQrCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateQrCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->generateQrCode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,36 +1275,36 @@ TrademarkClient::ConvertImageToGrayOutcomeCallable TrademarkClient::convertImage
 	return task->get_future();
 }
 
-TrademarkClient::QueryTrademarkMonitorResultsOutcome TrademarkClient::queryTrademarkMonitorResults(const QueryTrademarkMonitorResultsRequest &request) const
+TrademarkClient::QueryIntentionListOutcome TrademarkClient::queryIntentionList(const QueryIntentionListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryTrademarkMonitorResultsOutcome(endpointOutcome.error());
+		return QueryIntentionListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryTrademarkMonitorResultsOutcome(QueryTrademarkMonitorResultsResult(outcome.result()));
+		return QueryIntentionListOutcome(QueryIntentionListResult(outcome.result()));
 	else
-		return QueryTrademarkMonitorResultsOutcome(outcome.error());
+		return QueryIntentionListOutcome(outcome.error());
 }
 
-void TrademarkClient::queryTrademarkMonitorResultsAsync(const QueryTrademarkMonitorResultsRequest& request, const QueryTrademarkMonitorResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TrademarkClient::queryIntentionListAsync(const QueryIntentionListRequest& request, const QueryIntentionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryTrademarkMonitorResults(request), context);
+		handler(this, request, queryIntentionList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TrademarkClient::QueryTrademarkMonitorResultsOutcomeCallable TrademarkClient::queryTrademarkMonitorResultsCallable(const QueryTrademarkMonitorResultsRequest &request) const
+TrademarkClient::QueryIntentionListOutcomeCallable TrademarkClient::queryIntentionListCallable(const QueryIntentionListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryTrademarkMonitorResultsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<QueryIntentionListOutcome()>>(
 			[this, request]()
 			{
-			return this->queryTrademarkMonitorResults(request);
+			return this->queryIntentionList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,78 +1347,6 @@ TrademarkClient::CombineLoaOutcomeCallable TrademarkClient::combineLoaCallable(c
 	return task->get_future();
 }
 
-TrademarkClient::QueryTradeMarkApplicationsOutcome TrademarkClient::queryTradeMarkApplications(const QueryTradeMarkApplicationsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTradeMarkApplicationsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTradeMarkApplicationsOutcome(QueryTradeMarkApplicationsResult(outcome.result()));
-	else
-		return QueryTradeMarkApplicationsOutcome(outcome.error());
-}
-
-void TrademarkClient::queryTradeMarkApplicationsAsync(const QueryTradeMarkApplicationsRequest& request, const QueryTradeMarkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTradeMarkApplications(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryTradeMarkApplicationsOutcomeCallable TrademarkClient::queryTradeMarkApplicationsCallable(const QueryTradeMarkApplicationsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTradeMarkApplicationsOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTradeMarkApplications(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::CancelTradeOrderOutcome TrademarkClient::cancelTradeOrder(const CancelTradeOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CancelTradeOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CancelTradeOrderOutcome(CancelTradeOrderResult(outcome.result()));
-	else
-		return CancelTradeOrderOutcome(outcome.error());
-}
-
-void TrademarkClient::cancelTradeOrderAsync(const CancelTradeOrderRequest& request, const CancelTradeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, cancelTradeOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::CancelTradeOrderOutcomeCallable TrademarkClient::cancelTradeOrderCallable(const CancelTradeOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CancelTradeOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->cancelTradeOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::QueryTrademarkPriceOutcome TrademarkClient::queryTrademarkPrice(const QueryTrademarkPriceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,78 +1383,6 @@ TrademarkClient::QueryTrademarkPriceOutcomeCallable TrademarkClient::queryTradem
 	return task->get_future();
 }
 
-TrademarkClient::DeleteTmMonitorRuleOutcome TrademarkClient::deleteTmMonitorRule(const DeleteTmMonitorRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteTmMonitorRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteTmMonitorRuleOutcome(DeleteTmMonitorRuleResult(outcome.result()));
-	else
-		return DeleteTmMonitorRuleOutcome(outcome.error());
-}
-
-void TrademarkClient::deleteTmMonitorRuleAsync(const DeleteTmMonitorRuleRequest& request, const DeleteTmMonitorRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteTmMonitorRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::DeleteTmMonitorRuleOutcomeCallable TrademarkClient::deleteTmMonitorRuleCallable(const DeleteTmMonitorRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteTmMonitorRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteTmMonitorRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::SaveTaskOutcome TrademarkClient::saveTask(const SaveTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SaveTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SaveTaskOutcome(SaveTaskResult(outcome.result()));
-	else
-		return SaveTaskOutcome(outcome.error());
-}
-
-void TrademarkClient::saveTaskAsync(const SaveTaskRequest& request, const SaveTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, saveTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::SaveTaskOutcomeCallable TrademarkClient::saveTaskCallable(const SaveTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SaveTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->saveTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::FilterUnavailableCodesOutcome TrademarkClient::filterUnavailableCodes(const FilterUnavailableCodesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,42 +1413,6 @@ TrademarkClient::FilterUnavailableCodesOutcomeCallable TrademarkClient::filterUn
 			[this, request]()
 			{
 			return this->filterUnavailableCodes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::UploadNotaryDataOutcome TrademarkClient::uploadNotaryData(const UploadNotaryDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadNotaryDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadNotaryDataOutcome(UploadNotaryDataResult(outcome.result()));
-	else
-		return UploadNotaryDataOutcome(outcome.error());
-}
-
-void TrademarkClient::uploadNotaryDataAsync(const UploadNotaryDataRequest& request, const UploadNotaryDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadNotaryData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::UploadNotaryDataOutcomeCallable TrademarkClient::uploadNotaryDataCallable(const UploadNotaryDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadNotaryDataOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadNotaryData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,42 +1527,6 @@ TrademarkClient::QueryMonitorKeywordsOutcomeCallable TrademarkClient::queryMonit
 	return task->get_future();
 }
 
-TrademarkClient::GetNotaryOrderOutcome TrademarkClient::getNotaryOrder(const GetNotaryOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetNotaryOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetNotaryOrderOutcome(GetNotaryOrderResult(outcome.result()));
-	else
-		return GetNotaryOrderOutcome(outcome.error());
-}
-
-void TrademarkClient::getNotaryOrderAsync(const GetNotaryOrderRequest& request, const GetNotaryOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getNotaryOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::GetNotaryOrderOutcomeCallable TrademarkClient::getNotaryOrderCallable(const GetNotaryOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetNotaryOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->getNotaryOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::InsertTmMonitorRuleOutcome TrademarkClient::insertTmMonitorRule(const InsertTmMonitorRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,186 +1557,6 @@ TrademarkClient::InsertTmMonitorRuleOutcomeCallable TrademarkClient::insertTmMon
 			[this, request]()
 			{
 			return this->insertTmMonitorRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::InsertRenewInfoOutcome TrademarkClient::insertRenewInfo(const InsertRenewInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return InsertRenewInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return InsertRenewInfoOutcome(InsertRenewInfoResult(outcome.result()));
-	else
-		return InsertRenewInfoOutcome(outcome.error());
-}
-
-void TrademarkClient::insertRenewInfoAsync(const InsertRenewInfoRequest& request, const InsertRenewInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, insertRenewInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::InsertRenewInfoOutcomeCallable TrademarkClient::insertRenewInfoCallable(const InsertRenewInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<InsertRenewInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->insertRenewInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QuerySupplementDetailOutcome TrademarkClient::querySupplementDetail(const QuerySupplementDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QuerySupplementDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QuerySupplementDetailOutcome(QuerySupplementDetailResult(outcome.result()));
-	else
-		return QuerySupplementDetailOutcome(outcome.error());
-}
-
-void TrademarkClient::querySupplementDetailAsync(const QuerySupplementDetailRequest& request, const QuerySupplementDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, querySupplementDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QuerySupplementDetailOutcomeCallable TrademarkClient::querySupplementDetailCallable(const QuerySupplementDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QuerySupplementDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->querySupplementDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::ApplyNotaryPostOutcome TrademarkClient::applyNotaryPost(const ApplyNotaryPostRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ApplyNotaryPostOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ApplyNotaryPostOutcome(ApplyNotaryPostResult(outcome.result()));
-	else
-		return ApplyNotaryPostOutcome(outcome.error());
-}
-
-void TrademarkClient::applyNotaryPostAsync(const ApplyNotaryPostRequest& request, const ApplyNotaryPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, applyNotaryPost(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::ApplyNotaryPostOutcomeCallable TrademarkClient::applyNotaryPostCallable(const ApplyNotaryPostRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ApplyNotaryPostOutcome()>>(
-			[this, request]()
-			{
-			return this->applyNotaryPost(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryCredentialsInfoOutcome TrademarkClient::queryCredentialsInfo(const QueryCredentialsInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCredentialsInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCredentialsInfoOutcome(QueryCredentialsInfoResult(outcome.result()));
-	else
-		return QueryCredentialsInfoOutcome(outcome.error());
-}
-
-void TrademarkClient::queryCredentialsInfoAsync(const QueryCredentialsInfoRequest& request, const QueryCredentialsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCredentialsInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryCredentialsInfoOutcomeCallable TrademarkClient::queryCredentialsInfoCallable(const QueryCredentialsInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCredentialsInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCredentialsInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryTrademarkMonitorRulesOutcome TrademarkClient::queryTrademarkMonitorRules(const QueryTrademarkMonitorRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTrademarkMonitorRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTrademarkMonitorRulesOutcome(QueryTrademarkMonitorRulesResult(outcome.result()));
-	else
-		return QueryTrademarkMonitorRulesOutcome(outcome.error());
-}
-
-void TrademarkClient::queryTrademarkMonitorRulesAsync(const QueryTrademarkMonitorRulesRequest& request, const QueryTrademarkMonitorRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTrademarkMonitorRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryTrademarkMonitorRulesOutcomeCallable TrademarkClient::queryTrademarkMonitorRulesCallable(const QueryTrademarkMonitorRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTrademarkMonitorRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTrademarkMonitorRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1599,42 @@ TrademarkClient::CheckLoaFillOutcomeCallable TrademarkClient::checkLoaFillCallab
 	return task->get_future();
 }
 
+TrademarkClient::QueryTrademarkMonitorRulesOutcome TrademarkClient::queryTrademarkMonitorRules(const QueryTrademarkMonitorRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTrademarkMonitorRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTrademarkMonitorRulesOutcome(QueryTrademarkMonitorRulesResult(outcome.result()));
+	else
+		return QueryTrademarkMonitorRulesOutcome(outcome.error());
+}
+
+void TrademarkClient::queryTrademarkMonitorRulesAsync(const QueryTrademarkMonitorRulesRequest& request, const QueryTrademarkMonitorRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTrademarkMonitorRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TrademarkClient::QueryTrademarkMonitorRulesOutcomeCallable TrademarkClient::queryTrademarkMonitorRulesCallable(const QueryTrademarkMonitorRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTrademarkMonitorRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTrademarkMonitorRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TrademarkClient::QueryOssResourcesOutcome TrademarkClient::queryOssResources(const QueryOssResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,72 +1671,36 @@ TrademarkClient::QueryOssResourcesOutcomeCallable TrademarkClient::queryOssResou
 	return task->get_future();
 }
 
-TrademarkClient::GenerateUploadFilePolicyOutcome TrademarkClient::generateUploadFilePolicy(const GenerateUploadFilePolicyRequest &request) const
+TrademarkClient::CreateIntentionOrderOutcome TrademarkClient::createIntentionOrder(const CreateIntentionOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GenerateUploadFilePolicyOutcome(endpointOutcome.error());
+		return CreateIntentionOrderOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GenerateUploadFilePolicyOutcome(GenerateUploadFilePolicyResult(outcome.result()));
+		return CreateIntentionOrderOutcome(CreateIntentionOrderResult(outcome.result()));
 	else
-		return GenerateUploadFilePolicyOutcome(outcome.error());
+		return CreateIntentionOrderOutcome(outcome.error());
 }
 
-void TrademarkClient::generateUploadFilePolicyAsync(const GenerateUploadFilePolicyRequest& request, const GenerateUploadFilePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TrademarkClient::createIntentionOrderAsync(const CreateIntentionOrderRequest& request, const CreateIntentionOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, generateUploadFilePolicy(request), context);
+		handler(this, request, createIntentionOrder(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TrademarkClient::GenerateUploadFilePolicyOutcomeCallable TrademarkClient::generateUploadFilePolicyCallable(const GenerateUploadFilePolicyRequest &request) const
+TrademarkClient::CreateIntentionOrderOutcomeCallable TrademarkClient::createIntentionOrderCallable(const CreateIntentionOrderRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GenerateUploadFilePolicyOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateIntentionOrderOutcome()>>(
 			[this, request]()
 			{
-			return this->generateUploadFilePolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::DeleteMaterialOutcome TrademarkClient::deleteMaterial(const DeleteMaterialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteMaterialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteMaterialOutcome(DeleteMaterialResult(outcome.result()));
-	else
-		return DeleteMaterialOutcome(outcome.error());
-}
-
-void TrademarkClient::deleteMaterialAsync(const DeleteMaterialRequest& request, const DeleteMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteMaterial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::DeleteMaterialOutcomeCallable TrademarkClient::deleteMaterialCallable(const DeleteMaterialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteMaterialOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteMaterial(request);
+			return this->createIntentionOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,42 +1743,6 @@ TrademarkClient::DenySupplementOutcomeCallable TrademarkClient::denySupplementCa
 	return task->get_future();
 }
 
-TrademarkClient::InsertTradeIntentionUserOutcome TrademarkClient::insertTradeIntentionUser(const InsertTradeIntentionUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return InsertTradeIntentionUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return InsertTradeIntentionUserOutcome(InsertTradeIntentionUserResult(outcome.result()));
-	else
-		return InsertTradeIntentionUserOutcome(outcome.error());
-}
-
-void TrademarkClient::insertTradeIntentionUserAsync(const InsertTradeIntentionUserRequest& request, const InsertTradeIntentionUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, insertTradeIntentionUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::InsertTradeIntentionUserOutcomeCallable TrademarkClient::insertTradeIntentionUserCallable(const InsertTradeIntentionUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<InsertTradeIntentionUserOutcome()>>(
-			[this, request]()
-			{
-			return this->insertTradeIntentionUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::ListNotaryOrdersOutcome TrademarkClient::listNotaryOrders(const ListNotaryOrdersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,114 +1773,6 @@ TrademarkClient::ListNotaryOrdersOutcomeCallable TrademarkClient::listNotaryOrde
 			[this, request]()
 			{
 			return this->listNotaryOrders(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryTradeProduceDetailOutcome TrademarkClient::queryTradeProduceDetail(const QueryTradeProduceDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTradeProduceDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTradeProduceDetailOutcome(QueryTradeProduceDetailResult(outcome.result()));
-	else
-		return QueryTradeProduceDetailOutcome(outcome.error());
-}
-
-void TrademarkClient::queryTradeProduceDetailAsync(const QueryTradeProduceDetailRequest& request, const QueryTradeProduceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTradeProduceDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryTradeProduceDetailOutcomeCallable TrademarkClient::queryTradeProduceDetailCallable(const QueryTradeProduceDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTradeProduceDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTradeProduceDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::SubmitSupplementOutcome TrademarkClient::submitSupplement(const SubmitSupplementRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitSupplementOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitSupplementOutcome(SubmitSupplementResult(outcome.result()));
-	else
-		return SubmitSupplementOutcome(outcome.error());
-}
-
-void TrademarkClient::submitSupplementAsync(const SubmitSupplementRequest& request, const SubmitSupplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitSupplement(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::SubmitSupplementOutcomeCallable TrademarkClient::submitSupplementCallable(const SubmitSupplementRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitSupplementOutcome()>>(
-			[this, request]()
-			{
-			return this->submitSupplement(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryQrCodeUploadStatusOutcome TrademarkClient::queryQrCodeUploadStatus(const QueryQrCodeUploadStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryQrCodeUploadStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryQrCodeUploadStatusOutcome(QueryQrCodeUploadStatusResult(outcome.result()));
-	else
-		return QueryQrCodeUploadStatusOutcome(outcome.error());
-}
-
-void TrademarkClient::queryQrCodeUploadStatusAsync(const QueryQrCodeUploadStatusRequest& request, const QueryQrCodeUploadStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryQrCodeUploadStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryQrCodeUploadStatusOutcomeCallable TrademarkClient::queryQrCodeUploadStatusCallable(const QueryQrCodeUploadStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryQrCodeUploadStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->queryQrCodeUploadStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,78 +1815,6 @@ TrademarkClient::QueryMaterialOutcomeCallable TrademarkClient::queryMaterialCall
 	return task->get_future();
 }
 
-TrademarkClient::BindMaterialOutcome TrademarkClient::bindMaterial(const BindMaterialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BindMaterialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BindMaterialOutcome(BindMaterialResult(outcome.result()));
-	else
-		return BindMaterialOutcome(outcome.error());
-}
-
-void TrademarkClient::bindMaterialAsync(const BindMaterialRequest& request, const BindMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, bindMaterial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::BindMaterialOutcomeCallable TrademarkClient::bindMaterialCallable(const BindMaterialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BindMaterialOutcome()>>(
-			[this, request]()
-			{
-			return this->bindMaterial(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryTradeIntentionUserListOutcome TrademarkClient::queryTradeIntentionUserList(const QueryTradeIntentionUserListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTradeIntentionUserListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTradeIntentionUserListOutcome(QueryTradeIntentionUserListResult(outcome.result()));
-	else
-		return QueryTradeIntentionUserListOutcome(outcome.error());
-}
-
-void TrademarkClient::queryTradeIntentionUserListAsync(const QueryTradeIntentionUserListRequest& request, const QueryTradeIntentionUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTradeIntentionUserList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryTradeIntentionUserListOutcomeCallable TrademarkClient::queryTradeIntentionUserListCallable(const QueryTradeIntentionUserListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTradeIntentionUserListOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTradeIntentionUserList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::UpdateTmMonitorRuleOutcome TrademarkClient::updateTmMonitorRule(const UpdateTmMonitorRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,42 +1845,6 @@ TrademarkClient::UpdateTmMonitorRuleOutcomeCallable TrademarkClient::updateTmMon
 			[this, request]()
 			{
 			return this->updateTmMonitorRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::StoreMaterialTemporarilyOutcome TrademarkClient::storeMaterialTemporarily(const StoreMaterialTemporarilyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StoreMaterialTemporarilyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StoreMaterialTemporarilyOutcome(StoreMaterialTemporarilyResult(outcome.result()));
-	else
-		return StoreMaterialTemporarilyOutcome(outcome.error());
-}
-
-void TrademarkClient::storeMaterialTemporarilyAsync(const StoreMaterialTemporarilyRequest& request, const StoreMaterialTemporarilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, storeMaterialTemporarily(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::StoreMaterialTemporarilyOutcomeCallable TrademarkClient::storeMaterialTemporarilyCallable(const StoreMaterialTemporarilyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StoreMaterialTemporarilyOutcome()>>(
-			[this, request]()
-			{
-			return this->storeMaterialTemporarily(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,42 +1923,6 @@ TrademarkClient::QueryMaterialListOutcomeCallable TrademarkClient::queryMaterial
 	return task->get_future();
 }
 
-TrademarkClient::CreateTrademarkOrderOutcome TrademarkClient::createTrademarkOrder(const CreateTrademarkOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTrademarkOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTrademarkOrderOutcome(CreateTrademarkOrderResult(outcome.result()));
-	else
-		return CreateTrademarkOrderOutcome(outcome.error());
-}
-
-void TrademarkClient::createTrademarkOrderAsync(const CreateTrademarkOrderRequest& request, const CreateTrademarkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTrademarkOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::CreateTrademarkOrderOutcomeCallable TrademarkClient::createTrademarkOrderCallable(const CreateTrademarkOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTrademarkOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->createTrademarkOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 TrademarkClient::UpdateSendMaterialNumOutcome TrademarkClient::updateSendMaterialNum(const UpdateSendMaterialNumRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1671,108 +1959,36 @@ TrademarkClient::UpdateSendMaterialNumOutcomeCallable TrademarkClient::updateSen
 	return task->get_future();
 }
 
-TrademarkClient::ListNotaryInfosOutcome TrademarkClient::listNotaryInfos(const ListNotaryInfosRequest &request) const
+TrademarkClient::CreateTrademarkOrderOutcome TrademarkClient::createTrademarkOrder(const CreateTrademarkOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListNotaryInfosOutcome(endpointOutcome.error());
+		return CreateTrademarkOrderOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListNotaryInfosOutcome(ListNotaryInfosResult(outcome.result()));
+		return CreateTrademarkOrderOutcome(CreateTrademarkOrderResult(outcome.result()));
 	else
-		return ListNotaryInfosOutcome(outcome.error());
+		return CreateTrademarkOrderOutcome(outcome.error());
 }
 
-void TrademarkClient::listNotaryInfosAsync(const ListNotaryInfosRequest& request, const ListNotaryInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void TrademarkClient::createTrademarkOrderAsync(const CreateTrademarkOrderRequest& request, const CreateTrademarkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listNotaryInfos(request), context);
+		handler(this, request, createTrademarkOrder(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-TrademarkClient::ListNotaryInfosOutcomeCallable TrademarkClient::listNotaryInfosCallable(const ListNotaryInfosRequest &request) const
+TrademarkClient::CreateTrademarkOrderOutcomeCallable TrademarkClient::createTrademarkOrderCallable(const CreateTrademarkOrderRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListNotaryInfosOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateTrademarkOrderOutcome()>>(
 			[this, request]()
 			{
-			return this->listNotaryInfos(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryCommunicationLogsOutcome TrademarkClient::queryCommunicationLogs(const QueryCommunicationLogsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryCommunicationLogsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryCommunicationLogsOutcome(QueryCommunicationLogsResult(outcome.result()));
-	else
-		return QueryCommunicationLogsOutcome(outcome.error());
-}
-
-void TrademarkClient::queryCommunicationLogsAsync(const QueryCommunicationLogsRequest& request, const QueryCommunicationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryCommunicationLogs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryCommunicationLogsOutcomeCallable TrademarkClient::queryCommunicationLogsCallable(const QueryCommunicationLogsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryCommunicationLogsOutcome()>>(
-			[this, request]()
-			{
-			return this->queryCommunicationLogs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-TrademarkClient::QueryTradeMarkApplicationDetailOutcome TrademarkClient::queryTradeMarkApplicationDetail(const QueryTradeMarkApplicationDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryTradeMarkApplicationDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryTradeMarkApplicationDetailOutcome(QueryTradeMarkApplicationDetailResult(outcome.result()));
-	else
-		return QueryTradeMarkApplicationDetailOutcome(outcome.error());
-}
-
-void TrademarkClient::queryTradeMarkApplicationDetailAsync(const QueryTradeMarkApplicationDetailRequest& request, const QueryTradeMarkApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryTradeMarkApplicationDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-TrademarkClient::QueryTradeMarkApplicationDetailOutcomeCallable TrademarkClient::queryTradeMarkApplicationDetailCallable(const QueryTradeMarkApplicationDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryTradeMarkApplicationDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->queryTradeMarkApplicationDetail(request);
+			return this->createTrademarkOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

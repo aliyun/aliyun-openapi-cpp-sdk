@@ -36,3 +36,14 @@ void DescribeStatisticsRequest::setSourceIp(const std::string& sourceIp)
 	setCoreParameter("SourceIp", sourceIp);
 }
 
+std::string DescribeStatisticsRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeStatisticsRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+

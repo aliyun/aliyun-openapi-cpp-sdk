@@ -33,7 +33,7 @@ std::string ModifyDrdsInstanceDescriptionRequest::getDescription()const
 void ModifyDrdsInstanceDescriptionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string ModifyDrdsInstanceDescriptionRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string ModifyDrdsInstanceDescriptionRequest::getDrdsInstanceId()const
 void ModifyDrdsInstanceDescriptionRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsInstanceDescriptionRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string ModifyDrdsInstanceDescriptionRequest::getAccessKeyId()const
 void ModifyDrdsInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

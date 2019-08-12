@@ -447,36 +447,36 @@ CrClient::DeleteUserSourceAccountOutcomeCallable CrClient::deleteUserSourceAccou
 	return task->get_future();
 }
 
-CrClient::GetNamespaceOutcome CrClient::getNamespace(const GetNamespaceRequest &request) const
+CrClient::StartImageScanOutcome CrClient::startImageScan(const StartImageScanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetNamespaceOutcome(endpointOutcome.error());
+		return StartImageScanOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetNamespaceOutcome(GetNamespaceResult(outcome.result()));
+		return StartImageScanOutcome(StartImageScanResult(outcome.result()));
 	else
-		return GetNamespaceOutcome(outcome.error());
+		return StartImageScanOutcome(outcome.error());
 }
 
-void CrClient::getNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::startImageScanAsync(const StartImageScanRequest& request, const StartImageScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getNamespace(request), context);
+		handler(this, request, startImageScan(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::GetNamespaceOutcomeCallable CrClient::getNamespaceCallable(const GetNamespaceRequest &request) const
+CrClient::StartImageScanOutcomeCallable CrClient::startImageScanCallable(const StartImageScanRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetNamespaceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<StartImageScanOutcome()>>(
 			[this, request]()
 			{
-			return this->getNamespace(request);
+			return this->startImageScan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,72 +519,36 @@ CrClient::UpdateRepoBuildRuleOutcomeCallable CrClient::updateRepoBuildRuleCallab
 	return task->get_future();
 }
 
-CrClient::StartImageScanOutcome CrClient::startImageScan(const StartImageScanRequest &request) const
+CrClient::GetNamespaceOutcome CrClient::getNamespace(const GetNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return StartImageScanOutcome(endpointOutcome.error());
+		return GetNamespaceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return StartImageScanOutcome(StartImageScanResult(outcome.result()));
+		return GetNamespaceOutcome(GetNamespaceResult(outcome.result()));
 	else
-		return StartImageScanOutcome(outcome.error());
+		return GetNamespaceOutcome(outcome.error());
 }
 
-void CrClient::startImageScanAsync(const StartImageScanRequest& request, const StartImageScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::getNamespaceAsync(const GetNamespaceRequest& request, const GetNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, startImageScan(request), context);
+		handler(this, request, getNamespace(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::StartImageScanOutcomeCallable CrClient::startImageScanCallable(const StartImageScanRequest &request) const
+CrClient::GetNamespaceOutcomeCallable CrClient::getNamespaceCallable(const GetNamespaceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<StartImageScanOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetNamespaceOutcome()>>(
 			[this, request]()
 			{
-			return this->startImageScan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CrClient::DeleteCollectionOutcome CrClient::deleteCollection(const DeleteCollectionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteCollectionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteCollectionOutcome(DeleteCollectionResult(outcome.result()));
-	else
-		return DeleteCollectionOutcome(outcome.error());
-}
-
-void CrClient::deleteCollectionAsync(const DeleteCollectionRequest& request, const DeleteCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteCollection(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrClient::DeleteCollectionOutcomeCallable CrClient::deleteCollectionCallable(const DeleteCollectionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteCollectionOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteCollection(request);
+			return this->getNamespace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,72 +591,72 @@ CrClient::GetUserSourceRepoListOutcomeCallable CrClient::getUserSourceRepoListCa
 	return task->get_future();
 }
 
-CrClient::GetRegionOutcome CrClient::getRegion(const GetRegionRequest &request) const
+CrClient::DeleteCollectionOutcome CrClient::deleteCollection(const DeleteCollectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetRegionOutcome(endpointOutcome.error());
+		return DeleteCollectionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetRegionOutcome(GetRegionResult(outcome.result()));
+		return DeleteCollectionOutcome(DeleteCollectionResult(outcome.result()));
 	else
-		return GetRegionOutcome(outcome.error());
+		return DeleteCollectionOutcome(outcome.error());
 }
 
-void CrClient::getRegionAsync(const GetRegionRequest& request, const GetRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::deleteCollectionAsync(const DeleteCollectionRequest& request, const DeleteCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getRegion(request), context);
+		handler(this, request, deleteCollection(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::GetRegionOutcomeCallable CrClient::getRegionCallable(const GetRegionRequest &request) const
+CrClient::DeleteCollectionOutcomeCallable CrClient::deleteCollectionCallable(const DeleteCollectionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetRegionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteCollectionOutcome()>>(
 			[this, request]()
 			{
-			return this->getRegion(request);
+			return this->deleteCollection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CrClient::GetNamespaceAuthorizationListOutcome CrClient::getNamespaceAuthorizationList(const GetNamespaceAuthorizationListRequest &request) const
+CrClient::UpdateRepoWebhookOutcome CrClient::updateRepoWebhook(const UpdateRepoWebhookRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetNamespaceAuthorizationListOutcome(endpointOutcome.error());
+		return UpdateRepoWebhookOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetNamespaceAuthorizationListOutcome(GetNamespaceAuthorizationListResult(outcome.result()));
+		return UpdateRepoWebhookOutcome(UpdateRepoWebhookResult(outcome.result()));
 	else
-		return GetNamespaceAuthorizationListOutcome(outcome.error());
+		return UpdateRepoWebhookOutcome(outcome.error());
 }
 
-void CrClient::getNamespaceAuthorizationListAsync(const GetNamespaceAuthorizationListRequest& request, const GetNamespaceAuthorizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::updateRepoWebhookAsync(const UpdateRepoWebhookRequest& request, const UpdateRepoWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getNamespaceAuthorizationList(request), context);
+		handler(this, request, updateRepoWebhook(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::GetNamespaceAuthorizationListOutcomeCallable CrClient::getNamespaceAuthorizationListCallable(const GetNamespaceAuthorizationListRequest &request) const
+CrClient::UpdateRepoWebhookOutcomeCallable CrClient::updateRepoWebhookCallable(const UpdateRepoWebhookRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetNamespaceAuthorizationListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateRepoWebhookOutcome()>>(
 			[this, request]()
 			{
-			return this->getNamespaceAuthorizationList(request);
+			return this->updateRepoWebhook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,36 +699,72 @@ CrClient::GetAuthorizationTokenOutcomeCallable CrClient::getAuthorizationTokenCa
 	return task->get_future();
 }
 
-CrClient::UpdateRepoWebhookOutcome CrClient::updateRepoWebhook(const UpdateRepoWebhookRequest &request) const
+CrClient::GetNamespaceAuthorizationListOutcome CrClient::getNamespaceAuthorizationList(const GetNamespaceAuthorizationListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateRepoWebhookOutcome(endpointOutcome.error());
+		return GetNamespaceAuthorizationListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateRepoWebhookOutcome(UpdateRepoWebhookResult(outcome.result()));
+		return GetNamespaceAuthorizationListOutcome(GetNamespaceAuthorizationListResult(outcome.result()));
 	else
-		return UpdateRepoWebhookOutcome(outcome.error());
+		return GetNamespaceAuthorizationListOutcome(outcome.error());
 }
 
-void CrClient::updateRepoWebhookAsync(const UpdateRepoWebhookRequest& request, const UpdateRepoWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::getNamespaceAuthorizationListAsync(const GetNamespaceAuthorizationListRequest& request, const GetNamespaceAuthorizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateRepoWebhook(request), context);
+		handler(this, request, getNamespaceAuthorizationList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::UpdateRepoWebhookOutcomeCallable CrClient::updateRepoWebhookCallable(const UpdateRepoWebhookRequest &request) const
+CrClient::GetNamespaceAuthorizationListOutcomeCallable CrClient::getNamespaceAuthorizationListCallable(const GetNamespaceAuthorizationListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateRepoWebhookOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetNamespaceAuthorizationListOutcome()>>(
 			[this, request]()
 			{
-			return this->updateRepoWebhook(request);
+			return this->getNamespaceAuthorizationList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrClient::GetRegionOutcome CrClient::getRegion(const GetRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRegionOutcome(GetRegionResult(outcome.result()));
+	else
+		return GetRegionOutcome(outcome.error());
+}
+
+void CrClient::getRegionAsync(const GetRegionRequest& request, const GetRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrClient::GetRegionOutcomeCallable CrClient::getRegionCallable(const GetRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->getRegion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1167,42 +1167,6 @@ CrClient::GetRepoBuildLogsOutcomeCallable CrClient::getRepoBuildLogsCallable(con
 	return task->get_future();
 }
 
-CrClient::GetNamespaceListOutcome CrClient::getNamespaceList(const GetNamespaceListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetNamespaceListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetNamespaceListOutcome(GetNamespaceListResult(outcome.result()));
-	else
-		return GetNamespaceListOutcome(outcome.error());
-}
-
-void CrClient::getNamespaceListAsync(const GetNamespaceListRequest& request, const GetNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getNamespaceList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrClient::GetNamespaceListOutcomeCallable CrClient::getNamespaceListCallable(const GetNamespaceListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetNamespaceListOutcome()>>(
-			[this, request]()
-			{
-			return this->getNamespaceList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrClient::GetRepoListOutcome CrClient::getRepoList(const GetRepoListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1197,42 @@ CrClient::GetRepoListOutcomeCallable CrClient::getRepoListCallable(const GetRepo
 			[this, request]()
 			{
 			return this->getRepoList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrClient::GetNamespaceListOutcome CrClient::getNamespaceList(const GetNamespaceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetNamespaceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetNamespaceListOutcome(GetNamespaceListResult(outcome.result()));
+	else
+		return GetNamespaceListOutcome(outcome.error());
+}
+
+void CrClient::getNamespaceListAsync(const GetNamespaceListRequest& request, const GetNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getNamespaceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrClient::GetNamespaceListOutcomeCallable CrClient::getNamespaceListCallable(const GetNamespaceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetNamespaceListOutcome()>>(
+			[this, request]()
+			{
+			return this->getNamespaceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,36 +1491,36 @@ CrClient::CreateRepoSyncTaskOutcomeCallable CrClient::createRepoSyncTaskCallable
 	return task->get_future();
 }
 
-CrClient::GetRepoBuildRuleListOutcome CrClient::getRepoBuildRuleList(const GetRepoBuildRuleListRequest &request) const
+CrClient::GetImageManifestOutcome CrClient::getImageManifest(const GetImageManifestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetRepoBuildRuleListOutcome(endpointOutcome.error());
+		return GetImageManifestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetRepoBuildRuleListOutcome(GetRepoBuildRuleListResult(outcome.result()));
+		return GetImageManifestOutcome(GetImageManifestResult(outcome.result()));
 	else
-		return GetRepoBuildRuleListOutcome(outcome.error());
+		return GetImageManifestOutcome(outcome.error());
 }
 
-void CrClient::getRepoBuildRuleListAsync(const GetRepoBuildRuleListRequest& request, const GetRepoBuildRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::getImageManifestAsync(const GetImageManifestRequest& request, const GetImageManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getRepoBuildRuleList(request), context);
+		handler(this, request, getImageManifest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::GetRepoBuildRuleListOutcomeCallable CrClient::getRepoBuildRuleListCallable(const GetRepoBuildRuleListRequest &request) const
+CrClient::GetImageManifestOutcomeCallable CrClient::getImageManifestCallable(const GetImageManifestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetRepoBuildRuleListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetImageManifestOutcome()>>(
 			[this, request]()
 			{
-			return this->getRepoBuildRuleList(request);
+			return this->getImageManifest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,36 +1563,36 @@ CrClient::GetUserSourceRepoRefListOutcomeCallable CrClient::getUserSourceRepoRef
 	return task->get_future();
 }
 
-CrClient::GetImageManifestOutcome CrClient::getImageManifest(const GetImageManifestRequest &request) const
+CrClient::GetRepoBuildRuleListOutcome CrClient::getRepoBuildRuleList(const GetRepoBuildRuleListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetImageManifestOutcome(endpointOutcome.error());
+		return GetRepoBuildRuleListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetImageManifestOutcome(GetImageManifestResult(outcome.result()));
+		return GetRepoBuildRuleListOutcome(GetRepoBuildRuleListResult(outcome.result()));
 	else
-		return GetImageManifestOutcome(outcome.error());
+		return GetRepoBuildRuleListOutcome(outcome.error());
 }
 
-void CrClient::getImageManifestAsync(const GetImageManifestRequest& request, const GetImageManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CrClient::getRepoBuildRuleListAsync(const GetRepoBuildRuleListRequest& request, const GetRepoBuildRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getImageManifest(request), context);
+		handler(this, request, getRepoBuildRuleList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CrClient::GetImageManifestOutcomeCallable CrClient::getImageManifestCallable(const GetImageManifestRequest &request) const
+CrClient::GetRepoBuildRuleListOutcomeCallable CrClient::getRepoBuildRuleListCallable(const GetRepoBuildRuleListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetImageManifestOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetRepoBuildRuleListOutcome()>>(
 			[this, request]()
 			{
-			return this->getImageManifest(request);
+			return this->getRepoBuildRuleList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1707,42 +1707,6 @@ CrClient::GetRepoSourceRepoOutcomeCallable CrClient::getRepoSourceRepoCallable(c
 	return task->get_future();
 }
 
-CrClient::DeleteNamespaceAuthorizationOutcome CrClient::deleteNamespaceAuthorization(const DeleteNamespaceAuthorizationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteNamespaceAuthorizationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteNamespaceAuthorizationOutcome(DeleteNamespaceAuthorizationResult(outcome.result()));
-	else
-		return DeleteNamespaceAuthorizationOutcome(outcome.error());
-}
-
-void CrClient::deleteNamespaceAuthorizationAsync(const DeleteNamespaceAuthorizationRequest& request, const DeleteNamespaceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteNamespaceAuthorization(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrClient::DeleteNamespaceAuthorizationOutcomeCallable CrClient::deleteNamespaceAuthorizationCallable(const DeleteNamespaceAuthorizationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteNamespaceAuthorizationOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteNamespaceAuthorization(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrClient::CreateRepoBuildRuleOutcome CrClient::createRepoBuildRule(const CreateRepoBuildRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1773,6 +1737,42 @@ CrClient::CreateRepoBuildRuleOutcomeCallable CrClient::createRepoBuildRuleCallab
 			[this, request]()
 			{
 			return this->createRepoBuildRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrClient::DeleteNamespaceAuthorizationOutcome CrClient::deleteNamespaceAuthorization(const DeleteNamespaceAuthorizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNamespaceAuthorizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNamespaceAuthorizationOutcome(DeleteNamespaceAuthorizationResult(outcome.result()));
+	else
+		return DeleteNamespaceAuthorizationOutcome(outcome.error());
+}
+
+void CrClient::deleteNamespaceAuthorizationAsync(const DeleteNamespaceAuthorizationRequest& request, const DeleteNamespaceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNamespaceAuthorization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrClient::DeleteNamespaceAuthorizationOutcomeCallable CrClient::deleteNamespaceAuthorizationCallable(const DeleteNamespaceAuthorizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNamespaceAuthorizationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNamespaceAuthorization(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,42 +2103,6 @@ CrClient::GetRepoOutcomeCallable CrClient::getRepoCallable(const GetRepoRequest 
 	return task->get_future();
 }
 
-CrClient::GetRepoBuildStatusOutcome CrClient::getRepoBuildStatus(const GetRepoBuildStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetRepoBuildStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetRepoBuildStatusOutcome(GetRepoBuildStatusResult(outcome.result()));
-	else
-		return GetRepoBuildStatusOutcome(outcome.error());
-}
-
-void CrClient::getRepoBuildStatusAsync(const GetRepoBuildStatusRequest& request, const GetRepoBuildStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getRepoBuildStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CrClient::GetRepoBuildStatusOutcomeCallable CrClient::getRepoBuildStatusCallable(const GetRepoBuildStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetRepoBuildStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->getRepoBuildStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CrClient::CreateRepoAuthorizationOutcome CrClient::createRepoAuthorization(const CreateRepoAuthorizationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2133,42 @@ CrClient::CreateRepoAuthorizationOutcomeCallable CrClient::createRepoAuthorizati
 			[this, request]()
 			{
 			return this->createRepoAuthorization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CrClient::GetRepoBuildStatusOutcome CrClient::getRepoBuildStatus(const GetRepoBuildStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRepoBuildStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRepoBuildStatusOutcome(GetRepoBuildStatusResult(outcome.result()));
+	else
+		return GetRepoBuildStatusOutcome(outcome.error());
+}
+
+void CrClient::getRepoBuildStatusAsync(const GetRepoBuildStatusRequest& request, const GetRepoBuildStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRepoBuildStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CrClient::GetRepoBuildStatusOutcomeCallable CrClient::getRepoBuildStatusCallable(const GetRepoBuildStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRepoBuildStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getRepoBuildStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

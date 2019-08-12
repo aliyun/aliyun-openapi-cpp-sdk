@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 
             private:
 				std::string sourceIp_;
 				int pageSize_;
+				std::string from_;
 
 			};
 		}

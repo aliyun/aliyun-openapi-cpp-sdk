@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateUserRequest();
 				~CreateUserRequest();
 
+				std::string getPrivateOutboundNumberId()const;
+				void setPrivateOutboundNumberId(const std::string& privateOutboundNumberId);
 				std::vector<int> getSkillLevel()const;
 				void setSkillLevel(const std::vector<int>& skillLevel);
 				std::string getInstanceId()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string privateOutboundNumberId_;
 				std::vector<int> skillLevel_;
 				std::string instanceId_;
 				std::string loginName_;

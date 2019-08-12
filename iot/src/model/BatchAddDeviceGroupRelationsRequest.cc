@@ -25,6 +25,17 @@ BatchAddDeviceGroupRelationsRequest::BatchAddDeviceGroupRelationsRequest() :
 BatchAddDeviceGroupRelationsRequest::~BatchAddDeviceGroupRelationsRequest()
 {}
 
+std::string BatchAddDeviceGroupRelationsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string BatchAddDeviceGroupRelationsRequest::getGroupId()const
 {
 	return groupId_;
@@ -33,7 +44,7 @@ std::string BatchAddDeviceGroupRelationsRequest::getGroupId()const
 void BatchAddDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::vector<BatchAddDeviceGroupRelationsRequest::Device> BatchAddDeviceGroupRelationsRequest::getDevice()const
@@ -48,8 +59,8 @@ void BatchAddDeviceGroupRelationsRequest::setDevice(const std::vector<Device>& d
 	for(int i = 0; i!= device.size(); i++)	{
 		auto obj = device.at(i);
 		std::string str ="Device."+ std::to_string(i);
-		setParameter(str + ".DeviceName", obj.deviceName);
-		setParameter(str + ".ProductKey", obj.productKey);
+		setCoreParameter(str + ".DeviceName", obj.deviceName);
+		setCoreParameter(str + ".ProductKey", obj.productKey);
 	}
 }
 
@@ -61,6 +72,6 @@ std::string BatchAddDeviceGroupRelationsRequest::getAccessKeyId()const
 void BatchAddDeviceGroupRelationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

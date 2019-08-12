@@ -33,7 +33,7 @@ std::string CreateVerificationCodeRequest::getMode()const
 void CreateVerificationCodeRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
-	setParameter("Mode", mode);
+	setCoreParameter("Mode", mode);
 }
 
 long CreateVerificationCodeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long CreateVerificationCodeRequest::getResourceOwnerId()const
 void CreateVerificationCodeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateVerificationCodeRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string CreateVerificationCodeRequest::getRegionId()const
 void CreateVerificationCodeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string CreateVerificationCodeRequest::getAccessKeyId()const
@@ -66,7 +66,7 @@ std::string CreateVerificationCodeRequest::getAccessKeyId()const
 void CreateVerificationCodeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVerificationCodeRequest::getTarget()const
@@ -77,6 +77,6 @@ std::string CreateVerificationCodeRequest::getTarget()const
 void CreateVerificationCodeRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setParameter("Target", target);
+	setCoreParameter("Target", target);
 }
 

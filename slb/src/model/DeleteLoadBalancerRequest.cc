@@ -33,7 +33,7 @@ std::string DeleteLoadBalancerRequest::getAccess_key_id()const
 void DeleteLoadBalancerRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DeleteLoadBalancerRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteLoadBalancerRequest::getResourceOwnerId()const
 void DeleteLoadBalancerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteLoadBalancerRequest::getLoadBalancerId()const
@@ -55,7 +55,7 @@ std::string DeleteLoadBalancerRequest::getLoadBalancerId()const
 void DeleteLoadBalancerRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setParameter("LoadBalancerId", loadBalancerId);
+	setCoreParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string DeleteLoadBalancerRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteLoadBalancerRequest::getRegionId()const
 void DeleteLoadBalancerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteLoadBalancerRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteLoadBalancerRequest::getResourceOwnerAccount()const
 void DeleteLoadBalancerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteLoadBalancerRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string DeleteLoadBalancerRequest::getOwnerAccount()const
 void DeleteLoadBalancerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteLoadBalancerRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long DeleteLoadBalancerRequest::getOwnerId()const
 void DeleteLoadBalancerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLoadBalancerRequest::getTags()const
@@ -110,6 +110,6 @@ std::string DeleteLoadBalancerRequest::getTags()const
 void DeleteLoadBalancerRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 

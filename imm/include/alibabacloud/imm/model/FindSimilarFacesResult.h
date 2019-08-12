@@ -36,17 +36,36 @@ namespace AlibabaCloud
 				{
 					struct FaceAttributes
 					{
-						struct FaceBoundary
+						struct FaceBoundary2
 						{
 							int left;
 							int top;
 							int height;
 							int width;
 						};
-						FaceBoundary faceBoundary;
+						FaceBoundary2 faceBoundary2;
+					};
+					struct SimilarFacesItem
+					{
+						struct FaceAttributes1
+						{
+							struct FaceBoundary
+							{
+								int left;
+								int top;
+								int height;
+								int width;
+							};
+							FaceBoundary faceBoundary;
+						};
+						std::string faceId;
+						float similarity;
+						FaceAttributes1 faceAttributes1;
+						std::string imageUri;
 					};
 					std::string faceId;
 					FaceAttributes faceAttributes;
+					std::vector<FacesItem::SimilarFacesItem> similarFaces;
 					float similarity;
 					std::string imageUri;
 				};

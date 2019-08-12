@@ -33,6 +33,6 @@ std::string DescribeConfigNameRequest::getSourceIp()const
 void DescribeConfigNameRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 

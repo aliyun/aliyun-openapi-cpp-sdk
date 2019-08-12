@@ -35,15 +35,12 @@ namespace AlibabaCloud
 				OnsGroupSubDetailRequest();
 				~OnsGroupSubDetailRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string groupId_;
 

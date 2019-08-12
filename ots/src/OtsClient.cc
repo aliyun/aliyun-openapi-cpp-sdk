@@ -51,42 +51,6 @@ OtsClient::OtsClient(const std::string & accessKeyId, const std::string & access
 OtsClient::~OtsClient()
 {}
 
-OtsClient::UnbindInstance2VpcOutcome OtsClient::unbindInstance2Vpc(const UnbindInstance2VpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnbindInstance2VpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnbindInstance2VpcOutcome(UnbindInstance2VpcResult(outcome.result()));
-	else
-		return UnbindInstance2VpcOutcome(outcome.error());
-}
-
-void OtsClient::unbindInstance2VpcAsync(const UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unbindInstance2Vpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::UnbindInstance2VpcOutcomeCallable OtsClient::unbindInstance2VpcCallable(const UnbindInstance2VpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnbindInstance2VpcOutcome()>>(
-			[this, request]()
-			{
-			return this->unbindInstance2Vpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OtsClient::ListClusterTypeOutcome OtsClient::listClusterType(const ListClusterTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +81,42 @@ OtsClient::ListClusterTypeOutcomeCallable OtsClient::listClusterTypeCallable(con
 			[this, request]()
 			{
 			return this->listClusterType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::UnbindInstance2VpcOutcome OtsClient::unbindInstance2Vpc(const UnbindInstance2VpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindInstance2VpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindInstance2VpcOutcome(UnbindInstance2VpcResult(outcome.result()));
+	else
+		return UnbindInstance2VpcOutcome(outcome.error());
+}
+
+void OtsClient::unbindInstance2VpcAsync(const UnbindInstance2VpcRequest& request, const UnbindInstance2VpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindInstance2Vpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::UnbindInstance2VpcOutcomeCallable OtsClient::unbindInstance2VpcCallable(const UnbindInstance2VpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindInstance2VpcOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindInstance2Vpc(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +375,6 @@ OtsClient::ListTagsOutcomeCallable OtsClient::listTagsCallable(const ListTagsReq
 	return task->get_future();
 }
 
-OtsClient::InsertTagsOutcome OtsClient::insertTags(const InsertTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return InsertTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return InsertTagsOutcome(InsertTagsResult(outcome.result()));
-	else
-		return InsertTagsOutcome(outcome.error());
-}
-
-void OtsClient::insertTagsAsync(const InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, insertTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OtsClient::InsertTagsOutcomeCallable OtsClient::insertTagsCallable(const InsertTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<InsertTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->insertTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OtsClient::ListVpcInfoByInstanceOutcome OtsClient::listVpcInfoByInstance(const ListVpcInfoByInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +405,42 @@ OtsClient::ListVpcInfoByInstanceOutcomeCallable OtsClient::listVpcInfoByInstance
 			[this, request]()
 			{
 			return this->listVpcInfoByInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OtsClient::InsertTagsOutcome OtsClient::insertTags(const InsertTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertTagsOutcome(InsertTagsResult(outcome.result()));
+	else
+		return InsertTagsOutcome(outcome.error());
+}
+
+void OtsClient::insertTagsAsync(const InsertTagsRequest& request, const InsertTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OtsClient::InsertTagsOutcomeCallable OtsClient::insertTagsCallable(const InsertTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->insertTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

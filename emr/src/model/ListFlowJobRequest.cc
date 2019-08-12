@@ -33,7 +33,7 @@ std::string ListFlowJobRequest::getRegionId()const
 void ListFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ListFlowJobRequest::getName()const
@@ -44,7 +44,7 @@ std::string ListFlowJobRequest::getName()const
 void ListFlowJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 int ListFlowJobRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListFlowJobRequest::getPageSize()const
 void ListFlowJobRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowJobRequest::getId()const
@@ -66,7 +66,7 @@ std::string ListFlowJobRequest::getId()const
 void ListFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ListFlowJobRequest::getType()const
@@ -77,7 +77,7 @@ std::string ListFlowJobRequest::getType()const
 void ListFlowJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 bool ListFlowJobRequest::getAdhoc()const
@@ -88,7 +88,7 @@ bool ListFlowJobRequest::getAdhoc()const
 void ListFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setParameter("Adhoc", std::to_string(adhoc));
+	setCoreParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string ListFlowJobRequest::getProjectId()const
@@ -99,7 +99,7 @@ std::string ListFlowJobRequest::getProjectId()const
 void ListFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+	setCoreParameter("ProjectId", projectId);
 }
 
 int ListFlowJobRequest::getPageNumber()const
@@ -110,6 +110,6 @@ int ListFlowJobRequest::getPageNumber()const
 void ListFlowJobRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 

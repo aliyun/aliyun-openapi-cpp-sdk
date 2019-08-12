@@ -33,7 +33,7 @@ std::string CreateTicketRequest::getCreatorId()const
 void CreateTicketRequest::setCreatorId(const std::string& creatorId)
 {
 	creatorId_ = creatorId;
-	setParameter("CreatorId", creatorId);
+	setCoreParameter("CreatorId", creatorId);
 }
 
 std::string CreateTicketRequest::getDescription()const
@@ -44,7 +44,7 @@ std::string CreateTicketRequest::getDescription()const
 void CreateTicketRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string CreateTicketRequest::getType()const
@@ -55,7 +55,7 @@ std::string CreateTicketRequest::getType()const
 void CreateTicketRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string CreateTicketRequest::getCcsInstanceId()const
@@ -66,7 +66,7 @@ std::string CreateTicketRequest::getCcsInstanceId()const
 void CreateTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setParameter("CcsInstanceId", ccsInstanceId);
+	setCoreParameter("CcsInstanceId", ccsInstanceId);
 }
 
 std::string CreateTicketRequest::getCustomFields()const
@@ -77,6 +77,6 @@ std::string CreateTicketRequest::getCustomFields()const
 void CreateTicketRequest::setCustomFields(const std::string& customFields)
 {
 	customFields_ = customFields;
-	setParameter("CustomFields", customFields);
+	setCoreParameter("CustomFields", customFields);
 }
 

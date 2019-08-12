@@ -47,7 +47,7 @@ namespace AlibabaCloud
 							std::string enviroment_factor;
 							std::string assets_factor;
 						};
-						struct RpmEntityListItem
+						struct RpmEntity
 						{
 							std::string path;
 							std::string updateCmd;
@@ -56,21 +56,50 @@ namespace AlibabaCloud
 							std::string matchDetail;
 							std::string name;
 						};
-						int status;
-						std::vector<std::string> cveList;
+						std::string description;
 						std::string os;
+						std::string ip;
+						std::string reason;
+						std::string cwe;
+						std::string target;
+						std::string wasc;
+						std::string aliasName;
+						std::string osRelease;
+						std::string solution;
+						std::string vulType;
+						int status;
+						std::string owasp;
+						std::string reference;
 						Necessity necessity;
 						long lastTs;
-						std::vector<RpmEntityListItem> rpmEntityList;
+						std::vector<RpmEntity> rpmEntityList;
+						std::string title;
 						std::string absolutePath;
-						std::string reason;
-						std::string target;
-						std::string aliasName;
 						std::string proof;
 						std::string level;
+						std::string effect;
 						std::string tag;
-						std::string osRelease;
+						std::string emgProof;
 						long primaryId;
+					};
+					struct ProcessInfo
+					{
+						struct Process
+						{
+							struct SubProcess
+							{
+								std::string pname;
+								std::string pid;
+								std::string rpm;
+							};
+							std::string pname;
+							std::string pid;
+							std::vector<Process::SubProcess> subProcessList;
+							std::string rpm;
+						};
+						int totalCount;
+						std::vector<Process> processList;
+						long gmtLastTs;
 					};
 					std::string ip;
 					std::string osVersion;
@@ -82,11 +111,13 @@ namespace AlibabaCloud
 					std::string internetIp;
 					std::string aliasName;
 					long recordId;
+					std::string canFix;
 					ExtendContentJson extendContentJson;
 					int status;
 					std::string instanceId;
 					long lastTs;
 					std::string necessity;
+					ProcessInfo processInfo;
 					std::string needReboot;
 					std::string resultMessage;
 					int groupId;
@@ -97,6 +128,8 @@ namespace AlibabaCloud
 					std::string related;
 					std::string level;
 					std::string tag;
+					std::string regionId;
+					bool online;
 					long primaryId;
 					std::string resultCode;
 				};

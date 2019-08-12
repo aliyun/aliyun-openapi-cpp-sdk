@@ -33,7 +33,7 @@ std::string SubmitAnalysisJobRequest::getInput()const
 void SubmitAnalysisJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitAnalysisJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitAnalysisJobRequest::getUserData()const
 void SubmitAnalysisJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitAnalysisJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitAnalysisJobRequest::getResourceOwnerId()const
 void SubmitAnalysisJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAnalysisJobRequest::getAnalysisConfig()const
@@ -66,7 +66,7 @@ std::string SubmitAnalysisJobRequest::getAnalysisConfig()const
 void SubmitAnalysisJobRequest::setAnalysisConfig(const std::string& analysisConfig)
 {
 	analysisConfig_ = analysisConfig;
-	setParameter("AnalysisConfig", analysisConfig);
+	setCoreParameter("AnalysisConfig", analysisConfig);
 }
 
 std::string SubmitAnalysisJobRequest::getResourceOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitAnalysisJobRequest::getResourceOwnerAccount()const
 void SubmitAnalysisJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAnalysisJobRequest::getOwnerAccount()const
@@ -88,7 +88,7 @@ std::string SubmitAnalysisJobRequest::getOwnerAccount()const
 void SubmitAnalysisJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitAnalysisJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitAnalysisJobRequest::getOwnerId()const
 void SubmitAnalysisJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAnalysisJobRequest::getPriority()const
@@ -110,7 +110,7 @@ std::string SubmitAnalysisJobRequest::getPriority()const
 void SubmitAnalysisJobRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setParameter("Priority", priority);
+	setCoreParameter("Priority", priority);
 }
 
 std::string SubmitAnalysisJobRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string SubmitAnalysisJobRequest::getAccessKeyId()const
 void SubmitAnalysisJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAnalysisJobRequest::getPipelineId()const
@@ -132,6 +132,6 @@ std::string SubmitAnalysisJobRequest::getPipelineId()const
 void SubmitAnalysisJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getTargetInstanceId()const;
 				void setTargetInstanceId(int targetInstanceId);
+				std::string getRoleIds()const;
+				void setRoleIds(const std::string& roleIds);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getRegionId()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string accessKeyId_;
 				int targetInstanceId_;
+				std::string roleIds_;
 				std::string securityToken_;
 				std::string regionId_;
 				int switchType_;

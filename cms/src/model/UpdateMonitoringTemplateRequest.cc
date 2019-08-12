@@ -33,7 +33,7 @@ std::string UpdateMonitoringTemplateRequest::getEventRuleTemplatesJson()const
 void UpdateMonitoringTemplateRequest::setEventRuleTemplatesJson(const std::string& eventRuleTemplatesJson)
 {
 	eventRuleTemplatesJson_ = eventRuleTemplatesJson;
-	setParameter("EventRuleTemplatesJson", eventRuleTemplatesJson);
+	setCoreParameter("EventRuleTemplatesJson", eventRuleTemplatesJson);
 }
 
 std::string UpdateMonitoringTemplateRequest::getName()const
@@ -44,7 +44,7 @@ std::string UpdateMonitoringTemplateRequest::getName()const
 void UpdateMonitoringTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 long UpdateMonitoringTemplateRequest::getRestVersion()const
@@ -55,7 +55,7 @@ long UpdateMonitoringTemplateRequest::getRestVersion()const
 void UpdateMonitoringTemplateRequest::setRestVersion(long restVersion)
 {
 	restVersion_ = restVersion;
-	setParameter("RestVersion", std::to_string(restVersion));
+	setCoreParameter("RestVersion", std::to_string(restVersion));
 }
 
 std::string UpdateMonitoringTemplateRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string UpdateMonitoringTemplateRequest::getDescription()const
 void UpdateMonitoringTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 long UpdateMonitoringTemplateRequest::getId()const
@@ -77,7 +77,7 @@ long UpdateMonitoringTemplateRequest::getId()const
 void UpdateMonitoringTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string UpdateMonitoringTemplateRequest::getAlertTemplatesJson()const
@@ -88,6 +88,6 @@ std::string UpdateMonitoringTemplateRequest::getAlertTemplatesJson()const
 void UpdateMonitoringTemplateRequest::setAlertTemplatesJson(const std::string& alertTemplatesJson)
 {
 	alertTemplatesJson_ = alertTemplatesJson;
-	setParameter("AlertTemplatesJson", alertTemplatesJson);
+	setCoreParameter("AlertTemplatesJson", alertTemplatesJson);
 }
 

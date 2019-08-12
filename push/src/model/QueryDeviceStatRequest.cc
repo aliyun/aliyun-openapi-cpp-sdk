@@ -33,7 +33,7 @@ std::string QueryDeviceStatRequest::getEndTime()const
 void QueryDeviceStatRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 long QueryDeviceStatRequest::getAppKey()const
@@ -44,7 +44,7 @@ long QueryDeviceStatRequest::getAppKey()const
 void QueryDeviceStatRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDeviceStatRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string QueryDeviceStatRequest::getStartTime()const
 void QueryDeviceStatRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string QueryDeviceStatRequest::getDeviceType()const
@@ -66,7 +66,7 @@ std::string QueryDeviceStatRequest::getDeviceType()const
 void QueryDeviceStatRequest::setDeviceType(const std::string& deviceType)
 {
 	deviceType_ = deviceType;
-	setParameter("DeviceType", deviceType);
+	setCoreParameter("DeviceType", deviceType);
 }
 
 std::string QueryDeviceStatRequest::getQueryType()const
@@ -77,7 +77,7 @@ std::string QueryDeviceStatRequest::getQueryType()const
 void QueryDeviceStatRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setParameter("QueryType", queryType);
+	setCoreParameter("QueryType", queryType);
 }
 
 std::string QueryDeviceStatRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string QueryDeviceStatRequest::getAccessKeyId()const
 void QueryDeviceStatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

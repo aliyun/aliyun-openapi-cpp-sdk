@@ -25,17 +25,6 @@ OnsDLQMessagePageQueryByGroupIdRequest::OnsDLQMessagePageQueryByGroupIdRequest()
 OnsDLQMessagePageQueryByGroupIdRequest::~OnsDLQMessagePageQueryByGroupIdRequest()
 {}
 
-long OnsDLQMessagePageQueryByGroupIdRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsDLQMessagePageQueryByGroupIdRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsDLQMessagePageQueryByGroupIdRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -33,7 +33,7 @@ long CreateAllEcsWhiteListRequest::getResourceOwnerId()const
 void CreateAllEcsWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAllEcsWhiteListRequest::getSrcIP()const
@@ -44,7 +44,7 @@ std::string CreateAllEcsWhiteListRequest::getSrcIP()const
 void CreateAllEcsWhiteListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setParameter("SrcIP", srcIP);
+	setCoreParameter("SrcIP", srcIP);
 }
 
 std::string CreateAllEcsWhiteListRequest::getSourceIp()const
@@ -55,7 +55,7 @@ std::string CreateAllEcsWhiteListRequest::getSourceIp()const
 void CreateAllEcsWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 std::string CreateAllEcsWhiteListRequest::getSourceCode()const
@@ -66,6 +66,6 @@ std::string CreateAllEcsWhiteListRequest::getSourceCode()const
 void CreateAllEcsWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setParameter("SourceCode", sourceCode);
+	setCoreParameter("SourceCode", sourceCode);
 }
 

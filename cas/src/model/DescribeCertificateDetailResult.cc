@@ -35,10 +35,13 @@ DescribeCertificateDetailResult::~DescribeCertificateDetailResult()
 
 void DescribeCertificateDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["Id"].isNull())
 		id_ = std::stol(value["Id"].asString());
@@ -68,6 +71,8 @@ void DescribeCertificateDetailResult::parse(const std::string &payload)
 		certType_ = value["CertType"].asString();
 	if(!value["RemainingDays"].isNull())
 		remainingDays_ = std::stoi(value["RemainingDays"].asString());
+	if(!value["AccessDownload"].isNull())
+		accessDownload_ = std::stoi(value["AccessDownload"].asString());
 
 }
 
@@ -129,6 +134,11 @@ std::string DescribeCertificateDetailResult::getBrandName()const
 int DescribeCertificateDetailResult::getYear()const
 {
 	return year_;
+}
+
+int DescribeCertificateDetailResult::getAccessDownload()const
+{
+	return accessDownload_;
 }
 
 long DescribeCertificateDetailResult::getId()const

@@ -33,6 +33,6 @@ std::string QueryFaceRequest::getUserId()const
 void QueryFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 

@@ -33,7 +33,7 @@ std::string EncryptRequest::getEncryptionContext()const
 void EncryptRequest::setEncryptionContext(const std::string& encryptionContext)
 {
 	encryptionContext_ = encryptionContext;
-	setParameter("EncryptionContext", encryptionContext);
+	setCoreParameter("EncryptionContext", encryptionContext);
 }
 
 std::string EncryptRequest::getKeyId()const
@@ -44,18 +44,7 @@ std::string EncryptRequest::getKeyId()const
 void EncryptRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string EncryptRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void EncryptRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 
 std::string EncryptRequest::getPlaintext()const
@@ -66,6 +55,6 @@ std::string EncryptRequest::getPlaintext()const
 void EncryptRequest::setPlaintext(const std::string& plaintext)
 {
 	plaintext_ = plaintext;
-	setParameter("Plaintext", plaintext);
+	setCoreParameter("Plaintext", plaintext);
 }
 

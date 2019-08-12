@@ -40,18 +40,19 @@ namespace AlibabaCloud
 				};
 				struct Data
 				{
-					std::string gmtCreate;
 					int srcPort;
+					std::string description;
 					int feedBack;
-					std::string gmtExpire;
 					std::string punishType;
+					int dstPort;
+					std::string srcIP;
+					std::string reason;
+					std::string gmtCreate;
+					std::string gmtExpire;
 					std::string dstIP;
 					std::string punishResult;
 					std::string regionId;
-					int dstPort;
 					std::string protocol;
-					std::string srcIP;
-					std::string reason;
 				};
 
 

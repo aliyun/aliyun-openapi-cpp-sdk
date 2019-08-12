@@ -33,7 +33,18 @@ std::string GetGatewayBySubDeviceRequest::getIotId()const
 void GetGatewayBySubDeviceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
+}
+
+std::string GetGatewayBySubDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetGatewayBySubDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetGatewayBySubDeviceRequest::getDeviceName()const
@@ -44,7 +55,7 @@ std::string GetGatewayBySubDeviceRequest::getDeviceName()const
 void GetGatewayBySubDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string GetGatewayBySubDeviceRequest::getProductKey()const
@@ -55,7 +66,7 @@ std::string GetGatewayBySubDeviceRequest::getProductKey()const
 void GetGatewayBySubDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
 void GetGatewayBySubDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

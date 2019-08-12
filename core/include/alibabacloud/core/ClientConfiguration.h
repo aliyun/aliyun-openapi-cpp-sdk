@@ -17,23 +17,23 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
 
-#include <memory>
-#include <string>
-#include "CredentialsProvider.h"
 #include "CoreExport.h"
+#include "CredentialsProvider.h"
 #include "NetworkProxy.h"
 #include "Signer.h"
+#include <memory>
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT ClientConfiguration {
- public:
+public:
   explicit ClientConfiguration(const std::string &regionId = "cn-hangzhou",
-    const NetworkProxy &proxy = NetworkProxy());
+                               const NetworkProxy &proxy = NetworkProxy());
   ~ClientConfiguration();
 
-  std::string endpoint()const;
-  NetworkProxy proxy()const;
-  std::string regionId()const;
+  std::string endpoint() const;
+  NetworkProxy proxy() const;
+  std::string regionId() const;
   void setEndpoint(const std::string &endpoint);
   void setProxy(const NetworkProxy &proxy);
   void setRegionId(const std::string &regionId);
@@ -43,13 +43,13 @@ class ALIBABACLOUD_CORE_EXPORT ClientConfiguration {
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
 
- private:
+private:
   std::string endpoint_;
   NetworkProxy proxy_;
   std::string regionId_;
   long connectTimeout_;
   long readTimeout_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_CLIENTCONFIGURATION_H_

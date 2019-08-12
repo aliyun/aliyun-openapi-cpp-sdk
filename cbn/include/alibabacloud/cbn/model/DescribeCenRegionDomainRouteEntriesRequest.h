@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getStatus()const;
+				void setStatus(const std::string& status);
 
             private:
 				long resourceOwnerId_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				long ownerId_;
 				int pageNumber_;
+				std::string status_;
 
 			};
 		}

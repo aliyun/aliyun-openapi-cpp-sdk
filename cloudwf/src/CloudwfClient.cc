@@ -375,42 +375,6 @@ CloudwfClient::ShopOverviewOutcomeCallable CloudwfClient::shopOverviewCallable(c
 	return task->get_future();
 }
 
-CloudwfClient::ModifySubAccountPermissionOutcome CloudwfClient::modifySubAccountPermission(const ModifySubAccountPermissionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifySubAccountPermissionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifySubAccountPermissionOutcome(ModifySubAccountPermissionResult(outcome.result()));
-	else
-		return ModifySubAccountPermissionOutcome(outcome.error());
-}
-
-void CloudwfClient::modifySubAccountPermissionAsync(const ModifySubAccountPermissionRequest& request, const ModifySubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifySubAccountPermission(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ModifySubAccountPermissionOutcomeCallable CloudwfClient::modifySubAccountPermissionCallable(const ModifySubAccountPermissionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifySubAccountPermissionOutcome()>>(
-			[this, request]()
-			{
-			return this->modifySubAccountPermission(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::SaveUmengPagePermission4RootOutcome CloudwfClient::saveUmengPagePermission4Root(const SaveUmengPagePermission4RootRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +405,42 @@ CloudwfClient::SaveUmengPagePermission4RootOutcomeCallable CloudwfClient::saveUm
 			[this, request]()
 			{
 			return this->saveUmengPagePermission4Root(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ModifySubAccountPermissionOutcome CloudwfClient::modifySubAccountPermission(const ModifySubAccountPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySubAccountPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySubAccountPermissionOutcome(ModifySubAccountPermissionResult(outcome.result()));
+	else
+		return ModifySubAccountPermissionOutcome(outcome.error());
+}
+
+void CloudwfClient::modifySubAccountPermissionAsync(const ModifySubAccountPermissionRequest& request, const ModifySubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySubAccountPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ModifySubAccountPermissionOutcomeCallable CloudwfClient::modifySubAccountPermissionCallable(const ModifySubAccountPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySubAccountPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySubAccountPermission(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,42 +1887,6 @@ CloudwfClient::GetSubAccountStatusOutcomeCallable CloudwfClient::getSubAccountSt
 	return task->get_future();
 }
 
-CloudwfClient::GetSendCommandByMacProgressOutcome CloudwfClient::getSendCommandByMacProgress(const GetSendCommandByMacProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSendCommandByMacProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSendCommandByMacProgressOutcome(GetSendCommandByMacProgressResult(outcome.result()));
-	else
-		return GetSendCommandByMacProgressOutcome(outcome.error());
-}
-
-void CloudwfClient::getSendCommandByMacProgressAsync(const GetSendCommandByMacProgressRequest& request, const GetSendCommandByMacProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSendCommandByMacProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetSendCommandByMacProgressOutcomeCallable CloudwfClient::getSendCommandByMacProgressCallable(const GetSendCommandByMacProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSendCommandByMacProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->getSendCommandByMacProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::HeadquartersTrendOutcome CloudwfClient::headquartersTrend(const HeadquartersTrendRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +1917,42 @@ CloudwfClient::HeadquartersTrendOutcomeCallable CloudwfClient::headquartersTrend
 			[this, request]()
 			{
 			return this->headquartersTrend(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetSendCommandByMacProgressOutcome CloudwfClient::getSendCommandByMacProgress(const GetSendCommandByMacProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSendCommandByMacProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSendCommandByMacProgressOutcome(GetSendCommandByMacProgressResult(outcome.result()));
+	else
+		return GetSendCommandByMacProgressOutcome(outcome.error());
+}
+
+void CloudwfClient::getSendCommandByMacProgressAsync(const GetSendCommandByMacProgressRequest& request, const GetSendCommandByMacProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSendCommandByMacProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetSendCommandByMacProgressOutcomeCallable CloudwfClient::getSendCommandByMacProgressCallable(const GetSendCommandByMacProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSendCommandByMacProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->getSendCommandByMacProgress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2031,42 +2031,6 @@ CloudwfClient::ListApStatusOutcomeCallable CloudwfClient::listApStatusCallable(c
 	return task->get_future();
 }
 
-CloudwfClient::ListProbeinfoOutcome CloudwfClient::listProbeinfo(const ListProbeinfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListProbeinfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListProbeinfoOutcome(ListProbeinfoResult(outcome.result()));
-	else
-		return ListProbeinfoOutcome(outcome.error());
-}
-
-void CloudwfClient::listProbeinfoAsync(const ListProbeinfoRequest& request, const ListProbeinfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listProbeinfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ListProbeinfoOutcomeCallable CloudwfClient::listProbeinfoCallable(const ListProbeinfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListProbeinfoOutcome()>>(
-			[this, request]()
-			{
-			return this->listProbeinfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::AreaInfoOutcome CloudwfClient::areaInfo(const AreaInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2061,42 @@ CloudwfClient::AreaInfoOutcomeCallable CloudwfClient::areaInfoCallable(const Are
 			[this, request]()
 			{
 			return this->areaInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ListProbeinfoOutcome CloudwfClient::listProbeinfo(const ListProbeinfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProbeinfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProbeinfoOutcome(ListProbeinfoResult(outcome.result()));
+	else
+		return ListProbeinfoOutcome(outcome.error());
+}
+
+void CloudwfClient::listProbeinfoAsync(const ListProbeinfoRequest& request, const ListProbeinfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProbeinfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ListProbeinfoOutcomeCallable CloudwfClient::listProbeinfoCallable(const ListProbeinfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProbeinfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listProbeinfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3075,42 +3075,6 @@ CloudwfClient::DeletePositionMapOutcomeCallable CloudwfClient::deletePositionMap
 	return task->get_future();
 }
 
-CloudwfClient::SetScanModeOutcome CloudwfClient::setScanMode(const SetScanModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetScanModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetScanModeOutcome(SetScanModeResult(outcome.result()));
-	else
-		return SetScanModeOutcome(outcome.error());
-}
-
-void CloudwfClient::setScanModeAsync(const SetScanModeRequest& request, const SetScanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setScanMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::SetScanModeOutcomeCallable CloudwfClient::setScanModeCallable(const SetScanModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetScanModeOutcome()>>(
-			[this, request]()
-			{
-			return this->setScanMode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::UpgradeAPOutcome CloudwfClient::upgradeAP(const UpgradeAPRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3105,42 @@ CloudwfClient::UpgradeAPOutcomeCallable CloudwfClient::upgradeAPCallable(const U
 			[this, request]()
 			{
 			return this->upgradeAP(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::SetScanModeOutcome CloudwfClient::setScanMode(const SetScanModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetScanModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetScanModeOutcome(SetScanModeResult(outcome.result()));
+	else
+		return SetScanModeOutcome(outcome.error());
+}
+
+void CloudwfClient::setScanModeAsync(const SetScanModeRequest& request, const SetScanModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setScanMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::SetScanModeOutcomeCallable CloudwfClient::setScanModeCallable(const SetScanModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetScanModeOutcome()>>(
+			[this, request]()
+			{
+			return this->setScanMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3255,42 +3255,6 @@ CloudwfClient::ApgroupBatchDeleteApOutcomeCallable CloudwfClient::apgroupBatchDe
 	return task->get_future();
 }
 
-CloudwfClient::ShopMarketingListOutcome CloudwfClient::shopMarketingList(const ShopMarketingListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ShopMarketingListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ShopMarketingListOutcome(ShopMarketingListResult(outcome.result()));
-	else
-		return ShopMarketingListOutcome(outcome.error());
-}
-
-void CloudwfClient::shopMarketingListAsync(const ShopMarketingListRequest& request, const ShopMarketingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, shopMarketingList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ShopMarketingListOutcomeCallable CloudwfClient::shopMarketingListCallable(const ShopMarketingListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ShopMarketingListOutcome()>>(
-			[this, request]()
-			{
-			return this->shopMarketingList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ProfileHistoryOutcome CloudwfClient::profileHistory(const ProfileHistoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3321,6 +3285,42 @@ CloudwfClient::ProfileHistoryOutcomeCallable CloudwfClient::profileHistoryCallab
 			[this, request]()
 			{
 			return this->profileHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ShopMarketingListOutcome CloudwfClient::shopMarketingList(const ShopMarketingListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ShopMarketingListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ShopMarketingListOutcome(ShopMarketingListResult(outcome.result()));
+	else
+		return ShopMarketingListOutcome(outcome.error());
+}
+
+void CloudwfClient::shopMarketingListAsync(const ShopMarketingListRequest& request, const ShopMarketingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, shopMarketingList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ShopMarketingListOutcomeCallable CloudwfClient::shopMarketingListCallable(const ShopMarketingListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ShopMarketingListOutcome()>>(
+			[this, request]()
+			{
+			return this->shopMarketingList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,42 +3507,6 @@ CloudwfClient::SaveApgroupSsidConfigOutcomeCallable CloudwfClient::saveApgroupSs
 	return task->get_future();
 }
 
-CloudwfClient::OemMarketingSettingDataOutcome CloudwfClient::oemMarketingSettingData(const OemMarketingSettingDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return OemMarketingSettingDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return OemMarketingSettingDataOutcome(OemMarketingSettingDataResult(outcome.result()));
-	else
-		return OemMarketingSettingDataOutcome(outcome.error());
-}
-
-void CloudwfClient::oemMarketingSettingDataAsync(const OemMarketingSettingDataRequest& request, const OemMarketingSettingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, oemMarketingSettingData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::OemMarketingSettingDataOutcomeCallable CloudwfClient::oemMarketingSettingDataCallable(const OemMarketingSettingDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<OemMarketingSettingDataOutcome()>>(
-			[this, request]()
-			{
-			return this->oemMarketingSettingData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::InnerCheckOrderOutcome CloudwfClient::innerCheckOrder(const InnerCheckOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3573,6 +3537,42 @@ CloudwfClient::InnerCheckOrderOutcomeCallable CloudwfClient::innerCheckOrderCall
 			[this, request]()
 			{
 			return this->innerCheckOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::OemMarketingSettingDataOutcome CloudwfClient::oemMarketingSettingData(const OemMarketingSettingDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OemMarketingSettingDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OemMarketingSettingDataOutcome(OemMarketingSettingDataResult(outcome.result()));
+	else
+		return OemMarketingSettingDataOutcome(outcome.error());
+}
+
+void CloudwfClient::oemMarketingSettingDataAsync(const OemMarketingSettingDataRequest& request, const OemMarketingSettingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, oemMarketingSettingData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::OemMarketingSettingDataOutcomeCallable CloudwfClient::oemMarketingSettingDataCallable(const OemMarketingSettingDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OemMarketingSettingDataOutcome()>>(
+			[this, request]()
+			{
+			return this->oemMarketingSettingData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3615,42 +3615,6 @@ CloudwfClient::GetOnlineStaTimeSerOutcomeCallable CloudwfClient::getOnlineStaTim
 	return task->get_future();
 }
 
-CloudwfClient::ListSubAccountPermissionOutcome CloudwfClient::listSubAccountPermission(const ListSubAccountPermissionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListSubAccountPermissionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListSubAccountPermissionOutcome(ListSubAccountPermissionResult(outcome.result()));
-	else
-		return ListSubAccountPermissionOutcome(outcome.error());
-}
-
-void CloudwfClient::listSubAccountPermissionAsync(const ListSubAccountPermissionRequest& request, const ListSubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listSubAccountPermission(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ListSubAccountPermissionOutcomeCallable CloudwfClient::listSubAccountPermissionCallable(const ListSubAccountPermissionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListSubAccountPermissionOutcome()>>(
-			[this, request]()
-			{
-			return this->listSubAccountPermission(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ListStaOnoffLogOutcome CloudwfClient::listStaOnoffLog(const ListStaOnoffLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +3645,42 @@ CloudwfClient::ListStaOnoffLogOutcomeCallable CloudwfClient::listStaOnoffLogCall
 			[this, request]()
 			{
 			return this->listStaOnoffLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ListSubAccountPermissionOutcome CloudwfClient::listSubAccountPermission(const ListSubAccountPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSubAccountPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSubAccountPermissionOutcome(ListSubAccountPermissionResult(outcome.result()));
+	else
+		return ListSubAccountPermissionOutcome(outcome.error());
+}
+
+void CloudwfClient::listSubAccountPermissionAsync(const ListSubAccountPermissionRequest& request, const ListSubAccountPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSubAccountPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ListSubAccountPermissionOutcomeCallable CloudwfClient::listSubAccountPermissionCallable(const ListSubAccountPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSubAccountPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->listSubAccountPermission(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3759,42 +3759,6 @@ CloudwfClient::GetApgroupConfigProgressOutcomeCallable CloudwfClient::getApgroup
 	return task->get_future();
 }
 
-CloudwfClient::ListPortalTemplateOutcome CloudwfClient::listPortalTemplate(const ListPortalTemplateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPortalTemplateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPortalTemplateOutcome(ListPortalTemplateResult(outcome.result()));
-	else
-		return ListPortalTemplateOutcome(outcome.error());
-}
-
-void CloudwfClient::listPortalTemplateAsync(const ListPortalTemplateRequest& request, const ListPortalTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPortalTemplate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ListPortalTemplateOutcomeCallable CloudwfClient::listPortalTemplateCallable(const ListPortalTemplateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPortalTemplateOutcome()>>(
-			[this, request]()
-			{
-			return this->listPortalTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::AreaCreateOutcome CloudwfClient::areaCreate(const AreaCreateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3825,6 +3789,42 @@ CloudwfClient::AreaCreateOutcomeCallable CloudwfClient::areaCreateCallable(const
 			[this, request]()
 			{
 			return this->areaCreate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ListPortalTemplateOutcome CloudwfClient::listPortalTemplate(const ListPortalTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPortalTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPortalTemplateOutcome(ListPortalTemplateResult(outcome.result()));
+	else
+		return ListPortalTemplateOutcome(outcome.error());
+}
+
+void CloudwfClient::listPortalTemplateAsync(const ListPortalTemplateRequest& request, const ListPortalTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPortalTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ListPortalTemplateOutcomeCallable CloudwfClient::listPortalTemplateCallable(const ListPortalTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPortalTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->listPortalTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3903,42 +3903,6 @@ CloudwfClient::GetApgroupPortalConfigProgressOutcomeCallable CloudwfClient::getA
 	return task->get_future();
 }
 
-CloudwfClient::GetOssServerSignOutcome CloudwfClient::getOssServerSign(const GetOssServerSignRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetOssServerSignOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetOssServerSignOutcome(GetOssServerSignResult(outcome.result()));
-	else
-		return GetOssServerSignOutcome(outcome.error());
-}
-
-void CloudwfClient::getOssServerSignAsync(const GetOssServerSignRequest& request, const GetOssServerSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getOssServerSign(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetOssServerSignOutcomeCallable CloudwfClient::getOssServerSignCallable(const GetOssServerSignRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetOssServerSignOutcome()>>(
-			[this, request]()
-			{
-			return this->getOssServerSign(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::OemSitingContrastOutcome CloudwfClient::oemSitingContrast(const OemSitingContrastRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,6 +3933,42 @@ CloudwfClient::OemSitingContrastOutcomeCallable CloudwfClient::oemSitingContrast
 			[this, request]()
 			{
 			return this->oemSitingContrast(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetOssServerSignOutcome CloudwfClient::getOssServerSign(const GetOssServerSignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOssServerSignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOssServerSignOutcome(GetOssServerSignResult(outcome.result()));
+	else
+		return GetOssServerSignOutcome(outcome.error());
+}
+
+void CloudwfClient::getOssServerSignAsync(const GetOssServerSignRequest& request, const GetOssServerSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOssServerSign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetOssServerSignOutcomeCallable CloudwfClient::getOssServerSignCallable(const GetOssServerSignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOssServerSignOutcome()>>(
+			[this, request]()
+			{
+			return this->getOssServerSign(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4551,42 +4551,6 @@ CloudwfClient::OemHeatMapOutcomeCallable CloudwfClient::oemHeatMapCallable(const
 	return task->get_future();
 }
 
-CloudwfClient::ReleaseInstanceOutcome CloudwfClient::releaseInstance(const ReleaseInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ReleaseInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ReleaseInstanceOutcome(ReleaseInstanceResult(outcome.result()));
-	else
-		return ReleaseInstanceOutcome(outcome.error());
-}
-
-void CloudwfClient::releaseInstanceAsync(const ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, releaseInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ReleaseInstanceOutcomeCallable CloudwfClient::releaseInstanceCallable(const ReleaseInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ReleaseInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->releaseInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ReportRealtimeOutcome CloudwfClient::reportRealtime(const ReportRealtimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,6 +4581,42 @@ CloudwfClient::ReportRealtimeOutcomeCallable CloudwfClient::reportRealtimeCallab
 			[this, request]()
 			{
 			return this->reportRealtime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ReleaseInstanceOutcome CloudwfClient::releaseInstance(const ReleaseInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseInstanceOutcome(ReleaseInstanceResult(outcome.result()));
+	else
+		return ReleaseInstanceOutcome(outcome.error());
+}
+
+void CloudwfClient::releaseInstanceAsync(const ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ReleaseInstanceOutcomeCallable CloudwfClient::releaseInstanceCallable(const ReleaseInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4911,42 +4911,6 @@ CloudwfClient::ListGroupApBriefConfigOutcomeCallable CloudwfClient::listGroupApB
 	return task->get_future();
 }
 
-CloudwfClient::BatchRegisterApAssetOutcome CloudwfClient::batchRegisterApAsset(const BatchRegisterApAssetRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return BatchRegisterApAssetOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return BatchRegisterApAssetOutcome(BatchRegisterApAssetResult(outcome.result()));
-	else
-		return BatchRegisterApAssetOutcome(outcome.error());
-}
-
-void CloudwfClient::batchRegisterApAssetAsync(const BatchRegisterApAssetRequest& request, const BatchRegisterApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, batchRegisterApAsset(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::BatchRegisterApAssetOutcomeCallable CloudwfClient::batchRegisterApAssetCallable(const BatchRegisterApAssetRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<BatchRegisterApAssetOutcome()>>(
-			[this, request]()
-			{
-			return this->batchRegisterApAsset(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::PutOssFileOutcome CloudwfClient::putOssFile(const PutOssFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4983,36 +4947,36 @@ CloudwfClient::PutOssFileOutcomeCallable CloudwfClient::putOssFileCallable(const
 	return task->get_future();
 }
 
-CloudwfClient::SaveApScanConfigOutcome CloudwfClient::saveApScanConfig(const SaveApScanConfigRequest &request) const
+CloudwfClient::BatchRegisterApAssetOutcome CloudwfClient::batchRegisterApAsset(const BatchRegisterApAssetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return SaveApScanConfigOutcome(endpointOutcome.error());
+		return BatchRegisterApAssetOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return SaveApScanConfigOutcome(SaveApScanConfigResult(outcome.result()));
+		return BatchRegisterApAssetOutcome(BatchRegisterApAssetResult(outcome.result()));
 	else
-		return SaveApScanConfigOutcome(outcome.error());
+		return BatchRegisterApAssetOutcome(outcome.error());
 }
 
-void CloudwfClient::saveApScanConfigAsync(const SaveApScanConfigRequest& request, const SaveApScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CloudwfClient::batchRegisterApAssetAsync(const BatchRegisterApAssetRequest& request, const BatchRegisterApAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, saveApScanConfig(request), context);
+		handler(this, request, batchRegisterApAsset(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CloudwfClient::SaveApScanConfigOutcomeCallable CloudwfClient::saveApScanConfigCallable(const SaveApScanConfigRequest &request) const
+CloudwfClient::BatchRegisterApAssetOutcomeCallable CloudwfClient::batchRegisterApAssetCallable(const BatchRegisterApAssetRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<SaveApScanConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<BatchRegisterApAssetOutcome()>>(
 			[this, request]()
 			{
-			return this->saveApScanConfig(request);
+			return this->batchRegisterApAsset(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5091,6 +5055,42 @@ CloudwfClient::GetGroupApRadioConfigTemplateOutcomeCallable CloudwfClient::getGr
 	return task->get_future();
 }
 
+CloudwfClient::SaveApScanConfigOutcome CloudwfClient::saveApScanConfig(const SaveApScanConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveApScanConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveApScanConfigOutcome(SaveApScanConfigResult(outcome.result()));
+	else
+		return SaveApScanConfigOutcome(outcome.error());
+}
+
+void CloudwfClient::saveApScanConfigAsync(const SaveApScanConfigRequest& request, const SaveApScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveApScanConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::SaveApScanConfigOutcomeCallable CloudwfClient::saveApScanConfigCallable(const SaveApScanConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveApScanConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->saveApScanConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudwfClient::HeadquartersToolsO2OOutcome CloudwfClient::headquartersToolsO2O(const HeadquartersToolsO2ORequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5127,42 +5127,6 @@ CloudwfClient::HeadquartersToolsO2OOutcomeCallable CloudwfClient::headquartersTo
 	return task->get_future();
 }
 
-CloudwfClient::HeadquartersToolsCoincideOutcome CloudwfClient::headquartersToolsCoincide(const HeadquartersToolsCoincideRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return HeadquartersToolsCoincideOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return HeadquartersToolsCoincideOutcome(HeadquartersToolsCoincideResult(outcome.result()));
-	else
-		return HeadquartersToolsCoincideOutcome(outcome.error());
-}
-
-void CloudwfClient::headquartersToolsCoincideAsync(const HeadquartersToolsCoincideRequest& request, const HeadquartersToolsCoincideAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, headquartersToolsCoincide(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::HeadquartersToolsCoincideOutcomeCallable CloudwfClient::headquartersToolsCoincideCallable(const HeadquartersToolsCoincideRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<HeadquartersToolsCoincideOutcome()>>(
-			[this, request]()
-			{
-			return this->headquartersToolsCoincide(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ResumeInstanceOutcome CloudwfClient::resumeInstance(const ResumeInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5193,6 +5157,42 @@ CloudwfClient::ResumeInstanceOutcomeCallable CloudwfClient::resumeInstanceCallab
 			[this, request]()
 			{
 			return this->resumeInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::HeadquartersToolsCoincideOutcome CloudwfClient::headquartersToolsCoincide(const HeadquartersToolsCoincideRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return HeadquartersToolsCoincideOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return HeadquartersToolsCoincideOutcome(HeadquartersToolsCoincideResult(outcome.result()));
+	else
+		return HeadquartersToolsCoincideOutcome(outcome.error());
+}
+
+void CloudwfClient::headquartersToolsCoincideAsync(const HeadquartersToolsCoincideRequest& request, const HeadquartersToolsCoincideAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, headquartersToolsCoincide(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::HeadquartersToolsCoincideOutcomeCallable CloudwfClient::headquartersToolsCoincideCallable(const HeadquartersToolsCoincideRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<HeadquartersToolsCoincideOutcome()>>(
+			[this, request]()
+			{
+			return this->headquartersToolsCoincide(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5343,42 +5343,6 @@ CloudwfClient::RepairGroupApOutcomeCallable CloudwfClient::repairGroupApCallable
 	return task->get_future();
 }
 
-CloudwfClient::GetMapUrlOutcome CloudwfClient::getMapUrl(const GetMapUrlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetMapUrlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetMapUrlOutcome(GetMapUrlResult(outcome.result()));
-	else
-		return GetMapUrlOutcome(outcome.error());
-}
-
-void CloudwfClient::getMapUrlAsync(const GetMapUrlRequest& request, const GetMapUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getMapUrl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetMapUrlOutcomeCallable CloudwfClient::getMapUrlCallable(const GetMapUrlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetMapUrlOutcome()>>(
-			[this, request]()
-			{
-			return this->getMapUrl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::GetUpgradeAPGroupProgressOutcome CloudwfClient::getUpgradeAPGroupProgress(const GetUpgradeAPGroupProgressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5409,6 +5373,42 @@ CloudwfClient::GetUpgradeAPGroupProgressOutcomeCallable CloudwfClient::getUpgrad
 			[this, request]()
 			{
 			return this->getUpgradeAPGroupProgress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetMapUrlOutcome CloudwfClient::getMapUrl(const GetMapUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMapUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMapUrlOutcome(GetMapUrlResult(outcome.result()));
+	else
+		return GetMapUrlOutcome(outcome.error());
+}
+
+void CloudwfClient::getMapUrlAsync(const GetMapUrlRequest& request, const GetMapUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMapUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetMapUrlOutcomeCallable CloudwfClient::getMapUrlCallable(const GetMapUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMapUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getMapUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5919,6 +5919,42 @@ CloudwfClient::GetApgroupDetailedConfigOutcomeCallable CloudwfClient::getApgroup
 	return task->get_future();
 }
 
+CloudwfClient::ListStaStatusOutcome CloudwfClient::listStaStatus(const ListStaStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListStaStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListStaStatusOutcome(ListStaStatusResult(outcome.result()));
+	else
+		return ListStaStatusOutcome(outcome.error());
+}
+
+void CloudwfClient::listStaStatusAsync(const ListStaStatusRequest& request, const ListStaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listStaStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ListStaStatusOutcomeCallable CloudwfClient::listStaStatusCallable(const ListStaStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListStaStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->listStaStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudwfClient::InnerRefundOutcome CloudwfClient::innerRefund(const InnerRefundRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5985,42 +6021,6 @@ CloudwfClient::ProfileTradeOutcomeCallable CloudwfClient::profileTradeCallable(c
 			[this, request]()
 			{
 			return this->profileTrade(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudwfClient::ListStaStatusOutcome CloudwfClient::listStaStatus(const ListStaStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListStaStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListStaStatusOutcome(ListStaStatusResult(outcome.result()));
-	else
-		return ListStaStatusOutcome(outcome.error());
-}
-
-void CloudwfClient::listStaStatusAsync(const ListStaStatusRequest& request, const ListStaStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listStaStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ListStaStatusOutcomeCallable CloudwfClient::listStaStatusCallable(const ListStaStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListStaStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->listStaStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6531,42 +6531,6 @@ CloudwfClient::KickStaOutcomeCallable CloudwfClient::kickStaCallable(const KickS
 	return task->get_future();
 }
 
-CloudwfClient::ProfileConsumeOutcome CloudwfClient::profileConsume(const ProfileConsumeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ProfileConsumeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ProfileConsumeOutcome(ProfileConsumeResult(outcome.result()));
-	else
-		return ProfileConsumeOutcome(outcome.error());
-}
-
-void CloudwfClient::profileConsumeAsync(const ProfileConsumeRequest& request, const ProfileConsumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, profileConsume(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ProfileConsumeOutcomeCallable CloudwfClient::profileConsumeCallable(const ProfileConsumeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ProfileConsumeOutcome()>>(
-			[this, request]()
-			{
-			return this->profileConsume(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::DelApPositionOutcome CloudwfClient::delApPosition(const DelApPositionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6597,6 +6561,42 @@ CloudwfClient::DelApPositionOutcomeCallable CloudwfClient::delApPositionCallable
 			[this, request]()
 			{
 			return this->delApPosition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ProfileConsumeOutcome CloudwfClient::profileConsume(const ProfileConsumeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ProfileConsumeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ProfileConsumeOutcome(ProfileConsumeResult(outcome.result()));
+	else
+		return ProfileConsumeOutcome(outcome.error());
+}
+
+void CloudwfClient::profileConsumeAsync(const ProfileConsumeRequest& request, const ProfileConsumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, profileConsume(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ProfileConsumeOutcomeCallable CloudwfClient::profileConsumeCallable(const ProfileConsumeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ProfileConsumeOutcome()>>(
+			[this, request]()
+			{
+			return this->profileConsume(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6747,42 +6747,6 @@ CloudwfClient::SavePageConfigTemplateOutcomeCallable CloudwfClient::savePageConf
 	return task->get_future();
 }
 
-CloudwfClient::ShopGroupUpdateOutcome CloudwfClient::shopGroupUpdate(const ShopGroupUpdateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ShopGroupUpdateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ShopGroupUpdateOutcome(ShopGroupUpdateResult(outcome.result()));
-	else
-		return ShopGroupUpdateOutcome(outcome.error());
-}
-
-void CloudwfClient::shopGroupUpdateAsync(const ShopGroupUpdateRequest& request, const ShopGroupUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, shopGroupUpdate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::ShopGroupUpdateOutcomeCallable CloudwfClient::shopGroupUpdateCallable(const ShopGroupUpdateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ShopGroupUpdateOutcome()>>(
-			[this, request]()
-			{
-			return this->shopGroupUpdate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::SetUpgradeImgByModelOutcome CloudwfClient::setUpgradeImgByModel(const SetUpgradeImgByModelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6813,6 +6777,42 @@ CloudwfClient::SetUpgradeImgByModelOutcomeCallable CloudwfClient::setUpgradeImgB
 			[this, request]()
 			{
 			return this->setUpgradeImgByModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::ShopGroupUpdateOutcome CloudwfClient::shopGroupUpdate(const ShopGroupUpdateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ShopGroupUpdateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ShopGroupUpdateOutcome(ShopGroupUpdateResult(outcome.result()));
+	else
+		return ShopGroupUpdateOutcome(outcome.error());
+}
+
+void CloudwfClient::shopGroupUpdateAsync(const ShopGroupUpdateRequest& request, const ShopGroupUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, shopGroupUpdate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::ShopGroupUpdateOutcomeCallable CloudwfClient::shopGroupUpdateCallable(const ShopGroupUpdateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ShopGroupUpdateOutcome()>>(
+			[this, request]()
+			{
+			return this->shopGroupUpdate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7071,42 +7071,6 @@ CloudwfClient::CheckUmengDataAnalysisPermissionOutcomeCallable CloudwfClient::ch
 	return task->get_future();
 }
 
-CloudwfClient::DeviceDeleteOutcome CloudwfClient::deviceDelete(const DeviceDeleteRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeviceDeleteOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeviceDeleteOutcome(DeviceDeleteResult(outcome.result()));
-	else
-		return DeviceDeleteOutcome(outcome.error());
-}
-
-void CloudwfClient::deviceDeleteAsync(const DeviceDeleteRequest& request, const DeviceDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deviceDelete(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::DeviceDeleteOutcomeCallable CloudwfClient::deviceDeleteCallable(const DeviceDeleteRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeviceDeleteOutcome()>>(
-			[this, request]()
-			{
-			return this->deviceDelete(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ReportDayOutcome CloudwfClient::reportDay(const ReportDayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7137,6 +7101,42 @@ CloudwfClient::ReportDayOutcomeCallable CloudwfClient::reportDayCallable(const R
 			[this, request]()
 			{
 			return this->reportDay(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::DeviceDeleteOutcome CloudwfClient::deviceDelete(const DeviceDeleteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeviceDeleteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeviceDeleteOutcome(DeviceDeleteResult(outcome.result()));
+	else
+		return DeviceDeleteOutcome(outcome.error());
+}
+
+void CloudwfClient::deviceDeleteAsync(const DeviceDeleteRequest& request, const DeviceDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deviceDelete(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::DeviceDeleteOutcomeCallable CloudwfClient::deviceDeleteCallable(const DeviceDeleteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeviceDeleteOutcome()>>(
+			[this, request]()
+			{
+			return this->deviceDelete(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7395,42 +7395,6 @@ CloudwfClient::InnerProduceCloudWFOutcomeCallable CloudwfClient::innerProduceClo
 	return task->get_future();
 }
 
-CloudwfClient::UpLoadMapOutcome CloudwfClient::upLoadMap(const UpLoadMapRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpLoadMapOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpLoadMapOutcome(UpLoadMapResult(outcome.result()));
-	else
-		return UpLoadMapOutcome(outcome.error());
-}
-
-void CloudwfClient::upLoadMapAsync(const UpLoadMapRequest& request, const UpLoadMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, upLoadMap(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::UpLoadMapOutcomeCallable CloudwfClient::upLoadMapCallable(const UpLoadMapRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpLoadMapOutcome()>>(
-			[this, request]()
-			{
-			return this->upLoadMap(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::SavePortalConfigOutcome CloudwfClient::savePortalConfig(const SavePortalConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7461,6 +7425,42 @@ CloudwfClient::SavePortalConfigOutcomeCallable CloudwfClient::savePortalConfigCa
 			[this, request]()
 			{
 			return this->savePortalConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::UpLoadMapOutcome CloudwfClient::upLoadMap(const UpLoadMapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpLoadMapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpLoadMapOutcome(UpLoadMapResult(outcome.result()));
+	else
+		return UpLoadMapOutcome(outcome.error());
+}
+
+void CloudwfClient::upLoadMapAsync(const UpLoadMapRequest& request, const UpLoadMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upLoadMap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::UpLoadMapOutcomeCallable CloudwfClient::upLoadMapCallable(const UpLoadMapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpLoadMapOutcome()>>(
+			[this, request]()
+			{
+			return this->upLoadMap(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7539,42 +7539,6 @@ CloudwfClient::SaveApgroupScanConfigOutcomeCallable CloudwfClient::saveApgroupSc
 	return task->get_future();
 }
 
-CloudwfClient::GetApStaMiscAggOutcome CloudwfClient::getApStaMiscAgg(const GetApStaMiscAggRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetApStaMiscAggOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetApStaMiscAggOutcome(GetApStaMiscAggResult(outcome.result()));
-	else
-		return GetApStaMiscAggOutcome(outcome.error());
-}
-
-void CloudwfClient::getApStaMiscAggAsync(const GetApStaMiscAggRequest& request, const GetApStaMiscAggAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getApStaMiscAgg(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetApStaMiscAggOutcomeCallable CloudwfClient::getApStaMiscAggCallable(const GetApStaMiscAggRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetApStaMiscAggOutcome()>>(
-			[this, request]()
-			{
-			return this->getApStaMiscAgg(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::AliyunRegisterApAssetOutcome CloudwfClient::aliyunRegisterApAsset(const AliyunRegisterApAssetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7605,6 +7569,42 @@ CloudwfClient::AliyunRegisterApAssetOutcomeCallable CloudwfClient::aliyunRegiste
 			[this, request]()
 			{
 			return this->aliyunRegisterApAsset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetApStaMiscAggOutcome CloudwfClient::getApStaMiscAgg(const GetApStaMiscAggRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApStaMiscAggOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApStaMiscAggOutcome(GetApStaMiscAggResult(outcome.result()));
+	else
+		return GetApStaMiscAggOutcome(outcome.error());
+}
+
+void CloudwfClient::getApStaMiscAggAsync(const GetApStaMiscAggRequest& request, const GetApStaMiscAggAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApStaMiscAgg(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetApStaMiscAggOutcomeCallable CloudwfClient::getApStaMiscAggCallable(const GetApStaMiscAggRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApStaMiscAggOutcome()>>(
+			[this, request]()
+			{
+			return this->getApStaMiscAgg(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7755,42 +7755,6 @@ CloudwfClient::GetStaRunHistoryTimeSerOutcomeCallable CloudwfClient::getStaRunHi
 	return task->get_future();
 }
 
-CloudwfClient::GetUpgradeAPProgressOutcome CloudwfClient::getUpgradeAPProgress(const GetUpgradeAPProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetUpgradeAPProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetUpgradeAPProgressOutcome(GetUpgradeAPProgressResult(outcome.result()));
-	else
-		return GetUpgradeAPProgressOutcome(outcome.error());
-}
-
-void CloudwfClient::getUpgradeAPProgressAsync(const GetUpgradeAPProgressRequest& request, const GetUpgradeAPProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getUpgradeAPProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetUpgradeAPProgressOutcomeCallable CloudwfClient::getUpgradeAPProgressCallable(const GetUpgradeAPProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetUpgradeAPProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->getUpgradeAPProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::GroupIntimeOutcome CloudwfClient::groupIntime(const GroupIntimeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7821,6 +7785,42 @@ CloudwfClient::GroupIntimeOutcomeCallable CloudwfClient::groupIntimeCallable(con
 			[this, request]()
 			{
 			return this->groupIntime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetUpgradeAPProgressOutcome CloudwfClient::getUpgradeAPProgress(const GetUpgradeAPProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUpgradeAPProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUpgradeAPProgressOutcome(GetUpgradeAPProgressResult(outcome.result()));
+	else
+		return GetUpgradeAPProgressOutcome(outcome.error());
+}
+
+void CloudwfClient::getUpgradeAPProgressAsync(const GetUpgradeAPProgressRequest& request, const GetUpgradeAPProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUpgradeAPProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetUpgradeAPProgressOutcomeCallable CloudwfClient::getUpgradeAPProgressCallable(const GetUpgradeAPProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUpgradeAPProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->getUpgradeAPProgress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8043,42 +8043,6 @@ CloudwfClient::GetAccountConfigOutcomeCallable CloudwfClient::getAccountConfigCa
 	return task->get_future();
 }
 
-CloudwfClient::GetAddApsProgressOutcome CloudwfClient::getAddApsProgress(const GetAddApsProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetAddApsProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetAddApsProgressOutcome(GetAddApsProgressResult(outcome.result()));
-	else
-		return GetAddApsProgressOutcome(outcome.error());
-}
-
-void CloudwfClient::getAddApsProgressAsync(const GetAddApsProgressRequest& request, const GetAddApsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getAddApsProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudwfClient::GetAddApsProgressOutcomeCallable CloudwfClient::getAddApsProgressCallable(const GetAddApsProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetAddApsProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->getAddApsProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudwfClient::ProfileDistrictOutcome CloudwfClient::profileDistrict(const ProfileDistrictRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8109,6 +8073,42 @@ CloudwfClient::ProfileDistrictOutcomeCallable CloudwfClient::profileDistrictCall
 			[this, request]()
 			{
 			return this->profileDistrict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudwfClient::GetAddApsProgressOutcome CloudwfClient::getAddApsProgress(const GetAddApsProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAddApsProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAddApsProgressOutcome(GetAddApsProgressResult(outcome.result()));
+	else
+		return GetAddApsProgressOutcome(outcome.error());
+}
+
+void CloudwfClient::getAddApsProgressAsync(const GetAddApsProgressRequest& request, const GetAddApsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAddApsProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudwfClient::GetAddApsProgressOutcomeCallable CloudwfClient::getAddApsProgressCallable(const GetAddApsProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAddApsProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->getAddApsProgress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

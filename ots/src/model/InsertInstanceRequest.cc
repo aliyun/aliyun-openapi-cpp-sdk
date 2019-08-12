@@ -33,7 +33,7 @@ std::string InsertInstanceRequest::getAccess_key_id()const
 void InsertInstanceRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 std::string InsertInstanceRequest::getClusterType()const
@@ -44,7 +44,7 @@ std::string InsertInstanceRequest::getClusterType()const
 void InsertInstanceRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setParameter("ClusterType", clusterType);
+	setCoreParameter("ClusterType", clusterType);
 }
 
 long InsertInstanceRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long InsertInstanceRequest::getResourceOwnerId()const
 void InsertInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string InsertInstanceRequest::getInstanceName()const
@@ -66,7 +66,7 @@ std::string InsertInstanceRequest::getInstanceName()const
 void InsertInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+	setCoreParameter("InstanceName", instanceName);
 }
 
 std::string InsertInstanceRequest::getDescription()const
@@ -77,7 +77,7 @@ std::string InsertInstanceRequest::getDescription()const
 void InsertInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::vector<InsertInstanceRequest::TagInfo> InsertInstanceRequest::getTagInfo()const
@@ -92,8 +92,8 @@ void InsertInstanceRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 	for(int i = 0; i!= tagInfo.size(); i++)	{
 		auto obj = tagInfo.at(i);
 		std::string str ="TagInfo."+ std::to_string(i);
-		setParameter(str + ".TagValue", obj.tagValue);
-		setParameter(str + ".TagKey", obj.tagKey);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
 	}
 }
 
@@ -105,6 +105,6 @@ std::string InsertInstanceRequest::getNetwork()const
 void InsertInstanceRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setParameter("Network", network);
+	setCoreParameter("Network", network);
 }
 

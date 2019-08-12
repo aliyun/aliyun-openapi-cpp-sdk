@@ -33,7 +33,7 @@ std::string DescribeExpectationResultRequest::getSourceIp()const
 void DescribeExpectationResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeExpectationResultRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeExpectationResultRequest::getOrderId()const
 void DescribeExpectationResultRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeExpectationResultRequest::getExpectationType()const
@@ -55,7 +55,7 @@ std::string DescribeExpectationResultRequest::getExpectationType()const
 void DescribeExpectationResultRequest::setExpectationType(const std::string& expectationType)
 {
 	expectationType_ = expectationType;
-	setParameter("ExpectationType", expectationType);
+	setCoreParameter("ExpectationType", expectationType);
 }
 
 std::string DescribeExpectationResultRequest::getLang()const
@@ -66,6 +66,6 @@ std::string DescribeExpectationResultRequest::getLang()const
 void DescribeExpectationResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

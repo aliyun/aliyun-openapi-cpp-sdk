@@ -33,7 +33,7 @@ std::string DeleteSkillGroupRequest::getInstanceId()const
 void DeleteSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSkillGroupRequest::getSkillGroupId()const
@@ -44,7 +44,7 @@ std::string DeleteSkillGroupRequest::getSkillGroupId()const
 void DeleteSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string DeleteSkillGroupRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DeleteSkillGroupRequest::getAccessKeyId()const
 void DeleteSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

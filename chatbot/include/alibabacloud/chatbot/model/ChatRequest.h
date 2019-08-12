@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setSenderNick(const std::string& senderNick);
 				std::vector<std::string> getPerspective()const;
 				void setPerspective(const std::vector<std::string>& perspective);
+				bool getRecommend()const;
+				void setRecommend(bool recommend);
 				std::string getSessionId()const;
 				void setSessionId(const std::string& sessionId);
 				std::string getTag()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string senderNick_;
 				std::vector<std::string> perspective_;
+				bool recommend_;
 				std::string sessionId_;
 				std::string tag_;
 				std::string utterance_;

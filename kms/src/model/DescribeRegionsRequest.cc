@@ -25,14 +25,3 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
 
-std::string DescribeRegionsRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void DescribeRegionsRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
-}
-

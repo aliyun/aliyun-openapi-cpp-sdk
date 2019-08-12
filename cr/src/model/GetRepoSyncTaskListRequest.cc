@@ -33,7 +33,7 @@ std::string GetRepoSyncTaskListRequest::getRepoNamespace()const
 void GetRepoSyncTaskListRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setParameter("RepoNamespace", repoNamespace);
+	setCoreParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoSyncTaskListRequest::getRepoName()const
@@ -44,7 +44,7 @@ std::string GetRepoSyncTaskListRequest::getRepoName()const
 void GetRepoSyncTaskListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setParameter("RepoName", repoName);
+	setCoreParameter("RepoName", repoName);
 }
 
 std::string GetRepoSyncTaskListRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string GetRepoSyncTaskListRequest::getRegionId()const
 void GetRepoSyncTaskListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int GetRepoSyncTaskListRequest::getPageSize()const
@@ -66,7 +66,7 @@ int GetRepoSyncTaskListRequest::getPageSize()const
 void GetRepoSyncTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoSyncTaskListRequest::getPage()const
@@ -77,6 +77,6 @@ int GetRepoSyncTaskListRequest::getPage()const
 void GetRepoSyncTaskListRequest::setPage(int page)
 {
 	page_ = page;
-	setParameter("Page", std::to_string(page));
+	setCoreParameter("Page", std::to_string(page));
 }
 

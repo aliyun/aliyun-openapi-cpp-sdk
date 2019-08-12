@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setPhoneNumberId(const std::string& phoneNumberId);
 				std::string getUsage()const;
 				void setUsage(const std::string& usage);
+				std::vector<std::string> getSkillGroupId()const;
+				void setSkillGroupId(const std::vector<std::string>& skillGroupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string phoneNumberId_;
 				std::string usage_;
+				std::vector<std::string> skillGroupId_;
 				std::string accessKeyId_;
 
 			};

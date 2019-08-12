@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsWarnCreateRequest();
 				~OnsWarnCreateRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getBlockTime()const;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				void setContacts(const std::string& contacts);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				std::string blockTime_;
 				std::string level_;

@@ -35,10 +35,13 @@ QueryRegistrantProfilesResult::~QueryRegistrantProfilesResult()
 
 void QueryRegistrantProfilesResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allRegistrantProfiles = value["RegistrantProfiles"]["RegistrantProfile"];
 	for (auto value : allRegistrantProfiles)
@@ -90,6 +93,8 @@ void QueryRegistrantProfilesResult::parse(const std::string &payload)
 			registrantProfilesObject.registrantType = value["RegistrantType"].asString();
 		if(!value["RealNameStatus"].isNull())
 			registrantProfilesObject.realNameStatus = value["RealNameStatus"].asString();
+		if(!value["RegistrantProfileType"].isNull())
+			registrantProfilesObject.registrantProfileType = value["RegistrantProfileType"].asString();
 		registrantProfiles_.push_back(registrantProfilesObject);
 	}
 	if(!value["TotalItemNum"].isNull())

@@ -36,6 +36,17 @@ void ModifyParameterRequest::setResourceOwnerId(long resourceOwnerId)
 	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyParameterRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
+}
+
+void ModifyParameterRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setCoreParameter("ParameterGroupId", parameterGroupId);
+}
+
 std::string ModifyParameterRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

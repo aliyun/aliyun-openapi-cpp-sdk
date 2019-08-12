@@ -33,7 +33,7 @@ std::string AddCdnDomainRequest::getTopLevelDomain()const
 void AddCdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setParameter("TopLevelDomain", topLevelDomain);
+	setCoreParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string AddCdnDomainRequest::getSources()const
@@ -44,7 +44,7 @@ std::string AddCdnDomainRequest::getSources()const
 void AddCdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setParameter("Sources", sources);
+	setCoreParameter("Sources", sources);
 }
 
 std::string AddCdnDomainRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddCdnDomainRequest::getOwnerAccount()const
 void AddCdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddCdnDomainRequest::getDomainName()const
@@ -66,7 +66,7 @@ std::string AddCdnDomainRequest::getDomainName()const
 void AddCdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 long AddCdnDomainRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long AddCdnDomainRequest::getOwnerId()const
 void AddCdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddCdnDomainRequest::getResourceGroupId()const
@@ -88,7 +88,7 @@ std::string AddCdnDomainRequest::getResourceGroupId()const
 void AddCdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 int AddCdnDomainRequest::getSourcePort()const
@@ -99,7 +99,7 @@ int AddCdnDomainRequest::getSourcePort()const
 void AddCdnDomainRequest::setSourcePort(int sourcePort)
 {
 	sourcePort_ = sourcePort;
-	setParameter("SourcePort", std::to_string(sourcePort));
+	setCoreParameter("SourcePort", std::to_string(sourcePort));
 }
 
 std::string AddCdnDomainRequest::getPriorities()const
@@ -110,7 +110,7 @@ std::string AddCdnDomainRequest::getPriorities()const
 void AddCdnDomainRequest::setPriorities(const std::string& priorities)
 {
 	priorities_ = priorities;
-	setParameter("Priorities", priorities);
+	setCoreParameter("Priorities", priorities);
 }
 
 std::string AddCdnDomainRequest::getSecurityToken()const
@@ -121,7 +121,7 @@ std::string AddCdnDomainRequest::getSecurityToken()const
 void AddCdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string AddCdnDomainRequest::getCdnType()const
@@ -132,7 +132,7 @@ std::string AddCdnDomainRequest::getCdnType()const
 void AddCdnDomainRequest::setCdnType(const std::string& cdnType)
 {
 	cdnType_ = cdnType;
-	setParameter("CdnType", cdnType);
+	setCoreParameter("CdnType", cdnType);
 }
 
 std::string AddCdnDomainRequest::getScope()const
@@ -143,7 +143,7 @@ std::string AddCdnDomainRequest::getScope()const
 void AddCdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setParameter("Scope", scope);
+	setCoreParameter("Scope", scope);
 }
 
 std::string AddCdnDomainRequest::getSourceType()const
@@ -154,7 +154,7 @@ std::string AddCdnDomainRequest::getSourceType()const
 void AddCdnDomainRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setParameter("SourceType", sourceType);
+	setCoreParameter("SourceType", sourceType);
 }
 
 std::string AddCdnDomainRequest::getCheckUrl()const
@@ -165,7 +165,7 @@ std::string AddCdnDomainRequest::getCheckUrl()const
 void AddCdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setParameter("CheckUrl", checkUrl);
+	setCoreParameter("CheckUrl", checkUrl);
 }
 
 std::string AddCdnDomainRequest::getRegion()const
@@ -176,6 +176,6 @@ std::string AddCdnDomainRequest::getRegion()const
 void AddCdnDomainRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setParameter("Region", region);
+	setCoreParameter("Region", region);
 }
 

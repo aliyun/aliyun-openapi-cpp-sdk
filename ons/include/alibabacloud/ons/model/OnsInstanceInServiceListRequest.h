@@ -35,11 +35,8 @@ namespace AlibabaCloud
 				OnsInstanceInServiceListRequest();
 				~OnsInstanceInServiceListRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 
             private:
-				long preventCache_;
 
 			};
 		}

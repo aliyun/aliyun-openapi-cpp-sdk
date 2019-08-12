@@ -33,7 +33,7 @@ long DeleteAlertUserGroupsRequest::getResourceOwnerId()const
 void DeleteAlertUserGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAlertUserGroupsRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string DeleteAlertUserGroupsRequest::getRegionId()const
 void DeleteAlertUserGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteAlertUserGroupsRequest::getIds()const
@@ -55,7 +55,7 @@ std::string DeleteAlertUserGroupsRequest::getIds()const
 void DeleteAlertUserGroupsRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setParameter("Ids", ids);
+	setCoreParameter("Ids", ids);
 }
 
 std::string DeleteAlertUserGroupsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DeleteAlertUserGroupsRequest::getAccessKeyId()const
 void DeleteAlertUserGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

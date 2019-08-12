@@ -33,7 +33,7 @@ std::string DescribeDomainNsRequest::getUserClientIp()const
 void DescribeDomainNsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string DescribeDomainNsRequest::getDomainName()const
@@ -44,7 +44,7 @@ std::string DescribeDomainNsRequest::getDomainName()const
 void DescribeDomainNsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainNsRequest::getLang()const
@@ -55,7 +55,7 @@ std::string DescribeDomainNsRequest::getLang()const
 void DescribeDomainNsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeDomainNsRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DescribeDomainNsRequest::getAccessKeyId()const
 void DescribeDomainNsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -25,17 +25,6 @@ OnsGroupDeleteRequest::OnsGroupDeleteRequest() :
 OnsGroupDeleteRequest::~OnsGroupDeleteRequest()
 {}
 
-long OnsGroupDeleteRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsGroupDeleteRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsGroupDeleteRequest::getInstanceId()const
 {
 	return instanceId_;

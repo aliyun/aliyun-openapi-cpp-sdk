@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCheckWarningIds()const;
 				void setCheckWarningIds(const std::string& checkWarningIds);
+				std::string getCheckIds()const;
+				void setCheckIds(const std::string& checkIds);
 				std::string getRiskId()const;
 				void setRiskId(const std::string& riskId);
 				long getType()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string reason_;
 				std::string sourceIp_;
 				std::string checkWarningIds_;
+				std::string checkIds_;
 				std::string riskId_;
 				long type_;
 

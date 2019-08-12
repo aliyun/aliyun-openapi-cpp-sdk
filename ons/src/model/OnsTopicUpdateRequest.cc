@@ -25,17 +25,6 @@ OnsTopicUpdateRequest::OnsTopicUpdateRequest() :
 OnsTopicUpdateRequest::~OnsTopicUpdateRequest()
 {}
 
-long OnsTopicUpdateRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsTopicUpdateRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsTopicUpdateRequest::getInstanceId()const
 {
 	return instanceId_;

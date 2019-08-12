@@ -33,7 +33,7 @@ std::string ListFacesRequest::getCursor()const
 void ListFacesRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setParameter("Cursor", cursor);
+	setCoreParameter("Cursor", cursor);
 }
 
 std::string ListFacesRequest::getHasFaceName()const
@@ -44,7 +44,7 @@ std::string ListFacesRequest::getHasFaceName()const
 void ListFacesRequest::setHasFaceName(const std::string& hasFaceName)
 {
 	hasFaceName_ = hasFaceName;
-	setParameter("HasFaceName", hasFaceName);
+	setCoreParameter("HasFaceName", hasFaceName);
 }
 
 int ListFacesRequest::getSize()const
@@ -55,7 +55,7 @@ int ListFacesRequest::getSize()const
 void ListFacesRequest::setSize(int size)
 {
 	size_ = size;
-	setParameter("Size", std::to_string(size));
+	setCoreParameter("Size", std::to_string(size));
 }
 
 std::string ListFacesRequest::getLibraryId()const
@@ -66,7 +66,7 @@ std::string ListFacesRequest::getLibraryId()const
 void ListFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string ListFacesRequest::getStoreName()const
@@ -77,7 +77,7 @@ std::string ListFacesRequest::getStoreName()const
 void ListFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string ListFacesRequest::getState()const
@@ -88,7 +88,7 @@ std::string ListFacesRequest::getState()const
 void ListFacesRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setParameter("State", state);
+	setCoreParameter("State", state);
 }
 
 std::string ListFacesRequest::getDirection()const
@@ -99,6 +99,6 @@ std::string ListFacesRequest::getDirection()const
 void ListFacesRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setParameter("Direction", direction);
+	setCoreParameter("Direction", direction);
 }
 

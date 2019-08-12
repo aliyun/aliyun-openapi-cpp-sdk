@@ -33,7 +33,7 @@ std::string EnableActiveAlertRequest::getProduct()const
 void EnableActiveAlertRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string EnableActiveAlertRequest::getUserId()const
@@ -44,6 +44,6 @@ std::string EnableActiveAlertRequest::getUserId()const
 void EnableActiveAlertRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setParameter("UserId", userId);
+	setCoreParameter("UserId", userId);
 }
 

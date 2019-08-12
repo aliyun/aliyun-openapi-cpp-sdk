@@ -33,7 +33,7 @@ std::string DescribeDownloadDomainVerifyConfigurationRequest::getSourceIp()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeDownloadDomainVerifyConfigurationRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeDownloadDomainVerifyConfigurationRequest::getOrderId()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeDownloadDomainVerifyConfigurationRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeDownloadDomainVerifyConfigurationRequest::getLang()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -33,7 +33,7 @@ long KickStaRequest::getId()const
 void KickStaRequest::setId(long id)
 {
 	id_ = id;
-	setParameter("Id", std::to_string(id));
+	setCoreParameter("Id", std::to_string(id));
 }
 
 std::string KickStaRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string KickStaRequest::getAccessKeyId()const
 void KickStaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

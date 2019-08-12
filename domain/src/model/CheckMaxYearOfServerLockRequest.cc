@@ -33,7 +33,7 @@ std::string CheckMaxYearOfServerLockRequest::getDomainName()const
 void CheckMaxYearOfServerLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CheckMaxYearOfServerLockRequest::getUserClientIp()const
 void CheckMaxYearOfServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getCheckAction()const
@@ -55,7 +55,7 @@ std::string CheckMaxYearOfServerLockRequest::getCheckAction()const
 void CheckMaxYearOfServerLockRequest::setCheckAction(const std::string& checkAction)
 {
 	checkAction_ = checkAction;
-	setParameter("CheckAction", checkAction);
+	setCoreParameter("CheckAction", checkAction);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getLang()const
@@ -66,6 +66,6 @@ std::string CheckMaxYearOfServerLockRequest::getLang()const
 void CheckMaxYearOfServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

@@ -43,18 +43,14 @@ namespace AlibabaCloud
 				explicit DescribeScdnDomainUvDataResult(const std::string &payload);
 				~DescribeScdnDomainUvDataResult();
 				std::vector<UsageData> getUvDataInterval()const;
-				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<UsageData> uvDataInterval_;
-				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
 
 			};

@@ -33,7 +33,7 @@ bool DescribeRegionListRequest::getSecurity_transport()const
 void DescribeRegionListRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeRegionListRequest::getRequestId()const
@@ -44,7 +44,7 @@ std::string DescribeRegionListRequest::getRequestId()const
 void DescribeRegionListRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 long DescribeRegionListRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeRegionListRequest::getCallerParentId()const
 void DescribeRegionListRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long DescribeRegionListRequest::getCallerBid()const
@@ -66,7 +66,7 @@ long DescribeRegionListRequest::getCallerBid()const
 void DescribeRegionListRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string DescribeRegionListRequest::getCallerType()const
@@ -77,7 +77,7 @@ std::string DescribeRegionListRequest::getCallerType()const
 void DescribeRegionListRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeRegionListRequest::getAk_mfa_present()const
@@ -88,7 +88,7 @@ bool DescribeRegionListRequest::getAk_mfa_present()const
 void DescribeRegionListRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long DescribeRegionListRequest::getCallerUid()const
@@ -99,7 +99,7 @@ long DescribeRegionListRequest::getCallerUid()const
 void DescribeRegionListRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeRegionListRequest::getAccessKeyId()const
@@ -110,6 +110,6 @@ std::string DescribeRegionListRequest::getAccessKeyId()const
 void DescribeRegionListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

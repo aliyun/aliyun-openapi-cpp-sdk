@@ -58,6 +58,17 @@ void ModifyScheduledTaskRequest::setScheduledAction(const std::string& scheduled
 	setCoreParameter("ScheduledAction", scheduledAction);
 }
 
+int ModifyScheduledTaskRequest::getMaxValue()const
+{
+	return maxValue_;
+}
+
+void ModifyScheduledTaskRequest::setMaxValue(int maxValue)
+{
+	maxValue_ = maxValue;
+	setCoreParameter("MaxValue", std::to_string(maxValue));
+}
+
 std::string ModifyScheduledTaskRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -144,6 +155,17 @@ void ModifyScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+int ModifyScheduledTaskRequest::getMinValue()const
+{
+	return minValue_;
+}
+
+void ModifyScheduledTaskRequest::setMinValue(int minValue)
+{
+	minValue_ = minValue;
+	setCoreParameter("MinValue", std::to_string(minValue));
 }
 
 std::string ModifyScheduledTaskRequest::getScheduledTaskName()const

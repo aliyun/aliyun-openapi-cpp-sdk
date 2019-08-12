@@ -33,6 +33,6 @@ std::string DeletePhotoStoreRequest::getStoreName()const
 void DeletePhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

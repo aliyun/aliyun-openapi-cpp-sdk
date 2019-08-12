@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setApp_ip(const std::string& app_ip);
 				std::string getPopProduct()const;
 				void setPopProduct(const std::string& popProduct);
+				std::string getModelId()const;
+				void setModelId(const std::string& modelId);
 				std::string getCallerBid()const;
 				void setCallerBid(const std::string& callerBid);
 				long getOwnerId()const;
@@ -106,6 +108,7 @@ namespace AlibabaCloud
 				std::string showLog_;
 				std::string app_ip_;
 				std::string popProduct_;
+				std::string modelId_;
 				std::string callerBid_;
 				long ownerId_;
 				std::string version_;

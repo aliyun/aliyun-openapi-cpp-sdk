@@ -34,7 +34,7 @@ void DeleteEventRuleRequest::setRuleNames(const std::vector<std::string>& ruleNa
 {
 	ruleNames_ = ruleNames;
 	for(int i = 0; i!= ruleNames.size(); i++)
-		setParameter("RuleNames."+ std::to_string(i), ruleNames.at(i));
+		setCoreParameter("RuleNames."+ std::to_string(i), ruleNames.at(i));
 }
 
 std::string DeleteEventRuleRequest::getRuleName()const
@@ -45,6 +45,6 @@ std::string DeleteEventRuleRequest::getRuleName()const
 void DeleteEventRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setParameter("RuleName", ruleName);
+	setCoreParameter("RuleName", ruleName);
 }
 

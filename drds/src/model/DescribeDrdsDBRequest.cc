@@ -33,7 +33,7 @@ std::string DescribeDrdsDBRequest::getDbName()const
 void DescribeDrdsDBRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string DescribeDrdsDBRequest::getDrdsInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeDrdsDBRequest::getDrdsInstanceId()const
 void DescribeDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsDBRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeDrdsDBRequest::getAccessKeyId()const
 void DescribeDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

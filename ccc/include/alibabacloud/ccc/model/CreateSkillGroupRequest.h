@@ -39,12 +39,16 @@ namespace AlibabaCloud
 				void setSkillLevel(const std::vector<int>& skillLevel);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				bool getAllowPrivateOutboundNumber()const;
+				void setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber);
 				std::vector<std::string> getOutboundPhoneNumberId()const;
 				void setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getRoutingStrategy()const;
+				void setRoutingStrategy(const std::string& routingStrategy);
 				std::vector<std::string> getUserId()const;
 				void setUserId(const std::vector<std::string>& userId);
 				std::string getAccessKeyId()const;
@@ -53,9 +57,11 @@ namespace AlibabaCloud
             private:
 				std::vector<int> skillLevel_;
 				std::string instanceId_;
+				bool allowPrivateOutboundNumber_;
 				std::vector<std::string> outboundPhoneNumberId_;
 				std::string name_;
 				std::string description_;
+				std::string routingStrategy_;
 				std::vector<std::string> userId_;
 				std::string accessKeyId_;
 

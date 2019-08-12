@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				SubmitFlowResult();
 				explicit SubmitFlowResult(const std::string &payload);
 				~SubmitFlowResult();
+				std::string getInstanceId()const;
+				std::string getData()const;
 				std::string getId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string instanceId_;
+				std::string data_;
 				std::string id_;
 
 			};

@@ -33,7 +33,7 @@ std::string DescribeRealTimeRecordDetailRequest::getApp_ip()const
 void DescribeRealTimeRecordDetailRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getPopProduct()const
@@ -44,7 +44,7 @@ std::string DescribeRealTimeRecordDetailRequest::getPopProduct()const
 void DescribeRealTimeRecordDetailRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 long DescribeRealTimeRecordDetailRequest::getCallerParentId()const
@@ -55,7 +55,7 @@ long DescribeRealTimeRecordDetailRequest::getCallerParentId()const
 void DescribeRealTimeRecordDetailRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeRealTimeRecordDetailRequest::getProxy_original_security_transport()const
@@ -66,7 +66,7 @@ bool DescribeRealTimeRecordDetailRequest::getProxy_original_security_transport()
 void DescribeRealTimeRecordDetailRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getCallerBid()const
@@ -77,7 +77,7 @@ std::string DescribeRealTimeRecordDetailRequest::getCallerBid()const
 void DescribeRealTimeRecordDetailRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeRealTimeRecordDetailRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DescribeRealTimeRecordDetailRequest::getOwnerId()const
 void DescribeRealTimeRecordDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getProxy_original_source_ip()const
@@ -99,7 +99,7 @@ std::string DescribeRealTimeRecordDetailRequest::getProxy_original_source_ip()co
 void DescribeRealTimeRecordDetailRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getVersion()const
@@ -110,7 +110,7 @@ std::string DescribeRealTimeRecordDetailRequest::getVersion()const
 void DescribeRealTimeRecordDetailRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getOwnerIdLoginEmail()const
@@ -121,7 +121,7 @@ std::string DescribeRealTimeRecordDetailRequest::getOwnerIdLoginEmail()const
 void DescribeRealTimeRecordDetailRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getCallerType()const
@@ -132,7 +132,7 @@ std::string DescribeRealTimeRecordDetailRequest::getCallerType()const
 void DescribeRealTimeRecordDetailRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool DescribeRealTimeRecordDetailRequest::getProxy_trust_transport_info()const
@@ -143,7 +143,7 @@ bool DescribeRealTimeRecordDetailRequest::getProxy_trust_transport_info()const
 void DescribeRealTimeRecordDetailRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeRealTimeRecordDetailRequest::getAk_mfa_present()const
@@ -154,7 +154,7 @@ bool DescribeRealTimeRecordDetailRequest::getAk_mfa_present()const
 void DescribeRealTimeRecordDetailRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getAccessKeyId()const
@@ -165,7 +165,7 @@ std::string DescribeRealTimeRecordDetailRequest::getAccessKeyId()const
 void DescribeRealTimeRecordDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 bool DescribeRealTimeRecordDetailRequest::getSecurity_transport()const
@@ -176,7 +176,7 @@ bool DescribeRealTimeRecordDetailRequest::getSecurity_transport()const
 void DescribeRealTimeRecordDetailRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getRecordId()const
@@ -187,7 +187,7 @@ std::string DescribeRealTimeRecordDetailRequest::getRecordId()const
 void DescribeRealTimeRecordDetailRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setParameter("RecordId", recordId);
+	setCoreParameter("RecordId", recordId);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getSecurityToken()const
@@ -198,7 +198,7 @@ std::string DescribeRealTimeRecordDetailRequest::getSecurityToken()const
 void DescribeRealTimeRecordDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getRequestId()const
@@ -209,7 +209,7 @@ std::string DescribeRealTimeRecordDetailRequest::getRequestId()const
 void DescribeRealTimeRecordDetailRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getRequestContent()const
@@ -220,7 +220,7 @@ std::string DescribeRealTimeRecordDetailRequest::getRequestContent()const
 void DescribeRealTimeRecordDetailRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getAppId()const
@@ -231,7 +231,7 @@ std::string DescribeRealTimeRecordDetailRequest::getAppId()const
 void DescribeRealTimeRecordDetailRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getCallerBidEmail()const
@@ -242,7 +242,7 @@ std::string DescribeRealTimeRecordDetailRequest::getCallerBidEmail()const
 void DescribeRealTimeRecordDetailRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getCallerUidEmail()const
@@ -253,7 +253,7 @@ std::string DescribeRealTimeRecordDetailRequest::getCallerUidEmail()const
 void DescribeRealTimeRecordDetailRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 std::string DescribeRealTimeRecordDetailRequest::getChannelId()const
@@ -264,7 +264,7 @@ std::string DescribeRealTimeRecordDetailRequest::getChannelId()const
 void DescribeRealTimeRecordDetailRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", channelId);
 }
 
 long DescribeRealTimeRecordDetailRequest::getCallerUid()const
@@ -275,6 +275,6 @@ long DescribeRealTimeRecordDetailRequest::getCallerUid()const
 void DescribeRealTimeRecordDetailRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

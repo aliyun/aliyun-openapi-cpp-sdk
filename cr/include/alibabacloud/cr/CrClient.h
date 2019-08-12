@@ -44,24 +44,24 @@
 #include "model/CreateCollectionResult.h"
 #include "model/DeleteUserSourceAccountRequest.h"
 #include "model/DeleteUserSourceAccountResult.h"
-#include "model/GetNamespaceRequest.h"
-#include "model/GetNamespaceResult.h"
-#include "model/UpdateRepoBuildRuleRequest.h"
-#include "model/UpdateRepoBuildRuleResult.h"
 #include "model/StartImageScanRequest.h"
 #include "model/StartImageScanResult.h"
-#include "model/DeleteCollectionRequest.h"
-#include "model/DeleteCollectionResult.h"
+#include "model/UpdateRepoBuildRuleRequest.h"
+#include "model/UpdateRepoBuildRuleResult.h"
+#include "model/GetNamespaceRequest.h"
+#include "model/GetNamespaceResult.h"
 #include "model/GetUserSourceRepoListRequest.h"
 #include "model/GetUserSourceRepoListResult.h"
-#include "model/GetRegionRequest.h"
-#include "model/GetRegionResult.h"
-#include "model/GetNamespaceAuthorizationListRequest.h"
-#include "model/GetNamespaceAuthorizationListResult.h"
-#include "model/GetAuthorizationTokenRequest.h"
-#include "model/GetAuthorizationTokenResult.h"
+#include "model/DeleteCollectionRequest.h"
+#include "model/DeleteCollectionResult.h"
 #include "model/UpdateRepoWebhookRequest.h"
 #include "model/UpdateRepoWebhookResult.h"
+#include "model/GetAuthorizationTokenRequest.h"
+#include "model/GetAuthorizationTokenResult.h"
+#include "model/GetNamespaceAuthorizationListRequest.h"
+#include "model/GetNamespaceAuthorizationListResult.h"
+#include "model/GetRegionRequest.h"
+#include "model/GetRegionResult.h"
 #include "model/CreateRepoWebhookRequest.h"
 #include "model/CreateRepoWebhookResult.h"
 #include "model/UpdateUserInfoRequest.h"
@@ -84,10 +84,10 @@
 #include "model/GetUserInfoResult.h"
 #include "model/GetRepoBuildLogsRequest.h"
 #include "model/GetRepoBuildLogsResult.h"
-#include "model/GetNamespaceListRequest.h"
-#include "model/GetNamespaceListResult.h"
 #include "model/GetRepoListRequest.h"
 #include "model/GetRepoListResult.h"
+#include "model/GetNamespaceListRequest.h"
+#include "model/GetNamespaceListResult.h"
 #include "model/GetRegionListRequest.h"
 #include "model/GetRegionListResult.h"
 #include "model/GetImageLayerRequest.h"
@@ -102,22 +102,22 @@
 #include "model/StartRepoBuildByRuleResult.h"
 #include "model/CreateRepoSyncTaskRequest.h"
 #include "model/CreateRepoSyncTaskResult.h"
-#include "model/GetRepoBuildRuleListRequest.h"
-#include "model/GetRepoBuildRuleListResult.h"
-#include "model/GetUserSourceRepoRefListRequest.h"
-#include "model/GetUserSourceRepoRefListResult.h"
 #include "model/GetImageManifestRequest.h"
 #include "model/GetImageManifestResult.h"
+#include "model/GetUserSourceRepoRefListRequest.h"
+#include "model/GetUserSourceRepoRefListResult.h"
+#include "model/GetRepoBuildRuleListRequest.h"
+#include "model/GetRepoBuildRuleListResult.h"
 #include "model/CancelRepoBuildRequest.h"
 #include "model/CancelRepoBuildResult.h"
 #include "model/UpdateRepoAuthorizationRequest.h"
 #include "model/UpdateRepoAuthorizationResult.h"
 #include "model/GetRepoSourceRepoRequest.h"
 #include "model/GetRepoSourceRepoResult.h"
-#include "model/DeleteNamespaceAuthorizationRequest.h"
-#include "model/DeleteNamespaceAuthorizationResult.h"
 #include "model/CreateRepoBuildRuleRequest.h"
 #include "model/CreateRepoBuildRuleResult.h"
+#include "model/DeleteNamespaceAuthorizationRequest.h"
+#include "model/DeleteNamespaceAuthorizationResult.h"
 #include "model/UpdateRepoRequest.h"
 #include "model/UpdateRepoResult.h"
 #include "model/GetCollectionRequest.h"
@@ -136,10 +136,10 @@
 #include "model/UpdateRepoSourceRepoResult.h"
 #include "model/GetRepoRequest.h"
 #include "model/GetRepoResult.h"
-#include "model/GetRepoBuildStatusRequest.h"
-#include "model/GetRepoBuildStatusResult.h"
 #include "model/CreateRepoAuthorizationRequest.h"
 #include "model/CreateRepoAuthorizationResult.h"
+#include "model/GetRepoBuildStatusRequest.h"
+#include "model/GetRepoBuildStatusResult.h"
 #include "model/DeleteRepoWebhookRequest.h"
 #include "model/DeleteRepoWebhookResult.h"
 #include "model/DeleteRepoBuildRuleRequest.h"
@@ -192,33 +192,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUserSourceAccountResult> DeleteUserSourceAccountOutcome;
 			typedef std::future<DeleteUserSourceAccountOutcome> DeleteUserSourceAccountOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::DeleteUserSourceAccountRequest&, const DeleteUserSourceAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserSourceAccountAsyncHandler;
-			typedef Outcome<Error, Model::GetNamespaceResult> GetNamespaceOutcome;
-			typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetNamespaceRequest&, const GetNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceAsyncHandler;
-			typedef Outcome<Error, Model::UpdateRepoBuildRuleResult> UpdateRepoBuildRuleOutcome;
-			typedef std::future<UpdateRepoBuildRuleOutcome> UpdateRepoBuildRuleOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::UpdateRepoBuildRuleRequest&, const UpdateRepoBuildRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepoBuildRuleAsyncHandler;
 			typedef Outcome<Error, Model::StartImageScanResult> StartImageScanOutcome;
 			typedef std::future<StartImageScanOutcome> StartImageScanOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::StartImageScanRequest&, const StartImageScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartImageScanAsyncHandler;
-			typedef Outcome<Error, Model::DeleteCollectionResult> DeleteCollectionOutcome;
-			typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::DeleteCollectionRequest&, const DeleteCollectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCollectionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateRepoBuildRuleResult> UpdateRepoBuildRuleOutcome;
+			typedef std::future<UpdateRepoBuildRuleOutcome> UpdateRepoBuildRuleOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::UpdateRepoBuildRuleRequest&, const UpdateRepoBuildRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepoBuildRuleAsyncHandler;
+			typedef Outcome<Error, Model::GetNamespaceResult> GetNamespaceOutcome;
+			typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetNamespaceRequest&, const GetNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::GetUserSourceRepoListResult> GetUserSourceRepoListOutcome;
 			typedef std::future<GetUserSourceRepoListOutcome> GetUserSourceRepoListOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetUserSourceRepoListRequest&, const GetUserSourceRepoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserSourceRepoListAsyncHandler;
-			typedef Outcome<Error, Model::GetRegionResult> GetRegionOutcome;
-			typedef std::future<GetRegionOutcome> GetRegionOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetRegionRequest&, const GetRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionAsyncHandler;
-			typedef Outcome<Error, Model::GetNamespaceAuthorizationListResult> GetNamespaceAuthorizationListOutcome;
-			typedef std::future<GetNamespaceAuthorizationListOutcome> GetNamespaceAuthorizationListOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetNamespaceAuthorizationListRequest&, const GetNamespaceAuthorizationListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceAuthorizationListAsyncHandler;
-			typedef Outcome<Error, Model::GetAuthorizationTokenResult> GetAuthorizationTokenOutcome;
-			typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetAuthorizationTokenRequest&, const GetAuthorizationTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorizationTokenAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCollectionResult> DeleteCollectionOutcome;
+			typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::DeleteCollectionRequest&, const DeleteCollectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCollectionAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRepoWebhookResult> UpdateRepoWebhookOutcome;
 			typedef std::future<UpdateRepoWebhookOutcome> UpdateRepoWebhookOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::UpdateRepoWebhookRequest&, const UpdateRepoWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepoWebhookAsyncHandler;
+			typedef Outcome<Error, Model::GetAuthorizationTokenResult> GetAuthorizationTokenOutcome;
+			typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetAuthorizationTokenRequest&, const GetAuthorizationTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorizationTokenAsyncHandler;
+			typedef Outcome<Error, Model::GetNamespaceAuthorizationListResult> GetNamespaceAuthorizationListOutcome;
+			typedef std::future<GetNamespaceAuthorizationListOutcome> GetNamespaceAuthorizationListOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetNamespaceAuthorizationListRequest&, const GetNamespaceAuthorizationListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceAuthorizationListAsyncHandler;
+			typedef Outcome<Error, Model::GetRegionResult> GetRegionOutcome;
+			typedef std::future<GetRegionOutcome> GetRegionOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetRegionRequest&, const GetRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionAsyncHandler;
 			typedef Outcome<Error, Model::CreateRepoWebhookResult> CreateRepoWebhookOutcome;
 			typedef std::future<CreateRepoWebhookOutcome> CreateRepoWebhookOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::CreateRepoWebhookRequest&, const CreateRepoWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepoWebhookAsyncHandler;
@@ -252,12 +252,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRepoBuildLogsResult> GetRepoBuildLogsOutcome;
 			typedef std::future<GetRepoBuildLogsOutcome> GetRepoBuildLogsOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetRepoBuildLogsRequest&, const GetRepoBuildLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoBuildLogsAsyncHandler;
-			typedef Outcome<Error, Model::GetNamespaceListResult> GetNamespaceListOutcome;
-			typedef std::future<GetNamespaceListOutcome> GetNamespaceListOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetNamespaceListRequest&, const GetNamespaceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceListAsyncHandler;
 			typedef Outcome<Error, Model::GetRepoListResult> GetRepoListOutcome;
 			typedef std::future<GetRepoListOutcome> GetRepoListOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetRepoListRequest&, const GetRepoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoListAsyncHandler;
+			typedef Outcome<Error, Model::GetNamespaceListResult> GetNamespaceListOutcome;
+			typedef std::future<GetNamespaceListOutcome> GetNamespaceListOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetNamespaceListRequest&, const GetNamespaceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNamespaceListAsyncHandler;
 			typedef Outcome<Error, Model::GetRegionListResult> GetRegionListOutcome;
 			typedef std::future<GetRegionListOutcome> GetRegionListOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetRegionListRequest&, const GetRegionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionListAsyncHandler;
@@ -279,15 +279,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRepoSyncTaskResult> CreateRepoSyncTaskOutcome;
 			typedef std::future<CreateRepoSyncTaskOutcome> CreateRepoSyncTaskOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::CreateRepoSyncTaskRequest&, const CreateRepoSyncTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepoSyncTaskAsyncHandler;
-			typedef Outcome<Error, Model::GetRepoBuildRuleListResult> GetRepoBuildRuleListOutcome;
-			typedef std::future<GetRepoBuildRuleListOutcome> GetRepoBuildRuleListOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetRepoBuildRuleListRequest&, const GetRepoBuildRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoBuildRuleListAsyncHandler;
-			typedef Outcome<Error, Model::GetUserSourceRepoRefListResult> GetUserSourceRepoRefListOutcome;
-			typedef std::future<GetUserSourceRepoRefListOutcome> GetUserSourceRepoRefListOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetUserSourceRepoRefListRequest&, const GetUserSourceRepoRefListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserSourceRepoRefListAsyncHandler;
 			typedef Outcome<Error, Model::GetImageManifestResult> GetImageManifestOutcome;
 			typedef std::future<GetImageManifestOutcome> GetImageManifestOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetImageManifestRequest&, const GetImageManifestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageManifestAsyncHandler;
+			typedef Outcome<Error, Model::GetUserSourceRepoRefListResult> GetUserSourceRepoRefListOutcome;
+			typedef std::future<GetUserSourceRepoRefListOutcome> GetUserSourceRepoRefListOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetUserSourceRepoRefListRequest&, const GetUserSourceRepoRefListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserSourceRepoRefListAsyncHandler;
+			typedef Outcome<Error, Model::GetRepoBuildRuleListResult> GetRepoBuildRuleListOutcome;
+			typedef std::future<GetRepoBuildRuleListOutcome> GetRepoBuildRuleListOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetRepoBuildRuleListRequest&, const GetRepoBuildRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoBuildRuleListAsyncHandler;
 			typedef Outcome<Error, Model::CancelRepoBuildResult> CancelRepoBuildOutcome;
 			typedef std::future<CancelRepoBuildOutcome> CancelRepoBuildOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::CancelRepoBuildRequest&, const CancelRepoBuildOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelRepoBuildAsyncHandler;
@@ -297,12 +297,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRepoSourceRepoResult> GetRepoSourceRepoOutcome;
 			typedef std::future<GetRepoSourceRepoOutcome> GetRepoSourceRepoOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetRepoSourceRepoRequest&, const GetRepoSourceRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoSourceRepoAsyncHandler;
-			typedef Outcome<Error, Model::DeleteNamespaceAuthorizationResult> DeleteNamespaceAuthorizationOutcome;
-			typedef std::future<DeleteNamespaceAuthorizationOutcome> DeleteNamespaceAuthorizationOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::DeleteNamespaceAuthorizationRequest&, const DeleteNamespaceAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAuthorizationAsyncHandler;
 			typedef Outcome<Error, Model::CreateRepoBuildRuleResult> CreateRepoBuildRuleOutcome;
 			typedef std::future<CreateRepoBuildRuleOutcome> CreateRepoBuildRuleOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::CreateRepoBuildRuleRequest&, const CreateRepoBuildRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepoBuildRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteNamespaceAuthorizationResult> DeleteNamespaceAuthorizationOutcome;
+			typedef std::future<DeleteNamespaceAuthorizationOutcome> DeleteNamespaceAuthorizationOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::DeleteNamespaceAuthorizationRequest&, const DeleteNamespaceAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAuthorizationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateRepoResult> UpdateRepoOutcome;
 			typedef std::future<UpdateRepoOutcome> UpdateRepoOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::UpdateRepoRequest&, const UpdateRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRepoAsyncHandler;
@@ -330,12 +330,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRepoResult> GetRepoOutcome;
 			typedef std::future<GetRepoOutcome> GetRepoOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::GetRepoRequest&, const GetRepoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoAsyncHandler;
-			typedef Outcome<Error, Model::GetRepoBuildStatusResult> GetRepoBuildStatusOutcome;
-			typedef std::future<GetRepoBuildStatusOutcome> GetRepoBuildStatusOutcomeCallable;
-			typedef std::function<void(const CrClient*, const Model::GetRepoBuildStatusRequest&, const GetRepoBuildStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoBuildStatusAsyncHandler;
 			typedef Outcome<Error, Model::CreateRepoAuthorizationResult> CreateRepoAuthorizationOutcome;
 			typedef std::future<CreateRepoAuthorizationOutcome> CreateRepoAuthorizationOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::CreateRepoAuthorizationRequest&, const CreateRepoAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepoAuthorizationAsyncHandler;
+			typedef Outcome<Error, Model::GetRepoBuildStatusResult> GetRepoBuildStatusOutcome;
+			typedef std::future<GetRepoBuildStatusOutcome> GetRepoBuildStatusOutcomeCallable;
+			typedef std::function<void(const CrClient*, const Model::GetRepoBuildStatusRequest&, const GetRepoBuildStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRepoBuildStatusAsyncHandler;
 			typedef Outcome<Error, Model::DeleteRepoWebhookResult> DeleteRepoWebhookOutcome;
 			typedef std::future<DeleteRepoWebhookOutcome> DeleteRepoWebhookOutcomeCallable;
 			typedef std::function<void(const CrClient*, const Model::DeleteRepoWebhookRequest&, const DeleteRepoWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepoWebhookAsyncHandler;
@@ -389,33 +389,33 @@ namespace AlibabaCloud
 			DeleteUserSourceAccountOutcome deleteUserSourceAccount(const Model::DeleteUserSourceAccountRequest &request)const;
 			void deleteUserSourceAccountAsync(const Model::DeleteUserSourceAccountRequest& request, const DeleteUserSourceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserSourceAccountOutcomeCallable deleteUserSourceAccountCallable(const Model::DeleteUserSourceAccountRequest& request) const;
-			GetNamespaceOutcome getNamespace(const Model::GetNamespaceRequest &request)const;
-			void getNamespaceAsync(const Model::GetNamespaceRequest& request, const GetNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNamespaceOutcomeCallable getNamespaceCallable(const Model::GetNamespaceRequest& request) const;
-			UpdateRepoBuildRuleOutcome updateRepoBuildRule(const Model::UpdateRepoBuildRuleRequest &request)const;
-			void updateRepoBuildRuleAsync(const Model::UpdateRepoBuildRuleRequest& request, const UpdateRepoBuildRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateRepoBuildRuleOutcomeCallable updateRepoBuildRuleCallable(const Model::UpdateRepoBuildRuleRequest& request) const;
 			StartImageScanOutcome startImageScan(const Model::StartImageScanRequest &request)const;
 			void startImageScanAsync(const Model::StartImageScanRequest& request, const StartImageScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartImageScanOutcomeCallable startImageScanCallable(const Model::StartImageScanRequest& request) const;
-			DeleteCollectionOutcome deleteCollection(const Model::DeleteCollectionRequest &request)const;
-			void deleteCollectionAsync(const Model::DeleteCollectionRequest& request, const DeleteCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteCollectionOutcomeCallable deleteCollectionCallable(const Model::DeleteCollectionRequest& request) const;
+			UpdateRepoBuildRuleOutcome updateRepoBuildRule(const Model::UpdateRepoBuildRuleRequest &request)const;
+			void updateRepoBuildRuleAsync(const Model::UpdateRepoBuildRuleRequest& request, const UpdateRepoBuildRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateRepoBuildRuleOutcomeCallable updateRepoBuildRuleCallable(const Model::UpdateRepoBuildRuleRequest& request) const;
+			GetNamespaceOutcome getNamespace(const Model::GetNamespaceRequest &request)const;
+			void getNamespaceAsync(const Model::GetNamespaceRequest& request, const GetNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetNamespaceOutcomeCallable getNamespaceCallable(const Model::GetNamespaceRequest& request) const;
 			GetUserSourceRepoListOutcome getUserSourceRepoList(const Model::GetUserSourceRepoListRequest &request)const;
 			void getUserSourceRepoListAsync(const Model::GetUserSourceRepoListRequest& request, const GetUserSourceRepoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserSourceRepoListOutcomeCallable getUserSourceRepoListCallable(const Model::GetUserSourceRepoListRequest& request) const;
-			GetRegionOutcome getRegion(const Model::GetRegionRequest &request)const;
-			void getRegionAsync(const Model::GetRegionRequest& request, const GetRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetRegionOutcomeCallable getRegionCallable(const Model::GetRegionRequest& request) const;
-			GetNamespaceAuthorizationListOutcome getNamespaceAuthorizationList(const Model::GetNamespaceAuthorizationListRequest &request)const;
-			void getNamespaceAuthorizationListAsync(const Model::GetNamespaceAuthorizationListRequest& request, const GetNamespaceAuthorizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNamespaceAuthorizationListOutcomeCallable getNamespaceAuthorizationListCallable(const Model::GetNamespaceAuthorizationListRequest& request) const;
-			GetAuthorizationTokenOutcome getAuthorizationToken(const Model::GetAuthorizationTokenRequest &request)const;
-			void getAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAuthorizationTokenOutcomeCallable getAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
+			DeleteCollectionOutcome deleteCollection(const Model::DeleteCollectionRequest &request)const;
+			void deleteCollectionAsync(const Model::DeleteCollectionRequest& request, const DeleteCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCollectionOutcomeCallable deleteCollectionCallable(const Model::DeleteCollectionRequest& request) const;
 			UpdateRepoWebhookOutcome updateRepoWebhook(const Model::UpdateRepoWebhookRequest &request)const;
 			void updateRepoWebhookAsync(const Model::UpdateRepoWebhookRequest& request, const UpdateRepoWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRepoWebhookOutcomeCallable updateRepoWebhookCallable(const Model::UpdateRepoWebhookRequest& request) const;
+			GetAuthorizationTokenOutcome getAuthorizationToken(const Model::GetAuthorizationTokenRequest &request)const;
+			void getAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAuthorizationTokenOutcomeCallable getAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
+			GetNamespaceAuthorizationListOutcome getNamespaceAuthorizationList(const Model::GetNamespaceAuthorizationListRequest &request)const;
+			void getNamespaceAuthorizationListAsync(const Model::GetNamespaceAuthorizationListRequest& request, const GetNamespaceAuthorizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetNamespaceAuthorizationListOutcomeCallable getNamespaceAuthorizationListCallable(const Model::GetNamespaceAuthorizationListRequest& request) const;
+			GetRegionOutcome getRegion(const Model::GetRegionRequest &request)const;
+			void getRegionAsync(const Model::GetRegionRequest& request, const GetRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRegionOutcomeCallable getRegionCallable(const Model::GetRegionRequest& request) const;
 			CreateRepoWebhookOutcome createRepoWebhook(const Model::CreateRepoWebhookRequest &request)const;
 			void createRepoWebhookAsync(const Model::CreateRepoWebhookRequest& request, const CreateRepoWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepoWebhookOutcomeCallable createRepoWebhookCallable(const Model::CreateRepoWebhookRequest& request) const;
@@ -449,12 +449,12 @@ namespace AlibabaCloud
 			GetRepoBuildLogsOutcome getRepoBuildLogs(const Model::GetRepoBuildLogsRequest &request)const;
 			void getRepoBuildLogsAsync(const Model::GetRepoBuildLogsRequest& request, const GetRepoBuildLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepoBuildLogsOutcomeCallable getRepoBuildLogsCallable(const Model::GetRepoBuildLogsRequest& request) const;
-			GetNamespaceListOutcome getNamespaceList(const Model::GetNamespaceListRequest &request)const;
-			void getNamespaceListAsync(const Model::GetNamespaceListRequest& request, const GetNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNamespaceListOutcomeCallable getNamespaceListCallable(const Model::GetNamespaceListRequest& request) const;
 			GetRepoListOutcome getRepoList(const Model::GetRepoListRequest &request)const;
 			void getRepoListAsync(const Model::GetRepoListRequest& request, const GetRepoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepoListOutcomeCallable getRepoListCallable(const Model::GetRepoListRequest& request) const;
+			GetNamespaceListOutcome getNamespaceList(const Model::GetNamespaceListRequest &request)const;
+			void getNamespaceListAsync(const Model::GetNamespaceListRequest& request, const GetNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetNamespaceListOutcomeCallable getNamespaceListCallable(const Model::GetNamespaceListRequest& request) const;
 			GetRegionListOutcome getRegionList(const Model::GetRegionListRequest &request)const;
 			void getRegionListAsync(const Model::GetRegionListRequest& request, const GetRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRegionListOutcomeCallable getRegionListCallable(const Model::GetRegionListRequest& request) const;
@@ -476,15 +476,15 @@ namespace AlibabaCloud
 			CreateRepoSyncTaskOutcome createRepoSyncTask(const Model::CreateRepoSyncTaskRequest &request)const;
 			void createRepoSyncTaskAsync(const Model::CreateRepoSyncTaskRequest& request, const CreateRepoSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepoSyncTaskOutcomeCallable createRepoSyncTaskCallable(const Model::CreateRepoSyncTaskRequest& request) const;
-			GetRepoBuildRuleListOutcome getRepoBuildRuleList(const Model::GetRepoBuildRuleListRequest &request)const;
-			void getRepoBuildRuleListAsync(const Model::GetRepoBuildRuleListRequest& request, const GetRepoBuildRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetRepoBuildRuleListOutcomeCallable getRepoBuildRuleListCallable(const Model::GetRepoBuildRuleListRequest& request) const;
-			GetUserSourceRepoRefListOutcome getUserSourceRepoRefList(const Model::GetUserSourceRepoRefListRequest &request)const;
-			void getUserSourceRepoRefListAsync(const Model::GetUserSourceRepoRefListRequest& request, const GetUserSourceRepoRefListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetUserSourceRepoRefListOutcomeCallable getUserSourceRepoRefListCallable(const Model::GetUserSourceRepoRefListRequest& request) const;
 			GetImageManifestOutcome getImageManifest(const Model::GetImageManifestRequest &request)const;
 			void getImageManifestAsync(const Model::GetImageManifestRequest& request, const GetImageManifestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageManifestOutcomeCallable getImageManifestCallable(const Model::GetImageManifestRequest& request) const;
+			GetUserSourceRepoRefListOutcome getUserSourceRepoRefList(const Model::GetUserSourceRepoRefListRequest &request)const;
+			void getUserSourceRepoRefListAsync(const Model::GetUserSourceRepoRefListRequest& request, const GetUserSourceRepoRefListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserSourceRepoRefListOutcomeCallable getUserSourceRepoRefListCallable(const Model::GetUserSourceRepoRefListRequest& request) const;
+			GetRepoBuildRuleListOutcome getRepoBuildRuleList(const Model::GetRepoBuildRuleListRequest &request)const;
+			void getRepoBuildRuleListAsync(const Model::GetRepoBuildRuleListRequest& request, const GetRepoBuildRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRepoBuildRuleListOutcomeCallable getRepoBuildRuleListCallable(const Model::GetRepoBuildRuleListRequest& request) const;
 			CancelRepoBuildOutcome cancelRepoBuild(const Model::CancelRepoBuildRequest &request)const;
 			void cancelRepoBuildAsync(const Model::CancelRepoBuildRequest& request, const CancelRepoBuildAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelRepoBuildOutcomeCallable cancelRepoBuildCallable(const Model::CancelRepoBuildRequest& request) const;
@@ -494,12 +494,12 @@ namespace AlibabaCloud
 			GetRepoSourceRepoOutcome getRepoSourceRepo(const Model::GetRepoSourceRepoRequest &request)const;
 			void getRepoSourceRepoAsync(const Model::GetRepoSourceRepoRequest& request, const GetRepoSourceRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepoSourceRepoOutcomeCallable getRepoSourceRepoCallable(const Model::GetRepoSourceRepoRequest& request) const;
-			DeleteNamespaceAuthorizationOutcome deleteNamespaceAuthorization(const Model::DeleteNamespaceAuthorizationRequest &request)const;
-			void deleteNamespaceAuthorizationAsync(const Model::DeleteNamespaceAuthorizationRequest& request, const DeleteNamespaceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteNamespaceAuthorizationOutcomeCallable deleteNamespaceAuthorizationCallable(const Model::DeleteNamespaceAuthorizationRequest& request) const;
 			CreateRepoBuildRuleOutcome createRepoBuildRule(const Model::CreateRepoBuildRuleRequest &request)const;
 			void createRepoBuildRuleAsync(const Model::CreateRepoBuildRuleRequest& request, const CreateRepoBuildRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepoBuildRuleOutcomeCallable createRepoBuildRuleCallable(const Model::CreateRepoBuildRuleRequest& request) const;
+			DeleteNamespaceAuthorizationOutcome deleteNamespaceAuthorization(const Model::DeleteNamespaceAuthorizationRequest &request)const;
+			void deleteNamespaceAuthorizationAsync(const Model::DeleteNamespaceAuthorizationRequest& request, const DeleteNamespaceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteNamespaceAuthorizationOutcomeCallable deleteNamespaceAuthorizationCallable(const Model::DeleteNamespaceAuthorizationRequest& request) const;
 			UpdateRepoOutcome updateRepo(const Model::UpdateRepoRequest &request)const;
 			void updateRepoAsync(const Model::UpdateRepoRequest& request, const UpdateRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRepoOutcomeCallable updateRepoCallable(const Model::UpdateRepoRequest& request) const;
@@ -527,12 +527,12 @@ namespace AlibabaCloud
 			GetRepoOutcome getRepo(const Model::GetRepoRequest &request)const;
 			void getRepoAsync(const Model::GetRepoRequest& request, const GetRepoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRepoOutcomeCallable getRepoCallable(const Model::GetRepoRequest& request) const;
-			GetRepoBuildStatusOutcome getRepoBuildStatus(const Model::GetRepoBuildStatusRequest &request)const;
-			void getRepoBuildStatusAsync(const Model::GetRepoBuildStatusRequest& request, const GetRepoBuildStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetRepoBuildStatusOutcomeCallable getRepoBuildStatusCallable(const Model::GetRepoBuildStatusRequest& request) const;
 			CreateRepoAuthorizationOutcome createRepoAuthorization(const Model::CreateRepoAuthorizationRequest &request)const;
 			void createRepoAuthorizationAsync(const Model::CreateRepoAuthorizationRequest& request, const CreateRepoAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRepoAuthorizationOutcomeCallable createRepoAuthorizationCallable(const Model::CreateRepoAuthorizationRequest& request) const;
+			GetRepoBuildStatusOutcome getRepoBuildStatus(const Model::GetRepoBuildStatusRequest &request)const;
+			void getRepoBuildStatusAsync(const Model::GetRepoBuildStatusRequest& request, const GetRepoBuildStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRepoBuildStatusOutcomeCallable getRepoBuildStatusCallable(const Model::GetRepoBuildStatusRequest& request) const;
 			DeleteRepoWebhookOutcome deleteRepoWebhook(const Model::DeleteRepoWebhookRequest &request)const;
 			void deleteRepoWebhookAsync(const Model::DeleteRepoWebhookRequest& request, const DeleteRepoWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRepoWebhookOutcomeCallable deleteRepoWebhookCallable(const Model::DeleteRepoWebhookRequest& request) const;

@@ -33,7 +33,7 @@ std::string DescribeGtmLogsRequest::getInstanceId()const
 void DescribeGtmLogsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DescribeGtmLogsRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string DescribeGtmLogsRequest::getUserClientIp()const
 void DescribeGtmLogsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int DescribeGtmLogsRequest::getPageSize()const
@@ -55,7 +55,7 @@ int DescribeGtmLogsRequest::getPageSize()const
 void DescribeGtmLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGtmLogsRequest::getLang()const
@@ -66,7 +66,7 @@ std::string DescribeGtmLogsRequest::getLang()const
 void DescribeGtmLogsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string DescribeGtmLogsRequest::getKeyword()const
@@ -77,7 +77,7 @@ std::string DescribeGtmLogsRequest::getKeyword()const
 void DescribeGtmLogsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+	setCoreParameter("Keyword", keyword);
 }
 
 long DescribeGtmLogsRequest::getStartTimestamp()const
@@ -88,7 +88,7 @@ long DescribeGtmLogsRequest::getStartTimestamp()const
 void DescribeGtmLogsRequest::setStartTimestamp(long startTimestamp)
 {
 	startTimestamp_ = startTimestamp;
-	setParameter("StartTimestamp", std::to_string(startTimestamp));
+	setCoreParameter("StartTimestamp", std::to_string(startTimestamp));
 }
 
 int DescribeGtmLogsRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeGtmLogsRequest::getPageNumber()const
 void DescribeGtmLogsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeGtmLogsRequest::getEndTimestamp()const
@@ -110,6 +110,6 @@ long DescribeGtmLogsRequest::getEndTimestamp()const
 void DescribeGtmLogsRequest::setEndTimestamp(long endTimestamp)
 {
 	endTimestamp_ = endTimestamp;
-	setParameter("EndTimestamp", std::to_string(endTimestamp));
+	setCoreParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 

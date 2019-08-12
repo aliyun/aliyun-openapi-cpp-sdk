@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getPriority()const;
 				void setPriority(int priority);
+				std::string getType()const;
+				void setType(const std::string& type);
 				std::string getAcrId()const;
 				void setAcrId(const std::string& acrId);
 				std::string getDestCidr()const;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				std::string description_;
 				long ownerId_;
 				int priority_;
+				std::string type_;
 				std::string acrId_;
 				std::string destCidr_;
 				std::string destPortRange_;

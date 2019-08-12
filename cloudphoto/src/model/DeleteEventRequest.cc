@@ -33,7 +33,7 @@ long DeleteEventRequest::getEventId()const
 void DeleteEventRequest::setEventId(long eventId)
 {
 	eventId_ = eventId;
-	setParameter("EventId", std::to_string(eventId));
+	setCoreParameter("EventId", std::to_string(eventId));
 }
 
 std::string DeleteEventRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string DeleteEventRequest::getLibraryId()const
 void DeleteEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::string DeleteEventRequest::getStoreName()const
@@ -55,6 +55,6 @@ std::string DeleteEventRequest::getStoreName()const
 void DeleteEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 

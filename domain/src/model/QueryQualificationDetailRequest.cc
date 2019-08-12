@@ -33,7 +33,7 @@ std::string QueryQualificationDetailRequest::getInstanceId()const
 void QueryQualificationDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string QueryQualificationDetailRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string QueryQualificationDetailRequest::getUserClientIp()const
 void QueryQualificationDetailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryQualificationDetailRequest::getLang()const
@@ -55,7 +55,7 @@ std::string QueryQualificationDetailRequest::getLang()const
 void QueryQualificationDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string QueryQualificationDetailRequest::getQualificationType()const
@@ -66,6 +66,6 @@ std::string QueryQualificationDetailRequest::getQualificationType()const
 void QueryQualificationDetailRequest::setQualificationType(const std::string& qualificationType)
 {
 	qualificationType_ = qualificationType;
-	setParameter("QualificationType", qualificationType);
+	setCoreParameter("QualificationType", qualificationType);
 }
 

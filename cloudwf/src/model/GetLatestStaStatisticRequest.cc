@@ -33,7 +33,7 @@ long GetLatestStaStatisticRequest::getApgroupId()const
 void GetLatestStaStatisticRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setParameter("ApgroupId", std::to_string(apgroupId));
+	setCoreParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetLatestStaStatisticRequest::getAccessKeyId()const
@@ -44,6 +44,6 @@ std::string GetLatestStaStatisticRequest::getAccessKeyId()const
 void GetLatestStaStatisticRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

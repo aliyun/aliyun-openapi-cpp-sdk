@@ -33,7 +33,7 @@ std::string DownloadRecordingRequest::getInstanceId()const
 void DownloadRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
 }
 
 std::string DownloadRecordingRequest::getFileName()const
@@ -44,7 +44,7 @@ std::string DownloadRecordingRequest::getFileName()const
 void DownloadRecordingRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setParameter("FileName", fileName);
+	setCoreParameter("FileName", fileName);
 }
 
 std::string DownloadRecordingRequest::getChannel()const
@@ -55,7 +55,7 @@ std::string DownloadRecordingRequest::getChannel()const
 void DownloadRecordingRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setParameter("Channel", channel);
+	setCoreParameter("Channel", channel);
 }
 
 std::string DownloadRecordingRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string DownloadRecordingRequest::getAccessKeyId()const
 void DownloadRecordingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

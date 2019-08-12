@@ -33,7 +33,7 @@ std::string DescribeAccountsRequest::getAccountName()const
 void DescribeAccountsRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string DescribeAccountsRequest::getDBInstanceId()const
@@ -44,7 +44,7 @@ std::string DescribeAccountsRequest::getDBInstanceId()const
 void DescribeAccountsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
+	setCoreParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeAccountsRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string DescribeAccountsRequest::getAccessKeyId()const
 void DescribeAccountsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

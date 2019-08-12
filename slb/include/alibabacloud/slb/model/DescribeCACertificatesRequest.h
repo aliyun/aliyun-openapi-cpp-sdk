@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT DescribeCACertificatesRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeCACertificatesRequest();
@@ -47,6 +52,8 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getCACertificateId()const;
@@ -59,6 +66,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string regionId_;
 				std::string ownerAccount_;
+				std::vector<Tag> tag_;
 				long ownerId_;
 				std::string cACertificateId_;
 

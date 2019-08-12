@@ -28,26 +28,28 @@
 #include "model/DeleteCustomMetricResult.h"
 #include "model/DisableEventRuleRequest.h"
 #include "model/DisableEventRuleResult.h"
-#include "model/DescribeEventRuleRequest.h"
-#include "model/DescribeEventRuleResult.h"
 #include "model/StartTasksRequest.h"
 #include "model/StartTasksResult.h"
+#include "model/DescribeEventRuleRequest.h"
+#include "model/DescribeEventRuleResult.h"
 #include "model/DescribeISPAreaCityRequest.h"
 #include "model/DescribeISPAreaCityResult.h"
+#include "model/RemoveMetricRuleTargetsRequest.h"
+#include "model/RemoveMetricRuleTargetsResult.h"
 #include "model/QueryCustomEventCountRequest.h"
 #include "model/QueryCustomEventCountResult.h"
-#include "model/ListEventRulesRequest.h"
-#include "model/ListEventRulesResult.h"
 #include "model/UpdateMyGroupInstancesRequest.h"
 #include "model/UpdateMyGroupInstancesResult.h"
+#include "model/ListEventRulesRequest.h"
+#include "model/ListEventRulesResult.h"
 #include "model/ProfileGetRequest.h"
 #include "model/ProfileGetResult.h"
 #include "model/PutEventTargetsRequest.h"
 #include "model/PutEventTargetsResult.h"
-#include "model/PutGroupDynamicRuleRequest.h"
-#include "model/PutGroupDynamicRuleResult.h"
 #include "model/UpdateMonitoringTemplateRequest.h"
 #include "model/UpdateMonitoringTemplateResult.h"
+#include "model/PutGroupDynamicRuleRequest.h"
+#include "model/PutGroupDynamicRuleResult.h"
 #include "model/PutEventRuleRequest.h"
 #include "model/PutEventRuleResult.h"
 #include "model/NodeListRequest.h"
@@ -56,6 +58,8 @@
 #include "model/QueryStaticsAvailabilityResult.h"
 #include "model/NodeProcessesRequest.h"
 #include "model/NodeProcessesResult.h"
+#include "model/DescribeSiteMonitorISPCityListRequest.h"
+#include "model/DescribeSiteMonitorISPCityListResult.h"
 #include "model/ListMonitoringTemplatesRequest.h"
 #include "model/ListMonitoringTemplatesResult.h"
 #include "model/QueryMetricListRequest.h"
@@ -68,20 +72,22 @@
 #include "model/PutCustomMetricResult.h"
 #include "model/QueryMetricLastRequest.h"
 #include "model/QueryMetricLastResult.h"
+#include "model/DescribeAlertHistoryListRequest.h"
+#include "model/DescribeAlertHistoryListResult.h"
 #include "model/QuerySystemEventHistogramRequest.h"
 #include "model/QuerySystemEventHistogramResult.h"
 #include "model/DeleteEventRuleRequest.h"
 #include "model/DeleteEventRuleResult.h"
-#include "model/TaskConfigUnhealthyRequest.h"
-#include "model/TaskConfigUnhealthyResult.h"
 #include "model/DeleteEventTargetsRequest.h"
 #include "model/DeleteEventTargetsResult.h"
+#include "model/TaskConfigUnhealthyRequest.h"
+#include "model/TaskConfigUnhealthyResult.h"
 #include "model/ListProductOfActiveAlertRequest.h"
 #include "model/ListProductOfActiveAlertResult.h"
-#include "model/UpdateMyGroupAlertRequest.h"
-#include "model/UpdateMyGroupAlertResult.h"
 #include "model/CreateMonitoringTemplateRequest.h"
 #include "model/CreateMonitoringTemplateResult.h"
+#include "model/UpdateMyGroupAlertRequest.h"
+#include "model/UpdateMyGroupAlertResult.h"
 #include "model/CreateMyGroupsRequest.h"
 #include "model/CreateMyGroupsResult.h"
 #include "model/CreateMyGroupAlertBatchRequest.h"
@@ -104,6 +110,8 @@
 #include "model/QueryMetricDataResult.h"
 #include "model/DisableActiveAlertRequest.h"
 #include "model/DisableActiveAlertResult.h"
+#include "model/DescribeSiteMonitorISPAreaCityRequest.h"
+#include "model/DescribeSiteMonitorISPAreaCityResult.h"
 #include "model/PutEventRequest.h"
 #include "model/PutEventResult.h"
 #include "model/QueryCustomEventHistogramRequest.h"
@@ -126,16 +134,18 @@
 #include "model/ModifyTaskResult.h"
 #include "model/TaskConfigDeleteRequest.h"
 #include "model/TaskConfigDeleteResult.h"
-#include "model/QueryCustomEventDetailRequest.h"
-#include "model/QueryCustomEventDetailResult.h"
 #include "model/NodeProcessCreateRequest.h"
 #include "model/NodeProcessCreateResult.h"
+#include "model/QueryCustomEventDetailRequest.h"
+#include "model/QueryCustomEventDetailResult.h"
 #include "model/TaskConfigEnableRequest.h"
 #include "model/TaskConfigEnableResult.h"
 #include "model/QueryMetricMetaRequest.h"
 #include "model/QueryMetricMetaResult.h"
 #include "model/TaskConfigCreateRequest.h"
 #include "model/TaskConfigCreateResult.h"
+#include "model/PutMetricRuleTargetsRequest.h"
+#include "model/PutMetricRuleTargetsResult.h"
 #include "model/GetNotifyPolicyRequest.h"
 #include "model/GetNotifyPolicyResult.h"
 #include "model/NodeUninstallRequest.h"
@@ -146,14 +156,14 @@
 #include "model/EnableEventRuleResult.h"
 #include "model/ListEventTargetsByRuleRequest.h"
 #include "model/ListEventTargetsByRuleResult.h"
-#include "model/DescribeTaskDetailRequest.h"
-#include "model/DescribeTaskDetailResult.h"
 #include "model/QueryMonitorDataRequest.h"
 #include "model/QueryMonitorDataResult.h"
-#include "model/QueryCustomMetricListRequest.h"
-#include "model/QueryCustomMetricListResult.h"
+#include "model/DescribeTaskDetailRequest.h"
+#include "model/DescribeTaskDetailResult.h"
 #include "model/ApplyTemplateRequest.h"
 #include "model/ApplyTemplateResult.h"
+#include "model/QueryCustomMetricListRequest.h"
+#include "model/QueryCustomMetricListResult.h"
 #include "model/EnableActiveAlertRequest.h"
 #include "model/EnableActiveAlertResult.h"
 #include "model/QuerySystemEventDetailRequest.h"
@@ -168,10 +178,10 @@
 #include "model/GetMonitoringTemplateResult.h"
 #include "model/ListMyGroupCategoriesRequest.h"
 #include "model/ListMyGroupCategoriesResult.h"
-#include "model/DeleteGroupDynamicRuleRequest.h"
-#include "model/DeleteGroupDynamicRuleResult.h"
 #include "model/CreateTaskRequest.h"
 #include "model/CreateTaskResult.h"
+#include "model/DeleteGroupDynamicRuleRequest.h"
+#include "model/DeleteGroupDynamicRuleResult.h"
 #include "model/ListMyGroupInstancesDetailsRequest.h"
 #include "model/ListMyGroupInstancesDetailsResult.h"
 #include "model/DeleteMyGroupsRequest.h"
@@ -194,10 +204,10 @@
 #include "model/CreateAlarmResult.h"
 #include "model/ListMyGroupsRequest.h"
 #include "model/ListMyGroupsResult.h"
-#include "model/AddMyGroupInstancesRequest.h"
-#include "model/AddMyGroupInstancesResult.h"
 #include "model/SendDryRunSystemEventRequest.h"
 #include "model/SendDryRunSystemEventResult.h"
+#include "model/AddMyGroupInstancesRequest.h"
+#include "model/AddMyGroupInstancesResult.h"
 #include "model/NodeProcessDeleteRequest.h"
 #include "model/NodeProcessDeleteResult.h"
 #include "model/UpdateMyGroupsRequest.h"
@@ -212,6 +222,8 @@
 #include "model/UpdateMyGroupMembersResult.h"
 #include "model/QueryStaticsErrorRateRequest.h"
 #include "model/QueryStaticsErrorRateResult.h"
+#include "model/DescribeMetricRuleTargetsRequest.h"
+#include "model/DescribeMetricRuleTargetsResult.h"
 #include "model/ListGroupDynamicRuleRequest.h"
 #include "model/ListGroupDynamicRuleResult.h"
 #include "model/ListAlarmRequest.h"
@@ -226,10 +238,10 @@
 #include "model/NodeStatusListResult.h"
 #include "model/ListContactGroupRequest.h"
 #include "model/ListContactGroupResult.h"
-#include "model/DescribeContactRequest.h"
-#include "model/DescribeContactResult.h"
 #include "model/PutMetricAlarmRequest.h"
 #include "model/PutMetricAlarmResult.h"
+#include "model/DescribeContactRequest.h"
+#include "model/DescribeContactResult.h"
 #include "model/ListNotifyPolicyRequest.h"
 #include "model/ListNotifyPolicyResult.h"
 #include "model/EnableAlarmRequest.h"
@@ -252,36 +264,39 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableEventRuleResult> DisableEventRuleOutcome;
 			typedef std::future<DisableEventRuleOutcome> DisableEventRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DisableEventRuleRequest&, const DisableEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableEventRuleAsyncHandler;
-			typedef Outcome<Error, Model::DescribeEventRuleResult> DescribeEventRuleOutcome;
-			typedef std::future<DescribeEventRuleOutcome> DescribeEventRuleOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::DescribeEventRuleRequest&, const DescribeEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventRuleAsyncHandler;
 			typedef Outcome<Error, Model::StartTasksResult> StartTasksOutcome;
 			typedef std::future<StartTasksOutcome> StartTasksOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::StartTasksRequest&, const StartTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEventRuleResult> DescribeEventRuleOutcome;
+			typedef std::future<DescribeEventRuleOutcome> DescribeEventRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeEventRuleRequest&, const DescribeEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventRuleAsyncHandler;
 			typedef Outcome<Error, Model::DescribeISPAreaCityResult> DescribeISPAreaCityOutcome;
 			typedef std::future<DescribeISPAreaCityOutcome> DescribeISPAreaCityOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeISPAreaCityRequest&, const DescribeISPAreaCityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeISPAreaCityAsyncHandler;
+			typedef Outcome<Error, Model::RemoveMetricRuleTargetsResult> RemoveMetricRuleTargetsOutcome;
+			typedef std::future<RemoveMetricRuleTargetsOutcome> RemoveMetricRuleTargetsOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::RemoveMetricRuleTargetsRequest&, const RemoveMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveMetricRuleTargetsAsyncHandler;
 			typedef Outcome<Error, Model::QueryCustomEventCountResult> QueryCustomEventCountOutcome;
 			typedef std::future<QueryCustomEventCountOutcome> QueryCustomEventCountOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QueryCustomEventCountRequest&, const QueryCustomEventCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomEventCountAsyncHandler;
-			typedef Outcome<Error, Model::ListEventRulesResult> ListEventRulesOutcome;
-			typedef std::future<ListEventRulesOutcome> ListEventRulesOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::ListEventRulesRequest&, const ListEventRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventRulesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateMyGroupInstancesResult> UpdateMyGroupInstancesOutcome;
 			typedef std::future<UpdateMyGroupInstancesOutcome> UpdateMyGroupInstancesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::UpdateMyGroupInstancesRequest&, const UpdateMyGroupInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMyGroupInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListEventRulesResult> ListEventRulesOutcome;
+			typedef std::future<ListEventRulesOutcome> ListEventRulesOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::ListEventRulesRequest&, const ListEventRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventRulesAsyncHandler;
 			typedef Outcome<Error, Model::ProfileGetResult> ProfileGetOutcome;
 			typedef std::future<ProfileGetOutcome> ProfileGetOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ProfileGetRequest&, const ProfileGetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ProfileGetAsyncHandler;
 			typedef Outcome<Error, Model::PutEventTargetsResult> PutEventTargetsOutcome;
 			typedef std::future<PutEventTargetsOutcome> PutEventTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutEventTargetsRequest&, const PutEventTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutEventTargetsAsyncHandler;
-			typedef Outcome<Error, Model::PutGroupDynamicRuleResult> PutGroupDynamicRuleOutcome;
-			typedef std::future<PutGroupDynamicRuleOutcome> PutGroupDynamicRuleOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::PutGroupDynamicRuleRequest&, const PutGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutGroupDynamicRuleAsyncHandler;
 			typedef Outcome<Error, Model::UpdateMonitoringTemplateResult> UpdateMonitoringTemplateOutcome;
 			typedef std::future<UpdateMonitoringTemplateOutcome> UpdateMonitoringTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::UpdateMonitoringTemplateRequest&, const UpdateMonitoringTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMonitoringTemplateAsyncHandler;
+			typedef Outcome<Error, Model::PutGroupDynamicRuleResult> PutGroupDynamicRuleOutcome;
+			typedef std::future<PutGroupDynamicRuleOutcome> PutGroupDynamicRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutGroupDynamicRuleRequest&, const PutGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutGroupDynamicRuleAsyncHandler;
 			typedef Outcome<Error, Model::PutEventRuleResult> PutEventRuleOutcome;
 			typedef std::future<PutEventRuleOutcome> PutEventRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutEventRuleRequest&, const PutEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutEventRuleAsyncHandler;
@@ -294,6 +309,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::NodeProcessesResult> NodeProcessesOutcome;
 			typedef std::future<NodeProcessesOutcome> NodeProcessesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::NodeProcessesRequest&, const NodeProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NodeProcessesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSiteMonitorISPCityListResult> DescribeSiteMonitorISPCityListOutcome;
+			typedef std::future<DescribeSiteMonitorISPCityListOutcome> DescribeSiteMonitorISPCityListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeSiteMonitorISPCityListRequest&, const DescribeSiteMonitorISPCityListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSiteMonitorISPCityListAsyncHandler;
 			typedef Outcome<Error, Model::ListMonitoringTemplatesResult> ListMonitoringTemplatesOutcome;
 			typedef std::future<ListMonitoringTemplatesOutcome> ListMonitoringTemplatesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListMonitoringTemplatesRequest&, const ListMonitoringTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMonitoringTemplatesAsyncHandler;
@@ -312,27 +330,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMetricLastResult> QueryMetricLastOutcome;
 			typedef std::future<QueryMetricLastOutcome> QueryMetricLastOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QueryMetricLastRequest&, const QueryMetricLastOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMetricLastAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAlertHistoryListResult> DescribeAlertHistoryListOutcome;
+			typedef std::future<DescribeAlertHistoryListOutcome> DescribeAlertHistoryListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeAlertHistoryListRequest&, const DescribeAlertHistoryListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertHistoryListAsyncHandler;
 			typedef Outcome<Error, Model::QuerySystemEventHistogramResult> QuerySystemEventHistogramOutcome;
 			typedef std::future<QuerySystemEventHistogramOutcome> QuerySystemEventHistogramOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QuerySystemEventHistogramRequest&, const QuerySystemEventHistogramOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySystemEventHistogramAsyncHandler;
 			typedef Outcome<Error, Model::DeleteEventRuleResult> DeleteEventRuleOutcome;
 			typedef std::future<DeleteEventRuleOutcome> DeleteEventRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteEventRuleRequest&, const DeleteEventRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventRuleAsyncHandler;
-			typedef Outcome<Error, Model::TaskConfigUnhealthyResult> TaskConfigUnhealthyOutcome;
-			typedef std::future<TaskConfigUnhealthyOutcome> TaskConfigUnhealthyOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::TaskConfigUnhealthyRequest&, const TaskConfigUnhealthyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskConfigUnhealthyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteEventTargetsResult> DeleteEventTargetsOutcome;
 			typedef std::future<DeleteEventTargetsOutcome> DeleteEventTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteEventTargetsRequest&, const DeleteEventTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventTargetsAsyncHandler;
+			typedef Outcome<Error, Model::TaskConfigUnhealthyResult> TaskConfigUnhealthyOutcome;
+			typedef std::future<TaskConfigUnhealthyOutcome> TaskConfigUnhealthyOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::TaskConfigUnhealthyRequest&, const TaskConfigUnhealthyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskConfigUnhealthyAsyncHandler;
 			typedef Outcome<Error, Model::ListProductOfActiveAlertResult> ListProductOfActiveAlertOutcome;
 			typedef std::future<ListProductOfActiveAlertOutcome> ListProductOfActiveAlertOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListProductOfActiveAlertRequest&, const ListProductOfActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProductOfActiveAlertAsyncHandler;
-			typedef Outcome<Error, Model::UpdateMyGroupAlertResult> UpdateMyGroupAlertOutcome;
-			typedef std::future<UpdateMyGroupAlertOutcome> UpdateMyGroupAlertOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::UpdateMyGroupAlertRequest&, const UpdateMyGroupAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMyGroupAlertAsyncHandler;
 			typedef Outcome<Error, Model::CreateMonitoringTemplateResult> CreateMonitoringTemplateOutcome;
 			typedef std::future<CreateMonitoringTemplateOutcome> CreateMonitoringTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateMonitoringTemplateRequest&, const CreateMonitoringTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMonitoringTemplateAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMyGroupAlertResult> UpdateMyGroupAlertOutcome;
+			typedef std::future<UpdateMyGroupAlertOutcome> UpdateMyGroupAlertOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::UpdateMyGroupAlertRequest&, const UpdateMyGroupAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMyGroupAlertAsyncHandler;
 			typedef Outcome<Error, Model::CreateMyGroupsResult> CreateMyGroupsOutcome;
 			typedef std::future<CreateMyGroupsOutcome> CreateMyGroupsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateMyGroupsRequest&, const CreateMyGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMyGroupsAsyncHandler;
@@ -366,6 +387,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableActiveAlertResult> DisableActiveAlertOutcome;
 			typedef std::future<DisableActiveAlertOutcome> DisableActiveAlertOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DisableActiveAlertRequest&, const DisableActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableActiveAlertAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSiteMonitorISPAreaCityResult> DescribeSiteMonitorISPAreaCityOutcome;
+			typedef std::future<DescribeSiteMonitorISPAreaCityOutcome> DescribeSiteMonitorISPAreaCityOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeSiteMonitorISPAreaCityRequest&, const DescribeSiteMonitorISPAreaCityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSiteMonitorISPAreaCityAsyncHandler;
 			typedef Outcome<Error, Model::PutEventResult> PutEventOutcome;
 			typedef std::future<PutEventOutcome> PutEventOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutEventRequest&, const PutEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutEventAsyncHandler;
@@ -399,12 +423,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TaskConfigDeleteResult> TaskConfigDeleteOutcome;
 			typedef std::future<TaskConfigDeleteOutcome> TaskConfigDeleteOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::TaskConfigDeleteRequest&, const TaskConfigDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskConfigDeleteAsyncHandler;
-			typedef Outcome<Error, Model::QueryCustomEventDetailResult> QueryCustomEventDetailOutcome;
-			typedef std::future<QueryCustomEventDetailOutcome> QueryCustomEventDetailOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::QueryCustomEventDetailRequest&, const QueryCustomEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomEventDetailAsyncHandler;
 			typedef Outcome<Error, Model::NodeProcessCreateResult> NodeProcessCreateOutcome;
 			typedef std::future<NodeProcessCreateOutcome> NodeProcessCreateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::NodeProcessCreateRequest&, const NodeProcessCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NodeProcessCreateAsyncHandler;
+			typedef Outcome<Error, Model::QueryCustomEventDetailResult> QueryCustomEventDetailOutcome;
+			typedef std::future<QueryCustomEventDetailOutcome> QueryCustomEventDetailOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::QueryCustomEventDetailRequest&, const QueryCustomEventDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomEventDetailAsyncHandler;
 			typedef Outcome<Error, Model::TaskConfigEnableResult> TaskConfigEnableOutcome;
 			typedef std::future<TaskConfigEnableOutcome> TaskConfigEnableOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::TaskConfigEnableRequest&, const TaskConfigEnableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskConfigEnableAsyncHandler;
@@ -414,6 +438,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TaskConfigCreateResult> TaskConfigCreateOutcome;
 			typedef std::future<TaskConfigCreateOutcome> TaskConfigCreateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::TaskConfigCreateRequest&, const TaskConfigCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskConfigCreateAsyncHandler;
+			typedef Outcome<Error, Model::PutMetricRuleTargetsResult> PutMetricRuleTargetsOutcome;
+			typedef std::future<PutMetricRuleTargetsOutcome> PutMetricRuleTargetsOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutMetricRuleTargetsRequest&, const PutMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutMetricRuleTargetsAsyncHandler;
 			typedef Outcome<Error, Model::GetNotifyPolicyResult> GetNotifyPolicyOutcome;
 			typedef std::future<GetNotifyPolicyOutcome> GetNotifyPolicyOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::GetNotifyPolicyRequest&, const GetNotifyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNotifyPolicyAsyncHandler;
@@ -429,18 +456,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListEventTargetsByRuleResult> ListEventTargetsByRuleOutcome;
 			typedef std::future<ListEventTargetsByRuleOutcome> ListEventTargetsByRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListEventTargetsByRuleRequest&, const ListEventTargetsByRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventTargetsByRuleAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTaskDetailResult> DescribeTaskDetailOutcome;
-			typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::DescribeTaskDetailRequest&, const DescribeTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
 			typedef Outcome<Error, Model::QueryMonitorDataResult> QueryMonitorDataOutcome;
 			typedef std::future<QueryMonitorDataOutcome> QueryMonitorDataOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QueryMonitorDataRequest&, const QueryMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMonitorDataAsyncHandler;
-			typedef Outcome<Error, Model::QueryCustomMetricListResult> QueryCustomMetricListOutcome;
-			typedef std::future<QueryCustomMetricListOutcome> QueryCustomMetricListOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::QueryCustomMetricListRequest&, const QueryCustomMetricListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomMetricListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTaskDetailResult> DescribeTaskDetailOutcome;
+			typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeTaskDetailRequest&, const DescribeTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
 			typedef Outcome<Error, Model::ApplyTemplateResult> ApplyTemplateOutcome;
 			typedef std::future<ApplyTemplateOutcome> ApplyTemplateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ApplyTemplateRequest&, const ApplyTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyTemplateAsyncHandler;
+			typedef Outcome<Error, Model::QueryCustomMetricListResult> QueryCustomMetricListOutcome;
+			typedef std::future<QueryCustomMetricListOutcome> QueryCustomMetricListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::QueryCustomMetricListRequest&, const QueryCustomMetricListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomMetricListAsyncHandler;
 			typedef Outcome<Error, Model::EnableActiveAlertResult> EnableActiveAlertOutcome;
 			typedef std::future<EnableActiveAlertOutcome> EnableActiveAlertOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::EnableActiveAlertRequest&, const EnableActiveAlertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableActiveAlertAsyncHandler;
@@ -462,12 +489,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMyGroupCategoriesResult> ListMyGroupCategoriesOutcome;
 			typedef std::future<ListMyGroupCategoriesOutcome> ListMyGroupCategoriesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListMyGroupCategoriesRequest&, const ListMyGroupCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMyGroupCategoriesAsyncHandler;
-			typedef Outcome<Error, Model::DeleteGroupDynamicRuleResult> DeleteGroupDynamicRuleOutcome;
-			typedef std::future<DeleteGroupDynamicRuleOutcome> DeleteGroupDynamicRuleOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::DeleteGroupDynamicRuleRequest&, const DeleteGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupDynamicRuleAsyncHandler;
 			typedef Outcome<Error, Model::CreateTaskResult> CreateTaskOutcome;
 			typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::CreateTaskRequest&, const CreateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteGroupDynamicRuleResult> DeleteGroupDynamicRuleOutcome;
+			typedef std::future<DeleteGroupDynamicRuleOutcome> DeleteGroupDynamicRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteGroupDynamicRuleRequest&, const DeleteGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupDynamicRuleAsyncHandler;
 			typedef Outcome<Error, Model::ListMyGroupInstancesDetailsResult> ListMyGroupInstancesDetailsOutcome;
 			typedef std::future<ListMyGroupInstancesDetailsOutcome> ListMyGroupInstancesDetailsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListMyGroupInstancesDetailsRequest&, const ListMyGroupInstancesDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMyGroupInstancesDetailsAsyncHandler;
@@ -501,12 +528,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMyGroupsResult> ListMyGroupsOutcome;
 			typedef std::future<ListMyGroupsOutcome> ListMyGroupsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListMyGroupsRequest&, const ListMyGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMyGroupsAsyncHandler;
-			typedef Outcome<Error, Model::AddMyGroupInstancesResult> AddMyGroupInstancesOutcome;
-			typedef std::future<AddMyGroupInstancesOutcome> AddMyGroupInstancesOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::AddMyGroupInstancesRequest&, const AddMyGroupInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddMyGroupInstancesAsyncHandler;
 			typedef Outcome<Error, Model::SendDryRunSystemEventResult> SendDryRunSystemEventOutcome;
 			typedef std::future<SendDryRunSystemEventOutcome> SendDryRunSystemEventOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::SendDryRunSystemEventRequest&, const SendDryRunSystemEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendDryRunSystemEventAsyncHandler;
+			typedef Outcome<Error, Model::AddMyGroupInstancesResult> AddMyGroupInstancesOutcome;
+			typedef std::future<AddMyGroupInstancesOutcome> AddMyGroupInstancesOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::AddMyGroupInstancesRequest&, const AddMyGroupInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddMyGroupInstancesAsyncHandler;
 			typedef Outcome<Error, Model::NodeProcessDeleteResult> NodeProcessDeleteOutcome;
 			typedef std::future<NodeProcessDeleteOutcome> NodeProcessDeleteOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::NodeProcessDeleteRequest&, const NodeProcessDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NodeProcessDeleteAsyncHandler;
@@ -528,6 +555,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryStaticsErrorRateResult> QueryStaticsErrorRateOutcome;
 			typedef std::future<QueryStaticsErrorRateOutcome> QueryStaticsErrorRateOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::QueryStaticsErrorRateRequest&, const QueryStaticsErrorRateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryStaticsErrorRateAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMetricRuleTargetsResult> DescribeMetricRuleTargetsOutcome;
+			typedef std::future<DescribeMetricRuleTargetsOutcome> DescribeMetricRuleTargetsOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeMetricRuleTargetsRequest&, const DescribeMetricRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRuleTargetsAsyncHandler;
 			typedef Outcome<Error, Model::ListGroupDynamicRuleResult> ListGroupDynamicRuleOutcome;
 			typedef std::future<ListGroupDynamicRuleOutcome> ListGroupDynamicRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListGroupDynamicRuleRequest&, const ListGroupDynamicRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupDynamicRuleAsyncHandler;
@@ -549,12 +579,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListContactGroupResult> ListContactGroupOutcome;
 			typedef std::future<ListContactGroupOutcome> ListContactGroupOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListContactGroupRequest&, const ListContactGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListContactGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeContactResult> DescribeContactOutcome;
-			typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
-			typedef std::function<void(const CmsClient*, const Model::DescribeContactRequest&, const DescribeContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContactAsyncHandler;
 			typedef Outcome<Error, Model::PutMetricAlarmResult> PutMetricAlarmOutcome;
 			typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutMetricAlarmRequest&, const PutMetricAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutMetricAlarmAsyncHandler;
+			typedef Outcome<Error, Model::DescribeContactResult> DescribeContactOutcome;
+			typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeContactRequest&, const DescribeContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContactAsyncHandler;
 			typedef Outcome<Error, Model::ListNotifyPolicyResult> ListNotifyPolicyOutcome;
 			typedef std::future<ListNotifyPolicyOutcome> ListNotifyPolicyOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::ListNotifyPolicyRequest&, const ListNotifyPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNotifyPolicyAsyncHandler;
@@ -575,36 +605,39 @@ namespace AlibabaCloud
 			DisableEventRuleOutcome disableEventRule(const Model::DisableEventRuleRequest &request)const;
 			void disableEventRuleAsync(const Model::DisableEventRuleRequest& request, const DisableEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableEventRuleOutcomeCallable disableEventRuleCallable(const Model::DisableEventRuleRequest& request) const;
-			DescribeEventRuleOutcome describeEventRule(const Model::DescribeEventRuleRequest &request)const;
-			void describeEventRuleAsync(const Model::DescribeEventRuleRequest& request, const DescribeEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeEventRuleOutcomeCallable describeEventRuleCallable(const Model::DescribeEventRuleRequest& request) const;
 			StartTasksOutcome startTasks(const Model::StartTasksRequest &request)const;
 			void startTasksAsync(const Model::StartTasksRequest& request, const StartTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartTasksOutcomeCallable startTasksCallable(const Model::StartTasksRequest& request) const;
+			DescribeEventRuleOutcome describeEventRule(const Model::DescribeEventRuleRequest &request)const;
+			void describeEventRuleAsync(const Model::DescribeEventRuleRequest& request, const DescribeEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEventRuleOutcomeCallable describeEventRuleCallable(const Model::DescribeEventRuleRequest& request) const;
 			DescribeISPAreaCityOutcome describeISPAreaCity(const Model::DescribeISPAreaCityRequest &request)const;
 			void describeISPAreaCityAsync(const Model::DescribeISPAreaCityRequest& request, const DescribeISPAreaCityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeISPAreaCityOutcomeCallable describeISPAreaCityCallable(const Model::DescribeISPAreaCityRequest& request) const;
+			RemoveMetricRuleTargetsOutcome removeMetricRuleTargets(const Model::RemoveMetricRuleTargetsRequest &request)const;
+			void removeMetricRuleTargetsAsync(const Model::RemoveMetricRuleTargetsRequest& request, const RemoveMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveMetricRuleTargetsOutcomeCallable removeMetricRuleTargetsCallable(const Model::RemoveMetricRuleTargetsRequest& request) const;
 			QueryCustomEventCountOutcome queryCustomEventCount(const Model::QueryCustomEventCountRequest &request)const;
 			void queryCustomEventCountAsync(const Model::QueryCustomEventCountRequest& request, const QueryCustomEventCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCustomEventCountOutcomeCallable queryCustomEventCountCallable(const Model::QueryCustomEventCountRequest& request) const;
-			ListEventRulesOutcome listEventRules(const Model::ListEventRulesRequest &request)const;
-			void listEventRulesAsync(const Model::ListEventRulesRequest& request, const ListEventRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListEventRulesOutcomeCallable listEventRulesCallable(const Model::ListEventRulesRequest& request) const;
 			UpdateMyGroupInstancesOutcome updateMyGroupInstances(const Model::UpdateMyGroupInstancesRequest &request)const;
 			void updateMyGroupInstancesAsync(const Model::UpdateMyGroupInstancesRequest& request, const UpdateMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateMyGroupInstancesOutcomeCallable updateMyGroupInstancesCallable(const Model::UpdateMyGroupInstancesRequest& request) const;
+			ListEventRulesOutcome listEventRules(const Model::ListEventRulesRequest &request)const;
+			void listEventRulesAsync(const Model::ListEventRulesRequest& request, const ListEventRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEventRulesOutcomeCallable listEventRulesCallable(const Model::ListEventRulesRequest& request) const;
 			ProfileGetOutcome profileGet(const Model::ProfileGetRequest &request)const;
 			void profileGetAsync(const Model::ProfileGetRequest& request, const ProfileGetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ProfileGetOutcomeCallable profileGetCallable(const Model::ProfileGetRequest& request) const;
 			PutEventTargetsOutcome putEventTargets(const Model::PutEventTargetsRequest &request)const;
 			void putEventTargetsAsync(const Model::PutEventTargetsRequest& request, const PutEventTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutEventTargetsOutcomeCallable putEventTargetsCallable(const Model::PutEventTargetsRequest& request) const;
-			PutGroupDynamicRuleOutcome putGroupDynamicRule(const Model::PutGroupDynamicRuleRequest &request)const;
-			void putGroupDynamicRuleAsync(const Model::PutGroupDynamicRuleRequest& request, const PutGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PutGroupDynamicRuleOutcomeCallable putGroupDynamicRuleCallable(const Model::PutGroupDynamicRuleRequest& request) const;
 			UpdateMonitoringTemplateOutcome updateMonitoringTemplate(const Model::UpdateMonitoringTemplateRequest &request)const;
 			void updateMonitoringTemplateAsync(const Model::UpdateMonitoringTemplateRequest& request, const UpdateMonitoringTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateMonitoringTemplateOutcomeCallable updateMonitoringTemplateCallable(const Model::UpdateMonitoringTemplateRequest& request) const;
+			PutGroupDynamicRuleOutcome putGroupDynamicRule(const Model::PutGroupDynamicRuleRequest &request)const;
+			void putGroupDynamicRuleAsync(const Model::PutGroupDynamicRuleRequest& request, const PutGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutGroupDynamicRuleOutcomeCallable putGroupDynamicRuleCallable(const Model::PutGroupDynamicRuleRequest& request) const;
 			PutEventRuleOutcome putEventRule(const Model::PutEventRuleRequest &request)const;
 			void putEventRuleAsync(const Model::PutEventRuleRequest& request, const PutEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutEventRuleOutcomeCallable putEventRuleCallable(const Model::PutEventRuleRequest& request) const;
@@ -617,6 +650,9 @@ namespace AlibabaCloud
 			NodeProcessesOutcome nodeProcesses(const Model::NodeProcessesRequest &request)const;
 			void nodeProcessesAsync(const Model::NodeProcessesRequest& request, const NodeProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			NodeProcessesOutcomeCallable nodeProcessesCallable(const Model::NodeProcessesRequest& request) const;
+			DescribeSiteMonitorISPCityListOutcome describeSiteMonitorISPCityList(const Model::DescribeSiteMonitorISPCityListRequest &request)const;
+			void describeSiteMonitorISPCityListAsync(const Model::DescribeSiteMonitorISPCityListRequest& request, const DescribeSiteMonitorISPCityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSiteMonitorISPCityListOutcomeCallable describeSiteMonitorISPCityListCallable(const Model::DescribeSiteMonitorISPCityListRequest& request) const;
 			ListMonitoringTemplatesOutcome listMonitoringTemplates(const Model::ListMonitoringTemplatesRequest &request)const;
 			void listMonitoringTemplatesAsync(const Model::ListMonitoringTemplatesRequest& request, const ListMonitoringTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMonitoringTemplatesOutcomeCallable listMonitoringTemplatesCallable(const Model::ListMonitoringTemplatesRequest& request) const;
@@ -635,27 +671,30 @@ namespace AlibabaCloud
 			QueryMetricLastOutcome queryMetricLast(const Model::QueryMetricLastRequest &request)const;
 			void queryMetricLastAsync(const Model::QueryMetricLastRequest& request, const QueryMetricLastAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMetricLastOutcomeCallable queryMetricLastCallable(const Model::QueryMetricLastRequest& request) const;
+			DescribeAlertHistoryListOutcome describeAlertHistoryList(const Model::DescribeAlertHistoryListRequest &request)const;
+			void describeAlertHistoryListAsync(const Model::DescribeAlertHistoryListRequest& request, const DescribeAlertHistoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAlertHistoryListOutcomeCallable describeAlertHistoryListCallable(const Model::DescribeAlertHistoryListRequest& request) const;
 			QuerySystemEventHistogramOutcome querySystemEventHistogram(const Model::QuerySystemEventHistogramRequest &request)const;
 			void querySystemEventHistogramAsync(const Model::QuerySystemEventHistogramRequest& request, const QuerySystemEventHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySystemEventHistogramOutcomeCallable querySystemEventHistogramCallable(const Model::QuerySystemEventHistogramRequest& request) const;
 			DeleteEventRuleOutcome deleteEventRule(const Model::DeleteEventRuleRequest &request)const;
 			void deleteEventRuleAsync(const Model::DeleteEventRuleRequest& request, const DeleteEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventRuleOutcomeCallable deleteEventRuleCallable(const Model::DeleteEventRuleRequest& request) const;
-			TaskConfigUnhealthyOutcome taskConfigUnhealthy(const Model::TaskConfigUnhealthyRequest &request)const;
-			void taskConfigUnhealthyAsync(const Model::TaskConfigUnhealthyRequest& request, const TaskConfigUnhealthyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TaskConfigUnhealthyOutcomeCallable taskConfigUnhealthyCallable(const Model::TaskConfigUnhealthyRequest& request) const;
 			DeleteEventTargetsOutcome deleteEventTargets(const Model::DeleteEventTargetsRequest &request)const;
 			void deleteEventTargetsAsync(const Model::DeleteEventTargetsRequest& request, const DeleteEventTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventTargetsOutcomeCallable deleteEventTargetsCallable(const Model::DeleteEventTargetsRequest& request) const;
+			TaskConfigUnhealthyOutcome taskConfigUnhealthy(const Model::TaskConfigUnhealthyRequest &request)const;
+			void taskConfigUnhealthyAsync(const Model::TaskConfigUnhealthyRequest& request, const TaskConfigUnhealthyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TaskConfigUnhealthyOutcomeCallable taskConfigUnhealthyCallable(const Model::TaskConfigUnhealthyRequest& request) const;
 			ListProductOfActiveAlertOutcome listProductOfActiveAlert(const Model::ListProductOfActiveAlertRequest &request)const;
 			void listProductOfActiveAlertAsync(const Model::ListProductOfActiveAlertRequest& request, const ListProductOfActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProductOfActiveAlertOutcomeCallable listProductOfActiveAlertCallable(const Model::ListProductOfActiveAlertRequest& request) const;
-			UpdateMyGroupAlertOutcome updateMyGroupAlert(const Model::UpdateMyGroupAlertRequest &request)const;
-			void updateMyGroupAlertAsync(const Model::UpdateMyGroupAlertRequest& request, const UpdateMyGroupAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateMyGroupAlertOutcomeCallable updateMyGroupAlertCallable(const Model::UpdateMyGroupAlertRequest& request) const;
 			CreateMonitoringTemplateOutcome createMonitoringTemplate(const Model::CreateMonitoringTemplateRequest &request)const;
 			void createMonitoringTemplateAsync(const Model::CreateMonitoringTemplateRequest& request, const CreateMonitoringTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMonitoringTemplateOutcomeCallable createMonitoringTemplateCallable(const Model::CreateMonitoringTemplateRequest& request) const;
+			UpdateMyGroupAlertOutcome updateMyGroupAlert(const Model::UpdateMyGroupAlertRequest &request)const;
+			void updateMyGroupAlertAsync(const Model::UpdateMyGroupAlertRequest& request, const UpdateMyGroupAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMyGroupAlertOutcomeCallable updateMyGroupAlertCallable(const Model::UpdateMyGroupAlertRequest& request) const;
 			CreateMyGroupsOutcome createMyGroups(const Model::CreateMyGroupsRequest &request)const;
 			void createMyGroupsAsync(const Model::CreateMyGroupsRequest& request, const CreateMyGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMyGroupsOutcomeCallable createMyGroupsCallable(const Model::CreateMyGroupsRequest& request) const;
@@ -689,6 +728,9 @@ namespace AlibabaCloud
 			DisableActiveAlertOutcome disableActiveAlert(const Model::DisableActiveAlertRequest &request)const;
 			void disableActiveAlertAsync(const Model::DisableActiveAlertRequest& request, const DisableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableActiveAlertOutcomeCallable disableActiveAlertCallable(const Model::DisableActiveAlertRequest& request) const;
+			DescribeSiteMonitorISPAreaCityOutcome describeSiteMonitorISPAreaCity(const Model::DescribeSiteMonitorISPAreaCityRequest &request)const;
+			void describeSiteMonitorISPAreaCityAsync(const Model::DescribeSiteMonitorISPAreaCityRequest& request, const DescribeSiteMonitorISPAreaCityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSiteMonitorISPAreaCityOutcomeCallable describeSiteMonitorISPAreaCityCallable(const Model::DescribeSiteMonitorISPAreaCityRequest& request) const;
 			PutEventOutcome putEvent(const Model::PutEventRequest &request)const;
 			void putEventAsync(const Model::PutEventRequest& request, const PutEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutEventOutcomeCallable putEventCallable(const Model::PutEventRequest& request) const;
@@ -722,12 +764,12 @@ namespace AlibabaCloud
 			TaskConfigDeleteOutcome taskConfigDelete(const Model::TaskConfigDeleteRequest &request)const;
 			void taskConfigDeleteAsync(const Model::TaskConfigDeleteRequest& request, const TaskConfigDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaskConfigDeleteOutcomeCallable taskConfigDeleteCallable(const Model::TaskConfigDeleteRequest& request) const;
-			QueryCustomEventDetailOutcome queryCustomEventDetail(const Model::QueryCustomEventDetailRequest &request)const;
-			void queryCustomEventDetailAsync(const Model::QueryCustomEventDetailRequest& request, const QueryCustomEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryCustomEventDetailOutcomeCallable queryCustomEventDetailCallable(const Model::QueryCustomEventDetailRequest& request) const;
 			NodeProcessCreateOutcome nodeProcessCreate(const Model::NodeProcessCreateRequest &request)const;
 			void nodeProcessCreateAsync(const Model::NodeProcessCreateRequest& request, const NodeProcessCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			NodeProcessCreateOutcomeCallable nodeProcessCreateCallable(const Model::NodeProcessCreateRequest& request) const;
+			QueryCustomEventDetailOutcome queryCustomEventDetail(const Model::QueryCustomEventDetailRequest &request)const;
+			void queryCustomEventDetailAsync(const Model::QueryCustomEventDetailRequest& request, const QueryCustomEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCustomEventDetailOutcomeCallable queryCustomEventDetailCallable(const Model::QueryCustomEventDetailRequest& request) const;
 			TaskConfigEnableOutcome taskConfigEnable(const Model::TaskConfigEnableRequest &request)const;
 			void taskConfigEnableAsync(const Model::TaskConfigEnableRequest& request, const TaskConfigEnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaskConfigEnableOutcomeCallable taskConfigEnableCallable(const Model::TaskConfigEnableRequest& request) const;
@@ -737,6 +779,9 @@ namespace AlibabaCloud
 			TaskConfigCreateOutcome taskConfigCreate(const Model::TaskConfigCreateRequest &request)const;
 			void taskConfigCreateAsync(const Model::TaskConfigCreateRequest& request, const TaskConfigCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaskConfigCreateOutcomeCallable taskConfigCreateCallable(const Model::TaskConfigCreateRequest& request) const;
+			PutMetricRuleTargetsOutcome putMetricRuleTargets(const Model::PutMetricRuleTargetsRequest &request)const;
+			void putMetricRuleTargetsAsync(const Model::PutMetricRuleTargetsRequest& request, const PutMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutMetricRuleTargetsOutcomeCallable putMetricRuleTargetsCallable(const Model::PutMetricRuleTargetsRequest& request) const;
 			GetNotifyPolicyOutcome getNotifyPolicy(const Model::GetNotifyPolicyRequest &request)const;
 			void getNotifyPolicyAsync(const Model::GetNotifyPolicyRequest& request, const GetNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNotifyPolicyOutcomeCallable getNotifyPolicyCallable(const Model::GetNotifyPolicyRequest& request) const;
@@ -752,18 +797,18 @@ namespace AlibabaCloud
 			ListEventTargetsByRuleOutcome listEventTargetsByRule(const Model::ListEventTargetsByRuleRequest &request)const;
 			void listEventTargetsByRuleAsync(const Model::ListEventTargetsByRuleRequest& request, const ListEventTargetsByRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEventTargetsByRuleOutcomeCallable listEventTargetsByRuleCallable(const Model::ListEventTargetsByRuleRequest& request) const;
-			DescribeTaskDetailOutcome describeTaskDetail(const Model::DescribeTaskDetailRequest &request)const;
-			void describeTaskDetailAsync(const Model::DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTaskDetailOutcomeCallable describeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request) const;
 			QueryMonitorDataOutcome queryMonitorData(const Model::QueryMonitorDataRequest &request)const;
 			void queryMonitorDataAsync(const Model::QueryMonitorDataRequest& request, const QueryMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMonitorDataOutcomeCallable queryMonitorDataCallable(const Model::QueryMonitorDataRequest& request) const;
-			QueryCustomMetricListOutcome queryCustomMetricList(const Model::QueryCustomMetricListRequest &request)const;
-			void queryCustomMetricListAsync(const Model::QueryCustomMetricListRequest& request, const QueryCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryCustomMetricListOutcomeCallable queryCustomMetricListCallable(const Model::QueryCustomMetricListRequest& request) const;
+			DescribeTaskDetailOutcome describeTaskDetail(const Model::DescribeTaskDetailRequest &request)const;
+			void describeTaskDetailAsync(const Model::DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTaskDetailOutcomeCallable describeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request) const;
 			ApplyTemplateOutcome applyTemplate(const Model::ApplyTemplateRequest &request)const;
 			void applyTemplateAsync(const Model::ApplyTemplateRequest& request, const ApplyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyTemplateOutcomeCallable applyTemplateCallable(const Model::ApplyTemplateRequest& request) const;
+			QueryCustomMetricListOutcome queryCustomMetricList(const Model::QueryCustomMetricListRequest &request)const;
+			void queryCustomMetricListAsync(const Model::QueryCustomMetricListRequest& request, const QueryCustomMetricListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryCustomMetricListOutcomeCallable queryCustomMetricListCallable(const Model::QueryCustomMetricListRequest& request) const;
 			EnableActiveAlertOutcome enableActiveAlert(const Model::EnableActiveAlertRequest &request)const;
 			void enableActiveAlertAsync(const Model::EnableActiveAlertRequest& request, const EnableActiveAlertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableActiveAlertOutcomeCallable enableActiveAlertCallable(const Model::EnableActiveAlertRequest& request) const;
@@ -785,12 +830,12 @@ namespace AlibabaCloud
 			ListMyGroupCategoriesOutcome listMyGroupCategories(const Model::ListMyGroupCategoriesRequest &request)const;
 			void listMyGroupCategoriesAsync(const Model::ListMyGroupCategoriesRequest& request, const ListMyGroupCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMyGroupCategoriesOutcomeCallable listMyGroupCategoriesCallable(const Model::ListMyGroupCategoriesRequest& request) const;
-			DeleteGroupDynamicRuleOutcome deleteGroupDynamicRule(const Model::DeleteGroupDynamicRuleRequest &request)const;
-			void deleteGroupDynamicRuleAsync(const Model::DeleteGroupDynamicRuleRequest& request, const DeleteGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteGroupDynamicRuleOutcomeCallable deleteGroupDynamicRuleCallable(const Model::DeleteGroupDynamicRuleRequest& request) const;
 			CreateTaskOutcome createTask(const Model::CreateTaskRequest &request)const;
 			void createTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTaskOutcomeCallable createTaskCallable(const Model::CreateTaskRequest& request) const;
+			DeleteGroupDynamicRuleOutcome deleteGroupDynamicRule(const Model::DeleteGroupDynamicRuleRequest &request)const;
+			void deleteGroupDynamicRuleAsync(const Model::DeleteGroupDynamicRuleRequest& request, const DeleteGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteGroupDynamicRuleOutcomeCallable deleteGroupDynamicRuleCallable(const Model::DeleteGroupDynamicRuleRequest& request) const;
 			ListMyGroupInstancesDetailsOutcome listMyGroupInstancesDetails(const Model::ListMyGroupInstancesDetailsRequest &request)const;
 			void listMyGroupInstancesDetailsAsync(const Model::ListMyGroupInstancesDetailsRequest& request, const ListMyGroupInstancesDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMyGroupInstancesDetailsOutcomeCallable listMyGroupInstancesDetailsCallable(const Model::ListMyGroupInstancesDetailsRequest& request) const;
@@ -824,12 +869,12 @@ namespace AlibabaCloud
 			ListMyGroupsOutcome listMyGroups(const Model::ListMyGroupsRequest &request)const;
 			void listMyGroupsAsync(const Model::ListMyGroupsRequest& request, const ListMyGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMyGroupsOutcomeCallable listMyGroupsCallable(const Model::ListMyGroupsRequest& request) const;
-			AddMyGroupInstancesOutcome addMyGroupInstances(const Model::AddMyGroupInstancesRequest &request)const;
-			void addMyGroupInstancesAsync(const Model::AddMyGroupInstancesRequest& request, const AddMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddMyGroupInstancesOutcomeCallable addMyGroupInstancesCallable(const Model::AddMyGroupInstancesRequest& request) const;
 			SendDryRunSystemEventOutcome sendDryRunSystemEvent(const Model::SendDryRunSystemEventRequest &request)const;
 			void sendDryRunSystemEventAsync(const Model::SendDryRunSystemEventRequest& request, const SendDryRunSystemEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendDryRunSystemEventOutcomeCallable sendDryRunSystemEventCallable(const Model::SendDryRunSystemEventRequest& request) const;
+			AddMyGroupInstancesOutcome addMyGroupInstances(const Model::AddMyGroupInstancesRequest &request)const;
+			void addMyGroupInstancesAsync(const Model::AddMyGroupInstancesRequest& request, const AddMyGroupInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddMyGroupInstancesOutcomeCallable addMyGroupInstancesCallable(const Model::AddMyGroupInstancesRequest& request) const;
 			NodeProcessDeleteOutcome nodeProcessDelete(const Model::NodeProcessDeleteRequest &request)const;
 			void nodeProcessDeleteAsync(const Model::NodeProcessDeleteRequest& request, const NodeProcessDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			NodeProcessDeleteOutcomeCallable nodeProcessDeleteCallable(const Model::NodeProcessDeleteRequest& request) const;
@@ -851,6 +896,9 @@ namespace AlibabaCloud
 			QueryStaticsErrorRateOutcome queryStaticsErrorRate(const Model::QueryStaticsErrorRateRequest &request)const;
 			void queryStaticsErrorRateAsync(const Model::QueryStaticsErrorRateRequest& request, const QueryStaticsErrorRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryStaticsErrorRateOutcomeCallable queryStaticsErrorRateCallable(const Model::QueryStaticsErrorRateRequest& request) const;
+			DescribeMetricRuleTargetsOutcome describeMetricRuleTargets(const Model::DescribeMetricRuleTargetsRequest &request)const;
+			void describeMetricRuleTargetsAsync(const Model::DescribeMetricRuleTargetsRequest& request, const DescribeMetricRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMetricRuleTargetsOutcomeCallable describeMetricRuleTargetsCallable(const Model::DescribeMetricRuleTargetsRequest& request) const;
 			ListGroupDynamicRuleOutcome listGroupDynamicRule(const Model::ListGroupDynamicRuleRequest &request)const;
 			void listGroupDynamicRuleAsync(const Model::ListGroupDynamicRuleRequest& request, const ListGroupDynamicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListGroupDynamicRuleOutcomeCallable listGroupDynamicRuleCallable(const Model::ListGroupDynamicRuleRequest& request) const;
@@ -872,12 +920,12 @@ namespace AlibabaCloud
 			ListContactGroupOutcome listContactGroup(const Model::ListContactGroupRequest &request)const;
 			void listContactGroupAsync(const Model::ListContactGroupRequest& request, const ListContactGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListContactGroupOutcomeCallable listContactGroupCallable(const Model::ListContactGroupRequest& request) const;
-			DescribeContactOutcome describeContact(const Model::DescribeContactRequest &request)const;
-			void describeContactAsync(const Model::DescribeContactRequest& request, const DescribeContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeContactOutcomeCallable describeContactCallable(const Model::DescribeContactRequest& request) const;
 			PutMetricAlarmOutcome putMetricAlarm(const Model::PutMetricAlarmRequest &request)const;
 			void putMetricAlarmAsync(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutMetricAlarmOutcomeCallable putMetricAlarmCallable(const Model::PutMetricAlarmRequest& request) const;
+			DescribeContactOutcome describeContact(const Model::DescribeContactRequest &request)const;
+			void describeContactAsync(const Model::DescribeContactRequest& request, const DescribeContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeContactOutcomeCallable describeContactCallable(const Model::DescribeContactRequest& request) const;
 			ListNotifyPolicyOutcome listNotifyPolicy(const Model::ListNotifyPolicyRequest &request)const;
 			void listNotifyPolicyAsync(const Model::ListNotifyPolicyRequest& request, const ListNotifyPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNotifyPolicyOutcomeCallable listNotifyPolicyCallable(const Model::ListNotifyPolicyRequest& request) const;

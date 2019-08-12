@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSlowLogRecordType()const;
+				void setSlowLogRecordType(const std::string& slowLogRecordType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getDBName()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string slowLogRecordType_;
 				std::string instanceId_;
 				std::string dBName_;
 				std::string securityToken_;

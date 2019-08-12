@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeScreenOperateInfoResult(const std::string &payload);
 				~DescribeScreenOperateInfoResult();
 				std::vector<std::string> getVulValueArray()const;
+				bool getSuccessA()const;
 				int getSecurityEventDealedCount()const;
 				std::vector<std::string> getSuspEventValueArray()const;
 				int getVulnerabilityDealedCount()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> vulValueArray_;
+				bool successA_;
 				int securityEventDealedCount_;
 				std::vector<std::string> suspEventValueArray_;
 				int vulnerabilityDealedCount_;

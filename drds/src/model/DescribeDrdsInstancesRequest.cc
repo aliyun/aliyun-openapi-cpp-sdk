@@ -33,7 +33,7 @@ std::string DescribeDrdsInstancesRequest::getRegionId()const
 void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeDrdsInstancesRequest::getType()const
@@ -44,7 +44,7 @@ std::string DescribeDrdsInstancesRequest::getType()const
 void DescribeDrdsInstancesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
@@ -55,6 +55,17 @@ std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
 void DescribeDrdsInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDrdsInstancesRequest::getTags()const
+{
+	return tags_;
+}
+
+void DescribeDrdsInstancesRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setCoreParameter("Tags", tags);
 }
 

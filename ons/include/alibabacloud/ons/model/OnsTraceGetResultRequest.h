@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				OnsTraceGetResultRequest();
 				~OnsTraceGetResultRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getQueryId()const;
 				void setQueryId(const std::string& queryId);
 
             private:
-				long preventCache_;
 				std::string queryId_;
 
 			};

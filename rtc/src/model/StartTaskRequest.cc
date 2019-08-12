@@ -37,9 +37,9 @@ void StartTaskRequest::setMixPanes(const std::vector<MixPanes>& mixPanes)
 	for(int i = 0; i!= mixPanes.size(); i++)	{
 		auto obj = mixPanes.at(i);
 		std::string str ="MixPanes."+ std::to_string(i);
-		setParameter(str + ".PaneId", std::to_string(obj.paneId));
-		setParameter(str + ".UserId", obj.userId);
-		setParameter(str + ".SourceType", obj.sourceType);
+		setCoreParameter(str + ".PaneId", std::to_string(obj.paneId));
+		setCoreParameter(str + ".UserId", obj.userId);
+		setCoreParameter(str + ".SourceType", obj.sourceType);
 	}
 }
 
@@ -51,7 +51,7 @@ long StartTaskRequest::getCallerParentId()const
 void StartTaskRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 std::string StartTaskRequest::getIdempotentId()const
@@ -62,7 +62,7 @@ std::string StartTaskRequest::getIdempotentId()const
 void StartTaskRequest::setIdempotentId(const std::string& idempotentId)
 {
 	idempotentId_ = idempotentId;
-	setParameter("IdempotentId", idempotentId);
+	setCoreParameter("IdempotentId", idempotentId);
 }
 
 bool StartTaskRequest::getProxy_original_security_transport()const
@@ -73,7 +73,7 @@ bool StartTaskRequest::getProxy_original_security_transport()const
 void StartTaskRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", std::to_string(proxy_original_security_transport));
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string StartTaskRequest::getProxy_original_source_ip()const
@@ -84,7 +84,7 @@ std::string StartTaskRequest::getProxy_original_source_ip()const
 void StartTaskRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string StartTaskRequest::getOwnerIdLoginEmail()const
@@ -95,7 +95,7 @@ std::string StartTaskRequest::getOwnerIdLoginEmail()const
 void StartTaskRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string StartTaskRequest::getCallerType()const
@@ -106,7 +106,7 @@ std::string StartTaskRequest::getCallerType()const
 void StartTaskRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 std::string StartTaskRequest::getAccessKeyId()const
@@ -117,7 +117,7 @@ std::string StartTaskRequest::getAccessKeyId()const
 void StartTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string StartTaskRequest::getSecurityToken()const
@@ -128,7 +128,7 @@ std::string StartTaskRequest::getSecurityToken()const
 void StartTaskRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string StartTaskRequest::getRequestContent()const
@@ -139,7 +139,7 @@ std::string StartTaskRequest::getRequestContent()const
 void StartTaskRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 std::string StartTaskRequest::getCallerBidEmail()const
@@ -150,7 +150,7 @@ std::string StartTaskRequest::getCallerBidEmail()const
 void StartTaskRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string StartTaskRequest::getCallerUidEmail()const
@@ -161,7 +161,7 @@ std::string StartTaskRequest::getCallerUidEmail()const
 void StartTaskRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long StartTaskRequest::getCallerUid()const
@@ -172,7 +172,7 @@ long StartTaskRequest::getCallerUid()const
 void StartTaskRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string StartTaskRequest::getApp_ip()const
@@ -183,7 +183,7 @@ std::string StartTaskRequest::getApp_ip()const
 void StartTaskRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string StartTaskRequest::getPopProduct()const
@@ -194,7 +194,7 @@ std::string StartTaskRequest::getPopProduct()const
 void StartTaskRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string StartTaskRequest::getCallerBid()const
@@ -205,7 +205,7 @@ std::string StartTaskRequest::getCallerBid()const
 void StartTaskRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long StartTaskRequest::getOwnerId()const
@@ -216,7 +216,7 @@ long StartTaskRequest::getOwnerId()const
 void StartTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 long StartTaskRequest::getTemplateId()const
@@ -227,7 +227,7 @@ long StartTaskRequest::getTemplateId()const
 void StartTaskRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setParameter("TemplateId", std::to_string(templateId));
+	setCoreParameter("TemplateId", std::to_string(templateId));
 }
 
 std::string StartTaskRequest::getVersion()const
@@ -238,7 +238,7 @@ std::string StartTaskRequest::getVersion()const
 void StartTaskRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool StartTaskRequest::getProxy_trust_transport_info()const
@@ -249,7 +249,7 @@ bool StartTaskRequest::getProxy_trust_transport_info()const
 void StartTaskRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", std::to_string(proxy_trust_transport_info));
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool StartTaskRequest::getAk_mfa_present()const
@@ -260,7 +260,7 @@ bool StartTaskRequest::getAk_mfa_present()const
 void StartTaskRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool StartTaskRequest::getSecurity_transport()const
@@ -271,7 +271,7 @@ bool StartTaskRequest::getSecurity_transport()const
 void StartTaskRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string StartTaskRequest::getRequestId()const
@@ -282,7 +282,7 @@ std::string StartTaskRequest::getRequestId()const
 void StartTaskRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 std::string StartTaskRequest::getAppId()const
@@ -293,7 +293,7 @@ std::string StartTaskRequest::getAppId()const
 void StartTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setParameter("AppId", appId);
+	setCoreParameter("AppId", appId);
 }
 
 std::string StartTaskRequest::getChannelId()const
@@ -304,6 +304,6 @@ std::string StartTaskRequest::getChannelId()const
 void StartTaskRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setParameter("ChannelId", channelId);
+	setCoreParameter("ChannelId", channelId);
 }
 

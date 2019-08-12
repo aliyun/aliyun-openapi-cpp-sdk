@@ -48,6 +48,7 @@ namespace AlibabaCloud
 				int getBackendServerPort()const;
 				int getPersistenceTimeout()const;
 				int getHealthCheckConnectPort()const;
+				std::string getHealthCheckMethod()const;
 				int getBandwidth()const;
 				std::string getHealthCheckHttpCode()const;
 				int getEstablishedTimeout()const;
@@ -78,6 +79,7 @@ namespace AlibabaCloud
 				int backendServerPort_;
 				int persistenceTimeout_;
 				int healthCheckConnectPort_;
+				std::string healthCheckMethod_;
 				int bandwidth_;
 				std::string healthCheckHttpCode_;
 				int establishedTimeout_;

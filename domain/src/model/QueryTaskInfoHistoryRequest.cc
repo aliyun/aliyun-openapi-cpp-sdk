@@ -33,7 +33,7 @@ long QueryTaskInfoHistoryRequest::getBeginCreateTime()const
 void QueryTaskInfoHistoryRequest::setBeginCreateTime(long beginCreateTime)
 {
 	beginCreateTime_ = beginCreateTime;
-	setParameter("BeginCreateTime", std::to_string(beginCreateTime));
+	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 long QueryTaskInfoHistoryRequest::getEndCreateTime()const
@@ -44,7 +44,7 @@ long QueryTaskInfoHistoryRequest::getEndCreateTime()const
 void QueryTaskInfoHistoryRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
-	setParameter("EndCreateTime", std::to_string(endCreateTime));
+	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
 }
 
 std::string QueryTaskInfoHistoryRequest::getTaskNoCursor()const
@@ -55,7 +55,7 @@ std::string QueryTaskInfoHistoryRequest::getTaskNoCursor()const
 void QueryTaskInfoHistoryRequest::setTaskNoCursor(const std::string& taskNoCursor)
 {
 	taskNoCursor_ = taskNoCursor;
-	setParameter("TaskNoCursor", taskNoCursor);
+	setCoreParameter("TaskNoCursor", taskNoCursor);
 }
 
 std::string QueryTaskInfoHistoryRequest::getUserClientIp()const
@@ -66,7 +66,7 @@ std::string QueryTaskInfoHistoryRequest::getUserClientIp()const
 void QueryTaskInfoHistoryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskInfoHistoryRequest::getPageSize()const
@@ -77,7 +77,7 @@ int QueryTaskInfoHistoryRequest::getPageSize()const
 void QueryTaskInfoHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskInfoHistoryRequest::getLang()const
@@ -88,7 +88,7 @@ std::string QueryTaskInfoHistoryRequest::getLang()const
 void QueryTaskInfoHistoryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 long QueryTaskInfoHistoryRequest::getCreateTimeCursor()const
@@ -99,6 +99,6 @@ long QueryTaskInfoHistoryRequest::getCreateTimeCursor()const
 void QueryTaskInfoHistoryRequest::setCreateTimeCursor(long createTimeCursor)
 {
 	createTimeCursor_ = createTimeCursor;
-	setParameter("CreateTimeCursor", std::to_string(createTimeCursor));
+	setCoreParameter("CreateTimeCursor", std::to_string(createTimeCursor));
 }
 

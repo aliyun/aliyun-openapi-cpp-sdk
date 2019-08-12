@@ -35,15 +35,20 @@ DescribeDomainBpsDataByTimeStampResult::~DescribeDomainBpsDataByTimeStampResult(
 
 void DescribeDomainBpsDataByTimeStampResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allBpsDataList = value["BpsDataList"]["BpsDataModel"];
 	for (auto value : allBpsDataList)
 	{
 		BpsDataModel bpsDataListObject;
+		if(!value["TimeStamp"].isNull())
+			bpsDataListObject.timeStamp = value["TimeStamp"].asString();
 		if(!value["LocationName"].isNull())
 			bpsDataListObject.locationName = value["LocationName"].asString();
 		if(!value["IspName"].isNull())

@@ -21,20 +21,20 @@ set(push_public_header
 	include/alibabacloud/push/PushExport.h )
 
 set(push_public_header_model 
-	include/alibabacloud/push/model/UnbindTagRequest.h
-	include/alibabacloud/push/model/UnbindTagResult.h
 	include/alibabacloud/push/model/QueryDeviceStatRequest.h
 	include/alibabacloud/push/model/QueryDeviceStatResult.h
+	include/alibabacloud/push/model/UnbindTagRequest.h
+	include/alibabacloud/push/model/UnbindTagResult.h
 	include/alibabacloud/push/model/QueryPushStatByAppRequest.h
 	include/alibabacloud/push/model/QueryPushStatByAppResult.h
 	include/alibabacloud/push/model/CheckDeviceRequest.h
 	include/alibabacloud/push/model/CheckDeviceResult.h
-	include/alibabacloud/push/model/ListPushRecordsRequest.h
-	include/alibabacloud/push/model/ListPushRecordsResult.h
 	include/alibabacloud/push/model/QueryDevicesByAliasRequest.h
 	include/alibabacloud/push/model/QueryDevicesByAliasResult.h
 	include/alibabacloud/push/model/PushRequest.h
 	include/alibabacloud/push/model/PushResult.h
+	include/alibabacloud/push/model/ListPushRecordsRequest.h
+	include/alibabacloud/push/model/ListPushRecordsResult.h
 	include/alibabacloud/push/model/QueryTagsRequest.h
 	include/alibabacloud/push/model/QueryTagsResult.h
 	include/alibabacloud/push/model/UnbindAliasRequest.h
@@ -80,20 +80,20 @@ set(push_public_header_model
 
 set(push_src 
 	src/PushClient.cc
-	src/model/UnbindTagRequest.cc
-	src/model/UnbindTagResult.cc
 	src/model/QueryDeviceStatRequest.cc
 	src/model/QueryDeviceStatResult.cc
+	src/model/UnbindTagRequest.cc
+	src/model/UnbindTagResult.cc
 	src/model/QueryPushStatByAppRequest.cc
 	src/model/QueryPushStatByAppResult.cc
 	src/model/CheckDeviceRequest.cc
 	src/model/CheckDeviceResult.cc
-	src/model/ListPushRecordsRequest.cc
-	src/model/ListPushRecordsResult.cc
 	src/model/QueryDevicesByAliasRequest.cc
 	src/model/QueryDevicesByAliasResult.cc
 	src/model/PushRequest.cc
 	src/model/PushResult.cc
+	src/model/ListPushRecordsRequest.cc
+	src/model/ListPushRecordsResult.cc
 	src/model/QueryTagsRequest.cc
 	src/model/QueryTagsResult.cc
 	src/model/UnbindAliasRequest.cc

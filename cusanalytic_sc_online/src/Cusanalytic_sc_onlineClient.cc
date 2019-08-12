@@ -31,61 +31,25 @@ Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const Credentials &cred
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::Cusanalytic_sc_onlineClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cusanalytic_sc_online");
 }
 
 Cusanalytic_sc_onlineClient::~Cusanalytic_sc_onlineClient()
 {}
-
-Cusanalytic_sc_onlineClient::DescribeLocationsOutcome Cusanalytic_sc_onlineClient::describeLocations(const DescribeLocationsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLocationsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLocationsOutcome(DescribeLocationsResult(outcome.result()));
-	else
-		return DescribeLocationsOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::describeLocationsAsync(const DescribeLocationsRequest& request, const DescribeLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLocations(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::DescribeLocationsOutcomeCallable Cusanalytic_sc_onlineClient::describeLocationsCallable(const DescribeLocationsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLocationsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLocations(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
 
 Cusanalytic_sc_onlineClient::GetOverviewDataOutcome Cusanalytic_sc_onlineClient::getOverviewData(const GetOverviewDataRequest &request) const
 {
@@ -117,6 +81,42 @@ Cusanalytic_sc_onlineClient::GetOverviewDataOutcomeCallable Cusanalytic_sc_onlin
 			[this, request]()
 			{
 			return this->getOverviewData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::DescribeLocationsOutcome Cusanalytic_sc_onlineClient::describeLocations(const DescribeLocationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLocationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLocationsOutcome(DescribeLocationsResult(outcome.result()));
+	else
+		return DescribeLocationsOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::describeLocationsAsync(const DescribeLocationsRequest& request, const DescribeLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLocations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::DescribeLocationsOutcomeCallable Cusanalytic_sc_onlineClient::describeLocationsCallable(const DescribeLocationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLocationsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLocations(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -159,42 +159,6 @@ Cusanalytic_sc_onlineClient::GetSupportStoreOutcomeCallable Cusanalytic_sc_onlin
 	return task->get_future();
 }
 
-Cusanalytic_sc_onlineClient::DescribeActionDataOutcome Cusanalytic_sc_onlineClient::describeActionData(const DescribeActionDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeActionDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeActionDataOutcome(DescribeActionDataResult(outcome.result()));
-	else
-		return DescribeActionDataOutcome(outcome.error());
-}
-
-void Cusanalytic_sc_onlineClient::describeActionDataAsync(const DescribeActionDataRequest& request, const DescribeActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeActionData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Cusanalytic_sc_onlineClient::DescribeActionDataOutcomeCallable Cusanalytic_sc_onlineClient::describeActionDataCallable(const DescribeActionDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeActionDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeActionData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Cusanalytic_sc_onlineClient::GetLocationsOutcome Cusanalytic_sc_onlineClient::getLocations(const GetLocationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +189,42 @@ Cusanalytic_sc_onlineClient::GetLocationsOutcomeCallable Cusanalytic_sc_onlineCl
 			[this, request]()
 			{
 			return this->getLocations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Cusanalytic_sc_onlineClient::DescribeActionDataOutcome Cusanalytic_sc_onlineClient::describeActionData(const DescribeActionDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActionDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActionDataOutcome(DescribeActionDataResult(outcome.result()));
+	else
+		return DescribeActionDataOutcome(outcome.error());
+}
+
+void Cusanalytic_sc_onlineClient::describeActionDataAsync(const DescribeActionDataRequest& request, const DescribeActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActionData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Cusanalytic_sc_onlineClient::DescribeActionDataOutcomeCallable Cusanalytic_sc_onlineClient::describeActionDataCallable(const DescribeActionDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActionDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActionData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

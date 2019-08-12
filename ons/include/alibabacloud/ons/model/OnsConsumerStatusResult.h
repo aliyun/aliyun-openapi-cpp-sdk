@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string clientAddr;
 						std::string language;
 						std::string version;
+						std::string remoteIP;
 						std::string clientId;
 					};
 					struct DetailInTopicDo

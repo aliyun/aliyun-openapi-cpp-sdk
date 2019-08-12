@@ -33,7 +33,7 @@ std::string DeleteDomainExtensionRequest::getAccess_key_id()const
 void DeleteDomainExtensionRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setParameter("Access_key_id", access_key_id);
+	setCoreParameter("Access_key_id", access_key_id);
 }
 
 long DeleteDomainExtensionRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long DeleteDomainExtensionRequest::getResourceOwnerId()const
 void DeleteDomainExtensionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDomainExtensionRequest::getResourceOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteDomainExtensionRequest::getResourceOwnerAccount()const
 void DeleteDomainExtensionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDomainExtensionRequest::getRegionId()const
@@ -66,7 +66,7 @@ std::string DeleteDomainExtensionRequest::getRegionId()const
 void DeleteDomainExtensionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteDomainExtensionRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string DeleteDomainExtensionRequest::getOwnerAccount()const
 void DeleteDomainExtensionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDomainExtensionRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long DeleteDomainExtensionRequest::getOwnerId()const
 void DeleteDomainExtensionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDomainExtensionRequest::getTags()const
@@ -99,7 +99,7 @@ std::string DeleteDomainExtensionRequest::getTags()const
 void DeleteDomainExtensionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 
 std::string DeleteDomainExtensionRequest::getDomainExtensionId()const
@@ -110,6 +110,6 @@ std::string DeleteDomainExtensionRequest::getDomainExtensionId()const
 void DeleteDomainExtensionRequest::setDomainExtensionId(const std::string& domainExtensionId)
 {
 	domainExtensionId_ = domainExtensionId;
-	setParameter("DomainExtensionId", domainExtensionId);
+	setCoreParameter("DomainExtensionId", domainExtensionId);
 }
 

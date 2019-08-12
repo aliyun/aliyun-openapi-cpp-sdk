@@ -25,15 +25,15 @@ SearchTraceCountRequest::SearchTraceCountRequest() :
 SearchTraceCountRequest::~SearchTraceCountRequest()
 {}
 
-std::string SearchTraceCountRequest::getInstanceId()const
+std::string SearchTraceCountRequest::getServiceIp()const
 {
-	return instanceId_;
+	return serviceIp_;
 }
 
-void SearchTraceCountRequest::setInstanceId(const std::string& instanceId)
+void SearchTraceCountRequest::setServiceIp(const std::string& serviceIp)
 {
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	serviceIp_ = serviceIp;
+	setCoreParameter("ServiceIp", serviceIp);
 }
 
 std::string SearchTraceCountRequest::getRegionId()const

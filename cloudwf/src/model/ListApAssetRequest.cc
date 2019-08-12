@@ -33,7 +33,7 @@ std::string ListApAssetRequest::getOrderCol()const
 void ListApAssetRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setParameter("OrderCol", orderCol);
+	setCoreParameter("OrderCol", orderCol);
 }
 
 std::string ListApAssetRequest::getSearchName()const
@@ -44,7 +44,7 @@ std::string ListApAssetRequest::getSearchName()const
 void ListApAssetRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setParameter("SearchName", searchName);
+	setCoreParameter("SearchName", searchName);
 }
 
 std::string ListApAssetRequest::getSearchSerialNo()const
@@ -55,7 +55,7 @@ std::string ListApAssetRequest::getSearchSerialNo()const
 void ListApAssetRequest::setSearchSerialNo(const std::string& searchSerialNo)
 {
 	searchSerialNo_ = searchSerialNo;
-	setParameter("SearchSerialNo", searchSerialNo);
+	setCoreParameter("SearchSerialNo", searchSerialNo);
 }
 
 int ListApAssetRequest::getLength()const
@@ -66,7 +66,7 @@ int ListApAssetRequest::getLength()const
 void ListApAssetRequest::setLength(int length)
 {
 	length_ = length;
-	setParameter("Length", std::to_string(length));
+	setCoreParameter("Length", std::to_string(length));
 }
 
 int ListApAssetRequest::getPageIndex()const
@@ -77,7 +77,7 @@ int ListApAssetRequest::getPageIndex()const
 void ListApAssetRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setParameter("PageIndex", std::to_string(pageIndex));
+	setCoreParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApAssetRequest::getSearchMac()const
@@ -88,7 +88,7 @@ std::string ListApAssetRequest::getSearchMac()const
 void ListApAssetRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setParameter("SearchMac", searchMac);
+	setCoreParameter("SearchMac", searchMac);
 }
 
 std::string ListApAssetRequest::getOrderDir()const
@@ -99,7 +99,7 @@ std::string ListApAssetRequest::getOrderDir()const
 void ListApAssetRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setParameter("OrderDir", orderDir);
+	setCoreParameter("OrderDir", orderDir);
 }
 
 std::string ListApAssetRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string ListApAssetRequest::getAccessKeyId()const
 void ListApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApAssetRequest::getSearchModel()const
@@ -121,6 +121,6 @@ std::string ListApAssetRequest::getSearchModel()const
 void ListApAssetRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setParameter("SearchModel", searchModel);
+	setCoreParameter("SearchModel", searchModel);
 }
 

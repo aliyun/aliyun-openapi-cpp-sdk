@@ -40,6 +40,11 @@ namespace AlibabaCloud
 						std::string clusterId;
 						std::string clusterName;
 					};
+					struct HostPoolInfo
+					{
+						std::string hpBizId;
+						std::string hpName;
+					};
 					struct FailReason
 					{
 						std::string requestId;
@@ -131,6 +136,7 @@ namespace AlibabaCloud
 					};
 					int taskNodeInService;
 					bool showSoftwareInterface;
+					HostPoolInfo hostPoolInfo;
 					int coreNodeInService;
 					std::vector<BootstrapAction> bootstrapActionList;
 					bool resizeDiskEnable;
@@ -152,6 +158,7 @@ namespace AlibabaCloud
 					long startTime;
 					std::vector<GatewayClusterInfo> gatewayClusterInfoList;
 					int period;
+					std::string metaStoreType;
 					bool easEnable;
 					std::string vpcId;
 					std::vector<HostGroup> hostGroupList;
@@ -171,6 +178,7 @@ namespace AlibabaCloud
 					bool ioOptimized;
 					std::string zoneId;
 					std::string securityGroupId;
+					std::string machineType;
 					int taskNodeTotal;
 					AccessInfo accessInfo;
 					int masterNodeTotal;

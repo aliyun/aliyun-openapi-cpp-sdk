@@ -35,10 +35,13 @@ DescribeScreenHostStatisticsResult::~DescribeScreenHostStatisticsResult()
 
 void DescribeScreenHostStatisticsResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 		auto allWeaknessUuids = dataNode["WeaknessUuids"]["StringItem"];
@@ -53,6 +56,9 @@ void DescribeScreenHostStatisticsResult::parse(const std::string &payload)
 		auto allWeaknessMachineNames = dataNode["WeaknessMachineNames"]["StringItem"];
 		for (auto value : allWeaknessMachineNames)
 			data_.weaknessMachineNames.push_back(value.asString());
+		auto allSafeCount = dataNode["SafeCount"]["StringItem"];
+		for (auto value : allSafeCount)
+			data_.safeCount.push_back(value.asString());
 
 }
 

@@ -47,6 +47,17 @@ void ModifyScalingConfigurationRequest::setMemory(int memory)
 	setCoreParameter("Memory", std::to_string(memory));
 }
 
+std::string ModifyScalingConfigurationRequest::getHpcClusterId()const
+{
+	return hpcClusterId_;
+}
+
+void ModifyScalingConfigurationRequest::setHpcClusterId(const std::string& hpcClusterId)
+{
+	hpcClusterId_ = hpcClusterId;
+	setCoreParameter("HpcClusterId", hpcClusterId);
+}
+
 std::string ModifyScalingConfigurationRequest::getIoOptimized()const
 {
 	return ioOptimized_;
@@ -197,6 +208,17 @@ void ModifyScalingConfigurationRequest::setImageName(const std::string& imageNam
 	setCoreParameter("ImageName", imageName);
 }
 
+std::string ModifyScalingConfigurationRequest::getInstanceDescription()const
+{
+	return instanceDescription_;
+}
+
+void ModifyScalingConfigurationRequest::setInstanceDescription(const std::string& instanceDescription)
+{
+	instanceDescription_ = instanceDescription;
+	setCoreParameter("InstanceDescription", instanceDescription);
+}
+
 bool ModifyScalingConfigurationRequest::getOverride()const
 {
 	return override_;
@@ -283,6 +305,18 @@ void ModifyScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<std::string> ModifyScalingConfigurationRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void ModifyScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	for(int i = 0; i!= securityGroupIds.size(); i++)
+		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
 }
 
 std::vector<ModifyScalingConfigurationRequest::DataDisk> ModifyScalingConfigurationRequest::getDataDisk()const

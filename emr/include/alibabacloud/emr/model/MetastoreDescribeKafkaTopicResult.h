@@ -64,8 +64,10 @@ namespace AlibabaCloud
 				MetastoreDescribeKafkaTopicResult();
 				explicit MetastoreDescribeKafkaTopicResult(const std::string &payload);
 				~MetastoreDescribeKafkaTopicResult();
+				std::string getStatus()const;
 				std::vector<AdvancedConfig> getAdvancedConfigList()const;
 				int getReplicationFactor()const;
+				std::string getReassignId()const;
 				std::vector<Summary> getSummaryList()const;
 				long getGmtModified()const;
 				Cluster getCluster()const;
@@ -84,8 +86,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				std::vector<AdvancedConfig> advancedConfigList_;
 				int replicationFactor_;
+				std::string reassignId_;
 				std::vector<Summary> summaryList_;
 				long gmtModified_;
 				Cluster cluster_;

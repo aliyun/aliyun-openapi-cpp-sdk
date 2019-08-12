@@ -32,10 +32,10 @@
 #include "model/MoPenDoRecognizeResult.h"
 #include "model/MoPenBindIsvRequest.h"
 #include "model/MoPenBindIsvResult.h"
-#include "model/MoPenCreateDeviceRequest.h"
-#include "model/MoPenCreateDeviceResult.h"
 #include "model/MoPenAddGroupMemberRequest.h"
 #include "model/MoPenAddGroupMemberResult.h"
+#include "model/MoPenCreateDeviceRequest.h"
+#include "model/MoPenCreateDeviceResult.h"
 #include "model/MoPenSendMqttMessageRequest.h"
 #include "model/MoPenSendMqttMessageResult.h"
 #include "model/MoPenFindGroupRequest.h"
@@ -66,12 +66,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::MoPenBindIsvResult> MoPenBindIsvOutcome;
 			typedef std::future<MoPenBindIsvOutcome> MoPenBindIsvOutcomeCallable;
 			typedef std::function<void(const MoPenClient*, const Model::MoPenBindIsvRequest&, const MoPenBindIsvOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoPenBindIsvAsyncHandler;
-			typedef Outcome<Error, Model::MoPenCreateDeviceResult> MoPenCreateDeviceOutcome;
-			typedef std::future<MoPenCreateDeviceOutcome> MoPenCreateDeviceOutcomeCallable;
-			typedef std::function<void(const MoPenClient*, const Model::MoPenCreateDeviceRequest&, const MoPenCreateDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoPenCreateDeviceAsyncHandler;
 			typedef Outcome<Error, Model::MoPenAddGroupMemberResult> MoPenAddGroupMemberOutcome;
 			typedef std::future<MoPenAddGroupMemberOutcome> MoPenAddGroupMemberOutcomeCallable;
 			typedef std::function<void(const MoPenClient*, const Model::MoPenAddGroupMemberRequest&, const MoPenAddGroupMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoPenAddGroupMemberAsyncHandler;
+			typedef Outcome<Error, Model::MoPenCreateDeviceResult> MoPenCreateDeviceOutcome;
+			typedef std::future<MoPenCreateDeviceOutcome> MoPenCreateDeviceOutcomeCallable;
+			typedef std::function<void(const MoPenClient*, const Model::MoPenCreateDeviceRequest&, const MoPenCreateDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoPenCreateDeviceAsyncHandler;
 			typedef Outcome<Error, Model::MoPenSendMqttMessageResult> MoPenSendMqttMessageOutcome;
 			typedef std::future<MoPenSendMqttMessageOutcome> MoPenSendMqttMessageOutcomeCallable;
 			typedef std::function<void(const MoPenClient*, const Model::MoPenSendMqttMessageRequest&, const MoPenSendMqttMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoPenSendMqttMessageAsyncHandler;
@@ -101,12 +101,12 @@ namespace AlibabaCloud
 			MoPenBindIsvOutcome moPenBindIsv(const Model::MoPenBindIsvRequest &request)const;
 			void moPenBindIsvAsync(const Model::MoPenBindIsvRequest& request, const MoPenBindIsvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoPenBindIsvOutcomeCallable moPenBindIsvCallable(const Model::MoPenBindIsvRequest& request) const;
-			MoPenCreateDeviceOutcome moPenCreateDevice(const Model::MoPenCreateDeviceRequest &request)const;
-			void moPenCreateDeviceAsync(const Model::MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			MoPenCreateDeviceOutcomeCallable moPenCreateDeviceCallable(const Model::MoPenCreateDeviceRequest& request) const;
 			MoPenAddGroupMemberOutcome moPenAddGroupMember(const Model::MoPenAddGroupMemberRequest &request)const;
 			void moPenAddGroupMemberAsync(const Model::MoPenAddGroupMemberRequest& request, const MoPenAddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoPenAddGroupMemberOutcomeCallable moPenAddGroupMemberCallable(const Model::MoPenAddGroupMemberRequest& request) const;
+			MoPenCreateDeviceOutcome moPenCreateDevice(const Model::MoPenCreateDeviceRequest &request)const;
+			void moPenCreateDeviceAsync(const Model::MoPenCreateDeviceRequest& request, const MoPenCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MoPenCreateDeviceOutcomeCallable moPenCreateDeviceCallable(const Model::MoPenCreateDeviceRequest& request) const;
 			MoPenSendMqttMessageOutcome moPenSendMqttMessage(const Model::MoPenSendMqttMessageRequest &request)const;
 			void moPenSendMqttMessageAsync(const Model::MoPenSendMqttMessageRequest& request, const MoPenSendMqttMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoPenSendMqttMessageOutcomeCallable moPenSendMqttMessageCallable(const Model::MoPenSendMqttMessageRequest& request) const;

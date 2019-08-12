@@ -33,7 +33,18 @@ long DescribeVpcsRequest::getResourceOwnerId()const
 void DescribeVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool DescribeVpcsRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void DescribeVpcsRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setCoreParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVpcsRequest::getResourceOwnerAccount()const
@@ -44,7 +55,7 @@ std::string DescribeVpcsRequest::getResourceOwnerAccount()const
 void DescribeVpcsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpcsRequest::getOwnerAccount()const
@@ -55,7 +66,7 @@ std::string DescribeVpcsRequest::getOwnerAccount()const
 void DescribeVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVpcsRequest::getOwnerId()const
@@ -66,7 +77,7 @@ long DescribeVpcsRequest::getOwnerId()const
 void DescribeVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeVpcsRequest::getPageNumber()const
@@ -77,7 +88,7 @@ int DescribeVpcsRequest::getPageNumber()const
 void DescribeVpcsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVpcsRequest::getVpcName()const
@@ -88,7 +99,7 @@ std::string DescribeVpcsRequest::getVpcName()const
 void DescribeVpcsRequest::setVpcName(const std::string& vpcName)
 {
 	vpcName_ = vpcName;
-	setParameter("VpcName", vpcName);
+	setCoreParameter("VpcName", vpcName);
 }
 
 std::string DescribeVpcsRequest::getResourceGroupId()const
@@ -99,7 +110,7 @@ std::string DescribeVpcsRequest::getResourceGroupId()const
 void DescribeVpcsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+	setCoreParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeVpcsRequest::getRegionId()const
@@ -110,7 +121,7 @@ std::string DescribeVpcsRequest::getRegionId()const
 void DescribeVpcsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DescribeVpcsRequest::getVpcId()const
@@ -121,7 +132,7 @@ std::string DescribeVpcsRequest::getVpcId()const
 void DescribeVpcsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+	setCoreParameter("VpcId", vpcId);
 }
 
 int DescribeVpcsRequest::getPageSize()const
@@ -132,7 +143,7 @@ int DescribeVpcsRequest::getPageSize()const
 void DescribeVpcsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeVpcsRequest::Tag> DescribeVpcsRequest::getTag()const
@@ -147,8 +158,8 @@ void DescribeVpcsRequest::setTag(const std::vector<Tag>& tag)
 	for(int i = 0; i!= tag.size(); i++)	{
 		auto obj = tag.at(i);
 		std::string str ="Tag."+ std::to_string(i);
-		setParameter(str + ".Value", obj.value);
-		setParameter(str + ".Key", obj.key);
+		setCoreParameter(str + ".Value", obj.value);
+		setCoreParameter(str + ".Key", obj.key);
 	}
 }
 
@@ -160,6 +171,6 @@ bool DescribeVpcsRequest::getIsDefault()const
 void DescribeVpcsRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setParameter("IsDefault", std::to_string(isDefault));
+	setCoreParameter("IsDefault", isDefault ? "true" : "false");
 }
 

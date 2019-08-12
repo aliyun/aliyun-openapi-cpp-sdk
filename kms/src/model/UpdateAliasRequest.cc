@@ -33,7 +33,7 @@ std::string UpdateAliasRequest::getAliasName()const
 void UpdateAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setParameter("AliasName", aliasName);
+	setCoreParameter("AliasName", aliasName);
 }
 
 std::string UpdateAliasRequest::getKeyId()const
@@ -44,17 +44,6 @@ std::string UpdateAliasRequest::getKeyId()const
 void UpdateAliasRequest::setKeyId(const std::string& keyId)
 {
 	keyId_ = keyId;
-	setParameter("KeyId", keyId);
-}
-
-std::string UpdateAliasRequest::getSTSToken()const
-{
-	return sTSToken_;
-}
-
-void UpdateAliasRequest::setSTSToken(const std::string& sTSToken)
-{
-	sTSToken_ = sTSToken;
-	setParameter("STSToken", sTSToken);
+	setCoreParameter("KeyId", keyId);
 }
 

@@ -31,21 +31,21 @@ Yundun_dsClient::Yundun_dsClient(const Credentials &credentials, const ClientCon
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sddp");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "yundun-ds");
 }
 
 Yundun_dsClient::Yundun_dsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sddp");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "yundun-ds");
 }
 
 Yundun_dsClient::Yundun_dsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "sddp");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "yundun-ds");
 }
 
 Yundun_dsClient::~Yundun_dsClient()
@@ -195,42 +195,6 @@ Yundun_dsClient::DescribeEventTypesOutcomeCallable Yundun_dsClient::describeEven
 	return task->get_future();
 }
 
-Yundun_dsClient::DescribePackagesOutcome Yundun_dsClient::describePackages(const DescribePackagesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePackagesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePackagesOutcome(DescribePackagesResult(outcome.result()));
-	else
-		return DescribePackagesOutcome(outcome.error());
-}
-
-void Yundun_dsClient::describePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePackages(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::DescribePackagesOutcomeCallable Yundun_dsClient::describePackagesCallable(const DescribePackagesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
-			[this, request]()
-			{
-			return this->describePackages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::ModifyEventStatusOutcome Yundun_dsClient::modifyEventStatus(const ModifyEventStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +225,42 @@ Yundun_dsClient::ModifyEventStatusOutcomeCallable Yundun_dsClient::modifyEventSt
 			[this, request]()
 			{
 			return this->modifyEventStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::DescribePackagesOutcome Yundun_dsClient::describePackages(const DescribePackagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePackagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePackagesOutcome(DescribePackagesResult(outcome.result()));
+	else
+		return DescribePackagesOutcome(outcome.error());
+}
+
+void Yundun_dsClient::describePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePackages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::DescribePackagesOutcomeCallable Yundun_dsClient::describePackagesCallable(const DescribePackagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePackages(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,42 +339,6 @@ Yundun_dsClient::DescribeAuthAccountsOutcomeCallable Yundun_dsClient::describeAu
 	return task->get_future();
 }
 
-Yundun_dsClient::DescribeDataAssetsOutcome Yundun_dsClient::describeDataAssets(const DescribeDataAssetsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDataAssetsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDataAssetsOutcome(DescribeDataAssetsResult(outcome.result()));
-	else
-		return DescribeDataAssetsOutcome(outcome.error());
-}
-
-void Yundun_dsClient::describeDataAssetsAsync(const DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDataAssets(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::DescribeDataAssetsOutcomeCallable Yundun_dsClient::describeDataAssetsCallable(const DescribeDataAssetsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDataAssetsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDataAssets(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::ValidateConnectorOutcome Yundun_dsClient::validateConnector(const ValidateConnectorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +369,42 @@ Yundun_dsClient::ValidateConnectorOutcomeCallable Yundun_dsClient::validateConne
 			[this, request]()
 			{
 			return this->validateConnector(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::DescribeDataAssetsOutcome Yundun_dsClient::describeDataAssets(const DescribeDataAssetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDataAssetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDataAssetsOutcome(DescribeDataAssetsResult(outcome.result()));
+	else
+		return DescribeDataAssetsOutcome(outcome.error());
+}
+
+void Yundun_dsClient::describeDataAssetsAsync(const DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDataAssets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::DescribeDataAssetsOutcomeCallable Yundun_dsClient::describeDataAssetsCallable(const DescribeDataAssetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDataAssetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDataAssets(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,42 +447,6 @@ Yundun_dsClient::CreateRuleOutcomeCallable Yundun_dsClient::createRuleCallable(c
 	return task->get_future();
 }
 
-Yundun_dsClient::CreateUserAuthOutcome Yundun_dsClient::createUserAuth(const CreateUserAuthRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateUserAuthOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateUserAuthOutcome(CreateUserAuthResult(outcome.result()));
-	else
-		return CreateUserAuthOutcome(outcome.error());
-}
-
-void Yundun_dsClient::createUserAuthAsync(const CreateUserAuthRequest& request, const CreateUserAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createUserAuth(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::CreateUserAuthOutcomeCallable Yundun_dsClient::createUserAuthCallable(const CreateUserAuthRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateUserAuthOutcome()>>(
-			[this, request]()
-			{
-			return this->createUserAuth(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::DescribeDepartCountsOutcome Yundun_dsClient::describeDepartCounts(const DescribeDepartCountsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +477,42 @@ Yundun_dsClient::DescribeDepartCountsOutcomeCallable Yundun_dsClient::describeDe
 			[this, request]()
 			{
 			return this->describeDepartCounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::CreateUserAuthOutcome Yundun_dsClient::createUserAuth(const CreateUserAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserAuthOutcome(CreateUserAuthResult(outcome.result()));
+	else
+		return CreateUserAuthOutcome(outcome.error());
+}
+
+void Yundun_dsClient::createUserAuthAsync(const CreateUserAuthRequest& request, const CreateUserAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUserAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::CreateUserAuthOutcomeCallable Yundun_dsClient::createUserAuthCallable(const CreateUserAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->createUserAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,42 +591,6 @@ Yundun_dsClient::DescribeDataHubConnectorsOutcomeCallable Yundun_dsClient::descr
 	return task->get_future();
 }
 
-Yundun_dsClient::DescribeRulesOutcome Yundun_dsClient::describeRules(const DescribeRulesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRulesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
-	else
-		return DescribeRulesOutcome(outcome.error());
-}
-
-void Yundun_dsClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRules(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::DescribeRulesOutcomeCallable Yundun_dsClient::describeRulesCallable(const DescribeRulesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRules(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::DescribeColumnsOutcome Yundun_dsClient::describeColumns(const DescribeColumnsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,36 +627,36 @@ Yundun_dsClient::DescribeColumnsOutcomeCallable Yundun_dsClient::describeColumns
 	return task->get_future();
 }
 
-Yundun_dsClient::ModifyRuleStatusOutcome Yundun_dsClient::modifyRuleStatus(const ModifyRuleStatusRequest &request) const
+Yundun_dsClient::DescribeRulesOutcome Yundun_dsClient::describeRules(const DescribeRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyRuleStatusOutcome(endpointOutcome.error());
+		return DescribeRulesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyRuleStatusOutcome(ModifyRuleStatusResult(outcome.result()));
+		return DescribeRulesOutcome(DescribeRulesResult(outcome.result()));
 	else
-		return ModifyRuleStatusOutcome(outcome.error());
+		return DescribeRulesOutcome(outcome.error());
 }
 
-void Yundun_dsClient::modifyRuleStatusAsync(const ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void Yundun_dsClient::describeRulesAsync(const DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyRuleStatus(request), context);
+		handler(this, request, describeRules(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-Yundun_dsClient::ModifyRuleStatusOutcomeCallable Yundun_dsClient::modifyRuleStatusCallable(const ModifyRuleStatusRequest &request) const
+Yundun_dsClient::DescribeRulesOutcomeCallable Yundun_dsClient::describeRulesCallable(const DescribeRulesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyRuleStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeRulesOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyRuleStatus(request);
+			return this->describeRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +693,42 @@ Yundun_dsClient::DeleteDataLimitOutcomeCallable Yundun_dsClient::deleteDataLimit
 			[this, request]()
 			{
 			return this->deleteDataLimit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::ModifyRuleStatusOutcome Yundun_dsClient::modifyRuleStatus(const ModifyRuleStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRuleStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRuleStatusOutcome(ModifyRuleStatusResult(outcome.result()));
+	else
+		return ModifyRuleStatusOutcome(outcome.error());
+}
+
+void Yundun_dsClient::modifyRuleStatusAsync(const ModifyRuleStatusRequest& request, const ModifyRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRuleStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::ModifyRuleStatusOutcomeCallable Yundun_dsClient::modifyRuleStatusCallable(const ModifyRuleStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRuleStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRuleStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,42 +951,6 @@ Yundun_dsClient::DescribeDataHubTopicsOutcomeCallable Yundun_dsClient::describeD
 	return task->get_future();
 }
 
-Yundun_dsClient::DescribeTotalCountOutcome Yundun_dsClient::describeTotalCount(const DescribeTotalCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTotalCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTotalCountOutcome(DescribeTotalCountResult(outcome.result()));
-	else
-		return DescribeTotalCountOutcome(outcome.error());
-}
-
-void Yundun_dsClient::describeTotalCountAsync(const DescribeTotalCountRequest& request, const DescribeTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTotalCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::DescribeTotalCountOutcomeCallable Yundun_dsClient::describeTotalCountCallable(const DescribeTotalCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTotalCountOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTotalCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::DescribeAccountsOutcome Yundun_dsClient::describeAccounts(const DescribeAccountsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +981,42 @@ Yundun_dsClient::DescribeAccountsOutcomeCallable Yundun_dsClient::describeAccoun
 			[this, request]()
 			{
 			return this->describeAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::DescribeTotalCountOutcome Yundun_dsClient::describeTotalCount(const DescribeTotalCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTotalCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTotalCountOutcome(DescribeTotalCountResult(outcome.result()));
+	else
+		return DescribeTotalCountOutcome(outcome.error());
+}
+
+void Yundun_dsClient::describeTotalCountAsync(const DescribeTotalCountRequest& request, const DescribeTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTotalCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::DescribeTotalCountOutcomeCallable Yundun_dsClient::describeTotalCountCallable(const DescribeTotalCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTotalCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTotalCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,42 +1203,6 @@ Yundun_dsClient::DescribeDataLimitSetOutcomeCallable Yundun_dsClient::describeDa
 	return task->get_future();
 }
 
-Yundun_dsClient::ModifyRuleOutcome Yundun_dsClient::modifyRule(const ModifyRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyRuleOutcome(ModifyRuleResult(outcome.result()));
-	else
-		return ModifyRuleOutcome(outcome.error());
-}
-
-void Yundun_dsClient::modifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::ModifyRuleOutcomeCallable Yundun_dsClient::modifyRuleCallable(const ModifyRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::DescribeDepartTotalCountOutcome Yundun_dsClient::describeDepartTotalCount(const DescribeDepartTotalCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1233,42 @@ Yundun_dsClient::DescribeDepartTotalCountOutcomeCallable Yundun_dsClient::descri
 			[this, request]()
 			{
 			return this->describeDepartTotalCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::ModifyRuleOutcome Yundun_dsClient::modifyRule(const ModifyRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRuleOutcome(ModifyRuleResult(outcome.result()));
+	else
+		return ModifyRuleOutcome(outcome.error());
+}
+
+void Yundun_dsClient::modifyRuleAsync(const ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::ModifyRuleOutcomeCallable Yundun_dsClient::modifyRuleCallable(const ModifyRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,42 +1455,6 @@ Yundun_dsClient::DescribeInstancesOutcomeCallable Yundun_dsClient::describeInsta
 	return task->get_future();
 }
 
-Yundun_dsClient::ModifyDefaultLevelOutcome Yundun_dsClient::modifyDefaultLevel(const ModifyDefaultLevelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDefaultLevelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDefaultLevelOutcome(ModifyDefaultLevelResult(outcome.result()));
-	else
-		return ModifyDefaultLevelOutcome(outcome.error());
-}
-
-void Yundun_dsClient::modifyDefaultLevelAsync(const ModifyDefaultLevelRequest& request, const ModifyDefaultLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDefaultLevel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Yundun_dsClient::ModifyDefaultLevelOutcomeCallable Yundun_dsClient::modifyDefaultLevelCallable(const ModifyDefaultLevelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDefaultLevelOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDefaultLevel(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Yundun_dsClient::ModifyEventTypeStatusOutcome Yundun_dsClient::modifyEventTypeStatus(const ModifyEventTypeStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1485,42 @@ Yundun_dsClient::ModifyEventTypeStatusOutcomeCallable Yundun_dsClient::modifyEve
 			[this, request]()
 			{
 			return this->modifyEventTypeStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Yundun_dsClient::ModifyDefaultLevelOutcome Yundun_dsClient::modifyDefaultLevel(const ModifyDefaultLevelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDefaultLevelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDefaultLevelOutcome(ModifyDefaultLevelResult(outcome.result()));
+	else
+		return ModifyDefaultLevelOutcome(outcome.error());
+}
+
+void Yundun_dsClient::modifyDefaultLevelAsync(const ModifyDefaultLevelRequest& request, const ModifyDefaultLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDefaultLevel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Yundun_dsClient::ModifyDefaultLevelOutcomeCallable Yundun_dsClient::modifyDefaultLevelCallable(const ModifyDefaultLevelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDefaultLevelOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDefaultLevel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

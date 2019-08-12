@@ -33,7 +33,7 @@ std::string SubmitCoverJobRequest::getInput()const
 void SubmitCoverJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitCoverJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitCoverJobRequest::getUserData()const
 void SubmitCoverJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitCoverJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitCoverJobRequest::getResourceOwnerId()const
 void SubmitCoverJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitCoverJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitCoverJobRequest::getResourceOwnerAccount()const
 void SubmitCoverJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitCoverJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitCoverJobRequest::getOwnerAccount()const
 void SubmitCoverJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitCoverJobRequest::getCoverConfig()const
@@ -88,7 +88,7 @@ std::string SubmitCoverJobRequest::getCoverConfig()const
 void SubmitCoverJobRequest::setCoverConfig(const std::string& coverConfig)
 {
 	coverConfig_ = coverConfig;
-	setParameter("CoverConfig", coverConfig);
+	setCoreParameter("CoverConfig", coverConfig);
 }
 
 long SubmitCoverJobRequest::getOwnerId()const
@@ -99,7 +99,7 @@ long SubmitCoverJobRequest::getOwnerId()const
 void SubmitCoverJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitCoverJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitCoverJobRequest::getAccessKeyId()const
 void SubmitCoverJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitCoverJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitCoverJobRequest::getPipelineId()const
 void SubmitCoverJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

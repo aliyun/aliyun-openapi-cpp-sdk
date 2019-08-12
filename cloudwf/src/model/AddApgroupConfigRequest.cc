@@ -33,7 +33,7 @@ long AddApgroupConfigRequest::getParentApgroupId()const
 void AddApgroupConfigRequest::setParentApgroupId(long parentApgroupId)
 {
 	parentApgroupId_ = parentApgroupId;
-	setParameter("ParentApgroupId", std::to_string(parentApgroupId));
+	setCoreParameter("ParentApgroupId", std::to_string(parentApgroupId));
 }
 
 std::string AddApgroupConfigRequest::getName()const
@@ -44,7 +44,7 @@ std::string AddApgroupConfigRequest::getName()const
 void AddApgroupConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string AddApgroupConfigRequest::getDescription()const
@@ -55,7 +55,7 @@ std::string AddApgroupConfigRequest::getDescription()const
 void AddApgroupConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string AddApgroupConfigRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string AddApgroupConfigRequest::getAccessKeyId()const
 void AddApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

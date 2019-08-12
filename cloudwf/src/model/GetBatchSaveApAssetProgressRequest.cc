@@ -33,6 +33,6 @@ std::string GetBatchSaveApAssetProgressRequest::getAccessKeyId()const
 void GetBatchSaveApAssetProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

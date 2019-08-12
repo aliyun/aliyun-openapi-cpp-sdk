@@ -1455,42 +1455,6 @@ EssClient::CreateNotificationConfigurationOutcomeCallable EssClient::createNotif
 	return task->get_future();
 }
 
-EssClient::ModifyScheduledTaskOutcome EssClient::modifyScheduledTask(const ModifyScheduledTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyScheduledTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyScheduledTaskOutcome(ModifyScheduledTaskResult(outcome.result()));
-	else
-		return ModifyScheduledTaskOutcome(outcome.error());
-}
-
-void EssClient::modifyScheduledTaskAsync(const ModifyScheduledTaskRequest& request, const ModifyScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyScheduledTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::ModifyScheduledTaskOutcomeCallable EssClient::modifyScheduledTaskCallable(const ModifyScheduledTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyScheduledTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyScheduledTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::RecordLifecycleActionHeartbeatOutcome EssClient::recordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1485,42 @@ EssClient::RecordLifecycleActionHeartbeatOutcomeCallable EssClient::recordLifecy
 			[this, request]()
 			{
 			return this->recordLifecycleActionHeartbeat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ModifyScheduledTaskOutcome EssClient::modifyScheduledTask(const ModifyScheduledTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyScheduledTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyScheduledTaskOutcome(ModifyScheduledTaskResult(outcome.result()));
+	else
+		return ModifyScheduledTaskOutcome(outcome.error());
+}
+
+void EssClient::modifyScheduledTaskAsync(const ModifyScheduledTaskRequest& request, const ModifyScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyScheduledTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ModifyScheduledTaskOutcomeCallable EssClient::modifyScheduledTaskCallable(const ModifyScheduledTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyScheduledTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyScheduledTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,42 +1599,6 @@ EssClient::CreateScalingConfigurationOutcomeCallable EssClient::createScalingCon
 	return task->get_future();
 }
 
-EssClient::DescribeRegionsOutcome EssClient::describeRegions(const DescribeRegionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRegionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
-	else
-		return DescribeRegionsOutcome(outcome.error());
-}
-
-void EssClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRegions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeRegionsOutcomeCallable EssClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRegions(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::DetachDBInstancesOutcome EssClient::detachDBInstances(const DetachDBInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1629,42 @@ EssClient::DetachDBInstancesOutcomeCallable EssClient::detachDBInstancesCallable
 			[this, request]()
 			{
 			return this->detachDBInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeRegionsOutcome EssClient::describeRegions(const DescribeRegionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionsOutcome(DescribeRegionsResult(outcome.result()));
+	else
+		return DescribeRegionsOutcome(outcome.error());
+}
+
+void EssClient::describeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeRegionsOutcomeCallable EssClient::describeRegionsCallable(const DescribeRegionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,42 +1887,6 @@ EssClient::DescribeLimitationOutcomeCallable EssClient::describeLimitationCallab
 	return task->get_future();
 }
 
-EssClient::DescribeAlertConfigOutcome EssClient::describeAlertConfig(const DescribeAlertConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAlertConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAlertConfigOutcome(DescribeAlertConfigResult(outcome.result()));
-	else
-		return DescribeAlertConfigOutcome(outcome.error());
-}
-
-void EssClient::describeAlertConfigAsync(const DescribeAlertConfigRequest& request, const DescribeAlertConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAlertConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DescribeAlertConfigOutcomeCallable EssClient::describeAlertConfigCallable(const DescribeAlertConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAlertConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAlertConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::CreateScalingGroupOutcome EssClient::createScalingGroup(const CreateScalingGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +1917,42 @@ EssClient::CreateScalingGroupOutcomeCallable EssClient::createScalingGroupCallab
 			[this, request]()
 			{
 			return this->createScalingGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DescribeAlertConfigOutcome EssClient::describeAlertConfig(const DescribeAlertConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAlertConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAlertConfigOutcome(DescribeAlertConfigResult(outcome.result()));
+	else
+		return DescribeAlertConfigOutcome(outcome.error());
+}
+
+void EssClient::describeAlertConfigAsync(const DescribeAlertConfigRequest& request, const DescribeAlertConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAlertConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DescribeAlertConfigOutcomeCallable EssClient::describeAlertConfigCallable(const DescribeAlertConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAlertConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAlertConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2067,42 +2067,6 @@ EssClient::ModifyScalingRuleOutcomeCallable EssClient::modifyScalingRuleCallable
 	return task->get_future();
 }
 
-EssClient::DeleteScalingRuleOutcome EssClient::deleteScalingRule(const DeleteScalingRuleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteScalingRuleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteScalingRuleOutcome(DeleteScalingRuleResult(outcome.result()));
-	else
-		return DeleteScalingRuleOutcome(outcome.error());
-}
-
-void EssClient::deleteScalingRuleAsync(const DeleteScalingRuleRequest& request, const DeleteScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteScalingRule(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EssClient::DeleteScalingRuleOutcomeCallable EssClient::deleteScalingRuleCallable(const DeleteScalingRuleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteScalingRuleOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteScalingRule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EssClient::AttachDBInstancesOutcome EssClient::attachDBInstances(const AttachDBInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2097,42 @@ EssClient::AttachDBInstancesOutcomeCallable EssClient::attachDBInstancesCallable
 			[this, request]()
 			{
 			return this->attachDBInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::DeleteScalingRuleOutcome EssClient::deleteScalingRule(const DeleteScalingRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScalingRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScalingRuleOutcome(DeleteScalingRuleResult(outcome.result()));
+	else
+		return DeleteScalingRuleOutcome(outcome.error());
+}
+
+void EssClient::deleteScalingRuleAsync(const DeleteScalingRuleRequest& request, const DeleteScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScalingRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::DeleteScalingRuleOutcomeCallable EssClient::deleteScalingRuleCallable(const DeleteScalingRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScalingRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScalingRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

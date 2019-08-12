@@ -34,7 +34,7 @@ void ModifySkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
 	for(int i = 0; i!= skillLevel.size(); i++)
-		setParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
 }
 
 std::string ModifySkillGroupRequest::getInstanceId()const
@@ -45,7 +45,18 @@ std::string ModifySkillGroupRequest::getInstanceId()const
 void ModifySkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+	setCoreParameter("InstanceId", instanceId);
+}
+
+bool ModifySkillGroupRequest::getAllowPrivateOutboundNumber()const
+{
+	return allowPrivateOutboundNumber_;
+}
+
+void ModifySkillGroupRequest::setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber)
+{
+	allowPrivateOutboundNumber_ = allowPrivateOutboundNumber;
+	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
 }
 
 std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()const
@@ -57,7 +68,7 @@ void ModifySkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::st
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
 	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
 }
 
 std::string ModifySkillGroupRequest::getSkillGroupId()const
@@ -68,7 +79,7 @@ std::string ModifySkillGroupRequest::getSkillGroupId()const
 void ModifySkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setParameter("SkillGroupId", skillGroupId);
+	setCoreParameter("SkillGroupId", skillGroupId);
 }
 
 std::string ModifySkillGroupRequest::getName()const
@@ -79,7 +90,7 @@ std::string ModifySkillGroupRequest::getName()const
 void ModifySkillGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifySkillGroupRequest::getDescription()const
@@ -90,7 +101,18 @@ std::string ModifySkillGroupRequest::getDescription()const
 void ModifySkillGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
+}
+
+std::string ModifySkillGroupRequest::getRoutingStrategy()const
+{
+	return routingStrategy_;
+}
+
+void ModifySkillGroupRequest::setRoutingStrategy(const std::string& routingStrategy)
+{
+	routingStrategy_ = routingStrategy;
+	setCoreParameter("RoutingStrategy", routingStrategy);
 }
 
 std::vector<std::string> ModifySkillGroupRequest::getUserId()const
@@ -102,7 +124,7 @@ void ModifySkillGroupRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
 	for(int i = 0; i!= userId.size(); i++)
-		setParameter("UserId."+ std::to_string(i), userId.at(i));
+		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
 }
 
 std::string ModifySkillGroupRequest::getAccessKeyId()const
@@ -113,6 +135,6 @@ std::string ModifySkillGroupRequest::getAccessKeyId()const
 void ModifySkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

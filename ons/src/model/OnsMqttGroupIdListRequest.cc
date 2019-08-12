@@ -25,17 +25,6 @@ OnsMqttGroupIdListRequest::OnsMqttGroupIdListRequest() :
 OnsMqttGroupIdListRequest::~OnsMqttGroupIdListRequest()
 {}
 
-long OnsMqttGroupIdListRequest::getPreventCache()const
-{
-	return preventCache_;
-}
-
-void OnsMqttGroupIdListRequest::setPreventCache(long preventCache)
-{
-	preventCache_ = preventCache;
-	setCoreParameter("PreventCache", std::to_string(preventCache));
-}
-
 std::string OnsMqttGroupIdListRequest::getInstanceId()const
 {
 	return instanceId_;

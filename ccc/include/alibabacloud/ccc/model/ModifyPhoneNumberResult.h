@@ -42,12 +42,18 @@ namespace AlibabaCloud
 						std::string contactFlowName;
 						std::string contactFlowDescription;
 					};
+					struct SkillGroup
+					{
+						std::string skillGroupName;
+						std::string skillGroupId;
+					};
 					std::string usage;
 					bool testOnly;
 					bool allowOutbound;
 					std::string number;
 					std::string instanceId;
 					int remainingTime;
+					std::vector<SkillGroup> skillGroups;
 					int trunks;
 					std::string phoneNumberId;
 					ContactFlow contactFlow;

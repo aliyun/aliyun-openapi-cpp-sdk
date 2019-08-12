@@ -35,10 +35,13 @@ DescribeDBClusterMigrationResult::~DescribeDBClusterMigrationResult()
 
 void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
@@ -56,7 +59,14 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		rdsReadWriteMode_ = value["RdsReadWriteMode"].asString();
 	if(!value["DBClusterReadWriteMode"].isNull())
 		dBClusterReadWriteMode_ = value["DBClusterReadWriteMode"].asString();
+	if(!value["Comment"].isNull())
+		comment_ = value["Comment"].asString();
 
+}
+
+std::string DescribeDBClusterMigrationResult::getComment()const
+{
+	return comment_;
 }
 
 std::string DescribeDBClusterMigrationResult::getExpiredTime()const

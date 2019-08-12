@@ -190,6 +190,17 @@ void DescribeAllRegionsStatisticsRequest::setPageSize(int pageSize)
 	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeAllRegionsStatisticsRequest::getFrom()const
+{
+	return from_;
+}
+
+void DescribeAllRegionsStatisticsRequest::setFrom(const std::string& from)
+{
+	from_ = from;
+	setCoreParameter("From", from);
+}
+
 int DescribeAllRegionsStatisticsRequest::getAction1()const
 {
 	return action1_;

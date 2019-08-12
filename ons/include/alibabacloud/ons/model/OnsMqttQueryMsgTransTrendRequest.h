@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				OnsMqttQueryMsgTransTrendRequest();
 				~OnsMqttQueryMsgTransTrendRequest();
 
-				long getPreventCache()const;
-				void setPreventCache(long preventCache);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getQos()const;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
 				void setSubTopic(const std::string& subTopic);
 
             private:
-				long preventCache_;
 				std::string instanceId_;
 				int qos_;
 				std::string transType_;

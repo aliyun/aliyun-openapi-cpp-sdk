@@ -33,7 +33,18 @@ long MetastoreListKafkaTopicRequest::getResourceOwnerId()const
 void MetastoreListKafkaTopicRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+bool MetastoreListKafkaTopicRequest::getActiveOnly()const
+{
+	return activeOnly_;
+}
+
+void MetastoreListKafkaTopicRequest::setActiveOnly(bool activeOnly)
+{
+	activeOnly_ = activeOnly;
+	setCoreParameter("ActiveOnly", activeOnly ? "true" : "false");
 }
 
 std::string MetastoreListKafkaTopicRequest::getRegionId()const
@@ -44,7 +55,7 @@ std::string MetastoreListKafkaTopicRequest::getRegionId()const
 void MetastoreListKafkaTopicRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int MetastoreListKafkaTopicRequest::getPageSize()const
@@ -55,7 +66,7 @@ int MetastoreListKafkaTopicRequest::getPageSize()const
 void MetastoreListKafkaTopicRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string MetastoreListKafkaTopicRequest::getDataSourceId()const
@@ -66,7 +77,7 @@ std::string MetastoreListKafkaTopicRequest::getDataSourceId()const
 void MetastoreListKafkaTopicRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string MetastoreListKafkaTopicRequest::getTopicName()const
@@ -77,7 +88,7 @@ std::string MetastoreListKafkaTopicRequest::getTopicName()const
 void MetastoreListKafkaTopicRequest::setTopicName(const std::string& topicName)
 {
 	topicName_ = topicName;
-	setParameter("TopicName", topicName);
+	setCoreParameter("TopicName", topicName);
 }
 
 std::string MetastoreListKafkaTopicRequest::getClusterId()const
@@ -88,7 +99,7 @@ std::string MetastoreListKafkaTopicRequest::getClusterId()const
 void MetastoreListKafkaTopicRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int MetastoreListKafkaTopicRequest::getPageNumber()const
@@ -99,7 +110,7 @@ int MetastoreListKafkaTopicRequest::getPageNumber()const
 void MetastoreListKafkaTopicRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string MetastoreListKafkaTopicRequest::getAccessKeyId()const
@@ -110,6 +121,6 @@ std::string MetastoreListKafkaTopicRequest::getAccessKeyId()const
 void MetastoreListKafkaTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

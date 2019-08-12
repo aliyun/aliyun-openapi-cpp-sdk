@@ -33,7 +33,7 @@ bool GetEndPointByDomainRequest::getSecurity_transport()const
 void GetEndPointByDomainRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", std::to_string(security_transport));
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string GetEndPointByDomainRequest::getRegionID()const
@@ -44,7 +44,7 @@ std::string GetEndPointByDomainRequest::getRegionID()const
 void GetEndPointByDomainRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setParameter("RegionID", regionID);
+	setCoreParameter("RegionID", regionID);
 }
 
 std::string GetEndPointByDomainRequest::getRequestId()const
@@ -55,7 +55,7 @@ std::string GetEndPointByDomainRequest::getRequestId()const
 void GetEndPointByDomainRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 
 long GetEndPointByDomainRequest::getCallerParentId()const
@@ -66,7 +66,7 @@ long GetEndPointByDomainRequest::getCallerParentId()const
 void GetEndPointByDomainRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 long GetEndPointByDomainRequest::getCallerBid()const
@@ -77,7 +77,7 @@ long GetEndPointByDomainRequest::getCallerBid()const
 void GetEndPointByDomainRequest::setCallerBid(long callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", std::to_string(callerBid));
+	setCoreParameter("CallerBid", std::to_string(callerBid));
 }
 
 std::string GetEndPointByDomainRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string GetEndPointByDomainRequest::getCallerType()const
 void GetEndPointByDomainRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 bool GetEndPointByDomainRequest::getAk_mfa_present()const
@@ -99,7 +99,7 @@ bool GetEndPointByDomainRequest::getAk_mfa_present()const
 void GetEndPointByDomainRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", std::to_string(ak_mfa_present));
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 long GetEndPointByDomainRequest::getCallerUid()const
@@ -110,7 +110,7 @@ long GetEndPointByDomainRequest::getCallerUid()const
 void GetEndPointByDomainRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string GetEndPointByDomainRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string GetEndPointByDomainRequest::getAccessKeyId()const
 void GetEndPointByDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 long GetEndPointByDomainRequest::getUserID()const
@@ -132,7 +132,7 @@ long GetEndPointByDomainRequest::getUserID()const
 void GetEndPointByDomainRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setParameter("UserID", std::to_string(userID));
+	setCoreParameter("UserID", std::to_string(userID));
 }
 
 std::string GetEndPointByDomainRequest::getDomainURL()const
@@ -143,6 +143,6 @@ std::string GetEndPointByDomainRequest::getDomainURL()const
 void GetEndPointByDomainRequest::setDomainURL(const std::string& domainURL)
 {
 	domainURL_ = domainURL;
-	setParameter("DomainURL", domainURL);
+	setCoreParameter("DomainURL", domainURL);
 }
 

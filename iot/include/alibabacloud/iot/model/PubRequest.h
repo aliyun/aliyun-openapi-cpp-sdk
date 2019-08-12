@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setQos(int qos);
 				std::string getMessageContent()const;
 				void setMessageContent(const std::string& messageContent);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string topicFullName_;
 				int qos_;
 				std::string messageContent_;
+				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string accessKeyId_;
 

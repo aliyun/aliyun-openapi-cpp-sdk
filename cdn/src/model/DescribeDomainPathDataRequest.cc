@@ -33,7 +33,7 @@ long DescribeDomainPathDataRequest::getCallerParentId()const
 void DescribeDomainPathDataRequest::setCallerParentId(long callerParentId)
 {
 	callerParentId_ = callerParentId;
-	setParameter("CallerParentId", std::to_string(callerParentId));
+	setCoreParameter("CallerParentId", std::to_string(callerParentId));
 }
 
 bool DescribeDomainPathDataRequest::getProxy_original_security_transport()const
@@ -44,7 +44,7 @@ bool DescribeDomainPathDataRequest::getProxy_original_security_transport()const
 void DescribeDomainPathDataRequest::setProxy_original_security_transport(bool proxy_original_security_transport)
 {
 	proxy_original_security_transport_ = proxy_original_security_transport;
-	setParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
+	setCoreParameter("Proxy_original_security_transport", proxy_original_security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainPathDataRequest::getStartTime()const
@@ -55,7 +55,7 @@ std::string DescribeDomainPathDataRequest::getStartTime()const
 void DescribeDomainPathDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+	setCoreParameter("StartTime", startTime);
 }
 
 std::string DescribeDomainPathDataRequest::getProxy_original_source_ip()const
@@ -66,7 +66,7 @@ std::string DescribeDomainPathDataRequest::getProxy_original_source_ip()const
 void DescribeDomainPathDataRequest::setProxy_original_source_ip(const std::string& proxy_original_source_ip)
 {
 	proxy_original_source_ip_ = proxy_original_source_ip;
-	setParameter("Proxy_original_source_ip", proxy_original_source_ip);
+	setCoreParameter("Proxy_original_source_ip", proxy_original_source_ip);
 }
 
 std::string DescribeDomainPathDataRequest::getOwnerIdLoginEmail()const
@@ -77,7 +77,7 @@ std::string DescribeDomainPathDataRequest::getOwnerIdLoginEmail()const
 void DescribeDomainPathDataRequest::setOwnerIdLoginEmail(const std::string& ownerIdLoginEmail)
 {
 	ownerIdLoginEmail_ = ownerIdLoginEmail;
-	setParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
+	setCoreParameter("OwnerIdLoginEmail", ownerIdLoginEmail);
 }
 
 std::string DescribeDomainPathDataRequest::getCallerType()const
@@ -88,7 +88,7 @@ std::string DescribeDomainPathDataRequest::getCallerType()const
 void DescribeDomainPathDataRequest::setCallerType(const std::string& callerType)
 {
 	callerType_ = callerType;
-	setParameter("CallerType", callerType);
+	setCoreParameter("CallerType", callerType);
 }
 
 int DescribeDomainPathDataRequest::getPageNumber()const
@@ -99,7 +99,7 @@ int DescribeDomainPathDataRequest::getPageNumber()const
 void DescribeDomainPathDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainPathDataRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string DescribeDomainPathDataRequest::getAccessKeyId()const
 void DescribeDomainPathDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainPathDataRequest::getPath()const
@@ -121,7 +121,7 @@ std::string DescribeDomainPathDataRequest::getPath()const
 void DescribeDomainPathDataRequest::setPath(const std::string& path)
 {
 	path_ = path;
-	setParameter("Path", path);
+	setCoreParameter("Path", path);
 }
 
 std::string DescribeDomainPathDataRequest::getSecurityToken()const
@@ -132,7 +132,7 @@ std::string DescribeDomainPathDataRequest::getSecurityToken()const
 void DescribeDomainPathDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	setCoreParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDomainPathDataRequest::getRequestContent()const
@@ -143,7 +143,7 @@ std::string DescribeDomainPathDataRequest::getRequestContent()const
 void DescribeDomainPathDataRequest::setRequestContent(const std::string& requestContent)
 {
 	requestContent_ = requestContent;
-	setParameter("RequestContent", requestContent);
+	setCoreParameter("RequestContent", requestContent);
 }
 
 int DescribeDomainPathDataRequest::getPageSize()const
@@ -154,7 +154,7 @@ int DescribeDomainPathDataRequest::getPageSize()const
 void DescribeDomainPathDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDomainPathDataRequest::getCallerBidEmail()const
@@ -165,7 +165,7 @@ std::string DescribeDomainPathDataRequest::getCallerBidEmail()const
 void DescribeDomainPathDataRequest::setCallerBidEmail(const std::string& callerBidEmail)
 {
 	callerBidEmail_ = callerBidEmail;
-	setParameter("CallerBidEmail", callerBidEmail);
+	setCoreParameter("CallerBidEmail", callerBidEmail);
 }
 
 std::string DescribeDomainPathDataRequest::getCallerUidEmail()const
@@ -176,7 +176,7 @@ std::string DescribeDomainPathDataRequest::getCallerUidEmail()const
 void DescribeDomainPathDataRequest::setCallerUidEmail(const std::string& callerUidEmail)
 {
 	callerUidEmail_ = callerUidEmail;
-	setParameter("CallerUidEmail", callerUidEmail);
+	setCoreParameter("CallerUidEmail", callerUidEmail);
 }
 
 long DescribeDomainPathDataRequest::getCallerUid()const
@@ -187,7 +187,7 @@ long DescribeDomainPathDataRequest::getCallerUid()const
 void DescribeDomainPathDataRequest::setCallerUid(long callerUid)
 {
 	callerUid_ = callerUid;
-	setParameter("CallerUid", std::to_string(callerUid));
+	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 
 std::string DescribeDomainPathDataRequest::getApp_ip()const
@@ -198,7 +198,7 @@ std::string DescribeDomainPathDataRequest::getApp_ip()const
 void DescribeDomainPathDataRequest::setApp_ip(const std::string& app_ip)
 {
 	app_ip_ = app_ip;
-	setParameter("App_ip", app_ip);
+	setCoreParameter("App_ip", app_ip);
 }
 
 std::string DescribeDomainPathDataRequest::getPopProduct()const
@@ -209,7 +209,7 @@ std::string DescribeDomainPathDataRequest::getPopProduct()const
 void DescribeDomainPathDataRequest::setPopProduct(const std::string& popProduct)
 {
 	popProduct_ = popProduct;
-	setParameter("PopProduct", popProduct);
+	setCoreParameter("PopProduct", popProduct);
 }
 
 std::string DescribeDomainPathDataRequest::getProduct()const
@@ -220,7 +220,7 @@ std::string DescribeDomainPathDataRequest::getProduct()const
 void DescribeDomainPathDataRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setParameter("Product", product);
+	setCoreParameter("Product", product);
 }
 
 std::string DescribeDomainPathDataRequest::getDomainName()const
@@ -231,7 +231,7 @@ std::string DescribeDomainPathDataRequest::getDomainName()const
 void DescribeDomainPathDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainPathDataRequest::getEndTime()const
@@ -242,7 +242,7 @@ std::string DescribeDomainPathDataRequest::getEndTime()const
 void DescribeDomainPathDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+	setCoreParameter("EndTime", endTime);
 }
 
 std::string DescribeDomainPathDataRequest::getCallerBid()const
@@ -253,7 +253,7 @@ std::string DescribeDomainPathDataRequest::getCallerBid()const
 void DescribeDomainPathDataRequest::setCallerBid(const std::string& callerBid)
 {
 	callerBid_ = callerBid;
-	setParameter("CallerBid", callerBid);
+	setCoreParameter("CallerBid", callerBid);
 }
 
 long DescribeDomainPathDataRequest::getOwnerId()const
@@ -264,7 +264,7 @@ long DescribeDomainPathDataRequest::getOwnerId()const
 void DescribeDomainPathDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainPathDataRequest::getVersion()const
@@ -275,7 +275,7 @@ std::string DescribeDomainPathDataRequest::getVersion()const
 void DescribeDomainPathDataRequest::setVersion(const std::string& version)
 {
 	version_ = version;
-	setParameter("Version", version);
+	setCoreParameter("Version", version);
 }
 
 bool DescribeDomainPathDataRequest::getProxy_trust_transport_info()const
@@ -286,7 +286,7 @@ bool DescribeDomainPathDataRequest::getProxy_trust_transport_info()const
 void DescribeDomainPathDataRequest::setProxy_trust_transport_info(bool proxy_trust_transport_info)
 {
 	proxy_trust_transport_info_ = proxy_trust_transport_info;
-	setParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
+	setCoreParameter("Proxy_trust_transport_info", proxy_trust_transport_info ? "true" : "false");
 }
 
 bool DescribeDomainPathDataRequest::getAk_mfa_present()const
@@ -297,7 +297,7 @@ bool DescribeDomainPathDataRequest::getAk_mfa_present()const
 void DescribeDomainPathDataRequest::setAk_mfa_present(bool ak_mfa_present)
 {
 	ak_mfa_present_ = ak_mfa_present;
-	setParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
+	setCoreParameter("Ak_mfa_present", ak_mfa_present ? "true" : "false");
 }
 
 bool DescribeDomainPathDataRequest::getSecurity_transport()const
@@ -308,7 +308,7 @@ bool DescribeDomainPathDataRequest::getSecurity_transport()const
 void DescribeDomainPathDataRequest::setSecurity_transport(bool security_transport)
 {
 	security_transport_ = security_transport;
-	setParameter("Security_transport", security_transport ? "true" : "false");
+	setCoreParameter("Security_transport", security_transport ? "true" : "false");
 }
 
 std::string DescribeDomainPathDataRequest::getRequestId()const
@@ -319,6 +319,6 @@ std::string DescribeDomainPathDataRequest::getRequestId()const
 void DescribeDomainPathDataRequest::setRequestId(const std::string& requestId)
 {
 	requestId_ = requestId;
-	setParameter("RequestId", requestId);
+	setCoreParameter("RequestId", requestId);
 }
 

@@ -33,7 +33,7 @@ std::string DescribeOrderAuditFailRecordRequest::getSourceIp()const
 void DescribeOrderAuditFailRecordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
+	setCoreParameter("SourceIp", sourceIp);
 }
 
 long DescribeOrderAuditFailRecordRequest::getOrderId()const
@@ -44,7 +44,7 @@ long DescribeOrderAuditFailRecordRequest::getOrderId()const
 void DescribeOrderAuditFailRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setParameter("OrderId", std::to_string(orderId));
+	setCoreParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getLang()const
@@ -55,6 +55,6 @@ std::string DescribeOrderAuditFailRecordRequest::getLang()const
 void DescribeOrderAuditFailRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 

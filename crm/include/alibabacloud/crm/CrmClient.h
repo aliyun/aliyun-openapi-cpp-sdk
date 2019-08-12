@@ -34,14 +34,14 @@
 #include "model/GetAliyunPkByAliyunIdResult.h"
 #include "model/QueryCustomerLabelRequest.h"
 #include "model/QueryCustomerLabelResult.h"
-#include "model/RemoveIdentityCertifiedForBidUserRequest.h"
-#include "model/RemoveIdentityCertifiedForBidUserResult.h"
 #include "model/QueryBidUserCertifiedInfoRequest.h"
 #include "model/QueryBidUserCertifiedInfoResult.h"
-#include "model/AddLabelForBidRequest.h"
-#include "model/AddLabelForBidResult.h"
 #include "model/BatchGetAliyunIdByAliyunPkRequest.h"
 #include "model/BatchGetAliyunIdByAliyunPkResult.h"
+#include "model/RemoveIdentityCertifiedForBidUserRequest.h"
+#include "model/RemoveIdentityCertifiedForBidUserResult.h"
+#include "model/AddLabelForBidRequest.h"
+#include "model/AddLabelForBidResult.h"
 #include "model/DeleteLabelRequest.h"
 #include "model/DeleteLabelResult.h"
 #include "model/AddLabelRequest.h"
@@ -73,18 +73,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryCustomerLabelResult> QueryCustomerLabelOutcome;
 			typedef std::future<QueryCustomerLabelOutcome> QueryCustomerLabelOutcomeCallable;
 			typedef std::function<void(const CrmClient*, const Model::QueryCustomerLabelRequest&, const QueryCustomerLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerLabelAsyncHandler;
-			typedef Outcome<Error, Model::RemoveIdentityCertifiedForBidUserResult> RemoveIdentityCertifiedForBidUserOutcome;
-			typedef std::future<RemoveIdentityCertifiedForBidUserOutcome> RemoveIdentityCertifiedForBidUserOutcomeCallable;
-			typedef std::function<void(const CrmClient*, const Model::RemoveIdentityCertifiedForBidUserRequest&, const RemoveIdentityCertifiedForBidUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveIdentityCertifiedForBidUserAsyncHandler;
 			typedef Outcome<Error, Model::QueryBidUserCertifiedInfoResult> QueryBidUserCertifiedInfoOutcome;
 			typedef std::future<QueryBidUserCertifiedInfoOutcome> QueryBidUserCertifiedInfoOutcomeCallable;
 			typedef std::function<void(const CrmClient*, const Model::QueryBidUserCertifiedInfoRequest&, const QueryBidUserCertifiedInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBidUserCertifiedInfoAsyncHandler;
-			typedef Outcome<Error, Model::AddLabelForBidResult> AddLabelForBidOutcome;
-			typedef std::future<AddLabelForBidOutcome> AddLabelForBidOutcomeCallable;
-			typedef std::function<void(const CrmClient*, const Model::AddLabelForBidRequest&, const AddLabelForBidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLabelForBidAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetAliyunIdByAliyunPkResult> BatchGetAliyunIdByAliyunPkOutcome;
 			typedef std::future<BatchGetAliyunIdByAliyunPkOutcome> BatchGetAliyunIdByAliyunPkOutcomeCallable;
 			typedef std::function<void(const CrmClient*, const Model::BatchGetAliyunIdByAliyunPkRequest&, const BatchGetAliyunIdByAliyunPkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetAliyunIdByAliyunPkAsyncHandler;
+			typedef Outcome<Error, Model::RemoveIdentityCertifiedForBidUserResult> RemoveIdentityCertifiedForBidUserOutcome;
+			typedef std::future<RemoveIdentityCertifiedForBidUserOutcome> RemoveIdentityCertifiedForBidUserOutcomeCallable;
+			typedef std::function<void(const CrmClient*, const Model::RemoveIdentityCertifiedForBidUserRequest&, const RemoveIdentityCertifiedForBidUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveIdentityCertifiedForBidUserAsyncHandler;
+			typedef Outcome<Error, Model::AddLabelForBidResult> AddLabelForBidOutcome;
+			typedef std::future<AddLabelForBidOutcome> AddLabelForBidOutcomeCallable;
+			typedef std::function<void(const CrmClient*, const Model::AddLabelForBidRequest&, const AddLabelForBidOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLabelForBidAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLabelResult> DeleteLabelOutcome;
 			typedef std::future<DeleteLabelOutcome> DeleteLabelOutcomeCallable;
 			typedef std::function<void(const CrmClient*, const Model::DeleteLabelRequest&, const DeleteLabelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLabelAsyncHandler;
@@ -114,18 +114,18 @@ namespace AlibabaCloud
 			QueryCustomerLabelOutcome queryCustomerLabel(const Model::QueryCustomerLabelRequest &request)const;
 			void queryCustomerLabelAsync(const Model::QueryCustomerLabelRequest& request, const QueryCustomerLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCustomerLabelOutcomeCallable queryCustomerLabelCallable(const Model::QueryCustomerLabelRequest& request) const;
-			RemoveIdentityCertifiedForBidUserOutcome removeIdentityCertifiedForBidUser(const Model::RemoveIdentityCertifiedForBidUserRequest &request)const;
-			void removeIdentityCertifiedForBidUserAsync(const Model::RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RemoveIdentityCertifiedForBidUserOutcomeCallable removeIdentityCertifiedForBidUserCallable(const Model::RemoveIdentityCertifiedForBidUserRequest& request) const;
 			QueryBidUserCertifiedInfoOutcome queryBidUserCertifiedInfo(const Model::QueryBidUserCertifiedInfoRequest &request)const;
 			void queryBidUserCertifiedInfoAsync(const Model::QueryBidUserCertifiedInfoRequest& request, const QueryBidUserCertifiedInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryBidUserCertifiedInfoOutcomeCallable queryBidUserCertifiedInfoCallable(const Model::QueryBidUserCertifiedInfoRequest& request) const;
-			AddLabelForBidOutcome addLabelForBid(const Model::AddLabelForBidRequest &request)const;
-			void addLabelForBidAsync(const Model::AddLabelForBidRequest& request, const AddLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddLabelForBidOutcomeCallable addLabelForBidCallable(const Model::AddLabelForBidRequest& request) const;
 			BatchGetAliyunIdByAliyunPkOutcome batchGetAliyunIdByAliyunPk(const Model::BatchGetAliyunIdByAliyunPkRequest &request)const;
 			void batchGetAliyunIdByAliyunPkAsync(const Model::BatchGetAliyunIdByAliyunPkRequest& request, const BatchGetAliyunIdByAliyunPkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetAliyunIdByAliyunPkOutcomeCallable batchGetAliyunIdByAliyunPkCallable(const Model::BatchGetAliyunIdByAliyunPkRequest& request) const;
+			RemoveIdentityCertifiedForBidUserOutcome removeIdentityCertifiedForBidUser(const Model::RemoveIdentityCertifiedForBidUserRequest &request)const;
+			void removeIdentityCertifiedForBidUserAsync(const Model::RemoveIdentityCertifiedForBidUserRequest& request, const RemoveIdentityCertifiedForBidUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveIdentityCertifiedForBidUserOutcomeCallable removeIdentityCertifiedForBidUserCallable(const Model::RemoveIdentityCertifiedForBidUserRequest& request) const;
+			AddLabelForBidOutcome addLabelForBid(const Model::AddLabelForBidRequest &request)const;
+			void addLabelForBidAsync(const Model::AddLabelForBidRequest& request, const AddLabelForBidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLabelForBidOutcomeCallable addLabelForBidCallable(const Model::AddLabelForBidRequest& request) const;
 			DeleteLabelOutcome deleteLabel(const Model::DeleteLabelRequest &request)const;
 			void deleteLabelAsync(const Model::DeleteLabelRequest& request, const DeleteLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLabelOutcomeCallable deleteLabelCallable(const Model::DeleteLabelRequest& request) const;

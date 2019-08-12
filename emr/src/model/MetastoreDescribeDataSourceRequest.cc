@@ -33,7 +33,7 @@ long MetastoreDescribeDataSourceRequest::getResourceOwnerId()const
 void MetastoreDescribeDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MetastoreDescribeDataSourceRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string MetastoreDescribeDataSourceRequest::getRegionId()const
 void MetastoreDescribeDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MetastoreDescribeDataSourceRequest::getDataSourceId()const
@@ -55,7 +55,7 @@ std::string MetastoreDescribeDataSourceRequest::getDataSourceId()const
 void MetastoreDescribeDataSourceRequest::setDataSourceId(const std::string& dataSourceId)
 {
 	dataSourceId_ = dataSourceId;
-	setParameter("DataSourceId", dataSourceId);
+	setCoreParameter("DataSourceId", dataSourceId);
 }
 
 std::string MetastoreDescribeDataSourceRequest::getAccessKeyId()const
@@ -66,6 +66,6 @@ std::string MetastoreDescribeDataSourceRequest::getAccessKeyId()const
 void MetastoreDescribeDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

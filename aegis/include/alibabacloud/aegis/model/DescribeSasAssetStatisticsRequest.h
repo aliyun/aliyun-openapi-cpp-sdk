@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setStatisticsColumn(const std::string& statisticsColumn);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFrom()const;
+				void setFrom(const std::string& from);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getUuids()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string sourceIp_;
 				std::string statisticsColumn_;
 				int pageSize_;
+				std::string from_;
 				int currentPage_;
 				std::string uuids_;
 

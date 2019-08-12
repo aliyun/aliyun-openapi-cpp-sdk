@@ -38,32 +38,21 @@ namespace AlibabaCloud
 					{
 						struct CallDetailAgent
 						{
-							int holdTime;
-							int workTime;
-							std::string skillGroupName;
-							long startTime;
-							int queueTime;
-							std::string contactId;
+							std::string feedback;
+							std::string satisfaction;
 							std::string agentId;
-							std::string agentName;
-							int ringTime;
-							int talkTime;
 						};
 						struct Recording
 						{
-							std::string filePath;
-							std::string calledNumber;
-							std::string contactType;
-							std::string instanceId;
+							std::string fileDescription;
+							std::string qualityCheckTid;
 							std::string fileName;
-							std::string channel;
 							long startTime;
 							int duration;
 							std::string contactId;
-							std::string callingNumber;
-							std::string fileDescription;
 							std::string agentId;
 							std::string agentName;
+							std::string qualityCheckTaskId;
 						};
 						std::string calledNumber;
 						std::string contactType;
@@ -75,8 +64,9 @@ namespace AlibabaCloud
 						int duration;
 						std::vector<CallDetailRecord::Recording> recordings;
 						std::string contactId;
+						std::string satisfactionDesc;
 						std::string callingNumber;
-						std::string extraAttr;
+						std::string feedback;
 						std::string skillGroupNames;
 						std::string agentNames;
 					};

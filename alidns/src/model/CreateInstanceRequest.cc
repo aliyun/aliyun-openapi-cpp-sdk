@@ -33,7 +33,7 @@ int CreateInstanceRequest::getMonth()const
 void CreateInstanceRequest::setMonth(int month)
 {
 	month_ = month;
-	setParameter("Month", std::to_string(month));
+	setCoreParameter("Month", std::to_string(month));
 }
 
 std::string CreateInstanceRequest::getUserClientIp()const
@@ -44,7 +44,7 @@ std::string CreateInstanceRequest::getUserClientIp()const
 void CreateInstanceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string CreateInstanceRequest::getDomainName()const
@@ -55,7 +55,7 @@ std::string CreateInstanceRequest::getDomainName()const
 void CreateInstanceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setCoreParameter("DomainName", domainName);
 }
 
 std::string CreateInstanceRequest::getLang()const
@@ -66,7 +66,7 @@ std::string CreateInstanceRequest::getLang()const
 void CreateInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string CreateInstanceRequest::getInstanceVersion()const
@@ -77,7 +77,7 @@ std::string CreateInstanceRequest::getInstanceVersion()const
 void CreateInstanceRequest::setInstanceVersion(const std::string& instanceVersion)
 {
 	instanceVersion_ = instanceVersion;
-	setParameter("InstanceVersion", instanceVersion);
+	setCoreParameter("InstanceVersion", instanceVersion);
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string CreateInstanceRequest::getAccessKeyId()const
 void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateInstanceRequest::getToken()const
@@ -110,6 +110,6 @@ std::string CreateInstanceRequest::getToken()const
 void CreateInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setParameter("Token", token);
+	setCoreParameter("Token", token);
 }
 

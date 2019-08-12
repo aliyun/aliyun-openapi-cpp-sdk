@@ -44,10 +44,10 @@
 #include "model/DescribeBackupGatewayListResult.h"
 #include "model/ModifyBackupObjectsRequest.h"
 #include "model/ModifyBackupObjectsResult.h"
-#include "model/CreateRestoreTaskRequest.h"
-#include "model/CreateRestoreTaskResult.h"
 #include "model/DescribeIncrementBackupListRequest.h"
 #include "model/DescribeIncrementBackupListResult.h"
+#include "model/CreateRestoreTaskRequest.h"
+#include "model/CreateRestoreTaskResult.h"
 #include "model/ConfigureBackupPlanRequest.h"
 #include "model/ConfigureBackupPlanResult.h"
 #include "model/ModifyBackupStrategyRequest.h"
@@ -98,12 +98,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupObjectsResult> ModifyBackupObjectsOutcome;
 			typedef std::future<ModifyBackupObjectsOutcome> ModifyBackupObjectsOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ModifyBackupObjectsRequest&, const ModifyBackupObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupObjectsAsyncHandler;
-			typedef Outcome<Error, Model::CreateRestoreTaskResult> CreateRestoreTaskOutcome;
-			typedef std::future<CreateRestoreTaskOutcome> CreateRestoreTaskOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::CreateRestoreTaskRequest&, const CreateRestoreTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestoreTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeIncrementBackupListResult> DescribeIncrementBackupListOutcome;
 			typedef std::future<DescribeIncrementBackupListOutcome> DescribeIncrementBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeIncrementBackupListRequest&, const DescribeIncrementBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementBackupListAsyncHandler;
+			typedef Outcome<Error, Model::CreateRestoreTaskResult> CreateRestoreTaskOutcome;
+			typedef std::future<CreateRestoreTaskOutcome> CreateRestoreTaskOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::CreateRestoreTaskRequest&, const CreateRestoreTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestoreTaskAsyncHandler;
 			typedef Outcome<Error, Model::ConfigureBackupPlanResult> ConfigureBackupPlanOutcome;
 			typedef std::future<ConfigureBackupPlanOutcome> ConfigureBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ConfigureBackupPlanRequest&, const ConfigureBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureBackupPlanAsyncHandler;
@@ -154,12 +154,12 @@ namespace AlibabaCloud
 			ModifyBackupObjectsOutcome modifyBackupObjects(const Model::ModifyBackupObjectsRequest &request)const;
 			void modifyBackupObjectsAsync(const Model::ModifyBackupObjectsRequest& request, const ModifyBackupObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupObjectsOutcomeCallable modifyBackupObjectsCallable(const Model::ModifyBackupObjectsRequest& request) const;
-			CreateRestoreTaskOutcome createRestoreTask(const Model::CreateRestoreTaskRequest &request)const;
-			void createRestoreTaskAsync(const Model::CreateRestoreTaskRequest& request, const CreateRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateRestoreTaskOutcomeCallable createRestoreTaskCallable(const Model::CreateRestoreTaskRequest& request) const;
 			DescribeIncrementBackupListOutcome describeIncrementBackupList(const Model::DescribeIncrementBackupListRequest &request)const;
 			void describeIncrementBackupListAsync(const Model::DescribeIncrementBackupListRequest& request, const DescribeIncrementBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIncrementBackupListOutcomeCallable describeIncrementBackupListCallable(const Model::DescribeIncrementBackupListRequest& request) const;
+			CreateRestoreTaskOutcome createRestoreTask(const Model::CreateRestoreTaskRequest &request)const;
+			void createRestoreTaskAsync(const Model::CreateRestoreTaskRequest& request, const CreateRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRestoreTaskOutcomeCallable createRestoreTaskCallable(const Model::CreateRestoreTaskRequest& request) const;
 			ConfigureBackupPlanOutcome configureBackupPlan(const Model::ConfigureBackupPlanRequest &request)const;
 			void configureBackupPlanAsync(const Model::ConfigureBackupPlanRequest& request, const ConfigureBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigureBackupPlanOutcomeCallable configureBackupPlanCallable(const Model::ConfigureBackupPlanRequest& request) const;

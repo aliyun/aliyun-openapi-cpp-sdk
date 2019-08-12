@@ -22,18 +22,22 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "LinkFaceExport.h"
+#include "model/QuerySyncPicScheduleRequest.h"
+#include "model/QuerySyncPicScheduleResult.h"
 #include "model/UnlinkFaceRequest.h"
 #include "model/UnlinkFaceResult.h"
 #include "model/UpdateFaceRequest.h"
 #include "model/UpdateFaceResult.h"
-#include "model/QuerySyncPicScheduleRequest.h"
-#include "model/QuerySyncPicScheduleResult.h"
 #include "model/SyncFacePicturesRequest.h"
 #include "model/SyncFacePicturesResult.h"
 #include "model/CreateGroupRequest.h"
 #include "model/CreateGroupResult.h"
+#include "model/DeleteDeviceAllGroupRequest.h"
+#include "model/DeleteDeviceAllGroupResult.h"
 #include "model/DeleteGroupRequest.h"
 #include "model/DeleteGroupResult.h"
+#include "model/DeleteDeviceGroupRequest.h"
+#include "model/DeleteDeviceGroupResult.h"
 #include "model/DeleteFaceRequest.h"
 #include "model/DeleteFaceResult.h"
 #include "model/QueryAuthenticationRequest.h"
@@ -63,24 +67,30 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_LINKFACE_EXPORT LinkFaceClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::QuerySyncPicScheduleResult> QuerySyncPicScheduleOutcome;
+			typedef std::future<QuerySyncPicScheduleOutcome> QuerySyncPicScheduleOutcomeCallable;
+			typedef std::function<void(const LinkFaceClient*, const Model::QuerySyncPicScheduleRequest&, const QuerySyncPicScheduleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySyncPicScheduleAsyncHandler;
 			typedef Outcome<Error, Model::UnlinkFaceResult> UnlinkFaceOutcome;
 			typedef std::future<UnlinkFaceOutcome> UnlinkFaceOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::UnlinkFaceRequest&, const UnlinkFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlinkFaceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateFaceResult> UpdateFaceOutcome;
 			typedef std::future<UpdateFaceOutcome> UpdateFaceOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::UpdateFaceRequest&, const UpdateFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFaceAsyncHandler;
-			typedef Outcome<Error, Model::QuerySyncPicScheduleResult> QuerySyncPicScheduleOutcome;
-			typedef std::future<QuerySyncPicScheduleOutcome> QuerySyncPicScheduleOutcomeCallable;
-			typedef std::function<void(const LinkFaceClient*, const Model::QuerySyncPicScheduleRequest&, const QuerySyncPicScheduleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySyncPicScheduleAsyncHandler;
 			typedef Outcome<Error, Model::SyncFacePicturesResult> SyncFacePicturesOutcome;
 			typedef std::future<SyncFacePicturesOutcome> SyncFacePicturesOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::SyncFacePicturesRequest&, const SyncFacePicturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncFacePicturesAsyncHandler;
 			typedef Outcome<Error, Model::CreateGroupResult> CreateGroupOutcome;
 			typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::CreateGroupRequest&, const CreateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDeviceAllGroupResult> DeleteDeviceAllGroupOutcome;
+			typedef std::future<DeleteDeviceAllGroupOutcome> DeleteDeviceAllGroupOutcomeCallable;
+			typedef std::function<void(const LinkFaceClient*, const Model::DeleteDeviceAllGroupRequest&, const DeleteDeviceAllGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAllGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteGroupResult> DeleteGroupOutcome;
 			typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::DeleteGroupRequest&, const DeleteGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDeviceGroupResult> DeleteDeviceGroupOutcome;
+			typedef std::future<DeleteDeviceGroupOutcome> DeleteDeviceGroupOutcomeCallable;
+			typedef std::function<void(const LinkFaceClient*, const Model::DeleteDeviceGroupRequest&, const DeleteDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteFaceResult> DeleteFaceOutcome;
 			typedef std::future<DeleteFaceOutcome> DeleteFaceOutcomeCallable;
 			typedef std::function<void(const LinkFaceClient*, const Model::DeleteFaceRequest&, const DeleteFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceAsyncHandler;
@@ -116,24 +126,30 @@ namespace AlibabaCloud
 			LinkFaceClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			LinkFaceClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~LinkFaceClient();
+			QuerySyncPicScheduleOutcome querySyncPicSchedule(const Model::QuerySyncPicScheduleRequest &request)const;
+			void querySyncPicScheduleAsync(const Model::QuerySyncPicScheduleRequest& request, const QuerySyncPicScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySyncPicScheduleOutcomeCallable querySyncPicScheduleCallable(const Model::QuerySyncPicScheduleRequest& request) const;
 			UnlinkFaceOutcome unlinkFace(const Model::UnlinkFaceRequest &request)const;
 			void unlinkFaceAsync(const Model::UnlinkFaceRequest& request, const UnlinkFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlinkFaceOutcomeCallable unlinkFaceCallable(const Model::UnlinkFaceRequest& request) const;
 			UpdateFaceOutcome updateFace(const Model::UpdateFaceRequest &request)const;
 			void updateFaceAsync(const Model::UpdateFaceRequest& request, const UpdateFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFaceOutcomeCallable updateFaceCallable(const Model::UpdateFaceRequest& request) const;
-			QuerySyncPicScheduleOutcome querySyncPicSchedule(const Model::QuerySyncPicScheduleRequest &request)const;
-			void querySyncPicScheduleAsync(const Model::QuerySyncPicScheduleRequest& request, const QuerySyncPicScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QuerySyncPicScheduleOutcomeCallable querySyncPicScheduleCallable(const Model::QuerySyncPicScheduleRequest& request) const;
 			SyncFacePicturesOutcome syncFacePictures(const Model::SyncFacePicturesRequest &request)const;
 			void syncFacePicturesAsync(const Model::SyncFacePicturesRequest& request, const SyncFacePicturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncFacePicturesOutcomeCallable syncFacePicturesCallable(const Model::SyncFacePicturesRequest& request) const;
 			CreateGroupOutcome createGroup(const Model::CreateGroupRequest &request)const;
 			void createGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateGroupOutcomeCallable createGroupCallable(const Model::CreateGroupRequest& request) const;
+			DeleteDeviceAllGroupOutcome deleteDeviceAllGroup(const Model::DeleteDeviceAllGroupRequest &request)const;
+			void deleteDeviceAllGroupAsync(const Model::DeleteDeviceAllGroupRequest& request, const DeleteDeviceAllGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDeviceAllGroupOutcomeCallable deleteDeviceAllGroupCallable(const Model::DeleteDeviceAllGroupRequest& request) const;
 			DeleteGroupOutcome deleteGroup(const Model::DeleteGroupRequest &request)const;
 			void deleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGroupOutcomeCallable deleteGroupCallable(const Model::DeleteGroupRequest& request) const;
+			DeleteDeviceGroupOutcome deleteDeviceGroup(const Model::DeleteDeviceGroupRequest &request)const;
+			void deleteDeviceGroupAsync(const Model::DeleteDeviceGroupRequest& request, const DeleteDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDeviceGroupOutcomeCallable deleteDeviceGroupCallable(const Model::DeleteDeviceGroupRequest& request) const;
 			DeleteFaceOutcome deleteFace(const Model::DeleteFaceRequest &request)const;
 			void deleteFaceAsync(const Model::DeleteFaceRequest& request, const DeleteFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceOutcomeCallable deleteFaceCallable(const Model::DeleteFaceRequest& request) const;

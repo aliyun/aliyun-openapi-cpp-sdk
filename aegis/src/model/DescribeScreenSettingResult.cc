@@ -35,21 +35,70 @@ DescribeScreenSettingResult::~DescribeScreenSettingResult()
 
 void DescribeScreenSettingResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
-	auto sasScreenSettingNode = value["SasScreenSetting"];
-	if(!sasScreenSettingNode["ScreenSettingTitle"].isNull())
-		sasScreenSetting_.screenSettingTitle = sasScreenSettingNode["ScreenSettingTitle"].asString();
-	if(!sasScreenSettingNode["ScreenSettingIdMap"].isNull())
-		sasScreenSetting_.screenSettingIdMap = sasScreenSettingNode["ScreenSettingIdMap"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["MonitorUrl"].isNull())
+		monitorUrl_ = value["MonitorUrl"].asString();
+	if(!value["LogoPower"].isNull())
+		logoPower_ = value["LogoPower"].asString() == "true";
+	if(!value["Title"].isNull())
+		title_ = value["Title"].asString();
+	if(!value["ScreenDataMap"].isNull())
+		screenDataMap_ = value["ScreenDataMap"].asString();
+	if(!value["ScreenDefault"].isNull())
+		screenDefault_ = std::stoi(value["ScreenDefault"].asString());
+	if(!value["ScreenId"].isNull())
+		screenId_ = std::stoi(value["ScreenId"].asString());
+	if(!value["LogoUrl"].isNull())
+		logoUrl_ = value["LogoUrl"].asString();
 
 }
 
-DescribeScreenSettingResult::SasScreenSetting DescribeScreenSettingResult::getSasScreenSetting()const
+bool DescribeScreenSettingResult::getLogoPower()const
 {
-	return sasScreenSetting_;
+	return logoPower_;
+}
+
+std::string DescribeScreenSettingResult::getMonitorUrl()const
+{
+	return monitorUrl_;
+}
+
+int DescribeScreenSettingResult::getScreenId()const
+{
+	return screenId_;
+}
+
+std::string DescribeScreenSettingResult::getLogoUrl()const
+{
+	return logoUrl_;
+}
+
+std::string DescribeScreenSettingResult::getScreenDataMap()const
+{
+	return screenDataMap_;
+}
+
+std::string DescribeScreenSettingResult::getTitle()const
+{
+	return title_;
+}
+
+int DescribeScreenSettingResult::getScreenDefault()const
+{
+	return screenDefault_;
+}
+
+bool DescribeScreenSettingResult::getSuccess()const
+{
+	return success_;
 }
 

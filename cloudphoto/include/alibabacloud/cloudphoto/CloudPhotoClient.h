@@ -62,12 +62,12 @@
 #include "model/InactivatePhotosResult.h"
 #include "model/CreateTransactionRequest.h"
 #include "model/CreateTransactionResult.h"
-#include "model/GetLibraryRequest.h"
-#include "model/GetLibraryResult.h"
 #include "model/CreatePhotoStoreRequest.h"
 #include "model/CreatePhotoStoreResult.h"
 #include "model/TagPhotoRequest.h"
 #include "model/TagPhotoResult.h"
+#include "model/GetLibraryRequest.h"
+#include "model/GetLibraryResult.h"
 #include "model/SetQuotaRequest.h"
 #include "model/SetQuotaResult.h"
 #include "model/RemoveAlbumPhotosRequest.h"
@@ -76,20 +76,20 @@
 #include "model/ListAlbumPhotosResult.h"
 #include "model/ListAlbumsRequest.h"
 #include "model/ListAlbumsResult.h"
-#include "model/FetchPhotosRequest.h"
-#include "model/FetchPhotosResult.h"
 #include "model/ListPhotoFacesRequest.h"
 #include "model/ListPhotoFacesResult.h"
+#include "model/FetchPhotosRequest.h"
+#include "model/FetchPhotosResult.h"
 #include "model/RenameAlbumRequest.h"
 #include "model/RenameAlbumResult.h"
 #include "model/ActivatePhotosRequest.h"
 #include "model/ActivatePhotosResult.h"
 #include "model/GetPrivateAccessUrlsRequest.h"
 #include "model/GetPrivateAccessUrlsResult.h"
-#include "model/ListEventsRequest.h"
-#include "model/ListEventsResult.h"
 #include "model/GetSimilarPhotosRequest.h"
 #include "model/GetSimilarPhotosResult.h"
+#include "model/ListEventsRequest.h"
+#include "model/ListEventsResult.h"
 #include "model/GetVideoCoverRequest.h"
 #include "model/GetVideoCoverResult.h"
 #include "model/GetFramedPhotoUrlsRequest.h"
@@ -112,20 +112,20 @@
 #include "model/EditPhotoStoreResult.h"
 #include "model/ListTimeLinesRequest.h"
 #include "model/ListTimeLinesResult.h"
-#include "model/SearchPhotosRequest.h"
-#include "model/SearchPhotosResult.h"
 #include "model/ToggleFeaturesRequest.h"
 #include "model/ToggleFeaturesResult.h"
+#include "model/SearchPhotosRequest.h"
+#include "model/SearchPhotosResult.h"
 #include "model/ListRegisteredTagsRequest.h"
 #include "model/ListRegisteredTagsResult.h"
 #include "model/DeletePhotoStoreRequest.h"
 #include "model/DeletePhotoStoreResult.h"
 #include "model/CreateEventRequest.h"
 #include "model/CreateEventResult.h"
-#include "model/GetPhotoStoreRequest.h"
-#include "model/GetPhotoStoreResult.h"
 #include "model/ListMomentPhotosRequest.h"
 #include "model/ListMomentPhotosResult.h"
+#include "model/GetPhotoStoreRequest.h"
+#include "model/GetPhotoStoreResult.h"
 #include "model/GetThumbnailRequest.h"
 #include "model/GetThumbnailResult.h"
 #include "model/SetFaceCoverRequest.h"
@@ -231,15 +231,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTransactionResult> CreateTransactionOutcome;
 			typedef std::future<CreateTransactionOutcome> CreateTransactionOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::CreateTransactionRequest&, const CreateTransactionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTransactionAsyncHandler;
-			typedef Outcome<Error, Model::GetLibraryResult> GetLibraryOutcome;
-			typedef std::future<GetLibraryOutcome> GetLibraryOutcomeCallable;
-			typedef std::function<void(const CloudPhotoClient*, const Model::GetLibraryRequest&, const GetLibraryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLibraryAsyncHandler;
 			typedef Outcome<Error, Model::CreatePhotoStoreResult> CreatePhotoStoreOutcome;
 			typedef std::future<CreatePhotoStoreOutcome> CreatePhotoStoreOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::CreatePhotoStoreRequest&, const CreatePhotoStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhotoStoreAsyncHandler;
 			typedef Outcome<Error, Model::TagPhotoResult> TagPhotoOutcome;
 			typedef std::future<TagPhotoOutcome> TagPhotoOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::TagPhotoRequest&, const TagPhotoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagPhotoAsyncHandler;
+			typedef Outcome<Error, Model::GetLibraryResult> GetLibraryOutcome;
+			typedef std::future<GetLibraryOutcome> GetLibraryOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::GetLibraryRequest&, const GetLibraryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLibraryAsyncHandler;
 			typedef Outcome<Error, Model::SetQuotaResult> SetQuotaOutcome;
 			typedef std::future<SetQuotaOutcome> SetQuotaOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::SetQuotaRequest&, const SetQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetQuotaAsyncHandler;
@@ -252,12 +252,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAlbumsResult> ListAlbumsOutcome;
 			typedef std::future<ListAlbumsOutcome> ListAlbumsOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListAlbumsRequest&, const ListAlbumsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAlbumsAsyncHandler;
-			typedef Outcome<Error, Model::FetchPhotosResult> FetchPhotosOutcome;
-			typedef std::future<FetchPhotosOutcome> FetchPhotosOutcomeCallable;
-			typedef std::function<void(const CloudPhotoClient*, const Model::FetchPhotosRequest&, const FetchPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchPhotosAsyncHandler;
 			typedef Outcome<Error, Model::ListPhotoFacesResult> ListPhotoFacesOutcome;
 			typedef std::future<ListPhotoFacesOutcome> ListPhotoFacesOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListPhotoFacesRequest&, const ListPhotoFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhotoFacesAsyncHandler;
+			typedef Outcome<Error, Model::FetchPhotosResult> FetchPhotosOutcome;
+			typedef std::future<FetchPhotosOutcome> FetchPhotosOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::FetchPhotosRequest&, const FetchPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FetchPhotosAsyncHandler;
 			typedef Outcome<Error, Model::RenameAlbumResult> RenameAlbumOutcome;
 			typedef std::future<RenameAlbumOutcome> RenameAlbumOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::RenameAlbumRequest&, const RenameAlbumOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenameAlbumAsyncHandler;
@@ -267,12 +267,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPrivateAccessUrlsResult> GetPrivateAccessUrlsOutcome;
 			typedef std::future<GetPrivateAccessUrlsOutcome> GetPrivateAccessUrlsOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::GetPrivateAccessUrlsRequest&, const GetPrivateAccessUrlsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrivateAccessUrlsAsyncHandler;
-			typedef Outcome<Error, Model::ListEventsResult> ListEventsOutcome;
-			typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
-			typedef std::function<void(const CloudPhotoClient*, const Model::ListEventsRequest&, const ListEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventsAsyncHandler;
 			typedef Outcome<Error, Model::GetSimilarPhotosResult> GetSimilarPhotosOutcome;
 			typedef std::future<GetSimilarPhotosOutcome> GetSimilarPhotosOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::GetSimilarPhotosRequest&, const GetSimilarPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSimilarPhotosAsyncHandler;
+			typedef Outcome<Error, Model::ListEventsResult> ListEventsOutcome;
+			typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::ListEventsRequest&, const ListEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventsAsyncHandler;
 			typedef Outcome<Error, Model::GetVideoCoverResult> GetVideoCoverOutcome;
 			typedef std::future<GetVideoCoverOutcome> GetVideoCoverOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::GetVideoCoverRequest&, const GetVideoCoverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoCoverAsyncHandler;
@@ -306,12 +306,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTimeLinesResult> ListTimeLinesOutcome;
 			typedef std::future<ListTimeLinesOutcome> ListTimeLinesOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListTimeLinesRequest&, const ListTimeLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTimeLinesAsyncHandler;
-			typedef Outcome<Error, Model::SearchPhotosResult> SearchPhotosOutcome;
-			typedef std::future<SearchPhotosOutcome> SearchPhotosOutcomeCallable;
-			typedef std::function<void(const CloudPhotoClient*, const Model::SearchPhotosRequest&, const SearchPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPhotosAsyncHandler;
 			typedef Outcome<Error, Model::ToggleFeaturesResult> ToggleFeaturesOutcome;
 			typedef std::future<ToggleFeaturesOutcome> ToggleFeaturesOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ToggleFeaturesRequest&, const ToggleFeaturesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ToggleFeaturesAsyncHandler;
+			typedef Outcome<Error, Model::SearchPhotosResult> SearchPhotosOutcome;
+			typedef std::future<SearchPhotosOutcome> SearchPhotosOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::SearchPhotosRequest&, const SearchPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPhotosAsyncHandler;
 			typedef Outcome<Error, Model::ListRegisteredTagsResult> ListRegisteredTagsOutcome;
 			typedef std::future<ListRegisteredTagsOutcome> ListRegisteredTagsOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListRegisteredTagsRequest&, const ListRegisteredTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRegisteredTagsAsyncHandler;
@@ -321,12 +321,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateEventResult> CreateEventOutcome;
 			typedef std::future<CreateEventOutcome> CreateEventOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::CreateEventRequest&, const CreateEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEventAsyncHandler;
-			typedef Outcome<Error, Model::GetPhotoStoreResult> GetPhotoStoreOutcome;
-			typedef std::future<GetPhotoStoreOutcome> GetPhotoStoreOutcomeCallable;
-			typedef std::function<void(const CloudPhotoClient*, const Model::GetPhotoStoreRequest&, const GetPhotoStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhotoStoreAsyncHandler;
 			typedef Outcome<Error, Model::ListMomentPhotosResult> ListMomentPhotosOutcome;
 			typedef std::future<ListMomentPhotosOutcome> ListMomentPhotosOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::ListMomentPhotosRequest&, const ListMomentPhotosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMomentPhotosAsyncHandler;
+			typedef Outcome<Error, Model::GetPhotoStoreResult> GetPhotoStoreOutcome;
+			typedef std::future<GetPhotoStoreOutcome> GetPhotoStoreOutcomeCallable;
+			typedef std::function<void(const CloudPhotoClient*, const Model::GetPhotoStoreRequest&, const GetPhotoStoreOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhotoStoreAsyncHandler;
 			typedef Outcome<Error, Model::GetThumbnailResult> GetThumbnailOutcome;
 			typedef std::future<GetThumbnailOutcome> GetThumbnailOutcomeCallable;
 			typedef std::function<void(const CloudPhotoClient*, const Model::GetThumbnailRequest&, const GetThumbnailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetThumbnailAsyncHandler;
@@ -446,15 +446,15 @@ namespace AlibabaCloud
 			CreateTransactionOutcome createTransaction(const Model::CreateTransactionRequest &request)const;
 			void createTransactionAsync(const Model::CreateTransactionRequest& request, const CreateTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTransactionOutcomeCallable createTransactionCallable(const Model::CreateTransactionRequest& request) const;
-			GetLibraryOutcome getLibrary(const Model::GetLibraryRequest &request)const;
-			void getLibraryAsync(const Model::GetLibraryRequest& request, const GetLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetLibraryOutcomeCallable getLibraryCallable(const Model::GetLibraryRequest& request) const;
 			CreatePhotoStoreOutcome createPhotoStore(const Model::CreatePhotoStoreRequest &request)const;
 			void createPhotoStoreAsync(const Model::CreatePhotoStoreRequest& request, const CreatePhotoStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePhotoStoreOutcomeCallable createPhotoStoreCallable(const Model::CreatePhotoStoreRequest& request) const;
 			TagPhotoOutcome tagPhoto(const Model::TagPhotoRequest &request)const;
 			void tagPhotoAsync(const Model::TagPhotoRequest& request, const TagPhotoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagPhotoOutcomeCallable tagPhotoCallable(const Model::TagPhotoRequest& request) const;
+			GetLibraryOutcome getLibrary(const Model::GetLibraryRequest &request)const;
+			void getLibraryAsync(const Model::GetLibraryRequest& request, const GetLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLibraryOutcomeCallable getLibraryCallable(const Model::GetLibraryRequest& request) const;
 			SetQuotaOutcome setQuota(const Model::SetQuotaRequest &request)const;
 			void setQuotaAsync(const Model::SetQuotaRequest& request, const SetQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetQuotaOutcomeCallable setQuotaCallable(const Model::SetQuotaRequest& request) const;
@@ -467,12 +467,12 @@ namespace AlibabaCloud
 			ListAlbumsOutcome listAlbums(const Model::ListAlbumsRequest &request)const;
 			void listAlbumsAsync(const Model::ListAlbumsRequest& request, const ListAlbumsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAlbumsOutcomeCallable listAlbumsCallable(const Model::ListAlbumsRequest& request) const;
-			FetchPhotosOutcome fetchPhotos(const Model::FetchPhotosRequest &request)const;
-			void fetchPhotosAsync(const Model::FetchPhotosRequest& request, const FetchPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			FetchPhotosOutcomeCallable fetchPhotosCallable(const Model::FetchPhotosRequest& request) const;
 			ListPhotoFacesOutcome listPhotoFaces(const Model::ListPhotoFacesRequest &request)const;
 			void listPhotoFacesAsync(const Model::ListPhotoFacesRequest& request, const ListPhotoFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPhotoFacesOutcomeCallable listPhotoFacesCallable(const Model::ListPhotoFacesRequest& request) const;
+			FetchPhotosOutcome fetchPhotos(const Model::FetchPhotosRequest &request)const;
+			void fetchPhotosAsync(const Model::FetchPhotosRequest& request, const FetchPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FetchPhotosOutcomeCallable fetchPhotosCallable(const Model::FetchPhotosRequest& request) const;
 			RenameAlbumOutcome renameAlbum(const Model::RenameAlbumRequest &request)const;
 			void renameAlbumAsync(const Model::RenameAlbumRequest& request, const RenameAlbumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenameAlbumOutcomeCallable renameAlbumCallable(const Model::RenameAlbumRequest& request) const;
@@ -482,12 +482,12 @@ namespace AlibabaCloud
 			GetPrivateAccessUrlsOutcome getPrivateAccessUrls(const Model::GetPrivateAccessUrlsRequest &request)const;
 			void getPrivateAccessUrlsAsync(const Model::GetPrivateAccessUrlsRequest& request, const GetPrivateAccessUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrivateAccessUrlsOutcomeCallable getPrivateAccessUrlsCallable(const Model::GetPrivateAccessUrlsRequest& request) const;
-			ListEventsOutcome listEvents(const Model::ListEventsRequest &request)const;
-			void listEventsAsync(const Model::ListEventsRequest& request, const ListEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListEventsOutcomeCallable listEventsCallable(const Model::ListEventsRequest& request) const;
 			GetSimilarPhotosOutcome getSimilarPhotos(const Model::GetSimilarPhotosRequest &request)const;
 			void getSimilarPhotosAsync(const Model::GetSimilarPhotosRequest& request, const GetSimilarPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSimilarPhotosOutcomeCallable getSimilarPhotosCallable(const Model::GetSimilarPhotosRequest& request) const;
+			ListEventsOutcome listEvents(const Model::ListEventsRequest &request)const;
+			void listEventsAsync(const Model::ListEventsRequest& request, const ListEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEventsOutcomeCallable listEventsCallable(const Model::ListEventsRequest& request) const;
 			GetVideoCoverOutcome getVideoCover(const Model::GetVideoCoverRequest &request)const;
 			void getVideoCoverAsync(const Model::GetVideoCoverRequest& request, const GetVideoCoverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoCoverOutcomeCallable getVideoCoverCallable(const Model::GetVideoCoverRequest& request) const;
@@ -521,12 +521,12 @@ namespace AlibabaCloud
 			ListTimeLinesOutcome listTimeLines(const Model::ListTimeLinesRequest &request)const;
 			void listTimeLinesAsync(const Model::ListTimeLinesRequest& request, const ListTimeLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTimeLinesOutcomeCallable listTimeLinesCallable(const Model::ListTimeLinesRequest& request) const;
-			SearchPhotosOutcome searchPhotos(const Model::SearchPhotosRequest &request)const;
-			void searchPhotosAsync(const Model::SearchPhotosRequest& request, const SearchPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchPhotosOutcomeCallable searchPhotosCallable(const Model::SearchPhotosRequest& request) const;
 			ToggleFeaturesOutcome toggleFeatures(const Model::ToggleFeaturesRequest &request)const;
 			void toggleFeaturesAsync(const Model::ToggleFeaturesRequest& request, const ToggleFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ToggleFeaturesOutcomeCallable toggleFeaturesCallable(const Model::ToggleFeaturesRequest& request) const;
+			SearchPhotosOutcome searchPhotos(const Model::SearchPhotosRequest &request)const;
+			void searchPhotosAsync(const Model::SearchPhotosRequest& request, const SearchPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchPhotosOutcomeCallable searchPhotosCallable(const Model::SearchPhotosRequest& request) const;
 			ListRegisteredTagsOutcome listRegisteredTags(const Model::ListRegisteredTagsRequest &request)const;
 			void listRegisteredTagsAsync(const Model::ListRegisteredTagsRequest& request, const ListRegisteredTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRegisteredTagsOutcomeCallable listRegisteredTagsCallable(const Model::ListRegisteredTagsRequest& request) const;
@@ -536,12 +536,12 @@ namespace AlibabaCloud
 			CreateEventOutcome createEvent(const Model::CreateEventRequest &request)const;
 			void createEventAsync(const Model::CreateEventRequest& request, const CreateEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEventOutcomeCallable createEventCallable(const Model::CreateEventRequest& request) const;
-			GetPhotoStoreOutcome getPhotoStore(const Model::GetPhotoStoreRequest &request)const;
-			void getPhotoStoreAsync(const Model::GetPhotoStoreRequest& request, const GetPhotoStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetPhotoStoreOutcomeCallable getPhotoStoreCallable(const Model::GetPhotoStoreRequest& request) const;
 			ListMomentPhotosOutcome listMomentPhotos(const Model::ListMomentPhotosRequest &request)const;
 			void listMomentPhotosAsync(const Model::ListMomentPhotosRequest& request, const ListMomentPhotosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMomentPhotosOutcomeCallable listMomentPhotosCallable(const Model::ListMomentPhotosRequest& request) const;
+			GetPhotoStoreOutcome getPhotoStore(const Model::GetPhotoStoreRequest &request)const;
+			void getPhotoStoreAsync(const Model::GetPhotoStoreRequest& request, const GetPhotoStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPhotoStoreOutcomeCallable getPhotoStoreCallable(const Model::GetPhotoStoreRequest& request) const;
 			GetThumbnailOutcome getThumbnail(const Model::GetThumbnailRequest &request)const;
 			void getThumbnailAsync(const Model::GetThumbnailRequest& request, const GetThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetThumbnailOutcomeCallable getThumbnailCallable(const Model::GetThumbnailRequest& request) const;

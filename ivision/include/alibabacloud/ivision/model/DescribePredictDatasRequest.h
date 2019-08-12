@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setCallerParentId(long callerParentId);
 				bool getProxy_original_security_transport()const;
 				void setProxy_original_security_transport(bool proxy_original_security_transport);
+				std::string getDataIds()const;
+				void setDataIds(const std::string& dataIds);
 				std::string getProxy_original_source_ip()const;
 				void setProxy_original_source_ip(const std::string& proxy_original_source_ip);
 				std::string getOwnerIdLoginEmail()const;
@@ -105,6 +107,7 @@ namespace AlibabaCloud
 				std::string nextPageToken_;
 				long callerParentId_;
 				bool proxy_original_security_transport_;
+				std::string dataIds_;
 				std::string proxy_original_source_ip_;
 				std::string ownerIdLoginEmail_;
 				std::string callerType_;

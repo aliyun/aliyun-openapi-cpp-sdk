@@ -33,7 +33,7 @@ long UnbindPhoneRequest::getAppKey()const
 void UnbindPhoneRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setParameter("AppKey", std::to_string(appKey));
+	setCoreParameter("AppKey", std::to_string(appKey));
 }
 
 std::string UnbindPhoneRequest::getDeviceId()const
@@ -44,7 +44,7 @@ std::string UnbindPhoneRequest::getDeviceId()const
 void UnbindPhoneRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setParameter("DeviceId", deviceId);
+	setCoreParameter("DeviceId", deviceId);
 }
 
 std::string UnbindPhoneRequest::getAccessKeyId()const
@@ -55,6 +55,6 @@ std::string UnbindPhoneRequest::getAccessKeyId()const
 void UnbindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

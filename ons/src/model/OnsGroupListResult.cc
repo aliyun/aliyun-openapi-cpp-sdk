@@ -35,10 +35,13 @@ OnsGroupListResult::~OnsGroupListResult()
 
 void OnsGroupListResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allData = value["Data"]["SubscribeInfoDo"];
 	for (auto value : allData)
@@ -56,6 +59,8 @@ void OnsGroupListResult::parse(const std::string &payload)
 			dataObject.instanceId = value["InstanceId"].asString();
 		if(!value["IndependentNaming"].isNull())
 			dataObject.independentNaming = value["IndependentNaming"].asString() == "true";
+		if(!value["CreateTime"].isNull())
+			dataObject.createTime = std::stol(value["CreateTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

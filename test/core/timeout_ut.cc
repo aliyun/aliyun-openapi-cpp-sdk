@@ -2,14 +2,13 @@
 #include <iostream>
 #include <stdio.h>
 #include "gtest/gtest.h"
-#include "../../core/src/Utils.h"
+#include "alibabacloud/core/Utils.h"
 #include "alibabacloud/core/Config.h"
 #include "alibabacloud/core/AlibabaCloud.h"
 #include "alibabacloud/core/CommonClient.h"
 #include "alibabacloud/core/CommonResponse.h"
 #include "alibabacloud/core/CommonRequest.h"
 #include "alibabacloud/core/SimpleCredentialsProvider.h"
-
 
 #include "alibabacloud/core/RoaServiceClient.h"
 #include "alibabacloud/core/RpcServiceClient.h"
@@ -21,19 +20,20 @@ const std::string unreachableDomain = "192.168.111.111";
 const std::string timeoutErrorCode = "OperationTimeoutError";
 
 const std::string defaultErrorMessage =
-  "Timeout (connectTimeout: 5000ms, readTimeout: 10000ms) when connect or read data: GET http://192.168.111.111/";
+    "Timeout (connectTimeout: 5000ms, readTimeout: 10000ms) when connect or read data: GET http://192.168.111.111/";
 
 long kClientConnectTimeout = 12;
 long kClientReadTimeout = 234;
 const std::string clientErrorMessage =
-  "Timeout (connectTimeout: 12ms, readTimeout: 234ms) when connect or read data: GET http://192.168.111.111/";
+    "Timeout (connectTimeout: 12ms, readTimeout: 234ms) when connect or read data: GET http://192.168.111.111/";
 
 long kRequestConnectTimeout = 33;
 long kRequestReadTimeout = 724;
 const std::string requestErrorMessage =
-  "Timeout (connectTimeout: 33ms, readTimeout: 724ms) when connect or read data: GET http://192.168.111.111/";
+    "Timeout (connectTimeout: 33ms, readTimeout: 724ms) when connect or read data: GET http://192.168.111.111/";
 
-TEST(timeout, DefaultCommonClientROA) {
+TEST(timeout, DefaultCommonClientROA)
+{
   ClientConfiguration configuration("cn-hangzhou");
   CommonClient client("key", "secret", configuration);
   CommonRequest request(CommonRequest::RoaPattern);
@@ -44,7 +44,8 @@ TEST(timeout, DefaultCommonClientROA) {
   EXPECT_TRUE(out.error().errorMessage() == defaultErrorMessage);
 }
 
-TEST(timeout, DefaultCommonClientRPC) {
+TEST(timeout, DefaultCommonClientRPC)
+{
   ClientConfiguration configuration("cn-hangzhou");
   CommonClient client("key", "secret", configuration);
   CommonRequest request(CommonRequest::RpcPattern);
@@ -55,8 +56,8 @@ TEST(timeout, DefaultCommonClientRPC) {
   EXPECT_TRUE(out.error().errorMessage().find(defaultErrorMessage) == 0);
 }
 
-
-TEST(timeout, clientCommonClientROA) {
+TEST(timeout, clientCommonClientROA)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -70,7 +71,8 @@ TEST(timeout, clientCommonClientROA) {
   EXPECT_TRUE(out.error().errorMessage() == clientErrorMessage);
 }
 
-TEST(timeout, clientCommonClientRPC) {
+TEST(timeout, clientCommonClientRPC)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -84,7 +86,8 @@ TEST(timeout, clientCommonClientRPC) {
   EXPECT_TRUE(out.error().errorMessage().find(clientErrorMessage) == 0);
 }
 
-TEST(timeout, requestCommonClientROA) {
+TEST(timeout, requestCommonClientROA)
+{
   ClientConfiguration configuration("cn-hangzhou");
   CommonClient client("key", "secret", configuration);
 
@@ -98,7 +101,8 @@ TEST(timeout, requestCommonClientROA) {
   EXPECT_TRUE(out.error().errorMessage() == requestErrorMessage);
 }
 
-TEST(timeout, requestCommonClientRPC) {
+TEST(timeout, requestCommonClientRPC)
+{
   ClientConfiguration configuration("cn-hangzhou");
   CommonClient client("key", "secret", configuration);
 
@@ -112,7 +116,8 @@ TEST(timeout, requestCommonClientRPC) {
   EXPECT_TRUE(out.error().errorMessage().find(requestErrorMessage) == 0);
 }
 
-TEST(timeout, clientRequestCommonClientROA) {
+TEST(timeout, clientRequestCommonClientROA)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -128,7 +133,8 @@ TEST(timeout, clientRequestCommonClientROA) {
   EXPECT_TRUE(out.error().errorMessage() == requestErrorMessage);
 }
 
-TEST(timeout, clientRequestCommonClientRPC) {
+TEST(timeout, clientRequestCommonClientRPC)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -145,20 +151,23 @@ TEST(timeout, clientRequestCommonClientRPC) {
   EXPECT_TRUE(out.error().errorMessage().find(requestErrorMessage) == 0);
 }
 
-class TestRoaClient : public RoaServiceClient {
- public:
-  TestRoaClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-    const ClientConfiguration &configuration,
-    const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>()):
-  RoaServiceClient(servicename, credentialsProvider, configuration, signer)
-  {}
+class TestRoaClient : public RoaServiceClient
+{
+public:
+  TestRoaClient(const std::string &servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+                const ClientConfiguration &configuration,
+                const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>()) : RoaServiceClient(servicename, credentialsProvider, configuration, signer)
+  {
+  }
 
-  JsonOutcome makeRequest(const std::string &endpoint, const RoaServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const {
+  JsonOutcome makeRequest(const std::string &endpoint, const RoaServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const
+  {
     return RoaServiceClient::makeRequest(endpoint, msg, method);
   }
 };
 
-TEST(timeout, roaClientDefault) {
+TEST(timeout, roaClientDefault)
+{
   ClientConfiguration configuration("cn-hangzhou");
   const Credentials credentials("key", "secret");
   TestRoaClient client("any-service", std::make_shared<SimpleCredentialsProvider>(credentials), configuration);
@@ -169,7 +178,8 @@ TEST(timeout, roaClientDefault) {
   EXPECT_TRUE(out.error().errorMessage().find(defaultErrorMessage) == 0);
 }
 
-TEST(timeout, roaClientclient) {
+TEST(timeout, roaClientclient)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -182,7 +192,8 @@ TEST(timeout, roaClientclient) {
   EXPECT_TRUE(out.error().errorMessage().find(clientErrorMessage) == 0);
 }
 
-TEST(timeout, roaClientrequest) {
+TEST(timeout, roaClientrequest)
+{
   ClientConfiguration configuration("cn-hangzhou");
   const Credentials credentials("key", "secret");
   TestRoaClient client("any-service", std::make_shared<SimpleCredentialsProvider>(credentials), configuration);
@@ -195,7 +206,8 @@ TEST(timeout, roaClientrequest) {
   EXPECT_TRUE(out.error().errorMessage().find(requestErrorMessage) == 0);
 }
 
-TEST(timeout, roaClientclientrequest) {
+TEST(timeout, roaClientclientrequest)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -210,21 +222,23 @@ TEST(timeout, roaClientclientrequest) {
   EXPECT_TRUE(out.error().errorMessage().find(requestErrorMessage) == 0);
 }
 
+class TestRpcClient : public RpcServiceClient
+{
+public:
+  TestRpcClient(const std::string &servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+                const ClientConfiguration &configuration,
+                const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>()) : RpcServiceClient(servicename, credentialsProvider, configuration, signer)
+  {
+  }
 
-class TestRpcClient : public RpcServiceClient {
- public:
-  TestRpcClient(const std::string & servicename, const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-  const ClientConfiguration &configuration,
-  const std::shared_ptr<Signer> &signer = std::make_shared<HmacSha1Signer>()):
-  RpcServiceClient(servicename, credentialsProvider, configuration, signer)
-  {}
-
-  JsonOutcome makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get)const {
+  JsonOutcome makeRequest(const std::string &endpoint, const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const
+  {
     return RpcServiceClient::makeRequest(endpoint, msg, method);
   }
 };
 
-TEST(timeout, rpcClientDefault) {
+TEST(timeout, rpcClientDefault)
+{
   ClientConfiguration configuration("cn-hangzhou");
   const Credentials credentials("key", "secret");
   TestRpcClient client("any-service", std::make_shared<SimpleCredentialsProvider>(credentials), configuration);
@@ -235,7 +249,8 @@ TEST(timeout, rpcClientDefault) {
   EXPECT_TRUE(out.error().errorMessage().find(defaultErrorMessage) == 0);
 }
 
-TEST(timeout, rpcClientclient) {
+TEST(timeout, rpcClientclient)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);
@@ -248,7 +263,8 @@ TEST(timeout, rpcClientclient) {
   EXPECT_TRUE(out.error().errorMessage().find(clientErrorMessage) == 0);
 }
 
-TEST(timeout, rpcClientrequest) {
+TEST(timeout, rpcClientrequest)
+{
   ClientConfiguration configuration("cn-hangzhou");
   const Credentials credentials("key", "secret");
   TestRpcClient client("any-service", std::make_shared<SimpleCredentialsProvider>(credentials), configuration);
@@ -261,7 +277,8 @@ TEST(timeout, rpcClientrequest) {
   EXPECT_TRUE(out.error().errorMessage().find(requestErrorMessage) == 0);
 }
 
-TEST(timeout, rpcClientclientrequest) {
+TEST(timeout, rpcClientclientrequest)
+{
   ClientConfiguration configuration("cn-hangzhou");
   configuration.setConnectTimeout(kClientConnectTimeout);
   configuration.setReadTimeout(kClientReadTimeout);

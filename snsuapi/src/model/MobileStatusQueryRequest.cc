@@ -33,7 +33,7 @@ long MobileStatusQueryRequest::getResourceOwnerId()const
 void MobileStatusQueryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MobileStatusQueryRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string MobileStatusQueryRequest::getResourceOwnerAccount()const
 void MobileStatusQueryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MobileStatusQueryRequest::getCorrelationId()const
@@ -55,7 +55,7 @@ std::string MobileStatusQueryRequest::getCorrelationId()const
 void MobileStatusQueryRequest::setCorrelationId(const std::string& correlationId)
 {
 	correlationId_ = correlationId;
-	setParameter("CorrelationId", correlationId);
+	setCoreParameter("CorrelationId", correlationId);
 }
 
 long MobileStatusQueryRequest::getOwnerId()const
@@ -66,7 +66,7 @@ long MobileStatusQueryRequest::getOwnerId()const
 void MobileStatusQueryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MobileStatusQueryRequest::getAccessKeyId()const
@@ -77,6 +77,6 @@ std::string MobileStatusQueryRequest::getAccessKeyId()const
 void MobileStatusQueryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

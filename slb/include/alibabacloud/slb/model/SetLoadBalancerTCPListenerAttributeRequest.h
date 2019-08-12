@@ -79,6 +79,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getBandwidth()const;
 				void setBandwidth(int bandwidth);
+				std::string getHealthCheckMethod()const;
+				void setHealthCheckMethod(const std::string& healthCheckMethod);
 				std::string getHealthCheckDomain()const;
 				void setHealthCheckDomain(const std::string& healthCheckDomain);
 				std::string getOwnerAccount()const;
@@ -125,6 +127,7 @@ namespace AlibabaCloud
 				std::string healthCheckType_;
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
+				std::string healthCheckMethod_;
 				std::string healthCheckDomain_;
 				std::string ownerAccount_;
 				std::string synProxy_;

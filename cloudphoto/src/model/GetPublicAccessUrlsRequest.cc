@@ -33,7 +33,7 @@ std::string GetPublicAccessUrlsRequest::getDomainType()const
 void GetPublicAccessUrlsRequest::setDomainType(const std::string& domainType)
 {
 	domainType_ = domainType;
-	setParameter("DomainType", domainType);
+	setCoreParameter("DomainType", domainType);
 }
 
 std::string GetPublicAccessUrlsRequest::getLibraryId()const
@@ -44,7 +44,7 @@ std::string GetPublicAccessUrlsRequest::getLibraryId()const
 void GetPublicAccessUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setParameter("LibraryId", libraryId);
+	setCoreParameter("LibraryId", libraryId);
 }
 
 std::vector<long> GetPublicAccessUrlsRequest::getPhotoId()const
@@ -56,7 +56,7 @@ void GetPublicAccessUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
 	for(int i = 0; i!= photoId.size(); i++)
-		setParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
 }
 
 std::string GetPublicAccessUrlsRequest::getStoreName()const
@@ -67,7 +67,7 @@ std::string GetPublicAccessUrlsRequest::getStoreName()const
 void GetPublicAccessUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setParameter("StoreName", storeName);
+	setCoreParameter("StoreName", storeName);
 }
 
 std::string GetPublicAccessUrlsRequest::getZoomType()const
@@ -78,6 +78,6 @@ std::string GetPublicAccessUrlsRequest::getZoomType()const
 void GetPublicAccessUrlsRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setParameter("ZoomType", zoomType);
+	setCoreParameter("ZoomType", zoomType);
 }
 

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 					bool vpcUnavailable;
 					bool classicUnavailable;
 					std::string regionId;
+					std::string regionEndpoint;
+					std::string localName;
 				};
 
 

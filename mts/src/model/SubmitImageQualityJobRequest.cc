@@ -33,7 +33,7 @@ std::string SubmitImageQualityJobRequest::getInput()const
 void SubmitImageQualityJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitImageQualityJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitImageQualityJobRequest::getUserData()const
 void SubmitImageQualityJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitImageQualityJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitImageQualityJobRequest::getResourceOwnerId()const
 void SubmitImageQualityJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitImageQualityJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitImageQualityJobRequest::getResourceOwnerAccount()const
 void SubmitImageQualityJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitImageQualityJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitImageQualityJobRequest::getOwnerAccount()const
 void SubmitImageQualityJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitImageQualityJobRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SubmitImageQualityJobRequest::getOwnerId()const
 void SubmitImageQualityJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitImageQualityJobRequest::getAccessKeyId()const
@@ -99,7 +99,7 @@ std::string SubmitImageQualityJobRequest::getAccessKeyId()const
 void SubmitImageQualityJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitImageQualityJobRequest::getPipelineId()const
@@ -110,6 +110,6 @@ std::string SubmitImageQualityJobRequest::getPipelineId()const
 void SubmitImageQualityJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

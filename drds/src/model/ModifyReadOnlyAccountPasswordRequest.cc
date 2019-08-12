@@ -33,7 +33,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getNewPasswd()const
 void ModifyReadOnlyAccountPasswordRequest::setNewPasswd(const std::string& newPasswd)
 {
 	newPasswd_ = newPasswd;
-	setParameter("NewPasswd", newPasswd);
+	setCoreParameter("NewPasswd", newPasswd);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
@@ -44,7 +44,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
 void ModifyReadOnlyAccountPasswordRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setParameter("DbName", dbName);
+	setCoreParameter("DbName", dbName);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
@@ -55,7 +55,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
 void ModifyReadOnlyAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setParameter("AccountName", accountName);
+	setCoreParameter("AccountName", accountName);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
@@ -66,7 +66,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
 void ModifyReadOnlyAccountPasswordRequest::setOriginPassword(const std::string& originPassword)
 {
 	originPassword_ = originPassword;
-	setParameter("OriginPassword", originPassword);
+	setCoreParameter("OriginPassword", originPassword);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getDrdsInstanceId()const
@@ -77,7 +77,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDrdsInstanceId()const
 void ModifyReadOnlyAccountPasswordRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setParameter("DrdsInstanceId", drdsInstanceId);
+	setCoreParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
 void ModifyReadOnlyAccountPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

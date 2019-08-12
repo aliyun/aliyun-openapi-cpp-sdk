@@ -35,10 +35,13 @@ DescribeScheduledTasksResult::~DescribeScheduledTasksResult()
 
 void DescribeScheduledTasksResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allScheduledTasks = value["ScheduledTasks"]["ScheduledTask"];
 	for (auto value : allScheduledTasks)
@@ -64,6 +67,10 @@ void DescribeScheduledTasksResult::parse(const std::string &payload)
 			scheduledTasksObject.launchExpirationTime = std::stoi(value["LaunchExpirationTime"].asString());
 		if(!value["TaskEnabled"].isNull())
 			scheduledTasksObject.taskEnabled = value["TaskEnabled"].asString() == "true";
+		if(!value["MaxValue"].isNull())
+			scheduledTasksObject.maxValue = std::stoi(value["MaxValue"].asString());
+		if(!value["MinValue"].isNull())
+			scheduledTasksObject.minValue = std::stoi(value["MinValue"].asString());
 		scheduledTasks_.push_back(scheduledTasksObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -33,7 +33,7 @@ long DeleteMcuJobRequest::getResourceOwnerId()const
 void DeleteMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMcuJobRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteMcuJobRequest::getResourceOwnerAccount()const
 void DeleteMcuJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMcuJobRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string DeleteMcuJobRequest::getOwnerAccount()const
 void DeleteMcuJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteMcuJobRequest::getJobIds()const
@@ -66,7 +66,7 @@ std::string DeleteMcuJobRequest::getJobIds()const
 void DeleteMcuJobRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setParameter("JobIds", jobIds);
+	setCoreParameter("JobIds", jobIds);
 }
 
 long DeleteMcuJobRequest::getOwnerId()const
@@ -77,7 +77,7 @@ long DeleteMcuJobRequest::getOwnerId()const
 void DeleteMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMcuJobRequest::getAccessKeyId()const
@@ -88,6 +88,6 @@ std::string DeleteMcuJobRequest::getAccessKeyId()const
 void DeleteMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

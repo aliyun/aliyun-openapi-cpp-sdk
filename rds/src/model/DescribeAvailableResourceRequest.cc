@@ -91,6 +91,17 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAvailableResourceRequest::getDBInstanceClass()const
+{
+	return dBInstanceClass_;
+}
+
+void DescribeAvailableResourceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
+{
+	dBInstanceClass_ = dBInstanceClass;
+	setCoreParameter("DBInstanceClass", dBInstanceClass);
+}
+
 std::string DescribeAvailableResourceRequest::getRegionId()const
 {
 	return regionId_;

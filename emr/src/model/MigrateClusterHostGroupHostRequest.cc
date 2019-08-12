@@ -34,7 +34,7 @@ void MigrateClusterHostGroupHostRequest::setHostInstanceIdList(const std::vector
 {
 	hostInstanceIdList_ = hostInstanceIdList;
 	for(int i = 0; i!= hostInstanceIdList.size(); i++)
-		setParameter("HostInstanceIdList."+ std::to_string(i), hostInstanceIdList.at(i));
+		setCoreParameter("HostInstanceIdList."+ std::to_string(i), hostInstanceIdList.at(i));
 }
 
 long MigrateClusterHostGroupHostRequest::getResourceOwnerId()const
@@ -45,7 +45,7 @@ long MigrateClusterHostGroupHostRequest::getResourceOwnerId()const
 void MigrateClusterHostGroupHostRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MigrateClusterHostGroupHostRequest::getRegionId()const
@@ -56,7 +56,7 @@ std::string MigrateClusterHostGroupHostRequest::getRegionId()const
 void MigrateClusterHostGroupHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string MigrateClusterHostGroupHostRequest::getHostGroupId()const
@@ -67,7 +67,7 @@ std::string MigrateClusterHostGroupHostRequest::getHostGroupId()const
 void MigrateClusterHostGroupHostRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setParameter("HostGroupId", hostGroupId);
+	setCoreParameter("HostGroupId", hostGroupId);
 }
 
 std::string MigrateClusterHostGroupHostRequest::getClusterId()const
@@ -78,7 +78,7 @@ std::string MigrateClusterHostGroupHostRequest::getClusterId()const
 void MigrateClusterHostGroupHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 std::string MigrateClusterHostGroupHostRequest::getAccessKeyId()const
@@ -89,6 +89,6 @@ std::string MigrateClusterHostGroupHostRequest::getAccessKeyId()const
 void MigrateClusterHostGroupHostRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

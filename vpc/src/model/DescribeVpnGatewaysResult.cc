@@ -35,10 +35,13 @@ DescribeVpnGatewaysResult::~DescribeVpnGatewaysResult()
 
 void DescribeVpnGatewaysResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto allVpnGateways = value["VpnGateways"]["VpnGateway"];
 	for (auto value : allVpnGateways)
@@ -74,6 +77,8 @@ void DescribeVpnGatewaysResult::parse(const std::string &payload)
 			vpnGatewaysObject.sslVpn = value["SslVpn"].asString();
 		if(!value["SslMaxConnections"].isNull())
 			vpnGatewaysObject.sslMaxConnections = std::stol(value["SslMaxConnections"].asString());
+		if(!value["Tag"].isNull())
+			vpnGatewaysObject.tag = value["Tag"].asString();
 		vpnGateways_.push_back(vpnGatewaysObject);
 	}
 	if(!value["TotalCount"].isNull())

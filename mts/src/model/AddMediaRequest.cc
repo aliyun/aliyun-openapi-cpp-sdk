@@ -33,7 +33,7 @@ long AddMediaRequest::getResourceOwnerId()const
 void AddMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddMediaRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string AddMediaRequest::getResourceOwnerAccount()const
 void AddMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddMediaRequest::getOwnerAccount()const
@@ -55,7 +55,7 @@ std::string AddMediaRequest::getOwnerAccount()const
 void AddMediaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddMediaRequest::getDescription()const
@@ -66,7 +66,7 @@ std::string AddMediaRequest::getDescription()const
 void AddMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setParameter("Description", description);
+	setCoreParameter("Description", description);
 }
 
 std::string AddMediaRequest::getOverrideParams()const
@@ -77,7 +77,7 @@ std::string AddMediaRequest::getOverrideParams()const
 void AddMediaRequest::setOverrideParams(const std::string& overrideParams)
 {
 	overrideParams_ = overrideParams;
-	setParameter("OverrideParams", overrideParams);
+	setCoreParameter("OverrideParams", overrideParams);
 }
 
 long AddMediaRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long AddMediaRequest::getOwnerId()const
 void AddMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddMediaRequest::getTitle()const
@@ -99,7 +99,7 @@ std::string AddMediaRequest::getTitle()const
 void AddMediaRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setParameter("Title", title);
+	setCoreParameter("Title", title);
 }
 
 bool AddMediaRequest::getInputUnbind()const
@@ -110,7 +110,7 @@ bool AddMediaRequest::getInputUnbind()const
 void AddMediaRequest::setInputUnbind(bool inputUnbind)
 {
 	inputUnbind_ = inputUnbind;
-	setParameter("InputUnbind", inputUnbind ? "true" : "false");
+	setCoreParameter("InputUnbind", inputUnbind ? "true" : "false");
 }
 
 std::string AddMediaRequest::getAccessKeyId()const
@@ -121,7 +121,7 @@ std::string AddMediaRequest::getAccessKeyId()const
 void AddMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddMediaRequest::getTags()const
@@ -132,7 +132,7 @@ std::string AddMediaRequest::getTags()const
 void AddMediaRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setParameter("Tags", tags);
+	setCoreParameter("Tags", tags);
 }
 
 std::string AddMediaRequest::getCoverURL()const
@@ -143,7 +143,7 @@ std::string AddMediaRequest::getCoverURL()const
 void AddMediaRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setParameter("CoverURL", coverURL);
+	setCoreParameter("CoverURL", coverURL);
 }
 
 long AddMediaRequest::getCateId()const
@@ -154,7 +154,7 @@ long AddMediaRequest::getCateId()const
 void AddMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setParameter("CateId", std::to_string(cateId));
+	setCoreParameter("CateId", std::to_string(cateId));
 }
 
 std::string AddMediaRequest::getFileURL()const
@@ -165,7 +165,7 @@ std::string AddMediaRequest::getFileURL()const
 void AddMediaRequest::setFileURL(const std::string& fileURL)
 {
 	fileURL_ = fileURL;
-	setParameter("FileURL", fileURL);
+	setCoreParameter("FileURL", fileURL);
 }
 
 std::string AddMediaRequest::getMediaWorkflowId()const
@@ -176,7 +176,7 @@ std::string AddMediaRequest::getMediaWorkflowId()const
 void AddMediaRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setParameter("MediaWorkflowId", mediaWorkflowId);
+	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 std::string AddMediaRequest::getMediaWorkflowUserData()const
@@ -187,6 +187,6 @@ std::string AddMediaRequest::getMediaWorkflowUserData()const
 void AddMediaRequest::setMediaWorkflowUserData(const std::string& mediaWorkflowUserData)
 {
 	mediaWorkflowUserData_ = mediaWorkflowUserData;
-	setParameter("MediaWorkflowUserData", mediaWorkflowUserData);
+	setCoreParameter("MediaWorkflowUserData", mediaWorkflowUserData);
 }
 

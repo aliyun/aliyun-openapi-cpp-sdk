@@ -31,61 +31,25 @@ PushClient::PushClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "push");
 }
 
 PushClient::PushClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "push");
 }
 
 PushClient::PushClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "push");
 }
 
 PushClient::~PushClient()
 {}
-
-PushClient::UnbindTagOutcome PushClient::unbindTag(const UnbindTagRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UnbindTagOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UnbindTagOutcome(UnbindTagResult(outcome.result()));
-	else
-		return UnbindTagOutcome(outcome.error());
-}
-
-void PushClient::unbindTagAsync(const UnbindTagRequest& request, const UnbindTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, unbindTag(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PushClient::UnbindTagOutcomeCallable PushClient::unbindTagCallable(const UnbindTagRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UnbindTagOutcome()>>(
-			[this, request]()
-			{
-			return this->unbindTag(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
 
 PushClient::QueryDeviceStatOutcome PushClient::queryDeviceStat(const QueryDeviceStatRequest &request) const
 {
@@ -117,6 +81,42 @@ PushClient::QueryDeviceStatOutcomeCallable PushClient::queryDeviceStatCallable(c
 			[this, request]()
 			{
 			return this->queryDeviceStat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PushClient::UnbindTagOutcome PushClient::unbindTag(const UnbindTagRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindTagOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindTagOutcome(UnbindTagResult(outcome.result()));
+	else
+		return UnbindTagOutcome(outcome.error());
+}
+
+void PushClient::unbindTagAsync(const UnbindTagRequest& request, const UnbindTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindTag(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::UnbindTagOutcomeCallable PushClient::unbindTagCallable(const UnbindTagRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindTagOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindTag(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,42 +195,6 @@ PushClient::CheckDeviceOutcomeCallable PushClient::checkDeviceCallable(const Che
 	return task->get_future();
 }
 
-PushClient::ListPushRecordsOutcome PushClient::listPushRecords(const ListPushRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPushRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPushRecordsOutcome(ListPushRecordsResult(outcome.result()));
-	else
-		return ListPushRecordsOutcome(outcome.error());
-}
-
-void PushClient::listPushRecordsAsync(const ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPushRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PushClient::ListPushRecordsOutcomeCallable PushClient::listPushRecordsCallable(const ListPushRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPushRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->listPushRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PushClient::QueryDevicesByAliasOutcome PushClient::queryDevicesByAlias(const QueryDevicesByAliasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +261,42 @@ PushClient::PushOutcomeCallable PushClient::pushCallable(const PushRequest &requ
 			[this, request]()
 			{
 			return this->push(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PushClient::ListPushRecordsOutcome PushClient::listPushRecords(const ListPushRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPushRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPushRecordsOutcome(ListPushRecordsResult(outcome.result()));
+	else
+		return ListPushRecordsOutcome(outcome.error());
+}
+
+void PushClient::listPushRecordsAsync(const ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPushRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PushClient::ListPushRecordsOutcomeCallable PushClient::listPushRecordsCallable(const ListPushRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPushRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPushRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

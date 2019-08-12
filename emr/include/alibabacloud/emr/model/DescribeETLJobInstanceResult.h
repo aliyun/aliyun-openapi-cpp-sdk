@@ -62,20 +62,9 @@ namespace AlibabaCloud
 				};
 				struct StageInstance
 				{
-					struct Metrics1
-					{
-						long recordsOut;
-						long vcores;
-						long memSize;
-						long totalTime;
-						std::string recordsRate;
-						long recordsIn;
-						long recordsError;
-					};
-					long endTime;
-					Metrics1 metrics1;
-					long startTime;
+					long stageEndTime;
 					std::string id;
+					long stageStartTime;
 					std::string name;
 				};
 

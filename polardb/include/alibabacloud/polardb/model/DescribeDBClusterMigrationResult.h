@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				DescribeDBClusterMigrationResult();
 				explicit DescribeDBClusterMigrationResult(const std::string &payload);
 				~DescribeDBClusterMigrationResult();
+				std::string getComment()const;
 				std::string getExpiredTime()const;
 				std::string getDBClusterId()const;
 				std::string getTopologies()const;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string comment_;
 				std::string expiredTime_;
 				std::string dBClusterId_;
 				std::string topologies_;

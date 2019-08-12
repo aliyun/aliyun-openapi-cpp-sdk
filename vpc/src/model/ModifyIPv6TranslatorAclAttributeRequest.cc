@@ -33,7 +33,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getAclId()const
 void ModifyIPv6TranslatorAclAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setParameter("AclId", aclId);
+	setCoreParameter("AclId", aclId);
 }
 
 long ModifyIPv6TranslatorAclAttributeRequest::getResourceOwnerId()const
@@ -44,7 +44,7 @@ long ModifyIPv6TranslatorAclAttributeRequest::getResourceOwnerId()const
 void ModifyIPv6TranslatorAclAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIPv6TranslatorAclAttributeRequest::getAclName()const
@@ -55,7 +55,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getAclName()const
 void ModifyIPv6TranslatorAclAttributeRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setParameter("AclName", aclName);
+	setCoreParameter("AclName", aclName);
 }
 
 std::string ModifyIPv6TranslatorAclAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getResourceOwnerAccount()co
 void ModifyIPv6TranslatorAclAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyIPv6TranslatorAclAttributeRequest::getRegionId()const
@@ -77,7 +77,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getRegionId()const
 void ModifyIPv6TranslatorAclAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyIPv6TranslatorAclAttributeRequest::getClientToken()const
@@ -88,7 +88,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getClientToken()const
 void ModifyIPv6TranslatorAclAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+	setCoreParameter("ClientToken", clientToken);
 }
 
 std::string ModifyIPv6TranslatorAclAttributeRequest::getOwnerAccount()const
@@ -99,7 +99,7 @@ std::string ModifyIPv6TranslatorAclAttributeRequest::getOwnerAccount()const
 void ModifyIPv6TranslatorAclAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyIPv6TranslatorAclAttributeRequest::getOwnerId()const
@@ -110,6 +110,6 @@ long ModifyIPv6TranslatorAclAttributeRequest::getOwnerId()const
 void ModifyIPv6TranslatorAclAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

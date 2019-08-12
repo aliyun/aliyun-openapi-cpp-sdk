@@ -22,13 +22,13 @@
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT RoaServiceRequest : public ServiceRequest {
- public:
+public:
   RoaServiceRequest(const std::string &product, const std::string &version);
   virtual ~RoaServiceRequest();
-  using ServiceRequest::setParameter;
-  using ServiceRequest::setContent;
   using ServiceRequest::parameter;
+  using ServiceRequest::setContent;
+  using ServiceRequest::setParameter;
   using ServiceRequest::setScheme;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICEREQUEST_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_ROASERVICEREQUEST_H_

@@ -30,6 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT DescribeAccessControlListsRequest : public RpcServiceRequest
 			{
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeAccessControlListsRequest();
@@ -55,10 +60,14 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::string access_key_id_;
@@ -71,8 +80,10 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string accessKeyId_;
 				std::string tags_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 
 			};
 		}

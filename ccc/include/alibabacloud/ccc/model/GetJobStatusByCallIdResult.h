@@ -85,6 +85,7 @@ namespace AlibabaCloud
 						std::string calledNumber;
 						std::string taskId;
 						std::string scenarioId;
+						long endTime;
 						long actualTime;
 						std::string callId;
 						std::vector<Task::ConversationDetail> conversation;

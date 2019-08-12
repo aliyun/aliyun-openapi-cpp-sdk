@@ -33,7 +33,7 @@ std::string SubmitPornJobRequest::getInput()const
 void SubmitPornJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setParameter("Input", input);
+	setCoreParameter("Input", input);
 }
 
 std::string SubmitPornJobRequest::getUserData()const
@@ -44,7 +44,7 @@ std::string SubmitPornJobRequest::getUserData()const
 void SubmitPornJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setParameter("UserData", userData);
+	setCoreParameter("UserData", userData);
 }
 
 long SubmitPornJobRequest::getResourceOwnerId()const
@@ -55,7 +55,7 @@ long SubmitPornJobRequest::getResourceOwnerId()const
 void SubmitPornJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitPornJobRequest::getResourceOwnerAccount()const
@@ -66,7 +66,7 @@ std::string SubmitPornJobRequest::getResourceOwnerAccount()const
 void SubmitPornJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitPornJobRequest::getOwnerAccount()const
@@ -77,7 +77,7 @@ std::string SubmitPornJobRequest::getOwnerAccount()const
 void SubmitPornJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitPornJobRequest::getOwnerId()const
@@ -88,7 +88,7 @@ long SubmitPornJobRequest::getOwnerId()const
 void SubmitPornJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitPornJobRequest::getPornConfig()const
@@ -99,7 +99,7 @@ std::string SubmitPornJobRequest::getPornConfig()const
 void SubmitPornJobRequest::setPornConfig(const std::string& pornConfig)
 {
 	pornConfig_ = pornConfig;
-	setParameter("PornConfig", pornConfig);
+	setCoreParameter("PornConfig", pornConfig);
 }
 
 std::string SubmitPornJobRequest::getAccessKeyId()const
@@ -110,7 +110,7 @@ std::string SubmitPornJobRequest::getAccessKeyId()const
 void SubmitPornJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitPornJobRequest::getPipelineId()const
@@ -121,6 +121,6 @@ std::string SubmitPornJobRequest::getPipelineId()const
 void SubmitPornJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setParameter("PipelineId", pipelineId);
+	setCoreParameter("PipelineId", pipelineId);
 }
 

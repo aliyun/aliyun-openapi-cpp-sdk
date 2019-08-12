@@ -33,7 +33,7 @@ long DeleteNatGatewayRequest::getResourceOwnerId()const
 void DeleteNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
@@ -44,7 +44,7 @@ std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
 void DeleteNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNatGatewayRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string DeleteNatGatewayRequest::getRegionId()const
 void DeleteNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string DeleteNatGatewayRequest::getOwnerAccount()const
@@ -66,7 +66,7 @@ std::string DeleteNatGatewayRequest::getOwnerAccount()const
 void DeleteNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+	setCoreParameter("OwnerAccount", ownerAccount);
 }
 
 bool DeleteNatGatewayRequest::getForce()const
@@ -77,7 +77,7 @@ bool DeleteNatGatewayRequest::getForce()const
 void DeleteNatGatewayRequest::setForce(bool force)
 {
 	force_ = force;
-	setParameter("Force", std::to_string(force));
+	setCoreParameter("Force", force ? "true" : "false");
 }
 
 std::string DeleteNatGatewayRequest::getNatGatewayId()const
@@ -88,7 +88,7 @@ std::string DeleteNatGatewayRequest::getNatGatewayId()const
 void DeleteNatGatewayRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setParameter("NatGatewayId", natGatewayId);
+	setCoreParameter("NatGatewayId", natGatewayId);
 }
 
 long DeleteNatGatewayRequest::getOwnerId()const
@@ -99,6 +99,6 @@ long DeleteNatGatewayRequest::getOwnerId()const
 void DeleteNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+	setCoreParameter("OwnerId", std::to_string(ownerId));
 }
 

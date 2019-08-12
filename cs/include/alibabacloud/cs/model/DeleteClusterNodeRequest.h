@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,37 @@
 #ifndef ALIBABACLOUD_CS_MODEL_DELETECLUSTERNODEREQUEST_H_
 #define ALIBABACLOUD_CS_MODEL_DELETECLUSTERNODEREQUEST_H_
 
-#include <string>
-#include <vector>
 #include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/cs/CSExport.h>
+#include <string>
+#include <vector>
 
-namespace AlibabaCloud
-{
-	namespace CS
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CS_EXPORT DeleteClusterNodeRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace CS {
+namespace Model {
+class ALIBABACLOUD_CS_EXPORT DeleteClusterNodeRequest
+    : public RoaServiceRequest {
 
-			public:
-				DeleteClusterNodeRequest();
-				~DeleteClusterNodeRequest();
+public:
+  DeleteClusterNodeRequest();
+  ~DeleteClusterNodeRequest();
 
-				std::string getReleaseInstance()const;
-				void setReleaseInstance(const std::string& releaseInstance);
-				std::string getIp()const;
-				void setIp(const std::string& ip);
-				std::string getForce()const;
-				void setForce(const std::string& force);
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
+  std::string getReleaseInstance() const;
+  void setReleaseInstance(const std::string &releaseInstance);
+  std::string getIp() const;
+  void setIp(const std::string &ip);
+  std::string getForce() const;
+  void setForce(const std::string &force);
+  std::string getClusterId() const;
+  void setClusterId(const std::string &clusterId);
 
-            private:
-				std::string releaseInstance_;
-				std::string ip_;
-				std::string force_;
-				std::string clusterId_;
-
-			};
-		}
-	}
-}
+private:
+  std::string releaseInstance_;
+  std::string ip_;
+  std::string force_;
+  std::string clusterId_;
+};
+} // namespace Model
+} // namespace CS
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CS_MODEL_DELETECLUSTERNODEREQUEST_H_

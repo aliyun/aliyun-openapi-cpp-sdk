@@ -39,15 +39,12 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getKeyId()const;
 				void setKeyId(const std::string& keyId);
-				std::string getSTSToken()const;
-				void setSTSToken(const std::string& sTSToken);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
 				int pageSize_;
 				std::string keyId_;
-				std::string sTSToken_;
 				int pageNumber_;
 
 			};

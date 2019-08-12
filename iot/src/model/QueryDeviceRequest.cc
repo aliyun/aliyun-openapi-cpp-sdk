@@ -25,6 +25,17 @@ QueryDeviceRequest::QueryDeviceRequest() :
 QueryDeviceRequest::~QueryDeviceRequest()
 {}
 
+std::string QueryDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 int QueryDeviceRequest::getPageSize()const
 {
 	return pageSize_;
@@ -33,7 +44,7 @@ int QueryDeviceRequest::getPageSize()const
 void QueryDeviceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryDeviceRequest::getCurrentPage()const
@@ -44,7 +55,7 @@ int QueryDeviceRequest::getCurrentPage()const
 void QueryDeviceRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceRequest::getProductKey()const
@@ -55,7 +66,7 @@ std::string QueryDeviceRequest::getProductKey()const
 void QueryDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string QueryDeviceRequest::getAccessKeyId()const
 void QueryDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

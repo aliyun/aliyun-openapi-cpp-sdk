@@ -33,7 +33,7 @@ std::string SetGtmMonitorStatusRequest::getUserClientIp()const
 void SetGtmMonitorStatusRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+	setCoreParameter("UserClientIp", userClientIp);
 }
 
 std::string SetGtmMonitorStatusRequest::getMonitorConfigId()const
@@ -44,7 +44,7 @@ std::string SetGtmMonitorStatusRequest::getMonitorConfigId()const
 void SetGtmMonitorStatusRequest::setMonitorConfigId(const std::string& monitorConfigId)
 {
 	monitorConfigId_ = monitorConfigId;
-	setParameter("MonitorConfigId", monitorConfigId);
+	setCoreParameter("MonitorConfigId", monitorConfigId);
 }
 
 std::string SetGtmMonitorStatusRequest::getLang()const
@@ -55,7 +55,7 @@ std::string SetGtmMonitorStatusRequest::getLang()const
 void SetGtmMonitorStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setParameter("Lang", lang);
+	setCoreParameter("Lang", lang);
 }
 
 std::string SetGtmMonitorStatusRequest::getStatus()const
@@ -66,6 +66,6 @@ std::string SetGtmMonitorStatusRequest::getStatus()const
 void SetGtmMonitorStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setCoreParameter("Status", status);
 }
 

@@ -35,10 +35,13 @@ DescribeEventDetailResult::~DescribeEventDetailResult()
 
 void DescribeEventDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto eventNode = value["Event"];
 	if(!eventNode["Id"].isNull())
@@ -112,6 +115,16 @@ void DescribeEventDetailResult::parse(const std::string &payload)
 		if(!dataNode["Y"].isNull())
 			chartItemObject.data.y = dataNode["Y"].asString();
 		event_.detail.chart.push_back(chartItemObject);
+	}
+	auto allResourceInfo = value["ResourceInfo"]["ResourceInfoItem"];
+	for (auto value : allResourceInfo)
+	{
+		Event::Detail::ResourceInfoItem resourceInfoItemObject;
+		if(!value["Label"].isNull())
+			resourceInfoItemObject.label = value["Label"].asString();
+		if(!value["Value"].isNull())
+			resourceInfoItemObject.value = value["Value"].asString();
+		event_.detail.resourceInfo.push_back(resourceInfoItemObject);
 	}
 
 }

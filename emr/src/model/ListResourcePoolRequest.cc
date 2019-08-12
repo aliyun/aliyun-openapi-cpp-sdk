@@ -33,7 +33,7 @@ long ListResourcePoolRequest::getResourceOwnerId()const
 void ListResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListResourcePoolRequest::getRegionId()const
@@ -44,7 +44,7 @@ std::string ListResourcePoolRequest::getRegionId()const
 void ListResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 int ListResourcePoolRequest::getPageSize()const
@@ -55,7 +55,7 @@ int ListResourcePoolRequest::getPageSize()const
 void ListResourcePoolRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListResourcePoolRequest::getClusterId()const
@@ -66,7 +66,7 @@ std::string ListResourcePoolRequest::getClusterId()const
 void ListResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 int ListResourcePoolRequest::getPageNumber()const
@@ -77,7 +77,7 @@ int ListResourcePoolRequest::getPageNumber()const
 void ListResourcePoolRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setCoreParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListResourcePoolRequest::getAccessKeyId()const
@@ -88,7 +88,7 @@ std::string ListResourcePoolRequest::getAccessKeyId()const
 void ListResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListResourcePoolRequest::getPoolType()const
@@ -99,6 +99,6 @@ std::string ListResourcePoolRequest::getPoolType()const
 void ListResourcePoolRequest::setPoolType(const std::string& poolType)
 {
 	poolType_ = poolType;
-	setParameter("PoolType", poolType);
+	setCoreParameter("PoolType", poolType);
 }
 

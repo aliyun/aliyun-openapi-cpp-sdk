@@ -88,6 +88,8 @@ namespace AlibabaCloud
 				void setVolumeType(const std::string& volumeType);
 				std::string getDeployMode()const;
 				void setDeployMode(const std::string& deployMode);
+				std::string getSystemDiskType()const;
+				void setSystemDiskType(const std::string& systemDiskType);
 				int getEcsOrderManagerCount()const;
 				void setEcsOrderManagerCount(int ecsOrderManagerCount);
 				std::string getResourceGroupId()const;
@@ -166,6 +168,7 @@ namespace AlibabaCloud
 				std::string imageOwnerAlias_;
 				std::string volumeType_;
 				std::string deployMode_;
+				std::string systemDiskType_;
 				int ecsOrderManagerCount_;
 				std::string resourceGroupId_;
 				std::string password_;

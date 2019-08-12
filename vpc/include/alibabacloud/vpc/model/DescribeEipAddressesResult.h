@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::vector<std::string> availableRegions;
 					std::string resourceGroupId;
 					std::string allocationId;
+					bool secondLimited;
 					std::string name;
 					std::string reservationOrderType;
 					std::string instanceRegionId;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 					std::string hasReservationData;
 					std::string bandwidthPackageType;
 					std::vector<EipAddress::LockReason> operationLocks;
+					std::string bandwidthPackageBandwidth;
 					std::string internetChargeType;
 					std::string reservationInternetChargeType;
 					std::string allocationTime;

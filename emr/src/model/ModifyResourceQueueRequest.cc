@@ -33,7 +33,7 @@ long ModifyResourceQueueRequest::getResourceOwnerId()const
 void ModifyResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyResourceQueueRequest::getParentQueueId()const
@@ -44,7 +44,7 @@ long ModifyResourceQueueRequest::getParentQueueId()const
 void ModifyResourceQueueRequest::setParentQueueId(long parentQueueId)
 {
 	parentQueueId_ = parentQueueId;
-	setParameter("ParentQueueId", std::to_string(parentQueueId));
+	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
 }
 
 std::string ModifyResourceQueueRequest::getRegionId()const
@@ -55,7 +55,7 @@ std::string ModifyResourceQueueRequest::getRegionId()const
 void ModifyResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	setCoreParameter("RegionId", regionId);
 }
 
 std::string ModifyResourceQueueRequest::getName()const
@@ -66,7 +66,7 @@ std::string ModifyResourceQueueRequest::getName()const
 void ModifyResourceQueueRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string ModifyResourceQueueRequest::getQualifiedName()const
@@ -77,7 +77,7 @@ std::string ModifyResourceQueueRequest::getQualifiedName()const
 void ModifyResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
 {
 	qualifiedName_ = qualifiedName;
-	setParameter("QualifiedName", qualifiedName);
+	setCoreParameter("QualifiedName", qualifiedName);
 }
 
 long ModifyResourceQueueRequest::getResourcePoolId()const
@@ -88,7 +88,7 @@ long ModifyResourceQueueRequest::getResourcePoolId()const
 void ModifyResourceQueueRequest::setResourcePoolId(long resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setParameter("ResourcePoolId", std::to_string(resourcePoolId));
+	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
 }
 
 std::string ModifyResourceQueueRequest::getId()const
@@ -99,7 +99,7 @@ std::string ModifyResourceQueueRequest::getId()const
 void ModifyResourceQueueRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setParameter("Id", id);
+	setCoreParameter("Id", id);
 }
 
 std::string ModifyResourceQueueRequest::getClusterId()const
@@ -110,7 +110,7 @@ std::string ModifyResourceQueueRequest::getClusterId()const
 void ModifyResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	setCoreParameter("ClusterId", clusterId);
 }
 
 bool ModifyResourceQueueRequest::getLeaf()const
@@ -121,7 +121,7 @@ bool ModifyResourceQueueRequest::getLeaf()const
 void ModifyResourceQueueRequest::setLeaf(bool leaf)
 {
 	leaf_ = leaf;
-	setParameter("Leaf", std::to_string(leaf));
+	setCoreParameter("Leaf", leaf ? "true" : "false");
 }
 
 std::vector<ModifyResourceQueueRequest::Config> ModifyResourceQueueRequest::getConfig()const
@@ -136,11 +136,11 @@ void ModifyResourceQueueRequest::setConfig(const std::vector<Config>& config)
 	for(int i = 0; i!= config.size(); i++)	{
 		auto obj = config.at(i);
 		std::string str ="Config."+ std::to_string(i);
-		setParameter(str + ".ConfigKey", obj.configKey);
-		setParameter(str + ".Note", obj.note);
-		setParameter(str + ".ConfigValue", obj.configValue);
-		setParameter(str + ".Id", std::to_string(obj.id));
-		setParameter(str + ".Category", obj.category);
+		setCoreParameter(str + ".ConfigKey", obj.configKey);
+		setCoreParameter(str + ".Note", obj.note);
+		setCoreParameter(str + ".ConfigValue", obj.configValue);
+		setCoreParameter(str + ".Id", std::to_string(obj.id));
+		setCoreParameter(str + ".Category", obj.category);
 	}
 }
 
@@ -152,6 +152,6 @@ std::string ModifyResourceQueueRequest::getAccessKeyId()const
 void ModifyResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

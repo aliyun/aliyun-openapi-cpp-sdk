@@ -37,10 +37,10 @@ set(pvtz_public_header_model
 	include/alibabacloud/pvtz/model/AddZoneResult.h
 	include/alibabacloud/pvtz/model/BindZoneVpcRequest.h
 	include/alibabacloud/pvtz/model/BindZoneVpcResult.h
-	include/alibabacloud/pvtz/model/DescribeStatisticSummaryRequest.h
-	include/alibabacloud/pvtz/model/DescribeStatisticSummaryResult.h
 	include/alibabacloud/pvtz/model/DescribeRequestGraphRequest.h
 	include/alibabacloud/pvtz/model/DescribeRequestGraphResult.h
+	include/alibabacloud/pvtz/model/DescribeStatisticSummaryRequest.h
+	include/alibabacloud/pvtz/model/DescribeStatisticSummaryResult.h
 	include/alibabacloud/pvtz/model/SetProxyPatternRequest.h
 	include/alibabacloud/pvtz/model/SetProxyPatternResult.h
 	include/alibabacloud/pvtz/model/DescribeZoneVpcTreeRequest.h
@@ -78,10 +78,10 @@ set(pvtz_src
 	src/model/AddZoneResult.cc
 	src/model/BindZoneVpcRequest.cc
 	src/model/BindZoneVpcResult.cc
-	src/model/DescribeStatisticSummaryRequest.cc
-	src/model/DescribeStatisticSummaryResult.cc
 	src/model/DescribeRequestGraphRequest.cc
 	src/model/DescribeRequestGraphResult.cc
+	src/model/DescribeStatisticSummaryRequest.cc
+	src/model/DescribeStatisticSummaryResult.cc
 	src/model/SetProxyPatternRequest.cc
 	src/model/SetProxyPatternResult.cc
 	src/model/DescribeZoneVpcTreeRequest.cc

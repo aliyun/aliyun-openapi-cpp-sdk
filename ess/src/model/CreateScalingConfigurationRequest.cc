@@ -47,6 +47,28 @@ void CreateScalingConfigurationRequest::setMemory(int memory)
 	setCoreParameter("Memory", std::to_string(memory));
 }
 
+std::string CreateScalingConfigurationRequest::getHpcClusterId()const
+{
+	return hpcClusterId_;
+}
+
+void CreateScalingConfigurationRequest::setHpcClusterId(const std::string& hpcClusterId)
+{
+	hpcClusterId_ = hpcClusterId;
+	setCoreParameter("HpcClusterId", hpcClusterId);
+}
+
+std::string CreateScalingConfigurationRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateScalingConfigurationRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setCoreParameter("ClientToken", clientToken);
+}
+
 std::string CreateScalingConfigurationRequest::getScalingGroupId()const
 {
 	return scalingGroupId_;
@@ -230,6 +252,17 @@ void CreateScalingConfigurationRequest::setImageName(const std::string& imageNam
 	setCoreParameter("ImageName", imageName);
 }
 
+std::string CreateScalingConfigurationRequest::getInstanceDescription()const
+{
+	return instanceDescription_;
+}
+
+void CreateScalingConfigurationRequest::setInstanceDescription(const std::string& instanceDescription)
+{
+	instanceDescription_ = instanceDescription;
+	setCoreParameter("InstanceDescription", instanceDescription);
+}
+
 std::string CreateScalingConfigurationRequest::getInstanceType()const
 {
 	return instanceType_;
@@ -316,6 +349,18 @@ void CreateScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setCoreParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::vector<std::string> CreateScalingConfigurationRequest::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
+}
+
+void CreateScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
+{
+	securityGroupIds_ = securityGroupIds;
+	for(int i = 0; i!= securityGroupIds.size(); i++)
+		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
 }
 
 std::vector<CreateScalingConfigurationRequest::DataDisk> CreateScalingConfigurationRequest::getDataDisk()const
