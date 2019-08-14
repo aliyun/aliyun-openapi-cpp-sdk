@@ -25,6 +25,7 @@ UpdateProductTagsRequest::UpdateProductTagsRequest() :
 UpdateProductTagsRequest::~UpdateProductTagsRequest()
 {}
 
+<<<<<<< HEAD
 std::vector<UpdateProductTagsRequest::ProductTag> UpdateProductTagsRequest::getProductTag()const
 {
 	return productTag_;
@@ -75,3 +76,55 @@ void UpdateProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::vector<UpdateProductTagsRequest::ProductTag> UpdateProductTagsRequest::getProductTag()const
+{
+	return productTag_;
+}
+
+void UpdateProductTagsRequest::setProductTag(const std::vector<ProductTag>& productTag)
+{
+	productTag_ = productTag;
+	int i = 0;
+	for(int i = 0; i!= productTag.size(); i++)	{
+		auto obj = productTag.at(i);
+		std::string str ="ProductTag."+ std::to_string(i);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
+	}
+}
+
+std::string UpdateProductTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string UpdateProductTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

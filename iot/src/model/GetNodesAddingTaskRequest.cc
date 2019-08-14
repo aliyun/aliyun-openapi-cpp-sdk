@@ -25,6 +25,7 @@ GetNodesAddingTaskRequest::GetNodesAddingTaskRequest() :
 GetNodesAddingTaskRequest::~GetNodesAddingTaskRequest()
 {}
 
+<<<<<<< HEAD
 std::string GetNodesAddingTaskRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void GetNodesAddingTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string GetNodesAddingTaskRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetNodesAddingTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetNodesAddingTaskRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void GetNodesAddingTaskRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setCoreParameter("TaskId", taskId);
+}
+
+std::string GetNodesAddingTaskRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetNodesAddingTaskRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

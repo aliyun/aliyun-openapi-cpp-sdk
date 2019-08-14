@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				CreateTopicRouteTableRequest();
 				~CreateTopicRouteTableRequest();
 
+<<<<<<< HEAD
 				std::vector<std::string> getDstTopic()const;
 				void setDstTopic(const std::vector<std::string>& dstTopic);
 				std::string getRegionId()const;
@@ -52,6 +53,25 @@ namespace AlibabaCloud
 				std::string iotInstanceId_;
 				std::string accessKeyId_;
 				std::string srcTopic_;
+=======
+				std::vector<std::string> getDstTopic()const;
+				void setDstTopic(const std::vector<std::string>& dstTopic);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSrcTopic()const;
+				void setSrcTopic(const std::string& srcTopic);
+
+            private:
+				std::vector<std::string> dstTopic_;
+				std::string regionId_;
+				std::string iotInstanceId_;
+				std::string accessKeyId_;
+				std::string srcTopic_;
+>>>>>>> master
 
 			};
 		}

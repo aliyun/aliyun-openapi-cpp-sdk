@@ -25,6 +25,7 @@ PubRequest::PubRequest() :
 PubRequest::~PubRequest()
 {}
 
+<<<<<<< HEAD
 std::string PubRequest::getTopicFullName()const
 {
 	return topicFullName_;
@@ -91,3 +92,71 @@ void PubRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string PubRequest::getTopicFullName()const
+{
+	return topicFullName_;
+}
+
+void PubRequest::setTopicFullName(const std::string& topicFullName)
+{
+	topicFullName_ = topicFullName;
+	setCoreParameter("TopicFullName", topicFullName);
+}
+
+int PubRequest::getQos()const
+{
+	return qos_;
+}
+
+void PubRequest::setQos(int qos)
+{
+	qos_ = qos;
+	setCoreParameter("Qos", std::to_string(qos));
+}
+
+std::string PubRequest::getMessageContent()const
+{
+	return messageContent_;
+}
+
+void PubRequest::setMessageContent(const std::string& messageContent)
+{
+	messageContent_ = messageContent;
+	setCoreParameter("MessageContent", messageContent);
+}
+
+std::string PubRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string PubRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void PubRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string PubRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void PubRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

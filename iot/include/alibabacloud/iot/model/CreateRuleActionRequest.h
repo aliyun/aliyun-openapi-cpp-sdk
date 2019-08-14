@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				CreateRuleActionRequest();
 				~CreateRuleActionRequest();
 
+<<<<<<< HEAD
 				std::string getConfiguration()const;
 				void setConfiguration(const std::string& configuration);
 				std::string getIotInstanceId()const;
@@ -55,6 +56,28 @@ namespace AlibabaCloud
 				std::string type_;
 				std::string accessKeyId_;
 				bool errorActionFlag_;
+=======
+				std::string getConfiguration()const;
+				void setConfiguration(const std::string& configuration);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
+				std::string getType()const;
+				void setType(const std::string& type);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				bool getErrorActionFlag()const;
+				void setErrorActionFlag(bool errorActionFlag);
+
+            private:
+				std::string configuration_;
+				std::string iotInstanceId_;
+				long ruleId_;
+				std::string type_;
+				std::string accessKeyId_;
+				bool errorActionFlag_;
+>>>>>>> master
 
 			};
 		}

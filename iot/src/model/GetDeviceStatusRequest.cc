@@ -25,6 +25,7 @@ GetDeviceStatusRequest::GetDeviceStatusRequest() :
 GetDeviceStatusRequest::~GetDeviceStatusRequest()
 {}
 
+<<<<<<< HEAD
 std::string GetDeviceStatusRequest::getIotId()const
 {
 	return iotId_;
@@ -80,3 +81,60 @@ void GetDeviceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string GetDeviceStatusRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void GetDeviceStatusRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string GetDeviceStatusRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetDeviceStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetDeviceStatusRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void GetDeviceStatusRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string GetDeviceStatusRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetDeviceStatusRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string GetDeviceStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetDeviceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

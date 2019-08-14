@@ -1,3 +1,13 @@
+2019-08-14 Version 1.36.87
+- Generated 2018-01-20 for `Iot`.
+
+2019-08-13 Version 1.36.86
+- Optimize return code.
+- Edit QueryDataset.
+
+2019-08-13 Version 1.36.85
+- Supported for openapi new version.
+
 2019-08-12 Version 1.36.84
 - Support Defect Face API.
 

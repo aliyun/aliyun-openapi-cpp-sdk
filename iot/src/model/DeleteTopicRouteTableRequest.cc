@@ -25,6 +25,7 @@ DeleteTopicRouteTableRequest::DeleteTopicRouteTableRequest() :
 DeleteTopicRouteTableRequest::~DeleteTopicRouteTableRequest()
 {}
 
+<<<<<<< HEAD
 std::vector<std::string> DeleteTopicRouteTableRequest::getDstTopic()const
 {
 	return dstTopic_;
@@ -81,3 +82,61 @@ void DeleteTopicRouteTableRequest::setSrcTopic(const std::string& srcTopic)
 	setCoreParameter("SrcTopic", srcTopic);
 }
 
+=======
+std::vector<std::string> DeleteTopicRouteTableRequest::getDstTopic()const
+{
+	return dstTopic_;
+}
+
+void DeleteTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
+{
+	dstTopic_ = dstTopic;
+	for(int i = 0; i!= dstTopic.size(); i++)
+		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
+}
+
+std::string DeleteTopicRouteTableRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteTopicRouteTableRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string DeleteTopicRouteTableRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteTopicRouteTableRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteTopicRouteTableRequest::getSrcTopic()const
+{
+	return srcTopic_;
+}
+
+void DeleteTopicRouteTableRequest::setSrcTopic(const std::string& srcTopic)
+{
+	srcTopic_ = srcTopic;
+	setCoreParameter("SrcTopic", srcTopic);
+}
+
+>>>>>>> master

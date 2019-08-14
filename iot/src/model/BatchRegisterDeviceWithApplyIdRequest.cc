@@ -25,6 +25,7 @@ BatchRegisterDeviceWithApplyIdRequest::BatchRegisterDeviceWithApplyIdRequest() :
 BatchRegisterDeviceWithApplyIdRequest::~BatchRegisterDeviceWithApplyIdRequest()
 {}
 
+<<<<<<< HEAD
 long BatchRegisterDeviceWithApplyIdRequest::getApplyId()const
 {
 	return applyId_;
@@ -69,3 +70,49 @@ void BatchRegisterDeviceWithApplyIdRequest::setAccessKeyId(const std::string& ac
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+long BatchRegisterDeviceWithApplyIdRequest::getApplyId()const
+{
+	return applyId_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setApplyId(long applyId)
+{
+	applyId_ = applyId;
+	setCoreParameter("ApplyId", std::to_string(applyId));
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

@@ -25,6 +25,7 @@ DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}
 
+<<<<<<< HEAD
 std::string DeleteDeviceGroupRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void DeleteDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string DeleteDeviceGroupRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteDeviceGroupRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+std::string DeleteDeviceGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

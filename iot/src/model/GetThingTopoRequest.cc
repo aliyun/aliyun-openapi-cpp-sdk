@@ -25,6 +25,7 @@ GetThingTopoRequest::GetThingTopoRequest() :
 GetThingTopoRequest::~GetThingTopoRequest()
 {}
 
+<<<<<<< HEAD
 std::string GetThingTopoRequest::getIotId()const
 {
 	return iotId_;
@@ -102,3 +103,82 @@ void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string GetThingTopoRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void GetThingTopoRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+int GetThingTopoRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void GetThingTopoRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string GetThingTopoRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int GetThingTopoRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void GetThingTopoRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string GetThingTopoRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void GetThingTopoRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string GetThingTopoRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetThingTopoRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string GetThingTopoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

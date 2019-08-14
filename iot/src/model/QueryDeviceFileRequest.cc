@@ -25,6 +25,7 @@ QueryDeviceFileRequest::QueryDeviceFileRequest() :
 QueryDeviceFileRequest::~QueryDeviceFileRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryDeviceFileRequest::getIotId()const
 {
 	return iotId_;
@@ -91,3 +92,71 @@ void QueryDeviceFileRequest::setFileId(const std::string& fileId)
 	setCoreParameter("FileId", fileId);
 }
 
+=======
+std::string QueryDeviceFileRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void QueryDeviceFileRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDeviceFileRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceFileRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceFileRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryDeviceFileRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string QueryDeviceFileRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceFileRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceFileRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceFileRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryDeviceFileRequest::getFileId()const
+{
+	return fileId_;
+}
+
+void QueryDeviceFileRequest::setFileId(const std::string& fileId)
+{
+	fileId_ = fileId;
+	setCoreParameter("FileId", fileId);
+}
+
+>>>>>>> master

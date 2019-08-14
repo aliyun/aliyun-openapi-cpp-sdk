@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				GetLoraNodesTaskRequest();
 				~GetLoraNodesTaskRequest();
 
+<<<<<<< HEAD
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getTaskId()const;
@@ -46,6 +47,19 @@ namespace AlibabaCloud
 				std::string iotInstanceId_;
 				std::string taskId_;
 				std::string accessKeyId_;
+=======
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string iotInstanceId_;
+				std::string taskId_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

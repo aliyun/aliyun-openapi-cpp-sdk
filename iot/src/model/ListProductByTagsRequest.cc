@@ -25,6 +25,7 @@ ListProductByTagsRequest::ListProductByTagsRequest() :
 ListProductByTagsRequest::~ListProductByTagsRequest()
 {}
 
+<<<<<<< HEAD
 std::vector<ListProductByTagsRequest::ProductTag> ListProductByTagsRequest::getProductTag()const
 {
 	return productTag_;
@@ -86,3 +87,66 @@ void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::vector<ListProductByTagsRequest::ProductTag> ListProductByTagsRequest::getProductTag()const
+{
+	return productTag_;
+}
+
+void ListProductByTagsRequest::setProductTag(const std::vector<ProductTag>& productTag)
+{
+	productTag_ = productTag;
+	int i = 0;
+	for(int i = 0; i!= productTag.size(); i++)	{
+		auto obj = productTag.at(i);
+		std::string str ="ProductTag."+ std::to_string(i);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
+	}
+}
+
+std::string ListProductByTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void ListProductByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int ListProductByTagsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListProductByTagsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int ListProductByTagsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void ListProductByTagsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string ListProductByTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

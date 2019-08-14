@@ -25,6 +25,7 @@ UpdateDeviceShadowRequest::UpdateDeviceShadowRequest() :
 UpdateDeviceShadowRequest::~UpdateDeviceShadowRequest()
 {}
 
+<<<<<<< HEAD
 std::string UpdateDeviceShadowRequest::getShadowMessage()const
 {
 	return shadowMessage_;
@@ -80,3 +81,60 @@ void UpdateDeviceShadowRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string UpdateDeviceShadowRequest::getShadowMessage()const
+{
+	return shadowMessage_;
+}
+
+void UpdateDeviceShadowRequest::setShadowMessage(const std::string& shadowMessage)
+{
+	shadowMessage_ = shadowMessage;
+	setCoreParameter("ShadowMessage", shadowMessage);
+}
+
+std::string UpdateDeviceShadowRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateDeviceShadowRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateDeviceShadowRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void UpdateDeviceShadowRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string UpdateDeviceShadowRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateDeviceShadowRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string UpdateDeviceShadowRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateDeviceShadowRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

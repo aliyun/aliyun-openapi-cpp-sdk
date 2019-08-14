@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				CreateProductRequest();
 				~CreateProductRequest();
 
+<<<<<<< HEAD
 				int getDataFormat()const;
 				void setDataFormat(int dataFormat);
 				int getNodeType()const;
@@ -73,6 +74,46 @@ namespace AlibabaCloud
 				std::string joinPermissionId_;
 				long categoryId_;
 				std::string accessKeyId_;
+=======
+				int getDataFormat()const;
+				void setDataFormat(int dataFormat);
+				int getNodeType()const;
+				void setNodeType(int nodeType);
+				bool getId2()const;
+				void setId2(bool id2);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getNetType()const;
+				void setNetType(const std::string& netType);
+				std::string getProductName()const;
+				void setProductName(const std::string& productName);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
+				std::string getAliyunCommodityCode()const;
+				void setAliyunCommodityCode(const std::string& aliyunCommodityCode);
+				std::string getJoinPermissionId()const;
+				void setJoinPermissionId(const std::string& joinPermissionId);
+				long getCategoryId()const;
+				void setCategoryId(long categoryId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				int dataFormat_;
+				int nodeType_;
+				bool id2_;
+				std::string iotInstanceId_;
+				std::string netType_;
+				std::string productName_;
+				std::string description_;
+				std::string protocolType_;
+				std::string aliyunCommodityCode_;
+				std::string joinPermissionId_;
+				long categoryId_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

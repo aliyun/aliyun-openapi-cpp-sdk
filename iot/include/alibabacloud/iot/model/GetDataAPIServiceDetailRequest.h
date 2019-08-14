@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				GetDataAPIServiceDetailRequest();
 				~GetDataAPIServiceDetailRequest();
 
+<<<<<<< HEAD
 				std::string getApiSrn()const;
 				void setApiSrn(const std::string& apiSrn);
 				std::string getAccessKeyId()const;
@@ -43,6 +44,16 @@ namespace AlibabaCloud
             private:
 				std::string apiSrn_;
 				std::string accessKeyId_;
+=======
+				std::string getApiSrn()const;
+				void setApiSrn(const std::string& apiSrn);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string apiSrn_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

@@ -25,6 +25,7 @@ SetDeviceDesiredPropertyRequest::SetDeviceDesiredPropertyRequest() :
 SetDeviceDesiredPropertyRequest::~SetDeviceDesiredPropertyRequest()
 {}
 
+<<<<<<< HEAD
 std::string SetDeviceDesiredPropertyRequest::getIotId()const
 {
 	return iotId_;
@@ -102,3 +103,82 @@ void SetDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& accessKe
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string SetDeviceDesiredPropertyRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void SetDeviceDesiredPropertyRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getVersions()const
+{
+	return versions_;
+}
+
+void SetDeviceDesiredPropertyRequest::setVersions(const std::string& versions)
+{
+	versions_ = versions;
+	setCoreParameter("Versions", versions);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void SetDeviceDesiredPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void SetDeviceDesiredPropertyRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void SetDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getItems()const
+{
+	return items_;
+}
+
+void SetDeviceDesiredPropertyRequest::setItems(const std::string& items)
+{
+	items_ = items;
+	setCoreParameter("Items", items);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

@@ -25,6 +25,7 @@ QueryTopicRouteTableRequest::QueryTopicRouteTableRequest() :
 QueryTopicRouteTableRequest::~QueryTopicRouteTableRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryTopicRouteTableRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,3 +70,49 @@ void QueryTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string QueryTopicRouteTableRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void QueryTopicRouteTableRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setCoreParameter("RegionId", regionId);
+}
+
+std::string QueryTopicRouteTableRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryTopicRouteTableRequest::getTopic()const
+{
+	return topic_;
+}
+
+void QueryTopicRouteTableRequest::setTopic(const std::string& topic)
+{
+	topic_ = topic;
+	setCoreParameter("Topic", topic);
+}
+
+std::string QueryTopicRouteTableRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

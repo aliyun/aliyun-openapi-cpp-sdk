@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT BatchUpdateDeviceNicknameRequest : public RpcServiceRequest
 			{
+<<<<<<< HEAD
 				struct DeviceNicknameInfo
 				{
 					std::string iotId;
@@ -37,11 +38,21 @@ namespace AlibabaCloud
 					std::string deviceName;
 					std::string productKey;
 				};
+=======
+				struct DeviceNicknameInfo
+				{
+					std::string iotId;
+					std::string nickname;
+					std::string deviceName;
+					std::string productKey;
+				};
+>>>>>>> master
 
 			public:
 				BatchUpdateDeviceNicknameRequest();
 				~BatchUpdateDeviceNicknameRequest();
 
+<<<<<<< HEAD
 				std::vector<DeviceNicknameInfo> getDeviceNicknameInfo()const;
 				void setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo);
 				std::string getIotInstanceId()const;
@@ -53,6 +64,19 @@ namespace AlibabaCloud
 				std::vector<DeviceNicknameInfo> deviceNicknameInfo_;
 				std::string iotInstanceId_;
 				std::string accessKeyId_;
+=======
+				std::vector<DeviceNicknameInfo> getDeviceNicknameInfo()const;
+				void setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::vector<DeviceNicknameInfo> deviceNicknameInfo_;
+				std::string iotInstanceId_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

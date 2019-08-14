@@ -30,16 +30,25 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT ListProductByTagsRequest : public RpcServiceRequest
 			{
+<<<<<<< HEAD
 				struct ProductTag
 				{
 					std::string tagValue;
 					std::string tagKey;
 				};
+=======
+				struct ProductTag
+				{
+					std::string tagValue;
+					std::string tagKey;
+				};
+>>>>>>> master
 
 			public:
 				ListProductByTagsRequest();
 				~ListProductByTagsRequest();
 
+<<<<<<< HEAD
 				std::vector<ProductTag> getProductTag()const;
 				void setProductTag(const std::vector<ProductTag>& productTag);
 				std::string getIotInstanceId()const;
@@ -57,6 +66,25 @@ namespace AlibabaCloud
 				int pageSize_;
 				int currentPage_;
 				std::string accessKeyId_;
+=======
+				std::vector<ProductTag> getProductTag()const;
+				void setProductTag(const std::vector<ProductTag>& productTag);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::vector<ProductTag> productTag_;
+				std::string iotInstanceId_;
+				int pageSize_;
+				int currentPage_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

@@ -25,6 +25,7 @@ QueryDeviceFileListRequest::QueryDeviceFileListRequest() :
 QueryDeviceFileListRequest::~QueryDeviceFileListRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryDeviceFileListRequest::getIotId()const
 {
 	return iotId_;
@@ -102,3 +103,82 @@ void QueryDeviceFileListRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string QueryDeviceFileListRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void QueryDeviceFileListRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDeviceFileListRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceFileListRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int QueryDeviceFileListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDeviceFileListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryDeviceFileListRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryDeviceFileListRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+int QueryDeviceFileListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceFileListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceFileListRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceFileListRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceFileListRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceFileListRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

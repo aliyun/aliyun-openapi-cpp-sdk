@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT InvokeDataAPIServiceRequest : public RpcServiceRequest
 			{
+<<<<<<< HEAD
 				struct Param
 				{
 					std::string listParamType;
@@ -37,11 +38,21 @@ namespace AlibabaCloud
 					std::string paramValue;
 					std::string paramName;
 				};
+=======
+				struct Param
+				{
+					std::string listParamType;
+					std::vector<std::string> listParamValue;
+					std::string paramValue;
+					std::string paramName;
+				};
+>>>>>>> master
 
 			public:
 				InvokeDataAPIServiceRequest();
 				~InvokeDataAPIServiceRequest();
 
+<<<<<<< HEAD
 				std::string getApiSrn()const;
 				void setApiSrn(const std::string& apiSrn);
 				std::vector<Param> getParam()const;
@@ -53,6 +64,19 @@ namespace AlibabaCloud
 				std::string apiSrn_;
 				std::vector<Param> param_;
 				std::string accessKeyId_;
+=======
+				std::string getApiSrn()const;
+				void setApiSrn(const std::string& apiSrn);
+				std::vector<Param> getParam()const;
+				void setParam(const std::vector<Param>& param);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string apiSrn_;
+				std::vector<Param> param_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				DeleteDevicePropRequest();
 				~DeleteDevicePropRequest();
 
+<<<<<<< HEAD
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
@@ -55,6 +56,28 @@ namespace AlibabaCloud
 				std::string productKey_;
 				std::string accessKeyId_;
 				std::string propKey_;
+=======
+				std::string getIotId()const;
+				void setIotId(const std::string& iotId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPropKey()const;
+				void setPropKey(const std::string& propKey);
+
+            private:
+				std::string iotId_;
+				std::string iotInstanceId_;
+				std::string deviceName_;
+				std::string productKey_;
+				std::string accessKeyId_;
+				std::string propKey_;
+>>>>>>> master
 
 			};
 		}

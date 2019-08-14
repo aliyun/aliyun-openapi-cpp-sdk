@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				QueryLoRaJoinPermissionsRequest();
 				~QueryLoRaJoinPermissionsRequest();
 
+<<<<<<< HEAD
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getAccessKeyId()const;
@@ -43,6 +44,16 @@ namespace AlibabaCloud
             private:
 				std::string iotInstanceId_;
 				std::string accessKeyId_;
+=======
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string iotInstanceId_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

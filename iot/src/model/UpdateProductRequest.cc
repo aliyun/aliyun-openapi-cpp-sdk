@@ -25,6 +25,7 @@ UpdateProductRequest::UpdateProductRequest() :
 UpdateProductRequest::~UpdateProductRequest()
 {}
 
+<<<<<<< HEAD
 std::string UpdateProductRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -80,3 +81,60 @@ void UpdateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string UpdateProductRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateProductRequest::getProductName()const
+{
+	return productName_;
+}
+
+void UpdateProductRequest::setProductName(const std::string& productName)
+{
+	productName_ = productName;
+	setCoreParameter("ProductName", productName);
+}
+
+std::string UpdateProductRequest::getDescription()const
+{
+	return description_;
+}
+
+void UpdateProductRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setCoreParameter("Description", description);
+}
+
+std::string UpdateProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string UpdateProductRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateProductRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

@@ -25,6 +25,7 @@ QueryDeviceDesiredPropertyRequest::QueryDeviceDesiredPropertyRequest() :
 QueryDeviceDesiredPropertyRequest::~QueryDeviceDesiredPropertyRequest()
 {}
 
+<<<<<<< HEAD
 std::vector<std::string> QueryDeviceDesiredPropertyRequest::getIdentifier()const
 {
 	return identifier_;
@@ -92,3 +93,72 @@ void QueryDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& access
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::vector<std::string> QueryDeviceDesiredPropertyRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::string>& identifier)
+{
+	identifier_ = identifier;
+	for(int i = 0; i!= identifier.size(); i++)
+		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

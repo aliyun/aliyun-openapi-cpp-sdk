@@ -25,6 +25,7 @@ DeleteRuleActionRequest::DeleteRuleActionRequest() :
 DeleteRuleActionRequest::~DeleteRuleActionRequest()
 {}
 
+<<<<<<< HEAD
 std::string DeleteRuleActionRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void DeleteRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string DeleteRuleActionRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+long DeleteRuleActionRequest::getActionId()const
+{
+	return actionId_;
+}
+
+void DeleteRuleActionRequest::setActionId(long actionId)
+{
+	actionId_ = actionId;
+	setCoreParameter("ActionId", std::to_string(actionId));
+}
+
+std::string DeleteRuleActionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

@@ -25,6 +25,7 @@ ListProductTagsRequest::ListProductTagsRequest() :
 ListProductTagsRequest::~ListProductTagsRequest()
 {}
 
+<<<<<<< HEAD
 std::string ListProductTagsRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void ListProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string ListProductTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void ListProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string ListProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void ListProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string ListProductTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

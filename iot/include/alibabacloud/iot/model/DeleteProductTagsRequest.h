@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				DeleteProductTagsRequest();
 				~DeleteProductTagsRequest();
 
+<<<<<<< HEAD
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::vector<std::string> getProductTagKey()const;
@@ -49,6 +50,22 @@ namespace AlibabaCloud
 				std::vector<std::string> productTagKey_;
 				std::string productKey_;
 				std::string accessKeyId_;
+=======
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<std::string> getProductTagKey()const;
+				void setProductTagKey(const std::vector<std::string>& productTagKey);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string iotInstanceId_;
+				std::vector<std::string> productTagKey_;
+				std::string productKey_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

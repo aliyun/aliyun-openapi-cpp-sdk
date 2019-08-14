@@ -25,6 +25,7 @@ QueryProductRequest::QueryProductRequest() :
 QueryProductRequest::~QueryProductRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryProductRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void QueryProductRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string QueryProductRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryProductRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryProductRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryProductRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

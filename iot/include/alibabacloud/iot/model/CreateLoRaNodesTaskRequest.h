@@ -30,16 +30,25 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateLoRaNodesTaskRequest : public RpcServiceRequest
 			{
+<<<<<<< HEAD
 				struct DeviceInfo
 				{
 					std::string pinCode;
 					std::string devEui;
 				};
+=======
+				struct DeviceInfo
+				{
+					std::string pinCode;
+					std::string devEui;
+				};
+>>>>>>> master
 
 			public:
 				CreateLoRaNodesTaskRequest();
 				~CreateLoRaNodesTaskRequest();
 
+<<<<<<< HEAD
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
@@ -54,6 +63,22 @@ namespace AlibabaCloud
 				std::string productKey_;
 				std::vector<DeviceInfo> deviceInfo_;
 				std::string accessKeyId_;
+=======
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::vector<DeviceInfo> getDeviceInfo()const;
+				void setDeviceInfo(const std::vector<DeviceInfo>& deviceInfo);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string iotInstanceId_;
+				std::string productKey_;
+				std::vector<DeviceInfo> deviceInfo_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

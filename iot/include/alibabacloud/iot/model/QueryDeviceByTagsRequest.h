@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				QueryDeviceByTagsRequest();
 				~QueryDeviceByTagsRequest();
 
+<<<<<<< HEAD
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
@@ -57,6 +58,25 @@ namespace AlibabaCloud
 				int currentPage_;
 				std::vector<Tag> tag_;
 				std::string accessKeyId_;
+=======
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string iotInstanceId_;
+				int pageSize_;
+				int currentPage_;
+				std::vector<Tag> tag_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}

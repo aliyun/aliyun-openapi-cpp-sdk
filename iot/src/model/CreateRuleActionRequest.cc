@@ -25,6 +25,7 @@ CreateRuleActionRequest::CreateRuleActionRequest() :
 CreateRuleActionRequest::~CreateRuleActionRequest()
 {}
 
+<<<<<<< HEAD
 std::string CreateRuleActionRequest::getConfiguration()const
 {
 	return configuration_;
@@ -91,3 +92,71 @@ void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
 	setCoreParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
 }
 
+=======
+std::string CreateRuleActionRequest::getConfiguration()const
+{
+	return configuration_;
+}
+
+void CreateRuleActionRequest::setConfiguration(const std::string& configuration)
+{
+	configuration_ = configuration;
+	setCoreParameter("Configuration", configuration);
+}
+
+std::string CreateRuleActionRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+long CreateRuleActionRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void CreateRuleActionRequest::setRuleId(long ruleId)
+{
+	ruleId_ = ruleId;
+	setCoreParameter("RuleId", std::to_string(ruleId));
+}
+
+std::string CreateRuleActionRequest::getType()const
+{
+	return type_;
+}
+
+void CreateRuleActionRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setCoreParameter("Type", type);
+}
+
+std::string CreateRuleActionRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void CreateRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+bool CreateRuleActionRequest::getErrorActionFlag()const
+{
+	return errorActionFlag_;
+}
+
+void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
+{
+	errorActionFlag_ = errorActionFlag;
+	setCoreParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
+}
+
+>>>>>>> master

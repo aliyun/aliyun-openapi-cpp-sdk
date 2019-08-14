@@ -25,6 +25,7 @@ QueryBatchRegisterDeviceStatusRequest::QueryBatchRegisterDeviceStatusRequest() :
 QueryBatchRegisterDeviceStatusRequest::~QueryBatchRegisterDeviceStatusRequest()
 {}
 
+<<<<<<< HEAD
 long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
 {
 	return applyId_;
@@ -69,3 +70,49 @@ void QueryBatchRegisterDeviceStatusRequest::setAccessKeyId(const std::string& ac
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
+{
+	return applyId_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setApplyId(long applyId)
+{
+	applyId_ = applyId;
+	setCoreParameter("ApplyId", std::to_string(applyId));
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

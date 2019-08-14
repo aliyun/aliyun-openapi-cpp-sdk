@@ -25,6 +25,7 @@ NotifyAddThingTopoRequest::NotifyAddThingTopoRequest() :
 NotifyAddThingTopoRequest::~NotifyAddThingTopoRequest()
 {}
 
+<<<<<<< HEAD
 std::string NotifyAddThingTopoRequest::getGwProductKey()const
 {
 	return gwProductKey_;
@@ -91,3 +92,71 @@ void NotifyAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string NotifyAddThingTopoRequest::getGwProductKey()const
+{
+	return gwProductKey_;
+}
+
+void NotifyAddThingTopoRequest::setGwProductKey(const std::string& gwProductKey)
+{
+	gwProductKey_ = gwProductKey;
+	setCoreParameter("GwProductKey", gwProductKey);
+}
+
+std::string NotifyAddThingTopoRequest::getGwDeviceName()const
+{
+	return gwDeviceName_;
+}
+
+void NotifyAddThingTopoRequest::setGwDeviceName(const std::string& gwDeviceName)
+{
+	gwDeviceName_ = gwDeviceName;
+	setCoreParameter("GwDeviceName", gwDeviceName);
+}
+
+std::string NotifyAddThingTopoRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void NotifyAddThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string NotifyAddThingTopoRequest::getGwIotId()const
+{
+	return gwIotId_;
+}
+
+void NotifyAddThingTopoRequest::setGwIotId(const std::string& gwIotId)
+{
+	gwIotId_ = gwIotId;
+	setCoreParameter("GwIotId", gwIotId);
+}
+
+std::string NotifyAddThingTopoRequest::getDeviceListStr()const
+{
+	return deviceListStr_;
+}
+
+void NotifyAddThingTopoRequest::setDeviceListStr(const std::string& deviceListStr)
+{
+	deviceListStr_ = deviceListStr;
+	setCoreParameter("DeviceListStr", deviceListStr);
+}
+
+std::string NotifyAddThingTopoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void NotifyAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

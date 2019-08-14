@@ -25,6 +25,7 @@ QueryDeviceGroupByTagsRequest::QueryDeviceGroupByTagsRequest() :
 QueryDeviceGroupByTagsRequest::~QueryDeviceGroupByTagsRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryDeviceGroupByTagsRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -86,3 +87,66 @@ void QueryDeviceGroupByTagsRequest::setAccessKeyId(const std::string& accessKeyI
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string QueryDeviceGroupByTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceGroupByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int QueryDeviceGroupByTagsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDeviceGroupByTagsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryDeviceGroupByTagsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceGroupByTagsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::vector<QueryDeviceGroupByTagsRequest::Tag> QueryDeviceGroupByTagsRequest::getTag()const
+{
+	return tag_;
+}
+
+void QueryDeviceGroupByTagsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	int i = 0;
+	for(int i = 0; i!= tag.size(); i++)	{
+		auto obj = tag.at(i);
+		std::string str ="Tag."+ std::to_string(i);
+		setCoreParameter(str + ".TagValue", obj.tagValue);
+		setCoreParameter(str + ".TagKey", obj.tagKey);
+	}
+}
+
+std::string QueryDeviceGroupByTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceGroupByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

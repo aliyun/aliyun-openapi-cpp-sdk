@@ -25,6 +25,7 @@ DeleteProductRequest::DeleteProductRequest() :
 DeleteProductRequest::~DeleteProductRequest()
 {}
 
+<<<<<<< HEAD
 std::string DeleteProductRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -58,3 +59,38 @@ void DeleteProductRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string DeleteProductRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteProductRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string DeleteProductRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteProductRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

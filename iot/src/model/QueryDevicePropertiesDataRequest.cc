@@ -25,6 +25,7 @@ QueryDevicePropertiesDataRequest::QueryDevicePropertiesDataRequest() :
 QueryDevicePropertiesDataRequest::~QueryDevicePropertiesDataRequest()
 {}
 
+<<<<<<< HEAD
 int QueryDevicePropertiesDataRequest::getAsc()const
 {
 	return asc_;
@@ -136,3 +137,116 @@ void QueryDevicePropertiesDataRequest::setAccessKeyId(const std::string& accessK
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+int QueryDevicePropertiesDataRequest::getAsc()const
+{
+	return asc_;
+}
+
+void QueryDevicePropertiesDataRequest::setAsc(int asc)
+{
+	asc_ = asc;
+	setCoreParameter("Asc", std::to_string(asc));
+}
+
+std::vector<std::string> QueryDevicePropertiesDataRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void QueryDevicePropertiesDataRequest::setIdentifier(const std::vector<std::string>& identifier)
+{
+	identifier_ = identifier;
+	for(int i = 0; i!= identifier.size(); i++)
+		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
+}
+
+std::string QueryDevicePropertiesDataRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void QueryDevicePropertiesDataRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDevicePropertiesDataRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDevicePropertiesDataRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+int QueryDevicePropertiesDataRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDevicePropertiesDataRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+long QueryDevicePropertiesDataRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void QueryDevicePropertiesDataRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setCoreParameter("EndTime", std::to_string(endTime));
+}
+
+std::string QueryDevicePropertiesDataRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryDevicePropertiesDataRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+long QueryDevicePropertiesDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void QueryDevicePropertiesDataRequest::setStartTime(long startTime)
+{
+	startTime_ = startTime;
+	setCoreParameter("StartTime", std::to_string(startTime));
+}
+
+std::string QueryDevicePropertiesDataRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDevicePropertiesDataRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string QueryDevicePropertiesDataRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDevicePropertiesDataRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

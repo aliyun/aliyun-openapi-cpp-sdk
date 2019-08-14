@@ -25,6 +25,7 @@ InvokeThingServiceRequest::InvokeThingServiceRequest() :
 InvokeThingServiceRequest::~InvokeThingServiceRequest()
 {}
 
+<<<<<<< HEAD
 std::string InvokeThingServiceRequest::getArgs()const
 {
 	return args_;
@@ -102,3 +103,82 @@ void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string InvokeThingServiceRequest::getArgs()const
+{
+	return args_;
+}
+
+void InvokeThingServiceRequest::setArgs(const std::string& args)
+{
+	args_ = args;
+	setCoreParameter("Args", args);
+}
+
+std::string InvokeThingServiceRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void InvokeThingServiceRequest::setIdentifier(const std::string& identifier)
+{
+	identifier_ = identifier;
+	setCoreParameter("Identifier", identifier);
+}
+
+std::string InvokeThingServiceRequest::getIotId()const
+{
+	return iotId_;
+}
+
+void InvokeThingServiceRequest::setIotId(const std::string& iotId)
+{
+	iotId_ = iotId;
+	setCoreParameter("IotId", iotId);
+}
+
+std::string InvokeThingServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void InvokeThingServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string InvokeThingServiceRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void InvokeThingServiceRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setCoreParameter("DeviceName", deviceName);
+}
+
+std::string InvokeThingServiceRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void InvokeThingServiceRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setCoreParameter("ProductKey", productKey);
+}
+
+std::string InvokeThingServiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

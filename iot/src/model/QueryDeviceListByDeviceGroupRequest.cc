@@ -25,6 +25,7 @@ QueryDeviceListByDeviceGroupRequest::QueryDeviceListByDeviceGroupRequest() :
 QueryDeviceListByDeviceGroupRequest::~QueryDeviceListByDeviceGroupRequest()
 {}
 
+<<<<<<< HEAD
 std::string QueryDeviceListByDeviceGroupRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -80,3 +81,60 @@ void QueryDeviceListByDeviceGroupRequest::setAccessKeyId(const std::string& acce
 	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
+=======
+std::string QueryDeviceListByDeviceGroupRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setCoreParameter("GroupId", groupId);
+}
+
+int QueryDeviceListByDeviceGroupRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setCoreParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+>>>>>>> master

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				CreateDeviceGroupRequest();
 				~CreateDeviceGroupRequest();
 
+<<<<<<< HEAD
 				std::string getGroupDesc()const;
 				void setGroupDesc(const std::string& groupDesc);
 				std::string getIotInstanceId()const;
@@ -52,6 +53,25 @@ namespace AlibabaCloud
 				std::string superGroupId_;
 				std::string groupName_;
 				std::string accessKeyId_;
+=======
+				std::string getGroupDesc()const;
+				void setGroupDesc(const std::string& groupDesc);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getSuperGroupId()const;
+				void setSuperGroupId(const std::string& superGroupId);
+				std::string getGroupName()const;
+				void setGroupName(const std::string& groupName);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+
+            private:
+				std::string groupDesc_;
+				std::string iotInstanceId_;
+				std::string superGroupId_;
+				std::string groupName_;
+				std::string accessKeyId_;
+>>>>>>> master
 
 			};
 		}
