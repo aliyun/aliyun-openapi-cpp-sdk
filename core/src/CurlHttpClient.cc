@@ -15,7 +15,7 @@
  */
 
 #include "CurlHttpClient.h"
-#include "Utils.h"
+#include <alibabacloud/core/Utils.h>
 #include <cassert>
 #include <sstream>
 #include <string>
