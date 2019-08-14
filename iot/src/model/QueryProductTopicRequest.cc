@@ -25,6 +25,17 @@ QueryProductTopicRequest::QueryProductTopicRequest() :
 QueryProductTopicRequest::~QueryProductTopicRequest()
 {}
 
+std::string QueryProductTopicRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string QueryProductTopicRequest::getProductKey()const
 {
 	return productKey_;
@@ -33,7 +44,7 @@ std::string QueryProductTopicRequest::getProductKey()const
 void QueryProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryProductTopicRequest::getAccessKeyId()const
@@ -44,6 +55,6 @@ std::string QueryProductTopicRequest::getAccessKeyId()const
 void QueryProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

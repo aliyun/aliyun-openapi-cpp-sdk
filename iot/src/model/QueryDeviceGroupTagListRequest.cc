@@ -25,6 +25,17 @@ QueryDeviceGroupTagListRequest::QueryDeviceGroupTagListRequest() :
 QueryDeviceGroupTagListRequest::~QueryDeviceGroupTagListRequest()
 {}
 
+std::string QueryDeviceGroupTagListRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceGroupTagListRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string QueryDeviceGroupTagListRequest::getGroupId()const
 {
 	return groupId_;
@@ -33,7 +44,7 @@ std::string QueryDeviceGroupTagListRequest::getGroupId()const
 void QueryDeviceGroupTagListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+	setCoreParameter("GroupId", groupId);
 }
 
 std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
@@ -44,6 +55,6 @@ std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
 void QueryDeviceGroupTagListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,13 +35,17 @@ namespace AlibabaCloud
 				struct DeviceInfo
 				{
 					std::string deviceType;
+					std::string iotId;
 					std::string gmtCreate;
+					std::string utcCreate;
 					std::string deviceId;
 					std::string deviceSecret;
 					std::string gmtModified;
 					std::string deviceStatus;
+					std::string utcModified;
 					std::string productKey;
 					std::string deviceName;
+					std::string nickname;
 				};
 
 

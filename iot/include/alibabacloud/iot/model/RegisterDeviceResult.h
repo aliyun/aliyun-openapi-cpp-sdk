@@ -36,8 +36,11 @@ namespace AlibabaCloud
 				{
 					std::string iotId;
 					std::string deviceSecret;
+					std::string devEui;
 					std::string productKey;
+					std::string joinEui;
 					std::string deviceName;
+					std::string nickname;
 				};
 
 

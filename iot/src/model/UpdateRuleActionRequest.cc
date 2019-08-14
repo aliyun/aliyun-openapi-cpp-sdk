@@ -33,7 +33,18 @@ std::string UpdateRuleActionRequest::getConfiguration()const
 void UpdateRuleActionRequest::setConfiguration(const std::string& configuration)
 {
 	configuration_ = configuration;
-	setParameter("Configuration", configuration);
+	setCoreParameter("Configuration", configuration);
+}
+
+std::string UpdateRuleActionRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 long UpdateRuleActionRequest::getActionId()const
@@ -44,7 +55,7 @@ long UpdateRuleActionRequest::getActionId()const
 void UpdateRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
-	setParameter("ActionId", std::to_string(actionId));
+	setCoreParameter("ActionId", std::to_string(actionId));
 }
 
 std::string UpdateRuleActionRequest::getType()const
@@ -55,7 +66,7 @@ std::string UpdateRuleActionRequest::getType()const
 void UpdateRuleActionRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setCoreParameter("Type", type);
 }
 
 std::string UpdateRuleActionRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string UpdateRuleActionRequest::getAccessKeyId()const
 void UpdateRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

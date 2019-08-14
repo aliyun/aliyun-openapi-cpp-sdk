@@ -33,7 +33,18 @@ std::string UpdateProductTopicRequest::getTopicId()const
 void UpdateProductTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setParameter("TopicId", topicId);
+	setCoreParameter("TopicId", topicId);
+}
+
+std::string UpdateProductTopicRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string UpdateProductTopicRequest::getOperation()const
@@ -44,7 +55,7 @@ std::string UpdateProductTopicRequest::getOperation()const
 void UpdateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setParameter("Operation", operation);
+	setCoreParameter("Operation", operation);
 }
 
 std::string UpdateProductTopicRequest::getTopicShortName()const
@@ -55,7 +66,7 @@ std::string UpdateProductTopicRequest::getTopicShortName()const
 void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setParameter("TopicShortName", topicShortName);
+	setCoreParameter("TopicShortName", topicShortName);
 }
 
 std::string UpdateProductTopicRequest::getAccessKeyId()const
@@ -66,7 +77,7 @@ std::string UpdateProductTopicRequest::getAccessKeyId()const
 void UpdateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateProductTopicRequest::getDesc()const
@@ -77,6 +88,6 @@ std::string UpdateProductTopicRequest::getDesc()const
 void UpdateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setParameter("Desc", desc);
+	setCoreParameter("Desc", desc);
 }
 

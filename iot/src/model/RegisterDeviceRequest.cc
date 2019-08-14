@@ -25,6 +25,39 @@ RegisterDeviceRequest::RegisterDeviceRequest() :
 RegisterDeviceRequest::~RegisterDeviceRequest()
 {}
 
+std::string RegisterDeviceRequest::getPinCode()const
+{
+	return pinCode_;
+}
+
+void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
+{
+	pinCode_ = pinCode;
+	setCoreParameter("PinCode", pinCode);
+}
+
+std::string RegisterDeviceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void RegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string RegisterDeviceRequest::getNickname()const
+{
+	return nickname_;
+}
+
+void RegisterDeviceRequest::setNickname(const std::string& nickname)
+{
+	nickname_ = nickname;
+	setCoreParameter("Nickname", nickname);
+}
+
 std::string RegisterDeviceRequest::getDeviceName()const
 {
 	return deviceName_;
@@ -33,7 +66,7 @@ std::string RegisterDeviceRequest::getDeviceName()const
 void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string RegisterDeviceRequest::getProductKey()const
@@ -44,7 +77,7 @@ std::string RegisterDeviceRequest::getProductKey()const
 void RegisterDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string RegisterDeviceRequest::getAccessKeyId()const
@@ -55,6 +88,17 @@ std::string RegisterDeviceRequest::getAccessKeyId()const
 void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RegisterDeviceRequest::getDevEui()const
+{
+	return devEui_;
+}
+
+void RegisterDeviceRequest::setDevEui(const std::string& devEui)
+{
+	devEui_ = devEui;
+	setCoreParameter("DevEui", devEui);
 }
 

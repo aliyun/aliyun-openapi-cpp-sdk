@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateProductTopicRequest();
 				~CreateProductTopicRequest();
 
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getTopicShortName()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setDesc(const std::string& desc);
 
             private:
+				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string topicShortName_;
 				std::string operation_;

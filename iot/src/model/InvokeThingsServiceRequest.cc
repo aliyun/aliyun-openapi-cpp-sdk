@@ -33,7 +33,7 @@ std::string InvokeThingsServiceRequest::getArgs()const
 void InvokeThingsServiceRequest::setArgs(const std::string& args)
 {
 	args_ = args;
-	setParameter("Args", args);
+	setCoreParameter("Args", args);
 }
 
 std::string InvokeThingsServiceRequest::getIdentifier()const
@@ -44,7 +44,18 @@ std::string InvokeThingsServiceRequest::getIdentifier()const
 void InvokeThingsServiceRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setParameter("Identifier", identifier);
+	setCoreParameter("Identifier", identifier);
+}
+
+std::string InvokeThingsServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void InvokeThingsServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> InvokeThingsServiceRequest::getDeviceName()const
@@ -56,7 +67,7 @@ void InvokeThingsServiceRequest::setDeviceName(const std::vector<std::string>& d
 {
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
-		setParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
 }
 
 std::string InvokeThingsServiceRequest::getProductKey()const
@@ -67,7 +78,7 @@ std::string InvokeThingsServiceRequest::getProductKey()const
 void InvokeThingsServiceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string InvokeThingsServiceRequest::getAccessKeyId()const
@@ -78,6 +89,6 @@ std::string InvokeThingsServiceRequest::getAccessKeyId()const
 void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

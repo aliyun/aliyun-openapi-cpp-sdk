@@ -25,6 +25,28 @@ ListRuleRequest::ListRuleRequest() :
 ListRuleRequest::~ListRuleRequest()
 {}
 
+std::string ListRuleRequest::getSearchName()const
+{
+	return searchName_;
+}
+
+void ListRuleRequest::setSearchName(const std::string& searchName)
+{
+	searchName_ = searchName;
+	setCoreParameter("SearchName", searchName);
+}
+
+std::string ListRuleRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void ListRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 int ListRuleRequest::getPageSize()const
 {
 	return pageSize_;
@@ -33,7 +55,7 @@ int ListRuleRequest::getPageSize()const
 void ListRuleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListRuleRequest::getCurrentPage()const
@@ -44,7 +66,7 @@ int ListRuleRequest::getCurrentPage()const
 void ListRuleRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string ListRuleRequest::getAccessKeyId()const
@@ -55,6 +77,6 @@ std::string ListRuleRequest::getAccessKeyId()const
 void ListRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

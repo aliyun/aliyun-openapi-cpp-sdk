@@ -44,6 +44,8 @@ namespace AlibabaCloud
 				void setProductKeyList(const std::vector<std::string>& productKeyList);
 				std::vector<std::string> getCategoryKeyList()const;
 				void setCategoryKeyList(const std::vector<std::string>& categoryKeyList);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
             private:
 				std::vector<std::string> productKeyList_;
 				std::vector<std::string> categoryKeyList_;
+				std::string iotInstanceId_;
 				int pageSize_;
 				int currentPage_;
 				std::string appKey_;

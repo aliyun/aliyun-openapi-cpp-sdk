@@ -33,7 +33,18 @@ long QueryPageByApplyIdRequest::getApplyId()const
 void QueryPageByApplyIdRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setParameter("ApplyId", std::to_string(applyId));
+	setCoreParameter("ApplyId", std::to_string(applyId));
+}
+
+std::string QueryPageByApplyIdRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryPageByApplyIdRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryPageByApplyIdRequest::getPageSize()const
@@ -44,7 +55,7 @@ int QueryPageByApplyIdRequest::getPageSize()const
 void QueryPageByApplyIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryPageByApplyIdRequest::getCurrentPage()const
@@ -55,7 +66,7 @@ int QueryPageByApplyIdRequest::getCurrentPage()const
 void QueryPageByApplyIdRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setCoreParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryPageByApplyIdRequest::getAccessKeyId()const
@@ -66,6 +77,6 @@ std::string QueryPageByApplyIdRequest::getAccessKeyId()const
 void QueryPageByApplyIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

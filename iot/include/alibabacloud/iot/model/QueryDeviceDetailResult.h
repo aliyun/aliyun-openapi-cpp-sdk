@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string gmtOnline;
 					std::string productKey;
 					std::string deviceName;
+					std::string nickname;
 				};
 
 

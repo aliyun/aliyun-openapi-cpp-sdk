@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string lastOnlineTime;
+					std::string iotId;
 					std::string asAddress;
 					std::string deviceId;
 					std::string deviceName;

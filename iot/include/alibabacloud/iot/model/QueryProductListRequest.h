@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				QueryProductListRequest();
 				~QueryProductListRequest();
 
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				int getCurrentPage()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string iotInstanceId_;
 				int pageSize_;
 				int currentPage_;
 				std::string aliyunCommodityCode_;

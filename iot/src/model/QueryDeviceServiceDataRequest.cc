@@ -33,7 +33,7 @@ int QueryDeviceServiceDataRequest::getAsc()const
 void QueryDeviceServiceDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setParameter("Asc", std::to_string(asc));
+	setCoreParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceServiceDataRequest::getIdentifier()const
@@ -44,7 +44,7 @@ std::string QueryDeviceServiceDataRequest::getIdentifier()const
 void QueryDeviceServiceDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setParameter("Identifier", identifier);
+	setCoreParameter("Identifier", identifier);
 }
 
 std::string QueryDeviceServiceDataRequest::getIotId()const
@@ -55,7 +55,18 @@ std::string QueryDeviceServiceDataRequest::getIotId()const
 void QueryDeviceServiceDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceServiceDataRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceServiceDataRequest::getPageSize()const
@@ -66,7 +77,7 @@ int QueryDeviceServiceDataRequest::getPageSize()const
 void QueryDeviceServiceDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryDeviceServiceDataRequest::getEndTime()const
@@ -77,7 +88,7 @@ long QueryDeviceServiceDataRequest::getEndTime()const
 void QueryDeviceServiceDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryDeviceServiceDataRequest::getDeviceName()const
@@ -88,7 +99,7 @@ std::string QueryDeviceServiceDataRequest::getDeviceName()const
 void QueryDeviceServiceDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 long QueryDeviceServiceDataRequest::getStartTime()const
@@ -99,7 +110,7 @@ long QueryDeviceServiceDataRequest::getStartTime()const
 void QueryDeviceServiceDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDeviceServiceDataRequest::getProductKey()const
@@ -110,7 +121,7 @@ std::string QueryDeviceServiceDataRequest::getProductKey()const
 void QueryDeviceServiceDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
@@ -121,6 +132,6 @@ std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
 void QueryDeviceServiceDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

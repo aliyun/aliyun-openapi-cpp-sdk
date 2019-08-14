@@ -33,7 +33,7 @@ std::string CreateRuleRequest::getSelect()const
 void CreateRuleRequest::setSelect(const std::string& select)
 {
 	select_ = select;
-	setParameter("Select", select);
+	setCoreParameter("Select", select);
 }
 
 std::string CreateRuleRequest::getRuleDesc()const
@@ -44,7 +44,7 @@ std::string CreateRuleRequest::getRuleDesc()const
 void CreateRuleRequest::setRuleDesc(const std::string& ruleDesc)
 {
 	ruleDesc_ = ruleDesc;
-	setParameter("RuleDesc", ruleDesc);
+	setCoreParameter("RuleDesc", ruleDesc);
 }
 
 std::string CreateRuleRequest::getDataType()const
@@ -55,7 +55,18 @@ std::string CreateRuleRequest::getDataType()const
 void CreateRuleRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setParameter("DataType", dataType);
+	setCoreParameter("DataType", dataType);
+}
+
+std::string CreateRuleRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateRuleRequest::getName()const
@@ -66,7 +77,7 @@ std::string CreateRuleRequest::getName()const
 void CreateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setParameter("Name", name);
+	setCoreParameter("Name", name);
 }
 
 std::string CreateRuleRequest::getWhere()const
@@ -77,7 +88,7 @@ std::string CreateRuleRequest::getWhere()const
 void CreateRuleRequest::setWhere(const std::string& where)
 {
 	where_ = where;
-	setParameter("Where", where);
+	setCoreParameter("Where", where);
 }
 
 std::string CreateRuleRequest::getProductKey()const
@@ -88,7 +99,7 @@ std::string CreateRuleRequest::getProductKey()const
 void CreateRuleRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 int CreateRuleRequest::getTopicType()const
@@ -99,7 +110,7 @@ int CreateRuleRequest::getTopicType()const
 void CreateRuleRequest::setTopicType(int topicType)
 {
 	topicType_ = topicType;
-	setParameter("TopicType", std::to_string(topicType));
+	setCoreParameter("TopicType", std::to_string(topicType));
 }
 
 std::string CreateRuleRequest::getAccessKeyId()const
@@ -110,7 +121,7 @@ std::string CreateRuleRequest::getAccessKeyId()const
 void CreateRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateRuleRequest::getShortTopic()const
@@ -121,6 +132,6 @@ std::string CreateRuleRequest::getShortTopic()const
 void CreateRuleRequest::setShortTopic(const std::string& shortTopic)
 {
 	shortTopic_ = shortTopic;
-	setParameter("ShortTopic", shortTopic);
+	setCoreParameter("ShortTopic", shortTopic);
 }
 

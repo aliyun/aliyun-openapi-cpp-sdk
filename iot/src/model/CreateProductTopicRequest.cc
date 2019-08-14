@@ -25,6 +25,17 @@ CreateProductTopicRequest::CreateProductTopicRequest() :
 CreateProductTopicRequest::~CreateProductTopicRequest()
 {}
 
+std::string CreateProductTopicRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string CreateProductTopicRequest::getProductKey()const
 {
 	return productKey_;
@@ -33,7 +44,7 @@ std::string CreateProductTopicRequest::getProductKey()const
 void CreateProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string CreateProductTopicRequest::getTopicShortName()const
@@ -44,7 +55,7 @@ std::string CreateProductTopicRequest::getTopicShortName()const
 void CreateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setParameter("TopicShortName", topicShortName);
+	setCoreParameter("TopicShortName", topicShortName);
 }
 
 std::string CreateProductTopicRequest::getOperation()const
@@ -55,7 +66,7 @@ std::string CreateProductTopicRequest::getOperation()const
 void CreateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setParameter("Operation", operation);
+	setCoreParameter("Operation", operation);
 }
 
 std::string CreateProductTopicRequest::getAccessKeyId()const
@@ -66,7 +77,7 @@ std::string CreateProductTopicRequest::getAccessKeyId()const
 void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateProductTopicRequest::getDesc()const
@@ -77,6 +88,6 @@ std::string CreateProductTopicRequest::getDesc()const
 void CreateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setParameter("Desc", desc);
+	setCoreParameter("Desc", desc);
 }
 

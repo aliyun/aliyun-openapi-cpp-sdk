@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setSelect(const std::string& select);
 				std::string getRuleDesc()const;
 				void setRuleDesc(const std::string& ruleDesc);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getName()const;
 				void setName(const std::string& name);
 				std::string getWhere()const;
@@ -57,6 +59,7 @@ namespace AlibabaCloud
             private:
 				std::string select_;
 				std::string ruleDesc_;
+				std::string iotInstanceId_;
 				std::string name_;
 				std::string where_;
 				long ruleId_;

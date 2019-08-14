@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					int nodeType;
 					int dataFormat;
 					std::string categoryName;
+					int netType;
 					std::string productKey;
 					int deviceCount;
 				};

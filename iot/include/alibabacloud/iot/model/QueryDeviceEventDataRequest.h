@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setIdentifier(const std::string& identifier);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				long getEndTime()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				int asc_;
 				std::string identifier_;
 				std::string iotId_;
+				std::string iotInstanceId_;
 				int pageSize_;
 				long endTime_;
 				std::string eventType_;

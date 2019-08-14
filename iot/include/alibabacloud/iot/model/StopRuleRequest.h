@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				StopRuleRequest();
 				~StopRuleRequest();
 
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string iotInstanceId_;
 				long ruleId_;
 				std::string accessKeyId_;
 

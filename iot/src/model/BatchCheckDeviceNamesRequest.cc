@@ -25,6 +25,17 @@ BatchCheckDeviceNamesRequest::BatchCheckDeviceNamesRequest() :
 BatchCheckDeviceNamesRequest::~BatchCheckDeviceNamesRequest()
 {}
 
+std::string BatchCheckDeviceNamesRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchCheckDeviceNamesRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::vector<std::string> BatchCheckDeviceNamesRequest::getDeviceName()const
 {
 	return deviceName_;
@@ -34,7 +45,7 @@ void BatchCheckDeviceNamesRequest::setDeviceName(const std::vector<std::string>&
 {
 	deviceName_ = deviceName;
 	for(int i = 0; i!= deviceName.size(); i++)
-		setParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
 }
 
 std::string BatchCheckDeviceNamesRequest::getProductKey()const
@@ -45,7 +56,7 @@ std::string BatchCheckDeviceNamesRequest::getProductKey()const
 void BatchCheckDeviceNamesRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string BatchCheckDeviceNamesRequest::getAccessKeyId()const
@@ -56,6 +67,6 @@ std::string BatchCheckDeviceNamesRequest::getAccessKeyId()const
 void BatchCheckDeviceNamesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

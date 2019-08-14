@@ -25,6 +25,17 @@ RRpcRequest::RRpcRequest() :
 RRpcRequest::~RRpcRequest()
 {}
 
+std::string RRpcRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void RRpcRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string RRpcRequest::getRequestBase64Byte()const
 {
 	return requestBase64Byte_;
@@ -33,7 +44,7 @@ std::string RRpcRequest::getRequestBase64Byte()const
 void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
 {
 	requestBase64Byte_ = requestBase64Byte;
-	setParameter("RequestBase64Byte", requestBase64Byte);
+	setCoreParameter("RequestBase64Byte", requestBase64Byte);
 }
 
 std::string RRpcRequest::getTopic()const
@@ -44,7 +55,7 @@ std::string RRpcRequest::getTopic()const
 void RRpcRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setParameter("Topic", topic);
+	setCoreParameter("Topic", topic);
 }
 
 std::string RRpcRequest::getDeviceName()const
@@ -55,7 +66,7 @@ std::string RRpcRequest::getDeviceName()const
 void RRpcRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string RRpcRequest::getProductKey()const
@@ -66,7 +77,7 @@ std::string RRpcRequest::getProductKey()const
 void RRpcRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 int RRpcRequest::getTimeout()const
@@ -77,7 +88,7 @@ int RRpcRequest::getTimeout()const
 void RRpcRequest::setTimeout(int timeout)
 {
 	timeout_ = timeout;
-	setParameter("Timeout", std::to_string(timeout));
+	setCoreParameter("Timeout", std::to_string(timeout));
 }
 
 std::string RRpcRequest::getAccessKeyId()const
@@ -88,6 +99,6 @@ std::string RRpcRequest::getAccessKeyId()const
 void RRpcRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

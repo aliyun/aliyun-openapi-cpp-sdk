@@ -33,7 +33,7 @@ std::string GetThingTopoRequest::getIotId()const
 void GetThingTopoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
 }
 
 int GetThingTopoRequest::getPageNo()const
@@ -44,7 +44,18 @@ int GetThingTopoRequest::getPageNo()const
 void GetThingTopoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
+	setCoreParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string GetThingTopoRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void GetThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int GetThingTopoRequest::getPageSize()const
@@ -55,7 +66,7 @@ int GetThingTopoRequest::getPageSize()const
 void GetThingTopoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetThingTopoRequest::getDeviceName()const
@@ -66,7 +77,7 @@ std::string GetThingTopoRequest::getDeviceName()const
 void GetThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 std::string GetThingTopoRequest::getProductKey()const
@@ -77,7 +88,7 @@ std::string GetThingTopoRequest::getProductKey()const
 void GetThingTopoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string GetThingTopoRequest::getAccessKeyId()const
@@ -88,6 +99,6 @@ std::string GetThingTopoRequest::getAccessKeyId()const
 void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

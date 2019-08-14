@@ -33,7 +33,7 @@ int QueryDeviceEventDataRequest::getAsc()const
 void QueryDeviceEventDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setParameter("Asc", std::to_string(asc));
+	setCoreParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceEventDataRequest::getIdentifier()const
@@ -44,7 +44,7 @@ std::string QueryDeviceEventDataRequest::getIdentifier()const
 void QueryDeviceEventDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setParameter("Identifier", identifier);
+	setCoreParameter("Identifier", identifier);
 }
 
 std::string QueryDeviceEventDataRequest::getIotId()const
@@ -55,7 +55,18 @@ std::string QueryDeviceEventDataRequest::getIotId()const
 void QueryDeviceEventDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setParameter("IotId", iotId);
+	setCoreParameter("IotId", iotId);
+}
+
+std::string QueryDeviceEventDataRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceEventDataRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceEventDataRequest::getPageSize()const
@@ -66,7 +77,7 @@ int QueryDeviceEventDataRequest::getPageSize()const
 void QueryDeviceEventDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setCoreParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryDeviceEventDataRequest::getEndTime()const
@@ -77,7 +88,7 @@ long QueryDeviceEventDataRequest::getEndTime()const
 void QueryDeviceEventDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+	setCoreParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryDeviceEventDataRequest::getEventType()const
@@ -88,7 +99,7 @@ std::string QueryDeviceEventDataRequest::getEventType()const
 void QueryDeviceEventDataRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setParameter("EventType", eventType);
+	setCoreParameter("EventType", eventType);
 }
 
 std::string QueryDeviceEventDataRequest::getDeviceName()const
@@ -99,7 +110,7 @@ std::string QueryDeviceEventDataRequest::getDeviceName()const
 void QueryDeviceEventDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
+	setCoreParameter("DeviceName", deviceName);
 }
 
 long QueryDeviceEventDataRequest::getStartTime()const
@@ -110,7 +121,7 @@ long QueryDeviceEventDataRequest::getStartTime()const
 void QueryDeviceEventDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+	setCoreParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDeviceEventDataRequest::getProductKey()const
@@ -121,7 +132,7 @@ std::string QueryDeviceEventDataRequest::getProductKey()const
 void QueryDeviceEventDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceEventDataRequest::getAccessKeyId()const
@@ -132,6 +143,6 @@ std::string QueryDeviceEventDataRequest::getAccessKeyId()const
 void QueryDeviceEventDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

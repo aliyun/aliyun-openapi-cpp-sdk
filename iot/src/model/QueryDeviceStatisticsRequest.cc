@@ -25,6 +25,17 @@ QueryDeviceStatisticsRequest::QueryDeviceStatisticsRequest() :
 QueryDeviceStatisticsRequest::~QueryDeviceStatisticsRequest()
 {}
 
+std::string QueryDeviceStatisticsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryDeviceStatisticsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setCoreParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string QueryDeviceStatisticsRequest::getProductKey()const
 {
 	return productKey_;
@@ -33,7 +44,7 @@ std::string QueryDeviceStatisticsRequest::getProductKey()const
 void QueryDeviceStatisticsRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	setCoreParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceStatisticsRequest::getAccessKeyId()const
@@ -44,6 +55,6 @@ std::string QueryDeviceStatisticsRequest::getAccessKeyId()const
 void QueryDeviceStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	setCoreParameter("AccessKeyId", accessKeyId);
 }
 

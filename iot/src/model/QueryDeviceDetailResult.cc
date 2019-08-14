@@ -35,10 +35,13 @@ QueryDeviceDetailResult::~QueryDeviceDetailResult()
 
 void QueryDeviceDetailResult::parse(const std::string &payload)
 {
-	Json::Reader reader;
+	Json::CharReaderBuilder builder;
+	Json::CharReader *reader = builder.newCharReader();
+	Json::Value *val;
 	Json::Value value;
-	reader.parse(payload, value);
-
+	JSONCPP_STRING *errs;
+	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
+	value = *val;
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["IotId"].isNull())
@@ -75,6 +78,8 @@ void QueryDeviceDetailResult::parse(const std::string &payload)
 		data_.region = dataNode["Region"].asString();
 	if(!dataNode["Owner"].isNull())
 		data_.owner = dataNode["Owner"].asString() == "true";
+	if(!dataNode["Nickname"].isNull())
+		data_.nickname = dataNode["Nickname"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
