@@ -71,49 +71,42 @@ static void LoadLocalEndpoints()
                                        WIN_LOCAL_ENDPOINTS_CONFIG_3;
 #endif
 
-  try
-  {
-    if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value))
-    {
-      return;
-    }
-    
-    auto regions = value["regions"];
-    for (const auto &region : regions)
-    {
-      allRegions.push_back(region.asString());
-    }
-
-    auto products = value["products"];
-    for (const auto &product : products)
-    {
-      allProductsInLocalEndpoints.push_back(product.asString());
-    }
-
-    auto endpoints = value["endpoints"];
-    for (auto &product : allProductsInLocalEndpoints)
-    {
-      auto endpoint_per_product = endpoints[product];
-      productInfoType p;
-
-      auto regions = endpoint_per_product["regions"];
-      auto regional = endpoint_per_product["regional"];
-
-      for (auto &r : regions)
-      {
-        const std::string region = r.asString();
-        p.regions.push_back(region);
-        p.regional[region] =
-            endpoint_per_product["regional"][region].asString();
-      }
-      allLocalEndpoints[product] = p;
-    }
-    local_endpoints_loaded = true;
-  }
-  catch (JSONCPP_STRING errs)
+  if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value))
   {
     return;
   }
+
+  auto regions = value["regions"];
+  for (const auto &region : regions)
+  {
+    allRegions.push_back(region.asString());
+  }
+
+  auto products = value["products"];
+  for (const auto &product : products)
+  {
+    allProductsInLocalEndpoints.push_back(product.asString());
+  }
+
+  auto endpoints = value["endpoints"];
+  for (auto &product : allProductsInLocalEndpoints)
+  {
+    auto endpoint_per_product = endpoints[product];
+    productInfoType p;
+
+    auto regions = endpoint_per_product["regions"];
+    auto regional = endpoint_per_product["regional"];
+
+    for (auto &r : regions)
+    {
+      const std::string region = r.asString();
+      p.regions.push_back(region);
+      p.regional[region] =
+          endpoint_per_product["regional"][region].asString();
+    }
+    allLocalEndpoints[product] = p;
+  }
+  local_endpoints_loaded = true;
 }
 
 } // namespace
