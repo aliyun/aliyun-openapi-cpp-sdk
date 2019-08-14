@@ -59,6 +59,7 @@ set(core_public_header
 	include/alibabacloud/core/SimpleCredentialsProvider.h
 	include/alibabacloud/core/StsAssumeRoleCredentialsProvider.h
 	include/alibabacloud/core/Url.h
+	include/alibabacloud/core/Utils.h
 	)
 
 set(core_public_header_location
@@ -120,7 +121,6 @@ set(core_src
 	src/SimpleCredentialsProvider.cc
 	src/StsAssumeRoleCredentialsProvider.cc
 	src/Url.cc
-	src/Utils.h
 	src/Utils.cc
 	src/location/LocationClient.cc
 	src/location/LocationRequest.cc
